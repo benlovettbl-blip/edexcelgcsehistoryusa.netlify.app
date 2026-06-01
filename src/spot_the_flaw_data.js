@@ -1,162 +1,162 @@
 export const SPOT_THE_FLAW_DATA = {
   "subtopic_1_1": {
-    "exam_question": "Explain why the Jim Crow system was established in the Southern states in the late 19th century.",
+    "exam_question": "Explain why the Jim Crow system and legal segregation were established in the Southern states by the early 1950s.",
     "options": [
       {"letter": "A", "text": "Plessy v. Ferguson (1896) legalized 'separate but equal' racial segregation.", "is_correct_flaw": false},
-      {"letter": "B", "text": "Southern states passed Jim Crow laws to enforce racial separation in waiting rooms, schools, and transport.", "is_correct_flaw": false},
-      {"letter": "C", "text": "Disenfranchisement methods like literacy tests and poll taxes were used to prevent Black Americans from voting.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The Supreme Court's Brown v. Board of Education (1954) ruling legally protected the Jim Crow waiting rooms.", "is_correct_flaw": true}
+      {"letter": "B", "text": "Southern states used poll taxes and literacy tests to disenfranchise Black voters.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Civil rights organizations like the NAACP challenged segregation in the courts.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The Civil Rights Act of 1964 established the Jim Crow laws across the South.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Brown v. Board decision was made in 1954 and ruled school segregation unconstitutional, rather than protecting Jim Crow in the late 19th century."
+    "feedback": "Correct! Option D is flawed because the Civil Rights Act of 1964 banned Jim Crow segregation, rather than establishing it."
   },
   "subtopic_1_2": {
-    "exam_question": "Explain why the Supreme Court ruled that school segregation was unconstitutional in Brown v. Board of Education (1954).",
+    "exam_question": "Explain why the integration of Little Rock Central High School in 1957 became a major civil rights crisis.",
     "options": [
-      {"letter": "A", "text": "The NAACP presented psychological evidence (like the doll test) showing segregation caused Black children to feel inferior.", "is_correct_flaw": false},
-      {"letter": "B", "text": "Chief Justice Earl Warren worked to secure a unanimous 9-0 decision to project national unity and strength.", "is_correct_flaw": false},
-      {"letter": "C", "text": "The Court concluded that segregated education was inherently unequal, violating the 14th Amendment.", "is_correct_flaw": false},
-      {"letter": "D", "text": "President Eisenhower's signing of the Civil Rights Act of 1964 legally forced the Supreme Court to make the ruling.", "is_correct_flaw": true}
+      {"letter": "A", "text": "Governor Orval Faubus used the Arkansas National Guard to block the nine Black students from entering.", "is_correct_flaw": false},
+      {"letter": "B", "text": "President Eisenhower sent the 101st Airborne Division to protect the students and enforce federal law.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Governor Faubus closed all Little Rock high schools the following year to prevent further desegregation.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The Supreme Court's Browder v. Gayle ruling ordered the school to be closed immediately.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Civil Rights Act was passed in 1964, ten years after the 1954 Brown decision."
+    "feedback": "Correct! Option D is flawed because Browder v. Gayle was the 1956 Supreme Court case that ruled segregated bus transport unconstitutional, not school integration."
   },
   "subtopic_1_3": {
-    "exam_question": "Explain why the Montgomery Bus Boycott succeeded in desegregating transit by 1956.",
+    "exam_question": "Explain why the Montgomery Bus Boycott (1955-56) succeeded in desegregating transit.",
     "options": [
       {"letter": "A", "text": "Black citizens made up 70% of bus riders, so their economic boycott severely hit transit revenues.", "is_correct_flaw": false},
       {"letter": "B", "text": "The MIA organized a highly efficient private carpool network to transport workers and sustain the protest.", "is_correct_flaw": false},
-      {"letter": "C", "text": "The Supreme Court ruled in Browder v. Gayle (1956) that segregated bus transport was unconstitutional.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The Civil Rights Act of 1964 outlawed racial discrimination in public accommodations across Montgomery.", "is_correct_flaw": true}
+      {"letter": "C", "text": "The Supreme Court ruled in Browder v. Gayle (1956) that segregated public transport was unconstitutional.", "is_correct_flaw": false},
+      {"letter": "D", "text": "Martin Luther King Jr. set up the SCLC to buy the bus company and integrate it from within.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Civil Rights Act was passed in 1964, nearly a decade after the 1956 bus desegregation victory."
+    "feedback": "Correct! Option D is flawed because the SCLC was formed to coordinate protests, not to buy the bus company."
   },
   "subtopic_1_4": {
-    "exam_question": "Explain why school desegregation faced severe resistance in the South in the years 1954-57.",
+    "exam_question": "Explain why Southern white opposition to desegregation grew rapidly in the mid-1950s.",
     "options": [
-      {"letter": "A", "text": "Southern politicians organized massive resistance, signing the Southern Manifesto to block integration.", "is_correct_flaw": false},
-      {"letter": "B", "text": "White Citizens' Councils used economic intimidation and social pressure to harass pro-integration families.", "is_correct_flaw": false},
-      {"letter": "C", "text": "Governor Orval Faubus deployed the state National Guard to block Black students from entering Central High.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The Black Panther Party organized armed school patrols in Little Rock to protect Black students from mobs.", "is_correct_flaw": true}
+      {"letter": "A", "text": "Southern politicians signed the Southern Manifesto in 1956 to resist integration by 'lawful means'.", "is_correct_flaw": false},
+      {"letter": "B", "text": "White Citizens' Councils applied economic pressure, firing Black activists and boycotting integrationist businesses.", "is_correct_flaw": false},
+      {"letter": "C", "text": "The Ku Klux Klan experienced a revival, using violence and terror like the murder of Emmett Till (1955).", "is_correct_flaw": false},
+      {"letter": "D", "text": "Conservative Dixiecrats passed the Civil Rights Act of 1957 to enforce immediate integration in the South.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Black Panther Party was founded in 1966 and did not exist during the 1957 Little Rock crisis."
+    "feedback": "Correct! Option D is flawed because the Dixiecrats strongly opposed civil rights and tried to delay or block the Civil Rights Act of 1957, which was signed by President Eisenhower to protect voting rights but had weak enforcement powers."
   },
   "subtopic_2_1": {
-    "exam_question": "Explain why the Greensboro Sit-ins of 1960 spread rapidly across the South.",
+    "exam_question": "Explain why non-violent direct action gained success in the years 1960-62.",
     "options": [
-      {"letter": "A", "text": "Students were highly disciplined, using non-violent direct action to gain moral authority and media support.", "is_correct_flaw": false},
-      {"letter": "B", "text": "The newly formed Student Nonviolent Coordinating Committee (SNCC) helped organize and coordinate the protests.", "is_correct_flaw": false},
-      {"letter": "C", "text": "Media coverage of white mobs harassing peaceful students at lunch counters generated national sympathy.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The Black Panther Party provided armed security at Woolworth's lunch counters in 1960.", "is_correct_flaw": true}
+      {"letter": "A", "text": "The Greensboro sit-ins of 1960 desegregated lunch counters in over 80 Southern cities.", "is_correct_flaw": false},
+      {"letter": "B", "text": "The newly formed Student Nonviolent Coordinating Committee (SNCC) helped coordinate student protests.", "is_correct_flaw": false},
+      {"letter": "C", "text": "CORE's Freedom Rides in 1961 tested desegregation on interstate buses, forcing federal enforcement.", "is_correct_flaw": false},
+      {"letter": "D", "text": "James Meredith integrated the University of Mississippi in 1962 without any federal intervention.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Black Panther Party was founded in 1966, long after the 1960 Greensboro sit-ins."
+    "feedback": "Correct! Option D is flawed because James Meredith's integration of 'Ole Miss' required President Kennedy to send 30,000 federal troops to quell violent white riots."
   },
   "subtopic_2_2": {
-    "exam_question": "Explain why the Freedom Rides were launched in 1961.",
+    "exam_question": "Explain why landmark civil rights legislation was passed in the years 1964-65.",
     "options": [
-      {"letter": "A", "text": "To test whether the Supreme Court ban on segregation in interstate bus travel was being enforced in the South.", "is_correct_flaw": false},
-      {"letter": "B", "text": "To provoke violent responses from white mobs, forcing the federal government to intervene and enforce the law.", "is_correct_flaw": false},
-      {"letter": "C", "text": "To draw national and international media attention to the continuation of illegal Jim Crow bus segregation.", "is_correct_flaw": false},
-      {"letter": "D", "text": "To celebrate the passage of the Civil Rights Act, which had legally integrated all public transport.", "is_correct_flaw": true}
+      {"letter": "A", "text": "Outrage over televised police brutality in Birmingham (1963) and Selma (1965) pressured federal action.", "is_correct_flaw": false},
+      {"letter": "B", "text": "The March on Washington in 1963 demonstrated massive public and moral support for civil rights reforms.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Presidents Kennedy and Johnson used executive power and political skill to push the bills through Congress.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The KKK's Mississippi murders of three civil rights workers in 1964 was celebrated by Congress.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Civil Rights Act was passed in 1964, three years after the 1961 Freedom Rides."
+    "feedback": "Correct! Option D is flawed because the Mississippi murders of Chaney, Goodman, and Schwerner shocked the nation and generated massive moral outrage that helped pass the Civil Rights Act of 1964, rather than being celebrated."
   },
   "subtopic_2_3": {
-    "exam_question": "Explain why civil rights legislation was passed in the years 1964-65.",
+    "exam_question": "Explain why the Black Power movement emerged and grew in the mid-to-late 1960s.",
     "options": [
-      {"letter": "A", "text": "National outrage over police brutality against peaceful marchers in Birmingham and Selma pressured politicians.", "is_correct_flaw": false},
-      {"letter": "B", "text": "President Lyndon B. Johnson used his political skill and the memory of John F. Kennedy to push the bills.", "is_correct_flaw": false},
-      {"letter": "C", "text": "The massive March on Washington in 1963 demonstrated overwhelming public support for civil rights reforms.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The Supreme Court's Plessy v. Ferguson ruling legally forced Congress to pass desegregation laws.", "is_correct_flaw": true}
+      {"letter": "A", "text": "Younger activists grew frustrated with the slow pace of non-violent progress and persistent poverty in urban ghettos.", "is_correct_flaw": false},
+      {"letter": "B", "text": "Leaders like Malcolm X and Stokely Carmichael preached Black pride, self-reliance, and self-defense.", "is_correct_flaw": false},
+      {"letter": "C", "text": "The Black Panthers, founded in 1966, set up community programs and armed patrols to combat police brutality.", "is_correct_flaw": false},
+      {"letter": "D", "text": "Tommie Smith and John Carlos won gold and silver medals at the 1968 Olympics and signed a peace treaty with the KKK.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because Plessy v. Ferguson (1896) established 'separate but equal', which legally protected segregation."
+    "feedback": "Correct! Option D is flawed because Smith and Carlos raised their black-gloved fists in a silent protest against racial discrimination, not to sign a treaty with the KKK."
   },
   "subtopic_2_4": {
-    "exam_question": "Explain why the Black Power movement grew in the mid-1960s.",
-    "options": [
-      {"letter": "A", "text": "Growing frustration with the slow pace of civil rights progress and persistent poverty in Northern ghettos.", "is_correct_flaw": false},
-      {"letter": "B", "text": "A desire to celebrate Black pride, culture, and self-reliance rather than focusing solely on integration.", "is_correct_flaw": false},
-      {"letter": "C", "text": "Malcolm X's powerful critique of non-violence inspired younger activists to adopt more militant approaches.", "is_correct_flaw": false},
-      {"letter": "D", "text": "Marcus Garvey's 'Back to Africa' rallies organized mass departures to Liberia during the summer of 1966.", "is_correct_flaw": true}
-    ],
-    "feedback": "Correct! Option D is flawed because Marcus Garvey's Black Nationalism movement peaked in the 1920s, long before the 1960s Black Power rise."
-  },
-  "subtopic_3_1": {
     "exam_question": "Explain why urban riots broke out in Northern cities in the years 1965-68.",
     "options": [
-      {"letter": "A", "text": "Deep anger over police brutality and discrimination, which sparked local clashes in Chicago and Watts.", "is_correct_flaw": false},
-      {"letter": "B", "text": "Severe economic inequality, high unemployment, and poor housing in neglected inner-city neighborhoods.", "is_correct_flaw": false},
-      {"letter": "C", "text": "The assassination of Martin Luther King Jr. in 1968 triggered widespread grief and riots in over 100 cities.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The implementation of the New Deal, which deliberately reduced municipal funding for Black neighborhoods.", "is_correct_flaw": true}
+      {"letter": "A", "text": "Deep anger over police brutality, high unemployment, and poor housing in neglected inner-city ghettos.", "is_correct_flaw": false},
+      {"letter": "B", "text": "The Kerner Report (1968) concluded that the riots were caused by systemic white racism and economic inequality.", "is_correct_flaw": false},
+      {"letter": "C", "text": "The assassination of Martin Luther King Jr. in April 1968 triggered riots in over 100 cities.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The Fair Housing Act of 1968 was passed by Congress to legally ban Black Americans from buying houses in the North.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the New Deal was a 1930s economic recovery program and had no relation to the 1960s urban riots."
+    "feedback": "Correct! Option D is flawed because the Fair Housing Act of 1968 banned discrimination in housing, rather than legalizing it."
+  },
+  "subtopic_3_1": {
+    "exam_question": "Explain why US involvement in Vietnam grew under Eisenhower and Kennedy (1954-63).",
+    "options": [
+      {"letter": "A", "text": "The Domino Theory suggested that if South Vietnam fell to communism, neighboring nations would follow.", "is_correct_flaw": false},
+      {"letter": "B", "text": "The US backed South Vietnam's President Ngo Dinh Diem, sending military advisers and funding to contain the North.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Kennedy supported the Strategic Hamlet Program in 1962 to isolate peasants from Vietcong influence.", "is_correct_flaw": false},
+      {"letter": "D", "text": "President Eisenhower approved a coup in 1963 to install Ho Chi Minh as the leader of South Vietnam.", "is_correct_flaw": true}
+    ],
+    "feedback": "Correct! Option D is flawed because the coup in 1963 overthrew Ngo Dinh Diem, and Ho Chi Minh was the communist leader of North Vietnam, whom the US was actively fighting."
   },
   "subtopic_3_2": {
-    "exam_question": "Explain why the USA supported Ngo Dinh Diem's regime in South Vietnam.",
+    "exam_question": "Explain why the US conflict in Vietnam escalated into a major war in the years 1964-65.",
     "options": [
-      {"letter": "A", "text": "Diem was an intense anti-communist who was seen as a key ally in preventing the spread of communism in Asia.", "is_correct_flaw": false},
-      {"letter": "B", "text": "The Domino Theory suggested that if South Vietnam fell to communism, neighboring countries would also fall.", "is_correct_flaw": false},
-      {"letter": "C", "text": "Diem had successfully integrated Buddhists into his government, creating a unified and peaceful state.", "is_correct_flaw": true},
-      {"letter": "D", "text": "US containment policy dictated supporting any non-communist regime against Ho Chi Minh's North Vietnam.", "is_correct_flaw": false}
+      {"letter": "A", "text": "The Gulf of Tonkin incident in August 1964 led Congress to pass a resolution giving the president war powers.", "is_correct_flaw": false},
+      {"letter": "B", "text": "The Gulf of Tonkin Resolution served as a 'blank check' for President Johnson to wage war without a formal declaration.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Operation Rolling Thunder was launched in early 1965 as a continuous bombing campaign against North Vietnam.", "is_correct_flaw": false},
+      {"letter": "D", "text": "General Westmoreland withdrew all US troops in 1965 after the Vietcong threat was completely eliminated.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option C is flawed because Diem, a devout Catholic, heavily discriminated against the Buddhist majority, triggering massive protests."
+    "feedback": "Correct! Option D is flawed because 1965 marked the rapid escalation and first deployment of US ground combat troops (Marines at Da Nang) due to the increasing Vietcong threat."
   },
   "subtopic_3_3": {
-    "exam_question": "Explain why US military involvement in Vietnam escalated in the years 1964-65.",
+    "exam_question": "Explain why US conventional military tactics struggled to defeat the Vietcong.",
     "options": [
-      {"letter": "A", "text": "Reports of North Vietnamese attacks on the USS Maddox led to the Gulf of Tonkin Resolution in August 1964.", "is_correct_flaw": false},
-      {"letter": "B", "text": "The Gulf of Tonkin Resolution authorized President Johnson to take all necessary measures to repel attacks.", "is_correct_flaw": false},
-      {"letter": "C", "text": "Vietcong attacks on US bases like Pleiku in 1965 prompted the launch of Operation Rolling Thunder.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The signing of the Geneva Accords in 1965 legally forced the US to deploy combat divisions to Saigon.", "is_correct_flaw": true}
+      {"letter": "A", "text": "The Vietcong relied on effective guerrilla tactics, booby traps, and complex underground tunnel networks.", "is_correct_flaw": false},
+      {"letter": "B", "text": "The Ho Chi Minh Trail through Laos and Cambodia kept North Vietnamese supplies flowing to the South.", "is_correct_flaw": false},
+      {"letter": "C", "text": "US Search and Destroy missions and chemical defoliants (Agent Orange) alienated the Vietnamese rural populace.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The Vietcong launched the Tet Offensive in 1968, capturing and permanently occupying all major South Vietnamese cities.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Geneva Accords were signed in 1954 to temporarily divide Vietnam, not to deploy US combat troops in 1965."
+    "feedback": "Correct! Option D is flawed because while the Tet Offensive was a massive political blow to the US, it was a military failure for the Vietcong, who were quickly driven out of the cities with heavy casualties."
   },
   "subtopic_3_4": {
-    "exam_question": "Explain why US military tactics failed to defeat the Vietcong.",
+    "exam_question": "Explain why President Nixon's policy of Vietnamisation failed to secure South Vietnam.",
     "options": [
-      {"letter": "A", "text": "Vietcong guerrilla tactics, like tunnels and booby traps, neutralized US technological and air superiority.", "is_correct_flaw": false},
-      {"letter": "B", "text": "The Ho Chi Minh Trail allowed North Vietnam to continuously resupply troops in the South through Laos.", "is_correct_flaw": false},
-      {"letter": "C", "text": "US Search and Destroy missions and chemical weapons (Agent Orange) alienated the Vietnamese peasantry.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The Chinese military deployed one million combat troops to fight alongside the Vietcong in South Vietnam.", "is_correct_flaw": true}
+      {"letter": "A", "text": "The ARVN remained heavily dependent on US air support, plagued by low morale, corruption, and poor leadership.", "is_correct_flaw": false},
+      {"letter": "B", "text": "Nixon expanded the war by invading Cambodia (1970) and Laos (1971) to destroy sanctuaries, causing ARVN retreats.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Nixon ordered heavy bombing of North Vietnam in 1972 (Linebacker campaigns) to force peace negotiations.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The Nixon Doctrine declared that the US would take over all ground combat duties from the South Vietnamese army.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because China provided weapons, equipment, and support troops, but never sent combat divisions to fight in South Vietnam."
+    "feedback": "Correct! Option D is flawed because the Nixon Doctrine and Vietnamisation aimed to withdraw US ground troops and shift the combat burden to the ARVN, not the other way around."
   },
   "subtopic_4_1": {
-    "exam_question": "Explain why President Nixon introduced the policy of Vietnamization in 1969.",
+    "exam_question": "Explain why public opposition to the Vietnam War grew rapidly in the USA in the years 1968-70.",
     "options": [
-      {"letter": "A", "text": "The heavy casualties of the Tet Offensive and rising anti-war protests pressured Nixon to withdraw US troops.", "is_correct_flaw": false},
-      {"letter": "B", "text": "Nixon wanted to shift the combat burden to the ARVN (South Vietnamese Army) while maintaining air support.", "is_correct_flaw": false},
-      {"letter": "C", "text": "The Nixon Doctrine stated that US allies must take primary responsibility for their own military defense.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The Vietcong surrendered in 1969, enabling a full withdrawal of US combat forces from South Vietnam.", "is_correct_flaw": true}
+      {"letter": "A", "text": "Graphic TV and media coverage brought the brutal reality of the war directly into American living rooms.", "is_correct_flaw": false},
+      {"letter": "B", "text": "The draft system forced young men into service, sparking campus strikes and card-burning protests.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Exposing the My Lai Massacre (1969) and the trial of Lt. Calley horrified the public and damaged the war's moral justification.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The Kent State shootings in 1970 led the student movement to support Nixon's invasion of Cambodia.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Vietcong never surrendered, and the war continued until the Paris Peace Accords in 1973 and Saigon's fall in 1975."
+    "feedback": "Correct! Option D is flawed because the Kent State shootings were sparked by student protests against the invasion of Cambodia, and the tragedy led to a national student strike that shut down hundreds of colleges."
   },
   "subtopic_4_2": {
-    "exam_question": "Explain why the anti-war movement grew rapidly in the years 1968-70.",
+    "exam_question": "Explain why many Americans supported US involvement in the Vietnam War.",
     "options": [
-      {"letter": "A", "text": "The introduction of the draft lottery in 1969 directly threatened draft-age students with military service.", "is_correct_flaw": false},
-      {"letter": "B", "text": "Revelations of the My Lai Massacre in 1969 shocked the public and undermined the war's moral justification.", "is_correct_flaw": false},
-      {"letter": "C", "text": "Nixon's invasion of Cambodia in 1970 provoked massive campus protests, leading to the Kent State shootings.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The Gulf of Tonkin incident in 1970 convinced Americans that President Nixon had fabricated the war.", "is_correct_flaw": true}
+      {"letter": "A", "text": "Deep-seated fear of communism and belief in the containment policy.", "is_correct_flaw": false},
+      {"letter": "B", "text": "Nixon appealed to the 'Silent Majority' of patriotic, conservative Americans who opposed radical anti-war protests.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Blue-collar working-class supporters, known as the 'hard hats', actively protested in support of the war.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The hard hats and anti-war student protesters formed a political alliance in 1970 to end the draft lottery.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the Gulf of Tonkin incident occurred in August 1964 under President Johnson, not in 1970 under Nixon."
+    "feedback": "Correct! Option D is flawed because the 'hard hats' strongly disliked anti-war student protesters, clashing with them violently during the Hard Hat Riots of May 1970."
   },
   "subtopic_4_3": {
-    "exam_question": "Explain why many Americans supported US involvement in Vietnam in the years 1969-72.",
-    "options": [
-      {"letter": "A", "text": "Deep-seated anti-communism made many believe that withdrawal would lead to a catastrophic communist victory.", "is_correct_flaw": false},
-      {"letter": "B", "text": "Nixon's Silent Majority speeches appealed to patriotic, working-class citizens who disliked anti-war radicals.", "is_correct_flaw": false},
-      {"letter": "C", "text": "Nixon's Vietnamization policy reduced US casualties by withdrawing ground troops, making the war more acceptable.", "is_correct_flaw": true},
-      {"letter": "D", "text": "The US military's capture of Hanoi in 1971 convinced the public that a total victory was only months away.", "is_correct_flaw": true}
-    ],
-    "feedback": "Correct! Option D is flawed because the US military never captured Hanoi, and North Vietnam's capital remained in communist hands throughout the war."
-  },
-  "subtopic_4_4": {
     "exam_question": "Explain why the Paris Peace Accords were signed in January 1973.",
     "options": [
-      {"letter": "A", "text": "The massive Christmas Bombings of 1972 pressured North Vietnam to return to the negotiating table in Paris.", "is_correct_flaw": false},
-      {"letter": "B", "text": "Nixon was eager to end US involvement before Congress cut off funding for the war in early 1973.", "is_correct_flaw": false},
-      {"letter": "C", "text": "The US agreed to let North Vietnamese troops remain in the South, removing a key diplomatic roadblock.", "is_correct_flaw": false},
-      {"letter": "D", "text": "The successful invasion and occupation of Laos by South Vietnamese troops in 1972 forced a ceasefire.", "is_correct_flaw": true}
+      {"letter": "A", "text": "Secret negotiations led by Henry Kissinger and Le Duc Tho resolved the diplomatic deadlock.", "is_correct_flaw": false},
+      {"letter": "B", "text": "Massive US bombing of North Vietnam in 1972 pressured Hanoi to make concessions.", "is_correct_flaw": false},
+      {"letter": "C", "text": "The US agreed to let North Vietnamese troops remain in South Vietnam, removing a key roadblock.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The agreement successfully prevented North Vietnamese forces from ever attacking the South again.", "is_correct_flaw": true}
     ],
-    "feedback": "Correct! Option D is flawed because the ARVN invasion of Laos in 1971 (Operation Lam Son 719) was a disastrous defeat, not a victory."
+    "feedback": "Correct! Option D is flawed because the peace agreement quickly collapsed after US withdrawal, leading to the Fall of Saigon and communist reunification in April 1975."
+  },
+  "subtopic_4_4": {
+    "exam_question": "Explain why the United States failed to win the war in Vietnam.",
+    "options": [
+      {"letter": "A", "text": "The strengths of North Vietnam, including the resilience of their tactics and massive Russian and Chinese support.", "is_correct_flaw": false},
+      {"letter": "B", "text": "Major weaknesses of the US armed forces, including low morale, drug abuse, and inexperienced draftees.", "is_correct_flaw": false},
+      {"letter": "C", "text": "Counterproductive US tactics like heavy bombing and search and destroy, which alienated the local population.", "is_correct_flaw": false},
+      {"letter": "D", "text": "The US military was completely destroyed on the battlefield, losing every single engagement against the Vietcong.", "is_correct_flaw": true}
+    ],
+    "feedback": "Correct! Option D is flawed because the US military was never militarily defeated in a major set-piece battle; rather, the US lost the political will to continue fighting due to homefront opposition, high economic costs, and the resilience of the enemy."
   }
 };
