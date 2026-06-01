@@ -15615,15 +15615,41 @@ ${cleanBrackets(paper.q3d.model)}
         });
       }
     };
-    bindStarter(
-      "btn-q2-starter",
-      "q2-user-answer",
-      "One reason why [Insert Factor 1] was significant was because...\n\nA second reason why [Insert Factor 2] was significant was because...\n\nOverall, [Factor 1/2] was the most important reason because..."
-    );
+    const q2Btn = document.getElementById("btn-q2-starter");
+    if (q2Btn) {
+      q2Btn.addEventListener("click", () => {
+        AudioEngine.play("click");
+        const textarea = document.getElementById("q2-user-answer");
+        if (textarea) {
+          if (textarea.value && !confirm("This will overwrite your current draft. Do you want to insert the writing frame?")) {
+            return;
+          }
+          let questionEl = document.getElementById("q2-question-text");
+          let questionText = questionEl ? questionEl.textContent.trim() : "";
+          questionText = questionText.replace(/\s*\(\s*12\s*marks\s*\)\s*$/i, "");
+          let topic = questionText.replace(/^Explain\s+why\s+/i, "");
+          if (topic.endsWith(".")) {
+            topic = topic.slice(0, -1);
+          }
+          if (!topic || topic.includes("Select a topic") || topic.includes("begin...")) {
+            topic = "[Topic from the question]";
+          }
+          const template = `The first reason why ${topic} was because [Insert Reason 1]...
+
+The second reason why ${topic} was because [Insert Reason 2]...
+
+The third reason why ${topic} was because [Insert Reason 3]...
+
+Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
+          textarea.value = template;
+          textarea.dispatchEvent(new Event("input"));
+        }
+      });
+    }
     bindStarter(
       "btn-q3a-starter",
       "q3a-user-answer",
-      "Source B is useful for an inquiry into [Insert Topic] because it shows...\n\nThis is supported by my own knowledge that...\n\nHowever, the source's utility is limited because its provenance is..."
+      "Source B is useful for an inquiry into [Insert Topic] because it shows...\n\nThis is supported by my own knowledge that...\n\nThe provenance of Source B also increases its usefulness because it was created by [Insert Creator] in [Insert Year], which means it provides a reliable, first-hand account of...\n\nHowever, the utility of the source is slightly limited because..."
     );
     bindStarter(
       "btn-q3b-starter",
@@ -15638,7 +15664,7 @@ ${cleanBrackets(paper.q3d.model)}
     bindStarter(
       "btn-q3d-starter",
       "q3d-user-answer",
-      "Interpretation 1 argues that [Insert Claim 1]. This is supported by Source B which shows...\n\nOn the other hand, Interpretation 2 argues that [Insert Claim 2]. This is supported by Source C which shows...\n\nOverall, I agree more with Interpretation [1/2] because my own knowledge shows that..."
+      "Interpretation 2 argues that [Insert Claim 2]. This is supported by Source C which shows...\n\nOn the other hand, Interpretation 1 argues that [Insert Claim 1]. This is supported by Source B which shows...\n\nOverall, I agree more with Interpretation 2 because my own knowledge shows that..."
     );
     document.getElementById("btn-quick-exam-start").addEventListener("click", () => {
       AudioEngine.play("click");
@@ -16523,8 +16549,42 @@ ${cleanBrackets(paper.q3d.model)}
   function highlightModelQuotes(text) {
     if (!text) return "";
     let highlighted = text;
+    let i1Text = "";
+    let i2Text = "";
+    if (state && state.pastPaperSession && state.pastPaperSession.activePaperData) {
+      i1Text = state.pastPaperSession.activePaperData.interpretation1 || "";
+      i2Text = state.pastPaperSession.activePaperData.interpretation2 || "";
+    }
+    const cleanWord = (str) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "");
     highlighted = highlighted.replace(/["“]([^"”]{2,})["”]/g, '<span class="model-quote">\u201C$1\u201D</span>');
-    highlighted = highlighted.replace(/\[1\[(.*?)\]1\]/g, '<span class="model-quote-i1">\u201C$1\u201D</span>');
+    highlighted = highlighted.replace(/\[1\[(.*?)\]1\]/g, (match, quote) => {
+      const cleanQuote = cleanWord(quote);
+      if (!cleanQuote) return `<span class="model-quote-i1">\u201C${quote}\u201D</span>`;
+      if (i1Text || i2Text) {
+        const cleanI1 = cleanWord(i1Text);
+        const cleanI2 = cleanWord(i2Text);
+        if (cleanI2.includes(cleanQuote) && !cleanI1.includes(cleanQuote)) {
+          return `<span class="model-quote-i2">\u201C${quote}\u201D</span>`;
+        }
+        if (cleanI1.includes(cleanQuote)) {
+          return `<span class="model-quote-i1">\u201C${quote}\u201D</span>`;
+        }
+      }
+      if (typeof EXAM_SKILLS_DATA !== "undefined" && EXAM_SKILLS_DATA.q3) {
+        for (const key of Object.keys(EXAM_SKILLS_DATA.q3)) {
+          const qData = EXAM_SKILLS_DATA.q3[key];
+          const cleanI1 = cleanWord(qData.interpretation1);
+          const cleanI2 = cleanWord(qData.interpretation2);
+          if (cleanI2.includes(cleanQuote) && !cleanI1.includes(cleanQuote)) {
+            return `<span class="model-quote-i2">\u201C${quote}\u201D</span>`;
+          }
+          if (cleanI1.includes(cleanQuote)) {
+            return `<span class="model-quote-i1">\u201C${quote}\u201D</span>`;
+          }
+        }
+      }
+      return `<span class="model-quote-i1">\u201C${quote}\u201D</span>`;
+    });
     highlighted = highlighted.replace(/\[2\[(.*?)\]2\]/g, '<span class="model-quote-i2">\u201C$1\u201D</span>');
     highlighted = highlighted.replace(/\{\{(.*?)\}\}/g, '<span class="model-provenance">$1</span>');
     highlighted = highlighted.replace(/\[\[(.*?)\]\]/g, '<span class="contextual-knowledge">$1</span>');
