@@ -4160,12 +4160,12 @@ Source E is highly useful for showing the direct police criminalization of peace
         "image": "assets/sources/little-rock-protest-1957.jpg",
         "provenance": "A protestor outside Central High School holding a sign opposing school integration, Little Rock, Arkansas, September 1957.",
         "seeThinkWonder": {
-          "see": "Look at the text on the sign and the facial expressions of the protestors.",
-          "think": "Who is the protestor blaming for school integration, and what does this tell us about Southern views of federal authority?",
-          "wonder": "Why would local Southern parents view desegregated schools as a threat to their community?"
+          "see": "Look at the text on the protest signs and the U.S. flags carried by the crowd.",
+          "think": "Why did segregationists associate racial integration with communism and religious threats ('Anti-Christ')?",
+          "wonder": "How did the protesters use patriotic symbols like the American flag to argue for segregation?"
         },
         "bronze": "How long did the Montgomery Bus Boycott last, and what legal ruling officially ended it?",
-        "silver": "Study the source image. Identify two arguments segregationists used to oppose school integration, based on the protestor's sign.",
+        "silver": "Study the source image. Identify two slogans or arguments used on the segregationists' signs to oppose school integration.",
         "gold": "How did the Southern response to Brown v. Board (Topic 1.1) directly lead to the protest and resistance shown in this Little Rock image?",
         "keywords": [
           "Governor Faubus",
@@ -4174,7 +4174,7 @@ Source E is highly useful for showing the direct police criminalization of peace
           "Southern Manifesto"
         ],
         "bronzeAnswer": "The Montgomery Bus Boycott lasted 381 days and was officially ended by the Supreme Court's Browder v. Gayle decision in late 1956.",
-        "silverAnswer": "The sign argues that (1) integration is being forced by a 'dictator' (federal overreach), and (2) desegregation is a threat to the education and culture of white children ('stolen' school).",
+        "silverAnswer": "The signs show: (1) 'Race Mixing is Communism', and (2) 'Stop the Race Mixing March of the Anti-Christ'.",
         "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern boards exploited this loophole to delay integration, leading to angry public protests and state defiance in Little Rock."
       }
     },
@@ -4347,14 +4347,14 @@ Source E is highly useful for showing the violent and physical intimidation used
         "prevSubtopicId": "subtopic_1_3",
         "prevSubtopicTitle": "Topic 1.3: Little Rock Central High School",
         "image": "assets/sources/greensboro-sit-in-counter.jpg",
-        "provenance": "Student activists enduring harassment during the Greensboro Woolworth's lunch counter sit-in, February 1960.",
+        "provenance": "A preserved section of the Greensboro F. W. Woolworth's lunch counter, where the 1960 sit-ins began, now displayed at the Smithsonian National Museum of American History.",
         "seeThinkWonder": {
-          "see": "Look at the students sitting at the counter and the crowd of white youths standing directly behind them.",
-          "think": "Why did the activists refuse to react or retaliate when food and liquids were poured over them?",
-          "wonder": "How did student-led groups like SNCC organize such highly disciplined campaigns?"
+          "see": "Observe the empty curved counter, the individual bar stools fixed to the floor, and the museum display layout.",
+          "think": "Why is a simple piece of commercial furniture (a lunch counter) considered a historically significant artifact in a national museum?",
+          "wonder": "What was it like for the 'Greensboro Four' to sit on these stools in defiance of Jim Crow laws?"
         },
         "bronze": "Why did President Eisenhower feel compelled to send the 101st Airborne Division to Little Rock in 1957, despite his personal reluctance?",
-        "silver": "Study the source image. Identify two ways white segregationists are harassing the Black students at the counter.",
+        "silver": "Study the source image and provenance. Identify two reasons why this lunch counter has been preserved and displayed in a national museum.",
         "gold": "Contrast the student sit-ins with the Montgomery Bus Boycott (Topic 1.2). How did the sit-in strategy differ in its target, speed of mobilization, and direct confrontation?",
         "keywords": [
           "SNCC",
@@ -4363,7 +4363,7 @@ Source E is highly useful for showing the violent and physical intimidation used
           "Desegregation"
         ],
         "bronzeAnswer": "Eisenhower sent the troops because Governor Faubus used the state National Guard to defy a federal court order, forcing the President to uphold federal authority and the Constitution.",
-        "silverAnswer": "White segregationists are (1) crowding closely behind the students to intimidate them, and (2) pouring sugar, condiments, and liquids over their heads and clothes.",
+        "silverAnswer": "It is preserved because: (1) it was the site of the historic 1960 Greensboro sit-ins that sparked nationwide protests, and (2) it represents the physical segregation of public eating spaces that activists successfully challenged.",
         "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention."
       }
     },
@@ -4711,15 +4711,15 @@ Source E is highly useful for showing the political and legislative outcomes of 
         "prevSubtopicId": "subtopic_2_1",
         "prevSubtopicTitle": "Topic 2.1: Freedom Riders & James Meredith",
         "image": "assets/sources/mlk-dream-speech-1963.jpg",
-        "provenance": "Dr. King speaking to the massive crowd at the Lincoln Memorial during the March on Washington, 28 August 1963.",
+        "provenance": "Dr. King speaking from the podium at the Lincoln Memorial during the March on Washington, 28 August 1963.",
         "seeThinkWonder": {
-          "see": "Look at the sheer density of the crowd surrounding the Reflecting Pool and the Lincoln Memorial.",
-          "think": "Why did civil rights leaders choose the Lincoln Memorial as the stage for this mass protest?",
-          "wonder": "How did this demonstration pressure President Kennedy to introduce the Civil Rights Bill?"
+          "see": "Observe Dr. King's posture, the microphones in front of him, and the columns in the background.",
+          "think": "Why did civil rights organizers set up a large group of news microphones at this specific event?",
+          "wonder": "What was it like to stand behind those microphones and address hundreds of thousands of people?"
         },
         "bronze": "Describe the federal intervention required to safely enroll James Meredith at the University of Mississippi ('Ole Miss') in 1962.",
-        "silver": "Study the source image. Identify two details suggesting that the March on Washington represented a massive, unified coalition.",
-        "gold": "How did the escalation of protests from the Greensboro Sit-ins (Topic 1.4) lead directly to the massive mobilization and legislative demands shown in this March on Washington photo?",
+        "silver": "Study the source image. Identify two details showing that Dr. King is delivering a major address at a public monument.",
+        "gold": "How did the escalation of protests from the Greensboro Sit-ins (Topic 1.4) lead directly to the massive mobilization and legislative demands represented by this historic speech?",
         "keywords": [
           "Lincoln Memorial",
           "I Have a Dream",
@@ -4727,7 +4727,7 @@ Source E is highly useful for showing the political and legislative outcomes of 
           "SCLC"
         ],
         "bronzeAnswer": "President Kennedy had to send 30,000 federal troops, marshals, and national guardsmen to secure Meredith's safety after white mobs rioted.",
-        "silverAnswer": "The image shows (1) a massive crowd of over 250,000 people packed tightly together, and (2) protestors of diverse backgrounds united at a single national monument.",
+        "silverAnswer": "The details are: (1) he is standing behind a podium with a large cluster of news microphones, and (2) the marble columns of the Lincoln Memorial are visible directly behind him.",
         "goldAnswer": "The student sit-ins of 1960 (Topic 1.4) sparked a wave of direct action that grew into the Freedom Rides (1961) and the Birmingham Campaign (1963). This continuous escalation mobilized hundreds of thousands of people, forcing national civil rights groups to unite in a massive march to demand comprehensive federal legislation."
       }
     },
@@ -5083,14 +5083,14 @@ Source E is highly useful for showing the immediate political and emotional impa
         "prevSubtopicId": "subtopic_2_3",
         "prevSubtopicTitle": "Topic 2.3: Selma & Voting Rights Act",
         "image": "assets/sources/malcolm-x-speaking.jpg",
-        "provenance": "A photograph of Malcolm X speaking at a press conference in New York City, March 1964, outlining his ideological shift and plans for the OAAU.",
+        "provenance": "A portrait photograph of Malcolm X taken during a press conference in New York City on March 12, 1964, the day he announced his break with the Nation of Islam.",
         "seeThinkWonder": {
-          "see": "Observe Malcolm X's posture and the microphone setup at the rally.",
-          "think": "How does his focus on self-defense differ from the non-violent philosophy of Martin Luther King Jr.?",
-          "wonder": "Why did his message resonate so deeply with young Black Americans living in Northern cities?"
+          "see": "Observe Malcolm X's expression, his glasses, and his formal attire.",
+          "think": "Why would Malcolm X present himself in a highly formal and professional manner when addressing the national media?",
+          "wonder": "What was the atmosphere like at this press conference, given his dramatic break from the Nation of Islam?"
         },
         "bronze": "What landmark piece of federal legislation was passed as a direct consequence of the Selma marches in 1965?",
-        "silver": "Study the source image and provenance. Identify two details showing that this is an organized press conference rather than an informal speech.",
+        "silver": "Study the source image. Identify two features of Malcolm X's appearance that indicate he was presenting himself in a professional or formal manner.",
         "gold": "How did the slow pace of economic progress in Northern cities after the legal victories of the Montgomery Bus Boycott (Topic 1.2) fuel the rise of Malcolm X's Black Nationalist ideology?",
         "keywords": [
           "Black Nationalism",
@@ -5099,7 +5099,7 @@ Source E is highly useful for showing the immediate political and emotional impa
           "Black Power"
         ],
         "bronzeAnswer": "The Voting Rights Act of 1965 was passed as a direct consequence of the Selma marches.",
-        "silverAnswer": "The details are: (1) Malcolm X is formally seated at a table addressing reporters, and (2) he is speaking directly into a dense cluster of professional news microphones mounted on the table in front of him.",
+        "silverAnswer": "Malcolm X is: (1) wearing a formal suit and tie, and (2) wearing neat glasses, showing a professional and serious demeanor.",
         "goldAnswer": "Legal victories like the Montgomery Bus Boycott (Topic 1.2) and the Civil Rights Act ended legal segregation in the South, but did not solve Northern problems of poverty, unemployment, and police brutality. Malcolm X's focus on economic self-reliance and self-defense appealed to Northern Blacks who felt non-violence had failed to improve their daily lives."
       }
     },
