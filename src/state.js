@@ -14,6 +14,7 @@ export const state = {
   soundEnabled: true,
   theme: 'desert',
   deepThinkingAnswers: {},          // { questionId: string }
+  specObjectives: {},               // { objectiveId: boolean }
   
   // Flashcard Session State
   flashcardSession: {

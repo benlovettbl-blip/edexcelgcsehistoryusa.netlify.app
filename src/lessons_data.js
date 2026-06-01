@@ -166,7 +166,12 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "Segregation is the enforced separation of different racial groups in a country, community, or establishment. The 1896 ruling that legalized this was Plessy v. Ferguson.",
       "silverAnswer": "The Supreme Court ruled that separate schools were unequal and unconstitutional. This decision gave civil rights lawyers the legal power to demand that all-white schools admit Black students.",
       "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment."
-    }
+    },
+    "specPoints": [
+      "Segregation, discrimination and voting rights in the Southern states.",
+      "The work of civil rights organisations, including the NAACP and CORE.",
+      "Reasons for, key features and significance of the Brown v. Topeka case (1954)."
+    ]
   },
   "subtopic_1_2": {
     "headerTitle": "KT 1.2 - GCSE CORE MASTERY: A triumph of federal supremacy or proof of deep local resistance? How significant was the integration of Central High School?",
@@ -327,7 +332,10 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "In May 1954, the Supreme Court ruled unanimously (9-0) that racial segregation in public schools was unconstitutional.",
       "silverAnswer": "They opposed the boycott because it cost them a large amount of money (since Black passengers made up over 70% of bus riders) and threatened to end the segregation system that kept them in power.",
       "goldAnswer": "This image represents the dismantling of the Jim Crow system shown in Topic 1.1. By refusing to comply with segregated seating, activists forced a Supreme Court ruling (Browder v. Gayle) that declared segregated transit unconstitutional, legally removing signs like the one in Topic 1.1."
-    }
+    },
+    "specPoints": [
+      "Reasons for, key features and significance of the events at Little Rock High School (1957)."
+    ]
   },
   "subtopic_1_3": {
     "headerTitle": "KT 1.3 - GCSE CORE MASTERY: A spontaneous outbreak of protest or the result of years of meticulous planning? What caused the Montgomery Bus Boycott to succeed?",
@@ -487,7 +495,16 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The Montgomery Bus Boycott lasted 381 days and was officially ended by the Supreme Court's Browder v. Gayle decision in late 1956.",
       "silverAnswer": "Governor Faubus used state troops to block Black students from enrolling, defying a federal court. This left President Eisenhower with no choice but to send federal soldiers to enforce the law and protect the students, showing that federal law was supreme.",
       "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern boards exploited this loophole to delay integration, leading to angry public protests and state defiance in Little Rock."
-    }
+    },
+    "specPoints": [
+      "Causes and events of the Montgomery Bus Boycott.",
+      "The significance of Rosa Parks.",
+      "Reasons for the success and importance of the boycott.",
+      "The Supreme Court ruling.",
+      "The Civil Rights Act (1957).",
+      "The significance of the leadership of Martin Luther King.",
+      "The setting up of the SCLC."
+    ]
   },
   "subtopic_1_4": {
     "headerTitle": "KT 1.4 - GCSE CORE MASTERY: Defending states' rights or protecting racial supremacy? How should we interpret the rapid growth of Southern white resistance?",
@@ -649,7 +666,11 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "Eisenhower sent the troops because Governor Faubus used the state National Guard to defy a federal court order, forcing the President to uphold federal authority and the Constitution.",
       "silverAnswer": "White Citizens' Councils used economic pressure (like firing activists from their jobs), while the KKK used violent terror (like bombings and physical attacks) to scare activists into stopping their protests.",
       "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention."
-    }
+    },
+    "specPoints": [
+      "The Ku Klux Klan and violence, including the murder of Emmet Till in 1955.",
+      "Opposition to desegregation in the South, including the ‘Dixiecrats’ and the setting up of White Citizens’ Councils."
+    ]
   },
   "subtopic_2_1": {
     "headerTitle": "KT 2.1 - GCSE CORE MASTERY: A strategic breakthrough or a dangerous provocation? How did non-violent direct action force federal intervention?",
@@ -818,7 +839,12 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The Student Nonviolent Coordinating Committee (SNCC) was founded in 1960.",
       "silverAnswer": "They wanted to test whether the federal ban on transit segregation was actually being enforced, and to force the federal government to intervene when Southern states ignored the law.",
       "goldAnswer": "Although the Supreme Court had ruled segregation in interstate travel illegal (Browder v. Gayle, Topic 1.2), Southern states openly ignored the federal law and kept terminals segregated. CORE launched the Freedom Rides to force the federal government to actively enforce its own laws by provoking a crisis that the Kennedy administration could not ignore."
-    }
+    },
+    "specPoints": [
+      "The significance of Greensboro and the sit-in movement.",
+      "Reasons for, key features and significance of the Freedom Riders, including Ku Klux Klan violence and the Anniston bomb (1961).",
+      "The James Meredith case (1962)."
+    ]
   },
   "subtopic_2_2": {
     "headerTitle": "KT 2.2 - GCSE CORE MASTERY: A victory of grassroots moral pressure or of Washington political negotiation? Why was landmark legislation passed in 1964–65?",
@@ -979,7 +1005,13 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "President Kennedy had to send 30,000 federal troops, marshals, and national guardsmen to secure Meredith's safety after white mobs rioted.",
       "silverAnswer": "They chose it because Abraham Lincoln had signed the Emancipation Proclamation freeing slaves 100 years earlier, making it a powerful symbol to highlight that Black Americans were still not fully free or equal.",
       "goldAnswer": "The student sit-ins of 1960 (Topic 1.4) sparked a wave of direct action that grew into the Freedom Rides (1961) and the Birmingham Campaign (1963). This continuous escalation mobilized hundreds of thousands of people, forcing national civil rights groups to unite in a massive march to demand comprehensive federal legislation."
-    }
+    },
+    "specPoints": [
+      "King and the peace marches of 1963 in Birmingham and Washington.",
+      "Freedom Summer and the Mississippi murders.",
+      "The impact of peaceful protest and the roles of Presidents Kennedy and Johnson in the passage of the Civil Rights Act (1964).",
+      "Selma and the Voting Rights Act (1965)."
+    ]
   },
   "subtopic_2_3": {
     "headerTitle": "KT 2.3 - GCSE CORE MASTERY: A necessary self-defense movement or a destructive split in the struggle? How do interpretations of Black Power differ?",
@@ -1139,7 +1171,14 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The Birmingham Police Chief was Eugene 'Bull' Connor.",
       "silverAnswer": "The shocking TV news coverage of police beating peaceful marchers horrified the public. This put massive political pressure on President Johnson to pass a law protecting Black voters.",
       "goldAnswer": "In both Selma and Little Rock (Topic 1.3), state governors openly defied civil rights. In both cases, shocking media coverage (television broadcasts of white mobs in Little Rock and troopers beating marchers in Selma) provoked national outrage, forcing the Presidents (Eisenhower and Johnson) to intervene with federal authority."
-    }
+    },
+    "specPoints": [
+      "Malcolm X, his beliefs, methods and involvement with the Black Muslims.",
+      "His later change of attitude and assassination.",
+      "Reasons for the emergence of Black Power.",
+      "The significance of Stokely Carmichael and the 1968 Mexico Olympics.",
+      "The methods and achievements of the Black Panther movement."
+    ]
   },
   "subtopic_2_4": {
     "headerTitle": "KT 2.4 - GCSE CORE MASTERY: A violent rebellion against systemic oppression or lawless urban disorder? How should historians explain the riots of 1965–68?",
@@ -1301,7 +1340,13 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The Voting Rights Act of 1965 was passed as a direct consequence of the Selma marches.",
       "silverAnswer": "Martin Luther King Jr. believed in peaceful, non-violent protest to win over white support, whereas Malcolm X believed that Black Americans had the right to defend themselves by any means necessary if they were attacked by racists.",
       "goldAnswer": "Legal victories like the Montgomery Bus Boycott (Topic 1.2) and the Civil Rights Act ended legal segregation in the South, but did not solve Northern problems of poverty, unemployment, and police brutality. Malcolm X's focus on economic self-reliance and self-defense appealed to Northern Blacks who felt non-violence had failed to improve their daily lives."
-    }
+    },
+    "specPoints": [
+      "The riots of 1965–67 and the Kerner Report (1968).",
+      "King’s campaign in the North.",
+      "The assassination of Martin Luther King and its impact.",
+      "The extent of progress in civil rights by 1975."
+    ]
   },
   "subtopic_3_1": {
     "headerTitle": "KT 3.1 - GCSE CORE MASTERY: A noble crusade to protect democracy or an imperialist defense of a corrupt dictatorship? Why did the US support Diem?",
@@ -1476,7 +1521,11 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The organization was the Black Panther Party (founded by Huey Newton and Bobby Seale).",
       "silverAnswer": "The Domino Theory argued that if South Vietnam fell to communism, neighboring countries would also fall. Therefore, the US supported Diem's anti-communist government with money and advisors to prevent a communist takeover.",
       "goldAnswer": "Both campaigns relied on media exposure of violence to shock public opinion. In Birmingham (Topic 2.2), SCLC knew Bull Connor's brutality would build support for civil rights. In South Vietnam, the Buddhist crisis and Thich Quang Duc's self-immolation exposed Diem's tyranny, forcing the US government to withdraw its support for his regime."
-    }
+    },
+    "specPoints": [
+      "Reasons for greater US involvement under Eisenhower, including the domino theory and weaknesses of the Diem government.",
+      "Greater involvement under Kennedy, including the overthrow of Diem and the Strategic Hamlet Program."
+    ]
   },
   "subtopic_3_2": {
     "headerTitle": "KT 3.2 - GCSE CORE MASTERY: A defensive reaction to foreign aggression or a fabricated excuse for pre-planned war? What caused the escalation of 1964–65?",
@@ -1643,7 +1692,10 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The Domino Theory.",
       "silverAnswer": "The incident led Congress to pass the Gulf of Tonkin Resolution, which gave President Johnson the near-unlimited authority to send US combat troops to Vietnam without a formal declaration of war.",
       "goldAnswer": "Diem's failure and the collapse of the Strategic Hamlet Program (Topic 3.1) allowed the Vietcong to control large areas of South Vietnam. To prevent a total communist victory, President Johnson had to shift from sending advisory aid to directly patrolling the coast, leading to the Maddox incident and full military escalation."
-    }
+    },
+    "specPoints": [
+      "Reasons for the escalation of the conflict and increased US involvement in Vietnam, including the increasing threat of the Vietcong and the Gulf of Tonkin incident (1964)."
+    ]
   },
   "subtopic_3_3": {
     "headerTitle": "KT 3.3 - GCSE CORE MASTERY: High-tech military efficiency or a counterproductive campaign of terror? Why did US tactics fail to defeat the Vietcong?",
@@ -1809,7 +1861,12 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The Gulf of Tonkin Resolution.",
       "silverAnswer": "The Vietcong used the dense jungle for hiding and surprise attacks. The US military sprayed defoliants to kill the trees and strip away their cover, and to destroy crops so the Vietcong would run out of food.",
       "goldAnswer": "Because the Vietcong relied on the local peasantry (Topic 3.1) for food and used the dense jungle for cover, US conventional forces could not find them. The US military adopted Agent Orange to destroy the jungle canopy (cover) and destroy crops to starve the guerrillas, despite alienating local civilians."
-    }
+    },
+    "specPoints": [
+      "The guerrilla tactics used by the Vietcong.",
+      "The methods used by the USA, including Search and Destroy, Operation Rolling Thunder and chemical weapons.",
+      "The key features and significance of the Tet Offensive, 1968."
+    ]
   },
   "subtopic_3_4": {
     "headerTitle": "KT 3.4 - GCSE CORE MASTERY: 'Peace with honour' or a face-saving withdrawal that prolonged the slaughter? How should we evaluate Vietnamization?",
@@ -1984,7 +2041,13 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The tactics were (1) Search and Destroy missions, and (2) the spraying of chemical defoliants like Agent Orange.",
       "silverAnswer": "The US military had far superior firepower, technology, and air support. The Vietcong avoided open battles to survive, choosing instead to use hit-and-run guerrilla tactics and booby traps in the jungle.",
       "goldAnswer": "US tactics (Topic 3.3) relied on heavy bombing of industrial targets. However, the Ho Chi Minh Trail was a decentralized, hidden network of dirt paths. When a path was bombed, Vietcong engineers repaired it immediately. Using simple bicycles and human porters meant they did not rely on fuel depots or paved roads."
-    }
+    },
+    "specPoints": [
+      "Key features of Vietnamisation.",
+      "Reasons for its failure.",
+      "The Nixon Doctrine and the withdrawal of US troops.",
+      "Attacks on Cambodia (1970) and Laos (1971), and the bombing of North Vietnam (1972)."
+    ]
   },
   "subtopic_4_1": {
     "headerTitle": "KT 4.1 - GCSE CORE MASTERY: A patriotic defense of American values or an unpatriotic betrayal of troops? How did the anti-war movement shape public debate?",
@@ -2159,7 +2222,13 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The Tet Offensive was launched in 1968. It shattered public confidence in the war and forced Johnson to announce he would not run for re-election.",
       "silverAnswer": "The lottery meant that young men of all social classes were randomly selected for military service. The direct threat of being drafted to fight in an unpopular war caused massive protests on college campuses.",
       "goldAnswer": "Unlike the Greensboro sit-ins (Topic 1.4) which targeted local businesses to end segregation, the draft lottery directly threatened the lives of all young college-aged men. The threat of being drafted into a deadly, unpopular war mobilized a much wider and more angry student base, turning protests into national strikes."
-    }
+    },
+    "specPoints": [
+      "Reasons for the growth of opposition, including the student movement, TV and media coverage of the war and the draft system.",
+      "Public reaction to the My Lai Massacre (1968).",
+      "The trial of Lt. Calley.",
+      "The Kent State University shootings (1970)."
+    ]
   },
   "subtopic_4_2": {
     "headerTitle": "KT 4.2 - GCSE CORE MASTERY: A quiet majority defending global stability or a conservative backlash against counterculture? Why did many support the war?",
@@ -2326,7 +2395,11 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "A credibility gap is the difference between government claims and the actual reality. My Lai widened it because the military attempted to cover up the slaughter of hundreds of civilians.",
       "silverAnswer": "The \"Silent Majority\" were patriotic Americans who supported the government but did not join protests. Nixon appealed to them to show that the anti-war protesters did not represent the views of most Americans.",
       "goldAnswer": "The anti-war movement (Topic 4.1) had made the war politically toxic due to high casualties and the draft. To survive politically, Nixon had to show he was ending American involvement. Vietnamization allowed him to withdraw US ground troops (reducing draft calls and casualties) while claiming he was not surrendering."
-    }
+    },
+    "specPoints": [
+      "Reasons for support for the war, including the fear of communism.",
+      "The ‘hard hats’ and the ‘silent majority’."
+    ]
   },
   "subtopic_4_3": {
     "headerTitle": "KT 4.3 - GCSE CORE MASTERY: A diplomatic triumph of compromise or a betrayal of South Vietnamese sovereignty? Why did South Vietnam collapse so quickly?",
@@ -2492,7 +2565,12 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The invasion expanded the war into a neutral country, which directly contradicted Nixon's promises of de-escalation, triggering mass outrage.",
       "silverAnswer": "The invasion expanded the war, breaking Nixon's promises of de-escalation. This sparked massive student protests, leading to the deployment of the National Guard at Kent State, who shot and killed four students.",
       "goldAnswer": "Both events exposed deep social divisions. The urban riots (Topic 2.4) exposed racial and economic neglect of Black Americans in inner cities. The pro-war construction worker rallies exposed a deep class divide between working-class patriots (who felt a duty to support the government) and middle-class student protestors."
-    }
+    },
+    "specPoints": [
+      "Reasons for, and key features of, the peace negotiations (1972–73).",
+      "The significance of the Paris Peace Agreement (1973).",
+      "The economic and human costs of the war for the USA."
+    ]
   },
   "subtopic_4_4": {
     "headerTitle": "KT 4.4 - GCSE CORE MASTERY: Lost on the battlefield, in the media, or at the ballot box? What was the primary reason for the US failure in Vietnam?",
@@ -2660,6 +2738,12 @@ export const LESSONS_DATA = {
       "bronzeAnswer": "The Silent Majority were patriotic Americans who supported the war but did not protest. Nixon appealed to them to show he had popular support, isolating anti-war activists.",
       "silverAnswer": "Without US air support and financial aid, the South Vietnamese army (ARVN) was demoralized, corrupt, and lacked fuel and ammunition. This allowed the North Vietnamese forces to launch a swift offensive and capture Saigon.",
       "goldAnswer": "The collapse of 1975 was prefigured by Diem's regime (Topic 3.1). Diem failed to build a democratic, popular government, creating corruption and sectarian divide. The ARVN remained corrupt and politically dependent on US money and air power. When the US withdrew, the state collapsed instantly."
-    }
+    },
+    "specPoints": [
+      "The strengths of North Vietnam, including the significance of Russian and Chinese support, Vietcong tactics and the Ho Chi Minh Trail.",
+      "The weaknesses of the US armed forces.",
+      "The failure of US tactics.",
+      "The impact of opposition to the war in the USA."
+    ]
   }
 };

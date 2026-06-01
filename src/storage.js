@@ -49,6 +49,9 @@ export function initData() {
     
     const storedDeepThinking = localStorage.getItem('edexcel_deep_thinking');
     if (storedDeepThinking) state.deepThinkingAnswers = JSON.parse(storedDeepThinking);
+    
+    const storedObjectives = localStorage.getItem('edexcel_spec_objectives');
+    if (storedObjectives) state.specObjectives = JSON.parse(storedObjectives);
   } catch (e) {
     console.error("LocalStorage load error:", e);
   }
@@ -66,6 +69,7 @@ export function saveProgress() {
     localStorage.setItem('edexcel_past_answers', JSON.stringify(state.pastPaperSession.answers));
     localStorage.setItem('edexcel_past_completed', JSON.stringify(state.pastPaperSession.completedQuestions));
     localStorage.setItem('edexcel_deep_thinking', JSON.stringify(state.deepThinkingAnswers || {}));
+    localStorage.setItem('edexcel_spec_objectives', JSON.stringify(state.specObjectives || {}));
   } catch (e) {
     console.error("LocalStorage save error:", e);
   }

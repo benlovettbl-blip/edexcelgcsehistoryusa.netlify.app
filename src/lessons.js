@@ -940,6 +940,34 @@ export function renderMasteryView(subtopicId) {
     `;
   }
 
+  let learningObjectivesHtml = '';
+  if (data.specPoints && data.specPoints.length > 0) {
+    const listItems = data.specPoints.map((point, index) => {
+      const objId = `spec_obj_${subtopicId}_${index}`;
+      const isChecked = !!(state.specObjectives && state.specObjectives[objId]);
+      const textStyle = isChecked ? 'text-decoration: line-through; color: var(--text-muted);' : 'color: var(--text-base);';
+      return `
+        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; line-height: 1.45; border-bottom: 1px dashed rgba(255,255,255,0.03); padding-bottom: 8px;">
+          <input type="checkbox" class="objective-checkbox" data-objective-id="${objId}" style="margin-top: 3px; cursor: pointer; width: 16px; height: 16px;" ${isChecked ? 'checked' : ''}>
+          <span class="objective-text" style="${textStyle} cursor: pointer;">${applyGlossaryTooltips(point)}</span>
+        </li>
+      `;
+    }).join('');
+
+    learningObjectivesHtml = `
+      <div class="mastery-card learning-objectives-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--success); background: rgba(34, 197, 94, 0.02);">
+        <h3 class="mastery-card-title" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; font-size: 1rem; color: var(--success); display: flex; align-items: center; gap: 8px; margin: 0 0 12px 0;">
+          <i class="fa-solid fa-circle-check"></i> What will you master today?
+        </h3>
+        <div class="mastery-card-body" style="padding-top: 4px;">
+          <ul class="learning-objectives-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+            ${listItems}
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+
   // Set the container innerHTML
   container.innerHTML = `
     ${doNowHtml}
@@ -957,6 +985,8 @@ export function renderMasteryView(subtopicId) {
       </p>
       ${videoHtml}
     </div>
+
+    ${learningObjectivesHtml}
 
     <!-- Interactive Legend and Switch -->
     <div class="mastery-controls" style="max-width: 800px; margin: 0 auto 20px auto;">
@@ -1687,6 +1717,47 @@ export function renderMasteryView(subtopicId) {
     }
   }
 
+  // Bind Learning Objectives Checkboxes
+  const objectiveCheckboxes = container.querySelectorAll('.objective-checkbox');
+  objectiveCheckboxes.forEach(cb => {
+    cb.addEventListener('change', (e) => {
+      const objId = cb.getAttribute('data-objective-id');
+      const isChecked = cb.checked;
+      
+      // Update state
+      if (!state.specObjectives) state.specObjectives = {};
+      state.specObjectives[objId] = isChecked;
+      
+      // Save progress
+      saveProgress();
+      
+      // Visual feedback: toggle line-through on sibling text span
+      const textSpan = cb.nextElementSibling;
+      if (textSpan) {
+        if (isChecked) {
+          textSpan.style.textDecoration = 'line-through';
+          textSpan.style.color = 'var(--text-muted)';
+        } else {
+          textSpan.style.textDecoration = 'none';
+          textSpan.style.color = 'var(--text-base)';
+        }
+      }
+      
+      // Play sound
+      AudioEngine.play('click');
+    });
+  });
+
+  const objectiveTexts = container.querySelectorAll('.objective-text');
+  objectiveTexts.forEach(txt => {
+    txt.addEventListener('click', (e) => {
+      const cb = txt.previousElementSibling;
+      if (cb && cb.type === 'checkbox') {
+        cb.checked = !cb.checked;
+        cb.dispatchEvent(new Event('change'));
+      }
+    });
+  });
 
   // Formatting vault answers
   formatVaultImportanceAnswers(container);
