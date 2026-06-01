@@ -277,6 +277,49 @@ function bindEvents() {
     });
   }
 
+  const bindStarter = (btnId, textareaId, template) => {
+    const btn = document.getElementById(btnId);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        AudioEngine.play('click');
+        const textarea = document.getElementById(textareaId);
+        if (textarea) {
+          if (textarea.value && !confirm('This will overwrite your current draft. Do you want to insert the writing frame?')) {
+            return;
+          }
+          textarea.value = template;
+          textarea.dispatchEvent(new Event('input')); // Trigger check heuristics
+        }
+      });
+    }
+  };
+
+  bindStarter('btn-q2-starter', 'q2-user-answer', 
+    "One reason why [Insert Factor 1] was significant was because...\n\n" +
+    "A second reason why [Insert Factor 2] was significant was because...\n\n" +
+    "Overall, [Factor 1/2] was the most important reason because..."
+  );
+
+  bindStarter('btn-q3a-starter', 'q3a-user-answer', 
+    "Source B is useful for an inquiry into [Insert Topic] because it shows...\n\n" +
+    "This is supported by my own knowledge that...\n\n" +
+    "However, the source's utility is limited because its provenance is..."
+  );
+
+  bindStarter('btn-q3b-starter', 'q3b-user-answer', 
+    "The main difference between the interpretations is that Interpretation 1 claims that [Insert Claim 1], whereas Interpretation 2 claims that [Insert Claim 2]."
+  );
+
+  bindStarter('btn-q3c-starter', 'q3c-user-answer', 
+    "One reason the interpretations give different views is that they rely on different sources. Interpretation 1 relies on details about [Insert Detail B] in Source B, whereas Interpretation 2 relies on details about [Insert Detail C] in Source C."
+  );
+
+  bindStarter('btn-q3d-starter', 'q3d-user-answer', 
+    "Interpretation 1 argues that [Insert Claim 1]. This is supported by Source B which shows...\n\n" +
+    "On the other hand, Interpretation 2 argues that [Insert Claim 2]. This is supported by Source C which shows...\n\n" +
+    "Overall, I agree more with Interpretation [1/2] because my own knowledge shows that..."
+  );
+
 
   // Quiz generator controls
   document.getElementById('btn-quick-exam-start').addEventListener('click', () => {

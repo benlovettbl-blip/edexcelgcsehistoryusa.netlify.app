@@ -2310,11 +2310,13 @@ function renderTimelineView() {
     });
 
     let buttons = '';
+    let keyFigureIndicator = '';
     if (matchedFigures.size > 0) {
       buttons = Array.from(matchedFigures).map(name => {
         const key = figureKeys.find(k => KEY_FIGURES_BIO[k].name === name);
         return `<button class="timeline-bio-btn" data-figure="${key}" style="margin-right: 6px; margin-top: 6px; padding: 4px 10px; font-size: 0.72rem; border-radius: 12px; background: rgba(245, 158, 11, 0.1); border: 1px solid var(--accent); color: var(--accent); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-user-graduate"></i> Figure: ${name}</button>`;
       }).join('');
+      keyFigureIndicator = `<span class="timeline-badge-keyfigure"><i class="fa-solid fa-user-graduate"></i> Key Figure: ${Array.from(matchedFigures).join(', ')}</span>`;
     }
     
     const lessonButton = `<button class="timeline-lesson-btn" data-subtopic="${q.subtopicId}" style="margin-right: 6px; margin-top: 6px; padding: 4px 10px; font-size: 0.72rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); color: var(--primary); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-book-open"></i> Go to Lesson</button>`;
@@ -2325,7 +2327,10 @@ function renderTimelineView() {
       <div class="timeline-year">${q.year}</div>
       <div class="timeline-content-card" style="cursor: pointer;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
-          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">${topicName}</span>
+          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px;">
+            <span>${topicName}</span>
+            ${keyFigureIndicator}
+          </span>
           <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Standard' : 'Top Tier Trivia'}</span>
         </div>
         <div class="timeline-q-title" style="font-weight: bold; line-height: 1.4;">${q.question}</div>

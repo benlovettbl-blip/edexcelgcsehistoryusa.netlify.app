@@ -98,5 +98,56 @@ export const AudioEngine = {
     } catch (e) {
       console.warn("Audio Context synth error:", e);
     }
+  },
+  speak(text, onStart, onEnd, onError) {
+    if (!('speechSynthesis' in window)) {
+      console.warn("Speech Synthesis not supported in this browser.");
+      if (onError) onError();
+      return;
+    }
+    
+    // Stop any current speaking
+    window.speechSynthesis.cancel();
+    
+    if (!text) {
+      if (onEnd) onEnd();
+      return;
+    }
+    
+    // Remove HTML tags if any
+    const cleanText = text.replace(/<[^>]*>/g, '').trim();
+    
+    try {
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utterance.rate = 0.95; // Slightly slower for readability
+      utterance.pitch = 1.0;
+      
+      const voices = window.speechSynthesis.getVoices();
+      const enVoice = voices.find(v => v.lang === 'en-GB' || v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
+      if (enVoice) {
+        utterance.voice = enVoice;
+      }
+      
+      utterance.onstart = () => {
+        if (onStart) onStart();
+      };
+      utterance.onend = () => {
+        if (onEnd) onEnd();
+      };
+      utterance.onerror = (e) => {
+        console.warn("SpeechSynthesis error:", e);
+        if (onError) onError();
+      };
+      
+      window.speechSynthesis.speak(utterance);
+    } catch (err) {
+      console.warn("Speech synthesis error:", err);
+      if (onError) onError();
+    }
+  },
+  stopSpeaking() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
   }
 };

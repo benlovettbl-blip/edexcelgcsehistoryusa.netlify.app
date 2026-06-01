@@ -3511,6 +3511,48 @@ Source C is highly useful for understanding the military strategy and resilience
       } catch (e) {
         console.warn("Audio Context synth error:", e);
       }
+    },
+    speak(text, onStart, onEnd, onError) {
+      if (!("speechSynthesis" in window)) {
+        console.warn("Speech Synthesis not supported in this browser.");
+        if (onError) onError();
+        return;
+      }
+      window.speechSynthesis.cancel();
+      if (!text) {
+        if (onEnd) onEnd();
+        return;
+      }
+      const cleanText = text.replace(/<[^>]*>/g, "").trim();
+      try {
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+        const voices = window.speechSynthesis.getVoices();
+        const enVoice = voices.find((v) => v.lang === "en-GB" || v.lang === "en-US") || voices.find((v) => v.lang.startsWith("en"));
+        if (enVoice) {
+          utterance.voice = enVoice;
+        }
+        utterance.onstart = () => {
+          if (onStart) onStart();
+        };
+        utterance.onend = () => {
+          if (onEnd) onEnd();
+        };
+        utterance.onerror = (e) => {
+          console.warn("SpeechSynthesis error:", e);
+          if (onError) onError();
+        };
+        window.speechSynthesis.speak(utterance);
+      } catch (err) {
+        console.warn("Speech synthesis error:", err);
+        if (onError) onError();
+      }
+    },
+    stopSpeaking() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
     }
   };
 
@@ -10514,11 +10556,13 @@ Source E is highly useful for showing the political and moral collapse of the wa
         }
       });
       let buttons = "";
+      let keyFigureIndicator = "";
       if (matchedFigures.size > 0) {
         buttons = Array.from(matchedFigures).map((name) => {
           const key = figureKeys.find((k) => KEY_FIGURES_BIO[k].name === name);
           return `<button class="timeline-bio-btn" data-figure="${key}" style="margin-right: 6px; margin-top: 6px; padding: 4px 10px; font-size: 0.72rem; border-radius: 12px; background: rgba(245, 158, 11, 0.1); border: 1px solid var(--accent); color: var(--accent); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-user-graduate"></i> Figure: ${name}</button>`;
         }).join("");
+        keyFigureIndicator = `<span class="timeline-badge-keyfigure"><i class="fa-solid fa-user-graduate"></i> Key Figure: ${Array.from(matchedFigures).join(", ")}</span>`;
       }
       const lessonButton = `<button class="timeline-lesson-btn" data-subtopic="${q.subtopicId}" style="margin-right: 6px; margin-top: 6px; padding: 4px 10px; font-size: 0.72rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); color: var(--primary); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-book-open"></i> Go to Lesson</button>`;
       const combinedButtonsHtml = `<div class="timeline-buttons-row" style="margin-top: 8px; display: flex; flex-wrap: wrap;">${lessonButton}${buttons}</div>`;
@@ -10527,7 +10571,10 @@ Source E is highly useful for showing the political and moral collapse of the wa
       <div class="timeline-year">${q.year}</div>
       <div class="timeline-content-card" style="cursor: pointer;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
-          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">${topicName}</span>
+          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px;">
+            <span>${topicName}</span>
+            ${keyFigureIndicator}
+          </span>
           <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Standard" : "Top Tier Trivia"}</span>
         </div>
         <div class="timeline-q-title" style="font-weight: bold; line-height: 1.4;">${q.question}</div>
@@ -13389,6 +13436,47 @@ ${cleanBrackets(paper.q3d.model)}
   };
 
   // src/lessons.js
+  var GLOSSARY_DB = {
+    "segregation": "The legally or socially enforced separation of different racial groups in public spaces, housing, or education.",
+    "desegregation": "The process of ending the separation of racial groups, particularly in schools, transport, and public spaces.",
+    "unconstitutional": "Not in accordance with a country's constitution, meaning it is legally invalid and void.",
+    "constitution": "The supreme set of laws governing a nation, defining the powers of government and the rights of citizens.",
+    "jurisdiction": "The official power to make legal decisions and judgments over a specific area or group of people.",
+    "provocation": "An action or speech that deliberately makes someone annoyed or angry, often to elicit a hostile response.",
+    "provenance": "The origin, background, context, and history of a source (who made it, when, where, and why).",
+    "grassroots": "Local or community-level activism and organization, driven by ordinary citizens rather than political leaders.",
+    "attrition": "A strategy of wearing down an opponent's strength and resources over time through continuous pressure.",
+    "historiography": "The study of how history is written, focusing on different interpretations and perspectives of historians over time.",
+    "orthodox": "The traditional, widely accepted historical interpretation of an event.",
+    "revisionist": "A historical interpretation that challenges and revises traditional, orthodox views with new evidence or perspectives.",
+    "litigation": "The process of taking legal action through the courts to enforce rights or resolve disputes.",
+    "disenfranchisement": "The revocation of the right of suffrage (the right to vote) of a person or group of people.",
+    "disfranchisement": "The revocation of the right of suffrage (the right to vote) of a person or group of people.",
+    "integration": "The free association of people from all racial groups in public facilities, schools, and communities.",
+    "boycott": "A punitive ban on relations with a product, organization, or country, as a form of protest.",
+    "federalised": "Placing state forces or organizations under the direct command of the national (federal) government.",
+    "federalized": "Placing state forces or organizations under the direct command of the national (federal) government.",
+    "non-violence": "The practice of achieving social or political goals through peaceful protest and civil disobedience without physical force.",
+    "non-violent": "The practice of achieving social or political goals through peaceful protest and civil disobedience without physical force.",
+    "sovereignty": "The supreme authority and self-governing power of a state or territory.",
+    "credibility": "The quality of being trusted and believed in as a source of historical evidence."
+  };
+  function applyGlossaryTooltips(text) {
+    if (!text) return "";
+    let parsedText = text;
+    const sortedTerms = Object.keys(GLOSSARY_DB).sort((a, b) => b.length - a.length);
+    for (const term of sortedTerms) {
+      const definition = GLOSSARY_DB[term].replace(/"/g, "&quot;");
+      const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+      const regex = new RegExp(`(<[^>]*>)|\\b(${escapedTerm})(s|d|ly|dness)?\\b`, "gi");
+      parsedText = parsedText.replace(regex, (match, isTag, word, suffix) => {
+        if (isTag) return match;
+        const fullWord = suffix ? word + suffix : word;
+        return `<span class="glossary-term" data-definition="${definition}">${fullWord}</span>`;
+      });
+    }
+    return parsedText;
+  }
   function parseSummaryCorrectionText(text) {
     if (!text) return "";
     return text.replace(/\[\[(.*?)\]\]/g, (match, content) => {
@@ -13505,7 +13593,7 @@ ${cleanBrackets(paper.q3d.model)}
           <div class="scholarly-content" style="margin-top: 12px; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
             ${scholarlyImgHtml}
             <strong style="display: block; margin-bottom: 6px; color: var(--primary); font-size: 0.95rem;">${step.scholarlyDepth.title}</strong>
-            <p style="margin: 0 0 12px 0; font-style: italic;">${step.scholarlyDepth.body}</p>
+            <p style="margin: 0 0 12px 0; font-style: italic;">${applyGlossaryTooltips(step.scholarlyDepth.body)}</p>
             ${scholarlySourceHtml}
           </div>
         </details>
@@ -13521,12 +13609,20 @@ ${cleanBrackets(paper.q3d.model)}
         </div>
       `;
       }
+      const audioBtnHtml = `
+      <button class="btn-audio-read" title="Read Step Aloud" style="margin-left: 8px;">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+    `;
       if (step.isSplit) {
         stepsHtml += `
         <div class="mastery-card" style="max-width: 800px; margin: 0 auto 20px auto;">
-          <h3 class="mastery-card-title">${step.title}</h3>
+          <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <span>${step.title}</span>
+            ${audioBtnHtml}
+          </h3>
           <div class="mastery-split-layout">
-            ${step.bodyHtml}
+            ${applyGlossaryTooltips(step.bodyHtml)}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -13535,9 +13631,12 @@ ${cleanBrackets(paper.q3d.model)}
       } else {
         stepsHtml += `
         <div class="mastery-card" style="max-width: 800px; margin: 0 auto 20px auto;">
-          <h3 class="mastery-card-title">${step.title}</h3>
+          <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <span>${step.title}</span>
+            ${audioBtnHtml}
+          </h3>
           <div class="mastery-card-body card-content">
-            ${step.bodyHtml}
+            ${applyGlossaryTooltips(step.bodyHtml)}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -13547,14 +13646,69 @@ ${cleanBrackets(paper.q3d.model)}
     });
     let dualHtml = "";
     if (data.dualPerspective) {
+      let historiographicalSubtitle = "";
+      let disagreeSourceCard = "";
+      if (subtopicId.startsWith("subtopic_1") || subtopicId.startsWith("subtopic_2")) {
+        historiographicalSubtitle = `
+        <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="historiographical-label top-down">Top-Down Legalistic</span>
+          <span class="historiographical-label bottom-up">Bottom-Up Grassroots</span>
+        </div>
+      `;
+        disagreeSourceCard = `
+        <div class="disagree-analysis-card">
+          <div class="disagree-analysis-title">
+            <i class="fa-solid fa-code-branch"></i> Why Historians Disagree: Source Selection Analysis
+          </div>
+          <div class="disagree-analysis-body">
+            <p style="margin-bottom: 8px;">Historians of the Civil Rights era reach conflicting interpretations because they select and prioritize different primary sources:</p>
+            <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px;">
+              <li>
+                <strong>Presidential Papers & court rulings (Top-Down):</strong> Historians prioritizing Eisenhower's transcripts or Supreme Court decrees conclude that change was driven by constitutional authority and institutional reforms.
+              </li>
+              <li>
+                <strong>Oral Histories & Local records (Bottom-Up):</strong> Historians prioritizing SNCC field reports, church diaries, or Rosa Parks' notes conclude that the federal government only acted when forced by grassroots mobilization and disruption.
+              </li>
+            </ul>
+          </div>
+        </div>
+      `;
+      } else {
+        historiographicalSubtitle = `
+        <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="historiographical-label orthodox">Orthodox Interpretation</span>
+          <span class="historiographical-label revisionist">Revisionist Interpretation</span>
+        </div>
+      `;
+        disagreeSourceCard = `
+        <div class="disagree-analysis-card">
+          <div class="disagree-analysis-title">
+            <i class="fa-solid fa-code-branch"></i> Why Historians Disagree: Source Selection Analysis
+          </div>
+          <div class="disagree-analysis-body">
+            <p style="margin-bottom: 8px;">Historians of the Vietnam War period disagree due to their methodological frameworks and source preferences:</p>
+            <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px;">
+              <li>
+                <strong>Orthodox Historians (National Security Archives):</strong> Prioritizing Pentagon planning files and US military reports, they conclude the war was an inevitable tragedy of Cold War containment policy and military overreach.
+              </li>
+              <li>
+                <strong>Revisionist/Vietnamese Sources (Local Accounts):</strong> Prioritizing translated NLF/PAVN diaries, local guerrilla interviews, and rural intelligence reports, they argue the US failed primarily because it ignored the nationalist, anti-colonial nature of the Vietnamese struggle.
+              </li>
+            </ul>
+          </div>
+        </div>
+      `;
+      }
       dualHtml = `
       <div class="dual-perspective-card left-active"
            data-left-headline="${data.dualPerspective.leftHeadline}"
            data-left-text="${data.dualPerspective.leftText}"
            data-right-headline="${data.dualPerspective.rightHeadline}"
-           data-right-text="${data.dualPerspective.rightText}">
+           data-right-text="${data.dualPerspective.rightText}"
+           style="max-width: 800px; margin: 0 auto 20px auto;">
         <h3 class="dual-perspective-neutral-title">${data.dualPerspective.neutralTitle}</h3>
-        <div class="dual-perspective-narrative-box">
+        ${historiographicalSubtitle}
+        <div class="dual-perspective-narrative-box" style="margin-top: 14px;">
           <h4 class="dual-perspective-headline">${data.dualPerspective.leftHeadline}</h4>
           <p class="dual-perspective-text">${data.dualPerspective.leftText}</p>
         </div>
@@ -13567,6 +13721,7 @@ ${cleanBrackets(paper.q3d.model)}
         </div>
         ${data.dualPerspective.tipHtml || ""}
       </div>
+      ${disagreeSourceCard}
     `;
     }
     let causalHtml = "";
@@ -14137,11 +14292,14 @@ ${cleanBrackets(paper.q3d.model)}
     
     <!-- Header Card -->
     <div class="mastery-header-card" style="max-width: 800px; margin: 0 auto 24px auto;">
-      <h2 class="mastery-header-title">
-        ${data.headerTitle}
+      <h2 class="mastery-header-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+        <span>${data.headerTitle}</span>
+        <button class="btn-audio-read" data-text-selector=".mastery-header-intro" title="Read Introduction Aloud">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
       </h2>
       <p class="mastery-header-intro" style="margin-bottom: ${videoHtml ? "16px" : "0"};">
-        ${data.headerIntro}
+        ${applyGlossaryTooltips(data.headerIntro)}
       </p>
       ${videoHtml}
     </div>
@@ -14185,6 +14343,53 @@ ${cleanBrackets(paper.q3d.model)}
       </button>
     </div>
   `;
+    const audioButtons = container.querySelectorAll(".btn-audio-read");
+    audioButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        let textToRead = "";
+        const selector = btn.getAttribute("data-text-selector");
+        if (selector) {
+          const parent = btn.closest(".mastery-header-card, .mastery-card");
+          const targetEl = parent ? parent.querySelector(selector) : document.querySelector(selector);
+          if (targetEl) {
+            textToRead = targetEl.innerText;
+          }
+        } else {
+          const card = btn.closest(".mastery-card");
+          if (card) {
+            const body = card.querySelector(".mastery-card-body, .mastery-split-layout");
+            if (body) textToRead = body.innerText;
+          }
+        }
+        if (!textToRead) return;
+        if (btn.classList.contains("speaking")) {
+          AudioEngine.stopSpeaking();
+          btn.classList.remove("speaking");
+          btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+          return;
+        }
+        audioButtons.forEach((b) => {
+          b.classList.remove("speaking");
+          b.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+        });
+        AudioEngine.speak(
+          textToRead,
+          () => {
+            btn.classList.add("speaking");
+            btn.innerHTML = `<i class="fa-solid fa-circle-stop"></i>`;
+          },
+          () => {
+            btn.classList.remove("speaking");
+            btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+          },
+          () => {
+            btn.classList.remove("speaking");
+            btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+          }
+        );
+      });
+    });
     const summaryCard = document.getElementById("summary-correction-card");
     if (summaryCard) {
       const wrongWords = summaryCard.querySelectorAll(".summary-wrong-word");
@@ -15286,6 +15491,47 @@ ${cleanBrackets(paper.q3d.model)}
         renderTimelineView();
       });
     }
+    const bindStarter = (btnId, textareaId, template) => {
+      const btn = document.getElementById(btnId);
+      if (btn) {
+        btn.addEventListener("click", () => {
+          AudioEngine.play("click");
+          const textarea = document.getElementById(textareaId);
+          if (textarea) {
+            if (textarea.value && !confirm("This will overwrite your current draft. Do you want to insert the writing frame?")) {
+              return;
+            }
+            textarea.value = template;
+            textarea.dispatchEvent(new Event("input"));
+          }
+        });
+      }
+    };
+    bindStarter(
+      "btn-q2-starter",
+      "q2-user-answer",
+      "One reason why [Insert Factor 1] was significant was because...\n\nA second reason why [Insert Factor 2] was significant was because...\n\nOverall, [Factor 1/2] was the most important reason because..."
+    );
+    bindStarter(
+      "btn-q3a-starter",
+      "q3a-user-answer",
+      "Source B is useful for an inquiry into [Insert Topic] because it shows...\n\nThis is supported by my own knowledge that...\n\nHowever, the source's utility is limited because its provenance is..."
+    );
+    bindStarter(
+      "btn-q3b-starter",
+      "q3b-user-answer",
+      "The main difference between the interpretations is that Interpretation 1 claims that [Insert Claim 1], whereas Interpretation 2 claims that [Insert Claim 2]."
+    );
+    bindStarter(
+      "btn-q3c-starter",
+      "q3c-user-answer",
+      "One reason the interpretations give different views is that they rely on different sources. Interpretation 1 relies on details about [Insert Detail B] in Source B, whereas Interpretation 2 relies on details about [Insert Detail C] in Source C."
+    );
+    bindStarter(
+      "btn-q3d-starter",
+      "q3d-user-answer",
+      "Interpretation 1 argues that [Insert Claim 1]. This is supported by Source B which shows...\n\nOn the other hand, Interpretation 2 argues that [Insert Claim 2]. This is supported by Source C which shows...\n\nOverall, I agree more with Interpretation [1/2] because my own knowledge shows that..."
+    );
     document.getElementById("btn-quick-exam-start").addEventListener("click", () => {
       AudioEngine.play("click");
       const scope = document.getElementById("quick-exam-scope").value;
