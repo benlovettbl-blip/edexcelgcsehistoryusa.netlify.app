@@ -4,7 +4,16 @@ export const LESSONS_DATA = {
     "headerIntro": "By 1954, racial segregation in the United States was legally protected under the 1896 Plessy v. Ferguson 'separate but equal' ruling. The NAACP challenged this in court, leading to the landmark May 1954 Brown v. Board of Education decision where the Supreme Court declared school segregation unconstitutional. When Southern school boards stalled, activists took grassroots action. In December 1955, Rosa Parks was arrested for refusing to yield her seat on a Montgomery bus, sparking a 381-day bus boycott led by a young Martin Luther King Jr. that ultimately forced the Supreme Court to declare segregated transit unlawful in late 1956.",
     "steps": [
       {
-        "title": "Step 1: The Legal Battle - Brown v. Board of Education (1954)",
+        "title": "Step 1: Southern Segregation & Civil Rights Organisations",
+        "isSplit": true,
+        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In the early 1950s, Black Americans in the Southern states faced legal segregation and systemic discrimination:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Enforced strict segregation in public accommodations, transport, and schools. Facilities were separate but rarely equal.</li>\n              <li><strong>Voting Disenfranchisement:</strong> Southern states used literacy tests, poll taxes, and threats of violence to prevent Black Americans from registering to vote.</li>\n              <li><strong>Civil Rights Organisations:</strong> The <strong>NAACP</strong> (National Association for the Advancement of Colored People) fought segregation through legal battles led by lawyers like Thurgood Marshall. Simultaneously, <strong>CORE</strong> (Congress of Racial Equality) pioneered non-violent direct action tactics, such as early boycotts and sit-ins.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus: Jim Crow</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              Always emphasize that segregation was legally enforced by state laws in the South, creating systemic barriers in education, employment, and the ballot box.\n            </p>\n          </div>\n        </div>",
+        "scholarlyDepth": {
+          "title": "Scholarly Perspective: Legalism vs. Direct Action",
+          "body": "Historians debate whether the legal triumphs of the NAACP (like the Brown case) or the direct action campaigns of CORE and others were more important. Most agree they worked in tandem: legal rulings provided the constitutional basis, while direct action forced the federal government to enforce those rulings."
+        }
+      },
+      {
+        "title": "Step 2: The Legal Battle - Brown v. Board of Education (1954)",
         "isSplit": false,
         "bodyHtml": "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\r\n        <ul>\r\n          <li><strong>The Ruling:</strong> Led by Chief Justice Earl Warren, the Supreme Court ruled unanimously that segregation in public schools was unconstitutional, directly violating the 14th Amendment.</li>\r\n          <li><strong>Plessy Overturned:</strong> This decision officially rejected the 1896 'separate but equal' doctrine, declaring that separate educational facilities are inherently unequal.</li>\r\n          <li><strong>Southern Resistance:</strong> Southern congressmen signed the 'Southern Manifesto' to resist integration, and segregationist groups formed White Citizens' Councils to intimidate Black families.</li>\r\n        </ul>",
         "scholarlyDepth": {
@@ -13,15 +22,6 @@ export const LESSONS_DATA = {
           "image": "assets/sources/warren-court-1954.jpg",
           "imageAlt": "Scholarly Perspective: Warren's Unanimity Strategy",
           "imageProvenance": "A formal group portrait of the members of the Warren Court, the Supreme Court of the United States, taken in Washington D.C., 1954."
-        }
-      },
-      {
-        "title": "Step 2: Southern Segregation & Civil Rights Organisations",
-        "isSplit": true,
-        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In the early 1950s, Black Americans in the Southern states faced legal segregation and systemic discrimination:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Enforced strict segregation in public accommodations, transport, and schools. Facilities were separate but rarely equal.</li>\n              <li><strong>Voting Disenfranchisement:</strong> Southern states used literacy tests, poll taxes, and threats of violence to prevent Black Americans from registering to vote.</li>\n              <li><strong>Civil Rights Organisations:</strong> The <strong>NAACP</strong> (National Association for the Advancement of Colored People) fought segregation through legal battles led by lawyers like Thurgood Marshall. Simultaneously, <strong>CORE</strong> (Congress of Racial Equality) pioneered non-violent direct action tactics, such as early boycotts and sit-ins.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus: Jim Crow</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              Always emphasize that segregation was legally enforced by state laws in the South, creating systemic barriers in education, employment, and the ballot box.\n            </p>\n          </div>\n        </div>",
-        "scholarlyDepth": {
-          "title": "Scholarly Perspective: Legalism vs. Direct Action",
-          "body": "Historians debate whether the legal triumphs of the NAACP (like the Brown case) or the direct action campaigns of CORE and others were more important. Most agree they worked in tandem: legal rulings provided the constitutional basis, while direct action forced the federal government to enforce those rulings."
         }
       }
     ],
@@ -497,13 +497,13 @@ export const LESSONS_DATA = {
       "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern boards exploited this loophole to delay integration, leading to angry public protests and state defiance in Little Rock."
     },
     "specPoints": [
-      "Causes and events of the Montgomery Bus Boycott.",
       "The significance of Rosa Parks.",
+      "Causes and events of the Montgomery Bus Boycott.",
+      "The significance of the leadership of Martin Luther King.",
       "Reasons for the success and importance of the boycott.",
       "The Supreme Court ruling.",
-      "The Civil Rights Act (1957).",
-      "The significance of the leadership of Martin Luther King.",
-      "The setting up of the SCLC."
+      "The setting up of the SCLC.",
+      "The Civil Rights Act (1957)."
     ]
   },
   "subtopic_1_4": {
@@ -668,8 +668,8 @@ export const LESSONS_DATA = {
       "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention."
     },
     "specPoints": [
-      "The Ku Klux Klan and violence, including the murder of Emmet Till in 1955.",
-      "Opposition to desegregation in the South, including the ‘Dixiecrats’ and the setting up of White Citizens’ Councils."
+      "Opposition to desegregation in the South, including the ‘Dixiecrats’ and the setting up of White Citizens’ Councils.",
+      "The Ku Klux Klan and violence, including the murder of Emmet Till in 1955."
     ]
   },
   "subtopic_2_1": {
@@ -1035,7 +1035,7 @@ export const LESSONS_DATA = {
       {
         "title": "Step 2: The Black Panthers & Carmichael",
         "isSplit": true,
-        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In 1966, the term 'Black Power' was popularized by Stokely Carmichael of SNCC:</p>\n            <ul>\n              <li><strong>Black Panthers:</strong> Founded by Huey Newton and Bobby Seale, they patrolled neighborhoods to prevent police brutality and ran social programs.</li>\n              <li><strong>Stokely Carmichael:</strong> He argued that integration was a form of white supremacy, claiming Black people must unite to form a political force.</li>\n              <li><strong>The 1968 Mexico Olympics:</strong> U.S. athletes Tommie Smith and John Carlos staged a famous silent protest on the podium, raising black-gloved fists during the national anthem to showcase Black Power to a global audience.</li>\n              <li><strong>Cultural Pride:</strong> The movement promoted Black pride, Afrocentric fashion, and the slogan 'Black is Beautiful'.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"lesson-image-wrapper\">\n            <img src=\"assets/sources/olympics-black-power-1968.jpg\" alt=\"Tommie Smith and John Carlos raising black-gloved fists in protest at the 1968 Olympics\" class=\"lesson-source-img\" />\n            <div class=\"lesson-image-caption\">U.S. athletes Tommie Smith and John Carlos staging a silent protest on the podium at the 1968 Mexico City Olympic Games.</div>\n          </div>\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Ideology Focus</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              Be prepared to explain why the movement split. Make sure to link the slow progress in Northern ghettos to the rise of Black Power.\n            </p>\n          </div>\n        </div>",
+        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In 1966, the term 'Black Power' was popularized by Stokely Carmichael of SNCC:</p>\n            <ul>\n              <li><strong>Emergence of Black Power:</strong> Slow progress in Northern ghettos, economic discrimination, and police brutality led SNCC and CORE to move away from non-violence.</li>\n              <li><strong>Stokely Carmichael:</strong> Popularized the slogan 'Black Power' in 1966, arguing that Black people must unite to form their own political and social force.</li>\n              <li><strong>The 1968 Mexico Olympics:</strong> U.S. athletes Tommie Smith and John Carlos staged a famous silent protest on the podium, raising black-gloved fists during the U.S. national anthem to showcase Black Power to a global audience.</li>\n              <li><strong>Black Panthers:</strong> Founded by Huey Newton and Bobby Seale in late 1966, they patrolled neighborhoods to prevent police brutality, carried weapons for self-defense, and ran social programs like free breakfasts.</li>\n              <li><strong>Cultural Pride:</strong> The movement promoted Black pride, Afrocentric fashion, and the slogan 'Black is Beautiful'.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"lesson-image-wrapper\">\n            <img src=\"assets/sources/olympics-black-power-1968.jpg\" alt=\"Tommie Smith and John Carlos raising black-gloved fists in protest at the 1968 Olympics\" class=\"lesson-source-img\" />\n            <div class=\"lesson-image-caption\">U.S. athletes Tommie Smith and John Carlos staging a silent protest on the podium at the 1968 Mexico City Olympic Games.</div>\n          </div>\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Ideology Focus</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              Be prepared to explain why the movement split. Make sure to link the slow progress in Northern ghettos to the rise of Black Power.\n            </p>\n          </div>\n        </div>",
         "scholarlyDepth": {
           "title": "Scholarly Perspective: COINTELPRO and the Black Panthers",
           "body": "The rapid decline of the Black Panthers was accelerated by the FBI's Counterintelligence Program (COINTELPRO). Under J. Edgar Hoover, the FBI infiltrated the Panthers, sowed internal paranoia through forged letters, and coordinated with local police to launch armed raids on Panther headquarters. Hoover declared the Panthers' free breakfast program the 'greatest threat to internal security' because it built deep community loyalty."
@@ -1527,7 +1527,7 @@ export const LESSONS_DATA = {
     },
     "specPoints": [
       "Reasons for greater US involvement under Eisenhower, including the domino theory and weaknesses of the Diem government.",
-      "Greater involvement under Kennedy, including the overthrow of Diem and the Strategic Hamlet Program."
+      "Greater involvement under Kennedy, including the Strategic Hamlet Program and the overthrow of Diem."
     ]
   },
   "subtopic_3_2": {
@@ -1866,8 +1866,8 @@ export const LESSONS_DATA = {
       "goldAnswer": "Because the Vietcong relied on the local peasantry (Topic 3.1) for food and used the dense jungle for cover, US conventional forces could not find them. The US military adopted Agent Orange to destroy the jungle canopy (cover) and destroy crops to starve the guerrillas, despite alienating local civilians."
     },
     "specPoints": [
-      "The guerrilla tactics used by the Vietcong.",
       "The methods used by the USA, including Search and Destroy, Operation Rolling Thunder and chemical weapons.",
+      "The guerrilla tactics used by the Vietcong.",
       "The key features and significance of the Tet Offensive, 1968."
     ]
   },
@@ -2037,9 +2037,9 @@ export const LESSONS_DATA = {
       "goldAnswer": "US tactics (Topic 3.3) relied on heavy bombing of industrial targets. However, the Ho Chi Minh Trail was a decentralized, hidden network of dirt paths. When a path was bombed, Vietcong engineers repaired it immediately. Using simple bicycles and human porters meant they did not rely on fuel depots or paved roads."
     },
     "specPoints": [
+      "The Nixon Doctrine and the withdrawal of US troops.",
       "Key features of Vietnamisation.",
       "Reasons for its failure.",
-      "The Nixon Doctrine and the withdrawal of US troops.",
       "Attacks on Cambodia (1970) and Laos (1971), and the bombing of North Vietnam (1972)."
     ]
   },
@@ -2209,10 +2209,10 @@ export const LESSONS_DATA = {
       "goldAnswer": "Unlike the Greensboro sit-ins (Topic 1.4) which targeted local businesses to end segregation, the draft lottery directly threatened the lives of all young college-aged men. The threat of being drafted into a deadly, unpopular war mobilized a much wider and more angry student base, turning protests into national strikes."
     },
     "specPoints": [
-      "Reasons for the growth of opposition, including the student movement, TV and media coverage of the war and the draft system.",
+      "Reasons for the growth of opposition, including TV and media coverage of the war and the draft system.",
       "Public reaction to the My Lai Massacre (1968).",
       "The trial of Lt. Calley.",
-      "The Kent State University shootings (1970)."
+      "The student movement and the Kent State University shootings (1970)."
     ]
   },
   "subtopic_4_2": {
@@ -2382,8 +2382,8 @@ export const LESSONS_DATA = {
       "goldAnswer": "The anti-war movement (Topic 4.1) had made the war politically toxic due to high casualties and the draft. To survive politically, Nixon had to show he was ending American involvement. Vietnamization allowed him to withdraw US ground troops (reducing draft calls and casualties) while claiming he was not surrendering."
     },
     "specPoints": [
-      "Reasons for support for the war, including the fear of communism.",
-      "The ‘hard hats’ and the ‘silent majority’."
+      "Reasons for support for the war, including the fear of communism and the ‘silent majority’.",
+      "The ‘hard hats’."
     ]
   },
   "subtopic_4_3": {
