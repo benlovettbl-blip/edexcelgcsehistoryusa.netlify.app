@@ -1,0 +1,32 @@
+{
+  "name": "usa-history-mastery",
+  "version": "1.0.0",
+  "description": "Edexcel GCSE History Paper 3 The USA Mastery",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "bundle": "npx esbuild src/main.js --bundle --outfile=app.js",
+    "build": "npm run bundle && vite build && node -e \"const fs = require('fs'); fs.copyFileSync('app.js', 'dist/app.js'); fs.copyFileSync('questions.js', 'dist/questions.js');\"",
+    "cap:sync": "npx cap sync",
+    "build:apk": "cd android && gradlew.bat assembleDebug",
+    "build:aab": "cd android && gradlew.bat bundleRelease"
+  },
+  "keywords": [
+    "education",
+    "history",
+    "capacitor",
+    "android"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/core": "^8.3.4",
+    "googleapis": "^173.0.0",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "vite": "^8.0.14"
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.gradle/
+build/
+local.properties
+*.log
+*.apk
+*.aab
+.idea/
+*.zip
+client_secret.json
+youtube_token.json
+videos/
