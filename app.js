@@ -5090,7 +5090,7 @@ Source E is highly useful for showing the immediate political and emotional impa
           "wonder": "Why did his message resonate so deeply with young Black Americans living in Northern cities?"
         },
         "bronze": "What landmark piece of federal legislation was passed as a direct consequence of the Selma marches in 1965?",
-        "silver": "Study the source image. Identify two details indicating Malcolm X is addressing a public grassroots crowd rather than a formal courtroom.",
+        "silver": "Study the source image and provenance. Identify two details showing that this is an organized press conference rather than an informal speech.",
         "gold": "How did the slow pace of economic progress in Northern cities after the legal victories of the Montgomery Bus Boycott (Topic 1.2) fuel the rise of Malcolm X's Black Nationalist ideology?",
         "keywords": [
           "Black Nationalism",
@@ -5099,7 +5099,7 @@ Source E is highly useful for showing the immediate political and emotional impa
           "Black Power"
         ],
         "bronzeAnswer": "The Voting Rights Act of 1965 was passed as a direct consequence of the Selma marches.",
-        "silverAnswer": "The image shows (1) Malcolm X speaking outdoors with trees in the background, and (2) multiple microphones from different media outlets and organizations set up on a simple stand.",
+        "silverAnswer": "The details are: (1) Malcolm X is formally seated at a table addressing reporters, and (2) he is speaking directly into a dense cluster of professional news microphones mounted on the table in front of him.",
         "goldAnswer": "Legal victories like the Montgomery Bus Boycott (Topic 1.2) and the Civil Rights Act ended legal segregation in the South, but did not solve Northern problems of poverty, unemployment, and police brutality. Malcolm X's focus on economic self-reliance and self-defense appealed to Northern Blacks who felt non-violence had failed to improve their daily lives."
       }
     },
