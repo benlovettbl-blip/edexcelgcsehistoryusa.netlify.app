@@ -9,6 +9,7 @@ import { QUIZ_DATA } from '../questions.js';
 import { highlightModelQuotes } from './layout.js';
 import { SPOT_THE_FLAW_DATA } from './spot_the_flaw_data.js';
 import { VIDEOS_DATA } from './videos_data.js';
+import { HOMEWORK_QUESTIONS } from './homework_data.js';
 
 const GLOSSARY_DB = {
   "segregation": "The legally or socially enforced separation of different racial groups in public spaces, housing, or education.",
@@ -915,6 +916,30 @@ export function renderMasteryView(subtopicId) {
     `;
   }
 
+  let hwHtml = '';
+  const hwQuestions = HOMEWORK_QUESTIONS[subtopicId];
+  if (hwQuestions && hwQuestions.length > 0) {
+    const questionsListMarkup = hwQuestions.map(q => `
+      <li style="margin-bottom: 12px; padding-left: 4px; border-bottom: 1px dashed rgba(255,255,255,0.03); padding-bottom: 12px;">
+        ${applyGlossaryTooltips(q)}
+      </li>
+    `).join('');
+    
+    hwHtml = `
+      <div class="mastery-card homework-questions-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
+        <h3 class="mastery-card-title"><i class="fa-solid fa-file-pen" style="color: var(--primary);"></i> Classwork & Homework Questions</h3>
+        <div class="mastery-card-body" style="padding-top: 6px;">
+          <p style="font-style: italic; margin-top: 0; margin-bottom: 16px; color: var(--text-muted); font-size: 0.85rem;">
+            Answer the following questions in class or for homework to test your understanding of this topic:
+          </p>
+          <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; line-height: 1.45; font-size: 0.95rem; color: var(--text-main);">
+            ${questionsListMarkup}
+          </ol>
+        </div>
+      </div>
+    `;
+  }
+
   // Set the container innerHTML
   container.innerHTML = `
     ${doNowHtml}
@@ -964,6 +989,8 @@ export function renderMasteryView(subtopicId) {
     ${howUsefulHtml}
     
     ${deepThinkingHtml}
+    
+    ${hwHtml}
 
     <!-- Mastery Progress Button -->
     <div style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">

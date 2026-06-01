@@ -2481,7 +2481,7 @@ export const LESSONS_DATA = {
         "wonder": "How did Nixon capitalize on this patriotism to build his political coalition?"
       },
       "bronze": "Why did Nixon's invasion of Cambodia in April 1970 trigger a national student strike and the Kent State shootings?",
-      "silver": "Study the source image. Identify two phrases indicating the marchers support Nixon's military policies and oppose anti-war activists.",
+      "silver": "Study the source image and provenance. Identify two visual details indicating the patriotic and political nature of this pro-war demonstration.",
       "gold": "Connect this pro-war rally of blue-collar workers back to the Watts and Detroit urban riots (Topic 2.4). What social and class divisions in the US did both events expose?",
       "keywords": [
         "Silent Majority",
@@ -2490,7 +2490,7 @@ export const LESSONS_DATA = {
         "Labor Patriotism"
       ],
       "bronzeAnswer": "The invasion expanded the war into a neutral country, which directly contradicted Nixon's promises of de-escalation, triggering mass outrage.",
-      "silverAnswer": "The banners read (1) 'Support Our Men in Vietnam' (pro-troop) and (2) 'Support Our President' (pro-government policy).",
+      "silverAnswer": "The details are: (1) the prominent display of numerous American flags carried by the marchers to show patriotism, and (2) large banners expressing explicit political support for President Nixon and the troops.",
       "goldAnswer": "Both events exposed deep social divisions. The urban riots (Topic 2.4) exposed racial and economic neglect of Black Americans in inner cities. The pro-war construction worker rallies exposed a deep class divide between working-class patriots (who felt a duty to support the government) and middle-class student protestors."
     }
   },
