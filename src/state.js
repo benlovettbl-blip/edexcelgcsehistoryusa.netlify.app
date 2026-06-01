@@ -14,6 +14,7 @@ export const state = {
   soundEnabled: true,
   theme: 'desert',
   deepThinkingAnswers: {},          // { questionId: string }
+  howUsefulAnswers: {},             // { subtopicId: string }
   specObjectives: {},               // { objectiveId: boolean }
   
   // Flashcard Session State

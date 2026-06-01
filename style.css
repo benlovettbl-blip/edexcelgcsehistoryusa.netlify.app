@@ -527,6 +527,10 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .header-actions {
@@ -4583,24 +4587,29 @@ details > summary::marker {
   line-height: 1.2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .main-app-brand-title {
-    font-size: 0.95rem;
-    max-width: 320px;
+    display: none !important;
   }
 }
 
 @media (max-width: 580px) {
-  .main-app-brand-title {
-    font-size: 0.85rem;
-    white-space: normal !important;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    max-width: none !important;
-    line-height: 1.3 !important;
+  .mode-btn span {
+    display: none !important;
   }
-  
+  .mode-btn {
+    padding: 8px 12px !important;
+    gap: 0 !important;
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    justify-content: center !important;
+  }
+  .mode-switcher {
+    border-radius: 20px !important;
+    padding: 2px !important;
+  }
+
   /* Visual Density improvements on mobile viewports */
   .content-view {
     padding: 12px 14px !important;
@@ -6005,4 +6014,492 @@ details > summary::marker {
   text-transform: uppercase;
 }
 
+/* Custom Leaflet Map Tooltips & Controls */
+.leaflet-tooltip-active {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  color: #fff !important;
+  border: 1px solid var(--primary) !important;
+  font-weight: bold !important;
+  font-size: 0.72rem !important;
+  font-family: var(--font-heading) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
+  border-radius: 4px !important;
+  padding: 3px 7px !important;
+}
+.leaflet-tooltip-inactive {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  color: #94a3b8 !important;
+  border: 1px solid #475569 !important;
+  font-size: 0.65rem !important;
+  font-family: var(--font-body) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+  border-radius: 3px !important;
+  padding: 2px 5px !important;
+}
+.leaflet-tooltip-top::before {
+  border-top-color: rgba(15, 23, 42, 0.95) !important;
+}
+.leaflet-container {
+  font-family: inherit;
+  background-color: #111 !important;
+}
+.leaflet-bar {
+  border: 1px solid var(--border-glass) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.leaflet-bar a {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  color: var(--text-muted) !important;
+  border-bottom: 1px solid var(--border-glass) !important;
+  transition: all 0.2s !important;
+}
+.leaflet-bar a:hover {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+.hotspot-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  animation: hotspot-ping 2s infinite ease-in-out;
+  pointer-events: none;
+}
+@keyframes hotspot-ping {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 32px;
+    height: 32px;
+    opacity: 0;
+  }
+}
 
+/* --- 10-Step Unit Mastery Journey Accordion Styles --- */
+.mastery-journey-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.journey-step-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-md);
+  padding: 16px;
+  transition: all var(--transition-fast) ease;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.journey-step-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.journey-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.journey-step-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.journey-step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  transition: all var(--transition-fast) ease;
+  flex-shrink: 0;
+}
+
+.journey-step-card:hover .journey-step-circle,
+.journey-step-card.active .journey-step-circle {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.journey-level-badge {
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  font-family: var(--font-heading);
+  display: inline-block;
+}
+
+/* Color codes for level types to look premium */
+.badge-recall {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+.badge-factcheck {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.badge-concept {
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+.badge-analysis {
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+.badge-challenge {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.journey-step-question {
+  margin: 10px 0 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.45;
+  padding-left: 46px;
+}
+
+.journey-step-right {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.journey-toggle-icon {
+  font-size: 0.85rem;
+  transition: transform var(--transition-fast) ease;
+}
+
+.journey-step-card.active .journey-toggle-icon {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.journey-answer-guide {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.3s ease, padding 0.3s ease;
+  padding: 0 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 4px 4px 0;
+  margin-top: 0;
+  margin-left: 46px;
+}
+
+.journey-step-card.active .journey-answer-guide {
+  max-height: 1000px;
+  padding: 12px 16px;
+  margin-top: 12px;
+}
+
+.journey-answer-title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.journey-answer-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --- Taboo Cards Revision Game Styles --- */
+.taboo-setup-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.taboo-setup-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-md);
+  padding: 20px;
+}
+
+.taboo-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.taboo-team-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.taboo-team-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.taboo-input {
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.taboo-input:focus {
+  border-color: var(--primary);
+}
+
+.taboo-categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.taboo-category-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  padding: 8px 14px;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.taboo-category-checkbox-wrapper input {
+  cursor: pointer;
+}
+
+.taboo-play-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.taboo-game-card {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transition: all var(--transition-fast) ease;
+}
+
+.taboo-game-card.glowing {
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+.taboo-card-category-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.taboo-card-target-word {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.02em;
+}
+
+.taboo-card-forbidden-section {
+  border-top: 1px solid var(--border-glass);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.taboo-forbidden-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.taboo-forbidden-words-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.taboo-forbidden-word-box {
+  width: 80%;
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  padding: 8px 16px;
+  font-weight: 700;
+  border-radius: var(--border-radius-sm);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.taboo-timer-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.2);
+  padding: 10px 16px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-glass);
+  font-size: 0.95rem;
+}
+
+.taboo-timer-badge {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-glass);
+  min-width: 60px;
+  text-align: center;
+}
+
+.taboo-timer-badge.flashing {
+  color: #ef4444;
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  animation: taboo-timer-flash 1s infinite alternate;
+}
+
+@keyframes taboo-timer-flash {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.taboo-btn-green {
+  background: var(--success);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.taboo-btn-green:hover {
+  background: var(--success-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.taboo-btn-red {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.taboo-btn-red:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.25);
+}
+
+.taboo-scoreboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.taboo-scoreboard-table th,
+.taboo-scoreboard-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.taboo-scoreboard-table th {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.taboo-scoreboard-table tr.current-team {
+  background: rgba(56, 189, 248, 0.05);
+}

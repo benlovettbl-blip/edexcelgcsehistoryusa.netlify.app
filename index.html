@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <!-- Leaflet Maps CSS and JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#b34700">
@@ -1309,6 +1312,9 @@
             <button class="tab-btn" id="btn-tab-game-mindmap" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
               <i class="fa-solid fa-network-wired"></i> Concept Connector
             </button>
+            <button class="tab-btn" id="btn-tab-game-taboo" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
+              <i class="fa-solid fa-ban"></i> Taboo Cards
+            </button>
           </div>
 
           <!-- Container for Causal Link Builder Game -->
@@ -1390,6 +1396,13 @@
           <!-- Container for Concept Connector Game -->
           <div id="game-mindmap-container" class="game-view-pane" style="display: none;">
             <div id="mindmap-game-play-area">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Container for Taboo Cards Game -->
+          <div id="game-taboo-container" class="game-view-pane" style="display: none;">
+            <div id="taboo-game-play-area">
               <!-- Dynamically populated -->
             </div>
           </div>

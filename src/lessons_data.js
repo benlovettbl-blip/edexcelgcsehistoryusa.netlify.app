@@ -93,7 +93,10 @@ export const LESSONS_DATA = {
         "answer": "Montgomery Improvement Association"
       }
     ],
-    "importanceAnalyser": null,
+    "importanceAnalyser": {
+      "question": "Explain the importance of the Brown v. Topeka decision (1954) for developments in education. (8 marks)",
+      "answer": "Reason 1: The Brown v. Topeka decision was important because it overturned the 1896 Plessy v. Ferguson 'separate but equal' doctrine. The Supreme Court ruled unanimously (9-0) that segregated schools were inherently unequal, violating the 14th Amendment. This was crucial as it provided a legal precedent that desegregation was a constitutional right, allowing civil rights lawyers to challenge segregated education across the South.\n\nReason 2: It was also important because of the intense white resistance it provoked. The decision led to the Southern Manifesto and the creation of White Citizens' Councils, which used intimidation to block integration. This backlash showed that court rulings alone were insufficient and compelled the civil rights movement to transition from legal battles to grassroots direct action to force federal enforcement."
+    },
     "questionVault": [
       {
         "question": "Give two things you can infer from Source A about voting rights in the Southern states. (4 marks)",
@@ -171,7 +174,31 @@ export const LESSONS_DATA = {
       "Segregation, discrimination and voting rights in the Southern states.",
       "The work of civil rights organisations, including the NAACP and CORE.",
       "Reasons for, key features and significance of the Brown v. Topeka case (1954)."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "In the early 1950s, Southern Black Americans faced legal segregation under Jim Crow and systemic disenfranchisement. The NAACP challenged this legally, culminating in the 1954 Brown v. Topeka Supreme Court ruling that unconstitutionalized segregated schools, overturning the 1896 Plessy v. Ferguson 'separate but equal' doctrine.",
+      "interpretation": "Orthodox historians view Brown as a monumental triumph that destroyed segregation's legal legitimacy. However, revisionist historians highlight that without local and federal enforcement, the decision was largely a symbolic victory in the short term.",
+      "discussionQuestion": "To what extent was the legal strategy of the NAACP more effective than the non-violent direct action tactics pioneered by CORE in the early 1950s?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Topeka (Kansas) & Montgomery (Alabama)",
+      "highlightedPoints": [
+        "topeka",
+        "montgomery"
+      ],
+      "description": "The landmark Brown v. Topeka case (1954) was launched in Kansas, challenging school segregation in the Midwest. In December 1955, the Montgomery Bus Boycott erupted in Alabama, shifting the movement's focus to non-violent direct action in the Deep South.",
+      "points": {
+        "topeka": {
+          "title": "Topeka, Kansas",
+          "text": "Linda Brown challenged segregation here, leading to the 1954 Brown v. Board ruling."
+        },
+        "montgomery": {
+          "title": "Montgomery, Alabama",
+          "text": "Rosa Parks' arrest sparked the 381-day transit boycott led by Martin Luther King Jr."
+        }
+      }
+    }
   },
   "subtopic_1_2": {
     "headerTitle": "KT 1.2 - GCSE CORE MASTERY: A triumph of federal supremacy or proof of deep local resistance? How significant was the integration of Central High School?",
@@ -267,7 +294,10 @@ export const LESSONS_DATA = {
         "answer": "Dwight D. Eisenhower"
       }
     ],
-    "importanceAnalyser": null,
+    "importanceAnalyser": {
+      "question": "Explain the importance of the events at Little Rock Central High School (1957) for the civil rights movement. (8 marks)",
+      "answer": "Reason 1: Little Rock Central High was important because it forced the federal government to intervene directly to protect Black students' civil rights. When Governor Orval Faubus deployed the Arkansas National Guard to block the Little Rock Nine, President Eisenhower federalized the state guard and sent the 101st Airborne Division. This was the first time since Reconstruction that federal troops were sent to the South, demonstrating that federal authority would overrule state-level segregation.\n\nReason 2: It was also important due to the impact of national media coverage. The crisis was broadcast on television, showing white mobs abusing dignified Black students. This shocked Northern audiences, generating widespread public sympathy for the civil rights cause and putting political pressure on Congress to pass civil rights legislation."
+    },
     "questionVault": [
       {
         "question": "Explain why desegregation in education faced severe resistance in the years 1954–57. (12 marks)",
@@ -335,7 +365,26 @@ export const LESSONS_DATA = {
     },
     "specPoints": [
       "Reasons for, key features and significance of the events at Little Rock High School (1957)."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "The desegregation of Central High School in Little Rock, Arkansas (1957) tested the enforcement of the Brown ruling. Governor Orval Faubus used state troops to block nine Black students, forcing President Eisenhower to federalize the National Guard and deploy the elite 101st Airborne Division to protect them, demonstrating federal supremacy.",
+      "interpretation": "Historians debate whether Little Rock was a success for federal authority or a demonstration of the extreme lengths to which Southern states would go to resist integration, as shown by Faubus closing the schools the following year.",
+      "discussionQuestion": "Did the Little Rock crisis prove that federal military force was essential to achieve school integration in the South?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Little Rock Central High School (1957)",
+      "highlightedPoints": [
+        "littlerock"
+      ],
+      "description": "Following the Brown ruling, enforcement was tested in Little Rock, Arkansas. Governor Faubus used the National Guard to block nine Black students, forcing President Eisenhower to send the elite 101st Airborne Division to protect them.",
+      "points": {
+        "littlerock": {
+          "title": "Little Rock, Arkansas",
+          "text": "Where federal soldiers escorted the Little Rock Nine to class daily in September 1957."
+        }
+      }
+    }
   },
   "subtopic_1_3": {
     "headerTitle": "KT 1.3 - GCSE CORE MASTERY: A spontaneous outbreak of protest or the result of years of meticulous planning? What caused the Montgomery Bus Boycott to succeed?",
@@ -431,7 +480,10 @@ export const LESSONS_DATA = {
         "answer": "Browder v. Gayle"
       }
     ],
-    "importanceAnalyser": null,
+    "importanceAnalyser": {
+      "question": "Explain the importance of the Montgomery Bus Boycott (1955-56) for the civil rights movement. (8 marks)",
+      "answer": "Reason 1: The boycott was important because it proved the power of non-violent direct action and economic pressure. By organizing a 381-day boycott where Black riders (who made up 70% of passengers) refused to use the buses, the MIA severely damaged the bus company's revenue. This demonstrated that unified grassroots activism could force economic and social changes without relying solely on courts.\n\nReason 2: It was also important because it established Martin Luther King Jr. as a national leader and led to the creation of the Southern Christian Leadership Conference (SCLC). King's inspiring speeches framed the boycott as a moral and Christian crusade. This provided the movement with a powerful philosophy of non-violence and a structured organization to coordinate future campaigns across the South."
+    },
     "questionVault": [
       {
         "question": "How useful are Sources B and C for an enquiry into the reasons for the success of the Montgomery Bus Boycott? (8 marks)",
@@ -504,7 +556,26 @@ export const LESSONS_DATA = {
       "The Supreme Court ruling.",
       "The setting up of the SCLC.",
       "The Civil Rights Act (1957)."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "Sparked by Rosa Parks' arrest in December 1955, the Montgomery Bus Boycott saw the Black community organize the MIA, led by Martin Luther King Jr., to walk and carpool for 381 days. The boycott devastated bus company revenues until the Supreme Court ruled transit segregation unconstitutional in Browder v. Gayle (1956), prompting the creation of the SCLC and leading to the Civil Rights Act of 1957.",
+      "interpretation": "While many historical accounts focus heavily on the charismatic leadership of Martin Luther King Jr., social historians emphasize the meticulous planning and daily dedication of grassroots organizers like Jo Ann Robinson and the local community.",
+      "discussionQuestion": "Was the Montgomery Bus Boycott's success primarily due to economic pressure or legal victories in the federal courts?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Montgomery transit system (Alabama)",
+      "highlightedPoints": [
+        "montgomery"
+      ],
+      "description": "The Montgomery Bus Boycott of 1955-56 was concentrated in Montgomery, Alabama. Black residents walked, organized carpools, and held mass meetings at local churches, causing severe financial losses for the city bus company.",
+      "points": {
+        "montgomery": {
+          "title": "Montgomery, Alabama",
+          "text": "A key transit boycott center that forced the Supreme Court to declare bus segregation unconstitutional."
+        }
+      }
+    }
   },
   "subtopic_1_4": {
     "headerTitle": "KT 1.4 - GCSE CORE MASTERY: Defending states' rights or protecting racial supremacy? How should we interpret the rapid growth of Southern white resistance?",
@@ -600,7 +671,10 @@ export const LESSONS_DATA = {
         "answer": "Dixiecrats"
       }
     ],
-    "importanceAnalyser": null,
+    "importanceAnalyser": {
+      "question": "Explain the importance of the Civil Rights Act of 1957 for the development of the civil rights movement. (8 marks)",
+      "answer": "Reason 1: The Act was important because it was the first federal civil rights legislation passed by Congress since Reconstruction in 1875. Even though the bill was heavily weakened by Southern Democrats (Dixiecrats) led by Strom Thurmond's filibuster, its passage signaled a major shift in federal policy, showing that the U.S. government was beginning to accept responsibility for protecting Black voting rights.\n\nReason 2: It was also important because it created the Civil Rights Division in the Department of Justice and the federal Commission on Civil Rights. This allowed the federal government to monitor abuses and file lawsuits against Southern registrars who blocked Black voters. This legal machinery laid the groundwork for the more powerful Civil Rights and Voting Rights Acts of 1964 and 1965."
+    },
     "questionVault": [
       {
         "question": "This suite is based on the following interpretations regarding the opposition to the civil rights movement.",
@@ -670,7 +744,31 @@ export const LESSONS_DATA = {
     "specPoints": [
       "Opposition to desegregation in the South, including the ‘Dixiecrats’ and the setting up of White Citizens’ Councils.",
       "The Ku Klux Klan and violence, including the murder of Emmet Till in 1955."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "In response to civil rights gains, Southern white resistance intensified. Politicians signed the Southern Manifesto (1956) and used filibusters in Congress, segregationists formed White Citizens' Councils to apply economic pressure, and the Ku Klux Klan waged campaigns of terror, exemplified by the brutal lynching of 14-year-old Emmett Till in 1955.",
+      "interpretation": "Historians argue that the visibility of Southern white brutality—especially Mamie Till-Mobley's decision to hold an open-casket funeral for Emmett Till—unintentionally mobilized national public opinion and forced the federal government to intervene.",
+      "discussionQuestion": "How did Southern politicians use the concept of 'states' rights' to justify racial segregation and white supremacy?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Southern States Resistance & Washington D.C.",
+      "highlightedPoints": [
+        "washington",
+        "oxford"
+      ],
+      "description": "White Citizens' Councils and KKK terror spread throughout the Deep South (such as the murder of Emmett Till in Money, Mississippi). Meanwhile, in Washington D.C., politicians battled over the passage of the Civil Rights Act of 1957.",
+      "points": {
+        "washington": {
+          "title": "Washington D.C.",
+          "text": "Where the Civil Rights Act of 1957 was drafted and passed, establishing a federal Civil Rights Division."
+        },
+        "oxford": {
+          "title": "Money, Mississippi",
+          "text": "Where 14-year-old Emmett Till was murdered in 1955, sparking international outrage."
+        }
+      }
+    }
   },
   "subtopic_2_1": {
     "headerTitle": "KT 2.1 - GCSE CORE MASTERY: A strategic breakthrough or a dangerous provocation? How did non-violent direct action force federal intervention?",
@@ -766,7 +864,10 @@ export const LESSONS_DATA = {
         "answer": "Student Nonviolent Coordinating Committee"
       }
     ],
-    "importanceAnalyser": null,
+    "importanceAnalyser": {
+      "question": "Explain the importance of the Greensboro Sit-ins (1960) for the campaign to desegregate public facilities. (8 marks)",
+      "answer": "Reason 1: The Greensboro Sit-ins were important because they rapidly spread across the South, creating a massive, student-led protest movement. Starting with just four Black students at Woolworth's lunch counter, within days hundreds of students joined, and the sit-ins spread to over 50 cities. This mobilization led to the formation of the Student Nonviolent Coordinating Committee (SNCC), which became a driving force for grassroots youth activism.\n\nReason 2: They were also important because they caused immediate economic damage to Southern business owners. The sit-ins, combined with boycotts of stores that refused to serve Black customers, forced Woolworth's and other major chains to desegregate their lunch counters by July 1960. This proved that student-led economic direct action was highly effective in desegregating public facilities."
+    },
     "questionVault": [
       {
         "question": "Give two things you can infer from Source A about the dangers faced by the Freedom Riders. (4 marks)",
@@ -844,7 +945,60 @@ export const LESSONS_DATA = {
       "The significance of Greensboro and the sit-in movement.",
       "Reasons for, key features and significance of the Freedom Riders, including Ku Klux Klan violence and the Anniston bomb (1961).",
       "The James Meredith case (1962)."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "The early 1960s saw a wave of student-led direct action, starting with the Greensboro Sit-ins (1960) and the formation of SNCC. In 1961, CORE organized the Freedom Rides to test terminal desegregation, enduring severe violence that forced federal protection. In 1962, James Meredith integrated the University of Mississippi under armed federal escort.",
+      "interpretation": "Historiographers note a growing tension between older, more cautious legalistic organizations (like the NAACP) and younger, more confrontational student groups (like SNCC and CORE) who demanded immediate integration.",
+      "discussionQuestion": "Why did non-violent direct action prove to be more successful than litigation in forcing federal enforcement of civil rights?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "The Freedom Rides (1961) & Greensboro Sit-ins (1960)",
+      "highlightedPoints": [
+        "greensboro",
+        "anniston",
+        "birmingham",
+        "montgomery",
+        "jackson",
+        "oxford",
+        "washington"
+      ],
+      "drawRoute": [
+        "washington",
+        "greensboro",
+        "anniston",
+        "birmingham",
+        "montgomery",
+        "jackson"
+      ],
+      "description": "Greensboro (North Carolina) launched the lunch counter sit-ins in 1960. In 1961, the Freedom Rides traveled from Washington D.C. down into the Deep South to challenge interstate transit segregation, facing attacks in Anniston, Birmingham, and Montgomery, ending in Jackson, Mississippi. In 1962, James Meredith integrated the university in Oxford, Mississippi.",
+      "points": {
+        "greensboro": {
+          "title": "Greensboro, NC",
+          "text": "Four Black college students staged the Woolworth's lunch counter sit-in here in 1960."
+        },
+        "anniston": {
+          "title": "Anniston, Alabama",
+          "text": "A Freedom Riders' bus was firebombed and the riders beaten by a mob on May 14, 1961."
+        },
+        "birmingham": {
+          "title": "Birmingham, Alabama",
+          "text": "Riders were beaten with pipes by KKK mobs as police commissioner Bull Connor watched."
+        },
+        "jackson": {
+          "title": "Jackson, Mississippi",
+          "text": "Final terminal stop of the Freedom Rides, where riders were immediately arrested."
+        },
+        "oxford": {
+          "title": "Oxford, Mississippi",
+          "text": "James Meredith integrated the University of Mississippi (Ole Miss) in 1962."
+        },
+        "washington": {
+          "title": "Washington D.C.",
+          "text": "Starting point of the CORE Freedom Rides in May 1961."
+        }
+      }
+    }
   },
   "subtopic_2_2": {
     "headerTitle": "KT 2.2 - GCSE CORE MASTERY: A victory of grassroots moral pressure or of Washington political negotiation? Why was landmark legislation passed in 1964–65?",
@@ -946,7 +1100,10 @@ export const LESSONS_DATA = {
         "answer": "Bull Connor"
       }
     ],
-    "importanceAnalyser": null,
+    "importanceAnalyser": {
+      "question": "Explain the importance of the Selma marches (1965) for the campaign to secure voting rights. (8 marks)",
+      "answer": "Reason 1: The Selma marches were important because the brutal police violence at the Edmund Pettus Bridge, known as 'Bloody Sunday', shocked the nation and galvanized public support. Televised images of state troopers tear-gassing and beating peaceful marchers outraged citizens and forced President Lyndon B. Johnson to intervene, using the federalized National Guard to protect the marchers and pledging to pass voting rights laws.\n\nReason 2: It was also important because it led directly to the passage of the Voting Rights Act of 1965. The march forced Congress to take immediate action, resulting in legislation that banned literacy tests and authorized federal registrars to register voters in discriminatory counties. Within years, Black voter registration in the South skyrocketed (e.g., doubling in Alabama), transforming the political landscape."
+    },
     "questionVault": [
       {
         "question": "Explain why civil rights legislation was passed in the years 1964–65. (12 marks)",
@@ -1017,7 +1174,45 @@ export const LESSONS_DATA = {
       "Freedom Summer and the Mississippi murders.",
       "The impact of peaceful protest and the roles of Presidents Kennedy and Johnson in the passage of the Civil Rights Act (1964).",
       "Selma and the Voting Rights Act (1965)."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "Major non-violent campaigns reached their peak between 1963 and 1965, including the Birmingham Campaign, the March on Washington, Freedom Summer, and the Selma-to-Montgomery March. These protests provoked televised police brutality (like 'Bloody Sunday' in Selma) that shocked the world, forcing the passage of the Civil Rights Act of 1964 and the Voting Rights Act of 1965.",
+      "interpretation": "Historians often view this period as a collaborative triumph between grassroots movements and federal legislative power under President Johnson, though others argue the federal government only acted when domestic disorder threatened national security.",
+      "discussionQuestion": "To what extent did televised media coverage determine the success of civil rights campaigns in Birmingham and Selma?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Birmingham (1963), Washington D.C. (1963) & Selma (1965)",
+      "highlightedPoints": [
+        "birmingham",
+        "washington",
+        "selma",
+        "montgomery"
+      ],
+      "drawRoute": [
+        "selma",
+        "montgomery"
+      ],
+      "description": "In 1963, Martin Luther King Jr. launched Project C in Birmingham, Alabama, and led the March on Washington D.C. In 1965, SCLC organized the historic Selma-to-Montgomery voting rights march, crossing the Edmund Pettus Bridge on Bloody Sunday.",
+      "points": {
+        "birmingham": {
+          "title": "Birmingham, AL",
+          "text": "Where Bull Connor used attack dogs and water cannons against children's marches."
+        },
+        "washington": {
+          "title": "Washington D.C.",
+          "text": "Over 250,000 citizens joined the March on Washington, hearing King's 'I Have a Dream' speech."
+        },
+        "selma": {
+          "title": "Selma, Alabama",
+          "text": "The starting point of the 1965 voting rights marches, where Bloody Sunday occurred."
+        },
+        "montgomery": {
+          "title": "Montgomery, AL",
+          "text": "The state capitol and destination of the 54-mile Selma march."
+        }
+      }
+    }
   },
   "subtopic_2_3": {
     "headerTitle": "KT 2.3 - GCSE CORE MASTERY: A necessary self-defense movement or a destructive split in the struggle? How do interpretations of Black Power differ?",
@@ -1110,7 +1305,10 @@ export const LESSONS_DATA = {
         "answer": "Nation of Islam"
       }
     ],
-    "importanceAnalyser": null,
+    "importanceAnalyser": {
+      "question": "Explain the importance of Malcolm X for the development of the civil rights movement. (8 marks)",
+      "answer": "Reason 1: Malcolm X was important because he provided a powerful alternative ideology to Martin Luther King Jr.'s non-violent integrationist approach. As the leading spokesperson for the Nation of Islam, he rejected integration, advocating instead for Black nationalism, self-reliance, and self-defense 'by any means necessary'. This ideology resonated deeply with young, urban Black Americans who were frustrated by the slow pace of legal reform.\n\nReason 2: He was also important because his ideas laid the intellectual foundation for the Black Power movement. By emphasizing cultural pride, African heritage, and Black economic independence, Malcolm X inspired SNCC and CORE to move away from non-violence in the mid-1960s, shifting the focus of the civil rights movement from legal desegregation to broader issues of economic and social empowerment."
+    },
     "questionVault": [
       {
         "question": "How useful are Sources B and C for an enquiry into the aims of the Black Panther Party? (8 marks)",
@@ -1181,7 +1379,37 @@ export const LESSONS_DATA = {
       "Reasons for the emergence of Black Power.",
       "The significance of Stokely Carmichael and the 1968 Mexico Olympics.",
       "The methods and achievements of the Black Panther movement."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "Frustrated by persistent poverty and slow progress, the civil rights movement saw the rise of Black Power. Malcolm X advocated self-defense and Black nationalism, while Stokely Carmichael shifted SNCC away from non-violence. In 1966, Huey Newton and Bobby Seale founded the Black Panther Party, combining armed community patrols with social welfare programs.",
+      "interpretation": "Historians are divided on the legacy of Black Power: some argue it fractured the civil rights coalition and alienated white support, while others argue it built essential racial pride, community self-defense, and addressed northern economic issues.",
+      "discussionQuestion": "Did the Black Power movement strengthen or weaken the overall struggle for Black equality in the United States?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Black Power Movement Hubs & Oakland",
+      "highlightedPoints": [
+        "oakland",
+        "detroit",
+        "chicago",
+        "washington"
+      ],
+      "description": "While Malcolm X and SNCC advocated Black Power in Washington and Northern cities like Chicago and Detroit, Huey Newton and Bobby Seale founded the Black Panther Party in Oakland, California (1966) to patrol neighborhoods.",
+      "points": {
+        "oakland": {
+          "title": "Oakland, California",
+          "text": "Birthplace of the Black Panther Party, who carried weapons for self-defense."
+        },
+        "detroit": {
+          "title": "Detroit, Michigan",
+          "text": "Center of Black Power activism, black nationalist churches, and Nation of Islam temples."
+        },
+        "chicago": {
+          "title": "Chicago, Illinois",
+          "text": "Host to major Black Panther community programs (like Free Breakfasts) and active SNCC groups."
+        }
+      }
+    }
   },
   "subtopic_2_4": {
     "headerTitle": "KT 2.4 - GCSE CORE MASTERY: A violent rebellion against systemic oppression or lawless urban disorder? How should historians explain the riots of 1965–68?",
@@ -1277,7 +1505,10 @@ export const LESSONS_DATA = {
         "answer": "Watts Riots"
       }
     ],
-    "importanceAnalyser": null,
+    "importanceAnalyser": {
+      "question": "Explain the importance of the assassination of Martin Luther King Jr. (1968) for the civil rights movement. (8 marks)",
+      "answer": "Reason 1: The assassination was important because it triggered immediate, massive urban riots across more than 100 U.S. cities, marking the end of the non-violent civil rights era. The outbreak of violence in Washington D.C., Chicago, and elsewhere demonstrated the frustration of Black communities and accelerated the shift toward more militant Black Power ideologies, leaving the movement without its primary unifying figure.\n\nReason 2: It was also important because it shocked Congress into passing the Civil Rights Act of 1968 (the Fair Housing Act) within days of his death. Seeking to calm the riots and honor King's legacy, President Johnson urged Congress to pass the stalled legislation, which banned discrimination in the sale, rental, and financing of housing, representing the final major legislative triumph of the civil rights era."
+    },
     "questionVault": [
       {
         "question": "This suite is based on the following interpretations regarding the 1960s urban riots.",
@@ -1349,7 +1580,42 @@ export const LESSONS_DATA = {
       "King’s campaign in the North.",
       "The assassination of Martin Luther King and its impact.",
       "The extent of progress in civil rights by 1975."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "Tensions boiled over in urban rebellions, including the Watts (1965) and Detroit (1967) riots, which the Kerner Commission (1968) blamed on white racism and ghetto poverty. SCLC's Chicago Campaign (1966) showed the difficulty of fighting northern housing discrimination. On 4 April 1968, Martin Luther King Jr. was assassinated, sparking nationwide riots.",
+      "interpretation": "Historians often mark the assassination of Dr. King as the end of the classic, non-violent civil rights era, leading to a period of increased militancy, political fragmentation, and conservative white backlash.",
+      "discussionQuestion": "Why did the non-violent protest strategies that succeeded in the South fail to address racial inequality in Northern cities?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Race Riots (1965-68) & King's Assassination in Memphis",
+      "highlightedPoints": [
+        "losangeles",
+        "detroit",
+        "chicago",
+        "memphis",
+        "washington"
+      ],
+      "description": "Riots devastated ghetto areas in Watts (Los Angeles) in 1965 and Detroit in 1967. King moved his campaign north to Chicago in 1966, and was tragically assassinated in Memphis, Tennessee, in April 1968, sparking nationwide riots.",
+      "points": {
+        "losangeles": {
+          "title": "Watts, Los Angeles",
+          "text": "Site of the six-day Watts Riot in 1965 that resulted in 34 deaths and massive property damage."
+        },
+        "detroit": {
+          "title": "Detroit, Michigan",
+          "text": "A 1967 riot left 43 dead and required federal paratroopers to restore order."
+        },
+        "chicago": {
+          "title": "Chicago, Illinois",
+          "text": "Target of MLK's 1966 Chicago Freedom Movement to end housing segregation."
+        },
+        "memphis": {
+          "title": "Memphis, Tennessee",
+          "text": "Martin Luther King Jr. was assassinated at the Lorraine Motel on April 4, 1968."
+        }
+      }
+    }
   },
   "subtopic_3_1": {
     "headerTitle": "KT 3.1 - GCSE CORE MASTERY: A noble crusade to protect democracy or an imperialist defense of a corrupt dictatorship? Why did the US support Diem?",
@@ -1528,7 +1794,36 @@ export const LESSONS_DATA = {
     "specPoints": [
       "Reasons for greater US involvement under Eisenhower, including the domino theory and weaknesses of the Diem government.",
       "Greater involvement under Kennedy, including the Strategic Hamlet Program and the overthrow of Diem."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "After the 1954 Geneva Accords partitioned Vietnam, the US backed South Vietnamese dictator Ngo Dinh Diem to prevent the 'Domino Theory' of communist expansion. Diem's corrupt regime, Buddhist persecutions, and the failed Strategic Hamlet Program fueled Vietcong insurgency, leading the US to condone a military coup that overthrew Diem in 1963.",
+      "interpretation": "Historians criticize the US decision to support Diem, arguing that American policy prioritized cold war anti-communism over local democracy, which ultimately locked the US into an unstable and corrupt client state.",
+      "discussionQuestion": "Why did Ngo Dinh Diem's domestic policies undermine South Vietnam's stability and increase peasant support for the Vietcong?"
+    },
+    "mapConfig": {
+      "type": "vietnam",
+      "title": "Partition of Vietnam along the 17th Parallel (1954)",
+      "highlightedPoints": [
+        "hanoi",
+        "saigon",
+        "parallel17"
+      ],
+      "description": "The 1954 Geneva Accords divided Vietnam along the 17th Parallel. Ho Chi Minh controlled the communist North from Hanoi; the US backed Ngo Dinh Diem's capitalist government in Saigon.",
+      "points": {
+        "hanoi": {
+          "title": "Hanoi",
+          "text": "Capital of communist North Vietnam (Democratic Republic of Vietnam)."
+        },
+        "saigon": {
+          "title": "Saigon",
+          "text": "Capital of South Vietnam, backed by the US to resist communist takeover."
+        },
+        "parallel17": {
+          "title": "17th Parallel",
+          "text": "The demilitarized zone (DMZ) dividing line between North and South Vietnam."
+        }
+      }
+    }
   },
   "subtopic_3_2": {
     "headerTitle": "KT 3.2 - GCSE CORE MASTERY: A defensive reaction to foreign aggression or a fabricated excuse for pre-planned war? What caused the escalation of 1964–65?",
@@ -1698,7 +1993,33 @@ export const LESSONS_DATA = {
     },
     "specPoints": [
       "Reasons for the escalation of the conflict and increased US involvement in Vietnam, including the increasing threat of the Vietcong and the Gulf of Tonkin incident (1964)."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "The Gulf of Tonkin Incident in August 1964 led Congress to pass the Gulf of Tonkin Resolution, granting President Johnson a 'blank check' to escalate combat. In March 1965, US Marines landed at Da Nang, beginning the direct ground war, while communist forces relied on the Ho Chi Minh Trail to supply the insurgency.",
+      "interpretation": "Revisionist historians argue that the Johnson administration manipulated the details of the second Gulf of Tonkin incident to deceive Congress and the public into accepting a pre-planned military escalation.",
+      "discussionQuestion": "Was the escalation of US military involvement in 1964–65 inevitable, or was it the result of specific political decisions by President Johnson?"
+    },
+    "mapConfig": {
+      "type": "vietnam",
+      "title": "Gulf of Tonkin (1964) & Combat Deployment (Da Nang 1965)",
+      "highlightedPoints": [
+        "tonkin",
+        "danang",
+        "saigon",
+        "hanoi"
+      ],
+      "description": "Clashes in the Gulf of Tonkin (August 1964) led to the Gulf of Tonkin Resolution. In March 1965, US ground combat troops (Marines) landed at Da Nang beach, rapidy escalating US involvement.",
+      "points": {
+        "tonkin": {
+          "title": "Gulf of Tonkin",
+          "text": "Where US destroyers engaged North Vietnamese torpedo boats, sparking US military escalation."
+        },
+        "danang": {
+          "title": "Da Nang",
+          "text": "First landing site of US combat troops (Marines) and location of a major air base."
+        }
+      }
+    }
   },
   "subtopic_3_3": {
     "headerTitle": "KT 3.3 - GCSE CORE MASTERY: High-tech military efficiency or a counterproductive campaign of terror? Why did US tactics fail to defeat the Vietcong?",
@@ -1869,7 +2190,39 @@ export const LESSONS_DATA = {
       "The methods used by the USA, including Search and Destroy, Operation Rolling Thunder and chemical weapons.",
       "The guerrilla tactics used by the Vietcong.",
       "The key features and significance of the Tet Offensive, 1968."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "The US deployed Operation Rolling Thunder, search-and-destroy missions, and chemical agents (Agent Orange/Napalm) to fight the war, while the Vietcong used guerrilla tactics, tunnel networks, and the Ho Chi Minh Trail. In 1968, the communists launched the Tet Offensive, which was a military defeat for them but a major political and psychological victory that turned the US public against the war.",
+      "interpretation": "Military historians argue that the US won almost every tactical engagement but lost the war strategically because its attrition strategy was countered by the Vietcong's willingness to endure unlimited casualties to exhaust US resolve.",
+      "discussionQuestion": "Why was the Tet Offensive (1968) considered the decisive turning point of the Vietnam War?"
+    },
+    "mapConfig": {
+      "type": "vietnam",
+      "title": "Vietcong Guerrilla Tactics & The Ho Chi Minh Trail",
+      "highlightedPoints": [
+        "hanoi",
+        "laos",
+        "cambodia",
+        "saigon"
+      ],
+      "drawRoute": [
+        "hanoi",
+        "laos",
+        "cambodia",
+        "saigon"
+      ],
+      "description": "To avoid US firepower, the Vietcong used guerrilla tactics and tunnel systems. Supplies and soldiers flowed from Hanoi along the Ho Chi Minh Trail, weaving through neutral Laos and Cambodia into South Vietnam.",
+      "points": {
+        "laos": {
+          "title": "Laos Route",
+          "text": "Laos was bombed heavily by the US but remained the primary corridor for the Ho Chi Minh Trail."
+        },
+        "cambodia": {
+          "title": "Cambodia Route",
+          "text": "Vietcong established supply caches and sanctuaries inside neutral Cambodian territory."
+        }
+      }
+    }
   },
   "subtopic_3_4": {
     "headerTitle": "KT 3.4 - GCSE CORE MASTERY: 'Peace with honour' or a face-saving withdrawal that prolonged the slaughter? How should we evaluate Vietnamization?",
@@ -2041,7 +2394,33 @@ export const LESSONS_DATA = {
       "Key features of Vietnamisation.",
       "Reasons for its failure.",
       "Attacks on Cambodia (1970) and Laos (1971), and the bombing of North Vietnam (1972)."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "President Nixon took office in 1969 promising 'peace with honor'. He introduced 'Vietnamization' to withdraw US troops while training the ARVN, but simultaneously expanded the war by invading Cambodia (1970) and Laos (1971) to destroy sanctuaries. Under advisors Le Duc Tho and Henry Kissinger, peace negotiations slowly progressed.",
+      "interpretation": "Historians argue that Vietnamization was primarily a political strategy to pacify the American electorate, and that Nixon knew the ARVN was too weak to survive without US air power, creating a 'decent interval' before its eventual collapse.",
+      "discussionQuestion": "Did Nixon's policy of Vietnamization succeed in achieving 'peace with honor', or did it merely prolong the conflict?"
+    },
+    "mapConfig": {
+      "type": "vietnam",
+      "title": "Vietnamization & Nixon's Expansion into Cambodia/Laos",
+      "highlightedPoints": [
+        "cambodia",
+        "laos",
+        "hanoi",
+        "saigon"
+      ],
+      "description": "Under Vietnamization, Nixon began withdrawing US ground troops while escalating air warfare. In 1970, US/ARVN forces invaded Cambodia, and in 1971 ARVN invaded Laos to destroy communist sanctuaries, expanding the war zone.",
+      "points": {
+        "cambodia": {
+          "title": "Cambodia Invasion (1970)",
+          "text": "Joint US-ARVN cross-border raid that destroyed Vietcong camps but caused huge political protests in the US."
+        },
+        "laos": {
+          "title": "Laos Invasion (1971)",
+          "text": "ARVN forces invaded to cut the Trail, resulting in a disastrous defeat and proving Vietnamization was failing."
+        }
+      }
+    }
   },
   "subtopic_4_1": {
     "headerTitle": "KT 4.1 - GCSE CORE MASTERY: A patriotic defense of American values or an unpatriotic betrayal of troops? How did the anti-war movement shape public debate?",
@@ -2213,7 +2592,31 @@ export const LESSONS_DATA = {
       "Public reaction to the My Lai Massacre (1968).",
       "The trial of Lt. Calley.",
       "The student movement and the Kent State University shootings (1970)."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "The US war effort faced massive domestic opposition. Television broadcasts created a 'credibility gap' by exposing the horrors of war and events like the My Lai Massacre (1968). The Selective Service draft system angered youth, and the invasion of Cambodia sparked student strikes, culminating in the National Guard shooting four students at Kent State in 1970.",
+      "interpretation": "Social historians argue that the anti-war movement was highly diverse, consisting of middle-class students, civil rights groups, and working-class draft-resisters, though it also generated a massive conservative backlash.",
+      "discussionQuestion": "How did televised media coverage of the Vietnam War influence the relationship between the US government and the public?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Student Protests & Kent State Shooting (1970)",
+      "highlightedPoints": [
+        "washington",
+        "detroit"
+      ],
+      "description": "As the war escalated, the student movement organized massive protests. At Kent State University (Ohio) in May 1970, National Guardsmen shot and killed 4 student protesters, sparking a nationwide student strike.",
+      "points": {
+        "washington": {
+          "title": "Washington D.C.",
+          "text": "Site of the 1967 March on the Pentagon and other massive anti-war demonstrations."
+        },
+        "detroit": {
+          "title": "Kent State, Ohio",
+          "text": "National Guardsmen fired live rounds into unarmed student demonstrators here, killing 4."
+        }
+      }
+    }
   },
   "subtopic_4_2": {
     "headerTitle": "KT 4.2 - GCSE CORE MASTERY: A quiet majority defending global stability or a conservative backlash against counterculture? Why did many support the war?",
@@ -2384,7 +2787,31 @@ export const LESSONS_DATA = {
     "specPoints": [
       "Reasons for support for the war, including the fear of communism and the ‘silent majority’.",
       "The ‘hard hats’."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "President Nixon appealed to the 'Silent Majority'—patriotic Americans who supported the war and opposed student protestors. The home front was deeply polarized between hawks and doves, leading to events like the Hard Hat Riots in New York (1970), reflecting wider generational, class, and cultural divisions.",
+      "interpretation": "Political historians argue that Nixon's appeal to the Silent Majority successfully exploited class resentments against elite student protestors, forming the basis of a new conservative political coalition.",
+      "discussionQuestion": "To what extent did divisions over the Vietnam War reflect wider social and cultural conflicts in 1970s America?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Silent Majority & Wall Street Hard Hat Riots (1970)",
+      "highlightedPoints": [
+        "washington",
+        "detroit"
+      ],
+      "description": "Nixon appealed to the Silent Majority. In May 1970, working-class pro-war construction workers ('hard hats') marched in support of Nixon in New York City, clashing with anti-war students.",
+      "points": {
+        "washington": {
+          "title": "Washington D.C.",
+          "text": "Where Nixon delivered his Silent Majority television address in November 1969."
+        },
+        "detroit": {
+          "title": "New York City",
+          "text": "Wall Street construction workers beat anti-war student protesters during the Hard Hat Riots."
+        }
+      }
+    }
   },
   "subtopic_4_3": {
     "headerTitle": "KT 4.3 - GCSE CORE MASTERY: A diplomatic triumph of compromise or a betrayal of South Vietnamese sovereignty? Why did South Vietnam collapse so quickly?",
@@ -2555,7 +2982,32 @@ export const LESSONS_DATA = {
       "Reasons for, and key features of, the peace negotiations (1972–73).",
       "The significance of the Paris Peace Agreement (1973).",
       "The economic and human costs of the war for the USA."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "In January 1973, the Paris Peace Accords were signed, leading to the withdrawal of US forces. Left without US support, the South Vietnamese government collapsed when NVA forces captured the capital in the Fall of Saigon (1975). The war cost over 58,000 US lives and millions of Vietnamese lives, leaving a legacy of PTSD and the War Powers Act of 1973.",
+      "interpretation": "Historians argue that the Fall of Saigon was the inevitable outcome of a peace accord that allowed North Vietnamese troops to remain in the South, meaning the US withdrawal was a face-saving exit rather than a stable peace.",
+      "discussionQuestion": "What were the most significant political and social consequences of the Vietnam War for the United States?"
+    },
+    "mapConfig": {
+      "type": "vietnam",
+      "title": "Paris Peace Accords (1973) & Fall of Saigon (1975)",
+      "highlightedPoints": [
+        "saigon",
+        "hanoi",
+        "parallel17"
+      ],
+      "description": "The 1973 Paris Peace Accords led to the complete withdrawal of US combat troops. In April 1975, North Vietnamese forces launched their final offensive, capturing Saigon and reunifying the country.",
+      "points": {
+        "saigon": {
+          "title": "Saigon",
+          "text": "Fell to communist forces on April 30, 1975, renamed Ho Chi Minh City."
+        },
+        "hanoi": {
+          "title": "Hanoi",
+          "text": "Capital of North Vietnam, which directed the successful military campaign to capture the South."
+        }
+      }
+    }
   },
   "subtopic_4_4": {
     "headerTitle": "KT 4.4 - GCSE CORE MASTERY: Lost on the battlefield, in the media, or at the ballot box? What was the primary reason for the US failure in Vietnam?",
@@ -2720,6 +3172,34 @@ export const LESSONS_DATA = {
       "The weaknesses of the US armed forces.",
       "The failure of US tactics.",
       "The impact of opposition to the war in the USA."
-    ]
+    ],
+    "lessonWrapUp": {
+      "summary": "The US failure and communist victory resulted from a combination of factors: the Vietcong's effective guerrilla tactics and local knowledge, the severe corruption and unpopularity of the South Vietnamese government (ARVN), and the collapse of domestic public and political support in the United States.",
+      "interpretation": "Historians debate whether the US lost the war primarily due to military mistakes in the jungles of Vietnam (e.g., search-and-destroy tactics alienating peasants) or due to political collapse on the home front (e.g., anti-war movement and Congress cutting off funding).",
+      "discussionQuestion": "Was the corruption of the South Vietnamese government (ARVN) more responsible for the US defeat than the military strength of the Vietcong?"
+    },
+    "mapConfig": {
+      "type": "vietnam",
+      "title": "Why the US Failed: Areas of Conflict",
+      "highlightedPoints": [
+        "hanoi",
+        "saigon",
+        "tonkin",
+        "danang",
+        "laos",
+        "cambodia"
+      ],
+      "description": "A geographical summary of US failure: North Vietnamese aid (from USSR/China) flowed through Hanoi, down the Ho Chi Minh Trail in Laos and Cambodia, avoiding US conventional bases in Da Nang and Saigon.",
+      "points": {
+        "hanoi": {
+          "title": "North Vietnam",
+          "text": "Sustained supply lines and air defenses with Soviet and Chinese military hardware."
+        },
+        "saigon": {
+          "title": "South Vietnam",
+          "text": "Could not protect rural areas from Vietcong guerrilla infiltration and collapsed after US aid cuts."
+        }
+      }
+    }
   }
 };

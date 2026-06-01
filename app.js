@@ -15,6 +15,8 @@
     theme: "desert",
     deepThinkingAnswers: {},
     // { questionId: string }
+    howUsefulAnswers: {},
+    // { subtopicId: string }
     specObjectives: {},
     // { objectiveId: boolean }
     // Flashcard Session State
@@ -4017,7 +4019,10 @@ Source C is highly useful for understanding the Nixon administration's perspecti
           "answer": "Montgomery Improvement Association"
         }
       ],
-      "importanceAnalyser": null,
+      "importanceAnalyser": {
+        "question": "Explain the importance of the Brown v. Topeka decision (1954) for developments in education. (8 marks)",
+        "answer": "Reason 1: The Brown v. Topeka decision was important because it overturned the 1896 Plessy v. Ferguson 'separate but equal' doctrine. The Supreme Court ruled unanimously (9-0) that segregated schools were inherently unequal, violating the 14th Amendment. This was crucial as it provided a legal precedent that desegregation was a constitutional right, allowing civil rights lawyers to challenge segregated education across the South.\n\nReason 2: It was also important because of the intense white resistance it provoked. The decision led to the Southern Manifesto and the creation of White Citizens' Councils, which used intimidation to block integration. This backlash showed that court rulings alone were insufficient and compelled the civil rights movement to transition from legal battles to grassroots direct action to force federal enforcement."
+      },
       "questionVault": [
         {
           "question": "Give two things you can infer from Source A about voting rights in the Southern states. (4 marks)",
@@ -4102,7 +4107,31 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
         "Segregation, discrimination and voting rights in the Southern states.",
         "The work of civil rights organisations, including the NAACP and CORE.",
         "Reasons for, key features and significance of the Brown v. Topeka case (1954)."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "In the early 1950s, Southern Black Americans faced legal segregation under Jim Crow and systemic disenfranchisement. The NAACP challenged this legally, culminating in the 1954 Brown v. Topeka Supreme Court ruling that unconstitutionalized segregated schools, overturning the 1896 Plessy v. Ferguson 'separate but equal' doctrine.",
+        "interpretation": "Orthodox historians view Brown as a monumental triumph that destroyed segregation's legal legitimacy. However, revisionist historians highlight that without local and federal enforcement, the decision was largely a symbolic victory in the short term.",
+        "discussionQuestion": "To what extent was the legal strategy of the NAACP more effective than the non-violent direct action tactics pioneered by CORE in the early 1950s?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Topeka (Kansas) & Montgomery (Alabama)",
+        "highlightedPoints": [
+          "topeka",
+          "montgomery"
+        ],
+        "description": "The landmark Brown v. Topeka case (1954) was launched in Kansas, challenging school segregation in the Midwest. In December 1955, the Montgomery Bus Boycott erupted in Alabama, shifting the movement's focus to non-violent direct action in the Deep South.",
+        "points": {
+          "topeka": {
+            "title": "Topeka, Kansas",
+            "text": "Linda Brown challenged segregation here, leading to the 1954 Brown v. Board ruling."
+          },
+          "montgomery": {
+            "title": "Montgomery, Alabama",
+            "text": "Rosa Parks' arrest sparked the 381-day transit boycott led by Martin Luther King Jr."
+          }
+        }
+      }
     },
     "subtopic_1_2": {
       "headerTitle": "KT 1.2 - GCSE CORE MASTERY: A triumph of federal supremacy or proof of deep local resistance? How significant was the integration of Central High School?",
@@ -4219,7 +4248,10 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
           "answer": "Dwight D. Eisenhower"
         }
       ],
-      "importanceAnalyser": null,
+      "importanceAnalyser": {
+        "question": "Explain the importance of the events at Little Rock Central High School (1957) for the civil rights movement. (8 marks)",
+        "answer": "Reason 1: Little Rock Central High was important because it forced the federal government to intervene directly to protect Black students' civil rights. When Governor Orval Faubus deployed the Arkansas National Guard to block the Little Rock Nine, President Eisenhower federalized the state guard and sent the 101st Airborne Division. This was the first time since Reconstruction that federal troops were sent to the South, demonstrating that federal authority would overrule state-level segregation.\n\nReason 2: It was also important due to the impact of national media coverage. The crisis was broadcast on television, showing white mobs abusing dignified Black students. This shocked Northern audiences, generating widespread public sympathy for the civil rights cause and putting political pressure on Congress to pass civil rights legislation."
+      },
       "questionVault": [
         {
           "question": "Explain why desegregation in education faced severe resistance in the years 1954\u201357. (12 marks)",
@@ -4289,7 +4321,26 @@ Source E is highly useful for showing the scale of the state and military confli
       },
       "specPoints": [
         "Reasons for, key features and significance of the events at Little Rock High School (1957)."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "The desegregation of Central High School in Little Rock, Arkansas (1957) tested the enforcement of the Brown ruling. Governor Orval Faubus used state troops to block nine Black students, forcing President Eisenhower to federalize the National Guard and deploy the elite 101st Airborne Division to protect them, demonstrating federal supremacy.",
+        "interpretation": "Historians debate whether Little Rock was a success for federal authority or a demonstration of the extreme lengths to which Southern states would go to resist integration, as shown by Faubus closing the schools the following year.",
+        "discussionQuestion": "Did the Little Rock crisis prove that federal military force was essential to achieve school integration in the South?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Little Rock Central High School (1957)",
+        "highlightedPoints": [
+          "littlerock"
+        ],
+        "description": "Following the Brown ruling, enforcement was tested in Little Rock, Arkansas. Governor Faubus used the National Guard to block nine Black students, forcing President Eisenhower to send the elite 101st Airborne Division to protect them.",
+        "points": {
+          "littlerock": {
+            "title": "Little Rock, Arkansas",
+            "text": "Where federal soldiers escorted the Little Rock Nine to class daily in September 1957."
+          }
+        }
+      }
     },
     "subtopic_1_3": {
       "headerTitle": "KT 1.3 - GCSE CORE MASTERY: A spontaneous outbreak of protest or the result of years of meticulous planning? What caused the Montgomery Bus Boycott to succeed?",
@@ -4403,7 +4454,10 @@ Source E is highly useful for showing the scale of the state and military confli
           "answer": "Browder v. Gayle"
         }
       ],
-      "importanceAnalyser": null,
+      "importanceAnalyser": {
+        "question": "Explain the importance of the Montgomery Bus Boycott (1955-56) for the civil rights movement. (8 marks)",
+        "answer": "Reason 1: The boycott was important because it proved the power of non-violent direct action and economic pressure. By organizing a 381-day boycott where Black riders (who made up 70% of passengers) refused to use the buses, the MIA severely damaged the bus company's revenue. This demonstrated that unified grassroots activism could force economic and social changes without relying solely on courts.\n\nReason 2: It was also important because it established Martin Luther King Jr. as a national leader and led to the creation of the Southern Christian Leadership Conference (SCLC). King's inspiring speeches framed the boycott as a moral and Christian crusade. This provided the movement with a powerful philosophy of non-violence and a structured organization to coordinate future campaigns across the South."
+      },
       "questionVault": [
         {
           "question": "How useful are Sources B and C for an enquiry into the reasons for the success of the Montgomery Bus Boycott? (8 marks)",
@@ -4480,7 +4534,26 @@ Source E is highly useful for showing the direct police criminalization of peace
         "The Supreme Court ruling.",
         "The setting up of the SCLC.",
         "The Civil Rights Act (1957)."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "Sparked by Rosa Parks' arrest in December 1955, the Montgomery Bus Boycott saw the Black community organize the MIA, led by Martin Luther King Jr., to walk and carpool for 381 days. The boycott devastated bus company revenues until the Supreme Court ruled transit segregation unconstitutional in Browder v. Gayle (1956), prompting the creation of the SCLC and leading to the Civil Rights Act of 1957.",
+        "interpretation": "While many historical accounts focus heavily on the charismatic leadership of Martin Luther King Jr., social historians emphasize the meticulous planning and daily dedication of grassroots organizers like Jo Ann Robinson and the local community.",
+        "discussionQuestion": "Was the Montgomery Bus Boycott's success primarily due to economic pressure or legal victories in the federal courts?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Montgomery transit system (Alabama)",
+        "highlightedPoints": [
+          "montgomery"
+        ],
+        "description": "The Montgomery Bus Boycott of 1955-56 was concentrated in Montgomery, Alabama. Black residents walked, organized carpools, and held mass meetings at local churches, causing severe financial losses for the city bus company.",
+        "points": {
+          "montgomery": {
+            "title": "Montgomery, Alabama",
+            "text": "A key transit boycott center that forced the Supreme Court to declare bus segregation unconstitutional."
+          }
+        }
+      }
     },
     "subtopic_1_4": {
       "headerTitle": "KT 1.4 - GCSE CORE MASTERY: Defending states' rights or protecting racial supremacy? How should we interpret the rapid growth of Southern white resistance?",
@@ -4594,7 +4667,10 @@ Source E is highly useful for showing the direct police criminalization of peace
           "answer": "Dixiecrats"
         }
       ],
-      "importanceAnalyser": null,
+      "importanceAnalyser": {
+        "question": "Explain the importance of the Civil Rights Act of 1957 for the development of the civil rights movement. (8 marks)",
+        "answer": "Reason 1: The Act was important because it was the first federal civil rights legislation passed by Congress since Reconstruction in 1875. Even though the bill was heavily weakened by Southern Democrats (Dixiecrats) led by Strom Thurmond's filibuster, its passage signaled a major shift in federal policy, showing that the U.S. government was beginning to accept responsibility for protecting Black voting rights.\n\nReason 2: It was also important because it created the Civil Rights Division in the Department of Justice and the federal Commission on Civil Rights. This allowed the federal government to monitor abuses and file lawsuits against Southern registrars who blocked Black voters. This legal machinery laid the groundwork for the more powerful Civil Rights and Voting Rights Acts of 1964 and 1965."
+      },
       "questionVault": [
         {
           "question": "This suite is based on the following interpretations regarding the opposition to the civil rights movement.",
@@ -4674,7 +4750,31 @@ Source E is highly useful for showing the violent and physical intimidation used
       "specPoints": [
         "Opposition to desegregation in the South, including the \u2018Dixiecrats\u2019 and the setting up of White Citizens\u2019 Councils.",
         "The Ku Klux Klan and violence, including the murder of Emmet Till in 1955."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "In response to civil rights gains, Southern white resistance intensified. Politicians signed the Southern Manifesto (1956) and used filibusters in Congress, segregationists formed White Citizens' Councils to apply economic pressure, and the Ku Klux Klan waged campaigns of terror, exemplified by the brutal lynching of 14-year-old Emmett Till in 1955.",
+        "interpretation": "Historians argue that the visibility of Southern white brutality\u2014especially Mamie Till-Mobley's decision to hold an open-casket funeral for Emmett Till\u2014unintentionally mobilized national public opinion and forced the federal government to intervene.",
+        "discussionQuestion": "How did Southern politicians use the concept of 'states' rights' to justify racial segregation and white supremacy?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Southern States Resistance & Washington D.C.",
+        "highlightedPoints": [
+          "washington",
+          "oxford"
+        ],
+        "description": "White Citizens' Councils and KKK terror spread throughout the Deep South (such as the murder of Emmett Till in Money, Mississippi). Meanwhile, in Washington D.C., politicians battled over the passage of the Civil Rights Act of 1957.",
+        "points": {
+          "washington": {
+            "title": "Washington D.C.",
+            "text": "Where the Civil Rights Act of 1957 was drafted and passed, establishing a federal Civil Rights Division."
+          },
+          "oxford": {
+            "title": "Money, Mississippi",
+            "text": "Where 14-year-old Emmett Till was murdered in 1955, sparking international outrage."
+          }
+        }
+      }
     },
     "subtopic_2_1": {
       "headerTitle": "KT 2.1 - GCSE CORE MASTERY: A strategic breakthrough or a dangerous provocation? How did non-violent direct action force federal intervention?",
@@ -4791,7 +4891,10 @@ Source E is highly useful for showing the violent and physical intimidation used
           "answer": "Student Nonviolent Coordinating Committee"
         }
       ],
-      "importanceAnalyser": null,
+      "importanceAnalyser": {
+        "question": "Explain the importance of the Greensboro Sit-ins (1960) for the campaign to desegregate public facilities. (8 marks)",
+        "answer": "Reason 1: The Greensboro Sit-ins were important because they rapidly spread across the South, creating a massive, student-led protest movement. Starting with just four Black students at Woolworth's lunch counter, within days hundreds of students joined, and the sit-ins spread to over 50 cities. This mobilization led to the formation of the Student Nonviolent Coordinating Committee (SNCC), which became a driving force for grassroots youth activism.\n\nReason 2: They were also important because they caused immediate economic damage to Southern business owners. The sit-ins, combined with boycotts of stores that refused to serve Black customers, forced Woolworth's and other major chains to desegregate their lunch counters by July 1960. This proved that student-led economic direct action was highly effective in desegregating public facilities."
+      },
       "questionVault": [
         {
           "question": "Give two things you can infer from Source A about the dangers faced by the Freedom Riders. (4 marks)",
@@ -4871,7 +4974,60 @@ Source E is highly useful for showing the extreme level of state resistance to u
         "The significance of Greensboro and the sit-in movement.",
         "Reasons for, key features and significance of the Freedom Riders, including Ku Klux Klan violence and the Anniston bomb (1961).",
         "The James Meredith case (1962)."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "The early 1960s saw a wave of student-led direct action, starting with the Greensboro Sit-ins (1960) and the formation of SNCC. In 1961, CORE organized the Freedom Rides to test terminal desegregation, enduring severe violence that forced federal protection. In 1962, James Meredith integrated the University of Mississippi under armed federal escort.",
+        "interpretation": "Historiographers note a growing tension between older, more cautious legalistic organizations (like the NAACP) and younger, more confrontational student groups (like SNCC and CORE) who demanded immediate integration.",
+        "discussionQuestion": "Why did non-violent direct action prove to be more successful than litigation in forcing federal enforcement of civil rights?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "The Freedom Rides (1961) & Greensboro Sit-ins (1960)",
+        "highlightedPoints": [
+          "greensboro",
+          "anniston",
+          "birmingham",
+          "montgomery",
+          "jackson",
+          "oxford",
+          "washington"
+        ],
+        "drawRoute": [
+          "washington",
+          "greensboro",
+          "anniston",
+          "birmingham",
+          "montgomery",
+          "jackson"
+        ],
+        "description": "Greensboro (North Carolina) launched the lunch counter sit-ins in 1960. In 1961, the Freedom Rides traveled from Washington D.C. down into the Deep South to challenge interstate transit segregation, facing attacks in Anniston, Birmingham, and Montgomery, ending in Jackson, Mississippi. In 1962, James Meredith integrated the university in Oxford, Mississippi.",
+        "points": {
+          "greensboro": {
+            "title": "Greensboro, NC",
+            "text": "Four Black college students staged the Woolworth's lunch counter sit-in here in 1960."
+          },
+          "anniston": {
+            "title": "Anniston, Alabama",
+            "text": "A Freedom Riders' bus was firebombed and the riders beaten by a mob on May 14, 1961."
+          },
+          "birmingham": {
+            "title": "Birmingham, Alabama",
+            "text": "Riders were beaten with pipes by KKK mobs as police commissioner Bull Connor watched."
+          },
+          "jackson": {
+            "title": "Jackson, Mississippi",
+            "text": "Final terminal stop of the Freedom Rides, where riders were immediately arrested."
+          },
+          "oxford": {
+            "title": "Oxford, Mississippi",
+            "text": "James Meredith integrated the University of Mississippi (Ole Miss) in 1962."
+          },
+          "washington": {
+            "title": "Washington D.C.",
+            "text": "Starting point of the CORE Freedom Rides in May 1961."
+          }
+        }
+      }
     },
     "subtopic_2_2": {
       "headerTitle": "KT 2.2 - GCSE CORE MASTERY: A victory of grassroots moral pressure or of Washington political negotiation? Why was landmark legislation passed in 1964\u201365?",
@@ -4984,7 +5140,10 @@ Source E is highly useful for showing the extreme level of state resistance to u
           "answer": "Bull Connor"
         }
       ],
-      "importanceAnalyser": null,
+      "importanceAnalyser": {
+        "question": "Explain the importance of the Selma marches (1965) for the campaign to secure voting rights. (8 marks)",
+        "answer": "Reason 1: The Selma marches were important because the brutal police violence at the Edmund Pettus Bridge, known as 'Bloody Sunday', shocked the nation and galvanized public support. Televised images of state troopers tear-gassing and beating peaceful marchers outraged citizens and forced President Lyndon B. Johnson to intervene, using the federalized National Guard to protect the marchers and pledging to pass voting rights laws.\n\nReason 2: It was also important because it led directly to the passage of the Voting Rights Act of 1965. The march forced Congress to take immediate action, resulting in legislation that banned literacy tests and authorized federal registrars to register voters in discriminatory counties. Within years, Black voter registration in the South skyrocketed (e.g., doubling in Alabama), transforming the political landscape."
+      },
       "questionVault": [
         {
           "question": "Explain why civil rights legislation was passed in the years 1964\u201365. (12 marks)",
@@ -5057,7 +5216,45 @@ Source E is highly useful for showing the political and legislative outcomes of 
         "Freedom Summer and the Mississippi murders.",
         "The impact of peaceful protest and the roles of Presidents Kennedy and Johnson in the passage of the Civil Rights Act (1964).",
         "Selma and the Voting Rights Act (1965)."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "Major non-violent campaigns reached their peak between 1963 and 1965, including the Birmingham Campaign, the March on Washington, Freedom Summer, and the Selma-to-Montgomery March. These protests provoked televised police brutality (like 'Bloody Sunday' in Selma) that shocked the world, forcing the passage of the Civil Rights Act of 1964 and the Voting Rights Act of 1965.",
+        "interpretation": "Historians often view this period as a collaborative triumph between grassroots movements and federal legislative power under President Johnson, though others argue the federal government only acted when domestic disorder threatened national security.",
+        "discussionQuestion": "To what extent did televised media coverage determine the success of civil rights campaigns in Birmingham and Selma?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Birmingham (1963), Washington D.C. (1963) & Selma (1965)",
+        "highlightedPoints": [
+          "birmingham",
+          "washington",
+          "selma",
+          "montgomery"
+        ],
+        "drawRoute": [
+          "selma",
+          "montgomery"
+        ],
+        "description": "In 1963, Martin Luther King Jr. launched Project C in Birmingham, Alabama, and led the March on Washington D.C. In 1965, SCLC organized the historic Selma-to-Montgomery voting rights march, crossing the Edmund Pettus Bridge on Bloody Sunday.",
+        "points": {
+          "birmingham": {
+            "title": "Birmingham, AL",
+            "text": "Where Bull Connor used attack dogs and water cannons against children's marches."
+          },
+          "washington": {
+            "title": "Washington D.C.",
+            "text": "Over 250,000 citizens joined the March on Washington, hearing King's 'I Have a Dream' speech."
+          },
+          "selma": {
+            "title": "Selma, Alabama",
+            "text": "The starting point of the 1965 voting rights marches, where Bloody Sunday occurred."
+          },
+          "montgomery": {
+            "title": "Montgomery, AL",
+            "text": "The state capitol and destination of the 54-mile Selma march."
+          }
+        }
+      }
     },
     "subtopic_2_3": {
       "headerTitle": "KT 2.3 - GCSE CORE MASTERY: A necessary self-defense movement or a destructive split in the struggle? How do interpretations of Black Power differ?",
@@ -5173,7 +5370,10 @@ Source E is highly useful for showing the political and legislative outcomes of 
           "answer": "Nation of Islam"
         }
       ],
-      "importanceAnalyser": null,
+      "importanceAnalyser": {
+        "question": "Explain the importance of Malcolm X for the development of the civil rights movement. (8 marks)",
+        "answer": "Reason 1: Malcolm X was important because he provided a powerful alternative ideology to Martin Luther King Jr.'s non-violent integrationist approach. As the leading spokesperson for the Nation of Islam, he rejected integration, advocating instead for Black nationalism, self-reliance, and self-defense 'by any means necessary'. This ideology resonated deeply with young, urban Black Americans who were frustrated by the slow pace of legal reform.\n\nReason 2: He was also important because his ideas laid the intellectual foundation for the Black Power movement. By emphasizing cultural pride, African heritage, and Black economic independence, Malcolm X inspired SNCC and CORE to move away from non-violence in the mid-1960s, shifting the focus of the civil rights movement from legal desegregation to broader issues of economic and social empowerment."
+      },
       "questionVault": [
         {
           "question": "How useful are Sources B and C for an enquiry into the aims of the Black Panther Party? (8 marks)",
@@ -5248,7 +5448,37 @@ Source E is highly useful for showing how Black Power and militancy were institu
         "Reasons for the emergence of Black Power.",
         "The significance of Stokely Carmichael and the 1968 Mexico Olympics.",
         "The methods and achievements of the Black Panther movement."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "Frustrated by persistent poverty and slow progress, the civil rights movement saw the rise of Black Power. Malcolm X advocated self-defense and Black nationalism, while Stokely Carmichael shifted SNCC away from non-violence. In 1966, Huey Newton and Bobby Seale founded the Black Panther Party, combining armed community patrols with social welfare programs.",
+        "interpretation": "Historians are divided on the legacy of Black Power: some argue it fractured the civil rights coalition and alienated white support, while others argue it built essential racial pride, community self-defense, and addressed northern economic issues.",
+        "discussionQuestion": "Did the Black Power movement strengthen or weaken the overall struggle for Black equality in the United States?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Black Power Movement Hubs & Oakland",
+        "highlightedPoints": [
+          "oakland",
+          "detroit",
+          "chicago",
+          "washington"
+        ],
+        "description": "While Malcolm X and SNCC advocated Black Power in Washington and Northern cities like Chicago and Detroit, Huey Newton and Bobby Seale founded the Black Panther Party in Oakland, California (1966) to patrol neighborhoods.",
+        "points": {
+          "oakland": {
+            "title": "Oakland, California",
+            "text": "Birthplace of the Black Panther Party, who carried weapons for self-defense."
+          },
+          "detroit": {
+            "title": "Detroit, Michigan",
+            "text": "Center of Black Power activism, black nationalist churches, and Nation of Islam temples."
+          },
+          "chicago": {
+            "title": "Chicago, Illinois",
+            "text": "Host to major Black Panther community programs (like Free Breakfasts) and active SNCC groups."
+          }
+        }
+      }
     },
     "subtopic_2_4": {
       "headerTitle": "KT 2.4 - GCSE CORE MASTERY: A violent rebellion against systemic oppression or lawless urban disorder? How should historians explain the riots of 1965\u201368?",
@@ -5360,7 +5590,10 @@ Source E is highly useful for showing how Black Power and militancy were institu
           "answer": "Watts Riots"
         }
       ],
-      "importanceAnalyser": null,
+      "importanceAnalyser": {
+        "question": "Explain the importance of the assassination of Martin Luther King Jr. (1968) for the civil rights movement. (8 marks)",
+        "answer": "Reason 1: The assassination was important because it triggered immediate, massive urban riots across more than 100 U.S. cities, marking the end of the non-violent civil rights era. The outbreak of violence in Washington D.C., Chicago, and elsewhere demonstrated the frustration of Black communities and accelerated the shift toward more militant Black Power ideologies, leaving the movement without its primary unifying figure.\n\nReason 2: It was also important because it shocked Congress into passing the Civil Rights Act of 1968 (the Fair Housing Act) within days of his death. Seeking to calm the riots and honor King's legacy, President Johnson urged Congress to pass the stalled legislation, which banned discrimination in the sale, rental, and financing of housing, representing the final major legislative triumph of the civil rights era."
+      },
       "questionVault": [
         {
           "question": "This suite is based on the following interpretations regarding the 1960s urban riots.",
@@ -5440,7 +5673,42 @@ Source E is highly useful for showing the immediate political and emotional impa
         "King\u2019s campaign in the North.",
         "The assassination of Martin Luther King and its impact.",
         "The extent of progress in civil rights by 1975."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "Tensions boiled over in urban rebellions, including the Watts (1965) and Detroit (1967) riots, which the Kerner Commission (1968) blamed on white racism and ghetto poverty. SCLC's Chicago Campaign (1966) showed the difficulty of fighting northern housing discrimination. On 4 April 1968, Martin Luther King Jr. was assassinated, sparking nationwide riots.",
+        "interpretation": "Historians often mark the assassination of Dr. King as the end of the classic, non-violent civil rights era, leading to a period of increased militancy, political fragmentation, and conservative white backlash.",
+        "discussionQuestion": "Why did the non-violent protest strategies that succeeded in the South fail to address racial inequality in Northern cities?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Race Riots (1965-68) & King's Assassination in Memphis",
+        "highlightedPoints": [
+          "losangeles",
+          "detroit",
+          "chicago",
+          "memphis",
+          "washington"
+        ],
+        "description": "Riots devastated ghetto areas in Watts (Los Angeles) in 1965 and Detroit in 1967. King moved his campaign north to Chicago in 1966, and was tragically assassinated in Memphis, Tennessee, in April 1968, sparking nationwide riots.",
+        "points": {
+          "losangeles": {
+            "title": "Watts, Los Angeles",
+            "text": "Site of the six-day Watts Riot in 1965 that resulted in 34 deaths and massive property damage."
+          },
+          "detroit": {
+            "title": "Detroit, Michigan",
+            "text": "A 1967 riot left 43 dead and required federal paratroopers to restore order."
+          },
+          "chicago": {
+            "title": "Chicago, Illinois",
+            "text": "Target of MLK's 1966 Chicago Freedom Movement to end housing segregation."
+          },
+          "memphis": {
+            "title": "Memphis, Tennessee",
+            "text": "Martin Luther King Jr. was assassinated at the Lorraine Motel on April 4, 1968."
+          }
+        }
+      }
     },
     "subtopic_3_1": {
       "headerTitle": "KT 3.1 - GCSE CORE MASTERY: A noble crusade to protect democracy or an imperialist defense of a corrupt dictatorship? Why did the US support Diem?",
@@ -5642,7 +5910,36 @@ Source E is highly useful for showing the scale of religious opposition that und
       "specPoints": [
         "Reasons for greater US involvement under Eisenhower, including the domino theory and weaknesses of the Diem government.",
         "Greater involvement under Kennedy, including the Strategic Hamlet Program and the overthrow of Diem."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "After the 1954 Geneva Accords partitioned Vietnam, the US backed South Vietnamese dictator Ngo Dinh Diem to prevent the 'Domino Theory' of communist expansion. Diem's corrupt regime, Buddhist persecutions, and the failed Strategic Hamlet Program fueled Vietcong insurgency, leading the US to condone a military coup that overthrew Diem in 1963.",
+        "interpretation": "Historians criticize the US decision to support Diem, arguing that American policy prioritized cold war anti-communism over local democracy, which ultimately locked the US into an unstable and corrupt client state.",
+        "discussionQuestion": "Why did Ngo Dinh Diem's domestic policies undermine South Vietnam's stability and increase peasant support for the Vietcong?"
+      },
+      "mapConfig": {
+        "type": "vietnam",
+        "title": "Partition of Vietnam along the 17th Parallel (1954)",
+        "highlightedPoints": [
+          "hanoi",
+          "saigon",
+          "parallel17"
+        ],
+        "description": "The 1954 Geneva Accords divided Vietnam along the 17th Parallel. Ho Chi Minh controlled the communist North from Hanoi; the US backed Ngo Dinh Diem's capitalist government in Saigon.",
+        "points": {
+          "hanoi": {
+            "title": "Hanoi",
+            "text": "Capital of communist North Vietnam (Democratic Republic of Vietnam)."
+          },
+          "saigon": {
+            "title": "Saigon",
+            "text": "Capital of South Vietnam, backed by the US to resist communist takeover."
+          },
+          "parallel17": {
+            "title": "17th Parallel",
+            "text": "The demilitarized zone (DMZ) dividing line between North and South Vietnam."
+          }
+        }
+      }
     },
     "subtopic_3_2": {
       "headerTitle": "KT 3.2 - GCSE CORE MASTERY: A defensive reaction to foreign aggression or a fabricated excuse for pre-planned war? What caused the escalation of 1964\u201365?",
@@ -5814,7 +6111,33 @@ Source E is highly useful for showing the transition to full combat operations a
       },
       "specPoints": [
         "Reasons for the escalation of the conflict and increased US involvement in Vietnam, including the increasing threat of the Vietcong and the Gulf of Tonkin incident (1964)."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "The Gulf of Tonkin Incident in August 1964 led Congress to pass the Gulf of Tonkin Resolution, granting President Johnson a 'blank check' to escalate combat. In March 1965, US Marines landed at Da Nang, beginning the direct ground war, while communist forces relied on the Ho Chi Minh Trail to supply the insurgency.",
+        "interpretation": "Revisionist historians argue that the Johnson administration manipulated the details of the second Gulf of Tonkin incident to deceive Congress and the public into accepting a pre-planned military escalation.",
+        "discussionQuestion": "Was the escalation of US military involvement in 1964\u201365 inevitable, or was it the result of specific political decisions by President Johnson?"
+      },
+      "mapConfig": {
+        "type": "vietnam",
+        "title": "Gulf of Tonkin (1964) & Combat Deployment (Da Nang 1965)",
+        "highlightedPoints": [
+          "tonkin",
+          "danang",
+          "saigon",
+          "hanoi"
+        ],
+        "description": "Clashes in the Gulf of Tonkin (August 1964) led to the Gulf of Tonkin Resolution. In March 1965, US ground combat troops (Marines) landed at Da Nang beach, rapidy escalating US involvement.",
+        "points": {
+          "tonkin": {
+            "title": "Gulf of Tonkin",
+            "text": "Where US destroyers engaged North Vietnamese torpedo boats, sparking US military escalation."
+          },
+          "danang": {
+            "title": "Da Nang",
+            "text": "First landing site of US combat troops (Marines) and location of a major air base."
+          }
+        }
+      }
     },
     "subtopic_3_3": {
       "headerTitle": "KT 3.3 - GCSE CORE MASTERY: High-tech military efficiency or a counterproductive campaign of terror? Why did US tactics fail to defeat the Vietcong?",
@@ -6006,7 +6329,39 @@ Source E is highly useful for showing the chemical warfare tactics used by the U
         "The methods used by the USA, including Search and Destroy, Operation Rolling Thunder and chemical weapons.",
         "The guerrilla tactics used by the Vietcong.",
         "The key features and significance of the Tet Offensive, 1968."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "The US deployed Operation Rolling Thunder, search-and-destroy missions, and chemical agents (Agent Orange/Napalm) to fight the war, while the Vietcong used guerrilla tactics, tunnel networks, and the Ho Chi Minh Trail. In 1968, the communists launched the Tet Offensive, which was a military defeat for them but a major political and psychological victory that turned the US public against the war.",
+        "interpretation": "Military historians argue that the US won almost every tactical engagement but lost the war strategically because its attrition strategy was countered by the Vietcong's willingness to endure unlimited casualties to exhaust US resolve.",
+        "discussionQuestion": "Why was the Tet Offensive (1968) considered the decisive turning point of the Vietnam War?"
+      },
+      "mapConfig": {
+        "type": "vietnam",
+        "title": "Vietcong Guerrilla Tactics & The Ho Chi Minh Trail",
+        "highlightedPoints": [
+          "hanoi",
+          "laos",
+          "cambodia",
+          "saigon"
+        ],
+        "drawRoute": [
+          "hanoi",
+          "laos",
+          "cambodia",
+          "saigon"
+        ],
+        "description": "To avoid US firepower, the Vietcong used guerrilla tactics and tunnel systems. Supplies and soldiers flowed from Hanoi along the Ho Chi Minh Trail, weaving through neutral Laos and Cambodia into South Vietnam.",
+        "points": {
+          "laos": {
+            "title": "Laos Route",
+            "text": "Laos was bombed heavily by the US but remained the primary corridor for the Ho Chi Minh Trail."
+          },
+          "cambodia": {
+            "title": "Cambodia Route",
+            "text": "Vietcong established supply caches and sanctuaries inside neutral Cambodian territory."
+          }
+        }
+      }
     },
     "subtopic_3_4": {
       "headerTitle": "KT 3.4 - GCSE CORE MASTERY: 'Peace with honour' or a face-saving withdrawal that prolonged the slaughter? How should we evaluate Vietnamization?",
@@ -6202,7 +6557,33 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
         "Key features of Vietnamisation.",
         "Reasons for its failure.",
         "Attacks on Cambodia (1970) and Laos (1971), and the bombing of North Vietnam (1972)."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "President Nixon took office in 1969 promising 'peace with honor'. He introduced 'Vietnamization' to withdraw US troops while training the ARVN, but simultaneously expanded the war by invading Cambodia (1970) and Laos (1971) to destroy sanctuaries. Under advisors Le Duc Tho and Henry Kissinger, peace negotiations slowly progressed.",
+        "interpretation": "Historians argue that Vietnamization was primarily a political strategy to pacify the American electorate, and that Nixon knew the ARVN was too weak to survive without US air power, creating a 'decent interval' before its eventual collapse.",
+        "discussionQuestion": "Did Nixon's policy of Vietnamization succeed in achieving 'peace with honor', or did it merely prolong the conflict?"
+      },
+      "mapConfig": {
+        "type": "vietnam",
+        "title": "Vietnamization & Nixon's Expansion into Cambodia/Laos",
+        "highlightedPoints": [
+          "cambodia",
+          "laos",
+          "hanoi",
+          "saigon"
+        ],
+        "description": "Under Vietnamization, Nixon began withdrawing US ground troops while escalating air warfare. In 1970, US/ARVN forces invaded Cambodia, and in 1971 ARVN invaded Laos to destroy communist sanctuaries, expanding the war zone.",
+        "points": {
+          "cambodia": {
+            "title": "Cambodia Invasion (1970)",
+            "text": "Joint US-ARVN cross-border raid that destroyed Vietcong camps but caused huge political protests in the US."
+          },
+          "laos": {
+            "title": "Laos Invasion (1971)",
+            "text": "ARVN forces invaded to cut the Trail, resulting in a disastrous defeat and proving Vietnamization was failing."
+          }
+        }
+      }
     },
     "subtopic_4_1": {
       "headerTitle": "KT 4.1 - GCSE CORE MASTERY: A patriotic defense of American values or an unpatriotic betrayal of troops? How did the anti-war movement shape public debate?",
@@ -6393,7 +6774,31 @@ Source E is highly useful for showing the lethal escalation of state suppression
         "Public reaction to the My Lai Massacre (1968).",
         "The trial of Lt. Calley.",
         "The student movement and the Kent State University shootings (1970)."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "The US war effort faced massive domestic opposition. Television broadcasts created a 'credibility gap' by exposing the horrors of war and events like the My Lai Massacre (1968). The Selective Service draft system angered youth, and the invasion of Cambodia sparked student strikes, culminating in the National Guard shooting four students at Kent State in 1970.",
+        "interpretation": "Social historians argue that the anti-war movement was highly diverse, consisting of middle-class students, civil rights groups, and working-class draft-resisters, though it also generated a massive conservative backlash.",
+        "discussionQuestion": "How did televised media coverage of the Vietnam War influence the relationship between the US government and the public?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Student Protests & Kent State Shooting (1970)",
+        "highlightedPoints": [
+          "washington",
+          "detroit"
+        ],
+        "description": "As the war escalated, the student movement organized massive protests. At Kent State University (Ohio) in May 1970, National Guardsmen shot and killed 4 student protesters, sparking a nationwide student strike.",
+        "points": {
+          "washington": {
+            "title": "Washington D.C.",
+            "text": "Site of the 1967 March on the Pentagon and other massive anti-war demonstrations."
+          },
+          "detroit": {
+            "title": "Kent State, Ohio",
+            "text": "National Guardsmen fired live rounds into unarmed student demonstrators here, killing 4."
+          }
+        }
+      }
     },
     "subtopic_4_2": {
       "headerTitle": "KT 4.2 - GCSE CORE MASTERY: A quiet majority defending global stability or a conservative backlash against counterculture? Why did many support the war?",
@@ -6583,7 +6988,31 @@ Source E is highly useful for showing the working-class basis of this pro-war su
       "specPoints": [
         "Reasons for support for the war, including the fear of communism and the \u2018silent majority\u2019.",
         "The \u2018hard hats\u2019."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "President Nixon appealed to the 'Silent Majority'\u2014patriotic Americans who supported the war and opposed student protestors. The home front was deeply polarized between hawks and doves, leading to events like the Hard Hat Riots in New York (1970), reflecting wider generational, class, and cultural divisions.",
+        "interpretation": "Political historians argue that Nixon's appeal to the Silent Majority successfully exploited class resentments against elite student protestors, forming the basis of a new conservative political coalition.",
+        "discussionQuestion": "To what extent did divisions over the Vietnam War reflect wider social and cultural conflicts in 1970s America?"
+      },
+      "mapConfig": {
+        "type": "usa",
+        "title": "Silent Majority & Wall Street Hard Hat Riots (1970)",
+        "highlightedPoints": [
+          "washington",
+          "detroit"
+        ],
+        "description": "Nixon appealed to the Silent Majority. In May 1970, working-class pro-war construction workers ('hard hats') marched in support of Nixon in New York City, clashing with anti-war students.",
+        "points": {
+          "washington": {
+            "title": "Washington D.C.",
+            "text": "Where Nixon delivered his Silent Majority television address in November 1969."
+          },
+          "detroit": {
+            "title": "New York City",
+            "text": "Wall Street construction workers beat anti-war student protesters during the Hard Hat Riots."
+          }
+        }
+      }
     },
     "subtopic_4_3": {
       "headerTitle": "KT 4.3 - GCSE CORE MASTERY: A diplomatic triumph of compromise or a betrayal of South Vietnamese sovereignty? Why did South Vietnam collapse so quickly?",
@@ -6758,7 +7187,32 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
         "Reasons for, and key features of, the peace negotiations (1972\u201373).",
         "The significance of the Paris Peace Agreement (1973).",
         "The economic and human costs of the war for the USA."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "In January 1973, the Paris Peace Accords were signed, leading to the withdrawal of US forces. Left without US support, the South Vietnamese government collapsed when NVA forces captured the capital in the Fall of Saigon (1975). The war cost over 58,000 US lives and millions of Vietnamese lives, leaving a legacy of PTSD and the War Powers Act of 1973.",
+        "interpretation": "Historians argue that the Fall of Saigon was the inevitable outcome of a peace accord that allowed North Vietnamese troops to remain in the South, meaning the US withdrawal was a face-saving exit rather than a stable peace.",
+        "discussionQuestion": "What were the most significant political and social consequences of the Vietnam War for the United States?"
+      },
+      "mapConfig": {
+        "type": "vietnam",
+        "title": "Paris Peace Accords (1973) & Fall of Saigon (1975)",
+        "highlightedPoints": [
+          "saigon",
+          "hanoi",
+          "parallel17"
+        ],
+        "description": "The 1973 Paris Peace Accords led to the complete withdrawal of US combat troops. In April 1975, North Vietnamese forces launched their final offensive, capturing Saigon and reunifying the country.",
+        "points": {
+          "saigon": {
+            "title": "Saigon",
+            "text": "Fell to communist forces on April 30, 1975, renamed Ho Chi Minh City."
+          },
+          "hanoi": {
+            "title": "Hanoi",
+            "text": "Capital of North Vietnam, which directed the successful military campaign to capture the South."
+          }
+        }
+      }
     },
     "subtopic_4_4": {
       "headerTitle": "KT 4.4 - GCSE CORE MASTERY: Lost on the battlefield, in the media, or at the ballot box? What was the primary reason for the US failure in Vietnam?",
@@ -6948,7 +7402,35 @@ Source E is highly useful for showing the political and moral collapse of the wa
         "The weaknesses of the US armed forces.",
         "The failure of US tactics.",
         "The impact of opposition to the war in the USA."
-      ]
+      ],
+      "lessonWrapUp": {
+        "summary": "The US failure and communist victory resulted from a combination of factors: the Vietcong's effective guerrilla tactics and local knowledge, the severe corruption and unpopularity of the South Vietnamese government (ARVN), and the collapse of domestic public and political support in the United States.",
+        "interpretation": "Historians debate whether the US lost the war primarily due to military mistakes in the jungles of Vietnam (e.g., search-and-destroy tactics alienating peasants) or due to political collapse on the home front (e.g., anti-war movement and Congress cutting off funding).",
+        "discussionQuestion": "Was the corruption of the South Vietnamese government (ARVN) more responsible for the US defeat than the military strength of the Vietcong?"
+      },
+      "mapConfig": {
+        "type": "vietnam",
+        "title": "Why the US Failed: Areas of Conflict",
+        "highlightedPoints": [
+          "hanoi",
+          "saigon",
+          "tonkin",
+          "danang",
+          "laos",
+          "cambodia"
+        ],
+        "description": "A geographical summary of US failure: North Vietnamese aid (from USSR/China) flowed through Hanoi, down the Ho Chi Minh Trail in Laos and Cambodia, avoiding US conventional bases in Da Nang and Saigon.",
+        "points": {
+          "hanoi": {
+            "title": "North Vietnam",
+            "text": "Sustained supply lines and air defenses with Soviet and Chinese military hardware."
+          },
+          "saigon": {
+            "title": "South Vietnam",
+            "text": "Could not protect rural areas from Vietcong guerrilla infiltration and collapsed after US aid cuts."
+          }
+        }
+      }
     }
   };
 
@@ -8865,6 +9347,179 @@ Source E is highly useful for showing the political and moral collapse of the wa
     }
   };
 
+  // src/image_links.js
+  var IMAGE_WEB_LINKS = {
+    "agent-orange-spraying-c123.jpg": "https://catalog.archives.gov/id/12005971",
+    "airborne-little-rock-patrol.jpg": "https://catalog.archives.gov/id/16913988",
+    "antiwar-pentagon-protest-1967.jpg": "https://catalog.archives.gov/id/596071",
+    "arvn-troops-combat.jpg": "https://commons.wikimedia.org/wiki/File:ARVN_troops_in_action_1968.jpg",
+    "birmingham-protests-dogs-1963.jpg": "https://www.loc.gov/item/2012649195/",
+    "black-panthers-marching.jpg": "https://commons.wikimedia.org/wiki/File:Black_Panthers_at_Free_Huey_rally.jpg",
+    "buddhist-protests-1963.jpg": "https://commons.wikimedia.org/wiki/File:Thich_Quang_Duc_self-immolation.jpg",
+    "colored-waiting-room-sign.jpg": "https://www.loc.gov/item/2020635235/",
+    "detroit-riot-guard-1967.jpg": "https://commons.wikimedia.org/wiki/File:Detroit_riot_1967_guardsman.jpg",
+    "eisenhower-little-rock-speech.jpg": "https://www.eisenhowerlibrary.gov/research/online-documents/integration-little-rock-central-high-school",
+    "freedom-riders-bus-1961.jpg": "https://catalog.archives.gov/id/2641505",
+    "freedom-riders-bus-wreckage.jpg": "https://www.loc.gov/item/2001697368/",
+    "general-westmoreland.jpg": "https://catalog.archives.gov/id/6410427",
+    "greensboro-sit-in-counter.jpg": "https://americanhistory.si.edu/collections/search/object/nmah_1350486",
+    "hard-hat-riot-1970.jpg": "https://commons.wikimedia.org/wiki/File:Hard_Hat_Riot.jpg",
+    "ho-chi-minh-trail-bicycles.jpg": "https://commons.wikimedia.org/wiki/File:Viet_Cong_on_Ho_Chi_Minh_Trail.jpg",
+    "huey-helicopter-vietnam.jpg": "https://catalog.archives.gov/id/530616",
+    "james-meredith-walking.jpg": "https://www.loc.gov/item/2011661339/",
+    "kent-state-protests-1970.jpg": "https://commons.wikimedia.org/wiki/File:Kent_State_massacre_1970.jpg",
+    "kissinger-peace-talks.jpg": "https://commons.wikimedia.org/wiki/File:Kissinger_peace_talks_1972.jpg",
+    "kkk-march-washington-1926.jpg": "https://www.loc.gov/item/90707736/",
+    "lbj-mlk-signing-1964.jpg": "https://catalog.archives.gov/id/194244",
+    "lbj-signing-voting-rights-1965.jpg": "https://www.lbjlibrary.org/news-and-press/press-kits/voting-rights-act-of-1965",
+    "little-rock-nine-1957.jpg": "https://catalog.archives.gov/id/23871158",
+    "little-rock-protest-1957.jpg": "https://www.loc.gov/item/2003654385/",
+    "malcolm-x-newspaper.jpg": "https://www.loc.gov/item/2003688134/",
+    "malcolm-x-speaking.jpg": "https://commons.wikimedia.org/wiki/File:Malcolm_X_NYWTS_2.jpg",
+    "march-on-washington-crowd.jpg": "https://catalog.archives.gov/id/542015",
+    "marines-landing-danang.jpg": "https://commons.wikimedia.org/wiki/File:US_Marines_landing_at_Da_Nang_1965.jpg",
+    "mlk-boycott-speech-1955.jpg": "https://commons.wikimedia.org/wiki/File:Martin_Luther_King_Jr_at_boycott_meeting_1955.jpg",
+    "mlk-dream-speech-1963.jpg": "https://www.loc.gov/item/2013648056/",
+    "mlk-waving-washington-1963.jpg": "https://www.loc.gov/item/2013648056/",
+    "mourners-mlk-assassination.jpg": "https://www.loc.gov/item/2018649807/",
+    "ngo-dinh-diem-parade.jpg": "https://commons.wikimedia.org/wiki/File:Ngo_Dinh_Diem_and_Eisenhower_1957.jpg",
+    "nixon-television-address.jpg": "https://commons.wikimedia.org/wiki/File:Richard_Nixon_television_address_1969.jpg",
+    "nixon-visiting-troops.jpg": "https://commons.wikimedia.org/wiki/File:Richard_Nixon_with_US_troops_in_Vietnam_1969.jpg",
+    "olympics-black-power-1968.jpg": "https://commons.wikimedia.org/wiki/File:1968_Olympics_Black_Power_salute.jpg",
+    "paris-peace-accords-signing.jpg": "https://commons.wikimedia.org/wiki/File:Signing_of_the_Paris_Peace_Accords_1973.jpg",
+    "poor-peoples-campaign-1968.jpg": "https://www.loc.gov/item/2018649495/",
+    "pro-war-rally-nyc.jpg": "https://commons.wikimedia.org/wiki/File:Pro-war_demonstration_in_New_York_City,_1967.jpg",
+    "robert-mcnamara-briefing.jpg": "https://commons.wikimedia.org/wiki/File:Robert_McNamara_briefing_1965.jpg",
+    "rosa-parks-bus-1956.jpg": "https://www.loc.gov/item/2015647576/",
+    "rosa-parks-fingerprint.jpg": "https://catalog.archives.gov/id/596390",
+    "saigon-embassy-evacuation.jpg": "https://catalog.archives.gov/id/530869",
+    "selma-troopers-bridge.jpg": "https://www.loc.gov/item/2012649206/",
+    "southern-manifesto-signing.jpg": "https://www.senate.gov/artandhistory/history/common/generic/CivilRights_SouthernManifesto.htm",
+    "us-soldier-patrolling-swamp.jpg": "https://catalog.archives.gov/id/531454",
+    "us-troops-bogged-down.jpg": "https://catalog.archives.gov/id/531452",
+    "uss-maddox.jpg": "https://catalog.archives.gov/id/595874",
+    "vietnam-draft-lottery.jpg": "https://commons.wikimedia.org/wiki/File:1969_draft_lottery_wheel.jpg",
+    "vvaw-veterans-protest.jpg": "https://commons.wikimedia.org/wiki/File:VVAW_demonstration,_Washington,_D.C.,_1971.jpg",
+    "warren-court-1954.jpg": "https://commons.wikimedia.org/wiki/File:Warren_court.jpg"
+  };
+  function getImageWebLink(src, altText = "") {
+    if (!src) return "https://www.google.com/imghp";
+    const filename = src.split("/").pop().toLowerCase();
+    if (IMAGE_WEB_LINKS[filename]) {
+      return IMAGE_WEB_LINKS[filename];
+    }
+    const query = altText || filename.replace(/-|_/g, " ").replace(/\.[a-z0-9]+$/i, "");
+    return `https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(query)}`;
+  }
+
+  // src/taboo_data.js
+  var TABOO_CARDS = {
+    "People": [
+      {
+        "target": "Martin Luther King Jr.",
+        "taboo": ["Dream", "March", "Assassinated", "SCLC", "Non-violent"]
+      },
+      {
+        "target": "Ngo Dinh Diem",
+        "taboo": ["South Vietnam", "Catholic", "Corrupt", "Assassinated", "President"]
+      },
+      {
+        "target": "Malcolm X",
+        "taboo": ["Nation of Islam", "Assassinated", "Any Means Necessary", "Black Power", "Non-violent"]
+      },
+      {
+        "target": "Lyndon B. Johnson (LBJ)",
+        "taboo": ["President", "Escalation", "Great Society", "Gulf of Tonkin", "Kennedy"]
+      },
+      {
+        "target": "Rosa Parks",
+        "taboo": ["Bus", "Montgomery", "Boycott", "Seat", "Arrested"]
+      },
+      {
+        "target": "Eugene 'Bull' Connor",
+        "taboo": ["Police", "Birmingham", "Dogs", "Hoses", "Chief"]
+      }
+    ],
+    "Places": [
+      {
+        "target": "Little Rock High School",
+        "taboo": ["Nine", "Arkansas", "Education", "Eisenhower", "Faubus"]
+      },
+      {
+        "target": "Dien Bien Phu",
+        "taboo": ["French", "Battle", "Surrender", "Defeat", "1954"]
+      },
+      {
+        "target": "Ho Chi Minh Trail",
+        "taboo": ["Supply", "Route", "Laos", "Cambodia", "Jungle"]
+      },
+      {
+        "target": "My Lai",
+        "taboo": ["Massacre", "Civilians", "Charlie Company", "Calley", "Cover-up"]
+      },
+      {
+        "target": "Kent State University",
+        "taboo": ["Shootings", "Students", "National Guard", "Ohio", "Cambodia"]
+      },
+      {
+        "target": "Selma",
+        "taboo": ["Bloody Sunday", "Bridge", "Voting", "March", "Alabama"]
+      }
+    ],
+    "Things": [
+      {
+        "target": "Jim Crow Laws",
+        "taboo": ["Segregation", "South", "Separate", "Legal", "Rules"]
+      },
+      {
+        "target": "The Draft (Conscription)",
+        "taboo": ["Soldiers", "Avoid", "Ticket", "Unfair", "Lottery"]
+      },
+      {
+        "target": "Agent Orange",
+        "taboo": ["Chemical", "Defoliant", "Jungle", "Trees", "Birth Defects"]
+      },
+      {
+        "target": "Domino Theory",
+        "taboo": ["Fall", "Communism", "Eisenhower", "Spread", "Asia"]
+      },
+      {
+        "target": "Vietnamisation",
+        "taboo": ["Nixon", "ARVN", "Withdraw", "Troops", "Train"]
+      },
+      {
+        "target": "Black Power",
+        "taboo": ["Stokely Carmichael", "Panthers", "Fist", "Salute", "Radical"]
+      }
+    ],
+    "Events": [
+      {
+        "target": "Tet Offensive",
+        "taboo": ["1968", "Surprise", "Embassy", "New Year", "Turning Point"]
+      },
+      {
+        "target": "Montgomery Bus Boycott",
+        "taboo": ["Rosa Parks", "381 Days", "MIA", "Walk", "Transport"]
+      },
+      {
+        "target": "Gulf of Tonkin Incident",
+        "taboo": ["USS Maddox", "Ship", "Torpedo", "Blank Cheque", "Escalation"]
+      },
+      {
+        "target": "March on Washington",
+        "taboo": ["Dream", "Speech", "1963", "MLK", "250,000"]
+      },
+      {
+        "target": "Freedom Summer",
+        "taboo": ["Voting", "Mississippi", "Murders", "1964", "SNCC"]
+      },
+      {
+        "target": "Operation Rolling Thunder",
+        "taboo": ["Bombing", "Air", "North", "Johnson", "Campaign"]
+      }
+    ]
+  };
+
   // src/views.js
   var GOOGLE_SHEET_WEBAPP_URL = "";
   function renderSidebarNav() {
@@ -9042,18 +9697,20 @@ Source E is highly useful for showing the political and moral collapse of the wa
     const tabMastery = document.getElementById("btn-tab-game-mastery");
     const tabDecisions = document.getElementById("btn-tab-game-decisions");
     const tabMindMap = document.getElementById("btn-tab-game-mindmap");
+    const tabTaboo = document.getElementById("btn-tab-game-taboo");
     const paneCausal = document.getElementById("game-causal-container");
     const paneChronology = document.getElementById("game-chronology-container");
     const paneMastery = document.getElementById("game-mastery-container");
     const paneDecisions = document.getElementById("game-decisions-container");
     const paneMindMap = document.getElementById("game-mindmap-container");
-    if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap) {
+    const paneTaboo = document.getElementById("game-taboo-container");
+    if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo) {
       const showCausal = () => {
         tabCausal.classList.add("active");
         tabCausal.style.borderColor = "var(--primary)";
         tabCausal.style.color = "var(--primary)";
         tabCausal.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabChronology, tabMastery, tabDecisions, tabMindMap].forEach((t) => {
+        [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -9064,13 +9721,14 @@ Source E is highly useful for showing the political and moral collapse of the wa
         paneMastery.style.display = "none";
         paneDecisions.style.display = "none";
         paneMindMap.style.display = "none";
+        paneTaboo.style.display = "none";
       };
       const showChronology = () => {
         tabChronology.classList.add("active");
         tabChronology.style.borderColor = "var(--primary)";
         tabChronology.style.color = "var(--primary)";
         tabChronology.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabMastery, tabDecisions, tabMindMap].forEach((t) => {
+        [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -9081,6 +9739,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
         paneMastery.style.display = "none";
         paneDecisions.style.display = "none";
         paneMindMap.style.display = "none";
+        paneTaboo.style.display = "none";
         initChronologyGame();
       };
       const showMastery = () => {
@@ -9088,7 +9747,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
         tabMastery.style.borderColor = "var(--primary)";
         tabMastery.style.color = "var(--primary)";
         tabMastery.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabDecisions, tabMindMap].forEach((t) => {
+        [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -9099,6 +9758,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
         paneMastery.style.display = "block";
         paneDecisions.style.display = "none";
         paneMindMap.style.display = "none";
+        paneTaboo.style.display = "none";
         initMasteryMatchGame();
       };
       const showDecisions = () => {
@@ -9106,7 +9766,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
         tabDecisions.style.borderColor = "var(--primary)";
         tabDecisions.style.color = "var(--primary)";
         tabDecisions.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabMindMap].forEach((t) => {
+        [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -9117,6 +9777,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
         paneMastery.style.display = "none";
         paneDecisions.style.display = "block";
         paneMindMap.style.display = "none";
+        paneTaboo.style.display = "none";
         initDecisionsGame();
       };
       const showMindMap = () => {
@@ -9124,7 +9785,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
         tabMindMap.style.borderColor = "var(--primary)";
         tabMindMap.style.color = "var(--primary)";
         tabMindMap.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions].forEach((t) => {
+        [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -9135,7 +9796,27 @@ Source E is highly useful for showing the political and moral collapse of the wa
         paneMastery.style.display = "none";
         paneDecisions.style.display = "none";
         paneMindMap.style.display = "block";
+        paneTaboo.style.display = "none";
         initMindMapGame();
+      };
+      const showTaboo = () => {
+        tabTaboo.classList.add("active");
+        tabTaboo.style.borderColor = "var(--primary)";
+        tabTaboo.style.color = "var(--primary)";
+        tabTaboo.style.background = "rgba(59, 130, 246, 0.1)";
+        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap].forEach((t) => {
+          t.classList.remove("active");
+          t.style.borderColor = "var(--border-glass)";
+          t.style.color = "var(--text-muted)";
+          t.style.background = "rgba(255,255,255,0.03)";
+        });
+        paneCausal.style.display = "none";
+        paneChronology.style.display = "none";
+        paneMastery.style.display = "none";
+        paneDecisions.style.display = "none";
+        paneMindMap.style.display = "none";
+        paneTaboo.style.display = "block";
+        initTabooGame();
       };
       tabCausal.addEventListener("click", () => {
         AudioEngine.play("click");
@@ -9156,6 +9837,10 @@ Source E is highly useful for showing the political and moral collapse of the wa
       tabMindMap.addEventListener("click", () => {
         AudioEngine.play("click");
         showMindMap();
+      });
+      tabTaboo.addEventListener("click", () => {
+        AudioEngine.play("click");
+        showTaboo();
       });
     }
   }
@@ -10962,6 +11647,27 @@ Source E is highly useful for showing the political and moral collapse of the wa
       });
       wrapper.appendChild(item);
     });
+    wrapper.querySelectorAll("img").forEach((img) => {
+      if (img.parentElement.tagName !== "A") {
+        const webUrl = getImageWebLink(img.getAttribute("src"), img.getAttribute("alt"));
+        const link = document.createElement("a");
+        link.href = webUrl;
+        link.target = "_blank";
+        link.style.display = "block";
+        link.style.cursor = "zoom-in";
+        img.parentNode.insertBefore(link, img);
+        link.appendChild(img);
+        const inspectDiv = document.createElement("div");
+        inspectDiv.style.textAlign = "center";
+        inspectDiv.style.marginTop = "4px";
+        inspectDiv.innerHTML = `
+        <a href="${webUrl}" target="_blank" style="color: var(--primary); font-size: 0.72rem; text-decoration: underline; font-family: var(--font-body); display: inline-flex; align-items: center; gap: 4px;">
+          <i class="fa-solid fa-up-right-from-square"></i> Verify Source
+        </a>
+      `;
+        link.parentNode.insertBefore(inspectDiv, link.nextSibling);
+      }
+    });
   }
   function evaluateStudentAnswer(type, questionObj, userAnswer) {
     const cleanAns = (userAnswer || "").trim().toLowerCase();
@@ -12461,6 +13167,485 @@ Source E is highly useful for showing the political and moral collapse of the wa
       });
     }
   }
+  var tabooState = {
+    teams: [],
+    currentTeamIndex: 0,
+    currentRound: 1,
+    totalRounds: 3,
+    timeLimit: 60,
+    timeLeft: 60,
+    timerInterval: null,
+    activeCategories: [],
+    cardsPool: [],
+    currentCardIndex: 0,
+    currentCard: null,
+    turnScore: 0,
+    turnLogs: []
+  };
+  function tabooShuffleArray(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+  function initTabooGame() {
+    const container = document.getElementById("taboo-game-play-area");
+    if (!container) return;
+    if (tabooState.timerInterval) {
+      clearInterval(tabooState.timerInterval);
+      tabooState.timerInterval = null;
+    }
+    container.innerHTML = `
+    <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto;">
+      <div class="taboo-setup-section">
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-top: 0; margin-bottom: 12px; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-gear" style="color: var(--primary);"></i> Game Settings
+        </h3>
+        
+        <!-- Number of Teams -->
+        <div class="form-group" style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+          <label class="taboo-team-label">Number of Teams</label>
+          <select id="taboo-setup-team-count" class="select-input" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-main); font-size: 0.9rem; outline: none; cursor: pointer;">
+            <option value="2" selected>2 Teams</option>
+            <option value="3">3 Teams</option>
+            <option value="4">4 Teams</option>
+            <option value="5">5 Teams</option>
+            <option value="6">6 Teams</option>
+          </select>
+        </div>
+
+        <!-- Team Names Grid -->
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label class="taboo-team-label">Team Names</label>
+          <div id="taboo-setup-teams-list" class="taboo-teams-grid">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Turn Duration & Rounds -->
+        <div style="display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap;">
+          <div class="form-group" style="flex: 1; min-width: 120px; display: flex; flex-direction: column; gap: 6px;">
+            <label class="taboo-team-label">Time Limit per Turn</label>
+            <select id="taboo-setup-time-limit" class="select-input" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-main); font-size: 0.9rem; outline: none; cursor: pointer;">
+              <option value="30">30 Seconds</option>
+              <option value="45">45 Seconds</option>
+              <option value="60" selected>60 Seconds</option>
+              <option value="90">90 Seconds</option>
+              <option value="120">120 Seconds</option>
+            </select>
+          </div>
+          <div class="form-group" style="flex: 1; min-width: 120px; display: flex; flex-direction: column; gap: 6px;">
+            <label class="taboo-team-label">Number of Rounds</label>
+            <select id="taboo-setup-rounds" class="select-input" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-main); font-size: 0.9rem; outline: none; cursor: pointer;">
+              <option value="1">1 Round</option>
+              <option value="2">2 Rounds</option>
+              <option value="3" selected>3 Rounds</option>
+              <option value="4">4 Rounds</option>
+              <option value="5">5 Rounds</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Category Select -->
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label class="taboo-team-label">Select Categories</label>
+          <div class="taboo-categories-list">
+            <label class="taboo-category-checkbox-wrapper">
+              <input type="checkbox" name="taboo-category" value="People" checked>
+              <span>People</span>
+            </label>
+            <label class="taboo-category-checkbox-wrapper">
+              <input type="checkbox" name="taboo-category" value="Places" checked>
+              <span>Places</span>
+            </label>
+            <label class="taboo-category-checkbox-wrapper">
+              <input type="checkbox" name="taboo-category" value="Things" checked>
+              <span>Things (Concepts & Laws)</span>
+            </label>
+            <label class="taboo-category-checkbox-wrapper">
+              <input type="checkbox" name="taboo-category" value="Events" checked>
+              <span>Events</span>
+            </label>
+          </div>
+        </div>
+
+        <button id="btn-taboo-start" class="btn-primary" style="width: 100%; padding: 12px; font-weight: 700; font-size: 1rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fa-solid fa-circle-play"></i> Start Taboo Game
+        </button>
+      </div>
+    </div>
+  `;
+    const teamCountSelect = document.getElementById("taboo-setup-team-count");
+    const teamsListContainer = document.getElementById("taboo-setup-teams-list");
+    const updateTeamFields = () => {
+      const count = parseInt(teamCountSelect.value);
+      let fieldsHtml = "";
+      for (let i = 1; i <= count; i++) {
+        fieldsHtml += `
+        <div class="taboo-team-field">
+          <label class="taboo-team-label" style="font-size: 0.65rem;">Team ${i} Name</label>
+          <input type="text" class="taboo-input taboo-team-name-input" value="Team ${i}" data-index="${i - 1}">
+        </div>
+      `;
+      }
+      teamsListContainer.innerHTML = fieldsHtml;
+    };
+    teamCountSelect.addEventListener("change", () => {
+      AudioEngine.play("click");
+      updateTeamFields();
+    });
+    updateTeamFields();
+    document.getElementById("btn-taboo-start").addEventListener("click", () => {
+      AudioEngine.play("click");
+      startTabooGame();
+    });
+  }
+  function startTabooGame() {
+    const teamCountSelect = document.getElementById("taboo-setup-team-count");
+    if (!teamCountSelect) return;
+    const timeLimitSelect = document.getElementById("taboo-setup-time-limit");
+    const roundsSelect = document.getElementById("taboo-setup-rounds");
+    const timeLimit = parseInt(timeLimitSelect.value);
+    const totalRounds = parseInt(roundsSelect.value);
+    const teamInputs = document.querySelectorAll(".taboo-team-name-input");
+    const teams = [];
+    teamInputs.forEach((input) => {
+      teams.push({
+        name: input.value.trim() || `Team ${parseInt(input.dataset.index) + 1}`,
+        score: 0
+      });
+    });
+    const categoryCheckboxes = document.querySelectorAll('input[name="taboo-category"]:checked');
+    const activeCategories = Array.from(categoryCheckboxes).map((cb) => cb.value);
+    if (activeCategories.length === 0) {
+      alert("Please select at least one category to play.");
+      return;
+    }
+    let rawPool = [];
+    activeCategories.forEach((cat) => {
+      if (TABOO_CARDS[cat]) {
+        const cards = TABOO_CARDS[cat].map((card) => ({ ...card, category: cat }));
+        rawPool = rawPool.concat(cards);
+      }
+    });
+    if (rawPool.length === 0) {
+      alert("No taboo cards found in the selected categories.");
+      return;
+    }
+    tabooState.teams = teams;
+    tabooState.currentTeamIndex = 0;
+    tabooState.currentRound = 1;
+    tabooState.totalRounds = totalRounds;
+    tabooState.timeLimit = timeLimit;
+    tabooState.activeCategories = activeCategories;
+    tabooState.cardsPool = tabooShuffleArray(rawPool);
+    tabooState.currentCardIndex = 0;
+    renderTabooTurnTransition();
+  }
+  function renderTabooTurnTransition() {
+    const container = document.getElementById("taboo-game-play-area");
+    if (!container) return;
+    const currentTeam = tabooState.teams[tabooState.currentTeamIndex];
+    let scoreboardRowsHtml = tabooState.teams.map((t, idx) => {
+      const isCurrent = idx === tabooState.currentTeamIndex;
+      return `
+      <tr class="${isCurrent ? "current-team" : ""}" style="${isCurrent ? "font-weight: bold; border-left: 3px solid var(--primary);" : ""}">
+        <td>${t.name} ${isCurrent ? ' <span style="font-size: 0.7rem; background: var(--primary); color: black; padding: 2px 6px; border-radius: 4px; font-weight: bold;">UP NEXT</span>' : ""}</td>
+        <td style="text-align: right; font-weight: 700;">${t.score} pts</td>
+      </tr>
+    `;
+    }).join("");
+    container.innerHTML = `
+    <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <div class="taboo-setup-section" style="padding: 30px;">
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">
+          Round ${tabooState.currentRound} of ${tabooState.totalRounds}
+        </span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 16px 0;">
+          ${currentTeam.name}'s Turn
+        </h2>
+        
+        <div class="info-alert" style="margin-bottom: 24px; padding: 14px 16px; background: rgba(56, 189, 248, 0.08); border-left: 4px solid var(--primary); text-align: left; border-radius: 4px;">
+          <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
+            <strong>Guesser:</strong> Sit with your back to the screen.<br>
+            <strong>Team Members:</strong> Face the screen and describe the target words. Do NOT use the target word or any of the 5 listed Taboo words!
+          </p>
+        </div>
+
+        <button id="btn-taboo-start-turn" class="btn-primary" style="width: 100%; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px;">
+          <i class="fa-solid fa-play"></i> Start Turn (${tabooState.timeLimit}s)
+        </button>
+
+        <div style="border-top: 1px solid var(--border-glass); padding-top: 20px; text-align: left;">
+          <h4 style="margin: 0 0 12px 0; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Current Standings</h4>
+          <table class="taboo-scoreboard-table">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th style="text-align: right;">Total Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${scoreboardRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+    document.getElementById("btn-taboo-start-turn").addEventListener("click", () => {
+      AudioEngine.play("click");
+      startTabooTurn();
+    });
+  }
+  function startTabooTurn() {
+    tabooState.turnScore = 0;
+    tabooState.timeLeft = tabooState.timeLimit;
+    tabooState.turnLogs = [];
+    renderTabooPlayScreen();
+    drawNextTabooCard();
+    const timerBadge = document.getElementById("taboo-timer");
+    tabooState.timerInterval = setInterval(() => {
+      tabooState.timeLeft--;
+      if (timerBadge) {
+        timerBadge.textContent = `${tabooState.timeLeft}s`;
+        if (tabooState.timeLeft <= 10) {
+          timerBadge.classList.add("flashing");
+        }
+      }
+      if (tabooState.timeLeft <= 0) {
+        handleTabooTimerEnd();
+      }
+    }, 1e3);
+  }
+  function renderTabooPlayScreen() {
+    const container = document.getElementById("taboo-game-play-area");
+    if (!container) return;
+    const currentTeam = tabooState.teams[tabooState.currentTeamIndex];
+    container.innerHTML = `
+    <div class="taboo-play-wrapper">
+      
+      <!-- Top Stats Bar -->
+      <div class="taboo-timer-container">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: bold; display: block;">Team Playing</span>
+          <strong style="color: var(--primary); font-size: 1rem;">${currentTeam.name}</strong>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: bold; display: block;">Turn Score</span>
+          <strong id="taboo-turn-score" style="color: var(--success); font-size: 1.1rem;">0</strong>
+        </div>
+        <div style="text-align: right;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: bold; display: block;">Time Left</span>
+          <div id="taboo-timer" class="taboo-timer-badge">${tabooState.timeLeft}s</div>
+        </div>
+      </div>
+
+      <!-- Taboo Card Area -->
+      <div id="taboo-card-container" style="width: 100%; display: flex; justify-content: center;">
+        <!-- Card gets injected here -->
+      </div>
+
+      <!-- Controls -->
+      <div style="display: flex; gap: 16px; width: 100%; max-width: 500px; margin-top: 10px;">
+        <button id="btn-taboo-skip" class="taboo-btn-red">
+          <i class="fa-solid fa-ban"></i> Taboo / Skip (0)
+        </button>
+        <button id="btn-taboo-correct" class="taboo-btn-green">
+          <i class="fa-solid fa-circle-check"></i> Correct (+1)
+        </button>
+      </div>
+
+      <button id="btn-taboo-end-early" class="btn-secondary" style="margin-top: 16px; padding: 8px 16px; font-size: 0.8rem; font-weight: 600;">
+        <i class="fa-solid fa-square-minus"></i> End Turn Early
+      </button>
+
+    </div>
+  `;
+    document.getElementById("btn-taboo-correct").addEventListener("click", () => {
+      AudioEngine.play("success");
+      recordCardResult(true);
+      drawNextTabooCard();
+    });
+    document.getElementById("btn-taboo-skip").addEventListener("click", () => {
+      AudioEngine.play("fail");
+      recordCardResult(false);
+      drawNextTabooCard();
+    });
+    document.getElementById("btn-taboo-end-early").addEventListener("click", () => {
+      AudioEngine.play("click");
+      handleTabooTimerEnd();
+    });
+  }
+  function recordCardResult(isCorrect) {
+    if (!tabooState.currentCard) return;
+    if (isCorrect) {
+      tabooState.turnScore++;
+      document.getElementById("taboo-turn-score").textContent = tabooState.turnScore;
+    }
+    tabooState.turnLogs.push({
+      target: tabooState.currentCard.target,
+      status: isCorrect ? "correct" : "skip"
+    });
+  }
+  function drawNextTabooCard() {
+    const cardContainer = document.getElementById("taboo-card-container");
+    if (!cardContainer) return;
+    if (tabooState.currentCardIndex >= tabooState.cardsPool.length) {
+      let rawPool = [];
+      tabooState.activeCategories.forEach((cat) => {
+        if (TABOO_CARDS[cat]) {
+          rawPool = rawPool.concat(TABOO_CARDS[cat].map((c) => ({ ...c, category: cat })));
+        }
+      });
+      tabooState.cardsPool = tabooShuffleArray(rawPool);
+      tabooState.currentCardIndex = 0;
+    }
+    const card = tabooState.cardsPool[tabooState.currentCardIndex];
+    tabooState.currentCard = card;
+    tabooState.currentCardIndex++;
+    const listItemsHtml = card.taboo.map((word) => `
+    <div class="taboo-forbidden-word-box">${word}</div>
+  `).join("");
+    cardContainer.innerHTML = `
+    <div class="taboo-game-card glowing">
+      <span class="taboo-card-category-badge">${card.category}</span>
+      <h2 class="taboo-card-target-word">${card.target}</h2>
+      
+      <div class="taboo-card-forbidden-section">
+        <span class="taboo-forbidden-title">\u{1F6AB} Forbidden Taboo Words:</span>
+        <div class="taboo-forbidden-words-container">
+          ${listItemsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+  }
+  function handleTabooTimerEnd() {
+    if (tabooState.timerInterval) {
+      clearInterval(tabooState.timerInterval);
+      tabooState.timerInterval = null;
+    }
+    const currentTeam = tabooState.teams[tabooState.currentTeamIndex];
+    currentTeam.score += tabooState.turnScore;
+    const container = document.getElementById("taboo-game-play-area");
+    if (!container) return;
+    let logsHtml = tabooState.turnLogs.map((log) => `
+    <div style="display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.88rem;">
+      <span style="color: #fff; font-weight: 500;">${log.target}</span>
+      <span style="font-weight: 700; color: ${log.status === "correct" ? "var(--success)" : "var(--accent)"}; font-size: 0.75rem; text-transform: uppercase;">
+        ${log.status === "correct" ? "\u2713 Correct" : "\u2717 Skipped"}
+      </span>
+    </div>
+  `).join("");
+    if (tabooState.turnLogs.length === 0) {
+      logsHtml = `<p style="margin: 0; text-align: center; font-size: 0.88rem; color: var(--text-muted); padding: 12px 0;">No words played this turn.</p>`;
+    }
+    container.innerHTML = `
+    <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <div class="taboo-setup-section" style="padding: 30px;">
+        <span style="font-size: 2.5rem; color: var(--success); display: block; margin-bottom: 12px;">\u23F0</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #fff; margin: 0 0 8px 0;">Turn Completed!</h2>
+        <p style="margin: 0 0 24px 0; color: var(--text-muted); font-size: 0.95rem;">
+          <strong>${currentTeam.name}</strong> scored <strong style="color: var(--success); font-size: 1.15rem;">+${tabooState.turnScore}</strong> points this round.
+        </p>
+
+        <!-- Turn Log -->
+        <div style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-glass); border-radius: 4px; padding: 14px; text-align: left; margin-bottom: 24px; max-height: 200px; overflow-y: auto;">
+          <h4 style="margin: 0 0 10px 0; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Round Log</h4>
+          ${logsHtml}
+        </div>
+
+        <button id="btn-taboo-next-turn" class="btn-primary" style="width: 100%; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          Continue <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  `;
+    document.getElementById("btn-taboo-next-turn").addEventListener("click", () => {
+      AudioEngine.play("click");
+      progressTabooGame();
+    });
+  }
+  function progressTabooGame() {
+    tabooState.currentTeamIndex++;
+    if (tabooState.currentTeamIndex >= tabooState.teams.length) {
+      tabooState.currentTeamIndex = 0;
+      tabooState.currentRound++;
+    }
+    if (tabooState.currentRound > tabooState.totalRounds) {
+      endTabooGame();
+    } else {
+      renderTabooTurnTransition();
+    }
+  }
+  function endTabooGame() {
+    const container = document.getElementById("taboo-game-play-area");
+    if (!container) return;
+    AudioEngine.play("cheer");
+    Confetti.trigger();
+    let maxScore = -1;
+    tabooState.teams.forEach((t) => {
+      if (t.score > maxScore) maxScore = t.score;
+    });
+    const winners = tabooState.teams.filter((t) => t.score === maxScore);
+    let winMessage = "";
+    if (winners.length === 1) {
+      winMessage = `<strong style="color: var(--primary); font-size: 1.5rem;">\u{1F451} ${winners[0].name} Wins!</strong>`;
+    } else {
+      winMessage = `<strong style="color: var(--primary); font-size: 1.4rem;">\u{1F91D} It's a Tie between: ${winners.map((w) => w.name).join(", ")}!</strong>`;
+    }
+    const sortedTeams = [...tabooState.teams].sort((a, b) => b.score - a.score);
+    let scoreboardRowsHtml = sortedTeams.map((t, idx) => {
+      const isWinner = t.score === maxScore;
+      return `
+      <tr style="${isWinner ? "font-weight: bold; background: rgba(16, 185, 129, 0.05);" : ""}">
+        <td>
+          <span style="font-weight: bold; margin-right: 12px; color: var(--text-muted); font-size: 0.85rem;">#${idx + 1}</span>
+          ${t.name} ${isWinner ? " \u{1F3C6}" : ""}
+        </td>
+        <td style="text-align: right; font-weight: 700; color: ${isWinner ? "var(--success)" : ""};">${t.score} pts</td>
+      </tr>
+    `;
+    }).join("");
+    container.innerHTML = `
+    <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <div class="taboo-setup-section" style="padding: 40px 30px;">
+        <span style="font-size: 3.5rem; display: block; margin-bottom: 12px;">\u{1F3C6}</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 12px 0;">Taboo Revision Completed!</h2>
+        
+        <div style="margin-bottom: 28px; padding: 14px 20px; background: rgba(56, 189, 248, 0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); display: inline-block;">
+          ${winMessage}
+        </div>
+
+        <div style="text-align: left; margin-bottom: 28px;">
+          <h4 style="margin: 0 0 12px 0; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Final Results</h4>
+          <table class="taboo-scoreboard-table">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th style="text-align: right;">Final Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${scoreboardRowsHtml}
+            </tbody>
+          </table>
+        </div>
+
+        <button id="btn-taboo-reset" class="btn-primary" style="width: 100%; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fa-solid fa-rotate-left"></i> Play Again
+        </button>
+      </div>
+    </div>
+  `;
+    document.getElementById("btn-taboo-reset").addEventListener("click", () => {
+      AudioEngine.play("click");
+      initTabooGame();
+    });
+  }
 
   // src/exam.js
   function showExamSetup2() {
@@ -13786,84 +14971,996 @@ ${cleanBrackets(paper.q3d.model)}
   // src/homework_data.js
   var HOMEWORK_QUESTIONS = {
     "subtopic_1_1": [
-      "Explain the legal doctrine established by Plessy v. Ferguson (1896) and how Brown v. Board of Education (1954) challenged it.",
-      "Why did Chief Justice Earl Warren lobby for a unanimous (9-0) decision in the Brown case?",
-      "Describe the actions taken by Southern politicians in response to the school integration ruling."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "Which laws in the southern states of the USA enforced racial segregation in public places and services?",
+        "answer": "Jim Crow laws."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "What does the abbreviation NAACP stand for?",
+        "answer": "National Association for the Advancement of Colored People."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: CORE (Congress of Racial Equality) was founded in the US South in the 1950s.",
+        "answer": "False. CORE was actually founded in Chicago (the North) in 1942, although it became heavily active in the South during the 1950s and 1960s."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the 'separate but equal' legal doctrine established by the Plessy v. Ferguson ruling of 1896?",
+        "answer": "It was a constitutional doctrine that allowed states to provide segregated facilities for Black and white Americans, provided that the facilities were of equal quality (though in practice, facilities for Black Americans were almost always inferior)."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did the NAACP focus primarily on using the legal system and federal courts to fight segregation in the 1950s?",
+        "answer": "The NAACP believed that winning legal cases in court could set binding national precedents that southern state governments could not legally ignore, thereby dismantling segregation from the top down and forcing federal intervention."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "Identify which civil rights organization was founded first: the NAACP or CORE, and state the years they were founded.",
+        "answer": "The NAACP was founded first in 1909, whereas CORE was founded later in 1942."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Which civil rights organization, founded in 1942, was committed to non-violent direct action and played a major role in early challenges to segregation?",
+        "answer": "CORE (Congress of Racial Equality)."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did disenfranchisement tactics, such as literacy tests and poll taxes, limit the political power of Black Americans in the South?",
+        "answer": "These tactics were deliberately designed to prevent Black Americans from registering to vote. Without the vote, they could not elect sympathetic politicians, sit on juries, or change discriminatory local and state laws, keeping them politically powerless."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What is the difference between 'de jure' segregation and 'de facto' segregation?",
+        "answer": "'De jure' segregation is segregation enforced by local and state laws (prevalent in the South), whereas 'de facto' segregation is segregation that exists by custom, social practice, and economic factors rather than by law (prevalent in the North)."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "To what extent did the existence of Jim Crow laws in the South create a completely different experience of discrimination for Black Americans compared to those living in the North in the early 1950s?",
+        "answer": "While both regions suffered from deep racial prejudice, the South had legal (de jure) segregation enforcing separation in all aspects of life, backed by state-sanctioned violence and total disenfranchisement. In the North, discrimination was de facto, showing itself in housing segregation, job discrimination, and police hostility, but Black Americans in the North retained the legal right to vote and did not face formal Jim Crow laws."
+      }
     ],
     "subtopic_1_2": [
-      "Why did the NAACP select Rosa Parks as the test case for the bus boycott rather than Claudette Colvin?",
-      "Explain how the Montgomery Improvement Association (MIA) organized alternative transport during the 381-day boycott.",
-      "Assess the significance of the Browder v. Gayle (1956) Supreme Court ruling in ending transport segregation."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "Which US Supreme Court Chief Justice delivered the historic ruling in the Brown v. Board of Education case in 1954?",
+        "answer": "Chief Justice Earl Warren."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "What was the name of the Arkansas Governor who ordered the state's National Guard to block the Little Rock Nine from entering Central High School in 1957?",
+        "answer": "Governor Orval Faubus."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Brown v. Topeka ruling immediately integrated all public schools across the American South by the end of 1954.",
+        "answer": "False. The ruling did not set a specific deadline, and in 1955 the Supreme Court had to issue 'Brown II' ordering integration 'with all deliberate speed', which allowed southern states to delay integration for years."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the core constitutional argument used by the NAACP in Brown v. Topeka regarding segregated schools?",
+        "answer": "They argued that segregated schools violated the 'Equal Protection Clause' of the 14th Amendment, and that the segregation of children in public schools solely on the basis of race generated feelings of inferiority that made 'separate' inherently unequal."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did President Dwight D. Eisenhower eventually send the 101st Airborne Division to Little Rock in 1957?",
+        "answer": "Eisenhower did not primarily act out of support for civil rights, but rather to assert federal authority. Governor Faubus had openly defied a federal court order, and Eisenhower needed to show that state governors could not ignore federal law and constitutional rulings."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "How many Black students were selected to integrate Central High School in Little Rock in September 1957?",
+        "answer": "Nine students (known as the 'Little Rock Nine')."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "What was the name of the school at the centre of the 1957 integration crisis in Arkansas?",
+        "answer": "Central High School (in Little Rock)."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "What was the significance of the Little Rock Crisis of 1957 for the civil rights movement?",
+        "answer": "It demonstrated that the federal government would intervene with military force to protect Black students and uphold civil rights laws when states openly defied federal courts. It also brought international media attention to the violent reality of southern white racism."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What did the Supreme Court order in its 1955 ruling known as 'Brown II'?",
+        "answer": "It ordered that desegregation of public schools should proceed 'with all deliberate speed', a vague phrase that southern states exploited to delay integration for as long as possible."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "How far did the events at Little Rock High School in 1957 reveal the limitations of the Supreme Court's 1954 Brown v. Topeka decision?",
+        "answer": "It showed that the Brown decision could not enforce itself. Despite the Supreme Court declaring school segregation unconstitutional, local school boards and state authorities resisted, requiring direct presidential intervention and military force. Furthermore, it showed that white resistance was intense, as Governor Faubus closed all Little Rock high schools the following year (1958) to prevent further integration."
+      }
     ],
     "subtopic_1_3": [
-      "Explain why Governor Orval Faubus deployed the Arkansas National Guard to Central High School in September 1957.",
-      "Analyze the reasons why President Eisenhower federalized the Arkansas National Guard and sent the 101st Airborne Division.",
-      "Evaluate the impact of Governor Faubus' closure of Little Rock high schools in 1958 on the local community."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "On what date in December 1955 was Rosa Parks arrested, sparking the Montgomery Bus Boycott?",
+        "answer": "1 December 1955."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "Which new civil rights organisation did Martin Luther King Jr. and other southern ministers form in 1957 to coordinate non-violent protests?",
+        "answer": "Southern Christian Leadership Conference (SCLC)."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Montgomery Bus Boycott lasted for exactly 100 days.",
+        "answer": "False. The boycott lasted for 381 days, starting on 5 December 1955 and ending on 20 December 1956."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the Montgomery Improvement Association (MIA) and what was its purpose?",
+        "answer": "The MIA was an organization formed on 5 December 1955 by local Black leaders and ministers to oversee and coordinate the Montgomery Bus Boycott. Martin Luther King Jr. was chosen as its president."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did the MIA organize a highly structured carpool system during the Montgomery Bus Boycott?",
+        "answer": "Since Black Americans made up about 75% of Montgomery's bus passengers, the boycott could only succeed if protesters had alternative transportation to get to work. The carpool system, involving over 300 cars, kept the boycott sustainable despite police harassment and intimidation."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "What was the name of the 1956 Supreme Court case that ruled segregated buses were unconstitutional, and when did it take effect?",
+        "answer": "Browder v. Gayle. The ruling was made in November 1956 and took effect on 20 December 1956, officially ending the boycott."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Which US President signed the Civil Rights Act of 1957 into law?",
+        "answer": "President Dwight D. Eisenhower."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "What was the significance of the Civil Rights Act of 1957, despite its weak enforcement mechanisms?",
+        "answer": "It was the first federal civil rights legislation passed by Congress since Reconstruction (1875). It signaled that the federal government was beginning to take responsibility for civil rights, and it established the Civil Rights Division in the Justice Department."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What was the main focus and tactic of the SCLC when it was established?",
+        "answer": "Its focus was to use the moral authority of the Christian church to organize non-violent mass direct action campaigns to dismantle Jim Crow segregation throughout the South."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "Assess the relative importance of Rosa Parks' arrest versus Martin Luther King Jr.'s leadership in ensuring the success of the Montgomery Bus Boycott.",
+        "answer": "Rosa Parks' arrest was the essential spark; she was a respected, middle-class NAACP member who provided the perfect test case. However, King's leadership was critical for sustaining the boycott: his inspiring speeches maintained morale and commitment to non-violence over 381 days, and his organizational work with the MIA ensured the practical logistics (carpools) worked. Both were indispensable, but King's role transformed a local protest into a national movement."
+      }
     ],
     "subtopic_1_4": [
-      "Describe the tactical methods used by student activists during the Greensboro Sit-ins of 1960.",
-      "Explain why the Student Nonviolent Coordinating Committee (SNCC) was formed and how its approach differed from SCLC.",
-      "How did the sit-ins utilize economic pressure to force the desegregation of public lunch counters?"
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "In which state was 14-year-old Emmett Till brutally murdered in August 1955?",
+        "answer": "Mississippi."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "What was the name of the document signed in 1956 by over 100 Southern politicians pledging to resist the Supreme Court's school desegregation rulings?",
+        "answer": "The Southern Manifesto (formally the Declaration of Constitutional Principles)."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The men accused of murdering Emmett Till were convicted by a southern jury and sentenced to life in prison.",
+        "answer": "False. Roy Bryant and J.W. Milam were acquitted by an all-white, all-male jury in September 1955 (they later admitted to the murder in a paid magazine interview)."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What were White Citizens' Councils and how did they differ from the Ku Klux Klan?",
+        "answer": "White Citizens' Councils were local organizations formed by middle and upper-class white southerners to oppose integration. While the KKK used physical violence and terror in secret, the Councils used economic intimidation (firing activists, evicting tenants, boycotting businesses) and political lobbying in public."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did Mamie Till-Mobley insist on an open-casket funeral for her son Emmett Till in Chicago?",
+        "answer": "She wanted the world to see the horrific violence and brutality inflicted on her son by southern white racists. The visual shock of his mutilated body, published in Jet magazine, galvanized national outrage and mobilized the civil rights movement."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "Which white supremacist organization, originally formed in 1865, saw a resurgence in the 1950s and used bombings and beatings to terrorize civil rights workers?",
+        "answer": "The Ku Klux Klan (KKK)."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "In what year was the first White Citizens' Council formed in response to the Brown v. Topeka ruling?",
+        "answer": "1954 (in Indianola, Mississippi)."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did southern state authorities use 'legal resistance' to block desegregation following the Brown ruling?",
+        "answer": "They passed state laws that closed schools threatened with integration, funded private schools for white students only (using tuition grants), and used state legislation to outlaw or restrict the NAACP's operations within their borders."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What was the doctrine of 'interposition' invoked by southern states in the 1950s?",
+        "answer": "It was the discredited legal argument that a state has the right to 'interpose' itself between the federal government and its citizens to block federal laws or court rulings that the state considers unconstitutional."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "Compare the impact of the murder of Emmett Till with the signing of the Southern Manifesto in terms of their influence on the civil rights struggle in the mid-1950s.",
+        "answer": "Emmett Till's murder had an emotional, grassroots impact; it shocked Northern public opinion, showed the extreme dangers faced by Black Americans in the South, and motivated a young generation of Black activists to join the civil rights struggle. The Southern Manifesto, by contrast, was a top-down political action that gave a respectable cover of 'constitutional defense' to racial resistance, encouraging Southern governors, police, and councils to openly defy federal authority, thereby slowing progress and hardening white resistance."
+      }
     ],
     "subtopic_2_1": [
-      "What were the key objectives of the Congress of Racial Equality (CORE) when organizing the Freedom Rides in 1961?",
-      "Explain the reactions of local police and Southern segregationists in Anniston, Birmingham, and Montgomery to the riders.",
-      "How did the federal government intervene to enforce the desegregation of interstate bus terminals?"
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "In which North Carolina city did the famous lunch counter sit-ins begin at a Woolworth's store in February 1960?",
+        "answer": "Greensboro."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "What does the civil rights acronym SNCC stand for?",
+        "answer": "Student Nonviolent Coordinating Committee."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Freedom Rides of 1961 were organized by SNCC and aimed to desegregate schools.",
+        "answer": "False. The Freedom Rides were initially organized by CORE (though SNCC later stepped in to continue them) and aimed to test Supreme Court rulings banning segregation on interstate buses and in bus terminals."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the philosophy of non-violent direct action as practiced by SNCC in its early years?",
+        "answer": "It was the tactic of peacefully disobeying unjust laws (such as occupying white-only seats or lunch counters) and refusing to respond with violence when attacked, thereby exposing the moral bankruptcy and violence of segregation to the public."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did SNCC activists step in to continue the Freedom Rides in 1961 after the initial CORE riders were forced to stop due to violence?",
+        "answer": "SNCC leaders, like Diane Nash, believed that if the Freedom Rides were allowed to fail because of white supremacist violence, it would send a message that violence could always defeat civil rights campaigns, effectively halting the movement's progress."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "Who was the first Black student to enroll at the University of Mississippi (Ole Miss) in 1962, sparking riots?",
+        "answer": "James Meredith."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Which US Attorney General intervened to send federal marshals to protect the Freedom Rides in 1961?",
+        "answer": "Robert F. Kennedy."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did the Greensboro sit-ins succeed in desegregating lunch counters?",
+        "answer": "By occupying seats and refusing to leave, students disrupted business, caused a drop in sales (boycotts by Black and sympathetic white customers), and generated negative publicity. The economic loss eventually forced Woolworth's and other stores to desegregate their counters."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What was the significance of the Interstate Commerce Commission (ICC) ruling in late 1961?",
+        "answer": "Following the pressure of the Freedom Rides, the ICC issued a strict federal order banning segregation in all interstate bus terminals and facilities, which was a direct victory for the riders."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "To what extent did the integration of the University of Mississippi in 1962 show that the federal government was fully committed to civil rights?",
+        "answer": "While President Kennedy did send 320 federal marshals (and eventually thousands of federal troops and National Guardsmen) to enforce the court order allowing James Meredith to register, he did so reluctantly and only after negotiations with Governor Ross Barnett failed. This showed that the federal government's commitment was driven more by the need to uphold federal law against state defiance than a proactive desire to champion civil rights."
+      }
     ],
     "subtopic_2_2": [
-      "Explain the tactical objectives of SCLC's 'Project C' in Birmingham (1963) and how Bull Connor's response played into their strategy.",
-      "What was the significance of the 1963 March on Washington for Jobs and Freedom in pushing for federal civil rights legislation?",
-      "Evaluate the role of national media coverage of the Birmingham campaign in shifting public opinion."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "Which notorious Birmingham Police Commissioner used high-pressure fire hoses and police dogs against child protesters in May 1963?",
+        "answer": "Eugene 'Bull' Connor."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "Who delivered the famous 'I Have a Dream' speech during the March on Washington in August 1963?",
+        "answer": "Martin Luther King Jr."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Voting Rights Act of 1965 was signed into law by President John F. Kennedy.",
+        "answer": "False. President Lyndon B. Johnson signed the Voting Rights Act of 1965 (John F. Kennedy was assassinated in November 1963)."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the main purpose of the 1964 'Freedom Summer' campaign in Mississippi?",
+        "answer": "It was a voter registration drive organized by a coalition of civil rights groups (COFO, SNCC, CORE) to register Black voters in Mississippi (which had the lowest registration rate in the country) and to run 'Freedom Schools' for Black children."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did SCLC choose Birmingham, Alabama, for a major desegregation campaign in 1963 (Project C)?",
+        "answer": "Birmingham was known as the most segregated city in America, and its Police Commissioner, Bull Connor, was highly reactive. SCLC knew that Connor's violent response to peaceful protests would be televised, shocking the nation and forcing President Kennedy to introduce civil rights legislation."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "What was the name of the bridge in Selma, Alabama, where state troopers attacked peaceful marchers on 'Bloody Sunday' in March 1965?",
+        "answer": "The Edmund Pettus Bridge."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Which major federal law passed in 1964 outlawed segregation in public places and banned employment discrimination based on race, color, religion, sex, or national origin?",
+        "answer": "The Civil Rights Act of 1964."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did the events of the Selma Campaign in 1965 lead directly to the passage of the Voting Rights Act?",
+        "answer": "The brutal images of state troopers beating peaceful marchers on 'Bloody Sunday' were broadcast nationally, creating a massive wave of public outrage. This gave President Johnson the political leverage and moral urgency to address Congress and pass the Voting Rights Act."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What specific practices did the Voting Rights Act of 1965 outlaw?",
+        "answer": "It outlawed literacy tests, constitutional interpretation tests, and other discriminatory voting criteria. It also gave the federal government the power to send federal registrars to register voters in areas with low Black turnout."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "Compare the effectiveness of the Civil Rights Act of 1964 and the Voting Rights Act of 1965 in terms of their impact on the lives of Black Americans in the South.",
+        "answer": "The Civil Rights Act of 1964 was broader: it dismantled de jure segregation in public accommodations, schools, and jobs, which fundamentally altered social interactions and opened doors for Black employment. However, without political representation, these gains were fragile. The Voting Rights Act of 1965 was more targeted but highly transformative: it outlawed voter suppression tactics, leading to a dramatic rise in Black voter registration and the subsequent election of Black mayors, sheriffs, and legislators, giving Black communities direct political power."
+      }
     ],
     "subtopic_2_3": [
-      "Why was Selma, Alabama, chosen as the focal point for SCLC's voter registration campaign in 1965?",
-      "Describe the events of 'Bloody Sunday' at the Edmund Pettus Bridge and explain the public reaction to it.",
-      "How did the Voting Rights Act of 1965 legally dismantle state-level obstacles to Black voting registration?"
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "Which civil rights leader popularized the phrase 'Black Power' during the June 1966 March Against Fear?",
+        "answer": "Stokely Carmichael."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "Name the two co-founders of the Black Panther Party for Self-Defense, established in Oakland in 1966.",
+        "answer": "Huey P. Newton and Bobby Seale."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: Malcolm X remained a dedicated member and spokesman of the Nation of Islam until his death in 1965.",
+        "answer": "False. Malcolm X split from the Nation of Islam in March 1964, founded the Organization of Afro-American Unity (OAAU), and changed his views on integration before he was assassinated in February 1965."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What did Stokely Carmichael mean by 'Black Power' when he redefined the movement's goals?",
+        "answer": "He meant that Black Americans should unite, recognize their heritage, build their own communities and institutions (political and economic), and define their own goals rather than relying on white alliances or pleading for integration."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did the Black Panthers organize armed patrols to monitor police officers in Oakland?",
+        "answer": "They wanted to prevent police brutality against Black citizens. They carried loaded weapons legally (under California law at the time) and kept a legal distance from police stops, advising citizens of their constitutional rights to demonstrate community self-defense and resistance."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "What was the name of the document created by the Black Panther Party in 1966 that detailed their political demands and goals?",
+        "answer": "The Ten-Point Program."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Which nationalist religious group did Malcolm X represent as its national spokesman during the late 1950s and early 1960s?",
+        "answer": "The Nation of Islam (NOI)."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did the Black Power movement affect the wider civil rights movement in the late 1960s?",
+        "answer": "It created a division. Moderate groups like the NAACP and SCLC criticized Black Power for its militant tone and rejection of white support. However, it successfully shifted the focus to economic issues and police brutality, while instilling a deep sense of racial pride, self-determination, and cultural awareness in Black communities."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What were the 'survival programs' run by the Black Panthers, and what was their purpose?",
+        "answer": "These were community service programs, most famously the Free Breakfast for Children Program and free medical clinics. They were designed to meet the immediate, neglected needs of poor Black communities and build support for the Party's revolutionary agenda."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "To what extent was Malcolm X's philosophy a rejection of the non-violent integrationist methods of Martin Luther King Jr.?",
+        "answer": "Initially, Malcolm X strongly rejected integration as a form of submission and dismissed non-violence as defenseless in the face of white terror, advocating for self-defense 'by any means necessary'. However, after his pilgrimage to Mecca, his stance softened, and he expressed a willingness to work with other civil rights leaders. While they differed on tactics (non-violent direct action vs. armed self-defense) and immediate goals (integration vs. Black self-determination), both ultimately fought for the liberation and dignity of Black Americans."
+      }
     ],
     "subtopic_2_4": [
-      "Contrast Malcolm X's philosophy of self-defense and Black Nationalism with Martin Luther King Jr.'s non-violent integrationist approach.",
-      "Describe the social and economic programs (such as Free Breakfast for Children) run by the Black Panther Party alongside their armed patrols.",
-      "What factors triggered the major urban riots in Watts (1965) and Detroit (1967), and what did the Kerner Commission conclude?"
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "In which Los Angeles neighborhood did a major race riot break out in August 1965, resulting in 34 deaths?",
+        "answer": "Watts."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "In which city was Martin Luther King Jr. assassinated on 4 April 1968?",
+        "answer": "Memphis, Tennessee."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Chicago Campaign of 1966 was a massive success that successfully integrated Chicago's housing market within six months.",
+        "answer": "False. The Chicago Campaign was largely unsuccessful; although Mayor Richard Daley agreed to a statement of intent on fair housing, the agreement was ignored, and segregation in Chicago persisted."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What did the Kerner Commission (1968) conclude about the state of American society?",
+        "answer": "It concluded that the nation was moving toward 'two societies, one black, one white\u2014separate and unequal.' It blamed white racism for the urban riots, citing systemic discrimination, lack of economic opportunity, and police brutality."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did Martin Luther King Jr.'s non-violent tactics face much greater resistance during the Chicago Campaign of 1966 compared to his southern campaigns?",
+        "answer": "In Chicago, discrimination was de facto (informal and economic) rather than de jure (codified by Jim Crow laws). White residents and politicians (like Mayor Daley) avoided the open, theatrical brutality of southern sheriffs, instead using political delays and legal maneuvers, and King faced violent attacks from white mobs that shocked even him."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "In what year did the destructive riots in Detroit and Newark occur, leading to the deployment of federal troops?",
+        "answer": "1967 (referred to as the 'Long Hot Summer of 1967')."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Who was the US President who established the Kerner Commission to investigate the causes of the urban riots?",
+        "answer": "President Lyndon B. Johnson."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "What were the immediate and long-term consequences of the assassination of Martin Luther King Jr. in 1968?",
+        "answer": "The immediate consequence was an outbreak of riots in over 100 cities, leading to 46 deaths and heavy property damage. Long-term, it led directly to the passage of the Fair Housing Act of 1968, but it also marked the end of the unified, non-violent civil rights era and accelerated the rise of Black Power and white conservative backlash."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What was the 'Poor People's Campaign' planned by MLK before his death and carried out by the SCLC in mid-1968?",
+        "answer": "It was a campaign to demand economic justice for all poor people in America, regardless of race. It aimed to set up a protest camp ('Resurrection City') in Washington D.C. to pressure Congress into passing anti-poverty legislation."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "To what extent were the urban riots of 1965\u20131967 a reaction to the limitations of the Civil Rights Act of 1964 and the Voting Rights Act of 1965?",
+        "answer": "They were a direct reaction to the fact that these federal laws did not resolve the deep-seated economic and social problems in Northern and Western cities. While the laws ended segregation and protected voting rights in the South, Black Americans in northern ghettos still suffered from high unemployment, substandard housing, failing schools, and systemic police harassment. The riots reflected frustration that legislative victories had not translated into economic equality or an end to racial discrimination in daily life."
+      }
     ],
     "subtopic_3_1": [
-      "Why did the US support Ngo Dinh Diem's decision to refuse to hold the nationwide elections mandated by the 1954 Geneva Accords?",
-      "Explain how Ngo Dinh Diem's religious and political policies alienated the Buddhist majority in South Vietnam.",
-      "Describe the strategic goals of the Strategic Hamlet Program and explain why it failed to stop Vietcong expansion."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "At which parallel was Vietnam divided into North and South by the Geneva Accords of 1954?",
+        "answer": "The 17th Parallel."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "What was the religion of the South Vietnamese leader Ngo Dinh Diem, which alienated the majority Buddhist population?",
+        "answer": "Catholicism."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Strategic Hamlet Program, introduced in 1962, succeeded in reducing support for the Vietcong in South Vietnam.",
+        "answer": "False. The program actually increased resentment toward the South Vietnamese government because it forcibly moved peasants from their ancestral lands, driving many to support the Vietcong."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the 'Domino Theory' formulated by President Eisenhower in 1954?",
+        "answer": "It was the belief that if one country in Southeast Asia fell to communism, neighboring countries would inevitably fall like a row of dominoes, which justified US intervention to stop the spread of communism."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did Buddhist monk Thich Quang Duc burn himself to death in Saigon in June 1963?",
+        "answer": "He was protesting against the government of Ngo Dinh Diem, which systematically discriminated against the Buddhist majority, banned the flying of Buddhist flags, and violently suppressed peaceful Buddhist demonstrations."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "In what month and year was Ngo Dinh Diem overthrown and assassinated in a military coup?",
+        "answer": "November 1963."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Who was the communist leader of North Vietnam during the early stages of the conflict?",
+        "answer": "Ho Chi Minh."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "Why did the US government support or acquiesce to the military coup against Ngo Dinh Diem in 1963?",
+        "answer": "Diem's brutal repression of Buddhists, his corrupt administration, and his failure to defeat the Vietcong made him a liability. The Kennedy administration realized that the war could not be won with Diem in power and that his continued rule threatened South Vietnam's stability."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What were the 'Geneva Accords' of 1954 and what did they decide about Vietnam's future?",
+        "answer": "They were international agreements that ended French rule in Indochina, temporarily divided Vietnam at the 17th Parallel, and scheduled nationwide free elections for 1956 to unify the country (elections which Diem, backed by the US, later refused to hold)."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "Assess whether political corruption or religious persecution was the primary cause of Ngo Dinh Diem's lack of popular support in South Vietnam.",
+        "answer": "While religious persecution of the Buddhist majority (such as the May 1963 shootings in Hue and subsequent pagoda raids) was the public catalyst that led to international condemnation and his downfall, political corruption was the deeper, systemic cause. Diem's government was nepotistic (giving key positions to his family), favored the Catholic minority, refused land reform, and placed loyalists in charge of the military. This political corruption alienated the peasant majority and directly drove them to support the Vietcong, making his government unsustainable."
+      }
     ],
     "subtopic_3_2": [
-      "Describe the events of the Gulf of Tonkin Incident in August 1964 and explain how they were presented to the US Congress.",
-      "What powers did the Gulf of Tonkin Resolution grant to President Johnson, and how did it change US military involvement?",
-      "Explain the role of the Ho Chi Minh Trail in supplying communist forces in the South during the early stages of the war."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "What was the name of the US destroyer that was allegedly attacked by North Vietnamese patrol boats in the Gulf of Tonkin on 2 August 1964?",
+        "answer": "USS Maddox."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "In which South Vietnamese coastal city did the first official US ground combat troops (Marines) land in March 1965?",
+        "answer": "Da Nang."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Gulf of Tonkin Resolution was a formal declaration of war against North Vietnam passed by the US Congress.",
+        "answer": "False. It was not a formal declaration of war, but a resolution that gave President Johnson the authority to take 'all necessary measures' to repel attacks and prevent further aggression, allowing him to escalate the war without congressional approval."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the Ho Chi Minh Trail?",
+        "answer": "It was a complex network of jungle paths, roads, and waterways running from North Vietnam through neutral Laos and Cambodia into South Vietnam, used to transport weapons, supplies, and troops to the Vietcong."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did the Vietcong rely on guerrilla tactics rather than conventional warfare against the US military?",
+        "answer": "The US military had overwhelming superiority in technology, firepower, and air support. The Vietcong used guerrilla tactics (hit-and-run attacks, booby traps, underground tunnels, blending in with peasants) to avoid direct battles, neutralize US advantages, and wear down American morale."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "Identify which of the following was NOT a Vietcong trap: Punji stakes, Bouncing Betty mines, or Claymore mines.",
+        "answer": "Claymore mines (these were standard US military anti-personnel mines, whereas Punji stakes and modified Bouncing Betty mines were typical of Vietcong traps)."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Who was the commander of US forces in Vietnam during the escalation of the war from 1964 to 1968?",
+        "answer": "General William Westmoreland."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did the Gulf of Tonkin Incident in August 1964 change the nature of US involvement in Vietnam?",
+        "answer": "It provided the political justification for President Johnson to escalate the conflict from an advisory role to direct military intervention. The resulting congressional resolution gave him a 'blank check' to deploy combat troops and launch bombing campaigns (like Operation Rolling Thunder) without needing to consult Congress."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What was the Vietcong policy of 'hanging onto the belts' of US soldiers?",
+        "answer": "It was a combat tactic of fighting extremely close to US lines (close-quarter combat) so that US forces could not use their artillery or air support (bombs/napalm) without risking killing their own troops."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "To what extent was the Ho Chi Minh Trail the most important factor in the military success of the Vietcong against the USA?",
+        "answer": "The trail was crucial because it provided a continuous flow of supplies, ammunition, and North Vietnamese Army (NVA) reinforcements that kept the insurgency alive despite massive US casualties. However, it was not the sole factor; without the Vietcong's effective guerrilla tactics, their ability to blend in with the local population, and the political corruption of the South Vietnamese government (which alienated peasants), the supplies alone would not have secured victory. Thus, while the trail was logistically essential, the political and tactical environment in South Vietnam was equally critical."
+      }
     ],
     "subtopic_3_3": [
-      "Explain the operational objectives of Operation Rolling Thunder and analyze why it failed to force North Vietnam to negotiate.",
-      "Describe US 'Search and Destroy' tactics and explain how they affected the hearts and minds of the Vietnamese peasantry.",
-      "What was the military rationale for using chemical agents like Agent Orange and Napalm, and what were the consequences?"
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "What was the code name of the sustained US aerial bombing campaign against North Vietnam that began in March 1965?",
+        "answer": "Operation Rolling Thunder."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "What was the name of the toxic chemical defoliant sprayed by US planes to destroy the jungle canopy and expose Vietcong hiding places?",
+        "answer": "Agent Orange."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Tet Offensive of 1968 was a major military victory for the Vietcong, who successfully captured and held Saigon.",
+        "answer": "False. The Tet Offensive was a military defeat for the Vietcong; they failed to hold any captured cities and suffered massive casualties, nearly destroying their fighting capacity. However, it was a major psychological victory for them."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What were 'Search and Destroy' missions (often called Zippo raids)?",
+        "answer": "They were military operations where US troops patrolled the countryside to locate Vietcong units, destroy their base camps and supplies, and then withdraw. Success was measured by the 'body count' of enemy dead rather than land captured."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did the Tet Offensive of January 1968 have such a devastating impact on US public opinion?",
+        "answer": "Before the offensive, the US government had reassured the public that the war was being won and the enemy was near defeat. The sight of Vietcong commandos attacking the US Embassy in Saigon and major cities on live television created a massive 'credibility gap' and convinced many Americans that the war was unwinnable."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "Which highly flammable jelly-like substance was used in US bombs to clear jungle and burn villages suspected of harboring Vietcong?",
+        "answer": "Napalm."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Which famous US CBS television news anchor declared the Vietnam War was destined to end in a stalemate following the Tet Offensive?",
+        "answer": "Walter Cronkite."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did Search and Destroy tactics undermine the US goal of winning the 'hearts and minds' of the South Vietnamese peasants?",
+        "answer": "These missions often resulted in the destruction of civilian villages, the burning of homes, and the relocation of peasants into crowded camps. Innocent civilians were killed in the search for Vietcong, leading to deep resentment and driving many peasants to support the Vietcong."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What was the political impact of the Tet Offensive on President Lyndon B. Johnson's career?",
+        "answer": "It destroyed his political standing. Faced with rising opposition within his own party and a divided public, Johnson announced in March 1968 that he would not seek re-election and would focus on seeking a peaceful resolution to the war."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "Evaluate the claim that the Tet Offensive was the key turning point of the Vietnam War.",
+        "answer": "The Tet Offensive was undoubtedly the key turning point because it shattered the US home front's belief in victory, forced the US to halt escalation, and led to the start of peace talks and the policy of Vietnamization. However, it can be argued that the turning point was already underway due to the rising financial costs, the growing draft resistance, and the high casualty rates of 1967. Nonetheless, Tet was the catalyst that forced a fundamental shift from trying to win the war to finding a way to exit it."
+      }
     ],
     "subtopic_3_4": [
-      "Explain the strategy of 'Vietnamization' introduced by President Nixon in 1969.",
-      "Why did President Nixon order the military incursions and secret bombings of neutral Cambodia (1970) and Laos (1971)?",
-      "Describe the domestic political backlash in the USA to the invasion of Cambodia, referencing the Kent State shootings."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "What was the name of the military strategy introduced by President Nixon to withdraw US troops and train the South Vietnamese army (ARVN) to fight the war on their own?",
+        "answer": "Vietnamization."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "Which US National Security Advisor (later Secretary of State) conducted the secret peace negotiations with North Vietnam?",
+        "answer": "Henry Kissinger."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Paris Peace Accords of January 1973 resulted in an immediate, unified coalition government between North and South Vietnam.",
+        "answer": "False. The Accords established a ceasefire, the withdrawal of all US troops, and the release of POWs, but they left North Vietnamese troops in South Vietnam and did not resolve the political future of the country, leading to continued fighting."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the Nixon Doctrine announced in 1969?",
+        "answer": "It was a foreign policy directive stating that the US would support its allies with economic and military aid, but that Asian nations must provide their own ground troops for their defense, signaling the end of direct US troop deployments."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did President Nixon order the invasion of Cambodia in 1970 and Laos in 1971, despite his policy of withdrawing US troops?",
+        "answer": "He wanted to disrupt the Ho Chi Minh Trail and destroy North Vietnamese military bases (sanctuaries) in these neutral countries. By doing so, he hoped to protect the retreating US troops and buy time for the South Vietnamese army (ARVN) to strengthen itself."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "What was the name of the North Vietnamese diplomat who negotiated the Paris Peace Accords alongside Henry Kissinger?",
+        "answer": "Le Duc Tho."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "What was the code name of the heavy bombing of Hanoi and Haiphong in December 1972, ordered by Nixon to force North Vietnam back to negotiations?",
+        "answer": "Operation Linebacker II (also known as the 'Christmas Bombings')."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "Why did the ARVN invasion of Laos in 1971 (Operation Lam Son 719) reveal the failure of Vietnamization?",
+        "answer": "The invasion was planned as a test of the ARVN's ability to fight independently. However, the ARVN was quickly defeated by North Vietnamese forces and had to retreat in panic, suffering 50% casualties and only surviving due to US air support, showing they could not defend South Vietnam alone."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What did the term 'decent interval' refer to in Nixon's peace negotiations?",
+        "answer": "It was the secret political strategy of ensuring a sufficient amount of time elapsed between the withdrawal of US troops and the eventual (and expected) fall of South Vietnam, so that the US would not look directly responsible for the defeat."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "To what extent was the policy of Vietnamization a political success for Nixon, even if it was a military failure?",
+        "answer": "Politically, Vietnamization was highly successful: it defused the domestic anti-war movement by steadily reducing US casualties and draft calls, helping Nixon win a landslide re-election in 1972. However, militarily, it was a disaster. The ARVN remained corrupt, poorly led, and dependent on US airpower. Once US forces withdrew and Congress cut funding, the ARVN collapsed rapidly under the 1975 North Vietnamese offensive, proving that the policy could not save South Vietnam."
+      }
     ],
     "subtopic_4_1": [
-      "How did televised media coverage of events like the Tet Offensive and the My Lai Massacre create a 'credibility gap' for the US government?",
-      "Describe the methods used by anti-war activists in the USA, including draft resistance and university strikes.",
-      "Explain why the Selective Service draft system became a primary source of anger and protest among young Americans."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "In which year did the My Lai Massacre occur, where US soldiers killed hundreds of unarmed South Vietnamese civilians?",
+        "answer": "1968 (revealed to the public in 1969)."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "At which Ohio university were four students shot dead by National Guardsmen during an anti-war protest in May 1970?",
+        "answer": "Kent State University."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Pentagon Papers were leaked by a CIA agent and revealed that North Vietnam had planned the Gulf of Tonkin incident.",
+        "answer": "False. The Pentagon Papers were leaked by military analyst Daniel Ellsberg (a former RAND Corporation employee) and revealed that the US government had systematically lied to the public and Congress about the scale and progress of the war."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the draft system (Selective Service) and why did it become a target of anti-war protests?",
+        "answer": "It was the system of conscripting young men (aged 18-26) into military service. It was protested because it forced young men to fight in a war they opposed, and it was class-biased, as wealthy students could get university deferments while working-class and minority men were drafted in disproportionate numbers."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "How did televised media coverage of the Vietnam War affect public support for the war?",
+        "answer": "It was the first 'uncensored' television war. Nightly news broadcasts showed graphic footage of casualties, burning villages, and chemical warfare. This raw coverage contradicted the government's optimistic reports, widening the 'credibility gap' and turning public opinion against the war."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "What was the name of the US military officer convicted of murder for his role in ordering the My Lai Massacre?",
+        "answer": "Lieutenant William Calley."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "What was the term used to describe the difference between what the US government said about the war and what was actually happening?",
+        "answer": "The Credibility Gap."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "Why did the US invasion of Cambodia in 1970 trigger such a massive wave of student protests across US universities?",
+        "answer": "Nixon had been elected on a promise to wind down the war and withdraw troops. The invasion of Cambodia was seen as an escalation and expansion of the war into a new country, which students felt broke his promises and threatened to increase the draft."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What were the 'Pentagon Papers' published by the New York Times in 1971?",
+        "answer": "They were a classified Department of Defense study detailing the history of US political and military involvement in Vietnam from 1945 to 1967, proving that administrations from Truman to Johnson had deceived the public about US operations."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "Assess whether the My Lai Massacre or the Kent State shootings had a greater impact on the anti-war movement in the USA.",
+        "answer": "The My Lai Massacre (revealed in 1969) had a profound moral impact; it shocked the nation's conscience, challenged the belief that US soldiers were the 'good guys,' and showed the brutalizing effect of the war on American troops. The Kent State shootings (1970) had a more immediate political and mobilising impact; the killing of white, middle-class college students on a US campus by their own government sparked a national student strike of over 4 million students, closing hundreds of colleges and bringing the country to a political crisis. Both were vital, but Kent State brought the war directly home."
+      }
     ],
     "subtopic_4_2": [
-      "Who did President Nixon refer to as the 'Silent Majority', and what arguments did they use to support US military presence in Vietnam?",
-      "How did divisions between anti-war protestors ('hawks' vs. 'doves') reflect wider social and generational conflicts in 1970s America?",
-      "Explain how construction workers ('Hard Hats') demonstrated support for Nixon's policies and opposed student protestors."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "What term did President Nixon use in his November 1969 speech to describe the large body of Americans who supported his war policies but did not protest?",
+        "answer": "The 'Silent Majority'."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "In which US city did the 'Hard Hat Riots' of May 1970 take place, where construction workers attacked anti-war student protesters?",
+        "answer": "New York City."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The US Congress voted to fully cut off all military funding for the war immediately after the Tet Offensive in 1968.",
+        "answer": "False. Congress did not cut off funding immediately; it began placing legislative restrictions later, such as the Cooper-Church Amendment in late 1970, which prohibited the use of US ground troops in Cambodia and Laos."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What were the political arguments of the 'hawks' in the debate over the Vietnam War?",
+        "answer": "Hawks argued that the US must win the war to contain communism, uphold its international commitments (SEATO), protect US credibility, and prevent the Domino Theory from leading to communist expansion across Asia."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did many working-class Americans, such as the construction workers in the Hard Hat Riots, support the war and oppose student protesters?",
+        "answer": "They viewed student protesters as unpatriotic, middle-class, draft-dodging elites who were disrespecting the country and the soldiers (many of whom were working-class). They held traditional patriotic values and believed in supporting the government during wartime."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "What was the name of the Senate amendment passed in December 1970 that barred the use of US ground troops in Cambodia?",
+        "answer": "The Cooper-Church Amendment."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "Which political group, representing traditional patriotic values, organized rallies in support of the war under slogans like 'America: Love It or Leave It'?",
+        "answer": "The Silent Majority (or conservative pro-war groups)."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did President Nixon use the concept of the 'Silent Majority' to strengthen his political position?",
+        "answer": "By framing the anti-war movement as a loud, radical minority, Nixon appealed to the conservative, patriotic middle class. This allowed him to isolate the protesters, justify his slow withdrawal strategy (Vietnamization), and build a solid electoral coalition that supported his presidency."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What was the Gulf of Tonkin Resolution repeal, and when did it occur?",
+        "answer": "It was a legislative action by Congress in January 1971 to revoke the blank-check authority given to the President in 1964, reflecting Congress's effort to reclaim its constitutional role in declaring and limiting war."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "To what extent did congressional actions between 1970 and 1973 represent a real limit on President Nixon's ability to conduct the war?",
+        "answer": "Congressional actions represented a significant and growing limit. Amendments like Cooper-Church (1970) restricted the deployment of ground troops in Cambodia, and subsequent funding cuts limited air operations. This pressure culminated in the War Powers Act of 1973, passed over Nixon's veto. While Nixon initially bypassed Congress through secret bombings and executive authority, the threat of defunding and impeachment ultimately forced him to sign the Paris Peace Accords and prevented him from re-intervening when North Vietnam violated the ceasefire."
+      }
     ],
     "subtopic_4_3": [
-      "What were the key terms of the Paris Peace Accords signed in January 1973, and how did they facilitate the US exit?",
-      "Describe the events of the Fall of Saigon in April 1975 and explain why the evacuation was so chaotic.",
-      "Why do historians argue that the Paris Peace Accords were designed to create a 'decent interval' before the collapse of South Vietnam?"
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "In which month and year did the final North Vietnamese offensive capture Saigon, leading to the reunification of Vietnam?",
+        "answer": "April 1975."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "What was the name of the act passed by Congress in 1973 to limit the President's power to commit US troops to foreign conflicts without congressional approval?",
+        "answer": "The War Powers Act (or War Powers Resolution)."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: Under the War Powers Act of 1973, the President must notify Congress within 24 hours of deploying military forces.",
+        "answer": "False. The President must notify Congress within 48 hours of committing armed forces to military action."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What were the main terms of the Paris Peace Accords signed in January 1973?",
+        "answer": "The terms included a ceasefire, the complete withdrawal of all US troops and advisors within 60 days, the dismantling of US military bases, the release of all prisoners of war (POWs), and the establishment of a commission to organize free elections."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did returning US veterans face unique psychological and social difficulties compared to veterans of World War II?",
+        "answer": "The Vietnam War was deeply unpopular and divisive. Returning veterans were not welcomed with parades, but often met with indifference or hostility from both the anti-war public (who saw them as perpetrators of violence) and pro-war groups (who saw them as losers of the war). They also suffered high rates of PTSD and drug addiction without adequate government support."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "Approximately how many US soldiers died during the Vietnam War?",
+        "answer": "Approximately 58,000."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "What was the name of the emergency evacuation operation of US civilians and at-risk South Vietnamese from Saigon in April 1975?",
+        "answer": "Operation Frequent Wind."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did the War Powers Act of 1973 restrict the military authority of the US presidency?",
+        "answer": "It required the President to notify Congress within 48 hours of deploying troops abroad and mandated that those troops must be withdrawn within 60 days (with a 30-day extension) unless Congress explicitly declared war, authorized the action, or granted a time extension."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "What was the economic cost of the Vietnam War to the United States?",
+        "answer": "The war cost over $120 billion, which led to rising federal deficits, fueled high inflation in the 1970s, and forced President Johnson to cut funding for his 'Great Society' social reform programs."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "Evaluate the extent to which the War Powers Act of 1973 was a direct constitutional reaction to the decisions made during the Gulf of Tonkin incident.",
+        "answer": "It was a direct reaction to the 'imperial presidency' that began with the Gulf of Tonkin Resolution. In 1964, Congress had signed away its constitutional authority to declare war by giving Johnson a blank check based on incomplete information. The 1973 Act was a deliberate effort by Congress to reassert its constitutional war powers (Article I, Section 8), ensuring that no future president could conduct an undeclared, long-term war like Vietnam without continuous congressional oversight and consensus."
+      }
     ],
     "subtopic_4_4": [
-      "Explain how the Vietcong's guerrilla tactics and local knowledge neutralized the technological superiority of the US military.",
-      "To what extent was the corruption and unpopularity of the South Vietnamese government (ARVN) responsible for the US failure?",
-      "Analyze how the loss of domestic political and public support in the USA forced a military withdrawal from Vietnam."
+      {
+        "level": 1,
+        "type": "Recall",
+        "question": "Which South Vietnamese military force was the primary ally of the USA but suffered from low morale, corruption, and desertion?",
+        "answer": "The ARVN (Army of the Republic of Vietnam)."
+      },
+      {
+        "level": 2,
+        "type": "Recall",
+        "question": "What was the name of the political and military organization (known as the Vietcong) formed in South Vietnam in 1960 to overthrow the government and unify the country?",
+        "answer": "The National Liberation Front (NLF)."
+      },
+      {
+        "level": 3,
+        "type": "Fact Check",
+        "question": "True or False: The Vietcong had a higher desertion rate and lower morale than the US military by 1971.",
+        "answer": "False. Despite suffering massive casualties, the Vietcong and NVA maintained high morale and determination, driven by nationalist and communist ideology, whereas US troop morale declined significantly by 1971 due to drug abuse, 'fragging', and the impending withdrawal."
+      },
+      {
+        "level": 4,
+        "type": "Concept",
+        "question": "What was the communist strategy of 'war of attrition'?",
+        "answer": "It was a military strategy aimed at wearing down the enemy's resources, willpower, and troop numbers over a long period, accepting high casualties themselves, until the enemy (the USA) judged that the cost of fighting was too high and withdrew."
+      },
+      {
+        "level": 5,
+        "type": "Analysis",
+        "question": "Why did the corruption and political weakness of the South Vietnamese government contribute directly to the US failure in Vietnam?",
+        "answer": "The South Vietnamese government (under Diem, Ky, and Thieu) was seen as a corrupt, undemocratic US puppet regime that favored wealthy landowners over peasants. This lack of political legitimacy made it impossible to win the support of the population, meaning that no amount of US military aid could build a stable, self-sustaining state."
+      },
+      {
+        "level": 6,
+        "type": "Fact Check",
+        "question": "True or False: The USA's failure in Vietnam was entirely due to military defeats in major battles.",
+        "answer": "False. The US military won almost every major conventional battle (such as Ia Drang and Hue). The failure was due to the inability to secure rural areas, the political weakness of the South Vietnamese state, and the collapse of political support on the US home front."
+      },
+      {
+        "level": 7,
+        "type": "Recall",
+        "question": "What term is used to describe the practice of US soldiers killing their own officers, which reflected the collapse of troop morale in the late stages of the war?",
+        "answer": "Fragging."
+      },
+      {
+        "level": 8,
+        "type": "Analysis",
+        "question": "How did the Vietcong's treatment of the South Vietnamese peasantry contrast with that of the US military, and what was its impact?",
+        "answer": "The Vietcong lived among the peasants, helped them with farming, and promised land reform, while ruthlessly punishing those who cooperated with the government. The US military, by contrast, destroyed crops with chemicals, burned villages during Search and Destroy missions, and forced peasants into Strategic Hamlets, driving the peasantry to support the communists."
+      },
+      {
+        "level": 9,
+        "type": "Concept",
+        "question": "How did the US home front influence the military command's decisions in Vietnam?",
+        "answer": "The intense anti-war protests, media criticism, and congressional opposition restricted the military's options. It prevented invasion of North Vietnam (to avoid drawing China into the war), forced the steady withdrawal of troops under Vietnamization, and ultimately led to the cutting of military budgets, making victory impossible."
+      },
+      {
+        "level": 10,
+        "type": "Challenge",
+        "question": "Assess whether military factors or political factors were more important in explaining the US defeat in Vietnam.",
+        "answer": "Political factors were ultimately more important. Militarily, the USA was vastly superior and never lost a major battle, and the Vietcong were severely weakened by 1968. However, the war could not be won because the South Vietnamese government lacked political legitimacy and popular support, making the ARVN ineffective. Furthermore, the political collapse on the US home front, driven by the draft and media coverage, made the war politically unsustainable. Since war is an extension of politics, the failure to win the 'hearts and minds' of both the Vietnamese peasants and the American public guaranteed US defeat."
+      }
     ]
   };
 
@@ -13893,16 +15990,25 @@ ${cleanBrackets(paper.q3d.model)}
     "sovereignty": "The supreme authority and self-governing power of a state or territory.",
     "credibility": "The quality of being trusted and believed in as a source of historical evidence."
   };
+  var highlightedKeywords = /* @__PURE__ */ new Set();
   function applyGlossaryTooltips(text) {
     if (!text) return "";
     let parsedText = text;
     const sortedTerms = Object.keys(GLOSSARY_DB).sort((a, b) => b.length - a.length);
     for (const term of sortedTerms) {
+      const termLower = term.toLowerCase();
+      if (highlightedKeywords.has(termLower)) {
+        continue;
+      }
       const definition = GLOSSARY_DB[term].replace(/"/g, "&quot;");
       const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
       const regex = new RegExp(`(<[^>]*>)|\\b(${escapedTerm})(s|d|ly|dness)?\\b`, "gi");
+      let replacedOnce = false;
       parsedText = parsedText.replace(regex, (match, isTag, word, suffix) => {
         if (isTag) return match;
+        if (replacedOnce || highlightedKeywords.has(termLower)) return match;
+        replacedOnce = true;
+        highlightedKeywords.add(termLower);
         const fullWord = suffix ? word + suffix : word;
         return `<span class="glossary-term" data-definition="${definition}">${fullWord}</span>`;
       });
@@ -13960,6 +16066,7 @@ ${cleanBrackets(paper.q3d.model)}
     return "";
   }
   function renderMasteryView(subtopicId) {
+    highlightedKeywords.clear();
     const container = document.getElementById("mastery-content-container");
     if (!container) return;
     const data = LESSONS_DATA[subtopicId];
@@ -14475,6 +16582,15 @@ ${cleanBrackets(paper.q3d.model)}
             </div>
           </div>
 
+          <!-- Student Draft Response Area -->
+          <div class="hu-draft-section" style="margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <strong style="color: var(--primary); font-size: 0.95rem;">Your Draft Response:</strong>
+              <span class="hu-save-status" id="hu-save-status-${subtopicId}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? "inline" : "none"};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
+            </div>
+            <textarea class="hu-textarea" data-subtopic-id="${subtopicId}" placeholder="Draft your 8-mark source evaluation here (analyze Content, NOP/Provenance, and Contextual Knowledge for both sources)..." style="width: 100%; height: 120px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; line-height: 1.45; font-family: inherit; margin-bottom: 6px;">${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? state.howUsefulAnswers[subtopicId] : ""}</textarea>
+          </div>
+
           <!-- Model Answer Reveal -->
           <div class="hu-model-answer-section">
             <button class="mastery-btn hu-reveal-btn" style="width: 100%; justify-content: center; background: var(--gradient-primary); border: none; color: white; padding: 12px; font-weight: bold; border-radius: var(--border-radius-sm); cursor: pointer; display: flex; align-items: center; gap: 8px;">
@@ -14719,24 +16835,70 @@ ${cleanBrackets(paper.q3d.model)}
       </div>
     `;
     }
+    let lessonWrapUpHtml = "";
+    if (data.lessonWrapUp) {
+      const wu = data.lessonWrapUp;
+      lessonWrapUpHtml = `
+      <div class="mastery-card lesson-wrap-up-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--accent); background: rgba(249, 115, 22, 0.02);">
+        <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; font-size: 1rem; color: var(--accent); margin: 0 0 12px 0;">
+          <span><i class="fa-solid fa-graduation-cap"></i> Lesson Wrap-up</span>
+          <button class="btn-audio-read" data-text-selector=".wrap-up-read-target" title="Read Wrap-up Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1rem; padding: 4px 8px; border-radius: var(--border-radius-sm); transition: all var(--transition-fast);">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </h3>
+        <div class="mastery-card-body wrap-up-read-target" style="padding-top: 4px;">
+          <p class="wrap-up-summary" style="margin-top: 0; line-height: 1.5; color: var(--text-base); font-size: 0.95rem;">
+            <strong>Key Takeaway:</strong> ${applyGlossaryTooltips(wu.summary)}
+          </p>
+          <p class="wrap-up-interpretation" style="line-height: 1.5; color: var(--text-muted); font-size: 0.9rem; font-style: italic; border-left: 3px solid var(--border-glass); padding-left: 12px; margin: 14px 0;">
+            <strong>Historical Interpretation:</strong> ${applyGlossaryTooltips(wu.interpretation)}
+          </p>
+          <div class="discussion-question-box" style="margin-top: 14px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px 14px;">
+            <strong style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">
+              <i class="fa-solid fa-comments"></i> Class Discussion Prompt:
+            </strong>
+            <p style="margin: 0; font-size: 0.92rem; font-weight: 550; color: var(--text-main); line-height: 1.4;">
+              ${applyGlossaryTooltips(wu.discussionQuestion)}
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+    }
     let hwHtml = "";
     const hwQuestions = HOMEWORK_QUESTIONS[subtopicId];
     if (hwQuestions && hwQuestions.length > 0) {
-      const questionsListMarkup = hwQuestions.map((q) => `
-      <li style="margin-bottom: 12px; padding-left: 4px; border-bottom: 1px dashed rgba(255,255,255,0.03); padding-bottom: 12px;">
-        ${applyGlossaryTooltips(q)}
-      </li>
-    `).join("");
+      const questionsListMarkup = hwQuestions.map((q, idx) => {
+        const badgeClass = `badge-${q.type.toLowerCase().replace(/\s/g, "")}`;
+        return `
+        <div class="journey-step-card" data-step="${idx}">
+          <div class="journey-step-header">
+            <div class="journey-step-left">
+              <div class="journey-step-circle">Q${idx + 1}</div>
+              <span class="journey-level-badge ${badgeClass}">Level ${q.level}: ${q.type}</span>
+            </div>
+            <div class="journey-step-right">
+              <i class="fa-solid fa-chevron-down journey-toggle-icon"></i>
+            </div>
+          </div>
+          <p class="journey-step-question">${applyGlossaryTooltips(q.question)}</p>
+          <div class="journey-answer-guide">
+            <span class="journey-answer-title">\u{1F6E1}\uFE0F Answer Guide:</span>
+            <p class="journey-answer-text">${applyGlossaryTooltips(q.answer)}</p>
+          </div>
+        </div>
+      `;
+      }).join("");
       hwHtml = `
       <div class="mastery-card homework-questions-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
-        <h3 class="mastery-card-title"><i class="fa-solid fa-file-pen" style="color: var(--primary);"></i> Classwork & Homework Questions</h3>
+        <h3 class="mastery-card-title"><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> \u{1F6E1}\uFE0F 10-Step Unit Mastery Journey</h3>
         <div class="mastery-card-body" style="padding-top: 6px;">
-          <p style="font-style: italic; margin-top: 0; margin-bottom: 16px; color: var(--text-muted); font-size: 0.85rem;">
-            Answer the following questions in class or for homework to test your understanding of this topic:
+          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted); font-size: 0.85rem;">
+            Missed this lesson or need a thorough refresh? Click through these 10 structured questions (ranging from basic recall to expert challenge) to master the unit!
           </p>
-          <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; line-height: 1.45; font-size: 0.95rem; color: var(--text-main);">
+          <div class="mastery-journey-container">
             ${questionsListMarkup}
-          </ol>
+          </div>
         </div>
       </div>
     `;
@@ -14767,6 +16929,27 @@ ${cleanBrackets(paper.q3d.model)}
       </div>
     `;
     }
+    let mapHtml = "";
+    if (data.mapConfig) {
+      mapHtml = `
+      <div class="mastery-card lesson-map-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
+        <h3 class="mastery-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 1rem; color: var(--primary); margin: 0 0 12px 0; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+          <span><i class="fa-solid fa-map-location-dot"></i> Interactive Lesson Map: ${data.mapConfig.title}</span>
+        </h3>
+        <div class="mastery-card-body" style="padding-top: 4px;">
+          <p style="margin-top: 0; margin-bottom: 16px; font-style: italic; color: var(--text-muted); font-size: 0.85rem;">
+            Click on the pulsing markers to explore the locations where these historic events unfolded. Use the controls to zoom.
+          </p>
+          <div class="map-wrapper" style="position: relative; width: 100%; border-radius: var(--border-radius-md); overflow: hidden;">
+            <div id="leaflet-map-${subtopicId}" style="width: 100%; height: 350px; background: #111; z-index: 1;"></div>
+          </div>
+          <div class="map-significance-box" id="map-significance-${subtopicId}" style="margin-top: 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px 14px; font-size: 0.9rem; line-height: 1.45; border-left: 3px solid var(--accent); transition: all 0.2s;">
+            <strong>Map Notes:</strong> ${applyGlossaryTooltips(data.mapConfig.description)}
+          </div>
+        </div>
+      </div>
+    `;
+    }
     container.innerHTML = `
     ${doNowHtml}
     
@@ -14785,6 +16968,7 @@ ${cleanBrackets(paper.q3d.model)}
     </div>
 
     ${learningObjectivesHtml}
+    ${mapHtml}
 
     <!-- Interactive Legend and Switch -->
     <div class="mastery-controls" style="max-width: 800px; margin: 0 auto 20px auto;">
@@ -14803,6 +16987,8 @@ ${cleanBrackets(paper.q3d.model)}
     ${stepsHtml}
     
     ${dualHtml}
+    
+    ${lessonWrapUpHtml}
     
     ${kcHtml}
     
@@ -15081,6 +17267,20 @@ ${cleanBrackets(paper.q3d.model)}
         flipCard.classList.toggle("flipped");
       });
     }
+    const journeyCards = container.querySelectorAll(".journey-step-card");
+    journeyCards.forEach((card) => {
+      card.addEventListener("click", (e) => {
+        if (e.target.classList.contains("glossary-term")) {
+          return;
+        }
+        AudioEngine.play("click");
+        const isActive = card.classList.contains("active");
+        journeyCards.forEach((c) => c.classList.remove("active"));
+        if (!isActive) {
+          card.classList.add("active");
+        }
+      });
+    });
     const vaultQuestionBtns = container.querySelectorAll(".vault-question-btn");
     vaultQuestionBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -15181,6 +17381,11 @@ ${cleanBrackets(paper.q3d.model)}
         });
       });
     });
+    if (data.mapConfig && window.L) {
+      setTimeout(() => {
+        initializeLeafletMap(subtopicId, data.mapConfig);
+      }, 100);
+    }
     if (data.howUsefulAnalyser) {
       const huCard = container.querySelector(".how-useful-card");
       if (huCard) {
@@ -15221,6 +17426,27 @@ ${cleanBrackets(paper.q3d.model)}
               modelContent.style.display = "none";
               revealBtn.innerHTML = `<i class="fa-solid fa-eye"></i> Compare with Examiner Model Answer`;
             }
+          });
+        }
+        const textarea = huCard.querySelector(".hu-textarea");
+        if (textarea) {
+          const subId = textarea.getAttribute("data-subtopic-id");
+          const saveStatus = document.getElementById(`hu-save-status-${subId}`);
+          let saveTimeout;
+          textarea.addEventListener("input", () => {
+            if (saveTimeout) clearTimeout(saveTimeout);
+            if (saveStatus) {
+              saveStatus.style.display = "inline";
+              saveStatus.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Saving...`;
+            }
+            saveTimeout = setTimeout(() => {
+              if (!state.howUsefulAnswers) state.howUsefulAnswers = {};
+              state.howUsefulAnswers[subId] = textarea.value;
+              saveProgress();
+              if (saveStatus) {
+                saveStatus.innerHTML = `<i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved`;
+              }
+            }, 800);
           });
         }
       }
@@ -15422,6 +17648,7 @@ ${cleanBrackets(paper.q3d.model)}
       });
     });
     formatVaultImportanceAnswers(container);
+    wrapImagesInLinks(container);
   }
   function blankFirstWord(block) {
     const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
@@ -15559,6 +17786,153 @@ ${cleanBrackets(paper.q3d.model)}
         }
       }
     });
+  }
+  function wrapImagesInLinks(container) {
+    if (!container) return;
+    container.querySelectorAll("img").forEach((img) => {
+      if (img.closest(".model-answer-key") || img.closest(".objective-checkbox") || img.classList.contains("model-key-dot") || img.style.width === "16px") return;
+      if (img.parentElement.tagName !== "A") {
+        const webUrl = getImageWebLink(img.getAttribute("src"), img.getAttribute("alt"));
+        const link = document.createElement("a");
+        link.href = webUrl;
+        link.target = "_blank";
+        link.style.display = "block";
+        link.style.cursor = "zoom-in";
+        link.className = "img-zoom-link";
+        img.parentNode.insertBefore(link, img);
+        link.appendChild(img);
+        const inspectDiv = document.createElement("div");
+        inspectDiv.className = "img-web-link-wrapper";
+        inspectDiv.style.textAlign = "center";
+        inspectDiv.style.marginTop = "6px";
+        inspectDiv.style.marginBottom = "12px";
+        inspectDiv.innerHTML = `
+        <a href="${webUrl}" target="_blank" style="color: var(--primary); font-size: 0.72rem; font-weight: bold; text-decoration: underline; display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-body);">
+          <i class="fa-solid fa-up-right-from-square"></i> Verify Source
+        </a>
+      `;
+        link.parentNode.insertBefore(inspectDiv, link.nextSibling);
+      }
+    });
+  }
+  function initializeLeafletMap(subtopicId, mapConfig) {
+    const mapContainer = document.getElementById(`leaflet-map-${subtopicId}`);
+    if (!mapContainer) return;
+    if (mapContainer._leaflet_id) {
+      return;
+    }
+    const isUsa = mapConfig.type === "usa";
+    const pointsDb = isUsa ? {
+      "topeka": { name: "Topeka, KS", coords: [39.0473, -95.6752] },
+      "oakland": { name: "Oakland, CA", coords: [37.8044, -122.2712] },
+      "losangeles": { name: "Los Angeles, CA", coords: [34.0522, -118.2437] },
+      "chicago": { name: "Chicago, IL", coords: [41.8781, -87.6298] },
+      "detroit": { name: "Detroit, MI", coords: [42.3314, -83.0458] },
+      "memphis": { name: "Memphis, TN", coords: [35.1495, -90.049] },
+      "littlerock": { name: "Little Rock, AR", coords: [34.7465, -92.2896] },
+      "oxford": { name: "Oxford, MS (Ole Miss)", coords: [34.3662, -89.538] },
+      "jackson": { name: "Jackson, MS", coords: [32.2988, -90.1848] },
+      "birmingham": { name: "Birmingham, AL", coords: [33.5186, -86.8104] },
+      "anniston": { name: "Anniston, AL", coords: [33.6598, -85.8316] },
+      "selma": { name: "Selma, AL", coords: [32.4074, -87.0211] },
+      "montgomery": { name: "Montgomery, AL", coords: [32.3668, -86.3] },
+      "washington": { name: "Washington D.C.", coords: [38.9072, -77.0369] },
+      "greensboro": { name: "Greensboro, NC", coords: [36.0726, -79.792] },
+      "newyork": { name: "New York City, NY", coords: [40.7128, -74.006] }
+    } : {
+      "hanoi": { name: "Hanoi", coords: [21.0285, 105.8542] },
+      "tonkin": { name: "Gulf of Tonkin", coords: [19.5, 107.5] },
+      "parallel17": { name: "17th Parallel DMZ", coords: [17, 107] },
+      "khesanh": { name: "Khe Sanh", coords: [16.6341, 106.7262] },
+      "hue": { name: "Hue", coords: [16.4637, 107.5908] },
+      "danang": { name: "Da Nang", coords: [16.0544, 108.2022] },
+      "saigon": { name: "Saigon", coords: [10.8231, 106.6297] },
+      "laos": { name: "Laos (Trail)", coords: [16.7, 106.2] },
+      "cambodia": { name: "Cambodia (Sanctuaries)", coords: [12, 104.5] }
+    };
+    let center = isUsa ? [37.8, -96] : [16, 106];
+    let zoom = isUsa ? 4 : 5;
+    if (subtopicId === "subtopic_1_2") {
+      center = [34.7465, -92.2896];
+      zoom = 6;
+    } else if (subtopicId === "subtopic_1_3") {
+      center = [32.3668, -86.3];
+      zoom = 7;
+    }
+    const map = window.L.map(mapContainer, {
+      center,
+      zoom,
+      zoomControl: true,
+      attributionControl: false
+    });
+    window.L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      maxZoom: 18
+    }).addTo(map);
+    const createMarkerIcon = (isActive) => {
+      const size = isActive ? 14 : 9;
+      const color = isActive ? "var(--primary)" : "#475569";
+      const borderColor = isActive ? "#fff" : "rgba(255,255,255,0.4)";
+      const shadow = isActive ? "box-shadow: 0 0 8px var(--primary);" : "";
+      const pulseHtml = isActive ? `<div class="hotspot-pulse" style="width: 14px; height: 14px; border: 2px solid var(--primary); border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: hotspot-ping 2s infinite ease-in-out; pointer-events: none;"></div>` : "";
+      return window.L.divIcon({
+        html: `
+        <div style="position: relative; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+          ${pulseHtml}
+          <div style="width: ${size}px; height: ${size}px; border-radius: 50%; background: ${color}; border: 2px solid ${borderColor}; ${shadow}"></div>
+        </div>
+      `,
+        className: "custom-leaflet-marker",
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+      });
+    };
+    const significanceBox = document.getElementById(`map-significance-${subtopicId}`);
+    for (const pid in pointsDb) {
+      const pt = pointsDb[pid];
+      const isHighlighted = mapConfig.highlightedPoints.includes(pid);
+      const sigObj = mapConfig.points && mapConfig.points[pid];
+      const significanceText = sigObj ? sigObj.text : pt.name;
+      const cleanName = sigObj ? sigObj.title : pt.name;
+      const icon = createMarkerIcon(isHighlighted);
+      const marker = window.L.marker(pt.coords, { icon }).addTo(map);
+      marker.bindTooltip(cleanName, {
+        permanent: isHighlighted,
+        direction: "top",
+        offset: [0, -10],
+        className: isHighlighted ? "leaflet-tooltip-active" : "leaflet-tooltip-inactive"
+      });
+      marker.on("click", () => {
+        AudioEngine.play("click");
+        if (significanceBox) {
+          significanceBox.style.borderColor = "var(--accent)";
+          significanceBox.style.background = "rgba(249, 115, 22, 0.05)";
+          significanceBox.innerHTML = `<strong>\u{1F4CD} ${cleanName}:</strong> ${applyGlossaryTooltips(significanceText)}`;
+        }
+        map.panTo(pt.coords);
+      });
+    }
+    if (mapConfig.drawRoute && mapConfig.drawRoute.length > 0) {
+      const routeCoords = mapConfig.drawRoute.map((pid) => {
+        const pt = pointsDb[pid];
+        return pt ? pt.coords : null;
+      }).filter((c) => c !== null);
+      const isTrail = mapConfig.drawRoute.includes("laos") && mapConfig.drawRoute.includes("cambodia");
+      const color = isTrail ? "var(--accent)" : "var(--primary)";
+      window.L.polyline(routeCoords, {
+        color,
+        weight: 3,
+        dashArray: "5, 5",
+        opacity: 0.85
+      }).addTo(map);
+    }
+    if (!isUsa) {
+      window.L.polyline([[17, 104.5], [17, 108.5]], {
+        color: "var(--accent)",
+        weight: 2,
+        dashArray: "3, 6",
+        opacity: 0.7
+      }).addTo(map);
+    }
   }
 
   // src/brand_config.js
@@ -17040,6 +19414,8 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       if (storedPastCompleted) state.pastPaperSession.completedQuestions = JSON.parse(storedPastCompleted);
       const storedDeepThinking = localStorage.getItem("edexcel_deep_thinking");
       if (storedDeepThinking) state.deepThinkingAnswers = JSON.parse(storedDeepThinking);
+      const storedHowUseful = localStorage.getItem("edexcel_how_useful");
+      if (storedHowUseful) state.howUsefulAnswers = JSON.parse(storedHowUseful);
       const storedObjectives = localStorage.getItem("edexcel_spec_objectives");
       if (storedObjectives) state.specObjectives = JSON.parse(storedObjectives);
     } catch (e) {
@@ -17057,6 +19433,7 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       localStorage.setItem("edexcel_past_answers", JSON.stringify(state.pastPaperSession.answers));
       localStorage.setItem("edexcel_past_completed", JSON.stringify(state.pastPaperSession.completedQuestions));
       localStorage.setItem("edexcel_deep_thinking", JSON.stringify(state.deepThinkingAnswers || {}));
+      localStorage.setItem("edexcel_how_useful", JSON.stringify(state.howUsefulAnswers || {}));
       localStorage.setItem("edexcel_spec_objectives", JSON.stringify(state.specObjectives || {}));
     } catch (e) {
       console.error("LocalStorage save error:", e);
