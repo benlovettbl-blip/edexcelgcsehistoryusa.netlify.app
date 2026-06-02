@@ -17383,13 +17383,13 @@ ${cleanBrackets(paper.q3d.model)}
           <i class="fa-solid fa-volume-high"></i>
         </button>
       </h2>
-      <p class="mastery-header-intro" style="margin-bottom: ${videoHtml ? "16px" : "0"};">
+      <p class="mastery-header-intro" style="margin-bottom: 16px;">
         ${applyGlossaryTooltips(data.headerIntro)}
       </p>
+      ${renderSpecChecklistCard(subtopicId, SPEC_CHECKLIST_DATA[subtopicId])}
       ${videoHtml}
     </div>
 
-    ${renderSpecChecklistCard(subtopicId, SPEC_CHECKLIST_DATA[subtopicId])}
     ${mapHtml}
 
     <!-- Interactive Legend and Switch -->

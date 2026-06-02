@@ -6628,3 +6628,12 @@ details > summary::marker {
   margin-top: 12px;
   padding-top: 4px;
 }
+
+/* Nested Spec Checklist inside Header Card styling */
+.mastery-header-card .spec-checklist-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  margin: 20px 0;
+}
