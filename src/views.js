@@ -1425,6 +1425,12 @@ function renderClassicView() {
   });
 }
 
+export function formatSubtopicIdToKT(subtopicId) {
+  if (!subtopicId) return '';
+  const match = subtopicId.match(/subtopic_(\d+)_(\d+)/);
+  return match ? `KT ${match[1]}.${match[2]}` : '';
+}
+
 // 5. Flashcard View logic
 function startFlashcardSession(subtopicId) {
   const questions = state.allQuestions.filter(q => q.subtopicId === subtopicId);
@@ -1604,6 +1610,10 @@ function renderFlashcard() {
   document.getElementById('card-back-answer').textContent = q.answer;
   document.getElementById('card-back-explanation').textContent = q.explanation;
   
+  const ktLabel = formatSubtopicIdToKT(q.subtopicId);
+  document.getElementById('card-front-topic-indicator').textContent = ktLabel;
+  document.getElementById('card-back-topic-indicator').textContent = ktLabel;
+  
   // Set bookmark states on flashcard faces
   const frontBkmk = document.getElementById('card-front-bookmark');
   const backBkmk = document.getElementById('card-back-bookmark');
@@ -1715,7 +1725,10 @@ function restoreFlashcardSkeleton() {
           <div class="flashcard-face flashcard-front">
             <div class="card-top">
               <span class="badge" id="card-front-badge">Standard</span>
-              <span class="bookmark-icon-container" id="card-front-bookmark"><i class="fa-regular fa-star"></i></span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="card-topic-indicator" id="card-front-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
+                <span class="bookmark-icon-container" id="card-front-bookmark"><i class="fa-regular fa-star"></i></span>
+              </div>
             </div>
             <div class="card-body"><h3 class="card-question" id="card-front-question"></h3></div>
             <div class="card-bottom"><i class="fa-solid fa-rotate"></i> Click card to flip and reveal answer</div>
@@ -1723,7 +1736,10 @@ function restoreFlashcardSkeleton() {
           <div class="flashcard-face flashcard-back">
             <div class="card-top">
               <span class="badge badge-standard" id="card-back-badge">Standard</span>
-              <span class="bookmark-icon-container" id="card-back-bookmark"><i class="fa-regular fa-star"></i></span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="card-topic-indicator" id="card-back-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
+                <span class="bookmark-icon-container" id="card-back-bookmark"><i class="fa-regular fa-star"></i></span>
+              </div>
             </div>
             <div class="card-body">
               <span class="card-answer-label">Correct Answer</span>
@@ -5290,6 +5306,7 @@ function renderKeyTopicOverview(topicId) {
 
       const q = currentQuestion;
       const isBookmarked = state.bookmarks.includes(q.id);
+      const ktLabel = formatSubtopicIdToKT(q.subtopicId);
 
       let mcqOptionsHtml = '';
       if (reinforcing && reinforceMcq) {
@@ -5309,7 +5326,10 @@ function renderKeyTopicOverview(topicId) {
             <div class="flashcard-face flashcard-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-glass); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card); background-image: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);">
               <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                 <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Standard' : 'Top Tier Trivia'}</span>
-                <span class="bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-star" style="color: var(--primary);"></i></span>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
+                  <span class="bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-star" style="color: var(--primary);"></i></span>
+                </div>
               </div>
               <div class="card-body" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 0;">
                 <h3 class="card-question" style="font-size: 0.95rem; font-weight: 600; line-height: 1.4; text-align: center; margin: 0; color: var(--text-main); max-width: 90%;">${q.question}</h3>
@@ -5320,7 +5340,10 @@ function renderKeyTopicOverview(topicId) {
             <div class="flashcard-face flashcard-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-active); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card-hover); background-image: radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%); transform: rotateY(180deg);">
               <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                 <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Standard' : 'Top Tier Trivia'}</span>
-                <span class="bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-star" style="color: var(--primary);"></i></span>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
+                  <span class="bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-star" style="color: var(--primary);"></i></span>
+                </div>
               </div>
               
               <!-- Standard back body (Question detail) -->
