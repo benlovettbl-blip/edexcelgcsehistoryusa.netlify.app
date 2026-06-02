@@ -8,6 +8,8 @@ import { LESSONS_DATA } from './lessons_data.js';
 import { MASTERY_DATA } from './mastery_data.js';
 import { DECISIONS_DATA } from './decisions_data.js';
 import { MINDMAP_DATA } from './mindmap_data.js';
+import { getImageWebLink } from './image_links.js';
+import { TABOO_CARDS } from './taboo_data.js';
 
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
@@ -247,20 +249,23 @@ function renderGamesView() {
   const tabMastery = document.getElementById('btn-tab-game-mastery');
   const tabDecisions = document.getElementById('btn-tab-game-decisions');
   const tabMindMap = document.getElementById('btn-tab-game-mindmap');
+  const tabTaboo = document.getElementById('btn-tab-game-taboo');
   const paneCausal = document.getElementById('game-causal-container');
   const paneChronology = document.getElementById('game-chronology-container');
   const paneMastery = document.getElementById('game-mastery-container');
   const paneDecisions = document.getElementById('game-decisions-container');
   const paneMindMap = document.getElementById('game-mindmap-container');
+  const paneTaboo = document.getElementById('game-taboo-container');
 
-  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap) {
+  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && 
+      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo) {
     const showCausal = () => {
       tabCausal.classList.add('active');
       tabCausal.style.borderColor = 'var(--primary)';
       tabCausal.style.color = 'var(--primary)';
       tabCausal.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabChronology, tabMastery, tabDecisions, tabMindMap].forEach(t => {
+      [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -272,6 +277,7 @@ function renderGamesView() {
       paneMastery.style.display = 'none';
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'none';
+      paneTaboo.style.display = 'none';
     };
 
     const showChronology = () => {
@@ -280,7 +286,7 @@ function renderGamesView() {
       tabChronology.style.color = 'var(--primary)';
       tabChronology.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabMastery, tabDecisions, tabMindMap].forEach(t => {
+      [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -292,6 +298,7 @@ function renderGamesView() {
       paneMastery.style.display = 'none';
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'none';
+      paneTaboo.style.display = 'none';
       
       initChronologyGame();
     };
@@ -302,7 +309,7 @@ function renderGamesView() {
       tabMastery.style.color = 'var(--primary)';
       tabMastery.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabDecisions, tabMindMap].forEach(t => {
+      [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -314,6 +321,7 @@ function renderGamesView() {
       paneMastery.style.display = 'block';
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'none';
+      paneTaboo.style.display = 'none';
 
       initMasteryMatchGame();
     };
@@ -324,7 +332,7 @@ function renderGamesView() {
       tabDecisions.style.color = 'var(--primary)';
       tabDecisions.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabMindMap].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -336,6 +344,7 @@ function renderGamesView() {
       paneMastery.style.display = 'none';
       paneDecisions.style.display = 'block';
       paneMindMap.style.display = 'none';
+      paneTaboo.style.display = 'none';
 
       initDecisionsGame();
     };
@@ -346,7 +355,7 @@ function renderGamesView() {
       tabMindMap.style.color = 'var(--primary)';
       tabMindMap.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabDecisions].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -358,8 +367,32 @@ function renderGamesView() {
       paneMastery.style.display = 'none';
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'block';
+      paneTaboo.style.display = 'none';
 
       initMindMapGame();
+    };
+
+    const showTaboo = () => {
+      tabTaboo.classList.add('active');
+      tabTaboo.style.borderColor = 'var(--primary)';
+      tabTaboo.style.color = 'var(--primary)';
+      tabTaboo.style.background = 'rgba(59, 130, 246, 0.1)';
+
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap].forEach(t => {
+        t.classList.remove('active');
+        t.style.borderColor = 'var(--border-glass)';
+        t.style.color = 'var(--text-muted)';
+        t.style.background = 'rgba(255,255,255,0.03)';
+      });
+
+      paneCausal.style.display = 'none';
+      paneChronology.style.display = 'none';
+      paneMastery.style.display = 'none';
+      paneDecisions.style.display = 'none';
+      paneMindMap.style.display = 'none';
+      paneTaboo.style.display = 'block';
+
+      initTabooGame();
     };
 
     tabCausal.addEventListener('click', () => {
@@ -385,6 +418,11 @@ function renderGamesView() {
     tabMindMap.addEventListener('click', () => {
       AudioEngine.play('click');
       showMindMap();
+    });
+
+    tabTaboo.addEventListener('click', () => {
+      AudioEngine.play('click');
+      showTaboo();
     });
   }
 }
@@ -2310,11 +2348,13 @@ function renderTimelineView() {
     });
 
     let buttons = '';
+    let keyFigureIndicator = '';
     if (matchedFigures.size > 0) {
       buttons = Array.from(matchedFigures).map(name => {
         const key = figureKeys.find(k => KEY_FIGURES_BIO[k].name === name);
         return `<button class="timeline-bio-btn" data-figure="${key}" style="margin-right: 6px; margin-top: 6px; padding: 4px 10px; font-size: 0.72rem; border-radius: 12px; background: rgba(245, 158, 11, 0.1); border: 1px solid var(--accent); color: var(--accent); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-user-graduate"></i> Figure: ${name}</button>`;
       }).join('');
+      keyFigureIndicator = `<span class="timeline-badge-keyfigure"><i class="fa-solid fa-user-graduate"></i> Key Figure: ${Array.from(matchedFigures).join(', ')}</span>`;
     }
     
     const lessonButton = `<button class="timeline-lesson-btn" data-subtopic="${q.subtopicId}" style="margin-right: 6px; margin-top: 6px; padding: 4px 10px; font-size: 0.72rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); color: var(--primary); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-book-open"></i> Go to Lesson</button>`;
@@ -2325,7 +2365,10 @@ function renderTimelineView() {
       <div class="timeline-year">${q.year}</div>
       <div class="timeline-content-card" style="cursor: pointer;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
-          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">${topicName}</span>
+          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px;">
+            <span>${topicName}</span>
+            ${keyFigureIndicator}
+          </span>
           <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Standard' : 'Top Tier Trivia'}</span>
         </div>
         <div class="timeline-q-title" style="font-weight: bold; line-height: 1.4;">${q.question}</div>
@@ -2368,6 +2411,20 @@ function renderTimelineView() {
     });
     
     wrapper.appendChild(item);
+  });
+
+  // Wrap all timeline images in links to open in a new tab for high-res inspection
+  wrapper.querySelectorAll('img').forEach(img => {
+    if (img.parentElement.tagName !== 'A') {
+      const webUrl = getImageWebLink(img.getAttribute('src'), img.getAttribute('alt'));
+      const link = document.createElement('a');
+      link.href = webUrl;
+      link.target = '_blank';
+      link.style.display = 'block';
+      link.style.cursor = 'zoom-in';
+      img.parentNode.insertBefore(link, img);
+      link.appendChild(img);
+    }
   });
 }
 
@@ -4142,6 +4199,573 @@ function initExamLeaderboard(scope, pct) {
   }
 }
 
+// ==========================================
+// --- Taboo Cards Revision Game Logic ---
+// ==========================================
+
+let tabooState = {
+  teams: [],
+  currentTeamIndex: 0,
+  currentRound: 1,
+  totalRounds: 3,
+  timeLimit: 60,
+  timeLeft: 60,
+  timerInterval: null,
+  activeCategories: [],
+  cardsPool: [],
+  currentCardIndex: 0,
+  currentCard: null,
+  turnScore: 0,
+  turnLogs: []
+};
+
+function tabooShuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function initTabooGame() {
+  const container = document.getElementById('taboo-game-play-area');
+  if (!container) return;
+
+  // Clear any running timers
+  if (tabooState.timerInterval) {
+    clearInterval(tabooState.timerInterval);
+    tabooState.timerInterval = null;
+  }
+
+  // Render Setup Panel
+  container.innerHTML = `
+    <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto;">
+      <div class="taboo-setup-section">
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-top: 0; margin-bottom: 12px; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-gear" style="color: var(--primary);"></i> Game Settings
+        </h3>
+        
+        <!-- Number of Teams -->
+        <div class="form-group" style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+          <label class="taboo-team-label">Number of Teams</label>
+          <select id="taboo-setup-team-count" class="select-input" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-main); font-size: 0.9rem; outline: none; cursor: pointer;">
+            <option value="2" selected>2 Teams</option>
+            <option value="3">3 Teams</option>
+            <option value="4">4 Teams</option>
+            <option value="5">5 Teams</option>
+            <option value="6">6 Teams</option>
+          </select>
+        </div>
+
+        <!-- Team Names Grid -->
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label class="taboo-team-label">Team Names</label>
+          <div id="taboo-setup-teams-list" class="taboo-teams-grid">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Turn Duration & Rounds -->
+        <div style="display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap;">
+          <div class="form-group" style="flex: 1; min-width: 120px; display: flex; flex-direction: column; gap: 6px;">
+            <label class="taboo-team-label">Time Limit per Turn</label>
+            <select id="taboo-setup-time-limit" class="select-input" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-main); font-size: 0.9rem; outline: none; cursor: pointer;">
+              <option value="30">30 Seconds</option>
+              <option value="45">45 Seconds</option>
+              <option value="60" selected>60 Seconds</option>
+              <option value="90">90 Seconds</option>
+              <option value="120">120 Seconds</option>
+            </select>
+          </div>
+          <div class="form-group" style="flex: 1; min-width: 120px; display: flex; flex-direction: column; gap: 6px;">
+            <label class="taboo-team-label">Number of Rounds</label>
+            <select id="taboo-setup-rounds" class="select-input" style="width: 100%; padding: 10px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-main); font-size: 0.9rem; outline: none; cursor: pointer;">
+              <option value="1">1 Round</option>
+              <option value="2">2 Rounds</option>
+              <option value="3" selected>3 Rounds</option>
+              <option value="4">4 Rounds</option>
+              <option value="5">5 Rounds</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Category Select -->
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label class="taboo-team-label">Select Categories</label>
+          <div class="taboo-categories-list">
+            <label class="taboo-category-checkbox-wrapper">
+              <input type="checkbox" name="taboo-category" value="People" checked>
+              <span>People</span>
+            </label>
+            <label class="taboo-category-checkbox-wrapper">
+              <input type="checkbox" name="taboo-category" value="Places" checked>
+              <span>Places</span>
+            </label>
+            <label class="taboo-category-checkbox-wrapper">
+              <input type="checkbox" name="taboo-category" value="Things" checked>
+              <span>Things (Concepts & Laws)</span>
+            </label>
+            <label class="taboo-category-checkbox-wrapper">
+              <input type="checkbox" name="taboo-category" value="Events" checked>
+              <span>Events</span>
+            </label>
+          </div>
+        </div>
+
+        <button id="btn-taboo-start" class="btn-primary" style="width: 100%; padding: 12px; font-weight: 700; font-size: 1rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fa-solid fa-circle-play"></i> Start Taboo Game
+        </button>
+      </div>
+    </div>
+  `;
+
+  const teamCountSelect = document.getElementById('taboo-setup-team-count');
+  const teamsListContainer = document.getElementById('taboo-setup-teams-list');
+
+  const updateTeamFields = () => {
+    const count = parseInt(teamCountSelect.value);
+    let fieldsHtml = '';
+    for (let i = 1; i <= count; i++) {
+      fieldsHtml += `
+        <div class="taboo-team-field">
+          <label class="taboo-team-label" style="font-size: 0.65rem;">Team ${i} Name</label>
+          <input type="text" class="taboo-input taboo-team-name-input" value="Team ${i}" data-index="${i-1}">
+        </div>
+      `;
+    }
+    teamsListContainer.innerHTML = fieldsHtml;
+  };
+
+  teamCountSelect.addEventListener('change', () => {
+    AudioEngine.play('click');
+    updateTeamFields();
+  });
+
+  // Initial fill
+  updateTeamFields();
+
+  document.getElementById('btn-taboo-start').addEventListener('click', () => {
+    AudioEngine.play('click');
+    startTabooGame();
+  });
+}
+
+function startTabooGame() {
+  const teamCountSelect = document.getElementById('taboo-setup-team-count');
+  if (!teamCountSelect) return;
+  const timeLimitSelect = document.getElementById('taboo-setup-time-limit');
+  const roundsSelect = document.getElementById('taboo-setup-rounds');
+  
+  const timeLimit = parseInt(timeLimitSelect.value);
+  const totalRounds = parseInt(roundsSelect.value);
+  
+  // Collect team names
+  const teamInputs = document.querySelectorAll('.taboo-team-name-input');
+  const teams = [];
+  teamInputs.forEach(input => {
+    teams.push({
+      name: input.value.trim() || `Team ${parseInt(input.dataset.index) + 1}`,
+      score: 0
+    });
+  });
+
+  // Collect active categories
+  const categoryCheckboxes = document.querySelectorAll('input[name="taboo-category"]:checked');
+  const activeCategories = Array.from(categoryCheckboxes).map(cb => cb.value);
+
+  if (activeCategories.length === 0) {
+    alert("Please select at least one category to play.");
+    return;
+  }
+
+  // Compile cards pool
+  let rawPool = [];
+  activeCategories.forEach(cat => {
+    if (TABOO_CARDS[cat]) {
+      const cards = TABOO_CARDS[cat].map(card => ({ ...card, category: cat }));
+      rawPool = rawPool.concat(cards);
+    }
+  });
+
+  if (rawPool.length === 0) {
+    alert("No taboo cards found in the selected categories.");
+    return;
+  }
+
+  // Setup state
+  tabooState.teams = teams;
+  tabooState.currentTeamIndex = 0;
+  tabooState.currentRound = 1;
+  tabooState.totalRounds = totalRounds;
+  tabooState.timeLimit = timeLimit;
+  tabooState.activeCategories = activeCategories;
+  
+  // Shuffle cards
+  tabooState.cardsPool = tabooShuffleArray(rawPool);
+  tabooState.currentCardIndex = 0;
+
+  renderTabooTurnTransition();
+}
+
+function renderTabooTurnTransition() {
+  const container = document.getElementById('taboo-game-play-area');
+  if (!container) return;
+
+  const currentTeam = tabooState.teams[tabooState.currentTeamIndex];
+
+  // Render Scoreboard
+  let scoreboardRowsHtml = tabooState.teams.map((t, idx) => {
+    const isCurrent = idx === tabooState.currentTeamIndex;
+    return `
+      <tr class="${isCurrent ? 'current-team' : ''}" style="${isCurrent ? 'font-weight: bold; border-left: 3px solid var(--primary);' : ''}">
+        <td>${t.name} ${isCurrent ? ' <span style="font-size: 0.7rem; background: var(--primary); color: black; padding: 2px 6px; border-radius: 4px; font-weight: bold;">UP NEXT</span>' : ''}</td>
+        <td style="text-align: right; font-weight: 700;">${t.score} pts</td>
+      </tr>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <div class="taboo-setup-section" style="padding: 30px;">
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">
+          Round ${tabooState.currentRound} of ${tabooState.totalRounds}
+        </span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 16px 0;">
+          ${currentTeam.name}'s Turn
+        </h2>
+        
+        <div class="info-alert" style="margin-bottom: 24px; padding: 14px 16px; background: rgba(56, 189, 248, 0.08); border-left: 4px solid var(--primary); text-align: left; border-radius: 4px;">
+          <p style="margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
+            <strong>Guesser:</strong> Sit with your back to the screen.<br>
+            <strong>Team Members:</strong> Face the screen and describe the target words. Do NOT use the target word or any of the 5 listed Taboo words!
+          </p>
+        </div>
+
+        <button id="btn-taboo-start-turn" class="btn-primary" style="width: 100%; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px;">
+          <i class="fa-solid fa-play"></i> Start Turn (${tabooState.timeLimit}s)
+        </button>
+
+        <div style="border-top: 1px solid var(--border-glass); padding-top: 20px; text-align: left;">
+          <h4 style="margin: 0 0 12px 0; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Current Standings</h4>
+          <table class="taboo-scoreboard-table">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th style="text-align: right;">Total Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${scoreboardRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('btn-taboo-start-turn').addEventListener('click', () => {
+    AudioEngine.play('click');
+    startTabooTurn();
+  });
+}
+
+function startTabooTurn() {
+  tabooState.turnScore = 0;
+  tabooState.timeLeft = tabooState.timeLimit;
+  tabooState.turnLogs = [];
+  
+  // Render active play screen skeleton
+  renderTabooPlayScreen();
+
+  // Draw first card
+  drawNextTabooCard();
+
+  // Start timer interval
+  const timerBadge = document.getElementById('taboo-timer');
+  tabooState.timerInterval = setInterval(() => {
+    tabooState.timeLeft--;
+    if (timerBadge) {
+      timerBadge.textContent = `${tabooState.timeLeft}s`;
+      if (tabooState.timeLeft <= 10) {
+        timerBadge.classList.add('flashing');
+      }
+    }
+
+    if (tabooState.timeLeft <= 0) {
+      handleTabooTimerEnd();
+    }
+  }, 1000);
+}
+
+function renderTabooPlayScreen() {
+  const container = document.getElementById('taboo-game-play-area');
+  if (!container) return;
+
+  const currentTeam = tabooState.teams[tabooState.currentTeamIndex];
+
+  container.innerHTML = `
+    <div class="taboo-play-wrapper">
+      
+      <!-- Top Stats Bar -->
+      <div class="taboo-timer-container">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: bold; display: block;">Team Playing</span>
+          <strong style="color: var(--primary); font-size: 1rem;">${currentTeam.name}</strong>
+        </div>
+        <div style="text-align: center;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: bold; display: block;">Turn Score</span>
+          <strong id="taboo-turn-score" style="color: var(--success); font-size: 1.1rem;">0</strong>
+        </div>
+        <div style="text-align: right;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: bold; display: block;">Time Left</span>
+          <div id="taboo-timer" class="taboo-timer-badge">${tabooState.timeLeft}s</div>
+        </div>
+      </div>
+
+      <!-- Taboo Card Area -->
+      <div id="taboo-card-container" style="width: 100%; display: flex; justify-content: center;">
+        <!-- Card gets injected here -->
+      </div>
+
+      <!-- Controls -->
+      <div style="display: flex; gap: 16px; width: 100%; max-width: 500px; margin-top: 10px;">
+        <button id="btn-taboo-skip" class="taboo-btn-red">
+          <i class="fa-solid fa-ban"></i> Taboo / Skip (0)
+        </button>
+        <button id="btn-taboo-correct" class="taboo-btn-green">
+          <i class="fa-solid fa-circle-check"></i> Correct (+1)
+        </button>
+      </div>
+
+      <button id="btn-taboo-end-early" class="btn-secondary" style="margin-top: 16px; padding: 8px 16px; font-size: 0.8rem; font-weight: 600;">
+        <i class="fa-solid fa-square-minus"></i> End Turn Early
+      </button>
+
+    </div>
+  `;
+
+  document.getElementById('btn-taboo-correct').addEventListener('click', () => {
+    AudioEngine.play('success');
+    recordCardResult(true);
+    drawNextTabooCard();
+  });
+
+  document.getElementById('btn-taboo-skip').addEventListener('click', () => {
+    AudioEngine.play('fail');
+    recordCardResult(false);
+    drawNextTabooCard();
+  });
+
+  document.getElementById('btn-taboo-end-early').addEventListener('click', () => {
+    AudioEngine.play('click');
+    handleTabooTimerEnd();
+  });
+}
+
+function recordCardResult(isCorrect) {
+  if (!tabooState.currentCard) return;
+
+  if (isCorrect) {
+    tabooState.turnScore++;
+    document.getElementById('taboo-turn-score').textContent = tabooState.turnScore;
+  }
+
+  tabooState.turnLogs.push({
+    target: tabooState.currentCard.target,
+    status: isCorrect ? 'correct' : 'skip'
+  });
+}
+
+function drawNextTabooCard() {
+  const cardContainer = document.getElementById('taboo-card-container');
+  if (!cardContainer) return;
+
+  // Check if we ran out of cards, if so recycle and reshuffle
+  if (tabooState.currentCardIndex >= tabooState.cardsPool.length) {
+    let rawPool = [];
+    tabooState.activeCategories.forEach(cat => {
+      if (TABOO_CARDS[cat]) {
+        rawPool = rawPool.concat(TABOO_CARDS[cat].map(c => ({ ...c, category: cat })));
+      }
+    });
+    tabooState.cardsPool = tabooShuffleArray(rawPool);
+    tabooState.currentCardIndex = 0;
+  }
+
+  const card = tabooState.cardsPool[tabooState.currentCardIndex];
+  tabooState.currentCard = card;
+  tabooState.currentCardIndex++;
+
+  const listItemsHtml = card.taboo.map(word => `
+    <div class="taboo-forbidden-word-box">${word}</div>
+  `).join('');
+
+  cardContainer.innerHTML = `
+    <div class="taboo-game-card glowing">
+      <span class="taboo-card-category-badge">${card.category}</span>
+      <h2 class="taboo-card-target-word">${card.target}</h2>
+      
+      <div class="taboo-card-forbidden-section">
+        <span class="taboo-forbidden-title">🚫 Forbidden Taboo Words:</span>
+        <div class="taboo-forbidden-words-container">
+          ${listItemsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function handleTabooTimerEnd() {
+  if (tabooState.timerInterval) {
+    clearInterval(tabooState.timerInterval);
+    tabooState.timerInterval = null;
+  }
+
+  // Save score to active team
+  const currentTeam = tabooState.teams[tabooState.currentTeamIndex];
+  currentTeam.score += tabooState.turnScore;
+
+  // Render Turn Summary Screen
+  const container = document.getElementById('taboo-game-play-area');
+  if (!container) return;
+
+  let logsHtml = tabooState.turnLogs.map(log => `
+    <div style="display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.88rem;">
+      <span style="color: #fff; font-weight: 500;">${log.target}</span>
+      <span style="font-weight: 700; color: ${log.status === 'correct' ? 'var(--success)' : 'var(--accent)'}; font-size: 0.75rem; text-transform: uppercase;">
+        ${log.status === 'correct' ? '✓ Correct' : '✗ Skipped'}
+      </span>
+    </div>
+  `).join('');
+
+  if (tabooState.turnLogs.length === 0) {
+    logsHtml = `<p style="margin: 0; text-align: center; font-size: 0.88rem; color: var(--text-muted); padding: 12px 0;">No words played this turn.</p>`;
+  }
+
+  container.innerHTML = `
+    <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <div class="taboo-setup-section" style="padding: 30px;">
+        <span style="font-size: 2.5rem; color: var(--success); display: block; margin-bottom: 12px;">⏰</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #fff; margin: 0 0 8px 0;">Turn Completed!</h2>
+        <p style="margin: 0 0 24px 0; color: var(--text-muted); font-size: 0.95rem;">
+          <strong>${currentTeam.name}</strong> scored <strong style="color: var(--success); font-size: 1.15rem;">+${tabooState.turnScore}</strong> points this round.
+        </p>
+
+        <!-- Turn Log -->
+        <div style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-glass); border-radius: 4px; padding: 14px; text-align: left; margin-bottom: 24px; max-height: 200px; overflow-y: auto;">
+          <h4 style="margin: 0 0 10px 0; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Round Log</h4>
+          ${logsHtml}
+        </div>
+
+        <button id="btn-taboo-next-turn" class="btn-primary" style="width: 100%; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          Continue <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('btn-taboo-next-turn').addEventListener('click', () => {
+    AudioEngine.play('click');
+    progressTabooGame();
+  });
+}
+
+function progressTabooGame() {
+  // Move to next team
+  tabooState.currentTeamIndex++;
+  
+  // Check if round is complete (i.e. all teams have played)
+  if (tabooState.currentTeamIndex >= tabooState.teams.length) {
+    tabooState.currentTeamIndex = 0;
+    tabooState.currentRound++;
+  }
+
+  // Check if game is complete (all rounds completed)
+  if (tabooState.currentRound > tabooState.totalRounds) {
+    endTabooGame();
+  } else {
+    renderTabooTurnTransition();
+  }
+}
+
+function endTabooGame() {
+  const container = document.getElementById('taboo-game-play-area');
+  if (!container) return;
+
+  // Play cheer audio
+  AudioEngine.play('cheer');
+
+  // Trigger confetti
+  Confetti.trigger();
+
+  // Find winner(s)
+  let maxScore = -1;
+  tabooState.teams.forEach(t => {
+    if (t.score > maxScore) maxScore = t.score;
+  });
+
+  const winners = tabooState.teams.filter(t => t.score === maxScore);
+  let winMessage = "";
+  if (winners.length === 1) {
+    winMessage = `<strong style="color: var(--primary); font-size: 1.5rem;">👑 ${winners[0].name} Wins!</strong>`;
+  } else {
+    winMessage = `<strong style="color: var(--primary); font-size: 1.4rem;">🤝 It's a Tie between: ${winners.map(w => w.name).join(', ')}!</strong>`;
+  }
+
+  // Scoreboard rows sorted descending
+  const sortedTeams = [...tabooState.teams].sort((a, b) => b.score - a.score);
+  let scoreboardRowsHtml = sortedTeams.map((t, idx) => {
+    const isWinner = t.score === maxScore;
+    return `
+      <tr style="${isWinner ? 'font-weight: bold; background: rgba(16, 185, 129, 0.05);' : ''}">
+        <td>
+          <span style="font-weight: bold; margin-right: 12px; color: var(--text-muted); font-size: 0.85rem;">#${idx + 1}</span>
+          ${t.name} ${isWinner ? ' 🏆' : ''}
+        </td>
+        <td style="text-align: right; font-weight: 700; color: ${isWinner ? 'var(--success)' : ''};">${t.score} pts</td>
+      </tr>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <div class="taboo-setup-section" style="padding: 40px 30px;">
+        <span style="font-size: 3.5rem; display: block; margin-bottom: 12px;">🏆</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 12px 0;">Taboo Revision Completed!</h2>
+        
+        <div style="margin-bottom: 28px; padding: 14px 20px; background: rgba(56, 189, 248, 0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); display: inline-block;">
+          ${winMessage}
+        </div>
+
+        <div style="text-align: left; margin-bottom: 28px;">
+          <h4 style="margin: 0 0 12px 0; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Final Results</h4>
+          <table class="taboo-scoreboard-table">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th style="text-align: right;">Final Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${scoreboardRowsHtml}
+            </tbody>
+          </table>
+        </div>
+
+        <button id="btn-taboo-reset" class="btn-primary" style="width: 100%; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fa-solid fa-rotate-left"></i> Play Again
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('btn-taboo-reset').addEventListener('click', () => {
+    AudioEngine.play('click');
+    initTabooGame();
+  });
+}
+
 export {
   renderSidebarNav,
   updateBookmarksUI,
@@ -4163,7 +4787,8 @@ export {
   initMasteryMatchGame,
   initDecisionsGame,
   initMindMapGame,
-  initExamLeaderboard
+  initExamLeaderboard,
+  initTabooGame
 };
 
 

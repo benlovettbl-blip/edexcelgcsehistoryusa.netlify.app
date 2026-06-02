@@ -9,6 +9,71 @@ import { QUIZ_DATA } from '../questions.js';
 import { highlightModelQuotes } from './layout.js';
 import { SPOT_THE_FLAW_DATA } from './spot_the_flaw_data.js';
 import { VIDEOS_DATA } from './videos_data.js';
+import { HOMEWORK_QUESTIONS } from './homework_data.js';
+import { getImageWebLink } from './image_links.js';
+import { SPEC_CHECKLIST_DATA } from './spec_checklist_data.js';
+
+const GLOSSARY_DB = {
+  "segregation": "The legally or socially enforced separation of different racial groups in public spaces, housing, or education.",
+  "desegregation": "The process of ending the separation of racial groups, particularly in schools, transport, and public spaces.",
+  "unconstitutional": "Not in accordance with a country's constitution, meaning it is legally invalid and void.",
+  "constitution": "The supreme set of laws governing a nation, defining the powers of government and the rights of citizens.",
+  "jurisdiction": "The official power to make legal decisions and judgments over a specific area or group of people.",
+  "provocation": "An action or speech that deliberately makes someone annoyed or angry, often to elicit a hostile response.",
+  "provenance": "The origin, background, context, and history of a source (who made it, when, where, and why).",
+  "grassroots": "Local or community-level activism and organization, driven by ordinary citizens rather than political leaders.",
+  "attrition": "A strategy of wearing down an opponent's strength and resources over time through continuous pressure.",
+  "historiography": "The study of how history is written, focusing on different interpretations and perspectives of historians over time.",
+  "orthodox": "The traditional, widely accepted historical interpretation of an event.",
+  "revisionist": "A historical interpretation that challenges and revises traditional, orthodox views with new evidence or perspectives.",
+  "litigation": "The process of taking legal action through the courts to enforce rights or resolve disputes.",
+  "disenfranchisement": "The revocation of the right of suffrage (the right to vote) of a person or group of people.",
+  "disfranchisement": "The revocation of the right of suffrage (the right to vote) of a person or group of people.",
+  "integration": "The free association of people from all racial groups in public facilities, schools, and communities.",
+  "boycott": "A punitive ban on relations with a product, organization, or country, as a form of protest.",
+  "federalised": "Placing state forces or organizations under the direct command of the national (federal) government.",
+  "federalized": "Placing state forces or organizations under the direct command of the national (federal) government.",
+  "non-violence": "The practice of achieving social or political goals through peaceful protest and civil disobedience without physical force.",
+  "non-violent": "The practice of achieving social or political goals through peaceful protest and civil disobedience without physical force.",
+  "sovereignty": "The supreme authority and self-governing power of a state or territory.",
+  "credibility": "The quality of being trusted and believed in as a source of historical evidence."
+};
+
+let highlightedKeywords = new Set();
+
+function applyGlossaryTooltips(text) {
+  if (!text) return '';
+  let parsedText = text;
+  
+  const sortedTerms = Object.keys(GLOSSARY_DB).sort((a, b) => b.length - a.length);
+  
+  for (const term of sortedTerms) {
+    const termLower = term.toLowerCase();
+    
+    // Skip if this keyword was already highlighted in this lesson
+    if (highlightedKeywords.has(termLower)) {
+      continue;
+    }
+    
+    const definition = GLOSSARY_DB[term].replace(/"/g, '&quot;');
+    const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const regex = new RegExp(`(<[^>]*>)|\\b(${escapedTerm})(s|d|ly|dness)?\\b`, 'gi');
+    
+    let replacedOnce = false;
+    parsedText = parsedText.replace(regex, (match, isTag, word, suffix) => {
+      if (isTag) return match;
+      if (replacedOnce || highlightedKeywords.has(termLower)) return match;
+      
+      replacedOnce = true;
+      highlightedKeywords.add(termLower);
+      const fullWord = suffix ? word + suffix : word;
+      return `<span class="glossary-term" data-definition="${definition}">${fullWord}</span>`;
+    });
+  }
+  
+  return parsedText;
+}
+
 function parseSummaryCorrectionText(text) {
   if (!text) return '';
   return text.replace(/\[\[(.*?)\]\]/g, (match, content) => {
@@ -61,7 +126,64 @@ function getVaultLegendHTML(subtopicId) {
   return '';
 }
 
+export function renderSpecChecklistCard(subtopicId, checklist) {
+  if (!checklist || checklist.length === 0) return '';
+  
+  let checkedStates = {};
+  try {
+    const saved = localStorage.getItem('edexcel_spec_checklist');
+    if (saved) {
+      checkedStates = JSON.parse(saved);
+    }
+  } catch (e) {
+    console.error(e);
+  }
+
+  const itemsHtml = checklist.map((item, idx) => {
+    const key = `${subtopicId}_${idx}`;
+    const isChecked = checkedStates[key] || false;
+    
+    const keyFactsHtml = item.keyFacts.map(fact => `
+      <li style="margin-bottom: 8px; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted); position: relative; padding-left: 18px; list-style-type: none;">
+        <span style="position: absolute; left: 0; top: 0; color: var(--primary); font-size: 1.1rem; line-height: 1;">&bull;</span>
+        ${applyGlossaryTooltips(fact)}
+      </li>
+    `).join('');
+
+    return `
+      <div class="spec-checklist-item ${isChecked ? 'checked' : ''}" data-key="${key}">
+        <div class="spec-checklist-main" style="display: flex; align-items: flex-start; gap: 12px; width: 100%;">
+          <div class="spec-checklist-checkbox">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="spec-checklist-text" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main);">${applyGlossaryTooltips(item.point)}</div>
+        </div>
+        <div class="spec-checklist-expansion">
+          <ul style="margin: 0; padding: 0;">
+            ${keyFactsHtml}
+          </ul>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="spec-checklist-card" style="max-width: 800px; margin: 0 auto 24px auto;">
+      <h4 class="spec-checklist-title" style="display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-clipboard-list" style="color: var(--primary);"></i> Official Spec Checklist: Topic study goals
+      </h4>
+      <p class="spec-checklist-subtitle" style="margin-top: 6px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+        Tick each official Edexcel specification point to expand the key facts you need for the exam:
+      </p>
+      <div class="spec-checklist-items">
+        ${itemsHtml}
+      </div>
+    </div>
+  `;
+}
+
 export function renderMasteryView(subtopicId) {
+  highlightedKeywords.clear();
   const container = document.getElementById('mastery-content-container');
   if (!container) return;
 
@@ -132,7 +254,7 @@ export function renderMasteryView(subtopicId) {
           <div class="scholarly-content" style="margin-top: 12px; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
             ${scholarlyImgHtml}
             <strong style="display: block; margin-bottom: 6px; color: var(--primary); font-size: 0.95rem;">${step.scholarlyDepth.title}</strong>
-            <p style="margin: 0 0 12px 0; font-style: italic;">${step.scholarlyDepth.body}</p>
+            <p style="margin: 0 0 12px 0; font-style: italic;">${applyGlossaryTooltips(step.scholarlyDepth.body)}</p>
             ${scholarlySourceHtml}
           </div>
         </details>
@@ -150,12 +272,21 @@ export function renderMasteryView(subtopicId) {
       `;
     }
 
+    const audioBtnHtml = `
+      <button class="btn-audio-read" title="Read Step Aloud" style="margin-left: 8px;">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+    `;
+
     if (step.isSplit) {
       stepsHtml += `
         <div class="mastery-card" style="max-width: 800px; margin: 0 auto 20px auto;">
-          <h3 class="mastery-card-title">${step.title}</h3>
+          <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <span>${step.title}</span>
+            ${audioBtnHtml}
+          </h3>
           <div class="mastery-split-layout">
-            ${step.bodyHtml}
+            ${applyGlossaryTooltips(step.bodyHtml)}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -164,9 +295,12 @@ export function renderMasteryView(subtopicId) {
     } else {
       stepsHtml += `
         <div class="mastery-card" style="max-width: 800px; margin: 0 auto 20px auto;">
-          <h3 class="mastery-card-title">${step.title}</h3>
+          <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <span>${step.title}</span>
+            ${audioBtnHtml}
+          </h3>
           <div class="mastery-card-body card-content">
-            ${step.bodyHtml}
+            ${applyGlossaryTooltips(step.bodyHtml)}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -178,14 +312,72 @@ export function renderMasteryView(subtopicId) {
   // Generate Dual Perspective slider HTML
   let dualHtml = '';
   if (data.dualPerspective) {
+    let historiographicalSubtitle = '';
+    let disagreeSourceCard = '';
+    
+    // Choose appropriate historiographical debate label based on subtopic ID
+    if (subtopicId.startsWith('subtopic_1') || subtopicId.startsWith('subtopic_2')) {
+      historiographicalSubtitle = `
+        <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="historiographical-label top-down">Top-Down Legalistic</span>
+          <span class="historiographical-label bottom-up">Bottom-Up Grassroots</span>
+        </div>
+      `;
+      disagreeSourceCard = `
+        <div class="disagree-analysis-card">
+          <div class="disagree-analysis-title">
+            <i class="fa-solid fa-code-branch"></i> Why Historians Disagree: Source Selection Analysis
+          </div>
+          <div class="disagree-analysis-body">
+            <p style="margin-bottom: 8px;">Historians of the Civil Rights era reach conflicting interpretations because they select and prioritize different primary sources:</p>
+            <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px;">
+              <li>
+                <strong>Presidential Papers & court rulings (Top-Down):</strong> Historians prioritizing Eisenhower's transcripts or Supreme Court decrees conclude that change was driven by constitutional authority and institutional reforms.
+              </li>
+              <li>
+                <strong>Oral Histories & Local records (Bottom-Up):</strong> Historians prioritizing SNCC field reports, church diaries, or Rosa Parks' notes conclude that the federal government only acted when forced by grassroots mobilization and disruption.
+              </li>
+            </ul>
+          </div>
+        </div>
+      `;
+    } else {
+      historiographicalSubtitle = `
+        <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="historiographical-label orthodox">Orthodox Interpretation</span>
+          <span class="historiographical-label revisionist">Revisionist Interpretation</span>
+        </div>
+      `;
+      disagreeSourceCard = `
+        <div class="disagree-analysis-card">
+          <div class="disagree-analysis-title">
+            <i class="fa-solid fa-code-branch"></i> Why Historians Disagree: Source Selection Analysis
+          </div>
+          <div class="disagree-analysis-body">
+            <p style="margin-bottom: 8px;">Historians of the Vietnam War period disagree due to their methodological frameworks and source preferences:</p>
+            <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px;">
+              <li>
+                <strong>Orthodox Historians (National Security Archives):</strong> Prioritizing Pentagon planning files and US military reports, they conclude the war was an inevitable tragedy of Cold War containment policy and military overreach.
+              </li>
+              <li>
+                <strong>Revisionist/Vietnamese Sources (Local Accounts):</strong> Prioritizing translated NLF/PAVN diaries, local guerrilla interviews, and rural intelligence reports, they argue the US failed primarily because it ignored the nationalist, anti-colonial nature of the Vietnamese struggle.
+              </li>
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+
     dualHtml = `
       <div class="dual-perspective-card left-active"
            data-left-headline="${data.dualPerspective.leftHeadline}"
            data-left-text="${data.dualPerspective.leftText}"
            data-right-headline="${data.dualPerspective.rightHeadline}"
-           data-right-text="${data.dualPerspective.rightText}">
+           data-right-text="${data.dualPerspective.rightText}"
+           style="max-width: 800px; margin: 0 auto 20px auto;">
         <h3 class="dual-perspective-neutral-title">${data.dualPerspective.neutralTitle}</h3>
-        <div class="dual-perspective-narrative-box">
+        ${historiographicalSubtitle}
+        <div class="dual-perspective-narrative-box" style="margin-top: 14px;">
           <h4 class="dual-perspective-headline">${data.dualPerspective.leftHeadline}</h4>
           <p class="dual-perspective-text">${data.dualPerspective.leftText}</p>
         </div>
@@ -198,6 +390,7 @@ export function renderMasteryView(subtopicId) {
         </div>
         ${data.dualPerspective.tipHtml || ''}
       </div>
+      ${disagreeSourceCard}
     `;
   }
 
@@ -541,6 +734,15 @@ export function renderMasteryView(subtopicId) {
             </div>
           </div>
 
+          <!-- Student Draft Response Area -->
+          <div class="hu-draft-section" style="margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <strong style="color: var(--primary); font-size: 0.95rem;">Your Draft Response:</strong>
+              <span class="hu-save-status" id="hu-save-status-${subtopicId}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? 'inline' : 'none'};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
+            </div>
+            <textarea class="hu-textarea" data-subtopic-id="${subtopicId}" placeholder="Draft your 8-mark source evaluation here (analyze Content, NOP/Provenance, and Contextual Knowledge for both sources)..." style="width: 100%; height: 120px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; line-height: 1.45; font-family: inherit; margin-bottom: 6px;">${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? state.howUsefulAnswers[subtopicId] : ''}</textarea>
+          </div>
+
           <!-- Model Answer Reveal -->
           <div class="hu-model-answer-section">
             <button class="mastery-btn hu-reveal-btn" style="width: 100%; justify-content: center; background: var(--gradient-primary); border: none; color: white; padding: 12px; font-weight: bold; border-radius: var(--border-radius-sm); cursor: pointer; display: flex; align-items: center; gap: 8px;">
@@ -796,20 +998,121 @@ export function renderMasteryView(subtopicId) {
     `;
   }
 
+  let lessonWrapUpHtml = '';
+  if (data.lessonWrapUp) {
+    const wu = data.lessonWrapUp;
+    lessonWrapUpHtml = `
+      <div class="mastery-card lesson-wrap-up-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--accent); background: rgba(249, 115, 22, 0.02);">
+        <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; font-size: 1rem; color: var(--accent); margin: 0 0 12px 0;">
+          <span><i class="fa-solid fa-graduation-cap"></i> Lesson Wrap-up</span>
+          <button class="btn-audio-read" data-text-selector=".wrap-up-read-target" title="Read Wrap-up Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1rem; padding: 4px 8px; border-radius: var(--border-radius-sm); transition: all var(--transition-fast);">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </h3>
+        <div class="mastery-card-body wrap-up-read-target" style="padding-top: 4px;">
+          <p class="wrap-up-summary" style="margin-top: 0; line-height: 1.5; color: var(--text-base); font-size: 0.95rem;">
+            <strong>Key Takeaway:</strong> ${applyGlossaryTooltips(wu.summary)}
+          </p>
+          <p class="wrap-up-interpretation" style="line-height: 1.5; color: var(--text-muted); font-size: 0.9rem; font-style: italic; border-left: 3px solid var(--border-glass); padding-left: 12px; margin: 14px 0;">
+            <strong>Historical Interpretation:</strong> ${applyGlossaryTooltips(wu.interpretation)}
+          </p>
+          <div class="discussion-question-box" style="margin-top: 14px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px 14px;">
+            <strong style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">
+              <i class="fa-solid fa-comments"></i> Class Discussion Prompt:
+            </strong>
+            <p style="margin: 0; font-size: 0.92rem; font-weight: 550; color: var(--text-main); line-height: 1.4;">
+              ${applyGlossaryTooltips(wu.discussionQuestion)}
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  let hwHtml = '';
+  const hwQuestions = HOMEWORK_QUESTIONS[subtopicId];
+  if (hwQuestions && hwQuestions.length > 0) {
+    const questionsListMarkup = hwQuestions.map((q, idx) => {
+      const badgeClass = `badge-${q.type.toLowerCase().replace(/\s/g, '')}`;
+      return `
+        <div class="journey-step-card" data-step="${idx}">
+          <div class="journey-step-header">
+            <div class="journey-step-left">
+              <div class="journey-step-circle">Q${idx + 1}</div>
+              <span class="journey-level-badge ${badgeClass}">Level ${q.level}: ${q.type}</span>
+            </div>
+            <div class="journey-step-right">
+              <i class="fa-solid fa-chevron-down journey-toggle-icon"></i>
+            </div>
+          </div>
+          <p class="journey-step-question">${applyGlossaryTooltips(q.question)}</p>
+          <div class="journey-answer-guide">
+            <span class="journey-answer-title">🛡️ Answer Guide:</span>
+            <p class="journey-answer-text">${applyGlossaryTooltips(q.answer)}</p>
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+    hwHtml = `
+      <div class="mastery-card homework-questions-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
+        <h3 class="mastery-card-title"><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> 🛡️ 10-Step Unit Mastery Journey</h3>
+        <div class="mastery-card-body" style="padding-top: 6px;">
+          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted); font-size: 0.85rem;">
+            Missed this lesson or need a thorough refresh? Click through these 10 structured questions (ranging from basic recall to expert challenge) to master the unit!
+          </p>
+          <div class="mastery-journey-container">
+            ${questionsListMarkup}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+
+
+  let mapHtml = '';
+  if (data.mapConfig) {
+    mapHtml = `
+      <div class="mastery-card lesson-map-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
+        <h3 class="mastery-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 1rem; color: var(--primary); margin: 0 0 12px 0; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+          <span><i class="fa-solid fa-map-location-dot"></i> Interactive Lesson Map: ${data.mapConfig.title}</span>
+        </h3>
+        <div class="mastery-card-body" style="padding-top: 4px;">
+          <p style="margin-top: 0; margin-bottom: 16px; font-style: italic; color: var(--text-muted); font-size: 0.85rem;">
+            Click on the pulsing markers to explore the locations where these historic events unfolded. Use the controls to zoom.
+          </p>
+          <div class="map-wrapper" style="position: relative; width: 100%; border-radius: var(--border-radius-md); overflow: hidden;">
+            <div id="leaflet-map-${subtopicId}" style="width: 100%; height: 350px; background: #111; z-index: 1;"></div>
+          </div>
+          <div class="map-significance-box" id="map-significance-${subtopicId}" style="margin-top: 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px 14px; font-size: 0.9rem; line-height: 1.45; border-left: 3px solid var(--accent); transition: all 0.2s;">
+            <strong>Map Notes:</strong> ${applyGlossaryTooltips(data.mapConfig.description)}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   // Set the container innerHTML
   container.innerHTML = `
     ${doNowHtml}
     
     <!-- Header Card -->
     <div class="mastery-header-card" style="max-width: 800px; margin: 0 auto 24px auto;">
-      <h2 class="mastery-header-title">
-        ${data.headerTitle}
+      <h2 class="mastery-header-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+        <span>${data.headerTitle}</span>
+        <button class="btn-audio-read" data-text-selector=".mastery-header-intro" title="Read Introduction Aloud">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
       </h2>
-      <p class="mastery-header-intro" style="margin-bottom: ${videoHtml ? '16px' : '0'};">
-        ${data.headerIntro}
+      <p class="mastery-header-intro" style="margin-bottom: 16px;">
+        ${applyGlossaryTooltips(data.headerIntro)}
       </p>
+      ${renderSpecChecklistCard(subtopicId, SPEC_CHECKLIST_DATA[subtopicId])}
       ${videoHtml}
     </div>
+
+    ${mapHtml}
 
     <!-- Interactive Legend and Switch -->
     <div class="mastery-controls" style="max-width: 800px; margin: 0 auto 20px auto;">
@@ -829,6 +1132,8 @@ export function renderMasteryView(subtopicId) {
     
     ${dualHtml}
     
+    ${lessonWrapUpHtml}
+    
     ${kcHtml}
     
     ${summaryCorrectionHtml}
@@ -842,6 +1147,8 @@ export function renderMasteryView(subtopicId) {
     ${howUsefulHtml}
     
     ${deepThinkingHtml}
+    
+    ${hwHtml}
 
     <!-- Mastery Progress Button -->
     <div style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
@@ -852,6 +1159,64 @@ export function renderMasteryView(subtopicId) {
   `;
 
 
+
+  // Bind Audio Assist TTS buttons
+  const audioButtons = container.querySelectorAll('.btn-audio-read');
+  audioButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      // Get text to read
+      let textToRead = '';
+      const selector = btn.getAttribute('data-text-selector');
+      if (selector) {
+        const parent = btn.closest('.mastery-header-card, .mastery-card');
+        const targetEl = parent ? parent.querySelector(selector) : document.querySelector(selector);
+        if (targetEl) {
+          textToRead = targetEl.innerText;
+        }
+      } else {
+        // Default to card body
+        const card = btn.closest('.mastery-card');
+        if (card) {
+          const body = card.querySelector('.mastery-card-body, .mastery-split-layout');
+          if (body) textToRead = body.innerText;
+        }
+      }
+      
+      if (!textToRead) return;
+      
+      // Toggle if already speaking
+      if (btn.classList.contains('speaking')) {
+        AudioEngine.stopSpeaking();
+        btn.classList.remove('speaking');
+        btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+        return;
+      }
+      
+      // Stop others and reset icons
+      audioButtons.forEach(b => {
+        b.classList.remove('speaking');
+        b.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+      });
+      
+      AudioEngine.speak(
+        textToRead,
+        () => { // onstart
+          btn.classList.add('speaking');
+          btn.innerHTML = `<i class="fa-solid fa-circle-stop"></i>`;
+        },
+        () => { // onend
+          btn.classList.remove('speaking');
+          btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+        },
+        () => { // onerror
+          btn.classList.remove('speaking');
+          btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+        }
+      );
+    });
+  });
 
   // Bind Summary Spot-the-Errors Clicks
   const summaryCard = document.getElementById('summary-correction-card');
@@ -1104,6 +1469,27 @@ export function renderMasteryView(subtopicId) {
     });
   }
 
+  // Homework Journey Step Card Accordion Toggles
+  const journeyCards = container.querySelectorAll('.journey-step-card');
+  journeyCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't toggle accordion if clicking on a glossary term
+      if (e.target.classList.contains('glossary-term')) {
+        return;
+      }
+      
+      AudioEngine.play('click');
+      const isActive = card.classList.contains('active');
+      
+      // Close all step cards in this container
+      journeyCards.forEach(c => c.classList.remove('active'));
+      
+      if (!isActive) {
+        card.classList.add('active');
+      }
+    });
+  });
+
   // Exam Question Vault Accordion Toggles
   const vaultQuestionBtns = container.querySelectorAll('.vault-question-btn');
   vaultQuestionBtns.forEach(btn => {
@@ -1222,6 +1608,13 @@ export function renderMasteryView(subtopicId) {
     });
   });
 
+  // Initialize Leaflet Map
+  if (data.mapConfig && window.L) {
+    setTimeout(() => {
+      initializeLeafletMap(subtopicId, data.mapConfig);
+    }, 100);
+  }
+
   // How Useful Analyser Event Listeners
   if (data.howUsefulAnalyser) {
     const huCard = container.querySelector('.how-useful-card');
@@ -1270,6 +1663,32 @@ export function renderMasteryView(subtopicId) {
             modelContent.style.display = 'none';
             revealBtn.innerHTML = `<i class="fa-solid fa-eye"></i> Compare with Examiner Model Answer`;
           }
+        });
+      }
+
+      // Debounced auto-save for Draft Response text area
+      const textarea = huCard.querySelector('.hu-textarea');
+      if (textarea) {
+        const subId = textarea.getAttribute('data-subtopic-id');
+        const saveStatus = document.getElementById(`hu-save-status-${subId}`);
+        let saveTimeout;
+        textarea.addEventListener('input', () => {
+          if (saveTimeout) clearTimeout(saveTimeout);
+          
+          if (saveStatus) {
+            saveStatus.style.display = 'inline';
+            saveStatus.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Saving...`;
+          }
+          
+          saveTimeout = setTimeout(() => {
+            if (!state.howUsefulAnswers) state.howUsefulAnswers = {};
+            state.howUsefulAnswers[subId] = textarea.value;
+            saveProgress();
+            
+            if (saveStatus) {
+              saveStatus.innerHTML = `<i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved`;
+            }
+          }, 800);
         });
       }
     }
@@ -1482,9 +1901,43 @@ export function renderMasteryView(subtopicId) {
     }
   }
 
+  // Bind Specification Checklist click listeners
+  const checklistItems = container.querySelectorAll('.spec-checklist-item');
+  checklistItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      if (e.target.closest('.spec-checklist-expansion')) {
+        return;
+      }
+      AudioEngine.play('click');
+      const key = item.getAttribute('data-key');
+      const isChecked = item.classList.contains('checked');
+      
+      if (isChecked) {
+        item.classList.remove('checked');
+      } else {
+        item.classList.add('checked');
+      }
+
+      // Save to localStorage
+      try {
+        let checkedStates = {};
+        const saved = localStorage.getItem('edexcel_spec_checklist');
+        if (saved) {
+          checkedStates = JSON.parse(saved);
+        }
+        checkedStates[key] = !isChecked;
+        localStorage.setItem('edexcel_spec_checklist', JSON.stringify(checkedStates));
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  });
 
   // Formatting vault answers
   formatVaultImportanceAnswers(container);
+
+  // Wrap all images in links for high-res inspection
+  wrapImagesInLinks(container);
 }
 
 function blankFirstWord(block) {
@@ -1636,4 +2089,163 @@ export function formatVaultImportanceAnswers(container) {
       }
     }
   });
+}
+
+function wrapImagesInLinks(container) {
+  if (!container) return;
+  container.querySelectorAll('img').forEach(img => {
+    // Exclude layout helper elements, specific keys, small icons
+    if (img.closest('.model-answer-key') || img.closest('.objective-checkbox') || img.classList.contains('model-key-dot') || img.style.width === '16px') return;
+    
+    // Check if already wrapped in anchor
+    if (img.parentElement.tagName !== 'A') {
+      const webUrl = getImageWebLink(img.getAttribute('src'), img.getAttribute('alt'));
+      const link = document.createElement('a');
+      link.href = webUrl;
+      link.target = '_blank';
+      link.style.display = 'block';
+      link.style.cursor = 'zoom-in';
+      link.className = 'img-zoom-link';
+      img.parentNode.insertBefore(link, img);
+      link.appendChild(img);
+    }
+  });
+}
+
+function initializeLeafletMap(subtopicId, mapConfig) {
+  const mapContainer = document.getElementById(`leaflet-map-${subtopicId}`);
+  if (!mapContainer) return;
+  
+  if (mapContainer._leaflet_id) {
+    return; // Already initialized
+  }
+  
+  const isUsa = mapConfig.type === 'usa';
+  const pointsDb = isUsa ? {
+    "topeka": { name: "Topeka, KS", coords: [39.0473, -95.6752] },
+    "oakland": { name: "Oakland, CA", coords: [37.8044, -122.2712] },
+    "losangeles": { name: "Los Angeles, CA", coords: [34.0522, -118.2437] },
+    "chicago": { name: "Chicago, IL", coords: [41.8781, -87.6298] },
+    "detroit": { name: "Detroit, MI", coords: [42.3314, -83.0458] },
+    "memphis": { name: "Memphis, TN", coords: [35.1495, -90.0490] },
+    "littlerock": { name: "Little Rock, AR", coords: [34.7465, -92.2896] },
+    "oxford": { name: "Oxford, MS (Ole Miss)", coords: [34.3662, -89.5380] },
+    "jackson": { name: "Jackson, MS", coords: [32.2988, -90.1848] },
+    "birmingham": { name: "Birmingham, AL", coords: [33.5186, -86.8104] },
+    "anniston": { name: "Anniston, AL", coords: [33.6598, -85.8316] },
+    "selma": { name: "Selma, AL", coords: [32.4074, -87.0211] },
+    "montgomery": { name: "Montgomery, AL", coords: [32.3668, -86.3000] },
+    "washington": { name: "Washington D.C.", coords: [38.9072, -77.0369] },
+    "greensboro": { name: "Greensboro, NC", coords: [36.0726, -79.7920] },
+    "newyork": { name: "New York City, NY", coords: [40.7128, -74.0060] }
+  } : {
+    "hanoi": { name: "Hanoi", coords: [21.0285, 105.8542] },
+    "tonkin": { name: "Gulf of Tonkin", coords: [19.5000, 107.5000] },
+    "parallel17": { name: "17th Parallel DMZ", coords: [17.0000, 107.0000] },
+    "khesanh": { name: "Khe Sanh", coords: [16.6341, 106.7262] },
+    "hue": { name: "Hue", coords: [16.4637, 107.5908] },
+    "danang": { name: "Da Nang", coords: [16.0544, 108.2022] },
+    "saigon": { name: "Saigon", coords: [10.8231, 106.6297] },
+    "laos": { name: "Laos (Trail)", coords: [16.7000, 106.2000] },
+    "cambodia": { name: "Cambodia (Sanctuaries)", coords: [12.0000, 104.5000] }
+  };
+
+  // Determine initial center and zoom
+  let center = isUsa ? [37.8, -96.0] : [16.0, 106.0];
+  let zoom = isUsa ? 4 : 5;
+  
+  if (subtopicId === "subtopic_1_2") {
+    center = [34.7465, -92.2896];
+    zoom = 6;
+  } else if (subtopicId === "subtopic_1_3") {
+    center = [32.3668, -86.3000];
+    zoom = 7;
+  }
+  
+  const map = window.L.map(mapContainer, {
+    center: center,
+    zoom: zoom,
+    zoomControl: true,
+    attributionControl: false
+  });
+  
+  window.L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 18
+  }).addTo(map);
+  
+  const createMarkerIcon = (isActive) => {
+    const size = isActive ? 14 : 9;
+    const color = isActive ? 'var(--primary)' : '#475569';
+    const borderColor = isActive ? '#fff' : 'rgba(255,255,255,0.4)';
+    const shadow = isActive ? 'box-shadow: 0 0 8px var(--primary);' : '';
+    const pulseHtml = isActive ? `<div class="hotspot-pulse" style="width: 14px; height: 14px; border: 2px solid var(--primary); border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: hotspot-ping 2s infinite ease-in-out; pointer-events: none;"></div>` : '';
+    
+    return window.L.divIcon({
+      html: `
+        <div style="position: relative; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+          ${pulseHtml}
+          <div style="width: ${size}px; height: ${size}px; border-radius: 50%; background: ${color}; border: 2px solid ${borderColor}; ${shadow}"></div>
+        </div>
+      `,
+      className: 'custom-leaflet-marker',
+      iconSize: [30, 30],
+      iconAnchor: [15, 15]
+    });
+  };
+
+  const significanceBox = document.getElementById(`map-significance-${subtopicId}`);
+  
+  for (const pid in pointsDb) {
+    const pt = pointsDb[pid];
+    const isHighlighted = mapConfig.highlightedPoints.includes(pid);
+    const sigObj = mapConfig.points && mapConfig.points[pid];
+    const significanceText = sigObj ? sigObj.text : pt.name;
+    const cleanName = sigObj ? sigObj.title : pt.name;
+    
+    const icon = createMarkerIcon(isHighlighted);
+    const marker = window.L.marker(pt.coords, { icon: icon }).addTo(map);
+    
+    marker.bindTooltip(cleanName, {
+      permanent: isHighlighted,
+      direction: 'top',
+      offset: [0, -10],
+      className: isHighlighted ? 'leaflet-tooltip-active' : 'leaflet-tooltip-inactive'
+    });
+    
+    marker.on('click', () => {
+      AudioEngine.play('click');
+      if (significanceBox) {
+        significanceBox.style.borderColor = 'var(--accent)';
+        significanceBox.style.background = 'rgba(249, 115, 22, 0.05)';
+        significanceBox.innerHTML = `<strong>📍 ${cleanName}:</strong> ${applyGlossaryTooltips(significanceText)}`;
+      }
+      map.panTo(pt.coords);
+    });
+  }
+  
+  if (mapConfig.drawRoute && mapConfig.drawRoute.length > 0) {
+    const routeCoords = mapConfig.drawRoute.map(pid => {
+      const pt = pointsDb[pid];
+      return pt ? pt.coords : null;
+    }).filter(c => c !== null);
+    
+    const isTrail = mapConfig.drawRoute.includes('laos') && mapConfig.drawRoute.includes('cambodia');
+    const color = isTrail ? 'var(--accent)' : 'var(--primary)';
+    
+    window.L.polyline(routeCoords, {
+      color: color,
+      weight: 3,
+      dashArray: '5, 5',
+      opacity: 0.85
+    }).addTo(map);
+  }
+  
+  if (!isUsa) {
+    window.L.polyline([[17.0, 104.5], [17.0, 108.5]], {
+      color: 'var(--accent)',
+      weight: 2,
+      dashArray: '3, 6',
+      opacity: 0.7
+    }).addTo(map);
+  }
 }

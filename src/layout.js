@@ -33,10 +33,13 @@ function closeMobileSidebar() {
 
 function updateSoundBtnUI() {
   const btn = document.getElementById('sound-toggle-btn');
+  if (!btn) return;
   if (state.soundEnabled) {
-    btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Sound Effects: On`;
+    btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+    btn.title = 'Sound Effects: On (Click to Mute)';
   } else {
-    btn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i> Sound Effects: Off`;
+    btn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+    btn.title = 'Sound Effects: Off (Click to Enable)';
   }
 }
 
@@ -276,6 +279,77 @@ function bindEvents() {
       renderTimelineView();
     });
   }
+
+  const bindStarter = (btnId, textareaId, template) => {
+    const btn = document.getElementById(btnId);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        AudioEngine.play('click');
+        const textarea = document.getElementById(textareaId);
+        if (textarea) {
+          if (textarea.value && !confirm('This will overwrite your current draft. Do you want to insert the writing frame?')) {
+            return;
+          }
+          textarea.value = template;
+          textarea.dispatchEvent(new Event('input')); // Trigger check heuristics
+        }
+      });
+    }
+  };
+
+  const q2Btn = document.getElementById('btn-q2-starter');
+  if (q2Btn) {
+    q2Btn.addEventListener('click', () => {
+      AudioEngine.play('click');
+      const textarea = document.getElementById('q2-user-answer');
+      if (textarea) {
+        if (textarea.value && !confirm('This will overwrite your current draft. Do you want to insert the writing frame?')) {
+          return;
+        }
+        
+        let questionEl = document.getElementById('q2-question-text');
+        let questionText = questionEl ? questionEl.textContent.trim() : '';
+        questionText = questionText.replace(/\s*\(\s*12\s*marks\s*\)\s*$/i, '');
+        let topic = questionText.replace(/^Explain\s+why\s+/i, '');
+        if (topic.endsWith('.')) {
+          topic = topic.slice(0, -1);
+        }
+        if (!topic || topic.includes('Select a topic') || topic.includes('begin...')) {
+          topic = "[Topic from the question]";
+        }
+        
+        const template = 
+          `The first reason why ${topic} was because [Insert Reason 1]...\n\n` +
+          `The second reason why ${topic} was because [Insert Reason 2]...\n\n` +
+          `The third reason why ${topic} was because [Insert Reason 3]...\n\n` +
+          `Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
+          
+        textarea.value = template;
+        textarea.dispatchEvent(new Event('input'));
+      }
+    });
+  }
+
+  bindStarter('btn-q3a-starter', 'q3a-user-answer', 
+    "Source B is useful for an inquiry into [Insert Topic] because it shows...\n\n" +
+    "This is supported by my own knowledge that...\n\n" +
+    "The provenance of Source B also increases its usefulness because it was created by [Insert Creator] in [Insert Year], which means it provides a reliable, first-hand account of...\n\n" +
+    "However, the utility of the source is slightly limited because..."
+  );
+
+  bindStarter('btn-q3b-starter', 'q3b-user-answer', 
+    "The main difference between the interpretations is that Interpretation 1 claims that [Insert Claim 1], whereas Interpretation 2 claims that [Insert Claim 2]."
+  );
+
+  bindStarter('btn-q3c-starter', 'q3c-user-answer', 
+    "One reason the interpretations give different views is that they rely on different sources. Interpretation 1 relies on details about [Insert Detail B] in Source B, whereas Interpretation 2 relies on details about [Insert Detail C] in Source C."
+  );
+
+  bindStarter('btn-q3d-starter', 'q3d-user-answer', 
+    "Interpretation 2 argues that [Insert Claim 2]. This is supported by Source C which shows...\n\n" +
+    "On the other hand, Interpretation 1 argues that [Insert Claim 1]. This is supported by Source B which shows...\n\n" +
+    "Overall, I agree more with Interpretation 2 because my own knowledge shows that..."
+  );
 
 
   // Quiz generator controls
@@ -1357,15 +1431,62 @@ function updateRealTimeFeedback(type, value, questionObj, questionId) {
 export function highlightModelQuotes(text) {
   if (!text) return '';
   let highlighted = text;
+  
+  let i1Text = '';
+  let i2Text = '';
+  
+  if (state && state.pastPaperSession && state.pastPaperSession.activePaperData) {
+    i1Text = state.pastPaperSession.activePaperData.interpretation1 || '';
+    i2Text = state.pastPaperSession.activePaperData.interpretation2 || '';
+  }
+  
+  const cleanWord = (str) => (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  
   // Double quotes
   highlighted = highlighted.replace(/["“]([^"”]{2,})["”]/g, '<span class="model-quote">“$1”</span>');
+  
   // Special Interpretation quotes (1 = Interpretation 1, 2 = Interpretation 2)
-  highlighted = highlighted.replace(/\[1\[(.*?)\]1\]/g, '<span class="model-quote-i1">“$1”</span>');
+  highlighted = highlighted.replace(/\[1\[(.*?)\]1\]/g, (match, quote) => {
+    const cleanQuote = cleanWord(quote);
+    if (!cleanQuote) return `<span class="model-quote-i1">“${quote}”</span>`;
+    
+    // Check active paper first
+    if (i1Text || i2Text) {
+      const cleanI1 = cleanWord(i1Text);
+      const cleanI2 = cleanWord(i2Text);
+      if (cleanI2.includes(cleanQuote) && !cleanI1.includes(cleanQuote)) {
+        return `<span class="model-quote-i2">“${quote}”</span>`;
+      }
+      if (cleanI1.includes(cleanQuote)) {
+        return `<span class="model-quote-i1">“${quote}”</span>`;
+      }
+    }
+    
+    // Dynamic search fallback in all EXAM_SKILLS_DATA.q3 entries
+    if (typeof EXAM_SKILLS_DATA !== 'undefined' && EXAM_SKILLS_DATA.q3) {
+      for (const key of Object.keys(EXAM_SKILLS_DATA.q3)) {
+        const qData = EXAM_SKILLS_DATA.q3[key];
+        const cleanI1 = cleanWord(qData.interpretation1);
+        const cleanI2 = cleanWord(qData.interpretation2);
+        if (cleanI2.includes(cleanQuote) && !cleanI1.includes(cleanQuote)) {
+          return `<span class="model-quote-i2">“${quote}”</span>`;
+        }
+        if (cleanI1.includes(cleanQuote)) {
+          return `<span class="model-quote-i1">“${quote}”</span>`;
+        }
+      }
+    }
+    
+    return `<span class="model-quote-i1">“${quote}”</span>`;
+  });
+  
   highlighted = highlighted.replace(/\[2\[(.*?)\]2\]/g, '<span class="model-quote-i2">“$1”</span>');
+  
   // Provenance double braces
   highlighted = highlighted.replace(/\{\{(.*?)\}\}/g, '<span class="model-provenance">$1</span>');
   // Contextual knowledge double brackets (processed last to avoid conflicts with class attribute quotes)
   highlighted = highlighted.replace(/\[\[(.*?)\]\]/g, '<span class="contextual-knowledge">$1</span>');
+  
   return highlighted;
 }
 

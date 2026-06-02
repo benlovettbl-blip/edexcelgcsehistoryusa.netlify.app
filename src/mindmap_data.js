@@ -153,5 +153,15 @@ export const MINDMAP_DATA = {
       "North Vietnamese forces push south and capture Saigon (1975)",
       "Vietnam is reunited under communist rule"
     ]
+  },
+  "subtopic_4_4": {
+    title: "Reasons for US Failure in Vietnam",
+    nodes: [
+      "Strengths of North Vietnam, including Soviet (Russian) and Chinese military aid",
+      "Vietcong guerrilla tactics and logistics of the Ho Chi Minh Trail",
+      "Weaknesses of the US armed forces, including low morale, drug abuse, and the draft",
+      "US tactical failures like search-and-destroy and chemical weapons alienating civilians",
+      "Impact of anti-war opposition and protests destroying political support in the USA"
+    ]
   }
 };
