@@ -6,7 +6,8 @@ import {
   renderExamSkillsView, 
   renderGamesView,
   renderClassicView,
-  startFlashcardSession
+  startFlashcardSession,
+  renderKeyTopicOverview
 } from './views.js';
 import { showExamSetup } from './exam.js';
 import { renderPastPapersView } from './past_papers.js';
@@ -86,6 +87,7 @@ export function switchView(viewName, subtopicId = null) {
     renderGamesView();
   } else if (viewName === 'subtopic' && subtopicId) {
     state.selectedSubtopicId = subtopicId;
+    state.selectedKeyTopicId = null;
     if (headerModeSwitcher) headerModeSwitcher.style.display = 'flex';
     
     // Highlight correct subtopic in sidebar
@@ -98,7 +100,42 @@ export function switchView(viewName, subtopicId = null) {
       viewTitle.textContent = subtopic ? subtopic.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "") : "Study Mode";
     }
     
+    // Remove active from any topic headers
+    document.querySelectorAll('.nav-section-header').forEach(hdr => hdr.classList.remove('active'));
+    
     switchSubtopicMode(state.currentMode);
+  } else if (viewName === 'key-topic' && subtopicId) {
+    state.selectedSubtopicId = null;
+    state.selectedKeyTopicId = subtopicId;
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    
+    // Highlight correct topic header in sidebar
+    document.querySelectorAll('.nav-section-header').forEach(hdr => {
+      if (hdr.getAttribute('data-topic-id') === subtopicId) {
+        hdr.classList.add('active');
+      } else {
+        hdr.classList.remove('active');
+      }
+    });
+    
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) {
+      // Find title from state.allQuestions or hardcode prefix
+      const titles = {
+        'topic_1': 'Key Topic 1 Overview',
+        'topic_2': 'Key Topic 2 Overview',
+        'topic_3': 'Key Topic 3 Overview',
+        'topic_4': 'Key Topic 4 Overview'
+      };
+      viewTitle.textContent = titles[subtopicId] || "Key Topic Overview";
+    }
+    renderKeyTopicOverview(subtopicId);
+  }
+
+  // Remove active from topic headers if navigating to other non-key-topic views
+  if (viewName !== 'key-topic' && viewName !== 'subtopic') {
+    document.querySelectorAll('.nav-section-header').forEach(hdr => hdr.classList.remove('active'));
+    state.selectedKeyTopicId = null;
   }
 
   // Toggle active CSS view containers
@@ -112,7 +149,8 @@ export function switchView(viewName, subtopicId = null) {
     'lessons': 'view-mastery',
     'games': 'view-games',
     'exam-skills': 'view-exam-skills',
-    'past-papers': 'view-past-papers'
+    'past-papers': 'view-past-papers',
+    'key-topic': 'view-key-topic'
   };
 
   const targetViewId = viewName === 'subtopic' ? viewIdMap[state.currentMode] : viewIdMap[viewName];

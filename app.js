@@ -5,6 +5,8 @@
     // 'dashboard' | 'classic' | 'flashcards' | 'exam' | 'timeline' | 'bookmarks'
     selectedSubtopicId: null,
     // Active sub-topic ID (e.g. 'subtopic_1_1')
+    selectedKeyTopicId: null,
+    // Active Key Topic ID (e.g. 'topic_1')
     currentMode: "lessons",
     // 'lessons' | 'classic' | 'flashcards' (sub-topic study modes)
     mastery: {},
@@ -24,7 +26,9 @@
       deck: [],
       activeIndex: 0,
       originalLength: 0,
-      masteredCount: 0
+      masteredCount: 0,
+      reinforcing: false,
+      reinforceQuestion: null
     },
     // Quiz Generator State
     examSession: {
@@ -9517,6 +9521,205 @@ Source E is highly useful for showing the political and moral collapse of the wa
     ]
   };
 
+  // src/key_topics_data.js
+  var KEY_TOPICS_OVERVIEWS = {
+    "topic_1": {
+      "title": "Key Topic 1: The development of the civil rights movement, 1954\u201360",
+      "overview": "During the late 1950s, the struggle for African American civil rights transitioned from legal challenges in courtrooms to massive grassroots direct action. Key legal breakthroughs like the 1954 Brown v. Topeka decision ruled segregated education unconstitutional, but met fierce Southern opposition, as seen at Little Rock High School in 1957. Local community mobilization emerged as a powerful force during the Montgomery Bus Boycott (1955-56), propelled by Rosa Parks' courage and Martin Luther King Jr.'s inspiring leadership. Despite violent white backlashes from the Ku Klux Klan and White Citizens' Councils, the movement successfully forced national intervention and secured the first Civil Rights Act in 1957.",
+      "timeline": [
+        {
+          "id": "t1_event_1",
+          "year": "1954",
+          "title": "Brown v. Board of Education",
+          "bullets": [
+            "In May 1954, the Supreme Court ruled unanimously in Brown v. Board of Education of Topeka that racial segregation in public schools was unconstitutional.",
+            "The decision overturned the 1896 'separate but equal' Plessy v. Ferguson doctrine, establishing that separate educational facilities are inherently unequal.",
+            "While a major victory, the Court did not set a strict deadline for integration, leading to the vague directive of 'with all deliberate speed' in Brown II (1955)."
+          ],
+          "quote": "We conclude that in the field of public education the doctrine of 'separate but equal' has no place. Separate educational facilities are inherently unequal.",
+          "author": "Supreme Court Chief Justice Earl Warren, May 17, 1954",
+          "figures": ["Earl Warren", "Thurgood Marshall"]
+        },
+        {
+          "id": "t1_event_2",
+          "year": "1955\u201356",
+          "title": "Montgomery Bus Boycott",
+          "bullets": [
+            "Sparked by Rosa Parks' arrest on December 1, 1955, for refusing to give up her seat, the local Black community organized a massive boycott of city buses.",
+            "Led by the Montgomery Improvement Association (MIA) and its president, Martin Luther King Jr., the boycott lasted 381 days under intense white intimidation.",
+            "In November 1956, the Supreme Court ruled in Browder v. Gayle that bus segregation was unconstitutional, leading to desegregation of Montgomery's buses."
+          ],
+          "quote": "We are tired of being segregated and humiliated. If you will protest courageously, and yet with dignity and Christian love... history will have to record: There lived a great people who injected new meaning into the veins of history.",
+          "author": "Martin Luther King Jr., December 5, 1955",
+          "figures": ["Rosa Parks", "Martin Luther King Jr.", "Jo Ann Robinson"]
+        },
+        {
+          "id": "t1_event_3",
+          "year": "1957",
+          "title": "Little Rock Desegregation",
+          "bullets": [
+            "Nine Black students attempted to integrate Central High School in Arkansas, but were blocked by Governor Orval Faubus using the State National Guard.",
+            "After televised footage showed a white mob harassing the students, President Eisenhower intervened to uphold federal law.",
+            "Eisenhower federalized the Arkansas National Guard and sent 1,200 soldiers from the 101st Airborne Division to escort and protect the students."
+          ],
+          "quote": "Mob rule cannot be allowed to override the decisions of our courts. If it were, then individual rights would be swept away... our country would no longer be a nation of laws.",
+          "author": "President Dwight D. Eisenhower, Address to the Nation, September 24, 1957",
+          "figures": ["Elizabeth Eckford", "Orval Faubus", "Dwight D. Eisenhower"]
+        },
+        {
+          "id": "t1_event_4",
+          "year": "1957",
+          "title": "The Civil Rights Act of 1957",
+          "bullets": [
+            "The Civil Rights Act of 1957 was the first federal civil rights legislation passed by the US Congress since Reconstruction, designed to protect Black voting rights.",
+            "Senator Strom Thurmond of South Carolina conducted a record-breaking 24-hour filibuster in an attempt to block the bill in Congress.",
+            "While the act established a Civil Rights Commission and a new division in the Justice Department, its actual impact on expanding registration was limited."
+          ],
+          "quote": "This bill is a sham, a political gimmick... It is a federal encroachment on state sovereignty designed to force integration upon a reluctant South.",
+          "author": "Senator Strom Thurmond, filibuster speech opposition, August 1957",
+          "figures": ["Dwight D. Eisenhower", "Strom Thurmond", "Lyndon B. Johnson"]
+        }
+      ],
+      "sliders": [
+        {
+          "id": "factor_legal",
+          "label": "Legal Action & Federal Intervention",
+          "icon": "fa-gavel",
+          "tips": [
+            "Low Weight: Court rulings like Brown v. Board established critical legal precedents but lacked direct enforcement teeth.",
+            "Moderate Weight: Eisenhower's deployment of the 101st Airborne showed that federal force was crucial to breaking Southern state resistance.",
+            "High Weight: The Supreme Court and presidential military power were the ultimate authorities that dismantled legal segregation."
+          ]
+        },
+        {
+          "id": "factor_grassroots",
+          "label": "Grassroots Activism & Courage",
+          "icon": "fa-users",
+          "tips": [
+            "Low Weight: Local courage raised awareness but required federal laws and court actions to secure lasting, systemic change.",
+            "Moderate Weight: The MIA's organization of the 381-day Montgomery Boycott proved that community solidarity could force economic capitulation.",
+            "High Weight: Without Rosa Parks, the Montgomery boycotters, and the Little Rock Nine putting their lives on the line, no federal intervention would have occurred."
+          ]
+        },
+        {
+          "id": "factor_media",
+          "label": "Media Impact & Public Opinion",
+          "icon": "fa-tv",
+          "tips": [
+            "Low Weight: Media coverage documented history but did not change the constitution or issue federal executive orders.",
+            "Moderate Weight: National news coverage of white mobs harassing Elizabeth Eckford and the Little Rock Nine built immense public sympathy.",
+            "High Weight: Televised reports brought Southern brutality directly into Northern living rooms, creating the public outrage that forced Eisenhower to act."
+          ]
+        }
+      ]
+    },
+    "topic_2": {
+      "title": "Key Topic 2: The civil rights movement, 1960\u201375",
+      "overview": "The 1960s saw the civil rights movement reach its peak in scale, legislative achievement, and internal debate. Activists pioneered non-violent direct actions such as the Greensboro sit-ins and the Freedom Rides to dismantle Jim Crow facilities. High-profile campaigns in Birmingham (1963) and Selma (1965), along with the historic March on Washington, put intense moral and political pressure on the federal government, resulting in the landmark Civil Rights Act of 1964 and Voting Rights Act of 1965. However, frustrations with persistent economic inequality and police brutality sparked urban riots (1965-67) and gave rise to the Black Power movement, led by figures like Malcolm X and the Black Panthers, who advocated for self-defense and economic self-reliance.",
+      "sources": [
+        {
+          "image": "assets/sources/greensboro-sit-in-counter.jpg",
+          "alt": "Greensboro sit-in counter",
+          "caption": "Four Black students from North Carolina A&T State University sitting at a segregated Woolworth's lunch counter in Greensboro, NC (1960)."
+        },
+        {
+          "image": "assets/sources/mlk-dream-speech-1963.jpg",
+          "alt": "Martin Luther King Jr I Have a Dream",
+          "caption": "Martin Luther King Jr. delivering his famous 'I Have a Dream' speech at the Lincoln Memorial during the March on Washington on August 28, 1963."
+        },
+        {
+          "image": "assets/sources/selma-troopers-bridge.jpg",
+          "alt": "Troopers at Selma bridge",
+          "caption": "State troopers attacking peaceful civil rights marchers on the Edmund Pettus Bridge during 'Bloody Sunday' in Selma, Alabama (March 1965)."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t2_task_1",
+          "title": "Televised Violence & Federal Action",
+          "question": "Explain how public protests in Birmingham and Selma directly led to the passing of the 1964 Civil Rights Act and 1965 Voting Rights Act.",
+          "guidance": "Protests in Birmingham and Selma were met with televised violence (police dogs, fire hoses, state trooper attacks) which shocked national and global audiences. This public outrage pressured Presidents Kennedy and Johnson, alongside Congress, to pass sweeping federal laws to protect Black citizens and strip states of discriminatory loopholes."
+        },
+        {
+          "id": "t2_task_2",
+          "title": "Non-Violence vs. Black Power",
+          "question": "Compare the philosophy of non-violent direct action (championed by MLK and SCLC) with the principles of the Black Power movement (championed by Malcolm X, Stokely Carmichael, and the Black Panthers).",
+          "guidance": "MLK and SCLC prioritized integration, non-violent resistance, and appealing to the American democratic conscience. Black Power advocates rejected integration as a primary goal, emphasized Black pride and economic self-reliance, and argued for self-defense 'by any means necessary' in the face of systemic racism and police brutality."
+        }
+      ]
+    },
+    "topic_3": {
+      "title": "Key Topic 3: US involvement in the Vietnam War, 1954\u201375",
+      "overview": "US involvement in Vietnam grew from Cold War containment anxieties and the 'Domino Theory'\u2014the belief that a communist victory in South Vietnam would lead to a red wave across Southeast Asia. Following the partition of Vietnam in 1954, the US supported Ngo Dinh Diem's authoritarian regime in South Vietnam. However, Diem's unpopular policies, corruption, and persecution of Buddhists fueled support for the communist Vietcong. Following the Gulf of Tonkin Incident in 1964, President Lyndon B. Johnson launched Operation Rolling Thunder and sent the first combat Marines to Da Nang in 1965. Despite massive search-and-destroy missions, napalm, and Agent Orange, US forces struggled against the Vietcong's guerrilla tactics, as highlighted by the psychological blow of the 1968 Tet Offensive.",
+      "sources": [
+        {
+          "image": "assets/sources/ngo-dinh-diem-parade.jpg",
+          "alt": "Ngo Dinh Diem and Eisenhower",
+          "caption": "South Vietnamese President Ngo Dinh Diem welcomed by President Eisenhower in Washington, D.C. (1957), showing early US backing."
+        },
+        {
+          "image": "assets/sources/uss-maddox.jpg",
+          "alt": "USS Maddox",
+          "caption": "The USS Maddox, the destroyer involved in the Gulf of Tonkin Incident in August 1964, which President Johnson used to escalate US military intervention."
+        },
+        {
+          "image": "assets/sources/us-soldier-patrolling-swamp.jpg",
+          "alt": "US Soldier patrolling swamp",
+          "caption": "A US soldier wading through a swamp on a search-and-destroy mission, highlighting the difficult terrain and guerrilla environment of the Vietnam War."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t3_task_1",
+          "title": "Guerrilla Tactics vs. Conventional Power",
+          "question": "Compare the military tactics of the US forces (Search & Destroy, bombing campaigns) with the tactics of the Vietcong (guerrilla warfare, tunnels, booby traps).",
+          "guidance": "US forces relied on conventional superiority, massive firepower, chemical defoliants (Agent Orange/Napalm), and helicopter mobility to seek out enemy units. The Vietcong utilized guerrilla tactics: avoiding pitched battles, blending into local populations, setting booby traps, constructing vast underground tunnels, and using the Ho Chi Minh Trail to secure supplies from North Vietnam."
+        },
+        {
+          "id": "t3_task_2",
+          "title": "The Impact of the Tet Offensive",
+          "question": "Explain why the 1968 Tet Offensive is considered the turning point of the Vietnam War, even though the US achieved a military victory.",
+          "guidance": "While the US and ARVN forces successfully recaptured all territory and inflicted heavy casualties on the Vietcong (a military victory), the scale and coordination of the surprise offensive shocked the US public. It shattered the US government's claims that the war was being won, created a massive 'credibility gap', and turned public opinion and political consensus toward seeking an exit."
+        }
+      ]
+    },
+    "topic_4": {
+      "title": "Key Topic 4: Reactions to, and US decline in, Vietnam, 1964\u201375",
+      "overview": "The escalation of the Vietnam War triggered unprecedented social and political polarization on the US home front. As the military draft expanded, a vibrant anti-war movement emerged, fueled by shocking media coverage of events like the 1968 My Lai Massacre and the tragic shootings of student protesters at Kent State in 1970. Although a 'Silent Majority' supported President Nixon's policies, publication of the Pentagon Papers in 1971 deeply damaged public trust. Nixon's policy of 'Vietnamization' aimed to withdraw US troops while training the South Vietnamese army (ARVN) to fight alone. Following peace negotiations and the 1973 Paris Peace Accords, US combat troops withdrew. Deprived of US funding and military support, South Vietnam collapsed to North Vietnamese forces during the fall of Saigon in 1975.",
+      "sources": [
+        {
+          "image": "assets/sources/vietnam-draft-lottery.jpg",
+          "alt": "Vietnam Draft Lottery wheel",
+          "caption": "The draft lottery wheel used in December 1969 to determine the order of call to military service, a major source of anti-war protests."
+        },
+        {
+          "image": "assets/sources/kent-state-protests-1970.jpg",
+          "alt": "Kent State protests guardsmen",
+          "caption": "National Guardsmen deployed on the campus of Kent State University in May 1970, where four student protesters were shot and killed."
+        },
+        {
+          "image": "assets/sources/saigon-embassy-evacuation.jpg",
+          "alt": "Saigon embassy helicopter evacuation",
+          "caption": "A helicopter evacuating people from the roof of a CIA building in Saigon on April 29, 1975, just before the city fell to North Vietnamese forces."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t4_task_1",
+          "title": "The Growth of the Anti-War Movement",
+          "question": "Analyze how the military draft system, the My Lai Massacre, and media coverage combined to accelerate the growth of the anti-war movement.",
+          "guidance": "The draft felt unfair to working-class and minority men, creating draft resistance. The My Lai Massacre shocked the nation's conscience by showing US soldiers executing civilians. Uncensored television media brought the raw violence of combat, body bags, and civilian suffering directly into living rooms, destroying support for the war."
+        },
+        {
+          "id": "t4_task_2",
+          "title": "Military Failure & Home Front Constraints",
+          "question": "Examine the main reasons why the US failed to achieve its objectives in Vietnam. Think about both military factors in Vietnam and political factors at home.",
+          "guidance": "US military factors included ineffective conventional tactics against guerrilla forces, ARVN weakness, and Vietcong determination. Domestic political factors included intense public opposition, congress cutting funding, and the War Powers Act limiting presidential authority, which made sustaining the war politically impossible."
+        }
+      ]
+    }
+  };
+
   // src/views.js
   var GOOGLE_SHEET_WEBAPP_URL = "";
   function renderSidebarNav() {
@@ -9527,10 +9730,18 @@ Source E is highly useful for showing the political and moral collapse of the wa
       section.style.marginBottom = "6px";
       const header = document.createElement("div");
       header.className = "nav-section-header";
-      header.style.padding = "12px 10px 4px 10px";
+      header.setAttribute("data-topic-id", topic.id);
+      header.style.padding = "8px 10px";
+      header.style.margin = "4px 0";
       header.style.display = "flex";
       header.style.flexDirection = "column";
       header.style.gap = "2px";
+      header.style.cursor = "pointer";
+      header.style.borderRadius = "var(--border-radius-md)";
+      header.style.transition = "all var(--transition-fast)";
+      if (state.selectedKeyTopicId === topic.id) {
+        header.classList.add("active");
+      }
       const numSpan = document.createElement("span");
       numSpan.className = "nav-section-num";
       numSpan.style.fontFamily = "var(--font-heading)";
@@ -9549,6 +9760,10 @@ Source E is highly useful for showing the political and moral collapse of the wa
       descSpan.textContent = topic.title.split(":").slice(1).join(":").trim() || "";
       header.appendChild(numSpan);
       header.appendChild(descSpan);
+      header.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("key-topic", topic.id);
+      });
       section.appendChild(header);
       topic.subtopics.forEach((sub) => {
         const a = document.createElement("a");
@@ -10735,6 +10950,108 @@ Source E is highly useful for showing the political and moral collapse of the wa
     state.flashcardSession.masteredCount = 0;
     renderFlashcard();
   }
+  function generateReinforcementMCQ(q) {
+    const wordCount = q.answer.split(/\s+/).length;
+    const useExplanation = wordCount > 5 || Math.random() < 0.5;
+    let pool = state.allQuestions.filter((other) => other.subtopicId === q.subtopicId && other.id !== q.id);
+    if (pool.length < 3) {
+      pool = state.allQuestions.filter((other) => other.topicId === q.topicId && other.id !== q.id);
+    }
+    let correctText = "";
+    let distractors = [];
+    let prompt = "";
+    if (useExplanation) {
+      prompt = `Select the correct historical context/detail associated with <strong>${q.answer}</strong>:`;
+      correctText = q.explanation;
+      const uniqueExps = [...new Set(pool.map((other) => other.explanation).filter((e) => e !== correctText))];
+      distractors = uniqueExps.slice(0, 3);
+      while (distractors.length < 3) {
+        distractors.push("Alternative historical context overview for Paper 3 studies.");
+      }
+    } else {
+      prompt = `Which historical question/definition is answered by <strong>'${q.answer}'</strong>?`;
+      correctText = q.question;
+      const uniqueQs = [...new Set(pool.map((other) => other.question).filter((qst) => qst !== correctText))];
+      distractors = uniqueQs.slice(0, 3);
+      while (distractors.length < 3) {
+        distractors.push("Alternative lesson question and check of key facts.");
+      }
+    }
+    const options = [correctText, ...distractors].sort(() => Math.random() - 0.5);
+    const correctIndex = options.indexOf(correctText);
+    return {
+      prompt,
+      options,
+      correctIndex,
+      explanation: q.explanation
+    };
+  }
+  function renderMCQReinforce(mcq) {
+    const container = document.getElementById("flashcard-reinforce-options");
+    container.innerHTML = "";
+    mcq.options.forEach((opt, idx) => {
+      const btn = document.createElement("button");
+      btn.className = "flashcard-mcq-option";
+      btn.innerHTML = opt;
+      btn.style.width = "100%";
+      btn.style.textAlign = "left";
+      btn.style.padding = "8px 12px";
+      btn.style.fontSize = "0.75rem";
+      btn.style.lineHeight = "1.3";
+      btn.style.borderRadius = "var(--border-radius-sm)";
+      btn.style.border = "1px solid var(--border-glass)";
+      btn.style.background = "rgba(255, 255, 255, 0.03)";
+      btn.style.color = "var(--text-main)";
+      btn.style.cursor = "pointer";
+      btn.style.transition = "all var(--transition-fast)";
+      btn.addEventListener("click", () => {
+        handleReinforceAnswer(idx, btn);
+      });
+      container.appendChild(btn);
+    });
+  }
+  function handleReinforceAnswer(selectedIndex, clickedBtn) {
+    const session = state.flashcardSession;
+    const mcq = session.reinforceQuestion;
+    const q = session.deck[session.activeIndex];
+    const cardEl = document.getElementById("flashcard-card");
+    const optionBtns = document.querySelectorAll(".flashcard-mcq-option");
+    optionBtns.forEach((btn) => {
+      btn.disabled = true;
+      btn.style.pointerEvents = "none";
+    });
+    const isCorrect = selectedIndex === mcq.correctIndex;
+    if (isCorrect) {
+      AudioEngine.play("success");
+      clickedBtn.classList.add("correct");
+      setMastered(q.id, true);
+      session.masteredCount++;
+      setTimeout(() => {
+        cardEl.classList.add("swipe-right");
+        setTimeout(() => {
+          session.activeIndex++;
+          renderFlashcard();
+        }, 300);
+      }, 1200);
+    } else {
+      AudioEngine.play("fail");
+      clickedBtn.classList.add("incorrect");
+      optionBtns.forEach((btn, idx) => {
+        if (idx === mcq.correctIndex) {
+          btn.classList.add("correct");
+        }
+      });
+      setMastered(q.id, false);
+      setTimeout(() => {
+        cardEl.classList.add("swipe-left");
+        setTimeout(() => {
+          session.deck.push(q);
+          session.activeIndex++;
+          renderFlashcard();
+        }, 300);
+      }, 2200);
+    }
+  }
   function renderFlashcard() {
     const deck = state.flashcardSession.deck;
     const idx = state.flashcardSession.activeIndex;
@@ -10746,6 +11063,10 @@ Source E is highly useful for showing the political and moral collapse of the wa
       showFlashcardCompletion();
       return;
     }
+    state.flashcardSession.reinforcing = false;
+    state.flashcardSession.reinforceQuestion = null;
+    document.getElementById("flashcard-back-standard-body").style.display = "flex";
+    document.getElementById("flashcard-back-reinforce-body").style.display = "none";
     const q = deck[idx];
     const isBookmarked = state.bookmarks.includes(q.id);
     const frontBadge = document.getElementById("card-front-badge");
@@ -10778,14 +11099,15 @@ Source E is highly useful for showing the political and moral collapse of the wa
     const idx = state.flashcardSession.activeIndex;
     const q = deck[idx];
     if (correct) {
-      setMastered(q.id, true);
-      state.flashcardSession.masteredCount++;
-      AudioEngine.play("success");
-      cardEl.classList.add("swipe-right");
-      setTimeout(() => {
-        state.flashcardSession.activeIndex++;
-        renderFlashcard();
-      }, 300);
+      const mcq = generateReinforcementMCQ(q);
+      state.flashcardSession.reinforcing = true;
+      state.flashcardSession.reinforceQuestion = mcq;
+      document.getElementById("flashcard-back-standard-body").style.display = "none";
+      document.getElementById("flashcard-back-reinforce-body").style.display = "flex";
+      document.getElementById("flashcard-reinforce-question").innerHTML = mcq.prompt;
+      document.getElementById("btn-flashcard-reveal").style.display = "none";
+      document.getElementById("flashcard-self-grade-actions").style.display = "none";
+      renderMCQReinforce(mcq);
     } else {
       setMastered(q.id, false);
       AudioEngine.play("fail");
@@ -13633,6 +13955,448 @@ Source E is highly useful for showing the political and moral collapse of the wa
       AudioEngine.play("click");
       initTabooGame();
     });
+  }
+  function renderKeyTopicOverview(topicId) {
+    const data = KEY_TOPICS_OVERVIEWS[topicId];
+    if (!data) return;
+    const container = document.getElementById("key-topic-content-container");
+    if (!container) return;
+    const quizTopic = QUIZ_DATA.find((t) => t.id === topicId);
+    const subtopics = quizTopic ? quizTopic.subtopics : [];
+    let totalQs = 0;
+    let totalMastered = 0;
+    subtopics.forEach((sub) => {
+      const subQs = state.allQuestions.filter((q) => q.subtopicId === sub.id);
+      totalQs += subQs.length;
+      totalMastered += subQs.filter((q) => state.mastery[q.id]).length;
+    });
+    const overallPct = totalQs > 0 ? Math.round(totalMastered / totalQs * 100) : 0;
+    let subtopicsHtml = "";
+    subtopics.forEach((sub) => {
+      const subQs = state.allQuestions.filter((q) => q.subtopicId === sub.id);
+      const subMastered = subQs.filter((q) => state.mastery[q.id]).length;
+      const pct = subQs.length > 0 ? Math.round(subMastered / subQs.length * 100) : 0;
+      const cleanTitle = sub.title.replace(/^Topic \d\.\d:\s*/, "");
+      const subNum = sub.title.match(/Topic\s(\d\.\d)/)?.[1] || "";
+      subtopicsHtml += `
+      <div class="key-topic-subtopic-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: all var(--transition-normal); cursor: pointer;" onclick="window.switchView('subtopic', '${sub.id}')">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: 0.5px;">LESSON ${subNum}</span>
+            <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${pct}% Mastered</span>
+          </div>
+          <h3 style="font-size: 0.95rem; font-weight: 600; margin: 0; line-height: 1.3; color: var(--text-main);">${cleanTitle}</h3>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px; font-size: 0.8rem; font-weight: 600; color: var(--primary); align-self: flex-end;">
+          Study Lesson <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    `;
+    });
+    if (topicId === "topic_1") {
+      let openModal = function(idx) {
+        const event = data.timeline[idx];
+        if (!event) return;
+        AudioEngine.play("click");
+        document.getElementById("timeline-modal-year").textContent = event.year;
+        document.getElementById("timeline-modal-title").textContent = event.title;
+        document.getElementById("timeline-modal-quote").textContent = event.quote;
+        document.getElementById("timeline-modal-author").textContent = event.author;
+        document.getElementById("timeline-modal-figures").textContent = event.figures.join(", ");
+        const bulletsUl = document.getElementById("timeline-modal-bullets");
+        bulletsUl.innerHTML = "";
+        event.bullets.forEach((b) => {
+          const li = document.createElement("li");
+          li.textContent = b;
+          bulletsUl.appendChild(li);
+        });
+        overlay.style.display = "flex";
+        setTimeout(() => {
+          overlay.style.opacity = "1";
+          modalContent.style.transform = "scale(1)";
+        }, 20);
+      }, closeModal = function() {
+        overlay.style.opacity = "0";
+        modalContent.style.transform = "scale(0.9)";
+        setTimeout(() => {
+          overlay.style.display = "none";
+        }, 300);
+      };
+      let timelineNodesHtml = "";
+      data.timeline.forEach((event, idx) => {
+        timelineNodesHtml += `
+        <div class="timeline-node-item" data-event-index="${idx}" style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+          <div class="timeline-node-circle" style="width: 20px; height: 20px; border-radius: 50%; background: var(--bg-card); border: 3px solid var(--primary); box-shadow: var(--shadow-sm); transition: all var(--transition-fast); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 0.5rem;">
+            <i class="fa-solid fa-circle" style="opacity: 0; transition: opacity var(--transition-fast);"></i>
+          </div>
+          <div class="timeline-node-label" style="margin-top: 8px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <span class="timeline-node-year" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary);">${event.year}</span>
+            <span class="timeline-node-title" style="font-size: 0.72rem; color: var(--text-muted); max-width: 110px; line-height: 1.2; font-weight: 600;">${event.title}</span>
+          </div>
+        </div>
+      `;
+      });
+      const shuffledEvents = [...data.timeline].sort(() => Math.random() - 0.5);
+      let chronoCardsHtml = "";
+      shuffledEvents.forEach((event) => {
+        chronoCardsHtml += `
+        <div class="chrono-drag-card" draggable="true" data-id="${event.id}" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px; display: flex; align-items: center; gap: 12px; cursor: grab; transition: all var(--transition-fast);">
+          <i class="fa-solid fa-bars drag-handle" style="color: var(--text-muted); cursor: grab;"></i>
+          <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-main); flex: 1;">${event.title} (${event.year})</span>
+          <div class="chrono-arrows" style="display: flex; flex-direction: column; gap: 2px;">
+            <button class="btn-chrono-arrow-up" title="Move Up" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 6px; font-size: 0.75rem; transition: color var(--transition-fast);"><i class="fa-solid fa-chevron-up"></i></button>
+            <button class="btn-chrono-arrow-down" title="Move Down" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 6px; font-size: 0.75rem; transition: color var(--transition-fast);"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+        </div>
+      `;
+      });
+      let slidersHtml = "";
+      data.sliders.forEach((slider) => {
+        slidersHtml += `
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid ${slider.icon}" style="color: var(--primary); font-size: 0.9rem;"></i> ${slider.label}
+            </span>
+            <span id="slider-badge-${slider.id}" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary);">50%</span>
+          </div>
+          <input type="range" class="key-topic-slider" id="input-slider-${slider.id}" min="0" max="100" value="50" style="width: 100%; cursor: pointer;">
+          <div id="slider-tip-${slider.id}" style="font-size: 0.78rem; line-height: 1.4; color: var(--text-muted); min-height: 38px; border-top: 1px dashed var(--border-glass); padding-top: 6px; margin-top: 4px;">
+            <!-- Injected by dynamic logic -->
+          </div>
+        </div>
+      `;
+      });
+      container.innerHTML = `
+      <!-- Top Progress Banner -->
+      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
+          ${data.title}
+        </h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
+            <div style="background: var(--gradient-main); height: 100%; width: ${overallPct}%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overhauled Two Column Dashboard -->
+      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 24px; align-items: start;">
+        <!-- Left Column: Context Overview & Lesson Portals -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Overview Card -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-book-open"></i> Historical Context Overview
+            </h3>
+            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
+              ${data.overview}
+            </p>
+          </div>
+
+          <!-- Lessons portal grid -->
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-graduation-cap"></i> Key Topic Lessons
+            </h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              ${subtopicsHtml}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Blocks -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Component A: Responsive timeline -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm); position: relative;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-timeline"></i> Mental Map Timeline, 1954\u201360
+            </h3>
+            <div class="key-topic-timeline" style="position: relative; margin: 30px 0;">
+              ${timelineNodesHtml}
+            </div>
+            <div style="text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 12px; border-top: 1px dashed var(--border-glass); padding-top: 8px;">
+              <i class="fa-solid fa-circle-info"></i> Click or tap any year to reveal historical details & sources.
+            </div>
+          </div>
+
+          <!-- Component B: Drag-to-Order Challenge -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-clock"></i> Test Your Chronological Awareness
+            </h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 16px 0; line-height: 1.4;">
+              Drag the cards or use the Up/Down arrows to arrange the events in their correct sequence (1st to 4th):
+            </p>
+            <div id="chrono-drag-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+              ${chronoCardsHtml}
+            </div>
+            <div style="display: flex; gap: 12px; justify-content: flex-end; align-items: center;">
+              <span id="chrono-feedback-msg" style="font-size: 0.85rem; font-weight: 600; transition: color var(--transition-fast);"></span>
+              <button class="btn-primary" id="btn-chrono-check" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 4px; font-weight: 600;">Check Order</button>
+            </div>
+            <div id="chrono-explanation-box" style="display: none; margin-top: 14px; background: rgba(16, 185, 129, 0.05); border-left: 3px solid var(--success); padding: 14px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted);">
+              <!-- Populated upon correct order check -->
+            </div>
+          </div>
+
+          <!-- Component C: Weighing Sliders -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-sliders"></i> Analytical Weighting: What Drove Progress?
+            </h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 16px 0; line-height: 1.4;">
+              Adjust the sliders below to weigh the relative influence of these historical factors. Drag any slider to review its context tip:
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              ${slidersHtml}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Modal Overlay (glassmorphism details card) -->
+      <div id="timeline-modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); z-index: 1000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+        <div id="timeline-modal-content" style="background: var(--bg-card); border: 1px solid var(--border-active); border-radius: var(--border-radius-md); padding: 24px; max-width: 500px; width: 90%; box-shadow: var(--shadow-lg); position: relative; transform: scale(0.9); transition: transform 0.3s ease; display: flex; flex-direction: column; gap: 16px;">
+          <button id="btn-timeline-modal-close" style="position: absolute; top: 12px; right: 12px; background: none; border: none; font-size: 1.2rem; color: var(--text-muted); cursor: pointer; transition: color var(--transition-fast);"><i class="fa-solid fa-xmark"></i></button>
+          <div>
+            <span id="timeline-modal-year" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary); letter-spacing: 0.5px; text-transform: uppercase;">1954</span>
+            <h3 id="timeline-modal-title" style="margin: 4px 0 0 0; font-size: 1.2rem; font-weight: 600; color: var(--text-main); line-height: 1.3;">Brown v. Board of Education</h3>
+          </div>
+          <ul id="timeline-modal-bullets" style="padding-left: 20px; font-size: 0.85rem; line-height: 1.5; color: var(--text-normal); margin: 0; display: flex; flex-direction: column; gap: 8px;"></ul>
+          <div style="background: rgba(230, 92, 0, 0.05); border-left: 3px solid var(--primary); padding: 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.82rem; line-height: 1.4; color: var(--text-muted); font-style: italic;">
+            "<span id="timeline-modal-quote"></span>"
+            <div id="timeline-modal-author" style="text-align: right; font-size: 0.72rem; font-weight: 600; margin-top: 6px; font-style: normal; color: var(--text-normal);"></div>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+            <strong>Key Figures:</strong> <span id="timeline-modal-figures" style="color: var(--text-normal); font-weight: 600;"></span>
+          </div>
+        </div>
+      </div>
+    `;
+      const overlay = document.getElementById("timeline-modal-overlay");
+      const modalContent = document.getElementById("timeline-modal-content");
+      const closeBtn = document.getElementById("btn-timeline-modal-close");
+      const nodes = container.querySelectorAll(".timeline-node-item");
+      nodes.forEach((n) => {
+        n.addEventListener("click", () => {
+          const idx = parseInt(n.getAttribute("data-event-index"));
+          openModal(idx);
+        });
+      });
+      closeBtn.addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+      const chronoContainer = document.getElementById("chrono-drag-container");
+      const checkBtn = document.getElementById("btn-chrono-check");
+      const feedbackMsg = document.getElementById("chrono-feedback-msg");
+      const explanationBox = document.getElementById("chrono-explanation-box");
+      let draggedItem = null;
+      chronoContainer.addEventListener("dragstart", (e) => {
+        const card = e.target.closest(".chrono-drag-card");
+        if (!card) return;
+        draggedItem = card;
+        card.style.opacity = "0.5";
+        e.dataTransfer.effectAllowed = "move";
+      });
+      chronoContainer.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const card = e.target.closest(".chrono-drag-card");
+        if (!card || card === draggedItem) return;
+        const rect = card.getBoundingClientRect();
+        const next = (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
+        chronoContainer.insertBefore(draggedItem, next ? card.nextSibling : card);
+      });
+      chronoContainer.addEventListener("dragend", () => {
+        if (draggedItem) {
+          draggedItem.style.opacity = "1";
+          draggedItem = null;
+        }
+      });
+      chronoContainer.addEventListener("click", (e) => {
+        const arrowUp = e.target.closest(".btn-chrono-arrow-up");
+        const arrowDown = e.target.closest(".btn-chrono-arrow-down");
+        if (arrowUp) {
+          e.stopPropagation();
+          const card = arrowUp.closest(".chrono-drag-card");
+          const prev = card.previousElementSibling;
+          if (prev) {
+            chronoContainer.insertBefore(card, prev);
+            AudioEngine.play("click");
+          }
+        }
+        if (arrowDown) {
+          e.stopPropagation();
+          const card = arrowDown.closest(".chrono-drag-card");
+          const next = card.nextElementSibling;
+          if (next) {
+            chronoContainer.insertBefore(next, card);
+            AudioEngine.play("click");
+          }
+        }
+      });
+      checkBtn.addEventListener("click", () => {
+        const cards = chronoContainer.querySelectorAll(".chrono-drag-card");
+        const correctSeq = ["t1_event_1", "t1_event_2", "t1_event_3", "t1_event_4"];
+        let correctCount = 0;
+        cards.forEach((card, idx) => {
+          const id = card.getAttribute("data-id");
+          if (id === correctSeq[idx]) {
+            card.style.borderColor = "var(--success)";
+            card.style.boxShadow = "0 0 8px rgba(16, 185, 129, 0.15)";
+            correctCount++;
+          } else {
+            card.style.borderColor = "var(--danger)";
+            card.style.boxShadow = "0 0 8px rgba(239, 68, 68, 0.15)";
+          }
+        });
+        if (correctCount === 4) {
+          AudioEngine.play("cheer");
+          Confetti.spawn(60);
+          feedbackMsg.style.color = "var(--success)";
+          feedbackMsg.textContent = "\u{1F389} 100% Correct Sequence!";
+          explanationBox.style.display = "block";
+          explanationBox.innerHTML = `
+          <strong>Exam Connection: Why this sequence matters:</strong><br>
+          Establishing this timeline is critical for Paper 3 synthesis. The <strong>Brown decision (1954)</strong> established the constitutional right to integrated schools, but lacked enforcement. This sparked grassroots activism, leading to the <strong>Montgomery Bus Boycott (1955-56)</strong>, proving community solidarity could force local changes. The backlash to these movements culminated at <strong>Little Rock (1957)</strong>, where Southern state resistance forced President Eisenhower to execute federal troops, creating national momentum that compelled Congress to pass the <strong>Civil Rights Act of 1957</strong> to protect voting rights.
+        `;
+        } else {
+          AudioEngine.play("fail");
+          feedbackMsg.style.color = "var(--danger)";
+          feedbackMsg.textContent = `Incorrect Sequence (${correctCount}/4 match). Retrying...`;
+          explanationBox.style.display = "none";
+        }
+      });
+      data.sliders.forEach((slider) => {
+        const input = document.getElementById(`input-slider-${slider.id}`);
+        const badge = document.getElementById(`slider-badge-${slider.id}`);
+        const updateFn = (value) => {
+          badge.textContent = `${value}%`;
+          let tipIdx = 0;
+          if (value > 33 && value <= 66) tipIdx = 1;
+          else if (value > 66) tipIdx = 2;
+          const tipContainer = document.getElementById(`slider-tip-${slider.id}`);
+          if (tipContainer) {
+            tipContainer.innerHTML = `<strong>Analysis (${value}%):</strong> ${slider.tips[tipIdx]}`;
+          }
+        };
+        updateFn(50);
+        input.addEventListener("input", (e) => {
+          updateFn(e.target.value);
+        });
+      });
+    } else {
+      let sourcesHtml = "";
+      data.sources.forEach((src) => {
+        const webLink = getImageWebLink(src.image, src.alt);
+        sourcesHtml += `
+        <div class="key-topic-source-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 12px; display: flex; flex-direction: column; gap: 10px; cursor: pointer; transition: transform var(--transition-fast);" onclick="window.open('${webLink}', '_blank')">
+          <div style="height: 140px; border-radius: var(--border-radius-sm); overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; position: relative;">
+            <img src="${src.image}" alt="${src.alt}" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            <div style="position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.65); padding: 4px 8px; border-radius: var(--border-radius-sm); font-size: 0.65rem; color: #fff; font-weight: 600;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Source
+            </div>
+          </div>
+          <p style="font-size: 0.75rem; line-height: 1.4; color: var(--text-muted); margin: 0;">${src.caption}</p>
+        </div>
+      `;
+      });
+      let tasksHtml = "";
+      data.tasks.forEach((task) => {
+        tasksHtml += `
+        <div class="key-topic-task-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px;">
+          <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--primary); margin: 0; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-question"></i> ${task.title}
+          </h4>
+          <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-normal); margin: 0;">${task.question}</p>
+          <textarea id="${task.id}-textarea" placeholder="Type your revision notes here..." style="width: 100%; height: 80px; padding: 10px; background: rgba(0,0,0,0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); font-size: 0.85rem; font-family: inherit; color: var(--text-main); resize: vertical; box-sizing: border-box;"></textarea>
+          <div style="display: flex; justify-content: flex-end;">
+            <button class="btn-secondary" id="btn-reveal-${task.id}" style="padding: 8px 14px; font-size: 0.8rem; font-weight: 600;">
+              <i class="fa-solid fa-lightbulb"></i> Reveal Expert Guidance
+            </button>
+          </div>
+          <div id="guidance-${task.id}" style="display: none; background: rgba(230, 92, 0, 0.05); border-left: 3px solid var(--primary); padding: 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">
+            <strong>Expert Response Guide:</strong><br>${task.guidance}
+          </div>
+        </div>
+      `;
+      });
+      container.innerHTML = `
+      <!-- Top Progress Banner -->
+      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
+          ${data.title}
+        </h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
+            <div style="background: var(--gradient-main); height: 100%; width: ${overallPct}%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overview Text -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; margin-bottom: 24px; box-shadow: var(--shadow-sm);">
+        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-book-open"></i> Historical Context Overview
+        </h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
+          ${data.overview}
+        </p>
+      </div>
+
+      <!-- Visual Sources & Student Tasks (Two Column Layout) -->
+      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 24px;">
+        <!-- Visual Sources Column -->
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-images"></i> Primary Visual Sources
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            ${sourcesHtml}
+          </div>
+        </div>
+
+        <!-- Revision Tasks Column -->
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-list-check"></i> Synthesis Tasks
+          </h3>
+          <div>
+            ${tasksHtml}
+          </div>
+        </div>
+      </div>
+
+      <!-- Lessons & Subtopics Grid -->
+      <div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-graduation-cap"></i> Key Topic Lessons
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          ${subtopicsHtml}
+        </div>
+      </div>
+    `;
+      data.tasks.forEach((task) => {
+        const btn = document.getElementById(`btn-reveal-${task.id}`);
+        const guidance = document.getElementById(`guidance-${task.id}`);
+        if (btn && guidance) {
+          btn.addEventListener("click", () => {
+            AudioEngine.play("click");
+            if (guidance.style.display === "none") {
+              guidance.style.display = "block";
+              btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Guidance`;
+            } else {
+              guidance.style.display = "none";
+              btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Reveal Expert Guidance`;
+            }
+          });
+        }
+      });
+    }
   }
 
   // src/exam.js
@@ -18504,6 +19268,7 @@ ${cleanBrackets(paper.q3d.model)}
       renderGamesView();
     } else if (viewName === "subtopic" && subtopicId) {
       state.selectedSubtopicId = subtopicId;
+      state.selectedKeyTopicId = null;
       if (headerModeSwitcher) headerModeSwitcher.style.display = "flex";
       const subNavBtn = document.getElementById(`nav-subtopic-${subtopicId}`);
       if (subNavBtn) subNavBtn.classList.add("active");
@@ -18512,7 +19277,34 @@ ${cleanBrackets(paper.q3d.model)}
       if (viewTitle) {
         viewTitle.textContent = subtopic ? subtopic.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "") : "Study Mode";
       }
+      document.querySelectorAll(".nav-section-header").forEach((hdr) => hdr.classList.remove("active"));
       switchSubtopicMode(state.currentMode);
+    } else if (viewName === "key-topic" && subtopicId) {
+      state.selectedSubtopicId = null;
+      state.selectedKeyTopicId = subtopicId;
+      if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
+      document.querySelectorAll(".nav-section-header").forEach((hdr) => {
+        if (hdr.getAttribute("data-topic-id") === subtopicId) {
+          hdr.classList.add("active");
+        } else {
+          hdr.classList.remove("active");
+        }
+      });
+      const viewTitle = document.getElementById("current-view-title");
+      if (viewTitle) {
+        const titles = {
+          "topic_1": "Key Topic 1 Overview",
+          "topic_2": "Key Topic 2 Overview",
+          "topic_3": "Key Topic 3 Overview",
+          "topic_4": "Key Topic 4 Overview"
+        };
+        viewTitle.textContent = titles[subtopicId] || "Key Topic Overview";
+      }
+      renderKeyTopicOverview(subtopicId);
+    }
+    if (viewName !== "key-topic" && viewName !== "subtopic") {
+      document.querySelectorAll(".nav-section-header").forEach((hdr) => hdr.classList.remove("active"));
+      state.selectedKeyTopicId = null;
     }
     const viewIdMap = {
       "dashboard": "view-dashboard",
@@ -18524,7 +19316,8 @@ ${cleanBrackets(paper.q3d.model)}
       "lessons": "view-mastery",
       "games": "view-games",
       "exam-skills": "view-exam-skills",
-      "past-papers": "view-past-papers"
+      "past-papers": "view-past-papers",
+      "key-topic": "view-key-topic"
     };
     const targetViewId = viewName === "subtopic" ? viewIdMap[state.currentMode] : viewIdMap[viewName];
     document.querySelectorAll(".content-view").forEach((view) => {
@@ -19872,6 +20665,7 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
 
   // src/main.js
   window.addEventListener("DOMContentLoaded", () => {
+    window.switchView = switchView;
     initData();
     renderSidebarNav();
     updateGlobalStats();

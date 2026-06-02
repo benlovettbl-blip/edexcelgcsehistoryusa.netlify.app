@@ -10,6 +10,7 @@ import { DECISIONS_DATA } from './decisions_data.js';
 import { MINDMAP_DATA } from './mindmap_data.js';
 import { getImageWebLink } from './image_links.js';
 import { TABOO_CARDS } from './taboo_data.js';
+import { KEY_TOPICS_OVERVIEWS } from './key_topics_data.js';
 
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
@@ -29,10 +30,19 @@ function renderSidebarNav() {
     
     const header = document.createElement('div');
     header.className = 'nav-section-header';
-    header.style.padding = '12px 10px 4px 10px';
+    header.setAttribute('data-topic-id', topic.id);
+    header.style.padding = '8px 10px';
+    header.style.margin = '4px 0';
     header.style.display = 'flex';
     header.style.flexDirection = 'column';
     header.style.gap = '2px';
+    header.style.cursor = 'pointer';
+    header.style.borderRadius = 'var(--border-radius-md)';
+    header.style.transition = 'all var(--transition-fast)';
+    
+    if (state.selectedKeyTopicId === topic.id) {
+      header.classList.add('active');
+    }
     
     const numSpan = document.createElement('span');
     numSpan.className = 'nav-section-num';
@@ -54,6 +64,12 @@ function renderSidebarNav() {
     
     header.appendChild(numSpan);
     header.appendChild(descSpan);
+    
+    header.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('key-topic', topic.id);
+    });
+    
     section.appendChild(header);
     
     topic.subtopics.forEach(sub => {
@@ -1422,6 +1438,134 @@ function startFlashcardSession(subtopicId) {
   renderFlashcard();
 }
 
+function generateReinforcementMCQ(q) {
+  // Determine if answer is too long for a clean prompt
+  const wordCount = q.answer.split(/\s+/).length;
+  const useExplanation = wordCount > 5 || Math.random() < 0.5;
+
+  let pool = state.allQuestions.filter(other => other.subtopicId === q.subtopicId && other.id !== q.id);
+  // Fallback to topic level if subtopic pool is too small
+  if (pool.length < 3) {
+    pool = state.allQuestions.filter(other => other.topicId === q.topicId && other.id !== q.id);
+  }
+
+  let correctText = '';
+  let distractors = [];
+  let prompt = '';
+
+  if (useExplanation) {
+    prompt = `Select the correct historical context/detail associated with <strong>${q.answer}</strong>:`;
+    correctText = q.explanation;
+    // Get unique explanations as distractors
+    const uniqueExps = [...new Set(pool.map(other => other.explanation).filter(e => e !== correctText))];
+    distractors = uniqueExps.slice(0, 3);
+    // If not enough unique explanations, fallback to general ones
+    while (distractors.length < 3) {
+      distractors.push("Alternative historical context overview for Paper 3 studies.");
+    }
+  } else {
+    prompt = `Which historical question/definition is answered by <strong>'${q.answer}'</strong>?`;
+    correctText = q.question;
+    const uniqueQs = [...new Set(pool.map(other => other.question).filter(qst => qst !== correctText))];
+    distractors = uniqueQs.slice(0, 3);
+    while (distractors.length < 3) {
+      distractors.push("Alternative lesson question and check of key facts.");
+    }
+  }
+
+  // Combine and shuffle
+  const options = [correctText, ...distractors].sort(() => Math.random() - 0.5);
+  const correctIndex = options.indexOf(correctText);
+
+  return {
+    prompt,
+    options,
+    correctIndex,
+    explanation: q.explanation
+  };
+}
+
+function renderMCQReinforce(mcq) {
+  const container = document.getElementById('flashcard-reinforce-options');
+  container.innerHTML = '';
+  
+  mcq.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'flashcard-mcq-option';
+    btn.innerHTML = opt;
+    btn.style.width = '100%';
+    btn.style.textAlign = 'left';
+    btn.style.padding = '8px 12px';
+    btn.style.fontSize = '0.75rem';
+    btn.style.lineHeight = '1.3';
+    btn.style.borderRadius = 'var(--border-radius-sm)';
+    btn.style.border = '1px solid var(--border-glass)';
+    btn.style.background = 'rgba(255, 255, 255, 0.03)';
+    btn.style.color = 'var(--text-main)';
+    btn.style.cursor = 'pointer';
+    btn.style.transition = 'all var(--transition-fast)';
+    
+    btn.addEventListener('click', () => {
+      handleReinforceAnswer(idx, btn);
+    });
+    
+    container.appendChild(btn);
+  });
+}
+
+function handleReinforceAnswer(selectedIndex, clickedBtn) {
+  const session = state.flashcardSession;
+  const mcq = session.reinforceQuestion;
+  const q = session.deck[session.activeIndex];
+  const cardEl = document.getElementById('flashcard-card');
+  
+  // Disable all options
+  const optionBtns = document.querySelectorAll('.flashcard-mcq-option');
+  optionBtns.forEach(btn => {
+    btn.disabled = true;
+    btn.style.pointerEvents = 'none';
+  });
+
+  const isCorrect = selectedIndex === mcq.correctIndex;
+  
+  if (isCorrect) {
+    AudioEngine.play('success');
+    clickedBtn.classList.add('correct');
+    
+    setMastered(q.id, true);
+    session.masteredCount++;
+    
+    setTimeout(() => {
+      cardEl.classList.add('swipe-right');
+      setTimeout(() => {
+        session.activeIndex++;
+        renderFlashcard();
+      }, 300);
+    }, 1200);
+  } else {
+    AudioEngine.play('fail');
+    clickedBtn.classList.add('incorrect');
+    
+    // Highlight the correct one in green
+    optionBtns.forEach((btn, idx) => {
+      if (idx === mcq.correctIndex) {
+        btn.classList.add('correct');
+      }
+    });
+    
+    setMastered(q.id, false);
+    
+    setTimeout(() => {
+      cardEl.classList.add('swipe-left');
+      setTimeout(() => {
+        session.deck.push(q);
+        session.activeIndex++;
+        renderFlashcard();
+      }, 300);
+    }, 2200);
+  }
+}
+
 function renderFlashcard() {
   const deck = state.flashcardSession.deck;
   const idx = state.flashcardSession.activeIndex;
@@ -1438,6 +1582,12 @@ function renderFlashcard() {
     return;
   }
   
+  // Reset Reinforcing State for new card!
+  state.flashcardSession.reinforcing = false;
+  state.flashcardSession.reinforceQuestion = null;
+  document.getElementById('flashcard-back-standard-body').style.display = 'flex';
+  document.getElementById('flashcard-back-reinforce-body').style.display = 'none';
+
   const q = deck[idx];
   const isBookmarked = state.bookmarks.includes(q.id);
   
@@ -1485,16 +1635,22 @@ function handleFlashcardGrade(correct) {
   const q = deck[idx];
   
   if (correct) {
-    setMastered(q.id, true);
-    state.flashcardSession.masteredCount++;
-    AudioEngine.play('success');
+    // Start MCQ reinforcement double-check!
+    const mcq = generateReinforcementMCQ(q);
+    state.flashcardSession.reinforcing = true;
+    state.flashcardSession.reinforceQuestion = mcq;
     
-    // Swipe Right Animation
-    cardEl.classList.add('swipe-right');
-    setTimeout(() => {
-      state.flashcardSession.activeIndex++;
-      renderFlashcard();
-    }, 300);
+    // Update card elements to show MCQ
+    document.getElementById('flashcard-back-standard-body').style.display = 'none';
+    document.getElementById('flashcard-back-reinforce-body').style.display = 'flex';
+    document.getElementById('flashcard-reinforce-question').innerHTML = mcq.prompt;
+    
+    // Hide controls
+    document.getElementById('btn-flashcard-reveal').style.display = 'none';
+    document.getElementById('flashcard-self-grade-actions').style.display = 'none';
+    
+    // Render options
+    renderMCQReinforce(mcq);
   } else {
     setMastered(q.id, false);
     AudioEngine.play('fail');
@@ -4766,6 +4922,509 @@ function endTabooGame() {
   });
 }
 
+function renderKeyTopicOverview(topicId) {
+  const data = KEY_TOPICS_OVERVIEWS[topicId];
+  if (!data) return;
+
+  const container = document.getElementById('key-topic-content-container');
+  if (!container) return;
+
+  // Calculate Key Topic Progress
+  const quizTopic = QUIZ_DATA.find(t => t.id === topicId);
+  const subtopics = quizTopic ? quizTopic.subtopics : [];
+  
+  let totalQs = 0;
+  let totalMastered = 0;
+  subtopics.forEach(sub => {
+    const subQs = state.allQuestions.filter(q => q.subtopicId === sub.id);
+    totalQs += subQs.length;
+    totalMastered += subQs.filter(q => state.mastery[q.id]).length;
+  });
+  const overallPct = totalQs > 0 ? Math.round((totalMastered / totalQs) * 100) : 0;
+
+  // Build Subtopics Portal HTML
+  let subtopicsHtml = '';
+  subtopics.forEach(sub => {
+    const subQs = state.allQuestions.filter(q => q.subtopicId === sub.id);
+    const subMastered = subQs.filter(q => state.mastery[q.id]).length;
+    const pct = subQs.length > 0 ? Math.round((subMastered / subQs.length) * 100) : 0;
+    const cleanTitle = sub.title.replace(/^Topic \d\.\d:\s*/, "");
+    const subNum = sub.title.match(/Topic\s(\d\.\d)/)?.[1] || "";
+    
+    subtopicsHtml += `
+      <div class="key-topic-subtopic-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; transition: all var(--transition-normal); cursor: pointer;" onclick="window.switchView('subtopic', '${sub.id}')">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: 0.5px;">LESSON ${subNum}</span>
+            <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${pct}% Mastered</span>
+          </div>
+          <h3 style="font-size: 0.95rem; font-weight: 600; margin: 0; line-height: 1.3; color: var(--text-main);">${cleanTitle}</h3>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px; font-size: 0.8rem; font-weight: 600; color: var(--primary); align-self: flex-end;">
+          Study Lesson <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    `;
+  });
+
+  if (topicId === 'topic_1') {
+    // Overhauled Key Topic 1 Overview
+    // Build Timeline Nodes HTML
+    let timelineNodesHtml = '';
+    data.timeline.forEach((event, idx) => {
+      timelineNodesHtml += `
+        <div class="timeline-node-item" data-event-index="${idx}" style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+          <div class="timeline-node-circle" style="width: 20px; height: 20px; border-radius: 50%; background: var(--bg-card); border: 3px solid var(--primary); box-shadow: var(--shadow-sm); transition: all var(--transition-fast); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 0.5rem;">
+            <i class="fa-solid fa-circle" style="opacity: 0; transition: opacity var(--transition-fast);"></i>
+          </div>
+          <div class="timeline-node-label" style="margin-top: 8px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <span class="timeline-node-year" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary);">${event.year}</span>
+            <span class="timeline-node-title" style="font-size: 0.72rem; color: var(--text-muted); max-width: 110px; line-height: 1.2; font-weight: 600;">${event.title}</span>
+          </div>
+        </div>
+      `;
+    });
+
+    // Build Draggable Cards HTML (Scrambled initially)
+    // Create copy and shuffle
+    const shuffledEvents = [...data.timeline].sort(() => Math.random() - 0.5);
+
+    let chronoCardsHtml = '';
+    shuffledEvents.forEach(event => {
+      chronoCardsHtml += `
+        <div class="chrono-drag-card" draggable="true" data-id="${event.id}" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px; display: flex; align-items: center; gap: 12px; cursor: grab; transition: all var(--transition-fast);">
+          <i class="fa-solid fa-bars drag-handle" style="color: var(--text-muted); cursor: grab;"></i>
+          <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-main); flex: 1;">${event.title} (${event.year})</span>
+          <div class="chrono-arrows" style="display: flex; flex-direction: column; gap: 2px;">
+            <button class="btn-chrono-arrow-up" title="Move Up" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 6px; font-size: 0.75rem; transition: color var(--transition-fast);"><i class="fa-solid fa-chevron-up"></i></button>
+            <button class="btn-chrono-arrow-down" title="Move Down" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 6px; font-size: 0.75rem; transition: color var(--transition-fast);"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+        </div>
+      `;
+    });
+
+    // Build Sliders HTML
+    let slidersHtml = '';
+    data.sliders.forEach(slider => {
+      slidersHtml += `
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 14px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid ${slider.icon}" style="color: var(--primary); font-size: 0.9rem;"></i> ${slider.label}
+            </span>
+            <span id="slider-badge-${slider.id}" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary);">50%</span>
+          </div>
+          <input type="range" class="key-topic-slider" id="input-slider-${slider.id}" min="0" max="100" value="50" style="width: 100%; cursor: pointer;">
+          <div id="slider-tip-${slider.id}" style="font-size: 0.78rem; line-height: 1.4; color: var(--text-muted); min-height: 38px; border-top: 1px dashed var(--border-glass); padding-top: 6px; margin-top: 4px;">
+            <!-- Injected by dynamic logic -->
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = `
+      <!-- Top Progress Banner -->
+      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
+          ${data.title}
+        </h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
+            <div style="background: var(--gradient-main); height: 100%; width: ${overallPct}%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overhauled Two Column Dashboard -->
+      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 24px; align-items: start;">
+        <!-- Left Column: Context Overview & Lesson Portals -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Overview Card -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-book-open"></i> Historical Context Overview
+            </h3>
+            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
+              ${data.overview}
+            </p>
+          </div>
+
+          <!-- Lessons portal grid -->
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-graduation-cap"></i> Key Topic Lessons
+            </h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              ${subtopicsHtml}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Blocks -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Component A: Responsive timeline -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm); position: relative;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-timeline"></i> Mental Map Timeline, 1954–60
+            </h3>
+            <div class="key-topic-timeline" style="position: relative; margin: 30px 0;">
+              ${timelineNodesHtml}
+            </div>
+            <div style="text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 12px; border-top: 1px dashed var(--border-glass); padding-top: 8px;">
+              <i class="fa-solid fa-circle-info"></i> Click or tap any year to reveal historical details & sources.
+            </div>
+          </div>
+
+          <!-- Component B: Drag-to-Order Challenge -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-clock"></i> Test Your Chronological Awareness
+            </h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 16px 0; line-height: 1.4;">
+              Drag the cards or use the Up/Down arrows to arrange the events in their correct sequence (1st to 4th):
+            </p>
+            <div id="chrono-drag-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+              ${chronoCardsHtml}
+            </div>
+            <div style="display: flex; gap: 12px; justify-content: flex-end; align-items: center;">
+              <span id="chrono-feedback-msg" style="font-size: 0.85rem; font-weight: 600; transition: color var(--transition-fast);"></span>
+              <button class="btn-primary" id="btn-chrono-check" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 4px; font-weight: 600;">Check Order</button>
+            </div>
+            <div id="chrono-explanation-box" style="display: none; margin-top: 14px; background: rgba(16, 185, 129, 0.05); border-left: 3px solid var(--success); padding: 14px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted);">
+              <!-- Populated upon correct order check -->
+            </div>
+          </div>
+
+          <!-- Component C: Weighing Sliders -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-sliders"></i> Analytical Weighting: What Drove Progress?
+            </h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 16px 0; line-height: 1.4;">
+              Adjust the sliders below to weigh the relative influence of these historical factors. Drag any slider to review its context tip:
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              ${slidersHtml}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Modal Overlay (glassmorphism details card) -->
+      <div id="timeline-modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); z-index: 1000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+        <div id="timeline-modal-content" style="background: var(--bg-card); border: 1px solid var(--border-active); border-radius: var(--border-radius-md); padding: 24px; max-width: 500px; width: 90%; box-shadow: var(--shadow-lg); position: relative; transform: scale(0.9); transition: transform 0.3s ease; display: flex; flex-direction: column; gap: 16px;">
+          <button id="btn-timeline-modal-close" style="position: absolute; top: 12px; right: 12px; background: none; border: none; font-size: 1.2rem; color: var(--text-muted); cursor: pointer; transition: color var(--transition-fast);"><i class="fa-solid fa-xmark"></i></button>
+          <div>
+            <span id="timeline-modal-year" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary); letter-spacing: 0.5px; text-transform: uppercase;">1954</span>
+            <h3 id="timeline-modal-title" style="margin: 4px 0 0 0; font-size: 1.2rem; font-weight: 600; color: var(--text-main); line-height: 1.3;">Brown v. Board of Education</h3>
+          </div>
+          <ul id="timeline-modal-bullets" style="padding-left: 20px; font-size: 0.85rem; line-height: 1.5; color: var(--text-normal); margin: 0; display: flex; flex-direction: column; gap: 8px;"></ul>
+          <div style="background: rgba(230, 92, 0, 0.05); border-left: 3px solid var(--primary); padding: 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.82rem; line-height: 1.4; color: var(--text-muted); font-style: italic;">
+            "<span id="timeline-modal-quote"></span>"
+            <div id="timeline-modal-author" style="text-align: right; font-size: 0.72rem; font-weight: 600; margin-top: 6px; font-style: normal; color: var(--text-normal);"></div>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+            <strong>Key Figures:</strong> <span id="timeline-modal-figures" style="color: var(--text-normal); font-weight: 600;"></span>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Modal logic
+    const overlay = document.getElementById('timeline-modal-overlay');
+    const modalContent = document.getElementById('timeline-modal-content');
+    const closeBtn = document.getElementById('btn-timeline-modal-close');
+    const nodes = container.querySelectorAll('.timeline-node-item');
+
+    function openModal(idx) {
+      const event = data.timeline[idx];
+      if (!event) return;
+      AudioEngine.play('click');
+      
+      document.getElementById('timeline-modal-year').textContent = event.year;
+      document.getElementById('timeline-modal-title').textContent = event.title;
+      document.getElementById('timeline-modal-quote').textContent = event.quote;
+      document.getElementById('timeline-modal-author').textContent = event.author;
+      document.getElementById('timeline-modal-figures').textContent = event.figures.join(', ');
+      
+      const bulletsUl = document.getElementById('timeline-modal-bullets');
+      bulletsUl.innerHTML = '';
+      event.bullets.forEach(b => {
+        const li = document.createElement('li');
+        li.textContent = b;
+        bulletsUl.appendChild(li);
+      });
+      
+      overlay.style.display = 'flex';
+      setTimeout(() => {
+        overlay.style.opacity = '1';
+        modalContent.style.transform = 'scale(1)';
+      }, 20);
+    }
+
+    function closeModal() {
+      overlay.style.opacity = '0';
+      modalContent.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 300);
+    }
+
+    nodes.forEach(n => {
+      n.addEventListener('click', () => {
+        const idx = parseInt(n.getAttribute('data-event-index'));
+        openModal(idx);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+
+    // Chronology Drag & Drop / Arrow controls logic
+    const chronoContainer = document.getElementById('chrono-drag-container');
+    const checkBtn = document.getElementById('btn-chrono-check');
+    const feedbackMsg = document.getElementById('chrono-feedback-msg');
+    const explanationBox = document.getElementById('chrono-explanation-box');
+
+    let draggedItem = null;
+
+    chronoContainer.addEventListener('dragstart', (e) => {
+      const card = e.target.closest('.chrono-drag-card');
+      if (!card) return;
+      draggedItem = card;
+      card.style.opacity = '0.5';
+      e.dataTransfer.effectAllowed = 'move';
+    });
+
+    chronoContainer.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      const card = e.target.closest('.chrono-drag-card');
+      if (!card || card === draggedItem) return;
+
+      const rect = card.getBoundingClientRect();
+      const next = (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
+      chronoContainer.insertBefore(draggedItem, next ? card.nextSibling : card);
+    });
+
+    chronoContainer.addEventListener('dragend', () => {
+      if (draggedItem) {
+        draggedItem.style.opacity = '1';
+        draggedItem = null;
+      }
+    });
+
+    // Arrow controls
+    chronoContainer.addEventListener('click', (e) => {
+      const arrowUp = e.target.closest('.btn-chrono-arrow-up');
+      const arrowDown = e.target.closest('.btn-chrono-arrow-down');
+      
+      if (arrowUp) {
+        e.stopPropagation();
+        const card = arrowUp.closest('.chrono-drag-card');
+        const prev = card.previousElementSibling;
+        if (prev) {
+          chronoContainer.insertBefore(card, prev);
+          AudioEngine.play('click');
+        }
+      }
+      
+      if (arrowDown) {
+        e.stopPropagation();
+        const card = arrowDown.closest('.chrono-drag-card');
+        const next = card.nextElementSibling;
+        if (next) {
+          chronoContainer.insertBefore(next, card);
+          AudioEngine.play('click');
+        }
+      }
+    });
+
+    // Chronology Check button click
+    checkBtn.addEventListener('click', () => {
+      const cards = chronoContainer.querySelectorAll('.chrono-drag-card');
+      const correctSeq = ['t1_event_1', 't1_event_2', 't1_event_3', 't1_event_4'];
+      let correctCount = 0;
+
+      cards.forEach((card, idx) => {
+        const id = card.getAttribute('data-id');
+        if (id === correctSeq[idx]) {
+          card.style.borderColor = 'var(--success)';
+          card.style.boxShadow = '0 0 8px rgba(16, 185, 129, 0.15)';
+          correctCount++;
+        } else {
+          card.style.borderColor = 'var(--danger)';
+          card.style.boxShadow = '0 0 8px rgba(239, 68, 68, 0.15)';
+        }
+      });
+
+      if (correctCount === 4) {
+        AudioEngine.play('cheer');
+        Confetti.spawn(60);
+        feedbackMsg.style.color = 'var(--success)';
+        feedbackMsg.textContent = '🎉 100% Correct Sequence!';
+        
+        explanationBox.style.display = 'block';
+        explanationBox.innerHTML = `
+          <strong>Exam Connection: Why this sequence matters:</strong><br>
+          Establishing this timeline is critical for Paper 3 synthesis. The <strong>Brown decision (1954)</strong> established the constitutional right to integrated schools, but lacked enforcement. This sparked grassroots activism, leading to the <strong>Montgomery Bus Boycott (1955-56)</strong>, proving community solidarity could force local changes. The backlash to these movements culminated at <strong>Little Rock (1957)</strong>, where Southern state resistance forced President Eisenhower to execute federal troops, creating national momentum that compelled Congress to pass the <strong>Civil Rights Act of 1957</strong> to protect voting rights.
+        `;
+      } else {
+        AudioEngine.play('fail');
+        feedbackMsg.style.color = 'var(--danger)';
+        feedbackMsg.textContent = `Incorrect Sequence (${correctCount}/4 match). Retrying...`;
+        explanationBox.style.display = 'none';
+      }
+    });
+
+    // Weighing sliders logic
+    data.sliders.forEach(slider => {
+      const input = document.getElementById(`input-slider-${slider.id}`);
+      const badge = document.getElementById(`slider-badge-${slider.id}`);
+      
+      const updateFn = (value) => {
+        badge.textContent = `${value}%`;
+        
+        // Choose context tip index
+        let tipIdx = 0;
+        if (value > 33 && value <= 66) tipIdx = 1;
+        else if (value > 66) tipIdx = 2;
+        
+        const tipContainer = document.getElementById(`slider-tip-${slider.id}`);
+        if (tipContainer) {
+          tipContainer.innerHTML = `<strong>Analysis (${value}%):</strong> ${slider.tips[tipIdx]}`;
+        }
+      };
+
+      // Initial update
+      updateFn(50);
+
+      input.addEventListener('input', (e) => {
+        updateFn(e.target.value);
+      });
+    });
+
+  } else {
+    // Normal Key Topic Overview layout (Topics 2, 3, 4)
+    // Build Visual Sources HTML
+    let sourcesHtml = '';
+    data.sources.forEach(src => {
+      const webLink = getImageWebLink(src.image, src.alt);
+      sourcesHtml += `
+        <div class="key-topic-source-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 12px; display: flex; flex-direction: column; gap: 10px; cursor: pointer; transition: transform var(--transition-fast);" onclick="window.open('${webLink}', '_blank')">
+          <div style="height: 140px; border-radius: var(--border-radius-sm); overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; position: relative;">
+            <img src="${src.image}" alt="${src.alt}" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+            <div style="position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.65); padding: 4px 8px; border-radius: var(--border-radius-sm); font-size: 0.65rem; color: #fff; font-weight: 600;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Source
+            </div>
+          </div>
+          <p style="font-size: 0.75rem; line-height: 1.4; color: var(--text-muted); margin: 0;">${src.caption}</p>
+        </div>
+      `;
+    });
+
+    // Build Tasks HTML
+    let tasksHtml = '';
+    data.tasks.forEach(task => {
+      tasksHtml += `
+        <div class="key-topic-task-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px;">
+          <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--primary); margin: 0; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-question"></i> ${task.title}
+          </h4>
+          <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-normal); margin: 0;">${task.question}</p>
+          <textarea id="${task.id}-textarea" placeholder="Type your revision notes here..." style="width: 100%; height: 80px; padding: 10px; background: rgba(0,0,0,0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); font-size: 0.85rem; font-family: inherit; color: var(--text-main); resize: vertical; box-sizing: border-box;"></textarea>
+          <div style="display: flex; justify-content: flex-end;">
+            <button class="btn-secondary" id="btn-reveal-${task.id}" style="padding: 8px 14px; font-size: 0.8rem; font-weight: 600;">
+              <i class="fa-solid fa-lightbulb"></i> Reveal Expert Guidance
+            </button>
+          </div>
+          <div id="guidance-${task.id}" style="display: none; background: rgba(230, 92, 0, 0.05); border-left: 3px solid var(--primary); padding: 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">
+            <strong>Expert Response Guide:</strong><br>${task.guidance}
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = `
+      <!-- Top Progress Banner -->
+      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
+          ${data.title}
+        </h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
+            <div style="background: var(--gradient-main); height: 100%; width: ${overallPct}%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overview Text -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; margin-bottom: 24px; box-shadow: var(--shadow-sm);">
+        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-book-open"></i> Historical Context Overview
+        </h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
+          ${data.overview}
+        </p>
+      </div>
+
+      <!-- Visual Sources & Student Tasks (Two Column Layout) -->
+      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 24px;">
+        <!-- Visual Sources Column -->
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-images"></i> Primary Visual Sources
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            ${sourcesHtml}
+          </div>
+        </div>
+
+        <!-- Revision Tasks Column -->
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-list-check"></i> Synthesis Tasks
+          </h3>
+          <div>
+            ${tasksHtml}
+          </div>
+        </div>
+      </div>
+
+      <!-- Lessons & Subtopics Grid -->
+      <div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-graduation-cap"></i> Key Topic Lessons
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          ${subtopicsHtml}
+        </div>
+      </div>
+    `;
+
+    // Attach event listeners for Reveal Guidance buttons
+    data.tasks.forEach(task => {
+      const btn = document.getElementById(`btn-reveal-${task.id}`);
+      const guidance = document.getElementById(`guidance-${task.id}`);
+      if (btn && guidance) {
+        btn.addEventListener('click', () => {
+          AudioEngine.play('click');
+          if (guidance.style.display === 'none') {
+            guidance.style.display = 'block';
+            btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Guidance`;
+          } else {
+            guidance.style.display = 'none';
+            btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Reveal Expert Guidance`;
+          }
+        });
+      }
+    });
+  }
+}
+
 export {
   renderSidebarNav,
   updateBookmarksUI,
@@ -4788,7 +5447,8 @@ export {
   initDecisionsGame,
   initMindMapGame,
   initExamLeaderboard,
-  initTabooGame
+  initTabooGame,
+  renderKeyTopicOverview
 };
 
 
