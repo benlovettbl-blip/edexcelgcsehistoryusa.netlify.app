@@ -2424,16 +2424,6 @@ function renderTimelineView() {
       link.style.cursor = 'zoom-in';
       img.parentNode.insertBefore(link, img);
       link.appendChild(img);
-      
-      const inspectDiv = document.createElement('div');
-      inspectDiv.style.textAlign = 'center';
-      inspectDiv.style.marginTop = '4px';
-      inspectDiv.innerHTML = `
-        <a href="${webUrl}" target="_blank" style="color: var(--primary); font-size: 0.72rem; text-decoration: underline; font-family: var(--font-body); display: inline-flex; align-items: center; gap: 4px;">
-          <i class="fa-solid fa-up-right-from-square"></i> Verify Source
-        </a>
-      `;
-      link.parentNode.insertBefore(inspectDiv, link.nextSibling);
     }
   });
 }

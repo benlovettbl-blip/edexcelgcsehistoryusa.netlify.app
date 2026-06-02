@@ -11654,15 +11654,6 @@ Source E is highly useful for showing the political and moral collapse of the wa
         link.style.cursor = "zoom-in";
         img.parentNode.insertBefore(link, img);
         link.appendChild(img);
-        const inspectDiv = document.createElement("div");
-        inspectDiv.style.textAlign = "center";
-        inspectDiv.style.marginTop = "4px";
-        inspectDiv.innerHTML = `
-        <a href="${webUrl}" target="_blank" style="color: var(--primary); font-size: 0.72rem; text-decoration: underline; font-family: var(--font-body); display: inline-flex; align-items: center; gap: 4px;">
-          <i class="fa-solid fa-up-right-from-square"></i> Verify Source
-        </a>
-      `;
-        link.parentNode.insertBefore(inspectDiv, link.nextSibling);
       }
     });
   }
@@ -18219,17 +18210,6 @@ ${cleanBrackets(paper.q3d.model)}
         link.className = "img-zoom-link";
         img.parentNode.insertBefore(link, img);
         link.appendChild(img);
-        const inspectDiv = document.createElement("div");
-        inspectDiv.className = "img-web-link-wrapper";
-        inspectDiv.style.textAlign = "center";
-        inspectDiv.style.marginTop = "6px";
-        inspectDiv.style.marginBottom = "12px";
-        inspectDiv.innerHTML = `
-        <a href="${webUrl}" target="_blank" style="color: var(--primary); font-size: 0.72rem; font-weight: bold; text-decoration: underline; display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-body);">
-          <i class="fa-solid fa-up-right-from-square"></i> Verify Source
-        </a>
-      `;
-        link.parentNode.insertBefore(inspectDiv, link.nextSibling);
       }
     });
   }
