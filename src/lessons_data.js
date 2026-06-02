@@ -2542,7 +2542,7 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_3_4",
-      "prevSubtopicTitle": "Topic 3.4: Vietcong Tactics & Tet Offensive",
+      "prevSubtopicTitle": "Topic 3.4: Nixon's changes, Vietnamization, Cambodia & Laos",
       "image": "assets/sources/antiwar-pentagon-protest-1967.jpg",
       "provenance": "Anti-war demonstrators facing military police outside the Pentagon, October 1967.",
       "seeThinkWonder": {
@@ -2550,18 +2550,18 @@ export const LESSONS_DATA = {
         "think": "Why would protestors target the Pentagon rather than local draft board offices?",
         "wonder": "How did images of armed soldiers facing young civilians affect public support for the war?"
       },
-      "bronze": "In what year was the Tet Offensive launched, and how did it affect President Johnson's political career?",
-      "silver": "Explain how the introduction of the televised draft lottery in 1969 increased protests against the Vietnam War.",
-      "gold": "How did the introduction of the televised Selective Service Draft Lottery (Topic 4.1) escalate campus protests compared to the earlier civil rights student protests like the Greensboro Sit-ins (Topic 1.4)?",
+      "bronze": "What was Vietnamization, and what was its main objective?",
+      "silver": "Explain why Nixon's decision to invade Cambodia in 1970 triggered intense protests on the home front.",
+      "gold": "How did Nixon's invasion of Cambodia in 1970 (Topic 3.4) compare to Eisenhower's initial domino theory logic (Topic 3.1) in terms of expanding regional conflict?",
       "keywords": [
-        "Draft Resistance",
-        "SDS",
-        "Pentagon Protest",
-        "Credibility Gap"
+        "Vietnamization",
+        "Cambodia Invasion",
+        "Home Front Protests",
+        "De-escalation"
       ],
-      "bronzeAnswer": "The Tet Offensive was launched in 1968. It shattered public confidence in the war and forced Johnson to announce he would not run for re-election.",
-      "silverAnswer": "The lottery meant that young men of all social classes were randomly selected for military service. The direct threat of being drafted to fight in an unpopular war caused massive protests on college campuses.",
-      "goldAnswer": "Unlike the Greensboro sit-ins (Topic 1.4) which targeted local businesses to end segregation, the draft lottery directly threatened the lives of all young college-aged men. The threat of being drafted into a deadly, unpopular war mobilized a much wider and more angry student base, turning protests into national strikes."
+      "bronzeAnswer": "Vietnamization was Nixon's policy of withdrawing US troops and training the South Vietnamese army (ARVN) to take over the combat, aiming to withdraw US troops without appearing defeated.",
+      "silverAnswer": "The invasion expanded the war's geographic scope into a neutral country, directly contradicting Nixon's promises of de-escalation and triggering massive anger on the home front.",
+      "goldAnswer": "Eisenhower's domino theory predicted that if Vietnam fell, Laos and Cambodia would follow. Nixon's invasion of Cambodia in 1970 widened the war directly into Cambodia to destroy communist bases, showing that US military strategy itself expanded the conflict to neighboring nations to protect the South."
     },
     "specPoints": [
       "Reasons for the growth of opposition, including TV and media coverage of the war and the draft system.",
@@ -2739,7 +2739,7 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_4_1",
-      "prevSubtopicTitle": "Topic 4.1: Rise of the Anti-War Movement",
+      "prevSubtopicTitle": "Topic 4.1: Opposition to the war (Draft, Media, My Lai, and student protests)",
       "image": "assets/sources/nixon-visiting-troops.jpg",
       "provenance": "President Richard Nixon visiting US troops in South Vietnam, July 1969.",
       "seeThinkWonder": {
@@ -2748,17 +2748,17 @@ export const LESSONS_DATA = {
         "wonder": "How did this visit contrast with the secret bombing campaigns Nixon was launching in Cambodia?"
       },
       "bronze": "What is a 'credibility gap,' and how did the My Lai Massacre (1968) widen it?",
-      "silver": "Explain what President Nixon meant by the \"Silent Majority\" and why he appealed to them.",
-      "gold": "How did the anti-war movement's arguments about the draft and casualties (Topic 4.1) pressure Nixon into adopting the policy of Vietnamization?",
+      "silver": "Explain how the trial of Lieutenant William Calley in 1971 divided public opinion on the anti-war movement.",
+      "gold": "How did the television coverage of the draft and the My Lai Massacre (Topic 4.1) compare to the media coverage of the Birmingham campaign in 1963 (Topic 2.2) in terms of shaping public opinion?",
       "keywords": [
-        "Vietnamization",
-        "Cambodian Incursion",
-        "Kent State",
-        "Withdrawal"
+        "Credibility Gap",
+        "My Lai Massacre",
+        "Lt. Calley Trial",
+        "Media Influence"
       ],
       "bronzeAnswer": "A credibility gap is the difference between government claims and the actual reality. My Lai widened it because the military attempted to cover up the slaughter of hundreds of civilians.",
-      "silverAnswer": "The \"Silent Majority\" were patriotic Americans who supported the government but did not join protests. Nixon appealed to them to show that the anti-war protesters did not represent the views of most Americans.",
-      "goldAnswer": "The anti-war movement (Topic 4.1) had made the war politically toxic due to high casualties and the draft. To survive politically, Nixon had to show he was ending American involvement. Vietnamization allowed him to withdraw US ground troops (reducing draft calls and casualties) while claiming he was not surrendering."
+      "silverAnswer": "Calley was the only officer convicted for the My Lai Massacre. Anti-war supporters saw him as a scapegoat for systemic military failures, while others defended him, widening home front divisions.",
+      "goldAnswer": "Both used televised media to shock the national conscience. Birmingham exposed the brutality of Southern segregation using dogs and water hoses against peaceful protestors, creating support for civil rights. Similarly, raw TV footage of civilian casualties in Vietnam and the exposure of My Lai shattered the war's moral justification, turning the public against it."
     },
     "specPoints": [
       "Reasons for support for the war, including the fear of communism and the ‘silent majority’.",
@@ -2933,7 +2933,7 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_4_2",
-      "prevSubtopicTitle": "Topic 4.2: Vietnamization & Cambodia",
+      "prevSubtopicTitle": "Topic 4.2: Support for the war (Silent Majority and hard hats)",
       "image": "assets/sources/pro-war-rally-nyc.jpg",
       "provenance": "Pro-war demonstrators marching in support of Nixon's Vietnam policies, 1970.",
       "seeThinkWonder": {
@@ -2941,17 +2941,17 @@ export const LESSONS_DATA = {
         "think": "Why did blue-collar workers feel alienated by and hostile toward student anti-war protestors?",
         "wonder": "How did Nixon capitalize on this patriotism to build his political coalition?"
       },
-      "bronze": "Why did Nixon's invasion of Cambodia in April 1970 trigger a national student strike and the Kent State shootings?",
-      "silver": "Explain how Nixon's decision to invade Cambodia in April 1970 led to the tragedy at Kent State University.",
-      "gold": "Connect this pro-war rally of blue-collar workers back to the Watts and Detroit urban riots (Topic 2.4). What social and class divisions in the US did both events expose?",
+      "bronze": "Who did President Nixon refer to as the 'Silent Majority'?",
+      "silver": "Explain why many working-class construction workers ('hard hats') clashed with anti-war student demonstrators in New York in 1970.",
+      "gold": "Connect the pro-war 'hard hat' rallies of blue-collar workers (Topic 4.2) back to the Watts and Detroit urban riots (Topic 2.4). What social and class divisions in the US did both events expose?",
       "keywords": [
         "Silent Majority",
         "Hard Hat Riots",
         "Law and Order",
         "Labor Patriotism"
       ],
-      "bronzeAnswer": "The invasion expanded the war into a neutral country, which directly contradicted Nixon's promises of de-escalation, triggering mass outrage.",
-      "silverAnswer": "The invasion expanded the war, breaking Nixon's promises of de-escalation. This sparked massive student protests, leading to the deployment of the National Guard at Kent State, who shot and killed four students.",
+      "bronzeAnswer": "The 'Silent Majority' was Nixon's term for the moderate, working-class, patriotic Americans who supported his war policies but did not actively participate in protests.",
+      "silverAnswer": "Working-class citizens resented privileged middle-class student protestors who avoided the draft through college deferments, and they supported the government's call for patriotism and law and order.",
       "goldAnswer": "Both events exposed deep social divisions. The urban riots (Topic 2.4) exposed racial and economic neglect of Black Americans in inner cities. The pro-war construction worker rallies exposed a deep class divide between working-class patriots (who felt a duty to support the government) and middle-class student protestors."
     },
     "specPoints": [
@@ -3122,7 +3122,7 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_4_3",
-      "prevSubtopicTitle": "Topic 4.3: Support for the War & Silent Majority",
+      "prevSubtopicTitle": "Topic 4.3: Peace negotiations, the Paris Peace Agreement, and the Fall of Saigon",
       "image": "assets/sources/saigon-embassy-evacuation.jpg",
       "provenance": "Evacuation of American personnel and South Vietnamese refugees by helicopter from the US Embassy roof in Saigon, 29 April 1975.",
       "seeThinkWonder": {
@@ -3130,7 +3130,7 @@ export const LESSONS_DATA = {
         "think": "What does the desperate nature of this evacuation tell us about the speed of the South Vietnamese collapse?",
         "wonder": "Why did the US military refuse to send air support to stop the North Vietnamese offensive?"
       },
-      "bronze": "Who did Nixon refer to as the 'Silent Majority', and how did he use them to counter anti-war protests?",
+      "bronze": "In what year were the Paris Peace Accords signed, and what did they demand regarding US troops?",
       "silver": "Explain why the North Vietnamese were able to defeat South Vietnam so quickly in 1975 after the US troops had withdrawn.",
       "gold": "Connect the fall of South Vietnam in 1975 to the initial advisory role in 1954 under Eisenhower (Topic 3.1). How did the failure of Diem's Catholic regime prefigure this final collapse?",
       "keywords": [
@@ -3139,7 +3139,7 @@ export const LESSONS_DATA = {
         "Fall of Saigon",
         "Decent Interval"
       ],
-      "bronzeAnswer": "The Silent Majority were patriotic Americans who supported the war but did not protest. Nixon appealed to them to show he had popular support, isolating anti-war activists.",
+      "bronzeAnswer": "They were signed in 1973 and demanded the complete withdrawal of all US combat forces from Vietnam within 60 days.",
       "silverAnswer": "Without US air support and financial aid, the South Vietnamese army (ARVN) was demoralized, corrupt, and lacked fuel and ammunition. This allowed the North Vietnamese forces to launch a swift offensive and capture Saigon.",
       "goldAnswer": "The collapse of 1975 was prefigured by Diem's regime (Topic 3.1). Diem failed to build a democratic, popular government, creating corruption and sectarian divide. The ARVN remained corrupt and politically dependent on US money and air power. When the US withdrew, the state collapsed instantly."
     },
