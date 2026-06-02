@@ -8,6 +8,7 @@
 export const state = {
   currentView: 'dashboard',         // 'dashboard' | 'classic' | 'flashcards' | 'exam' | 'timeline' | 'bookmarks'
   selectedSubtopicId: null,         // Active sub-topic ID (e.g. 'subtopic_1_1')
+  selectedKeyTopicId: null,          // Active Key Topic ID (e.g. 'topic_1')
   currentMode: 'lessons',           // 'lessons' | 'classic' | 'flashcards' (sub-topic study modes)
   mastery: {},                      // { questionId: boolean }
   bookmarks: [],                     // Array of questionIds
@@ -22,7 +23,9 @@ export const state = {
     deck: [],
     activeIndex: 0,
     originalLength: 0,
-    masteredCount: 0
+    masteredCount: 0,
+    reinforcing: false,
+    reinforceQuestion: null
   },
   
   // Quiz Generator State

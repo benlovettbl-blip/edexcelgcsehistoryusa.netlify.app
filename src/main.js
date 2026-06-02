@@ -5,6 +5,8 @@ import { switchView } from './navigation.js';
 
 // --- Application Entry Point ---
 window.addEventListener('DOMContentLoaded', () => {
+  window.switchView = switchView;
+  
   initData();
   renderSidebarNav();
   updateGlobalStats();
