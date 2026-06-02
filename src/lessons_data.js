@@ -93,10 +93,7 @@ export const LESSONS_DATA = {
         "answer": "Montgomery Improvement Association"
       }
     ],
-    "importanceAnalyser": {
-      "question": "Explain the importance of the Brown v. Topeka decision (1954) for developments in education. (8 marks)",
-      "answer": "Reason 1: The Brown v. Topeka decision was important because it overturned the 1896 Plessy v. Ferguson 'separate but equal' doctrine. The Supreme Court ruled unanimously (9-0) that segregated schools were inherently unequal, violating the 14th Amendment. This was crucial as it provided a legal precedent that desegregation was a constitutional right, allowing civil rights lawyers to challenge segregated education across the South.\n\nReason 2: It was also important because of the intense white resistance it provoked. The decision led to the Southern Manifesto and the creation of White Citizens' Councils, which used intimidation to block integration. This backlash showed that court rulings alone were insufficient and compelled the civil rights movement to transition from legal battles to grassroots direct action to force federal enforcement."
-    },
+    "importanceAnalyser": null,
     "questionVault": [
       {
         "question": "Give two things you can infer from Source A about voting rights in the Southern states. (4 marks)",
@@ -294,10 +291,7 @@ export const LESSONS_DATA = {
         "answer": "Dwight D. Eisenhower"
       }
     ],
-    "importanceAnalyser": {
-      "question": "Explain the importance of the events at Little Rock Central High School (1957) for the civil rights movement. (8 marks)",
-      "answer": "Reason 1: Little Rock Central High was important because it forced the federal government to intervene directly to protect Black students' civil rights. When Governor Orval Faubus deployed the Arkansas National Guard to block the Little Rock Nine, President Eisenhower federalized the state guard and sent the 101st Airborne Division. This was the first time since Reconstruction that federal troops were sent to the South, demonstrating that federal authority would overrule state-level segregation.\n\nReason 2: It was also important due to the impact of national media coverage. The crisis was broadcast on television, showing white mobs abusing dignified Black students. This shocked Northern audiences, generating widespread public sympathy for the civil rights cause and putting political pressure on Congress to pass civil rights legislation."
-    },
+    "importanceAnalyser": null,
     "questionVault": [
       {
         "question": "Explain why desegregation in education faced severe resistance in the years 1954–57. (12 marks)",
@@ -480,10 +474,7 @@ export const LESSONS_DATA = {
         "answer": "Browder v. Gayle"
       }
     ],
-    "importanceAnalyser": {
-      "question": "Explain the importance of the Montgomery Bus Boycott (1955-56) for the civil rights movement. (8 marks)",
-      "answer": "Reason 1: The boycott was important because it proved the power of non-violent direct action and economic pressure. By organizing a 381-day boycott where Black riders (who made up 70% of passengers) refused to use the buses, the MIA severely damaged the bus company's revenue. This demonstrated that unified grassroots activism could force economic and social changes without relying solely on courts.\n\nReason 2: It was also important because it established Martin Luther King Jr. as a national leader and led to the creation of the Southern Christian Leadership Conference (SCLC). King's inspiring speeches framed the boycott as a moral and Christian crusade. This provided the movement with a powerful philosophy of non-violence and a structured organization to coordinate future campaigns across the South."
-    },
+    "importanceAnalyser": null,
     "questionVault": [
       {
         "question": "How useful are Sources B and C for an enquiry into the reasons for the success of the Montgomery Bus Boycott? (8 marks)",
@@ -671,10 +662,7 @@ export const LESSONS_DATA = {
         "answer": "Dixiecrats"
       }
     ],
-    "importanceAnalyser": {
-      "question": "Explain the importance of the Civil Rights Act of 1957 for the development of the civil rights movement. (8 marks)",
-      "answer": "Reason 1: The Act was important because it was the first federal civil rights legislation passed by Congress since Reconstruction in 1875. Even though the bill was heavily weakened by Southern Democrats (Dixiecrats) led by Strom Thurmond's filibuster, its passage signaled a major shift in federal policy, showing that the U.S. government was beginning to accept responsibility for protecting Black voting rights.\n\nReason 2: It was also important because it created the Civil Rights Division in the Department of Justice and the federal Commission on Civil Rights. This allowed the federal government to monitor abuses and file lawsuits against Southern registrars who blocked Black voters. This legal machinery laid the groundwork for the more powerful Civil Rights and Voting Rights Acts of 1964 and 1965."
-    },
+    "importanceAnalyser": null,
     "questionVault": [
       {
         "question": "This suite is based on the following interpretations regarding the opposition to the civil rights movement.",
@@ -864,10 +852,7 @@ export const LESSONS_DATA = {
         "answer": "Student Nonviolent Coordinating Committee"
       }
     ],
-    "importanceAnalyser": {
-      "question": "Explain the importance of the Greensboro Sit-ins (1960) for the campaign to desegregate public facilities. (8 marks)",
-      "answer": "Reason 1: The Greensboro Sit-ins were important because they rapidly spread across the South, creating a massive, student-led protest movement. Starting with just four Black students at Woolworth's lunch counter, within days hundreds of students joined, and the sit-ins spread to over 50 cities. This mobilization led to the formation of the Student Nonviolent Coordinating Committee (SNCC), which became a driving force for grassroots youth activism.\n\nReason 2: They were also important because they caused immediate economic damage to Southern business owners. The sit-ins, combined with boycotts of stores that refused to serve Black customers, forced Woolworth's and other major chains to desegregate their lunch counters by July 1960. This proved that student-led economic direct action was highly effective in desegregating public facilities."
-    },
+    "importanceAnalyser": null,
     "questionVault": [
       {
         "question": "Give two things you can infer from Source A about the dangers faced by the Freedom Riders. (4 marks)",
@@ -1100,10 +1085,7 @@ export const LESSONS_DATA = {
         "answer": "Bull Connor"
       }
     ],
-    "importanceAnalyser": {
-      "question": "Explain the importance of the Selma marches (1965) for the campaign to secure voting rights. (8 marks)",
-      "answer": "Reason 1: The Selma marches were important because the brutal police violence at the Edmund Pettus Bridge, known as 'Bloody Sunday', shocked the nation and galvanized public support. Televised images of state troopers tear-gassing and beating peaceful marchers outraged citizens and forced President Lyndon B. Johnson to intervene, using the federalized National Guard to protect the marchers and pledging to pass voting rights laws.\n\nReason 2: It was also important because it led directly to the passage of the Voting Rights Act of 1965. The march forced Congress to take immediate action, resulting in legislation that banned literacy tests and authorized federal registrars to register voters in discriminatory counties. Within years, Black voter registration in the South skyrocketed (e.g., doubling in Alabama), transforming the political landscape."
-    },
+    "importanceAnalyser": null,
     "questionVault": [
       {
         "question": "Explain why civil rights legislation was passed in the years 1964–65. (12 marks)",
@@ -1305,10 +1287,7 @@ export const LESSONS_DATA = {
         "answer": "Nation of Islam"
       }
     ],
-    "importanceAnalyser": {
-      "question": "Explain the importance of Malcolm X for the development of the civil rights movement. (8 marks)",
-      "answer": "Reason 1: Malcolm X was important because he provided a powerful alternative ideology to Martin Luther King Jr.'s non-violent integrationist approach. As the leading spokesperson for the Nation of Islam, he rejected integration, advocating instead for Black nationalism, self-reliance, and self-defense 'by any means necessary'. This ideology resonated deeply with young, urban Black Americans who were frustrated by the slow pace of legal reform.\n\nReason 2: He was also important because his ideas laid the intellectual foundation for the Black Power movement. By emphasizing cultural pride, African heritage, and Black economic independence, Malcolm X inspired SNCC and CORE to move away from non-violence in the mid-1960s, shifting the focus of the civil rights movement from legal desegregation to broader issues of economic and social empowerment."
-    },
+    "importanceAnalyser": null,
     "questionVault": [
       {
         "question": "How useful are Sources B and C for an enquiry into the aims of the Black Panther Party? (8 marks)",
@@ -1505,10 +1484,7 @@ export const LESSONS_DATA = {
         "answer": "Watts Riots"
       }
     ],
-    "importanceAnalyser": {
-      "question": "Explain the importance of the assassination of Martin Luther King Jr. (1968) for the civil rights movement. (8 marks)",
-      "answer": "Reason 1: The assassination was important because it triggered immediate, massive urban riots across more than 100 U.S. cities, marking the end of the non-violent civil rights era. The outbreak of violence in Washington D.C., Chicago, and elsewhere demonstrated the frustration of Black communities and accelerated the shift toward more militant Black Power ideologies, leaving the movement without its primary unifying figure.\n\nReason 2: It was also important because it shocked Congress into passing the Civil Rights Act of 1968 (the Fair Housing Act) within days of his death. Seeking to calm the riots and honor King's legacy, President Johnson urged Congress to pass the stalled legislation, which banned discrimination in the sale, rental, and financing of housing, representing the final major legislative triumph of the civil rights era."
-    },
+    "importanceAnalyser": null,
     "questionVault": [
       {
         "question": "This suite is based on the following interpretations regarding the 1960s urban riots.",

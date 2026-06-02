@@ -4019,10 +4019,7 @@ Source C is highly useful for understanding the Nixon administration's perspecti
           "answer": "Montgomery Improvement Association"
         }
       ],
-      "importanceAnalyser": {
-        "question": "Explain the importance of the Brown v. Topeka decision (1954) for developments in education. (8 marks)",
-        "answer": "Reason 1: The Brown v. Topeka decision was important because it overturned the 1896 Plessy v. Ferguson 'separate but equal' doctrine. The Supreme Court ruled unanimously (9-0) that segregated schools were inherently unequal, violating the 14th Amendment. This was crucial as it provided a legal precedent that desegregation was a constitutional right, allowing civil rights lawyers to challenge segregated education across the South.\n\nReason 2: It was also important because of the intense white resistance it provoked. The decision led to the Southern Manifesto and the creation of White Citizens' Councils, which used intimidation to block integration. This backlash showed that court rulings alone were insufficient and compelled the civil rights movement to transition from legal battles to grassroots direct action to force federal enforcement."
-      },
+      "importanceAnalyser": null,
       "questionVault": [
         {
           "question": "Give two things you can infer from Source A about voting rights in the Southern states. (4 marks)",
@@ -4248,10 +4245,7 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
           "answer": "Dwight D. Eisenhower"
         }
       ],
-      "importanceAnalyser": {
-        "question": "Explain the importance of the events at Little Rock Central High School (1957) for the civil rights movement. (8 marks)",
-        "answer": "Reason 1: Little Rock Central High was important because it forced the federal government to intervene directly to protect Black students' civil rights. When Governor Orval Faubus deployed the Arkansas National Guard to block the Little Rock Nine, President Eisenhower federalized the state guard and sent the 101st Airborne Division. This was the first time since Reconstruction that federal troops were sent to the South, demonstrating that federal authority would overrule state-level segregation.\n\nReason 2: It was also important due to the impact of national media coverage. The crisis was broadcast on television, showing white mobs abusing dignified Black students. This shocked Northern audiences, generating widespread public sympathy for the civil rights cause and putting political pressure on Congress to pass civil rights legislation."
-      },
+      "importanceAnalyser": null,
       "questionVault": [
         {
           "question": "Explain why desegregation in education faced severe resistance in the years 1954\u201357. (12 marks)",
@@ -4454,10 +4448,7 @@ Source E is highly useful for showing the scale of the state and military confli
           "answer": "Browder v. Gayle"
         }
       ],
-      "importanceAnalyser": {
-        "question": "Explain the importance of the Montgomery Bus Boycott (1955-56) for the civil rights movement. (8 marks)",
-        "answer": "Reason 1: The boycott was important because it proved the power of non-violent direct action and economic pressure. By organizing a 381-day boycott where Black riders (who made up 70% of passengers) refused to use the buses, the MIA severely damaged the bus company's revenue. This demonstrated that unified grassroots activism could force economic and social changes without relying solely on courts.\n\nReason 2: It was also important because it established Martin Luther King Jr. as a national leader and led to the creation of the Southern Christian Leadership Conference (SCLC). King's inspiring speeches framed the boycott as a moral and Christian crusade. This provided the movement with a powerful philosophy of non-violence and a structured organization to coordinate future campaigns across the South."
-      },
+      "importanceAnalyser": null,
       "questionVault": [
         {
           "question": "How useful are Sources B and C for an enquiry into the reasons for the success of the Montgomery Bus Boycott? (8 marks)",
@@ -4667,10 +4658,7 @@ Source E is highly useful for showing the direct police criminalization of peace
           "answer": "Dixiecrats"
         }
       ],
-      "importanceAnalyser": {
-        "question": "Explain the importance of the Civil Rights Act of 1957 for the development of the civil rights movement. (8 marks)",
-        "answer": "Reason 1: The Act was important because it was the first federal civil rights legislation passed by Congress since Reconstruction in 1875. Even though the bill was heavily weakened by Southern Democrats (Dixiecrats) led by Strom Thurmond's filibuster, its passage signaled a major shift in federal policy, showing that the U.S. government was beginning to accept responsibility for protecting Black voting rights.\n\nReason 2: It was also important because it created the Civil Rights Division in the Department of Justice and the federal Commission on Civil Rights. This allowed the federal government to monitor abuses and file lawsuits against Southern registrars who blocked Black voters. This legal machinery laid the groundwork for the more powerful Civil Rights and Voting Rights Acts of 1964 and 1965."
-      },
+      "importanceAnalyser": null,
       "questionVault": [
         {
           "question": "This suite is based on the following interpretations regarding the opposition to the civil rights movement.",
@@ -4891,10 +4879,7 @@ Source E is highly useful for showing the violent and physical intimidation used
           "answer": "Student Nonviolent Coordinating Committee"
         }
       ],
-      "importanceAnalyser": {
-        "question": "Explain the importance of the Greensboro Sit-ins (1960) for the campaign to desegregate public facilities. (8 marks)",
-        "answer": "Reason 1: The Greensboro Sit-ins were important because they rapidly spread across the South, creating a massive, student-led protest movement. Starting with just four Black students at Woolworth's lunch counter, within days hundreds of students joined, and the sit-ins spread to over 50 cities. This mobilization led to the formation of the Student Nonviolent Coordinating Committee (SNCC), which became a driving force for grassroots youth activism.\n\nReason 2: They were also important because they caused immediate economic damage to Southern business owners. The sit-ins, combined with boycotts of stores that refused to serve Black customers, forced Woolworth's and other major chains to desegregate their lunch counters by July 1960. This proved that student-led economic direct action was highly effective in desegregating public facilities."
-      },
+      "importanceAnalyser": null,
       "questionVault": [
         {
           "question": "Give two things you can infer from Source A about the dangers faced by the Freedom Riders. (4 marks)",
@@ -5140,10 +5125,7 @@ Source E is highly useful for showing the extreme level of state resistance to u
           "answer": "Bull Connor"
         }
       ],
-      "importanceAnalyser": {
-        "question": "Explain the importance of the Selma marches (1965) for the campaign to secure voting rights. (8 marks)",
-        "answer": "Reason 1: The Selma marches were important because the brutal police violence at the Edmund Pettus Bridge, known as 'Bloody Sunday', shocked the nation and galvanized public support. Televised images of state troopers tear-gassing and beating peaceful marchers outraged citizens and forced President Lyndon B. Johnson to intervene, using the federalized National Guard to protect the marchers and pledging to pass voting rights laws.\n\nReason 2: It was also important because it led directly to the passage of the Voting Rights Act of 1965. The march forced Congress to take immediate action, resulting in legislation that banned literacy tests and authorized federal registrars to register voters in discriminatory counties. Within years, Black voter registration in the South skyrocketed (e.g., doubling in Alabama), transforming the political landscape."
-      },
+      "importanceAnalyser": null,
       "questionVault": [
         {
           "question": "Explain why civil rights legislation was passed in the years 1964\u201365. (12 marks)",
@@ -5370,10 +5352,7 @@ Source E is highly useful for showing the political and legislative outcomes of 
           "answer": "Nation of Islam"
         }
       ],
-      "importanceAnalyser": {
-        "question": "Explain the importance of Malcolm X for the development of the civil rights movement. (8 marks)",
-        "answer": "Reason 1: Malcolm X was important because he provided a powerful alternative ideology to Martin Luther King Jr.'s non-violent integrationist approach. As the leading spokesperson for the Nation of Islam, he rejected integration, advocating instead for Black nationalism, self-reliance, and self-defense 'by any means necessary'. This ideology resonated deeply with young, urban Black Americans who were frustrated by the slow pace of legal reform.\n\nReason 2: He was also important because his ideas laid the intellectual foundation for the Black Power movement. By emphasizing cultural pride, African heritage, and Black economic independence, Malcolm X inspired SNCC and CORE to move away from non-violence in the mid-1960s, shifting the focus of the civil rights movement from legal desegregation to broader issues of economic and social empowerment."
-      },
+      "importanceAnalyser": null,
       "questionVault": [
         {
           "question": "How useful are Sources B and C for an enquiry into the aims of the Black Panther Party? (8 marks)",
@@ -5590,10 +5569,7 @@ Source E is highly useful for showing how Black Power and militancy were institu
           "answer": "Watts Riots"
         }
       ],
-      "importanceAnalyser": {
-        "question": "Explain the importance of the assassination of Martin Luther King Jr. (1968) for the civil rights movement. (8 marks)",
-        "answer": "Reason 1: The assassination was important because it triggered immediate, massive urban riots across more than 100 U.S. cities, marking the end of the non-violent civil rights era. The outbreak of violence in Washington D.C., Chicago, and elsewhere demonstrated the frustration of Black communities and accelerated the shift toward more militant Black Power ideologies, leaving the movement without its primary unifying figure.\n\nReason 2: It was also important because it shocked Congress into passing the Civil Rights Act of 1968 (the Fair Housing Act) within days of his death. Seeking to calm the riots and honor King's legacy, President Johnson urged Congress to pass the stalled legislation, which banned discrimination in the sale, rental, and financing of housing, representing the final major legislative triumph of the civil rights era."
-      },
+      "importanceAnalyser": null,
       "questionVault": [
         {
           "question": "This suite is based on the following interpretations regarding the 1960s urban riots.",
@@ -15964,6 +15940,407 @@ ${cleanBrackets(paper.q3d.model)}
     ]
   };
 
+  // src/spec_checklist_data.js
+  var SPEC_CHECKLIST_DATA = {
+    "subtopic_1_1": [
+      {
+        "point": "Segregation, discrimination and voting rights in the Southern states.",
+        "keyFacts": [
+          "<strong>Jim Crow Laws:</strong> Southern states legally enforced racial segregation in schools, transit, and public accommodations.",
+          "<strong>Voter Disenfranchisement:</strong> Authorities used arbitrary literacy tests, poll taxes, and violent intimidation to prevent Black citizens from registering to vote.",
+          "<strong>Separate but Equal:</strong> The 1896 <em>Plessy v. Ferguson</em> Supreme Court ruling established this legal doctrine, though Black facilities were consistently inferior."
+        ]
+      },
+      {
+        "point": "The work of civil rights organisations, including the NAACP and CORE.",
+        "keyFacts": [
+          "<strong>NAACP:</strong> The National Association for the Advancement of Colored People focused on legal challenges to segregation, led by Thurgood Marshall.",
+          "<strong>CORE:</strong> The Congress of Racial Equality pioneered non-violent direct action, organizing early sit-ins and boycotts."
+        ]
+      },
+      {
+        "point": "Reasons for, key features and significance of the Brown v. Topeka case (1954).",
+        "keyFacts": [
+          "<strong>Supreme Court Ruling:</strong> Chief Justice Earl Warren led a unanimous (9-0) decision declaring that segregated public schools violated the 14th Amendment's Equal Protection Clause.",
+          "<strong>Doctrine Overturned:</strong> The court declared that separate educational facilities are 'inherently unequal,' dismantling the constitutional basis for Jim Crow.",
+          "<strong>Southern Resistance:</strong> Southern politicians signed the 'Southern Manifesto' and formed White Citizens' Councils to delay and block school integration."
+        ]
+      }
+    ],
+    "subtopic_1_2": [
+      {
+        "point": "Reasons for, key features and significance of the events at Little Rock High School (1957).",
+        "keyFacts": [
+          "<strong>Faubus' Defiance:</strong> Arkansas Governor Orval Faubus deployed the state's National Guard to block nine Black students from enrolling at Central High School in Little Rock.",
+          "<strong>Federal Intervention:</strong> President Eisenhower federalized the Arkansas National Guard and sent the 101st Airborne Division to escort the students to classes.",
+          "<strong>Cold War Context:</strong> Eisenhower intervened partly to defend the nation's international reputation, as Soviet propaganda weaponized images of racial violence."
+        ]
+      }
+    ],
+    "subtopic_1_3": [
+      {
+        "point": "The significance of Rosa Parks.",
+        "keyFacts": [
+          "<strong>Refusal to Yield:</strong> On 1 December 1955, Rosa Parks refused to give up her bus seat to a white passenger, leading to her arrest.",
+          "<strong>Strategic Figure:</strong> As a respected, active NAACP member, her arrest served as the perfect legal test case to launch a wider movement."
+        ]
+      },
+      {
+        "point": "Causes and events of the Montgomery Bus Boycott.",
+        "keyFacts": [
+          "<strong>Boycott Launch:</strong> Black citizens in Montgomery organized a massive boycott of the city's bus system, which lasted for 381 days.",
+          "<strong>Economic Leverage:</strong> Black passengers accounted for 70% of bus ridership, starving the transit company of revenue."
+        ]
+      },
+      {
+        "point": "The significance of the leadership of Martin Luther King.",
+        "keyFacts": [
+          "<strong>Non-violence and Christianity:</strong> King preached peaceful direct action and Christian love, sustaining the morale of the boycotters.",
+          "<strong>Oratorical Impact:</strong> His powerful speeches mobilized the local community and brought national media attention to the campaign."
+        ]
+      },
+      {
+        "point": "Reasons for the success and importance of the boycott.",
+        "keyFacts": [
+          "<strong>MIA Organization:</strong> The Montgomery Improvement Association coordinated a highly effective network of carpools to transport thousands daily.",
+          "<strong>Economic Pressure:</strong> The long-term loss of fares forced transit authorities to face bankruptcy."
+        ]
+      },
+      {
+        "point": "The Supreme Court ruling.",
+        "keyFacts": [
+          "<strong>Browder v. Gayle (1956):</strong> The Supreme Court upheld a district court ruling that segregation on public buses was unconstitutional, ending the boycott in victory."
+        ]
+      },
+      {
+        "point": "The setting up of the SCLC.",
+        "keyFacts": [
+          "<strong>SCLC (1957):</strong> The Southern Christian Leadership Conference was founded to organize non-violent protests across the South, with MLK as its president."
+        ]
+      },
+      {
+        "point": "The Civil Rights Act (1957).",
+        "keyFacts": [
+          "<strong>First Federal Law:</strong> The first civil rights act passed by Congress since Reconstruction, aimed at protecting voting rights.",
+          "<strong>Weak Impact:</strong> Though it established a Civil Rights Commission, loopholes made it largely ineffective in registering new Black voters."
+        ]
+      }
+    ],
+    "subtopic_1_4": [
+      {
+        "point": "Opposition to desegregation in the South, including the \u2018Dixiecrats\u2019 and the setting up of White Citizens\u2019 Councils.",
+        "keyFacts": [
+          "<strong>Dixiecrats:</strong> Southern conservative Democrats who strongly defended segregation and opposed federal intervention under the banner of 'states' rights.'",
+          "<strong>White Citizens' Councils:</strong> Middle-class segregationist groups that used economic intimidation, job firings, and boycotts to suppress civil rights activists."
+        ]
+      },
+      {
+        "point": "The Ku Klux Klan and violence, including the murder of Emmet Till in 1955.",
+        "keyFacts": [
+          "<strong>KKK Violence:</strong> The white supremacist terror group experienced a resurgence, carrying out bombings, beatings, and murders of activists.",
+          "<strong>Emmett Till (1955):</strong> A 14-year-old Black boy from Chicago was brutally murdered in Mississippi for allegedly whistling at a white woman.",
+          "<strong>National Outrage:</strong> His mother Mamie Till held an open-casket funeral to expose the horrors of Southern racism, sparking widespread national anger."
+        ]
+      }
+    ],
+    "subtopic_2_1": [
+      {
+        "point": "The significance of Greensboro and the sit-in movement.",
+        "keyFacts": [
+          "<strong>Greensboro Sit-in (1960):</strong> Four Black college students sat at a segregated Woolworth's lunch counter, refusing to leave after being denied service.",
+          "<strong>Rapid Spread:</strong> This action sparked a wave of sit-ins across the South, involving over 70,000 students and desegregating hundreds of public counters.",
+          "<strong>SNCC Founded:</strong> The movement led directly to the creation of the Student Nonviolent Coordinating Committee (SNCC) to coordinate student protests."
+        ]
+      },
+      {
+        "point": "Reasons for, key features and significance of the Freedom Riders, including Ku Klux Klan violence and the Anniston bomb (1961).",
+        "keyFacts": [
+          "<strong>CORE Campaign:</strong> Activists rode interstate buses into the deep South to test federal rulings outlawing transit segregation.",
+          "<strong>Anniston Bombing:</strong> An angry white mob firebombed a Freedom Riders' bus in Anniston, Alabama, and beat the escaping passengers.",
+          "<strong>Federal Action:</strong> The extreme violence forced Attorney General Robert Kennedy to issue a strict ban on transit segregation."
+        ]
+      },
+      {
+        "point": "The James Meredith case (1962).",
+        "keyFacts": [
+          "<strong>Ole Miss Desegregation:</strong> James Meredith won a federal court order to enroll at the all-white University of Mississippi.",
+          "<strong>Federal Force:</strong> Governor Ross Barnett physically blocked him, sparking riots that forced President Kennedy to send 30,000 federal troops to secure Meredith's safety."
+        ]
+      }
+    ],
+    "subtopic_2_2": [
+      {
+        "point": "King and the peace marches of 1963 in Birmingham and Washington.",
+        "keyFacts": [
+          "<strong>Birmingham Campaign (1963):</strong> MLK led protests where Police Chief Bull Connor used high-pressure water hoses and attack dogs against child marchers.",
+          "<strong>March on Washington (1963):</strong> Over 250,000 demonstrators gathered at the Lincoln Memorial, where King delivered his iconic 'I Have a Dream' speech."
+        ]
+      },
+      {
+        "point": "Freedom Summer and the Mississippi murders.",
+        "keyFacts": [
+          "<strong>Voter Drive (1964):</strong> SNCC and CORE organized a massive campaign to register Black voters in Mississippi and establish Freedom Schools.",
+          "<strong>Mississippi Murders:</strong> Three civil rights workers (Schwerner, Chaney, and Goodman) were murdered by the KKK, drawing national horror."
+        ]
+      },
+      {
+        "point": "The impact of peaceful protest and the roles of Presidents Kennedy and Johnson in the passage of the Civil Rights Act (1964).",
+        "keyFacts": [
+          "<strong>Kennedy's Bill:</strong> JFK proposed a civil rights bill following the Birmingham crisis, calling civil rights a 'moral issue.'",
+          "<strong>Johnson's Leverage:</strong> President Johnson pushed the bill through Congress as a tribute to the assassinated JFK.",
+          "<strong>Civil Rights Act (1964):</strong> Banned racial segregation in public accommodations, schools, and employment nationwide."
+        ]
+      },
+      {
+        "point": "Selma and the Voting Rights Act (1965).",
+        "keyFacts": [
+          "<strong>Bloody Sunday:</strong> Activists marching from Selma to Montgomery for voting rights were brutally attacked by state troopers on the Edmund Pettus Bridge.",
+          "<strong>Voting Rights Act (1965):</strong> President Johnson signed this act, banning literacy tests and sending federal registrars to enforce fair voting in the South."
+        ]
+      }
+    ],
+    "subtopic_2_3": [
+      {
+        "point": "Malcolm X, his beliefs, methods and involvement with the Black Muslims.",
+        "keyFacts": [
+          "<strong>Nation of Islam:</strong> Malcolm X was the chief spokesperson for the Nation of Islam, advocating Black nationalism and separation from white society.",
+          "<strong>Self-Defense:</strong> He rejected MLK's non-violent approach, declaring that Black Americans should defend themselves 'by any means necessary.'"
+        ]
+      },
+      {
+        "point": "His later change of attitude and assassination.",
+        "keyFacts": [
+          "<strong>Hajj Pilgrimage (1964):</strong> After split with the Nation of Islam, his pilgrimage to Mecca led him to adopt orthodox Islam and a more inclusive approach to race.",
+          "<strong>Assassination (1965):</strong> Malcolm X was assassinated in New York City by members of the Nation of Islam."
+        ]
+      },
+      {
+        "point": "Reasons for the emergence of Black Power.",
+        "keyFacts": [
+          "<strong>Slow Pace of Reform:</strong> Frustration with the slow progress of mainstream civil rights and ongoing economic inequality in urban ghettos.",
+          "<strong>Northern Ghetto Reality:</strong> Civil rights laws did not address systemic poverty, poor housing, and police brutality in Northern cities."
+        ]
+      },
+      {
+        "point": "The significance of Stokely Carmichael and the 1968 Mexico Olympics.",
+        "keyFacts": [
+          "<strong>Stokely Carmichael:</strong> The SNCC leader coined the term 'Black Power' in 1966, encouraging Black pride and self-reliance.",
+          "<strong>Olympic Salute (1968):</strong> Sprinters Tommie Smith and John Carlos raised black-gloved fists on the podium in Mexico City to protest racial inequality."
+        ]
+      },
+      {
+        "point": "The methods and achievements of the Black Panther movement.",
+        "keyFacts": [
+          "<strong>Black Panthers (1966):</strong> Founded by Huey Newton and Bobby Seale, they wore black berets and carried weapons for armed citizen patrols against police brutality.",
+          "<strong>Social Programs:</strong> Established community clinics and a popular Free Breakfast for Children program, showing local community achievements."
+        ]
+      }
+    ],
+    "subtopic_2_4": [
+      {
+        "point": "The riots of 1965\u201367 and the Kerner Report (1968).",
+        "keyFacts": [
+          "<strong>Urban Rebellions:</strong> Major riots erupted in cities like Watts (1965), Newark, and Detroit (1967) over police brutality and poverty.",
+          "<strong>Kerner Commission:</strong> The federal report warned that America was splitting into 'two societies, one Black, one white\u2014separate and unequal,' blaming white institutional racism."
+        ]
+      },
+      {
+        "point": "King\u2019s campaign in the North.",
+        "keyFacts": [
+          "<strong>Chicago Campaign (1966):</strong> MLK shifted focus northward to Chicago to campaign against slum housing and job discrimination, facing intense white hostility."
+        ]
+      },
+      {
+        "point": "The assassination of Martin Luther King and its impact.",
+        "keyFacts": [
+          "<strong>MLK Assassination:</strong> Shot and killed by James Earl Ray on 4 April 1968 in Memphis, Tennessee.",
+          "<strong>National Rioting:</strong> His death triggered riots in over 100 US cities, signaling a fragmentation of the civil rights movement."
+        ]
+      },
+      {
+        "point": "The extent of progress in civil rights by 1975.",
+        "keyFacts": [
+          "<strong>De Jure Segregation Ended:</strong> Federal laws successfully outlawed legal segregation and protected voting rights.",
+          "<strong>De Facto Disparities:</strong> Despite legal gains, systemic issues of police bias, inner-city poverty, and residential segregation remained unresolved."
+        ]
+      }
+    ],
+    "subtopic_3_1": [
+      {
+        "point": "Reasons for greater US involvement under Eisenhower, including the domino theory and weaknesses of the Diem government.",
+        "keyFacts": [
+          "<strong>Domino Theory:</strong> The belief that if South Vietnam fell to communism, neighboring Southeast Asian nations would also fall.",
+          "<strong>Diem's Weakness:</strong> South Vietnamese President Ngo Dinh Diem ran a corrupt, nepotistic regime that alienated the Buddhist majority.",
+          "<strong>Advisors and Aid:</strong> Eisenhower sent hundreds of millions of dollars and military advisors to stabilize South Vietnam's government."
+        ]
+      },
+      {
+        "point": "Greater involvement under Kennedy, including the Strategic Hamlet Program and the overthrow of Diem.",
+        "keyFacts": [
+          "<strong>Advisors Surge:</strong> President Kennedy increased military advisors from 700 to over 16,000 to assist the South Vietnamese army (ARVN).",
+          "<strong>Strategic Hamlets:</strong> Forced relocation of peasants into fortified villages to isolate them from Vietcong influence, which instead built peasant resentment.",
+          "<strong>Diem's Overthrow (1963):</strong> The US tacitly approved a military coup by South Vietnamese generals that resulted in Diem's assassination."
+        ]
+      }
+    ],
+    "subtopic_3_2": [
+      {
+        "point": "Reasons for the escalation of the conflict and increased US involvement in Vietnam, including the increasing threat of the Vietcong and the Gulf of Tonkin incident (1964).",
+        "keyFacts": [
+          "<strong>Vietcong Expansion:</strong> The communist guerrilla group grew rapidly in the South, supported by North Vietnam's supplies.",
+          "<strong>Gulf of Tonkin Incident (1964):</strong> Reports of North Vietnamese torpedo attacks on US destroyers in the Gulf of Tonkin.",
+          "<strong>Tonkin Resolution:</strong> Congress granted President Johnson power to take 'all necessary measures' to defend US forces, initiating direct combat escalation."
+        ]
+      }
+    ],
+    "subtopic_3_3": [
+      {
+        "point": "The methods used by the USA, including Search and Destroy, Operation Rolling Thunder and chemical weapons.",
+        "keyFacts": [
+          "<strong>Operation Rolling Thunder (1965-68):</strong> A massive, continuous bombing campaign designed to destroy North Vietnamese infrastructure and supply routes.",
+          "<strong>Search and Destroy:</strong> US patrols used helicopters to locate Vietcong forces in rural villages, which often resulted in civilian casualties.",
+          "<strong>Chemical Defoliants:</strong> Deployed Napalm (jellied gasoline) and Agent Orange (weed killer) to destroy jungle cover and crops, causing horrific civilian harm."
+        ]
+      },
+      {
+        "point": "The guerrilla tactics used by the Vietcong.",
+        "keyFacts": [
+          "<strong>Guerrilla Warfare:</strong> The Vietcong avoided open combat, relying on ambushes, booby traps (e.g., Punji stakes), and complex underground tunnels.",
+          "<strong>Ho Chi Minh Trail:</strong> A vital jungle supply network running through Laos and Cambodia that supplied Vietcong forces despite US bombing."
+        ]
+      },
+      {
+        "point": "The key features and significance of the Tet Offensive, 1968.",
+        "keyFacts": [
+          "<strong>Surprise Offensive:</strong> The Vietcong launched a coordinated attack on over 100 cities and bases in South Vietnam during the Tet holiday.",
+          "<strong>Credibility Gap:</strong> Though a military defeat for the communists, the offensive shocked the US public, proving the war was far from won."
+        ]
+      }
+    ],
+    "subtopic_3_4": [
+      {
+        "point": "The Nixon Doctrine and the withdrawal of US troops.",
+        "keyFacts": [
+          "<strong>Nixon Doctrine (1969):</strong> Announced that the US would support allies with aid but expected them to fight their own ground wars."
+        ]
+      },
+      {
+        "point": "Key features of Vietnamisation.",
+        "keyFacts": [
+          "<strong>ARVN Takeover:</strong> A policy to train and equip the South Vietnamese army (ARVN) to take over combat operations as US troops withdrew."
+        ]
+      },
+      {
+        "point": "Reasons for its failure.",
+        "keyFacts": [
+          "<strong>Systemic Corruption:</strong> The ARVN suffered from weak leadership, high desertion rates, and dependence on US support.",
+          "<strong>US Exit:</strong> The rapid withdrawal of US forces left the ARVN militarily vulnerable."
+        ]
+      },
+      {
+        "point": "Attacks on Cambodia (1970) and Laos (1971), and the bombing of North Vietnam (1972).",
+        "keyFacts": [
+          "<strong>Cambodian Invasion (1970):</strong> Nixon ordered troops into Cambodia to destroy communist bases, triggering massive protests in the US.",
+          "<strong>Laos Defeat (1971):</strong> South Vietnamese troops invaded Laos to disrupt supply lines but were decisively defeated.",
+          "<strong>Linebacker Bombing (1972):</strong> Heavy air strikes ordered by Nixon to stop North Vietnam's massive Easter Offensive."
+        ]
+      }
+    ],
+    "subtopic_4_1": [
+      {
+        "point": "Reasons for the growth of opposition, including TV and media coverage of the war and the draft system.",
+        "keyFacts": [
+          "<strong>The Draft:</strong> Conscription forced young men (often disproportionately poor or working class) to serve, provoking draft resistance.",
+          "<strong>Televised War:</strong> Daily news broadcasts brought visual evidence of casualties and destruction directly into American homes, fueling anti-war sentiment."
+        ]
+      },
+      {
+        "point": "Public reaction to the My Lai Massacre (1968).",
+        "keyFacts": [
+          "<strong>My Lai Massacre:</strong> US troops slaughtered over 340 unarmed civilians in My Lai. The cover-up was exposed in late 1969.",
+          "<strong>Moral Crisis:</strong> The revelations shocked the American public and severely damaged the moral justification for the war."
+        ]
+      },
+      {
+        "point": "The trial of Lt. Calley.",
+        "keyFacts": [
+          "<strong>Calley Convicted (1971):</strong> Lieutenant William Calley was court-martialed and convicted of murder for his actions at My Lai, dividing public opinion."
+        ]
+      },
+      {
+        "point": "The student movement and the Kent State University shootings (1970).",
+        "keyFacts": [
+          "<strong>Student Protest:</strong> The invasion of Cambodia provoked huge student strikes on college campuses nationwide.",
+          "<strong>Kent State Shootings:</strong> The Ohio National Guard shot and killed four student protestors at Kent State, sparking a massive national strike."
+        ]
+      }
+    ],
+    "subtopic_4_2": [
+      {
+        "point": "Reasons for support for the war, including the fear of communism and the \u2018silent majority\u2019.",
+        "keyFacts": [
+          "<strong>Anti-Communism:</strong> Patriotic belief that the US was defending free democracy and preventing communist expansion in Asia.",
+          "<strong>Silent Majority:</strong> President Nixon's term for moderate, working-class Americans who supported the government and rejected radical protest."
+        ]
+      },
+      {
+        "point": "The \u2018hard hats\u2019.",
+        "keyFacts": [
+          "<strong>Hard Hat Riot (1970):</strong> New York construction workers attacked anti-war student protestors, highlighting deep social class divisions."
+        ]
+      }
+    ],
+    "subtopic_4_3": [
+      {
+        "point": "Reasons for, and key features of, the peace negotiations (1972\u201373).",
+        "keyFacts": [
+          "<strong>Kissinger Diplomacy:</strong> National Security Advisor Henry Kissinger held secret talks with North Vietnam's representative Le Duc Tho.",
+          "<strong>Diplomatic Pressure:</strong> Nixon visited Moscow and Beijing to isolate North Vietnam, combined with intense bombing (Christmas Bombing)."
+        ]
+      },
+      {
+        "point": "The significance of the Paris Peace Agreement (1973).",
+        "keyFacts": [
+          "<strong>Ceasefire Terms:</strong> Negotiated the withdrawal of all US forces and the release of all prisoners of war, while allowing North Vietnamese troops to remain in the South."
+        ]
+      },
+      {
+        "point": "The economic and human costs of the war for the USA.",
+        "keyFacts": [
+          "<strong>Human Loss:</strong> Over 58,000 US soldiers were killed, and more than 300,000 were wounded.",
+          "<strong>Economic Damage:</strong> Spent over $167 billion, leading to severe inflation and starving domestic programs of funding."
+        ]
+      }
+    ],
+    "subtopic_4_4": [
+      {
+        "point": "The strengths of North Vietnam, including the significance of Russian and Chinese support, Vietcong tactics and the Ho Chi Minh Trail.",
+        "keyFacts": [
+          "<strong>Soviet and Chinese Aid:</strong> The North Vietnamese received vital military hardware, anti-aircraft defense systems, and economic aid from the USSR and China.",
+          "<strong>Vietcong Resilience:</strong> Guerrillas were fighting a nationalist war of liberation, sustaining high casualties and utilizing highly effective local tactics."
+        ]
+      },
+      {
+        "point": "The weaknesses of the US armed forces.",
+        "keyFacts": [
+          "<strong>Low Morale:</strong> Young conscripted soldiers suffered from low morale, leading to drug use and instances of 'fragging' (killing unpopular officers)."
+        ]
+      },
+      {
+        "point": "The failure of US tactics.",
+        "keyFacts": [
+          "<strong>Strategy Mismatch:</strong> Relying on heavy firepower, bombing, and search-and-destroy tactics proved counterproductive against a guerrilla force, alienating South Vietnamese civilians."
+        ]
+      },
+      {
+        "point": "The impact of opposition to the war in the USA.",
+        "keyFacts": [
+          "<strong>Political Constraints:</strong> Domestic opposition restricted the government's ability to escalate the war, forcing troop withdrawal and ultimately leading to Congress cutting military funding."
+        ]
+      }
+    ]
+  };
+
   // src/lessons.js
   var GLOSSARY_DB = {
     "segregation": "The legally or socially enforced separation of different racial groups in public spaces, housing, or education.",
@@ -16064,6 +16441,56 @@ ${cleanBrackets(paper.q3d.model)}
     `;
     }
     return "";
+  }
+  function renderSpecChecklistCard(subtopicId, checklist) {
+    if (!checklist || checklist.length === 0) return "";
+    let checkedStates = {};
+    try {
+      const saved = localStorage.getItem("edexcel_spec_checklist");
+      if (saved) {
+        checkedStates = JSON.parse(saved);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    const itemsHtml = checklist.map((item, idx) => {
+      const key = `${subtopicId}_${idx}`;
+      const isChecked = checkedStates[key] || false;
+      const keyFactsHtml = item.keyFacts.map((fact) => `
+      <li style="margin-bottom: 8px; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted); position: relative; padding-left: 18px; list-style-type: none;">
+        <span style="position: absolute; left: 0; top: 0; color: var(--primary); font-size: 1.1rem; line-height: 1;">&bull;</span>
+        ${applyGlossaryTooltips(fact)}
+      </li>
+    `).join("");
+      return `
+      <div class="spec-checklist-item ${isChecked ? "checked" : ""}" data-key="${key}">
+        <div class="spec-checklist-main" style="display: flex; align-items: flex-start; gap: 12px; width: 100%;">
+          <div class="spec-checklist-checkbox">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="spec-checklist-text" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main);">${applyGlossaryTooltips(item.point)}</div>
+        </div>
+        <div class="spec-checklist-expansion">
+          <ul style="margin: 0; padding: 0;">
+            ${keyFactsHtml}
+          </ul>
+        </div>
+      </div>
+    `;
+    }).join("");
+    return `
+    <div class="spec-checklist-card" style="max-width: 800px; margin: 0 auto 24px auto;">
+      <h4 class="spec-checklist-title" style="display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-clipboard-list" style="color: var(--primary);"></i> Official Spec Checklist: Topic study goals
+      </h4>
+      <p class="spec-checklist-subtitle" style="margin-top: 6px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+        Tick each official Edexcel specification point to expand the key facts you need for the exam:
+      </p>
+      <div class="spec-checklist-items">
+        ${itemsHtml}
+      </div>
+    </div>
+  `;
   }
   function renderMasteryView(subtopicId) {
     highlightedKeywords.clear();
@@ -16903,32 +17330,6 @@ ${cleanBrackets(paper.q3d.model)}
       </div>
     `;
     }
-    let learningObjectivesHtml = "";
-    if (data.specPoints && data.specPoints.length > 0) {
-      const listItems = data.specPoints.map((point, index) => {
-        const objId = `spec_obj_${subtopicId}_${index}`;
-        const isChecked = !!(state.specObjectives && state.specObjectives[objId]);
-        const textStyle = isChecked ? "text-decoration: line-through; color: var(--text-muted);" : "color: var(--text-base);";
-        return `
-        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; line-height: 1.45; border-bottom: 1px dashed rgba(255,255,255,0.03); padding-bottom: 8px;">
-          <input type="checkbox" class="objective-checkbox" data-objective-id="${objId}" style="margin-top: 3px; cursor: pointer; width: 16px; height: 16px;" ${isChecked ? "checked" : ""}>
-          <span class="objective-text" style="${textStyle} cursor: pointer;">${applyGlossaryTooltips(point)}</span>
-        </li>
-      `;
-      }).join("");
-      learningObjectivesHtml = `
-      <div class="mastery-card learning-objectives-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--success); background: rgba(34, 197, 94, 0.02);">
-        <h3 class="mastery-card-title" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; font-size: 1rem; color: var(--success); display: flex; align-items: center; gap: 8px; margin: 0 0 12px 0;">
-          <i class="fa-solid fa-circle-check"></i> What will you master today?
-        </h3>
-        <div class="mastery-card-body" style="padding-top: 4px;">
-          <ul class="learning-objectives-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-            ${listItems}
-          </ul>
-        </div>
-      </div>
-    `;
-    }
     let mapHtml = "";
     if (data.mapConfig) {
       mapHtml = `
@@ -16967,7 +17368,7 @@ ${cleanBrackets(paper.q3d.model)}
       ${videoHtml}
     </div>
 
-    ${learningObjectivesHtml}
+    ${renderSpecChecklistCard(subtopicId, SPEC_CHECKLIST_DATA[subtopicId])}
     ${mapHtml}
 
     <!-- Interactive Legend and Switch -->
@@ -17616,34 +18017,30 @@ ${cleanBrackets(paper.q3d.model)}
         });
       }
     }
-    const objectiveCheckboxes = container.querySelectorAll(".objective-checkbox");
-    objectiveCheckboxes.forEach((cb) => {
-      cb.addEventListener("change", (e) => {
-        const objId = cb.getAttribute("data-objective-id");
-        const isChecked = cb.checked;
-        if (!state.specObjectives) state.specObjectives = {};
-        state.specObjectives[objId] = isChecked;
-        saveProgress();
-        const textSpan = cb.nextElementSibling;
-        if (textSpan) {
-          if (isChecked) {
-            textSpan.style.textDecoration = "line-through";
-            textSpan.style.color = "var(--text-muted)";
-          } else {
-            textSpan.style.textDecoration = "none";
-            textSpan.style.color = "var(--text-base)";
-          }
+    const checklistItems = container.querySelectorAll(".spec-checklist-item");
+    checklistItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        if (e.target.closest(".spec-checklist-expansion")) {
+          return;
         }
         AudioEngine.play("click");
-      });
-    });
-    const objectiveTexts = container.querySelectorAll(".objective-text");
-    objectiveTexts.forEach((txt) => {
-      txt.addEventListener("click", (e) => {
-        const cb = txt.previousElementSibling;
-        if (cb && cb.type === "checkbox") {
-          cb.checked = !cb.checked;
-          cb.dispatchEvent(new Event("change"));
+        const key = item.getAttribute("data-key");
+        const isChecked = item.classList.contains("checked");
+        if (isChecked) {
+          item.classList.remove("checked");
+        } else {
+          item.classList.add("checked");
+        }
+        try {
+          let checkedStates = {};
+          const saved = localStorage.getItem("edexcel_spec_checklist");
+          if (saved) {
+            checkedStates = JSON.parse(saved);
+          }
+          checkedStates[key] = !isChecked;
+          localStorage.setItem("edexcel_spec_checklist", JSON.stringify(checkedStates));
+        } catch (e2) {
+          console.error(e2);
         }
       });
     });

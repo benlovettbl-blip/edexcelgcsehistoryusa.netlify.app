@@ -1418,7 +1418,34 @@
   <script src="questions.js"></script>
   <script src="app.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          let unregisterPromises = [];
+          for (let registration of registrations) {
+            unregisterPromises.push(registration.unregister());
+          }
+          Promise.all(unregisterPromises).then(() => {
+            if ('caches' in window) {
+              caches.keys().then(names => {
+                Promise.all(names.map(name => caches.delete(name))).then(() => {
+                  window.location.reload();
+                });
+              });
+            } else {
+              window.location.reload();
+            }
+          });
+        });
+      } else if ('caches' in window) {
+        // Clear caches anyway to ensure no bad css files are left
+        caches.keys().then(names => {
+          for (let name of names) {
+            caches.delete(name);
+          }
+        });
+      }
+    } else if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
           .then(reg => console.log('Service Worker registered successfully!', reg.scope))

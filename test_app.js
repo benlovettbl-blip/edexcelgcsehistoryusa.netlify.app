@@ -24,6 +24,7 @@ const sandbox = {
     }
   },
   document: {
+    addEventListener: () => {},
     documentElement: {
       setAttribute: () => {}
     },

@@ -6503,3 +6503,128 @@ details > summary::marker {
 .taboo-scoreboard-table tr.current-team {
   background: rgba(56, 189, 248, 0.05);
 }
+
+/* --- Specification Tracker Checklist --- */
+.spec-checklist-card {
+  margin-bottom: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.spec-checklist-card:hover {
+  border-color: var(--border-active);
+}
+
+.spec-checklist-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-checklist-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0 0 16px 0;
+}
+
+.spec-checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spec-checklist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all var(--transition-fast) ease-in-out;
+}
+
+.spec-checklist-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-glass-hover);
+}
+
+.spec-checklist-item.checked {
+  background: rgba(59, 130, 246, 0.03);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.spec-checklist-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--text-muted);
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  margin-top: 2px;
+}
+
+.spec-checklist-item.checked .spec-checklist-checkbox {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+.spec-checklist-checkbox i {
+  font-size: 0.75rem;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all var(--transition-fast);
+}
+
+.spec-checklist-item.checked .spec-checklist-checkbox i {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.spec-checklist-text {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.spec-checklist-item.checked .spec-checklist-text {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.spec-checklist-expansion {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  width: 100%;
+  border-left: 2px solid var(--primary);
+  padding-left: 16px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  transition: max-height 0.35s ease, opacity 0.35s ease, padding-top 0.35s ease, margin-top 0.35s ease;
+}
+
+.spec-checklist-item.checked .spec-checklist-expansion {
+  max-height: 800px;
+  opacity: 1;
+  margin-top: 12px;
+  padding-top: 4px;
+}

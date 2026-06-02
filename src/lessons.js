@@ -11,6 +11,7 @@ import { SPOT_THE_FLAW_DATA } from './spot_the_flaw_data.js';
 import { VIDEOS_DATA } from './videos_data.js';
 import { HOMEWORK_QUESTIONS } from './homework_data.js';
 import { getImageWebLink } from './image_links.js';
+import { SPEC_CHECKLIST_DATA } from './spec_checklist_data.js';
 
 const GLOSSARY_DB = {
   "segregation": "The legally or socially enforced separation of different racial groups in public spaces, housing, or education.",
@@ -123,6 +124,62 @@ function getVaultLegendHTML(subtopicId) {
     `;
   }
   return '';
+}
+
+export function renderSpecChecklistCard(subtopicId, checklist) {
+  if (!checklist || checklist.length === 0) return '';
+  
+  let checkedStates = {};
+  try {
+    const saved = localStorage.getItem('edexcel_spec_checklist');
+    if (saved) {
+      checkedStates = JSON.parse(saved);
+    }
+  } catch (e) {
+    console.error(e);
+  }
+
+  const itemsHtml = checklist.map((item, idx) => {
+    const key = `${subtopicId}_${idx}`;
+    const isChecked = checkedStates[key] || false;
+    
+    const keyFactsHtml = item.keyFacts.map(fact => `
+      <li style="margin-bottom: 8px; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted); position: relative; padding-left: 18px; list-style-type: none;">
+        <span style="position: absolute; left: 0; top: 0; color: var(--primary); font-size: 1.1rem; line-height: 1;">&bull;</span>
+        ${applyGlossaryTooltips(fact)}
+      </li>
+    `).join('');
+
+    return `
+      <div class="spec-checklist-item ${isChecked ? 'checked' : ''}" data-key="${key}">
+        <div class="spec-checklist-main" style="display: flex; align-items: flex-start; gap: 12px; width: 100%;">
+          <div class="spec-checklist-checkbox">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <div class="spec-checklist-text" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main);">${applyGlossaryTooltips(item.point)}</div>
+        </div>
+        <div class="spec-checklist-expansion">
+          <ul style="margin: 0; padding: 0;">
+            ${keyFactsHtml}
+          </ul>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="spec-checklist-card" style="max-width: 800px; margin: 0 auto 24px auto;">
+      <h4 class="spec-checklist-title" style="display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-clipboard-list" style="color: var(--primary);"></i> Official Spec Checklist: Topic study goals
+      </h4>
+      <p class="spec-checklist-subtitle" style="margin-top: 6px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+        Tick each official Edexcel specification point to expand the key facts you need for the exam:
+      </p>
+      <div class="spec-checklist-items">
+        ${itemsHtml}
+      </div>
+    </div>
+  `;
 }
 
 export function renderMasteryView(subtopicId) {
@@ -1012,33 +1069,7 @@ export function renderMasteryView(subtopicId) {
     `;
   }
 
-  let learningObjectivesHtml = '';
-  if (data.specPoints && data.specPoints.length > 0) {
-    const listItems = data.specPoints.map((point, index) => {
-      const objId = `spec_obj_${subtopicId}_${index}`;
-      const isChecked = !!(state.specObjectives && state.specObjectives[objId]);
-      const textStyle = isChecked ? 'text-decoration: line-through; color: var(--text-muted);' : 'color: var(--text-base);';
-      return `
-        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; line-height: 1.45; border-bottom: 1px dashed rgba(255,255,255,0.03); padding-bottom: 8px;">
-          <input type="checkbox" class="objective-checkbox" data-objective-id="${objId}" style="margin-top: 3px; cursor: pointer; width: 16px; height: 16px;" ${isChecked ? 'checked' : ''}>
-          <span class="objective-text" style="${textStyle} cursor: pointer;">${applyGlossaryTooltips(point)}</span>
-        </li>
-      `;
-    }).join('');
 
-    learningObjectivesHtml = `
-      <div class="mastery-card learning-objectives-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--success); background: rgba(34, 197, 94, 0.02);">
-        <h3 class="mastery-card-title" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; font-size: 1rem; color: var(--success); display: flex; align-items: center; gap: 8px; margin: 0 0 12px 0;">
-          <i class="fa-solid fa-circle-check"></i> What will you master today?
-        </h3>
-        <div class="mastery-card-body" style="padding-top: 4px;">
-          <ul class="learning-objectives-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-            ${listItems}
-          </ul>
-        </div>
-      </div>
-    `;
-  }
 
   let mapHtml = '';
   if (data.mapConfig) {
@@ -1080,7 +1111,7 @@ export function renderMasteryView(subtopicId) {
       ${videoHtml}
     </div>
 
-    ${learningObjectivesHtml}
+    ${renderSpecChecklistCard(subtopicId, SPEC_CHECKLIST_DATA[subtopicId])}
     ${mapHtml}
 
     <!-- Interactive Legend and Switch -->
@@ -1126,6 +1157,8 @@ export function renderMasteryView(subtopicId) {
       </button>
     </div>
   `;
+
+
 
   // Bind Audio Assist TTS buttons
   const audioButtons = container.querySelectorAll('.btn-audio-read');
@@ -1868,44 +1901,34 @@ export function renderMasteryView(subtopicId) {
     }
   }
 
-  // Bind Learning Objectives Checkboxes
-  const objectiveCheckboxes = container.querySelectorAll('.objective-checkbox');
-  objectiveCheckboxes.forEach(cb => {
-    cb.addEventListener('change', (e) => {
-      const objId = cb.getAttribute('data-objective-id');
-      const isChecked = cb.checked;
-      
-      // Update state
-      if (!state.specObjectives) state.specObjectives = {};
-      state.specObjectives[objId] = isChecked;
-      
-      // Save progress
-      saveProgress();
-      
-      // Visual feedback: toggle line-through on sibling text span
-      const textSpan = cb.nextElementSibling;
-      if (textSpan) {
-        if (isChecked) {
-          textSpan.style.textDecoration = 'line-through';
-          textSpan.style.color = 'var(--text-muted)';
-        } else {
-          textSpan.style.textDecoration = 'none';
-          textSpan.style.color = 'var(--text-base)';
-        }
+  // Bind Specification Checklist click listeners
+  const checklistItems = container.querySelectorAll('.spec-checklist-item');
+  checklistItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      if (e.target.closest('.spec-checklist-expansion')) {
+        return;
       }
-      
-      // Play sound
       AudioEngine.play('click');
-    });
-  });
+      const key = item.getAttribute('data-key');
+      const isChecked = item.classList.contains('checked');
+      
+      if (isChecked) {
+        item.classList.remove('checked');
+      } else {
+        item.classList.add('checked');
+      }
 
-  const objectiveTexts = container.querySelectorAll('.objective-text');
-  objectiveTexts.forEach(txt => {
-    txt.addEventListener('click', (e) => {
-      const cb = txt.previousElementSibling;
-      if (cb && cb.type === 'checkbox') {
-        cb.checked = !cb.checked;
-        cb.dispatchEvent(new Event('change'));
+      // Save to localStorage
+      try {
+        let checkedStates = {};
+        const saved = localStorage.getItem('edexcel_spec_checklist');
+        if (saved) {
+          checkedStates = JSON.parse(saved);
+        }
+        checkedStates[key] = !isChecked;
+        localStorage.setItem('edexcel_spec_checklist', JSON.stringify(checkedStates));
+      } catch (e) {
+        console.error(e);
       }
     });
   });
