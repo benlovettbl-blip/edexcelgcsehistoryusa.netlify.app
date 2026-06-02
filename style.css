@@ -503,7 +503,7 @@ body {
   transform: scale(1.05);
 }
 
-.fullscreen-btn {
+.fullscreen-btn, .header-icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -517,7 +517,7 @@ body {
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-normal);
 }
-.fullscreen-btn:hover {
+.fullscreen-btn:hover, .header-icon-btn:hover {
   background-color: var(--primary-glow);
   transform: scale(1.05);
 }

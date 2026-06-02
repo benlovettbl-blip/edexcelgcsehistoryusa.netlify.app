@@ -18598,10 +18598,13 @@ ${cleanBrackets(paper.q3d.model)}
   }
   function updateSoundBtnUI() {
     const btn = document.getElementById("sound-toggle-btn");
+    if (!btn) return;
     if (state.soundEnabled) {
-      btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Sound Effects: On`;
+      btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+      btn.title = "Sound Effects: On (Click to Mute)";
     } else {
-      btn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i> Sound Effects: Off`;
+      btn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+      btn.title = "Sound Effects: Off (Click to Enable)";
     }
   }
   function initializePracticeDropdowns() {
