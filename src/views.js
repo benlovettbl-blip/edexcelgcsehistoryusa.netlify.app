@@ -1425,6 +1425,12 @@ function renderClassicView() {
   });
 }
 
+export function formatSubtopicIdToKT(subtopicId) {
+  if (!subtopicId) return '';
+  const match = subtopicId.match(/subtopic_(\d+)_(\d+)/);
+  return match ? `KT ${match[1]}.${match[2]}` : '';
+}
+
 // 5. Flashcard View logic
 function startFlashcardSession(subtopicId) {
   const questions = state.allQuestions.filter(q => q.subtopicId === subtopicId);
@@ -1604,6 +1610,10 @@ function renderFlashcard() {
   document.getElementById('card-back-answer').textContent = q.answer;
   document.getElementById('card-back-explanation').textContent = q.explanation;
   
+  const ktLabel = formatSubtopicIdToKT(q.subtopicId);
+  document.getElementById('card-front-topic-indicator').textContent = ktLabel;
+  document.getElementById('card-back-topic-indicator').textContent = ktLabel;
+  
   // Set bookmark states on flashcard faces
   const frontBkmk = document.getElementById('card-front-bookmark');
   const backBkmk = document.getElementById('card-back-bookmark');
@@ -1635,22 +1645,15 @@ function handleFlashcardGrade(correct) {
   const q = deck[idx];
   
   if (correct) {
-    // Start MCQ reinforcement double-check!
-    const mcq = generateReinforcementMCQ(q);
-    state.flashcardSession.reinforcing = true;
-    state.flashcardSession.reinforceQuestion = mcq;
+    AudioEngine.play('success');
+    setMastered(q.id, true);
+    state.flashcardSession.masteredCount++;
     
-    // Update card elements to show MCQ
-    document.getElementById('flashcard-back-standard-body').style.display = 'none';
-    document.getElementById('flashcard-back-reinforce-body').style.display = 'flex';
-    document.getElementById('flashcard-reinforce-question').innerHTML = mcq.prompt;
-    
-    // Hide controls
-    document.getElementById('btn-flashcard-reveal').style.display = 'none';
-    document.getElementById('flashcard-self-grade-actions').style.display = 'none';
-    
-    // Render options
-    renderMCQReinforce(mcq);
+    cardEl.classList.add('swipe-right');
+    setTimeout(() => {
+      state.flashcardSession.activeIndex++;
+      renderFlashcard();
+    }, 300);
   } else {
     setMastered(q.id, false);
     AudioEngine.play('fail');
@@ -1715,7 +1718,10 @@ function restoreFlashcardSkeleton() {
           <div class="flashcard-face flashcard-front">
             <div class="card-top">
               <span class="badge" id="card-front-badge">Standard</span>
-              <span class="bookmark-icon-container" id="card-front-bookmark"><i class="fa-regular fa-star"></i></span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="card-topic-indicator" id="card-front-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
+                <span class="bookmark-icon-container" id="card-front-bookmark"><i class="fa-regular fa-star"></i></span>
+              </div>
             </div>
             <div class="card-body"><h3 class="card-question" id="card-front-question"></h3></div>
             <div class="card-bottom"><i class="fa-solid fa-rotate"></i> Click card to flip and reveal answer</div>
@@ -1723,7 +1729,10 @@ function restoreFlashcardSkeleton() {
           <div class="flashcard-face flashcard-back">
             <div class="card-top">
               <span class="badge badge-standard" id="card-back-badge">Standard</span>
-              <span class="bookmark-icon-container" id="card-back-bookmark"><i class="fa-regular fa-star"></i></span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="card-topic-indicator" id="card-back-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
+                <span class="bookmark-icon-container" id="card-back-bookmark"><i class="fa-regular fa-star"></i></span>
+              </div>
             </div>
             <div class="card-body">
               <span class="card-answer-label">Correct Answer</span>
@@ -4967,8 +4976,8 @@ function renderKeyTopicOverview(topicId) {
     `;
   });
 
-  if (topicId === 'topic_1') {
-    // Overhauled Key Topic 1 Overview
+  if (data.timeline) {
+    // Overhauled Key Topic Overview (generalized for all topics)
     // Build Timeline Nodes HTML
     let timelineNodesHtml = '';
     data.timeline.forEach((event, idx) => {
@@ -4980,24 +4989,6 @@ function renderKeyTopicOverview(topicId) {
           <div class="timeline-node-label" style="margin-top: 8px; text-align: center; display: flex; flex-direction: column; align-items: center;">
             <span class="timeline-node-year" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary);">${event.year}</span>
             <span class="timeline-node-title" style="font-size: 0.72rem; color: var(--text-muted); max-width: 110px; line-height: 1.2; font-weight: 600;">${event.title}</span>
-          </div>
-        </div>
-      `;
-    });
-
-    // Build Draggable Cards HTML (Scrambled initially)
-    // Create copy and shuffle
-    const shuffledEvents = [...data.timeline].sort(() => Math.random() - 0.5);
-
-    let chronoCardsHtml = '';
-    shuffledEvents.forEach(event => {
-      chronoCardsHtml += `
-        <div class="chrono-drag-card" draggable="true" data-id="${event.id}" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px; display: flex; align-items: center; gap: 12px; cursor: grab; transition: all var(--transition-fast);">
-          <i class="fa-solid fa-bars drag-handle" style="color: var(--text-muted); cursor: grab;"></i>
-          <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-main); flex: 1;">${event.title} (${event.year})</span>
-          <div class="chrono-arrows" style="display: flex; flex-direction: column; gap: 2px;">
-            <button class="btn-chrono-arrow-up" title="Move Up" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 6px; font-size: 0.75rem; transition: color var(--transition-fast);"><i class="fa-solid fa-chevron-up"></i></button>
-            <button class="btn-chrono-arrow-down" title="Move Down" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 6px; font-size: 0.75rem; transition: color var(--transition-fast);"><i class="fa-solid fa-chevron-down"></i></button>
           </div>
         </div>
       `;
@@ -5036,64 +5027,55 @@ function renderKeyTopicOverview(topicId) {
         </div>
       </div>
 
-      <!-- Overhauled Two Column Dashboard -->
-      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 24px; align-items: start;">
-        <!-- Left Column: Context Overview & Lesson Portals -->
-        <div style="display: flex; flex-direction: column; gap: 24px;">
-          <!-- Overview Card -->
-          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
-            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-book-open"></i> Historical Context Overview
-            </h3>
-            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
-              ${data.overview}
-            </p>
-          </div>
+      <!-- Historical Context Overview (Full Width) -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 24px;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-book-open"></i> Historical Context Overview
+        </h3>
+        <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
+          ${data.overview}
+        </p>
+      </div>
 
-          <!-- Lessons portal grid -->
+      <!-- Component A: Responsive timeline (Full Width) -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px 30px; box-shadow: var(--shadow-sm); position: relative; margin-bottom: 24px;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-timeline"></i> Mental Map Timeline, ${data.title.split(', ').pop()}
+        </h3>
+        <div class="key-topic-timeline" style="position: relative; margin: 30px 0;">
+          ${timelineNodesHtml}
+        </div>
+        <div style="text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 12px; border-top: 1px dashed var(--border-glass); padding-top: 8px;">
+          <i class="fa-solid fa-circle-info"></i> Click or tap any year to reveal historical details & sources.
+        </div>
+      </div>
+
+      <!-- Lower Content Columns -->
+      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; align-items: start;">
+        <!-- Left Column: Key Topic Lessons -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
           <div>
             <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
               <i class="fa-solid fa-graduation-cap"></i> Key Topic Lessons
             </h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 16px;">
               ${subtopicsHtml}
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Interactive Blocks -->
+        <!-- Right Column: Revision Flashcards & Sliders -->
         <div style="display: flex; flex-direction: column; gap: 24px;">
-          <!-- Component A: Responsive timeline -->
-          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm); position: relative;">
-            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-timeline"></i> Mental Map Timeline, 1954–60
-            </h3>
-            <div class="key-topic-timeline" style="position: relative; margin: 30px 0;">
-              ${timelineNodesHtml}
-            </div>
-            <div style="text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 12px; border-top: 1px dashed var(--border-glass); padding-top: 8px;">
-              <i class="fa-solid fa-circle-info"></i> Click or tap any year to reveal historical details & sources.
-            </div>
-          </div>
-
-          <!-- Component B: Drag-to-Order Challenge -->
+          <!-- Component B: Dynamic Flashcard Revision Widget -->
           <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
             <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-clock"></i> Test Your Chronological Awareness
+              <i class="fa-solid fa-layer-group"></i> Key Topic Revision Flashcards
             </h3>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 16px 0; line-height: 1.4;">
-              Drag the cards or use the Up/Down arrows to arrange the events in their correct sequence (1st to 4th):
+              Toggle subtopics to customize your study pool, click the card to flip, and test your mastery:
             </p>
-            <div id="chrono-drag-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
-              ${chronoCardsHtml}
-            </div>
-            <div style="display: flex; gap: 12px; justify-content: flex-end; align-items: center;">
-              <span id="chrono-feedback-msg" style="font-size: 0.85rem; font-weight: 600; transition: color var(--transition-fast);"></span>
-              <button class="btn-primary" id="btn-chrono-check" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 4px; font-weight: 600;">Check Order</button>
-            </div>
-            <div id="chrono-explanation-box" style="display: none; margin-top: 14px; background: rgba(16, 185, 129, 0.05); border-left: 3px solid var(--success); padding: 14px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted);">
-              <!-- Populated upon correct order check -->
-            </div>
+            <div id="overview-subtopic-toggles" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;"></div>
+            <div id="overview-flashcard-stage-container"></div>
           </div>
 
           <!-- Component C: Weighing Sliders -->
@@ -5183,101 +5165,294 @@ function renderKeyTopicOverview(topicId) {
       if (e.target === overlay) closeModal();
     });
 
-    // Chronology Drag & Drop / Arrow controls logic
-    const chronoContainer = document.getElementById('chrono-drag-container');
-    const checkBtn = document.getElementById('btn-chrono-check');
-    const feedbackMsg = document.getElementById('chrono-feedback-msg');
-    const explanationBox = document.getElementById('chrono-explanation-box');
+    // Overview Flashcard Session Logic
+    let activeSubtopicIds = subtopics.map(sub => sub.id);
+    let currentQuestion = null;
+    let reinforcing = false;
+    let reinforceMcq = null;
 
-    let draggedItem = null;
+    function getFilteredPool() {
+      return state.allQuestions.filter(q => activeSubtopicIds.includes(q.subtopicId));
+    }
 
-    chronoContainer.addEventListener('dragstart', (e) => {
-      const card = e.target.closest('.chrono-drag-card');
-      if (!card) return;
-      draggedItem = card;
-      card.style.opacity = '0.5';
-      e.dataTransfer.effectAllowed = 'move';
-    });
-
-    chronoContainer.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      const card = e.target.closest('.chrono-drag-card');
-      if (!card || card === draggedItem) return;
-
-      const rect = card.getBoundingClientRect();
-      const next = (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
-      chronoContainer.insertBefore(draggedItem, next ? card.nextSibling : card);
-    });
-
-    chronoContainer.addEventListener('dragend', () => {
-      if (draggedItem) {
-        draggedItem.style.opacity = '1';
-        draggedItem = null;
+    function selectNewRandomCard() {
+      const pool = getFilteredPool();
+      if (pool.length === 0) {
+        currentQuestion = null;
+        return;
       }
-    });
+      let nextQ = currentQuestion;
+      let attempts = 0;
+      while ((nextQ === currentQuestion || !nextQ) && attempts < 10 && pool.length > 1) {
+        nextQ = pool[Math.floor(Math.random() * pool.length)];
+        attempts++;
+      }
+      if (pool.length === 1 || attempts >= 10) {
+        nextQ = pool[Math.floor(Math.random() * pool.length)];
+      }
+      currentQuestion = nextQ;
+      reinforcing = false;
+      reinforceMcq = null;
+    }
 
-    // Arrow controls
-    chronoContainer.addEventListener('click', (e) => {
-      const arrowUp = e.target.closest('.btn-chrono-arrow-up');
-      const arrowDown = e.target.closest('.btn-chrono-arrow-down');
+    function renderToggles() {
+      const togglesContainer = document.getElementById('overview-subtopic-toggles');
+      if (!togglesContainer) return;
+      togglesContainer.innerHTML = '';
       
-      if (arrowUp) {
-        e.stopPropagation();
-        const card = arrowUp.closest('.chrono-drag-card');
-        const prev = card.previousElementSibling;
-        if (prev) {
-          chronoContainer.insertBefore(card, prev);
+      subtopics.forEach(sub => {
+        const subNum = sub.title.match(/Topic\s(\d\.\d)/)?.[1] || sub.title;
+        const isActive = activeSubtopicIds.includes(sub.id);
+        
+        const btn = document.createElement('button');
+        btn.className = `btn-subtopic-toggle ${isActive ? 'active' : ''}`;
+        btn.textContent = `Lesson ${subNum}`;
+        btn.title = sub.title.replace(/^Topic \d\.\d:\s*/, "");
+        
+        btn.style.padding = '6px 12px';
+        btn.style.fontSize = '0.8rem';
+        btn.style.borderRadius = '20px';
+        btn.style.fontWeight = '600';
+        btn.style.cursor = 'pointer';
+        btn.style.transition = 'all var(--transition-fast)';
+        btn.style.border = isActive ? '1px solid var(--primary)' : '1px solid var(--border-glass)';
+        btn.style.background = isActive ? 'var(--primary)' : 'rgba(255, 255, 255, 0.03)';
+        btn.style.color = isActive ? '#fff' : 'var(--text-muted)';
+        
+        btn.addEventListener('click', () => {
           AudioEngine.play('click');
-        }
-      }
-      
-      if (arrowDown) {
-        e.stopPropagation();
-        const card = arrowDown.closest('.chrono-drag-card');
-        const next = card.nextElementSibling;
-        if (next) {
-          chronoContainer.insertBefore(next, card);
-          AudioEngine.play('click');
-        }
-      }
-    });
+          if (isActive) {
+            if (activeSubtopicIds.length > 1) {
+              activeSubtopicIds = activeSubtopicIds.filter(id => id !== sub.id);
+            } else {
+              btn.style.animation = 'shake 0.4s ease-in-out';
+              setTimeout(() => btn.style.animation = '', 400);
+              return;
+            }
+          } else {
+            activeSubtopicIds.push(sub.id);
+          }
+          renderToggles();
+          selectNewRandomCard();
+          renderCard();
+        });
+        togglesContainer.appendChild(btn);
+      });
+    }
 
-    // Chronology Check button click
-    checkBtn.addEventListener('click', () => {
-      const cards = chronoContainer.querySelectorAll('.chrono-drag-card');
-      const correctSeq = ['t1_event_1', 't1_event_2', 't1_event_3', 't1_event_4'];
-      let correctCount = 0;
-
-      cards.forEach((card, idx) => {
-        const id = card.getAttribute('data-id');
-        if (id === correctSeq[idx]) {
-          card.style.borderColor = 'var(--success)';
-          card.style.boxShadow = '0 0 8px rgba(16, 185, 129, 0.15)';
-          correctCount++;
-        } else {
-          card.style.borderColor = 'var(--danger)';
-          card.style.boxShadow = '0 0 8px rgba(239, 68, 68, 0.15)';
-        }
+    function handleOverviewMcqSelection(selectedIndex, clickedBtn, reinforceContainer, cardEl, q) {
+      const optionBtns = reinforceContainer.querySelectorAll('.overview-mcq-option');
+      optionBtns.forEach(btn => {
+        btn.disabled = true;
+        btn.style.pointerEvents = 'none';
       });
 
-      if (correctCount === 4) {
-        AudioEngine.play('cheer');
-        Confetti.spawn(60);
-        feedbackMsg.style.color = 'var(--success)';
-        feedbackMsg.textContent = '🎉 100% Correct Sequence!';
+      const isCorrect = selectedIndex === reinforceMcq.correctIndex;
+      
+      if (isCorrect) {
+        AudioEngine.play('success');
+        clickedBtn.classList.add('correct');
+        setMastered(q.id, true);
         
-        explanationBox.style.display = 'block';
-        explanationBox.innerHTML = `
-          <strong>Exam Connection: Why this sequence matters:</strong><br>
-          Establishing this timeline is critical for Paper 3 synthesis. The <strong>Brown decision (1954)</strong> established the constitutional right to integrated schools, but lacked enforcement. This sparked grassroots activism, leading to the <strong>Montgomery Bus Boycott (1955-56)</strong>, proving community solidarity could force local changes. The backlash to these movements culminated at <strong>Little Rock (1957)</strong>, where Southern state resistance forced President Eisenhower to execute federal troops, creating national momentum that compelled Congress to pass the <strong>Civil Rights Act of 1957</strong> to protect voting rights.
-        `;
+        setTimeout(() => {
+          cardEl.className = 'flashcard-card flipped swipe-right';
+          setTimeout(() => {
+            selectNewRandomCard();
+            renderCard();
+          }, 300);
+        }, 1200);
       } else {
         AudioEngine.play('fail');
-        feedbackMsg.style.color = 'var(--danger)';
-        feedbackMsg.textContent = `Incorrect Sequence (${correctCount}/4 match). Retrying...`;
-        explanationBox.style.display = 'none';
+        clickedBtn.classList.add('incorrect');
+        
+        optionBtns.forEach((btn, idx) => {
+          if (idx === reinforceMcq.correctIndex) {
+            btn.classList.add('correct');
+          }
+        });
+        setMastered(q.id, false);
+        
+        setTimeout(() => {
+          cardEl.className = 'flashcard-card flipped swipe-left';
+          setTimeout(() => {
+            selectNewRandomCard();
+            renderCard();
+          }, 300);
+        }, 2200);
       }
-    });
+    }
+
+    function renderCard() {
+      const stageContainer = document.getElementById('overview-flashcard-stage-container');
+      if (!stageContainer) return;
+      
+      if (!currentQuestion) {
+        stageContainer.innerHTML = `
+          <div style="background: rgba(255,255,255,0.01); border: 1px dashed var(--border-glass); border-radius: var(--border-radius-md); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-face-frown" style="font-size: 2rem; color: var(--primary); margin-bottom: 12px; display: block;"></i>
+            No flashcards available. Please enable at least one subtopic lesson.
+          </div>
+        `;
+        return;
+      }
+
+      const q = currentQuestion;
+      const isBookmarked = state.bookmarks.includes(q.id);
+      const ktLabel = formatSubtopicIdToKT(q.subtopicId);
+
+      let mcqOptionsHtml = '';
+      if (reinforcing && reinforceMcq) {
+        reinforceMcq.options.forEach((opt, idx) => {
+          mcqOptionsHtml += `
+            <button class="overview-mcq-option" data-index="${idx}" style="width: 100%; text-align: left; padding: 8px 12px; font-size: 0.75rem; line-height: 1.3; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-main); cursor: pointer; transition: all var(--transition-fast);">
+              ${opt}
+            </button>
+          `;
+        });
+      }
+
+      stageContainer.innerHTML = `
+        <div class="overview-flashcard-stage" style="perspective: 1000px; position: relative; width: 100%; height: 380px; margin-bottom: 16px;">
+          <div class="flashcard-card" id="overview-flashcard-card" style="cursor: pointer; position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+            <!-- Front Face -->
+            <div class="flashcard-face flashcard-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-glass); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card); background-image: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);">
+              <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Standard' : 'Top Tier Trivia'}</span>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
+                  <span class="bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-star" style="color: var(--primary);"></i></span>
+                </div>
+              </div>
+              <div class="card-body" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 0;">
+                <h3 class="card-question" style="font-size: 0.95rem; font-weight: 600; line-height: 1.4; text-align: center; margin: 0; color: var(--text-main); max-width: 90%;">${q.question}</h3>
+              </div>
+              <div class="card-bottom" style="text-align: center; font-size: 0.72rem; color: var(--text-muted); font-weight: 500;"><i class="fa-solid fa-rotate"></i> Click card to flip and reveal answer</div>
+            </div>
+            <!-- Back Face -->
+            <div class="flashcard-face flashcard-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-active); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card-hover); background-image: radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%); transform: rotateY(180deg);">
+              <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Standard' : 'Top Tier Trivia'}</span>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
+                  <span class="bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-star" style="color: var(--primary);"></i></span>
+                </div>
+              </div>
+              
+              <!-- Standard back body (Question detail) -->
+              <div id="overview-flashcard-back-standard-body" style="display: ${reinforcing ? 'none' : 'flex'}; flex-direction: column; flex: 1; padding: 10px 0; overflow-y: auto; text-align: center; justify-content: center; gap: 4px;">
+                <span class="card-answer-label" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; margin-bottom: 2px;">Correct Answer</span>
+                <h2 class="card-answer-text" style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0 0 6px 0; line-height: 1.2;">${q.answer}</h2>
+                <p class="card-explanation-text" style="font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); margin: 0; max-height: 160px; overflow-y: auto;">${q.explanation}</p>
+              </div>
+
+              <!-- MCQ reinforce back body -->
+              <div id="overview-flashcard-back-reinforce-body" style="display: ${reinforcing ? 'flex' : 'none'}; flex-direction: column; flex: 1; padding: 8px 0; text-align: center; justify-content: center; gap: 6px; overflow-y: auto;">
+                <span class="card-answer-label" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); font-weight: 700;">🧠 Double-Check Understanding</span>
+                <h4 id="overview-flashcard-reinforce-question" style="font-size: 0.78rem; font-weight: 600; line-height: 1.3; margin: 0 0 6px 0; color: var(--text-main);">${reinforceMcq ? reinforceMcq.prompt : ''}</h4>
+                <div id="overview-flashcard-reinforce-options" style="display: flex; flex-direction: column; gap: 6px; width: 100%;">
+                  ${mcqOptionsHtml}
+                </div>
+              </div>
+              
+              <div class="card-bottom" style="text-align: center; font-size: 0.72rem; color: var(--text-muted); font-weight: 500;"><i class="fa-solid fa-rotate"></i> Click card to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="overview-flashcard-controls" style="display: flex; justify-content: center; gap: 12px; margin-top: 12px; height: 38px; align-items: center;">
+          <button class="btn-secondary" id="overview-btn-flashcard-reveal" style="padding: 8px 16px; font-size: 0.82rem; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); display: flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-rotate"></i> Flip Card
+          </button>
+          <div id="overview-flashcard-self-grade-actions" style="display: none; width: 100%; gap: 12px; justify-content: center;">
+            <button class="btn-incorrect" id="overview-btn-flashcard-incorrect" style="padding: 8px 14px; font-size: 0.8rem; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); display: flex; align-items: center; gap: 6px; border: 1px solid var(--danger); background: rgba(239, 68, 68, 0.05); color: var(--danger);">
+              <i class="fa-solid fa-xmark"></i> Study Again
+            </button>
+            <button class="btn-correct" id="overview-btn-flashcard-correct" style="padding: 8px 14px; font-size: 0.8rem; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); display: flex; align-items: center; gap: 6px; border: 1px solid var(--success); background: rgba(16, 185, 129, 0.05); color: var(--success);">
+              <i class="fa-solid fa-check"></i> Got It!
+            </button>
+          </div>
+        </div>
+      `;
+
+      const cardEl = document.getElementById('overview-flashcard-card');
+      const revealBtn = document.getElementById('overview-btn-flashcard-reveal');
+      const gradeActions = document.getElementById('overview-flashcard-self-grade-actions');
+
+      cardEl.addEventListener('click', (e) => {
+        if (e.target.closest('button') || e.target.closest('.bookmark-icon-container')) {
+          return;
+        }
+        if (reinforcing) {
+          cardEl.style.animation = 'shake 0.4s ease-in-out';
+          setTimeout(() => cardEl.style.animation = '', 400);
+          return;
+        }
+        cardEl.classList.toggle('flipped');
+        AudioEngine.play('flip');
+        updateControlsVisibility();
+      });
+
+      revealBtn.addEventListener('click', () => {
+        cardEl.classList.add('flipped');
+        AudioEngine.play('flip');
+        updateControlsVisibility();
+      });
+
+      function updateControlsVisibility() {
+        const isFlipped = cardEl.classList.contains('flipped');
+        if (isFlipped && !reinforcing) {
+          revealBtn.style.display = 'none';
+          gradeActions.style.display = 'flex';
+        } else if (reinforcing) {
+          revealBtn.style.display = 'none';
+          gradeActions.style.display = 'none';
+        } else {
+          revealBtn.style.display = 'flex';
+          gradeActions.style.display = 'none';
+        }
+      }
+
+      updateControlsVisibility();
+
+      document.getElementById('overview-btn-flashcard-incorrect').addEventListener('click', () => {
+        AudioEngine.play('fail');
+        setMastered(q.id, false);
+        cardEl.className = 'flashcard-card flipped swipe-left';
+        setTimeout(() => {
+          selectNewRandomCard();
+          renderCard();
+        }, 300);
+      });
+
+      document.getElementById('overview-btn-flashcard-correct').addEventListener('click', () => {
+        AudioEngine.play('success');
+        setMastered(q.id, true);
+        cardEl.className = 'flashcard-card flipped swipe-right';
+        setTimeout(() => {
+          selectNewRandomCard();
+          renderCard();
+        }, 300);
+      });
+
+      // Attach bookmarks listeners
+      const bkmkBtns = stageContainer.querySelectorAll('.bookmark-icon-container');
+      bkmkBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const qid = btn.getAttribute('data-qid');
+          toggleBookmark(qid);
+          const isNowBookmarked = state.bookmarks.includes(qid);
+          bkmkBtns.forEach(b => {
+            b.className = `bookmark-icon-container ${isNowBookmarked ? 'bookmarked' : ''}`;
+            b.querySelector('i').className = isNowBookmarked ? 'fa-solid fa-star' : 'fa-regular fa-star';
+          });
+        });
+      });
+    }
+
+    selectNewRandomCard();
+    renderToggles();
+    renderCard();
 
     // Weighing sliders logic
     data.sliders.forEach(slider => {
@@ -5304,123 +5479,6 @@ function renderKeyTopicOverview(topicId) {
       input.addEventListener('input', (e) => {
         updateFn(e.target.value);
       });
-    });
-
-  } else {
-    // Normal Key Topic Overview layout (Topics 2, 3, 4)
-    // Build Visual Sources HTML
-    let sourcesHtml = '';
-    data.sources.forEach(src => {
-      const webLink = getImageWebLink(src.image, src.alt);
-      sourcesHtml += `
-        <div class="key-topic-source-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 12px; display: flex; flex-direction: column; gap: 10px; cursor: pointer; transition: transform var(--transition-fast);" onclick="window.open('${webLink}', '_blank')">
-          <div style="height: 140px; border-radius: var(--border-radius-sm); overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; position: relative;">
-            <img src="${src.image}" alt="${src.alt}" style="max-height: 100%; max-width: 100%; object-fit: contain;">
-            <div style="position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.65); padding: 4px 8px; border-radius: var(--border-radius-sm); font-size: 0.65rem; color: #fff; font-weight: 600;">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Source
-            </div>
-          </div>
-          <p style="font-size: 0.75rem; line-height: 1.4; color: var(--text-muted); margin: 0;">${src.caption}</p>
-        </div>
-      `;
-    });
-
-    // Build Tasks HTML
-    let tasksHtml = '';
-    data.tasks.forEach(task => {
-      tasksHtml += `
-        <div class="key-topic-task-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px;">
-          <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--primary); margin: 0; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-circle-question"></i> ${task.title}
-          </h4>
-          <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-normal); margin: 0;">${task.question}</p>
-          <textarea id="${task.id}-textarea" placeholder="Type your revision notes here..." style="width: 100%; height: 80px; padding: 10px; background: rgba(0,0,0,0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); font-size: 0.85rem; font-family: inherit; color: var(--text-main); resize: vertical; box-sizing: border-box;"></textarea>
-          <div style="display: flex; justify-content: flex-end;">
-            <button class="btn-secondary" id="btn-reveal-${task.id}" style="padding: 8px 14px; font-size: 0.8rem; font-weight: 600;">
-              <i class="fa-solid fa-lightbulb"></i> Reveal Expert Guidance
-            </button>
-          </div>
-          <div id="guidance-${task.id}" style="display: none; background: rgba(230, 92, 0, 0.05); border-left: 3px solid var(--primary); padding: 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">
-            <strong>Expert Response Guide:</strong><br>${task.guidance}
-          </div>
-        </div>
-      `;
-    });
-
-    container.innerHTML = `
-      <!-- Top Progress Banner -->
-      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;">
-        <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
-          ${data.title}
-        </h2>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
-          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
-          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
-            <div style="background: var(--gradient-main); height: 100%; width: ${overallPct}%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Overview Text -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; margin-bottom: 24px; box-shadow: var(--shadow-sm);">
-        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-book-open"></i> Historical Context Overview
-        </h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
-          ${data.overview}
-        </p>
-      </div>
-
-      <!-- Visual Sources & Student Tasks (Two Column Layout) -->
-      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 24px;">
-        <!-- Visual Sources Column -->
-        <div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-images"></i> Primary Visual Sources
-          </h3>
-          <div style="display: flex; flex-direction: column; gap: 16px;">
-            ${sourcesHtml}
-          </div>
-        </div>
-
-        <!-- Revision Tasks Column -->
-        <div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-list-check"></i> Synthesis Tasks
-          </h3>
-          <div>
-            ${tasksHtml}
-          </div>
-        </div>
-      </div>
-
-      <!-- Lessons & Subtopics Grid -->
-      <div>
-        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-graduation-cap"></i> Key Topic Lessons
-        </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-          ${subtopicsHtml}
-        </div>
-      </div>
-    `;
-
-    // Attach event listeners for Reveal Guidance buttons
-    data.tasks.forEach(task => {
-      const btn = document.getElementById(`btn-reveal-${task.id}`);
-      const guidance = document.getElementById(`guidance-${task.id}`);
-      if (btn && guidance) {
-        btn.addEventListener('click', () => {
-          AudioEngine.play('click');
-          if (guidance.style.display === 'none') {
-            guidance.style.display = 'block';
-            btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Guidance`;
-          } else {
-            guidance.style.display = 'none';
-            btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Reveal Expert Guidance`;
-          }
-        });
-      }
     });
   }
 }

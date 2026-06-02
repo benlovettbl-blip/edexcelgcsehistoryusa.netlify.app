@@ -337,25 +337,25 @@ export const LESSONS_DATA = {
     "doNowStarter": {
       "prevSubtopicId": "subtopic_1_1",
       "prevSubtopicTitle": "Topic 1.1: Segregation & Brown v. Board",
-      "image": "assets/sources/rosa-parks-bus-1956.jpg",
-      "provenance": "A photograph of Rosa Parks riding in the front of a Montgomery bus in December 1956, after the Supreme Court segregation ban took effect.",
+      "image": "assets/sources/warren-court-1954.jpg",
+      "provenance": "A formal group portrait of the members of the Warren Court, the Supreme Court of the United States, taken in Washington D.C., 1954.",
       "seeThinkWonder": {
-        "see": "Look at Rosa Parks' position on the bus and the white passenger sitting behind her.",
-        "think": "How does her calm, dignified demeanor in the photograph serve as a powerful political statement?",
-        "wonder": "Why was this photograph widely distributed to national newspapers rather than kept private?"
+        "see": "Observe the formal attire and serious expressions of the Supreme Court justices in the portrait.",
+        "think": "Why did Chief Justice Earl Warren strive for a unanimous (9-0) decision in the Brown v. Board case?",
+        "wonder": "How did Southern states weaponize legal delays and massive resistance against a ruling issued by this court?"
       },
       "bronze": "State the date and outcome of the landmark Brown v. Board of Education decision.",
-      "silver": "Explain why Southern segregationist business owners and bus companies opposed the Montgomery Bus Boycott.",
-      "gold": "Connect this image of bus integration back to the segregation sign in Topic 1.1. How does this represent a direct legal and social challenge to that earlier system?",
+      "silver": "Study the source image. Explain how the Supreme Court's decision in Brown v. Board of Education (1954) challenged the 1896 'separate but equal' doctrine.",
+      "gold": "How did the Warren Court's unanimity in the Brown ruling attempt to address Southern resistance to desegregation?",
       "keywords": [
-        "NAACP",
-        "Test Case",
-        "Direct Action",
-        "Montgomery Improvement Association"
+        "Earl Warren",
+        "Plessy v. Ferguson",
+        "14th Amendment",
+        "Unanimous Ruling"
       ],
       "bronzeAnswer": "In May 1954, the Supreme Court ruled unanimously (9-0) that racial segregation in public schools was unconstitutional.",
-      "silverAnswer": "They opposed the boycott because it cost them a large amount of money (since Black passengers made up over 70% of bus riders) and threatened to end the segregation system that kept them in power.",
-      "goldAnswer": "This image represents the dismantling of the Jim Crow system shown in Topic 1.1. By refusing to comply with segregated seating, activists forced a Supreme Court ruling (Browder v. Gayle) that declared segregated transit unconstitutional, legally removing signs like the one in Topic 1.1."
+      "silverAnswer": "The decision ruled that separate educational facilities are inherently unequal, directly overturning the 1896 Plessy v. Ferguson ruling and violating the 14th Amendment's Equal Protection Clause.",
+      "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow."
     },
     "specPoints": [
       "Reasons for, key features and significance of the events at Little Rock High School (1957)."
@@ -518,16 +518,16 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_1_2",
-      "prevSubtopicTitle": "Topic 1.2: The Montgomery Bus Boycott",
+      "prevSubtopicTitle": "Topic 1.2: Integration of Central High School",
       "image": "assets/sources/little-rock-protest-1957.jpg",
       "provenance": "A protestor outside Central High School holding a sign opposing school integration, Little Rock, Arkansas, September 1957.",
       "seeThinkWonder": {
-        "see": "Look at the text on the protest signs and the U.S. flags carried by the crowd.",
-        "think": "Why did segregationists associate racial integration with communism and religious threats ('Anti-Christ')?",
-        "wonder": "How did the protesters use patriotic symbols like the American flag to argue for segregation?"
+        "see": "Look at the text on the sign and the facial expressions of the protestors.",
+        "think": "Who is the protestor blaming for school integration, and what does this tell us about Southern views of federal authority?",
+        "wonder": "Why would local Southern parents view desegregated schools as a threat to their community?"
       },
-      "bronze": "How long did the Montgomery Bus Boycott last, and what legal ruling officially ended it?",
-      "silver": "Explain how Governor Orval Faubus' refusal to integrate Central High School in 1957 forced President Eisenhower to intervene.",
+      "bronze": "Why did President Eisenhower feel compelled to send the 101st Airborne Division to Little Rock in 1957, despite his personal reluctance?",
+      "silver": "Study the source image. Identify two arguments segregationists used to oppose school integration, based on the protestor's sign.",
       "gold": "How did the Southern response to Brown v. Board (Topic 1.1) directly lead to the protest and resistance shown in this Little Rock image?",
       "keywords": [
         "Governor Faubus",
@@ -535,9 +535,9 @@ export const LESSONS_DATA = {
         "Brown II",
         "Southern Manifesto"
       ],
-      "bronzeAnswer": "The Montgomery Bus Boycott lasted 381 days and was officially ended by the Supreme Court's Browder v. Gayle decision in late 1956.",
-      "silverAnswer": "Governor Faubus used state troops to block Black students from enrolling, defying a federal court. This left President Eisenhower with no choice but to send federal soldiers to enforce the law and protect the students, showing that federal law was supreme.",
-      "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern boards exploited this loophole to delay integration, leading to angry public protests and state defiance in Little Rock."
+      "bronzeAnswer": "Eisenhower sent the troops because Governor Faubus used the state National Guard to defy a federal court order, forcing the President to uphold federal authority and the Constitution.",
+      "silverAnswer": "The sign argues that (1) integration is being forced by a 'dictator' (federal overreach), and (2) desegregation is a threat to the education and culture of white children ('stolen' school).",
+      "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern school boards used this loophole to delay integration, leading to angry public protests and state defiance in Little Rock."
     },
     "specPoints": [
       "The significance of Rosa Parks.",
@@ -708,26 +708,26 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_1_3",
-      "prevSubtopicTitle": "Topic 1.3: Little Rock Central High School",
-      "image": "assets/sources/greensboro-sit-in-counter.jpg",
-      "provenance": "A preserved section of the Greensboro F. W. Woolworth's lunch counter, where the 1960 sit-ins began, now displayed at the Smithsonian National Museum of American History.",
+      "prevSubtopicTitle": "Topic 1.3: The Montgomery Bus Boycott",
+      "image": "assets/sources/rosa-parks-bus-1956.jpg",
+      "provenance": "A photograph of Rosa Parks riding in the front of a Montgomery bus in December 1956, after the Supreme Court segregation ban took effect.",
       "seeThinkWonder": {
-        "see": "Observe the empty curved counter, the individual bar stools fixed to the floor, and the museum display layout.",
-        "think": "Why is a simple piece of commercial furniture (a lunch counter) considered a historically significant artifact in a national museum?",
-        "wonder": "What was it like for the 'Greensboro Four' to sit on these stools in defiance of Jim Crow laws?"
+        "see": "Look at Rosa Parks' position on the bus and the white passenger sitting behind her.",
+        "think": "How does her calm, dignified demeanor in the photograph serve as a powerful political statement?",
+        "wonder": "Why was this photograph widely distributed to national newspapers rather than kept private?"
       },
-      "bronze": "Why did President Eisenhower feel compelled to send the 101st Airborne Division to Little Rock in 1957, despite his personal reluctance?",
-      "silver": "Explain the different ways in which White Citizens' Councils and the Ku Klux Klan (KKK) tried to stop civil rights activists.",
-      "gold": "Contrast the student sit-ins with the Montgomery Bus Boycott (Topic 1.2). How did the sit-in strategy differ in its target, speed of mobilization, and direct confrontation?",
+      "bronze": "How long did the Montgomery Bus Boycott last, and what legal ruling officially ended it?",
+      "silver": "Study the source image. Identify two details showing that Rosa Parks' protest resulted in a significant shift in bus seating rules.",
+      "gold": "Connect this image of bus integration back to the segregation sign in Topic 1.1. How does this represent a direct legal and social challenge to that earlier system?",
       "keywords": [
-        "SNCC",
-        "Woolworth's",
+        "NAACP",
+        "Test Case",
         "Direct Action",
-        "Desegregation"
+        "Montgomery Improvement Association"
       ],
-      "bronzeAnswer": "Eisenhower sent the troops because Governor Faubus used the state National Guard to defy a federal court order, forcing the President to uphold federal authority and the Constitution.",
-      "silverAnswer": "White Citizens' Councils used economic pressure (like firing activists from their jobs), while the KKK used violent terror (like bombings and physical attacks) to scare activists into stopping their protests.",
-      "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention."
+      "bronzeAnswer": "The Montgomery Bus Boycott lasted 381 days and was officially ended by the Supreme Court's Browder v. Gayle decision in late 1956.",
+      "silverAnswer": "The image shows Parks sitting in the front seats of the bus (previously reserved for whites only) and a white man sitting peacefully behind her, proving the laws had changed.",
+      "goldAnswer": "This image represents the dismantling of the Jim Crow system shown in Topic 1.1. By refusing to comply with segregated seating, activists forced a Supreme Court ruling (Browder v. Gayle) that declared segregated transit unconstitutional, legally removing signs like the one in Topic 1.1."
     },
     "specPoints": [
       "Opposition to desegregation in the South, including the ‘Dixiecrats’ and the setting up of White Citizens’ Councils.",
@@ -905,26 +905,26 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_1_4",
-      "prevSubtopicTitle": "Topic 1.4: Greensboro Sit-ins & SNCC",
-      "image": "assets/sources/freedom-riders-bus-wreckage.jpg",
-      "provenance": "Smoking wreckage of a Greyhound bus carrying Freedom Riders firebombed in Anniston, Alabama, 14 May 1961.",
+      "prevSubtopicTitle": "Topic 1.4: Southern White Resistance",
+      "image": "assets/sources/southern-manifesto-signing.jpg",
+      "provenance": "A group of Southern senators and congressmen signing the 'Southern Manifesto' in 1956 to coordinate resistance against school desegregation.",
       "seeThinkWonder": {
-        "see": "Examine the completely gutted bus interior and the smoke rising from the windows.",
-        "think": "What does this firebombing reveal about how far white supremacists were willing to go to stop integration?",
-        "wonder": "What was the reaction of the federal government when national media broadcasted this image?"
+        "see": "Observe the formal setting and the documents being signed by the Southern politicians.",
+        "think": "Why did Southern politicians feel the need to document their opposition to desegregation in a formal 'Manifesto'?",
+        "wonder": "How did this political declaration encourage segregationist groups like the Ku Klux Klan and White Citizens' Councils?"
       },
-      "bronze": "What student-led civil rights organization was founded in 1960 to coordinate sit-ins and voter registration?",
-      "silver": "Explain why the Freedom Riders chose to travel on buses through the deep Southern states in 1961.",
-      "gold": "Why did CORE launch the Freedom Rides to test interstate transit desegregation in 1961, when segregation was already ruled illegal in Browder v. Gayle (Topic 1.2)?",
+      "bronze": "Identify two ways in which white segregationists in the South resisted civil rights progress in the late 1950s.",
+      "silver": "Study the source image. Explain how the Southern Manifesto signed by Southern congressmen in 1956 opposed the Supreme Court's authority.",
+      "gold": "Contrast the Southern White Resistance tactics (such as the Southern Manifesto and White Citizens' Councils) with the direct action methods used in the Montgomery Bus Boycott.",
       "keywords": [
-        "CORE",
-        "Freedom Riders",
-        "Interstate Commerce",
-        "Anniston Mobs"
+        "Southern Manifesto",
+        "Massive Resistance",
+        "White Citizens' Councils",
+        "Dixiecrats"
       ],
-      "bronzeAnswer": "The Student Nonviolent Coordinating Committee (SNCC) was founded in 1960.",
-      "silverAnswer": "They wanted to test whether the federal ban on transit segregation was actually being enforced, and to force the federal government to intervene when Southern states ignored the law.",
-      "goldAnswer": "Although the Supreme Court had ruled segregation in interstate travel illegal (Browder v. Gayle, Topic 1.2), Southern states openly ignored the federal law and kept terminals segregated. CORE launched the Freedom Rides to force the federal government to actively enforce its own laws by provoking a crisis that the Kennedy administration could not ignore."
+      "bronzeAnswer": "They resisted through (1) political measures like the Southern Manifesto and 'massive resistance', and (2) social/economic intimidation by White Citizens' Councils and KKK violence.",
+      "silverAnswer": "The Southern Manifesto claimed the Supreme Court had abused its power in the Brown decision, asserting that education was a state matter and encouraging states to resist federal integration orders.",
+      "goldAnswer": "While Montgomery activists used non-violent economic pressure, Southern White Resistance used legal obstruction (states' rights arguments) and economic/physical intimidation to prevent integration and maintain white supremacy."
     },
     "specPoints": [
       "The significance of Greensboro and the sit-in movement.",
@@ -1130,26 +1130,26 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_2_1",
-      "prevSubtopicTitle": "Topic 2.1: Freedom Riders & James Meredith",
-      "image": "assets/sources/mlk-dream-speech-1963.jpg",
-      "provenance": "Dr. King speaking from the podium at the Lincoln Memorial during the March on Washington, 28 August 1963.",
+      "prevSubtopicTitle": "Topic 2.1: Non-Violent Direct Action",
+      "image": "assets/sources/greensboro-sit-in-counter.jpg",
+      "provenance": "Student activists enduring harassment during the Greensboro Woolworth's lunch counter sit-in, February 1960.",
       "seeThinkWonder": {
-        "see": "Observe Dr. King's posture, the microphones in front of him, and the columns in the background.",
-        "think": "Why did civil rights organizers set up a large group of news microphones at this specific event?",
-        "wonder": "What was it like to stand behind those microphones and address hundreds of thousands of people?"
+        "see": "Look at the students sitting at the counter and the crowd of white youths standing directly behind them.",
+        "think": "Why did the activists refuse to react or retaliate when food and liquids were poured over them?",
+        "wonder": "How did student-led groups like SNCC organize such highly disciplined campaigns?"
       },
-      "bronze": "Describe the federal intervention required to safely enroll James Meredith at the University of Mississippi ('Ole Miss') in 1962.",
-      "silver": "Explain why civil rights leaders chose the Lincoln Memorial in Washington D.C. as the location for the 1963 March on Washington.",
-      "gold": "How did the escalation of protests from the Greensboro Sit-ins (Topic 1.4) lead directly to the massive mobilization and legislative demands represented by this historic speech?",
+      "bronze": "What student-led civil rights organization was founded in 1960 to coordinate sit-ins and voter registration?",
+      "silver": "Study the source image. Identify two ways white segregationists are harassing the Black students at the counter.",
+      "gold": "Contrast the student sit-ins with the Montgomery Bus Boycott (Topic 1.2). How did the sit-in strategy differ in its target, speed of mobilization, and direct confrontation?",
       "keywords": [
-        "Lincoln Memorial",
-        "I Have a Dream",
-        "Civil Rights Bill",
-        "SCLC"
+        "SNCC",
+        "Woolworth's",
+        "Direct Action",
+        "Desegregation"
       ],
-      "bronzeAnswer": "President Kennedy had to send 30,000 federal troops, marshals, and national guardsmen to secure Meredith's safety after white mobs rioted.",
-      "silverAnswer": "They chose it because Abraham Lincoln had signed the Emancipation Proclamation freeing slaves 100 years earlier, making it a powerful symbol to highlight that Black Americans were still not fully free or equal.",
-      "goldAnswer": "The student sit-ins of 1960 (Topic 1.4) sparked a wave of direct action that grew into the Freedom Rides (1961) and the Birmingham Campaign (1963). This continuous escalation mobilized hundreds of thousands of people, forcing national civil rights groups to unite in a massive march to demand comprehensive federal legislation."
+      "bronzeAnswer": "The Student Nonviolent Coordinating Committee (SNCC) was founded in 1960.",
+      "silverAnswer": "White segregationists are (1) crowding closely behind the students to intimidate them, and (2) pouring sugar, condiments, and liquids over their heads and clothes.",
+      "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention."
     },
     "specPoints": [
       "King and the peace marches of 1963 in Birmingham and Washington.",
@@ -1331,7 +1331,7 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_2_2",
-      "prevSubtopicTitle": "Topic 2.2: Birmingham & March on Washington",
+      "prevSubtopicTitle": "Topic 2.2: Landmark Legislation & Selma",
       "image": "assets/sources/selma-troopers-bridge.jpg",
       "provenance": "State troopers facing civil rights marchers on the Edmund Pettus Bridge in Selma, Alabama, during 'Bloody Sunday', 7 March 1965.",
       "seeThinkWonder": {
@@ -1530,7 +1530,7 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_2_3",
-      "prevSubtopicTitle": "Topic 2.3: Selma & Voting Rights Act",
+      "prevSubtopicTitle": "Topic 2.3: Black Power & Malcolm X",
       "image": "assets/sources/malcolm-x-speaking.jpg",
       "provenance": "A portrait photograph of Malcolm X taken during a press conference in New York City on March 12, 1964, the day he announced his break with the Nation of Islam.",
       "seeThinkWonder": {
@@ -1538,7 +1538,7 @@ export const LESSONS_DATA = {
         "think": "Why would Malcolm X present himself in a highly formal and professional manner when addressing the national media?",
         "wonder": "What was the atmosphere like at this press conference, given his dramatic break from the Nation of Islam?"
       },
-      "bronze": "What landmark piece of federal legislation was passed as a direct consequence of the Selma marches in 1965?",
+      "bronze": "Name the revolutionary Black organization founded in Oakland in 1966 that rejected SCLC's non-violence.",
       "silver": "Explain how Malcolm X's ideas on self-defense differed from Martin Luther King Jr.'s philosophy of non-violence.",
       "gold": "How did the slow pace of economic progress in Northern cities after the legal victories of the Montgomery Bus Boycott (Topic 1.2) fuel the rise of Malcolm X's Black Nationalist ideology?",
       "keywords": [
@@ -1547,7 +1547,7 @@ export const LESSONS_DATA = {
         "Nation of Islam",
         "Black Power"
       ],
-      "bronzeAnswer": "The Voting Rights Act of 1965 was passed as a direct consequence of the Selma marches.",
+      "bronzeAnswer": "The Black Panther Party (founded by Huey Newton and Bobby Seale in Oakland in 1966).",
       "silverAnswer": "Martin Luther King Jr. believed in peaceful, non-violent protest to win over white support, whereas Malcolm X believed that Black Americans had the right to defend themselves by any means necessary if they were attacked by racists.",
       "goldAnswer": "Legal victories like the Montgomery Bus Boycott (Topic 1.2) and the Civil Rights Act ended legal segregation in the South, but did not solve Northern problems of poverty, unemployment, and police brutality. Malcolm X's focus on economic self-reliance and self-defense appealed to Northern Blacks who felt non-violence had failed to improve their daily lives."
     },
@@ -1746,26 +1746,26 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_2_4",
-      "prevSubtopicTitle": "Topic 2.4: Black Power & Malcolm X",
-      "image": "assets/sources/ngo-dinh-diem-parade.jpg",
-      "provenance": "President Ngo Dinh Diem of South Vietnam during an official military parade in Saigon, late 1950s.",
+      "prevSubtopicTitle": "Topic 2.4: Urban Riots (1965–68)",
+      "image": "assets/sources/detroit-riot-guard-1967.jpg",
+      "provenance": "A photograph showing National Guard troops patrolling a street during the Detroit Riot, July 1967.",
       "seeThinkWonder": {
-        "see": "Observe Diem riding in the open-top vehicle surrounded by military officers.",
-        "think": "What image of stability and control is the Diem regime attempting to project here?",
-        "wonder": "How did Diem's Catholicism and nepotism undermine the military strength shown in this parade?"
+        "see": "Observe the armed soldier in combat gear patrolling a residential street with smoke in the background.",
+        "think": "Why did the US government deploy military forces (National Guard) to American cities in the late 1960s?",
+        "wonder": "How did these violent urban riots affect the public support for the civil rights movement's non-violent goals?"
       },
-      "bronze": "Name the revolutionary Black organization founded in Oakland in 1966 that rejected SCLC's non-violence.",
-      "silver": "Explain how President Eisenhower's \"Domino Theory\" influenced the US decision to support Ngo Dinh Diem's regime in South Vietnam.",
-      "gold": "Connect the Buddhist Crisis of 1963 (Topic 3.1) to the SCLC's strategy of provoking police violence in Birmingham (Topic 2.2). How did both use media images of suffering to achieve political goals?",
+      "bronze": "State two major US cities that experienced significant urban riots between 1965 and 1968.",
+      "silver": "Study the source image. Identify two details indicating the scale of civil unrest and state military deployment during this riot.",
+      "gold": "Contrast the causes of the urban riots (1965–68) with the goals of the Southern civil rights campaigns led by the SCLC.",
       "keywords": [
-        "Geneva Accords",
-        "17th Parallel",
-        "Ngo Dinh Diem",
-        "Buddhist Crisis"
+        "Watts Riot",
+        "Detroit Riots",
+        "Kerner Commission",
+        "De Facto Segregation"
       ],
-      "bronzeAnswer": "The organization was the Black Panther Party (founded by Huey Newton and Bobby Seale).",
-      "silverAnswer": "The Domino Theory argued that if South Vietnam fell to communism, neighboring countries would also fall. Therefore, the US supported Diem's anti-communist government with money and advisors to prevent a communist takeover.",
-      "goldAnswer": "Both campaigns relied on media exposure of violence to shock public opinion. In Birmingham (Topic 2.2), SCLC knew Bull Connor's brutality would build support for civil rights. In South Vietnam, the Buddhist crisis and Thich Quang Duc's self-immolation exposed Diem's tyranny, forcing the US government to withdraw its support for his regime."
+      "bronzeAnswer": "Two major cities that experienced significant urban riots were Los Angeles (Watts in 1965) and Detroit (1967) or Newark (1967).",
+      "silverAnswer": "The image shows (1) armed National Guard soldiers deployed in combat gear patrolling a street, and (2) burning buildings with thick smoke filling the sky, showing widespread unrest.",
+      "goldAnswer": "While Southern SCLC campaigns focused on de jure segregation (legal rights, voting access), the Northern urban riots arose from de facto segregation (economic deprivation, discrimination, and police bias) which legal reforms could not easily solve."
     },
     "specPoints": [
       "Reasons for greater US involvement under Eisenhower, including the domino theory and weaknesses of the Diem government.",
@@ -1947,25 +1947,25 @@ export const LESSONS_DATA = {
     "doNowStarter": {
       "prevSubtopicId": "subtopic_3_1",
       "prevSubtopicTitle": "Topic 3.1: US Involvement & Diem",
-      "image": "assets/sources/uss-maddox.jpg",
-      "provenance": "The USS Maddox, the destroyer involved in the Gulf of Tonkin incidents in August 1964.",
+      "image": "assets/sources/ngo-dinh-diem-parade.jpg",
+      "provenance": "President Ngo Dinh Diem of South Vietnam during an official military parade in Saigon, late 1950s.",
       "seeThinkWonder": {
-        "see": "Observe the guns and radar equipment on the USS Maddox.",
-        "think": "Why was a US destroyer patrolling so close to North Vietnamese territorial waters in 1964?",
-        "wonder": "How did the events involving this ship change the nature of the Vietnam War?"
+        "see": "Observe Diem riding in the open-top vehicle surrounded by military officers.",
+        "think": "What image of stability and control is the Diem regime attempting to project here?",
+        "wonder": "How did Diem's Catholicism and nepotism undermine the military strength shown in this parade?"
       },
       "bronze": "What theory, coined by President Eisenhower, argued that if South Vietnam fell to communism, its neighbors would follow?",
-      "silver": "Explain how the Gulf of Tonkin incident in August 1964 led directly to the US escalation of the war in Vietnam.",
-      "gold": "How did Diem's failure to defeat the Vietcong using the Strategic Hamlet Program (Topic 3.1) lead directly to the escalation and naval presence shown in this Gulf of Tonkin photo?",
+      "silver": "Study the source image. Identify two visual details that indicate Diem relied heavily on military force to maintain his regime.",
+      "gold": "Connect the Buddhist Crisis of 1963 (Topic 3.1) to the SCLC's strategy of provoking police violence in Birmingham (Topic 2.2). How did both use media images of suffering to achieve political goals?",
       "keywords": [
-        "USS Maddox",
-        "Gulf of Tonkin Resolution",
-        "Advisors",
-        "Escalation"
+        "Geneva Accords",
+        "17th Parallel",
+        "Ngo Dinh Diem",
+        "Buddhist Crisis"
       ],
       "bronzeAnswer": "The Domino Theory.",
-      "silverAnswer": "The incident led Congress to pass the Gulf of Tonkin Resolution, which gave President Johnson the near-unlimited authority to send US combat troops to Vietnam without a formal declaration of war.",
-      "goldAnswer": "Diem's failure and the collapse of the Strategic Hamlet Program (Topic 3.1) allowed the Vietcong to control large areas of South Vietnam. To prevent a total communist victory, President Johnson had to shift from sending advisory aid to directly patrolling the coast, leading to the Maddox incident and full military escalation."
+      "silverAnswer": "The image shows Diem (1) riding in a military parade, and (2) surrounded by heavily armed officers and armored transport, showing his dependence on military power.",
+      "goldAnswer": "Both campaigns relied on media exposure of violence to shock public opinion. In Birmingham (Topic 2.2), SCLC knew Bull Connor's brutality would build support for civil rights. In South Vietnam, the Buddhist crisis and Thich Quang Duc's self-immolation exposed Diem's tyranny, forcing the US government to withdraw its support for his regime."
     },
     "specPoints": [
       "Reasons for the escalation of the conflict and increased US involvement in Vietnam, including the increasing threat of the Vietcong and the Gulf of Tonkin incident (1964)."
@@ -2142,25 +2142,25 @@ export const LESSONS_DATA = {
     "doNowStarter": {
       "prevSubtopicId": "subtopic_3_2",
       "prevSubtopicTitle": "Topic 3.2: Escalation & Gulf of Tonkin",
-      "image": "assets/sources/agent-orange-spraying-c123.jpg",
-      "provenance": "US C-123 aircraft spraying Agent Orange defoliant over South Vietnamese forests, 1966.",
+      "image": "assets/sources/uss-maddox.jpg",
+      "provenance": "The USS Maddox, the destroyer involved in the Gulf of Tonkin incidents in August 1964.",
       "seeThinkWonder": {
-        "see": "Look at the thick chemical clouds trailing behind the aircraft.",
-        "think": "How does spraying chemicals from the air reflect a change in US strategy in the face of jungle warfare?",
-        "wonder": "What were the long-term health and environmental consequences for civilians and soldiers on the ground?"
+        "see": "Observe the guns and radar equipment on the USS Maddox.",
+        "think": "Why was a US destroyer patrolling so close to North Vietnamese territorial waters in 1964?",
+        "wonder": "How did the events involving this ship change the nature of the Vietnam War?"
       },
       "bronze": "What resolution did Congress pass in August 1964 giving President Johnson near-unlimited authority to wage war?",
-      "silver": "Explain why the US military used chemical defoliants like Agent Orange during the war, despite the danger to civilians.",
-      "gold": "How did the Vietcong's strategy of gaining local peasant support (Topic 3.1) force the US to adopt destructive chemical tactics like Agent Orange to strip away their cover and crop supplies?",
+      "silver": "Study the source image. Identify two details indicating the USS Maddox was equipped for conventional naval combat and surveillance.",
+      "gold": "How did Diem's failure to defeat the Vietcong using the Strategic Hamlet Program (Topic 3.1) lead directly to the escalation and naval presence shown in this Gulf of Tonkin photo?",
       "keywords": [
-        "Operation Rolling Thunder",
-        "Search & Destroy",
-        "Agent Orange",
-        "Operation Ranch Hand"
+        "USS Maddox",
+        "Gulf of Tonkin Resolution",
+        "Advisors",
+        "Escalation"
       ],
       "bronzeAnswer": "The Gulf of Tonkin Resolution.",
-      "silverAnswer": "The Vietcong used the dense jungle for hiding and surprise attacks. The US military sprayed defoliants to kill the trees and strip away their cover, and to destroy crops so the Vietcong would run out of food.",
-      "goldAnswer": "Because the Vietcong relied on the local peasantry (Topic 3.1) for food and used the dense jungle for cover, US conventional forces could not find them. The US military adopted Agent Orange to destroy the jungle canopy (cover) and destroy crops to starve the guerrillas, despite alienating local civilians."
+      "silverAnswer": "The USS Maddox is equipped with (1) large naval guns (turrets) for combat, and (2) advanced radar and antenna masts for electronic surveillance.",
+      "goldAnswer": "Diem's failure and the collapse of the Strategic Hamlet Program (Topic 3.1) allowed the Vietcong to control large areas of South Vietnam. To prevent a total communist victory, President Johnson had to shift from sending advisory aid to directly patrolling the coast, leading to the Maddox incident and full military escalation."
     },
     "specPoints": [
       "The methods used by the USA, including Search and Destroy, Operation Rolling Thunder and chemical weapons.",
@@ -2543,25 +2543,25 @@ export const LESSONS_DATA = {
     "doNowStarter": {
       "prevSubtopicId": "subtopic_3_4",
       "prevSubtopicTitle": "Topic 3.4: Nixon's changes, Vietnamization, Cambodia & Laos",
-      "image": "assets/sources/antiwar-pentagon-protest-1967.jpg",
-      "provenance": "Anti-war demonstrators facing military police outside the Pentagon, October 1967.",
+      "image": "assets/sources/nixon-visiting-troops.jpg",
+      "provenance": "President Richard Nixon visiting US troops in South Vietnam, July 1969.",
       "seeThinkWonder": {
-        "see": "Observe the proximity of the young protestors to the armed military police guard line.",
-        "think": "Why would protestors target the Pentagon rather than local draft board offices?",
-        "wonder": "How did images of armed soldiers facing young civilians affect public support for the war?"
+        "see": "Observe Nixon standing on a vehicle surrounded by smiling, cheering American soldiers.",
+        "think": "What political message is the Nixon administration attempting to send to voters back home through this photo?",
+        "wonder": "How did this visit contrast with the secret bombing campaigns Nixon was launching in Cambodia?"
       },
       "bronze": "What was Vietnamization, and what was its main objective?",
-      "silver": "Explain why Nixon's decision to invade Cambodia in 1970 triggered intense protests on the home front.",
+      "silver": "Study the source image. Identify two details indicating the visit was carefully staged to project troop morale and support for the President.",
       "gold": "How did Nixon's invasion of Cambodia in 1970 (Topic 3.4) compare to Eisenhower's initial domino theory logic (Topic 3.1) in terms of expanding regional conflict?",
       "keywords": [
         "Vietnamization",
-        "Cambodia Invasion",
-        "Home Front Protests",
-        "De-escalation"
+        "Cambodian Incursion",
+        "Kent State",
+        "Withdrawal"
       ],
-      "bronzeAnswer": "Vietnamization was Nixon's policy of withdrawing US troops and training the South Vietnamese army (ARVN) to take over the combat, aiming to withdraw US troops without appearing defeated.",
-      "silverAnswer": "The invasion expanded the war's geographic scope into a neutral country, directly contradicting Nixon's promises of de-escalation and triggering massive anger on the home front.",
-      "goldAnswer": "Eisenhower's domino theory predicted that if Vietnam fell, Laos and Cambodia would follow. Nixon's invasion of Cambodia in 1970 widened the war directly into Cambodia to destroy communist bases, showing that US military strategy itself expanded the conflict to neighboring nations to protect the South."
+      "bronzeAnswer": "Vietnamization was Nixon's policy to withdraw US ground troops and transfer the responsibility of fighting to the South Vietnamese army (ARVN), with the objective of ending US involvement 'with honor'.",
+      "silverAnswer": "The image shows (1) Nixon positioned high on a vehicle to be visible to the entire crowd, and (2) soldiers smiling and holding up cameras, creating a positive public relations image.",
+      "goldAnswer": "Nixon's invasion of Cambodia in 1970 (Topic 3.4) expanded the war into a neutral country to destroy communist sanctuaries, echoing Eisenhower's domino theory (Topic 3.1) that communist expansion in any neighboring state threatened the entire region's stability."
     },
     "specPoints": [
       "Reasons for the growth of opposition, including TV and media coverage of the war and the draft system.",
@@ -2739,26 +2739,26 @@ export const LESSONS_DATA = {
     ],
     "doNowStarter": {
       "prevSubtopicId": "subtopic_4_1",
-      "prevSubtopicTitle": "Topic 4.1: Opposition to the war (Draft, Media, My Lai, and student protests)",
-      "image": "assets/sources/nixon-visiting-troops.jpg",
-      "provenance": "President Richard Nixon visiting US troops in South Vietnam, July 1969.",
+      "prevSubtopicTitle": "Topic 4.1: Rise of the Anti-War Movement",
+      "image": "assets/sources/antiwar-pentagon-protest-1967.jpg",
+      "provenance": "Anti-war demonstrators facing military police outside the Pentagon, October 1967.",
       "seeThinkWonder": {
-        "see": "Observe Nixon standing on a vehicle surrounded by smiling, cheering American soldiers.",
-        "think": "What political message is the Nixon administration attempting to send to voters back home through this photo?",
-        "wonder": "How did this visit contrast with the secret bombing campaigns Nixon was launching in Cambodia?"
+        "see": "Observe the proximity of the young protestors to the armed military police guard line.",
+        "think": "Why would protestors target the Pentagon rather than local draft board offices?",
+        "wonder": "How did images of armed soldiers facing young civilians affect public support for the war?"
       },
       "bronze": "What is a 'credibility gap,' and how did the My Lai Massacre (1968) widen it?",
-      "silver": "Explain how the trial of Lieutenant William Calley in 1971 divided public opinion on the anti-war movement.",
+      "silver": "Study the source image. Identify two details showing that this protest was a direct confrontation between young civilians and state military power.",
       "gold": "How did the television coverage of the draft and the My Lai Massacre (Topic 4.1) compare to the media coverage of the Birmingham campaign in 1963 (Topic 2.2) in terms of shaping public opinion?",
       "keywords": [
-        "Credibility Gap",
-        "My Lai Massacre",
-        "Lt. Calley Trial",
-        "Media Influence"
+        "Draft Resistance",
+        "SDS",
+        "Pentagon Protest",
+        "Credibility Gap"
       ],
-      "bronzeAnswer": "A credibility gap is the difference between government claims and the actual reality. My Lai widened it because the military attempted to cover up the slaughter of hundreds of civilians.",
-      "silverAnswer": "Calley was the only officer convicted for the My Lai Massacre. Anti-war supporters saw him as a scapegoat for systemic military failures, while others defended him, widening home front divisions.",
-      "goldAnswer": "Both used televised media to shock the national conscience. Birmingham exposed the brutality of Southern segregation using dogs and water hoses against peaceful protestors, creating support for civil rights. Similarly, raw TV footage of civilian casualties in Vietnam and the exposure of My Lai shattered the war's moral justification, turning the public against it."
+      "bronzeAnswer": "A credibility gap is the difference between government claims and reality. My Lai widened it because the military attempted to cover up the slaughter of hundreds of unarmed civilians, contradicting claims of humanitarian efforts.",
+      "silverAnswer": "The image shows (1) young civilian protestors standing inches away from a solid line of (2) armed military police holding rifles and wearing combat gear.",
+      "goldAnswer": "Television coverage of the draft and My Lai (Topic 4.1) exposed the human cost and brutality of the war, generating anti-war sentiment, much like the media coverage of police dogs and water cannons in Birmingham (Topic 2.2) generated support for civil rights by exposing Southern white brutality."
     },
     "specPoints": [
       "Reasons for support for the war, including the fear of communism and the ‘silent majority’.",

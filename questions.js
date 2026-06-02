@@ -30,38 +30,38 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_1_1_s4",
-            "question": "In what year was the landmark school segregation case Brown v. Board of Education decided?",
-            "answer": "1954",
-            "explanation": "In May 1954, the Supreme Court ruled unanimously that racial segregation in public schools violated the 14th Amendment.",
-            "year": 1954
+            "question": "What primary method did the NAACP use in the early 1950s to fight racial inequality?",
+            "answer": "Legal action through the courts",
+            "explanation": "The NAACP chose to challenge segregation using the judicial system, filing lawsuits to prove that segregated facilities violated the US Constitution.",
+            "year": 1950
           },
           {
             "id": "q_1_1_s5",
-            "question": "What 1896 doctrine of segregation was overturned by the Brown v. Board decision?",
-            "answer": "Separate but equal",
-            "explanation": "Plessy v. Ferguson (1896) had ruled that segregation was legal as long as facilities were equal, which the 1954 court rejected.",
-            "year": 1896
+            "question": "Why did Black Americans find it almost impossible to register to vote in the South in the early 1950s?",
+            "answer": "Due to literacy tests, poll taxes, and white intimidation",
+            "explanation": "Southern states used discriminatory literacy tests, financial poll taxes, and threats of violence or job loss to disenfranchise Black voters.",
+            "year": 1950
           },
           {
             "id": "q_1_1_s6",
-            "question": "In what year did the Plessy v. Ferguson Supreme Court case occur?",
-            "answer": "1896",
-            "explanation": "Plessy established the 'separate but equal' doctrine that legally underpinned Jim Crow segregation for over half a century.",
+            "question": "What was the doctrine established by the 1896 Plessy v. Ferguson Supreme Court ruling?",
+            "answer": "Separate but equal",
+            "explanation": "Plessy v. Ferguson established the 'separate but equal' doctrine, which legally justified segregation in the South for over fifty years.",
             "year": 1896
           },
           {
             "id": "q_1_1_s7",
-            "question": "How many Southern states required school segregation by law before the 1954 Brown ruling?",
-            "answer": "17 states",
-            "explanation": "Segregation in education was legally mandatory across 17 Southern and border states, and optional in several others.",
-            "year": 1954
+            "question": "Why did the Congress of Racial Equality (CORE) choose to use non-violent direct action?",
+            "answer": "To expose the injustice of segregation to the public and force change",
+            "explanation": "CORE believed that peaceful boycotts and sit-ins would gain public support, embarrass segregationists, and pressure authorities to act.",
+            "year": 1942
           },
           {
             "id": "q_1_1_s8",
-            "question": "Who was the lead legal counsel for the NAACP who successfully argued the Brown v. Board of Education case before the Supreme Court?",
+            "question": "Who was the first Black American to head the NAACP Legal Defense and Educational Fund, coordinating early court battles?",
             "answer": "Thurgood Marshall",
-            "explanation": "Thurgood Marshall was the NAACP's chief counsel who argued that segregated schools were inherently unequal, later becoming the first Black Supreme Court Justice.",
-            "year": 1954
+            "explanation": "Thurgood Marshall was the chief legal strategist for the NAACP, directing the legal campaign against Jim Crow segregation in public facilities and education.",
+            "year": 1940
           },
           {
             "id": "q_1_1_s9",
@@ -109,10 +109,10 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_1_1_d5",
-            "question": "What legal doctrine, established in the Plessy v. Ferguson (1896) case, was overturned by the Brown v. Topeka ruling?",
-            "answer": "Separate but equal",
-            "explanation": "The Brown ruling rejected this doctrine, declaring that separate educational facilities are inherently unequal.",
-            "year": 1896
+            "question": "Why did many Black Americans face severe economic intimidation if they attempted to register to vote in the South?",
+            "answer": "Because white landowners and employers would fire or evict them",
+            "explanation": "White citizens and businesses actively cooperated to punish civil rights activists by firing them from jobs or evicting them from their sharecropping lands.",
+            "year": 1950
           }
         ]
       },
@@ -222,9 +222,9 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_1_2_d5",
-            "question": "Which Supreme Court case in 1954 declared segregation in public schools unconstitutional?",
-            "answer": "Brown v. Board of Education of Topeka",
-            "explanation": "It was a class-action suit combining cases from Kansas, South Carolina, Virginia, Delaware, and Washington D.C.",
+            "question": "Why was the 1954 Brown v. Topeka ruling alone insufficient to desegregate Southern schools?",
+            "answer": "Because it lacked a clear enforcement mechanism and timeframe",
+            "explanation": "The Supreme Court did not specify a deadline for desegregation, which allowed Southern states to engage in 'Massive Resistance' and delay integration for years.",
             "year": 1954
           }
         ]
@@ -427,10 +427,10 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_1_4_d2",
-            "question": "Who was the segregationist Governor of Mississippi who attempted to block James Meredith from enrolling at university?",
-            "answer": "Ross Barnett",
-            "explanation": "Governor Barnett physically blocked Meredith at the university doors, defying federal integration mandates.",
-            "year": 1962
+            "question": "Why did the murder of Emmett Till in 1955 become a major catalyst for the civil rights movement?",
+            "answer": "Because his mother held an open-casket funeral to expose the brutality of racism",
+            "explanation": "Mamie Till-Mobley wanted the world to see what was done to her son. The published photographs of Emmett Till's mutilated body shocked the nation and mobilized millions.",
+            "year": 1955
           },
           {
             "id": "q_1_4_d3",
@@ -553,16 +553,16 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_2_1_d3",
-            "question": "Who was the SCLC leader who joined the Albany Movement in Georgia, only to be arrested and fail to desegregate the city?",
-            "answer": "Martin Luther King Jr.",
-            "explanation": "King was arrested in Albany but police chief Pritchett paid his bail quietly, neutralizing King's media impact.",
+            "question": "Why did the Albany Movement (1961–62) fail to achieve its desegregation goals?",
+            "answer": "Because the police chief used non-violent arrests and avoided media attention",
+            "explanation": "Police Chief Laurie Pritchett instructed his officers to treat protesters peacefully in public and arrested them without violence, preventing the media outrage that civil rights campaigns relied on.",
             "year": 1961
           },
           {
             "id": "q_2_1_d4",
-            "question": "What was the popular nickname of the University of Mississippi integrated by James Meredith?",
-            "answer": "Ole Miss",
-            "explanation": "Ole Miss was a symbol of Southern white heritage. Meredith's registration triggered a riot that killed two people.",
+            "question": "Who was the segregationist Governor of Mississippi who actively defied federal orders to block James Meredith from enrolling in 1962?",
+            "answer": "Ross Barnett",
+            "explanation": "Governor Ross Barnett physically blocked Meredith from entering the university doors, defying federal integration mandates and prompting a deployment of federal marshals.",
             "year": 1962
           },
           {
@@ -659,16 +659,16 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_2_2_d2",
-            "question": "In what year did the SCLC-led Birmingham campaign take place?",
-            "answer": "1963",
-            "explanation": "The campaign ran throughout April and May 1963, forcing local business leaders to agree to desegregate downtown stores.",
+            "question": "Why did the SCLC choose Birmingham, Alabama, for a major campaign in 1963?",
+            "answer": "Because it was heavily segregated and had a notoriously hot-tempered police chief",
+            "explanation": "MLK and SCLC targeted Birmingham because they knew Police Commissioner 'Bull' Connor would react violently to peaceful protests, creating media coverage that would force federal intervention.",
             "year": 1963
           },
           {
             "id": "q_2_2_d3",
-            "question": "In what year did the Selma voting rights march campaign occur?",
-            "answer": "1965",
-            "explanation": "The Selma campaign began in January 1965 and culminated in the march to Montgomery in late March.",
+            "question": "Why was the Selma to Montgomery march in 1965 organized by civil rights leaders?",
+            "answer": "To demand federal legislation protecting Black voting rights",
+            "explanation": "Despite the 1964 Civil Rights Act, local registrars in Selma used loopholes to keep Black voter registration below 2%. Activists marched to demand direct federal intervention.",
             "year": 1965
           },
           {
@@ -765,10 +765,10 @@ export const QUIZ_DATA = [
         "depth": [
           {
             "id": "q_2_3_d1",
-            "question": "What was the birth name of Malcolm X before he replaced it with an 'X' to symbolize his lost African heritage?",
-            "answer": "Malcolm Little",
-            "explanation": "He rejected 'Little' as a slave name given to his ancestors by white masters, adopting 'X' instead.",
-            "year": 1952
+            "question": "Why did the Black Power movement gain popularity among young urban Black Americans in the mid-1960s?",
+            "answer": "Due to frustration with the slow pace of legislative change and ongoing police brutality",
+            "explanation": "Many young urban Black Americans in the North and West felt that civil rights laws did not improve their daily lives, stop police violence, or solve poverty, leading them to embrace self-defense and Black pride.",
+            "year": 1966
           },
           {
             "id": "q_2_3_d2",
@@ -878,10 +878,10 @@ export const QUIZ_DATA = [
         "depth": [
           {
             "id": "q_2_4_d1",
-            "question": "In what year was the Kerner Commission report published?",
-            "answer": "1968",
-            "explanation": "The report warned that segregation and poverty had created an explosive ghetto environment in cities.",
-            "year": 1968
+            "question": "Why did Martin Luther King Jr. launch the Chicago Freedom Movement in 1966?",
+            "answer": "To challenge segregation in Northern housing, employment, and education",
+            "explanation": "King wanted to show that racial discrimination was not just a Southern problem, but was deeply entrenched in Northern cities through informal segregation and housing redlining.",
+            "year": 1966
           },
           {
             "id": "q_2_4_d2",
@@ -1011,10 +1011,10 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_3_1_d3",
-            "question": "In what month and year was Ngo Dinh Diem assassinated?",
-            "answer": "November 1963",
-            "explanation": "Diem was shot on 2 November 1963, just three weeks before President Kennedy was assassinated in Dallas.",
-            "year": 1963
+            "question": "Why did the Strategic Hamlet Program (1962) fail and actually increase support for the Vietcong?",
+            "answer": "It forcibly relocated peasants from their ancestral lands and villages",
+            "explanation": "The program alienated South Vietnam's rural population by uprooting them from their land and farming fields to move them into fortified hamlets, building resentment and VC recruits.",
+            "year": 1962
           },
           {
             "id": "q_3_1_d4",
@@ -1110,9 +1110,9 @@ export const QUIZ_DATA = [
         "depth": [
           {
             "id": "q_3_2_d1",
-            "question": "In what month and year did the Gulf of Tonkin incident occur?",
-            "answer": "August 1964",
-            "explanation": "The USS Maddox reported attacks on August 2 and August 4, though the second attack was later shown to be non-existent.",
+            "question": "Why was the Gulf of Tonkin Resolution (1964) highly significant for US involvement in Vietnam?",
+            "answer": "It gave President Johnson the power to escalate military action without a formal declaration of war",
+            "explanation": "Passed by Congress almost unanimously, the resolution acted as a blank check, allowing Johnson to deploy combat troops and launch bombing campaigns in Vietnam.",
             "year": 1964
           },
           {
@@ -1223,9 +1223,9 @@ export const QUIZ_DATA = [
         "depth": [
           {
             "id": "q_3_3_d1",
-            "question": "In what month and year did the Tet Offensive begin?",
-            "answer": "January 1968",
-            "explanation": "Launched on 30-31 January 1968 during the Tet holiday, it involved attacks on over 100 cities in South Vietnam.",
+            "question": "Why was the 1968 Tet Offensive considered a major political turning point for the US homefront?",
+            "answer": "It shattered the public belief that the US was winning the war",
+            "explanation": "Despite military claims of progress, the size and coordination of the communist offensive, broadcast on TV, created a massive credibility gap for the US government.",
             "year": 1968
           },
           {
@@ -1350,9 +1350,9 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_3_4_d3",
-            "question": "In what year did the joint US-ARVN ground invasion of Cambodia take place, triggering protests at Kent State?",
-            "answer": "1970",
-            "explanation": "The invasion began in April 1970, widening the war's geographic scope and provoking intense domestic outrage.",
+            "question": "Why did President Nixon order the military invasion of Cambodia in 1970?",
+            "answer": "To destroy Vietcong supply sanctuaries and disrupt the Ho Chi Minh Trail",
+            "explanation": "Nixon wanted to weaken communist forces using neutral Cambodian territory as safe havens, hoping to buy time for South Vietnam's army to build strength.",
             "year": 1970
           },
           {
@@ -1469,9 +1469,9 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_4_1_d3",
-            "question": "What was the exact month and year the My Lai massacre took place?",
-            "answer": "March 1968",
-            "explanation": "The massacre occurred on 16 March 1968 during a search-and-destroy operation in the Son My area.",
+            "question": "Why did the My Lai Massacre (1968) have such a devastating impact on the US homefront when it was revealed in 1969?",
+            "answer": "It exposed the moral cost of the war and shocked the public's conscience",
+            "explanation": "The brutal killing of over 500 unarmed Vietnamese civilians by US soldiers undermined the government's claim that the war was a moral defense of democracy.",
             "year": 1968
           },
           {
@@ -1582,10 +1582,10 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_4_2_d3",
-            "question": "Which New York Governor supported the construction workers and was later appointed Vice President by Gerald Ford?",
-            "answer": "Nelson Rockefeller",
-            "explanation": "Rockefeller took a moderate-conservative stance, supporting labor unions and Nixon's national security policies.",
-            "year": 1970
+            "question": "Why did Nixon appeal specifically to the 'Silent Majority' in 1969?",
+            "answer": "To bypass active anti-war protesters and show Congress he had broad public support",
+            "explanation": "Nixon wanted to demonstrate that the vocal student protesters did not represent the majority of Americans, allowing him to continue his Vietnam policies.",
+            "year": 1969
           },
           {
             "id": "q_4_2_d4",
@@ -1702,10 +1702,10 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_4_3_d4",
-            "question": "What was the main problem with the official Paris peace talks?",
-            "answer": "They were stalled and lengthy over minor disputes",
-            "explanation": "The talks dragged on for years, with long arguments even over the shape of the conference table, prompting secret negotiations.",
-            "year": 1969
+            "question": "Why did the US Congress pass the War Powers Act in 1973?",
+            "answer": "To limit the president's ability to wage undeclared war without congressional approval",
+            "explanation": "After Nixon escalated the war in Cambodia and Laos without consulting Congress, politicians wanted to reassert their constitutional control over military commitments.",
+            "year": 1973
           },
           {
             "id": "q_4_3_d5",
@@ -1815,10 +1815,10 @@ export const QUIZ_DATA = [
           },
           {
             "id": "q_4_4_d4",
-            "question": "What was the primary reason the US-backed Strategic Hamlet Program backfired and drove peasants to support the Vietcong?",
-            "answer": "Relocation alienated peasants and separated them from ancestral lands",
-            "explanation": "Forcibly moving peasants into fortified enclosures separated them from their farms and burial grounds, destroying local goodwill and building Vietcong recruits.",
-            "year": 1962
+            "question": "What major weakness of the South Vietnamese military (ARVN) contributed to the ultimate US failure in Vietnam?",
+            "answer": "High desertion rates, corruption, and heavy reliance on US air support",
+            "explanation": "The ARVN suffered from poor leadership, low morale, and corruption. When the US withdrew its troops and air support, the ARVN was unable to resist the NVA.",
+            "year": 1973
           },
           {
             "id": "q_4_4_d5",

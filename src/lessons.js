@@ -7,7 +7,6 @@ import { AudioEngine } from './audio.js';
 import { Confetti } from './confetti.js';
 import { QUIZ_DATA } from '../questions.js';
 import { highlightModelQuotes } from './layout.js';
-import { SPOT_THE_FLAW_DATA } from './spot_the_flaw_data.js';
 import { VIDEOS_DATA } from './videos_data.js';
 import { HOMEWORK_QUESTIONS } from './homework_data.js';
 import { getImageWebLink } from './image_links.js';
@@ -249,7 +248,7 @@ export function renderMasteryView(subtopicId) {
       scholarlyHtml = `
         <details class="scholarly-extension" style="margin-top: 16px;">
           <summary class="scholarly-summary">
-            <i class="fa-solid fa-graduation-cap"></i> Scholarly Perspective (Expand for Depth)
+            <i class="fa-solid fa-graduation-cap"></i> Scholarly Perspective - Expand for depth
           </summary>
           <div class="scholarly-content" style="margin-top: 12px; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
             ${scholarlyImgHtml}
@@ -834,132 +833,111 @@ export function renderMasteryView(subtopicId) {
       </span>
     `).join('');
 
-    // Spot the Flaw HTML preparation
-    let spotTheFlawHtml = '';
-    const flawData = SPOT_THE_FLAW_DATA[subtopicId];
-    if (flawData) {
-      spotTheFlawHtml = `
-        <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; border-bottom: 1px solid var(--border-glass); padding-bottom: 4px; display: flex; align-items: center; gap: 4px;">
-          <span>🔍 Spot the Flaw: 12-Mark Plan</span>
-        </div>
-        <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-main); line-height: 1.25; margin-top: 2px;">
-          <strong>Exam Q:</strong> ${flawData.exam_question}
-        </div>
-        <p style="font-size: 0.68rem; color: var(--text-muted); margin: 0; font-style: italic; line-height: 1.2;">
-          Find the paragraph reason that is chronologically or historically flawed:
-        </p>
-        <div class="flaw-options-list" style="display: flex; flex-direction: column; gap: 4px; padding-right: 2px; margin-top: 2px;">
-          ${flawData.options.map(opt => `
-            <button class="flaw-option-btn" data-letter="${opt.letter}" data-correct="${opt.is_correct_flaw}" style="display: flex; align-items: flex-start; text-align: left; gap: 6px; width: 100%; padding: 4px 6px; font-size: 0.72rem; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255, 255, 255, 0.02); color: var(--text-main); cursor: pointer; font-family: inherit; line-height: 1.2; transition: all 0.2s;">
-              <strong style="color: var(--primary);">${opt.letter}:</strong>
-              <span>${opt.text}</span>
-            </button>
-          `).join('')}
-        </div>
-        <div class="flaw-feedback-box" style="display: none; font-size: 0.7rem; line-height: 1.3; padding: 4px 8px; border-radius: var(--border-radius-sm); font-weight: 600; margin-top: 2px;">
-        </div>
-      `;
-    }
-
     doNowHtml = `
-      <div class="mastery-card do-now-card" style="max-width: 800px; margin: 18px auto 24px auto; border-top: 4px solid var(--accent); position: relative; padding: 24px; overflow: visible !important;">
-        <div style="position: absolute; top: -12px; left: 16px; background: var(--accent); color: #000; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.8px; box-shadow: var(--shadow-sm); z-index: 10;">
+      <div class="mastery-card do-now-card" style="max-width: 800px; margin: 24px auto 32px auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-left: 5px solid var(--accent); border-radius: var(--border-radius-lg); position: relative; padding: 24px; box-shadow: var(--shadow-md); overflow: visible !important;">
+        <div style="position: absolute; top: -14px; left: 20px; background: var(--accent); color: #000; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 12px; letter-spacing: 0.8px; box-shadow: var(--shadow-sm); z-index: 10;">
           ⚡ DO NOW starter (5-10 MINS)
         </div>
         
         <div class="mastery-card-body" style="padding-top: 8px; margin: 0;">
           ${prevLessonLinkHtml}
           
-          <div class="do-now-split-container" style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <div class="do-now-split-container" style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 8px;">
             
             <!-- Left Side: Visual Source & See-Think-Wonder & Keyword Bank -->
-            <div class="do-now-left-col" style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 12px;">
+            <div class="do-now-left-col" style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 14px;">
               <div>
-                <div style="background: #000; border-radius: var(--border-radius-sm); overflow: hidden; padding: 8px; border: 1px solid var(--border-glass); text-align: center;">
-                  <img src="${dn.image}" alt="Starter Image" style="max-width: 100%; max-height: 170px; object-fit: contain; border-radius: var(--border-radius-sm);">
-                  <div class="do-now-provenance-box" style="font-size: 0.72rem; color: #f8fafc; font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 8px 10px; border-radius: var(--border-radius-sm); line-height: 1.4;">
-                    <strong style="color: #cbd5e1;">Source Provenance:</strong> ${dn.provenance}
+                <div style="background: #000; border-radius: var(--border-radius-md); overflow: hidden; padding: 8px; border: 1px solid var(--border-glass); text-align: center; box-shadow: var(--shadow-sm);">
+                  <img src="${dn.image}" alt="Starter Image" style="max-width: 100%; max-height: 180px; object-fit: contain; border-radius: var(--border-radius-sm);">
+                  <div class="do-now-provenance-box" style="font-size: 0.75rem; color: #e2e8f0; font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: var(--border-radius-sm); line-height: 1.45;">
+                    <strong style="color: #94a3b8; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Source Provenance</strong> ${dn.provenance}
                   </div>
                 </div>
                 
                 <!-- See Think Wonder Prompt Box -->
-                <div style="background: rgba(245, 158, 11, 0.04); border: 1px dashed rgba(245, 158, 11, 0.2); padding: 10px; border-radius: var(--border-radius-sm); font-size: 0.78rem; line-height: 1.35; margin-top: 10px;">
-                  <strong style="color: var(--accent); display: block; margin-bottom: 4px; font-size: 0.8rem;"><i class="fa-solid fa-lightbulb"></i> Inference: See, Think, Wonder</strong>
-                  <ul style="margin: 0; padding-left: 14px; color: var(--text-muted); display: flex; flex-direction: column; gap: 2px;">
-                    <li><strong>See:</strong> ${dn.seeThinkWonder.see}</li>
-                    <li><strong>Think:</strong> ${dn.seeThinkWonder.think}</li>
-                    <li><strong>Wonder:</strong> ${dn.seeThinkWonder.wonder}</li>
-                  </ul>
+                <div style="background: rgba(245, 158, 11, 0.03); border: 1px solid rgba(245, 158, 11, 0.15); padding: 14px; border-radius: var(--border-radius-md); font-size: 0.82rem; margin-top: 14px; box-shadow: var(--shadow-sm);">
+                  <strong style="color: var(--accent); display: flex; align-items: center; gap: 6px; margin-bottom: 10px; font-size: 0.88rem;">
+                    <i class="fa-solid fa-compass" style="animation: spin 10s linear infinite;"></i> Inquiry: See, Think, Wonder
+                  </strong>
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; gap: 8px; align-items: flex-start;">
+                      <span style="background: rgba(245, 158, 11, 0.12); color: var(--accent); font-weight: 700; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; margin-top: 1px; flex-shrink: 0; min-width: 48px; text-align: center;">See</span>
+                      <span style="color: var(--text-base); line-height: 1.4;">${dn.seeThinkWonder.see}</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: flex-start;">
+                      <span style="background: rgba(245, 158, 11, 0.12); color: var(--accent); font-weight: 700; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; margin-top: 1px; flex-shrink: 0; min-width: 48px; text-align: center;">Think</span>
+                      <span style="color: var(--text-base); line-height: 1.4;">${dn.seeThinkWonder.think}</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: flex-start;">
+                      <span style="background: rgba(245, 158, 11, 0.12); color: var(--accent); font-weight: 700; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; margin-top: 1px; flex-shrink: 0; min-width: 48px; text-align: center;">Wonder</span>
+                      <span style="color: var(--text-base); line-height: 1.4;">${dn.seeThinkWonder.wonder}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-
+ 
               <!-- Keyword Bank -->
-              <div style="margin-top: 10px; border-top: 1px solid var(--border-glass); padding-top: 10px;">
-                <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 6px;">🔑 Retrieval Keyword Bank:</strong>
-                <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+              <div style="margin-top: 8px; border-top: 1px solid var(--border-glass); padding-top: 14px;">
+                <strong style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 8px; letter-spacing: 0.5px;">🔑 Retrieval Keyword Bank:</strong>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
                   ${keywordsHtml}
                 </div>
               </div>
             </div>
             
-            <!-- Right Side: Three-Tiered Cognitive Challenge & Spot the Flaw -->
-            <div class="do-now-right-col" style="flex: 1.2; min-width: 300px; display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: flex; flex-direction: column; gap: 10px;">
-                <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; border-bottom: 1px solid var(--border-glass); padding-bottom: 4px; margin-bottom: 2px;">
-                  Three-Tiered Challenge
+            <!-- Right Side: Three-Tiered Cognitive Challenge -->
+            <div class="do-now-right-col" style="flex: 1.2; min-width: 300px; display: flex; flex-direction: column; gap: 14px;">
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; border-bottom: 1px solid var(--border-glass); padding-bottom: 6px; letter-spacing: 0.5px; margin-bottom: 2px;">
+                  🏆 Three-Tiered Challenge
                 </div>
                 
                 <!-- Bronze Recall -->
-                <div style="position: relative; padding-left: 32px;">
-                  <div style="position: absolute; top: 0; left: 0; width: 22px; height: 22px; border-radius: 50%; background: #cd7f32; color: #000; font-weight: 800; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥉</div>
-                  <strong style="color: #d97706; font-size: 0.8rem; display: block; margin-bottom: 1px;">Bronze Challenge (Recall - Last Lesson)</strong>
-                  <p style="margin: 0; font-size: 0.82rem; line-height: 1.35; color: var(--text-base);">${dn.bronze}</p>
+                <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(205, 127, 50, 0.02); border: 1px solid rgba(205, 127, 50, 0.12); border-left: 4px solid #cd7f32; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
+                  <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #cd7f32; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥉</div>
+                  <strong style="color: #d97706; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Bronze Challenge (Recall - Last Lesson)</strong>
+                  <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.bronze}</p>
                 </div>
                 
                 <!-- Silver Analyze -->
-                <div style="position: relative; padding-left: 32px;">
-                  <div style="position: absolute; top: 0; left: 0; width: 22px; height: 22px; border-radius: 50%; background: #c0c0c0; color: #000; font-weight: 800; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥈</div>
-                  <strong style="color: #94a3b8; font-size: 0.8rem; display: block; margin-bottom: 1px;">Silver Challenge (Analyze - Source Inference)</strong>
-                  <p style="margin: 0; font-size: 0.82rem; line-height: 1.35; color: var(--text-base);">${dn.silver}</p>
+                <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(161, 161, 170, 0.02); border: 1px solid rgba(161, 161, 170, 0.12); border-left: 4px solid #a1a1aa; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
+                  <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #a1a1aa; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥈</div>
+                  <strong style="color: #cbd5e1; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Silver Challenge (Analyze - Source Inference)</strong>
+                  <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.silver}</p>
                 </div>
                 
                 <!-- Gold Evaluate -->
-                <div style="position: relative; padding-left: 32px;">
-                  <div style="position: absolute; top: 0; left: 0; width: 22px; height: 22px; border-radius: 50%; background: #ffd700; color: #000; font-weight: 800; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥇</div>
-                  <strong style="color: #fbbf24; font-size: 0.8rem; display: block; margin-bottom: 1px;">Gold Challenge (Evaluate - Synoptic Link)</strong>
-                  <p style="margin: 0; font-size: 0.82rem; line-height: 1.35; color: var(--text-base);">${dn.gold}</p>
+                <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(251, 191, 36, 0.02); border: 1px solid rgba(251, 191, 36, 0.12); border-left: 4px solid #fbbf24; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
+                  <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #ffd700; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥇</div>
+                  <strong style="color: #fbbf24; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Gold Challenge (Evaluate - Synoptic Link)</strong>
+                  <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.gold}</p>
                 </div>
-              </div>
-
-              <!-- Spot the Flaw: Placed directly underneath the Gold Challenge box -->
-              <div id="spot-the-flaw-widget" style="margin-top: 10px; border-top: 1px solid var(--border-glass); padding-top: 10px; display: flex; flex-direction: column; gap: 6px;">
-                ${spotTheFlawHtml}
               </div>
             </div>
             
           </div>
           
           <!-- Bottom Section: Reveal Do Now Answers Button Row -->
-          <div style="margin-top: 16px; border-top: 1px solid var(--border-glass); padding-top: 16px;">
-            <button class="mastery-btn do-now-reveal-btn" style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--accent); color: var(--accent); font-weight: bold; font-size: 0.82rem; padding: 8px 16px; border-radius: 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+          <div style="margin-top: 20px; border-top: 1px solid var(--border-glass); padding-top: 16px; display: flex; flex-direction: column; gap: 14px;">
+            <button class="mastery-btn do-now-reveal-btn" style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--accent); color: var(--accent); font-weight: bold; font-size: 0.82rem; padding: 8px 18px; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; width: fit-content;">
               <i class="fa-solid fa-graduation-cap"></i> Reveal Do Now Guide Answers
             </button>
             
             <!-- Hidden structured responses drawer -->
-            <div class="do-now-answers-drawer" style="display: none; margin-top: 16px; padding: 16px; background: rgba(34, 197, 94, 0.04); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); border-top: 1px solid var(--border-glass); border-right: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
-              <h4 style="margin: 0 0 12px 0; color: var(--success); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check"></i> Starter Evaluation Guide:</h4>
-              <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem; line-height: 1.45;">
-                <div>
-                  <strong style="color: #d97706; display: block; font-size: 0.82rem;">🥉 Bronze Answer Recall:</strong>
-                  <p style="margin: 4px 0 0 0; color: var(--text-muted);">${dn.bronzeAnswer}</p>
+            <div class="do-now-answers-drawer" style="display: none; padding: 16px; background: rgba(34, 197, 94, 0.02); border: 1px solid var(--border-glass); border-left: 4px solid var(--success); border-radius: var(--border-radius-md);">
+              <h4 style="margin: 0 0 14px 0; color: var(--success); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check"></i> Starter Evaluation Guide:</h4>
+              <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem; line-height: 1.5;">
+                <div style="padding: 10px 12px; background: rgba(205, 127, 50, 0.04); border-left: 3px solid #cd7f32; border-radius: 4px;">
+                  <strong style="color: #cd7f32; display: block; font-size: 0.82rem; margin-bottom: 2px;">🥉 Bronze Answer Recall:</strong>
+                  <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.bronzeAnswer}</p>
                 </div>
-                <div>
-                  <strong style="color: #94a3b8; display: block; font-size: 0.82rem;">🥈 Silver Answer Analysis:</strong>
-                  <p style="margin: 4px 0 0 0; color: var(--text-muted);">${dn.silverAnswer}</p>
+                <div style="padding: 10px 12px; background: rgba(161, 161, 170, 0.04); border-left: 3px solid #a1a1aa; border-radius: 4px;">
+                  <strong style="color: #cbd5e1; display: block; font-size: 0.82rem; margin-bottom: 2px;">🥈 Silver Answer Analysis:</strong>
+                  <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.silverAnswer}</p>
                 </div>
-                <div>
-                  <strong style="color: #fbbf24; display: block; font-size: 0.82rem;">🥇 Gold Answer Evaluation:</strong>
-                  <p style="margin: 4px 0 0 0; color: var(--text-muted);">${dn.goldAnswer}</p>
+                <div style="padding: 10px 12px; background: rgba(251, 191, 36, 0.04); border-left: 3px solid #fbbf24; border-radius: 4px;">
+                  <strong style="color: #fbbf24; display: block; font-size: 0.82rem; margin-bottom: 2px;">🥇 Gold Answer Evaluation:</strong>
+                  <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.goldAnswer}</p>
                 </div>
               </div>
             </div>
@@ -1843,62 +1821,6 @@ export function renderMasteryView(subtopicId) {
       });
     }
 
-    // Bind Spot the Flaw Option Click Listeners
-    const flawWidget = doNowCard.querySelector('#spot-the-flaw-widget');
-    if (flawWidget) {
-      const optionBtns = flawWidget.querySelectorAll('.flaw-option-btn');
-      const feedbackBox = flawWidget.querySelector('.flaw-feedback-box');
-      
-      optionBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const isCorrect = btn.getAttribute('data-correct') === 'true';
-          const letter = btn.getAttribute('data-letter');
-          
-          if (isCorrect) {
-            AudioEngine.play('success');
-            
-            // Highlight the correct flaw in green
-            btn.style.background = 'rgba(16, 185, 129, 0.15)';
-            btn.style.borderColor = 'var(--success)';
-            btn.style.fontWeight = '700';
-            
-            // Disable all buttons
-            optionBtns.forEach(b => {
-              b.disabled = true;
-              b.style.cursor = 'default';
-              if (b !== btn) {
-                b.style.opacity = '0.5';
-              }
-            });
-            
-            // Show success feedback
-            feedbackBox.style.display = 'block';
-            feedbackBox.style.background = 'rgba(16, 185, 129, 0.1)';
-            feedbackBox.style.color = 'var(--success)';
-            feedbackBox.style.borderLeft = '3px solid var(--success)';
-            feedbackBox.textContent = flawData.feedback;
-            
-            // Spawn Confetti if available
-            if (typeof Confetti !== 'undefined' && typeof Confetti.spawn === 'function') {
-              Confetti.spawn(40);
-            }
-          } else {
-            AudioEngine.play('fail');
-            
-            // Highlight the incorrect guess in red
-            btn.style.background = 'rgba(239, 68, 68, 0.15)';
-            btn.style.borderColor = 'var(--accent)';
-            
-            // Show failure feedback
-            feedbackBox.style.display = 'block';
-            feedbackBox.style.background = 'rgba(239, 68, 68, 0.1)';
-            feedbackBox.style.color = 'var(--accent)';
-            feedbackBox.style.borderLeft = '3px solid var(--accent)';
-            feedbackBox.textContent = `Incorrect. Option ${letter} is historically accurate, structurally sound, and highly valid. Try again!`;
-          }
-        });
-      });
-    }
   }
 
   // Bind Specification Checklist click listeners
