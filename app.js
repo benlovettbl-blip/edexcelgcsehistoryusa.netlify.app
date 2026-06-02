@@ -14324,7 +14324,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
           });
         }
         stageContainer.innerHTML = `
-        <div class="overview-flashcard-stage" style="perspective: 1000px; position: relative; width: 100%; height: 280px; margin-bottom: 16px;">
+        <div class="overview-flashcard-stage" style="perspective: 1000px; position: relative; width: 100%; height: 380px; margin-bottom: 16px;">
           <div class="flashcard-card" id="overview-flashcard-card" style="cursor: pointer; position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
             <!-- Front Face -->
             <div class="flashcard-face flashcard-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-glass); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card); background-image: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);">
@@ -14354,11 +14354,11 @@ Source E is highly useful for showing the political and moral collapse of the wa
               <div id="overview-flashcard-back-standard-body" style="display: ${reinforcing ? "none" : "flex"}; flex-direction: column; flex: 1; padding: 10px 0; overflow-y: auto; text-align: center; justify-content: center; gap: 4px;">
                 <span class="card-answer-label" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; margin-bottom: 2px;">Correct Answer</span>
                 <h2 class="card-answer-text" style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0 0 6px 0; line-height: 1.2;">${q.answer}</h2>
-                <p class="card-explanation-text" style="font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); margin: 0; max-height: 80px; overflow-y: auto;">${q.explanation}</p>
+                <p class="card-explanation-text" style="font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); margin: 0; max-height: 160px; overflow-y: auto;">${q.explanation}</p>
               </div>
 
               <!-- MCQ reinforce back body -->
-              <div id="overview-flashcard-back-reinforce-body" style="display: ${reinforcing ? "flex" : "none"}; flex-direction: column; flex: 1; padding: 8px 0; text-align: center; justify-content: flex-start; gap: 6px; overflow-y: auto;">
+              <div id="overview-flashcard-back-reinforce-body" style="display: ${reinforcing ? "flex" : "none"}; flex-direction: column; flex: 1; padding: 8px 0; text-align: center; justify-content: center; gap: 6px; overflow-y: auto;">
                 <span class="card-answer-label" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); font-weight: 700;">\u{1F9E0} Double-Check Understanding</span>
                 <h4 id="overview-flashcard-reinforce-question" style="font-size: 0.78rem; font-weight: 600; line-height: 1.3; margin: 0 0 6px 0; color: var(--text-main);">${reinforceMcq ? reinforceMcq.prompt : ""}</h4>
                 <div id="overview-flashcard-reinforce-options" style="display: flex; flex-direction: column; gap: 6px; width: 100%;">
@@ -14518,46 +14518,45 @@ Source E is highly useful for showing the political and moral collapse of the wa
         </div>
       </div>
 
-      <!-- Overhauled Two Column Dashboard -->
-      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 24px; align-items: start;">
-        <!-- Left Column: Context Overview & Lesson Portals -->
-        <div style="display: flex; flex-direction: column; gap: 24px;">
-          <!-- Overview Card -->
-          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
-            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-book-open"></i> Historical Context Overview
-            </h3>
-            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
-              ${data.overview}
-            </p>
-          </div>
+      <!-- Historical Context Overview (Full Width) -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 24px;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-book-open"></i> Historical Context Overview
+        </h3>
+        <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
+          ${data.overview}
+        </p>
+      </div>
 
-          <!-- Lessons portal grid -->
+      <!-- Component A: Responsive timeline (Full Width) -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px 30px; box-shadow: var(--shadow-sm); position: relative; margin-bottom: 24px;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-timeline"></i> Mental Map Timeline, ${data.title.split(", ").pop()}
+        </h3>
+        <div class="key-topic-timeline" style="position: relative; margin: 30px 0;">
+          ${timelineNodesHtml}
+        </div>
+        <div style="text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 12px; border-top: 1px dashed var(--border-glass); padding-top: 8px;">
+          <i class="fa-solid fa-circle-info"></i> Click or tap any year to reveal historical details & sources.
+        </div>
+      </div>
+
+      <!-- Lower Content Columns -->
+      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; align-items: start;">
+        <!-- Left Column: Key Topic Lessons -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
           <div>
             <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
               <i class="fa-solid fa-graduation-cap"></i> Key Topic Lessons
             </h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 16px;">
               ${subtopicsHtml}
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Interactive Blocks -->
+        <!-- Right Column: Revision Flashcards & Sliders -->
         <div style="display: flex; flex-direction: column; gap: 24px;">
-          <!-- Component A: Responsive timeline -->
-          <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm); position: relative;">
-            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-timeline"></i> Mental Map Timeline, ${data.title.split(", ").pop()}
-            </h3>
-            <div class="key-topic-timeline" style="position: relative; margin: 30px 0;">
-              ${timelineNodesHtml}
-            </div>
-            <div style="text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 12px; border-top: 1px dashed var(--border-glass); padding-top: 8px;">
-              <i class="fa-solid fa-circle-info"></i> Click or tap any year to reveal historical details & sources.
-            </div>
-          </div>
-
           <!-- Component B: Dynamic Flashcard Revision Widget -->
           <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
             <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
