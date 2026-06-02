@@ -1438,7 +1438,7 @@
       "subtopics": [
         {
           "id": "subtopic_4_1",
-          "title": "Topic 4.1: Opposition to the war",
+          "title": "Topic 4.1: Opposition to the war (Draft, Media, My Lai, and student protests)",
           "standard": [
             {
               "id": "q_4_1_s1",
@@ -1477,38 +1477,38 @@
             },
             {
               "id": "q_4_1_s6",
-              "question": "What popular chant was directed at President Johnson by protesters during anti-war rallies?",
-              "answer": "Hey, hey, LBJ, how many kids did you kill today?",
-              "explanation": "The chant highlighted Johnson's personal responsibility for the mounting casualties and civilian deaths.",
-              "year": 1967
+              "question": "What term describes the difference between what the government reported about the war and what journalists showed on TV?",
+              "answer": "Credibility gap",
+              "explanation": "The credibility gap eroded public trust in the presidency, especially after the Tet Offensive showed the war was not won.",
+              "year": 1968
             },
             {
               "id": "q_4_1_s7",
-              "question": "Which folk-rock singer-songwriter wrote anti-war anthems like 'Blowin' in the Wind' and 'The Times They Are A-Changin'?",
-              "answer": "Bob Dylan",
-              "explanation": "Dylan's songs became the soundtrack of the 1960s protest culture and the student movement.",
-              "year": 1963
+              "question": "In which South Vietnamese village did US troops massacre over 500 unarmed civilians in March 1968?",
+              "answer": "My Lai",
+              "explanation": "The massacre of women, children, and old men was covered up by the military until journalist Seymour Hersh broke the story.",
+              "year": 1968
             },
             {
               "id": "q_4_1_s8",
-              "question": "What organization of returning soldiers protested by throwing their combat medals onto the steps of the Capitol in 1971?",
-              "answer": "Vietnam Veterans Against the War (VVAW)",
-              "explanation": "VVAW's protests showed that even those who fought in the war believed it was unjust and unwinnable.",
+              "question": "Who was the US Army lieutenant court-martialed and convicted of murder for ordering the My Lai massacre?",
+              "answer": "William Calley",
+              "explanation": "Calley was sentenced to life in prison, but Nixon reduced his sentence, and he ultimately served only three years of house arrest.",
               "year": 1971
             },
             {
               "id": "q_4_1_s9",
-              "question": "In which city did violent clashes break out between anti-war protesters and police during the 1968 Democratic National Convention?",
-              "answer": "Chicago",
-              "explanation": "Mayor Daley ordered a brutal crackdown, leading to a police riot on national television that deepened divisions.",
-              "year": 1968
+              "question": "What was the name of the top-secret government history of the war leaked to the press in 1971?",
+              "answer": "The Pentagon Papers",
+              "explanation": "The papers revealed that the government had systematically lied to Congress and the public about the scope of the war.",
+              "year": 1971
             },
             {
               "id": "q_4_1_s10",
-              "question": "Which 1973 Act of Congress limited the president's power to commit troops to foreign conflicts without approval?",
-              "answer": "War Powers Act",
-              "explanation": "Passed over Nixon's veto, the act required congressional approval within 60 days of deploying troops.",
-              "year": 1973
+              "question": "Which trusted CBS news anchor declared in 1968 that the war was mired in a stalemate?",
+              "answer": "Walter Cronkite",
+              "explanation": "Cronkite's report after visiting Vietnam deeply influenced public opinion. Johnson remarked: 'If I've lost Cronkite, I've lost Middle America.'",
+              "year": 1968
             }
           ],
           "depth": [
@@ -1528,209 +1528,96 @@
             },
             {
               "id": "q_4_1_d3",
-              "question": "At which historically Black university in Mississippi did state police shoot and kill two students on 15 May 1970?",
-              "answer": "Jackson State University",
-              "explanation": "Police fired on a dormitory during racial and anti-war tensions, killing two students and injuring 12.",
-              "year": 1970
-            },
-            {
-              "id": "q_4_1_d4",
-              "question": "What was the name of the Catholic activist group that raided a Maryland draft board and destroyed files with homemade napalm in 1968?",
-              "answer": "Catonsville Nine",
-              "explanation": "Led by Daniel and Philip Berrigan, they used their trial to deliver powerful anti-war statements.",
-              "year": 1968
-            },
-            {
-              "id": "q_4_1_d5",
-              "question": "Which massive anti-war protest in Washington in November 1969 drew a record turnout of over 250,000 peaceful marchers?",
-              "answer": "March on Washington for Peace",
-              "explanation": "Also known as the Mobilization, it was the largest single anti-war demonstration in American history.",
-              "year": 1969
-            }
-          ]
-        },
-        {
-          "id": "subtopic_4_2",
-          "title": "Topic 4.2: Media coverage of Vietnam, credibility gap, My Lai massacre",
-          "standard": [
-            {
-              "id": "q_4_2_s1",
-              "question": "What term describes the difference between what the government reported about the war and what journalists showed on TV?",
-              "answer": "Credibility gap",
-              "explanation": "The credibility gap eroded public trust in the presidency, especially after the Tet Offensive showed the war was not won.",
-              "year": 1968
-            },
-            {
-              "id": "q_4_2_s2",
-              "question": "In which South Vietnamese village did US troops massacre over 500 unarmed civilians in March 1968?",
-              "answer": "My Lai",
-              "explanation": "The massacre of women, children, and old men was covered up by the military until journalist Seymour Hersh broke the story.",
-              "year": 1968
-            },
-            {
-              "id": "q_4_2_s3",
-              "question": "Who was the US Army lieutenant court-martialed and convicted of murder for ordering the My Lai massacre?",
-              "answer": "William Calley",
-              "explanation": "Calley was sentenced to life in prison, but Nixon reduced his sentence, and he ultimately served only three years of house arrest.",
-              "year": 1971
-            },
-            {
-              "id": "q_4_2_s4",
-              "question": "What was the name of the top-secret government history of the war leaked to the press in 1971?",
-              "answer": "The Pentagon Papers",
-              "explanation": "The papers revealed that the government had systematically lied to Congress and the public about the scope of the war.",
-              "year": 1971
-            },
-            {
-              "id": "q_4_2_s5",
-              "question": "Who was the military analyst who leaked the Pentagon Papers to newspapers in 1971?",
-              "answer": "Daniel Ellsberg",
-              "explanation": "Ellsberg was a former defense analyst who copied the documents to expose the deception of the war.",
-              "year": 1971
-            },
-            {
-              "id": "q_4_2_s6",
-              "question": "Which newspaper first began publishing the leaked Pentagon Papers in June 1971?",
-              "answer": "The New York Times",
-              "explanation": "The Times published the first installments, leading to a major legal battle over freedom of the press.",
-              "year": 1971
-            },
-            {
-              "id": "q_4_2_s7",
-              "question": "In what year was the My Lai massacre story finally exposed to the American public?",
-              "answer": "1969",
-              "explanation": "Although the massacre occurred in March 1968, it was kept secret until Hersh's reports and soldier photos emerged in late 1969.",
-              "year": 1969
-            },
-            {
-              "id": "q_4_2_s8",
-              "question": "Which trusted CBS news anchor declared in 1968 that the war was mired in a stalemate?",
-              "answer": "Walter Cronkite",
-              "explanation": "Cronkite's report after visiting Vietnam deeply influenced public opinion. Johnson remarked: 'If I've lost Cronkite, I've lost Middle America.'",
-              "year": 1968
-            },
-            {
-              "id": "q_4_2_s9",
-              "question": "Which media technology brought graphic, uncensored color images of combat directly into American living rooms?",
-              "answer": "Television (TV)",
-              "explanation": "Television allowed families to see the reality of war and casualties every night, turning many against the conflict.",
-              "year": 1965
-            },
-            {
-              "id": "q_4_2_s10",
-              "question": "What was the name of the US helicopter pilot who landed his aircraft to protect My Lai civilians from his own troops?",
-              "answer": "Hugh Thompson",
-              "explanation": "Thompson threatened to fire on US soldiers if they continued killing, and evacuated several children to safety.",
-              "year": 1968
-            }
-          ],
-          "depth": [
-            {
-              "id": "q_4_2_d1",
               "question": "What was the exact month and year the My Lai massacre took place?",
               "answer": "March 1968",
               "explanation": "The massacre occurred on 16 March 1968 during a search-and-destroy operation in the Son My area.",
               "year": 1968
             },
             {
-              "id": "q_4_2_d2",
+              "id": "q_4_1_d4",
               "question": "Who was the independent investigative journalist who broke the My Lai massacre story in November 1969?",
               "answer": "Seymour Hersh",
               "explanation": "Hersh traced Calley's court-martial charges, interviewed soldiers, and won the Pulitzer Prize for his reporting.",
               "year": 1969
             },
             {
-              "id": "q_4_2_d3",
-              "question": "Which Supreme Court case in 1971 ruled that the government could not block publication of the Pentagon Papers?",
-              "answer": "New York Times Co. v. United States",
-              "explanation": "The court ruled 6-3 that the government had not met the heavy burden needed to justify prior restraint of the press.",
+              "id": "q_4_1_d5",
+              "question": "Who was the military analyst who leaked the Pentagon Papers to newspapers in 1971?",
+              "answer": "Daniel Ellsberg",
+              "explanation": "Ellsberg was a former defense analyst who copied the documents to expose the deception of the war.",
               "year": 1971
-            },
-            {
-              "id": "q_4_2_d4",
-              "question": "In what year did Daniel Ellsberg leak the Pentagon Papers to the press?",
-              "answer": "1971",
-              "explanation": "Ellsberg photocopied the 7,000-page report while working at the RAND Corporation, delivering it to the NYT.",
-              "year": 1971
-            },
-            {
-              "id": "q_4_2_d5",
-              "question": "What popular historical term describes the Vietnam War due to the lack of military censorship and nightly news coverage?",
-              "answer": "The first television war",
-              "explanation": "Unlike WWII, reporters had free access, and TV networks broadcasted battles and body bags into homes daily.",
-              "year": 1965
             }
           ]
         },
         {
-          "id": "subtopic_4_3",
-          "title": "Topic 4.3: Support for the war",
+          "id": "subtopic_4_2",
+          "title": "Topic 4.2: Support for the war (Silent Majority and hard hats)",
           "standard": [
             {
-              "id": "q_4_3_s1",
+              "id": "q_4_2_s1",
               "question": "What term did Nixon use in November 1969 to describe the patriotic Americans who supported his war policy?",
               "answer": "The Silent Majority",
               "explanation": "Nixon argued that the loud anti-war protesters were a minority, and most Americans supported his efforts.",
               "year": 1969
             },
             {
-              "id": "q_4_3_s2",
+              "id": "q_4_2_s2",
               "question": "What was the primary political motivation for pro-war supporters in the US, fearing the global spread of communism?",
               "answer": "Anti-communism",
               "explanation": "Supporters believed that stopping communism in Vietnam was essential to protect American security and democracy.",
               "year": 1965
             },
             {
-              "id": "q_4_3_s3",
+              "id": "q_4_2_s3",
               "question": "What violent event occurred in New York City in May 1970 where construction workers attacked anti-war students?",
               "answer": "Hard Hat Riots",
               "explanation": "Mobilized by union leaders, construction workers beat student protesters, demonstrating the working-class support for the war.",
               "year": 1970
             },
             {
-              "id": "q_4_3_s4",
+              "id": "q_4_2_s4",
               "question": "What informal term was used to describe politicians and citizens who supported the escalation of the war?",
               "answer": "Hawks",
               "explanation": "Hawks favored military pressure, believing that the US should use all necessary force to win in Vietnam.",
               "year": 1965
             },
             {
-              "id": "q_4_3_s5",
+              "id": "q_4_2_s5",
               "question": "What informal term was used to describe politicians and citizens who favored a peaceful exit from the war?",
               "answer": "Doves",
               "explanation": "Doves argued that the war was a civil conflict that could not be won militarily and urged immediate negotiations.",
               "year": 1965
             },
             {
-              "id": "q_4_3_s6",
+              "id": "q_4_2_s6",
               "question": "What popular pro-war slogan expressed the view that citizens who criticized the war should emigrate?",
               "answer": "America: Love It or Leave It",
               "explanation": "The slogan reflected the intense patriotism and hostility toward anti-war protesters among supporters.",
               "year": 1969
             },
             {
-              "id": "q_4_3_s7",
+              "id": "q_4_2_s7",
               "question": "Which US president made the famous 'Silent Majority' speech on television in November 1969?",
               "answer": "Richard Nixon",
               "explanation": "The speech was highly successful, rallying conservative and working-class support to his administration.",
               "year": 1969
             },
             {
-              "id": "q_4_3_s8",
+              "id": "q_4_2_s8",
               "question": "Which major national labor union coalition supported Nixon's war policy and helped organize the Hard Hat Riots?",
               "answer": "AFL-CIO",
               "explanation": "Led by George Meany, the union leadership was strongly anti-communist and patriotic, aligning with Nixon.",
               "year": 1970
             },
             {
-              "id": "q_4_3_s9",
+              "id": "q_4_2_s9",
               "question": "In what month and year did President Nixon deliver his famous 'Silent Majority' address?",
               "answer": "November 1969",
               "explanation": "Delivered on 3 November 1969, the speech sought to buy time for his Vietnamisation policy.",
               "year": 1969
             },
             {
-              "id": "q_4_3_s10",
+              "id": "q_4_2_s10",
               "question": "What pro-war student organization was formed to counter the radical anti-war Student Mobilization Committee?",
               "answer": "Young Americans for Freedom (YAF)",
               "explanation": "YAF was a conservative youth organization that organized pro-war rallies and supported the draft.",
@@ -1739,39 +1626,152 @@
           ],
           "depth": [
             {
-              "id": "q_4_3_d1",
+              "id": "q_4_2_d1",
               "question": "How many construction workers marched in support of Nixon in New York City in the days following the Hard Hat Riots?",
               "answer": "Over 20,000",
               "explanation": "The workers marched to City Hall carrying American flags, showing the depth of working-class support for the troops.",
               "year": 1970
             },
             {
-              "id": "q_4_3_d2",
+              "id": "q_4_2_d2",
               "question": "What concept of national duty and pride did working-class supporters frequently cite when criticizing student protesters?",
               "answer": "Patriotism",
               "explanation": "Supporters felt that refusing the draft and burning flags was a betrayal of those who had served in previous wars.",
               "year": 1969
             },
             {
-              "id": "q_4_3_d3",
+              "id": "q_4_2_d3",
               "question": "Which New York Governor supported the construction workers and was later appointed Vice President by Gerald Ford?",
               "answer": "Nelson Rockefeller",
               "explanation": "Rockefeller took a moderate-conservative stance, supporting labor unions and Nixon's national security policies.",
               "year": 1970
             },
             {
-              "id": "q_4_3_d4",
+              "id": "q_4_2_d4",
               "question": "What demographic groups formed the primary social base for Nixon's Silent Majority?",
               "answer": "Working-class, suburban, and older conservative Americans",
               "explanation": "Often called 'Middle America', they were alienated by the counterculture, student riots, and radical civil rights.",
               "year": 1969
             },
             {
-              "id": "q_4_3_d5",
+              "id": "q_4_2_d5",
               "question": "What did pro-war advocates fear would happen to US allies if the United States withdrew from Vietnam in defeat?",
               "answer": "Loss of US global credibility and containment failure",
               "explanation": "They feared a communist takeover of the region and that allies would no longer trust US security commitments.",
               "year": 1965
+            }
+          ]
+        },
+        {
+          "id": "subtopic_4_3",
+          "title": "Topic 4.3: Peace negotiations, the Paris Peace Agreement, and the Fall of Saigon",
+          "standard": [
+            {
+              "id": "q_4_3_s1",
+              "question": "In what year did Saigon fall to the North Vietnamese, marking the end of the Vietnam War?",
+              "answer": "1975",
+              "explanation": "Saigon fell on 30 April 1975, when NVA tanks crashed through the gates of the Presidential Palace.",
+              "year": 1975
+            },
+            {
+              "id": "q_4_3_s2",
+              "question": "What was the name of the final North Vietnamese conventional offensive that captured Saigon in 1975?",
+              "answer": "The Ho Chi Minh Campaign",
+              "explanation": "The offensive quickly overran South Vietnamese defense lines following the withdrawal of US aid.",
+              "year": 1975
+            },
+            {
+              "id": "q_4_3_s3",
+              "question": "What was the name of the US helicopter evacuation of Saigon in April 1975?",
+              "answer": "Operation Frequent Wind",
+              "explanation": "Helicopters evacuated over 1,000 Americans and 5,000 South Vietnamese refugees from the embassy and airport.",
+              "year": 1975
+            },
+            {
+              "id": "q_4_3_s4",
+              "question": "Who was the South Vietnamese President who surrendered Saigon to North Vietnamese forces?",
+              "answer": "Duong Van Minh",
+              "explanation": "Minh surrendered on 30 April, telling the NVA: 'I am waiting to hand over the power to you to avoid bloodshed.'",
+              "year": 1975
+            },
+            {
+              "id": "q_4_3_s5",
+              "question": "In what year was the Paris Peace Accords signed?",
+              "answer": "1973",
+              "explanation": "The accords were signed in January 1973, bringing a temporary ceasefire and allowing the withdrawal of US combat forces.",
+              "year": 1973
+            },
+            {
+              "id": "q_4_3_s6",
+              "question": "How many days did the US have to withdraw all troops under the 1973 Accords?",
+              "answer": "60 days",
+              "explanation": "The accords mandated the complete withdrawal of all US military personnel and the release of all POWs within 60 days.",
+              "year": 1973
+            },
+            {
+              "id": "q_4_3_s7",
+              "question": "Why did South Vietnamese President Thieu initially refuse to sign the accords?",
+              "answer": "North Vietnamese troops stayed in the South",
+              "explanation": "Thieu knew that leaving North Vietnamese troops inside South Vietnam would make a communist takeover inevitable once US forces left.",
+              "year": 1972
+            },
+            {
+              "id": "q_4_3_s8",
+              "question": "What bombing campaign was ordered to force the signing of the accords in late 1972?",
+              "answer": "Operation Linebacker II (Christmas Bombings)",
+              "explanation": "Nixon launched intense B-52 raids against Hanoi and Haiphong in December 1972 to force North Vietnam back to the negotiating table.",
+              "year": 1972
+            },
+            {
+              "id": "q_4_3_s9",
+              "question": "Which 1973 Act of Congress limited the president's power to commit troops to foreign conflicts without approval?",
+              "answer": "War Powers Act",
+              "explanation": "Passed over Nixon's veto, the act required congressional approval within 60 days of deploying troops.",
+              "year": 1973
+            },
+            {
+              "id": "q_4_3_s10",
+              "question": "Which constitutional amendment lowered the US voting age to 18 in 1971, prompted by the draft?",
+              "answer": "26th Amendment",
+              "explanation": "The slogan 'old enough to fight, old enough to vote' led to the rapid ratification of the amendment.",
+              "year": 1971
+            }
+          ],
+          "depth": [
+            {
+              "id": "q_4_3_d1",
+              "question": "What was the exact date of the Fall of Saigon, marking the official end of South Vietnam?",
+              "answer": "30 April 1975",
+              "explanation": "Tanks entered the city, raised the Vietcong flag on the palace, and South Vietnam surrendered unconditionally.",
+              "year": 1975
+            },
+            {
+              "id": "q_4_3_d2",
+              "question": "What prominent building in Saigon became the iconic site of helicopter evacuations during Operation Frequent Wind?",
+              "answer": "US Embassy roof",
+              "explanation": "Images of refugees scaling embassy walls and boarding helicopters became symbols of the US defeat in Vietnam.",
+              "year": 1975
+            },
+            {
+              "id": "q_4_3_d3",
+              "question": "Under the War Powers Act of 1973, within how many hours must a president notify Congress of troop deployment?",
+              "answer": "48 hours",
+              "explanation": "The president must explain the reasons for the deployment and withdraw forces within 60 days unless Congress approves.",
+              "year": 1973
+            },
+            {
+              "id": "q_4_3_d4",
+              "question": "What was the main problem with the official Paris peace talks?",
+              "answer": "They were stalled and lengthy over minor disputes",
+              "explanation": "The talks dragged on for years, with long arguments even over the shape of the conference table, prompting secret negotiations.",
+              "year": 1969
+            },
+            {
+              "id": "q_4_3_d5",
+              "question": "Who was the chief North Vietnamese secret negotiator who met with Henry Kissinger in Paris?",
+              "answer": "Le Duc Tho",
+              "explanation": "Tho negotiated alongside Kissinger. They were jointly awarded the 1973 Nobel Peace Prize, but Tho refused it.",
+              "year": 1973
             }
           ]
         },
@@ -1781,110 +1781,110 @@
           "standard": [
             {
               "id": "q_4_4_s1",
-              "question": "In what year did Saigon fall to the North Vietnamese, marking the end of the Vietnam War?",
-              "answer": "1975",
-              "explanation": "Saigon fell on 30 April 1975, when NVA tanks crashed through the gates of the Presidential Palace.",
-              "year": 1975
+              "question": "What was the name of the highly resilient supply route running through Laos and Cambodia that the US failed to block?",
+              "answer": "Ho Chi Minh Trail",
+              "explanation": "The trail funneled troops and supplies from North Vietnam into the South, rebuilt constantly by volunteers despite intense bombing.",
+              "year": 1965
             },
             {
               "id": "q_4_4_s2",
-              "question": "What was the name of the final North Vietnamese conventional offensive that captured Saigon in 1975?",
-              "answer": "The Ho Chi Minh Campaign",
-              "explanation": "The offensive quickly overran South Vietnamese defense lines following the withdrawal of US aid.",
-              "year": 1975
+              "question": "Which two communist superpowers provided essential military hardware, air defenses, and financial aid to North Vietnam?",
+              "answer": "Soviet Union and China",
+              "explanation": "Soviet surface-to-air missiles and Chinese military hardware/labor provided North Vietnam the material support to match US firepower.",
+              "year": 1965
             },
             {
               "id": "q_4_4_s3",
-              "question": "What was the name of the US helicopter evacuation of Saigon in April 1975?",
-              "answer": "Operation Frequent Wind",
-              "explanation": "Helicopters evacuated over 1,000 Americans and 5,000 South Vietnamese refugees from the embassy and airport.",
-              "year": 1975
+              "question": "What term was used to describe the collapse of morale behavior where US soldiers intentionally killed their own officers with grenades?",
+              "answer": "Fragging",
+              "explanation": "Usually involving fragmentation grenades, fragging reflected severe drug abuse, frustration, and rebellion among conscripted soldiers.",
+              "year": 1970
             },
             {
               "id": "q_4_4_s4",
-              "question": "Who was the South Vietnamese President who surrendered Saigon to North Vietnamese forces?",
-              "answer": "Duong Van Minh",
-              "explanation": "Minh surrendered on 30 April, telling the NVA: 'I am waiting to hand over the power to you to avoid bloodshed.'",
-              "year": 1975
+              "question": "What US military strategy of attrition failed because the Vietcong were fighting a total war and could replace losses indefinitely?",
+              "answer": "Search and Destroy",
+              "explanation": "General Westmoreland sought to reach a 'crossover point' of enemy casualties, but North Vietnam's high population and resolve nullified this strategy.",
+              "year": 1965
             },
             {
               "id": "q_4_4_s5",
-              "question": "What is the estimated total cost of the Vietnam War to the United States economy?",
-              "answer": "Over $100 billion",
-              "explanation": "The enormous cost of the war drained federal funds, causing high inflation and economic problems in the 1970s.",
-              "year": 1975
+              "question": "What was a major cause of low morale and drug abuse among US troops, who were mostly young, working-class conscripts?",
+              "answer": "The Draft",
+              "explanation": "Conscription selected unwilling young men to fight in a highly confusing, dangerous conflict, leading to a breakdown in military discipline.",
+              "year": 1968
             },
             {
               "id": "q_4_4_s6",
-              "question": "How many US servicemen were killed in action during the course of the Vietnam War?",
-              "answer": "58,220",
-              "explanation": "The high casualty rate eroded public support for the war over its decade-long combat duration.",
-              "year": 1975
+              "question": "What chemical weapons and defoliants dropped by the US ruined its global reputation and alienated South Vietnamese peasants?",
+              "answer": "Agent Orange and Napalm",
+              "explanation": "The drop of toxic herbicides and incendiary weapons destroyed crops and villages, pushing rural populations to support the Vietcong.",
+              "year": 1965
             },
             {
               "id": "q_4_4_s7",
-              "question": "In what year did Congress pass the War Powers Act over Nixon's veto?",
-              "answer": "1973",
-              "explanation": "Passed in November 1973, it represented congressional assertion of authority to prevent future executive wars.",
-              "year": 1973
+              "question": "Which 1968 offensive, though a military defeat for the Vietcong, was a political victory that shattered US support?",
+              "answer": "Tet Offensive",
+              "explanation": "Tet proved to the American public that the government's optimistic claims about winning the war were false, fueling opposition.",
+              "year": 1968
             },
             {
               "id": "q_4_4_s8",
-              "question": "What was the primary economic consequence of the war's high military expenditure on the US homefront?",
-              "answer": "High inflation and deficits",
-              "explanation": "Johnson's attempt to fund both the war and his Great Society programs without raising taxes caused stagflation.",
-              "year": 1975
+              "question": "What did the US Congress cut in 1974 that severely weakened the South Vietnamese military prior to the final invasion?",
+              "answer": "Military funding",
+              "explanation": "Congress slashed military aid to South Vietnam from $2.1 billion to $700 million, leaving the ARVN with critical shortages of ammo and fuel.",
+              "year": 1974
             },
             {
               "id": "q_4_4_s9",
-              "question": "Which constitutional amendment lowered the US voting age to 18 in 1971, prompted by the draft?",
-              "answer": "26th Amendment",
-              "explanation": "The slogan 'old enough to fight, old enough to vote' led to the rapid ratification of the amendment.",
-              "year": 1971
+              "question": "What term describes the psychological reluctance of the US public and politicians to intervene militarily abroad after Vietnam?",
+              "answer": "Vietnam Syndrome",
+              "explanation": "The national trauma of the defeat made subsequent US administrations highly hesitant to commit ground troops in foreign conflicts.",
+              "year": 1975
             },
             {
               "id": "q_4_4_s10",
-              "question": "What term describes the psychological reluctance of US politicians and public to intervene militarily abroad after Vietnam?",
-              "answer": "Vietnam Syndrome",
-              "explanation": "The syndrome dominated US foreign policy for decades, making leaders reluctant to engage in ground wars.",
-              "year": 1975
+              "question": "What was the primary economic consequence of the war's high military expenditure on the US homefront?",
+              "answer": "High inflation and deficits",
+              "explanation": "President Johnson's attempt to fund both the war and Great Society programs without raising taxes triggered severe inflation and economic stagflation.",
+              "year": 1970
             }
           ],
           "depth": [
             {
               "id": "q_4_4_d1",
-              "question": "What was the exact date of the Fall of Saigon, marking the official end of South Vietnam?",
-              "answer": "30 April 1975",
-              "explanation": "Tanks entered the city, raised the Vietcong flag on the palace, and South Vietnam surrendered unconditionally.",
-              "year": 1975
-            },
-            {
-              "id": "q_4_4_d2",
-              "question": "What prominent building in Saigon became the iconic site of helicopter evacuations during Operation Frequent Wind?",
-              "answer": "US Embassy roof",
-              "explanation": "Images of refugees scaling embassy walls and boarding helicopters became symbols of the US defeat in Vietnam.",
-              "year": 1975
-            },
-            {
-              "id": "q_4_4_d3",
-              "question": "Under the War Powers Act of 1973, within how many hours must a president notify Congress of troop deployment?",
-              "answer": "48 hours",
-              "explanation": "The president must explain the reasons for the deployment and withdraw forces within 60 days unless Congress approves.",
-              "year": 1973
-            },
-            {
-              "id": "q_4_4_d4",
               "question": "Which superpower provided North Vietnam with advanced anti-aircraft missiles and radar (referred to in the syllabus as Russian support)?",
               "answer": "Soviet Union",
               "explanation": "Soviet SAM missiles and technical advisors shot down hundreds of US planes, helping North Vietnam survive Rolling Thunder.",
               "year": 1972
             },
             {
-              "id": "q_4_4_d5",
+              "id": "q_4_4_d2",
               "question": "What strategic military miscalculation by General Westmoreland underestimated the motivation of the communist forces?",
               "answer": "Strategy of attrition",
               "explanation": "Westmoreland believed there was a 'crossover point' where casualties would break the enemy, but the communists replaced losses indefinitely.",
               "year": 1968
+            },
+            {
+              "id": "q_4_4_d3",
+              "question": "How did the one-year tour of duty system affect the combat effectiveness and morale of the US military?",
+              "answer": "Prevented experience build-up and lowered unit cohesion",
+              "explanation": "As soon as soldiers became experienced and street-smart, they were sent home, meaning the US army was constantly filled with raw, un-cohesive recruits.",
+              "year": 1968
+            },
+            {
+              "id": "q_4_4_d4",
+              "question": "What was the primary reason the US-backed Strategic Hamlet Program backfired and drove peasants to support the Vietcong?",
+              "answer": "Relocation alienated peasants and separated them from ancestral lands",
+              "explanation": "Forcibly moving peasants into fortified enclosures separated them from their farms and burial grounds, destroying local goodwill and building Vietcong recruits.",
+              "year": 1962
+            },
+            {
+              "id": "q_4_4_d5",
+              "question": "Why was the South Vietnamese (Saigon) government unable to win the 'hearts and minds' of its own people?",
+              "answer": "Extreme political corruption, religious bias, and reliance on US force",
+              "explanation": "The ruling elites in Saigon were viewed as Western puppets, highly corrupt, and biased against the Buddhist majority, denying them popular legitimacy.",
+              "year": 1963
             }
           ]
         }
@@ -8481,7 +8481,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
       ]
     },
     "subtopic_4_1": {
-      title: "4.1: Growth of Anti-War Opposition",
+      title: "Topic 4.1: Opposition to the war (Draft, Media, My Lai, and student protests)",
       items: [
         {
           term: "The Draft",
@@ -8526,20 +8526,6 @@ Source E is highly useful for showing the political and moral collapse of the wa
           defendAnswer: "Muhammad Ali"
         },
         {
-          term: "Economic Cost",
-          definition: "The war cost $167 billion, forcing LBJ to defund poverty programs.",
-          defendQuestion: "How did the war's economic cost affect LBJ's domestic policies?",
-          defendOptions: ["Forced defunding of Great Society poverty programs", "Caused tax cuts", "Increased funding for space programs", "Ended the draft"],
-          defendAnswer: "Forced defunding of Great Society poverty programs"
-        },
-        {
-          term: "Human Cost",
-          definition: "58,000+ US soldiers killed, 300,000 wounded, severe PTSD.",
-          defendQuestion: "How many American service members died in the Vietnam War?",
-          defendOptions: ["15,000", "58,000+", "100,000", "500,000"],
-          defendAnswer: "58,000+"
-        },
-        {
           term: "Fulbright Hearings (1971)",
           definition: "Senate investigations making it acceptable for middle class to oppose war.",
           defendQuestion: "Which Senate hearings made war opposition mainstream for middle-class Americans?",
@@ -8560,18 +8546,6 @@ Source E is highly useful for showing the political and moral collapse of the wa
           defendOptions: ["John Kerry", "Daniel Ellsberg", "Ron Kovic", "Oliver Stone"],
           defendAnswer: "John Kerry"
         },
-        {
-          term: "Silent Majority",
-          definition: "Nixon's term for conservative, patriotic Americans supporting the war.",
-          defendQuestion: "What term did Nixon use for Americans who supported his policies quietly?",
-          defendOptions: ["Patriot Bloc", "Silent Majority", "Middle America", "Hard Hats"],
-          defendAnswer: "Silent Majority"
-        }
-      ]
-    },
-    "subtopic_4_2": {
-      title: "4.2: My Lai and Kent State (1968-70)",
-      items: [
         {
           term: "My Lai Massacre (1968)",
           definition: "Brutal murder of 300\u2013500 unarmed South Vietnamese civilians.",
@@ -8658,8 +8632,55 @@ Source E is highly useful for showing the political and moral collapse of the wa
         }
       ]
     },
+    "subtopic_4_2": {
+      title: "Topic 4.2: Support for the war (Silent Majority and hard hats)",
+      items: [
+        {
+          term: "Silent Majority",
+          definition: "Nixon's term for conservative, patriotic Americans supporting the war.",
+          defendQuestion: "What term did Nixon use for Americans who supported his policies quietly?",
+          defendOptions: ["Patriot Bloc", "Silent Majority", "Middle America", "Hard Hats"],
+          defendAnswer: "Silent Majority"
+        },
+        {
+          term: "Anti-communism",
+          definition: "Patriotic belief that the US was defending free democracy and preventing communist expansion in Asia.",
+          defendQuestion: "What was the primary political motivation for pro-war supporters in the US?",
+          defendOptions: ["Isolationism", "Anti-communism", "Imperialism", "Pacifism"],
+          defendAnswer: "Anti-communism"
+        },
+        {
+          term: "The Hard Hats",
+          definition: "Working-class construction workers who actively protested in support of the war.",
+          defendQuestion: "Who were the 'hard hats' who marched in support of Nixon's war policies?",
+          defendOptions: ["Construction workers", "Police officers", "Coal miners", "Office workers"],
+          defendAnswer: "Construction workers"
+        },
+        {
+          term: "Hard Hat Riots (1970)",
+          definition: "New York clashes where construction workers attacked anti-war student protesters.",
+          defendQuestion: "What violent event occurred in New York City in May 1970, showing pro-war working-class anger?",
+          defendOptions: ["Saratoga Strike", "Hard Hat Riots", "Manhattan March", "Union Square Rally"],
+          defendAnswer: "Hard Hat Riots"
+        },
+        {
+          term: "Law and Order",
+          definition: "Nixon's campaign theme appealing to citizens tired of radical protests and riots.",
+          defendQuestion: "What political slogan did Nixon use to appeal to voters tired of student protests and urban riots?",
+          defendOptions: ["Law and Order", "Peace with Honor", "The Great Society", "Return to Normalcy"],
+          defendAnswer: "Law and Order"
+        },
+        {
+          term: "Southern Strategy",
+          definition: "Nixon's political strategy to win over conservative Southern Democrats by opposing radical protests.",
+          defendQuestion: "What was Nixon's strategy to win over conservative Southern Democrats called?",
+          defendOptions: ["Northern Strategy", "Southern Strategy", "Western Strategy", "Eastern Strategy"],
+          defendAnswer: "Southern Strategy"
+        }
+      ]
+    },
     "subtopic_4_3": {
-      title: "4.3: The Peace Process and Fall of Saigon",
+      title: "Topic 4.3: Peace negotiations, the Paris Peace Agreement, and the Fall of Saigon",
       items: [
         {
           term: "Paris Peace Negotiations",
@@ -8748,7 +8769,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
       ]
     },
     "subtopic_4_4": {
-      title: "4.4: Reasons for US Failure in Vietnam",
+      title: "Topic 4.4: Reasons for the failure of the USA in Vietnam",
       items: [
         {
           term: "Soviet & Chinese Support",

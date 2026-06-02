@@ -1068,7 +1068,7 @@ export const MASTERY_DATA = {
     ]
   },
   "subtopic_4_1": {
-    title: "4.1: Growth of Anti-War Opposition",
+    title: "Topic 4.1: Opposition to the war (Draft, Media, My Lai, and student protests)",
     items: [
       {
         term: "The Draft",
@@ -1113,20 +1113,6 @@ export const MASTERY_DATA = {
         defendAnswer: "Muhammad Ali"
       },
       {
-        term: "Economic Cost",
-        definition: "The war cost $167 billion, forcing LBJ to defund poverty programs.",
-        defendQuestion: "How did the war's economic cost affect LBJ's domestic policies?",
-        defendOptions: ["Forced defunding of Great Society poverty programs", "Caused tax cuts", "Increased funding for space programs", "Ended the draft"],
-        defendAnswer: "Forced defunding of Great Society poverty programs"
-      },
-      {
-        term: "Human Cost",
-        definition: "58,000+ US soldiers killed, 300,000 wounded, severe PTSD.",
-        defendQuestion: "How many American service members died in the Vietnam War?",
-        defendOptions: ["15,000", "58,000+", "100,000", "500,000"],
-        defendAnswer: "58,000+"
-      },
-      {
         term: "Fulbright Hearings (1971)",
         definition: "Senate investigations making it acceptable for middle class to oppose war.",
         defendQuestion: "Which Senate hearings made war opposition mainstream for middle-class Americans?",
@@ -1147,18 +1133,6 @@ export const MASTERY_DATA = {
         defendOptions: ["John Kerry", "Daniel Ellsberg", "Ron Kovic", "Oliver Stone"],
         defendAnswer: "John Kerry"
       },
-      {
-        term: "Silent Majority",
-        definition: "Nixon's term for conservative, patriotic Americans supporting the war.",
-        defendQuestion: "What term did Nixon use for Americans who supported his policies quietly?",
-        defendOptions: ["Patriot Bloc", "Silent Majority", "Middle America", "Hard Hats"],
-        defendAnswer: "Silent Majority"
-      }
-    ]
-  },
-  "subtopic_4_2": {
-    title: "4.2: My Lai and Kent State (1968-70)",
-    items: [
       {
         term: "My Lai Massacre (1968)",
         definition: "Brutal murder of 300–500 unarmed South Vietnamese civilians.",
@@ -1245,8 +1219,55 @@ export const MASTERY_DATA = {
       }
     ]
   },
+  "subtopic_4_2": {
+    title: "Topic 4.2: Support for the war (Silent Majority and hard hats)",
+    items: [
+      {
+        term: "Silent Majority",
+        definition: "Nixon's term for conservative, patriotic Americans supporting the war.",
+        defendQuestion: "What term did Nixon use for Americans who supported his policies quietly?",
+        defendOptions: ["Patriot Bloc", "Silent Majority", "Middle America", "Hard Hats"],
+        defendAnswer: "Silent Majority"
+      },
+      {
+        term: "Anti-communism",
+        definition: "Patriotic belief that the US was defending free democracy and preventing communist expansion in Asia.",
+        defendQuestion: "What was the primary political motivation for pro-war supporters in the US?",
+        defendOptions: ["Isolationism", "Anti-communism", "Imperialism", "Pacifism"],
+        defendAnswer: "Anti-communism"
+      },
+      {
+        term: "The Hard Hats",
+        definition: "Working-class construction workers who actively protested in support of the war.",
+        defendQuestion: "Who were the 'hard hats' who marched in support of Nixon's war policies?",
+        defendOptions: ["Construction workers", "Police officers", "Coal miners", "Office workers"],
+        defendAnswer: "Construction workers"
+      },
+      {
+        term: "Hard Hat Riots (1970)",
+        definition: "New York clashes where construction workers attacked anti-war student protesters.",
+        defendQuestion: "What violent event occurred in New York City in May 1970, showing pro-war working-class anger?",
+        defendOptions: ["Saratoga Strike", "Hard Hat Riots", "Manhattan March", "Union Square Rally"],
+        defendAnswer: "Hard Hat Riots"
+      },
+      {
+        term: "Law and Order",
+        definition: "Nixon's campaign theme appealing to citizens tired of radical protests and riots.",
+        defendQuestion: "What political slogan did Nixon use to appeal to voters tired of student protests and urban riots?",
+        defendOptions: ["Law and Order", "Peace with Honor", "The Great Society", "Return to Normalcy"],
+        defendAnswer: "Law and Order"
+      },
+      {
+        term: "Southern Strategy",
+        definition: "Nixon's political strategy to win over conservative Southern Democrats by opposing radical protests.",
+        defendQuestion: "What was Nixon's strategy to win over conservative Southern Democrats called?",
+        defendOptions: ["Northern Strategy", "Southern Strategy", "Western Strategy", "Eastern Strategy"],
+        defendAnswer: "Southern Strategy"
+      }
+    ]
+  },
   "subtopic_4_3": {
-    title: "4.3: The Peace Process and Fall of Saigon",
+    title: "Topic 4.3: Peace negotiations, the Paris Peace Agreement, and the Fall of Saigon",
     items: [
       {
         term: "Paris Peace Negotiations",
@@ -1335,7 +1356,7 @@ export const MASTERY_DATA = {
     ]
   },
   "subtopic_4_4": {
-    title: "4.4: Reasons for US Failure in Vietnam",
+    title: "Topic 4.4: Reasons for the failure of the USA in Vietnam",
     items: [
       {
         term: "Soviet & Chinese Support",
