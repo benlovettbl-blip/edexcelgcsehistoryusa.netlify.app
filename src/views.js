@@ -4967,8 +4967,8 @@ function renderKeyTopicOverview(topicId) {
     `;
   });
 
-  if (topicId === 'topic_1') {
-    // Overhauled Key Topic 1 Overview
+  if (data.timeline) {
+    // Overhauled Key Topic Overview (generalized for all topics)
     // Build Timeline Nodes HTML
     let timelineNodesHtml = '';
     data.timeline.forEach((event, idx) => {
@@ -5066,7 +5066,7 @@ function renderKeyTopicOverview(topicId) {
           <!-- Component A: Responsive timeline -->
           <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm); position: relative;">
             <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-timeline"></i> Mental Map Timeline, 1954–60
+              <i class="fa-solid fa-timeline"></i> Mental Map Timeline, ${data.title.split(', ').pop()}
             </h3>
             <div class="key-topic-timeline" style="position: relative; margin: 30px 0;">
               ${timelineNodesHtml}
@@ -5245,7 +5245,7 @@ function renderKeyTopicOverview(topicId) {
     // Chronology Check button click
     checkBtn.addEventListener('click', () => {
       const cards = chronoContainer.querySelectorAll('.chrono-drag-card');
-      const correctSeq = ['t1_event_1', 't1_event_2', 't1_event_3', 't1_event_4'];
+      const correctSeq = data.timeline.map(e => e.id);
       let correctCount = 0;
 
       cards.forEach((card, idx) => {
@@ -5260,7 +5260,7 @@ function renderKeyTopicOverview(topicId) {
         }
       });
 
-      if (correctCount === 4) {
+      if (correctCount === correctSeq.length) {
         AudioEngine.play('cheer');
         Confetti.spawn(60);
         feedbackMsg.style.color = 'var(--success)';
@@ -5269,12 +5269,12 @@ function renderKeyTopicOverview(topicId) {
         explanationBox.style.display = 'block';
         explanationBox.innerHTML = `
           <strong>Exam Connection: Why this sequence matters:</strong><br>
-          Establishing this timeline is critical for Paper 3 synthesis. The <strong>Brown decision (1954)</strong> established the constitutional right to integrated schools, but lacked enforcement. This sparked grassroots activism, leading to the <strong>Montgomery Bus Boycott (1955-56)</strong>, proving community solidarity could force local changes. The backlash to these movements culminated at <strong>Little Rock (1957)</strong>, where Southern state resistance forced President Eisenhower to execute federal troops, creating national momentum that compelled Congress to pass the <strong>Civil Rights Act of 1957</strong> to protect voting rights.
+          ${data.chronoExplanation}
         `;
       } else {
         AudioEngine.play('fail');
         feedbackMsg.style.color = 'var(--danger)';
-        feedbackMsg.textContent = `Incorrect Sequence (${correctCount}/4 match). Retrying...`;
+        feedbackMsg.textContent = `Incorrect Sequence (${correctCount}/${correctSeq.length} match). Retrying...`;
         explanationBox.style.display = 'none';
       }
     });
@@ -5304,123 +5304,6 @@ function renderKeyTopicOverview(topicId) {
       input.addEventListener('input', (e) => {
         updateFn(e.target.value);
       });
-    });
-
-  } else {
-    // Normal Key Topic Overview layout (Topics 2, 3, 4)
-    // Build Visual Sources HTML
-    let sourcesHtml = '';
-    data.sources.forEach(src => {
-      const webLink = getImageWebLink(src.image, src.alt);
-      sourcesHtml += `
-        <div class="key-topic-source-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 12px; display: flex; flex-direction: column; gap: 10px; cursor: pointer; transition: transform var(--transition-fast);" onclick="window.open('${webLink}', '_blank')">
-          <div style="height: 140px; border-radius: var(--border-radius-sm); overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; position: relative;">
-            <img src="${src.image}" alt="${src.alt}" style="max-height: 100%; max-width: 100%; object-fit: contain;">
-            <div style="position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.65); padding: 4px 8px; border-radius: var(--border-radius-sm); font-size: 0.65rem; color: #fff; font-weight: 600;">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Source
-            </div>
-          </div>
-          <p style="font-size: 0.75rem; line-height: 1.4; color: var(--text-muted); margin: 0;">${src.caption}</p>
-        </div>
-      `;
-    });
-
-    // Build Tasks HTML
-    let tasksHtml = '';
-    data.tasks.forEach(task => {
-      tasksHtml += `
-        <div class="key-topic-task-card" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px;">
-          <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--primary); margin: 0; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-circle-question"></i> ${task.title}
-          </h4>
-          <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-normal); margin: 0;">${task.question}</p>
-          <textarea id="${task.id}-textarea" placeholder="Type your revision notes here..." style="width: 100%; height: 80px; padding: 10px; background: rgba(0,0,0,0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); font-size: 0.85rem; font-family: inherit; color: var(--text-main); resize: vertical; box-sizing: border-box;"></textarea>
-          <div style="display: flex; justify-content: flex-end;">
-            <button class="btn-secondary" id="btn-reveal-${task.id}" style="padding: 8px 14px; font-size: 0.8rem; font-weight: 600;">
-              <i class="fa-solid fa-lightbulb"></i> Reveal Expert Guidance
-            </button>
-          </div>
-          <div id="guidance-${task.id}" style="display: none; background: rgba(230, 92, 0, 0.05); border-left: 3px solid var(--primary); padding: 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">
-            <strong>Expert Response Guide:</strong><br>${task.guidance}
-          </div>
-        </div>
-      `;
-    });
-
-    container.innerHTML = `
-      <!-- Top Progress Banner -->
-      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;">
-        <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
-          ${data.title}
-        </h2>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
-          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
-          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
-            <div style="background: var(--gradient-main); height: 100%; width: ${overallPct}%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Overview Text -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; margin-bottom: 24px; box-shadow: var(--shadow-sm);">
-        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-book-open"></i> Historical Context Overview
-        </h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
-          ${data.overview}
-        </p>
-      </div>
-
-      <!-- Visual Sources & Student Tasks (Two Column Layout) -->
-      <div class="key-topic-columns" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-bottom: 24px;">
-        <!-- Visual Sources Column -->
-        <div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-images"></i> Primary Visual Sources
-          </h3>
-          <div style="display: flex; flex-direction: column; gap: 16px;">
-            ${sourcesHtml}
-          </div>
-        </div>
-
-        <!-- Revision Tasks Column -->
-        <div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-list-check"></i> Synthesis Tasks
-          </h3>
-          <div>
-            ${tasksHtml}
-          </div>
-        </div>
-      </div>
-
-      <!-- Lessons & Subtopics Grid -->
-      <div>
-        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-graduation-cap"></i> Key Topic Lessons
-        </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-          ${subtopicsHtml}
-        </div>
-      </div>
-    `;
-
-    // Attach event listeners for Reveal Guidance buttons
-    data.tasks.forEach(task => {
-      const btn = document.getElementById(`btn-reveal-${task.id}`);
-      const guidance = document.getElementById(`guidance-${task.id}`);
-      if (btn && guidance) {
-        btn.addEventListener('click', () => {
-          AudioEngine.play('click');
-          if (guidance.style.display === 'none') {
-            guidance.style.display = 'block';
-            btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Guidance`;
-          } else {
-            guidance.style.display = 'none';
-            btn.innerHTML = `<i class="fa-solid fa-lightbulb"></i> Reveal Expert Guidance`;
-          }
-        });
-      }
     });
   }
 }

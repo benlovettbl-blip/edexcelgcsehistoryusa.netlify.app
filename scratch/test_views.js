@@ -108,6 +108,16 @@ function createMockElement(id, tag = 'div') {
       return createMockElement(null, selector);
     },
     querySelectorAll: function(selector) {
+      if (selector === '.spec-checklist-item') {
+        const item = getOrRegisterMockElement('mock-spec-checklist-item');
+        item.classList.add('spec-checklist-item');
+        item.closest = () => null;
+        item.getAttribute = (name) => {
+          if (name === 'data-key') return 'subtopic_1_1_0';
+          return null;
+        };
+        return [item];
+      }
       if (selector === '.hu-tab-btn' || selector === '.hu-tab-panel' || selector === '.deep-thinking-textarea' || selector === '.dt-guide-btn' || selector === '.flaw-option-btn') {
         return [createMockElement(null, 'div')];
       }
@@ -251,6 +261,16 @@ const sandbox = {
       if (selector === '.exam-tab-btn') {
         return examTabBtns;
       }
+      if (selector === '.spec-checklist-item') {
+        const item = getOrRegisterMockElement('mock-spec-checklist-item');
+        item.classList.add('spec-checklist-item');
+        item.closest = () => null;
+        item.getAttribute = (name) => {
+          if (name === 'data-key') return 'subtopic_1_1_0';
+          return null;
+        };
+        return [item];
+      }
       if (selector === '.lesson-tab-btn' || selector === '.vault-question-btn' || selector === '.dual-perspective-card' || selector === '.chrono-option-card' || selector === '.chrono-slot' || selector === '.mastery-match-card' || selector === '.defend-option-btn' || selector === '.mindmap-option-card' || selector === '.taboo-team-name-input' || selector === '.taboo-category' || selector === '.btn-audio-read' || selector === '.summary-wrong-word' || selector === '.journey-step-card' || selector === '.vault-reveal-btn' || selector === '.vault-clue-btn' || selector === '.interactive-vault-q1' || selector === '.timeline-bio-btn' || selector === '.timeline-lesson-btn' || selector === '.timeline-bridge-btn' || selector === '.objective-checkbox' || selector === '.objective-text' || selector === '.card-content li' || selector === '.vault-item') {
         return [createMockElement(null, 'div')];
       }
@@ -362,36 +382,25 @@ try {
     const activeViewAfterSubtopic = viewIds.find(vid => elementRegistry.get(vid).classList.contains('active'));
     console.log(`  Active view in DOM: ${activeViewAfterSubtopic}`);
 
-    // Assert that the learning objectives body collapses and toggles cleanly on click
-    console.log("\nTesting learning objectives dropdown toggle...");
-    let toggleEl = null;
-    let bodyEl = null;
-    for (const [id, el] of elementRegistry.entries()) {
-      if (el.tagName === '.LEARNING-OBJECTIVES-TOGGLE') {
-        toggleEl = el;
+    // Assert that the spec checklist items toggle checked state on click
+    console.log("\nTesting specification checklist item toggle...");
+    const checklistItem = elementRegistry.get('mock-spec-checklist-item');
+    if (checklistItem) {
+      console.log(`  Checklist item checked state before click: ${checklistItem.classList.contains('checked')}`);
+      const isInitiallyChecked = checklistItem.classList.contains('checked');
+      checklistItem.trigger('click', { target: checklistItem });
+      console.log(`  Checklist item checked state after click: ${checklistItem.classList.contains('checked')}`);
+      if (checklistItem.classList.contains('checked') === isInitiallyChecked) {
+        throw new Error("Expected checklist item 'checked' class to be toggled after click!");
       }
-      if (el.tagName === '.LEARNING-OBJECTIVES-BODY') {
-        bodyEl = el;
+      checklistItem.trigger('click', { target: checklistItem });
+      console.log(`  Checklist item checked state after second click: ${checklistItem.classList.contains('checked')}`);
+      if (checklistItem.classList.contains('checked') !== isInitiallyChecked) {
+        throw new Error("Expected checklist item 'checked' class to toggle back after second click!");
       }
-    }
-    if (toggleEl && bodyEl) {
-      console.log(`  Objectives body display before click: ${bodyEl.style.display}`);
-      if (bodyEl.style.display !== 'none') {
-        throw new Error(`Expected objectives body to be hidden by default (display: none), got: ${bodyEl.style.display}`);
-      }
-      toggleEl.trigger('click');
-      console.log(`  Objectives body display after click: ${bodyEl.style.display}`);
-      if (bodyEl.style.display !== 'block') {
-        throw new Error(`Expected objectives body to be visible after click (display: block), got: ${bodyEl.style.display}`);
-      }
-      toggleEl.trigger('click');
-      console.log(`  Objectives body display after second click: ${bodyEl.style.display}`);
-      if (bodyEl.style.display !== 'none') {
-        throw new Error(`Expected objectives body to be hidden after second click (display: none), got: ${bodyEl.style.display}`);
-      }
-      console.log("  Learning objectives toggle clicks verified successfully!");
+      console.log("  Specification checklist item toggle verified successfully!");
     } else {
-      throw new Error("Could not find learning objectives toggle or body elements in DOM registry!");
+      throw new Error("Could not find specification checklist item element in DOM registry!");
     }
 
     // Now test subtopic modes: lessons, classic, flashcards
