@@ -1645,22 +1645,15 @@ function handleFlashcardGrade(correct) {
   const q = deck[idx];
   
   if (correct) {
-    // Start MCQ reinforcement double-check!
-    const mcq = generateReinforcementMCQ(q);
-    state.flashcardSession.reinforcing = true;
-    state.flashcardSession.reinforceQuestion = mcq;
+    AudioEngine.play('success');
+    setMastered(q.id, true);
+    state.flashcardSession.masteredCount++;
     
-    // Update card elements to show MCQ
-    document.getElementById('flashcard-back-standard-body').style.display = 'none';
-    document.getElementById('flashcard-back-reinforce-body').style.display = 'flex';
-    document.getElementById('flashcard-reinforce-question').innerHTML = mcq.prompt;
-    
-    // Hide controls
-    document.getElementById('btn-flashcard-reveal').style.display = 'none';
-    document.getElementById('flashcard-self-grade-actions').style.display = 'none';
-    
-    // Render options
-    renderMCQReinforce(mcq);
+    cardEl.classList.add('swipe-right');
+    setTimeout(() => {
+      state.flashcardSession.activeIndex++;
+      renderFlashcard();
+    }, 300);
   } else {
     setMastered(q.id, false);
     AudioEngine.play('fail');
@@ -5432,40 +5425,13 @@ function renderKeyTopicOverview(topicId) {
       });
 
       document.getElementById('overview-btn-flashcard-correct').addEventListener('click', () => {
-        reinforceMcq = generateReinforcementMCQ(q);
-        reinforcing = true;
-        
-        document.getElementById('overview-flashcard-back-standard-body').style.display = 'none';
-        document.getElementById('overview-flashcard-back-reinforce-body').style.display = 'flex';
-        document.getElementById('overview-flashcard-reinforce-question').innerHTML = reinforceMcq.prompt;
-        
-        const reinforceContainer = document.getElementById('overview-flashcard-reinforce-options');
-        reinforceContainer.innerHTML = '';
-        
-        reinforceMcq.options.forEach((opt, idx) => {
-          const btn = document.createElement('button');
-          btn.className = 'flashcard-mcq-option overview-mcq-option';
-          btn.innerHTML = opt;
-          btn.style.width = '100%';
-          btn.style.textAlign = 'left';
-          btn.style.padding = '8px 12px';
-          btn.style.fontSize = '0.75rem';
-          btn.style.lineHeight = '1.3';
-          btn.style.borderRadius = 'var(--border-radius-sm)';
-          btn.style.border = '1px solid var(--border-glass)';
-          btn.style.background = 'rgba(255, 255, 255, 0.03)';
-          btn.style.color = 'var(--text-main)';
-          btn.style.cursor = 'pointer';
-          btn.style.transition = 'all var(--transition-fast)';
-          
-          btn.addEventListener('click', () => {
-            handleOverviewMcqSelection(idx, btn, reinforceContainer, cardEl, q);
-          });
-          
-          reinforceContainer.appendChild(btn);
-        });
-        
-        updateControlsVisibility();
+        AudioEngine.play('success');
+        setMastered(q.id, true);
+        cardEl.className = 'flashcard-card flipped swipe-right';
+        setTimeout(() => {
+          selectNewRandomCard();
+          renderCard();
+        }, 300);
       });
 
       // Attach bookmarks listeners
