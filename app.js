@@ -14190,6 +14190,267 @@ Source E is highly useful for showing the political and moral collapse of the wa
         setTimeout(() => {
           overlay.style.display = "none";
         }, 300);
+      }, getFilteredPool = function() {
+        return state.allQuestions.filter((q) => activeSubtopicIds.includes(q.subtopicId));
+      }, selectNewRandomCard = function() {
+        const pool = getFilteredPool();
+        if (pool.length === 0) {
+          currentQuestion = null;
+          return;
+        }
+        let nextQ = currentQuestion;
+        let attempts = 0;
+        while ((nextQ === currentQuestion || !nextQ) && attempts < 10 && pool.length > 1) {
+          nextQ = pool[Math.floor(Math.random() * pool.length)];
+          attempts++;
+        }
+        if (pool.length === 1 || attempts >= 10) {
+          nextQ = pool[Math.floor(Math.random() * pool.length)];
+        }
+        currentQuestion = nextQ;
+        reinforcing = false;
+        reinforceMcq = null;
+      }, renderToggles = function() {
+        const togglesContainer = document.getElementById("overview-subtopic-toggles");
+        if (!togglesContainer) return;
+        togglesContainer.innerHTML = "";
+        subtopics.forEach((sub) => {
+          const subNum = sub.title.match(/Topic\s(\d\.\d)/)?.[1] || sub.title;
+          const isActive = activeSubtopicIds.includes(sub.id);
+          const btn = document.createElement("button");
+          btn.className = `btn-subtopic-toggle ${isActive ? "active" : ""}`;
+          btn.textContent = `Lesson ${subNum}`;
+          btn.title = sub.title.replace(/^Topic \d\.\d:\s*/, "");
+          btn.style.padding = "6px 12px";
+          btn.style.fontSize = "0.8rem";
+          btn.style.borderRadius = "20px";
+          btn.style.fontWeight = "600";
+          btn.style.cursor = "pointer";
+          btn.style.transition = "all var(--transition-fast)";
+          btn.style.border = isActive ? "1px solid var(--primary)" : "1px solid var(--border-glass)";
+          btn.style.background = isActive ? "var(--primary)" : "rgba(255, 255, 255, 0.03)";
+          btn.style.color = isActive ? "#fff" : "var(--text-muted)";
+          btn.addEventListener("click", () => {
+            AudioEngine.play("click");
+            if (isActive) {
+              if (activeSubtopicIds.length > 1) {
+                activeSubtopicIds = activeSubtopicIds.filter((id) => id !== sub.id);
+              } else {
+                btn.style.animation = "shake 0.4s ease-in-out";
+                setTimeout(() => btn.style.animation = "", 400);
+                return;
+              }
+            } else {
+              activeSubtopicIds.push(sub.id);
+            }
+            renderToggles();
+            selectNewRandomCard();
+            renderCard();
+          });
+          togglesContainer.appendChild(btn);
+        });
+      }, handleOverviewMcqSelection = function(selectedIndex, clickedBtn, reinforceContainer, cardEl, q) {
+        const optionBtns = reinforceContainer.querySelectorAll(".overview-mcq-option");
+        optionBtns.forEach((btn) => {
+          btn.disabled = true;
+          btn.style.pointerEvents = "none";
+        });
+        const isCorrect = selectedIndex === reinforceMcq.correctIndex;
+        if (isCorrect) {
+          AudioEngine.play("success");
+          clickedBtn.classList.add("correct");
+          setMastered(q.id, true);
+          setTimeout(() => {
+            cardEl.className = "flashcard-card flipped swipe-right";
+            setTimeout(() => {
+              selectNewRandomCard();
+              renderCard();
+            }, 300);
+          }, 1200);
+        } else {
+          AudioEngine.play("fail");
+          clickedBtn.classList.add("incorrect");
+          optionBtns.forEach((btn, idx) => {
+            if (idx === reinforceMcq.correctIndex) {
+              btn.classList.add("correct");
+            }
+          });
+          setMastered(q.id, false);
+          setTimeout(() => {
+            cardEl.className = "flashcard-card flipped swipe-left";
+            setTimeout(() => {
+              selectNewRandomCard();
+              renderCard();
+            }, 300);
+          }, 2200);
+        }
+      }, renderCard = function() {
+        const stageContainer = document.getElementById("overview-flashcard-stage-container");
+        if (!stageContainer) return;
+        if (!currentQuestion) {
+          stageContainer.innerHTML = `
+          <div style="background: rgba(255,255,255,0.01); border: 1px dashed var(--border-glass); border-radius: var(--border-radius-md); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+            <i class="fa-solid fa-face-frown" style="font-size: 2rem; color: var(--primary); margin-bottom: 12px; display: block;"></i>
+            No flashcards available. Please enable at least one subtopic lesson.
+          </div>
+        `;
+          return;
+        }
+        const q = currentQuestion;
+        const isBookmarked = state.bookmarks.includes(q.id);
+        let mcqOptionsHtml = "";
+        if (reinforcing && reinforceMcq) {
+          reinforceMcq.options.forEach((opt, idx) => {
+            mcqOptionsHtml += `
+            <button class="overview-mcq-option" data-index="${idx}" style="width: 100%; text-align: left; padding: 8px 12px; font-size: 0.75rem; line-height: 1.3; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-main); cursor: pointer; transition: all var(--transition-fast);">
+              ${opt}
+            </button>
+          `;
+          });
+        }
+        stageContainer.innerHTML = `
+        <div class="overview-flashcard-stage" style="perspective: 1000px; position: relative; width: 100%; height: 280px; margin-bottom: 16px;">
+          <div class="flashcard-card" id="overview-flashcard-card" style="cursor: pointer; position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+            <!-- Front Face -->
+            <div class="flashcard-face flashcard-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-glass); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card); background-image: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);">
+              <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Standard" : "Top Tier Trivia"}</span>
+                <span class="bookmark-icon-container ${isBookmarked ? "bookmarked" : ""}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? "fa-solid" : "fa-regular"} fa-star" style="color: var(--primary);"></i></span>
+              </div>
+              <div class="card-body" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 0;">
+                <h3 class="card-question" style="font-size: 0.95rem; font-weight: 600; line-height: 1.4; text-align: center; margin: 0; color: var(--text-main); max-width: 90%;">${q.question}</h3>
+              </div>
+              <div class="card-bottom" style="text-align: center; font-size: 0.72rem; color: var(--text-muted); font-weight: 500;"><i class="fa-solid fa-rotate"></i> Click card to flip and reveal answer</div>
+            </div>
+            <!-- Back Face -->
+            <div class="flashcard-face flashcard-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-active); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card-hover); background-image: radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%); transform: rotateY(180deg);">
+              <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Standard" : "Top Tier Trivia"}</span>
+                <span class="bookmark-icon-container ${isBookmarked ? "bookmarked" : ""}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? "fa-solid" : "fa-regular"} fa-star" style="color: var(--primary);"></i></span>
+              </div>
+              
+              <!-- Standard back body (Question detail) -->
+              <div id="overview-flashcard-back-standard-body" style="display: ${reinforcing ? "none" : "flex"}; flex-direction: column; flex: 1; padding: 10px 0; overflow-y: auto; text-align: center; justify-content: center; gap: 4px;">
+                <span class="card-answer-label" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; margin-bottom: 2px;">Correct Answer</span>
+                <h2 class="card-answer-text" style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0 0 6px 0; line-height: 1.2;">${q.answer}</h2>
+                <p class="card-explanation-text" style="font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); margin: 0; max-height: 80px; overflow-y: auto;">${q.explanation}</p>
+              </div>
+
+              <!-- MCQ reinforce back body -->
+              <div id="overview-flashcard-back-reinforce-body" style="display: ${reinforcing ? "flex" : "none"}; flex-direction: column; flex: 1; padding: 8px 0; text-align: center; justify-content: flex-start; gap: 6px; overflow-y: auto;">
+                <span class="card-answer-label" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); font-weight: 700;">\u{1F9E0} Double-Check Understanding</span>
+                <h4 id="overview-flashcard-reinforce-question" style="font-size: 0.78rem; font-weight: 600; line-height: 1.3; margin: 0 0 6px 0; color: var(--text-main);">${reinforceMcq ? reinforceMcq.prompt : ""}</h4>
+                <div id="overview-flashcard-reinforce-options" style="display: flex; flex-direction: column; gap: 6px; width: 100%;">
+                  ${mcqOptionsHtml}
+                </div>
+              </div>
+              
+              <div class="card-bottom" style="text-align: center; font-size: 0.72rem; color: var(--text-muted); font-weight: 500;"><i class="fa-solid fa-rotate"></i> Click card to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="overview-flashcard-controls" style="display: flex; justify-content: center; gap: 12px; margin-top: 12px; height: 38px; align-items: center;">
+          <button class="btn-secondary" id="overview-btn-flashcard-reveal" style="padding: 8px 16px; font-size: 0.82rem; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); display: flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-rotate"></i> Flip Card
+          </button>
+          <div id="overview-flashcard-self-grade-actions" style="display: none; width: 100%; gap: 12px; justify-content: center;">
+            <button class="btn-incorrect" id="overview-btn-flashcard-incorrect" style="padding: 8px 14px; font-size: 0.8rem; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); display: flex; align-items: center; gap: 6px; border: 1px solid var(--danger); background: rgba(239, 68, 68, 0.05); color: var(--danger);">
+              <i class="fa-solid fa-xmark"></i> Study Again
+            </button>
+            <button class="btn-correct" id="overview-btn-flashcard-correct" style="padding: 8px 14px; font-size: 0.8rem; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); display: flex; align-items: center; gap: 6px; border: 1px solid var(--success); background: rgba(16, 185, 129, 0.05); color: var(--success);">
+              <i class="fa-solid fa-check"></i> Got It!
+            </button>
+          </div>
+        </div>
+      `;
+        const cardEl = document.getElementById("overview-flashcard-card");
+        const revealBtn = document.getElementById("overview-btn-flashcard-reveal");
+        const gradeActions = document.getElementById("overview-flashcard-self-grade-actions");
+        cardEl.addEventListener("click", (e) => {
+          if (e.target.closest("button") || e.target.closest(".bookmark-icon-container")) {
+            return;
+          }
+          if (reinforcing) {
+            cardEl.style.animation = "shake 0.4s ease-in-out";
+            setTimeout(() => cardEl.style.animation = "", 400);
+            return;
+          }
+          cardEl.classList.toggle("flipped");
+          AudioEngine.play("flip");
+          updateControlsVisibility();
+        });
+        revealBtn.addEventListener("click", () => {
+          cardEl.classList.add("flipped");
+          AudioEngine.play("flip");
+          updateControlsVisibility();
+        });
+        function updateControlsVisibility() {
+          const isFlipped = cardEl.classList.contains("flipped");
+          if (isFlipped && !reinforcing) {
+            revealBtn.style.display = "none";
+            gradeActions.style.display = "flex";
+          } else if (reinforcing) {
+            revealBtn.style.display = "none";
+            gradeActions.style.display = "none";
+          } else {
+            revealBtn.style.display = "flex";
+            gradeActions.style.display = "none";
+          }
+        }
+        updateControlsVisibility();
+        document.getElementById("overview-btn-flashcard-incorrect").addEventListener("click", () => {
+          AudioEngine.play("fail");
+          setMastered(q.id, false);
+          cardEl.className = "flashcard-card flipped swipe-left";
+          setTimeout(() => {
+            selectNewRandomCard();
+            renderCard();
+          }, 300);
+        });
+        document.getElementById("overview-btn-flashcard-correct").addEventListener("click", () => {
+          reinforceMcq = generateReinforcementMCQ(q);
+          reinforcing = true;
+          document.getElementById("overview-flashcard-back-standard-body").style.display = "none";
+          document.getElementById("overview-flashcard-back-reinforce-body").style.display = "flex";
+          document.getElementById("overview-flashcard-reinforce-question").innerHTML = reinforceMcq.prompt;
+          const reinforceContainer = document.getElementById("overview-flashcard-reinforce-options");
+          reinforceContainer.innerHTML = "";
+          reinforceMcq.options.forEach((opt, idx) => {
+            const btn = document.createElement("button");
+            btn.className = "flashcard-mcq-option overview-mcq-option";
+            btn.innerHTML = opt;
+            btn.style.width = "100%";
+            btn.style.textAlign = "left";
+            btn.style.padding = "8px 12px";
+            btn.style.fontSize = "0.75rem";
+            btn.style.lineHeight = "1.3";
+            btn.style.borderRadius = "var(--border-radius-sm)";
+            btn.style.border = "1px solid var(--border-glass)";
+            btn.style.background = "rgba(255, 255, 255, 0.03)";
+            btn.style.color = "var(--text-main)";
+            btn.style.cursor = "pointer";
+            btn.style.transition = "all var(--transition-fast)";
+            btn.addEventListener("click", () => {
+              handleOverviewMcqSelection(idx, btn, reinforceContainer, cardEl, q);
+            });
+            reinforceContainer.appendChild(btn);
+          });
+          updateControlsVisibility();
+        });
+        const bkmkBtns = stageContainer.querySelectorAll(".bookmark-icon-container");
+        bkmkBtns.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const qid = btn.getAttribute("data-qid");
+            toggleBookmark(qid);
+            const isNowBookmarked = state.bookmarks.includes(qid);
+            bkmkBtns.forEach((b) => {
+              b.className = `bookmark-icon-container ${isNowBookmarked ? "bookmarked" : ""}`;
+              b.querySelector("i").className = isNowBookmarked ? "fa-solid fa-star" : "fa-regular fa-star";
+            });
+          });
+        });
       };
       let timelineNodesHtml = "";
       data.timeline.forEach((event, idx) => {
@@ -14201,20 +14462,6 @@ Source E is highly useful for showing the political and moral collapse of the wa
           <div class="timeline-node-label" style="margin-top: 8px; text-align: center; display: flex; flex-direction: column; align-items: center;">
             <span class="timeline-node-year" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary);">${event.year}</span>
             <span class="timeline-node-title" style="font-size: 0.72rem; color: var(--text-muted); max-width: 110px; line-height: 1.2; font-weight: 600;">${event.title}</span>
-          </div>
-        </div>
-      `;
-      });
-      const shuffledEvents = [...data.timeline].sort(() => Math.random() - 0.5);
-      let chronoCardsHtml = "";
-      shuffledEvents.forEach((event) => {
-        chronoCardsHtml += `
-        <div class="chrono-drag-card" draggable="true" data-id="${event.id}" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px; display: flex; align-items: center; gap: 12px; cursor: grab; transition: all var(--transition-fast);">
-          <i class="fa-solid fa-bars drag-handle" style="color: var(--text-muted); cursor: grab;"></i>
-          <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-main); flex: 1;">${event.title} (${event.year})</span>
-          <div class="chrono-arrows" style="display: flex; flex-direction: column; gap: 2px;">
-            <button class="btn-chrono-arrow-up" title="Move Up" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 6px; font-size: 0.75rem; transition: color var(--transition-fast);"><i class="fa-solid fa-chevron-up"></i></button>
-            <button class="btn-chrono-arrow-down" title="Move Down" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 2px 6px; font-size: 0.75rem; transition: color var(--transition-fast);"><i class="fa-solid fa-chevron-down"></i></button>
           </div>
         </div>
       `;
@@ -14290,24 +14537,16 @@ Source E is highly useful for showing the political and moral collapse of the wa
             </div>
           </div>
 
-          <!-- Component B: Drag-to-Order Challenge -->
+          <!-- Component B: Dynamic Flashcard Revision Widget -->
           <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm);">
             <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-clock"></i> Test Your Chronological Awareness
+              <i class="fa-solid fa-layer-group"></i> Key Topic Revision Flashcards
             </h3>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 16px 0; line-height: 1.4;">
-              Drag the cards or use the Up/Down arrows to arrange the events in their correct sequence (1st to 4th):
+              Toggle subtopics to customize your study pool, click the card to flip, and test your mastery:
             </p>
-            <div id="chrono-drag-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
-              ${chronoCardsHtml}
-            </div>
-            <div style="display: flex; gap: 12px; justify-content: flex-end; align-items: center;">
-              <span id="chrono-feedback-msg" style="font-size: 0.85rem; font-weight: 600; transition: color var(--transition-fast);"></span>
-              <button class="btn-primary" id="btn-chrono-check" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 4px; font-weight: 600;">Check Order</button>
-            </div>
-            <div id="chrono-explanation-box" style="display: none; margin-top: 14px; background: rgba(16, 185, 129, 0.05); border-left: 3px solid var(--success); padding: 14px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted);">
-              <!-- Populated upon correct order check -->
-            </div>
+            <div id="overview-subtopic-toggles" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;"></div>
+            <div id="overview-flashcard-stage-container"></div>
           </div>
 
           <!-- Component C: Weighing Sliders -->
@@ -14358,86 +14597,13 @@ Source E is highly useful for showing the political and moral collapse of the wa
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closeModal();
       });
-      const chronoContainer = document.getElementById("chrono-drag-container");
-      const checkBtn = document.getElementById("btn-chrono-check");
-      const feedbackMsg = document.getElementById("chrono-feedback-msg");
-      const explanationBox = document.getElementById("chrono-explanation-box");
-      let draggedItem = null;
-      chronoContainer.addEventListener("dragstart", (e) => {
-        const card = e.target.closest(".chrono-drag-card");
-        if (!card) return;
-        draggedItem = card;
-        card.style.opacity = "0.5";
-        e.dataTransfer.effectAllowed = "move";
-      });
-      chronoContainer.addEventListener("dragover", (e) => {
-        e.preventDefault();
-        const card = e.target.closest(".chrono-drag-card");
-        if (!card || card === draggedItem) return;
-        const rect = card.getBoundingClientRect();
-        const next = (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
-        chronoContainer.insertBefore(draggedItem, next ? card.nextSibling : card);
-      });
-      chronoContainer.addEventListener("dragend", () => {
-        if (draggedItem) {
-          draggedItem.style.opacity = "1";
-          draggedItem = null;
-        }
-      });
-      chronoContainer.addEventListener("click", (e) => {
-        const arrowUp = e.target.closest(".btn-chrono-arrow-up");
-        const arrowDown = e.target.closest(".btn-chrono-arrow-down");
-        if (arrowUp) {
-          e.stopPropagation();
-          const card = arrowUp.closest(".chrono-drag-card");
-          const prev = card.previousElementSibling;
-          if (prev) {
-            chronoContainer.insertBefore(card, prev);
-            AudioEngine.play("click");
-          }
-        }
-        if (arrowDown) {
-          e.stopPropagation();
-          const card = arrowDown.closest(".chrono-drag-card");
-          const next = card.nextElementSibling;
-          if (next) {
-            chronoContainer.insertBefore(next, card);
-            AudioEngine.play("click");
-          }
-        }
-      });
-      checkBtn.addEventListener("click", () => {
-        const cards = chronoContainer.querySelectorAll(".chrono-drag-card");
-        const correctSeq = data.timeline.map((e) => e.id);
-        let correctCount = 0;
-        cards.forEach((card, idx) => {
-          const id = card.getAttribute("data-id");
-          if (id === correctSeq[idx]) {
-            card.style.borderColor = "var(--success)";
-            card.style.boxShadow = "0 0 8px rgba(16, 185, 129, 0.15)";
-            correctCount++;
-          } else {
-            card.style.borderColor = "var(--danger)";
-            card.style.boxShadow = "0 0 8px rgba(239, 68, 68, 0.15)";
-          }
-        });
-        if (correctCount === correctSeq.length) {
-          AudioEngine.play("cheer");
-          Confetti.spawn(60);
-          feedbackMsg.style.color = "var(--success)";
-          feedbackMsg.textContent = "\u{1F389} 100% Correct Sequence!";
-          explanationBox.style.display = "block";
-          explanationBox.innerHTML = `
-          <strong>Exam Connection: Why this sequence matters:</strong><br>
-          ${data.chronoExplanation}
-        `;
-        } else {
-          AudioEngine.play("fail");
-          feedbackMsg.style.color = "var(--danger)";
-          feedbackMsg.textContent = `Incorrect Sequence (${correctCount}/${correctSeq.length} match). Retrying...`;
-          explanationBox.style.display = "none";
-        }
-      });
+      let activeSubtopicIds = subtopics.map((sub) => sub.id);
+      let currentQuestion = null;
+      let reinforcing = false;
+      let reinforceMcq = null;
+      selectNewRandomCard();
+      renderToggles();
+      renderCard();
       data.sliders.forEach((slider) => {
         const input = document.getElementById(`input-slider-${slider.id}`);
         const badge = document.getElementById(`slider-badge-${slider.id}`);
