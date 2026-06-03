@@ -19064,6 +19064,15 @@ ${cleanBrackets(paper.q3d.model)}
           </div>
           ${clueContentHtml}
           <div class="vault-model-answer-content" style="display: none; margin-top: 12px; padding: 12px; background: rgba(34, 197, 94, 0.05); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); white-space: pre-line;">
+            <strong style="display: block; margin-bottom: 8px; color: var(--primary); font-size: 0.95rem; font-style: normal; white-space: normal;">Model Response Blueprint (${q.question.toLowerCase().includes("12 marks") ? "12 Marks" : "Model Answer"}):</strong>
+            ${q.question.toLowerCase().includes("12 marks") ? `
+              <div style="margin-bottom: 12px; padding: 10px; background: rgba(59, 130, 246, 0.08); border-left: 4px solid var(--primary); border-radius: var(--border-radius-sm); font-size: 0.85rem; color: var(--text-base); font-weight: 500; line-height: 1.45; font-style: normal; white-space: normal;">
+                <strong style="color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                  <i class="fa-solid fa-graduation-cap"></i> Edexcel 12-Mark Causation Formula:
+                </strong>
+                To achieve full marks, write <strong>three analytical paragraphs</strong>, incorporating the <strong>two provided bullet points</strong> plus your own specific <strong>OOK (Own Knowledge)</strong>.
+              </div>
+            ` : ""}
             ${highlightModelQuotes(q.answer)}
             ${getVaultLegendHTML(data.id)}
           </div>
@@ -19197,10 +19206,29 @@ ${cleanBrackets(paper.q3d.model)}
 
           <!-- Student Draft Response Area -->
           <div class="hu-draft-section" style="margin-bottom: 16px;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
               <strong style="color: var(--primary); font-size: 0.95rem;">Your Draft Response:</strong>
               <span class="hu-save-status" id="hu-save-status-${subtopicId}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? "inline" : "none"};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
             </div>
+            
+            <!-- Sentence Starter Dropdown -->
+            <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+              <label for="sentence-starter-${subtopicId}" style="font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; white-space: nowrap;">
+                <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary);"></i> Sentence Starters:
+              </label>
+              <select id="sentence-starter-${subtopicId}" class="hu-starter-select" style="flex: 1; min-width: 220px; padding: 6px 10px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.82rem; cursor: pointer; outline: none; transition: border-color var(--transition-fast);">
+                <option value="" disabled selected>-- Select a sentence starter to insert --</option>
+                <option value="Source D is useful because it shows...">"Source D is useful because it shows..."</option>
+                <option value="Source D is useful because the provenance reveals...">"Source D is useful because the provenance reveals..."</option>
+                <option value="This is supported by my own knowledge that...">"This is supported by my own knowledge that..."</option>
+                <option value="However, the utility of Source D is limited by...">"However, the utility of Source D is limited by..."</option>
+                <option value="Similarly, Source E is useful because...">"Similarly, Source E is useful because..."</option>
+                <option value="Source E is useful because the provenance reveals...">"Source E is useful because the provenance reveals..."</option>
+                <option value="However, the utility of Source E is limited by...">"However, the utility of Source E is limited by..."</option>
+                <option value="In conclusion, both sources are highly useful because...">"In conclusion, both sources are highly useful because..."</option>
+              </select>
+            </div>
+
             <textarea class="hu-textarea" data-subtopic-id="${subtopicId}" placeholder="Draft your 8-mark source evaluation here (analyze Content, NOP/Provenance, and Contextual Knowledge for both sources)..." style="width: 100%; height: 120px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; line-height: 1.45; font-family: inherit; margin-bottom: 6px;">${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? state.howUsefulAnswers[subtopicId] : ""}</textarea>
           </div>
 
@@ -20016,6 +20044,26 @@ ${cleanBrackets(paper.q3d.model)}
               }
             }, 800);
           });
+          const starterSelect = huCard.querySelector(".hu-starter-select");
+          if (starterSelect) {
+            starterSelect.addEventListener("change", () => {
+              const starterText = starterSelect.value;
+              if (!starterText) return;
+              AudioEngine.play("click");
+              const startPos = textarea.selectionStart;
+              const endPos = textarea.selectionEnd;
+              const originalText = textarea.value;
+              if (startPos !== void 0) {
+                textarea.value = originalText.substring(0, startPos) + starterText + originalText.substring(endPos);
+                textarea.selectionStart = textarea.selectionEnd = startPos + starterText.length;
+              } else {
+                textarea.value += starterText;
+              }
+              starterSelect.value = "";
+              textarea.focus();
+              textarea.dispatchEvent(new Event("input"));
+            });
+          }
         }
       }
     }

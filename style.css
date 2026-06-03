@@ -4877,15 +4877,17 @@ details > summary::marker {
 }
 
 .summary-wrong-word.corrected {
-  color: var(--success) !important;
+  color: #10b981 !important;
+  font-weight: 800 !important;
   border-bottom: none !important;
-  font-family: 'Caveat', 'Kalam', 'Architects Daughter', cursive !important;
-  font-size: 1.15em !important;
-  background: transparent !important;
-  transform: rotate(-1.5deg) scale(1.05) !important;
+  font-family: var(--font-body), sans-serif !important;
+  font-size: 1.05em !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  padding: 2px 6px !important;
+  border-radius: var(--border-radius-sm) !important;
+  transform: none !important;
   display: inline-block;
   cursor: default !important;
-  animation: handwrittenWiggle 0.3s ease-out;
 }
 
 @keyframes handwrittenWiggle {
