@@ -14857,6 +14857,10 @@ Source E is highly useful for showing the political and moral collapse of the wa
   }
   function getMultipleChoiceOptions(q) {
     const correct = q.answer.trim();
+    if (q.distractors && Array.isArray(q.distractors) && q.distractors.length === 3) {
+      const options2 = [correct, ...q.distractors.map((d) => d.trim())].sort(() => Math.random() - 0.5);
+      return options2;
+    }
     const pool = state.allQuestions.map((other) => other.answer.trim()).filter((ans) => ans.toLowerCase() !== correct.toLowerCase() && ans.length > 0);
     const distractors = generateSmartDistractors(correct, pool, q.question);
     const options = [correct, ...distractors].sort(() => Math.random() - 0.5);

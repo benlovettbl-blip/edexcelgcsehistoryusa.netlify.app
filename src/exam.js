@@ -407,6 +407,11 @@ function generateSmartDistractors(correctText, pool, questionText) {
 function getMultipleChoiceOptions(q) {
   const correct = q.answer.trim();
   
+  if (q.distractors && Array.isArray(q.distractors) && q.distractors.length === 3) {
+    const options = [correct, ...q.distractors.map(d => d.trim())].sort(() => Math.random() - 0.5);
+    return options;
+  }
+  
   const pool = state.allQuestions
     .map(other => other.answer.trim())
     .filter(ans => ans.toLowerCase() !== correct.toLowerCase() && ans.length > 0);
