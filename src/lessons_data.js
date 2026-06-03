@@ -2934,8 +2934,8 @@ export const LESSONS_DATA = {
     "doNowStarter": {
       "prevSubtopicId": "subtopic_4_2",
       "prevSubtopicTitle": "Topic 4.2: Support for the war (Silent Majority and hard hats)",
-      "image": "assets/sources/pro-war-rally-nyc.jpg",
-      "provenance": "Pro-war demonstrators marching in support of Nixon's Vietnam policies, 1970.",
+      "image": "assets/sources/hard-hat-riot-1970.jpg",
+      "provenance": "Construction workers wearing hard hats marching in support of the government during the Hard Hat Riots, New York City, May 1970.",
       "seeThinkWonder": {
         "see": "Observe the text on the banners and the American flags carried by the marchers.",
         "think": "Why did blue-collar workers feel alienated by and hostile toward student anti-war protestors?",
