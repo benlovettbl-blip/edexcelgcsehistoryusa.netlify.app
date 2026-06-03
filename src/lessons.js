@@ -849,8 +849,22 @@ export function renderMasteryView(subtopicId) {
       `;
     } else {
       prevLessonLinkHtml = `
-        <div style="margin-bottom: 14px; font-size: 0.88rem; color: var(--accent); font-weight: 700;">
-          <i class="fa-solid fa-star"></i> Course Introduction Retrieval
+        <div style="margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); padding: 12px 16px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); width: 100%; box-sizing: border-box;">
+          <div style="font-size: 0.88rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>How useful is this source for an enquiry into segregation and discrimination in the Southern states in the 1950s?</span>
+          </div>
+          <div class="do-now-checkboxes" style="display: flex; gap: 14px; align-items: center;">
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
+              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> C
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
+              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> NOP
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
+              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> OK
+            </label>
+          </div>
         </div>
       `;
     }
@@ -1876,6 +1890,27 @@ export function renderMasteryView(subtopicId) {
       });
     }
 
+    // Bind Do Now source evaluation checkboxes
+    const doNowCbs = doNowCard.querySelectorAll('.do-now-cb');
+    doNowCbs.forEach(cb => {
+      cb.addEventListener('change', () => {
+        AudioEngine.play('click');
+        const allChecked = Array.from(doNowCbs).every(c => c.checked);
+        const parentContainer = cb.closest('.do-now-checkboxes').parentElement;
+        if (allChecked) {
+          AudioEngine.play('success');
+          if (parentContainer) {
+            parentContainer.style.borderColor = '#10b981';
+            parentContainer.style.background = 'rgba(16, 185, 129, 0.08)';
+          }
+        } else {
+          if (parentContainer) {
+            parentContainer.style.borderColor = 'rgba(245, 158, 11, 0.2)';
+            parentContainer.style.background = 'rgba(245, 158, 11, 0.05)';
+          }
+        }
+      });
+    });
   }
 
   // Bind Specification Checklist click listeners
