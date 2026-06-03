@@ -1,0 +1,240 @@
+q_1_1_s1|Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?|Jim Crow laws
+q_1_1_s2|What does the abbreviation NAACP stand for?|National Association for the Advancement of Colored People
+q_1_1_s3|Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?|CORE (Congress of Racial Equality)
+q_1_1_s4|What primary method did the NAACP use in the early 1950s to fight racial inequality?|Legal action through the courts
+q_1_1_s5|Why did Black Americans find it almost impossible to register to vote in the South in the early 1950s?|Due to literacy tests, poll taxes, and white intimidation
+q_1_1_s6|What was the doctrine established by the 1896 Plessy v. Ferguson Supreme Court ruling?|Separate but equal
+q_1_1_s7|Why did the Congress of Racial Equality (CORE) choose to use non-violent direct action?|To expose the injustice of segregation to the public and force change
+q_1_1_s8|Who was the first Black American to head the NAACP Legal Defense and Educational Fund, coordinating early court battles?|Thurgood Marshall
+q_1_1_s9|Which US President issued Executive Order 9981 in 1948 to desegregate the United States Armed Forces?|Harry S. Truman
+q_1_1_s10|What constitutional amendment, passed in 1868, contains the Equal Protection Clause used by the NAACP to challenge segregation?|14th Amendment
+q_1_1_d1|What term describes the local taxes citizens had to pay in order to vote, used to disenfranchise Black voters?|Poll taxes
+q_1_1_d2|What tests were designed to prevent Black citizens from registering to vote by asking complex questions?|Literacy tests
+q_1_1_d3|In what year was the NAACP originally founded?|1909
+q_1_1_d4|Which landmark Supreme Court case struck down the Texas 'white primary' voting restriction in 1944?|Smith v. Allwright
+q_1_1_d5|Why did many Black Americans face severe economic intimidation if they attempted to register to vote in the South?|Because white landowners and employers would fire or evict them
+q_1_2_s1|Which 1954 Supreme Court case declared segregation in public schools unconstitutional?|Brown v. Board of Education of Topeka
+q_1_2_s2|What was the name given to the group of Black students who integrated Central High School in Arkansas in 1957?|The Little Rock Nine
+q_1_2_s3|Who was the chief justice of the Supreme Court during the Brown v. Board ruling?|Earl Warren
+q_1_2_s4|Who was the Governor of Arkansas who defied federal court orders and blocked school integration in 1957?|Orval Faubus
+q_1_2_s5|Which elite military division was deployed by President Eisenhower to protect the Little Rock Nine?|101st Airborne Division
+q_1_2_s6|Who was the lead NAACP lawyer who successfully argued the Brown case before the Supreme Court?|Thurgood Marshall
+q_1_2_s7|In what year did the integration crisis at Little Rock Central High School occur?|1957
+q_1_2_s8|What was the full name of the high school integrated in Little Rock?|Central High School
+q_1_2_s9|What action did Governor Faubus take in 1958 to prevent further school integration?|Closed all Little Rock high schools
+q_1_2_s10|Who was the first Black student to graduate from Little Rock Central High School?|Ernest Green
+q_1_2_d1|What was the name of the 1955 Supreme Court order requiring school desegregation 'with all deliberate speed'?|Brown II
+q_1_2_d2|Which 1950 Supreme Court case ruled that Texas must admit a Black student to its state law school?|Sweatt v. Painter
+q_1_2_d3|Who was the first Black child to integrate an all-white elementary school in the South, in New Orleans in 1960?|Ruby Bridges
+q_1_2_d4|Who was the local leader of the Arkansas NAACP who guided and supported the Little Rock Nine during the crisis?|Daisy Bates
+q_1_2_d5|Why was the 1954 Brown v. Topeka ruling alone insufficient to desegregate Southern schools?|Because it lacked a clear enforcement mechanism and timeframe
+q_1_3_s1|Whose arrest on 1 December 1955 sparked the Montgomery Bus Boycott?|Rosa Parks
+q_1_3_s2|Which young minister was chosen to lead the Montgomery Improvement Association (MIA) during the boycott?|Martin Luther King Jr.
+q_1_3_s3|What does the abbreviation SCLC stand for?|Southern Christian Leadership Conference
+q_1_3_s4|How many days did the Montgomery Bus Boycott last?|381 days
+q_1_3_s5|Who was the Mayor of Montgomery who strongly opposed the boycott and joined the White Citizens' Council?|W. A. Gayle
+q_1_3_s6|What logistics system did the MIA set up to allow boycotters to travel without using buses?|Carpool system
+q_1_3_s7|Which 1956 Supreme Court case declared bus segregation unconstitutional?|Browder v. Gayle
+q_1_3_s8|What percentage of Montgomery's daily bus passengers were Black before the boycott?|70%
+q_1_3_s9|Who was the local NAACP president in Montgomery who bailed Rosa Parks out and helped organize the boycott?|E.D. Nixon
+q_1_3_s10|What non-violent strategy did the MIA use to force the bus company to desegregate?|Economic boycott
+q_1_3_d1|What was the exact date the Supreme Court's desegregation order was served on Montgomery city authorities?|20 December 1956
+q_1_3_d2|Who was the 15-year-old Black girl arrested in Montgomery for refusing to yield her seat 9 months before Rosa Parks?|Claudette Colvin
+q_1_3_d3|Which constitutional amendment's Equal Protection Clause was used to challenge bus segregation in Browder v. Gayle?|14th Amendment
+q_1_3_d4|Who was the president of the Women's Political Council (WPC) who mimeographed 52,000 leaflets calling for a boycott?|Jo Ann Robinson
+q_1_3_d5|What was the name of the women's political activist group led by Jo Ann Robinson in Montgomery?|Women's Political Council (WPC)
+q_1_4_s1|What document signed by over 100 Southern congressmen in 1956 urged defiance of school integration?|The Southern Manifesto
+q_1_4_s2|Which segregationist group formed in Mississippi in 1954 to apply economic intimidation against civil rights?|White Citizens' Councils
+q_1_4_s3|Which white supremacist organization saw a major resurgence in the mid-1950s, using violence and bombings?|Ku Klux Klan
+q_1_4_s4|Which Southern Senator conducted a record-breaking 24-hour filibuster against the 1957 Civil Rights Act?|Strom Thurmond
+q_1_4_s5|In what year was the Southern Manifesto signed and published by Southern politicians?|1956
+q_1_4_s6|Which US president signed the Civil Rights Act of 1957 into law?|Dwight D. Eisenhower
+q_1_4_s7|What parliamentary delaying tactic did Southern senators (Dixiecrats) use to block civil rights bills?|Filibuster
+q_1_4_s8|What was the primary focus of the Civil Rights Act of 1957?|Voting rights
+q_1_4_s9|What was the main purpose of the Civil Rights Act of 1960?|Federal inspection of local voter registration records
+q_1_4_s10|How many Southern congressmen signed the Southern Manifesto in 1956?|101 congressmen
+q_1_4_d1|What was the exact length of Strom Thurmond's record-breaking solo filibuster against the 1957 Civil Rights Act?|24 hours and 18 minutes
+q_1_4_d2|Why did the murder of Emmett Till in 1955 become a major catalyst for the civil rights movement?|Because his mother held an open-casket funeral to expose the brutality of racism
+q_1_4_d3|What term describes the conservative Southern Democrats who organized congressional resistance to civil rights?|Dixiecrats
+q_1_4_d4|What economic warfare method did the White Citizens' Councils use to punish civil rights activists?|Job dismissals and mortgage foreclosures
+q_1_4_d5|Who was the 14-year-old Black boy from Chicago brutally lynched in Mississippi in August 1955 for allegedly whistling at a white woman?|Emmett Till
+q_2_1_s1|In which city did the famous 1960 lunch counter sit-ins begin?|Greensboro, North Carolina
+q_2_1_s2|What does the abbreviation SNCC stand for?|Student Nonviolent Coordinating Committee
+q_2_1_s3|Which tactic was used by activists in 1961 to test the desegregation of interstate bus terminals?|Freedom Rides
+q_2_1_s4|In what year did the CORE-led Freedom Rides begin?|1961
+q_2_1_s5|Which civil rights organization organized the first Freedom Rides in 1961?|CORE (Congress of Racial Equality)
+q_2_1_s6|Who was the first Black student to register and enroll at the University of Mississippi in 1962?|James Meredith
+q_2_1_s7|Who was the president of the United States during the Freedom Rides and the James Meredith crisis?|John F. Kennedy
+q_2_1_s8|Who was the Attorney General who sent federal marshals to protect James Meredith in Mississippi?|Robert Kennedy
+q_2_1_s9|In which Alabama city was a Freedom Riders bus firebombed by a white mob in May 1961?|Anniston
+q_2_1_s10|Which Georgia city was the target of SNCC's first major, though unsuccessful, desegregation campaign in 1961-62?|Albany
+q_2_1_d1|What term describes the integrated groups of white and Black activists who rode interstate buses together in 1961?|Freedom Riders
+q_2_1_d2|Who was the National Director of CORE who designed and launched the first Freedom Rides?|James Farmer
+q_2_1_d3|Why did the Albany Movement (1961–62) fail to achieve its desegregation goals?|Because the police chief used non-violent arrests and avoided media attention
+q_2_1_d4|Who was the segregationist Governor of Mississippi who actively defied federal orders to block James Meredith from enrolling in 1962?|Ross Barnett
+q_2_1_d5|Which prominent civil rights adviser and SCLC executive secretary helped student activists organize SNCC in April 1960?|Ella Baker
+q_2_2_s1|Which Alabama city was the site of the 1963 civil rights campaign where police used dogs and fire hoses against children?|Birmingham, Alabama
+q_2_2_s2|Who was the segregationist Police Commissioner of Birmingham who ordered the brutal response to protesters?|Eugene 'Bull' Connor
+q_2_2_s3|What was the name of the famous document written by Martin Luther King Jr. while imprisoned in Alabama in 1963?|Letter from Birmingham Jail
+q_2_2_s4|In what month and year did the historic March on Washington take place?|August 1963
+q_2_2_s5|What was the title of Martin Luther King Jr.'s famous speech delivered at the March on Washington?|I Have a Dream
+q_2_2_s6|Which US president originally proposed the Civil Rights Bill in June 1963 before his assassination?|John F. Kennedy
+q_2_2_s7|Which US president signed the historic Civil Rights Act of 1964 into law?|Lyndon B. Johnson
+q_2_2_s8|Which Alabama city was the starting point for the 1965 marches where protesters were beaten on 'Bloody Sunday'?|Selma, Alabama
+q_2_2_s9|What landmark voting law was passed in 1965 in response to the Selma campaign?|Voting Rights Act of 1965
+q_2_2_s10|How many demonstrators participated in the March on Washington in August 1963?|Over 250,000
+q_2_2_d1|What was the name of the bridge in Selma where state troopers brutally attacked marching protesters on 7 March 1965?|Edmund Pettus Bridge
+q_2_2_d2|Why did the SCLC choose Birmingham, Alabama, for a major campaign in 1963?|Because it was heavily segregated and had a notoriously hot-tempered police chief
+q_2_2_d3|Why was the Selma to Montgomery march in 1965 organized by civil rights leaders?|To demand federal legislation protecting Black voting rights
+q_2_2_d4|Which student leader and SNCC chairman was severely beaten on the Edmund Pettus Bridge on Bloody Sunday?|John Lewis
+q_2_2_d5|Which three civil rights activists were abducted and murdered by the KKK in Mississippi during Freedom Summer in 1964?|James Chaney, Andrew Goodman, and Michael Schwerner
+q_2_3_s1|Who was the leading spokesperson for the Nation of Islam (commonly known as the Black Muslims) who advocated self-defense in the early 1960s?|Malcolm X
+q_2_3_s2|Which radical civil rights slogan was popularized by Stokely Carmichael during a 1966 march in Mississippi?|Black Power
+q_2_3_s3|Who were the two co-founders of the Black Panther Party for Self-Defense, created in Oakland in 1966?|Huey Newton and Bobby Seale
+q_2_3_s4|Which leader of the Nation of Islam (the Black Muslims) did Malcolm X clash with before breaking away in 1964?|Elijah Muhammad
+q_2_3_s5|In what year was Malcolm X assassinated while giving a speech in New York City?|1965
+q_2_3_s6|In what year was the Black Panther Party for Self-Defense founded?|1966
+q_2_3_s7|Which two US athletes raised black-gloved fists during the medal ceremony at the 1968 Olympics?|Tommie Smith and John Carlos
+q_2_3_s8|In which California city was the Black Panther Party originally founded?|Oakland
+q_2_3_s9|Which student organization officially rejected non-violence and adopted Black Power under Stokely Carmichael in 1966?|SNCC
+q_2_3_s10|What secular activist organization did Malcolm X found after leaving the Nation of Islam in 1964?|OAAU (Organization of Afro-American Unity)
+q_2_3_d1|Why did the Black Power movement gain popularity among young urban Black Americans in the mid-1960s?|Due to frustration with the slow pace of legislative change and ongoing police brutality
+q_2_3_d2|What famous book detailing Malcolm X's life was published shortly after his death in 1965?|The Autobiography of Malcolm X
+q_2_3_d3|What was the name of the popular community service program created by the Black Panthers to feed school children?|Free Breakfast for Children Program
+q_2_3_d4|What term was popularized by Stokely Carmichael to describe systemic discrimination embedded in social institutions?|Institutional racism
+q_2_3_d5|Which voting rights campaign did Malcolm X visit and support in early 1965 shortly before his death?|Selma campaign
+q_2_4_s1|Which district of Los Angeles was the site of massive, destructive race riots in August 1965?|Watts
+q_2_4_s2|What was the name of the federal commission appointed by Johnson that blamed white racism for the 1960s riots?|Kerner Commission
+q_2_4_s3|On what date was Martin Luther King Jr. assassinated in Memphis?|4 April 1968
+q_2_4_s4|In which Southern city was Martin Luther King Jr. assassinated in 1968?|Memphis, Tennessee
+q_2_4_s5|What was the name of the 1966 campaign where MLK moved into a slum to highlight poor housing in the North?|Chicago Freedom Movement
+q_2_4_s6|Who was convicted of the assassination of Martin Luther King Jr.?|James Earl Ray
+q_2_4_s7|Which federal law passed in April 1968 banned racial discrimination in the sale or rental of housing?|Civil Rights Act of 1968 (Fair Housing Act)
+q_2_4_s8|What SCLC campaign launched in 1968 aimed to bring thousands of poor Americans to camp out in Washington?|Poor People's Campaign
+q_2_4_s9|Who took over the leadership of the SCLC immediately after Martin Luther King Jr.'s assassination?|Ralph Abernathy
+q_2_4_s10|In how many US cities did major race riots break out in the week following Martin Luther King Jr.'s assassination?|Over 100 cities
+q_2_4_d1|Why did Martin Luther King Jr. launch the Chicago Freedom Movement in 1966?|To challenge segregation in Northern housing, employment, and education
+q_2_4_d2|What famous conclusion did the Kerner Commission draw about the future division of American society?|Moving toward two societies, one Black, one white - separate and unequal
+q_2_4_d3|Which Chicago suburb saw MLK's housing march met by thousands of white residents throwing bricks and bottles?|Cicero
+q_2_4_d4|What municipal labor strike was Martin Luther King Jr. supporting when he was shot in Memphis?|Sanitation workers' strike
+q_2_4_d5|In what year did the destructive Watts Riots occur in Los Angeles?|1965
+q_3_1_s1|Who was the leader of the communist forces and President of North Vietnam?|Ho Chi Minh
+q_3_1_s2|Which 1954 battle saw the decisive defeat of the French army, ending French colonial rule in Indochina?|Dien Bien Phu
+q_3_1_s3|Which parallel divided Vietnam into North and South according to the 1954 Geneva Accords?|17th Parallel
+q_3_1_s4|What theory did President Eisenhower use in 1954 to justify U.S. intervention in Southeast Asia?|The Domino Theory
+q_3_1_s5|Who was the first US president to send military advisors to South Vietnam?|Dwight D. Eisenhower
+q_3_1_s6|Which US president increased the number of military advisors in Vietnam to over 16,000 by late 1963?|John F. Kennedy
+q_3_1_s7|What was the capital city of South Vietnam?|Saigon
+q_3_1_s8|What was the capital city of North Vietnam?|Hanoi
+q_3_1_s9|Which South Vietnamese president was overthrown and assassinated in a coup in November 1963?|Ngo Dinh Diem
+q_3_1_s10|What was the name of the program that built fortified villages to separate peasants from Vietcong influence?|Strategic Hamlet Program
+q_3_1_d1|What was the name of the communist-led nationalist coalition that fought the French for independence?|Vietminh
+q_3_1_d2|Which major religious group faced severe discrimination under Ngo Dinh Diem's Catholic-dominated government?|Buddhists
+q_3_1_d3|Why did the Strategic Hamlet Program (1962) fail and actually increase support for the Vietcong?|It forcibly relocated peasants from their ancestral lands and villages
+q_3_1_d4|What term was commonly used by US troops to refer to the communist insurgent fighters in South Vietnam?|Vietcong
+q_3_1_d5|What was the official name of the political and military organization commonly known as the Vietcong?|National Liberation Front (NLF)
+q_3_2_s1|Which US destroyer was reportedly attacked by North Vietnamese torpedo boats in August 1964?|USS Maddox
+q_3_2_s2|Which congressional resolution in August 1964 gave President Johnson war powers to defend South Vietnam?|Gulf of Tonkin Resolution
+q_3_2_s3|In what year did Congress pass the Gulf of Tonkin Resolution?|1964
+q_3_2_s4|What was the code name of the sustained US bombing campaign of North Vietnam started in early 1965?|Operation Rolling Thunder
+q_3_2_s5|In what year did Operation Rolling Thunder begin?|1965
+q_3_2_s6|Who was the commander of US forces in Vietnam during the period of escalation (1964-68)?|General William Westmoreland
+q_3_2_s7|In what year were the first US combat troops officially deployed to South Vietnam?|1965
+q_3_2_s8|Which US military base in South Vietnam was attacked in February 1965, prompting Johnson to launch Rolling Thunder?|Pleiku
+q_3_2_s9|What was the peak troop level of US servicemen in Vietnam under President Johnson's administration?|Over 500,000
+q_3_2_s10|Who was the Secretary of Defense who served under Kennedy and Johnson, overseeing the escalation of the war?|Robert McNamara
+q_3_2_d1|Why was the Gulf of Tonkin Resolution (1964) highly significant for US involvement in Vietnam?|It gave President Johnson the power to escalate military action without a formal declaration of war
+q_3_2_d2|Which South Vietnamese air base was the landing site for the first official US ground combat troops in March 1965?|Da Nang
+q_3_2_d3|Which major battle in November 1965 was the first large-scale clash between the US Army and conventional NVA forces?|Battle of Ia Drang
+q_3_2_d4|How many members of Congress voted against the Gulf of Tonkin Resolution in August 1964?|Two
+q_3_2_d5|Who was the military commander of the North Vietnamese Army (NVA) who planned the strategy against the French and Americans?|Vo Nguyen Giap
+q_3_3_s1|What Vietcong military tactic involved hit-and-run ambushes, traps, and avoiding conventional pitched battles?|Guerrilla warfare
+q_3_3_s2|What US military tactic involved patrolling the jungle to locate enemy units and calling in artillery and air strikes?|Search and Destroy
+q_3_3_s3|What highly flammable, sticky gasoline gel was used by the US military in bombs to burn jungle foliage and enemy positions?|Napalm
+q_3_3_s4|What chemical herbicide was sprayed by US aircraft to defoliate forests and destroy enemy food crops?|Agent Orange
+q_3_3_s5|What was the name of the complex supply route running from North to South Vietnam through Laos and Cambodia?|Ho Chi Minh Trail
+q_3_3_s6|What underground structures did the Vietcong construct to hide, store supplies, and launch surprise attacks?|Tunnel systems
+q_3_3_s7|What simple Vietcong traps used sharpened bamboo stakes hidden in pits and smeared with excrement?|Punji traps
+q_3_3_s8|What metric did U.S. commanders use as the primary measure of progress in the war of attrition?|Body count
+q_3_3_s9|What helicopter model was widely used by the US for troop transport, medical evacuation, and gunship support?|UH-1 Huey
+q_3_3_s10|Which major North Vietnamese and Vietcong offensive in January 1968 marked the turning point of the war?|Tet Offensive
+q_3_3_d1|Why was the 1968 Tet Offensive considered a major political turning point for the US homefront?|It shattered the public belief that the US was winning the war
+q_3_3_d2|Which historic South Vietnamese city saw the longest and bloodiest urban battle of the Tet Offensive?|Hue
+q_3_3_d3|Which US Marine base in northern South Vietnam was besieged by NVA forces for 77 days in early 1968?|Khe Sanh
+q_3_3_d4|Which high-profile building in Saigon was attacked by a Vietcong commando squad during the Tet Offensive?|US Embassy
+q_3_3_d5|What slang term was used by US soldiers for search-and-destroy missions that ended in burning down peasant huts?|Zippo missions
+q_3_4_s1|What policy under President Nixon aimed to withdraw US troops and hand over combat duties to the South Vietnamese army?|Vietnamisation
+q_3_4_s2|What was the name of the foreign policy doctrine declaring that US allies must provide their own ground troops?|Nixon Doctrine
+q_3_4_s3|What slogan did Richard Nixon use to describe his goal of achieving a negotiated exit from the war?|Peace with Honor
+q_3_4_s4|Which neutral country neighboring Vietnam did Nixon order a secret bombing campaign and ground invasion of in 1969-70?|Cambodia
+q_3_4_s5|Which country neighboring Vietnam was invaded by ARVN forces with US air support in 1971?|Laos
+q_3_4_s6|Which North Vietnamese capital city was hit by heavy U.S. B-52 bomber raids during the 1972 Christmas Bombings?|Hanoi
+q_3_4_s7|What was the official code name of the December 1972 Christmas Bombing campaign?|Operation Linebacker II
+q_3_4_s8|In what year did all remaining US combat troops withdraw from Vietnam following the peace agreement?|1973
+q_3_4_s9|Who was Nixon's National Security Advisor and lead negotiator at the Paris peace talks?|Henry Kissinger
+q_3_4_s10|Who was the chief negotiator for North Vietnam who negotiated the peace accords with Henry Kissinger?|Le Duc Tho
+q_3_4_d1|In what month and year were the Paris Peace Accords officially signed, ending direct US military involvement?|January 1973
+q_3_4_d2|What was the term for Nixon's secret strategy to make North Vietnam think he was volatile and willing to use nuclear weapons?|Madman Theory
+q_3_4_d3|Why did President Nixon order the military invasion of Cambodia in 1970?|To destroy Vietcong supply sanctuaries and disrupt the Ho Chi Minh Trail
+q_3_4_d4|What was the code name of the disastrous 1971 ARVN invasion of Laos that ended in panic and retreat?|Operation Lam Son 719
+q_3_4_d5|What major conventional offensive did North Vietnam launch in spring 1972 to test the progress of Vietnamisation?|Easter Offensive
+q_4_1_s1|What was the name of the system used to select young men for compulsory military service in Vietnam?|The Draft
+q_4_1_s2|At which university did National Guardsmen shoot and kill four student protesters in May 1970?|Kent State University
+q_4_1_s3|Which student organization was at the forefront of the early anti-war protest movement?|Students for a Democratic Society (SDS)
+q_4_1_s4|What symbolic protest method involved young men burning their official government service notices?|Draft card burning
+q_4_1_s5|Which heavyweight boxing champion famously refused to be drafted in 1967, citing religious beliefs?|Muhammad Ali
+q_4_1_s6|What term describes the difference between what the government reported about the war and what journalists showed on TV?|Credibility gap
+q_4_1_s7|In which South Vietnamese village did US troops massacre over 500 unarmed civilians in March 1968?|My Lai
+q_4_1_s8|Who was the US Army lieutenant court-martialed and convicted of murder for ordering the My Lai massacre?|William Calley
+q_4_1_s9|What was the name of the top-secret government history of the war leaked to the press in 1971?|The Pentagon Papers
+q_4_1_s10|Which trusted CBS news anchor declared in 1968 that the war was mired in a stalemate?|Walter Cronkite
+q_4_1_d1|What justification did Muhammad Ali give for refusing to fight in the Vietnam War?|His religious beliefs and opposition to fighting other people of color
+q_4_1_d2|What was the exact date of the Kent State shootings in Ohio?|4 May 1970
+q_4_1_d3|Why did the My Lai Massacre (1968) have such a devastating impact on the US homefront when it was revealed in 1969?|It exposed the moral cost of the war and shocked the public's conscience
+q_4_1_d4|Who was the independent investigative journalist who broke the My Lai massacre story in November 1969?|Seymour Hersh
+q_4_1_d5|Who was the military analyst who leaked the Pentagon Papers to newspapers in 1971?|Daniel Ellsberg
+q_4_2_s1|What term did Nixon use in November 1969 to describe the patriotic Americans who supported his war policy?|The Silent Majority
+q_4_2_s2|What was the primary political motivation for pro-war supporters in the US, fearing the global spread of communism?|Anti-communism
+q_4_2_s3|What violent event occurred in New York City in May 1970 where construction workers attacked anti-war students?|Hard Hat Riots
+q_4_2_s4|What informal term was used to describe politicians and citizens who supported the escalation of the war?|Hawks
+q_4_2_s5|What informal term was used to describe politicians and citizens who favored a peaceful exit from the war?|Doves
+q_4_2_s6|What popular pro-war slogan expressed the view that citizens who criticized the war should emigrate?|America: Love It or Leave It
+q_4_2_s7|Which US president made the famous 'Silent Majority' speech on television in November 1969?|Richard Nixon
+q_4_2_s8|Which major national labor union coalition supported Nixon's war policy and helped organize the Hard Hat Riots?|AFL-CIO
+q_4_2_s9|In what month and year did President Nixon deliver his famous 'Silent Majority' address?|November 1969
+q_4_2_s10|What pro-war student organization was formed to counter the radical anti-war Student Mobilization Committee?|Young Americans for Freedom (YAF)
+q_4_2_d1|How many construction workers marched in support of Nixon in New York City in the days following the Hard Hat Riots?|Over 20,000
+q_4_2_d2|What concept of national duty and pride did working-class supporters frequently cite when criticizing student protesters?|Patriotism
+q_4_2_d3|Why did Nixon appeal specifically to the 'Silent Majority' in 1969?|To bypass active anti-war protesters and show Congress he had broad public support
+q_4_2_d4|What demographic groups formed the primary social base for Nixon's Silent Majority?|Working-class, suburban, and older conservative Americans
+q_4_2_d5|What did pro-war advocates fear would happen to US allies if the United States withdrew from Vietnam in defeat?|Loss of US global credibility and containment failure
+q_4_3_s1|In what year did Saigon fall to the North Vietnamese, marking the end of the Vietnam War?|1975
+q_4_3_s2|What was the name of the final North Vietnamese conventional offensive that captured Saigon in 1975?|The Ho Chi Minh Campaign
+q_4_3_s3|What was the name of the US helicopter evacuation of Saigon in April 1975?|Operation Frequent Wind
+q_4_3_s4|Who was the South Vietnamese President who surrendered Saigon to North Vietnamese forces?|Duong Van Minh
+q_4_3_s5|In what year was the Paris Peace Accords signed?|1973
+q_4_3_s6|How many days did the US have to withdraw all troops under the 1973 Accords?|60 days
+q_4_3_s7|Why did South Vietnamese President Thieu initially refuse to sign the accords?|North Vietnamese troops stayed in the South
+q_4_3_s8|What bombing campaign was ordered to force the signing of the accords in late 1972?|Operation Linebacker II (Christmas Bombings)
+q_4_3_s9|Which 1973 Act of Congress limited the president's power to commit troops to foreign conflicts without approval?|War Powers Act
+q_4_3_s10|Which constitutional amendment lowered the US voting age to 18 in 1971, prompted by the draft?|26th Amendment
+q_4_3_d1|What was the exact date of the Fall of Saigon, marking the official end of South Vietnam?|30 April 1975
+q_4_3_d2|What prominent building in Saigon became the iconic site of helicopter evacuations during Operation Frequent Wind?|US Embassy roof
+q_4_3_d3|Under the War Powers Act of 1973, within how many hours must a president notify Congress of troop deployment?|48 hours
+q_4_3_d4|Why did the US Congress pass the War Powers Act in 1973?|To limit the president's ability to wage undeclared war without congressional approval
+q_4_3_d5|Who was the chief North Vietnamese secret negotiator who met with Henry Kissinger in Paris?|Le Duc Tho
+q_4_4_s1|What was the name of the highly resilient supply route running through Laos and Cambodia that the US failed to block?|Ho Chi Minh Trail
+q_4_4_s2|Which two communist superpowers provided essential military hardware, air defenses, and financial aid to North Vietnam?|Soviet Union and China
+q_4_4_s3|What term was used to describe the collapse of morale behavior where US soldiers intentionally killed their own officers with grenades?|Fragging
+q_4_4_s4|What US military strategy of attrition failed because the Vietcong were fighting a total war and could replace losses indefinitely?|Search and Destroy
+q_4_4_s5|What was a major cause of low morale and drug abuse among US troops, who were mostly young, working-class conscripts?|The Draft
+q_4_4_s6|What chemical weapons and defoliants dropped by the US ruined its global reputation and alienated South Vietnamese peasants?|Agent Orange and Napalm
+q_4_4_s7|Which 1968 offensive, though a military defeat for the Vietcong, was a political victory that shattered US support?|Tet Offensive
+q_4_4_s8|What did the US Congress cut in 1974 that severely weakened the South Vietnamese military prior to the final invasion?|Military funding
+q_4_4_s9|What term describes the psychological reluctance of the US public and politicians to intervene militarily abroad after Vietnam?|Vietnam Syndrome
+q_4_4_s10|What was the primary economic consequence of the war's high military expenditure on the US homefront?|High inflation and deficits
+q_4_4_d1|Which superpower provided North Vietnam with advanced anti-aircraft missiles and radar (referred to in the syllabus as Russian support)?|Soviet Union
+q_4_4_d2|What strategic military miscalculation by General Westmoreland underestimated the motivation of the communist forces?|Strategy of attrition
+q_4_4_d3|How did the one-year tour of duty system affect the combat effectiveness and morale of the US military?|Prevented experience build-up and lowered unit cohesion
+q_4_4_d4|What major weakness of the South Vietnamese military (ARVN) contributed to the ultimate US failure in Vietnam?|High desertion rates, corruption, and heavy reliance on US air support
+q_4_4_d5|Why was the South Vietnamese (Saigon) government unable to win the 'hearts and minds' of its own people?|Extreme political corruption, religious bias, and reliance on US force
