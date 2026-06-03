@@ -36,7 +36,11 @@ export function initData() {
     const storedMastery = localStorage.getItem('edexcel_mastery') || localStorage.getItem('firefly_mastery');
     const storedBookmarks = localStorage.getItem('edexcel_bookmarks') || localStorage.getItem('firefly_bookmarks');
     const storedSound = localStorage.getItem('edexcel_sound') || localStorage.getItem('firefly_sound');
-    const storedTheme = localStorage.getItem('edexcel_theme') || localStorage.getItem('firefly_theme');
+    let storedTheme = localStorage.getItem('edexcel_theme') || localStorage.getItem('firefly_theme');
+    if (storedTheme === 'midnight' || storedTheme === 'teal') {
+      storedTheme = 'desert';
+      localStorage.setItem('edexcel_theme', 'desert');
+    }
     const storedPastAnswers = localStorage.getItem('edexcel_past_answers');
     const storedPastCompleted = localStorage.getItem('edexcel_past_completed');
     

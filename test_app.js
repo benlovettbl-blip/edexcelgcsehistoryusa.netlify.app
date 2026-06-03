@@ -33,6 +33,7 @@ const sandbox = {
         return {
           id: id,
           addEventListener: () => {},
+          setAttribute: () => {},
           classList: {
             add: () => {},
             remove: () => {},
@@ -52,6 +53,7 @@ const sandbox = {
       return {
         tagName: tag,
         addEventListener: () => {},
+        setAttribute: () => {},
         classList: {
           add: () => {},
           remove: () => {},

@@ -595,6 +595,15 @@ export function renderMasteryView(subtopicId) {
           </div>
           ${clueContentHtml}
           <div class="vault-model-answer-content" style="display: none; margin-top: 12px; padding: 12px; background: rgba(34, 197, 94, 0.05); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); white-space: pre-line;">
+            <strong style="display: block; margin-bottom: 8px; color: var(--primary); font-size: 0.95rem; font-style: normal; white-space: normal;">Model Response Blueprint (${q.question.toLowerCase().includes('12 marks') ? '12 Marks' : 'Model Answer'}):</strong>
+            ${q.question.toLowerCase().includes('12 marks') ? `
+              <div style="margin-bottom: 12px; padding: 10px; background: rgba(59, 130, 246, 0.08); border-left: 4px solid var(--primary); border-radius: var(--border-radius-sm); font-size: 0.85rem; color: var(--text-base); font-weight: 500; line-height: 1.45; font-style: normal; white-space: normal;">
+                <strong style="color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                  <i class="fa-solid fa-graduation-cap"></i> Edexcel 12-Mark Causation Formula:
+                </strong>
+                To achieve full marks, write <strong>three analytical paragraphs</strong>, incorporating the <strong>two provided bullet points</strong> plus your own specific <strong>OOK (Own Knowledge)</strong>.
+              </div>
+            ` : ''}
             ${highlightModelQuotes(q.answer)}
             ${getVaultLegendHTML(data.id)}
           </div>
@@ -735,10 +744,29 @@ export function renderMasteryView(subtopicId) {
 
           <!-- Student Draft Response Area -->
           <div class="hu-draft-section" style="margin-bottom: 16px;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
               <strong style="color: var(--primary); font-size: 0.95rem;">Your Draft Response:</strong>
               <span class="hu-save-status" id="hu-save-status-${subtopicId}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? 'inline' : 'none'};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
             </div>
+            
+            <!-- Sentence Starter Dropdown -->
+            <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+              <label for="sentence-starter-${subtopicId}" style="font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; white-space: nowrap;">
+                <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary);"></i> Sentence Starters:
+              </label>
+              <select id="sentence-starter-${subtopicId}" class="hu-starter-select" style="flex: 1; min-width: 220px; padding: 6px 10px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.82rem; cursor: pointer; outline: none; transition: border-color var(--transition-fast);">
+                <option value="" disabled selected>-- Select a sentence starter to insert --</option>
+                <option value="Source D is useful because it shows...">"Source D is useful because it shows..."</option>
+                <option value="Source D is useful because the provenance reveals...">"Source D is useful because the provenance reveals..."</option>
+                <option value="This is supported by my own knowledge that...">"This is supported by my own knowledge that..."</option>
+                <option value="However, the utility of Source D is limited by...">"However, the utility of Source D is limited by..."</option>
+                <option value="Similarly, Source E is useful because...">"Similarly, Source E is useful because..."</option>
+                <option value="Source E is useful because the provenance reveals...">"Source E is useful because the provenance reveals..."</option>
+                <option value="However, the utility of Source E is limited by...">"However, the utility of Source E is limited by..."</option>
+                <option value="In conclusion, both sources are highly useful because...">"In conclusion, both sources are highly useful because..."</option>
+              </select>
+            </div>
+
             <textarea class="hu-textarea" data-subtopic-id="${subtopicId}" placeholder="Draft your 8-mark source evaluation here (analyze Content, NOP/Provenance, and Contextual Knowledge for both sources)..." style="width: 100%; height: 120px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; line-height: 1.45; font-family: inherit; margin-bottom: 6px;">${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? state.howUsefulAnswers[subtopicId] : ''}</textarea>
           </div>
 
@@ -821,8 +849,22 @@ export function renderMasteryView(subtopicId) {
       `;
     } else {
       prevLessonLinkHtml = `
-        <div style="margin-bottom: 14px; font-size: 0.88rem; color: var(--accent); font-weight: 700;">
-          <i class="fa-solid fa-star"></i> Course Introduction Retrieval
+        <div style="margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); padding: 12px 16px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); width: 100%; box-sizing: border-box;">
+          <div style="font-size: 0.88rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>How useful is this source for an enquiry into segregation and discrimination in the Southern states in the 1950s?</span>
+          </div>
+          <div class="do-now-checkboxes" style="display: flex; gap: 14px; align-items: center;">
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
+              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> C
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
+              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> NOP
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
+              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> OK
+            </label>
+          </div>
         </div>
       `;
     }
@@ -1668,6 +1710,33 @@ export function renderMasteryView(subtopicId) {
             }
           }, 800);
         });
+
+        // Bind sentence starters dropdown
+        const starterSelect = huCard.querySelector('.hu-starter-select');
+        if (starterSelect) {
+          starterSelect.addEventListener('change', () => {
+            const starterText = starterSelect.value;
+            if (!starterText) return;
+            
+            AudioEngine.play('click');
+            const startPos = textarea.selectionStart;
+            const endPos = textarea.selectionEnd;
+            const originalText = textarea.value;
+            
+            if (startPos !== undefined) {
+              textarea.value = originalText.substring(0, startPos) + starterText + originalText.substring(endPos);
+              textarea.selectionStart = textarea.selectionEnd = startPos + starterText.length;
+            } else {
+              textarea.value += starterText;
+            }
+            
+            starterSelect.value = '';
+            textarea.focus();
+            
+            // Trigger auto-save
+            textarea.dispatchEvent(new Event('input'));
+          });
+        }
       }
     }
   }
@@ -1821,6 +1890,27 @@ export function renderMasteryView(subtopicId) {
       });
     }
 
+    // Bind Do Now source evaluation checkboxes
+    const doNowCbs = doNowCard.querySelectorAll('.do-now-cb');
+    doNowCbs.forEach(cb => {
+      cb.addEventListener('change', () => {
+        AudioEngine.play('click');
+        const allChecked = Array.from(doNowCbs).every(c => c.checked);
+        const parentContainer = cb.closest('.do-now-checkboxes').parentElement;
+        if (allChecked) {
+          AudioEngine.play('success');
+          if (parentContainer) {
+            parentContainer.style.borderColor = '#10b981';
+            parentContainer.style.background = 'rgba(16, 185, 129, 0.08)';
+          }
+        } else {
+          if (parentContainer) {
+            parentContainer.style.borderColor = 'rgba(245, 158, 11, 0.2)';
+            parentContainer.style.background = 'rgba(245, 158, 11, 0.05)';
+          }
+        }
+      });
+    });
   }
 
   // Bind Specification Checklist click listeners
