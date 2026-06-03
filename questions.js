@@ -12,70 +12,120 @@ export const QUIZ_DATA = [
             "question": "Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?",
             "answer": "Jim Crow laws",
             "explanation": "Jim Crow laws legalised segregation in public transport, schools, restaurants, and other public facilities across the South.",
-            "year": 1950
+            "year": 1950,
+            "distractors": [
+              "Black Codes",
+              "Grandfather clauses",
+              "De jure segregation acts"
+            ]
           },
           {
             "id": "q_1_1_s2",
             "question": "What does the abbreviation NAACP stand for?",
             "answer": "National Association for the Advancement of Colored People",
             "explanation": "Founded in 1909, the NAACP focused on challenging segregation and discrimination through legal action and the courts.",
-            "year": 1909
+            "year": 1909,
+            "distractors": [
+              "National Association for the Advancement of Civil Rights",
+              "National Alliance for the Advocacy of Colored People",
+              "National Coalition for the Advancement of Colored Persons"
+            ]
           },
           {
             "id": "q_1_1_s3",
             "question": "Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?",
             "answer": "CORE (Congress of Racial Equality)",
             "explanation": "CORE pioneered non-violent tactics, including early sit-ins, and later co-organised the Freedom Rides.",
-            "year": 1942
+            "year": 1942,
+            "distractors": [
+              "SCLC (Southern Christian Leadership Conference)",
+              "SNCC (Student Nonviolent Coordinating Committee)",
+              "NAACP (National Association for the Advancement of Colored People)"
+            ]
           },
           {
             "id": "q_1_1_s4",
             "question": "What primary method did the NAACP use in the early 1950s to fight racial inequality?",
             "answer": "Legal action through the courts",
             "explanation": "The NAACP chose to challenge segregation using the judicial system, filing lawsuits to prove that segregated facilities violated the US Constitution.",
-            "year": 1950
+            "year": 1950,
+            "distractors": [
+              "Non-violent direct action and marches",
+              "Armed self-defense and street patrols",
+              "Economic boycotts of white businesses"
+            ]
           },
           {
             "id": "q_1_1_s5",
             "question": "Why did Black Americans find it almost impossible to register to vote in the South in the early 1950s?",
             "answer": "Due to literacy tests, poll taxes, and white intimidation",
             "explanation": "Southern states used discriminatory literacy tests, financial poll taxes, and threats of violence or job loss to disenfranchise Black voters.",
-            "year": 1950
+            "year": 1950,
+            "distractors": [
+              "Due to federal voting laws, state bans, and Supreme Court rulings",
+              "Due to strict residency requirements, property ownership tests, and language barriers",
+              "Due to age restrictions, citizenship requirements, and grandfather clauses"
+            ]
           },
           {
             "id": "q_1_1_s6",
             "question": "What was the doctrine established by the 1896 Plessy v. Ferguson Supreme Court ruling?",
             "answer": "Separate but equal",
             "explanation": "Plessy v. Ferguson established the 'separate but equal' doctrine, which legally justified segregation in the South for over fifty years.",
-            "year": 1896
+            "year": 1896,
+            "distractors": [
+              "Equal protection under the law",
+              "Integration with all deliberate speed",
+              "Freedom of association"
+            ]
           },
           {
             "id": "q_1_1_s7",
             "question": "Why did the Congress of Racial Equality (CORE) choose to use non-violent direct action?",
             "answer": "To expose the injustice of segregation to the public and force change",
             "explanation": "CORE believed that peaceful boycotts and sit-ins would gain public support, embarrass segregationists, and pressure authorities to act.",
-            "year": 1942
+            "year": 1942,
+            "distractors": [
+              "To build political coalitions with Southern Democrats and lobby Congress",
+              "To protect Black communities from white violence and police brutality",
+              "To raise funds for legal defense fees in landmark Supreme Court cases"
+            ]
           },
           {
             "id": "q_1_1_s8",
             "question": "Who was the first Black American to head the NAACP Legal Defense and Educational Fund, coordinating early court battles?",
             "answer": "Thurgood Marshall",
             "explanation": "Thurgood Marshall was the chief legal strategist for the NAACP, directing the legal campaign against Jim Crow segregation in public facilities and education.",
-            "year": 1940
+            "year": 1940,
+            "distractors": [
+              "Charles Hamilton Houston",
+              "W. E. B. Du Bois",
+              "A. Philip Randolph"
+            ]
           },
           {
             "id": "q_1_1_s9",
             "question": "Which US President issued Executive Order 9981 in 1948 to desegregate the United States Armed Forces?",
             "answer": "Harry S. Truman",
             "explanation": "President Truman's executive order desegregated the military, representing a landmark early federal action for civil rights.",
-            "year": 1948
+            "year": 1948,
+            "distractors": [
+              "Franklin D. Roosevelt",
+              "Dwight D. Eisenhower",
+              "John F. Kennedy"
+            ]
           },
           {
             "id": "q_1_1_s10",
             "question": "What constitutional amendment, passed in 1868, contains the Equal Protection Clause used by the NAACP to challenge segregation?",
             "answer": "14th Amendment",
             "explanation": "The 14th Amendment guarantees equal protection under the law, which the Supreme Court ruled was violated by segregated schools.",
-            "year": 1868
+            "year": 1868,
+            "distractors": [
+              "13th Amendment",
+              "15th Amendment",
+              "24th Amendment"
+            ]
           }
         ],
         "depth": [
@@ -84,35 +134,60 @@ export const QUIZ_DATA = [
             "question": "What term describes the local taxes citizens had to pay in order to vote, used to disenfranchise Black voters?",
             "answer": "Poll taxes",
             "explanation": "Poll taxes disproportionately affected poor Black Americans, preventing them from registering to vote in Southern states.",
-            "year": 1950
+            "year": 1950,
+            "distractors": [
+              "Property taxes",
+              "Residency fees",
+              "Registration tariffs"
+            ]
           },
           {
             "id": "q_1_1_d2",
             "question": "What tests were designed to prevent Black citizens from registering to vote by asking complex questions?",
             "answer": "Literacy tests",
             "explanation": "Literacy tests were applied corruptly: Black applicants faced impossible legal questions, while whites were exempted.",
-            "year": 1950
+            "year": 1950,
+            "distractors": [
+              "Character tests",
+              "Loyalty tests",
+              "Residency tests"
+            ]
           },
           {
             "id": "q_1_1_d3",
             "question": "In what year was the NAACP originally founded?",
             "answer": "1909",
             "explanation": "The NAACP was founded in 1909 by a group of Black and white activists, including W.E.B. Du Bois, in response to racial violence.",
-            "year": 1909
+            "year": 1909,
+            "distractors": [
+              "1896",
+              "1919",
+              "1925"
+            ]
           },
           {
             "id": "q_1_1_d4",
             "question": "Which landmark Supreme Court case struck down the Texas 'white primary' voting restriction in 1944?",
             "answer": "Smith v. Allwright",
             "explanation": "The ruling declared that primary elections could not exclude Black voters, a major early legal victory for the NAACP.",
-            "year": 1944
+            "year": 1944,
+            "distractors": [
+              "Sweatt v. Painter",
+              "Plessy v. Ferguson",
+              "Brown v. Board of Education"
+            ]
           },
           {
             "id": "q_1_1_d5",
             "question": "Why did many Black Americans face severe economic intimidation if they attempted to register to vote in the South?",
             "answer": "Because white landowners and employers would fire or evict them",
             "explanation": "White citizens and businesses actively cooperated to punish civil rights activists by firing them from jobs or evicting them from their sharecropping lands.",
-            "year": 1950
+            "year": 1950,
+            "distractors": [
+              "Because state police forces would arrest them on false vagrancy charges",
+              "Because local registrars would publish their names in newspapers to invite violence",
+              "Because federal marshals would refuse to protect them at registration offices"
+            ]
           }
         ]
       },
@@ -125,70 +200,120 @@ export const QUIZ_DATA = [
             "question": "Which 1954 Supreme Court case declared segregation in public schools unconstitutional?",
             "answer": "Brown v. Board of Education of Topeka",
             "explanation": "The ruling overturned the 1896 'separate but equal' doctrine established by Plessy v. Ferguson, declaring school segregation unlawful.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Plessy v. Ferguson of New Orleans",
+              "Sweatt v. Painter of Austin",
+              "McLaurin v. Oklahoma State Regents"
+            ]
           },
           {
             "id": "q_1_2_s2",
             "question": "What was the name given to the group of Black students who integrated Central High School in Arkansas in 1957?",
             "answer": "The Little Rock Nine",
             "explanation": "President Eisenhower had to send federal troops from the 101st Airborne Division to protect the nine students from violent mobs.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "The Greensboro Four",
+              "The Montgomery Boycotters",
+              "The Freedom Riders"
+            ]
           },
           {
             "id": "q_1_2_s3",
             "question": "Who was the chief justice of the Supreme Court during the Brown v. Board ruling?",
             "answer": "Earl Warren",
             "explanation": "Earl Warren wrote the unanimous opinion, declaring that separate educational facilities are inherently unequal.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Fred M. Vinson",
+              "Hugo Black",
+              "William O. Douglas"
+            ]
           },
           {
             "id": "q_1_2_s4",
             "question": "Who was the Governor of Arkansas who defied federal court orders and blocked school integration in 1957?",
             "answer": "Orval Faubus",
             "explanation": "Faubus used the state's National Guard to block the Black students from entering Central High School.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "George Wallace",
+              "Ross Barnett",
+              "Allan Shivers"
+            ]
           },
           {
             "id": "q_1_2_s5",
             "question": "Which elite military division was deployed by President Eisenhower to protect the Little Rock Nine?",
             "answer": "101st Airborne Division",
             "explanation": "Soldiers guarded the students inside corridors and escorted them to school, asserting federal supremacy over state defiance.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "82nd Airborne Division",
+              "1st Infantry Division",
+              "2nd Armored Division"
+            ]
           },
           {
             "id": "q_1_2_s6",
             "question": "Who was the lead NAACP lawyer who successfully argued the Brown case before the Supreme Court?",
             "answer": "Thurgood Marshall",
             "explanation": "Marshall led the NAACP Legal Defense Fund, using social and legal arguments to dismantle 'separate but equal'.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Charles Hamilton Houston",
+              "Archibald Cox",
+              "James Nabrit"
+            ]
           },
           {
             "id": "q_1_2_s7",
             "question": "In what year did the integration crisis at Little Rock Central High School occur?",
             "answer": "1957",
             "explanation": "The crisis lasted throughout September 1957, drawing international media attention to Southern white resistance.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "1954",
+              "1955",
+              "1960"
+            ]
           },
           {
             "id": "q_1_2_s8",
             "question": "What was the full name of the high school integrated in Little Rock?",
             "answer": "Central High School",
             "explanation": "Central High School was a prestigious, previously all-white school chosen by the local school board for gradual integration.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "Little Rock High School",
+              "Arkansas State Academy",
+              "Southern Consolidated High"
+            ]
           },
           {
             "id": "q_1_2_s9",
             "question": "What action did Governor Faubus take in 1958 to prevent further school integration?",
             "answer": "Closed all Little Rock high schools",
             "explanation": "Rather than integrate, Faubus shut down the city's high schools for the 1958-59 academic year, known as 'The Lost Year'.",
-            "year": 1958
+            "year": 1958,
+            "distractors": [
+              "Deported the Little Rock Nine from the state",
+              "Replaced the school board with segregationists",
+              "Declared martial law and closed the borders"
+            ]
           },
           {
             "id": "q_1_2_s10",
             "question": "Who was the first Black student to graduate from Little Rock Central High School?",
             "answer": "Ernest Green",
             "explanation": "Green graduated in May 1958. Martin Luther King Jr. attended his graduation ceremony to mark the milestone.",
-            "year": 1958
+            "year": 1958,
+            "distractors": [
+              "Melba Pattillo",
+              "Elizabeth Eckford",
+              "Minnijean Brown"
+            ]
           }
         ],
         "depth": [
@@ -197,35 +322,60 @@ export const QUIZ_DATA = [
             "question": "What was the name of the 1955 Supreme Court order requiring school desegregation 'with all deliberate speed'?",
             "answer": "Brown II",
             "explanation": "Because Southern states resisted, the Court issued Brown II to enforce implementation, but the wording allowed delays.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Decreed that Southern states must desegregate all public transport immediately",
+              "Ruled that school districts must create separate school systems for Black students",
+              "Ordered the immediate arrest of Southern governors who blocked school doors"
+            ]
           },
           {
             "id": "q_1_2_d2",
             "question": "Which 1950 Supreme Court case ruled that Texas must admit a Black student to its state law school?",
             "answer": "Sweatt v. Painter",
             "explanation": "The court ruled the separate law school set up for Black students was physically and academically unequal, paving the way for Brown.",
-            "year": 1950
+            "year": 1950,
+            "distractors": [
+              "Plessy v. Ferguson",
+              "Brown v. Board of Education",
+              "Smith v. Allwright"
+            ]
           },
           {
             "id": "q_1_2_d3",
             "question": "Who was the first Black child to integrate an all-white elementary school in the South, in New Orleans in 1960?",
             "answer": "Ruby Bridges",
             "explanation": "Bridges had to be escorted to school by federal marshals every day due to fierce white protests and boycotts.",
-            "year": 1960
+            "year": 1960,
+            "distractors": [
+              "Claudette Colvin",
+              "Linda Brown",
+              "Daisy Bates"
+            ]
           },
           {
             "id": "q_1_2_d4",
             "question": "Who was the local leader of the Arkansas NAACP who guided and supported the Little Rock Nine during the crisis?",
             "answer": "Daisy Bates",
             "explanation": "Bates' home served as a meeting place and media headquarters for the students, making her a target for white backlash.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "Jo Ann Robinson",
+              "Ella Baker",
+              "Septima Clark"
+            ]
           },
           {
             "id": "q_1_2_d5",
             "question": "Why was the 1954 Brown v. Topeka ruling alone insufficient to desegregate Southern schools?",
             "answer": "Because it lacked a clear enforcement mechanism and timeframe",
             "explanation": "The Supreme Court did not specify a deadline for desegregation, which allowed Southern states to engage in 'Massive Resistance' and delay integration for years.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Because the President refused to support the Supreme Court decision in public",
+              "Because the NAACP lacked the financial resources to bring lawsuits to local courts",
+              "Because the majority of Black parents in the South preferred segregated schools"
+            ]
           }
         ]
       },
@@ -238,70 +388,120 @@ export const QUIZ_DATA = [
             "question": "Whose arrest on 1 December 1955 sparked the Montgomery Bus Boycott?",
             "answer": "Rosa Parks",
             "explanation": "Parks refused to give up her seat on a Montgomery bus to a white passenger, triggering the 381-day protest.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Claudette Colvin",
+              "Jo Ann Robinson",
+              "Daisy Bates"
+            ]
           },
           {
             "id": "q_1_3_s2",
             "question": "Which young minister was chosen to lead the Montgomery Improvement Association (MIA) during the boycott?",
             "answer": "Martin Luther King Jr.",
             "explanation": "The bus boycott brought Martin Luther King Jr. to national prominence as a primary leader of the civil rights movement.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Ralph Abernathy",
+              "Fred Shuttlesworth",
+              "Roy Wilkins"
+            ]
           },
           {
             "id": "q_1_3_s3",
             "question": "What does the abbreviation SCLC stand for?",
             "answer": "Southern Christian Leadership Conference",
             "explanation": "SCLC was formed in 1957, led by MLK, to coordinate civil rights protests using non-violent resistance through Southern churches.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "Student Campaign for Liberation and Equality",
+              "Southern Coalition of Liberated Churches",
+              "State Committee for Law and Civil Rights"
+            ]
           },
           {
             "id": "q_1_3_s4",
             "question": "How many days did the Montgomery Bus Boycott last?",
             "answer": "381 days",
             "explanation": "The boycott began on 5 December 1955 and ended on 21 December 1956 when desegregation was officially enforced.",
-            "year": 1956
+            "year": 1956,
+            "distractors": [
+              "100 days",
+              "250 days",
+              "500 days"
+            ]
           },
           {
             "id": "q_1_3_s5",
             "question": "Who was the Mayor of Montgomery who strongly opposed the boycott and joined the White Citizens' Council?",
             "answer": "W. A. Gayle",
             "explanation": "Mayor Gayle took a hardline stance, refusing to compromise with the MIA and launching a legal crackdown on carpools.",
-            "year": 1956
+            "year": 1956,
+            "distractors": [
+              "Bull Connor",
+              "George Wallace",
+              "Laurie Pritchett"
+            ]
           },
           {
             "id": "q_1_3_s6",
             "question": "What logistics system did the MIA set up to allow boycotters to travel without using buses?",
             "answer": "Carpool system",
             "explanation": "The carpool involved over 300 private vehicles and designated pickup stations, running with military-like efficiency.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Bicycle relay system",
+              "Free taxi service",
+              "Shuttle train system"
+            ]
           },
           {
             "id": "q_1_3_s7",
             "question": "Which 1956 Supreme Court case declared bus segregation unconstitutional?",
             "answer": "Browder v. Gayle",
             "explanation": "The court ruled that segregated public transit violated the 14th Amendment, forcing Montgomery to desegregate.",
-            "year": 1956
+            "year": 1956,
+            "distractors": [
+              "Brown v. Board of Education",
+              "Plessy v. Ferguson",
+              "Sweatt v. Painter"
+            ]
           },
           {
             "id": "q_1_3_s8",
             "question": "What percentage of Montgomery's daily bus passengers were Black before the boycott?",
             "answer": "70%",
             "explanation": "Because Black residents made up the vast majority of riders, their boycott devastated the bus company's finances.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "40%",
+              "55%",
+              "90%"
+            ]
           },
           {
             "id": "q_1_3_s9",
             "question": "Who was the local NAACP president in Montgomery who bailed Rosa Parks out and helped organize the boycott?",
             "answer": "E.D. Nixon",
             "explanation": "Nixon was a union leader who recognized the potential of Parks' arrest to challenge transit segregation laws.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Fred Shuttlesworth",
+              "Ralph Abernathy",
+              "James Farmer"
+            ]
           },
           {
             "id": "q_1_3_s10",
             "question": "What non-violent strategy did the MIA use to force the bus company to desegregate?",
             "answer": "Economic boycott",
             "explanation": "By depriving the private bus company of fare revenue, the MIA applied financial pressure that eventually forced change.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Legal petitioning",
+              "Armed resistance",
+              "Political lobbying"
+            ]
           }
         ],
         "depth": [
@@ -310,35 +510,60 @@ export const QUIZ_DATA = [
             "question": "What was the exact date the Supreme Court's desegregation order was served on Montgomery city authorities?",
             "answer": "20 December 1956",
             "explanation": "The desegregation order arrived on Dec 20, and MLK and other leaders rode integrated buses the next morning.",
-            "year": 1956
+            "year": 1956,
+            "distractors": [
+              "1 December 1955",
+              "5 December 1955",
+              "13 November 1956"
+            ]
           },
           {
             "id": "q_1_3_d2",
             "question": "Who was the 15-year-old Black girl arrested in Montgomery for refusing to yield her seat 9 months before Rosa Parks?",
             "answer": "Claudette Colvin",
             "explanation": "Colvin was arrested in March 1955, but NAACP leaders chose not to use her case due to her pregnancy and youth.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Mary Louise Smith",
+              "Aurelia Browder",
+              "Susie McDonald"
+            ]
           },
           {
             "id": "q_1_3_d3",
             "question": "Which constitutional amendment's Equal Protection Clause was used to challenge bus segregation in Browder v. Gayle?",
             "answer": "14th Amendment",
             "explanation": "The 14th Amendment prohibits states from denying any person equal protection of the laws, which segregation violated.",
-            "year": 1956
+            "year": 1956,
+            "distractors": [
+              "13th Amendment",
+              "15th Amendment",
+              "19th Amendment"
+            ]
           },
           {
             "id": "q_1_3_d4",
             "question": "Who was the president of the Women's Political Council (WPC) who mimeographed 52,000 leaflets calling for a boycott?",
             "answer": "Jo Ann Robinson",
             "explanation": "Robinson and the WPC organized the initial call for the boycott within hours of Rosa Parks' arrest.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Daisy Bates",
+              "Rosa Parks",
+              "Ella Baker"
+            ]
           },
           {
             "id": "q_1_3_d5",
             "question": "What was the name of the women's political activist group led by Jo Ann Robinson in Montgomery?",
             "answer": "Women's Political Council (WPC)",
             "explanation": "The WPC was a civic group of professional Black women that had complained about bus treatment for years.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "National Council of Negro Women (NCNW)",
+              "Southern Christian Leadership Conference (SCLC)",
+              "Student Nonviolent Coordinating Committee (SNCC)"
+            ]
           }
         ]
       },
@@ -351,70 +576,120 @@ export const QUIZ_DATA = [
             "question": "What document signed by over 100 Southern congressmen in 1956 urged defiance of school integration?",
             "answer": "The Southern Manifesto",
             "explanation": "The Manifesto declared the Brown ruling a clear abuse of judicial power and encouraged states to resist it.",
-            "year": 1956
+            "year": 1956,
+            "distractors": [
+              "The Declaration of Constitutional Defiance",
+              "The Southern Segregation Accord",
+              "The Dixiecrats Manifesto"
+            ]
           },
           {
             "id": "q_1_4_s2",
             "question": "Which segregationist group formed in Mississippi in 1954 to apply economic intimidation against civil rights?",
             "answer": "White Citizens' Councils",
             "explanation": "Councils used economic pressure (e.g. firing Black workers, evicting tenants) to prevent challenges to segregation.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Southern Rights Associations",
+              "Patriots for Segregation Guilds",
+              "Anti-Integration Leagues"
+            ]
           },
           {
             "id": "q_1_4_s3",
             "question": "Which white supremacist organization saw a major resurgence in the mid-1950s, using violence and bombings?",
             "answer": "Ku Klux Klan",
             "explanation": "The KKK terrorized civil rights workers and Black families with bombings, beatings, and cross-burnings.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "The White League",
+              "The Knights of the White Camelia",
+              "The Southern Knights Guard"
+            ]
           },
           {
             "id": "q_1_4_s4",
             "question": "Which Southern Senator conducted a record-breaking 24-hour filibuster against the 1957 Civil Rights Act?",
             "answer": "Strom Thurmond",
             "explanation": "Thurmond spoke for over 24 hours to block the bill, representing the deep political opposition in Congress.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "Richard Russell",
+              "James Eastland",
+              "Harry F. Byrd"
+            ]
           },
           {
             "id": "q_1_4_s5",
             "question": "In what year was the Southern Manifesto signed and published by Southern politicians?",
             "answer": "1956",
             "explanation": "Signed by 19 Senators and 82 Representatives, it united Southern political resistance under the banner of states' rights.",
-            "year": 1956
+            "year": 1956,
+            "distractors": [
+              "1954",
+              "1955",
+              "1957"
+            ]
           },
           {
             "id": "q_1_4_s6",
             "question": "Which US president signed the Civil Rights Act of 1957 into law?",
             "answer": "Dwight D. Eisenhower",
             "explanation": "It was the first civil rights legislation passed since Reconstruction, though it was heavily weakened by Southern amendments.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "Harry S. Truman",
+              "John F. Kennedy",
+              "Lyndon B. Johnson"
+            ]
           },
           {
             "id": "q_1_4_s7",
             "question": "What parliamentary delaying tactic did Southern senators (Dixiecrats) use to block civil rights bills?",
             "answer": "Filibuster",
             "explanation": "Senators would speak indefinitely to prevent a vote on civil rights bills, requiring a supermajority to stop them.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "Gerrymandering",
+              "Cloture petition",
+              "Pork barreling"
+            ]
           },
           {
             "id": "q_1_4_s8",
             "question": "What was the primary focus of the Civil Rights Act of 1957?",
             "answer": "Voting rights",
             "explanation": "The act created the Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "School integration",
+              "Employment discrimination",
+              "Public transport segregation"
+            ]
           },
           {
             "id": "q_1_4_s9",
             "question": "What was the main purpose of the Civil Rights Act of 1960?",
             "answer": "Federal inspection of local voter registration records",
             "explanation": "The act introduced federal penalties for obstructing voter registration and allowed federal judges to appoint voter referees.",
-            "year": 1960
+            "year": 1960,
+            "distractors": [
+              "Federal funding for integrated schools in the South",
+              "The total desegregation of all public transport facilities",
+              "Protection of civil rights activists against white bombings"
+            ]
           },
           {
             "id": "q_1_4_s10",
             "question": "How many Southern congressmen signed the Southern Manifesto in 1956?",
             "answer": "101 congressmen",
             "explanation": "A total of 101 senators and representatives signed the document, showing the unity of the segregationist political bloc.",
-            "year": 1956
+            "year": 1956,
+            "distractors": [
+              "50 congressmen",
+              "75 congressmen",
+              "120 congressmen"
+            ]
           }
         ],
         "depth": [
@@ -423,35 +698,60 @@ export const QUIZ_DATA = [
             "question": "What was the exact length of Strom Thurmond's record-breaking solo filibuster against the 1957 Civil Rights Act?",
             "answer": "24 hours and 18 minutes",
             "explanation": "Thurmond read election laws, Washington's farewell address, and recipe books to sustain his record-setting speech.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "12 hours and 30 minutes",
+              "18 hours and 45 minutes",
+              "30 hours and 12 minutes"
+            ]
           },
           {
             "id": "q_1_4_d2",
             "question": "Why did the murder of Emmett Till in 1955 become a major catalyst for the civil rights movement?",
             "answer": "Because his mother held an open-casket funeral to expose the brutality of racism",
             "explanation": "Mamie Till-Mobley wanted the world to see what was done to her son. The published photographs of Emmett Till's mutilated body shocked the nation and mobilized millions.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Because it forced the state government to arrest the killers immediately",
+              "Because it led to an immediate federal investigation into Southern lynching",
+              "Because it convinced Southern politicians to support the Civil Rights Bill"
+            ]
           },
           {
             "id": "q_1_4_d3",
             "question": "What term describes the conservative Southern Democrats who organized congressional resistance to civil rights?",
             "answer": "Dixiecrats",
             "explanation": "Dixiecrats controlled key committee chairmanships in Congress, allowing them to pigeonhole or weaken civil rights bills.",
-            "year": 1957
+            "year": 1957,
+            "distractors": [
+              "Whigs",
+              "Populists",
+              "Redeemers"
+            ]
           },
           {
             "id": "q_1_4_d4",
             "question": "What economic warfare method did the White Citizens' Councils use to punish civil rights activists?",
             "answer": "Job dismissals and mortgage foreclosures",
             "explanation": "By firing activists, denying bank loans, and cancelling insurance policies, the Councils financially ruined integrationists.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Voter registration purge and literacy re-testing",
+              "Physical assaults and house burnings of active organizers",
+              "State prosecutions and false tax evasion charges"
+            ]
           },
           {
             "id": "q_1_4_d5",
             "question": "Who was the 14-year-old Black boy from Chicago brutally lynched in Mississippi in August 1955 for allegedly whistling at a white woman?",
             "answer": "Emmett Till",
             "explanation": "Till's mother held an open-casket funeral in Chicago, exposing the extreme brutality of Southern racism to the world.",
-            "year": 1955
+            "year": 1955,
+            "distractors": [
+              "Medgar Evers",
+              "Jimmie Lee Jackson",
+              "James Chaney"
+            ]
           }
         ]
       }
@@ -470,70 +770,120 @@ export const QUIZ_DATA = [
             "question": "In which city did the famous 1960 lunch counter sit-ins begin?",
             "answer": "Greensboro, North Carolina",
             "explanation": "Four Black college students sat at a Woolworth's lunch counter, launching a wave of sit-ins across the South.",
-            "year": 1960
+            "year": 1960,
+            "distractors": [
+              "Nashville, Tennessee",
+              "Atlanta, Georgia",
+              "Birmingham, Alabama"
+            ]
           },
           {
             "id": "q_2_1_s2",
             "question": "What does the abbreviation SNCC stand for?",
             "answer": "Student Nonviolent Coordinating Committee",
             "explanation": "Formed in 1960, SNCC allowed younger student activists to organize sit-ins and voter registration drives.",
-            "year": 1960
+            "year": 1960,
+            "distractors": [
+              "Student Nonviolent Coalition Committee",
+              "Southern Negro Youth Congress",
+              "State Network for Civil Reform"
+            ]
           },
           {
             "id": "q_2_1_s3",
             "question": "Which tactic was used by activists in 1961 to test the desegregation of interstate bus terminals?",
             "answer": "Freedom Rides",
             "explanation": "Freedom Riders rode buses into the Deep South, encountering severe violence that forced federal intervention.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "Sit-ins",
+              "Freedom Summer",
+              "Selma Marches"
+            ]
           },
           {
             "id": "q_2_1_s4",
             "question": "In what year did the CORE-led Freedom Rides begin?",
             "answer": "1961",
             "explanation": "Starting in Washington D.C. in May 1961, the riders aimed to test the Supreme Court's ruling on terminal integration.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "1960",
+              "1962",
+              "1963"
+            ]
           },
           {
             "id": "q_2_1_s5",
             "question": "Which civil rights organization organized the first Freedom Rides in 1961?",
             "answer": "CORE (Congress of Racial Equality)",
             "explanation": "CORE planned the original route under director James Farmer, though SNCC students later resumed the rides.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "SCLC (Southern Christian Leadership Conference)",
+              "SNCC (Student Nonviolent Coordinating Committee)",
+              "NAACP (National Association for the Advancement of Colored People)"
+            ]
           },
           {
             "id": "q_2_1_s6",
             "question": "Who was the first Black student to register and enroll at the University of Mississippi in 1962?",
             "answer": "James Meredith",
             "explanation": "Meredith's enrollment led to violent riots that required 30,000 federal troops to secure his safety.",
-            "year": 1962
+            "year": 1962,
+            "distractors": [
+              "James Hood",
+              "Harvey Gantt",
+              "Hamilton Holmes"
+            ]
           },
           {
             "id": "q_2_1_s7",
             "question": "Who was the president of the United States during the Freedom Rides and the James Meredith crisis?",
             "answer": "John F. Kennedy",
             "explanation": "Kennedy was forced to send federal marshals and troops to protect activists and enforce court integration orders.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "Dwight D. Eisenhower",
+              "Lyndon B. Johnson",
+              "Richard Nixon"
+            ]
           },
           {
             "id": "q_2_1_s8",
             "question": "Who was the Attorney General who sent federal marshals to protect James Meredith in Mississippi?",
             "answer": "Robert Kennedy",
             "explanation": "Robert Kennedy managed the federal response, ordering marshals and military police to secure the campus.",
-            "year": 1962
+            "year": 1962,
+            "distractors": [
+              "Nicholas Katzenbach",
+              "Archibald Cox",
+              "J. Edgar Hoover"
+            ]
           },
           {
             "id": "q_2_1_s9",
             "question": "In which Alabama city was a Freedom Riders bus firebombed by a white mob in May 1961?",
             "answer": "Anniston",
             "explanation": "A mob slashed the bus tires, chased it out of town, firebombed the vehicle, and attacked the escaping passengers.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "Birmingham",
+              "Montgomery",
+              "Jackson"
+            ]
           },
           {
             "id": "q_2_1_s10",
             "question": "Which Georgia city was the target of SNCC's first major, though unsuccessful, desegregation campaign in 1961-62?",
             "answer": "Albany",
             "explanation": "The Albany Movement failed because Police Chief Pritchett used non-violent arrests and avoided media-sensational violence.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "Savannah",
+              "Augusta",
+              "Macon"
+            ]
           }
         ],
         "depth": [
@@ -542,35 +892,60 @@ export const QUIZ_DATA = [
             "question": "What term describes the integrated groups of white and Black activists who rode interstate buses together in 1961?",
             "answer": "Freedom Riders",
             "explanation": "Freedom Riders challenged the non-enforcement of the Supreme Court's Boynton v. Virginia ruling.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "Freedom Riders",
+              "Interstate Desegregationists",
+              "CORE Volunteers"
+            ]
           },
           {
             "id": "q_2_1_d2",
             "question": "Who was the National Director of CORE who designed and launched the first Freedom Rides?",
             "answer": "James Farmer",
             "explanation": "Farmer organized the rides to provoke federal enforcement of Supreme Court desegregation rulings.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "James Farmer",
+              "Bayard Rustin",
+              "John Lewis"
+            ]
           },
           {
             "id": "q_2_1_d3",
             "question": "Why did the Albany Movement (1961–62) fail to achieve its desegregation goals?",
             "answer": "Because the police chief used non-violent arrests and avoided media attention",
             "explanation": "Police Chief Laurie Pritchett instructed his officers to treat protesters peacefully in public and arrested them without violence, preventing the media outrage that civil rights campaigns relied on.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "Because the local Black community refused to support the protests",
+              "Because the federal government refused to send marshals to assist",
+              "Because the organizers ran out of funds to support arrested activists"
+            ]
           },
           {
             "id": "q_2_1_d4",
             "question": "Who was the segregationist Governor of Mississippi who actively defied federal orders to block James Meredith from enrolling in 1962?",
             "answer": "Ross Barnett",
             "explanation": "Governor Ross Barnett physically blocked Meredith from entering the university doors, defying federal integration mandates and prompting a deployment of federal marshals.",
-            "year": 1962
+            "year": 1962,
+            "distractors": [
+              "George Wallace",
+              "Orval Faubus",
+              "Paul B. Johnson Jr."
+            ]
           },
           {
             "id": "q_2_1_d5",
             "question": "Which prominent civil rights adviser and SCLC executive secretary helped student activists organize SNCC in April 1960?",
             "answer": "Ella Baker",
             "explanation": "Baker encouraged students to form their own independent organization rather than join MLK's SCLC.",
-            "year": 1960
+            "year": 1960,
+            "distractors": [
+              "Septima Clark",
+              "Jo Ann Robinson",
+              "Daisy Bates"
+            ]
           }
         ]
       },
@@ -583,70 +958,120 @@ export const QUIZ_DATA = [
             "question": "Which Alabama city was the site of the 1963 civil rights campaign where police used dogs and fire hoses against children?",
             "answer": "Birmingham, Alabama",
             "explanation": "The campaign was organized by SCLC to provoke national outrage, leading directly to Kennedy drafting the Civil Rights Bill.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Montgomery, Alabama",
+              "Selma, Alabama",
+              "Jackson, Mississippi"
+            ]
           },
           {
             "id": "q_2_2_s2",
             "question": "Who was the segregationist Police Commissioner of Birmingham who ordered the brutal response to protesters?",
             "answer": "Eugene 'Bull' Connor",
             "explanation": "Connor's use of attack dogs and high-pressure fire hoses on television screens shocked the American public.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Laurie Pritchett",
+              "Jim Clark",
+              "W. A. Gayle"
+            ]
           },
           {
             "id": "q_2_2_s3",
             "question": "What was the name of the famous document written by Martin Luther King Jr. while imprisoned in Alabama in 1963?",
             "answer": "Letter from Birmingham Jail",
             "explanation": "Written on scraps of paper, the letter defended non-violent direct action against moderate white clergy who urged patience.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Letter from Birmingham Jail",
+              "The Montgomery Manifesto",
+              "The Nonviolent Direct Action Guide"
+            ]
           },
           {
             "id": "q_2_2_s4",
             "question": "In what month and year did the historic March on Washington take place?",
             "answer": "August 1963",
             "explanation": "Over 250,000 people gathered at the Lincoln Memorial to demand 'Jobs and Freedom' and support the Civil Rights Bill.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "June 1963",
+              "July 1963",
+              "September 1963"
+            ]
           },
           {
             "id": "q_2_2_s5",
             "question": "What was the title of Martin Luther King Jr.'s famous speech delivered at the March on Washington?",
             "answer": "I Have a Dream",
             "explanation": "King departed from his written text to deliver a powerful vision of racial integration and equality.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "I Have a Dream",
+              "Let Freedom Ring",
+              "Normalcy No More"
+            ]
           },
           {
             "id": "q_2_2_s6",
             "question": "Which US president originally proposed the Civil Rights Bill in June 1963 before his assassination?",
             "answer": "John F. Kennedy",
             "explanation": "Kennedy proposed the bill on national television, declaring civil rights a moral issue that required federal action.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Dwight D. Eisenhower",
+              "Lyndon B. Johnson",
+              "Richard Nixon"
+            ]
           },
           {
             "id": "q_2_2_s7",
             "question": "Which US president signed the historic Civil Rights Act of 1964 into law?",
             "answer": "Lyndon B. Johnson",
             "explanation": "Johnson used his political skill and the memory of Kennedy to guide the bill through a lengthy Southern filibuster.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "John F. Kennedy",
+              "Richard Nixon",
+              "Gerald Ford"
+            ]
           },
           {
             "id": "q_2_2_s8",
             "question": "Which Alabama city was the starting point for the 1965 marches where protesters were beaten on 'Bloody Sunday'?",
             "answer": "Selma, Alabama",
             "explanation": "The march from Selma to Montgomery aimed to demand federal voting rights protection for Black citizens.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Birmingham, Alabama",
+              "Montgomery, Alabama",
+              "Tuskegee, Alabama"
+            ]
           },
           {
             "id": "q_2_2_s9",
             "question": "What landmark voting law was passed in 1965 in response to the Selma campaign?",
             "answer": "Voting Rights Act of 1965",
             "explanation": "The act outlawed literacy tests and sent federal registrars to Southern states, drastically increasing voter turnout.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Civil Rights Act of 1964",
+              "Equal Opportunity Act of 1964",
+              "Fair Housing Act of 1968"
+            ]
           },
           {
             "id": "q_2_2_s10",
             "question": "How many demonstrators participated in the March on Washington in August 1963?",
             "answer": "Over 250,000",
             "explanation": "It was one of the largest political rallies in US history, bringing immense moral pressure to bear on Congress.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Over 100,000",
+              "Over 150,000",
+              "Over 500,000"
+            ]
           }
         ],
         "depth": [
@@ -655,35 +1080,60 @@ export const QUIZ_DATA = [
             "question": "What was the name of the bridge in Selma where state troopers brutally attacked marching protesters on 7 March 1965?",
             "answer": "Edmund Pettus Bridge",
             "explanation": "Troopers used tear gas and clubs on the peaceful marchers in an event known as 'Bloody Sunday'.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "George Washington Bridge",
+              "Jefferson Davis Bridge",
+              "Alabama River Bridge"
+            ]
           },
           {
             "id": "q_2_2_d2",
             "question": "Why did the SCLC choose Birmingham, Alabama, for a major campaign in 1963?",
             "answer": "Because it was heavily segregated and had a notoriously hot-tempered police chief",
             "explanation": "MLK and SCLC targeted Birmingham because they knew Police Commissioner 'Bull' Connor would react violently to peaceful protests, creating media coverage that would force federal intervention.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Because the city had a highly active local NAACP chapter ready to march",
+              "Because the city was the birthplace of the SCLC and King's first parish",
+              "Because the city government had indicated it was willing to desegregate"
+            ]
           },
           {
             "id": "q_2_2_d3",
             "question": "Why was the Selma to Montgomery march in 1965 organized by civil rights leaders?",
             "answer": "To demand federal legislation protecting Black voting rights",
             "explanation": "Despite the 1964 Civil Rights Act, local registrars in Selma used loopholes to keep Black voter registration below 2%. Activists marched to demand direct federal intervention.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "To protest against the recent assassination of Malcolm X in New York",
+              "To demand the desegregation of all public facilities in the capital city",
+              "To support the campaign of moderate Democrats running for local offices"
+            ]
           },
           {
             "id": "q_2_2_d4",
             "question": "Which student leader and SNCC chairman was severely beaten on the Edmund Pettus Bridge on Bloody Sunday?",
             "answer": "John Lewis",
             "explanation": "Lewis co-led the march with SCLC's Hosea Williams. Images of his fractured skull shocked the nation.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Stokely Carmichael",
+              "Bob Moses",
+              "James Bevel"
+            ]
           },
           {
             "id": "q_2_2_d5",
             "question": "Which three civil rights activists were abducted and murdered by the KKK in Mississippi during Freedom Summer in 1964?",
             "answer": "James Chaney, Andrew Goodman, and Michael Schwerner",
             "explanation": "The murders of Chaney, Goodman, and Schwerner in Neshoba County shocked the nation and accelerated the passage of the Civil Rights Act of 1964.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "Medgar Evers, Jimmie Lee Jackson, and Viola Liuzzo",
+              "John Daniels, Jonathan Daniels, and Willie Brewster",
+              "Lemuel Penn, Virgil Ware, and Johnny Robinson"
+            ]
           }
         ]
       },
@@ -696,70 +1146,120 @@ export const QUIZ_DATA = [
             "question": "Who was the leading spokesperson for the Nation of Islam (commonly known as the Black Muslims) who advocated self-defense in the early 1960s?",
             "answer": "Malcolm X",
             "explanation": "Malcolm X offered a militant alternative to MLK, urging Black Americans to defend themselves 'by any means necessary'.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "Elijah Muhammad",
+              "Stokely Carmichael",
+              "Bobby Seale"
+            ]
           },
           {
             "id": "q_2_3_s2",
             "question": "Which radical civil rights slogan was popularized by Stokely Carmichael during a 1966 march in Mississippi?",
             "answer": "Black Power",
             "explanation": "The slogan marked a shift toward self-reliance, racial pride, and rejection of white integrationist control.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "Black Nationalism",
+              "By Any Means Necessary",
+              "Self-Defense Now"
+            ]
           },
           {
             "id": "q_2_3_s3",
             "question": "Who were the two co-founders of the Black Panther Party for Self-Defense, created in Oakland in 1966?",
             "answer": "Huey Newton and Bobby Seale",
             "explanation": "They founded the party in October 1966, adopting a 10-Point Program and carrying loaded weapons to monitor police.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "Stokely Carmichael and H. Rap Brown",
+              "Fred Hampton and Mark Clark",
+              "Malcolm X and Elijah Muhammad"
+            ]
           },
           {
             "id": "q_2_3_s4",
             "question": "Which leader of the Nation of Islam (the Black Muslims) did Malcolm X clash with before breaking away in 1964?",
             "answer": "Elijah Muhammad",
             "explanation": "Malcolm left the Nation of Islam in 1964 due to Elijah Muhammad's personal scandals and political passivity.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "Louis Farrakhan",
+              "Wallace Fard Muhammad",
+              "Warith Deen Mohammed"
+            ]
           },
           {
             "id": "q_2_3_s5",
             "question": "In what year was Malcolm X assassinated while giving a speech in New York City?",
             "answer": "1965",
             "explanation": "Malcolm X was shot on 21 February 1965 by members of the Nation of Islam at the Audubon Ballroom.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "1963",
+              "1964",
+              "1966"
+            ]
           },
           {
             "id": "q_2_3_s6",
             "question": "In what year was the Black Panther Party for Self-Defense founded?",
             "answer": "1966",
             "explanation": "Created in October 1966, the party quickly expanded to cities across the nation, becoming icons of revolutionary nationalism.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "1964",
+              "1965",
+              "1968"
+            ]
           },
           {
             "id": "q_2_3_s7",
             "question": "Which two US athletes raised black-gloved fists during the medal ceremony at the 1968 Olympics?",
             "answer": "Tommie Smith and John Carlos",
             "explanation": "Their silent protest on the podium in Mexico City drew international attention to racial inequality in the US.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Jesse Owens and Ralph Metcalfe",
+              "Bob Beamon and Wyomia Tyus",
+              "Lee Evans and Tommie Smith"
+            ]
           },
           {
             "id": "q_2_3_s8",
             "question": "In which California city was the Black Panther Party originally founded?",
             "answer": "Oakland",
             "explanation": "Oakland had a large Black population that faced severe police brutality, which the Panthers formed to monitor.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "Los Angeles",
+              "San Francisco",
+              "Chicago"
+            ]
           },
           {
             "id": "q_2_3_s9",
             "question": "Which student organization officially rejected non-violence and adopted Black Power under Stokely Carmichael in 1966?",
             "answer": "SNCC",
             "explanation": "Under Carmichael, SNCC expelled its white members and focused on militant community organizing.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "CORE",
+              "SCLC",
+              "NAACP"
+            ]
           },
           {
             "id": "q_2_3_s10",
             "question": "What secular activist organization did Malcolm X found after leaving the Nation of Islam in 1964?",
             "answer": "OAAU (Organization of Afro-American Unity)",
             "explanation": "The OAAU aimed to unite African Americans and link their struggle to African human rights movements.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "Muslim Mosque, Inc. (MMI)",
+              "Nation of Islam (NOI)",
+              "Black Panther Party (BPP)"
+            ]
           }
         ],
         "depth": [
@@ -768,35 +1268,60 @@ export const QUIZ_DATA = [
             "question": "Why did the Black Power movement gain popularity among young urban Black Americans in the mid-1960s?",
             "answer": "Due to frustration with the slow pace of legislative change and ongoing police brutality",
             "explanation": "Many young urban Black Americans in the North and West felt that civil rights laws did not improve their daily lives, stop police violence, or solve poverty, leading them to embrace self-defense and Black pride.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "Because of the active recruitment efforts of the Nation of Islam in colleges",
+              "Because moderate civil rights leaders urged urban youth to form self-defense militias",
+              "Because the federal government withdrew all funding from Northern inner-city programs"
+            ]
           },
           {
             "id": "q_2_3_d2",
             "question": "What famous book detailing Malcolm X's life was published shortly after his death in 1965?",
             "answer": "The Autobiography of Malcolm X",
             "explanation": "Co-authored with Alex Haley, the book sold millions and deeply influenced the nascent Black Power movement.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "The Fire Next Time",
+              "Soul on Ice",
+              "Where Do We Go from Here: Chaos or Community?"
+            ]
           },
           {
             "id": "q_2_3_d3",
             "question": "What was the name of the popular community service program created by the Black Panthers to feed school children?",
             "answer": "Free Breakfast for Children Program",
             "explanation": "The breakfast program fed thousands of children daily, earning the party deep respect in local communities.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Community Medical Clinics Program",
+              "Interstate Bus Desegregation Escort Patrol",
+              "Legal Aid for Incarcerated Youth Campaign"
+            ]
           },
           {
             "id": "q_2_3_d4",
             "question": "What term was popularized by Stokely Carmichael to describe systemic discrimination embedded in social institutions?",
             "answer": "Institutional racism",
             "explanation": "Carmichael argued that racism was not just individual prejudice but built into housing, education, and employment.",
-            "year": 1967
+            "year": 1967,
+            "distractors": [
+              "Systemic prejudice",
+              "De facto segregation",
+              "Structural bias"
+            ]
           },
           {
             "id": "q_2_3_d5",
             "question": "Which voting rights campaign did Malcolm X visit and support in early 1965 shortly before his death?",
             "answer": "Selma campaign",
             "explanation": "Malcolm spoke in Selma in February 1965 to support the campaign, offering a militant warning to white authorities.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Freedom Summer campaign",
+              "March on Washington",
+              "Greensboro sit-ins"
+            ]
           }
         ]
       },
@@ -809,70 +1334,120 @@ export const QUIZ_DATA = [
             "question": "Which district of Los Angeles was the site of massive, destructive race riots in August 1965?",
             "answer": "Watts",
             "explanation": "Triggered by a police arrest, the Watts Riots lasted for 6 days, resulting in 34 deaths and massive property destruction.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Compton",
+              "East Los Angeles",
+              "Inglewood"
+            ]
           },
           {
             "id": "q_2_4_s2",
             "question": "What was the name of the federal commission appointed by Johnson that blamed white racism for the 1960s riots?",
             "answer": "Kerner Commission",
             "explanation": "The 1968 report warned that America was moving toward two separate and unequal societies: one Black, one white.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Warren Commission",
+              "McCone Commission",
+              "Eisenhower Commission"
+            ]
           },
           {
             "id": "q_2_4_s3",
             "question": "On what date was Martin Luther King Jr. assassinated in Memphis?",
             "answer": "4 April 1968",
             "explanation": "King was shot by a sniper on the balcony of the Lorraine Motel, triggering national riots.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "21 February 1965",
+              "22 November 1963",
+              "5 June 1968"
+            ]
           },
           {
             "id": "q_2_4_s4",
             "question": "In which Southern city was Martin Luther King Jr. assassinated in 1968?",
             "answer": "Memphis, Tennessee",
             "explanation": "King had travelled to Memphis to support a strike of municipal Black sanitation workers.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Atlanta, Georgia",
+              "Birmingham, Alabama",
+              "Jackson, Mississippi"
+            ]
           },
           {
             "id": "q_2_4_s5",
             "question": "What was the name of the 1966 campaign where MLK moved into a slum to highlight poor housing in the North?",
             "answer": "Chicago Freedom Movement",
             "explanation": "It was MLK's first major campaign in a Northern city, encountering violent white opposition during marches.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "Poor People's Campaign",
+              "Birmingham Campaign",
+              "Mississippi Freedom Project"
+            ]
           },
           {
             "id": "q_2_4_s6",
             "question": "Who was convicted of the assassination of Martin Luther King Jr.?",
             "answer": "James Earl Ray",
             "explanation": "Ray pleaded guilty in 1969 to avoid the death penalty, though he later spent years retracting his confession.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Lee Harvey Oswald",
+              "Sirhan Sirhan",
+              "Byron De La Beckwith"
+            ]
           },
           {
             "id": "q_2_4_s7",
             "question": "Which federal law passed in April 1968 banned racial discrimination in the sale or rental of housing?",
             "answer": "Civil Rights Act of 1968 (Fair Housing Act)",
             "explanation": "The act was passed quickly during the national mourning period following MLK's assassination.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Voting Rights Act of 1965",
+              "Equal Opportunity Act of 1964",
+              "Civil Rights Act of 1964"
+            ]
           },
           {
             "id": "q_2_4_s8",
             "question": "What SCLC campaign launched in 1968 aimed to bring thousands of poor Americans to camp out in Washington?",
             "answer": "Poor People's Campaign",
             "explanation": "Planned by MLK before his death, the campaign went ahead under Ralph Abernathy, setting up 'Resurrection City'.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "March on Washington for Jobs and Freedom",
+              "Resurrection City Project",
+              "Coalition of the Poor League"
+            ]
           },
           {
             "id": "q_2_4_s9",
             "question": "Who took over the leadership of the SCLC immediately after Martin Luther King Jr.'s assassination?",
             "answer": "Ralph Abernathy",
             "explanation": "Abernathy was King's closest friend and co-founder of SCLC, but the organization struggled to maintain influence.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Jesse Jackson",
+              "Fred Shuttlesworth",
+              "Andrew Young"
+            ]
           },
           {
             "id": "q_2_4_s10",
             "question": "In how many US cities did major race riots break out in the week following Martin Luther King Jr.'s assassination?",
             "answer": "Over 100 cities",
             "explanation": "The riots led to 46 deaths, 20,000 arrests, and required the deployment of 50,000 national guard and federal troops.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Over 20 cities",
+              "Over 50 cities",
+              "Over 200 cities"
+            ]
           }
         ],
         "depth": [
@@ -881,35 +1456,60 @@ export const QUIZ_DATA = [
             "question": "Why did Martin Luther King Jr. launch the Chicago Freedom Movement in 1966?",
             "answer": "To challenge segregation in Northern housing, employment, and education",
             "explanation": "King wanted to show that racial discrimination was not just a Southern problem, but was deeply entrenched in Northern cities through informal segregation and housing redlining.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "To support the Democratic mayoral candidate running for city office",
+              "To test the enforcement of the recently passed Voting Rights Act of 1965",
+              "To organize the first Northern branch of the Black Panther Party"
+            ]
           },
           {
             "id": "q_2_4_d2",
             "question": "What famous conclusion did the Kerner Commission draw about the future division of American society?",
             "answer": "Moving toward two societies, one Black, one white - separate and unequal",
             "explanation": "The report warned that unless massive federal aid was directed to urban ghettos, the division would become permanent.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Leading toward a classless society, unified in economic progress - equal and free",
+              "Remaining divided into separate regional factions based on political party lines",
+              "Rapidly integrating public spaces but remaining segregated in political power"
+            ]
           },
           {
             "id": "q_2_4_d3",
             "question": "Which Chicago suburb saw MLK's housing march met by thousands of white residents throwing bricks and bottles?",
             "answer": "Cicero",
             "explanation": "King remarked that he had never seen mobs as hostile or hateful as those in Chicago, even in Mississippi or Alabama.",
-            "year": 1966
+            "year": 1966,
+            "distractors": [
+              "Evanston",
+              "Oak Park",
+              "Skokie"
+            ]
           },
           {
             "id": "q_2_4_d4",
             "question": "What municipal labor strike was Martin Luther King Jr. supporting when he was shot in Memphis?",
             "answer": "Sanitation workers' strike",
             "explanation": "King marched with the workers who were striking for safety, union recognition, and equal wages.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Transit workers' strike",
+              "Postal employees' strike",
+              "Steel mills walkout"
+            ]
           },
           {
             "id": "q_2_4_d5",
             "question": "In what year did the destructive Watts Riots occur in Los Angeles?",
             "answer": "1965",
             "explanation": "The riots occurred in August 1965, just days after the Voting Rights Act was signed, showing the limits of legislative civil rights.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "1964",
+              "1967",
+              "1968"
+            ]
           }
         ]
       }
@@ -928,70 +1528,120 @@ export const QUIZ_DATA = [
             "question": "Who was the leader of the communist forces and President of North Vietnam?",
             "answer": "Ho Chi Minh",
             "explanation": "Ho Chi Minh led the Vietminh against the French and later directed the struggle to unify Vietnam under communism.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Ngo Dinh Diem",
+              "Vo Nguyen Giap",
+              "Le Duc Tho"
+            ]
           },
           {
             "id": "q_3_1_s2",
             "question": "Which 1954 battle saw the decisive defeat of the French army, ending French colonial rule in Indochina?",
             "answer": "Dien Bien Phu",
             "explanation": "Vietminh forces under General Giap besieged and captured the French base, forcing France to withdraw.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Battle of Ia Drang",
+              "Siege of Khe Sanh",
+              "Battle of Hue"
+            ]
           },
           {
             "id": "q_3_1_s3",
             "question": "Which parallel divided Vietnam into North and South according to the 1954 Geneva Accords?",
             "answer": "17th Parallel",
             "explanation": "The division was intended to be temporary until national elections could be held in 1956.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "38th Parallel",
+              "16th Parallel",
+              "20th Parallel"
+            ]
           },
           {
             "id": "q_3_1_s4",
             "question": "What theory did President Eisenhower use in 1954 to justify U.S. intervention in Southeast Asia?",
             "answer": "The Domino Theory",
             "explanation": "The theory argued that if one nation fell to communism, neighboring nations would collapse like dominoes.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "The Containment Doctrine",
+              "The Rollback Strategy",
+              "The Truman Doctrine"
+            ]
           },
           {
             "id": "q_3_1_s5",
             "question": "Who was the first US president to send military advisors to South Vietnam?",
             "answer": "Dwight D. Eisenhower",
             "explanation": "Eisenhower backed the South Vietnamese regime with money and hundreds of military advisors starting in 1954.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Harry S. Truman",
+              "John F. Kennedy",
+              "Lyndon B. Johnson"
+            ]
           },
           {
             "id": "q_3_1_s6",
             "question": "Which US president increased the number of military advisors in Vietnam to over 16,000 by late 1963?",
             "answer": "John F. Kennedy",
             "explanation": "Kennedy resisted sending combat troops but heavily expanded advisors and Green Beret special forces.",
-            "year": 1961
+            "year": 1961,
+            "distractors": [
+              "Dwight D. Eisenhower",
+              "Lyndon B. Johnson",
+              "Richard Nixon"
+            ]
           },
           {
             "id": "q_3_1_s7",
             "question": "What was the capital city of South Vietnam?",
             "answer": "Saigon",
             "explanation": "Saigon was the seat of the anti-communist South Vietnamese government backed by the United States.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Hanoi",
+              "Hue",
+              "Da Nang"
+            ]
           },
           {
             "id": "q_3_1_s8",
             "question": "What was the capital city of North Vietnam?",
             "answer": "Hanoi",
             "explanation": "Hanoi was the capital of the communist Democratic Republic of Vietnam led by Ho Chi Minh.",
-            "year": 1954
+            "year": 1954,
+            "distractors": [
+              "Saigon",
+              "Hue",
+              "Haiphong"
+            ]
           },
           {
             "id": "q_3_1_s9",
             "question": "Which South Vietnamese president was overthrown and assassinated in a coup in November 1963?",
             "answer": "Ngo Dinh Diem",
             "explanation": "Diem's Catholic-centered discrimination and corruption led the US to tacitly support his overthrow by his generals.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Nguyen Van Thieu",
+              "Nguyen Cao Ky",
+              "Duong Van Minh"
+            ]
           },
           {
             "id": "q_3_1_s10",
             "question": "What was the name of the program that built fortified villages to separate peasants from Vietcong influence?",
             "answer": "Strategic Hamlet Program",
             "explanation": "Launched in 1962, the program alienated peasants by forcing them off ancestral lands, driving many to support the Vietcong.",
-            "year": 1962
+            "year": 1962,
+            "distractors": [
+              "Fortified Settlement Program",
+              "Rural Pacification Program",
+              "Civilian Defense Hamlet Initiative"
+            ]
           }
         ],
         "depth": [
@@ -1000,35 +1650,60 @@ export const QUIZ_DATA = [
             "question": "What was the name of the communist-led nationalist coalition that fought the French for independence?",
             "answer": "Vietminh",
             "explanation": "Founded by Ho Chi Minh in 1941, the Vietminh fought Japanese occupiers and then French colonial forces.",
-            "year": 1941
+            "year": 1941,
+            "distractors": [
+              "Vietcong",
+              "Pathet Lao",
+              "Khmer Rouge"
+            ]
           },
           {
             "id": "q_3_1_d2",
             "question": "Which major religious group faced severe discrimination under Ngo Dinh Diem's Catholic-dominated government?",
             "answer": "Buddhists",
             "explanation": "Diem's ban on Buddhist flags led to mass protests, self-immolations by monks, and a major political crisis in 1963.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Hindus",
+              "Cao Dai adherents",
+              "Protestants"
+            ]
           },
           {
             "id": "q_3_1_d3",
             "question": "Why did the Strategic Hamlet Program (1962) fail and actually increase support for the Vietcong?",
             "answer": "It forcibly relocated peasants from their ancestral lands and villages",
             "explanation": "The program alienated South Vietnam's rural population by uprooting them from their land and farming fields to move them into fortified hamlets, building resentment and VC recruits.",
-            "year": 1962
+            "year": 1962,
+            "distractors": [
+              "It failed to provide adequate medical care and schooling for children in the hamlets",
+              "It forced peasants to pay high rent fees and taxes to the South Vietnamese government",
+              "It failed to construct secure fences or provide weapons to defend against Vietcong raids"
+            ]
           },
           {
             "id": "q_3_1_d4",
             "question": "What term was commonly used by US troops to refer to the communist insurgent fighters in South Vietnam?",
             "answer": "Vietcong",
             "explanation": "Vietcong was short for Vietnamese Communists. The fighters were also referred to as VC or 'Victor Charlie'.",
-            "year": 1960
+            "year": 1960,
+            "distractors": [
+              "NVA",
+              "Vietminh",
+              "Charlie"
+            ]
           },
           {
             "id": "q_3_1_d5",
             "question": "What was the official name of the political and military organization commonly known as the Vietcong?",
             "answer": "National Liberation Front (NLF)",
             "explanation": "The NLF was established in December 1960 to unite all opponents of Diem's US-backed regime in the South.",
-            "year": 1960
+            "year": 1960,
+            "distractors": [
+              "People's Army of Vietnam (PAVN)",
+              "Communist Party of South Vietnam (CPSV)",
+              "Democratic Republic Alliance (DRA)"
+            ]
           }
         ]
       },
@@ -1041,70 +1716,120 @@ export const QUIZ_DATA = [
             "question": "Which US destroyer was reportedly attacked by North Vietnamese torpedo boats in August 1964?",
             "answer": "USS Maddox",
             "explanation": "The clash in the Gulf of Tonkin provided the justification Johnson needed to seek congressional war powers.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "USS Turner Joy",
+              "USS C. Turner Joy",
+              "USS Ticonderoga"
+            ]
           },
           {
             "id": "q_3_2_s2",
             "question": "Which congressional resolution in August 1964 gave President Johnson war powers to defend South Vietnam?",
             "answer": "Gulf of Tonkin Resolution",
             "explanation": "The resolution allowed Johnson to take 'all necessary measures' to repel attacks, acting as a blank check.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "Gulf of Tonkin Declaration",
+              "Southeast Asia Defense Bill",
+              "Presidential War Powers Act"
+            ]
           },
           {
             "id": "q_3_2_s3",
             "question": "In what year did Congress pass the Gulf of Tonkin Resolution?",
             "answer": "1964",
             "explanation": "It was passed nearly unanimously in August 1964, following reported clashes off the coast of North Vietnam.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "1963",
+              "1965",
+              "1968"
+            ]
           },
           {
             "id": "q_3_2_s4",
             "question": "What was the code name of the sustained US bombing campaign of North Vietnam started in early 1965?",
             "answer": "Operation Rolling Thunder",
             "explanation": "The campaign aimed to destroy North Vietnamese infrastructure and disrupt supply lines to the South.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Operation Linebacker",
+              "Operation Arc Light",
+              "Operation Pierce Arrow"
+            ]
           },
           {
             "id": "q_3_2_s5",
             "question": "In what year did Operation Rolling Thunder begin?",
             "answer": "1965",
             "explanation": "It began in March 1965 and ran almost continuously until November 1968, dropping over 600,000 tons of bombs.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "1964",
+              "1966",
+              "1968"
+            ]
           },
           {
             "id": "q_3_2_s6",
             "question": "Who was the commander of US forces in Vietnam during the period of escalation (1964-68)?",
             "answer": "General William Westmoreland",
             "explanation": "Westmoreland advocated a strategy of attrition, aiming to kill communist forces faster than they could be replaced.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "General Creighton Abrams",
+              "General Maxwell Taylor",
+              "General William DePuy"
+            ]
           },
           {
             "id": "q_3_2_s7",
             "question": "In what year were the first US combat troops officially deployed to South Vietnam?",
             "answer": "1965",
             "explanation": "The first ground combat troops (3,500 Marines) landed at Da Nang in March 1965 to protect the US air base.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "1963",
+              "1964",
+              "1966"
+            ]
           },
           {
             "id": "q_3_2_s8",
             "question": "Which US military base in South Vietnam was attacked in February 1965, prompting Johnson to launch Rolling Thunder?",
             "answer": "Pleiku",
             "explanation": "A Vietcong mortar attack killed 8 US soldiers at Pleiku, triggering retaliatory air strikes and the bombing campaign.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Da Nang",
+              "Khe Sanh",
+              "Tan Son Nhut"
+            ]
           },
           {
             "id": "q_3_2_s9",
             "question": "What was the peak troop level of US servicemen in Vietnam under President Johnson's administration?",
             "answer": "Over 500,000",
             "explanation": "By late 1968, US forces in Vietnam exceeded 536,000, representing a massive escalation from advisors.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Over 100,000",
+              "Over 250,000",
+              "Over 750,000"
+            ]
           },
           {
             "id": "q_3_2_s10",
             "question": "Who was the Secretary of Defense who served under Kennedy and Johnson, overseeing the escalation of the war?",
             "answer": "Robert McNamara",
             "explanation": "McNamara applied statistical systems to the war, but later grew disillusioned with prospects of US military victory.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "Dean Rusk",
+              "Clark Clifford",
+              "McGeorge Bundy"
+            ]
           }
         ],
         "depth": [
@@ -1113,35 +1838,60 @@ export const QUIZ_DATA = [
             "question": "Why was the Gulf of Tonkin Resolution (1964) highly significant for US involvement in Vietnam?",
             "answer": "It gave President Johnson the power to escalate military action without a formal declaration of war",
             "explanation": "Passed by Congress almost unanimously, the resolution acted as a blank check, allowing Johnson to deploy combat troops and launch bombing campaigns in Vietnam.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "It officially declared war against North Vietnam and authorized a full ground invasion",
+              "It established a joint military coalition between the United States and SEATO allies",
+              "It permitted Congress to supervise and limit presidential defense spending in Vietnam"
+            ]
           },
           {
             "id": "q_3_2_d2",
             "question": "Which South Vietnamese air base was the landing site for the first official US ground combat troops in March 1965?",
             "answer": "Da Nang",
             "explanation": "The landing of the 9th Marine Expeditionary Brigade marked the formal commitment of US ground combat forces.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Cam Ranh Bay",
+              "Saigon Airport",
+              "Qui Nhon"
+            ]
           },
           {
             "id": "q_3_2_d3",
             "question": "Which major battle in November 1965 was the first large-scale clash between the US Army and conventional NVA forces?",
             "answer": "Battle of Ia Drang",
             "explanation": "US airmobile troops used helicopters to engage NVA units in the highlands. Both sides suffered heavy casualties and claimed victory.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Battle of Dak To",
+              "Battle of Khe Sanh",
+              "Battle of Hamburger Hill"
+            ]
           },
           {
             "id": "q_3_2_d4",
             "question": "How many members of Congress voted against the Gulf of Tonkin Resolution in August 1964?",
             "answer": "Two",
             "explanation": "The resolution passed 416-0 in the House and 88-2 in the Senate, with only Senators Morse and Gruening voting against.",
-            "year": 1964
+            "year": 1964,
+            "distractors": [
+              "Zero",
+              "Five",
+              "Ten"
+            ]
           },
           {
             "id": "q_3_2_d5",
             "question": "Who was the military commander of the North Vietnamese Army (NVA) who planned the strategy against the French and Americans?",
             "answer": "Vo Nguyen Giap",
             "explanation": "Giap was the Minister of Defense who planned the victories at Dien Bien Phu and directed the Tet Offensive.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Le Duan",
+              "Van Tien Dung",
+              "Nguyen Chi Thanh"
+            ]
           }
         ]
       },
@@ -1154,70 +1904,120 @@ export const QUIZ_DATA = [
             "question": "What Vietcong military tactic involved hit-and-run ambushes, traps, and avoiding conventional pitched battles?",
             "answer": "Guerrilla warfare",
             "explanation": "Guerrilla warfare aimed to wear down US troop morale and resources without offering a fixed target for airpower.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Conventional warfare",
+              "Attrition warfare",
+              "Blitzkrieg tactics"
+            ]
           },
           {
             "id": "q_3_3_s2",
             "question": "What US military tactic involved patrolling the jungle to locate enemy units and calling in artillery and air strikes?",
             "answer": "Search and Destroy",
             "explanation": "Also known as seek-and-destroy, it relied on helicopter mobility to deploy infantry, but often alienated local populations.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Encircle and Subdue",
+              "Target and Eliminate",
+              "Infiltrate and Secure"
+            ]
           },
           {
             "id": "q_3_3_s3",
             "question": "What highly flammable, sticky gasoline gel was used by the US military in bombs to burn jungle foliage and enemy positions?",
             "answer": "Napalm",
             "explanation": "Napalm clung to surfaces and skin, causing horrific burns and sucking oxygen out of shelters.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "White phosphorus",
+              "Agent Orange",
+              "Thermite powder"
+            ]
           },
           {
             "id": "q_3_3_s4",
             "question": "What chemical herbicide was sprayed by US aircraft to defoliate forests and destroy enemy food crops?",
             "answer": "Agent Orange",
             "explanation": "Agent Orange destroyed millions of acres of forest. It was later linked to severe health issues and birth defects.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Napalm",
+              "Blue Defoliant",
+              "Malathion spray"
+            ]
           },
           {
             "id": "q_3_3_s5",
             "question": "What was the name of the complex supply route running from North to South Vietnam through Laos and Cambodia?",
             "answer": "Ho Chi Minh Trail",
             "explanation": "The trail kept communist forces in the South supplied with weapons and reinforcements despite constant US bombing.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Vietcong Supply Highway",
+              "Indochina Bypass Trail",
+              "Hanoi Transport Route"
+            ]
           },
           {
             "id": "q_3_3_s6",
             "question": "What underground structures did the Vietcong construct to hide, store supplies, and launch surprise attacks?",
             "answer": "Tunnel systems",
             "explanation": "Tunnels (like those at Cu Chi) contained barracks, hospitals, and command centers, protecting fighters from bombing.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Fortified bunkers",
+              "Trench lines",
+              "Cave bases"
+            ]
           },
           {
             "id": "q_3_3_s7",
             "question": "What simple Vietcong traps used sharpened bamboo stakes hidden in pits and smeared with excrement?",
             "answer": "Punji traps",
             "explanation": "Punji traps were designed to wound rather than kill, slowing down patrols and causing severe infections.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Tripwire bombs",
+              "Bouncing Betties",
+              "Spike boards"
+            ]
           },
           {
             "id": "q_3_3_s8",
             "question": "What metric did U.S. commanders use as the primary measure of progress in the war of attrition?",
             "answer": "Body count",
             "explanation": "Commanders focused on the number of enemy dead. This system led to inflated statistics and civilian casualties being counted as combatants.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Territory captured",
+              "Ammunition expended",
+              "Sorties flown"
+            ]
           },
           {
             "id": "q_3_3_s9",
             "question": "What helicopter model was widely used by the US for troop transport, medical evacuation, and gunship support?",
             "answer": "UH-1 Huey",
             "explanation": "The Huey became the symbol of the Vietnam War, defining the airmobile tactics of the conflict.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "CH-47 Chinook",
+              "AH-1 Cobra",
+              "OH-6 Cayuse"
+            ]
           },
           {
             "id": "q_3_3_s10",
             "question": "Which major North Vietnamese and Vietcong offensive in January 1968 marked the turning point of the war?",
             "answer": "Tet Offensive",
             "explanation": "Although a military failure for the communists, Tet shattered the US public's belief that victory was near.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Easter Offensive",
+              "Christmas Offensive",
+              "Gulf of Tonkin Incident"
+            ]
           }
         ],
         "depth": [
@@ -1226,35 +2026,60 @@ export const QUIZ_DATA = [
             "question": "Why was the 1968 Tet Offensive considered a major political turning point for the US homefront?",
             "answer": "It shattered the public belief that the US was winning the war",
             "explanation": "Despite military claims of progress, the size and coordination of the communist offensive, broadcast on TV, created a massive credibility gap for the US government.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "It forced President Johnson to resign from office immediately",
+              "It resulted in the military capture of Saigon by communist forces",
+              "It led to the immediate withdrawal of all US ground forces"
+            ]
           },
           {
             "id": "q_3_3_d2",
             "question": "Which historic South Vietnamese city saw the longest and bloodiest urban battle of the Tet Offensive?",
             "answer": "Hue",
             "explanation": "NVA forces captured the city and held it for nearly a month. The battle left the ancient citadel in ruins.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Da Nang",
+              "Quang Tri",
+              "Saigon"
+            ]
           },
           {
             "id": "q_3_3_d3",
             "question": "Which US Marine base in northern South Vietnam was besieged by NVA forces for 77 days in early 1968?",
             "answer": "Khe Sanh",
             "explanation": "The siege began just before the Tet Offensive. Johnson ordered heavy air support to prevent another Dien Bien Phu.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Con Thien",
+              "Dong Ha",
+              "Camp Carroll"
+            ]
           },
           {
             "id": "q_3_3_d4",
             "question": "Which high-profile building in Saigon was attacked by a Vietcong commando squad during the Tet Offensive?",
             "answer": "US Embassy",
             "explanation": "Although the attackers were killed, images of combat inside the embassy compound shocked the US public.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Presidential Palace",
+              "ARVN Headquarters",
+              "Radio Saigon station"
+            ]
           },
           {
             "id": "q_3_3_d5",
             "question": "What slang term was used by US soldiers for search-and-destroy missions that ended in burning down peasant huts?",
             "answer": "Zippo missions",
             "explanation": "Named after the popular Zippo lighter, soldiers used them to burn thatched roofs of suspected Vietcong villages.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Search-and-destroy sweeps",
+              "Search-and-burn actions",
+              "Burn-and-clear missions"
+            ]
           }
         ]
       },
@@ -1267,70 +2092,120 @@ export const QUIZ_DATA = [
             "question": "What policy under President Nixon aimed to withdraw US troops and hand over combat duties to the South Vietnamese army?",
             "answer": "Vietnamisation",
             "explanation": "Vietnamisation aimed to reduce US ground casualties and shift the military burden to the ARVN forces.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "De-escalation policy",
+              "Strategic withdrawal",
+              "Guam Doctrine alignment"
+            ]
           },
           {
             "id": "q_3_4_s2",
             "question": "What was the name of the foreign policy doctrine declaring that US allies must provide their own ground troops?",
             "answer": "Nixon Doctrine",
             "explanation": "The doctrine stated that while the US would offer economic and air support, it would not fight ground wars for allies.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Truman Doctrine",
+              "Eisenhower Doctrine",
+              "Carter Doctrine"
+            ]
           },
           {
             "id": "q_3_4_s3",
             "question": "What slogan did Richard Nixon use to describe his goal of achieving a negotiated exit from the war?",
             "answer": "Peace with Honor",
             "explanation": "Nixon sought an exit that did not look like a defeat, preserving US credibility and South Vietnam's independence.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Victory with Dignity",
+              "Stalemate Resolution",
+              "Negotiated Settlement Plan"
+            ]
           },
           {
             "id": "q_3_4_s4",
             "question": "Which neutral country neighboring Vietnam did Nixon order a secret bombing campaign and ground invasion of in 1969-70?",
             "answer": "Cambodia",
             "explanation": "The invasion aimed to destroy Vietcong sanctuaries and supply depots, but caused massive protests in the US.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "Laos",
+              "Thailand",
+              "North Vietnam"
+            ]
           },
           {
             "id": "q_3_4_s5",
             "question": "Which country neighboring Vietnam was invaded by ARVN forces with US air support in 1971?",
             "answer": "Laos",
             "explanation": "The invasion (Lam Son 719) aimed to cut the Ho Chi Minh Trail but ended in a disastrous ARVN retreat.",
-            "year": 1971
+            "year": 1971,
+            "distractors": [
+              "Cambodia",
+              "Thailand",
+              "Myanmar"
+            ]
           },
           {
             "id": "q_3_4_s6",
             "question": "Which North Vietnamese capital city was hit by heavy U.S. B-52 bomber raids during the 1972 Christmas Bombings?",
             "answer": "Hanoi",
             "explanation": "The bombings aimed to force North Vietnam back to the negotiating table to finalize the peace treaty.",
-            "year": 1972
+            "year": 1972,
+            "distractors": [
+              "Haiphong",
+              "Vinh",
+              "Saigon"
+            ]
           },
           {
             "id": "q_3_4_s7",
             "question": "What was the official code name of the December 1972 Christmas Bombing campaign?",
             "answer": "Operation Linebacker II",
             "explanation": "It was the largest campaign of heavy bomber attacks launched by the US Air Force since World War II.",
-            "year": 1972
+            "year": 1972,
+            "distractors": [
+              "Operation Rolling Thunder",
+              "Operation Linebacker I",
+              "Operation Menu"
+            ]
           },
           {
             "id": "q_3_4_s8",
             "question": "In what year did all remaining US combat troops withdraw from Vietnam following the peace agreement?",
             "answer": "1973",
             "explanation": "The last US combat troops left in March 1973, leaving only embassy guards and advisors.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "1971",
+              "1972",
+              "1975"
+            ]
           },
           {
             "id": "q_3_4_s9",
             "question": "Who was Nixon's National Security Advisor and lead negotiator at the Paris peace talks?",
             "answer": "Henry Kissinger",
             "explanation": "Kissinger conducted years of secret negotiations with North Vietnam, earning the Nobel Peace Prize in 1973.",
-            "year": 1972
+            "year": 1972,
+            "distractors": [
+              "William P. Rogers",
+              "Melvin Laird",
+              "McGeorge Bundy"
+            ]
           },
           {
             "id": "q_3_4_s10",
             "question": "Who was the chief negotiator for North Vietnam who negotiated the peace accords with Henry Kissinger?",
             "answer": "Le Duc Tho",
             "explanation": "Le Duc Tho declined the Nobel Peace Prize, stating that true peace had not yet been achieved in Vietnam.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "Le Duan",
+              "Nguyen Co Thach",
+              "Xuan Thuy"
+            ]
           }
         ],
         "depth": [
@@ -1339,35 +2214,60 @@ export const QUIZ_DATA = [
             "question": "In what month and year were the Paris Peace Accords officially signed, ending direct US military involvement?",
             "answer": "January 1973",
             "explanation": "The accords were signed on 27 January 1973, establishing a ceasefire and outlining US troop withdrawal.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "December 1972",
+              "March 1973",
+              "April 1975"
+            ]
           },
           {
             "id": "q_3_4_d2",
             "question": "What was the term for Nixon's secret strategy to make North Vietnam think he was volatile and willing to use nuclear weapons?",
             "answer": "Madman Theory",
             "explanation": "Nixon wanted the communists to believe he was irrational enough to do anything, forcing them to negotiate.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Atomic Diplomacy Strategy",
+              "Volatile Negotiator Tactic",
+              "Unpredictable Commander Plan"
+            ]
           },
           {
             "id": "q_3_4_d3",
             "question": "Why did President Nixon order the military invasion of Cambodia in 1970?",
             "answer": "To destroy Vietcong supply sanctuaries and disrupt the Ho Chi Minh Trail",
             "explanation": "Nixon wanted to weaken communist forces using neutral Cambodian territory as safe havens, hoping to buy time for South Vietnam's army to build strength.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "To retaliate against North Vietnamese artillery shelling of South Vietnamese cities",
+              "To establish a new joint US-ARVN military command center closer to the border",
+              "To pressure the Cambodian king to join the military coalition against North Vietnam"
+            ]
           },
           {
             "id": "q_3_4_d4",
             "question": "What was the code name of the disastrous 1971 ARVN invasion of Laos that ended in panic and retreat?",
             "answer": "Operation Lam Son 719",
             "explanation": "The operation showed that without US ground commanders, the ARVN was unable to defeat NVA forces.",
-            "year": 1971
+            "year": 1971,
+            "distractors": [
+              "Operation Lam Son 720",
+              "Operation Dewey Canyon II",
+              "Operation Commando Hunt"
+            ]
           },
           {
             "id": "q_3_4_d5",
             "question": "What major conventional offensive did North Vietnam launch in spring 1972 to test the progress of Vietnamisation?",
             "answer": "Easter Offensive",
             "explanation": "The NVA attacked on three fronts, but Nixon responded with heavy air support (Operation Linebacker) to halt the invasion.",
-            "year": 1972
+            "year": 1972,
+            "distractors": [
+              "Tet Offensive",
+              "Christmas Offensive",
+              "Vietnamisation Test Drive"
+            ]
           }
         ]
       }
@@ -1386,70 +2286,120 @@ export const QUIZ_DATA = [
             "question": "What was the name of the system used to select young men for compulsory military service in Vietnam?",
             "answer": "The Draft",
             "explanation": "The draft was highly controversial, particularly because college students could obtain deferments, favoring wealthier whites.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Conscription Act",
+              "Selective Service System",
+              "National Military Call-up"
+            ]
           },
           {
             "id": "q_4_1_s2",
             "question": "At which university did National Guardsmen shoot and kill four student protesters in May 1970?",
             "answer": "Kent State University",
             "explanation": "The shootings occurred during protests against the invasion of Cambodia, triggering a national student strike.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "Jackson State University",
+              "University of Wisconsin",
+              "UC Berkeley"
+            ]
           },
           {
             "id": "q_4_1_s3",
             "question": "Which student organization was at the forefront of the early anti-war protest movement?",
             "answer": "Students for a Democratic Society (SDS)",
             "explanation": "SDS organized the first major national anti-war march in Washington in April 1965, drawing 20,000.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Student Mobilization Committee (SMC)",
+              "Weather Underground Organization (WUO)",
+              "Young Americans for Freedom (YAF)"
+            ]
           },
           {
             "id": "q_4_1_s4",
             "question": "What symbolic protest method involved young men burning their official government service notices?",
             "answer": "Draft card burning",
             "explanation": "Burning draft cards became a federal crime in 1965, but remained a popular act of civil disobedience.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Registration card destruction",
+              "Conscription notice burning",
+              "Selective Service protest"
+            ]
           },
           {
             "id": "q_4_1_s5",
             "question": "Which heavyweight boxing champion famously refused to be drafted in 1967, citing religious beliefs?",
             "answer": "Muhammad Ali",
             "explanation": "Ali was stripped of his title and banned from boxing, declaring: 'I ain't got no quarrel with them Viet Cong.'",
-            "year": 1967
+            "year": 1967,
+            "distractors": [
+              "Joe Frazier",
+              "George Foreman",
+              "Sonny Liston"
+            ]
           },
           {
             "id": "q_4_1_s6",
             "question": "What term describes the difference between what the government reported about the war and what journalists showed on TV?",
             "answer": "Credibility gap",
             "explanation": "The credibility gap eroded public trust in the presidency, especially after the Tet Offensive showed the war was not won.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Information mismatch",
+              "Pentagon barrier",
+              "Public trust deficit"
+            ]
           },
           {
             "id": "q_4_1_s7",
             "question": "In which South Vietnamese village did US troops massacre over 500 unarmed civilians in March 1968?",
             "answer": "My Lai",
             "explanation": "The massacre of women, children, and old men was covered up by the military until journalist Seymour Hersh broke the story.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Song My",
+              "Dak Son",
+              "Ben Tre"
+            ]
           },
           {
             "id": "q_4_1_s8",
             "question": "Who was the US Army lieutenant court-martialed and convicted of murder for ordering the My Lai massacre?",
             "answer": "William Calley",
             "explanation": "Calley was sentenced to life in prison, but Nixon reduced his sentence, and he ultimately served only three years of house arrest.",
-            "year": 1971
+            "year": 1971,
+            "distractors": [
+              "Ernest Medina",
+              "Oran Henderson",
+              "Samuel Koster"
+            ]
           },
           {
             "id": "q_4_1_s9",
             "question": "What was the name of the top-secret government history of the war leaked to the press in 1971?",
             "answer": "The Pentagon Papers",
             "explanation": "The papers revealed that the government had systematically lied to Congress and the public about the scope of the war.",
-            "year": 1971
+            "year": 1971,
+            "distractors": [
+              "The McNamara Report",
+              "The Vietnam Archives",
+              "The Secret History Files"
+            ]
           },
           {
             "id": "q_4_1_s10",
             "question": "Which trusted CBS news anchor declared in 1968 that the war was mired in a stalemate?",
             "answer": "Walter Cronkite",
             "explanation": "Cronkite's report after visiting Vietnam deeply influenced public opinion. Johnson remarked: 'If I've lost Cronkite, I've lost Middle America.'",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Eric Sevareid",
+              "Chet Huntley",
+              "David Brinkley"
+            ]
           }
         ],
         "depth": [
@@ -1458,35 +2408,60 @@ export const QUIZ_DATA = [
             "question": "What justification did Muhammad Ali give for refusing to fight in the Vietnam War?",
             "answer": "His religious beliefs and opposition to fighting other people of color",
             "explanation": "Ali cited his faith as a Muslim and argued that Black Americans should not fight for a country that denied them civil rights at home.",
-            "year": 1967
+            "year": 1967,
+            "distractors": [
+              "His alignment with anti-war student movements and the Students for a Democratic Society",
+              "His desire to pursue a professional career in boxing without military interruption",
+              "His protest against the lack of combat safety gear and training provided to recruits"
+            ]
           },
           {
             "id": "q_4_1_d2",
             "question": "What was the exact date of the Kent State shootings in Ohio?",
             "answer": "4 May 1970",
             "explanation": "Guardsmen fired 67 rounds into the crowd, killing 4 students and wounding 9 others, including one who was paralyzed.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "1 May 1970",
+              "8 May 1970",
+              "15 May 1970"
+            ]
           },
           {
             "id": "q_4_1_d3",
             "question": "Why did the My Lai Massacre (1968) have such a devastating impact on the US homefront when it was revealed in 1969?",
             "answer": "It exposed the moral cost of the war and shocked the public's conscience",
             "explanation": "The brutal killing of over 500 unarmed Vietnamese civilians by US soldiers undermined the government's claim that the war was a moral defense of democracy.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "It resulted in the immediate cut-off of congressional funds for military operations",
+              "It forced the President to establish an immediate ceasefire in South Vietnam",
+              "It led to massive legal prosecutions of top generals in the Pentagon"
+            ]
           },
           {
             "id": "q_4_1_d4",
             "question": "Who was the independent investigative journalist who broke the My Lai massacre story in November 1969?",
             "answer": "Seymour Hersh",
             "explanation": "Hersh traced Calley's court-martial charges, interviewed soldiers, and won the Pulitzer Prize for his reporting.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Ronald Ridenhour",
+              "Daniel Ellsberg",
+              "Neil Sheehan"
+            ]
           },
           {
             "id": "q_4_1_d5",
             "question": "Who was the military analyst who leaked the Pentagon Papers to newspapers in 1971?",
             "answer": "Daniel Ellsberg",
             "explanation": "Ellsberg was a former defense analyst who copied the documents to expose the deception of the war.",
-            "year": 1971
+            "year": 1971,
+            "distractors": [
+              "Neil Sheehan",
+              "Anthony Russo",
+              "Arthur Ochs Sulzberger"
+            ]
           }
         ]
       },
@@ -1499,70 +2474,120 @@ export const QUIZ_DATA = [
             "question": "What term did Nixon use in November 1969 to describe the patriotic Americans who supported his war policy?",
             "answer": "The Silent Majority",
             "explanation": "Nixon argued that the loud anti-war protesters were a minority, and most Americans supported his efforts.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "The Great Majority",
+              "The Patriotic Masses",
+              "The Quiet Americans"
+            ]
           },
           {
             "id": "q_4_2_s2",
             "question": "What was the primary political motivation for pro-war supporters in the US, fearing the global spread of communism?",
             "answer": "Anti-communism",
             "explanation": "Supporters believed that stopping communism in Vietnam was essential to protect American security and democracy.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Democratic capitalism",
+              "National sovereignty",
+              "Global militarism"
+            ]
           },
           {
             "id": "q_4_2_s3",
             "question": "What violent event occurred in New York City in May 1970 where construction workers attacked anti-war students?",
             "answer": "Hard Hat Riots",
             "explanation": "Mobilized by union leaders, construction workers beat student protesters, demonstrating the working-class support for the war.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "Construction Workers Riot",
+              "Wall Street Student Brawl",
+              "Labor-Student Clashes"
+            ]
           },
           {
             "id": "q_4_2_s4",
             "question": "What informal term was used to describe politicians and citizens who supported the escalation of the war?",
             "answer": "Hawks",
             "explanation": "Hawks favored military pressure, believing that the US should use all necessary force to win in Vietnam.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Eagles",
+              "Falcons",
+              "Warriors"
+            ]
           },
           {
             "id": "q_4_2_s5",
             "question": "What informal term was used to describe politicians and citizens who favored a peaceful exit from the war?",
             "answer": "Doves",
             "explanation": "Doves argued that the war was a civil conflict that could not be won militarily and urged immediate negotiations.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Pigeons",
+              "Swallows",
+              "Pacifists"
+            ]
           },
           {
             "id": "q_4_2_s6",
             "question": "What popular pro-war slogan expressed the view that citizens who criticized the war should emigrate?",
             "answer": "America: Love It or Leave It",
             "explanation": "The slogan reflected the intense patriotism and hostility toward anti-war protesters among supporters.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "My Country: Right or Wrong",
+              "Stand by Your President",
+              "Support Our Troops: No Matter What"
+            ]
           },
           {
             "id": "q_4_2_s7",
             "question": "Which US president made the famous 'Silent Majority' speech on television in November 1969?",
             "answer": "Richard Nixon",
             "explanation": "The speech was highly successful, rallying conservative and working-class support to his administration.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Lyndon B. Johnson",
+              "Richard Nixon (as Vice President)",
+              "Gerald Ford"
+            ]
           },
           {
             "id": "q_4_2_s8",
             "question": "Which major national labor union coalition supported Nixon's war policy and helped organize the Hard Hat Riots?",
             "answer": "AFL-CIO",
             "explanation": "Led by George Meany, the union leadership was strongly anti-communist and patriotic, aligning with Nixon.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "Teamsters",
+              "United Auto Workers (UAW)",
+              "United Mine Workers (UMW)"
+            ]
           },
           {
             "id": "q_4_2_s9",
             "question": "In what month and year did President Nixon deliver his famous 'Silent Majority' address?",
             "answer": "November 1969",
             "explanation": "Delivered on 3 November 1969, the speech sought to buy time for his Vietnamisation policy.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "May 1970",
+              "November 1970",
+              "January 1973"
+            ]
           },
           {
             "id": "q_4_2_s10",
             "question": "What pro-war student organization was formed to counter the radical anti-war Student Mobilization Committee?",
             "answer": "Young Americans for Freedom (YAF)",
             "explanation": "YAF was a conservative youth organization that organized pro-war rallies and supported the draft.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Students for America (SFA)",
+              "Patriotic Youth Coalition (PYC)",
+              "College Republicans League (CRL)"
+            ]
           }
         ],
         "depth": [
@@ -1571,35 +2596,60 @@ export const QUIZ_DATA = [
             "question": "How many construction workers marched in support of Nixon in New York City in the days following the Hard Hat Riots?",
             "answer": "Over 20,000",
             "explanation": "The workers marched to City Hall carrying American flags, showing the depth of working-class support for the troops.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "Over 5,000",
+              "Over 10,000",
+              "Over 50,000"
+            ]
           },
           {
             "id": "q_4_2_d2",
             "question": "What concept of national duty and pride did working-class supporters frequently cite when criticizing student protesters?",
             "answer": "Patriotism",
             "explanation": "Supporters felt that refusing the draft and burning flags was a betrayal of those who had served in previous wars.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Constitutional duty",
+              "Anti-intellectualism",
+              "Law and order"
+            ]
           },
           {
             "id": "q_4_2_d3",
             "question": "Why did Nixon appeal specifically to the 'Silent Majority' in 1969?",
             "answer": "To bypass active anti-war protesters and show Congress he had broad public support",
             "explanation": "Nixon wanted to demonstrate that the vocal student protesters did not represent the majority of Americans, allowing him to continue his Vietnam policies.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "To justify a massive increase in the draft calls and defense spending",
+              "To gain political leverage to dissolve the anti-war student organizations",
+              "To prepare the public for a potential nuclear strike against North Vietnam"
+            ]
           },
           {
             "id": "q_4_2_d4",
             "question": "What demographic groups formed the primary social base for Nixon's Silent Majority?",
             "answer": "Working-class, suburban, and older conservative Americans",
             "explanation": "Often called 'Middle America', they were alienated by the counterculture, student riots, and radical civil rights.",
-            "year": 1969
+            "year": 1969,
+            "distractors": [
+              "Academic intellectuals, university students, and liberal media columnists",
+              "Black civil rights activists, anti-war veterans, and labor union leaders",
+              "Unemployed urban residents, immigrant laborers, and Southern farmers"
+            ]
           },
           {
             "id": "q_4_2_d5",
             "question": "What did pro-war advocates fear would happen to US allies if the United States withdrew from Vietnam in defeat?",
             "answer": "Loss of US global credibility and containment failure",
             "explanation": "They feared a communist takeover of the region and that allies would no longer trust US security commitments.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Immediate economic recession on the homefront due to loss of trade routes",
+              "The collapse of the United Nations coalition and loss of European allies",
+              "A direct Soviet military invasion of other non-communist countries in Asia"
+            ]
           }
         ]
       },
@@ -1612,70 +2662,120 @@ export const QUIZ_DATA = [
             "question": "In what year did Saigon fall to the North Vietnamese, marking the end of the Vietnam War?",
             "answer": "1975",
             "explanation": "Saigon fell on 30 April 1975, when NVA tanks crashed through the gates of the Presidential Palace.",
-            "year": 1975
+            "year": 1975,
+            "distractors": [
+              "1973",
+              "1974",
+              "1976"
+            ]
           },
           {
             "id": "q_4_3_s2",
             "question": "What was the name of the final North Vietnamese conventional offensive that captured Saigon in 1975?",
             "answer": "The Ho Chi Minh Campaign",
             "explanation": "The offensive quickly overran South Vietnamese defense lines following the withdrawal of US aid.",
-            "year": 1975
+            "year": 1975,
+            "distractors": [
+              "The Spring Offensive",
+              "The Hanoi Campaign",
+              "The Liberation Drive"
+            ]
           },
           {
             "id": "q_4_3_s3",
             "question": "What was the name of the US helicopter evacuation of Saigon in April 1975?",
             "answer": "Operation Frequent Wind",
             "explanation": "Helicopters evacuated over 1,000 Americans and 5,000 South Vietnamese refugees from the embassy and airport.",
-            "year": 1975
+            "year": 1975,
+            "distractors": [
+              "Operation Frequent Rescue",
+              "Operation Saigon Airlift",
+              "Operation Frequent Departure"
+            ]
           },
           {
             "id": "q_4_3_s4",
             "question": "Who was the South Vietnamese President who surrendered Saigon to North Vietnamese forces?",
             "answer": "Duong Van Minh",
             "explanation": "Minh surrendered on 30 April, telling the NVA: 'I am waiting to hand over the power to you to avoid bloodshed.'",
-            "year": 1975
+            "year": 1975,
+            "distractors": [
+              "Nguyen Van Thieu",
+              "Tran Van Huong",
+              "Nguyen Cao Ky"
+            ]
           },
           {
             "id": "q_4_3_s5",
             "question": "In what year was the Paris Peace Accords signed?",
             "answer": "1973",
             "explanation": "The accords were signed in January 1973, bringing a temporary ceasefire and allowing the withdrawal of US combat forces.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "1971",
+              "1972",
+              "1975"
+            ]
           },
           {
             "id": "q_4_3_s6",
             "question": "How many days did the US have to withdraw all troops under the 1973 Accords?",
             "answer": "60 days",
             "explanation": "The accords mandated the complete withdrawal of all US military personnel and the release of all POWs within 60 days.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "30 days",
+              "45 days",
+              "90 days"
+            ]
           },
           {
             "id": "q_4_3_s7",
             "question": "Why did South Vietnamese President Thieu initially refuse to sign the accords?",
             "answer": "North Vietnamese troops stayed in the South",
             "explanation": "Thieu knew that leaving North Vietnamese troops inside South Vietnam would make a communist takeover inevitable once US forces left.",
-            "year": 1972
+            "year": 1972,
+            "distractors": [
+              "The US refused to provide any further economic aid to the South",
+              "The accords did not guarantee the return of South Vietnamese POWs",
+              "He believed the US military was plotting a coup to replace him"
+            ]
           },
           {
             "id": "q_4_3_s8",
             "question": "What bombing campaign was ordered to force the signing of the accords in late 1972?",
             "answer": "Operation Linebacker II (Christmas Bombings)",
             "explanation": "Nixon launched intense B-52 raids against Hanoi and Haiphong in December 1972 to force North Vietnam back to the negotiating table.",
-            "year": 1972
+            "year": 1972,
+            "distractors": [
+              "Operation Rolling Thunder",
+              "Operation Linebacker I",
+              "Operation Menu"
+            ]
           },
           {
             "id": "q_4_3_s9",
             "question": "Which 1973 Act of Congress limited the president's power to commit troops to foreign conflicts without approval?",
             "answer": "War Powers Act",
             "explanation": "Passed over Nixon's veto, the act required congressional approval within 60 days of deploying troops.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "National Security Act",
+              "Presidential Limitation Bill",
+              "Foreign Intervention Act"
+            ]
           },
           {
             "id": "q_4_3_s10",
             "question": "Which constitutional amendment lowered the US voting age to 18 in 1971, prompted by the draft?",
             "answer": "26th Amendment",
             "explanation": "The slogan 'old enough to fight, old enough to vote' led to the rapid ratification of the amendment.",
-            "year": 1971
+            "year": 1971,
+            "distractors": [
+              "24th Amendment",
+              "25th Amendment",
+              "27th Amendment"
+            ]
           }
         ],
         "depth": [
@@ -1684,35 +2784,60 @@ export const QUIZ_DATA = [
             "question": "What was the exact date of the Fall of Saigon, marking the official end of South Vietnam?",
             "answer": "30 April 1975",
             "explanation": "Tanks entered the city, raised the Vietcong flag on the palace, and South Vietnam surrendered unconditionally.",
-            "year": 1975
+            "year": 1975,
+            "distractors": [
+              "27 January 1973",
+              "29 March 1973",
+              "15 August 1973"
+            ]
           },
           {
             "id": "q_4_3_d2",
             "question": "What prominent building in Saigon became the iconic site of helicopter evacuations during Operation Frequent Wind?",
             "answer": "US Embassy roof",
             "explanation": "Images of refugees scaling embassy walls and boarding helicopters became symbols of the US defeat in Vietnam.",
-            "year": 1975
+            "year": 1975,
+            "distractors": [
+              "Presidential Palace gates",
+              "Saigon Port docks",
+              "Tân Sơn Nhất Airport runway"
+            ]
           },
           {
             "id": "q_4_3_d3",
             "question": "Under the War Powers Act of 1973, within how many hours must a president notify Congress of troop deployment?",
             "answer": "48 hours",
             "explanation": "The president must explain the reasons for the deployment and withdraw forces within 60 days unless Congress approves.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "24 hours",
+              "72 hours",
+              "96 hours"
+            ]
           },
           {
             "id": "q_4_3_d4",
             "question": "Why did the US Congress pass the War Powers Act in 1973?",
             "answer": "To limit the president's ability to wage undeclared war without congressional approval",
             "explanation": "After Nixon escalated the war in Cambodia and Laos without consulting Congress, politicians wanted to reassert their constitutional control over military commitments.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "To cut off all presidential funding for international diplomatic treaties",
+              "To restore the Senate's authority to command and direct active troop movements",
+              "To prevent future presidents from making any executive orders regarding the draft"
+            ]
           },
           {
             "id": "q_4_3_d5",
             "question": "Who was the chief North Vietnamese secret negotiator who met with Henry Kissinger in Paris?",
             "answer": "Le Duc Tho",
             "explanation": "Tho negotiated alongside Kissinger. They were jointly awarded the 1973 Nobel Peace Prize, but Tho refused it.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "Le Duan",
+              "Nguyen Co Thach",
+              "Xuan Thuy"
+            ]
           }
         ]
       },
@@ -1725,70 +2850,120 @@ export const QUIZ_DATA = [
             "question": "What was the name of the highly resilient supply route running through Laos and Cambodia that the US failed to block?",
             "answer": "Ho Chi Minh Trail",
             "explanation": "The trail funneled troops and supplies from North Vietnam into the South, rebuilt constantly by volunteers despite intense bombing.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Hanoi Bypass Route",
+              "Indochina Supply Highway",
+              "Vietcong Logistics Trail"
+            ]
           },
           {
             "id": "q_4_4_s2",
             "question": "Which two communist superpowers provided essential military hardware, air defenses, and financial aid to North Vietnam?",
             "answer": "Soviet Union and China",
             "explanation": "Soviet surface-to-air missiles and Chinese military hardware/labor provided North Vietnam the material support to match US firepower.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Soviet Union and North Korea",
+              "China and Cuba",
+              "Soviet Union and East Germany"
+            ]
           },
           {
             "id": "q_4_4_s3",
             "question": "What term was used to describe the collapse of morale behavior where US soldiers intentionally killed their own officers with grenades?",
             "answer": "Fragging",
             "explanation": "Usually involving fragmentation grenades, fragging reflected severe drug abuse, frustration, and rebellion among conscripted soldiers.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "Mutiny",
+              "Friendly fire",
+              "Desertion"
+            ]
           },
           {
             "id": "q_4_4_s4",
             "question": "What US military strategy of attrition failed because the Vietcong were fighting a total war and could replace losses indefinitely?",
             "answer": "Search and Destroy",
             "explanation": "General Westmoreland sought to reach a 'crossover point' of enemy casualties, but North Vietnam's high population and resolve nullified this strategy.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Search and destroy",
+              "Strategic hamlets",
+              "Pacification sweeps"
+            ]
           },
           {
             "id": "q_4_4_s5",
             "question": "What was a major cause of low morale and drug abuse among US troops, who were mostly young, working-class conscripts?",
             "answer": "The Draft",
             "explanation": "Conscription selected unwilling young men to fight in a highly confusing, dangerous conflict, leading to a breakdown in military discipline.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Low pay rates",
+              "Short tour duration",
+              "Lack of combat gear"
+            ]
           },
           {
             "id": "q_4_4_s6",
             "question": "What chemical weapons and defoliants dropped by the US ruined its global reputation and alienated South Vietnamese peasants?",
             "answer": "Agent Orange and Napalm",
             "explanation": "The drop of toxic herbicides and incendiary weapons destroyed crops and villages, pushing rural populations to support the Vietcong.",
-            "year": 1965
+            "year": 1965,
+            "distractors": [
+              "Thermite and White Phosphorus",
+              " Agent Orange and Tear Gas",
+              "Blue Defoliant and CS Gas"
+            ]
           },
           {
             "id": "q_4_4_s7",
             "question": "Which 1968 offensive, though a military defeat for the Vietcong, was a political victory that shattered US support?",
             "answer": "Tet Offensive",
             "explanation": "Tet proved to the American public that the government's optimistic claims about winning the war were false, fueling opposition.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Easter Offensive",
+              "Christmas Offensive",
+              "Battle of Hue"
+            ]
           },
           {
             "id": "q_4_4_s8",
             "question": "What did the US Congress cut in 1974 that severely weakened the South Vietnamese military prior to the final invasion?",
             "answer": "Military funding",
             "explanation": "Congress slashed military aid to South Vietnam from $2.1 billion to $700 million, leaving the ARVN with critical shortages of ammo and fuel.",
-            "year": 1974
+            "year": 1974,
+            "distractors": [
+              "Air support funding",
+              "Economic aid package",
+              "Diplomatic support budget"
+            ]
           },
           {
             "id": "q_4_4_s9",
             "question": "What term describes the psychological reluctance of the US public and politicians to intervene militarily abroad after Vietnam?",
             "answer": "Vietnam Syndrome",
             "explanation": "The national trauma of the defeat made subsequent US administrations highly hesitant to commit ground troops in foreign conflicts.",
-            "year": 1975
+            "year": 1975,
+            "distractors": [
+              "Vietnam Reluctance",
+              "Isolationist Complex",
+              "Pentagon Hesitation"
+            ]
           },
           {
             "id": "q_4_4_s10",
             "question": "What was the primary economic consequence of the war's high military expenditure on the US homefront?",
             "answer": "High inflation and deficits",
             "explanation": "President Johnson's attempt to fund both the war and Great Society programs without raising taxes triggered severe inflation and economic stagflation.",
-            "year": 1970
+            "year": 1970,
+            "distractors": [
+              "High unemployment rates",
+              "Stock market collapse",
+              "Severe trade deficits"
+            ]
           }
         ],
         "depth": [
@@ -1797,35 +2972,60 @@ export const QUIZ_DATA = [
             "question": "Which superpower provided North Vietnam with advanced anti-aircraft missiles and radar (referred to in the syllabus as Russian support)?",
             "answer": "Soviet Union",
             "explanation": "Soviet SAM missiles and technical advisors shot down hundreds of US planes, helping North Vietnam survive Rolling Thunder.",
-            "year": 1972
+            "year": 1972,
+            "distractors": [
+              "North Korea",
+              "China",
+              "East Germany"
+            ]
           },
           {
             "id": "q_4_4_d2",
             "question": "What strategic military miscalculation by General Westmoreland underestimated the motivation of the communist forces?",
             "answer": "Strategy of attrition",
             "explanation": "Westmoreland believed there was a 'crossover point' where casualties would break the enemy, but the communists replaced losses indefinitely.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Pacification strategy",
+              "Vietnamisation strategy",
+              "Search and destroy strategy"
+            ]
           },
           {
             "id": "q_4_4_d3",
             "question": "How did the one-year tour of duty system affect the combat effectiveness and morale of the US military?",
             "answer": "Prevented experience build-up and lowered unit cohesion",
             "explanation": "As soon as soldiers became experienced and street-smart, they were sent home, meaning the US army was constantly filled with raw, un-cohesive recruits.",
-            "year": 1968
+            "year": 1968,
+            "distractors": [
+              "Increased training expenses and created administrative delays in recruiting",
+              "Decreased the size of the active military force and caused labor shortages",
+              "Caused severe conflicts between newly arrived draftees and veteran soldiers"
+            ]
           },
           {
             "id": "q_4_4_d4",
             "question": "What major weakness of the South Vietnamese military (ARVN) contributed to the ultimate US failure in Vietnam?",
             "answer": "High desertion rates, corruption, and heavy reliance on US air support",
             "explanation": "The ARVN suffered from poor leadership, low morale, and corruption. When the US withdrew its troops and air support, the ARVN was unable to resist the NVA.",
-            "year": 1973
+            "year": 1973,
+            "distractors": [
+              "A total lack of modern weapons, radio equipment, and vehicle transport",
+              "Heavy conflicts between the political leaders of Saigon and military generals",
+              "The complete absence of veteran officers and trained pilots in the air force"
+            ]
           },
           {
             "id": "q_4_4_d5",
             "question": "Why was the South Vietnamese (Saigon) government unable to win the 'hearts and minds' of its own people?",
             "answer": "Extreme political corruption, religious bias, and reliance on US force",
             "explanation": "The ruling elites in Saigon were viewed as Western puppets, highly corrupt, and biased against the Buddhist majority, denying them popular legitimacy.",
-            "year": 1963
+            "year": 1963,
+            "distractors": [
+              "Its refusal to accept any economic or military aid from western allies",
+              "Its decision to outlaw all political parties except the ruling military junta",
+              "Its failure to build any public schools, roads, or clinics in the countryside"
+            ]
           }
         ]
       }
