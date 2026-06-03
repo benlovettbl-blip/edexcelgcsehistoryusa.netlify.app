@@ -1440,7 +1440,14 @@ export function highlightModelQuotes(text) {
     i2Text = state.pastPaperSession.activePaperData.interpretation2 || '';
   }
   
-  const cleanWord = (str) => (str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const cleanWord = (str) => {
+    if (!str) return '';
+    let val = str;
+    if (typeof str === 'object') {
+      val = str.content || str.text || '';
+    }
+    return String(val).toLowerCase().replace(/[^a-z0-9]/g, '');
+  };
   
   // Double quotes
   highlighted = highlighted.replace(/["“]([^"”]{2,})["”]/g, '<span class="model-quote">“$1”</span>');

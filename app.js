@@ -21880,7 +21880,14 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       i1Text = state.pastPaperSession.activePaperData.interpretation1 || "";
       i2Text = state.pastPaperSession.activePaperData.interpretation2 || "";
     }
-    const cleanWord = (str) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const cleanWord = (str) => {
+      if (!str) return "";
+      let val = str;
+      if (typeof str === "object") {
+        val = str.content || str.text || "";
+      }
+      return String(val).toLowerCase().replace(/[^a-z0-9]/g, "");
+    };
     highlighted = highlighted.replace(/["“]([^"”]{2,})["”]/g, '<span class="model-quote">\u201C$1\u201D</span>');
     highlighted = highlighted.replace(/\[1\[(.*?)\]1\]/g, (match, quote) => {
       const cleanQuote = cleanWord(quote);
