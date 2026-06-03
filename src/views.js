@@ -4596,7 +4596,7 @@ function renderTabooTurnTransition() {
         <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">
           Round ${tabooState.currentRound} of ${tabooState.totalRounds}
         </span>
-        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 16px 0;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 0 0 16px 0;">
           ${currentTeam.name}'s Turn
         </h2>
         
@@ -4797,7 +4797,7 @@ function handleTabooTimerEnd() {
 
   let logsHtml = tabooState.turnLogs.map(log => `
     <div style="display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.88rem;">
-      <span style="color: #fff; font-weight: 500;">${log.target}</span>
+      <span style="color: var(--text-main); font-weight: 500;">${log.target}</span>
       <span style="font-weight: 700; color: ${log.status === 'correct' ? 'var(--success)' : 'var(--accent)'}; font-size: 0.75rem; text-transform: uppercase;">
         ${log.status === 'correct' ? '✓ Correct' : '✗ Skipped'}
       </span>
@@ -4812,7 +4812,7 @@ function handleTabooTimerEnd() {
     <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
       <div class="taboo-setup-section" style="padding: 30px;">
         <span style="font-size: 2.5rem; color: var(--success); display: block; margin-bottom: 12px;">⏰</span>
-        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #fff; margin: 0 0 8px 0;">Turn Completed!</h2>
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin: 0 0 8px 0;">Turn Completed!</h2>
         <p style="margin: 0 0 24px 0; color: var(--text-muted); font-size: 0.95rem;">
           <strong>${currentTeam.name}</strong> scored <strong style="color: var(--success); font-size: 1.15rem;">+${tabooState.turnScore}</strong> points this round.
         </p>
@@ -4897,7 +4897,7 @@ function endTabooGame() {
     <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
       <div class="taboo-setup-section" style="padding: 40px 30px;">
         <span style="font-size: 3.5rem; display: block; margin-bottom: 12px;">🏆</span>
-        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 12px 0;">Taboo Revision Completed!</h2>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 0 0 12px 0;">Taboo Revision Completed!</h2>
         
         <div style="margin-bottom: 28px; padding: 14px 20px; background: rgba(56, 189, 248, 0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); display: inline-block;">
           ${winMessage}

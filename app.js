@@ -13753,7 +13753,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
         <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">
           Round ${tabooState.currentRound} of ${tabooState.totalRounds}
         </span>
-        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 16px 0;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 0 0 16px 0;">
           ${currentTeam.name}'s Turn
         </h2>
         
@@ -13924,7 +13924,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
     if (!container) return;
     let logsHtml = tabooState.turnLogs.map((log) => `
     <div style="display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.88rem;">
-      <span style="color: #fff; font-weight: 500;">${log.target}</span>
+      <span style="color: var(--text-main); font-weight: 500;">${log.target}</span>
       <span style="font-weight: 700; color: ${log.status === "correct" ? "var(--success)" : "var(--accent)"}; font-size: 0.75rem; text-transform: uppercase;">
         ${log.status === "correct" ? "\u2713 Correct" : "\u2717 Skipped"}
       </span>
@@ -13937,7 +13937,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
     <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
       <div class="taboo-setup-section" style="padding: 30px;">
         <span style="font-size: 2.5rem; color: var(--success); display: block; margin-bottom: 12px;">\u23F0</span>
-        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #fff; margin: 0 0 8px 0;">Turn Completed!</h2>
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin: 0 0 8px 0;">Turn Completed!</h2>
         <p style="margin: 0 0 24px 0; color: var(--text-muted); font-size: 0.95rem;">
           <strong>${currentTeam.name}</strong> scored <strong style="color: var(--success); font-size: 1.15rem;">+${tabooState.turnScore}</strong> points this round.
         </p>
@@ -14004,7 +14004,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
     <div class="taboo-setup-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
       <div class="taboo-setup-section" style="padding: 40px 30px;">
         <span style="font-size: 3.5rem; display: block; margin-bottom: 12px;">\u{1F3C6}</span>
-        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #fff; margin: 0 0 12px 0;">Taboo Revision Completed!</h2>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin: 0 0 12px 0;">Taboo Revision Completed!</h2>
         
         <div style="margin-bottom: 28px; padding: 14px 20px; background: rgba(56, 189, 248, 0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); display: inline-block;">
           ${winMessage}
@@ -20495,7 +20495,11 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       const storedMastery = localStorage.getItem("edexcel_mastery") || localStorage.getItem("firefly_mastery");
       const storedBookmarks = localStorage.getItem("edexcel_bookmarks") || localStorage.getItem("firefly_bookmarks");
       const storedSound = localStorage.getItem("edexcel_sound") || localStorage.getItem("firefly_sound");
-      const storedTheme = localStorage.getItem("edexcel_theme") || localStorage.getItem("firefly_theme");
+      let storedTheme = localStorage.getItem("edexcel_theme") || localStorage.getItem("firefly_theme");
+      if (storedTheme === "midnight" || storedTheme === "teal") {
+        storedTheme = "desert";
+        localStorage.setItem("edexcel_theme", "desert");
+      }
       const storedPastAnswers = localStorage.getItem("edexcel_past_answers");
       const storedPastCompleted = localStorage.getItem("edexcel_past_completed");
       if (storedMastery) state.mastery = JSON.parse(storedMastery);
