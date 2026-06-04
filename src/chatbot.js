@@ -2,9 +2,43 @@ import { LESSONS_DATA } from './lessons_data.js';
 import { QUIZ_DATA } from '../questions.js';
 import { switchView } from './navigation.js';
 import { state } from './state.js';
+import { SPEC_CHECKLIST_DATA } from './spec_checklist_data.js';
 
 let searchDatabase = [];
 let chatHistory = [];
+
+let quizState = {
+  isActive: false,
+  questions: [],
+  currentIndex: 0,
+  score: 0,
+  answersShuffled: []
+};
+
+let gradingState = {
+  isActive: false
+};
+
+const examinerSystemInstruction = `You are a strict, professional GCSE History Examiner for Edexcel Paper 3 USA. 
+Your task is to grade the student's PEEL paragraph contribution to a 12-mark or 16-mark essay.
+Grade the paragraph out of 4 marks:
+- 1 mark for a clear Point.
+- 1 mark for precise historical Evidence (specific years, names, numbers, events).
+- 1 mark for clear Explanation of HOW/WHY the evidence supports the point.
+- 1 mark for a Link sentence connecting back to the essay topic/question.
+
+Structure your response strictly as follows:
+**GCSE Examiner Grade:** [Score]/4
+
+- **Point (P):** [Evaluation of whether they have a clear point/topic sentence]
+- **Evidence (E):** [Evaluation of their facts/dates/specific details]
+- **Explanation (E):** [Evaluation of their explanation connecting facts to the point]
+- **Link (L):** [Evaluation of their concluding sentence connecting to the question]
+
+**WWW (What Went Well):** [Encouraging feedback highlighting a strong area]
+**EBI (Even Better If):** [One specific actionable improvement]
+
+Keep feedback concise, professional, encouraging, and under 150 words.`;
 
 const SEARCH_ALIASES = {
   "mlk": "martin luther king jr leader civil rights non violence",
@@ -349,9 +383,9 @@ function formatMessageText(text) {
     .replace(/\n/g, "<br>");
 }
 
-// Send user query to Gemini API
-async function fetchGeminiResponse(apiKey, userInput, localContext) {
-  const systemInstruction = `You are a strict, helpful AI history tutor for Edexcel GCSE History, Paper 3: Modern Depth Study - USA (1954-75).
+// Send user query to Gemini API (Proxy by default, local key fallback)
+async function fetchGeminiResponse(localApiKey, userInput, localContext, customSystemInstruction = null) {
+  const systemInstruction = customSystemInstruction || `You are a strict, helpful AI history tutor for Edexcel GCSE History, Paper 3: Modern Depth Study - USA (1954-75).
 Your task is to answer the student's question accurately, concisely, and at a GCSE level (appropriate for 14-16 year olds).
 Rules:
 - Keep the response short (strictly under 100 words).
@@ -388,6 +422,47 @@ Rules:
     }
   };
 
+  // Try the Netlify serverless proxy first
+  try {
+    const response = await fetch(`/.netlify/functions/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(requestBody)
+    });
+
+    const data = await response.json().catch(() => ({}));
+    if (response.ok && data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+      const aiText = data.candidates[0].content.parts[0].text.trim();
+      chatHistory.push({
+        role: "model",
+        parts: [{ text: aiText }]
+      });
+      return aiText;
+    } else {
+      const isUnconfigured = !response.ok && (
+        (data.error && data.error.message && data.error.message.includes("GEMINI_API_KEY")) ||
+        response.status === 500
+      );
+      if (isUnconfigured && localApiKey) {
+        return await fetchDirectGemini(localApiKey, requestBody);
+      }
+      throw new Error(data.error?.message || `Proxy error ${response.status}`);
+    }
+  } catch (proxyError) {
+    if (localApiKey) {
+      try {
+        return await fetchDirectGemini(localApiKey, requestBody);
+      } catch (directError) {
+        throw new Error(`Proxy error (${proxyError.message}) and fallback failed: ${directError.message}`);
+      }
+    }
+    throw proxyError;
+  }
+}
+
+async function fetchDirectGemini(apiKey, requestBody) {
   const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
     method: "POST",
     headers: {
@@ -396,35 +471,27 @@ Rules:
     body: JSON.stringify(requestBody)
   });
 
-  if (!response.ok) {
-    const errData = await response.json().catch(() => ({}));
-    throw new Error(errData.error?.message || `HTTP error ${response.status}`);
-  }
-
   const data = await response.json();
-  if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+  if (response.ok && data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
     const aiText = data.candidates[0].content.parts[0].text.trim();
-    
-    // Save AI response to chat history thread
     chatHistory.push({
       role: "model",
       parts: [{ text: aiText }]
     });
-
     return aiText;
   } else {
-    throw new Error("No response content from Gemini.");
+    throw new Error(data.error?.message || `Direct API error ${response.status}`);
   }
 }
 
 // Append a new bubble to the chat container
-function appendBubble(sender, contentText, subtopicLink = null) {
+function appendBubble(sender, contentText, subtopicLink = null, isHtml = false) {
   const container = document.getElementById('chatbot-messages');
   if (!container) return;
 
   const bubble = document.createElement('div');
   bubble.className = `chatbot-bubble ${sender}`;
-  bubble.innerHTML = formatMessageText(contentText);
+  bubble.innerHTML = isHtml ? contentText : formatMessageText(contentText);
 
   if (subtopicLink) {
     const linkBtn = document.createElement('button');
@@ -432,6 +499,15 @@ function appendBubble(sender, contentText, subtopicLink = null) {
     linkBtn.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> Study: ${subtopicLink.cleanTitle}`;
     linkBtn.setAttribute('data-subtopic-id', subtopicLink.id);
     bubble.appendChild(linkBtn);
+  }
+
+  // Add TTS button for assistant and system bubbles
+  if (sender === 'assistant' || sender === 'system') {
+    const ttsBtn = document.createElement('button');
+    ttsBtn.className = 'chatbot-tts-btn';
+    ttsBtn.title = 'Listen to response';
+    ttsBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    bubble.appendChild(ttsBtn);
   }
 
   container.appendChild(bubble);
@@ -537,6 +613,205 @@ export function initChatbot() {
       background: rgba(194, 65, 12, 0.12);
       border-color: #c2410c;
       color: #c2410c;
+    }
+
+    /* Quiz styling */
+    .chatbot-quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .chatbot-quiz-option-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      border-radius: 6px;
+      color: var(--text-main);
+      padding: 8px 10px;
+      font-size: 0.78rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      outline: none;
+      font-family: inherit;
+    }
+    .chatbot-quiz-option-btn:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary);
+    }
+    .chatbot-quiz-option-btn.correct {
+      background: rgba(16, 185, 129, 0.25) !important;
+      border-color: #10b981 !important;
+      color: #34d399 !important;
+      font-weight: 600;
+    }
+    .chatbot-quiz-option-btn.incorrect {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: #ef4444 !important;
+      color: #f87171 !important;
+    }
+    .chatbot-quiz-next-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .chatbot-quiz-next-btn:hover {
+      background: var(--primary-light);
+    }
+
+    /* Unit & Subtopic Selection Chips */
+    .chatbot-unit-chip-btn, .chatbot-subtopic-chip-btn {
+      background: rgba(139, 92, 246, 0.08);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 8px;
+      color: #a78bfa;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      outline: none;
+      font-family: inherit;
+    }
+    .chatbot-unit-chip-btn:hover, .chatbot-subtopic-chip-btn:hover {
+      background: rgba(139, 92, 246, 0.16);
+      border-color: #8b5cf6;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Checklist Styling */
+    .chatbot-checklist-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      text-align: left;
+    }
+    .chatbot-checklist-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .chatbot-checklist-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    .chatbot-spec-checkbox {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    .chatbot-checkbox-custom {
+      height: 16px;
+      width: 16px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-glass);
+      border-radius: 4px;
+      display: inline-block;
+      position: relative;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all var(--transition-fast);
+    }
+    .chatbot-spec-checkbox:checked ~ .chatbot-checkbox-custom {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+    .chatbot-checkbox-custom:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 5px;
+      top: 2px;
+      width: 4px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .chatbot-spec-checkbox:checked ~ .chatbot-checkbox-custom:after {
+      display: block;
+    }
+    .chatbot-checklist-point-text {
+      color: var(--text-main);
+    }
+    .chatbot-spec-checkbox:checked ~ .chatbot-checklist-point-text {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    .chatbot-checklist-facts {
+      margin-top: 6px;
+      margin-left: 24px;
+      padding-left: 0;
+      list-style-type: none;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .chatbot-checklist-facts li {
+      position: relative;
+      padding-left: 10px;
+    }
+    .chatbot-checklist-facts li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    /* TTS Button styling */
+    .chatbot-tts-btn {
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      background: var(--bg-sidebar);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: all var(--transition-fast);
+      z-index: 10;
+    }
+    .chatbot-tts-btn:hover {
+      color: var(--text-main);
+      border-color: var(--primary);
+      transform: scale(1.1);
+    }
+    .chatbot-tts-btn.speaking {
+      color: var(--accent);
+      border-color: var(--accent);
+      animation: chatbotPulse 1s infinite alternate;
+    }
+    .chatbot-bubble.assistant, .chatbot-bubble.system {
+      position: relative;
     }
   `;
   document.head.appendChild(style);
@@ -663,7 +938,7 @@ export function initChatbot() {
     appendBubble('system', 'Chat history cleared.');
   });
 
-  // 6. In-app navigation links & Suggestion Prompt Chips (Event delegation)
+  // 6. In-app navigation links, Suggestion Prompt Chips & new interactive features (Event delegation)
   messagesContainer.addEventListener('click', (e) => {
     // Jump to lesson link clicks
     const jumpLink = e.target.closest('.chatbot-jump-link');
@@ -694,6 +969,72 @@ export function initChatbot() {
         userInput.value = query;
         handleSend();
       }
+      return;
+    }
+
+    // Quiz Option Clicks
+    const optionBtn = e.target.closest('.chatbot-quiz-option-btn');
+    if (optionBtn) {
+      if (!quizState.isActive) return;
+      const index = parseInt(optionBtn.getAttribute('data-choice-index'), 10);
+      evaluateQuizChoice(index, optionBtn);
+      return;
+    }
+
+    // Quiz Next Clicks
+    const nextBtn = e.target.closest('.chatbot-quiz-next-btn');
+    if (nextBtn) {
+      if (!quizState.isActive) return;
+      quizState.currentIndex++;
+      if (quizState.currentIndex < quizState.questions.length) {
+        presentQuizQuestion();
+      } else {
+        const percent = Math.round((quizState.score / quizState.questions.length) * 100);
+        let feedback = `🏆 **Quiz Complete!**\n\nYou scored **${quizState.score} out of ${quizState.questions.length}** (${percent}%).\n\n`;
+        if (percent === 100) feedback += "Sensational! You are an expert examiner. 🌟";
+        else if (percent >= 80) feedback += "Excellent job! You have a strong grasp of Paper 3 details. 🎓";
+        else if (percent >= 50) feedback += "Good effort. Review the study materials and try again to master it! 📖";
+        else feedback += "Keep studying! Try searching for terms like 'Little Rock' or 'Montgomery' to build your knowledge. 📚";
+        
+        appendBubble('assistant', feedback);
+        quizState.isActive = false;
+      }
+      return;
+    }
+
+    // Unit selection chips
+    const unitChip = e.target.closest('.chatbot-unit-chip-btn');
+    if (unitChip) {
+      const unit = unitChip.getAttribute('data-unit');
+      let subtopicsHtml = `**Unit ${unit} Topics:**\nSelect a topic checklist to view:\n\n`;
+      subtopicsHtml += `<div class="chatbot-chips-container">`;
+      for (let t = 1; t <= 4; t++) {
+        const subtopicId = `subtopic_${unit}_${t}`;
+        const lesson = LESSONS_DATA[subtopicId];
+        const title = lesson ? lesson.headerTitle.replace(/^Topic \d\.\d:\s*/, "") : `Topic ${unit}.${t}`;
+        subtopicsHtml += `<button class="chatbot-subtopic-chip-btn" data-subtopic-id="${subtopicId}">Topic ${unit}.${t}: ${title}</button>`;
+      }
+      subtopicsHtml += `</div>`;
+      appendBubble('assistant', subtopicsHtml, null, true);
+      return;
+    }
+
+    // Subtopic checklist chips
+    const subtopicChip = e.target.closest('.chatbot-subtopic-chip-btn');
+    if (subtopicChip) {
+      const subtopicId = subtopicChip.getAttribute('data-subtopic-id');
+      if (SPEC_CHECKLIST_DATA[subtopicId]) {
+        const checklistHtml = getChecklistHTML(subtopicId);
+        appendBubble('assistant', checklistHtml, null, true);
+      }
+      return;
+    }
+
+    // TTS button click
+    const ttsBtn = e.target.closest('.chatbot-tts-btn');
+    if (ttsBtn) {
+      handleTTS(ttsBtn);
+      return;
     }
   });
 
@@ -706,7 +1047,46 @@ export function initChatbot() {
     appendBubble('user', text);
     userInput.value = '';
 
-    // Step 1: Perform local app database match search
+    // Intercept if Quiz Mode is active
+    if (quizState.isActive) {
+      handleQuizAnswerInput(text);
+      return;
+    }
+
+    // Intercept if Essay Grading Mode is active
+    if (gradingState.isActive) {
+      await handleGradingInput(text);
+      return;
+    }
+
+    // Check for interactive feature triggers
+    const lowerText = text.toLowerCase();
+    
+    // 1. Trivia Quiz trigger
+    if (/\b(quiz|trivia|test me|start quiz|play quiz)\b/.test(lowerText)) {
+      startChatbotQuiz();
+      return;
+    }
+
+    // 2. Grade My Paragraph trigger
+    if (/\b(grade my paragraph|grade my essay|critique my paragraph|peel grade|grade essay|mark my essay)\b/.test(lowerText)) {
+      const matchText = text.replace(/^(grade my paragraph|grade my essay|critique my paragraph|peel grade|grade essay|mark my essay)\s*:?\s*/i, "").trim();
+      if (matchText.length > 5) {
+        await handleGradingInput(matchText);
+      } else {
+        gradingState.isActive = true;
+        appendBubble('assistant', 'I am ready to grade your paragraph! Please paste your essay paragraph or outline below, and I will critique it against GCSE PEEL criteria.');
+      }
+      return;
+    }
+
+    // 3. Spec Checklist trigger
+    if (/\b(spec|specification|checklist|syllabus|what is on the test|requirements|what is on the exam)\b/.test(lowerText)) {
+      handleSpecChecklistQuery(text);
+      return;
+    }
+
+    // Default search
     const localMatches = searchLocalApp(text);
     const bestMatch = localMatches[0];
 
@@ -727,26 +1107,19 @@ export function initChatbot() {
       return;
     }
 
-    // If API Key is present, leverage Gemini AI
-    if (apiKey) {
-      appendThinkingBubble();
-      try {
-        const responseText = await fetchGeminiResponse(apiKey, text, bestMatch);
-        removeThinkingBubble();
-        
-        // Show AI response along with a direct jump link if a relevant local topic matched
-        appendBubble('assistant', responseText, bestMatch);
-      } catch (err) {
-        removeThinkingBubble();
-        appendBubble('system', `API Error: ${err.message}. Please double-check your Gemini API key settings.`);
-      }
-    } else {
-      // Local Database fallback mode
+    // Connect to AI Proxy with key fallback, or local search fallback
+    appendThinkingBubble();
+    try {
+      const responseText = await fetchGeminiResponse(apiKey, text, bestMatch);
+      removeThinkingBubble();
+      appendBubble('assistant', responseText, bestMatch);
+    } catch (err) {
+      removeThinkingBubble();
       if (bestMatch) {
         const fallbackText = getLocalStaticResponse(bestMatch, text);
-        appendBubble('assistant', fallbackText, bestMatch);
+        appendBubble('assistant', `*Offline Mode (AI unavailable: ${err.message})*\n\n${fallbackText}`, bestMatch);
       } else {
-        appendBubble('assistant', `I couldn't find a direct match for that in the course content. To draw answers from the wider internet, please enter your Gemini API Key in the settings (click the ⚙️ gear icon).`);
+        appendBubble('assistant', `I couldn't contact the AI tutor (${err.message}).\n\nIf you are running this locally, you can enter your Gemini API Key in the settings (click the ⚙️ gear icon) to activate AI mode. Otherwise, please ask about a topic covered in the course (e.g., "Little Rock Nine" or "Montgomery Bus Boycott").`);
       }
     }
   }
@@ -758,4 +1131,341 @@ export function initChatbot() {
       handleSend();
     }
   });
+}
+
+// --- Quiz Helper Functions ---
+function startChatbotQuiz() {
+  const allQuestions = [];
+  QUIZ_DATA.forEach(topic => {
+    if (topic.subtopics) {
+      topic.subtopics.forEach(sub => {
+        const subQuestions = [...(sub.standard || []), ...(sub.depth || [])];
+        subQuestions.forEach(q => {
+          allQuestions.push({
+            id: q.id,
+            question: q.question,
+            answer: q.answer,
+            explanation: q.explanation || "",
+            distractors: q.distractors || [],
+            subtopicTitle: sub.title,
+            subtopicId: sub.id
+          });
+        });
+      });
+    }
+  });
+
+  if (allQuestions.length === 0) {
+    appendBubble('assistant', 'Sorry, I could not load any quiz questions at the moment.');
+    return;
+  }
+
+  const shuffled = allQuestions.sort(() => Math.random() - 0.5);
+  quizState.isActive = true;
+  quizState.questions = shuffled.slice(0, 5);
+  quizState.currentIndex = 0;
+  quizState.score = 0;
+
+  appendBubble('assistant', '🎓 **GCSE History Recall Trivia Quiz!**\n\nLet\'s test your knowledge on Paper 3 USA History. I have prepared 5 questions for you. Good luck! Let\'s start with Question 1.');
+  
+  presentQuizQuestion();
+}
+
+function presentQuizQuestion() {
+  const q = quizState.questions[quizState.currentIndex];
+  const choices = [q.answer, ...q.distractors];
+  choices.sort(() => Math.random() - 0.5);
+  quizState.answersShuffled = choices;
+
+  let bubbleContent = `**Question ${quizState.currentIndex + 1} of 5:**\n${q.question}\n\n`;
+  bubbleContent += `<div class="chatbot-quiz-options">`;
+  choices.forEach((choice, index) => {
+    const optionLetter = String.fromCharCode(65 + index);
+    bubbleContent += `
+      <button class="chatbot-quiz-option-btn" data-choice-text="${choice.replace(/"/g, '&quot;')}" data-choice-index="${index}">
+        <strong>${optionLetter}:</strong> ${choice}
+      </button>
+    `;
+  });
+  bubbleContent += `</div>`;
+  
+  appendBubble('assistant', bubbleContent, null, true);
+}
+
+function handleQuizAnswerInput(text) {
+  const lowerText = text.toLowerCase().trim();
+  if (lowerText === 'exit' || lowerText === 'stop' || lowerText === 'quit') {
+    quizState.isActive = false;
+    appendBubble('assistant', 'Quiz stopped. Let me know if you want to play again!');
+    return;
+  }
+
+  const choices = quizState.answersShuffled;
+  let selectedIndex = -1;
+  if (lowerText === 'a' || lowerText === '1') selectedIndex = 0;
+  else if (lowerText === 'b' || lowerText === '2') selectedIndex = 1;
+  else if (lowerText === 'c' || lowerText === '3') selectedIndex = 2;
+  else if (lowerText === 'd' || lowerText === '4') selectedIndex = 3;
+  else {
+    selectedIndex = choices.findIndex(c => c.toLowerCase().trim() === lowerText);
+  }
+
+  if (selectedIndex === -1) {
+    appendBubble('assistant', 'Please select one of the options by clicking a button, or typing A, B, C, or D. (Type "exit" to quit).');
+    return;
+  }
+
+  evaluateQuizChoice(selectedIndex);
+}
+
+function evaluateQuizChoice(selectedIndex, clickedBtn = null) {
+  const q = quizState.questions[quizState.currentIndex];
+  const choices = quizState.answersShuffled;
+  const selectedText = choices[selectedIndex];
+  const correctText = q.answer;
+  const isCorrect = selectedText === correctText;
+
+  if (isCorrect) {
+    quizState.score++;
+  }
+
+  const messagesContainer = document.getElementById('chatbot-messages');
+  const allOptionBtns = messagesContainer.querySelectorAll('.chatbot-quiz-option-btn');
+  const currentOptionsContainer = clickedBtn ? clickedBtn.parentElement : null;
+  const btnsToUpdate = currentOptionsContainer 
+    ? currentOptionsContainer.querySelectorAll('.chatbot-quiz-option-btn')
+    : Array.from(allOptionBtns).slice(-4);
+
+  btnsToUpdate.forEach((btn, idx) => {
+    btn.disabled = true;
+    const btnText = choices[idx];
+    if (btnText === correctText) {
+      btn.classList.add('correct');
+    } else if (btnText === selectedText && !isCorrect) {
+      btn.classList.add('incorrect');
+    }
+  });
+
+  let feedback = isCorrect 
+    ? `✅ **Correct!**\n\n` 
+    : `❌ **Incorrect.** The correct answer was: **${correctText}**.\n\n`;
+  if (q.explanation) {
+    feedback += `*Explanation:* ${q.explanation}`;
+  }
+
+  const isLast = quizState.currentIndex === quizState.questions.length - 1;
+  const nextBtnText = isLast ? "Finish Quiz" : "Next Question";
+  feedback += `\n\n<button class="chatbot-quiz-next-btn">${nextBtnText} <i class="fa-solid fa-arrow-right"></i></button>`;
+
+  appendBubble('assistant', feedback, null, true);
+}
+
+// --- Essay Examiner Helper Functions ---
+async function handleGradingInput(text) {
+  gradingState.isActive = false;
+  const apiKey = localStorage.getItem('gemini_api_key') || '';
+  
+  appendThinkingBubble();
+  try {
+    const responseText = await fetchGeminiResponse(apiKey, text, null, examinerSystemInstruction);
+    removeThinkingBubble();
+    appendBubble('assistant', responseText);
+  } catch (err) {
+    removeThinkingBubble();
+    const fallbackText = gradeParagraphLocally(text);
+    appendBubble('assistant', fallbackText);
+  }
+}
+
+function gradeParagraphLocally(text) {
+  const lowerText = text.toLowerCase();
+  
+  const pointConnectives = ["firstly", "the main reason", "one factor", "initially", "primarily", "to begin", "one key cause"];
+  const hasPoint = pointConnectives.some(c => lowerText.includes(c)) || text.split('.').length > 1;
+  
+  const evidenceKeywords = [
+    "195", "196", "197", "little rock", "boycott", "rosa parks", "mlk", "king", "till", "faubus", "eisenhower", "kennedy", "johnson", "nixon", "vietnam", "tonkin", "tet", "my lai", "brown v", "segregation", "sit-in", "birmingham", "selma", "vietcong"
+  ];
+  const foundEvidence = evidenceKeywords.filter(k => lowerText.includes(k));
+  const hasEvidence = foundEvidence.length >= 1;
+  
+  const explanationConnectives = ["because", "this meant that", "consequently", "therefore", "as a result", "due to", "led to", "this showed"];
+  const hasExplanation = explanationConnectives.some(c => lowerText.includes(c));
+  
+  const linkKeywords = ["therefore", "consequently", "link", "shows that", "shows why", "resulted in", "thus"];
+  const hasLink = linkKeywords.some(c => lowerText.includes(c)) && text.trim().endsWith('.');
+  
+  let score = 0;
+  if (hasPoint) score++;
+  if (hasEvidence) score++;
+  if (hasExplanation) score++;
+  if (hasLink) score++;
+  
+  let feedback = `📊 **GCSE Examiner Grade (Offline Heuristic Check):** **${score}/4**\n\n`;
+  
+  feedback += `* **Point (P):** ${hasPoint ? "✅ Detected a topic sentence or structured starting sentence." : "❌ Try to start with a clear point connective like 'First, one main cause was...'."}\n`;
+  feedback += `* **Evidence (E):** ${hasEvidence ? `✅ Detected historical evidence. (Matched terms: ${foundEvidence.join(", ")})` : "❌ No specific dates, years (e.g. 1954, 1957) or key figures detected."}\n`;
+  feedback += `* **Explanation (E):** ${hasExplanation ? "✅ Explanatory connectives detected." : "❌ Try to explain *why* this matters using words like 'consequently', 'this meant that' or 'as a result'."}\n`;
+  feedback += `* **Link (L):** ${hasLink ? "✅ Clear link words found connecting back." : "❌ End your paragraph with a linking sentence returning to the question topic."}\n\n`;
+  
+  feedback += `**WWW (What Went Well):** `;
+  if (score === 4) {
+    feedback += "Excellent! Your paragraph follows the PEEL structure perfectly with specific history facts.";
+  } else if (hasEvidence && hasExplanation) {
+    feedback += "You support your argument with good factual evidence and explain the consequence clearly.";
+  } else if (hasEvidence) {
+    feedback += "You included good factual evidence (names or years) in your response.";
+  } else if (hasExplanation) {
+    feedback += "You used strong explanatory connectives to explain your reasoning.";
+  } else {
+    feedback += "You have attempted to write a structured paragraph.";
+  }
+  
+  feedback += `\n**EBI (Even Better If):** `;
+  if (score === 4) {
+    feedback += "Try to practice writing under timed conditions (about 5 minutes per PEEL paragraph in the exam).";
+  } else if (!hasEvidence) {
+    feedback += "Include specific facts, dates (e.g., 1954 Brown case, 1964 Civil Rights Act) to secure knowledge marks.";
+  } else if (!hasExplanation) {
+    feedback += "Expand on your evidence by explaining *how* it answers the question using words like 'this meant that'.";
+  } else if (!hasLink) {
+    feedback += "Add a final sentence linking directly back to the question using 'Therefore, this shows that...'.";
+  } else {
+    feedback += "Ensure you have all four PEEL elements: Point, Evidence, Explanation, and Link.";
+  }
+  
+  return feedback;
+}
+
+// --- Specification Checklist Helper Functions ---
+function getChecklistHTML(subtopicId) {
+  const data = SPEC_CHECKLIST_DATA[subtopicId];
+  if (!data) return "Checklist data not found.";
+  
+  const lesson = LESSONS_DATA[subtopicId];
+  const title = lesson ? lesson.headerTitle : subtopicId;
+  
+  let html = `📋 **Edexcel Specification Checklist:**\n**${title}**\n\n`;
+  html += `<div class="chatbot-checklist-container">`;
+  data.forEach((item, index) => {
+    const uniqueId = `cb-${subtopicId}-${index}`;
+    html += `
+      <div class="chatbot-checklist-item">
+        <label class="chatbot-checklist-label">
+          <input type="checkbox" id="${uniqueId}" class="chatbot-spec-checkbox" />
+          <span class="chatbot-checkbox-custom"></span>
+          <span class="chatbot-checklist-point-text">${item.point}</span>
+        </label>
+        <ul class="chatbot-checklist-facts">
+    `;
+    item.keyFacts.forEach(fact => {
+      html += `<li>${fact}</li>`;
+    });
+    html += `
+        </ul>
+      </div>
+    `;
+  });
+  html += `</div>`;
+  return html;
+}
+
+function handleSpecChecklistQuery(queryText) {
+  const match = queryText.match(/\b([1-4])\.([1-4])\b/);
+  if (match) {
+    const unit = match[1];
+    const topic = match[2];
+    const subtopicId = `subtopic_${unit}_${topic}`;
+    if (SPEC_CHECKLIST_DATA[subtopicId]) {
+      const checklistHtml = getChecklistHTML(subtopicId);
+      appendBubble('assistant', checklistHtml, null, true);
+      return;
+    }
+  }
+
+  const activeSubtopicId = state.selectedSubtopicId;
+  if (activeSubtopicId && SPEC_CHECKLIST_DATA[activeSubtopicId]) {
+    const checklistHtml = getChecklistHTML(activeSubtopicId);
+    appendBubble('assistant', `Showing specification checklist for your active topic:\n\n${checklistHtml}`, null, true);
+    return;
+  }
+
+  let menuHtml = `📋 **Edexcel GCSE History Specification Checklist**\n\nSelect a Unit to view its topics and syllabus requirements:`;
+  menuHtml += `<div class="chatbot-chips-container">
+    <button class="chatbot-unit-chip-btn" data-unit="1">Unit 1: Civil Rights, 1954–60</button>
+    <button class="chatbot-unit-chip-btn" data-unit="2">Unit 2: Civil Rights, 1960–75</button>
+    <button class="chatbot-unit-chip-btn" data-unit="3">Unit 3: US Involvement in Vietnam, 1954–69</button>
+    <button class="chatbot-unit-chip-btn" data-unit="4">Unit 4: US Decline in Vietnam, 1969–75</button>
+  </div>`;
+  appendBubble('assistant', menuHtml, null, true);
+}
+
+// --- Text-to-Speech Helper Functions ---
+let currentUtterance = null;
+let currentTTSBtn = null;
+
+function handleTTS(btn) {
+  const bubble = btn.closest('.chatbot-bubble');
+  if (!bubble) return;
+
+  const clone = bubble.cloneNode(true);
+  const tts = clone.querySelector('.chatbot-tts-btn');
+  if (tts) tts.remove();
+  const jump = clone.querySelector('.chatbot-jump-link');
+  if (jump) jump.remove();
+  const nextBtn = clone.querySelector('.chatbot-quiz-next-btn');
+  if (nextBtn) nextBtn.remove();
+  const optionBtns = clone.querySelectorAll('.chatbot-quiz-option-btn');
+  optionBtns.forEach(el => el.remove());
+  const chips = clone.querySelector('.chatbot-chips-container');
+  if (chips) chips.remove();
+  const checkboxes = clone.querySelectorAll('.chatbot-spec-checkbox');
+  checkboxes.forEach(el => el.remove());
+  
+  const rawText = clone.innerText.trim();
+
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    if (currentTTSBtn === btn) {
+      btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+      btn.classList.remove('speaking');
+      currentTTSBtn = null;
+      return;
+    }
+  }
+
+  if (currentTTSBtn) {
+    currentTTSBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    currentTTSBtn.classList.remove('speaking');
+  }
+
+  currentTTSBtn = btn;
+  btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+  btn.classList.add('speaking');
+
+  const utterance = new SpeechSynthesisUtterance(rawText);
+  const voices = window.speechSynthesis.getVoices();
+  const englishVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Microsoft')));
+  if (englishVoice) {
+    utterance.voice = englishVoice;
+  }
+  utterance.rate = 1.05;
+
+  utterance.onend = () => {
+    btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    btn.classList.remove('speaking');
+    if (currentTTSBtn === btn) {
+      currentTTSBtn = null;
+    }
+  };
+
+  utterance.onerror = () => {
+    btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    btn.classList.remove('speaking');
+    if (currentTTSBtn === btn) {
+      currentTTSBtn = null;
+    }
+  };
+
+  window.speechSynthesis.speak(utterance);
 }
