@@ -22366,7 +22366,7 @@ ${cleanBrackets(paper.q3d.model)}
       AudioEngine.play("click");
       switchView("exam");
     });
-    document.getElementById("shortcut-exam-skills").addEventListener("click", () => {
+    document.getElementById("shortcut-exam-hub").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("exam-hub", "technique");
     });
@@ -22597,13 +22597,6 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       navExamHub.addEventListener("click", () => {
         AudioEngine.play("click");
         switchView("exam-hub", "technique");
-      });
-    }
-    const shortcutPastPapers = document.getElementById("shortcut-past-papers");
-    if (shortcutPastPapers) {
-      shortcutPastPapers.addEventListener("click", () => {
-        AudioEngine.play("click");
-        switchView("exam-hub", "papers");
       });
     }
     document.querySelectorAll(".exam-tab-btn").forEach((btn) => {

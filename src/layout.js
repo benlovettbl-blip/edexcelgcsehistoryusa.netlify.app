@@ -170,7 +170,7 @@ function bindEvents() {
     switchView('exam');
   });
 
-  document.getElementById('shortcut-exam-skills').addEventListener('click', () => {
+  document.getElementById('shortcut-exam-hub').addEventListener('click', () => {
     AudioEngine.play('click');
     switchView('exam-hub', 'technique');
   });
@@ -449,14 +449,7 @@ function bindEvents() {
     });
   }
 
-  // Past Papers Shortcut Click
-  const shortcutPastPapers = document.getElementById('shortcut-past-papers');
-  if (shortcutPastPapers) {
-    shortcutPastPapers.addEventListener('click', () => {
-      AudioEngine.play('click');
-      switchView('exam-hub', 'papers');
-    });
-  }
+
 
   // Tab Switcher
   document.querySelectorAll('.exam-tab-btn').forEach(btn => {
