@@ -585,14 +585,29 @@ export function renderMasteryView(subtopicId) {
   let vaultHtml = '';
   if (data.questionVault.length > 0) {
     vaultHtml = `
-      <div class="exam-question-vault" style="max-width: 800px; margin: 0 auto 24px auto;">
-        <h3 class="mastery-card-title" style="border: none; margin-bottom: 6px;">📝 Test Your Knowledge (Exam Question Vault)</h3>
-        <p style="font-style: italic; margin-top: 0; margin-bottom: 16px; color: var(--text-muted);">
-          Click each question to view the model response blueprint.
-        </p>
-        <div class="vault-items">
-          ${vaultItemsHtml}
-        </div>
+      <style>
+        details.vault-details summary::-webkit-details-marker {
+          display: none;
+        }
+        details.vault-details[open] .vault-toggle-icon {
+          transform: rotate(180deg);
+        }
+      </style>
+      <div class="exam-question-vault" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+        <details class="vault-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
+          <summary class="vault-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.15rem; color: var(--text-main);">
+            <span style="display: flex; align-items: center; gap: 8px;">📝 Test Your Knowledge (Exam Question Vault)</span>
+            <i class="fa-solid fa-chevron-down vault-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+          </summary>
+          <div class="vault-expanded-content" style="margin-top: 16px;">
+            <p style="font-style: italic; margin-top: 0; margin-bottom: 16px; color: var(--text-muted); font-size: 0.9rem;">
+              Click each question to view the model response blueprint.
+            </p>
+            <div class="vault-items">
+              ${vaultItemsHtml}
+            </div>
+          </div>
+        </details>
       </div>
     `;
   }
@@ -626,112 +641,127 @@ export function renderMasteryView(subtopicId) {
   if (data.howUsefulAnalyser) {
     const hu = data.howUsefulAnalyser;
     howUsefulHtml = `
-      <div class="mastery-card how-useful-card" style="max-width: 800px; margin: 0 auto 24px auto;">
-        <h3 class="mastery-card-title"><i class="fa-solid fa-images" style="color: var(--primary);"></i> Exam Skill: The "How Useful" Analyser</h3>
-        <div class="mastery-card-body">
-          <p class="hu-question" style="font-weight: bold; font-size: 1.05rem; margin-bottom: 16px; border-left: 4px solid var(--primary); padding-left: 12px; line-height: 1.4;">
-            ${hu.question}
-          </p>
+      <style>
+        details.how-useful-details summary::-webkit-details-marker {
+          display: none;
+        }
+        details.how-useful-details[open] .how-useful-toggle-icon {
+          transform: rotate(180deg);
+        }
+      </style>
+      <div class="mastery-card how-useful-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+        <details class="how-useful-details" style="width: 100%; padding: 28px; box-sizing: border-box;">
+          <summary class="how-useful-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.15rem; color: var(--text-main);">
+            <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-images" style="color: var(--primary);"></i> Exam Skill: The "How Useful" Analyser</span>
+            <i class="fa-solid fa-chevron-down how-useful-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+          </summary>
+          <div class="how-useful-expanded-content" style="margin-top: 16px;">
+            <div class="mastery-card-body" style="font-size: 0.95rem;">
+              <p class="hu-question" style="font-weight: bold; font-size: 1.05rem; margin-bottom: 16px; border-left: 4px solid var(--primary); padding-left: 12px; line-height: 1.4;">
+                ${hu.question}
+              </p>
 
-          <div class="hu-sources-wrapper" style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-            <!-- Source D -->
-            <div class="hu-source-box" style="flex: 1; min-width: 280px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px; display: flex; flex-direction: column;">
-              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 6px; display: block;">Source D</strong>
-              <div class="hu-image-container" style="text-align: center; margin-bottom: 10px; background: #000; border-radius: var(--border-radius-sm); overflow: hidden; height: 200px; display: flex; align-items: center; justify-content: center;">
-                <img src="${hu.sourceD.image}" alt="Source D" class="hu-source-img" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: pointer; transition: transform 0.2s;" onclick="this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)'; this.style.zIndex = this.style.transform === 'scale(1.5)' ? '10' : '1'; this.style.position = this.style.transform === 'scale(1.5)' ? 'relative' : 'static';">
-              </div>
-              <span class="hu-caption" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 8px; font-style: italic; line-height: 1.3;">
-                ${hu.sourceD.caption}
-              </span>
-              <div class="hu-provenance" style="font-size: 0.82rem; line-height: 1.4; border-top: 1px solid var(--border-glass); padding-top: 8px; color: var(--text-base); flex-grow: 1;">
-                <strong>Provenance:</strong> ${hu.sourceD.provenance}
-              </div>
-            </div>
+              <div class="hu-sources-wrapper" style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+                <!-- Source D -->
+                <div class="hu-source-box" style="flex: 1; min-width: 280px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px; display: flex; flex-direction: column;">
+                  <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 6px; display: block;">Source D</strong>
+                  <div class="hu-image-container" style="text-align: center; margin-bottom: 10px; background: #000; border-radius: var(--border-radius-sm); overflow: hidden; height: 200px; display: flex; align-items: center; justify-content: center;">
+                    <img src="${hu.sourceD.image}" alt="Source D" class="hu-source-img" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: pointer; transition: transform 0.2s;" onclick="this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)'; this.style.zIndex = this.style.transform === 'scale(1.5)' ? '10' : '1'; this.style.position = this.style.transform === 'scale(1.5)' ? 'relative' : 'static';">
+                  </div>
+                  <span class="hu-caption" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 8px; font-style: italic; line-height: 1.3;">
+                    ${hu.sourceD.caption}
+                  </span>
+                  <div class="hu-provenance" style="font-size: 0.82rem; line-height: 1.4; border-top: 1px solid var(--border-glass); padding-top: 8px; color: var(--text-base); flex-grow: 1;">
+                    <strong>Provenance:</strong> ${hu.sourceD.provenance}
+                  </div>
+                </div>
 
-            <!-- Source E -->
-            <div class="hu-source-box" style="flex: 1; min-width: 280px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px; display: flex; flex-direction: column;">
-              <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 6px; display: block;">Source E</strong>
-              <div class="hu-image-container" style="text-align: center; margin-bottom: 10px; background: #000; border-radius: var(--border-radius-sm); overflow: hidden; height: 200px; display: flex; align-items: center; justify-content: center;">
-                <img src="${hu.sourceE.image}" alt="Source E" class="hu-source-img" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: pointer; transition: transform 0.2s;" onclick="this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)'; this.style.zIndex = this.style.transform === 'scale(1.5)' ? '10' : '1'; this.style.position = this.style.transform === 'scale(1.5)' ? 'relative' : 'static';">
+                <!-- Source E -->
+                <div class="hu-source-box" style="flex: 1; min-width: 280px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px; display: flex; flex-direction: column;">
+                  <strong style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 6px; display: block;">Source E</strong>
+                  <div class="hu-image-container" style="text-align: center; margin-bottom: 10px; background: #000; border-radius: var(--border-radius-sm); overflow: hidden; height: 200px; display: flex; align-items: center; justify-content: center;">
+                    <img src="${hu.sourceE.image}" alt="Source E" class="hu-source-img" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: pointer; transition: transform 0.2s;" onclick="this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)'; this.style.zIndex = this.style.transform === 'scale(1.5)' ? '10' : '1'; this.style.position = this.style.transform === 'scale(1.5)' ? 'relative' : 'static';">
+                  </div>
+                  <span class="hu-caption" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 8px; font-style: italic; line-height: 1.3;">
+                    ${hu.sourceE.caption}
+                  </span>
+                  <div class="hu-provenance" style="font-size: 0.82rem; line-height: 1.4; border-top: 1px solid var(--border-glass); padding-top: 8px; color: var(--text-base); flex-grow: 1;">
+                    <strong>Provenance:</strong> ${hu.sourceE.provenance}
+                  </div>
+                </div>
               </div>
-              <span class="hu-caption" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 8px; font-style: italic; line-height: 1.3;">
-                ${hu.sourceE.caption}
-              </span>
-              <div class="hu-provenance" style="font-size: 0.82rem; line-height: 1.4; border-top: 1px solid var(--border-glass); padding-top: 8px; color: var(--text-base); flex-grow: 1;">
-                <strong>Provenance:</strong> ${hu.sourceE.provenance}
+
+              <!-- Analytical Scaffolding Tabs -->
+              <div class="hu-scaffolding" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 20px; overflow: hidden;">
+                <div class="hu-tab-bar" style="display: flex; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid var(--border-glass);">
+                  <button class="hu-tab-btn active" data-tab="content" style="flex: 1; padding: 10px 12px; background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;">1. Content Analysis</button>
+                  <button class="hu-tab-btn" data-tab="provenance" style="flex: 1; padding: 10px 12px; background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;">2. Provenance & Purpose</button>
+                  <button class="hu-tab-btn" data-tab="context" style="flex: 1; padding: 10px 12px; background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;">3. Contextual Knowledge</button>
+                </div>
+                <div class="hu-tab-panels" style="padding: 14px; font-size: 0.88rem; line-height: 1.5;">
+                  <div class="hu-tab-panel active" id="panel-content">
+                    <p style="margin: 0 0 10px 0;"><strong style="color: var(--primary);">Source D Content:</strong> ${hu.sourceD.content}</p>
+                    <p style="margin: 0;"><strong style="color: var(--primary);">Source E Content:</strong> ${hu.sourceE.content}</p>
+                  </div>
+                  <div class="hu-tab-panel" id="panel-provenance" style="display: none;">
+                    <p style="margin: 0 0 10px 0;"><strong style="color: var(--secondary);">Evaluating Provenance (NOP - Nature, Origin, Purpose):</strong></p>
+                    <p style="margin: 0 0 8px 0;"><strong>Source D:</strong> How does its nature as a photo/cartoon, its origin (who created it and when), and its purpose affect how useful it is for this enquiry?</p>
+                    <p style="margin: 0;"><strong>Source E:</strong> Contrast its origin and purpose with Source D. Why was it created, and what are its limitations or strengths?</p>
+                  </div>
+                  <div class="hu-tab-panel" id="panel-context" style="display: none;">
+                    <p style="margin: 0 0 10px 0;"><strong style="color: var(--accent);">Contextual Knowledge Checklist:</strong></p>
+                    <p style="margin: 0;">What facts about this period can you use to test the accuracy or typicality of these sources? Consider key events, laws, and dates from the lesson text above to support your evaluation.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Student Draft Response Area -->
+              <div class="hu-draft-section" style="margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+                  <strong style="color: var(--primary); font-size: 0.95rem;">Your Draft Response:</strong>
+                  <span class="hu-save-status" id="hu-save-status-${subtopicId}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? 'inline' : 'none'};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
+                </div>
+                
+                <!-- Sentence Starter Dropdown -->
+                <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                  <label for="sentence-starter-${subtopicId}" style="font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; white-space: nowrap;">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary);"></i> Sentence Starters:
+                  </label>
+                  <select id="sentence-starter-${subtopicId}" class="hu-starter-select" style="flex: 1; min-width: 220px; padding: 6px 10px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.82rem; cursor: pointer; outline: none; transition: border-color var(--transition-fast);">
+                    <option value="" disabled selected>-- Select a sentence starter to insert --</option>
+                    <option value="Source D is useful because it shows...">"Source D is useful because it shows..."</option>
+                    <option value="Source D is useful because the provenance reveals...">"Source D is useful because the provenance reveals..."</option>
+                    <option value="This is supported by my own knowledge that...">"This is supported by my own knowledge that..."</option>
+                    <option value="However, the utility of Source D is limited by...">"However, the utility of Source D is limited by..."</option>
+                    <option value="Similarly, Source E is useful because...">"Similarly, Source E is useful because..."</option>
+                    <option value="Source E is useful because the provenance reveals...">"Source E is useful because the provenance reveals..."</option>
+                    <option value="However, the utility of Source E is limited by...">"However, the utility of Source E is limited by..."</option>
+                    <option value="In conclusion, both sources are highly useful because...">"In conclusion, both sources are highly useful because..."</option>
+                  </select>
+                </div>
+
+                <textarea class="hu-textarea" data-subtopic-id="${subtopicId}" placeholder="Draft your 8-mark source evaluation here (analyze Content, NOP/Provenance, and Contextual Knowledge for both sources)..." style="width: 100%; height: 120px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; line-height: 1.45; font-family: inherit; margin-bottom: 6px;">${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? state.howUsefulAnswers[subtopicId] : ''}</textarea>
+              </div>
+
+              <!-- Model Answer Reveal -->
+              <div class="hu-model-answer-section">
+                <button class="mastery-btn hu-reveal-btn" style="width: 100%; justify-content: center; background: var(--gradient-primary); border: none; color: white; padding: 12px; font-weight: bold; border-radius: var(--border-radius-sm); cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-eye"></i> Compare with Examiner Model Answer
+                </button>
+                <div class="hu-model-answer-content" style="display: none; margin-top: 14px; padding: 16px; background: rgba(34, 197, 94, 0.05); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm);">
+                  <h4 style="margin: 0 0 10px 0; color: var(--success); font-size: 0.95rem;"><i class="fa-solid fa-circle-check"></i> Examiner Model Answer (8 Marks):</h4>
+                  <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); white-space: pre-line;">${highlightModelQuotes(hu.modelAnswer)}</p>
+                  <div class="model-answer-key" style="margin-top: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(0, 0, 0, 0.2);">
+                    <span class="model-key-title">Key:</span>
+                    <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
+                    <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+                    <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Provenance</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- Analytical Scaffolding Tabs -->
-          <div class="hu-scaffolding" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 20px; overflow: hidden;">
-            <div class="hu-tab-bar" style="display: flex; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid var(--border-glass);">
-              <button class="hu-tab-btn active" data-tab="content" style="flex: 1; padding: 10px 12px; background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;">1. Content Analysis</button>
-              <button class="hu-tab-btn" data-tab="provenance" style="flex: 1; padding: 10px 12px; background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;">2. Provenance & Purpose</button>
-              <button class="hu-tab-btn" data-tab="context" style="flex: 1; padding: 10px 12px; background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;">3. Contextual Knowledge</button>
-            </div>
-            <div class="hu-tab-panels" style="padding: 14px; font-size: 0.88rem; line-height: 1.5;">
-              <div class="hu-tab-panel active" id="panel-content">
-                <p style="margin: 0 0 10px 0;"><strong style="color: var(--primary);">Source D Content:</strong> ${hu.sourceD.content}</p>
-                <p style="margin: 0;"><strong style="color: var(--primary);">Source E Content:</strong> ${hu.sourceE.content}</p>
-              </div>
-              <div class="hu-tab-panel" id="panel-provenance" style="display: none;">
-                <p style="margin: 0 0 10px 0;"><strong style="color: var(--secondary);">Evaluating Provenance (NOP - Nature, Origin, Purpose):</strong></p>
-                <p style="margin: 0 0 8px 0;"><strong>Source D:</strong> How does its nature as a photo/cartoon, its origin (who created it and when), and its purpose affect how useful it is for this enquiry?</p>
-                <p style="margin: 0;"><strong>Source E:</strong> Contrast its origin and purpose with Source D. Why was it created, and what are its limitations or strengths?</p>
-              </div>
-              <div class="hu-tab-panel" id="panel-context" style="display: none;">
-                <p style="margin: 0 0 10px 0;"><strong style="color: var(--accent);">Contextual Knowledge Checklist:</strong></p>
-                <p style="margin: 0;">What facts about this period can you use to test the accuracy or typicality of these sources? Consider key events, laws, and dates from the lesson text above to support your evaluation.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Student Draft Response Area -->
-          <div class="hu-draft-section" style="margin-bottom: 16px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
-              <strong style="color: var(--primary); font-size: 0.95rem;">Your Draft Response:</strong>
-              <span class="hu-save-status" id="hu-save-status-${subtopicId}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? 'inline' : 'none'};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
-            </div>
-            
-            <!-- Sentence Starter Dropdown -->
-            <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-              <label for="sentence-starter-${subtopicId}" style="font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; white-space: nowrap;">
-                <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary);"></i> Sentence Starters:
-              </label>
-              <select id="sentence-starter-${subtopicId}" class="hu-starter-select" style="flex: 1; min-width: 220px; padding: 6px 10px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.82rem; cursor: pointer; outline: none; transition: border-color var(--transition-fast);">
-                <option value="" disabled selected>-- Select a sentence starter to insert --</option>
-                <option value="Source D is useful because it shows...">"Source D is useful because it shows..."</option>
-                <option value="Source D is useful because the provenance reveals...">"Source D is useful because the provenance reveals..."</option>
-                <option value="This is supported by my own knowledge that...">"This is supported by my own knowledge that..."</option>
-                <option value="However, the utility of Source D is limited by...">"However, the utility of Source D is limited by..."</option>
-                <option value="Similarly, Source E is useful because...">"Similarly, Source E is useful because..."</option>
-                <option value="Source E is useful because the provenance reveals...">"Source E is useful because the provenance reveals..."</option>
-                <option value="However, the utility of Source E is limited by...">"However, the utility of Source E is limited by..."</option>
-                <option value="In conclusion, both sources are highly useful because...">"In conclusion, both sources are highly useful because..."</option>
-              </select>
-            </div>
-
-            <textarea class="hu-textarea" data-subtopic-id="${subtopicId}" placeholder="Draft your 8-mark source evaluation here (analyze Content, NOP/Provenance, and Contextual Knowledge for both sources)..." style="width: 100%; height: 120px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; line-height: 1.45; font-family: inherit; margin-bottom: 6px;">${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? state.howUsefulAnswers[subtopicId] : ''}</textarea>
-          </div>
-
-          <!-- Model Answer Reveal -->
-          <div class="hu-model-answer-section">
-            <button class="mastery-btn hu-reveal-btn" style="width: 100%; justify-content: center; background: var(--gradient-primary); border: none; color: white; padding: 12px; font-weight: bold; border-radius: var(--border-radius-sm); cursor: pointer; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-eye"></i> Compare with Examiner Model Answer
-            </button>
-            <div class="hu-model-answer-content" style="display: none; margin-top: 14px; padding: 16px; background: rgba(34, 197, 94, 0.05); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm);">
-              <h4 style="margin: 0 0 10px 0; color: var(--success); font-size: 0.95rem;"><i class="fa-solid fa-circle-check"></i> Examiner Model Answer (8 Marks):</h4>
-              <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); white-space: pre-line;">${highlightModelQuotes(hu.modelAnswer)}</p>
-              <div class="model-answer-key" style="margin-top: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(0, 0, 0, 0.2);">
-                <span class="model-key-title">Key:</span>
-                <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
-                <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
-                <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Provenance</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        </details>
       </div>
     `;
   }
