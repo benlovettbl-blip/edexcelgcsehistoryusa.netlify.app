@@ -175,6 +175,11 @@ function bindEvents() {
     switchView('exam-hub', 'technique');
   });
 
+  document.getElementById('shortcut-bookmarks').addEventListener('click', () => {
+    AudioEngine.play('click');
+    switchView('bookmarks');
+  });
+
   document.getElementById('shortcut-games').addEventListener('click', () => {
     AudioEngine.play('click');
     switchView('games');
@@ -183,6 +188,15 @@ function bindEvents() {
   // Mobile Menu Toggle
   document.getElementById('menu-toggle').addEventListener('click', toggleMobileSidebar);
   document.getElementById('sidebar-overlay').addEventListener('click', closeMobileSidebar);
+
+  // Header Back Button
+  const backBtn = document.getElementById('header-back-btn');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('dashboard');
+    });
+  }
 
   // Fullscreen Toggle
   const fullscreenBtn = document.getElementById('fullscreen-btn');

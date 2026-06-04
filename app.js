@@ -12245,7 +12245,7 @@ ${cleanBrackets(paper.q3d.model)}
         const subMastered = subQs.filter((q) => state.mastery[q.id]).length;
         const subPct = subQs.length > 0 ? Math.round(subMastered / subQs.length * 100) : 0;
         subtopicsHTML += `
-        <div style="margin-top: 10px; padding-left: 12px; border-left: 2px solid var(--border-glass);">
+        <div class="dashboard-subtopic-row" data-subtopic-id="${sub.id}" style="margin-top: 10px; padding: 6px 8px; border-left: 2px solid var(--border-glass); cursor: pointer; transition: all var(--transition-fast); border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;" onmouseover="this.style.background='rgba(255,255,255,0.03)'; this.style.borderLeftColor='var(--primary)';" onmouseout="this.style.background='transparent'; this.style.borderLeftColor='var(--border-glass)';">
           <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px;">
             <span style="color: var(--text-main); font-weight: 500;">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
             <span style="color: var(--primary); font-weight: 600;">${subMastered}/${subQs.length} Secured</span>
@@ -12268,6 +12268,14 @@ ${cleanBrackets(paper.q3d.model)}
         ${subtopicsHTML}
       </div>
     `;
+      card.querySelectorAll(".dashboard-subtopic-row").forEach((row) => {
+        row.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const subId = row.getAttribute("data-subtopic-id");
+          AudioEngine.play("click");
+          switchView("subtopic", subId);
+        });
+      });
       card.addEventListener("click", (e) => {
         if (e.target.closest("a") || e.target.closest("button")) return;
         AudioEngine.play("click");
@@ -22088,6 +22096,14 @@ ${cleanBrackets(paper.q3d.model)}
   // src/navigation.js
   function switchView(viewName, subtopicId = null) {
     state.currentView = viewName;
+    const backBtn = document.getElementById("header-back-btn");
+    if (backBtn) {
+      if (viewName === "dashboard") {
+        backBtn.style.display = "none";
+      } else {
+        backBtn.style.display = "flex";
+      }
+    }
     document.querySelectorAll(".sidebar-nav .nav-item").forEach((item) => {
       item.classList.remove("active");
     });
@@ -22370,12 +22386,23 @@ ${cleanBrackets(paper.q3d.model)}
       AudioEngine.play("click");
       switchView("exam-hub", "technique");
     });
+    document.getElementById("shortcut-bookmarks").addEventListener("click", () => {
+      AudioEngine.play("click");
+      switchView("bookmarks");
+    });
     document.getElementById("shortcut-games").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("games");
     });
     document.getElementById("menu-toggle").addEventListener("click", toggleMobileSidebar);
     document.getElementById("sidebar-overlay").addEventListener("click", closeMobileSidebar);
+    const backBtn = document.getElementById("header-back-btn");
+    if (backBtn) {
+      backBtn.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("dashboard");
+      });
+    }
     const fullscreenBtn = document.getElementById("fullscreen-btn");
     if (fullscreenBtn) {
       fullscreenBtn.addEventListener("click", () => {

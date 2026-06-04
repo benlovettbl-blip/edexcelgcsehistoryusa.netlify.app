@@ -183,7 +183,7 @@ function renderDashboard() {
       const subPct = subQs.length > 0 ? Math.round((subMastered / subQs.length) * 100) : 0;
       
       subtopicsHTML += `
-        <div style="margin-top: 10px; padding-left: 12px; border-left: 2px solid var(--border-glass);">
+        <div class="dashboard-subtopic-row" data-subtopic-id="${sub.id}" style="margin-top: 10px; padding: 6px 8px; border-left: 2px solid var(--border-glass); cursor: pointer; transition: all var(--transition-fast); border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;" onmouseover="this.style.background='rgba(255,255,255,0.03)'; this.style.borderLeftColor='var(--primary)';" onmouseout="this.style.background='transparent'; this.style.borderLeftColor='var(--border-glass)';">
           <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px;">
             <span style="color: var(--text-main); font-weight: 500;">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
             <span style="color: var(--primary); font-weight: 600;">${subMastered}/${subQs.length} Secured</span>
@@ -207,6 +207,16 @@ function renderDashboard() {
         ${subtopicsHTML}
       </div>
     `;
+    
+    // Attach individual subtopic row clicks
+    card.querySelectorAll('.dashboard-subtopic-row').forEach(row => {
+      row.addEventListener('click', (e) => {
+        e.stopPropagation(); // Avoid triggering card click
+        const subId = row.getAttribute('data-subtopic-id');
+        AudioEngine.play('click');
+        switchView('subtopic', subId);
+      });
+    });
     
     // Clicking anywhere on topic card takes user to the first subtopic of that topic
     card.addEventListener('click', (e) => {

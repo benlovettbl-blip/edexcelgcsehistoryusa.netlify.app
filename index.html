@@ -112,6 +112,9 @@
           <button class="menu-toggle" id="menu-toggle" title="Toggle Sidebar">
             <i class="fa-solid fa-bars"></i>
           </button>
+          <button class="header-back-btn" id="header-back-btn" style="display: none; align-items: center; justify-content: center; gap: 8px; padding: 8px 14px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all var(--transition-fast); margin-right: 16px;">
+            <i class="fa-solid fa-arrow-left"></i> <span>Dashboard</span>
+          </button>
           <div class="header-title-wrapper" style="display: flex; flex-direction: column; gap: 2px; min-width: 0;">
             <span class="main-app-brand-title" style="font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.2;">Edexcel GCSE History Paper 3: The USA</span>
             <h1 class="current-view-title" id="current-view-title" style="margin: 0; font-size: 1.2rem; font-weight: 700; line-height: 1.2;">Dashboard</h1>
@@ -207,6 +210,16 @@
             <div>
               <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0; color: var(--text-main);">Exam Hub</h3>
               <p style="font-size: 0.75rem; color: var(--text-muted); margin: 2px 0 0 0; line-height: 1.3;">Practice techniques, official past papers & mock exams</p>
+            </div>
+          </div>
+
+          <div class="shortcut-card" id="shortcut-bookmarks" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--border-active)';" onmouseout="this.style.transform='none'; this.style.borderColor='var(--border-glass)';" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 18px; display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform var(--transition-fast), border-color var(--transition-fast); box-shadow: var(--shadow-sm);">
+            <div class="shortcut-icon" style="width: 48px; height: 48px; border-radius: var(--border-radius-sm); background: var(--primary-glow); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+              <i class="fa-solid fa-bookmark"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0; color: var(--text-main);">Bookmarks</h3>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin: 2px 0 0 0; line-height: 1.3;">Review your bookmarked study decks</p>
             </div>
           </div>
 

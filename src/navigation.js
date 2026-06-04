@@ -21,6 +21,15 @@ import { AudioEngine } from './audio.js';
 export function switchView(viewName, subtopicId = null) {
   state.currentView = viewName;
 
+  const backBtn = document.getElementById('header-back-btn');
+  if (backBtn) {
+    if (viewName === 'dashboard') {
+      backBtn.style.display = 'none';
+    } else {
+      backBtn.style.display = 'flex';
+    }
+  }
+
   // Remove active from all sidebar nav items
   document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
     item.classList.remove('active');
