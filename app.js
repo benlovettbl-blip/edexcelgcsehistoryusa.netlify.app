@@ -22550,13 +22550,6 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       "q3d-user-answer",
       "Interpretation 2 argues that [Insert Claim 2]. This is supported by Source C which shows...\n\nOn the other hand, Interpretation 1 argues that [Insert Claim 1]. This is supported by Source B which shows...\n\nOverall, I agree more with Interpretation 2 because my own knowledge shows that..."
     );
-    document.getElementById("btn-quick-exam-start").addEventListener("click", () => {
-      AudioEngine.play("click");
-      const scope = document.getElementById("quick-exam-scope").value;
-      const len = document.getElementById("quick-exam-count").value;
-      switchView("exam");
-      startExam(scope, len, 600);
-    });
     document.getElementById("btn-exam-start").addEventListener("click", () => {
       AudioEngine.play("click");
       const scope = document.getElementById("exam-scope-select").value;

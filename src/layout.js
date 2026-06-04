@@ -366,14 +366,6 @@ function bindEvents() {
   );
 
 
-  // Quiz generator controls
-  document.getElementById('btn-quick-exam-start').addEventListener('click', () => {
-    AudioEngine.play('click');
-    const scope = document.getElementById('quick-exam-scope').value;
-    const len = document.getElementById('quick-exam-count').value;
-    switchView('exam');
-    startExam(scope, len, 600); // Defaults to 10 minutes (600s)
-  });
 
   document.getElementById('btn-exam-start').addEventListener('click', () => {
     AudioEngine.play('click');
