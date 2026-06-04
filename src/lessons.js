@@ -83,10 +83,12 @@ function applyGlossaryTooltips(text) {
 
 function parseSummaryCorrectionText(text) {
   if (!text) return '';
+  let errorIndex = 0;
   return text.replace(/\[\[(.*?)\]\]/g, (match, content) => {
     if (content.includes('->')) {
+      errorIndex++;
       const [wrong, right] = content.split('->').map(s => s.trim());
-      return `<span class="summary-wrong-word" data-correct="${right}" data-wrong="${wrong}">${wrong}</span>`;
+      return `<span class="summary-wrong-word" data-correct="${right}" data-wrong="${wrong}">${wrong}<sup style="font-size: 0.75rem; font-weight: bold; color: var(--accent); margin-left: 2px; vertical-align: super; pointer-events: none;">${errorIndex}</sup></span>`;
     } else {
       return content.trim();
     }
