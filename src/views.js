@@ -167,13 +167,6 @@ function renderDashboard() {
   const container = document.getElementById('dashboard-topics-list');
   container.innerHTML = '';
   
-  const topicIcons = {
-    'topic_1': 'fa-people-group',
-    'topic_2': 'fa-bullhorn',
-    'topic_3': 'fa-crosshairs',
-    'topic_4': 'fa-dove'
-  };
-
   QUIZ_DATA.forEach(topic => {
     const card = document.createElement('div');
     card.className = 'topic-list-card';
@@ -182,8 +175,6 @@ function renderDashboard() {
     const topicQuestions = state.allQuestions.filter(q => q.topicId === topic.id);
     const mastered = topicQuestions.filter(q => state.mastery[q.id]);
     const pct = topicQuestions.length > 0 ? Math.round((mastered.length / topicQuestions.length) * 100) : 0;
-    
-    const iconClass = topicIcons[topic.id] || 'fa-book-open';
     
     let subtopicsHTML = '';
     topic.subtopics.forEach(sub => {
@@ -206,8 +197,8 @@ function renderDashboard() {
     
     card.innerHTML = `
       <div class="topic-list-info" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; margin-bottom: 4px;">
-        <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; gap: 8px; color: var(--text-main);">
-          <i class="fa-solid ${iconClass}" style="color: var(--primary); font-size: 1.1rem; width: 24px; text-align: center;"></i> ${topic.title}
+        <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main);">
+          ${topic.title}
         </span>
         <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700;">${pct}%</span>
       </div>
