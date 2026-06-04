@@ -8,7 +8,8 @@ import {
   renderClassicView,
   startFlashcardSession,
   renderKeyTopicOverview,
-  activateExamHubPanel
+  activateExamHubPanel,
+  renderAiVideosView
 } from './views.js';
 import { showExamSetup } from './exam.js';
 import { renderPastPapersView } from './past_papers.js';
@@ -89,6 +90,14 @@ export function switchView(viewName, subtopicId = null) {
     if (viewTitle) viewTitle.textContent = "Revision Games";
     state.selectedSubtopicId = null;
     renderGamesView();
+  } else if (viewName === 'ai-videos') {
+    const aiVideosNav = document.getElementById('nav-ai-videos');
+    if (aiVideosNav) aiVideosNav.classList.add('active');
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) viewTitle.textContent = "2-Minute AI Video Overview";
+    state.selectedSubtopicId = null;
+    renderAiVideosView();
   } else if (viewName === 'subtopic' && subtopicId) {
     state.selectedSubtopicId = subtopicId;
     state.selectedKeyTopicId = null;
@@ -153,7 +162,8 @@ export function switchView(viewName, subtopicId = null) {
     'lessons': 'view-mastery',
     'games': 'view-games',
     'exam-hub': 'view-exam-hub',
-    'key-topic': 'view-key-topic'
+    'key-topic': 'view-key-topic',
+    'ai-videos': 'view-ai-videos'
   };
 
   const targetViewId = viewName === 'subtopic' ? viewIdMap[state.currentMode] : viewIdMap[viewName];

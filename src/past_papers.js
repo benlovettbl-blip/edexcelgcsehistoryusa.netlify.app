@@ -302,8 +302,34 @@ export function renderExamSheet() {
   html += `
     <div class="exam-sheet-section" style="margin-top: 32px;">
       <h4>Section D: Interpretations Suite (Q3b-d - 24 marks total)</h4>
+      
+      ${paper.sourceB && paper.sourceC ? `
+        <strong style="display: block; margin-top: 20px; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Sources B & C:</strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
+            ${paper.sourceB.image ? `
+              <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" />
+            ` : ''}
+            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+          </div>
+          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
+            ${paper.sourceC.image ? `
+              <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" />
+            ` : ''}
+            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+          </div>
+        </div>
+      ` : ''}
+
       ${paper.interpretation1 && paper.interpretation2 ? `
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; margin-bottom: 24px;">
+        <strong style="display: block; margin-top: 20px; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Interpretations 1 & 2:</strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
           <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
             <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
             <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
@@ -318,6 +344,7 @@ export function renderExamSheet() {
           </div>
         </div>
       ` : ''}
+
       <div style="display: flex; flex-direction: column; gap: 24px;">
         ${renderPastQuestionMarkup(paper.id + '_q3b', paper.q3b.question, paper.q3b.clue, paper.q3b.model, 4)}
         ${renderPastQuestionMarkup(paper.id + '_q3c', paper.q3c.question, paper.q3c.clue, paper.q3c.model, 4)}
@@ -348,6 +375,9 @@ export function renderExamSheet() {
 
     const textarea = document.getElementById(`past-textarea-${qId}`);
     if (textarea && qObj) {
+      if (qId.endsWith('_q1') && !session.answers[paper.id][qId]) {
+        session.answers[paper.id][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
+      }
       textarea.value = session.answers[paper.id][qId] || '';
       updateDraftFeedback(qId, textarea.value, qObj);
       textarea.addEventListener('input', (e) => {
@@ -598,14 +628,11 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
         "This is shown when Interpretation 2 states..."
       ];
     } else if (qId.endsWith('_q3c')) {
-      formula = "<strong>Q3c Reason for Difference (4 Marks) Formula:</strong><br>1. Explain the reason (weighed sources differently OR have different focuses).<br>2. Link Interpretation 1 to Source B (or Focus 1) with evidence.<br>3. Link Interpretation 2 to Source C (or Focus 2) with evidence.";
+      formula = "<strong>Q3c Reason for Difference (4 Marks) Formula (Crucial for Full Marks):</strong><br>1. State that the interpretations differ because they used different sources (Interpretation 1 uses Source B, whereas Interpretation 2 uses Source C).<br>2. Quote Interpretation 1 AND Source B to show how they support each other.<br>3. Quote Interpretation 2 AND Source C to show how they support each other.<br><em>*Note: You MUST quote both interpretations and both sources to get full marks!</em>";
       starters = [
-        "The interpretations differ because the historians have given weight to different sources...",
-        "Interpretation 1 is supported by Source B, which details...",
-        "On the other hand, Interpretation 2 is supported by Source C, which details...",
-        "Alternatively, the interpretations differ because they focus on different aspects...",
-        "Interpretation 1 focuses primarily on...",
-        "Whereas Interpretation 2 focuses primarily on..."
+        "The interpretations differ because the historians have used different sources: Interpretation 1 has used Source B, whereas Interpretation 2 has used Source C.",
+        "Interpretation 1 argues that '[quote Interpretation 1]', which is supported by Source B stating '[quote Source B]'.",
+        "In contrast, Interpretation 2 argues that '[quote Interpretation 2]', which is supported by Source C stating '[quote Source C]'."
       ];
     } else if (qId.endsWith('_q3d')) {
       formula = "<strong>Q3d Evaluation Essay (16+4 Marks) Formula:</strong><br>1. Support Interpretation 2 using your own knowledge (PEEL paragraph).<br>2. Support Interpretation 1 using your own knowledge (PEEL paragraph).<br>3. Conclude with a clear judgment explaining which interpretation is more convincing.";

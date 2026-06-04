@@ -957,7 +957,7 @@
               "explanation": "Freedom Riders challenged the non-enforcement of the Supreme Court's Boynton v. Virginia ruling.",
               "year": 1961,
               "distractors": [
-                "Freedom Riders",
+                "Freedom Marchers",
                 "Interstate Desegregationists",
                 "CORE Volunteers"
               ]
@@ -969,7 +969,7 @@
               "explanation": "Farmer organized the rides to provoke federal enforcement of Supreme Court desegregation rulings.",
               "year": 1961,
               "distractors": [
-                "James Farmer",
+                "Roy Wilkins",
                 "Bayard Rustin",
                 "John Lewis"
               ]
@@ -1047,7 +1047,7 @@
               "explanation": "Written on scraps of paper, the letter defended non-violent direct action against moderate white clergy who urged patience.",
               "year": 1963,
               "distractors": [
-                "Letter from Birmingham Jail",
+                "The Birmingham Manifesto",
                 "The Montgomery Manifesto",
                 "The Nonviolent Direct Action Guide"
               ]
@@ -1071,7 +1071,7 @@
               "explanation": "King departed from his written text to deliver a powerful vision of racial integration and equality.",
               "year": 1963,
               "distractors": [
-                "I Have a Dream",
+                "I've Been to the Mountaintop",
                 "Let Freedom Ring",
                 "Normalcy No More"
               ]
@@ -2901,6 +2901,18 @@
                 "Nguyen Co Thach",
                 "Xuan Thuy"
               ]
+            },
+            {
+              "id": "q_4_3_d6",
+              "question": "Which June 1973 congressional amendment prohibited all further US military action in Indochina after 15 August 1973?",
+              "answer": "Case-Church Amendment",
+              "explanation": "The Case-Church Amendment legally prevented the US president from ordering air support or military intervention to protect South Vietnam during the final 1975 Spring Offensive.",
+              "year": 1973,
+              "distractors": [
+                "War Powers Amendment",
+                "Gulf of Tonkin Repeal Act",
+                "Cooper-Church Amendment"
+              ]
             }
           ]
         },
@@ -4469,9 +4481,9 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
         "id": "p_2019_q3a",
         "question": "How useful are Sources B and C for an enquiry into the achievements of the civil rights movement in the years 1964\u201365? (8 marks)",
         "clue": "Address both sources. Assess content utility, verify with own knowledge (1964 Civil Rights Act, Selma, 1965 Voting Rights Act), and evaluate provenance reliability and limitations.",
-        "model": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the achievement of the Civil Rights Act (1964) as a collaborative success between the federal government and civil rights leaders. The photograph captures President Johnson shaking hands with Martin Luther King Jr. and presenting him with the pen used to sign the bill into law, surrounded by other activists. </span> <span style="color: green;"> This utility is supported by my knowledge that the NAACP and SCLC lobbied intensely for the bill, and King's national campaign, including the March on Washington, was instrumental in creating the public pressure that enabled Johnson to push the act through Congress. </span> <span style="color: purple;"> The provenance of a photograph published on the front pages of national newspapers in July 1964 makes the source highly useful for demonstrating how this historic milestone was presented to the public, symbolizing a unified, official victory for racial justice. However, it is limited because it is a staged publicity event that conceals the deep political resistance from Southern Democrats and the fact that the Act did not immediately resolve voting disenfranchisement. </span>
 
-<span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`
+<span style="color: blue;"> Source C is highly useful for showing the direct correlation between non-violent protests in Selma and the passage of the Voting Rights Act of 1965. John Lewis describes being brutally attacked by Alabama state police on 'Bloody Sunday', and notes how this violence shocked President Johnson into introducing the bill to Congress, culminating in a triumphant march of 25,000 people to Montgomery. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the national outrage over the police brutality at the Edmund Pettus Bridge forced federal action, leading Johnson to deliver his 'We Shall Overcome' speech and pass the Voting Rights Act of 1965. </span> <span style="color: purple;"> The provenance of a first-hand radio interview in 2009 by John Lewis, who was a leading activist at the scene, increases its utility by providing a direct, personal account of the physical sacrifice and strategic success of the marchers. However, as an interview recorded over 40 years later, it may reflect a polished, commemorative reflection of the event's history rather than the immediate tension and fear felt by the participants in 1965. </span>`
       },
       "q3b": {
         "id": "p_2019_q3b",
@@ -4538,9 +4550,9 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
         "id": "p_2020_q3a",
         "question": "How useful are Sources B and C for an enquiry into the reasons for the failure of the USA in Vietnam? (8 marks)",
         "clue": "Address both sources. Assess content utility, verify with own knowledge (Rolling Thunder, Ho Chi Minh Trail, conscription, drug use, fragging), and evaluate provenance reliability and limitations.",
-        "model": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
+        "model": `<span style="color: blue;"> Source B is highly useful for showing that the strategic failure of the US air campaign contributed to the failure in Vietnam. The content details that despite bombing transport routes, there was "no evidence of serious disruption" to communist supply flows and that bombing did not weaken the enemy's determination. </span> <span style="color: green;"> This utility is supported by my knowledge that the Ho Chi Minh Trail was continually rebuilt by thousands of volunteers, meaning Operation Rolling Thunder failed to stop the flow of troops or supplies, which validates the report's assessment. </span> <span style="color: purple;"> The provenance of a secret US government report from 1966 makes it highly useful as it represents an honest, internal military assessment of their own failing strategy, free from public relations spin. </span>
 
-<span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`
+<span style="color: blue;"> Source C is highly useful for showing how the internal collapse of troop morale and discipline undermined the US war effort. The soldier recounts that "morale got worse over time", leading to widespread drug use, knife fights, and even the murder of officers ("fragging") by their own men. </span> <span style="color: green;"> This matches my knowledge that conscription, the one-year tour of duty, and the lack of a clear purpose led to severe indiscipline and drug addiction, with over 20% of troops using heroin by 1971. </span> <span style="color: purple;"> The provenance of a first-hand TV interview in 1981 means it captures the raw personal experience of a veteran, though its utility is slightly limited as it reflects the extreme conditions of 1971\u201372 when US troops were already withdrawing, rather than the earlier years of the conflict. </span>`
       },
       "q3b": {
         "id": "p_2020_q3b",
@@ -4878,9 +4890,9 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
         "id": "p_2023_q3a",
         "question": "How useful are Sources B and C for an enquiry into the Freedom Summer (1964)? (8 marks)",
         "clue": "Evaluate Source B (first-hand recollections of a Black student, highlights empowerment and inspiration, potential recall bias in 2015) and Source C (contemporary log of 67 incidents of violence and intimidation, lists specific towns, reveals scale of hostility) for usefulness.",
-        "model": `<span style="color: blue;"> Source B is highly useful for showing how US military tactics alienated the civilian population in South Vietnam. The report states that heavy reliance on "search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees" and is driving peasants "directly into the arms of the enemy". </span> <span style="color: green;"> This content's utility is supported by my knowledge that tactics like search-and-destroy and the chemical spraying of Agent Orange under Operation Ranch Hand alienated the rural population, making it impossible to win the hearts and minds campaign, which confirms that US tactics actively fueled the communist insurgency. </span> <span style="color: purple;"> The provenance strengthens its usefulness because it is an official report by a US Senate Subcommittee in 1968. Since it is a self-critical government investigation, it provides a highly reliable, objective contemporary record of the counterproductive nature of US military operations. </span>
+        "model": `<span style="color: blue;"> Source B is highly useful for demonstrating the positive, empowering impact of the Freedom Summer on local Black communities in Mississippi. Gandy recalls that the campaign was a "turning point" that made local residents realize they "had a right to do things" and inspired them to stage their own boycotts and protests. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the SNCC and CORE volunteers established 30 Freedom Schools throughout Mississippi, which educated over 3,000 Black children and adults, fostering grassroots political awareness and self-determination. </span> <span style="color: purple;"> The provenance of a recollection from a local Black resident who attended a Freedom School as a child in 1964 increases its usefulness because it provides a first-hand perspective of the psychological empowerment experienced by the local population. However, it was recorded in 2015, meaning it may be influenced by decades of hindsight and the heroic narrative of the civil rights movement, which could gloss over the immediate fear and divisions at the time. </span>
 
-<span style="color: blue;"> Source C is highly useful for understanding the Vietcong perspective on US military actions and their effect on peasant recruitment. The veteran recalls that because US troops "did not know who the enemy was", they treated everyone as Vietcong and "burned our huts and killed our livestock. This made even the quietest peasants want to fight". </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the Vietcong guerrilla strategy relied on hiding among civilians, which led frustrated US soldiers to treat all villagers as hostile, driving many peasants to support the communists, which explains how US high-firepower tactics actively drove recruits to the VC. </span> <span style="color: purple;"> The provenance of a 1985 interview with a Vietcong veteran makes it useful for providing an insider's recollection of the conflict. While it may contain retrospective communist propaganda, it is highly useful for explaining how US tactical errors strengthened the insurgency. </span>`
+<span style="color: blue;"> Source C is highly useful for showing the extreme violence, intimidation, and state-level opposition faced by civil rights volunteers. The log records numerous incidents of white hostility, including the firebombing of churches and homes of activists, arrests of volunteers, and the disappearance of three civil rights workers in Philadelphia whose car was found burned. </span> <span style="color: green;"> This content's utility is verified by my knowledge that the KKK, local police, and White Citizens' Councils worked together to terrorize volunteers, most famously shown by the murder of James Chaney, Andrew Goodman, and Michael Schwerner in Philadelphia, Mississippi, in June 1964, confirming the high level of danger. </span> <span style="color: purple;"> The provenance makes the source extremely useful because it is a contemporary record compiled by the organizers of the Freedom Summer during June 1964. This represents an immediate, accurate, and unembellished log of events designed for internal security and to alert the federal government, making it a highly reliable record of the systematic violence they suffered. </span>`
       },
       "q3b": {
         "id": "p_2023_q3b",
@@ -4950,9 +4962,9 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         "id": "p_2024_q3a",
         "question": "How useful are Sources B and C for an enquiry into the achievements of Martin Luther King in the civil rights movement? (8 marks)",
         "clue": "Evaluate Source B (photograph of March on Washington, shows King's massive popularity, support from federal government, potential staging bias) and Source C (Bob Lucas interview, shows failure of Chicago Freedom Movement in 1966, divisions between Black and white activists, first-hand witness perspective) for usefulness.",
-        "model": `<span style="color: blue;"> Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers, which explains the intense exhaustion and fear expressed in his diary. </span> <span style="color: purple;"> The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare. </span>
+        "model": `<span style="color: blue;"> Source B is highly useful for showing Martin Luther King's ability to mobilize massive, diverse public support and project national leadership during the civil rights movement. The photograph depicts King waving to a huge, peaceful crowd along the Lincoln Memorial reflecting pool, representing the scale and racial diversity of the March on Washington. </span> <span style="color: green;"> This utility is supported by my knowledge that the March on Washington in August 1963 attracted over 250,000 demonstrators and culminated in King's famous 'I Have a Dream' speech, which successfully pressured President Kennedy to support civil rights legislation and gained positive national publicity. </span> <span style="color: purple;"> The provenance of a photograph taken on the day of the march makes it highly useful as a primary visual record of the event's scale and optimistic mood. However, as a photograph, it is limited because it only captures a single moment of triumph and public harmony, omitting the behind-the-scenes political compromises and the ongoing segregationist hostility in the Deep South. </span>
 
-<span style="color: blue;"> Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal, which confirms the accuracy of the commander's strategic recollections. </span> <span style="color: purple;"> The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a natural interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower. </span>`
+<span style="color: blue;"> Source C is highly useful for showing the limits of King's success when campaigning in Northern cities, and his role in temporarily bridging ideological splits. The activist states that King "failed to get improved living conditions" in Chicago and that after his departure in late 1966, a major split between Black and White activists became visible, leading Black activists to ask Whites to leave the movement. </span> <span style="color: green;"> This content's usefulness is validated by my knowledge that the Chicago Freedom Movement in 1966 faced fierce opposition from Mayor Daley and made little progress in tackling housing slums or poverty, which contributed to the rise of Black Power ideas that rejected white collaboration. </span> <span style="color: purple;"> The provenance of an account by a Black civil rights leader in Chicago who worked closely with King increases its utility because it offers a realistic, critical insider's view of the campaign's limitations and the growing radicalization of activists, though as a later television interview, it may reflect the fragmented landscape of the post-1966 movement. </span>`
       },
       "q3b": {
         "id": "p_2024_q3b",
@@ -5019,9 +5031,9 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         "id": "p_2025_q3a",
         "question": "How useful are Sources B and C for an enquiry into the escalation of US involvement in the conflict in Vietnam in the 1960s? (8 marks)",
         "clue": "Evaluate Source B (top-secret document 1961, shows Kennedy's early escalation via advisers, helicopters, and aid, highly reliable private source) and Source C (LBJ speech 1965, shows transition to ground combat forces up to 125,000 and draft increase, public speech justifying war) for usefulness.",
-        "model": `<span style="color: blue;"> Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. </span> <span style="color: green;"> The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression, which confirms that the eyewitness account captures the authentic feeling of shock and alienation. </span> <span style="color: purple;"> The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction. </span>
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the early stages of US escalation in Vietnam under President Kennedy through military and economic advising. The document details that the USA authorized increased air support (helicopters), economic aid, training, and individual administrators/advisers to Diem's government. </span> <span style="color: green;"> This content is highly useful because it aligns with my knowledge that Kennedy increased the number of US military advisers from around 800 in 1961 to over 16,000 by 1963, and supplied helicopters to transport South Vietnamese troops, demonstrating a clear step towards direct involvement. </span> <span style="color: purple;"> The provenance of a top-secret government document from 1961 makes it extremely useful because it represents the actual, confidential policy decisions of the Kennedy administration at the beginning of the decade, revealing their hidden plans to shore up South Vietnam without the filter of public diplomacy. </span>
 
-<span style="color: blue;"> Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... </span> <span style="color: green;"> tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions, which confirms that the speech is typical of Nixon's political strategy. </span> <span style="color: purple;"> The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy. </span>`
+<span style="color: blue;"> Source C is highly useful for showing the dramatic transition to large-scale combat operations and the mobilization of the US population under President Johnson. Johnson announces that he is increasing troop strength from 74,000 to 125,000 men immediately, plans to send additional forces as requested by General Westmoreland, and will increase the military draft to support this. </span> <span style="color: green;"> This content's utility is supported by my knowledge that in July 1965, Johnson made the pivotal decision to commit US ground forces to active combat, causing US troop levels to surpass 184,000 by the end of 1965 and peaking at over 536,000 by 1968, backed by draft call-ups. </span> <span style="color: purple;"> The provenance of a public television broadcast to the American people in July 1965 makes the source highly useful for understanding how the president publicly justified this massive expansion of the war, framing it as a necessary response to "Vietnamese aggression" to maintain public support, though it is limited because it downplays the expected casualties and financial costs of the conflict. </span>`
       },
       "q3b": {
         "id": "p_2025_q3b",
@@ -5407,16 +5419,16 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         {
           "title": "Step 1: Southern Segregation & Civil Rights Organisations",
           "isSplit": true,
-          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>In the early 1950s, Black Americans in the Southern states faced legal segregation and systemic discrimination:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Enforced strict segregation in public accommodations, transport, and schools. Facilities were separate but rarely equal.</li>\n              <li><strong>Voting Disenfranchisement:</strong> Southern states used literacy tests, poll taxes, and threats of violence to prevent Black Americans from registering to vote.</li>\n              <li><strong>Civil Rights Organisations:</strong> The <strong>NAACP</strong> (National Association for the Advancement of Colored People) fought segregation through legal battles led by lawyers like Thurgood Marshall. Simultaneously, <strong>CORE</strong> (Congress of Racial Equality) pioneered non-violent direct action tactics, such as early boycotts and sit-ins.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;">\n            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Context Focus: Jim Crow</strong>\n            <p style="color: var(--text-muted); margin: 0;">\n              Always emphasize that segregation was legally enforced by state laws in the South, creating systemic barriers in education, employment, and the ballot box.\n            </p>\n          </div>\n        </div>',
+          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>In the early 1950s, Black Americans in the Southern states faced legal segregation and systemic discrimination:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Enforced strict de jure segregation in public accommodations, transit, and schools. Facilities were separate but rarely equal.</li>\n              <li><strong>Voting Disenfranchisement:</strong> Southern states used literacy tests, poll taxes, and threats of violence to prevent Black Americans from registering. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Civil Rights Organisations:</strong> The <strong>NAACP</strong> (National Association for the Advancement of Colored People) fought segregation through legal battles led by lawyers like Thurgood Marshall. Simultaneously, <strong>CORE</strong> (Congress of Racial Equality), founded in 1942, pioneered non-violent direct action tactics, such as early boycotts and sit-ins.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;">\n            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Context Focus: Jim Crow</strong>\n            <p style="color: var(--text-muted); margin: 0;">\n              Always emphasize that segregation was legally enforced by state laws in the South, creating systemic barriers in education, employment, and the ballot box.\n            </p>\n          </div>\n        </div>',
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Legalism vs. Direct Action",
-            "body": "Historians debate whether the legal triumphs of the NAACP (like the Brown case) or the direct action campaigns of CORE and others were more important. Most agree they worked in tandem: legal rulings provided the constitutional basis, while direct action forced the federal government to enforce those rulings."
+            "body": "Historians debate whether the legal triumphs of the NAACP (like the Brown case) or direct action campaigns were more important. Top-down legal historians emphasize the constitutional basis provided by litigation, while grassroots scholars argue that bottom-up local activism was the true engine of change."
           }
         },
         {
           "title": "Step 2: The Legal Battle - Brown v. Board of Education (1954)",
           "isSplit": false,
-          "bodyHtml": "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\r\n        <ul>\r\n          <li><strong>The Ruling:</strong> Led by Chief Justice Earl Warren, the Supreme Court ruled unanimously that segregation in public schools was unconstitutional, directly violating the 14th Amendment.</li>\r\n          <li><strong>Plessy Overturned:</strong> This decision officially rejected the 1896 'separate but equal' doctrine, declaring that separate educational facilities are inherently unequal.</li>\r\n          <li><strong>Southern Resistance:</strong> Southern congressmen signed the 'Southern Manifesto' to resist integration, and segregationist groups formed White Citizens' Councils to intimidate Black families.</li>\r\n        </ul>",
+          "bodyHtml": "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\r\n        <ul>\r\n          <li><strong>The Ruling:</strong> Led by Chief Justice Earl Warren, the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>.</li>\r\n          <li><strong>Plessy Overturned & Precedents:</strong> Overturned the 1896 'separate but equal' doctrine, building on precedents like <strong>Sweatt v. Painter (1950)</strong>.</li>\r\n          <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' to resist integration. In 1955, the Court issued **Brown II**, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\r\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Warren's Unanimity Strategy",
             "body": "Chief Justice Earl Warren spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public.",
@@ -5617,7 +5629,7 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
         {
           "title": "Step 1: The Crisis at Little Rock (1957)",
           "isSplit": false,
-          "bodyHtml": "<p>In September 1957, desegregation was put to the test at Central High School in Little Rock, Arkansas:</p>\r\n        <ul>\r\n          <li><strong>The Nine Students:</strong> Nine Black students attempted to enroll at the previously all-white school.</li>\r\n          <li><strong>State Interference:</strong> Governor Orval Faubus defied federal court orders, calling in the state's National Guard to block the Black students from entering the building.</li>\r\n          <li><strong>Mob Violence:</strong> Angry white mobs gathered outside, screaming threats and spitting on the students as they arrived.</li>\r\n        </ul>",
+          "bodyHtml": "<p>In September 1957, desegregation was put to the test at Central High School in Little Rock, Arkansas:</p>\r\n        <ul>\r\n          <li><strong>The Nine Students & Daisy Bates:</strong> Nine Black students, organized and mentored by Arkansas NAACP leader <strong>Daisy Bates</strong>, attempted to enroll at the previously all-white school.</li>\r\n          <li><strong>State Interference:</strong> Governor Orval Faubus defied federal court orders, calling in the state's National Guard to block the Black students from entering.</li>\r\n          <li><strong>Mob Violence:</strong> Angry white mobs gathered outside. 15-year-old **Elizabeth Eckford** arrived alone and faced the screaming crowd, a moment captured in photographs that shocked the world.</li>\r\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The Media and the Crisis",
             "body": "Little Rock was the first civil rights crisis to be broadcast on national television. The images of angry white mobs screaming at the dignified Little Rock Nine shocked northern viewers. Harry Ashmore, the editor of the local Arkansas Gazette, won a Pulitzer Prize for his editorials calling for compliance with the law, despite facing a massive advertising boycott from segregationists.",
@@ -5633,9 +5645,9 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
           <div class="mastery-card-body card-content">\r
             <p>To enforce the law, President Dwight D. Eisenhower was forced to take unprecedented federal action:</p>\r
             <ul>\r
-              <li><strong>Federal Troops:</strong> Eisenhower federalised the Arkansas National Guard and sent the elite <strong>101st Airborne Division</strong> to escort the students into school.</li>\r
-              <li><strong>Daily Escorts:</strong> Soldiers guarded the Little Rock Nine inside the school corridors, demonstrating that the federal government would physically enforce desegregation.</li>\r
-              <li><strong>Faubus' Revenge:</strong> Governor Faubus closed all Little Rock high schools the following year to prevent further desegregation, showing the depth of white resistance.</li>\r
+              <li><strong>Federal Troops:</strong> Eisenhower federalised the Arkansas National Guard and sent <strong>1,000 soldiers</strong> of the elite <strong>101st Airborne Division</strong> to protect the students.</li>\r
+              <li><strong>Daily Escorts:</strong> Soldiers escorted and guarded the Little Rock Nine inside the school corridors, demonstrating that the federal government would physically enforce desegregation.</li>\r
+              <li><strong>The 'Lost Year' (1958-59):</strong> Governor Faubus closed all four Little Rock high schools the following year to prevent further integration. Over <strong>70%</strong> of white voters backed this closure in a local referendum, leaving 4,000 students without education.</li>\r
             </ul>\r
           </div>\r
         </div>\r
@@ -5824,7 +5836,7 @@ Source E is highly useful for showing the scale of the state and military confli
         {
           "title": "Step 1: The Arrest of Rosa Parks (1955)",
           "isSplit": false,
-          "bodyHtml": '<p>On 1 December 1955, Rosa Parks, a respected seamstress and NAACP member, refused to stand to allow a white passenger to sit on a Montgomery bus:</p>\r\n        <div class="lesson-image-wrapper">\r\n          <img src="assets/sources/rosa-parks-bus-1956.jpg" alt="Rosa Parks sitting on a Montgomery bus in late 1956" class="lesson-source-img" />\r\n          <div class="lesson-image-caption">Rosa Parks sitting on a Montgomery bus in late 1956, after the Supreme Court ruled segregation on public transport was unconstitutional.</div>\r\n        </div>\r\n        <ul>\r\n          <li><strong>The Arrest:</strong> Parks was arrested, providing the civil rights movement with a highly sympathetic and respectable test case.</li>\r\n          <li><strong>The Organization:</strong> Local Black leaders founded the Montgomery Improvement Association (MIA) to coordinate a bus boycott.</li>\r\n          <li><strong>MLK Chosen:</strong> A 26-year-old minister, Martin Luther King Jr., was elected president of the MIA, bringing powerful Christian non-violence rhetoric to the fore.</li>\r\n        </ul>',
+          "bodyHtml": '<p>On 1 December 1955, Rosa Parks, a respected seamstress and NAACP member, refused to stand to allow a white passenger to sit on a Montgomery bus:</p>\r\n        <div class="lesson-image-wrapper">\r\n          <img src="assets/sources/rosa-parks-bus-1956.jpg" alt="Rosa Parks sitting on a Montgomery bus in late 1956" class="lesson-source-img" />\r\n          <div class="lesson-image-caption">Rosa Parks sitting on a Montgomery bus in late 1956, after the Supreme Court ruled segregation on public transport was unconstitutional.</div>\r\n        </div>\r\n        <ul>\r\n          <li><strong>The Arrest & NAACP Role:</strong> Parks was not just a tired seamstress; she was a trained **NAACP secretary** who had attended the Highlander Folk School. Her arrest provided a deliberate and respectable test case.</li>\r\n          <li><strong>The Organization:</strong> Local Black leaders founded the Montgomery Improvement Association (MIA) to coordinate the bus boycott.</li>\r\n          <li><strong>MLK Chosen:</strong> A 26-year-old minister, Martin Luther King Jr., was elected president of the MIA, bringing powerful Christian non-violence rhetoric to the fore.</li>\r\n        </ul>',
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The Choice of Test Case",
             "body": "Nine months before Rosa Parks' arrest, a 15-year-old Black girl named Claudette Colvin was arrested in Montgomery for the same offence. However, civil rights leaders chose not to use her case to challenge segregation. Colvin was young, pregnant, and from a poorer background, which leaders feared segregationists would use to assassinate her character. Rosa Parks, an middle-class, respected NAACP activist, was deemed the perfect 'test case' to withstand intense media scrutiny.",
@@ -5840,10 +5852,10 @@ Source E is highly useful for showing the scale of the state and military confli
           <div class="mastery-card-body card-content">
             <p>The boycott succeeded due to disciplined logistics, legal victories, and new organization:</p>
             <ul>
-              <li><strong>Carpool Network:</strong> The MIA organized an extensive private carpool network, with Black taxi drivers charging reduced fares to transport boycotters.</li>
+              <li><strong>Carpool Network & Jo Ann Robinson:</strong> The MIA organized an extensive private carpool network. This was kickstarted by **Jo Ann Robinson** and the Women's Political Council (WPC), who printed and distributed **35,000 leaflets** calling for the boycott within 24 hours of Parks' arrest.</li>
               <li><strong>Supreme Court Ruling:</strong> In November 1956, the Supreme Court ruled in the <em>Browder v. Gayle</em> case that segregated bus transit was unconstitutional.</li>
-              <li><strong>The SCLC (1957):</strong> Following the boycott's success, Martin Luther King Jr. and other ministers set up the <strong>Southern Christian Leadership Conference (SCLC)</strong> to coordinate non-violent protests across the South.</li>
-              <li><strong>Civil Rights Act (1957):</strong> In September 1957, President Eisenhower signed the first Civil Rights Act since Reconstruction. While its enforcement powers were weak, it aimed to protect Black voting rights and showed that the federal government was beginning to take action.</li>
+              <li><strong>The SCLC (1957):</strong> Following the boycott's success, Martin Luther King Jr. and other ministers set up the <strong>Southern Christian Leadership Conference (SCLC)</strong> to coordinate non-violent protests.</li>
+              <li><strong>Civil Rights Act (1957) & Filibuster:</strong> In September 1957, President Eisenhower signed the first Civil Rights Act since Reconstruction. Though heavily weakened by a **24-hour-18-minute filibuster** by Strom Thurmond, it established a Civil Rights Division in the DOJ and the U.S. Commission on Civil Rights.</li>
             </ul>
           </div>
         </div>
@@ -6035,7 +6047,7 @@ Source E is highly useful for showing the direct police criminalization of peace
         {
           "title": "Step 1: Political Resistance and the Southern Manifesto",
           "isSplit": false,
-          "bodyHtml": "<p>Southern politicians used local laws and state institutions to block federal desegregation directives:</p>\r\n        <ul>\r\n          <li><strong>The Southern Manifesto (1956):</strong> Signed by over 100 Southern congressmen, it accused the Supreme Court of abusing judicial power and urged states to resist integration by 'lawful means'.</li>\r\n          <li><strong>Dixiecrats:</strong> Conservative Southern Democrats in Congress used filibusters to delay or defeat civil rights legislation.</li>\r\n          <li><strong>State Nullification:</strong> Several Southern states passed laws declaring federal desegregation rulings 'null and void' within their borders.</li>\r\n        </ul>",
+          "bodyHtml": "<p>Southern politicians used local laws and state institutions to block federal desegregation directives:</p>\r\n        <ul>\r\n          <li><strong>The Southern Manifesto (1956):</strong> Signed by over 100 Southern congressmen, it urged states to resist integration. Led by Virginia Senator Harry Byrd, it initiated a campaign of **'Massive Resistance'** to close integrated schools.</li>\r\n          <li><strong>Dixiecrats & Filibustering:</strong> Conservative Southern Democrats used filibusters, such as Senator **Strom Thurmond's record 24-hour-18-minute filibuster** against the 1957 Civil Rights Act, to delay reforms.</li>\r\n          <li><strong>State Nullification:</strong> Several Southern states passed laws declaring federal desegregation rulings 'null and void' within their borders.</li>\r\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The Revival of Interposition",
             "body": "To bypass federal integration orders, Southern politicians revived the pre-Civil War constitutional theory of 'interposition.' Champions of this theory, such as Senator James Eastland, argued that states had the right to 'interpose' themselves between federal authorities and their citizens to protect local laws from federal overreach. This intellectual framework justified the Southern Manifesto and state-level nullification efforts.",
@@ -6051,8 +6063,8 @@ Source E is highly useful for showing the direct police criminalization of peace
           <div class="mastery-card-body card-content">
             <p>At the grassroots level, opposition took both economic and violent forms:</p>
             <ul>
-              <li><strong>White Citizens' Councils:</strong> Formed across the South to apply economic pressure. They fired Black activists, evicted tenant farmers, and boycotted integrationist businesses.</li>
-              <li><strong>The Murder of Emmett Till (1955):</strong> In August 1955, a 14-year-old Black boy named Emmett Till was brutally murdered in Mississippi after being accused of whistling at a white woman. The acquittal of his killers by an all-white jury, and his mother Mamie Till's decision to hold an open-casket funeral to show the world his mutilated body, shocked the nation and mobilized the civil rights movement.</li>
+              <li><strong>White Citizens' Councils:</strong> Formed to apply economic pressure. Often called the **'Country Club Klan'**, their middle-class members (doctors, bank managers) fired Black activists, evicted sharecroppers, and denied bank loans.</li>
+              <li><strong>The Murder of Emmett Till (1955):</strong> In August 1955, 14-year-old Emmett Till was brutally lynched in Money, Mississippi. His killers, **Roy Bryant and J.W. Milam**, were acquitted by an all-white jury in **67 minutes** (later confessing to *Look* magazine for $4,000). Mamie Till's decision to hold an open-casket funeral to show his mutilated body shocked the nation.</li>
               <li><strong>Ku Klux Klan (KKK) and Terror:</strong> The KKK experienced a revival, using bombings, beatings, and lynchings to terrorize civil rights workers and Black families.</li>
               <li><strong>Police Complicity:</strong> Local Southern police forces and sheriff departments frequently colluded with or ignored KKK violence.</li>
             </ul>
@@ -6141,44 +6153,45 @@ Source E is highly useful for showing the direct police criminalization of peace
         }
       ],
       "importanceAnalyser": null,
-      "questionVault": [
-        {
-          "question": "This suite is based on the following interpretations regarding the opposition to the civil rights movement.",
-          "sourceB": `From a speech by Southern Senator Strom Thurmond to Congress, 1956.
-
-"The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment. The Supreme Court's ruling is an abuse of power that tears up our laws and customs. We will resist integration using every legal means at our disposal."`,
-          "sourceC": `From an NAACP report on violent incidents in Alabama, 1957.
-
-"The KKK is acting with complete impunity. Black churches have been bombed, and civil rights workers are dragged from their homes and beaten. The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members."`,
-          "interpretation1": `From 'The Dixiecrats and Southern Politics' by historian Keith M. Finley, published in 2008.
-
-"Southern political leaders were highly organized and used federal parliamentary rules, such as the filibuster, to block civil rights bills for years. By framing their fight around 'states' rights' rather than overt racism, they successfully delayed integration and maintained white control."`,
-          "interpretation2": `From 'Race and Terror in the South' by historian Adam Fairclough, published in 1995.
-
-"While politicians spoke of constitutional law, the real defense of segregation lay in raw, unchecked violence. The KKK and local vigilante mobs terrorized Black communities. It was the threat of the bomb, the rope, and the economic boycott that truly kept desegregation from happening."`,
-          "answer": "<strong>Model Answer Blueprint (Q3b-d):</strong>\n\n<strong>Difference (Q3b):</strong> Interpretation 1 focuses on the formal, political resistance of Southern leaders using states' rights arguments and filibusters. In contrast, Interpretation 2 argues that the true defense of segregation was raw violence, terror, and economic boycotts carried out by vigilantes.\n\n<strong>Reason (Q3c):</strong>\n- <em>Option 1 (Focus on different sources):</em> The historians gave weight to different sources. Interpretation 1 is supported by Source B, which details Senator Thurmond's official speech defending states' rights and constitutional law in Congress. Interpretation 2 is supported by Source C, which details KKK terror, church bombings, and local police complicity in Alabama.\n- <em>Option 2 (Focus on different aspects):</em> The historians chose to focus on different aspects of Southern opposition. Interpretation 1 focuses on the political and parliamentary obstruction of Southern congressmen who used filibusters and legalistic 'states' rights' arguments to delay civil rights laws. Interpretation 2 focuses on the physical and economic intimidation on the ground, highlighting vigilante violence by the KKK as the primary defense of segregation.\n\n<strong>Evaluation (Q3d):</strong> I agree with Interpretation 2 to a high extent. While politicians in Washington delayed laws (Interpretation 1), on the ground in the Deep South it was the physical threat of violence and economic ruin (Source C) that kept Black Americans segregated. Without KKK terror and police collusion, legal delaying tactics would not have succeeded."
-        }
-      ],
+      "questionVault": [],
       "summaryCorrection": {
         "text": "In response to civil rights gains, Southern white resistance intensified. In 1956, Southern congressmen signed the [[Declaration of Independence -> Southern Manifesto]] to resist integration by 'lawful means'. Meanwhile, middle-class segregationists formed the [[Ku Klux Klan -> White Citizens' Councils]] to apply economic pressure, firing Black workers who petitioned for school integration. While some historians view the opposition as a [[peaceful -> monolithic]] block, others argue there was a clear division between these 'respectable' councils and the working-class [[Dixiecrats -> Ku Klux Klan]] who used raw physical terror, such as the brutal [[1965 -> 1955]] lynching of 14-year-old Emmett Till. This terror was highly effective on the ground; revisionist historians argue it succeeded in delaying school integration because the federal government [[refused to compromise -> failed to protect]] local activists."
       },
-      "howUsefulAnalyser": {
-        "question": "How useful are Sources D and E for an enquiry into the methods used by Southern white opposition to resist civil rights in the 1950s? (8 marks)",
-        "sourceD": {
-          "provenance": "A photograph showing Senator Strom Thurmond signing the Southern Manifesto in March 1956, surrounded by other Southern politicians.",
-          "content": "[A photograph showing Senator Strom Thurmond sitting at a desk and signing the Southern Manifesto, while a group of five other Southern Senators stand around him watching.]",
-          "image": "assets/sources/southern-manifesto-signing.jpg",
-          "caption": "Southern Congressmen signing the Southern Manifesto in March 1956."
+      "paper3Suite": {
+        "title": "Exam Practice: Paper 3 Section B (Unified Source & Interpretation Set)",
+        "enquiry": "the opposition to the civil rights movement in the 1950s",
+        "sourceB": {
+          "provenance": "From a speech by Southern Senator Strom Thurmond to Congress, 1956.",
+          "content": `"The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment. The Supreme Court's ruling is an abuse of power that tears up our laws and customs. We will resist integration using every legal means at our disposal."`
         },
-        "sourceE": {
-          "provenance": "A photograph of a massive Ku Klux Klan parade marching in front of the U.S. Treasury Building in Washington D.C. in 1926.",
-          "content": "[A photograph showing a large line of Klansmen in white robes and hoods marching down a street in Washington D.C. in front of the U.S. Treasury Building, carrying American flags, with crowds of onlookers watching from the sidewalk.]",
-          "image": "assets/sources/kkk-march-washington-1926.jpg",
-          "caption": "A Ku Klux Klan parade marching in front of the U.S. Treasury Building in Washington D.C. in 1926."
+        "sourceC": {
+          "provenance": "From an NAACP report on violent incidents in Alabama, 1957.",
+          "content": `"The KKK is acting with complete impunity. Black churches have been bombed, and civil rights workers are dragged from their homes and beaten. The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members."`
         },
-        "modelAnswer": `Source D is highly useful for showing the official, legalistic methods of resistance deployed by Southern politicians to defy integration. The photograph depicts "Senator Strom Thurmond sitting at a desk and signing the Southern Manifesto", with other senators standing around him. This content is highly useful because it is supported by my contextual knowledge that [[in March 1956, over 100 Southern politicians signed the Southern Manifesto to coordinate resistance, falsely claiming the Supreme Court's Brown ruling was an abuse of judicial power]], which confirms that the photograph is an accurate representation of how Southern elites lent political legitimacy to segregation. {{The provenance makes the source highly useful because it documents a historic moment of political mobilization in March 1956, showing the unity of Southern lawmakers. However, it is limited because it only captures a staged photo opportunity of a signing ceremony, concealing the illegal, violent tactics and economic intimidation that these same state authorities quietly condoned on the ground.}}
-
-Source E is highly useful for showing the violent and physical intimidation used by extremist groups to enforce segregation. The photograph depicts "a large line of Klansmen in white robes and hoods marching" in Washington D.C. This content's utility is supported by my knowledge that [[the Ku Klux Klan experienced a major revival in the 1950s, using bombings, beatings, and lynchings to terrorize civil rights workers with local police collusion]], which confirms the accuracy of the source as a record of KKK activity. {{The provenance, showing a KKK march in Washington D.C. in 1926, makes the source useful for showing the national scale and public visibility of the Klan in the 1920s. However, its usefulness is significantly limited for an enquiry into the 1950s South because it was taken decades earlier in the North (D.C.) and fails to document the specific 1950s Southern civil rights context, KKK violence, or their collusion with local Southern police.}}`
+        "interpretation1": {
+          "provenance": "From 'The Dixiecrats and Southern Politics' by historian Keith M. Finley, published in 2008.",
+          "content": `"Southern political leaders were highly organized and used federal parliamentary rules, such as the filibuster, to block civil rights bills for years. By framing their fight around 'states' rights' rather than overt racism, they successfully delayed integration and maintained white control."`
+        },
+        "interpretation2": {
+          "provenance": "From 'Race and Terror in the South' by historian Adam Fairclough, published in 1995.",
+          "content": '"While politicians spoke of constitutional law, the real defense of segregation lay in raw, unchecked violence. The KKK and local vigilante mobs terrorized Black communities. It was the threat of the bomb, the rope, and the economic boycott that truly kept desegregation from happening."'
+        },
+        "questions": {
+          "q3a": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the 1950s? (8 marks)",
+          "q3b": "Study Interpretations 1 and 2. They give different views about the opposition to the civil rights movement. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
+          "q3d": "How far do you agree with Interpretation 2 about the opposition to the civil rights movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+        },
+        "sentenceStarters": [
+          { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into opposition to civil rights because it shows..." },
+          { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
+          { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into opposition to civil rights because..." },
+          { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
+          { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
+          { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
+          { "label": "Q3d: I agree with Interpretation 2 to a...", "value": "I agree with Interpretation 2 to a [high/moderate] extent because while political obstruction was key, on the ground..." }
+        ],
+        "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the official, political opposition to civil rights. The content defends the Southern Manifesto as a constitutional right against 'federal encroachment' and claims the Supreme Court's ruling is an 'abuse of power.' This is useful because it is supported by my knowledge that Southern politicians organized massive legal resistance (signing the Southern Manifesto in 1956) to delay integration. The provenance, a speech by Southern Senator Strom Thurmond to Congress, makes it a reliable primary record of the legalistic, states' rights arguments used by Southern elites. However, it is limited because it conceals the violent, illegal methods of opposition occurring on the ground.\n\nSource C is highly useful for demonstrating the violent, vigilante opposition to civil rights. The content details KKK terror, church bombings, beatings, and police collusion ('local sheriff... refuse to make any arrests'). This is useful because it is supported by my knowledge that the KKK experienced a massive revival in the 1950s, using raw violence to terrorize activists. The provenance, an NAACP report, provides highly valuable evidence of the ground-level terror that civil rights workers had to overcome. However, it is limited because it represents the perspective of civil rights victims, and may not fully document the political and legislative delaying tactics occurring in Washington.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the opposition to civil rights was primarily political and legal, led by Southern politicians who used congressional rules (such as filibusters) and constitutional arguments (like states' rights) to delay integration. In contrast, Interpretation 2 argues that the true defense of segregation was raw, physical terror, violence, and economic intimidation carried out by the KKK and vigilante mobs to prevent desegregation on the ground.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the opposition to the civil rights movement. Interpretation 1 focuses on the political and legislative obstruction of Southern congressmen in Washington, whereas Interpretation 2 focuses on the physical terror and economic coercion used by vigilantes on the ground in the Deep South. Additionally, they gave weight to different primary sources: Interpretation 1 is supported by official speeches like Source B, while Interpretation 2 is supported by reports of ground-level violence like Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 2 to a high extent. While political delays in Washington (Interpretation 1) were highly organized and successfully blocked legislation, the true force keeping segregation in place in daily Southern life was raw terror. As Source C details, the KKK acted with complete impunity, using bombings and beatings to intimidate civil rights workers, often with the collusion of local law enforcement. Without this constant threat of violence and economic ruin on the ground, legalistic arguments like Strom Thurmond's defense of states' rights in Source B would have had little practical effect. Therefore, while both forms of opposition were important, vigilante violence was the primary mechanism that maintained segregation in the South."
       },
       "deepThinkingQuestions": [
         {
@@ -6254,7 +6267,7 @@ Source E is highly useful for showing the violent and physical intimidation used
         {
           "title": "Step 1: Greensboro Sit-ins & SNCC (1960)",
           "isSplit": false,
-          "bodyHtml": "<p>In February 1960, four Black students staged a peaceful sit-in at a Woolworth's lunch counter in Greensboro, North Carolina:</p>\r\n        <ul>\r\n          <li><strong>Greensboro:</strong> The protest sparked a wave of sit-ins across the South, involving over <strong>70,000</strong> students.</li>\r\n          <li><strong>SNCC:</strong> To coordinate these student-led protests, the Student Nonviolent Coordinating Committee (SNCC) was formed, promoting grassroots democracy.</li>\r\n          <li><strong>Desegregation:</strong> The sit-ins succeeded in desegregating lunch counters in over 80 Southern cities by the end of 1960.</li>\r\n        </ul>",
+          "bodyHtml": "<p>In February 1960, four Black students staged a peaceful sit-in at a Woolworth's lunch counter in Greensboro, North Carolina:</p>\r\n        <ul>\r\n          <li><strong>Greensboro & The Four:</strong> The sit-in was started by **Ezell Blair Jr., Franklin McCain, Joseph McNeil, and David Richmond** (the 'Greensboro Four'). It sparked a wave of sit-ins across the South involving over <strong>70,000</strong> students.</li>\r\n          <li><strong>SNCC & Ella Baker:</strong> To coordinate these protests, the Student Nonviolent Coordinating Committee (SNCC) was formed in April 1960, guided by veteran civil rights organizer <strong>Ella Baker</strong>.</li>\r\n          <li><strong>Desegregation:</strong> The sit-ins succeeded in desegregating lunch counters in over 80 Southern cities by the end of 1960.</li>\r\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The Economic Leverage of Sit-ins",
             "body": "The Greensboro sit-ins succeeded because they directly targeted the profits of national retail chains. Woolworth's lost over $200,000 in sales (equivalent to nearly $2 million today) due to the protests and secondary boycotts by sympathizers in the North. This demonstrated that hitting segregationist businesses in their pockets was far more effective than moral persuasion alone.",
@@ -6270,9 +6283,9 @@ Source E is highly useful for showing the violent and physical intimidation used
           <div class="mastery-card-body card-content">\r
             <p>Activists tested federal rulings on interstate travel and university integration:</p>\r
             <ul>\r
-              <li><strong>Freedom Riders (1961):</strong> Organised by CORE, Black and white activists rode buses into the Deep South. They faced extreme violence, including a bus firebombing in Anniston, Alabama.</li>\r
-              <li><strong>Federal Action:</strong> The ICC finally banned segregation in interstate transit terminals after federal marshals were sent to protect the riders.</li>\r
-              <li><strong>James Meredith (1962):</strong> Meredith integrated the University of Mississippi (Ole Miss), escorted by <strong>30,000</strong> federal troops after riots broke out on campus.</li>\r
+              <li><strong>Freedom Riders (1961):</strong> Organised by CORE under **James Farmer**, Black and white activists rode buses into the Deep South. They faced extreme violence, including a bus firebombing in Anniston, Alabama, and beatings in Birmingham.</li>\r
+              <li><strong>Parchman Deal:</strong> To prevent public riots, Attorney General Robert F. Kennedy made a deal with Mississippi **Governor Ross Barnett** to allow local authorities to imprison the riders in **Parchman Penitentiary** in exchange for state protection from mob violence.</li>\r
+              <li><strong>James Meredith (1962):</strong> Meredith integrated the University of Mississippi (Ole Miss), escorted by <strong>30,000</strong> federal troops sent by JFK to suppress a segregationist riot that killed two.</li>\r
             </ul>\r
           </div>\r
         </div>\r
@@ -6504,12 +6517,12 @@ Source E is highly useful for showing the extreme level of state resistance to u
       "headerIntro": "In 1963 and 1965, the Southern Christian Leadership Conference (SCLC) targeted the most segregated cities. The Birmingham Campaign (April 1963) saw police chief Bull Connor use fire hoses and attack dogs on child protesters, sparking international outrage and forcing President Kennedy to draft civil rights legislation. Following the Civil Rights Act of 1964, attention shifted to voting. In March 1965, the Selma-to-Montgomery marches faced state trooper violence on 'Bloody Sunday', forcing President Johnson to pass the Voting Rights Act of 1965, which outlawed literacy tests.",
       "steps": [
         {
-          "title": "Step 1: The Birmingham Campaign (1963)",
+          "title": "Step 1: The Birmingham Campaign & 'Letter' (1963)",
           "isSplit": false,
           "bodyHtml": `<p>In April 1963, SCLC launched a campaign to desegregate Birmingham, Alabama, one of the most segregated cities in the US:</p>
         <ul>
-          <li><strong>The Strategy:</strong> MLK and SCLC used non-violent direct action (sit-ins, marches) to deliberately provoke a crisis, knowing the local police chief Eugene 'Bull' Connor would react violently.</li>
-          <li><strong>The Children's Crusade:</strong> When adult activists faced job loss, SCLC recruited children to march. Connor ordered police dogs and high-pressure fire hoses to be used against them.</li>
+          <li><strong>Project C:</strong> SCLC used non-violent direct action (called **'Project C'** for Confrontation) to deliberately provoke a crisis, knowing the local police chief Eugene 'Bull' Connor would react violently.</li>
+          <li><strong>The Children's Crusade & Jail:</strong> MLK was arrested and wrote his famous **'Letter from Birmingham Jail'** on scraps of paper. When adult numbers dwindled, SCLC recruited school children. Connor ordered police dogs and high-pressure fire hoses to be used against them.</li>
           <li><strong>The Impact:</strong> Televised images of children being attacked shocked the world. President John F. Kennedy declared segregation a "moral issue" and committed to a civil rights bill.</li>
         </ul>`,
           "scholarlyDepth": {
@@ -6522,10 +6535,9 @@ Source E is highly useful for showing the extreme level of state resistance to u
           "isSplit": false,
           "bodyHtml": `<p>Protests shifted to national-level demands and voter registration drives:</p>
         <ul>
-          <li><strong>March on Washington (August 1963):</strong> Over 250,000 demonstrators gathered at the Lincoln Memorial to demand civil rights legislation. Here, Dr. King delivered his iconic "I Have a Dream" speech, placing massive moral pressure on President John F. Kennedy.</li>
-          <li><strong>Freedom Summer (1964):</strong> A major voter registration drive launched in Mississippi by civil rights groups including SNCC and CORE, bringing white northern students to help register Black voters.</li>
-          <li><strong>The Mississippi Murders (1964):</strong> Three civil rights activists (James Chaney, Andrew Goodman, and Michael Schwerner) were abducted and murdered by the KKK with local police collusion, triggering national outrage.</li>
-          <li><strong>Civil Rights Act (1964):</strong> Signed by President Lyndon B. Johnson, this landmark law banned segregation in public accommodations, schools, and employment, and outlawed voter registration discrimination. Both Kennedy's initial bill and Johnson's legislative skill were key to its passage.</li>
+          <li><strong>March on Washington (August 1963):</strong> Organised by **A. Philip Randolph and Bayard Rustin**, over **250,000** demonstrators (including **60,000 whites**) gathered at the Lincoln Memorial. Dr. King delivered his iconic "I Have a Dream" speech, placing massive moral pressure on JFK.</li>
+          <li><strong>Freedom Summer & Murders (1964):</strong> A major voter registration drive launched in Mississippi by SNCC and CORE. Three activists (**James Chaney, Andrew Goodman, and Michael Schwerner**) were abducted and murdered by the KKK with local police collusion, triggering national outrage.</li>
+          <li><strong>Civil Rights Act (1964):</strong> Signed by President Johnson, this landmark law banned segregation in public accommodations, schools, and employment (**Title VII**), and created the Equal Employment Opportunity Commission (**EEOC**). Both Kennedy's initial bill and Johnson's legislative skill were key to its passage.</li>
         </ul>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Media and the Mississippi Murders",
@@ -6535,7 +6547,7 @@ Source E is highly useful for showing the extreme level of state resistance to u
         {
           "title": "Step 3: Selma and the Voting Rights Act (1965)",
           "isSplit": true,
-          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>To secure voting rights, MLK organized a march from Selma to Montgomery in March 1965:</p>\n            <ul>\n              <li><strong>Bloody Sunday:</strong> State troopers attacked peaceful marchers with tear gas and clubs on the Edmund Pettus Bridge. The televised brutality shocked the nation and forced federal intervention.</li>\n              <li><strong>Voting Rights Act (1965):</strong> President Johnson signed this act into law, banning literacy tests and allowing federal registrars to register voters in states with a history of discrimination. It transformed Black voter turnout in the South.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="lesson-image-wrapper">\n            <img src="assets/sources/selma-troopers-bridge.jpg" alt="State troopers lined up on the bridge at Selma" class="lesson-source-img" />\n            <div class="lesson-image-caption">State troopers confronting civil rights marchers in Selma, Alabama, on 7 March 1965.</div>\n          </div>\n        </div>',
+          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>To secure voting rights, SCLC organized a march from Selma to Montgomery in March 1965 after local activist **Jimmie Lee Jackson** was shot by state troopers:</p>\n            <ul>\n              <li><strong>Bloody Sunday:</strong> State troopers under Sheriff **Jim Clark** attacked peaceful marchers with tear gas and bullwhips on the **Edmund Pettus Bridge**. The televised brutality shocked the nation and forced federal intervention.</li>\n              <li><strong>Voting Rights Act (1965) & Impact:</strong> President Johnson signed this act into law, banning literacy tests and allowing federal registrars. It transformed voter turnout; in Mississippi, Black registration rose from **6% in 1964 to 60% by 1968**.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="lesson-image-wrapper">\n            <img src="assets/sources/selma-troopers-bridge.jpg" alt="State troopers lined up on the bridge at Selma" class="lesson-source-img" />\n            <div class="lesson-image-caption">State troopers confronting civil rights marchers in Selma, Alabama, on 7 March 1965.</div>\n          </div>\n        </div>',
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Johnson and King's Collaboration",
             "body": "While historians emphasize the pressure of Bloody Sunday, they also note the collaborative relationship between President Johnson and Dr. King. Johnson used the public shock of Selma to draft and pass the Voting Rights Act, showcasing a successful convergence of grassroots pressure and executive power."
@@ -6732,7 +6744,7 @@ Source E is highly useful for showing the political and legislative outcomes of 
         {
           "title": "Step 1: Malcolm X & The Black Muslims",
           "isSplit": false,
-          "bodyHtml": '<p>Malcolm X offered a powerful critique of the mainstream civil rights movement:</p>\n        <ul>\n          <li><strong>Black Nationalism:</strong> Malcolm rejected integration, arguing that Black Americans should create their own independent institutions. He believed in self-defense "by any means necessary."</li>\n          <li><strong>The Nation of Islam (Black Muslims):</strong> As the chief spokesman for the Nation of Islam (often called the Black Muslims), Malcolm preached self-reliance and racial pride, drawing support from Northern urban ghettos.</li>\n          <li><strong>Change of Attitude & Death:</strong> After breaking with the Nation of Islam in 1964 and visiting Mecca, he adopted a more inclusive approach, advocating for human rights. He was assassinated by members of the Nation of Islam in February 1965.</li>\n        </ul>',
+          "bodyHtml": '<p>Malcolm X offered a powerful critique of the mainstream civil rights movement:</p>\n        <ul>\n          <li><strong>Black Nationalism:</strong> Malcolm rejected integration, arguing that Black Americans should create their own independent institutions. He believed in self-defense "by any means necessary."</li>\n          <li><strong>The Nation of Islam (Black Muslims):</strong> As the chief spokesman for the Nation of Islam, Malcolm preached self-reliance and racial pride, drawing support from Northern urban ghettos.</li>\n          <li><strong>OAAU & Assassination:</strong> After breaking with the Nation of Islam in 1964, he visited Mecca and founded the **Organization of Afro-American Unity (OAAU)** to advocate for international human rights. He was assassinated in February 1965.</li>\n        </ul>',
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The North/South Divide",
             "body": "Historians argue that Malcolm X's appeal was rooted in Northern cities. While MLK's Southern campaigns targeted legal segregation, Northern Blacks faced economic discrimination and police brutality that legal rulings did not fix. Malcolm's militant rhetoric resonated with urban youth who felt non-violence had failed them."
@@ -6748,7 +6760,7 @@ Source E is highly useful for showing the political and legislative outcomes of 
               <li><strong>Emergence of Black Power:</strong> Slow progress in Northern ghettos, economic discrimination, and police brutality led SNCC and CORE to move away from non-violence.</li>
               <li><strong>Stokely Carmichael:</strong> Popularized the slogan 'Black Power' in 1966, arguing that Black people must unite to form their own political and social force.</li>
               <li><strong>The 1968 Mexico Olympics:</strong> U.S. athletes Tommie Smith and John Carlos staged a famous silent protest on the podium, raising black-gloved fists during the U.S. national anthem to showcase Black Power to a global audience.</li>
-              <li><strong>Black Panthers:</strong> Founded by Huey Newton and Bobby Seale in late 1966, they patrolled neighborhoods to prevent police brutality, carried weapons for self-defense, and ran social programs like free breakfasts.</li>
+              <li><strong>Black Panthers & Ten-Point Program:</strong> Founded by Huey Newton and Bobby Seale in late 1966 in Oakland, California, they had a **Ten-Point Program** demanding housing, education, and exemption from the military draft. They patrolled neighborhoods with weapons for self-defense and ran free school breakfasts.</li>
               <li><strong>Cultural Pride:</strong> The movement promoted Black pride, Afrocentric fashion, and the slogan 'Black is Beautiful'.</li>
             </ul>
           </div>
@@ -6767,7 +6779,7 @@ Source E is highly useful for showing the political and legislative outcomes of 
         </div>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: COINTELPRO and the Black Panthers",
-            "body": "The rapid decline of the Black Panthers was accelerated by the FBI's Counterintelligence Program (COINTELPRO). Under J. Edgar Hoover, the FBI infiltrated the Panthers, sowed internal paranoia through forged letters, and coordinated with local police to launch armed raids on Panther headquarters. Hoover declared the Panthers' free breakfast program the 'greatest threat to internal security' because it built deep community loyalty."
+            "body": "The rapid decline of the Black Panthers was accelerated by the FBI's Counterintelligence Program (COINTELPRO). Under J. Edgar Hoover, the FBI infiltrated the Panthers, sowed internal paranoia, and coordinated with local police to launch armed raids on Panther headquarters, leading to the killing of leaders like **Fred Hampton** in Chicago in 1969. Hoover declared the Panthers' free breakfast program the 'greatest threat to internal security' because it built deep community loyalty."
           }
         }
       ],
@@ -6954,7 +6966,7 @@ Source E is highly useful for showing how Black Power and militancy were institu
         {
           "title": "Step 1: The Urban Riots & The Kerner Report",
           "isSplit": false,
-          "bodyHtml": "<p>Between 1965 and 1968, massive riots erupted in over 100 US cities, including Watts, Detroit, and Newark:</p>\r\n        <ul>\r\n          <li><strong>The Outbreaks:</strong> Riots were triggered by incidents of police brutality, but rooted in deep socio-economic inequality.</li>\r\n          <li><strong>Kerner Commission (1968):</strong> Appointed by Johnson, the report warned that 'our nation is moving toward two societies, one Black, one white\u2014separate and unequal.'</li>\r\n          <li><strong>The Diagnosis:</strong> The report blamed 'white racism' for urban poverty, recommending massive federal spending to improve housing and jobs.</li>\r\n        </ul>",
+          "bodyHtml": "<p>Between 1965 and 1968, massive riots erupted in over 100 US cities, including Watts, Detroit, and Newark:</p>\r\n        <ul>\r\n          <li><strong>Watts Riot (August 1965):</strong> Triggered by the arrest of Marquette Frye. The violence lasted 6 days, resulting in **34 deaths**, over **1,000 injured**, and **$40 million** in property damage.</li>\r\n          <li><strong>Detroit Riot (July 1967):</strong> One of the most destructive riots in US history, resulting in **43 deaths**, **7,200 arrests**, and **2,000 buildings destroyed**.</li>\r\n          <li><strong>Kerner Commission (1968):</strong> Appointed by Johnson, the report warned that 'our nation is moving toward two societies, one Black, one white\u2014separate and unequal.' It blamed systemic 'white racism' and de facto segregation rather than Black criminality, recommending massive federal spending.</li>\r\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The McCone Commission Findings",
             "body": "Following the 1965 Watts riots, the McCone Commission investigated the causes of the unrest. While conservative politicians blamed outside agitators and criminals, the commission concluded that the riots were a protest against systemic socioeconomic conditions: a lack of jobs, substandard housing, inadequate schooling, and widespread resentment of police brutality in the ghetto.",
@@ -6971,9 +6983,9 @@ Source E is highly useful for showing how Black Power and militancy were institu
             <p>The year 1968 marked a tragic turning point and a final legislative push:</p>
             <ul>
               <li><strong>Northern Campaign (Chicago Freedom Movement):</strong> In 1966, MLK moved his campaign to the North, launching protests in <strong>Chicago</strong> to highlight discrimination in housing, employment, and slum conditions. He faced intense white backlash and found that Northern economic segregation was harder to defeat than Southern legal segregation.</li>
-              <li><strong>MLK Assassination:</strong> On 4 April 1968, Martin Luther King Jr. was assassinated in Memphis, Tennessee. His death triggered riots in over 100 cities, marking the end of the non-violent civil rights era.</li>
+              <li><strong>MLK Assassination:</strong> On 4 April 1968, Martin Luther King Jr. was assassinated by **James Earl Ray** in Memphis, Tennessee. His death triggered riots in over 100 cities, marking the end of the non-violent civil rights era.</li>
               <li><strong>Fair Housing Act (1968):</strong> In the wake of King's death, Congress passed the Civil Rights Act of 1968, banning discrimination in housing.</li>
-              <li><strong>Progress by 1975:</strong> By 1975, legal segregation was dismantled, and the number of Black elected officials had skyrocketed. However, economic inequality, ghetto conditions, and de facto segregation remained deep challenges.</li>
+              <li><strong>Progress by 1975:</strong> By 1975, legal (de jure) segregation was dismantled, and the number of Black elected officials had skyrocketed. However, economic inequality, ghetto conditions, and de facto segregation remained deep challenges.</li>
             </ul>
           </div>
         </div>
@@ -7058,42 +7070,45 @@ Source E is highly useful for showing how Black Power and militancy were institu
         }
       ],
       "importanceAnalyser": null,
-      "questionVault": [
-        {
-          "question": "This suite is based on the following interpretations regarding the 1960s urban riots.",
-          "sourceB": `From a statement by a Detroit resident participating in the 1967 riot.
-
-"This isn't a race riot. We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt. We have no jobs, no future. We are just telling the white man we've had enough."`,
-          "sourceC": 'From a speech by California Governor Ronald Reagan, 1967.\n\n"A rioter is not a civil rights protestor. He is a criminal who steals and burns. We will not tolerate lawlessness. We must restore law and order, support our police, and show that crime does not pay. The streets of our cities must be kept safe."',
-          "interpretation1": `From 'The Fire This Time' by historian Gerald Horne, published in 1995.
-
-"The riots were the direct outcome of economic despair. The political gains of the Civil Rights Acts of 1964 and 1965 meant nothing in Northern cities where Black unemployment was double that of whites and housing segregation was absolute. The riots were a political rebellion against economic ghettoization."`,
-          "interpretation2": `From 'The Unheavenly City' by political scientist Edward Banfield, published in 1970.
-
-"The urban riots were not political protests but class-based looting sprees. They were carried out by young, low-income males who took advantage of police hesitation to vandalize property and steal consumer goods. Framing these destructive acts as political rebellion is an academic myth."`,
-          "answer": "<strong>Model Answer Blueprint (Q3b-d):</strong>\n\n<strong>Difference (Q3b):</strong> Interpretation 1 argues that the riots were political rebellions rooted in economic despair, unemployment, and ghetto housing. Interpretation 2, however, claims the riots were class-based looting sprees carried out by opportunistic young males for consumer goods.\n\n<strong>Reason (Q3c):</strong>\n- <em>Option 1 (Focus on different sources):</em> The historians gave weight to different sources. Interpretation 1 is supported by Source B, which details a Detroit resident's testimony that they are rioting due to exploitation, lack of jobs, and police treatment. Interpretation 2 is supported by Source C, which features Governor Reagan's official statement condemning rioters as simple criminals and thieves.\n- <em>Option 2 (Focus on different aspects):</em> The historians chose to focus on different aspects of the riots. Interpretation 1 focuses on the underlying socio-economic causes, such as ghetto housing, systemic discrimination, and massive unemployment. Interpretation 2, however, focuses on the behavior of the rioters during the events, characterizing them as opportunistic young males stealing consumer goods.\n\n<strong>Evaluation (Q3d):</strong> I agree with Interpretation 1 to a high extent. While some looting occurred, the Kerner Commission (1968) confirmed that the riots were systemic responses to deep-seated white racism, poor housing, and unemployment. Labeling them simple looting sprees (Interpretation 2) ignores the profound economic neglect of Northern cities that MLK himself highlighted during the Chicago Freedom Movement."
-        }
-      ],
+      "questionVault": [],
       "summaryCorrection": {
         "text": "Between 1965 and 1968, massive urban riots erupted in Northern cities, beginning in the Watts district of [[Chicago -> Los Angeles]]. Conservative politicians argued that the riots were caused by [[systemic white racism -> lawless black extremists]] and outside agitators. However, the official [[Warren -> Kerner]] Commission in 1968 concluded that the primary cause was [[black supremacy -> systemic white racism]] and economic inequality, warning that America was split into 'two societies, one black, one white\u2014separate and unequal'. The assassination of King in April [[1965 -> 1968]] triggered riots in over 100 cities. In response, Congress passed the Fair Housing Act of 1968, which revisionist historians argue was [[fully successful in ending -> a symbolic gesture that failed to solve]] inner-city economic deprivation."
       },
-      "howUsefulAnalyser": {
-        "question": "How useful are Sources D and E for an enquiry into the causes and consequences of urban unrest in the late 1960s? (8 marks)",
-        "sourceD": {
-          "provenance": "A photograph showing National Guard troops patrolling a street during the Detroit Riot, July 1967.",
-          "content": "[A photograph showing armed National Guardsmen standing in front of burning storefronts. Thick smoke fills the sky, and military armored personnel carriers are parked on the street.]",
-          "image": "assets/sources/detroit-riot-guard-1967.jpg",
-          "caption": "National Guard troops deployed to restore order during the 1967 Detroit urban rebellion."
+      "paper3Suite": {
+        "title": "Exam Practice: Paper 3 Section B (Unified Source & Interpretation Set)",
+        "enquiry": "the causes of the 1960s urban riots",
+        "sourceB": {
+          "provenance": "From a statement by a Detroit resident participating in the 1967 riot.",
+          "content": `"This isn't a race riot. We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt. We have no jobs, no future. We are just telling the white man we've had enough."`
         },
-        "sourceE": {
-          "provenance": "From a photograph showing mourners and protesters in Washington D.C. after the assassination of Martin Luther King Jr., April 1968.",
-          "content": "[A photograph of a large crowd of Black citizens marching down a street in Washington D.C. carrying signs that read 'Honor King: End Racism Now'. Some buildings in the background are smoldering from recent fires.]",
-          "image": "assets/sources/mourners-mlk-assassination.jpg",
-          "caption": "Protesters and mourners in Washington D.C. expressing grief and anger following MLK's assassination."
+        "sourceC": {
+          "provenance": "From a speech by California Governor Ronald Reagan, 1967.",
+          "content": '"A rioter is not a civil rights protestor. He is a criminal who steals and burns. We will not tolerate lawlessness. We must restore law and order, support our police, and show that crime does not pay. The streets of our cities must be kept safe."'
         },
-        "modelAnswer": `Source D is highly useful for showing the scale of violence, property destruction, and military deployment during the urban riots. The photograph shows "armed National Guardsmen standing in front of burning storefronts" in Detroit. This content is highly useful because it is supported by my knowledge that [[the Detroit Riot of July 1967 resulted in 43 deaths, over 1,000 injuries, and prompted the Kerner Commission to investigate the systemic racism and poverty in Northern ghettos]], which explains the military necessity of deploying the National Guard. {{The provenance of July 1967 makes the source highly useful because it provides an authentic, contemporary record of the military force needed to suppress urban rebellions. However, it is less useful because it focuses on the law-and-order response, failing to depict the underlying causes of the riot, such as police brutality and housing discrimination.}}
-
-Source E is highly useful for showing the immediate political and emotional impact of MLK's death on Black Americans. The photograph shows a "large crowd... carrying signs that read 'Honor King: End Racism Now'" with smoldering buildings in the background. This content's utility is supported by my knowledge that [[the assassination of Martin Luther King Jr. on 4 April 1968 sparked violent riots in over 100 cities, marking the end of the non-violent civil rights era]], which confirms the immediate transition from grief to civil unrest across American cities. {{The provenance of April 1968 in Washington D.C. makes the source extremely useful because it captures the national grief and outrage. However, it is less useful because it portrays a peaceful march, failing to represent the violent riots and arson that occurred in Washington D.C. at the same time.}}`
+        "interpretation1": {
+          "provenance": "From 'The Fire This Time' by historian Gerald Horne, published in 1995.",
+          "content": '"The riots were the direct outcome of economic despair. The political gains of the Civil Rights Acts of 1964 and 1965 meant nothing in Northern cities where Black unemployment was double that of whites and housing segregation was absolute. The riots were a political rebellion against economic ghettoization."'
+        },
+        "interpretation2": {
+          "provenance": "From 'The Unheavenly City' by political scientist Edward Banfield, published in 1970.",
+          "content": '"The urban riots were not political protests but class-based looting sprees. They were carried out by young, low-income males who took advantage of police hesitation to vandalize property and steal consumer goods. Framing these destructive acts as political rebellion is an academic myth."'
+        },
+        "questions": {
+          "q3a": "How useful are Sources B and C for an enquiry into the causes of the 1960s urban riots? (8 marks)",
+          "q3b": "Study Interpretations 1 and 2. They give different views about the causes of the 1960s urban riots. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
+          "q3d": "How far do you agree with Interpretation 1 about the causes of the 1960s urban riots? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+        },
+        "sentenceStarters": [
+          { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the causes of the riots because it shows..." },
+          { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
+          { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into the causes of the riots because..." },
+          { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
+          { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
+          { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
+          { "label": "Q3d: I agree with Interpretation 1 to a...", "value": "I agree with Interpretation 1 to a [high/moderate] extent because while opportunistic looting occurred, the Kerner Commission..." }
+        ],
+        "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the socioeconomic causes of the urban riots from the perspective of an active participant. The content highlights intense grievances over exploitation by local stores, sub-standard rat-infested housing, lack of employment and future prospects, and police mistreatment. This is useful because it is supported by my knowledge that the riots in Watts (1965) and Detroit (1967) were driven by deep-seated anger over de facto segregation, ghetto conditions, and police clashes. The provenance, being a direct statement from a Detroit resident during the 1967 riot, gives it high utility as a contemporary record of grassroots feelings. However, it is limited because it represents a single, highly subjective participant's view and does not capture the broader political or national perspective.\n\nSource C is highly useful for showing the political, conservative response to the urban riots. The content condemns the rioters as criminals who burn and steal rather than civil rights protestors, and argues that law and order must be restored. This utility is supported by my knowledge that conservative politicians like Ronald Reagan campaigned heavily on a 'law and order' platform, blaming individual lawlessness rather than systemic social issues to appeal to anxious white voters. The provenance, a speech by California Governor Ronald Reagan in 1967, makes it a reliable primary record of the official state narrative that justified military intervention. However, it is limited because it is a political speech that ignores the real, documented socio-economic grievances behind the unrest.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the urban riots were political rebellions caused by economic despair, unemployment, and housing segregation in Northern cities, rendering the political gains of the Civil Rights Acts meaningless on the ground. In contrast, Interpretation 2 argues that the riots were not political protests at all, but rather opportunistic, class-based looting sprees carried out by young, low-income males taking advantage of police hesitation.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the urban riots. Interpretation 1 focuses on the underlying socioeconomic causes of the riots, such as high unemployment and absolute housing segregation, whereas Interpretation 2 focuses on the immediate behavior of the rioters, characterizing them as opportunistic looters. Furthermore, they gave weight to different primary sources: Interpretation 1 is supported by the resident testimony in Source B, while Interpretation 2 is supported by the official condemnations in Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 1 to a high extent. While there was undoubtedly opportunistic looting during the chaos (as Interpretation 2 emphasizes), characterizing the riots solely as looting sprees is an oversimplification that ignores the structural roots of the violence. As Source B details, the rioters were driven by clear grievances: exploitation, rat-infested rooms, a lack of jobs, and police hostility. This is strongly supported by the 1968 Kerner Commission Report, which officially concluded that the riots were political and social protests against systemic white racism and economic inequality. Without these severe, de facto ghetto conditions, police incidents would not have sparked such massive city-wide rebellions. Therefore, the riots were fundamentally political protests against economic ghettoization rather than simple criminal lawlessness."
       },
       "deepThinkingQuestions": [
         {
@@ -7182,7 +7197,7 @@ Source E is highly useful for showing the immediate political and emotional impa
         {
           "title": "Step 1: The Domino Theory & Partition (1954)",
           "isSplit": false,
-          "bodyHtml": "<p>Following the defeat of the French at Dien Bien Phu, the 1954 Geneva Accords divided Vietnam along the 17th Parallel:</p>\n        <ul>\n          <li><strong>The Partition:</strong> The communist Vietminh under Ho Chi Minh controlled the North. The capitalist State of Vietnam controlled the South.</li>\n          <li><strong>The Domino Theory:</strong> President Eisenhower warned that if South Vietnam fell to communism, neighboring nations would fall like dominoes. This fear drove greater US involvement under his presidency.</li>\n          <li><strong>Backing Diem:</strong> Rather than holding the nationwide 1956 elections (which the US feared the communist Ho Chi Minh would win), Eisenhower supported Ngo Dinh Diem in establishing a separate, anti-communist government in South Vietnam.</li>\n          <li><strong>Early Weaknesses & SEATO:</strong> The US formed SEATO to block communist expansion and sent military advisers to support South Vietnam. However, Diem's early weaknesses (corruption and nepotism) made his government unpopular from the start, requiring ever-greater US aid to survive.</li>\n        </ul>",
+          "bodyHtml": "<p>Following the defeat of the French at Dien Bien Phu, the 1954 Geneva Accords divided Vietnam along the 17th Parallel:</p>\n        <ul>\n          <li><strong>Geneva & French Defeat:</strong> Prior to the French defeat at Dien Bien Phu (where General Giap besieged French forces), the US funded **80%** of the French war effort. The Accords partitioned Vietnam at the 17th Parallel.</li>\n          <li><strong>The Domino Theory:</strong> President Eisenhower warned that if South Vietnam fell to communism, neighboring nations would fall like dominoes. This containment fear drove greater US involvement.</li>\n          <li><strong>Backing Diem:</strong> Rather than holding the nationwide 1956 elections (which the US feared Ho Chi Minh would win), Eisenhower supported Ngo Dinh Diem in establishing a separate, anti-communist government in South Vietnam.</li>\n          <li><strong>Early Weaknesses & SEATO:</strong> The US formed SEATO and sent military advisers to support South Vietnam. However, Diem's early weaknesses (corruption and nepotism) made his government unpopular, requiring ever-greater US aid to survive.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: NSC-68 and the Roots of Intervention",
             "body": "The Domino Theory was rooted in National Security Council Report 68 (NSC-68), a classified 1950 policy paper. NSC-68 argued that the Soviet Union was engaged in a global, monolithic conspiracy for world domination. This framework led US policymakers to view local anti-colonial struggles, like Ho Chi Minh's nationalist movement against the French, as Soviet-directed aggression rather than local struggles for independence.",
@@ -7204,8 +7219,8 @@ Source E is highly useful for showing the immediate political and emotional impa
           <div class="mastery-card-body card-content">
             <p>To contain the North, the US backed South Vietnam's President Ngo Dinh Diem, whose regime was highly corrupt:</p>
             <ul>
-              <li><strong>Catholic Favoritism:</strong> Diem favored the Catholic minority in a Buddhist-majority country, leading to massive Buddhist protests and self-immolations in 1963.</li>
-              <li><strong>Strategic Hamlet Program:</strong> Introduced under Kennedy, the US moved peasants into armed villages (Hamlets) to isolate them from the Vietcong. The program failed, alienating the peasantry and pushing them to support the communists.</li>
+              <li><strong>Catholic Favoritism:</strong> Diem favored the Catholic minority in a Buddhist-majority country. After a ban on the Buddhist flag sparked shootings in Hue, monk **Thich Quang Duc** self-immolated in Saigon in June 1963, destroying the regime's legitimacy.</li>
+              <li><strong>Strategic Hamlet Program:</strong> Managed by Diem's brother **Ngo Dinh Nhu**, the US moved peasants into armed villages. The program failed because Nhu forced peasants to build them at their own expense, alienating them and driving them to support the Vietcong.</li>
               <li><strong>Diem's Overthrow (1963):</strong> Recognizing Diem could not win the war, President Kennedy approved a military coup in November 1963. Diem was overthrown and assassinated, leading to a period of extreme political instability in South Vietnam.</li>
             </ul>
           </div>
@@ -7415,7 +7430,7 @@ Source E is highly useful for showing the scale of religious opposition that und
         {
           "title": "Step 1: The Gulf of Tonkin Incident (1964)",
           "isSplit": false,
-          "bodyHtml": "<p>In August 1964, clashes in the Gulf of Tonkin gave President Lyndon B. Johnson the political mandate to escalate the war:</p>\r\n        <ul>\r\n          <li><strong>The Clash:</strong> The US destroyer USS Maddox clashed with North Vietnamese patrol boats in the Gulf of Tonkin.</li>\r\n          <li><strong>The Resolution:</strong> Congress passed the Gulf of Tonkin Resolution, authorizing the President to take 'all necessary measures' to defend US interests.</li>\r\n          <li><strong>The Blank Check:</strong> This resolution served as a 'blank check' for Johnson to wage war without a formal declaration from Congress.</li>\r\n        </ul>",
+          "bodyHtml": "<p>In August 1964, clashes in the Gulf of Tonkin gave President Lyndon B. Johnson the political mandate to escalate the war:</p>\r\n        <ul>\r\n          <li><strong>The Clash & OPLAN 34A:</strong> The US destroyer USS Maddox clashed with North Vietnamese patrol boats. The Maddox was conducting a DESOTO electronic intelligence patrol to support secret South Vietnamese commando raids (known as **OPLAN 34A**).</li>\r\n          <li><strong>The Resolution:</strong> Congress passed the Gulf of Tonkin Resolution, authorizing the President to take 'all necessary measures' to defend US interests.</li>\r\n          <li><strong>The Blank Check:</strong> This resolution served as a 'blank check' for Johnson to wage war without a formal declaration from Congress.</li>\r\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The Declassified Truth of the Second Attack",
             "body": "Declassified NSA documents released in 2005 confirmed that the second alleged North Vietnamese attack on August 4, 1964, never took place. The US Navy destroyer USS Maddox was firing at radar 'ghosts' caused by severe weather conditions and sonar anomalies. President Johnson, however, used the initial reports to rush the Gulf of Tonkin Resolution through Congress, gaining a blank check for war.",
@@ -7433,7 +7448,7 @@ Source E is highly useful for showing the scale of religious opposition that und
         {
           "title": "Step 2: Vietcong Threat & Escalation",
           "isSplit": true,
-          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>Following the resolution, Johnson rapidly escalated US military involvement in early 1965:</p>\n            <ul>\n              <li><strong>Increasing Vietcong Threat:</strong> The Vietcong controlled large areas of the South Vietnamese countryside. The ARVN was on the verge of defeat, forcing Johnson to act.</li>\n              <li><strong>Operation Rolling Thunder (Feb 1965):</strong> A massive, continuous bombing campaign against North Vietnam designed to destroy supply lines and force Hanoi to negotiate.</li>\n              <li><strong>Combat Deployment (March 1965):</strong> The first US ground combat troops (Marines) landed at Da Nang beach, shifting US involvement from advisory aid to active combat. By the end of 1965, over 180,000 US troops were in Vietnam.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="lesson-image-wrapper">\n            <img src="assets/sources/marines-landing-danang.jpg" alt="US Marines landing at Da Nang beach in 1965" class="lesson-source-img" />\n            <div class="lesson-image-caption">US Marines landing at Da Nang, South Vietnam, in March 1965, marking the official start of US ground combat operations.</div>\n          </div>\n        </div>',
+          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>Following the resolution, Johnson rapidly escalated US military involvement in early 1965:</p>\n            <ul>\n              <li><strong>Increasing Vietcong Threat:</strong> The Vietcong controlled large areas of the South Vietnamese countryside. The ARVN was on the verge of defeat, forcing Johnson to act.</li>\n              <li><strong>Operation Rolling Thunder (Feb 1965):</strong> A massive bombing campaign that dropped **800,000 tons** of bombs on North Vietnam, costing the US **$1 billion**, but failed to halt communist supply lines.</li>\n              <li><strong>Combat Deployment (March 1965):</strong> On **8 March 1965**, 3,500 Marines of the **9th Marine Expeditionary Brigade** landed at Da Nang beach, shifting US involvement from advisory aid to active combat. By the end of 1965, over 180,000 US troops were deployed.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="lesson-image-wrapper">\n            <img src="assets/sources/marines-landing-danang.jpg" alt="US Marines landing at Da Nang beach in 1965" class="lesson-source-img" />\n            <div class="lesson-image-caption">US Marines landing at Da Nang, South Vietnam, in March 1965, marking the official start of US ground combat operations.</div>\n          </div>\n        </div>',
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The Decision to Deploy Ground Troops",
             "body": "Historians note that Johnson's advisors (McNamara and Rusk) argued that unless US combat troops were deployed immediately, South Vietnam would fall to communism within months. This shows that the initial escalation was a defensive reaction to save a collapsing ally."
@@ -7613,9 +7628,9 @@ Source E is highly useful for showing the transition to full combat operations a
       "headerIntro": "Between 1965 and 1968, the Vietnam War became a brutal conflict of contrasting strategies. The US military, led by General Westmoreland, relied on high-tech attrition tactics, including 'Search and Destroy' missions, massive carpet bombing, and chemical agents like Agent Orange and Napalm to clear jungles and crop cover. In contrast, the Vietcong fought a guerrilla war, avoiding pitched battles, hiding in complex underground tunnel networks, and deploying deadly booby traps, which neutralized US technological superiority and severely damaged US soldier morale.",
       "steps": [
         {
-          "title": "Step 1: US Tactics: Rolling Thunder, Search & Destroy & Chemicals",
+          "title": "Step 1: US Tactics: Attrition, Search & Destroy & Chemicals",
           "isSplit": false,
-          "bodyHtml": "<p>The US military relied on technological superiority and firepower to wage a war of attrition:</p>\n        <ul>\n          <li><strong>Operation Rolling Thunder:</strong> A continuous, heavy aerial bombing campaign against North Vietnam and the Ho Chi Minh Trail.</li>\n          <li><strong>Search & Destroy:</strong> US patrols searched the jungle for Vietcong forces, calling in air strikes or helicopter troops, and burning down villages suspected of harboring guerrillas.</li>\n          <li><strong>Chemical Defoliants:</strong> Spraying chemical agents like <strong>Agent Orange</strong> to strip away the jungle canopy (cover) and destroy crops to starve the guerrillas, and using <strong>Napalm</strong> to burn enemy positions.</li>\n        </ul>",
+          "bodyHtml": "<p>The US military, led by General William Westmoreland, relied on technological superiority to wage a war of attrition:</p>\n        <ul>\n          <li><strong>Search & Destroy & 'Body Count':</strong> US patrols searched the jungle for VC forces. To measure success, commanders used the **'body count'** (attrition) strategy, which encouraged troops to view all Vietnamese dead as VC, leading to atrocities.</li>\n          <li><strong>Operation Rolling Thunder:</strong> A heavy carpet bombing campaign targeting North Vietnam and transit trails.</li>\n          <li><strong>Chemical Warfare & Defoliants:</strong> Sprayed **20 million gallons** of **Agent Orange** to strip the jungle canopy and destroy food crops. Used **Napalm** (jellied gasoline burning at 800-1200\xB0C) to incinerate enemy positions.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Failure of Firepower",
             "body": "Orthodox historians argue that US military tactics were fundamentally flawed because they relied on heavy conventional firepower. This was counterproductive in a counterinsurgency war, as civilian casualties and crop destruction alienated the rural populace, driving them to support the Vietcong."
@@ -7624,7 +7639,7 @@ Source E is highly useful for showing the transition to full combat operations a
         {
           "title": "Step 2: Vietcong Guerrilla Tactics & The Trail",
           "isSplit": false,
-          "bodyHtml": "<p>The Vietcong waged a 'people's war', avoiding pitched battles and exploiting local knowledge:</p>\n        <ul>\n          <li><strong>Guerrilla Tactics:</strong> Booby traps (punji sticks, landmines), sniper fire, and ambushes, which wore down US troop morale and caused high casualties.</li>\n          <li><strong>Tunnels and Cover:</strong> Complex underground tunnel networks (like the Cu Chi tunnels) allowed them to hide, launch surprise attacks, and retreat safely.</li>\n          <li><strong>The Ho Chi Minh Trail:</strong> A supply network of dirt tracks running through Laos and Cambodia, used to transport supplies and soldiers from the North to the South.</li>\n        </ul>",
+          "bodyHtml": "<p>The Vietcong waged a 'people's war', avoiding pitched battles and exploiting local knowledge:</p>\n        <ul>\n          <li><strong>Booby Traps:</strong> Used **punji stakes** (bamboo spikes hidden in pits and smeared with human waste to cause infection) and **bouncing betty** mines to wound US soldiers, severely damaging morale.</li>\n          <li><strong>Cu Chi Tunnels:</strong> A **250km underground network** of rooms, kitchens, hospitals, and command centers that protected VC forces from US bombings.</li>\n          <li><strong>The Ho Chi Minh Trail:</strong> A **16,000km supply network** through Laos and Cambodia. Despite US bombing, it was kept open by **50,000 volunteers** who repaired damage within hours.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Vietcong Logistics and Resilience",
             "body": "Revisionist historians argue that the US completely underestimated the logistic resilience of the Vietcong. The Ho Chi Minh Trail, despite constant US bombing, remained open because thousands of volunteers repaired the damage immediately, showing the national commitment to reunification."
@@ -7638,8 +7653,8 @@ Source E is highly useful for showing the transition to full combat operations a
             <p>In January 1968, the Vietcong and North Vietnamese forces launched a massive surprise attack during the Tet holiday:</p>
             <ul>
               <li><strong>The Offensives:</strong> Attacking over 100 South Vietnamese cities, towns, and even the US Embassy in Saigon.</li>
-              <li><strong>Military Failure:</strong> The US and ARVN forces quickly recaptured the cities, decimating the Vietcong forces and reclaiming control.</li>
-              <li><strong>Political Significance:</strong> The Tet Offensive was a massive political blow to the US government. Televised footage of intense fighting shattered the US public's belief that they were winning the war, widening the "credibility gap" and forcing President Johnson to seek peace talks and announce he would not run for re-election.</li>
+              <li><strong>Military Failure:</strong> The VC failed to spark a popular uprising. They suffered over **45,000 casualties**, decimating their forces on the ground.</li>
+              <li><strong>Political Significance:</strong> Tet was a massive political defeat for the US. Westmoreland's request for **206,000 more troops** was leaked and rejected. The televised fighting widened the 'credibility gap' and forced President Johnson to seek peace talks and withdraw from the 1968 election.</li>
             </ul>
           </div>
         </div>
@@ -7840,7 +7855,7 @@ Source E is highly useful for showing the chemical warfare tactics used by the U
         {
           "title": "Step 1: Vietnamisation & The Nixon Doctrine",
           "isSplit": false,
-          "bodyHtml": "<p>Taking office in 1969, President Richard Nixon promised to achieve 'Peace with Honor' in Vietnam:</p>\n        <ul>\n          <li><strong>The Nixon Doctrine:</strong> Nixon declared that the US would provide economic and military aid to allies, but they must supply their own ground troops.</li>\n          <li><strong>Vietnamisation:</strong> A policy of training and equipping the South Vietnamese Army (ARVN) to take over combat operations, allowing the gradual withdrawal of US troops.</li>\n          <li><strong>Failure of Vietnamisation:</strong> The ARVN remained heavily dependent on US air support, was plagued by high desertion rates, corruption, and poor leadership, leading to major military defeats when fighting alone.</li>\n        </ul>",
+          "bodyHtml": "<p>Taking office in 1969, President Richard Nixon promised to achieve 'Peace with Honor' in Vietnam:</p>\n        <ul>\n          <li><strong>The Nixon Doctrine:</strong> Nixon declared that the US would provide economic and military aid to allies, but they must supply their own ground troops.</li>\n          <li><strong>Vietnamisation & Troop Withdrawals:</strong> A policy of training the South Vietnamese Army (ARVN) to take over combat, allowing US troop withdrawals. US troop levels fell from **543,000 in 1969** to **24,000 by late 1972**.</li>\n          <li><strong>Failure of Vietnamisation:</strong> The ARVN remained dependent on US air support, was plagued by high desertion rates, corruption, and poor leadership, leading to major military defeats when fighting alone.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Why Vietnamisation Failed",
             "body": "Historians identify that Vietnamisation failed because the ARVN lacked political motivation and was built in the image of the US Army\u2014dependent on expensive technology, air power, and fuel. When the US withdrew its direct support, South Vietnam could not sustain this style of warfare."
@@ -7853,9 +7868,9 @@ Source E is highly useful for showing the chemical warfare tactics used by the U
           <div class="mastery-card-body card-content">
             <p>To support ARVN and destroy supply lines, Nixon paradoxically expanded the war:</p>
             <ul>
-              <li><strong>Cambodia Invasion (1970):</strong> Nixon ordered a joint US-ARVN invasion of neutral Cambodia to destroy Vietcong sanctuaries and supply depots.</li>
-              <li><strong>Laos (1971):</strong> US air support backed an ARVN invasion of Laos, which ended in a disastrous ARVN retreat.</li>
-              <li><strong>Bombing of North Vietnam (1972):</strong> Nixon launched massive bombing campaigns in 1972 (Operations Linebacker I & II) against North Vietnam to cut off supply lines and force Hanoi back to the negotiating table.</li>
+              <li><strong>Secret Bombing & Cambodia (1969-70):</strong> Nixon launched **Operation Menu** in 1969, a secret bombing campaign in neutral Cambodia, before ordering a joint US-ARVN ground invasion in 1970 to destroy VC sanctuaries.</li>
+              <li><strong>Laos & Lam Son 719 (1971):</strong> SCLC-style direct combat was tested in **Operation Lam Son 719**. US air support backed an ARVN invasion of Laos, which ended in a disastrous ARVN retreat, proving they could not fight alone.</li>
+              <li><strong>Linebacker II (1972):</strong> Nixon launched massive bombing campaigns (Operations Linebacker I & II) in 1972. **Operation Linebacker II** (the Christmas Bombings) dropped **20,000 tons** of bombs on Hanoi and Haiphong in 11 days.</li>
             </ul>
           </div>
         </div>
@@ -8063,22 +8078,22 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
         {
           "title": "Step 1: Television, The Draft, My Lai & Lt. Calley",
           "isSplit": false,
-          "bodyHtml": "<p>By the late 1960s, public opposition to the war became a mass movement:</p>\n        <ul>\n          <li><strong>TV and Media Coverage:</strong> Vietnam was the first 'television (TV) war'. Graphic TV and media coverage showed daily footage of casualties, burning villages, and suffering civilians, bringing the war directly into American living rooms and fueling deep anti-war sentiment.</li>\n          <li><strong>The Draft System:</strong> The conscription system drafted young men into military service. Protesters burned draft cards, held strikes on college campuses, and draft-dodged.</li>\n          <li><strong>My Lai Massacre (1968) & Lt. Calley:</strong> In March 1968, US soldiers murdered over 300 unarmed South Vietnamese civilians in the village of My Lai. When the massacre was exposed in late 1969, it horrified the public. The subsequent trial of <strong>Lieutenant William Calley</strong> (the only officer convicted) escalated public anger, showing the moral cost of the war.</li>\n        </ul>",
+          "bodyHtml": "<p>By the late 1960s, public opposition to the war became a mass movement:</p>\n        <ul>\n          <li><strong>TV and Media Coverage:</strong> Vietnam was the first 'television (TV) war'. Graphic TV and media coverage showed daily footage of casualties, burning villages, and suffering civilians, creating a **'credibility gap'** between official claims and reality.</li>\n          <li><strong>The Conscripted Draft System:</strong> Young men were drafted into service. College deferments meant working-class and minority men were disproportionately drafted, fueling anger. Protesters burned draft cards and draft-dodged.</li>\n          <li><strong>My Lai Massacre (1968) & Calley:</strong> In March 1968, US troops of Charlie Company murdered **347 to 504 unarmed civilians** in My Lai. Exposed by journalist **Seymour Hersh** in Nov 1969, it horrified the public. **Lt. William Calley** was convicted but served only 3 years house arrest, increasing public anger.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Media Influence on Public Opinion",
             "body": "Historians argue that the media did not create the anti-war movement, but it legitimized it. Seeing respected anchors like Walter Cronkite question the war, alongside raw battlefield footage, made it respectable for mainstream Americans to oppose the conflict."
           }
         },
         {
-          "title": "Step 2: Kent State and the Student Movement (1970)",
+          "title": "Step 2: Kent State, Pentagon Papers & Senate Hearings",
           "isSplit": true,
           "bodyHtml": `<div class="mastery-text-column">
           <div class="mastery-card-body card-content">
             <p>Nixon's invasion of Cambodia in 1970 triggered massive student protests across US campuses:</p>
             <ul>
-              <li><strong>Kent State Shooting & The Student Movement (May 1970):</strong> Nixon's expansion of the war into Cambodia triggered massive student protests across college campuses nationwide, led by the active <strong>student movement</strong>. At Kent State University in Ohio, National Guardsmen opened fire on unarmed student protesters, killing 4 and wounding 9.</li>
-              <li><strong>National Strike:</strong> The shooting triggered a national student strike, forcing hundreds of colleges to close.</li>
-              <li><strong>Fulbright Hearings:</strong> Senate hearings led by Senator Fulbright investigated the war, providing a respectable platform for anti-war veterans (including John Kerry) to condemn the conflict.</li>
+              <li><strong>Kent State Shooting (May 1970):</strong> Ohio National Guardsmen fired **67 rounds** in 13 seconds into an unarmed student crowd at Kent State University, killing 4 and wounding 9. This triggered a national strike of **4 million students**, closing hundreds of colleges.</li>
+              <li><strong>Pentagon Papers (1971):</strong> Leaked by military analyst **Daniel Ellsberg**, these top-secret DOD files proved the government had systematically lied to Congress and the public about the scale of US military escalation.</li>
+              <li><strong>Fulbright Hearings & VVAW:</strong> Senate hearings led by Senator Fulbright investigated the war, providing a platform for the **Vietnam Veterans Against the War (VVAW)** (including John Kerry) to condemn military atrocities.</li>
             </ul>
           </div>
         </div>
@@ -8280,7 +8295,7 @@ Source E is highly useful for showing the lethal escalation of state suppression
         {
           "title": "Step 1: Nixon's Silent Majority Speech (1969)",
           "isSplit": false,
-          "bodyHtml": "<p>In November 1969, Nixon delivered a televised address appealing directly to the millions of conservative Americans:</p>\r\n        <ul>\r\n          <li><strong>The Speech:</strong> Nixon contrasted the loud, visible student protesters with the 'great silent majority' of patriotic Americans who supported the war effort.</li>\r\n          <li><strong>The Appeal:</strong> He argued that a sudden US withdrawal would result in a communist massacre in South Vietnam and destroy America's global credibility.</li>\r\n          <li><strong>Public Response:</strong> The speech was a massive political success, generating thousands of supportive letters and boosting Nixon's approval ratings.</li>\r\n        </ul>",
+          "bodyHtml": "<p>In November 1969, Nixon delivered a televised address appealing directly to the millions of conservative Americans:</p>\r\n        <ul>\r\n          <li><strong>The Speech & Strategy:</strong> Nixon contrasted loud student protesters with the 'great silent majority' who supported the war. This was a political strategy to divide the nation and appeal to patriotic taxpayers who resented the counterculture.</li>\r\n          <li><strong>The Appeal:</strong> He argued that a sudden US withdrawal would result in a communist massacre in South Vietnam and destroy America's global credibility.</li>\r\n          <li><strong>Public & Congress Response:</strong> The speech was a massive success. Boosted by public letters, Congress passed a resolution supporting Nixon's Vietnam policies by a landslide **323-57** vote.</li>\r\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Realignment of the Silent Majority",
             "body": "Nixon's appeal to the 'Silent Majority' was part of the Republican 'Southern Strategy' developed by political strategists. By framing anti-war protesters and civil rights radicals as threats to law and order, Nixon successfully drew conservative Southern Democrats and northern blue-collar workers into the Republican coalition, transforming American electoral politics.",
@@ -8296,14 +8311,14 @@ Source E is highly useful for showing the lethal escalation of state suppression
           }
         },
         {
-          "title": "Step 2: The Hard Hat Riots & Conservative Backlash",
+          "title": "Step 2: The Hard Hat Riots & Class Backlash",
           "isSplit": true,
           "bodyHtml": `<div class="mastery-text-column">
           <div class="mastery-card-body card-content">
             <p>Pro-war support was strong among the traditional white working-class:</p>
             <ul>
-              <li><strong>The 'Hard Hats' (1970):</strong> Working-class supporters, famously known as the <strong>\u2018hard hats\u2019</strong> (due to construction workers wearing safety helmets), launched active protests in support of the war. During the Hard Hat Riots of May 1970 in New York City, they clashed with anti-war student demonstrators.</li>
-              <li><strong>Patriotic Backlash:</strong> Many working-class citizens resented middle-class student protesters who avoided the draft through college deferments.</li>
+              <li><strong>The 'Hard Hat Riots' (May 1970):</strong> In New York City, **200 construction workers** organized by the AFL-CIO attacked anti-war student demonstrators with tools and hard hats while police stood by. These **\u2018hard hats\u2019** later held massive rallies supporting the war.</li>
+              <li><strong>Patriotic Backlash:</strong> Many working-class citizens resented middle-class student protesters who avoided the draft through college deferments, leaving blue-collar youth to fight.</li>
               <li><strong>Law and Order:</strong> Conservative voters united behind Nixon's call for law and order, opposing radical social change and student rebellion.</li>
             </ul>
           </div>
@@ -8496,10 +8511,10 @@ Source E is highly useful for showing the working-class basis of this pro-war su
         {
           "title": "Step 1: Peace Negotiations & Paris Accords (1972\u201373)",
           "isSplit": false,
-          "bodyHtml": "<p>In January 1973, after years of deadlock, Henry Kissinger and Le Duc Tho signed the Paris Peace Accords. The road to this treaty was shaped by intense negotiations:</p>\n        <ul>\n          <li><strong>Reasons for Negotiations (1972\u201373):</strong> Nixon was desperate to end the war before the 1972 presidential election. His policy of <strong>detente</strong> (improving relations with the USSR and China) pressured North Vietnam by reducing their allies' support, while the massive US bombing of Hanoi in 1972 forced them to make concessions.</li>\n          <li><strong>The Terms of the Accords (1973):</strong> All US military forces were to withdraw from Vietnam. All prisoners of war (POWs) were to be released.</li>\n          <li><strong>The Compromise:</strong> In a key concession, North Vietnamese troops were permitted to remain in positions inside South Vietnam, leaving the South highly vulnerable to future attack.</li>\n          <li><strong>US Troop Exit:</strong> By March 1973, the last US combat troops left Vietnam, ending direct US military involvement.</li>\n        </ul>",
+          "bodyHtml": "<p>In January 1973, after years of diplomatic deadlock, US National Security Advisor <strong>Henry Kissinger</strong> and North Vietnamese diplomat <strong>Le Duc Tho</strong> signed the Paris Peace Accords. The treaty was shaped by intense military pressure and diplomatic strategy:</p>\n        <ul>\n          <li><strong>Reasons for Negotiations (1972\u201373):</strong> Nixon was eager to end direct US involvement before the 1972 presidential election. His policy of <strong>detente</strong> (improving relations with the USSR and China) pressured North Vietnam by reducing its allies' overt diplomatic backing. To break the final negotiation deadlock, Nixon ordered <strong>Operation Linebacker II</strong> (the 'Christmas Bombings' of December 1972), dropping over 20,000 tons of bombs on Hanoi and Haiphong.</li>\n          <li><strong>The Terms of the Accords (27 January 1973):</strong> Direct US military involvement ended. All US combat forces were to withdraw within 60 days. All prisoners of war (POWs) were to be released (Operation Homecoming returned 591 US POWs). A National Council of Reconciliation was proposed to oversee elections.</li>\n          <li><strong>The Critical Compromise:</strong> In a major concession that deeply alarmed South Vietnamese President Nguyen Van Thieu, approximately <strong>150,000 North Vietnamese (PAVN) troops</strong> were permitted to remain in their positions inside South Vietnam, leaving the South extremely vulnerable.</li>\n          <li><strong>US Troop Exit:</strong> By 29 March 1973, the last US combat troops left Vietnam, ending direct US military intervention.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The 'Decent Interval' Strategy",
-            "body": "Historians have revealed that Henry Kissinger and Richard Nixon pursued a 'decent interval' strategy in the peace negotiations. They privately recognized that South Vietnam's military could not survive without US air support, but sought a peace agreement that would delay the collapse of Saigon by a few years so that the eventual defeat would not be blamed directly on US foreign policy.",
+            "body": "Traditional historians argue that Henry Kissinger and Richard Nixon pursued a 'decent interval' strategy in the peace negotiations. They privately recognized that South Vietnam's military could not survive without US air support, but sought a peace agreement that would delay the collapse of Saigon by a few years so that the eventual defeat would not be blamed directly on US foreign policy or Nixon's reelection campaign.",
             "image": "assets/sources/kissinger-peace-talks.jpg",
             "imageAlt": "Scholarly Perspective: The 'Decent Interval' Strategy",
             "imageProvenance": "A photograph of National Security Advisor Henry Kissinger speaking with journalists in Paris, France, during negotiations for the Paris Peace Accords, January 1973.",
@@ -8514,10 +8529,26 @@ Source E is highly useful for showing the working-class basis of this pro-war su
         {
           "title": "Step 2: The Fall of Saigon & Costs of the War",
           "isSplit": true,
-          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>Once US forces withdrew, the peace agreements quickly collapsed:</p>\n            <ul>\n              <li><strong>ARVN Collapse:</strong> South Vietnamese forces collapsed under a swift North Vietnamese offensive in early 1975. Saigon fell on 30 April 1975, and Vietnam was reunited under communist rule.</li>\n              <li><strong>Economic Costs:</strong> The war cost the USA over $150 billion, leading to severe inflation and damaging the US economy for years.</li>\n              <li><strong>Human Costs:</strong> Over 58,000 US soldiers were killed, and more than 300,000 were wounded. For Vietnam, the human toll was devastating, with millions of civilian and military casualties.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="lesson-image-wrapper">\n            <img src="assets/sources/saigon-embassy-evacuation.jpg" alt="The evacuation of Saigon" class="lesson-source-img" />\n            <div class="lesson-image-caption">Helicopter evacuation of US personnel and refugees from a building roof in Saigon, 29 April 1975.</div>\n          </div>\n        </div>',
+          "bodyHtml": `<div class="mastery-text-column">
+          <div class="mastery-card-body card-content">
+            <p>Once US combat forces withdrew, the fragile peace quickly collapsed under legislative restrictions and communist offensives:</p>
+            <ul>
+              <li><strong>Congressional Restrictions (1973):</strong> In June 1973, the US Congress passed the <strong>Case-Church Amendment</strong>, which prohibited any further US military activity in Indochina after 15 August 1973, legally preventing Nixon or Ford from ordering air support. In November 1973, Congress overrode a presidential veto to pass the <strong>War Powers Act</strong>, forcing the president to notify Congress within 48 hours of troop deployment and limiting unauthorized actions to 60 days.</li>
+              <li><strong>Slashing Military Aid (1974):</strong> Congress cut military funding for South Vietnam from $1 billion in 1973 to $700 million in 1974. This triggered severe shortages of ammunition, fuel, and spare parts, shattering ARVN combat readiness and morale.</li>
+              <li><strong>The Fall of Saigon (1975):</strong> In early 1975, North Vietnamese General Van Tien Dung launched the Spring Offensive. President Thieu ordered a disastrous retreat from the Central Highlands, causing ARVN forces to disintegrate. On 29-30 April 1975, the US executed <strong>Operation Frequent Wind</strong>, a chaotic helicopter evacuation of 7,000 Americans and South Vietnamese allies. On <strong>30 April 1975</strong>, North Vietnamese tanks crashed through the gates of the Presidential Palace, and acting President Duong Van Minh surrendered.</li>
+              <li><strong>Human & Economic Costs:</strong> The war cost the USA over <strong>$167 billion</strong> ($1+ trillion in today's money), sparking severe inflation and domestic 'stagflation'. The human toll was immense: 58,220 US soldiers died, over 300,000 were wounded, and between 1.5 to 3 million Vietnamese civilians and combatants lost their lives.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mastery-media-column">
+          <div class="lesson-image-wrapper">
+            <img src="assets/sources/saigon-embassy-evacuation.jpg" alt="The evacuation of Saigon" class="lesson-source-img" />
+            <div class="lesson-image-caption">Helicopter evacuation of US personnel and refugees from a building roof in Saigon during Operation Frequent Wind, 29 April 1975.</div>
+          </div>
+        </div>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Economic consequences",
-            "body": "Historians point out that the massive spending on the Vietnam War, combined with President Johnson's refusal to raise taxes to pay for it, triggered the 'stagflation' (high inflation and slow growth) that crippled the American economy throughout the 1970s."
+            "body": "Economic historians emphasize that President Lyndon B. Johnson's refusal to raise taxes to pay for the Vietnam War\u2014fearing it would derail his domestic 'Great Society' social welfare spending (a policy of funding both 'guns and butter')\u2014sparked a massive federal deficit and severe inflation. This economic strain undermined the US economy throughout the 1970s and eroded political support for continuing the war."
           }
         }
       ],
@@ -8557,13 +8588,13 @@ Source E is highly useful for showing the working-class basis of this pro-war su
           },
           {
             "id": "s43_f3",
-            "title": "Outrage over the 'Hard Hat Riots' of May 1970.",
+            "title": "The rapid North Vietnamese Spring Offensive in early 1975.",
             "options": [
-              "Where construction workers attacked anti-war student demonstrators, showing the deep social divide between the working class and students.",
-              "Where students and construction workers marched together against Nixon."
+              "Which quickly overran demoralized ARVN positions in the Central Highlands and led to the final capture of Saigon on 30 April 1975.",
+              "Which was easily repelled by the South Vietnamese army without any foreign assistance."
             ],
             "correctIndex": 0,
-            "linkageText": "Where construction workers attacked anti-war student demonstrators, showing the deep social divide between the working class and students."
+            "linkageText": "Which quickly overran demoralized ARVN positions in the Central Highlands and led to the final capture of Saigon on 30 April 1975."
           }
         ]
       },
@@ -8577,16 +8608,16 @@ Source E is highly useful for showing the working-class basis of this pro-war su
           "answer": "Ho Chi Minh"
         },
         {
-          "question": "What phrase did President Nixon use to describe the moderate, patriotic Americans who supported the war?",
-          "answer": "Silent Majority"
+          "question": "Which Act of Congress, passed over Nixon's veto in November 1973, limited the President's ability to wage undeclared war?",
+          "answer": "War Powers Act"
         },
         {
-          "question": "In what city did the violent 'Hard Hat Riots' of May 1970 take place?",
-          "answer": "New York City"
+          "question": "What June 1973 congressional amendment banned all US military intervention in Indochina after August 15?",
+          "answer": "Case-Church Amendment"
         },
         {
-          "question": "What was the main political motivation for pro-war supporters in the USA?",
-          "answer": "Anti-communism"
+          "question": "What was the name of the US helicopter evacuation of Saigon on 29-30 April 1975?",
+          "answer": "Operation Frequent Wind"
         }
       ],
       "importanceAnalyser": null,
@@ -8695,24 +8726,42 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
       "headerIntro": "The failure of the USA to defeat communist forces in Vietnam was the result of interconnected military, political, and social factors. Militarily, the Vietcong's guerrilla tactics, local knowledge, and supplies from China and the USSR defeated US attrition strategies. Politically, the South Vietnamese government remained corrupt and unpopular, whereas the North Vietnamese exhibited absolute determination (the 'commitment bug'). Socially, the growing anti-war movement and draft resistance destroyed the domestic political support necessary to sustain a prolonged war, forcing US withdrawal.",
       "steps": [
         {
-          "title": "Step 1: Military, Tactical & Homefront Failures",
+          "title": "Step 1: Military & Tactical Factors (Communist Strengths vs. US Failures)",
           "isSplit": true,
-          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>US military strategies and homefront opposition fundamentally undermined the war effort:</p>\n            <ul>\n              <li><strong>Guerrilla Resilience & Russian/Chinese Support:</strong> The Vietcong and North Vietnamese forces were highly motivated and received massive economic and military aid from the <strong>Soviet Union (Russian support) and China</strong>, including advanced weaponry and radar. They also relied on effective Vietcong guerrilla tactics and the Ho Chi Minh Trail to keep supplies flowing.</li>\n              <li><strong>Weaknesses of US Armed Forces:</strong> The draft system led to young, inexperienced, and demotivated soldiers. Drug abuse, "fragging" (attacks on officers by soldiers), and low morale plagued the ranks.</li>\n              <li><strong>Failure of US Tactics:</strong> Search and destroy missions and heavy bombing alienated the local peasant population, driving them to support the Vietcong, while failing to stop the flow of supplies along the Ho Chi Minh Trail.</li>\n              <li><strong>Impact of Homefront Opposition:</strong> The anti-war movement, media coverage, and high human/economic costs destroyed political support for the war, forcing Nixon to seek withdrawal rather than military victory.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;">\n            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Context Focus: Why the US Lost</strong>\n            <p style="color: var(--text-muted); margin: 0;">\n              Ensure you can discuss both external factors (Vietcong resilience and Soviet/Chinese aid) and internal factors (morale, military weaknesses, and homefront protests).\n            </p>\n          </div>\n        </div>',
+          "bodyHtml": `<div class="mastery-text-column">
+          <div class="mastery-card-body card-content">
+            <p>US military strategies and heavy conventional tactics were defeated by asymmetric communist strengths and structural weaknesses within the US forces:</p>
+            <ul>
+              <li><strong>Communist Guerrilla Resilience & Supply Lines:</strong> The Vietcong and North Vietnamese forces (PAVN) neutralized US conventional advantages using <strong>guerrilla tactics</strong> (punji stakes, booby traps, hit-and-run ambushes) and local terrain knowledge. They built the extensive <strong>Cu Chi tunnel network</strong> (250km) for sanctuary and maintained the <strong>Ho Chi Minh Trail</strong> (over 16,000km of supply routes running through Laos and Cambodia, rebuilt constantly by 50,000 volunteers).</li>
+              <li><strong>Chinese and Soviet Support:</strong> North Vietnam received approximately <strong>$3 billion in military and economic aid</strong>. The **Soviet Union** provided sophisticated surface-to-air missiles (SAMs), radar, and MiG fighter jets to combat US air power. **China** supplied infantry weapons, ammunition, food, and over 300,000 support and engineering troops to maintain and repair logistical networks.</li>
+              <li><strong>US Tactical Failures:</strong> General Westmoreland's **strategy of attrition** (the 'body count') failed because the communists fought a total war of liberation and replaced losses faster than the US could inflict them. Heavy bombing (Operation Rolling Thunder) failed to disrupt the low-industrial North. Massive chemical defoliation, dropping <strong>20 million gallons of Agent Orange</strong> and Napalm, destroyed crops and villages, alienating the rural peasant population and pushing them to support the Vietcong.</li>
+              <li><strong>Weaknesses of US Armed Forces:</strong> The US draft system relied on young (average age 19), demotivated conscripts who served a **one-year tour of duty**. This prevented experience build-up and destroyed unit cohesion. By 1970, combat morale collapsed, leading to widespread drug abuse (an estimated <strong>20% of US troops on heroin</strong>) and **'fragging'** (soldiers attacking their own officers, with over 800 documented cases).</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mastery-media-column">
+          <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;">
+            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Context Focus: Why the US Lost</strong>
+            <p style="color: var(--text-muted); margin: 0;">
+              Ensure you can discuss both external factors (Vietcong resilience and Soviet/Chinese aid) and internal factors (morale, military weaknesses, and homefront protests).
+            </p>
+          </div>
+        </div>`,
           "scholarlyDepth": {
-            "title": "Scholarly Perspective: Why the US Failed",
-            "body": "Historians emphasize that the US failed because it treated a political nationalist struggle as a purely military problem. Firepower could not defeat the political motivation of the North, which was backed by the strategic resources of Moscow and Beijing."
+            "title": "Scholarly Perspective: Tactical and Strategic Debates",
+            "body": "Traditional historians argue that the US failure was inevitable because they fought a nationalist movement that was willing to sacrifice millions of lives to secure independence. In contrast, revisionist historians argue that the war was winnable, but US military command erred by using a conventional strategy of attrition instead of a dedicated counter-insurgency plan."
           }
         },
         {
-          "title": "Step 2: Homefront & Political Failures",
+          "title": "Step 2: Political & Home Front Factors (Saigon Weakness vs. US Domestic Collapse)",
           "isSplit": true,
           "bodyHtml": `<div class="mastery-text-column">\r
           <div class="mastery-card-body card-content">\r
-            <p>The US government ultimately lost the political will to continue fighting:</p>\r
+            <p>The US war effort was critically undermined by the political instability of its ally and the collapse of political consensus on the home front:</p>\r
             <ul>\r
-              <li><strong>Loss of Public Support:</strong> The growing anti-war movement, media coverage, and high casualty rates destroyed the domestic consensus for the war.</li>\r
-              <li><strong>ARVN Weakness:</strong> The South Vietnamese government was widely seen as corrupt and illegitimate, and its army (ARVN) was never able to stand alone.</li>\r
-              <li><strong>Congress Restrictions:</strong> Democratic pressure led Congress to restrict military funding and outlaw further bombing, tying the hands of US commanders.</li>\r
+              <li><strong>South Vietnamese Political Weakness:</strong> The Saigon government (under Ngo Dinh Diem, and later Nguyen Van Thieu) lacked popular legitimacy due to rampant corruption, suppression of political rivals, and religious bias against the Buddhist majority. The South Vietnamese army (<strong>ARVN</strong>) suffered from poor leadership, high desertion rates (exceeding 100,000 per year), and a total reliance on US funding and air cover.</li>\r
+              <li><strong>US Domestic Home Front & Media Collapse:</strong> Vietnam was the first 'television war.' Uncensored media coverage of the **Tet Offensive (1968)** and the **My Lai Massacre** created a massive **credibility gap** between government claims of success and the reality of a stalemate. The anti-war movement, driven by student protests, draft resistance, and groups like the **Vietnam Veterans Against the War (VVAW)**, destroyed the political consensus.</li>\r
+              <li><strong>Legislative & Economic Restrictions:</strong> The massive cost of the war ($167 billion) forced Lyndon B. Johnson to fund both 'guns and butter' (the war and his Great Society welfare programs) without raising taxes, triggering severe inflation and deficits that weakened the US economy. Congress eventually capitalized on public outrage to pass the **Case-Church Amendment** and slash military aid to Saigon, legally and financially disabling the US command.</li>\r
             </ul>\r
           </div>\r
         </div>\r
@@ -8725,8 +8774,8 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
           </div>\r
         </div>`,
           "scholarlyDepth": {
-            "title": "Scholarly Perspective: The Economic Strain of 'Guns and Butter'",
-            "body": "President Johnson refused to raise taxes to pay for the Vietnam War, fearing it would kill his domestic welfare programs (the 'Great Society'). This policy of funding 'guns and butter' simultaneously caused severe economic strain, leading to high inflation and a budget deficit that weakened the US economy throughout the 1970s and eroded political support for the war."
+            "title": "Scholarly Perspective: The Political Collapse of the War",
+            "body": "The political collapse of the war is analyzed differently by historians. Some scholars argue that public opposition and media coverage were natural reactions to an immoral and unwinnable war. Other revisionist historians argue that biased media reporting (particularly during the Tet Offensive) and congressional abdication of support undermined the military and South Vietnam."
           }
         }
       ],
@@ -8778,63 +8827,66 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
       },
       "knowledgeCheck": [
         {
-          "question": "Which two superpowers supplied military aid to North Vietnam?",
+          "question": "Which two superpowers provided $3 billion in military hardware and manpower to support North Vietnam?",
           "answer": "Soviet Union and China"
         },
         {
-          "question": "What Vietcong tactic was characterized by punji stakes and hit-and-run ambushes?",
-          "answer": "Guerrilla warfare"
+          "question": "What was the average age of a conscripted US soldier under the draft system?",
+          "answer": "19"
         },
         {
-          "question": "Saigon fell in which year, marking the complete victory of North Vietnam?",
-          "answer": "1975"
+          "question": "What term describes the low-morale action where US soldiers attacked their own officers?",
+          "answer": "Fragging"
         },
         {
-          "question": "What was Saigon renamed after the war?",
-          "answer": "Ho Chi Minh City"
+          "question": "What was the length of the Vietcong's complex underground Cu Chi tunnel network?",
+          "answer": "250 kilometers"
         },
         {
-          "question": "What was the name of the military alliance that South Vietnam and the US were part of?",
-          "answer": "SEATO"
+          "question": "What was the name of the 16,000-kilometer supply network running through Laos and Cambodia?",
+          "answer": "Ho Chi Minh Trail"
         }
       ],
       "importanceAnalyser": null,
-      "questionVault": [
-        {
-          "question": "This suite is based on the following interpretations regarding the reasons for US failure in Vietnam.",
-          "sourceB": 'From a speech by US General William Westmoreland, 1976.\n\n"On the battlefield, our soldiers were outstanding. We won every major battle. The defeat was not military. The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause."',
-          "sourceC": `From a North Vietnamese volunteer worker on the Ho Chi Minh Trail, 1974.
-
-"They bombed us day and night, but we rebuilt the road immediately. We were fighting for our country's independence. We were willing to die for our land. The Americans were fighting for a government in Saigon that nobody respected. Firepower cannot defeat national spirit."`,
-          "interpretation1": `From 'A Better War' by historian Lewis Sorley, published in 1999.
-
-"The US military successfully adapted to guerrilla warfare and had secured South Vietnam's rural areas by 1971. The ultimate failure was political: the US Congress cut military funding and forbade air support, leaving ARVN defenseless against a massive NVA conventional invasion."`,
-          "interpretation2": `From 'Vietnam: A History' by historian Stanley Karnow, published in 1983.
-
-"The US failure was inevitable because they were fighting a nationalist movement that was willing to accept any human cost to win. General Westmoreland's strategy of attrition was a failure because the communists replaced their losses faster than the US could kill them, and the corrupt Saigon regime never had the loyalty of the people."`,
-          "answer": "<strong>Model Answer Blueprint (Q3b-d):</strong>\n\n<strong>Difference (Q3b):</strong> Interpretation 1 argues that the US failure was political, specifically that the military had won the rural areas but Congress abandoned South Vietnam by cutting funding. In contrast, Interpretation 2 argues that US defeat was inevitable due to the resilient nationalist spirit of the communists and the corruption of the Saigon government.\n\n<strong>Reason (Q3c):</strong>\n- <em>Option 1 (Focus on different sources):</em> The historians gave weight to different sources. Interpretation 1 is supported by Source B, where US General Westmoreland blames political restrictions and media defeatism for the defeat. Interpretation 2 is supported by Source C, where a North Vietnamese volunteer details the unbreakable nationalist commitment and resolve to rebuild the Ho Chi Minh Trail.\n- <em>Option 2 (Focus on different aspects):</em> The historians chose to focus on different aspects of the US failure. Interpretation 1 focuses on the domestic political decisions and legislative restrictions in the US (such as Congress cutting funding). Interpretation 2 focuses on the military strategies and nationalist determination of the Vietnamese communists on the battlefield.\n\n<strong>Evaluation (Q3d):</strong> I agree with Interpretation 2 to a high extent. While Congress cutting funds in 1974 was the final political trigger (Interpretation 1), the underlying military strategy of attrition was flawed from the beginning. As Source C shows, the North Vietnamese and Vietcong were fighting a total nationalist war of liberation and could replace their casualties indefinitely, whereas the US homefront was only willing to tolerate a limited war, making US defeat structurally inevitable."
-        }
-      ],
+      "questionVault": [],
       "summaryCorrection": {
         "text": "The US failed to win in Vietnam due to several factors. The US military faced low morale, drug abuse, and racial tensions. Additionally, US search-and-destroy tactics and chemical defoliants alienated civilians. Traditionalist historians blame the failure on [[communist superiority -> US military and political errors]]. In contrast, revisionist historians argue that the defeat was inevitable because of the [[weakness -> unbreakable nationalist motivation]] of the Vietnamese communists, who were fighting a war of liberation. They could replace their casualties indefinitely, whereas the US public was only willing to tolerate a [[total -> limited]] war. This interpretation suggests that even if the US had used different tactics, it could never have defeated a population willing to sacrifice millions to end [[communist -> foreign]] control."
       },
-      "howUsefulAnalyser": {
-        "question": "How useful are Sources D and E for an enquiry into the military and political reasons for the US failure in Vietnam? (8 marks)",
-        "sourceD": {
-          "provenance": "From a photograph showing US soldiers walking through a swampy jungle patrol in Vietnam, 1968.",
-          "content": "[A photograph showing several soldiers wading through thick mud and reeds in a swamp. They are looking around warily, showing signs of exhaustion and carrying heavy equipment.]",
-          "image": "assets/sources/us-troops-bogged-down.jpg",
-          "caption": "US troops navigating difficult swampy terrain during a combat patrol."
+      "paper3Suite": {
+        "title": "Exam Practice: Paper 3 Section B (Unified Source & Interpretation Set)",
+        "enquiry": "the reasons for US failure in the Vietnam War",
+        "sourceB": {
+          "provenance": "From a speech by US General William Westmoreland, 1976.",
+          "content": '"On the battlefield, our soldiers were outstanding. We won every major battle. The defeat was not military. The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause."'
         },
-        "sourceE": {
-          "provenance": "From a photograph showing members of the Vietnam Veterans Against the War (VVAW) protesting in Washington D.C., 1971.",
-          "content": "[A photograph showing disabled and combat veterans in uniform throwing their military medals and ribbons over a wire fence in front of the US Capitol building in protest.]",
-          "image": "assets/sources/vvaw-veterans-protest.jpg",
-          "caption": "Vietnam veterans protesting against the war by throwing away their combat medals."
+        "sourceC": {
+          "provenance": "From a North Vietnamese volunteer worker on the Ho Chi Minh Trail, 1974.",
+          "content": `"They bombed us day and night, but we rebuilt the road immediately. We were fighting for our country's independence. We were willing to die for our land. The Americans were fighting for a government in Saigon that nobody respected. Firepower cannot defeat national spirit."`
         },
-        "modelAnswer": `Source D is highly useful for showing the tactical and military challenges that caused US failure. The photograph shows several soldiers "wading through thick mud and reeds in a swamp" in Vietnam. This content is highly useful because it is supported by my knowledge that [[US conventional advantages in heavy armor and firepower were neutralized by the difficult swamp and jungle terrain, which favored Vietcong guerrilla warfare and ambush tactics]], which confirms the environmental difficulties that bogged down US infantry. {{The provenance of 1968 makes the source highly useful because it visually represents the physical and tactical quagmire that US combat patrols faced. However, it is less useful because it only shows the tactical environment, failing to represent the strategic failures of the search-and-destroy policy or the political instability in Saigon.}}
-
-Source E is highly useful for showing the political and moral collapse of the war effort at home. The photograph shows "veterans... throwing their military medals and ribbons over a wire fence" in front of the Capitol. This content's utility is supported by my knowledge that [[the Vietnam Veterans Against the War (VVAW) protests of 1971, which included veterans testifying about war crimes, severely damaged the government's moral credibility]], which confirms that even those who fought had turned against the conflict, destroying its domestic legitimacy. {{The provenance of 1971 in Washington D.C. makes the source extremely useful because it shows the deep moral and political disillusionment of the soldiers who fought. However, it is less useful because it represents the views of highly politicized, activist veterans, rather than the silent majority of returning soldiers who did not join protests.}}`
+        "interpretation1": {
+          "provenance": "From 'A Better War' by historian Lewis Sorley, published in 1999.",
+          "content": `"The US military successfully adapted to guerrilla warfare and had secured South Vietnam's rural areas by 1971. The ultimate failure was political: the US Congress cut military funding and forbade air support, leaving ARVN defenseless against a massive NVA conventional invasion."`
+        },
+        "interpretation2": {
+          "provenance": "From 'Vietnam: A History' by historian Stanley Karnow, published in 1983.",
+          "content": `"The US failure was inevitable because they were fighting a nationalist movement that was willing to accept any human cost to win. General Westmoreland's strategy of attrition was a failure because the communists replaced their losses faster than the US could kill them, and the corrupt Saigon regime never had the loyalty of the people."`
+        },
+        "questions": {
+          "q3a": "How useful are Sources B and C for an enquiry into the reasons for US failure in the Vietnam War? (8 marks)",
+          "q3b": "Study Interpretations 1 and 2. They give different views about the reasons for US failure in Vietnam. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
+          "q3d": "How far do you agree with Interpretation 2 about the reasons for US failure in the Vietnam War? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+        },
+        "sentenceStarters": [
+          { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the reasons for US failure in Vietnam because it shows..." },
+          { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
+          { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into the reasons for US failure in Vietnam because..." },
+          { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
+          { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
+          { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
+          { "label": "Q3d: I agree with Interpretation 2 to a...", "value": "I agree with Interpretation 2 to a [high/moderate] extent because while US political divisions were important, the communist commitment and..." }
+        ],
+        "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the perspective of the US military command regarding the reasons for US failure. The content claims that US soldiers were outstanding and won every battle, blaming the defeat entirely on political target restrictions and a media that turned the public against the war. This is useful because it is supported by my knowledge that US command faced severe restrictions (such as not invading North Vietnam directly to avoid Chinese intervention) and that media coverage of the Tet Offensive created a massive 'credibility gap' at home. The provenance, a speech by General Westmoreland in 1976 (the commander of US forces in Vietnam), makes it an authentic record of how top US commanders rationalized the defeat. However, it is limited because Westmoreland was personally responsible for the controversial strategy of attrition, meaning the source is highly self-defensive and seeks to deflect personal blame.\n\nSource C is highly useful for showing the motivations and tactics of the communist forces. The content emphasizes North Vietnamese determination to rebuild bombed supply routes, their willing commitment to die for independence, and their view that the Saigon regime lacked legitimacy. This utility is supported by my knowledge that the communists fought a total war of national liberation, using over 50,000 volunteers to keep the Ho Chi Minh Trail open despite constant US bombing. The provenance, being a North Vietnamese volunteer worker in 1974, provides an invaluable contemporary perspective on the high morale and nationalist commitment of the communist forces. However, it is limited because it is a highly patriotic statement that may downplay the severe physical hardships, fear, and high casualties suffered by trail workers.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the US failure in Vietnam was primarily political and occurred late in the conflict, claiming the military had actually secured the countryside by 1971 but were abandoned when Congress cut military funding and air support to South Vietnam. In contrast, Interpretation 2 argues that US defeat was militarily inevitable from the start because the US was fighting a highly resilient nationalist movement willing to accept any human cost, whose losses were replaced faster than the US could inflict them, combined with an unpopular and corrupt Saigon regime.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the US failure. Interpretation 1 focuses on the domestic legislative and political decisions in Washington (such as Congress cutting military funds), whereas Interpretation 2 focuses on the structural military weaknesses of the US strategy of attrition and the high nationalist resolve of the North Vietnamese. Additionally, they gave weight to different primary sources: Interpretation 1 is supported by General Westmoreland's claims of battlefield success in Source B, while Interpretation 2 is supported by the volunteer's testimony of unbreakable resolve in Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 2 to a high extent. While political decisions in Washington and funding cuts (Interpretation 1) certainly hastened the final collapse of South Vietnam in 1975, the fundamental reason for US failure was the unwinnable nature of the conflict itself. As Source C shows, the North Vietnamese and Vietcong possessed an unbreakable nationalist commitment to secure their country's independence, which allowed them to withstand relentless US bombing and rebuild crucial networks like the Ho Chi Minh Trail. General Westmoreland's conventional strategy of attrition (highlighted in Source B) was structurally flawed because the communists replaced their casualties faster than the US could inflict them. Furthermore, the corrupt and unstable Saigon government (ARVN) never won the loyalty of the rural peasantry. Therefore, US military tactics could not overcome these political and social realities, making defeat inevitable."
       },
       "deepThinkingQuestions": [
         {
@@ -11639,8 +11691,34 @@ Source E is highly useful for showing the political and moral collapse of the wa
     html += `
     <div class="exam-sheet-section" style="margin-top: 32px;">
       <h4>Section D: Interpretations Suite (Q3b-d - 24 marks total)</h4>
+      
+      ${paper.sourceB && paper.sourceC ? `
+        <strong style="display: block; margin-top: 20px; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Sources B & C:</strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
+            ${paper.sourceB.image ? `
+              <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" />
+            ` : ""}
+            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+          </div>
+          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
+            ${paper.sourceC.image ? `
+              <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" />
+            ` : ""}
+            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+          </div>
+        </div>
+      ` : ""}
+
       ${paper.interpretation1 && paper.interpretation2 ? `
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; margin-bottom: 24px;">
+        <strong style="display: block; margin-top: 20px; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Interpretations 1 & 2:</strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
           <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
             <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
             <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
@@ -11655,6 +11733,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
           </div>
         </div>
       ` : ""}
+
       <div style="display: flex; flex-direction: column; gap: 24px;">
         ${renderPastQuestionMarkup(paper.id + "_q3b", paper.q3b.question, paper.q3b.clue, paper.q3b.model, 4)}
         ${renderPastQuestionMarkup(paper.id + "_q3c", paper.q3c.question, paper.q3c.clue, paper.q3c.model, 4)}
@@ -11681,6 +11760,9 @@ Source E is highly useful for showing the political and moral collapse of the wa
       else if (qId === paper.id + "_q3d") qObj = paper.q3d;
       const textarea = document.getElementById(`past-textarea-${qId}`);
       if (textarea && qObj) {
+        if (qId.endsWith("_q1") && !session.answers[paper.id][qId]) {
+          session.answers[paper.id][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
+        }
         textarea.value = session.answers[paper.id][qId] || "";
         updateDraftFeedback(qId, textarea.value, qObj);
         textarea.addEventListener("input", (e) => {
@@ -11954,14 +12036,11 @@ ${cleanBrackets(paper.q3d.model)}
           "This is shown when Interpretation 2 states..."
         ];
       } else if (qId.endsWith("_q3c")) {
-        formula = "<strong>Q3c Reason for Difference (4 Marks) Formula:</strong><br>1. Explain the reason (weighed sources differently OR have different focuses).<br>2. Link Interpretation 1 to Source B (or Focus 1) with evidence.<br>3. Link Interpretation 2 to Source C (or Focus 2) with evidence.";
+        formula = "<strong>Q3c Reason for Difference (4 Marks) Formula (Crucial for Full Marks):</strong><br>1. State that the interpretations differ because they used different sources (Interpretation 1 uses Source B, whereas Interpretation 2 uses Source C).<br>2. Quote Interpretation 1 AND Source B to show how they support each other.<br>3. Quote Interpretation 2 AND Source C to show how they support each other.<br><em>*Note: You MUST quote both interpretations and both sources to get full marks!</em>";
         starters = [
-          "The interpretations differ because the historians have given weight to different sources...",
-          "Interpretation 1 is supported by Source B, which details...",
-          "On the other hand, Interpretation 2 is supported by Source C, which details...",
-          "Alternatively, the interpretations differ because they focus on different aspects...",
-          "Interpretation 1 focuses primarily on...",
-          "Whereas Interpretation 2 focuses primarily on..."
+          "The interpretations differ because the historians have used different sources: Interpretation 1 has used Source B, whereas Interpretation 2 has used Source C.",
+          "Interpretation 1 argues that '[quote Interpretation 1]', which is supported by Source B stating '[quote Source B]'.",
+          "In contrast, Interpretation 2 argues that '[quote Interpretation 2]', which is supported by Source C stating '[quote Source C]'."
         ];
       } else if (qId.endsWith("_q3d")) {
         formula = "<strong>Q3d Evaluation Essay (16+4 Marks) Formula:</strong><br>1. Support Interpretation 2 using your own knowledge (PEEL paragraph).<br>2. Support Interpretation 1 using your own knowledge (PEEL paragraph).<br>3. Conclude with a clear judgment explaining which interpretation is more convincing.";
@@ -12120,6 +12199,314 @@ ${cleanBrackets(paper.q3d.model)}
     }
   }
 
+  // src/videos_data.js
+  var VIDEOS_DATA = {
+    "subtopic_1_1": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Brown v Board of Education",
+        "youtube_url": "https://www.youtube.com/watch?v=dKyYlye0c6Q",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "School Segregation and Brown v Board: Crash Course Black American History #33",
+        "youtube_url": "https://www.youtube.com/watch?v=NBlqcAEv4nk",
+        "duration": "11:30",
+        "production_source": "Crash Course"
+      },
+      "questions": [
+        "Which constitutional amendment and clause did the Supreme Court base its ruling on in this case?",
+        "What previous Supreme Court decision established the 'separate but equal' doctrine that Brown overturned?",
+        "How did Southern members of Congress respond to the Brown decision (what document did they sign)?"
+      ]
+    },
+    "subtopic_1_2": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Little Rock Nine",
+        "youtube_url": "https://www.youtube.com/watch?v=mI09vVUs0FQ",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "Little Rock Nine integration at 60",
+        "youtube_url": "https://www.youtube.com/watch?v=ym8rdtq-KBE",
+        "duration": "05:35",
+        "production_source": "CBS News"
+      },
+      "questions": [
+        "Why did the Governor of Arkansas deploy the National Guard to Central High School in 1957?",
+        "Which military division did President Eisenhower send to protect the Little Rock Nine?",
+        "What did Governor Faubus do to the schools in Little Rock the following year to stop integration?"
+      ]
+    },
+    "subtopic_1_3": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Montgomery Bus Boycott",
+        "youtube_url": "https://www.youtube.com/watch?v=AiLWOcVNDEQ",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "The Montgomery Bus Boycott: Crash Course Black American History #35",
+        "youtube_url": "https://www.youtube.com/watch?v=ylOpide9dus",
+        "duration": "11:20",
+        "production_source": "Crash Course"
+      },
+      "questions": [
+        "Whose arrest in December 1955 sparked the Montgomery Bus Boycott?",
+        "What was the name of the organization formed to lead the boycott, and who was chosen as its leader?",
+        "Which Supreme Court case declared segregation on Montgomery buses unconstitutional?"
+      ]
+    },
+    "subtopic_1_4": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Early Civil Rights Steps",
+        "youtube_url": "https://www.youtube.com/watch?v=qML-X9i7_3w",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "Early Steps in the CIVIL RIGHTS Movement (1940s-50s)",
+        "youtube_url": "https://www.youtube.com/watch?v=0sUpGqKayWY",
+        "duration": "05:40",
+        "production_source": "Heimler's History"
+      },
+      "questions": [
+        "What does the term 'Massive Resistance' refer to in the context of school integration?",
+        "What was the Southern Manifesto, and who signed it?",
+        "How did the White Citizens' Councils oppose the civil rights movement economically and socially?"
+      ]
+    },
+    "subtopic_2_1": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Freedom Rides & Sit-Ins",
+        "youtube_url": "https://www.youtube.com/watch?v=8ufqX4wmvgc",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "Sound Smart: The Freedom Rides",
+        "youtube_url": "https://www.youtube.com/watch?v=dJqA6PQRh3U",
+        "duration": "02:30",
+        "production_source": "HISTORY Channel"
+      },
+      "questions": [
+        "What was the primary goal of the Freedom Rides in 1961?",
+        "Which two main civil rights organizations coordinated and participated in the Freedom Rides?",
+        "How did the federal government react to the violence faced by the Freedom Riders?"
+      ]
+    },
+    "subtopic_2_2": {
+      "primary": {
+        "video_title": "2-minute AI Overview: March on Washington & Civil Rights Act",
+        "youtube_url": "https://www.youtube.com/watch?v=xW9k63w-TRM",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "Bet You Didn't Know: March on Washington",
+        "youtube_url": "https://www.youtube.com/watch?v=qjL1E3R9dF4",
+        "duration": "03:00",
+        "production_source": "HISTORY Channel"
+      },
+      "questions": [
+        "In which year did the March on Washington for Jobs and Freedom take place?",
+        "What famous speech did Martin Luther King Jr. deliver during this march?",
+        "What major federal piece of legislation was passed the year after the march?"
+      ]
+    },
+    "subtopic_2_3": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Malcolm X & Black Power",
+        "youtube_url": "https://www.youtube.com/watch?v=fX-zU1nl-zU",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "The Life of Malcolm X",
+        "youtube_url": "https://www.youtube.com/watch?v=tFh4OloaJMo",
+        "duration": "03:46",
+        "production_source": "Biography"
+      },
+      "questions": [
+        "What organization did Malcolm X join while in prison, which he later became the spokesperson for?",
+        "How did Malcolm X's philosophy on achieving civil rights differ from Martin Luther King Jr.'s non-violent approach?",
+        "What major change occurred in Malcolm X's beliefs after his pilgrimage to Mecca in 1964?"
+      ]
+    },
+    "subtopic_2_4": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Watts Riots & Race Riots",
+        "youtube_url": "https://www.youtube.com/watch?v=Fq8hWqOlF-A",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "50 Years On: A Look Back at the Watts Riots",
+        "youtube_url": "https://www.youtube.com/watch?v=lJrWmKsxEos",
+        "duration": "06:53",
+        "production_source": "CBS News"
+      },
+      "questions": [
+        "In which city and year did the Watts riots take place?",
+        "What immediate incident triggered the outbreak of the riots?",
+        "What were the deeper, systemic causes of the riots highlighted in the video?"
+      ]
+    },
+    "subtopic_3_1": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Domino Theory & Early US Involvement",
+        "youtube_url": "https://www.youtube.com/watch?v=fVRaO3QW6fU",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "Drawn History: What is Domino Theory?",
+        "youtube_url": "https://www.youtube.com/watch?v=44cnzhzcYjs",
+        "duration": "03:15",
+        "production_source": "HISTORY Channel"
+      },
+      "questions": [
+        "What is the main idea behind the 'Domino Theory' developed during the Cold War?",
+        "Which U.S. President first publicly outlined the Domino Theory in relation to Southeast Asia?",
+        "How did this theory influence early U.S. foreign policy and intervention in Vietnam?"
+      ]
+    },
+    "subtopic_3_2": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Gulf of Tonkin & Escalation",
+        "youtube_url": "https://www.youtube.com/watch?v=lYzopF_Tg7s",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "The Gulf of Tonkin Incident (1964)",
+        "youtube_url": "https://www.youtube.com/watch?v=crALHjTiXbk",
+        "duration": "03:15",
+        "production_source": "Simple History"
+      },
+      "questions": [
+        "What incident occurred in August 1964 involving the USS Maddox in the Gulf of Tonkin?",
+        "What authority did the Gulf of Tonkin Resolution give to President Lyndon B. Johnson?",
+        "Why do some historians debate the accuracy of the reports regarding the second attack?"
+      ]
+    },
+    "subtopic_3_3": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Ho Chi Minh Trail & Guerrilla Tactics",
+        "youtube_url": "https://www.youtube.com/watch?v=L21k5Bh_hHo",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "The Infamous and Ingenious Ho Chi Minh Trail",
+        "youtube_url": "https://www.youtube.com/watch?v=poE_nNW9-yk",
+        "duration": "03:55",
+        "production_source": "TED-Ed"
+      },
+      "questions": [
+        "What was the primary purpose of the Ho Chi Minh Trail during the Vietnam War?",
+        "Through which neighboring countries of Vietnam did the trail run?",
+        "Why did the U.S. military find it so difficult to destroy or disable the trail?"
+      ]
+    },
+    "subtopic_3_4": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Vietnamization & Nixon Doctrine",
+        "youtube_url": "https://www.youtube.com/watch?v=3zhZ3OVyBYY",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "Address to the Nation on Vietnam - April 26, 1972",
+        "youtube_url": "https://www.youtube.com/watch?v=jnbhRdmK6ek",
+        "duration": "04:50",
+        "production_source": "Richard Nixon Foundation"
+      },
+      "questions": [
+        "What is the meaning of President Nixon's policy of 'Vietnamization'?",
+        "How did Nixon plan to change the role of the South Vietnamese army (ARVN) while withdrawing U.S. troops?",
+        "What diplomatic and military actions did Nixon combine with troop withdrawals to pressure North Vietnam?"
+      ]
+    },
+    "subtopic_4_1": {
+      "primary": {
+        "video_title": "2-minute AI Overview: The Tet Offensive",
+        "youtube_url": "https://www.youtube.com/watch?v=KXXJLaGrHU8",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "How The Tet Offensive Changed The Vietnam War",
+        "youtube_url": "https://www.youtube.com/watch?v=BPgWqgpgVRc",
+        "duration": "04:02",
+        "production_source": "HISTORY Channel"
+      },
+      "questions": [
+        "What was the Tet Offensive, and when did it take place?",
+        "Why did the Tet Offensive shock the American public despite being a military defeat for the communists?",
+        "What is a 'credibility gap,' and how did the Tet Offensive widen it for the U.S. government?"
+      ]
+    },
+    "subtopic_4_2": {
+      "primary": {
+        "video_title": "2-minute AI Overview: My Lai, Silent Majority & Anti-War Movement",
+        "youtube_url": "https://www.youtube.com/watch?v=iiNc3nsIR2Y",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "President Richard Nixon's 'Silent Majority' Speech",
+        "youtube_url": "https://www.youtube.com/watch?v=TpCWHQ30Do8",
+        "duration": "03:45",
+        "production_source": "Richard Nixon Foundation"
+      },
+      "questions": [
+        "Who did President Nixon refer to as the 'Silent Majority' in his 1969 speech?",
+        "How did Nixon contrast the Silent Majority with the active anti-war protestors?",
+        "What did Nixon argue would happen if the U.S. immediately withdrew all forces from Vietnam?"
+      ]
+    },
+    "subtopic_4_3": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Peace Negotiations & Fall of Saigon",
+        "youtube_url": "https://www.youtube.com/watch?v=jNAilp37isA",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "Witnessing History: The Fall of Saigon: 50 Years On",
+        "youtube_url": "https://www.youtube.com/watch?v=Y0PaYMWsENs&t=188s",
+        "duration": "18:34",
+        "production_source": "ITV News"
+      },
+      "questions": [
+        "Which British news network was on the ground reporting the evacuation and fall of Saigon in April 1975?",
+        "What actions did the U.S. take to evacuate people from Saigon as North Vietnamese forces advanced?",
+        "What did the fall of Saigon mark in terms of the political unification of Vietnam?"
+      ]
+    },
+    "subtopic_4_4": {
+      "primary": {
+        "video_title": "2-minute AI Overview: Why the US Failed in Vietnam",
+        "youtube_url": "https://www.youtube.com/watch?v=ogoIQSjAFcc",
+        "duration": "02:00",
+        "production_source": "AI Revision Guide"
+      },
+      "secondary": {
+        "video_title": "How did the U.S. Fail in Vietnam?",
+        "youtube_url": "https://www.youtube.com/watch?v=zAq6MrYgLr0",
+        "duration": "05:10",
+        "production_source": "The Armchair Historian"
+      },
+      "questions": [
+        "What military strategies used by the U.S. (such as body counts and attrition) proved ineffective against the Vietcong?",
+        "How did domestic political opposition and the anti-war movement limit the U.S. military's options?",
+        "What role did the unpopularity and instability of the South Vietnamese government play in the U.S. failure?"
+      ]
+    }
+  };
+
   // src/views.js
   var GOOGLE_SHEET_WEBAPP_URL = "";
   function renderSidebarNav() {
@@ -12233,6 +12620,11 @@ ${cleanBrackets(paper.q3d.model)}
     QUIZ_DATA.forEach((topic) => {
       const card = document.createElement("div");
       card.className = "topic-list-card";
+      card.style.background = "rgba(255, 255, 255, 0.02)";
+      card.style.border = "1px solid var(--border-glass)";
+      card.style.borderRadius = "var(--border-radius-md)";
+      card.style.padding = "20px";
+      card.style.boxShadow = "var(--shadow-sm)";
       const topicQuestions = state.allQuestions.filter((q) => q.topicId === topic.id);
       const mastered = topicQuestions.filter((q) => state.mastery[q.id]);
       const pct = topicQuestions.length > 0 ? Math.round(mastered.length / topicQuestions.length * 100) : 0;
@@ -12241,12 +12633,27 @@ ${cleanBrackets(paper.q3d.model)}
         const subQs = state.allQuestions.filter((q) => q.subtopicId === sub.id);
         const subMastered = subQs.filter((q) => state.mastery[q.id]).length;
         const subPct = subQs.length > 0 ? Math.round(subMastered / subQs.length * 100) : 0;
+        let subInquiryText = "";
+        const lesson = LESSONS_DATA[sub.id];
+        if (lesson && lesson.headerTitle) {
+          const match = lesson.headerTitle.match(/KT\s+(\d+\.\d+)\s+-\s+GCSE\s+CORE\s+MASTERY:\s+(.*)/i);
+          if (match) {
+            subInquiryText = `KT ${match[1]}. ${match[2]}`;
+          } else {
+            subInquiryText = lesson.headerTitle.replace(/^.*GCSE CORE MASTERY:\s*/i, "");
+          }
+        }
         subtopicsHTML += `
         <div class="dashboard-subtopic-row" data-subtopic-id="${sub.id}">
-          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 500; align-items: center; margin-bottom: 2px;">
-            <span style="color: var(--text-main);">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
-            <span style="color: var(--primary); font-weight: 600; font-size: 0.76rem;">${subMastered}/${subQs.length} Secured</span>
+          <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; align-items: center; margin-bottom: 2px;">
+            <span style="color: var(--text-main); font-family: var(--font-heading);">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
+            <span style="color: var(--primary); font-weight: 700; font-size: 0.74rem;">${subMastered}/${subQs.length} Secured</span>
           </div>
+          ${subInquiryText ? `
+          <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.35; font-weight: 400; margin: 2px 0 6px 0;">
+            ${subInquiryText}
+          </div>
+          ` : ""}
           <div class="topic-list-progress-bar" style="height: 3px; margin: 0;">
             <div class="topic-list-progress-fill" style="width: ${subPct}%;"></div>
           </div>
@@ -12255,19 +12662,19 @@ ${cleanBrackets(paper.q3d.model)}
       });
       const inquiryText = topicInquiries[topic.id] || "";
       card.innerHTML = `
-      <div class="topic-list-info" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; margin-bottom: 4px;">
+      <div class="topic-list-info" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 12px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-          <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+          <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; line-height: 1.25;">
             ${topic.title}
           </span>
           <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700; flex-shrink: 0; margin-left: 8px;">${pct}%</span>
         </div>
-        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-main); opacity: 0.8; font-style: italic; line-height: 1.3; margin-top: 4px; display: flex; align-items: flex-start; gap: 6px;">
+        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-main); opacity: 0.8; font-style: italic; line-height: 1.3; margin-top: 6px; display: flex; align-items: flex-start; gap: 6px;">
           <i class="fa-solid fa-compass" style="color: var(--accent); margin-top: 2px; flex-shrink: 0; font-size: 0.85rem;"></i>
           <span>${inquiryText}</span>
         </div>
       </div>
-      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 6px;">
+      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 10px;">
         <div class="topic-list-progress-fill" style="width: ${pct}%;"></div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -16783,6 +17190,162 @@ ${cleanBrackets(paper.q3d.model)}
       renderPastPapersView();
     }
   }
+  function openVideoModal(src, title) {
+    const modal = document.getElementById("video-modal-overlay");
+    const iframe = document.getElementById("video-modal-iframe");
+    const modalTitle = document.getElementById("video-modal-title");
+    const externalLink = document.getElementById("video-modal-external-link");
+    if (!modal || !iframe || !modalTitle) return;
+    modalTitle.textContent = title;
+    let embedUrl = src;
+    let watchUrl = src;
+    let videoId = "";
+    try {
+      if (src.includes("youtube.com/watch")) {
+        const url = new URL(src);
+        videoId = url.searchParams.get("v");
+      } else if (src.includes("youtu.be/")) {
+        const parts = src.split("youtu.be/");
+        videoId = parts[1]?.split("?")[0];
+      } else if (src.includes("youtube.com/embed/")) {
+        const parts = src.split("youtube.com/embed/");
+        videoId = parts[1]?.split("?")[0];
+      } else if (src.includes("youtube-nocookie.com/embed/")) {
+        const parts = src.split("youtube-nocookie.com/embed/");
+        videoId = parts[1]?.split("?")[0];
+      }
+      if (videoId) {
+        embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        const currentOrigin = window.location.origin;
+        const params = ["rel=0"];
+        if (currentOrigin && currentOrigin !== "null" && !currentOrigin.startsWith("file:")) {
+          params.push(`origin=${encodeURIComponent(currentOrigin)}`);
+        }
+        embedUrl = `${embedUrl}?${params.join("&")}`;
+      }
+    } catch (e) {
+      console.error("Failed to parse video URL:", e);
+    }
+    iframe.src = embedUrl;
+    if (externalLink) {
+      externalLink.href = watchUrl;
+    }
+    modal.style.display = "flex";
+    AudioEngine.play("click");
+  }
+  function closeVideoModal() {
+    const modal = document.getElementById("video-modal-overlay");
+    const iframe = document.getElementById("video-modal-iframe");
+    if (!modal || !iframe) return;
+    iframe.src = "";
+    modal.style.display = "none";
+    AudioEngine.play("click");
+  }
+  function renderAiVideosView() {
+    const container = document.getElementById("video-revision-grid");
+    if (!container) return;
+    container.innerHTML = "";
+    const subtopicIds = Object.keys(VIDEOS_DATA).sort();
+    subtopicIds.forEach((subtopicId) => {
+      const video = VIDEOS_DATA[subtopicId];
+      if (!video || !video.primary) return;
+      const subtopicData = QUIZ_DATA.flatMap((t) => t.subtopics).find((s) => s.id === subtopicId);
+      const lessonTitle = subtopicData ? subtopicData.title : subtopicId;
+      const formattedKT = formatSubtopicIdToKT(subtopicId);
+      const card = document.createElement("div");
+      card.className = "mastery-card";
+      card.style.display = "flex";
+      card.style.flexDirection = "column";
+      card.style.justifyContent = "space-between";
+      card.style.height = "100%";
+      card.style.padding = "20px";
+      card.style.border = "1px solid var(--border-glass)";
+      card.style.background = "rgba(255, 255, 255, 0.01)";
+      card.style.transition = "transform 0.2s, box-shadow 0.2s, background-color 0.2s";
+      card.style.borderRadius = "var(--border-radius-md)";
+      card.style.cursor = "pointer";
+      card.addEventListener("mouseenter", () => {
+        card.style.transform = "translateY(-2px)";
+        card.style.background = "rgba(255, 255, 255, 0.03)";
+        card.style.boxShadow = "0 8px 24px rgba(0, 0, 0, 0.2)";
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0)";
+        card.style.background = "rgba(255, 255, 255, 0.01)";
+        card.style.boxShadow = "none";
+      });
+      const header = `
+      <div style="margin-bottom: 12px;">
+        <span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); background: var(--accent-glow); border: 1px solid rgba(244, 63, 94, 0.2); padding: 2px 8px; border-radius: 4px; font-family: var(--font-heading); display: inline-block; margin-bottom: 6px;">${formattedKT}</span>
+        <h3 style="font-size: 0.95rem; font-weight: 700; margin: 0; line-height: 1.3; color: var(--text-main);">${lessonTitle.split(":").slice(1).join(":").trim() || lessonTitle}</h3>
+      </div>
+    `;
+      const thumbnail = `
+      <div class="video-thumbnail-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); margin-bottom: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; padding: 10px; font-family: var(--font-body); font-weight: 500;">
+          <i class="fa-solid fa-film" style="font-size: 1.8rem; display: block; margin-bottom: 6px; color: var(--primary);"></i>
+          2-Minute AI Overview
+        </div>
+        <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); transition: transform 0.2s;" class="play-btn">
+          <i class="fa-solid fa-play" style="margin-left: 2px;"></i>
+        </div>
+        <span style="position: absolute; bottom: 8px; right: 8px; font-size: 0.7rem; font-weight: 700; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading);">${video.primary.duration} mins</span>
+      </div>
+    `;
+      const body = `
+      <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.45; margin: 0 0 16px 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+        Watch the quick 2-minute overview covering: ${video.questions.map((q) => q.replace(/\?$/, "")).join(", ")}.
+      </p>
+    `;
+      const actions = document.createElement("div");
+      actions.style.display = "flex";
+      actions.style.gap = "8px";
+      actions.style.marginTop = "auto";
+      const playBtn = document.createElement("button");
+      playBtn.className = "mastery-btn";
+      playBtn.style.flex = "1";
+      playBtn.style.padding = "8px";
+      playBtn.style.fontSize = "0.78rem";
+      playBtn.style.fontWeight = "bold";
+      playBtn.style.background = "var(--primary)";
+      playBtn.style.color = "#fff";
+      playBtn.style.border = "none";
+      playBtn.style.display = "inline-flex";
+      playBtn.style.alignItems = "center";
+      playBtn.style.justifyContent = "center";
+      playBtn.style.gap = "6px";
+      playBtn.innerHTML = `<i class="fa-solid fa-play"></i> Watch`;
+      playBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        AudioEngine.play("click");
+        openVideoModal(video.primary.youtube_url, video.primary.video_title);
+      });
+      const studyBtn = document.createElement("button");
+      studyBtn.className = "mastery-btn";
+      studyBtn.style.padding = "8px";
+      studyBtn.style.fontSize = "0.78rem";
+      studyBtn.style.fontWeight = "bold";
+      studyBtn.style.background = "rgba(255,255,255,0.05)";
+      studyBtn.style.border = "1px solid var(--border-glass)";
+      studyBtn.style.color = "var(--text-main)";
+      studyBtn.innerHTML = `Study Lesson`;
+      studyBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        AudioEngine.play("click");
+        switchView("subtopic", subtopicId);
+      });
+      actions.appendChild(playBtn);
+      actions.appendChild(studyBtn);
+      card.innerHTML = header + thumbnail + body;
+      card.appendChild(actions);
+      card.addEventListener("click", () => {
+        AudioEngine.play("click");
+        openVideoModal(video.primary.youtube_url, video.primary.video_title);
+      });
+      container.appendChild(card);
+    });
+  }
 
   // src/exam.js
   function showExamSetup2() {
@@ -17171,8 +17734,10 @@ ${cleanBrackets(paper.q3d.model)}
     document.getElementById("exam-correct-term").textContent = q.answer;
     document.getElementById("exam-correct-exp").textContent = q.explanation;
     const reviewAnswer = document.getElementById("exam-review-user-answer");
-    reviewAnswer.textContent = optionText;
-    reviewAnswer.style.color = isCorrect ? "var(--success)" : "var(--accent)";
+    if (reviewAnswer) {
+      reviewAnswer.textContent = optionText;
+      reviewAnswer.style.color = isCorrect ? "var(--success)" : "var(--accent)";
+    }
     const banner = document.getElementById("exam-result-banner");
     if (banner) {
       if (isCorrect) {
@@ -17278,186 +17843,6 @@ ${cleanBrackets(paper.q3d.model)}
     if (percentage >= 50) return "Scholar";
     return "Apprentice";
   }
-
-  // src/videos_data.js
-  var VIDEOS_DATA = {
-    "subtopic_1_1": {
-      "video_title": "School Segregation and Brown v Board: Crash Course Black American History #33",
-      "youtube_url": "https://www.youtube.com/watch?v=NBlqcAEv4nk",
-      "duration": "11:30",
-      "production_source": "Crash Course",
-      "questions": [
-        "Which constitutional amendment and clause did the Supreme Court base its ruling on in this case?",
-        "What previous Supreme Court decision established the 'separate but equal' doctrine that Brown overturned?",
-        "How did Southern members of Congress respond to the Brown decision (what document did they sign)?"
-      ]
-    },
-    "subtopic_1_2": {
-      "video_title": "Little Rock Nine integration at 60",
-      "youtube_url": "https://www.youtube.com/watch?v=ym8rdtq-KBE",
-      "duration": "05:35",
-      "production_source": "CBS News",
-      "questions": [
-        "Why did the Governor of Arkansas deploy the National Guard to Central High School in 1957?",
-        "Which military division did President Eisenhower send to protect the Little Rock Nine?",
-        "What did Governor Faubus do to the schools in Little Rock the following year to stop integration?"
-      ]
-    },
-    "subtopic_1_3": {
-      "video_title": "The Montgomery Bus Boycott: Crash Course Black American History #35",
-      "youtube_url": "https://www.youtube.com/watch?v=ylOpide9dus",
-      "duration": "11:20",
-      "production_source": "Crash Course",
-      "questions": [
-        "Whose arrest in December 1955 sparked the Montgomery Bus Boycott?",
-        "What was the name of the organization formed to lead the boycott, and who was chosen as its leader?",
-        "Which Supreme Court case declared segregation on Montgomery buses unconstitutional?"
-      ]
-    },
-    "subtopic_1_4": {
-      "video_title": "Early Steps in the CIVIL RIGHTS Movement (1940s-50s)",
-      "youtube_url": "https://www.youtube.com/watch?v=0sUpGqKayWY",
-      "duration": "05:40",
-      "production_source": "Heimler's History",
-      "questions": [
-        "What does the term 'Massive Resistance' refer to in the context of school integration?",
-        "What was the Southern Manifesto, and who signed it?",
-        "How did the White Citizens' Councils oppose the civil rights movement economically and socially?"
-      ]
-    },
-    "subtopic_2_1": {
-      "video_title": "Sound Smart: The Freedom Rides",
-      "youtube_url": "https://www.youtube.com/watch?v=dJqA6PQRh3U",
-      "duration": "02:30",
-      "production_source": "HISTORY Channel",
-      "questions": [
-        "What was the primary goal of the Freedom Rides in 1961?",
-        "Which two main civil rights organizations coordinated and participated in the Freedom Rides?",
-        "How did the federal government react to the violence faced by the Freedom Riders?"
-      ]
-    },
-    "subtopic_2_2": {
-      "video_title": "Bet You Didn't Know: March on Washington",
-      "youtube_url": "https://www.youtube.com/watch?v=qjL1E3R9dF4",
-      "duration": "03:00",
-      "production_source": "HISTORY Channel",
-      "questions": [
-        "In which year did the March on Washington for Jobs and Freedom take place?",
-        "What famous speech did Martin Luther King Jr. deliver during this march?",
-        "What major federal piece of legislation was passed the year after the march?"
-      ]
-    },
-    "subtopic_2_3": {
-      "video_title": "The Life of Malcolm X",
-      "youtube_url": "https://www.youtube.com/watch?v=tFh4OloaJMo",
-      "duration": "03:46",
-      "production_source": "Biography",
-      "questions": [
-        "What organization did Malcolm X join while in prison, which he later became the spokesperson for?",
-        "How did Malcolm X's philosophy on achieving civil rights differ from Martin Luther King Jr.'s non-violent approach?",
-        "What major change occurred in Malcolm X's beliefs after his pilgrimage to Mecca in 1964?"
-      ]
-    },
-    "subtopic_2_4": {
-      "video_title": "50 Years On: A Look Back at the Watts Riots",
-      "youtube_url": "https://www.youtube.com/watch?v=lJrWmKsxEos",
-      "duration": "06:53",
-      "production_source": "CBS News",
-      "questions": [
-        "In which city and year did the Watts riots take place?",
-        "What immediate incident triggered the outbreak of the riots?",
-        "What were the deeper, systemic causes of the riots highlighted in the video?"
-      ]
-    },
-    "subtopic_3_1": {
-      "video_title": "Drawn History: What is Domino Theory?",
-      "youtube_url": "https://www.youtube.com/watch?v=44cnzhzcYjs",
-      "duration": "03:15",
-      "production_source": "HISTORY Channel",
-      "questions": [
-        "What is the main idea behind the 'Domino Theory' developed during the Cold War?",
-        "Which U.S. President first publicly outlined the Domino Theory in relation to Southeast Asia?",
-        "How did this theory influence early U.S. foreign policy and intervention in Vietnam?"
-      ]
-    },
-    "subtopic_3_2": {
-      "video_title": "The Gulf of Tonkin Incident (1964)",
-      "youtube_url": "https://www.youtube.com/watch?v=crALHjTiXbk",
-      "duration": "03:15",
-      "production_source": "Simple History",
-      "questions": [
-        "What incident occurred in August 1964 involving the USS Maddox in the Gulf of Tonkin?",
-        "What authority did the Gulf of Tonkin Resolution give to President Lyndon B. Johnson?",
-        "Why do some historians debate the accuracy of the reports regarding the second attack?"
-      ]
-    },
-    "subtopic_3_3": {
-      "video_title": "The Infamous and Ingenious Ho Chi Minh Trail",
-      "youtube_url": "https://www.youtube.com/watch?v=poE_nNW9-yk",
-      "duration": "03:55",
-      "production_source": "TED-Ed",
-      "questions": [
-        "What was the primary purpose of the Ho Chi Minh Trail during the Vietnam War?",
-        "Through which neighboring countries of Vietnam did the trail run?",
-        "Why did the U.S. military find it so difficult to destroy or disable the trail?"
-      ]
-    },
-    "subtopic_3_4": {
-      "video_title": "Address to the Nation on Vietnam - April 26, 1972",
-      "youtube_url": "https://www.youtube.com/watch?v=jnbhRdmK6ek",
-      "duration": "04:50",
-      "production_source": "Richard Nixon Foundation",
-      "questions": [
-        "What is the meaning of President Nixon's policy of 'Vietnamization'?",
-        "How did Nixon plan to change the role of the South Vietnamese army (ARVN) while withdrawing U.S. troops?",
-        "What diplomatic and military actions did Nixon combine with troop withdrawals to pressure North Vietnam?"
-      ]
-    },
-    "subtopic_4_1": {
-      "video_title": "How The Tet Offensive Changed The Vietnam War",
-      "youtube_url": "https://www.youtube.com/watch?v=BPgWqgpgVRc",
-      "duration": "04:02",
-      "production_source": "HISTORY Channel",
-      "questions": [
-        "What was the Tet Offensive, and when did it take place?",
-        "Why did the Tet Offensive shock the American public despite being a military defeat for the communists?",
-        "What is a 'credibility gap,' and how did the Tet Offensive widen it for the U.S. government?"
-      ]
-    },
-    "subtopic_4_2": {
-      "video_title": "President Richard Nixon's 'Silent Majority' Speech",
-      "youtube_url": "https://www.youtube.com/watch?v=TpCWHQ30Do8",
-      "duration": "03:45",
-      "production_source": "Richard Nixon Foundation",
-      "questions": [
-        "Who did President Nixon refer to as the 'Silent Majority' in his 1969 speech?",
-        "How did Nixon contrast the Silent Majority with the active anti-war protestors?",
-        "What did Nixon argue would happen if the U.S. immediately withdrew all forces from Vietnam?"
-      ]
-    },
-    "subtopic_4_3": {
-      "video_title": "Witnessing History: The Fall of Saigon: 50 Years On",
-      "youtube_url": "https://www.youtube.com/watch?v=Y0PaYMWsENs&t=188s",
-      "duration": "18:34",
-      "production_source": "ITV News",
-      "questions": [
-        "Which British news network was on the ground reporting the evacuation and fall of Saigon in April 1975?",
-        "What actions did the U.S. take to evacuate people from Saigon as North Vietnamese forces advanced?",
-        "What did the fall of Saigon mark in terms of the political unification of Vietnam?"
-      ]
-    },
-    "subtopic_4_4": {
-      "video_title": "How did the U.S. Fail in Vietnam?",
-      "youtube_url": "https://www.youtube.com/watch?v=zAq6MrYgLr0",
-      "duration": "05:10",
-      "production_source": "The Armchair Historian",
-      "questions": [
-        "What military strategies used by the U.S. (such as body counts and attrition) proved ineffective against the Vietcong?",
-        "How did domestic political opposition and the anti-war movement limit the U.S. military's options?",
-        "What role did the unpopularity and instability of the South Vietnamese government play in the U.S. failure?"
-      ]
-    }
-  };
 
   // src/homework_data.js
   var HOMEWORK_QUESTIONS = {
@@ -19308,45 +19693,6 @@ ${cleanBrackets(paper.q3d.model)}
       }
     });
   }
-  function getVaultLegendHTML(subtopicId) {
-    if (!subtopicId) return "";
-    if (subtopicId.endsWith("_2")) {
-      return `
-      <div class="model-answer-key" style="margin-top: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(0, 0, 0, 0.2);">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Point</span>
-        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Own Knowledge</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Therefore Link Back</span>
-      </div>
-    `;
-    } else if (subtopicId.endsWith("_3")) {
-      return `
-      <div class="model-answer-key" style="margin-top: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(0, 0, 0, 0.2);">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
-        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Provenance</span>
-      </div>
-    `;
-    } else if (subtopicId.endsWith("_1")) {
-      return `
-      <div class="model-answer-key" style="margin-top: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(0, 0, 0, 0.2);">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
-        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Own Knowledge</span>
-      </div>
-    `;
-    } else if (subtopicId.endsWith("_4")) {
-      return `
-      <div class="model-answer-key" style="margin-top: 12px; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(0, 0, 0, 0.2);">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
-        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
-      </div>
-    `;
-    }
-    return "";
-  }
   function renderSpecChecklistCard(subtopicId, checklist) {
     if (!checklist || checklist.length === 0) return "";
     let checkedStates = {};
@@ -19406,21 +19752,48 @@ ${cleanBrackets(paper.q3d.model)}
       { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
       { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" },
       { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
-      { paperId: "2024_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2024" }
-    ],
-    "subtopic_1_2": [
-      { paperId: "2019_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2019" }
-    ],
-    "subtopic_1_3": [
-      { paperId: "mock_exam_3", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 3" },
       { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
       { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
       { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
       { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
       { paperId: "2025_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2025" }
     ],
+    "subtopic_1_2": [
+      { paperId: "2019_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2019" },
+      { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" },
+      { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "2018_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" }
+    ],
+    "subtopic_1_3": [
+      { paperId: "mock_exam_3", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "2025_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2025" },
+      { paperId: "2018_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" }
+    ],
     "subtopic_1_4": [
-      { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" }
+      { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" },
+      { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "2018_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" }
     ],
     "subtopic_2_1": [
       { paperId: "mock_exam_8", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 8" },
@@ -19428,13 +19801,26 @@ ${cleanBrackets(paper.q3d.model)}
       { paperId: "mock_exam_8", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 8" },
       { paperId: "mock_exam_8", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 8" },
       { paperId: "mock_exam_8", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 8" },
-      { paperId: "mock_exam_8", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 8" }
+      { paperId: "mock_exam_8", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 8" },
+      { paperId: "2023_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2023" },
+      { paperId: "2023_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2023" },
+      { paperId: "2023_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2023" },
+      { paperId: "2023_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2023" },
+      { paperId: "2024_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2024" },
+      { paperId: "2024_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2024" },
+      { paperId: "2024_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2024" },
+      { paperId: "2024_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2024" }
     ],
     "subtopic_2_2": [
       { paperId: "2019_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2019" },
       { paperId: "2019_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2019" },
       { paperId: "2019_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2019" },
       { paperId: "2019_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2019" },
+      { paperId: "mock_exam_8", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 8" },
+      { paperId: "mock_exam_8", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 8" },
+      { paperId: "mock_exam_8", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 8" },
+      { paperId: "mock_exam_8", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 8" },
+      { paperId: "mock_exam_8", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 8" },
       { paperId: "2020_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2020" },
       { paperId: "2023_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2023" },
       { paperId: "2023_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2023" },
@@ -19454,15 +19840,26 @@ ${cleanBrackets(paper.q3d.model)}
       { paperId: "2022_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2022" }
     ],
     "subtopic_2_4": [
+      { paperId: "mock_exam_1", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 1" },
       { paperId: "mock_exam_1", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 1" },
       { paperId: "mock_exam_1", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 1" },
       { paperId: "mock_exam_1", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 1" },
-      { paperId: "mock_exam_1", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 1" }
+      { paperId: "mock_exam_1", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 1" },
+      { paperId: "2022_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2022" },
+      { paperId: "2022_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2022" },
+      { paperId: "2022_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2022" },
+      { paperId: "2022_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2022" }
     ],
     "subtopic_3_1": [
-      { paperId: "2023_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2023" }
+      { paperId: "2023_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2023" },
+      { paperId: "2024_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2024" },
+      { paperId: "2025_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2025" },
+      { paperId: "2025_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2025" },
+      { paperId: "2025_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2025" },
+      { paperId: "2025_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2025" }
     ],
     "subtopic_3_2": [
+      { paperId: "mock_exam_5", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 5" },
       { paperId: "2025_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2025" },
       { paperId: "2025_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2025" },
       { paperId: "2025_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2025" },
@@ -19478,7 +19875,12 @@ ${cleanBrackets(paper.q3d.model)}
       { paperId: "mock_exam_5", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 5" }
     ],
     "subtopic_3_4": [
-      { paperId: "2019_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2019" }
+      { paperId: "2019_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2019" },
+      { paperId: "2023_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2023" },
+      { paperId: "2020_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" }
     ],
     "subtopic_4_1": [
       { paperId: "mock_exam_2", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 2" },
@@ -19489,24 +19891,68 @@ ${cleanBrackets(paper.q3d.model)}
       { paperId: "2022_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2022" }
     ],
     "subtopic_4_2": [
-      { paperId: "mock_exam_2", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 2" }
+      { paperId: "mock_exam_2", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "2022_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2022" }
     ],
     "subtopic_4_3": [
-      { paperId: "2023_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2023" }
-    ],
-    "subtopic_4_4": [
+      { paperId: "2023_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2023" },
+      { paperId: "2019_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2019" },
       { paperId: "2020_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2020" },
       { paperId: "2020_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2020" },
       { paperId: "2020_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2020" },
-      { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" },
-      { paperId: "2024_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2024" }
+      { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" }
+    ],
+    "subtopic_4_4": [
+      { paperId: "2024_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2024" },
+      { paperId: "2020_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" }
     ]
   };
+  function groupMappedExams(mappedExams) {
+    if (!mappedExams) return [];
+    const processed = [];
+    const q3Groups = {};
+    mappedExams.forEach((item) => {
+      if (item.qType && item.qType.startsWith("q3")) {
+        if (!q3Groups[item.paperId]) {
+          q3Groups[item.paperId] = [];
+        }
+        q3Groups[item.paperId].push(item);
+      } else {
+        processed.push(item);
+      }
+    });
+    Object.keys(q3Groups).forEach((paperId) => {
+      const groupItems = q3Groups[paperId];
+      if (groupItems.length > 0) {
+        groupItems.sort((a, b) => a.qType.localeCompare(b.qType));
+        const firstItem = groupItems[0];
+        processed.push({
+          paperId,
+          qType: "q3_suite",
+          label: "Section B Enquiry Suite (Q3a-d)",
+          yearLabel: firstItem.yearLabel,
+          items: groupItems
+        });
+      }
+    });
+    return processed;
+  }
   function bindEmbeddedExamQuestionListeners(container, qId, qObj, paperId) {
     const textarea = container.querySelector(`#past-textarea-${qId}`);
     if (textarea && qObj) {
       if (!state.pastPaperSession.answers[paperId]) {
         state.pastPaperSession.answers[paperId] = {};
+      }
+      if (qId.endsWith("_q1") && !state.pastPaperSession.answers[paperId][qId]) {
+        state.pastPaperSession.answers[paperId][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
       }
       textarea.value = state.pastPaperSession.answers[paperId][qId] || "";
       updateDraftFeedback(qId, textarea.value, qObj);
@@ -19821,167 +20267,7 @@ ${cleanBrackets(paper.q3d.model)}
       </div>
     `;
     }
-    let vaultItemsHtml = "";
-    data.questionVault.forEach((q, index) => {
-      let sourcesHtml = "";
-      if (q.sourceB && q.sourceC) {
-        sourcesHtml = `
-        <div class="vault-sources-comparison" style="display: flex; gap: 16px; margin-bottom: 12px; flex-wrap: wrap;">
-          <div class="skills-source-card" style="flex: 1; min-width: 250px; padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 4px;">Source B</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.sourceB}</p>
-          </div>
-          <div class="skills-source-card" style="flex: 1; min-width: 250px; padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 4px;">Source C</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.sourceC}</p>
-          </div>
-        </div>
-      `;
-      } else if (q.sourceA) {
-        sourcesHtml = `
-        <div class="vault-sources-comparison" style="margin-bottom: 12px;">
-          <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 4px;">Source A</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.sourceA}</p>
-          </div>
-        </div>
-      `;
-      }
-      if (q.interpretation1 && q.interpretation2) {
-        sourcesHtml += `
-        <div class="vault-interpretations-comparison" style="display: flex; gap: 16px; margin-bottom: 12px; flex-wrap: wrap;">
-          <div class="skills-source-card" style="flex: 1; min-width: 250px; padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase; display: block; margin-bottom: 4px;">Interpretation 1</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.interpretation1}</p>
-          </div>
-          <div class="skills-source-card" style="flex: 1; min-width: 250px; padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase; display: block; margin-bottom: 4px;">Interpretation 2</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.interpretation2}</p>
-          </div>
-        </div>
-      `;
-      }
-      let answerHtml = "";
-      if (q.options && q.correctIndices) {
-        answerHtml = `
-        <div class="interactive-vault-q1" data-vault-idx="${index}" style="margin-top: 10px;">
-          <p style="font-weight: bold; margin-bottom: 8px;">Select the TWO correct inferences that can be made from the source:</p>
-          <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
-            ${q.options.map((opt, oIdx) => `
-              <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer; padding: 8px; border-radius: var(--border-radius-sm); background: rgba(255, 255, 255, 0.02); transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='rgba(255,255,255,0.02)'">
-                <input type="checkbox" class="vault-q1-option" data-idx="${oIdx}" style="margin-top: 3px;">
-                <span style="font-size: 0.9rem;">${opt}</span>
-              </label>
-            `).join("")}
-          </div>
-          <button class="mastery-btn vault-q1-check-btn" style="max-width: fit-content; padding: 8px 16px; font-size: 0.85rem; border-radius: 20px; background: var(--gradient-primary); color: white; border: none; font-weight: bold; cursor: pointer;">Check Inferences</button>
-          <div class="vault-q1-feedback" style="display: none; margin-top: 12px; padding: 10px 14px; border-radius: var(--border-radius-sm); font-size: 0.9rem; font-weight: bold;"></div>
-          
-          <div class="vault-q1-model-answer" style="display: none; margin-top: 16px; border-top: 1px dashed var(--border-glass); padding-top: 12px;">
-            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">Model Response Blueprint (4 Marks):</strong>
-            <div style="white-space: pre-line; color: var(--text-muted); font-size: 0.9rem;">${highlightModelQuotes(q.answer)}</div>
-            ${getVaultLegendHTML(data.id)}
-          </div>
-        </div>
-      `;
-      } else {
-        let clueBtnHtml = "";
-        let clueContentHtml = "";
-        if (q.clue) {
-          clueBtnHtml = `
-          <button class="mastery-btn vault-clue-btn btn-amber-variant" data-vault-idx="${index}" style="max-width: fit-content;">
-            <i class="fa-solid fa-lightbulb"></i> Educator Clue
-          </button>
-        `;
-          clueContentHtml = `
-          <div class="vault-clue-content" style="display: none; margin-top: 12px; padding: 12px; background: var(--btn-amber-bg); border-left: 4px solid var(--btn-amber-text); border-radius: var(--border-radius-sm); font-size: 0.88rem; line-height: 1.45; color: var(--text-base);">
-            <strong>Educator Clue/Pointers:</strong><br>${q.clue}
-          </div>
-        `;
-        }
-        answerHtml = `
-        <div class="vault-model-answer-section" style="margin-top: 14px; border-top: 1px dashed var(--border-glass); padding-top: 12px;">
-          <div style="display: flex; gap: 10px; align-items: center; margin-top: 8px; flex-wrap: wrap;">
-            ${clueBtnHtml}
-            <button class="mastery-btn vault-reveal-btn" data-vault-idx="${index}" style="max-width: fit-content; padding: 8px 16px; font-size: 0.85rem; border-radius: 20px; background: rgba(255, 255, 255, 0.05); color: var(--text-base); border: 1px solid var(--border-glass); font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-eye"></i> Compare with Model Answer
-            </button>
-          </div>
-          ${clueContentHtml}
-          <div class="vault-model-answer-content" style="display: none; margin-top: 12px; padding: 12px; background: rgba(34, 197, 94, 0.05); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); white-space: pre-line;">
-            <strong style="display: block; margin-bottom: 8px; color: var(--primary); font-size: 0.95rem; font-style: normal; white-space: normal;">Model Response Blueprint (${q.question.toLowerCase().includes("12 marks") ? "12 Marks" : "Model Answer"}):</strong>
-            ${q.question.toLowerCase().includes("12 marks") ? `
-              <div style="margin-bottom: 12px; padding: 10px; background: rgba(59, 130, 246, 0.08); border-left: 4px solid var(--primary); border-radius: var(--border-radius-sm); font-size: 0.85rem; color: var(--text-base); font-weight: 500; line-height: 1.45; font-style: normal; white-space: normal;">
-                <strong style="color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
-                  <i class="fa-solid fa-graduation-cap"></i> Edexcel 12-Mark Causation Formula:
-                </strong>
-                To achieve full marks, write <strong>three analytical paragraphs</strong>, incorporating the <strong>two provided bullet points</strong> plus your own specific <strong>OOK (Own Knowledge)</strong>.
-              </div>
-            ` : ""}
-            ${highlightModelQuotes(q.answer)}
-            ${getVaultLegendHTML(data.id)}
-          </div>
-        </div>
-      `;
-      }
-      let stimulusHtml = "";
-      if (q.stimulus1 && q.stimulus2) {
-        stimulusHtml = `
-        <div class="stimulus-container" style="display: flex; gap: 10px; margin-top: 6px; margin-bottom: 12px; align-items: center; flex-wrap: wrap;">
-          <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted);">Stimulus:</span>
-          <span class="stimulus-item" style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-glass); padding: 4px 10px; border-radius: 4px; font-size: 0.82rem; color: var(--text-base); font-weight: 500;">${q.stimulus1}</span>
-          <span class="stimulus-item" style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-glass); padding: 4px 10px; border-radius: 4px; font-size: 0.82rem; color: var(--text-base); font-weight: 500;">${q.stimulus2}</span>
-        </div>
-      `;
-      }
-      vaultItemsHtml += `
-      <div class="vault-item">
-        <button class="vault-question-btn" data-vault-idx="${index}">
-          <span>${q.question}</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="vault-answer-panel">
-          ${stimulusHtml}
-          ${sourcesHtml}
-          ${answerHtml}
-        </div>
-      </div>
-    `;
-    });
     let vaultHtml = "";
-    if (data.questionVault.length > 0) {
-      vaultHtml = `
-      <style>
-        details.vault-details summary::-webkit-details-marker {
-          display: none;
-        }
-        details.vault-details[open] .vault-toggle-icon {
-          transform: rotate(180deg);
-        }
-      </style>
-      <div class="exam-question-vault" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
-        <details class="vault-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
-          <summary class="vault-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.15rem; color: var(--text-main);">
-            <span style="display: flex; align-items: center; gap: 8px;">\u{1F4DD} Test Your Knowledge (Exam Question Vault)</span>
-            <i class="fa-solid fa-chevron-down vault-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
-          </summary>
-          <div class="vault-expanded-content" style="margin-top: 16px;">
-            <p style="font-style: italic; margin-top: 0; margin-bottom: 16px; color: var(--text-muted); font-size: 0.9rem;">
-              Click each question to view the model response blueprint.
-            </p>
-            <div class="vault-items">
-              ${vaultItemsHtml}
-            </div>
-          </div>
-        </details>
-      </div>
-    `;
-    }
     let summaryCorrectionHtml = "";
     if (data.summaryCorrection && data.summaryCorrection.text) {
       const parsedText = parseSummaryCorrectionText(data.summaryCorrection.text);
@@ -20005,7 +20291,142 @@ ${cleanBrackets(paper.q3d.model)}
     `;
     }
     let howUsefulHtml = "";
-    if (data.howUsefulAnalyser) {
+    if (data.paper3Suite) {
+      const suite = data.paper3Suite;
+      howUsefulHtml = `
+      <style>
+        details.how-useful-details summary::-webkit-details-marker {
+          display: none;
+        }
+        details.how-useful-details[open] .how-useful-toggle-icon {
+          transform: rotate(180deg);
+        }
+        .paper3-sources-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+        .paper3-interpretations-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+        @media (max-width: 768px) {
+          .paper3-sources-grid, .paper3-interpretations-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+      <div class="mastery-card how-useful-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+        <details class="how-useful-details" open style="width: 100%; padding: 28px; box-sizing: border-box;">
+          <summary class="how-useful-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.15rem; color: var(--text-main);">
+            <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-file-lines" style="color: var(--primary);"></i> ${suite.title}</span>
+            <i class="fa-solid fa-chevron-down how-useful-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+          </summary>
+          <div class="how-useful-expanded-content" style="margin-top: 16px;">
+            <div class="mastery-card-body" style="font-size: 0.95rem;">
+              <p style="margin-bottom: 16px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.45;">
+                In Paper 3 Section B, you will be given a set of sources and interpretations that work together. You are required to answer <strong>Questions 3a to 3d</strong> based on this material.
+              </p>
+
+              <!-- Questions List -->
+              <div class="paper3-questions-block" style="margin-bottom: 20px; padding: 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm);">
+                <strong style="display: block; margin-bottom: 10px; color: var(--primary); font-size: 0.9rem;"><i class="fa-solid fa-circle-question"></i> Exam Question Set:</strong>
+                <ol style="margin: 0; padding-left: 20px; font-size: 0.88rem; line-height: 1.5; color: var(--text-base); display: flex; flex-direction: column; gap: 8px;">
+                  <li><strong>Q3a (8 marks):</strong> ${suite.questions.q3a}</li>
+                  <li><strong>Q3b (4 marks):</strong> ${suite.questions.q3b}</li>
+                  <li><strong>Q3c (4 marks):</strong> ${suite.questions.q3c}</li>
+                  <li><strong>Q3d (16 marks + 4 SPaG):</strong> ${suite.questions.q3d}</li>
+                </ol>
+              </div>
+
+              <!-- Sources Block -->
+              <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Sources for Q3a & Q3c:</strong>
+              <div class="paper3-sources-grid">
+                <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+                  <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase;">Source B</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; border-bottom: 1px dashed var(--border-glass); padding-bottom: 6px;">
+                    <strong>Provenance:</strong> ${suite.sourceB.provenance}
+                  </div>
+                  <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); margin: 0;">${suite.sourceB.content}</p>
+                </div>
+                <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+                  <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase;">Source C</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; border-bottom: 1px dashed var(--border-glass); padding-bottom: 6px;">
+                    <strong>Provenance:</strong> ${suite.sourceC.provenance}
+                  </div>
+                  <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); margin: 0;">${suite.sourceC.content}</p>
+                </div>
+              </div>
+
+              <!-- Interpretations Block -->
+              <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Interpretations for Q3b, Q3c & Q3d:</strong>
+              <div class="paper3-interpretations-grid">
+                <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+                  <strong style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase;">Interpretation 1</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; border-bottom: 1px dashed var(--border-glass); padding-bottom: 6px;">
+                    <strong>Provenance:</strong> ${suite.interpretation1.provenance}
+                  </div>
+                  <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); margin: 0;">${suite.interpretation1.content}</p>
+                </div>
+                <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+                  <strong style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase;">Interpretation 2</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; border-bottom: 1px dashed var(--border-glass); padding-bottom: 6px;">
+                    <strong>Provenance:</strong> ${suite.interpretation2.provenance}
+                  </div>
+                  <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); margin: 0;">${suite.interpretation2.content}</p>
+                </div>
+              </div>
+
+              <!-- Student Draft Response Area -->
+              <div class="hu-draft-section" style="margin-bottom: 16px; margin-top: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+                  <strong style="color: var(--primary); font-size: 0.95rem;">Your Draft Response (Write answers to Q3a-d below):</strong>
+                  <span class="hu-save-status" id="hu-save-status-${subtopicId}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? "inline" : "none"};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
+                </div>
+                
+                <!-- Sentence Starters Dropdown -->
+                <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                  <label for="sentence-starter-${subtopicId}" style="font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; white-space: nowrap;">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary);"></i> Sentence Starters:
+                  </label>
+                  <select id="sentence-starter-${subtopicId}" class="hu-starter-select" style="flex: 1; min-width: 220px; padding: 6px 10px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.82rem; cursor: pointer; outline: none; transition: border-color var(--transition-fast);">
+                    <option value="" disabled selected>-- Select a sentence starter to insert --</option>
+                    ${suite.sentenceStarters.map((st) => `<option value="${st.value}">${st.label}</option>`).join("")}
+                  </select>
+                </div>
+
+                <textarea class="hu-textarea" data-subtopic-id="${subtopicId}" placeholder="Draft your answers to Questions 3a, 3b, 3c, and 3d here. For example:
+
+[Q3a Draft]
+...
+
+[Q3b Draft]
+..." style="width: 100%; height: 250px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; line-height: 1.45; font-family: inherit; margin-bottom: 6px;">${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? state.howUsefulAnswers[subtopicId] : ""}</textarea>
+              </div>
+
+              <!-- Model Answer Reveal -->
+              <div class="hu-model-answer-section" style="margin-top: 20px;">
+                <button class="mastery-btn hu-reveal-btn" style="width: 100%; justify-content: center; background: var(--gradient-primary); border: none; color: white; padding: 12px; font-weight: bold; border-radius: var(--border-radius-sm); cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-eye"></i> Compare with Examiner Model Answers
+                </button>
+                <div class="hu-model-answer-content" style="display: none; margin-top: 14px; padding: 16px; background: rgba(34, 197, 94, 0.05); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm);">
+                  <h4 style="margin: 0 0 10px 0; color: var(--success); font-size: 0.95rem;"><i class="fa-solid fa-circle-check"></i> Examiner Model Answer (Q3a to Q3d):</h4>
+                  <div style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); white-space: pre-line;">${highlightModelQuotes(suite.modelAnswer)}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    `;
+    } else if (data.howUsefulAnalyser) {
       const hu = data.howUsefulAnalyser;
       howUsefulHtml = `
       <style>
@@ -20410,17 +20831,43 @@ ${cleanBrackets(paper.q3d.model)}
     const video = VIDEOS_DATA[subtopicId];
     let videoHtml = "";
     if (video) {
-      const cleanDuration = video.duration.startsWith("0") ? video.duration.slice(1) : video.duration;
       const questionsList = video.questions.map((q) => `<li>${q}</li>`).join("");
+      let primaryHtml = "";
+      if (video.primary) {
+        const cleanDuration = video.primary.duration.startsWith("0") ? video.primary.duration.slice(1) : video.primary.duration;
+        primaryHtml = `
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+          <span style="font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); background: var(--accent-glow); border: 1px solid rgba(244, 63, 94, 0.2); padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); white-space: nowrap;">2-Minute AI Overview</span>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0; flex: 1; min-width: 250px;">
+            <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 1.05rem; margin-right: 4px; vertical-align: middle;"></i>
+            Watch the 2-minute summary: 
+            <a href="${video.primary.youtube_url}" class="lesson-video-link" data-url="${video.primary.youtube_url}" data-title="${video.primary.video_title.replace(/"/g, "&quot;")}" style="color: var(--primary); font-weight: bold; text-decoration: underline; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--primary-hover)'" onmouseout="this.style.color='var(--primary)'">
+              "${video.primary.video_title}"
+            </a> (${cleanDuration} mins).
+          </p>
+        </div>
+      `;
+      }
+      let secondaryHtml = "";
+      if (video.secondary) {
+        const cleanDuration = video.secondary.duration.startsWith("0") ? video.secondary.duration.slice(1) : video.secondary.duration;
+        secondaryHtml = `
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); background: var(--primary-glow); border: 1px solid rgba(168, 85, 247, 0.2); padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); white-space: nowrap;">Deconstruct Deep Dive</span>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0; flex: 1; min-width: 250px;">
+            <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 1.05rem; margin-right: 4px; vertical-align: middle;"></i>
+            Study video: 
+            <a href="${video.secondary.youtube_url}" class="lesson-video-link" data-url="${video.secondary.youtube_url}" data-title="${video.secondary.video_title.replace(/"/g, "&quot;")}" style="color: var(--primary); font-weight: bold; text-decoration: underline; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--primary-hover)'" onmouseout="this.style.color='var(--primary)'">
+              "${video.secondary.video_title}"
+            </a> (${cleanDuration} mins) by ${video.secondary.production_source}.
+          </p>
+        </div>
+      `;
+      }
       videoHtml = `
-      <div class="lesson-video-wrapper" style="margin-top: 14px; border-top: 1px dashed var(--border-glass); padding-top: 12px;">
-        <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0 0 10px 0;">
-          <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 1.1rem; margin-right: 6px; vertical-align: middle;"></i>
-          Watch this YouTube video on "${data.headerTitle.split(":").pop().trim()}" by ${video.production_source}: 
-          <a href="${video.youtube_url}" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--primary-hover)'" onmouseout="this.style.color='var(--primary)'">
-            "${video.video_title}"
-          </a> (${cleanDuration} mins).
-        </p>
+      <div class="lesson-video-wrapper" style="margin-top: 14px; border-top: 1px dashed var(--border-glass); padding-top: 12px; display: flex; flex-direction: column; gap: 10px;">
+        ${primaryHtml}
+        ${secondaryHtml}
         
         <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 10px 14px;">
           <strong style="font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -20601,88 +21048,315 @@ ${cleanBrackets(paper.q3d.model)}
     const mappedExams = SUBTOPIC_EXAM_MAPPING[subtopicId];
     if (mappedExams && mappedExams.length > 0) {
       let dropdownsMarkup = "";
-      mappedExams.forEach((item) => {
+      const processedMappedExams2 = groupMappedExams(mappedExams);
+      processedMappedExams2.forEach((item) => {
         const paper = PAST_PAPERS_DATA.find((p) => p.id === item.paperId);
         if (!paper) return;
-        const qObj = paper[item.qType];
-        if (!qObj) return;
-        const cleanQuestionText = qObj.question.replace(/\(\d+\s*marks?\)/gi, "").trim();
-        let sourcesHtml = "";
-        if (item.qType === "q1" && paper.sourceA) {
-          sourcesHtml = `
-          <div class="skills-source-card" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 24px; position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary);"></div>
-            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 8px;">SOURCE A</span>
-            <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
-            ${paper.sourceA.image ? `
-              <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 250px; object-fit: contain; margin-bottom: 12px; border-radius: 4px;" />
-            ` : ""}
-            <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
+        if (item.qType === "q3_suite") {
+          let sourcesHtml = "";
+          if (paper.sourceB && paper.sourceC && paper.interpretation1 && paper.interpretation2) {
+            sourcesHtml = `
+            <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Sources B & C:</strong>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
+              <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+                <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
+                <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
+                ${paper.sourceB.image ? `
+                  <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
+                ` : ""}
+                <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+              </div>
+              <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+                <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
+                <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
+                ${paper.sourceC.image ? `
+                  <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
+                ` : ""}
+                <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+              </div>
+            </div>
+            <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Interpretations 1 & 2:</strong>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
+              <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+                <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
+                <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation1.author}</p>
+                <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation1.content}</p>
+              </div>
+              <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+                <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 2</span>
+                <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation2.author}</p>
+                <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation2.content}</p>
+              </div>
+            </div>
+          `;
+          }
+          const qId = `${paper.id}_q3_suite`;
+          let questionsListHTML = `
+          <div style="margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px;">
+        `;
+          if (paper.q3a) {
+            questionsListHTML += `
+            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+              <span style="font-weight: bold; color: var(--primary);">Question 3a (8 Marks):</span>
+              <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3a.question.replace(/\(8\s*marks?\)/gi, "").trim()}</span>
+            </div>
+          `;
+          }
+          if (paper.q3b) {
+            questionsListHTML += `
+            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+              <span style="font-weight: bold; color: var(--primary);">Question 3b (4 Marks):</span>
+              <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3b.question.replace(/\(4\s*marks?\)/gi, "").trim()}</span>
+            </div>
+          `;
+          }
+          if (paper.q3c) {
+            questionsListHTML += `
+            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+              <span style="font-weight: bold; color: var(--primary);">Question 3c (4 Marks):</span>
+              <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3c.question.replace(/\(4\s*marks?\)/gi, "").trim()}</span>
+            </div>
+          `;
+          }
+          if (paper.q3d) {
+            questionsListHTML += `
+            <div>
+              <span style="font-weight: bold; color: var(--primary);">Question 3d (16 + 4 SPaG Marks):</span>
+              <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3d.question.replace(/\(16\s*marks?\)/gi, "").replace(/\(16\+4\s*marks?\)/gi, "").trim()}</span>
+              <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+                Explain your answer, using both interpretations, and your knowledge of the historical context.
+              </p>
+            </div>
+          `;
+          }
+          questionsListHTML += `</div>`;
+          const scaffoldBtn = `
+          <button class="btn-secondary btn-blue-variant" id="past-btn-scaffold-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px;">
+            <i class="fa-solid fa-pen-fancy"></i> Writing Scaffolds
+          </button>
+        `;
+          const scaffoldBoxHTML = `
+          <div class="past-scaffold-box" id="past-scaffold-box-${qId}" style="display: none; margin-top: 15px; padding: 15px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: var(--border-radius-sm);">
+            <div style="margin-bottom: 16px;">
+              <strong>Q3b Main Difference (4 Marks) Formula:</strong><br>1. State the main difference in their overall view.<br>2. Quote/detail from Interpretation 1.<br>3. Quote/detail from Interpretation 2.
+              <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                <button class="scaffold-starter-btn" data-starter="The main difference is that Interpretation 1 argues that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> The main difference is that Interpretation 1 argues that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="This is shown when Interpretation 1 states...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> This is shown when Interpretation 1 states...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="In contrast, Interpretation 2 suggests that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> In contrast, Interpretation 2 suggests that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="This is shown when Interpretation 2 states...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> This is shown when Interpretation 2 states...
+                </button>
+              </div>
+            </div>
+            <div style="margin-bottom: 16px; border-top: 1px solid var(--border-glass); padding-top: 16px;">
+              <strong>Q3c Reason for Difference (4 Marks) Formula (Crucial for Full Marks):</strong><br>1. State that the interpretations differ because they used different sources (Interpretation 1 uses Source B, whereas Interpretation 2 uses Source C).<br>2. Quote Interpretation 1 AND Source B to show how they support each other.<br>3. Quote Interpretation 2 AND Source C to show how they support each other.<br><em>*Note: You MUST quote both interpretations and both sources to get full marks!</em>
+              <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                <button class="scaffold-starter-btn" data-starter="The interpretations differ because the historians have used different sources: Interpretation 1 has used Source B, whereas Interpretation 2 has used Source C.">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> The interpretations differ because they used different sources...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="Interpretation 1 argues that '[quote Interpretation 1]', which is supported by Source B stating '[quote Source B]'.">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> Interpretation 1 argues that... supported by Source B...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="In contrast, Interpretation 2 argues that '[quote Interpretation 2]', which is supported by Source C stating '[quote Source C]'.">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> In contrast, Interpretation 2 argues that... supported by Source C...
+                </button>
+              </div>
+            </div>
+            <div style="border-top: 1px solid var(--border-glass); padding-top: 16px;">
+              <strong>Q3d Evaluation Essay (16+4 Marks) Formula:</strong><br>1. Support Interpretation 2 using own knowledge.<br>2. Support Interpretation 1 using own knowledge.<br>3. Conclude with judgment.
+              <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                <button class="scaffold-starter-btn" data-starter="I agree with Interpretation 2 to a large extent because...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> I agree with Interpretation 2 to a large extent because...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="My own knowledge confirms that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> My own knowledge confirms that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="This supports Interpretation 2's view that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> This supports Interpretation 2's view that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="However, Interpretation 1 is also valid in highlighting that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> However, Interpretation 1 is also valid in highlighting that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="Overall, I find Interpretation 2 more convincing because...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> Overall, I find Interpretation 2 more convincing because...
+                </button>
+              </div>
+            </div>
           </div>
         `;
-        } else if (item.qType === "q3a" && paper.sourceB && paper.sourceC) {
-          sourcesHtml = `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
-            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-              <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
-              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
-              ${paper.sourceB.image ? `
-                <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
-              ` : ""}
-              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+          const questionMarkup = `
+          <div class="exam-question-block" id="exam-q-block-${qId}">
+            <div class="exam-question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px;">
+              <div style="flex: 1;">
+                <h5 class="exam-question-title" style="margin: 0; font-size: 1.05rem; line-height: 1.4;">Section B Enquiry Questions (Q3a-d)</h5>
+              </div>
+              <span class="exam-question-marks" style="flex-shrink: 0; background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">32 Marks Total</span>
             </div>
-            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-              <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
-              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
-              ${paper.sourceC.image ? `
-                <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
-              ` : ""}
-              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+
+            ${questionsListHTML}
+
+            <textarea class="exam-textarea" id="past-textarea-${qId}" placeholder="Draft your answers for Q3a, Q3b, Q3c, and Q3d here..." style="min-height: 250px;"></textarea>
+
+            <!-- Live feedback card -->
+            <div class="draft-feedback-card" id="draft-feedback-${qId}">
+              <div class="feedback-stats">
+                <div class="feedback-badge" id="feedback-badge-${qId}">Structure: Drafting</div>
+                <div class="feedback-progress-bar">
+                  <div class="feedback-progress-fill" id="feedback-fill-${qId}" style="width: 0%;"></div>
+                </div>
+              </div>
+              <div class="feedback-checklist">
+                <div class="feedback-item">
+                  <strong>Connectives checklist:</strong>
+                  <div class="feedback-tags" id="connective-tags-${qId}"></div>
+                </div>
+                <div class="feedback-item" id="keyword-feedback-row-${qId}">
+                  <strong>Key Terms:</strong>
+                  <div class="feedback-tags" id="keyword-tags-${qId}"></div>
+                </div>
+              </div>
             </div>
+
+            <div class="exam-sheet-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="btn-secondary" id="past-btn-clue-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px;">
+                <i class="fa-solid fa-lightbulb"></i> Educator Clues
+              </button>
+              ${scaffoldBtn}
+              <button class="btn-primary" id="past-btn-check-${qId}" style="flex: 2; min-width: 180px; font-size: 0.85rem; padding: 8px 12px;">
+                <i class="fa-solid fa-clipboard-check"></i> Self-Check Answers
+              </button>
+            </div>
+
+            <div class="past-clue-box" id="past-clue-box-${qId}" style="display: none; padding: 12px; background: rgba(255,255,255,0.03); border-radius: var(--border-radius-sm); border: 1px dashed var(--border-glass); margin-top: 15px;">
+              <div style="margin-bottom: 8px;"><strong>Q3a Clue (Source Utility):</strong> ${paper.q3a.clue}</div>
+              <div style="margin-bottom: 8px;"><strong>Q3b Clue (Interpretations Difference):</strong> ${paper.q3b.clue}</div>
+              <div style="margin-bottom: 8px;"><strong>Q3c Clue (Interpretations Difference Reason):</strong> ${paper.q3c.clue}</div>
+              <div><strong>Q3d Clue (Interpretations Evaluation):</strong> ${paper.q3d.clue}</div>
+            </div>
+
+            ${scaffoldBoxHTML}
+
+            <div class="past-model-answer" id="past-answer-box-${qId}" style="display: none; margin-top: 15px; padding: 15px; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--border-radius-sm);">
+              <div class="past-model-answer-title" style="font-weight: 700; color: #10b981; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-star"></i> Level 3/4 Model Answers Suite
+              </div>
+              
+              <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+                <strong style="color: var(--primary); display: block; margin-bottom: 6px;">Q3a Model Answer (Source Utility):</strong>
+                <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3a.model)}</div>
+                <div class="model-answer-key" style="margin-top: 8px;">
+                  <span class="model-key-title">Key:</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Provenance</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+                <strong style="color: var(--primary); display: block; margin-bottom: 6px;">Q3b Model Answer (Interpretations Difference):</strong>
+                <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3b.model)}</div>
+                <div class="model-answer-key" style="margin-top: 8px;">
+                  <span class="model-key-title">Key:</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation 1 Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #10b981;"></span> Interpretation 2 Quotes</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+                <strong style="color: var(--primary); display: block; margin-bottom: 6px;">Q3c Model Answer (Interpretations Difference Reason):</strong>
+                <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3c.model)}</div>
+                <div class="model-answer-key" style="margin-top: 8px;">
+                  <span class="model-key-title">Key:</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
+                </div>
+              </div>
+
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 6px;">Q3d Model Answer (Interpretations Evaluation):</strong>
+                <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3d.model)}</div>
+                <div class="model-answer-key" style="margin-top: 8px;">
+                  <span class="model-key-title">Key:</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+                </div>
+              </div>
+            </div>
+
+            <label class="completion-check-row">
+              <input type="checkbox" id="past-chk-${qId}">
+              Mark this question suite as complete
+            </label>
           </div>
         `;
-        } else if ((item.qType === "q3b" || item.qType === "q3c" || item.qType === "q3d") && paper.interpretation1 && paper.interpretation2) {
-          sourcesHtml = `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
-            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-              <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
-              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation1.author}</p>
-              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation1.content}</p>
+          dropdownsMarkup += `
+          <div class="mastery-card lesson-exam-practice-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+            <details class="lesson-exam-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
+              <summary class="lesson-exam-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.1rem; color: var(--text-main);">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+                  Exam Practice (${item.yearLabel}): ${item.label}
+                </span>
+                <i class="fa-solid fa-chevron-down lesson-exam-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+              </summary>
+              <div class="lesson-exam-expanded-content" style="margin-top: 16px;">
+                ${sourcesHtml}
+                ${questionMarkup}
+              </div>
+            </details>
+          </div>
+        `;
+        } else {
+          const qObj = paper[item.qType];
+          if (!qObj) return;
+          const cleanQuestionText = qObj.question.replace(/\(\d+\s*marks?\)/gi, "").trim();
+          let sourcesHtml = "";
+          if (item.qType === "q1" && paper.sourceA) {
+            sourcesHtml = `
+            <div class="skills-source-card" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 24px; position: relative;">
+              <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary);"></div>
+              <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 8px;">SOURCE A</span>
+              <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
+              ${paper.sourceA.image ? `
+                <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 250px; object-fit: contain; margin-bottom: 12px; border-radius: 4px;" />
+              ` : ""}
+              <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
             </div>
-            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-              <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 2</span>
-              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation2.author}</p>
-              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation2.content}</p>
-            </div>
+          `;
+          }
+          const qId = `${paper.id}_${item.qType}`;
+          const marks = item.qType === "q1" ? "4" : item.qType === "q2" ? "12" : item.qType === "q3a" ? "8" : item.qType === "q3b" ? "4" : item.qType === "q3c" ? "4" : "16 + 4 SPaG";
+          const stimulus = item.qType === "q2" ? qObj.stimulus : null;
+          const questionMarkup = renderPastQuestionMarkup(qId, qObj.question, qObj.clue, qObj.model, marks, stimulus);
+          const yearOrMockLabel = item.yearLabel;
+          dropdownsMarkup += `
+          <div class="mastery-card lesson-exam-practice-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+            <details class="lesson-exam-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
+              <summary class="lesson-exam-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.1rem; color: var(--text-main);">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+                  Exam Practice (${yearOrMockLabel}): ${item.label} - ${cleanQuestionText}
+                </span>
+                <i class="fa-solid fa-chevron-down lesson-exam-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+              </summary>
+              <div class="lesson-exam-expanded-content" style="margin-top: 16px;">
+                ${sourcesHtml}
+                ${questionMarkup}
+              </div>
+            </details>
           </div>
         `;
         }
-        const qId = `${paper.id}_${item.qType}`;
-        const marks = item.qType === "q1" ? "4" : item.qType === "q2" ? "12" : item.qType === "q3a" ? "8" : item.qType === "q3b" ? "4" : item.qType === "q3c" ? "4" : "16 + 4 SPaG";
-        const stimulus = item.qType === "q2" ? qObj.stimulus : null;
-        const questionMarkup = renderPastQuestionMarkup(qId, qObj.question, qObj.clue, qObj.model, marks, stimulus);
-        const yearOrMockLabel = item.yearLabel;
-        dropdownsMarkup += `
-        <div class="mastery-card lesson-exam-practice-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
-          <details class="lesson-exam-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
-            <summary class="lesson-exam-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.1rem; color: var(--text-main);">
-              <span style="display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
-                Exam Practice (${yearOrMockLabel}): ${item.label} - ${cleanQuestionText}
-              </span>
-              <i class="fa-solid fa-chevron-down lesson-exam-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
-            </summary>
-            <div class="lesson-exam-expanded-content" style="margin-top: 16px;">
-              ${sourcesHtml}
-              ${questionMarkup}
-            </div>
-          </details>
-        </div>
-      `;
       });
       embeddedExamsHtml = `
       <style>
@@ -21129,7 +21803,7 @@ ${cleanBrackets(paper.q3d.model)}
         initializeLeafletMap(subtopicId, data.mapConfig);
       }, 100);
     }
-    if (data.howUsefulAnalyser) {
+    if (data.howUsefulAnalyser || data.paper3Suite) {
       const huCard = container.querySelector(".how-useful-card");
       if (huCard) {
         const tabBtns = huCard.querySelectorAll(".hu-tab-btn");
@@ -21237,6 +21911,16 @@ ${cleanBrackets(paper.q3d.model)}
             searchInput.style.outline = "none";
           }, 1500);
         }
+      });
+    });
+    const videoLinks = container.querySelectorAll(".lesson-video-link");
+    videoLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        AudioEngine.play("click");
+        const url = link.getAttribute("data-url");
+        const title = link.getAttribute("data-title");
+        openVideoModal(url, title);
       });
     });
     const btnMark = document.getElementById("btn-mark-mastery-mastered");
@@ -21607,14 +22291,29 @@ ${cleanBrackets(paper.q3d.model)}
     formatVaultImportanceAnswers(container);
     setupWrapUpChallenge(container, subtopicId);
     wrapImagesInLinks(container);
-    if (mappedExams && mappedExams.length > 0) {
-      mappedExams.forEach((item) => {
+    const processedMappedExams = groupMappedExams(mappedExams);
+    if (processedMappedExams && processedMappedExams.length > 0) {
+      processedMappedExams.forEach((item) => {
         const paper = PAST_PAPERS_DATA.find((p) => p.id === item.paperId);
         if (!paper) return;
-        const qObj = paper[item.qType];
-        if (!qObj) return;
-        const qId = `${paper.id}_${item.qType}`;
-        bindEmbeddedExamQuestionListeners(container, qId, qObj, paper.id);
+        if (item.qType === "q3_suite") {
+          const qId = `${paper.id}_q3_suite`;
+          const uniqueKeywords = [
+            .../* @__PURE__ */ new Set([
+              ...paper.q3a ? getKeywordsForQuestion(paper.q3a) : [],
+              ...paper.q3b ? getKeywordsForQuestion(paper.q3b) : [],
+              ...paper.q3c ? getKeywordsForQuestion(paper.q3c) : [],
+              ...paper.q3d ? getKeywordsForQuestion(paper.q3d) : []
+            ])
+          ];
+          const suiteQObj = { keywords: uniqueKeywords };
+          bindEmbeddedExamQuestionListeners(container, qId, suiteQObj, paper.id);
+        } else {
+          const qObj = paper[item.qType];
+          if (!qObj) return;
+          const qId = `${paper.id}_${item.qType}`;
+          bindEmbeddedExamQuestionListeners(container, qId, qObj, paper.id);
+        }
       });
     }
   }
@@ -22046,73 +22745,59 @@ ${cleanBrackets(paper.q3d.model)}
       }
     },
     apply(unitId, isSilent = false) {
-      const config = this.units[unitId] || this.units["conflict_middle_east"];
-      const headerTitle = document.getElementById("brand-subheader-title");
-      const quoteEl = document.getElementById("brand-subheader-quote");
-      const banner = document.getElementById("brand-subheader-banner");
-      if (headerTitle && quoteEl && banner) {
-        headerTitle.textContent = config.brandHeader;
-        const randomIndex = Math.floor(Math.random() * config.quotes.length);
-        quoteEl.textContent = `"${config.quotes[randomIndex]}"`;
-        banner.style.display = "flex";
-        if (!isSilent) {
-          AudioEngine.play("success");
-        }
-      }
+      updateBrandBanner();
     }
   };
+  var bannerListenerInitialized = false;
   var brandBannerTimeout = null;
   var brandBannerHideTimeout = null;
-  var brandBannerPinned = false;
-  var bannerListenerInitialized = false;
-  function startBannerDismiss(delay) {
+  function updateBrandBanner() {
+    const container = document.getElementById("header-brand-quote-container");
+    const textEl = document.getElementById("header-brand-quote-text");
+    if (!container || !textEl) return;
     if (brandBannerTimeout) clearTimeout(brandBannerTimeout);
     if (brandBannerHideTimeout) clearTimeout(brandBannerHideTimeout);
-    const banner = document.getElementById("brand-subheader-banner");
-    if (!banner) return;
-    brandBannerTimeout = setTimeout(() => {
-      banner.classList.add("fade-out");
-      brandBannerHideTimeout = setTimeout(() => {
-        banner.style.display = "none";
-      }, 500);
-    }, delay);
-  }
-  function updateBrandBanner() {
-    const banner = document.getElementById("brand-subheader-banner");
-    const quoteEl = document.getElementById("brand-subheader-quote");
-    const titleEl = document.getElementById("brand-subheader-title");
-    if (!banner || !quoteEl || !titleEl) return;
-    brandBannerPinned = false;
-    banner.style.borderLeft = "";
-    banner.classList.remove("fade-out");
+    if (state.currentView !== "dashboard") {
+      container.style.display = "none";
+      return;
+    }
+    const startDismissTimer = () => {
+      if (brandBannerTimeout) clearTimeout(brandBannerTimeout);
+      if (brandBannerHideTimeout) clearTimeout(brandBannerHideTimeout);
+      brandBannerTimeout = setTimeout(() => {
+        container.style.opacity = "0";
+        brandBannerHideTimeout = setTimeout(() => {
+          container.style.display = "none";
+        }, 500);
+      }, 5e3);
+    };
     if (!bannerListenerInitialized) {
-      banner.style.cursor = "pointer";
-      banner.title = "Click to pin/unpin this message";
-      banner.addEventListener("click", () => {
-        brandBannerPinned = !brandBannerPinned;
+      container.addEventListener("click", () => {
         AudioEngine.play("click");
-        if (brandBannerPinned) {
-          if (brandBannerTimeout) clearTimeout(brandBannerTimeout);
-          if (brandBannerHideTimeout) clearTimeout(brandBannerHideTimeout);
-          banner.classList.remove("fade-out");
-          banner.style.borderLeft = "4px solid var(--accent)";
-        } else {
-          banner.style.borderLeft = "";
-          startBannerDismiss(5e3);
+        const config2 = BRAND_CONFIG.units["conflict_middle_east"];
+        if (config2) {
+          const randomIndex = Math.floor(Math.random() * config2.quotes.length);
+          const quoteText = config2.quotes[randomIndex];
+          textEl.textContent = `"${quoteText}"`;
+          container.title = `Fareham Chimney Sweep: "${quoteText}" (Click to cycle)`;
+          container.style.display = "flex";
+          container.style.opacity = "1";
+          startDismissTimer();
         }
       });
       bannerListenerInitialized = true;
     }
-    const unitKey = "conflict_middle_east";
-    const config = BRAND_CONFIG.units[unitKey];
+    const config = BRAND_CONFIG.units["conflict_middle_east"];
     if (config) {
-      titleEl.textContent = config.brandHeader;
       const randomIndex = Math.floor(Math.random() * config.quotes.length);
-      quoteEl.textContent = `"${config.quotes[randomIndex]}"`;
-      banner.style.display = "flex";
-      startBannerDismiss(5e3);
+      const quoteText = config.quotes[randomIndex];
+      textEl.textContent = `"${quoteText}"`;
+      container.title = `Fareham Chimney Sweep: "${quoteText}" (Click to cycle)`;
+      container.style.display = "flex";
+      container.style.opacity = "1";
+      startDismissTimer();
     } else {
-      banner.style.display = "none";
+      container.style.display = "none";
     }
   }
 
@@ -22182,6 +22867,14 @@ ${cleanBrackets(paper.q3d.model)}
       if (viewTitle) viewTitle.textContent = "Revision Games";
       state.selectedSubtopicId = null;
       renderGamesView();
+    } else if (viewName === "ai-videos") {
+      const aiVideosNav = document.getElementById("nav-ai-videos");
+      if (aiVideosNav) aiVideosNav.classList.add("active");
+      if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
+      const viewTitle = document.getElementById("current-view-title");
+      if (viewTitle) viewTitle.textContent = "2-Minute AI Video Overview";
+      state.selectedSubtopicId = null;
+      renderAiVideosView();
     } else if (viewName === "subtopic" && subtopicId) {
       state.selectedSubtopicId = subtopicId;
       state.selectedKeyTopicId = null;
@@ -22232,7 +22925,8 @@ ${cleanBrackets(paper.q3d.model)}
       "lessons": "view-mastery",
       "games": "view-games",
       "exam-hub": "view-exam-hub",
-      "key-topic": "view-key-topic"
+      "key-topic": "view-key-topic",
+      "ai-videos": "view-ai-videos"
     };
     const targetViewId = viewName === "subtopic" ? viewIdMap[state.currentMode] : viewIdMap[viewName];
     document.querySelectorAll(".content-view").forEach((view) => {
@@ -22397,6 +23091,10 @@ ${cleanBrackets(paper.q3d.model)}
       AudioEngine.play("click");
       switchView("games");
     });
+    document.getElementById("nav-ai-videos").addEventListener("click", () => {
+      AudioEngine.play("click");
+      switchView("ai-videos");
+    });
     document.getElementById("shortcut-timeline").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("timeline");
@@ -22416,6 +23114,10 @@ ${cleanBrackets(paper.q3d.model)}
     document.getElementById("shortcut-games").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("games");
+    });
+    document.getElementById("shortcut-ai-videos").addEventListener("click", () => {
+      AudioEngine.play("click");
+      switchView("ai-videos");
     });
     document.getElementById("menu-toggle").addEventListener("click", toggleMobileSidebar);
     document.getElementById("sidebar-overlay").addEventListener("click", closeMobileSidebar);
@@ -23531,10 +24233,6 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       const storedBookmarks = localStorage.getItem("edexcel_bookmarks") || localStorage.getItem("firefly_bookmarks");
       const storedSound = localStorage.getItem("edexcel_sound") || localStorage.getItem("firefly_sound");
       let storedTheme = localStorage.getItem("edexcel_theme") || localStorage.getItem("firefly_theme");
-      if (storedTheme === "midnight" || storedTheme === "teal") {
-        storedTheme = "desert";
-        localStorage.setItem("edexcel_theme", "desert");
-      }
       const storedPastAnswers = localStorage.getItem("edexcel_past_answers");
       const storedPastCompleted = localStorage.getItem("edexcel_past_completed");
       if (storedMastery) state.mastery = JSON.parse(storedMastery);
@@ -25240,6 +25938,38 @@ Here are some questions you can ask me about this lesson:`;
     updateGlobalStats();
     bindEvents();
     initChatbot();
+    const closeBtn = document.getElementById("video-modal-close-btn");
+    if (closeBtn) {
+      const handleClose = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeVideoModal();
+      };
+      closeBtn.addEventListener("click", handleClose);
+      closeBtn.addEventListener("touchend", handleClose);
+    }
+    const modalOverlay = document.getElementById("video-modal-overlay");
+    if (modalOverlay) {
+      modalOverlay.addEventListener("click", (e) => {
+        if (e.target === modalOverlay) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeVideoModal();
+        }
+      });
+      modalOverlay.addEventListener("touchend", (e) => {
+        if (e.target === modalOverlay) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeVideoModal();
+        }
+      });
+    }
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modalOverlay && modalOverlay.style.display === "flex") {
+        closeVideoModal();
+      }
+    });
     switchView("dashboard");
   });
 })();

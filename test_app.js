@@ -11,6 +11,33 @@ while ((match = idRegex.exec(htmlContent)) !== null) {
 }
 console.log(`Parsed ${htmlIds.size} real IDs from index.html`);
 
+// Helper to create element mock
+const createMockElement = (tag = 'div', id = '') => {
+  const el = {
+    tagName: tag,
+    id: id,
+    addEventListener: () => {},
+    setAttribute: () => {},
+    getAttribute: () => '',
+    removeAttribute: () => {},
+    classList: {
+      add: () => {},
+      remove: () => {},
+      toggle: () => {},
+      contains: () => false
+    },
+    style: {},
+    appendChild: (child) => child,
+    innerHTML: '',
+    value: '',
+    querySelector: (sel) => createMockElement(),
+    querySelectorAll: () => [],
+    closest: () => el,
+    remove: () => {}
+  };
+  return el;
+};
+
 // Prepare global mock object based on real IDs in index.html
 const sandbox = {
   window: {
@@ -19,49 +46,29 @@ const sandbox = {
         sandbox.triggerDOMContentLoaded = cb;
       }
     },
+    dispatchEvent: () => {},
     location: {
       origin: 'http://localhost'
     }
   },
   document: {
+    head: createMockElement('head'),
+    body: createMockElement('body'),
     addEventListener: () => {},
-    documentElement: {
-      setAttribute: () => {}
-    },
+    documentElement: createMockElement('html'),
     getElementById: (id) => {
-      if (htmlIds.has(id)) {
-        return {
-          id: id,
-          addEventListener: () => {},
-          setAttribute: () => {},
-          classList: {
-            add: () => {},
-            remove: () => {},
-            toggle: () => {}
-          },
-          style: {},
-          appendChild: () => {},
-          innerHTML: '',
-          value: ''
-        };
+      if (htmlIds.has(id) || id.startsWith('chatbot-')) {
+        return createMockElement('div', id);
       } else {
         // Return null exactly like a real browser would if the element is missing!
         return null;
       }
     },
     createElement: (tag) => {
-      return {
-        tagName: tag,
-        addEventListener: () => {},
-        setAttribute: () => {},
-        classList: {
-          add: () => {},
-          remove: () => {},
-          toggle: () => {}
-        },
-        style: {},
-        appendChild: () => {}
-      };
+      return createMockElement(tag);
+    },
+    querySelector: (sel) => {
+      return createMockElement();
     },
     querySelectorAll: () => []
   },
@@ -75,6 +82,12 @@ const sandbox = {
   Confetti: {
     spawn: () => {}
   },
+  CustomEvent: class CustomEvent {
+    constructor(event, params) {
+      this.type = event;
+      this.detail = params ? params.detail : null;
+    }
+  },
   console: console,
   setTimeout: setTimeout,
   clearTimeout: clearTimeout,
@@ -83,6 +96,8 @@ const sandbox = {
   Math: Math,
   JSON: JSON
 };
+
+sandbox.window.CustomEvent = sandbox.CustomEvent;
 
 sandbox.global = sandbox;
 sandbox.window.global = sandbox;

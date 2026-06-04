@@ -1,4 +1,5 @@
 import { AudioEngine } from './audio.js';
+import { state } from './state.js';
 
 export const BRAND_CONFIG = {
   units: {
@@ -34,84 +35,74 @@ export const BRAND_CONFIG = {
   },
   
   apply(unitId, isSilent = false) {
-    const config = this.units[unitId] || this.units["conflict_middle_east"];
-    
-    // Update headers and titles dynamically in DOM
-    const headerTitle = document.getElementById('brand-subheader-title');
-    const quoteEl = document.getElementById('brand-subheader-quote');
-    const banner = document.getElementById('brand-subheader-banner');
-    
-    if (headerTitle && quoteEl && banner) {
-      headerTitle.textContent = config.brandHeader;
-      
-      const randomIndex = Math.floor(Math.random() * config.quotes.length);
-      quoteEl.textContent = `"${config.quotes[randomIndex]}"`;
-      
-      banner.style.display = 'flex';
-      
-      if (!isSilent) {
-        AudioEngine.play('success');
-      }
-    }
+    // Left as compatibility stub in case other parts of code query it
+    updateBrandBanner();
   }
 };
 
+let bannerListenerInitialized = false;
 let brandBannerTimeout = null;
 let brandBannerHideTimeout = null;
-let brandBannerPinned = false;
-let bannerListenerInitialized = false;
-
-function startBannerDismiss(delay) {
-  if (brandBannerTimeout) clearTimeout(brandBannerTimeout);
-  if (brandBannerHideTimeout) clearTimeout(brandBannerHideTimeout);
-  const banner = document.getElementById('brand-subheader-banner');
-  if (!banner) return;
-  brandBannerTimeout = setTimeout(() => {
-    banner.classList.add('fade-out');
-    brandBannerHideTimeout = setTimeout(() => {
-      banner.style.display = 'none';
-    }, 500);
-  }, delay);
-}
 
 export function updateBrandBanner() {
-  const banner = document.getElementById('brand-subheader-banner');
-  const quoteEl = document.getElementById('brand-subheader-quote');
-  const titleEl = document.getElementById('brand-subheader-title');
-  if (!banner || !quoteEl || !titleEl) return;
+  const container = document.getElementById('header-brand-quote-container');
+  const textEl = document.getElementById('header-brand-quote-text');
+  if (!container || !textEl) return;
 
-  brandBannerPinned = false;
-  banner.style.borderLeft = '';
-  banner.classList.remove('fade-out');
+  // Clear any existing active timeouts
+  if (brandBannerTimeout) clearTimeout(brandBannerTimeout);
+  if (brandBannerHideTimeout) clearTimeout(brandBannerHideTimeout);
 
+  // Only display on home screen (dashboard view)
+  if (state.currentView !== 'dashboard') {
+    container.style.display = 'none';
+    return;
+  }
+
+  const startDismissTimer = () => {
+    if (brandBannerTimeout) clearTimeout(brandBannerTimeout);
+    if (brandBannerHideTimeout) clearTimeout(brandBannerHideTimeout);
+    brandBannerTimeout = setTimeout(() => {
+      container.style.opacity = '0';
+      brandBannerHideTimeout = setTimeout(() => {
+        container.style.display = 'none';
+      }, 500);
+    }, 5000);
+  };
+
+  // Setup click listener once to cycle/refresh quotes on demand
   if (!bannerListenerInitialized) {
-    banner.style.cursor = 'pointer';
-    banner.title = 'Click to pin/unpin this message';
-    banner.addEventListener('click', () => {
-      brandBannerPinned = !brandBannerPinned;
+    container.addEventListener('click', () => {
       AudioEngine.play('click');
-      if (brandBannerPinned) {
-        if (brandBannerTimeout) clearTimeout(brandBannerTimeout);
-        if (brandBannerHideTimeout) clearTimeout(brandBannerHideTimeout);
-        banner.classList.remove('fade-out');
-        banner.style.borderLeft = '4px solid var(--accent)';
-      } else {
-        banner.style.borderLeft = '';
-        startBannerDismiss(5000);
+      const config = BRAND_CONFIG.units["conflict_middle_east"];
+      if (config) {
+        const randomIndex = Math.floor(Math.random() * config.quotes.length);
+        const quoteText = config.quotes[randomIndex];
+        textEl.textContent = `"${quoteText}"`;
+        container.title = `Fareham Chimney Sweep: "${quoteText}" (Click to cycle)`;
+        // Bring back opacity and reset the 5s timer
+        container.style.display = 'flex';
+        container.style.opacity = '1';
+        startDismissTimer();
       }
     });
     bannerListenerInitialized = true;
   }
 
-  const unitKey = 'conflict_middle_east';
-  const config = BRAND_CONFIG.units[unitKey];
+  const config = BRAND_CONFIG.units["conflict_middle_east"];
   if (config) {
-    titleEl.textContent = config.brandHeader;
     const randomIndex = Math.floor(Math.random() * config.quotes.length);
-    quoteEl.textContent = `"${config.quotes[randomIndex]}"`;
-    banner.style.display = 'flex';
-    startBannerDismiss(5000);
+    const quoteText = config.quotes[randomIndex];
+    textEl.textContent = `"${quoteText}"`;
+    container.title = `Fareham Chimney Sweep: "${quoteText}" (Click to cycle)`;
+    
+    // Show and reset opacity
+    container.style.display = 'flex';
+    container.style.opacity = '1';
+    
+    // Start the 5-second fade out countdown
+    startDismissTimer();
   } else {
-    banner.style.display = 'none';
+    container.style.display = 'none';
   }
 }

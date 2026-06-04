@@ -12,6 +12,7 @@ import { getImageWebLink } from './image_links.js';
 import { TABOO_CARDS } from './taboo_data.js';
 import { KEY_TOPICS_OVERVIEWS } from './key_topics_data.js';
 import { renderPastPapersView } from './past_papers.js';
+import { VIDEOS_DATA } from './videos_data.js';
 
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
@@ -164,6 +165,11 @@ function renderDashboard() {
   QUIZ_DATA.forEach(topic => {
     const card = document.createElement('div');
     card.className = 'topic-list-card';
+    card.style.background = 'rgba(255, 255, 255, 0.02)';
+    card.style.border = '1px solid var(--border-glass)';
+    card.style.borderRadius = 'var(--border-radius-md)';
+    card.style.padding = '20px';
+    card.style.boxShadow = 'var(--shadow-sm)';
     
     // Topic header progress
     const topicQuestions = state.allQuestions.filter(q => q.topicId === topic.id);
@@ -176,12 +182,28 @@ function renderDashboard() {
       const subMastered = subQs.filter(q => state.mastery[q.id]).length;
       const subPct = subQs.length > 0 ? Math.round((subMastered / subQs.length) * 100) : 0;
       
+      let subInquiryText = '';
+      const lesson = LESSONS_DATA[sub.id];
+      if (lesson && lesson.headerTitle) {
+        const match = lesson.headerTitle.match(/KT\s+(\d+\.\d+)\s+-\s+GCSE\s+CORE\s+MASTERY:\s+(.*)/i);
+        if (match) {
+          subInquiryText = `KT ${match[1]}. ${match[2]}`;
+        } else {
+          subInquiryText = lesson.headerTitle.replace(/^.*GCSE CORE MASTERY:\s*/i, "");
+        }
+      }
+      
       subtopicsHTML += `
         <div class="dashboard-subtopic-row" data-subtopic-id="${sub.id}">
-          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 500; align-items: center; margin-bottom: 2px;">
-            <span style="color: var(--text-main);">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
-            <span style="color: var(--primary); font-weight: 600; font-size: 0.76rem;">${subMastered}/${subQs.length} Secured</span>
+          <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; align-items: center; margin-bottom: 2px;">
+            <span style="color: var(--text-main); font-family: var(--font-heading);">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
+            <span style="color: var(--primary); font-weight: 700; font-size: 0.74rem;">${subMastered}/${subQs.length} Secured</span>
           </div>
+          ${subInquiryText ? `
+          <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.35; font-weight: 400; margin: 2px 0 6px 0;">
+            ${subInquiryText}
+          </div>
+          ` : ''}
           <div class="topic-list-progress-bar" style="height: 3px; margin: 0;">
             <div class="topic-list-progress-fill" style="width: ${subPct}%;"></div>
           </div>
@@ -192,19 +214,19 @@ function renderDashboard() {
     const inquiryText = topicInquiries[topic.id] || '';
     
     card.innerHTML = `
-      <div class="topic-list-info" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; margin-bottom: 4px;">
+      <div class="topic-list-info" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 12px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-          <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+          <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; line-height: 1.25;">
             ${topic.title}
           </span>
           <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700; flex-shrink: 0; margin-left: 8px;">${pct}%</span>
         </div>
-        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-main); opacity: 0.8; font-style: italic; line-height: 1.3; margin-top: 4px; display: flex; align-items: flex-start; gap: 6px;">
+        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-main); opacity: 0.8; font-style: italic; line-height: 1.3; margin-top: 6px; display: flex; align-items: flex-start; gap: 6px;">
           <i class="fa-solid fa-compass" style="color: var(--accent); margin-top: 2px; flex-shrink: 0; font-size: 0.85rem;"></i>
           <span>${inquiryText}</span>
         </div>
       </div>
-      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 6px;">
+      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 10px;">
         <div class="topic-list-progress-fill" style="width: ${pct}%;"></div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -5535,7 +5557,10 @@ export {
   initExamLeaderboard,
   initTabooGame,
   renderKeyTopicOverview,
-  activateExamHubPanel
+  activateExamHubPanel,
+  renderAiVideosView,
+  openVideoModal,
+  closeVideoModal
 };
 
 function activateExamHubPanel(targetPanel) {
@@ -5543,6 +5568,192 @@ function activateExamHubPanel(targetPanel) {
   if (targetPanel === 'papers') {
     renderPastPapersView();
   }
+}
+
+function openVideoModal(src, title) {
+  const modal = document.getElementById('video-modal-overlay');
+  const iframe = document.getElementById('video-modal-iframe');
+  const modalTitle = document.getElementById('video-modal-title');
+  const externalLink = document.getElementById('video-modal-external-link');
+  
+  if (!modal || !iframe || !modalTitle) return;
+  
+  modalTitle.textContent = title;
+  
+  let embedUrl = src;
+  let watchUrl = src;
+  let videoId = '';
+  
+  try {
+    if (src.includes('youtube.com/watch')) {
+      const url = new URL(src);
+      videoId = url.searchParams.get('v');
+    } else if (src.includes('youtu.be/')) {
+      const parts = src.split('youtu.be/');
+      videoId = parts[1]?.split('?')[0];
+    } else if (src.includes('youtube.com/embed/')) {
+      const parts = src.split('youtube.com/embed/');
+      videoId = parts[1]?.split('?')[0];
+    } else if (src.includes('youtube-nocookie.com/embed/')) {
+      const parts = src.split('youtube-nocookie.com/embed/');
+      videoId = parts[1]?.split('?')[0];
+    }
+    
+    if (videoId) {
+      embedUrl = `https://www.youtube.com/embed/${videoId}`;
+      watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+      
+      const currentOrigin = window.location.origin;
+      const params = ['rel=0'];
+      
+      if (currentOrigin && currentOrigin !== 'null' && !currentOrigin.startsWith('file:')) {
+        params.push(`origin=${encodeURIComponent(currentOrigin)}`);
+      }
+      
+      embedUrl = `${embedUrl}?${params.join('&')}`;
+    }
+  } catch (e) {
+    console.error("Failed to parse video URL:", e);
+  }
+  
+  iframe.src = embedUrl;
+  if (externalLink) {
+    externalLink.href = watchUrl;
+  }
+  
+  modal.style.display = 'flex';
+  AudioEngine.play('click');
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('video-modal-overlay');
+  const iframe = document.getElementById('video-modal-iframe');
+  
+  if (!modal || !iframe) return;
+  
+  iframe.src = '';
+  modal.style.display = 'none';
+  AudioEngine.play('click');
+}
+
+function renderAiVideosView() {
+  const container = document.getElementById('video-revision-grid');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const subtopicIds = Object.keys(VIDEOS_DATA).sort();
+
+  subtopicIds.forEach(subtopicId => {
+    const video = VIDEOS_DATA[subtopicId];
+    if (!video || !video.primary) return;
+
+    const subtopicData = QUIZ_DATA.flatMap(t => t.subtopics).find(s => s.id === subtopicId);
+    const lessonTitle = subtopicData ? subtopicData.title : subtopicId;
+    const formattedKT = formatSubtopicIdToKT(subtopicId);
+
+    const card = document.createElement('div');
+    card.className = 'mastery-card';
+    card.style.display = 'flex';
+    card.style.flexDirection = 'column';
+    card.style.justifyContent = 'space-between';
+    card.style.height = '100%';
+    card.style.padding = '20px';
+    card.style.border = '1px solid var(--border-glass)';
+    card.style.background = 'rgba(255, 255, 255, 0.01)';
+    card.style.transition = 'transform 0.2s, box-shadow 0.2s, background-color 0.2s';
+    card.style.borderRadius = 'var(--border-radius-md)';
+    card.style.cursor = 'pointer';
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-2px)';
+      card.style.background = 'rgba(255, 255, 255, 0.03)';
+      card.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.2)';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+      card.style.background = 'rgba(255, 255, 255, 0.01)';
+      card.style.boxShadow = 'none';
+    });
+
+    const header = `
+      <div style="margin-bottom: 12px;">
+        <span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); background: var(--accent-glow); border: 1px solid rgba(244, 63, 94, 0.2); padding: 2px 8px; border-radius: 4px; font-family: var(--font-heading); display: inline-block; margin-bottom: 6px;">${formattedKT}</span>
+        <h3 style="font-size: 0.95rem; font-weight: 700; margin: 0; line-height: 1.3; color: var(--text-main);">${lessonTitle.split(':').slice(1).join(':').trim() || lessonTitle}</h3>
+      </div>
+    `;
+
+    const thumbnail = `
+      <div class="video-thumbnail-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); margin-bottom: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; padding: 10px; font-family: var(--font-body); font-weight: 500;">
+          <i class="fa-solid fa-film" style="font-size: 1.8rem; display: block; margin-bottom: 6px; color: var(--primary);"></i>
+          2-Minute AI Overview
+        </div>
+        <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); transition: transform 0.2s;" class="play-btn">
+          <i class="fa-solid fa-play" style="margin-left: 2px;"></i>
+        </div>
+        <span style="position: absolute; bottom: 8px; right: 8px; font-size: 0.7rem; font-weight: 700; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading);">${video.primary.duration} mins</span>
+      </div>
+    `;
+
+    const body = `
+      <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.45; margin: 0 0 16px 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+        Watch the quick 2-minute overview covering: ${video.questions.map(q => q.replace(/\?$/, "")).join(', ')}.
+      </p>
+    `;
+
+    const actions = document.createElement('div');
+    actions.style.display = 'flex';
+    actions.style.gap = '8px';
+    actions.style.marginTop = 'auto';
+
+    const playBtn = document.createElement('button');
+    playBtn.className = 'mastery-btn';
+    playBtn.style.flex = '1';
+    playBtn.style.padding = '8px';
+    playBtn.style.fontSize = '0.78rem';
+    playBtn.style.fontWeight = 'bold';
+    playBtn.style.background = 'var(--primary)';
+    playBtn.style.color = '#fff';
+    playBtn.style.border = 'none';
+    playBtn.style.display = 'inline-flex';
+    playBtn.style.alignItems = 'center';
+    playBtn.style.justifyContent = 'center';
+    playBtn.style.gap = '6px';
+    playBtn.innerHTML = `<i class="fa-solid fa-play"></i> Watch`;
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      AudioEngine.play('click');
+      openVideoModal(video.primary.youtube_url, video.primary.video_title);
+    });
+
+    const studyBtn = document.createElement('button');
+    studyBtn.className = 'mastery-btn';
+    studyBtn.style.padding = '8px';
+    studyBtn.style.fontSize = '0.78rem';
+    studyBtn.style.fontWeight = 'bold';
+    studyBtn.style.background = 'rgba(255,255,255,0.05)';
+    studyBtn.style.border = '1px solid var(--border-glass)';
+    studyBtn.style.color = 'var(--text-main)';
+    studyBtn.innerHTML = `Study Lesson`;
+    studyBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      AudioEngine.play('click');
+      switchView('subtopic', subtopicId);
+    });
+
+    actions.appendChild(playBtn);
+    actions.appendChild(studyBtn);
+
+    card.innerHTML = header + thumbnail + body;
+    card.appendChild(actions);
+
+    card.addEventListener('click', () => {
+      AudioEngine.play('click');
+      openVideoModal(video.primary.youtube_url, video.primary.video_title);
+    });
+
+    container.appendChild(card);
+  });
 }
 
 

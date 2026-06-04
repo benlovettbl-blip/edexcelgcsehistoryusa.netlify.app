@@ -1,9 +1,17 @@
 export const VIDEOS_DATA = {
   "subtopic_1_1": {
-    "video_title": "School Segregation and Brown v Board: Crash Course Black American History #33",
-    "youtube_url": "https://www.youtube.com/watch?v=NBlqcAEv4nk",
-    "duration": "11:30",
-    "production_source": "Crash Course",
+    "primary": {
+      "video_title": "2-minute AI Overview: Brown v Board of Education",
+      "youtube_url": "https://www.youtube.com/watch?v=dKyYlye0c6Q",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "School Segregation and Brown v Board: Crash Course Black American History #33",
+      "youtube_url": "https://www.youtube.com/watch?v=NBlqcAEv4nk",
+      "duration": "11:30",
+      "production_source": "Crash Course"
+    },
     "questions": [
       "Which constitutional amendment and clause did the Supreme Court base its ruling on in this case?",
       "What previous Supreme Court decision established the 'separate but equal' doctrine that Brown overturned?",
@@ -11,10 +19,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_1_2": {
-    "video_title": "Little Rock Nine integration at 60",
-    "youtube_url": "https://www.youtube.com/watch?v=ym8rdtq-KBE",
-    "duration": "05:35",
-    "production_source": "CBS News",
+    "primary": {
+      "video_title": "2-minute AI Overview: Little Rock Nine",
+      "youtube_url": "https://www.youtube.com/watch?v=mI09vVUs0FQ",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "Little Rock Nine integration at 60",
+      "youtube_url": "https://www.youtube.com/watch?v=ym8rdtq-KBE",
+      "duration": "05:35",
+      "production_source": "CBS News"
+    },
     "questions": [
       "Why did the Governor of Arkansas deploy the National Guard to Central High School in 1957?",
       "Which military division did President Eisenhower send to protect the Little Rock Nine?",
@@ -22,10 +38,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_1_3": {
-    "video_title": "The Montgomery Bus Boycott: Crash Course Black American History #35",
-    "youtube_url": "https://www.youtube.com/watch?v=ylOpide9dus",
-    "duration": "11:20",
-    "production_source": "Crash Course",
+    "primary": {
+      "video_title": "2-minute AI Overview: Montgomery Bus Boycott",
+      "youtube_url": "https://www.youtube.com/watch?v=AiLWOcVNDEQ",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "The Montgomery Bus Boycott: Crash Course Black American History #35",
+      "youtube_url": "https://www.youtube.com/watch?v=ylOpide9dus",
+      "duration": "11:20",
+      "production_source": "Crash Course"
+    },
     "questions": [
       "Whose arrest in December 1955 sparked the Montgomery Bus Boycott?",
       "What was the name of the organization formed to lead the boycott, and who was chosen as its leader?",
@@ -33,10 +57,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_1_4": {
-    "video_title": "Early Steps in the CIVIL RIGHTS Movement (1940s-50s)",
-    "youtube_url": "https://www.youtube.com/watch?v=0sUpGqKayWY",
-    "duration": "05:40",
-    "production_source": "Heimler's History",
+    "primary": {
+      "video_title": "2-minute AI Overview: Early Civil Rights Steps",
+      "youtube_url": "https://www.youtube.com/watch?v=qML-X9i7_3w",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "Early Steps in the CIVIL RIGHTS Movement (1940s-50s)",
+      "youtube_url": "https://www.youtube.com/watch?v=0sUpGqKayWY",
+      "duration": "05:40",
+      "production_source": "Heimler's History"
+    },
     "questions": [
       "What does the term 'Massive Resistance' refer to in the context of school integration?",
       "What was the Southern Manifesto, and who signed it?",
@@ -44,10 +76,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_2_1": {
-    "video_title": "Sound Smart: The Freedom Rides",
-    "youtube_url": "https://www.youtube.com/watch?v=dJqA6PQRh3U",
-    "duration": "02:30",
-    "production_source": "HISTORY Channel",
+    "primary": {
+      "video_title": "2-minute AI Overview: Freedom Rides & Sit-Ins",
+      "youtube_url": "https://www.youtube.com/watch?v=8ufqX4wmvgc",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "Sound Smart: The Freedom Rides",
+      "youtube_url": "https://www.youtube.com/watch?v=dJqA6PQRh3U",
+      "duration": "02:30",
+      "production_source": "HISTORY Channel"
+    },
     "questions": [
       "What was the primary goal of the Freedom Rides in 1961?",
       "Which two main civil rights organizations coordinated and participated in the Freedom Rides?",
@@ -55,10 +95,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_2_2": {
-    "video_title": "Bet You Didn't Know: March on Washington",
-    "youtube_url": "https://www.youtube.com/watch?v=qjL1E3R9dF4",
-    "duration": "03:00",
-    "production_source": "HISTORY Channel",
+    "primary": {
+      "video_title": "2-minute AI Overview: March on Washington & Civil Rights Act",
+      "youtube_url": "https://www.youtube.com/watch?v=xW9k63w-TRM",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "Bet You Didn't Know: March on Washington",
+      "youtube_url": "https://www.youtube.com/watch?v=qjL1E3R9dF4",
+      "duration": "03:00",
+      "production_source": "HISTORY Channel"
+    },
     "questions": [
       "In which year did the March on Washington for Jobs and Freedom take place?",
       "What famous speech did Martin Luther King Jr. deliver during this march?",
@@ -66,10 +114,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_2_3": {
-    "video_title": "The Life of Malcolm X",
-    "youtube_url": "https://www.youtube.com/watch?v=tFh4OloaJMo",
-    "duration": "03:46",
-    "production_source": "Biography",
+    "primary": {
+      "video_title": "2-minute AI Overview: Malcolm X & Black Power",
+      "youtube_url": "https://www.youtube.com/watch?v=fX-zU1nl-zU",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "The Life of Malcolm X",
+      "youtube_url": "https://www.youtube.com/watch?v=tFh4OloaJMo",
+      "duration": "03:46",
+      "production_source": "Biography"
+    },
     "questions": [
       "What organization did Malcolm X join while in prison, which he later became the spokesperson for?",
       "How did Malcolm X's philosophy on achieving civil rights differ from Martin Luther King Jr.'s non-violent approach?",
@@ -77,10 +133,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_2_4": {
-    "video_title": "50 Years On: A Look Back at the Watts Riots",
-    "youtube_url": "https://www.youtube.com/watch?v=lJrWmKsxEos",
-    "duration": "06:53",
-    "production_source": "CBS News",
+    "primary": {
+      "video_title": "2-minute AI Overview: Watts Riots & Race Riots",
+      "youtube_url": "https://www.youtube.com/watch?v=Fq8hWqOlF-A",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "50 Years On: A Look Back at the Watts Riots",
+      "youtube_url": "https://www.youtube.com/watch?v=lJrWmKsxEos",
+      "duration": "06:53",
+      "production_source": "CBS News"
+    },
     "questions": [
       "In which city and year did the Watts riots take place?",
       "What immediate incident triggered the outbreak of the riots?",
@@ -88,10 +152,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_3_1": {
-    "video_title": "Drawn History: What is Domino Theory?",
-    "youtube_url": "https://www.youtube.com/watch?v=44cnzhzcYjs",
-    "duration": "03:15",
-    "production_source": "HISTORY Channel",
+    "primary": {
+      "video_title": "2-minute AI Overview: Domino Theory & Early US Involvement",
+      "youtube_url": "https://www.youtube.com/watch?v=fVRaO3QW6fU",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "Drawn History: What is Domino Theory?",
+      "youtube_url": "https://www.youtube.com/watch?v=44cnzhzcYjs",
+      "duration": "03:15",
+      "production_source": "HISTORY Channel"
+    },
     "questions": [
       "What is the main idea behind the 'Domino Theory' developed during the Cold War?",
       "Which U.S. President first publicly outlined the Domino Theory in relation to Southeast Asia?",
@@ -99,10 +171,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_3_2": {
-    "video_title": "The Gulf of Tonkin Incident (1964)",
-    "youtube_url": "https://www.youtube.com/watch?v=crALHjTiXbk",
-    "duration": "03:15",
-    "production_source": "Simple History",
+    "primary": {
+      "video_title": "2-minute AI Overview: Gulf of Tonkin & Escalation",
+      "youtube_url": "https://www.youtube.com/watch?v=lYzopF_Tg7s",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "The Gulf of Tonkin Incident (1964)",
+      "youtube_url": "https://www.youtube.com/watch?v=crALHjTiXbk",
+      "duration": "03:15",
+      "production_source": "Simple History"
+    },
     "questions": [
       "What incident occurred in August 1964 involving the USS Maddox in the Gulf of Tonkin?",
       "What authority did the Gulf of Tonkin Resolution give to President Lyndon B. Johnson?",
@@ -110,10 +190,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_3_3": {
-    "video_title": "The Infamous and Ingenious Ho Chi Minh Trail",
-    "youtube_url": "https://www.youtube.com/watch?v=poE_nNW9-yk",
-    "duration": "03:55",
-    "production_source": "TED-Ed",
+    "primary": {
+      "video_title": "2-minute AI Overview: Ho Chi Minh Trail & Guerrilla Tactics",
+      "youtube_url": "https://www.youtube.com/watch?v=L21k5Bh_hHo",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "The Infamous and Ingenious Ho Chi Minh Trail",
+      "youtube_url": "https://www.youtube.com/watch?v=poE_nNW9-yk",
+      "duration": "03:55",
+      "production_source": "TED-Ed"
+    },
     "questions": [
       "What was the primary purpose of the Ho Chi Minh Trail during the Vietnam War?",
       "Through which neighboring countries of Vietnam did the trail run?",
@@ -121,10 +209,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_3_4": {
-    "video_title": "Address to the Nation on Vietnam - April 26, 1972",
-    "youtube_url": "https://www.youtube.com/watch?v=jnbhRdmK6ek",
-    "duration": "04:50",
-    "production_source": "Richard Nixon Foundation",
+    "primary": {
+      "video_title": "2-minute AI Overview: Vietnamization & Nixon Doctrine",
+      "youtube_url": "https://www.youtube.com/watch?v=3zhZ3OVyBYY",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "Address to the Nation on Vietnam - April 26, 1972",
+      "youtube_url": "https://www.youtube.com/watch?v=jnbhRdmK6ek",
+      "duration": "04:50",
+      "production_source": "Richard Nixon Foundation"
+    },
     "questions": [
       "What is the meaning of President Nixon's policy of 'Vietnamization'?",
       "How did Nixon plan to change the role of the South Vietnamese army (ARVN) while withdrawing U.S. troops?",
@@ -132,10 +228,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_1": {
-    "video_title": "How The Tet Offensive Changed The Vietnam War",
-    "youtube_url": "https://www.youtube.com/watch?v=BPgWqgpgVRc",
-    "duration": "04:02",
-    "production_source": "HISTORY Channel",
+    "primary": {
+      "video_title": "2-minute AI Overview: The Tet Offensive",
+      "youtube_url": "https://www.youtube.com/watch?v=KXXJLaGrHU8",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "How The Tet Offensive Changed The Vietnam War",
+      "youtube_url": "https://www.youtube.com/watch?v=BPgWqgpgVRc",
+      "duration": "04:02",
+      "production_source": "HISTORY Channel"
+    },
     "questions": [
       "What was the Tet Offensive, and when did it take place?",
       "Why did the Tet Offensive shock the American public despite being a military defeat for the communists?",
@@ -143,10 +247,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_2": {
-    "video_title": "President Richard Nixon's 'Silent Majority' Speech",
-    "youtube_url": "https://www.youtube.com/watch?v=TpCWHQ30Do8",
-    "duration": "03:45",
-    "production_source": "Richard Nixon Foundation",
+    "primary": {
+      "video_title": "2-minute AI Overview: My Lai, Silent Majority & Anti-War Movement",
+      "youtube_url": "https://www.youtube.com/watch?v=iiNc3nsIR2Y",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "President Richard Nixon's 'Silent Majority' Speech",
+      "youtube_url": "https://www.youtube.com/watch?v=TpCWHQ30Do8",
+      "duration": "03:45",
+      "production_source": "Richard Nixon Foundation"
+    },
     "questions": [
       "Who did President Nixon refer to as the 'Silent Majority' in his 1969 speech?",
       "How did Nixon contrast the Silent Majority with the active anti-war protestors?",
@@ -154,10 +266,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_3": {
-    "video_title": "Witnessing History: The Fall of Saigon: 50 Years On",
-    "youtube_url": "https://www.youtube.com/watch?v=Y0PaYMWsENs&t=188s",
-    "duration": "18:34",
-    "production_source": "ITV News",
+    "primary": {
+      "video_title": "2-minute AI Overview: Peace Negotiations & Fall of Saigon",
+      "youtube_url": "https://www.youtube.com/watch?v=jNAilp37isA",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "Witnessing History: The Fall of Saigon: 50 Years On",
+      "youtube_url": "https://www.youtube.com/watch?v=Y0PaYMWsENs&t=188s",
+      "duration": "18:34",
+      "production_source": "ITV News"
+    },
     "questions": [
       "Which British news network was on the ground reporting the evacuation and fall of Saigon in April 1975?",
       "What actions did the U.S. take to evacuate people from Saigon as North Vietnamese forces advanced?",
@@ -165,10 +285,18 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_4": {
-    "video_title": "How did the U.S. Fail in Vietnam?",
-    "youtube_url": "https://www.youtube.com/watch?v=zAq6MrYgLr0",
-    "duration": "05:10",
-    "production_source": "The Armchair Historian",
+    "primary": {
+      "video_title": "2-minute AI Overview: Why the US Failed in Vietnam",
+      "youtube_url": "https://www.youtube.com/watch?v=ogoIQSjAFcc",
+      "duration": "02:00",
+      "production_source": "AI Revision Guide"
+    },
+    "secondary": {
+      "video_title": "How did the U.S. Fail in Vietnam?",
+      "youtube_url": "https://www.youtube.com/watch?v=zAq6MrYgLr0",
+      "duration": "05:10",
+      "production_source": "The Armchair Historian"
+    },
     "questions": [
       "What military strategies used by the U.S. (such as body counts and attrition) proved ineffective against the Vietcong?",
       "How did domestic political opposition and the anti-war movement limit the U.S. military's options?",

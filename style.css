@@ -811,8 +811,22 @@ body {
 
 .topics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topics-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 .topic-list-card {
@@ -7250,3 +7264,254 @@ details > summary::marker {
   color: #b91c1c;
   border-color: rgba(185, 28, 28, 0.25);
 }
+
+/* Video Modal Overlay */
+.video-modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: modalFadeIn var(--transition-fast);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video-modal-container {
+  width: 90%;
+  max-width: 800px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(139, 92, 246, 0.2);
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: modalScaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@keyframes modalScaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid var(--border-glass);
+  color: var(--text-main);
+  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+.video-modal-close:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+  background-color: rgba(244, 63, 94, 0.2);
+  border-color: var(--accent);
+}
+
+.video-modal-header {
+  padding-right: 40px;
+}
+
+.video-modal-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.video-modal-body {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
+  border: 1px solid var(--border-glass);
+}
+
+#video-modal-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Inline Header Brand Quote Widget */
+.header-brand-quote-container {
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+.header-brand-quote-container:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+@media (max-width: 992px) {
+  .header-brand-quote-container {
+    display: none !important;
+  }
+}
+
+/* --- Study Center Quick Navigation Grid --- */
+.study-shortcuts-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.study-shortcuts-grid .shortcut-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-md);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+
+.study-shortcuts-grid .shortcut-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.study-shortcuts-grid .shortcut-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.study-shortcuts-grid .shortcut-card h3 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.study-shortcuts-grid .shortcut-card p {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  .study-shortcuts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .study-shortcuts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+/* Highlighted Quiz Generator Explanation */
+#exam-correct-exp {
+  font-size: 1.05rem !important;
+  color: var(--text-main) !important;
+  line-height: 1.52 !important;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--primary);
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* Responsive adjustments for the main-header to prevent overlap */
+@media (max-width: 1024px) {
+  .header-brand-quote-container {
+    display: none !important; /* Hide quote on desktop-medium and below to save space */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-app-brand-title {
+    display: none !important; /* Hide main-app-brand-title on tablets/mobile */
+  }
+  .main-header {
+    padding: 0 12px;
+    height: 60px !important;
+  }
+  .header-title-container {
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  #fullscreen-btn {
+    display: none !important; /* Hide fullscreen button on mobile */
+  }
+  .header-theme-selector-container {
+    padding: 0 !important;
+  }
+  #theme-selector {
+    max-width: 80px; /* Restrict select width on mobile */
+    font-size: 0.75rem !important;
+    padding: 2px 16px 2px 4px !important;
+    height: 28px !important;
+  }
+  .current-view-title {
+    font-size: 1.05rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 0 8px;
+  }
+  #reset-progress-btn {
+    display: none !important; /* Hide reset progress button on small mobile to avoid squeeze */
+  }
+  .mode-btn span {
+    display: none; /* Hide Lessons/Accordions text, show only icons on mobile */
+  }
+  .mode-btn {
+    padding: 6px 10px !important;
+  }
+  #theme-selector {
+    max-width: 60px; /* Further restrict selector size */
+  }
+}
+
+
+

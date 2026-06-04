@@ -1,12 +1,12 @@
 import { LESSONS_DATA } from './lessons_data.js';
 import { state } from './state.js';
 import { switchView } from './navigation.js';
-import { renderSidebarNav, updateGlobalStats } from './views.js';
+import { renderSidebarNav, updateGlobalStats, openVideoModal } from './views.js';
 import { saveProgress } from './storage.js';
 import { AudioEngine } from './audio.js';
 import { Confetti } from './confetti.js';
 import { QUIZ_DATA, PAST_PAPERS_DATA } from '../questions.js';
-import { highlightModelQuotes } from './layout.js';
+import { highlightModelQuotes, getKeywordsForQuestion } from './layout.js';
 import { VIDEOS_DATA } from './videos_data.js';
 import { HOMEWORK_QUESTIONS } from './homework_data.js';
 import { getImageWebLink } from './image_links.js';
@@ -200,21 +200,48 @@ const SUBTOPIC_EXAM_MAPPING = {
     { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
     { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" },
     { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
-    { paperId: "2024_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2024" }
-  ],
-  "subtopic_1_2": [
-    { paperId: "2019_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2019" }
-  ],
-  "subtopic_1_3": [
-    { paperId: "mock_exam_3", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 3" },
     { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
     { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
     { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
     { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
     { paperId: "2025_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2025" }
   ],
+  "subtopic_1_2": [
+    { paperId: "2019_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2019" },
+    { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" },
+    { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "2018_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" }
+  ],
+  "subtopic_1_3": [
+    { paperId: "mock_exam_3", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "2025_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2025" },
+    { paperId: "2018_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" }
+  ],
   "subtopic_1_4": [
-    { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" }
+    { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" },
+    { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "2018_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
+    { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" }
   ],
   "subtopic_2_1": [
     { paperId: "mock_exam_8", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 8" },
@@ -222,13 +249,26 @@ const SUBTOPIC_EXAM_MAPPING = {
     { paperId: "mock_exam_8", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 8" },
     { paperId: "mock_exam_8", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 8" },
     { paperId: "mock_exam_8", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 8" },
-    { paperId: "mock_exam_8", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 8" }
+    { paperId: "mock_exam_8", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "2023_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2023" },
+    { paperId: "2023_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2023" },
+    { paperId: "2023_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2023" },
+    { paperId: "2023_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2023" },
+    { paperId: "2024_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2024" },
+    { paperId: "2024_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2024" },
+    { paperId: "2024_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2024" },
+    { paperId: "2024_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2024" }
   ],
   "subtopic_2_2": [
     { paperId: "2019_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2019" },
     { paperId: "2019_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2019" },
     { paperId: "2019_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2019" },
     { paperId: "2019_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2019" },
+    { paperId: "mock_exam_8", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 8" },
     { paperId: "2020_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2020" },
     { paperId: "2023_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2023" },
     { paperId: "2023_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2023" },
@@ -248,15 +288,26 @@ const SUBTOPIC_EXAM_MAPPING = {
     { paperId: "2022_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2022" }
   ],
   "subtopic_2_4": [
+    { paperId: "mock_exam_1", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 1" },
     { paperId: "mock_exam_1", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 1" },
     { paperId: "mock_exam_1", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 1" },
     { paperId: "mock_exam_1", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 1" },
-    { paperId: "mock_exam_1", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 1" }
+    { paperId: "mock_exam_1", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 1" },
+    { paperId: "2022_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2022" },
+    { paperId: "2022_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2022" },
+    { paperId: "2022_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2022" },
+    { paperId: "2022_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2022" }
   ],
   "subtopic_3_1": [
-    { paperId: "2023_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2023" }
+    { paperId: "2023_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2023" },
+    { paperId: "2024_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2024" },
+    { paperId: "2025_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2025" },
+    { paperId: "2025_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2025" },
+    { paperId: "2025_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2025" },
+    { paperId: "2025_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2025" }
   ],
   "subtopic_3_2": [
+    { paperId: "mock_exam_5", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 5" },
     { paperId: "2025_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2025" },
     { paperId: "2025_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2025" },
     { paperId: "2025_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2025" },
@@ -272,7 +323,12 @@ const SUBTOPIC_EXAM_MAPPING = {
     { paperId: "mock_exam_5", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 5" }
   ],
   "subtopic_3_4": [
-    { paperId: "2019_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2019" }
+    { paperId: "2019_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2019" },
+    { paperId: "2023_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2023" },
+    { paperId: "2020_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2020" },
+    { paperId: "2020_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2020" },
+    { paperId: "2020_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2020" },
+    { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" }
   ],
   "subtopic_4_1": [
     { paperId: "mock_exam_2", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 2" },
@@ -283,25 +339,76 @@ const SUBTOPIC_EXAM_MAPPING = {
     { paperId: "2022_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2022" }
   ],
   "subtopic_4_2": [
-    { paperId: "mock_exam_2", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 2" }
+    { paperId: "mock_exam_2", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 2" },
+    { paperId: "mock_exam_2", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 2" },
+    { paperId: "mock_exam_2", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 2" },
+    { paperId: "mock_exam_2", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 2" },
+    { paperId: "mock_exam_2", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 2" },
+    { paperId: "mock_exam_2", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 2" },
+    { paperId: "2022_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2022" }
   ],
   "subtopic_4_3": [
-    { paperId: "2023_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2023" }
-  ],
-  "subtopic_4_4": [
+    { paperId: "2023_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2023" },
+    { paperId: "2019_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2019" },
     { paperId: "2020_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2020" },
     { paperId: "2020_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2020" },
     { paperId: "2020_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2020" },
-    { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" },
-    { paperId: "2024_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2024" }
+    { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" }
+  ],
+  "subtopic_4_4": [
+    { paperId: "2024_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2024" },
+    { paperId: "2020_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2020" },
+    { paperId: "2020_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2020" },
+    { paperId: "2020_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2020" },
+    { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" }
   ]
 };
+
+function groupMappedExams(mappedExams) {
+  if (!mappedExams) return [];
+  const processed = [];
+  const q3Groups = {}; // paperId -> list of items
+
+  mappedExams.forEach(item => {
+    if (item.qType && item.qType.startsWith('q3')) {
+      if (!q3Groups[item.paperId]) {
+        q3Groups[item.paperId] = [];
+      }
+      q3Groups[item.paperId].push(item);
+    } else {
+      processed.push(item);
+    }
+  });
+
+  // Now process q3Groups
+  Object.keys(q3Groups).forEach(paperId => {
+    const groupItems = q3Groups[paperId];
+    if (groupItems.length > 0) {
+      // Sort them in alphabetical order of qType to ensure order is q3a, q3b, q3c, q3d
+      groupItems.sort((a, b) => a.qType.localeCompare(b.qType));
+      
+      const firstItem = groupItems[0];
+      processed.push({
+        paperId: paperId,
+        qType: 'q3_suite',
+        label: 'Section B Enquiry Suite (Q3a-d)',
+        yearLabel: firstItem.yearLabel,
+        items: groupItems
+      });
+    }
+  });
+
+  return processed;
+}
 
 function bindEmbeddedExamQuestionListeners(container, qId, qObj, paperId) {
   const textarea = container.querySelector(`#past-textarea-${qId}`);
   if (textarea && qObj) {
     if (!state.pastPaperSession.answers[paperId]) {
       state.pastPaperSession.answers[paperId] = {};
+    }
+    if (qId.endsWith('_q1') && !state.pastPaperSession.answers[paperId][qId]) {
+      state.pastPaperSession.answers[paperId][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
     }
     textarea.value = state.pastPaperSession.answers[paperId][qId] || '';
     updateDraftFeedback(qId, textarea.value, qObj);
@@ -650,174 +757,8 @@ export function renderMasteryView(subtopicId) {
     `;
   }
 
-  // Generate Question Vault HTML
-  let vaultItemsHtml = '';
-  data.questionVault.forEach((q, index) => {
-    let sourcesHtml = '';
-    if (q.sourceB && q.sourceC) {
-      sourcesHtml = `
-        <div class="vault-sources-comparison" style="display: flex; gap: 16px; margin-bottom: 12px; flex-wrap: wrap;">
-          <div class="skills-source-card" style="flex: 1; min-width: 250px; padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 4px;">Source B</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.sourceB}</p>
-          </div>
-          <div class="skills-source-card" style="flex: 1; min-width: 250px; padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 4px;">Source C</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.sourceC}</p>
-          </div>
-        </div>
-      `;
-    } else if (q.sourceA) {
-      sourcesHtml = `
-        <div class="vault-sources-comparison" style="margin-bottom: 12px;">
-          <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 4px;">Source A</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.sourceA}</p>
-          </div>
-        </div>
-      `;
-    }
-
-    if (q.interpretation1 && q.interpretation2) {
-      sourcesHtml += `
-        <div class="vault-interpretations-comparison" style="display: flex; gap: 16px; margin-bottom: 12px; flex-wrap: wrap;">
-          <div class="skills-source-card" style="flex: 1; min-width: 250px; padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase; display: block; margin-bottom: 4px;">Interpretation 1</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.interpretation1}</p>
-          </div>
-          <div class="skills-source-card" style="flex: 1; min-width: 250px; padding: 12px; background: rgba(0, 0, 0, 0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-            <strong style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase; display: block; margin-bottom: 4px;">Interpretation 2</strong>
-            <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); margin: 0;">${q.interpretation2}</p>
-          </div>
-        </div>
-      `;
-    }
-
-    let answerHtml = '';
-    if (q.options && q.correctIndices) {
-      answerHtml = `
-        <div class="interactive-vault-q1" data-vault-idx="${index}" style="margin-top: 10px;">
-          <p style="font-weight: bold; margin-bottom: 8px;">Select the TWO correct inferences that can be made from the source:</p>
-          <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
-            ${q.options.map((opt, oIdx) => `
-              <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer; padding: 8px; border-radius: var(--border-radius-sm); background: rgba(255, 255, 255, 0.02); transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='rgba(255,255,255,0.02)'">
-                <input type="checkbox" class="vault-q1-option" data-idx="${oIdx}" style="margin-top: 3px;">
-                <span style="font-size: 0.9rem;">${opt}</span>
-              </label>
-            `).join('')}
-          </div>
-          <button class="mastery-btn vault-q1-check-btn" style="max-width: fit-content; padding: 8px 16px; font-size: 0.85rem; border-radius: 20px; background: var(--gradient-primary); color: white; border: none; font-weight: bold; cursor: pointer;">Check Inferences</button>
-          <div class="vault-q1-feedback" style="display: none; margin-top: 12px; padding: 10px 14px; border-radius: var(--border-radius-sm); font-size: 0.9rem; font-weight: bold;"></div>
-          
-          <div class="vault-q1-model-answer" style="display: none; margin-top: 16px; border-top: 1px dashed var(--border-glass); padding-top: 12px;">
-            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">Model Response Blueprint (4 Marks):</strong>
-            <div style="white-space: pre-line; color: var(--text-muted); font-size: 0.9rem;">${highlightModelQuotes(q.answer)}</div>
-            ${getVaultLegendHTML(data.id)}
-          </div>
-        </div>
-      `;
-    } else {
-      let clueBtnHtml = '';
-      let clueContentHtml = '';
-      if (q.clue) {
-        clueBtnHtml = `
-          <button class="mastery-btn vault-clue-btn btn-amber-variant" data-vault-idx="${index}" style="max-width: fit-content;">
-            <i class="fa-solid fa-lightbulb"></i> Educator Clue
-          </button>
-        `;
-        clueContentHtml = `
-          <div class="vault-clue-content" style="display: none; margin-top: 12px; padding: 12px; background: var(--btn-amber-bg); border-left: 4px solid var(--btn-amber-text); border-radius: var(--border-radius-sm); font-size: 0.88rem; line-height: 1.45; color: var(--text-base);">
-            <strong>Educator Clue/Pointers:</strong><br>${q.clue}
-          </div>
-        `;
-      }
-
-      answerHtml = `
-        <div class="vault-model-answer-section" style="margin-top: 14px; border-top: 1px dashed var(--border-glass); padding-top: 12px;">
-          <div style="display: flex; gap: 10px; align-items: center; margin-top: 8px; flex-wrap: wrap;">
-            ${clueBtnHtml}
-            <button class="mastery-btn vault-reveal-btn" data-vault-idx="${index}" style="max-width: fit-content; padding: 8px 16px; font-size: 0.85rem; border-radius: 20px; background: rgba(255, 255, 255, 0.05); color: var(--text-base); border: 1px solid var(--border-glass); font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-eye"></i> Compare with Model Answer
-            </button>
-          </div>
-          ${clueContentHtml}
-          <div class="vault-model-answer-content" style="display: none; margin-top: 12px; padding: 12px; background: rgba(34, 197, 94, 0.05); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); white-space: pre-line;">
-            <strong style="display: block; margin-bottom: 8px; color: var(--primary); font-size: 0.95rem; font-style: normal; white-space: normal;">Model Response Blueprint (${q.question.toLowerCase().includes('12 marks') ? '12 Marks' : 'Model Answer'}):</strong>
-            ${q.question.toLowerCase().includes('12 marks') ? `
-              <div style="margin-bottom: 12px; padding: 10px; background: rgba(59, 130, 246, 0.08); border-left: 4px solid var(--primary); border-radius: var(--border-radius-sm); font-size: 0.85rem; color: var(--text-base); font-weight: 500; line-height: 1.45; font-style: normal; white-space: normal;">
-                <strong style="color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
-                  <i class="fa-solid fa-graduation-cap"></i> Edexcel 12-Mark Causation Formula:
-                </strong>
-                To achieve full marks, write <strong>three analytical paragraphs</strong>, incorporating the <strong>two provided bullet points</strong> plus your own specific <strong>OOK (Own Knowledge)</strong>.
-              </div>
-            ` : ''}
-            ${highlightModelQuotes(q.answer)}
-            ${getVaultLegendHTML(data.id)}
-          </div>
-        </div>
-      `;
-    }
-
-    let stimulusHtml = '';
-    if (q.stimulus1 && q.stimulus2) {
-      stimulusHtml = `
-        <div class="stimulus-container" style="display: flex; gap: 10px; margin-top: 6px; margin-bottom: 12px; align-items: center; flex-wrap: wrap;">
-          <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted);">Stimulus:</span>
-          <span class="stimulus-item" style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-glass); padding: 4px 10px; border-radius: 4px; font-size: 0.82rem; color: var(--text-base); font-weight: 500;">${q.stimulus1}</span>
-          <span class="stimulus-item" style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-glass); padding: 4px 10px; border-radius: 4px; font-size: 0.82rem; color: var(--text-base); font-weight: 500;">${q.stimulus2}</span>
-        </div>
-      `;
-    }
-
-    vaultItemsHtml += `
-      <div class="vault-item">
-        <button class="vault-question-btn" data-vault-idx="${index}">
-          <span>${q.question}</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="vault-answer-panel">
-          ${stimulusHtml}
-          ${sourcesHtml}
-          ${answerHtml}
-        </div>
-      </div>
-    `;
-  });
-
+  // Generate Question Vault HTML (Removed per user request)
   let vaultHtml = '';
-  if (data.questionVault.length > 0) {
-    vaultHtml = `
-      <style>
-        details.vault-details summary::-webkit-details-marker {
-          display: none;
-        }
-        details.vault-details[open] .vault-toggle-icon {
-          transform: rotate(180deg);
-        }
-      </style>
-      <div class="exam-question-vault" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
-        <details class="vault-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
-          <summary class="vault-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.15rem; color: var(--text-main);">
-            <span style="display: flex; align-items: center; gap: 8px;">📝 Test Your Knowledge (Exam Question Vault)</span>
-            <i class="fa-solid fa-chevron-down vault-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
-          </summary>
-          <div class="vault-expanded-content" style="margin-top: 16px;">
-            <p style="font-style: italic; margin-top: 0; margin-bottom: 16px; color: var(--text-muted); font-size: 0.9rem;">
-              Click each question to view the model response blueprint.
-            </p>
-            <div class="vault-items">
-              ${vaultItemsHtml}
-            </div>
-          </div>
-        </details>
-      </div>
-    `;
-  }
 
   // Generate Summary Spotter HTML
   let summaryCorrectionHtml = '';
@@ -843,9 +784,138 @@ export function renderMasteryView(subtopicId) {
     `;
   }
 
-  // Generate How Useful Analyser HTML
+  // Generate How Useful Analyser or unified Paper 3 Suite HTML
   let howUsefulHtml = '';
-  if (data.howUsefulAnalyser) {
+  if (data.paper3Suite) {
+    const suite = data.paper3Suite;
+    howUsefulHtml = `
+      <style>
+        details.how-useful-details summary::-webkit-details-marker {
+          display: none;
+        }
+        details.how-useful-details[open] .how-useful-toggle-icon {
+          transform: rotate(180deg);
+        }
+        .paper3-sources-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+        .paper3-interpretations-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+        @media (max-width: 768px) {
+          .paper3-sources-grid, .paper3-interpretations-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+      <div class="mastery-card how-useful-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+        <details class="how-useful-details" open style="width: 100%; padding: 28px; box-sizing: border-box;">
+          <summary class="how-useful-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.15rem; color: var(--text-main);">
+            <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-file-lines" style="color: var(--primary);"></i> ${suite.title}</span>
+            <i class="fa-solid fa-chevron-down how-useful-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+          </summary>
+          <div class="how-useful-expanded-content" style="margin-top: 16px;">
+            <div class="mastery-card-body" style="font-size: 0.95rem;">
+              <p style="margin-bottom: 16px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.45;">
+                In Paper 3 Section B, you will be given a set of sources and interpretations that work together. You are required to answer <strong>Questions 3a to 3d</strong> based on this material.
+              </p>
+
+              <!-- Questions List -->
+              <div class="paper3-questions-block" style="margin-bottom: 20px; padding: 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm);">
+                <strong style="display: block; margin-bottom: 10px; color: var(--primary); font-size: 0.9rem;"><i class="fa-solid fa-circle-question"></i> Exam Question Set:</strong>
+                <ol style="margin: 0; padding-left: 20px; font-size: 0.88rem; line-height: 1.5; color: var(--text-base); display: flex; flex-direction: column; gap: 8px;">
+                  <li><strong>Q3a (8 marks):</strong> ${suite.questions.q3a}</li>
+                  <li><strong>Q3b (4 marks):</strong> ${suite.questions.q3b}</li>
+                  <li><strong>Q3c (4 marks):</strong> ${suite.questions.q3c}</li>
+                  <li><strong>Q3d (16 marks + 4 SPaG):</strong> ${suite.questions.q3d}</li>
+                </ol>
+              </div>
+
+              <!-- Sources Block -->
+              <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Sources for Q3a & Q3c:</strong>
+              <div class="paper3-sources-grid">
+                <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+                  <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase;">Source B</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; border-bottom: 1px dashed var(--border-glass); padding-bottom: 6px;">
+                    <strong>Provenance:</strong> ${suite.sourceB.provenance}
+                  </div>
+                  <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); margin: 0;">${suite.sourceB.content}</p>
+                </div>
+                <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+                  <strong style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase;">Source C</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; border-bottom: 1px dashed var(--border-glass); padding-bottom: 6px;">
+                    <strong>Provenance:</strong> ${suite.sourceC.provenance}
+                  </div>
+                  <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); margin: 0;">${suite.sourceC.content}</p>
+                </div>
+              </div>
+
+              <!-- Interpretations Block -->
+              <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Interpretations for Q3b, Q3c & Q3d:</strong>
+              <div class="paper3-interpretations-grid">
+                <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+                  <strong style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase;">Interpretation 1</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; border-bottom: 1px dashed var(--border-glass); padding-bottom: 6px;">
+                    <strong>Provenance:</strong> ${suite.interpretation1.provenance}
+                  </div>
+                  <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); margin: 0;">${suite.interpretation1.content}</p>
+                </div>
+                <div class="skills-source-card" style="padding: 12px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative; display: flex; flex-direction: column; gap: 8px;">
+                  <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+                  <strong style="font-size: 0.75rem; color: var(--secondary); text-transform: uppercase;">Interpretation 2</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; border-bottom: 1px dashed var(--border-glass); padding-bottom: 6px;">
+                    <strong>Provenance:</strong> ${suite.interpretation2.provenance}
+                  </div>
+                  <p style="font-style: italic; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); margin: 0;">${suite.interpretation2.content}</p>
+                </div>
+              </div>
+
+              <!-- Student Draft Response Area -->
+              <div class="hu-draft-section" style="margin-bottom: 16px; margin-top: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+                  <strong style="color: var(--primary); font-size: 0.95rem;">Your Draft Response (Write answers to Q3a-d below):</strong>
+                  <span class="hu-save-status" id="hu-save-status-${subtopicId}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? 'inline' : 'none'};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
+                </div>
+                
+                <!-- Sentence Starters Dropdown -->
+                <div style="margin-bottom: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                  <label for="sentence-starter-${subtopicId}" style="font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; white-space: nowrap;">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary);"></i> Sentence Starters:
+                  </label>
+                  <select id="sentence-starter-${subtopicId}" class="hu-starter-select" style="flex: 1; min-width: 220px; padding: 6px 10px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.82rem; cursor: pointer; outline: none; transition: border-color var(--transition-fast);">
+                    <option value="" disabled selected>-- Select a sentence starter to insert --</option>
+                    ${suite.sentenceStarters.map(st => `<option value="${st.value}">${st.label}</option>`).join('')}
+                  </select>
+                </div>
+
+                <textarea class="hu-textarea" data-subtopic-id="${subtopicId}" placeholder="Draft your answers to Questions 3a, 3b, 3c, and 3d here. For example:\n\n[Q3a Draft]\n...\n\n[Q3b Draft]\n..." style="width: 100%; height: 250px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; line-height: 1.45; font-family: inherit; margin-bottom: 6px;">${state.howUsefulAnswers && state.howUsefulAnswers[subtopicId] ? state.howUsefulAnswers[subtopicId] : ''}</textarea>
+              </div>
+
+              <!-- Model Answer Reveal -->
+              <div class="hu-model-answer-section" style="margin-top: 20px;">
+                <button class="mastery-btn hu-reveal-btn" style="width: 100%; justify-content: center; background: var(--gradient-primary); border: none; color: white; padding: 12px; font-weight: bold; border-radius: var(--border-radius-sm); cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-eye"></i> Compare with Examiner Model Answers
+                </button>
+                <div class="hu-model-answer-content" style="display: none; margin-top: 14px; padding: 16px; background: rgba(34, 197, 94, 0.05); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm);">
+                  <h4 style="margin: 0 0 10px 0; color: var(--success); font-size: 0.95rem;"><i class="fa-solid fa-circle-check"></i> Examiner Model Answer (Q3a to Q3d):</h4>
+                  <div style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); white-space: pre-line;">${highlightModelQuotes(suite.modelAnswer)}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    `;
+  } else if (data.howUsefulAnalyser) {
     const hu = data.howUsefulAnalyser;
     howUsefulHtml = `
       <style>
@@ -975,7 +1045,6 @@ export function renderMasteryView(subtopicId) {
 
   // Generate Deep Thinking HTML (Disabled)
   let deepThinkingHtml = '';
-
   let doNowHtml = '';
   if (data.doNowStarter) {
     const dn = data.doNowStarter;
@@ -1259,18 +1328,46 @@ export function renderMasteryView(subtopicId) {
   const video = VIDEOS_DATA[subtopicId];
   let videoHtml = '';
   if (video) {
-    const cleanDuration = video.duration.startsWith('0') ? video.duration.slice(1) : video.duration;
     const questionsList = video.questions.map(q => `<li>${q}</li>`).join('');
     
+    let primaryHtml = '';
+    if (video.primary) {
+      const cleanDuration = video.primary.duration.startsWith('0') ? video.primary.duration.slice(1) : video.primary.duration;
+      primaryHtml = `
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+          <span style="font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); background: var(--accent-glow); border: 1px solid rgba(244, 63, 94, 0.2); padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); white-space: nowrap;">2-Minute AI Overview</span>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0; flex: 1; min-width: 250px;">
+            <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 1.05rem; margin-right: 4px; vertical-align: middle;"></i>
+            Watch the 2-minute summary: 
+            <a href="${video.primary.youtube_url}" class="lesson-video-link" data-url="${video.primary.youtube_url}" data-title="${video.primary.video_title.replace(/"/g, '&quot;')}" style="color: var(--primary); font-weight: bold; text-decoration: underline; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--primary-hover)'" onmouseout="this.style.color='var(--primary)'">
+              "${video.primary.video_title}"
+            </a> (${cleanDuration} mins).
+          </p>
+        </div>
+      `;
+    }
+
+    let secondaryHtml = '';
+    if (video.secondary) {
+      const cleanDuration = video.secondary.duration.startsWith('0') ? video.secondary.duration.slice(1) : video.secondary.duration;
+      secondaryHtml = `
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); background: var(--primary-glow); border: 1px solid rgba(168, 85, 247, 0.2); padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); white-space: nowrap;">Deconstruct Deep Dive</span>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0; flex: 1; min-width: 250px;">
+            <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 1.05rem; margin-right: 4px; vertical-align: middle;"></i>
+            Study video: 
+            <a href="${video.secondary.youtube_url}" class="lesson-video-link" data-url="${video.secondary.youtube_url}" data-title="${video.secondary.video_title.replace(/"/g, '&quot;')}" style="color: var(--primary); font-weight: bold; text-decoration: underline; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--primary-hover)'" onmouseout="this.style.color='var(--primary)'">
+              "${video.secondary.video_title}"
+            </a> (${cleanDuration} mins) by ${video.secondary.production_source}.
+          </p>
+        </div>
+      `;
+    }
+
     videoHtml = `
-      <div class="lesson-video-wrapper" style="margin-top: 14px; border-top: 1px dashed var(--border-glass); padding-top: 12px;">
-        <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0 0 10px 0;">
-          <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 1.1rem; margin-right: 6px; vertical-align: middle;"></i>
-          Watch this YouTube video on "${data.headerTitle.split(':').pop().trim()}" by ${video.production_source}: 
-          <a href="${video.youtube_url}" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--primary-hover)'" onmouseout="this.style.color='var(--primary)'">
-            "${video.video_title}"
-          </a> (${cleanDuration} mins).
-        </p>
+      <div class="lesson-video-wrapper" style="margin-top: 14px; border-top: 1px dashed var(--border-glass); padding-top: 12px; display: flex; flex-direction: column; gap: 10px;">
+        ${primaryHtml}
+        ${secondaryHtml}
         
         <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 10px 14px;">
           <strong style="font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -1461,98 +1558,335 @@ export function renderMasteryView(subtopicId) {
   const mappedExams = SUBTOPIC_EXAM_MAPPING[subtopicId];
   if (mappedExams && mappedExams.length > 0) {
     let dropdownsMarkup = '';
-    mappedExams.forEach(item => {
+    const processedMappedExams = groupMappedExams(mappedExams);
+    processedMappedExams.forEach(item => {
       const paper = PAST_PAPERS_DATA.find(p => p.id === item.paperId);
       if (!paper) return;
       
-      const qObj = paper[item.qType];
-      if (!qObj) return;
+      if (item.qType === 'q3_suite') {
+        // Display both sources and both interpretations once and once only
+        let sourcesHtml = '';
+        if (paper.sourceB && paper.sourceC && paper.interpretation1 && paper.interpretation2) {
+          sourcesHtml = `
+            <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Sources B & C:</strong>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
+              <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+                <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
+                <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
+                ${paper.sourceB.image ? `
+                  <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
+                ` : ''}
+                <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+              </div>
+              <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+                <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
+                <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
+                ${paper.sourceC.image ? `
+                  <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
+                ` : ''}
+                <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+              </div>
+            </div>
+            <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Interpretations 1 & 2:</strong>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
+              <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+                <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
+                <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation1.author}</p>
+                <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation1.content}</p>
+              </div>
+              <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+                <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 2</span>
+                <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation2.author}</p>
+                <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation2.content}</p>
+              </div>
+            </div>
+          `;
+        }
 
-      // Clean trailing marks suffix from question title
-      const cleanQuestionText = qObj.question.replace(/\(\d+\s*marks?\)/gi, '').trim();
+        const qId = `${paper.id}_q3_suite`;
 
-      // Render sources if any
-      let sourcesHtml = '';
-      if (item.qType === 'q1' && paper.sourceA) {
-        sourcesHtml = `
-          <div class="skills-source-card" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 24px; position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary);"></div>
-            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 8px;">SOURCE A</span>
-            <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
-            ${paper.sourceA.image ? `
-              <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 250px; object-fit: contain; margin-bottom: 12px; border-radius: 4px;" />
-            ` : ''}
-            <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
+        // Questions list HTML
+        let questionsListHTML = `
+          <div style="margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px;">
+        `;
+        if (paper.q3a) {
+          questionsListHTML += `
+            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+              <span style="font-weight: bold; color: var(--primary);">Question 3a (8 Marks):</span>
+              <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3a.question.replace(/\(8\s*marks?\)/gi, '').trim()}</span>
+            </div>
+          `;
+        }
+        if (paper.q3b) {
+          questionsListHTML += `
+            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+              <span style="font-weight: bold; color: var(--primary);">Question 3b (4 Marks):</span>
+              <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3b.question.replace(/\(4\s*marks?\)/gi, '').trim()}</span>
+            </div>
+          `;
+        }
+        if (paper.q3c) {
+          questionsListHTML += `
+            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
+              <span style="font-weight: bold; color: var(--primary);">Question 3c (4 Marks):</span>
+              <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3c.question.replace(/\(4\s*marks?\)/gi, '').trim()}</span>
+            </div>
+          `;
+        }
+        if (paper.q3d) {
+          questionsListHTML += `
+            <div>
+              <span style="font-weight: bold; color: var(--primary);">Question 3d (16 + 4 SPaG Marks):</span>
+              <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3d.question.replace(/\(16\s*marks?\)/gi, '').replace(/\(16\+4\s*marks?\)/gi, '').trim()}</span>
+              <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+                Explain your answer, using both interpretations, and your knowledge of the historical context.
+              </p>
+            </div>
+          `;
+        }
+        questionsListHTML += `</div>`;
+
+        // Scaffold templates
+        const scaffoldBtn = `
+          <button class="btn-secondary btn-blue-variant" id="past-btn-scaffold-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px;">
+            <i class="fa-solid fa-pen-fancy"></i> Writing Scaffolds
+          </button>
+        `;
+
+        const scaffoldBoxHTML = `
+          <div class="past-scaffold-box" id="past-scaffold-box-${qId}" style="display: none; margin-top: 15px; padding: 15px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: var(--border-radius-sm);">
+            <div style="margin-bottom: 16px;">
+              <strong>Q3b Main Difference (4 Marks) Formula:</strong><br>1. State the main difference in their overall view.<br>2. Quote/detail from Interpretation 1.<br>3. Quote/detail from Interpretation 2.
+              <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                <button class="scaffold-starter-btn" data-starter="The main difference is that Interpretation 1 argues that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> The main difference is that Interpretation 1 argues that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="This is shown when Interpretation 1 states...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> This is shown when Interpretation 1 states...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="In contrast, Interpretation 2 suggests that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> In contrast, Interpretation 2 suggests that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="This is shown when Interpretation 2 states...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> This is shown when Interpretation 2 states...
+                </button>
+              </div>
+            </div>
+            <div style="margin-bottom: 16px; border-top: 1px solid var(--border-glass); padding-top: 16px;">
+              <strong>Q3c Reason for Difference (4 Marks) Formula (Crucial for Full Marks):</strong><br>1. State that the interpretations differ because they used different sources (Interpretation 1 uses Source B, whereas Interpretation 2 uses Source C).<br>2. Quote Interpretation 1 AND Source B to show how they support each other.<br>3. Quote Interpretation 2 AND Source C to show how they support each other.<br><em>*Note: You MUST quote both interpretations and both sources to get full marks!</em>
+              <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                <button class="scaffold-starter-btn" data-starter="The interpretations differ because the historians have used different sources: Interpretation 1 has used Source B, whereas Interpretation 2 has used Source C.">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> The interpretations differ because they used different sources...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="Interpretation 1 argues that '[quote Interpretation 1]', which is supported by Source B stating '[quote Source B]'.">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> Interpretation 1 argues that... supported by Source B...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="In contrast, Interpretation 2 argues that '[quote Interpretation 2]', which is supported by Source C stating '[quote Source C]'.">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> In contrast, Interpretation 2 argues that... supported by Source C...
+                </button>
+              </div>
+            </div>
+            <div style="border-top: 1px solid var(--border-glass); padding-top: 16px;">
+              <strong>Q3d Evaluation Essay (16+4 Marks) Formula:</strong><br>1. Support Interpretation 2 using own knowledge.<br>2. Support Interpretation 1 using own knowledge.<br>3. Conclude with judgment.
+              <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                <button class="scaffold-starter-btn" data-starter="I agree with Interpretation 2 to a large extent because...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> I agree with Interpretation 2 to a large extent because...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="My own knowledge confirms that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> My own knowledge confirms that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="This supports Interpretation 2's view that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> This supports Interpretation 2's view that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="However, Interpretation 1 is also valid in highlighting that...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> However, Interpretation 1 is also valid in highlighting that...
+                </button>
+                <button class="scaffold-starter-btn" data-starter="Overall, I find Interpretation 2 more convincing because...">
+                  <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> Overall, I find Interpretation 2 more convincing because...
+                </button>
+              </div>
+            </div>
           </div>
         `;
-      } else if (item.qType === 'q3a' && paper.sourceB && paper.sourceC) {
-        sourcesHtml = `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
-            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-              <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
-              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
-              ${paper.sourceB.image ? `
-                <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
-              ` : ''}
-              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+
+        const questionMarkup = `
+          <div class="exam-question-block" id="exam-q-block-${qId}">
+            <div class="exam-question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px;">
+              <div style="flex: 1;">
+                <h5 class="exam-question-title" style="margin: 0; font-size: 1.05rem; line-height: 1.4;">Section B Enquiry Questions (Q3a-d)</h5>
+              </div>
+              <span class="exam-question-marks" style="flex-shrink: 0; background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">32 Marks Total</span>
             </div>
-            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-              <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
-              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
-              ${paper.sourceC.image ? `
-                <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
-              ` : ''}
-              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+
+            ${questionsListHTML}
+
+            <textarea class="exam-textarea" id="past-textarea-${qId}" placeholder="Draft your answers for Q3a, Q3b, Q3c, and Q3d here..." style="min-height: 250px;"></textarea>
+
+            <!-- Live feedback card -->
+            <div class="draft-feedback-card" id="draft-feedback-${qId}">
+              <div class="feedback-stats">
+                <div class="feedback-badge" id="feedback-badge-${qId}">Structure: Drafting</div>
+                <div class="feedback-progress-bar">
+                  <div class="feedback-progress-fill" id="feedback-fill-${qId}" style="width: 0%;"></div>
+                </div>
+              </div>
+              <div class="feedback-checklist">
+                <div class="feedback-item">
+                  <strong>Connectives checklist:</strong>
+                  <div class="feedback-tags" id="connective-tags-${qId}"></div>
+                </div>
+                <div class="feedback-item" id="keyword-feedback-row-${qId}">
+                  <strong>Key Terms:</strong>
+                  <div class="feedback-tags" id="keyword-tags-${qId}"></div>
+                </div>
+              </div>
             </div>
+
+            <div class="exam-sheet-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="btn-secondary" id="past-btn-clue-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px;">
+                <i class="fa-solid fa-lightbulb"></i> Educator Clues
+              </button>
+              ${scaffoldBtn}
+              <button class="btn-primary" id="past-btn-check-${qId}" style="flex: 2; min-width: 180px; font-size: 0.85rem; padding: 8px 12px;">
+                <i class="fa-solid fa-clipboard-check"></i> Self-Check Answers
+              </button>
+            </div>
+
+            <div class="past-clue-box" id="past-clue-box-${qId}" style="display: none; padding: 12px; background: rgba(255,255,255,0.03); border-radius: var(--border-radius-sm); border: 1px dashed var(--border-glass); margin-top: 15px;">
+              <div style="margin-bottom: 8px;"><strong>Q3a Clue (Source Utility):</strong> ${paper.q3a.clue}</div>
+              <div style="margin-bottom: 8px;"><strong>Q3b Clue (Interpretations Difference):</strong> ${paper.q3b.clue}</div>
+              <div style="margin-bottom: 8px;"><strong>Q3c Clue (Interpretations Difference Reason):</strong> ${paper.q3c.clue}</div>
+              <div><strong>Q3d Clue (Interpretations Evaluation):</strong> ${paper.q3d.clue}</div>
+            </div>
+
+            ${scaffoldBoxHTML}
+
+            <div class="past-model-answer" id="past-answer-box-${qId}" style="display: none; margin-top: 15px; padding: 15px; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--border-radius-sm);">
+              <div class="past-model-answer-title" style="font-weight: 700; color: #10b981; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-star"></i> Level 3/4 Model Answers Suite
+              </div>
+              
+              <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+                <strong style="color: var(--primary); display: block; margin-bottom: 6px;">Q3a Model Answer (Source Utility):</strong>
+                <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3a.model)}</div>
+                <div class="model-answer-key" style="margin-top: 8px;">
+                  <span class="model-key-title">Key:</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Provenance</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+                <strong style="color: var(--primary); display: block; margin-bottom: 6px;">Q3b Model Answer (Interpretations Difference):</strong>
+                <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3b.model)}</div>
+                <div class="model-answer-key" style="margin-top: 8px;">
+                  <span class="model-key-title">Key:</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation 1 Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #10b981;"></span> Interpretation 2 Quotes</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+                <strong style="color: var(--primary); display: block; margin-bottom: 6px;">Q3c Model Answer (Interpretations Difference Reason):</strong>
+                <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3c.model)}</div>
+                <div class="model-answer-key" style="margin-top: 8px;">
+                  <span class="model-key-title">Key:</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
+                </div>
+              </div>
+
+              <div>
+                <strong style="color: var(--primary); display: block; margin-bottom: 6px;">Q3d Model Answer (Interpretations Evaluation):</strong>
+                <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3d.model)}</div>
+                <div class="model-answer-key" style="margin-top: 8px;">
+                  <span class="model-key-title">Key:</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+                </div>
+              </div>
+            </div>
+
+            <label class="completion-check-row">
+              <input type="checkbox" id="past-chk-${qId}">
+              Mark this question suite as complete
+            </label>
           </div>
         `;
-      } else if ((item.qType === 'q3b' || item.qType === 'q3c' || item.qType === 'q3d') && paper.interpretation1 && paper.interpretation2) {
-        sourcesHtml = `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
-            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-              <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
-              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation1.author}</p>
-              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation1.content}</p>
+
+        dropdownsMarkup += `
+          <div class="mastery-card lesson-exam-practice-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+            <details class="lesson-exam-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
+              <summary class="lesson-exam-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.1rem; color: var(--text-main);">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+                  Exam Practice (${item.yearLabel}): ${item.label}
+                </span>
+                <i class="fa-solid fa-chevron-down lesson-exam-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+              </summary>
+              <div class="lesson-exam-expanded-content" style="margin-top: 16px;">
+                ${sourcesHtml}
+                ${questionMarkup}
+              </div>
+            </details>
+          </div>
+        `;
+      } else {
+        const qObj = paper[item.qType];
+        if (!qObj) return;
+
+        // Clean trailing marks suffix from question title
+        const cleanQuestionText = qObj.question.replace(/\(\d+\s*marks?\)/gi, '').trim();
+
+        // Render sources if any
+        let sourcesHtml = '';
+        if (item.qType === 'q1' && paper.sourceA) {
+          sourcesHtml = `
+            <div class="skills-source-card" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 24px; position: relative;">
+              <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary);"></div>
+              <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 8px;">SOURCE A</span>
+              <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
+              ${paper.sourceA.image ? `
+                <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 250px; object-fit: contain; margin-bottom: 12px; border-radius: 4px;" />
+              ` : ''}
+              <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
             </div>
-            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-              <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 2</span>
-              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation2.author}</p>
-              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation2.content}</p>
-            </div>
+          `;
+        }
+
+        const qId = `${paper.id}_${item.qType}`;
+        const marks = item.qType === 'q1' ? '4' : (item.qType === 'q2' ? '12' : (item.qType === 'q3a' ? '8' : (item.qType === 'q3b' ? '4' : (item.qType === 'q3c' ? '4' : '16 + 4 SPaG'))));
+        const stimulus = item.qType === 'q2' ? qObj.stimulus : null;
+        const questionMarkup = renderPastQuestionMarkup(qId, qObj.question, qObj.clue, qObj.model, marks, stimulus);
+
+        // Label with year or mock in brackets
+        const yearOrMockLabel = item.yearLabel;
+
+        dropdownsMarkup += `
+          <div class="mastery-card lesson-exam-practice-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+            <details class="lesson-exam-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
+              <summary class="lesson-exam-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.1rem; color: var(--text-main);">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+                  Exam Practice (${yearOrMockLabel}): ${item.label} - ${cleanQuestionText}
+                </span>
+                <i class="fa-solid fa-chevron-down lesson-exam-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+              </summary>
+              <div class="lesson-exam-expanded-content" style="margin-top: 16px;">
+                ${sourcesHtml}
+                ${questionMarkup}
+              </div>
+            </details>
           </div>
         `;
       }
-
-      const qId = `${paper.id}_${item.qType}`;
-      const marks = item.qType === 'q1' ? '4' : (item.qType === 'q2' ? '12' : (item.qType === 'q3a' ? '8' : (item.qType === 'q3b' ? '4' : (item.qType === 'q3c' ? '4' : '16 + 4 SPaG'))));
-      const stimulus = item.qType === 'q2' ? qObj.stimulus : null;
-      const questionMarkup = renderPastQuestionMarkup(qId, qObj.question, qObj.clue, qObj.model, marks, stimulus);
-
-      // Label with year or mock in brackets
-      const yearOrMockLabel = item.yearLabel;
-
-      dropdownsMarkup += `
-        <div class="mastery-card lesson-exam-practice-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
-          <details class="lesson-exam-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
-            <summary class="lesson-exam-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.1rem; color: var(--text-main);">
-              <span style="display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
-                Exam Practice (${yearOrMockLabel}): ${item.label} - ${cleanQuestionText}
-              </span>
-              <i class="fa-solid fa-chevron-down lesson-exam-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
-            </summary>
-            <div class="lesson-exam-expanded-content" style="margin-top: 16px;">
-              ${sourcesHtml}
-              ${questionMarkup}
-            </div>
-          </details>
-        </div>
-      `;
     });
+
 
     embeddedExamsHtml = `
       <style>
@@ -2087,7 +2421,7 @@ export function renderMasteryView(subtopicId) {
   }
 
   // How Useful Analyser Event Listeners
-  if (data.howUsefulAnalyser) {
+  if (data.howUsefulAnalyser || data.paper3Suite) {
     const huCard = container.querySelector('.how-useful-card');
     if (huCard) {
       // Tab Switching
@@ -2225,6 +2559,18 @@ export function renderMasteryView(subtopicId) {
           searchInput.style.outline = 'none';
         }, 1500);
       }
+    });
+  });
+
+  // Bind Video Link Event to open in Video Modal
+  const videoLinks = container.querySelectorAll('.lesson-video-link');
+  videoLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      AudioEngine.play('click');
+      const url = link.getAttribute('data-url');
+      const title = link.getAttribute('data-title');
+      openVideoModal(url, title);
     });
   });
 
@@ -2649,14 +2995,30 @@ export function renderMasteryView(subtopicId) {
   wrapImagesInLinks(container);
 
   // Bind Embedded Exam Question Listeners
-  if (mappedExams && mappedExams.length > 0) {
-    mappedExams.forEach(item => {
+  const processedMappedExams = groupMappedExams(mappedExams);
+  if (processedMappedExams && processedMappedExams.length > 0) {
+    processedMappedExams.forEach(item => {
       const paper = PAST_PAPERS_DATA.find(p => p.id === item.paperId);
       if (!paper) return;
-      const qObj = paper[item.qType];
-      if (!qObj) return;
-      const qId = `${paper.id}_${item.qType}`;
-      bindEmbeddedExamQuestionListeners(container, qId, qObj, paper.id);
+      
+      if (item.qType === 'q3_suite') {
+        const qId = `${paper.id}_q3_suite`;
+        const uniqueKeywords = [
+          ...new Set([
+            ...(paper.q3a ? getKeywordsForQuestion(paper.q3a) : []),
+            ...(paper.q3b ? getKeywordsForQuestion(paper.q3b) : []),
+            ...(paper.q3c ? getKeywordsForQuestion(paper.q3c) : []),
+            ...(paper.q3d ? getKeywordsForQuestion(paper.q3d) : [])
+          ])
+        ];
+        const suiteQObj = { keywords: uniqueKeywords };
+        bindEmbeddedExamQuestionListeners(container, qId, suiteQObj, paper.id);
+      } else {
+        const qObj = paper[item.qType];
+        if (!qObj) return;
+        const qId = `${paper.id}_${item.qType}`;
+        bindEmbeddedExamQuestionListeners(container, qId, qObj, paper.id);
+      }
     });
   }
 }

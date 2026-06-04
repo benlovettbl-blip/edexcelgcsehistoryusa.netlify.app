@@ -7,7 +7,7 @@ const { google } = require('googleapis');
 
 const CLIENT_SECRET_FILE = 'client_secret.json';
 const TOKEN_FILE = 'youtube_token.json';
-const QUESTIONS_FILE = 'questions.js';
+const VIDEOS_DATA_FILE = path.join(__dirname, 'src', 'videos_data.js');
 
 async function main() {
   console.log('====================================================');
@@ -17,15 +17,6 @@ async function main() {
   // 1. Check for client_secret.json
   if (!fs.existsSync(CLIENT_SECRET_FILE)) {
     console.error(`ERROR: "${CLIENT_SECRET_FILE}" not found in this folder.\n`);
-    console.log('To set up YouTube uploads, please do the following:');
-    console.log('1. Go to the Google Cloud Console: https://console.cloud.google.com/');
-    console.log('2. Create a new project (e.g. "GCSE History App").');
-    console.log('3. Search for and enable the "YouTube Data API v3".');
-    console.log('4. Go to "APIs & Services" > "Credentials" and click "+ Create Credentials" > "OAuth client ID".');
-    console.log('5. Select Application Type: "Web application".');
-    console.log('6. Add Authorized Redirect URI: http://localhost:3000/oauth2callback');
-    console.log('7. Click Create, then click "Download JSON" and save it as "client_secret.json" in this directory.');
-    console.log('\nOnce you have downloaded client_secret.json, run this script again!');
     process.exit(1);
   }
 
@@ -43,7 +34,7 @@ async function main() {
     process.exit(1);
   }
 
-  const { client_secret, client_id, redirect_uris } = credentials;
+  const { client_secret, client_id } = credentials;
   const redirectUri = 'http://localhost:3000/oauth2callback';
   const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirectUri);
 
@@ -59,40 +50,38 @@ async function main() {
 
   const youtube = google.youtube({ version: 'v3', auth: oAuth2Client });
 
-  // 4. Load questions.js and subtopics
-  console.log('\nReading questions database...');
-  let questionsContent = fs.readFileSync(QUESTIONS_FILE, 'utf8');
+  // 4. Load src/videos_data.js
+  console.log('\nReading src/videos_data.js database...');
+  const videosDataContent = fs.readFileSync(VIDEOS_DATA_FILE, 'utf8');
   
-  const questionsModule = await import('./questions.js');
-  const questionsData = questionsModule.QUIZ_DATA;
+  // Find JSON inside export statement
+  const jsonStartIndex = videosDataContent.indexOf('{');
+  const jsonEndIndex = videosDataContent.lastIndexOf('}') + 1;
+  if (jsonStartIndex === -1 || jsonEndIndex === -1) {
+    console.error('ERROR: Could not parse json out of src/videos_data.js');
+    process.exit(1);
+  }
+  
+  const jsonText = videosDataContent.substring(jsonStartIndex, jsonEndIndex);
+  const videosData = JSON.parse(jsonText);
 
   const subtopicsToUpload = [];
   
-  for (const topic of questionsData) {
-    if (topic.subtopics) {
-      for (const sub of topic.subtopics) {
-        // If youtubeId ends in _yt or starts with subtopic_ or is missing, we need to upload
-        const needsUpload = !sub.youtubeId || sub.youtubeId.endsWith('_yt') || sub.youtubeId.startsWith('subtopic_');
-        if (needsUpload && sub.embedVideo) {
-          // Check if local file exists
-          const localPath = path.join(__dirname, 'videos', `${sub.id}.mp4`);
-          if (fs.existsSync(localPath)) {
-            subtopicsToUpload.push({
-              id: sub.id,
-              title: sub.title,
-              localPath: localPath
-            });
-          } else {
-            console.warn(`WARNING: Missing local video file for ${sub.id} at: ${localPath}`);
-          }
-        }
-      }
+  for (const subtopicId of Object.keys(videosData)) {
+    const localPath = path.join(__dirname, 'videos', `${subtopicId}.mp4`);
+    if (fs.existsSync(localPath)) {
+      subtopicsToUpload.push({
+        id: subtopicId,
+        title: videosData[subtopicId].primary.video_title,
+        localPath: localPath
+      });
+    } else {
+      console.warn(`WARNING: Local video file not found for ${subtopicId} at: ${localPath}`);
     }
   }
 
   if (subtopicsToUpload.length === 0) {
-    console.log('\nAll videos are already uploaded with valid YouTube IDs!');
-    console.log('No new videos to upload.');
+    console.log('\nNo videos to upload. Make sure .mp4 files are in /videos/');
     process.exit(0);
   }
 
@@ -135,20 +124,17 @@ async function main() {
     }
   }
 
-  // 5. Update questions.js file
-  console.log('Updating questions.js database with new YouTube IDs...');
-  let updatedQuestions = questionsContent;
-  let replacementsCount = 0;
+  // 5. Update videosData and save back to src/videos_data.js
+  console.log('Updating src/videos_data.js database with new YouTube IDs...');
   for (const [subtopicId, ytId] of Object.entries(youtubeIdsMap)) {
-    const placeholder = `${subtopicId}_yt`;
-    if (updatedQuestions.includes(placeholder)) {
-      updatedQuestions = updatedQuestions.split(placeholder).join(ytId);
-      replacementsCount++;
+    if (videosData[subtopicId] && videosData[subtopicId].primary) {
+      videosData[subtopicId].primary.youtube_url = `https://www.youtube.com/watch?v=${ytId}`;
     }
   }
 
-  fs.writeFileSync(QUESTIONS_FILE, updatedQuestions, 'utf8');
-  console.log(`Saved changes to ${QUESTIONS_FILE}. Mapped ${replacementsCount} placeholders to real YouTube IDs.`);
+  const updatedContent = `export const VIDEOS_DATA = ${JSON.stringify(videosData, null, 2)};\n`;
+  fs.writeFileSync(VIDEOS_DATA_FILE, updatedContent, 'utf8');
+  console.log(`Saved changes to ${VIDEOS_DATA_FILE}. Mapped ${Object.keys(youtubeIdsMap).length} subtopics to real YouTube IDs.`);
 
   // 6. Run rebuild
   console.log('\nRunning build to bundle updated assets...');
@@ -200,7 +186,6 @@ function getNewToken(oAuth2Client) {
       console.log('  ', authUrl);
       console.log('====================================================\n');
       
-      // Open default browser on Windows
       exec(`start "" "${authUrl}"`);
     });
   });

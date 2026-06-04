@@ -482,8 +482,10 @@ function selectMCQOption(optionText) {
   document.getElementById('exam-correct-exp').textContent = q.explanation;
   
   const reviewAnswer = document.getElementById('exam-review-user-answer');
-  reviewAnswer.textContent = optionText;
-  reviewAnswer.style.color = isCorrect ? 'var(--success)' : 'var(--accent)';
+  if (reviewAnswer) {
+    reviewAnswer.textContent = optionText;
+    reviewAnswer.style.color = isCorrect ? 'var(--success)' : 'var(--accent)';
+  }
   
   // Update result banner
   const banner = document.getElementById('exam-result-banner');

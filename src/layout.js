@@ -9,7 +9,8 @@ import {
   evaluateStudentAnswer, 
   renderSidebarNav, 
   updateGlobalStats,
-  setActiveClassicFilter
+  setActiveClassicFilter,
+  closeVideoModal
 } from './views.js';
 import { startExam, nextExamQuestion, displayExamQuestion, finishExam } from './exam.js';
 import { saveProgress } from './storage.js';
@@ -159,6 +160,11 @@ function bindEvents() {
     switchView('games');
   });
 
+  document.getElementById('nav-ai-videos').addEventListener('click', () => {
+    AudioEngine.play('click');
+    switchView('ai-videos');
+  });
+
   // Dashboard Shortcuts
   document.getElementById('shortcut-timeline').addEventListener('click', () => {
     AudioEngine.play('click');
@@ -183,6 +189,11 @@ function bindEvents() {
   document.getElementById('shortcut-games').addEventListener('click', () => {
     AudioEngine.play('click');
     switchView('games');
+  });
+
+  document.getElementById('shortcut-ai-videos').addEventListener('click', () => {
+    AudioEngine.play('click');
+    switchView('ai-videos');
   });
 
   // Mobile Menu Toggle
