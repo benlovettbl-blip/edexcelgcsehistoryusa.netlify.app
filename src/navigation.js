@@ -20,6 +20,7 @@ import { AudioEngine } from './audio.js';
 
 // --- Navigation Controller ---
 export function switchView(viewName, subtopicId = null) {
+  AudioEngine.stopSpeaking();
   state.currentView = viewName;
 
   const backBtn = document.getElementById('header-back-btn');
@@ -98,10 +99,19 @@ export function switchView(viewName, subtopicId = null) {
     if (viewTitle) viewTitle.textContent = "2-Minute AI Video Overview";
     state.selectedSubtopicId = null;
     renderAiVideosView();
+  } else if (viewName === 'flashcards') {
+    state.selectedSubtopicId = subtopicId;
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) {
+      viewTitle.textContent = subtopicId === 'bookmarks' ? "Reviewing Bookmarked Deck" : "Flashcard Study";
+    }
+    startFlashcardSession(subtopicId);
   } else if (viewName === 'subtopic' && subtopicId) {
     state.selectedSubtopicId = subtopicId;
     state.selectedKeyTopicId = null;
     if (headerModeSwitcher) headerModeSwitcher.style.display = 'flex';
+    localStorage.setItem('edexcel_last_subtopic', subtopicId);
     
     // Highlight correct subtopic in sidebar
     const subNavBtn = document.getElementById(`nav-subtopic-${subtopicId}`);

@@ -25,7 +25,8 @@ export const state = {
     originalLength: 0,
     masteredCount: 0,
     reinforcing: false,
-    reinforceQuestion: null
+    reinforceQuestion: null,
+    wasDragged: false
   },
   
   // Quiz Generator State

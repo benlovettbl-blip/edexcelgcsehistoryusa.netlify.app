@@ -34,13 +34,25 @@ function closeMobileSidebar() {
 
 function updateSoundBtnUI() {
   const btn = document.getElementById('sound-toggle-btn');
-  if (!btn) return;
-  if (state.soundEnabled) {
-    btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
-    btn.title = 'Sound Effects: On (Click to Mute)';
-  } else {
-    btn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
-    btn.title = 'Sound Effects: Off (Click to Enable)';
+  if (btn) {
+    if (state.soundEnabled) {
+      btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+      btn.title = 'Sound Effects: On (Click to Mute)';
+    } else {
+      btn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+      btn.title = 'Sound Effects: Off (Click to Enable)';
+    }
+  }
+
+  const sidebarBtn = document.getElementById('sidebar-sound-toggle-btn');
+  if (sidebarBtn) {
+    if (state.soundEnabled) {
+      sidebarBtn.innerHTML = `<i class="fa-solid fa-volume-high"></i> <span>Sound Effects: On</span>`;
+      sidebarBtn.title = 'Sound Effects: On (Click to Mute)';
+    } else {
+      sidebarBtn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i> <span>Sound Effects: Off</span>`;
+      sidebarBtn.title = 'Sound Effects: Off (Click to Enable)';
+    }
   }
 }
 
@@ -425,22 +437,37 @@ function bindEvents() {
   });
 
   // Bottom Settings Utilities
-  document.getElementById('sound-toggle-btn').addEventListener('click', () => {
+  const toggleSound = () => {
     state.soundEnabled = !state.soundEnabled;
     localStorage.setItem('edexcel_sound', JSON.stringify(state.soundEnabled));
     updateSoundBtnUI();
     AudioEngine.play('click');
-  });
+  };
 
-  document.getElementById('theme-selector').addEventListener('change', (e) => {
-    const nextTheme = e.target.value;
+  const soundBtn = document.getElementById('sound-toggle-btn');
+  if (soundBtn) soundBtn.addEventListener('click', toggleSound);
+  const sidebarSoundBtn = document.getElementById('sidebar-sound-toggle-btn');
+  if (sidebarSoundBtn) sidebarSoundBtn.addEventListener('click', toggleSound);
+
+  const changeTheme = (nextTheme) => {
     state.theme = nextTheme;
     localStorage.setItem('edexcel_theme', nextTheme);
     document.documentElement.setAttribute('data-theme', nextTheme);
+    
+    const headerTheme = document.getElementById('theme-selector');
+    if (headerTheme) headerTheme.value = nextTheme;
+    const sidebarTheme = document.getElementById('sidebar-theme-selector');
+    if (sidebarTheme) sidebarTheme.value = nextTheme;
+    
     AudioEngine.play('click');
-  });
+  };
 
-  document.getElementById('reset-progress-btn').addEventListener('click', () => {
+  const themeSel = document.getElementById('theme-selector');
+  if (themeSel) themeSel.addEventListener('change', (e) => changeTheme(e.target.value));
+  const sidebarThemeSel = document.getElementById('sidebar-theme-selector');
+  if (sidebarThemeSel) sidebarThemeSel.addEventListener('change', (e) => changeTheme(e.target.value));
+
+  const resetProgress = () => {
     if (confirm("WARNING: This will completely erase all your mastery stats. Bookmarks will be kept. Proceed?")) {
       state.mastery = {};
       saveProgress();
@@ -453,7 +480,12 @@ function bindEvents() {
       }
       AudioEngine.play('fail');
     }
-  });
+  };
+
+  const resetBtn = document.getElementById('reset-progress-btn');
+  if (resetBtn) resetBtn.addEventListener('click', resetProgress);
+  const sidebarResetBtn = document.getElementById('sidebar-reset-progress-btn');
+  if (sidebarResetBtn) sidebarResetBtn.addEventListener('click', resetProgress);
 
 
 
@@ -1255,6 +1287,292 @@ function bindEvents() {
       generateMockExam();
     });
   }
+
+  // Desktop Keyboard Shortcuts
+  document.addEventListener('keydown', (e) => {
+    // Avoid triggering when user is typing in inputs or textareas
+    const active = document.activeElement;
+    if (active && (
+      active.tagName === 'INPUT' || 
+      active.tagName === 'TEXTAREA' || 
+      active.isContentEditable
+    )) {
+      return;
+    }
+
+    // Escape Key - Global modals/sidebar
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      closeVideoModal();
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebar-overlay');
+      if (sidebar && sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+      }
+      if (overlay && overlay.classList.contains('active')) {
+        overlay.classList.remove('active');
+      }
+      return;
+    }
+
+    // Flashcard View Controls
+    const flashcardView = document.getElementById('view-flashcards');
+    if (flashcardView && flashcardView.classList.contains('active')) {
+      const cardEl = document.getElementById('flashcard-card');
+      if (cardEl && !state.flashcardSession.reinforcing) {
+        if (e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          flipFlashcard();
+        } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+          e.preventDefault();
+          handleFlashcardGrade(false);
+        } else if (e.key === 'ArrowRight' || e.key === 'Right') {
+          e.preventDefault();
+          handleFlashcardGrade(true);
+        }
+      }
+      return;
+    }
+
+    // 10-Step Unit Mastery Journey Controls (when in lesson/mastery view)
+    const masteryView = document.getElementById('view-mastery');
+    if (masteryView && masteryView.classList.contains('active')) {
+      const homeworkCard = masteryView.querySelector('.homework-questions-card');
+      if (homeworkCard) {
+        if (e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          const revealBtn = homeworkCard.querySelector('.journey-reveal-answer-btn');
+          if (revealBtn) revealBtn.click();
+        } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+          e.preventDefault();
+          const prevBtn = homeworkCard.querySelector('.journey-prev-btn');
+          if (prevBtn && !prevBtn.disabled) prevBtn.click();
+        } else if (e.key === 'ArrowRight' || e.key === 'Right') {
+          e.preventDefault();
+          const nextBtn = homeworkCard.querySelector('.journey-next-btn');
+          if (nextBtn && !nextBtn.disabled) nextBtn.click();
+        } else if (e.key >= '1' && e.key <= '9') {
+          e.preventDefault();
+          const idx = parseInt(e.key) - 1;
+          const node = homeworkCard.querySelector(`.journey-step-node[data-step-index="${idx}"]`);
+          if (node) node.click();
+        } else if (e.key === '0') {
+          e.preventDefault();
+          const node = homeworkCard.querySelector(`.journey-step-node[data-step-index="9"]`);
+          if (node) node.click();
+        }
+      }
+    }
+  });
+
+  // Mobile Touch Swipe & Mouse Drag Gestures for Flashcards
+  const viewFlashcards = document.getElementById('view-flashcards');
+  if (viewFlashcards) {
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+    let deltaX = 0;
+    let cardEl = null;
+
+    viewFlashcards.addEventListener('mousedown', startDrag);
+    viewFlashcards.addEventListener('touchstart', startDrag);
+
+    // TTS Speaker Button Click
+    viewFlashcards.addEventListener('click', (e) => {
+      const btn = e.target.closest('.tts-speak-btn');
+      if (btn) {
+        e.stopPropagation(); // Avoid triggering card flip when clicking speaker icon!
+        AudioEngine.play('click');
+        
+        const isFront = btn.id === 'btn-front-tts';
+        const deck = state.flashcardSession.deck;
+        const idx = state.flashcardSession.activeIndex;
+        if (deck && deck[idx]) {
+          const q = deck[idx];
+          const textToSpeak = isFront 
+            ? q.question 
+            : `${q.answer}. Explanation: ${q.explanation}`;
+          
+          btn.style.color = 'var(--primary)';
+          AudioEngine.speak(textToSpeak, 
+            () => {
+              btn.innerHTML = '<i class="fa-solid fa-volume-high fa-beat"></i>';
+            },
+            () => {
+              btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+              btn.style.color = '';
+            },
+            () => {
+              btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+              btn.style.color = '';
+            }
+          );
+        }
+      }
+    });
+
+    function startDrag(e) {
+      cardEl = document.getElementById('flashcard-card');
+      if (!cardEl) return;
+      
+      if (state.flashcardSession.reinforcing) return;
+      if (cardEl.classList.contains('swipe-right') || cardEl.classList.contains('swipe-left')) return;
+
+      const target = e.target;
+      if (target.closest('button') || target.closest('.bookmark-icon-container') || target.closest('#flashcard-reinforce-options')) {
+        return;
+      }
+      if (!cardEl.contains(target)) return;
+
+      isDragging = true;
+      state.flashcardSession.wasDragged = false;
+      
+      const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+      startX = clientX;
+      startY = clientY;
+      
+      cardEl.classList.remove('resetting');
+      
+      if (e.type === 'mousedown') {
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', endDrag);
+      } else {
+        document.addEventListener('touchmove', drag, { passive: false });
+        document.addEventListener('touchend', endDrag);
+      }
+    }
+
+    function drag(e) {
+      if (!isDragging || !cardEl) return;
+      
+      const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+      
+      deltaX = clientX - startX;
+      const deltaY = clientY - startY;
+
+      if (e.type.startsWith('touch') && Math.abs(deltaY) > Math.abs(deltaX) * 1.5 && Math.abs(deltaX) < 15) {
+        endDrag();
+        return;
+      }
+
+      if (e.cancelable) e.preventDefault();
+
+      if (Math.abs(deltaX) > 10) {
+        state.flashcardSession.wasDragged = true;
+      }
+
+      const isFlipped = cardEl.classList.contains('flipped');
+      const rotationAngle = deltaX * 0.05 * (isFlipped ? -1 : 1);
+      cardEl.style.transform = `translateX(${deltaX}px) rotateY(${isFlipped ? 180 : 0}deg) rotate(${rotationAngle}deg)`;
+    }
+
+    function endDrag() {
+      if (!isDragging || !cardEl) return;
+      isDragging = false;
+      
+      document.removeEventListener('mousemove', drag);
+      document.removeEventListener('mouseup', endDrag);
+      document.removeEventListener('touchmove', drag);
+      document.removeEventListener('touchend', endDrag);
+
+      const threshold = 100;
+      if (deltaX > threshold) {
+        cardEl.style.transform = '';
+        handleFlashcardGrade(true);
+      } else if (deltaX < -threshold) {
+        cardEl.style.transform = '';
+        handleFlashcardGrade(false);
+      } else {
+        cardEl.classList.add('resetting');
+        cardEl.style.transform = '';
+        setTimeout(() => {
+          cardEl.classList.remove('resetting');
+        }, 200);
+      }
+      
+      deltaX = 0;
+    }
+  }
+
+  // Settings & Accessibility Drawer
+  const btnToggle = document.getElementById('btn-settings-toggle');
+  const settingsOverlay = document.getElementById('settings-drawer-overlay');
+  const btnClose = document.getElementById('btn-settings-close');
+  
+  if (btnToggle && settingsOverlay) {
+    btnToggle.addEventListener('click', () => {
+      AudioEngine.play('click');
+      settingsOverlay.style.display = 'flex';
+    });
+  }
+  
+  if (btnClose && settingsOverlay) {
+    btnClose.addEventListener('click', () => {
+      AudioEngine.play('click');
+      settingsOverlay.style.display = 'none';
+    });
+    settingsOverlay.addEventListener('click', (e) => {
+      if (e.target === settingsOverlay) {
+        AudioEngine.play('click');
+        settingsOverlay.style.display = 'none';
+      }
+    });
+  }
+
+  const fontBtns = document.querySelectorAll('.font-scale-btn');
+  fontBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      AudioEngine.play('click');
+      const scale = btn.getAttribute('data-scale');
+      
+      fontBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      document.documentElement.style.fontSize = `${scale * 100}%`;
+      localStorage.setItem('edexcel_prefs_fontsize', scale);
+    });
+  });
+
+  const volumeSlider = document.getElementById('settings-volume-slider');
+  const percentText = document.getElementById('settings-volume-percent');
+  if (volumeSlider && percentText) {
+    volumeSlider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      percentText.textContent = `${val}%`;
+      state.audioVolume = val / 100;
+      localStorage.setItem('edexcel_prefs_volume', state.audioVolume);
+    });
+    
+    volumeSlider.addEventListener('change', () => {
+      AudioEngine.play('click');
+    });
+  }
+
+  function applyLoadedSettings() {
+    const savedScale = localStorage.getItem('edexcel_prefs_fontsize');
+    if (savedScale) {
+      document.documentElement.style.fontSize = `${savedScale * 100}%`;
+      const activeBtn = document.querySelector(`.font-scale-btn[data-scale="${savedScale}"]`);
+      if (activeBtn) {
+        fontBtns.forEach(b => b.classList.remove('active'));
+        activeBtn.classList.add('active');
+      }
+    }
+    
+    const savedVol = localStorage.getItem('edexcel_prefs_volume');
+    if (savedVol !== null) {
+      state.audioVolume = parseFloat(savedVol);
+      if (volumeSlider && percentText) {
+        volumeSlider.value = Math.round(state.audioVolume * 100);
+        percentText.textContent = `${volumeSlider.value}%`;
+      }
+    } else {
+      state.audioVolume = 0.8;
+    }
+  }
+  
+  applyLoadedSettings();
 }
 
 // --- Real-time Fact / Connective Verification Checklist for Essay Writing ---

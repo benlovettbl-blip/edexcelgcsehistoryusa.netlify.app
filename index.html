@@ -119,6 +119,33 @@
         </div>
       </nav>
 
+      <div class="sidebar-footer mobile-only">
+        <!-- Sound Toggle -->
+        <button class="sound-toggle-btn" id="sidebar-sound-toggle-btn" title="Toggle Sound Effects">
+          <i class="fa-solid fa-volume-high"></i>
+          <span>Sound Effects</span>
+        </button>
+
+        <!-- Theme Selector -->
+        <div class="theme-toggle-btn" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-palette"></i>
+            <span>Theme</span>
+          </div>
+          <select class="select-input" id="sidebar-theme-selector" style="font-size: 0.8rem; padding: 4px 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main); cursor: pointer; outline: none; height: 32px; width: auto; margin: 0;">
+            <option value="midnight">Midnight</option>
+            <option value="desert">Desert</option>
+            <option value="teal">Teal</option>
+          </select>
+        </div>
+
+        <!-- Reset Button -->
+        <button class="reset-btn" id="sidebar-reset-progress-btn" title="Reset Study Progress">
+          <i class="fa-solid fa-rotate-left"></i>
+          <span>Reset Progress</span>
+        </button>
+      </div>
+
     </aside>
 
     <!-- Main Content Wrapper -->
@@ -147,12 +174,12 @@
 
         <div class="header-actions">
           <!-- Sound Toggle Button -->
-          <button class="header-icon-btn" id="sound-toggle-btn" title="Toggle Sound Effects">
+          <button class="header-icon-btn desktop-only" id="sound-toggle-btn" title="Toggle Sound Effects">
             <i class="fa-solid fa-volume-high"></i>
           </button>
 
           <!-- Aesthetic Theme Selector Dropdown -->
-          <div class="header-theme-selector-container" style="display: flex; align-items: center; gap: 6px; padding: 0 4px;">
+          <div class="header-theme-selector-container desktop-only" style="display: flex; align-items: center; gap: 6px; padding: 0 4px;">
             <i class="fa-solid fa-palette" style="font-size: 1.1rem; color: var(--text-muted);" title="Aesthetic Theme"></i>
             <select class="select-input" id="theme-selector" style="font-size: 0.8rem; padding: 4px 24px 4px 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main); cursor: pointer; outline: none; height: 32px; width: auto; margin: 0;">
               <option value="desert">Woodstock Gold (70s Vibe)</option>
@@ -162,13 +189,18 @@
           </div>
 
           <!-- Reset Study Progress Button -->
-          <button class="header-icon-btn" id="reset-progress-btn" title="Reset Study Progress">
+          <button class="header-icon-btn desktop-only" id="reset-progress-btn" title="Reset Study Progress">
             <i class="fa-solid fa-rotate-left"></i>
           </button>
 
           <!-- Fullscreen Toggle Button -->
-          <button class="header-icon-btn" id="fullscreen-btn" title="Toggle Fullscreen">
+          <button class="header-icon-btn desktop-only" id="fullscreen-btn" title="Toggle Fullscreen">
             <i class="fa-solid fa-expand"></i>
+          </button>
+
+          <!-- Settings Panel Toggle Button -->
+          <button class="header-icon-btn" id="btn-settings-toggle" title="Settings & Accessibility">
+            <i class="fa-solid fa-gear"></i>
           </button>
 
           <!-- Study Mode Switcher (shown when subtopic is selected) -->
@@ -191,14 +223,49 @@
       <section class="content-view active" id="view-dashboard" style="padding-top: 10px;">
 
         <!-- Dashboard Hero Section -->
-        <div class="dashboard-hero" style="background: var(--gradient-hero); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 28px; margin-bottom: 24px; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); border-left: 4px solid var(--primary);">
+        <div class="dashboard-hero" style="background: var(--gradient-hero); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px 28px; margin-bottom: 24px; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); border-left: 4px solid var(--primary); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;">
           <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: var(--primary-glow); filter: blur(80px); border-radius: 50%; opacity: 0.3; pointer-events: none;"></div>
-          <div style="position: relative; z-index: 1; max-width: 650px;">
+          
+          <!-- Hero Text -->
+          <div style="position: relative; z-index: 1; flex: 1.5; min-width: 280px;">
             <span style="font-size: 0.7rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 6px; background: var(--accent-glow); padding: 2px 8px; border-radius: 10px;">Edexcel Paper 3 Study Guide</span>
             <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin: 0 0 6px 0; line-height: 1.2;">The USA, 1954–75: Conflict at Home and Abroad</h2>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.45;">Master the Civil Rights movement and the Vietnam War through structured lesson modules, custom audio engines, and interactive study aids.</p>
           </div>
+
+          <!-- SVG Radial Chart & Breakdown Stats -->
+          <div class="hero-stats-widget" style="position: relative; z-index: 1; flex: 1; min-width: 240px; display: flex; align-items: center; justify-content: flex-end; gap: 16px; background: rgba(0,0,0,0.15); padding: 12px 16px; border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm);">
+            
+            <!-- SVG Progress Circle -->
+            <div style="position: relative; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="80" height="80" viewBox="0 0 80 80" style="transform: rotate(-90deg);">
+                <!-- Track Circle -->
+                <circle cx="40" cy="40" r="34" stroke="var(--border-glass)" stroke-width="6" fill="transparent" />
+                <!-- Progress Circle -->
+                <circle id="radial-progress-fill" cx="40" cy="40" r="34" stroke="var(--primary)" stroke-width="6" fill="transparent" 
+                        stroke-dasharray="213.63" stroke-dashoffset="213.63" stroke-linecap="round" style="transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);" />
+              </svg>
+              <!-- Center Text -->
+              <div id="radial-progress-percent" style="position: absolute; font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: var(--text-main);">0%</div>
+            </div>
+
+            <!-- Text Stats Breakdown -->
+            <div style="display: flex; flex-direction: column; gap: 4px; text-align: left; flex: 1;">
+              <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px;">Mastery Breakdown</span>
+              <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main);" id="radial-fraction-text">0 / 240 Mastered</div>
+              
+              <!-- Color Pills -->
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                <span class="badge badge-standard" id="radial-badge-mastered" style="font-size: 0.6rem; padding: 1px 6px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); color: #4ade80;">0 Mastered</span>
+                <span class="badge badge-standard" id="radial-badge-bookmarks" style="font-size: 0.6rem; padding: 1px 6px; background: rgba(250, 204, 21, 0.1); border: 1px solid rgba(250, 204, 21, 0.2); color: #facc15;">0 Saved</span>
+              </div>
+            </div>
+
+          </div>
         </div>
+
+        <!-- Quick Actions Panel -->
+        <div id="dashboard-quick-actions-container" style="display: none; margin-bottom: 24px; gap: 16px; flex-wrap: wrap;"></div>
 
         <!-- Study Center Quick Navigation -->
         <div class="study-shortcuts-grid">
@@ -317,6 +384,7 @@
                 <div class="card-top">
                   <span class="badge" id="card-front-badge">Standard</span>
                   <div style="display: flex; align-items: center; gap: 8px;">
+                    <button class="tts-speak-btn" id="btn-front-tts" title="Read Question Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                     <span class="card-topic-indicator" id="card-front-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
                     <span class="bookmark-icon-container" id="card-front-bookmark" title="Bookmark Question">
                       <i class="fa-regular fa-star"></i>
@@ -336,6 +404,7 @@
                 <div class="card-top">
                   <span class="badge badge-standard" id="card-back-badge">Standard</span>
                   <div style="display: flex; align-items: center; gap: 8px;">
+                    <button class="tts-speak-btn" id="btn-back-tts" title="Read Answer & Explanation Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                     <span class="card-topic-indicator" id="card-back-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
                     <span class="bookmark-icon-container" id="card-back-bookmark" title="Bookmark Question">
                       <i class="fa-regular fa-star"></i>
@@ -374,6 +443,13 @@
                 <i class="fa-solid fa-check"></i> Got It!
               </button>
             </div>
+          </div>
+
+          <!-- Desktop Keyboard Shortcuts Help -->
+          <div class="desktop-only" style="margin-top: 14px; text-align: center; font-size: 0.72rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 12px; width: 100%;">
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 2px 5px; border-radius: 3px; border: 1px solid var(--border-glass);">Space</kbd> Flip Card</span>
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 2px 5px; border-radius: 3px; border: 1px solid var(--border-glass);">←</kbd> Study Again</span>
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 2px 5px; border-radius: 3px; border: 1px solid var(--border-glass);">→</kbd> Got It!</span>
           </div>
         </div>
       </section>
@@ -1613,11 +1689,46 @@
         <iframe id="video-modal-iframe" src="" allow="autoplay; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="video-modal-footer" style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 4px; padding-top: 12px; border-top: 1px solid var(--border-glass);">
-        <a id="video-modal-external-link" href="#" target="_blank" style="background: #ff0000; color: #ffffff; border: none; border-radius: 24px; padding: 10px 24px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2); transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.backgroundColor='#cc0000'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 6px 16px rgba(255, 0, 0, 0.3)'" onmouseout="this.style.backgroundColor='#ff0000'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(255, 0, 0, 0.2)'">
+         <a id="video-modal-external-link" href="#" target="_blank" style="background: #ff0000; color: #ffffff; border: none; border-radius: 24px; padding: 10px 24px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2); transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.backgroundColor='#cc0000'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 6px 16px rgba(255, 0, 0, 0.3)'" onmouseout="this.style.backgroundColor='#ff0000'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(255, 0, 0, 0.2)'">
           <i class="fa-brands fa-youtube"></i> Watch on YouTube
         </a>
       </div>
       <button class="video-modal-close" id="video-modal-close-btn">&times;</button>
+    </div>
+  </div>
+
+  <!-- Settings Drawer Overlay -->
+  <div class="settings-drawer-overlay" id="settings-drawer-overlay" style="display: none;">
+    <div class="settings-drawer">
+      <div class="settings-drawer-header">
+        <h3><i class="fa-solid fa-gear" style="color: var(--primary); margin-right: 6px;"></i> Settings & Accessibility</h3>
+        <button class="settings-drawer-close" id="btn-settings-close">&times;</button>
+      </div>
+      
+      <div class="settings-drawer-body">
+        <!-- Font Size Setting -->
+        <div class="settings-section">
+          <label class="settings-label"><i class="fa-solid fa-font"></i> Text Scale</label>
+          <div class="font-scale-controls">
+            <button class="font-scale-btn" data-scale="0.9" title="Small text">A-</button>
+            <button class="font-scale-btn active" data-scale="1.0" title="Normal text">A</button>
+            <button class="font-scale-btn" data-scale="1.15" title="Large text">A+</button>
+            <button class="font-scale-btn" data-scale="1.3" title="Extra Large text">A++</button>
+          </div>
+          <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 4px; display: block;">Adjust text size for easier reading of dense history content.</span>
+        </div>
+
+        <!-- Volume Slider Setting -->
+        <div class="settings-section">
+          <label class="settings-label"><i class="fa-solid fa-volume-high"></i> Master Volume</label>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 6px;">
+            <i class="fa-solid fa-volume-off" style="color: var(--text-muted); font-size: 0.95rem;"></i>
+            <input type="range" id="settings-volume-slider" min="0" max="100" value="80" style="flex: 1; cursor: pointer; accent-color: var(--primary); height: 6px; border-radius: 3px; background: rgba(255,255,255,0.1); border: none; outline: none;">
+            <span id="settings-volume-percent" style="font-size: 0.8rem; font-weight: 700; color: var(--text-main); width: 35px; text-align: right;">80%</span>
+          </div>
+          <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 4px; display: block;">Applies to both click/cheer effects and Speech Synthesis (TTS).</span>
+        </div>
+      </div>
     </div>
   </div>
 </body>

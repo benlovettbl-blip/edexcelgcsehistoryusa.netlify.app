@@ -62,6 +62,8 @@ export function initData() {
   document.documentElement.setAttribute('data-theme', state.theme);
   const themeSelector = document.getElementById('theme-selector');
   if (themeSelector) themeSelector.value = state.theme;
+  const sidebarThemeSelector = document.getElementById('sidebar-theme-selector');
+  if (sidebarThemeSelector) sidebarThemeSelector.value = state.theme;
   updateSoundBtnUI();
 }
 

@@ -28,7 +28,8 @@
       originalLength: 0,
       masteredCount: 0,
       reinforcing: false,
-      reinforceQuestion: null
+      reinforceQuestion: null,
+      wasDragged: false
     },
     // Quiz Generator State
     examSession: {
@@ -5217,12 +5218,13 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           ctx.resume().catch((e) => console.warn("Failed to resume AudioContext:", e));
         }
         const now = ctx.currentTime;
+        const vol = state.audioVolume !== void 0 ? state.audioVolume : 0.8;
         if (type === "click") {
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.frequency.setValueAtTime(600, now);
           osc.frequency.exponentialRampToValueAtTime(150, now + 0.04);
-          gain.gain.setValueAtTime(0.04, now);
+          gain.gain.setValueAtTime(0.04 * vol, now);
           gain.gain.linearRampToValueAtTime(0, now + 0.04);
           osc.connect(gain);
           gain.connect(ctx.destination);
@@ -5234,7 +5236,7 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           osc.type = "triangle";
           osc.frequency.setValueAtTime(280, now);
           osc.frequency.exponentialRampToValueAtTime(140, now + 0.12);
-          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.setValueAtTime(0.06 * vol, now);
           gain.gain.linearRampToValueAtTime(0, now + 0.12);
           osc.connect(gain);
           gain.connect(ctx.destination);
@@ -5247,10 +5249,10 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           osc.frequency.setValueAtTime(523.25, now);
           osc.frequency.setValueAtTime(659.25, now + 0.08);
           osc.frequency.setValueAtTime(783.99, now + 0.16);
-          gain.gain.setValueAtTime(0.05, now);
-          gain.gain.setValueAtTime(0.05, now + 0.08);
-          gain.gain.setValueAtTime(0.05, now + 0.16);
-          gain.gain.exponentialRampToValueAtTime(1e-3, now + 0.35);
+          gain.gain.setValueAtTime(0.05 * vol, now);
+          gain.gain.setValueAtTime(0.05 * vol, now + 0.08);
+          gain.gain.setValueAtTime(0.05 * vol, now + 0.16);
+          gain.gain.exponentialRampToValueAtTime(1e-3 * vol, now + 0.35);
           osc.connect(gain);
           gain.connect(ctx.destination);
           osc.start(now);
@@ -5261,8 +5263,8 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           osc.type = "sawtooth";
           osc.frequency.setValueAtTime(180, now);
           osc.frequency.linearRampToValueAtTime(90, now + 0.2);
-          gain.gain.setValueAtTime(0.06, now);
-          gain.gain.exponentialRampToValueAtTime(1e-3, now + 0.2);
+          gain.gain.setValueAtTime(0.06 * vol, now);
+          gain.gain.exponentialRampToValueAtTime(1e-3 * vol, now + 0.2);
           const filter = ctx.createBiquadFilter();
           filter.type = "lowpass";
           filter.frequency.setValueAtTime(450, now);
@@ -5279,8 +5281,8 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
             osc.type = "sine";
             osc.frequency.setValueAtTime(freq, now + idx * 0.06);
             gain.gain.setValueAtTime(0, now);
-            gain.gain.linearRampToValueAtTime(0.04, now + idx * 0.06 + 0.02);
-            gain.gain.exponentialRampToValueAtTime(1e-3, now + idx * 0.06 + 0.3);
+            gain.gain.linearRampToValueAtTime(0.04 * vol, now + idx * 0.06 + 0.02);
+            gain.gain.exponentialRampToValueAtTime(1e-3 * vol, now + idx * 0.06 + 0.3);
             osc.connect(gain);
             gain.connect(ctx.destination);
             osc.start(now + idx * 0.06);
@@ -5307,6 +5309,8 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         const utterance = new SpeechSynthesisUtterance(cleanText);
         utterance.rate = 0.95;
         utterance.pitch = 1;
+        const vol = state.audioVolume !== void 0 ? state.audioVolume : 0.8;
+        utterance.volume = vol;
         const voices = window.speechSynthesis.getVoices();
         const enVoice = voices.find((v) => v.lang === "en-GB" || v.lang === "en-US") || voices.find((v) => v.lang.startsWith("en"));
         if (enVoice) {
@@ -12413,7 +12417,7 @@ ${cleanBrackets(paper.q3d.model)}
     "subtopic_3_4": {
       "primary": {
         "video_title": "2-minute AI Overview: Vietnamization & Nixon Doctrine",
-        "youtube_url": "https://www.youtube.com/watch?v=3zhZ3OVyBYY",
+        "youtube_url": "https://www.youtube.com/watch?v=yTZzZlLoE84",
         "duration": "02:00",
         "production_source": "AI Revision Guide"
       },
@@ -12432,7 +12436,7 @@ ${cleanBrackets(paper.q3d.model)}
     "subtopic_4_1": {
       "primary": {
         "video_title": "2-minute AI Overview: The Tet Offensive",
-        "youtube_url": "https://www.youtube.com/watch?v=KXXJLaGrHU8",
+        "youtube_url": "https://www.youtube.com/watch?v=KYE62XVdcrY",
         "duration": "02:00",
         "production_source": "AI Revision Guide"
       },
@@ -12451,7 +12455,7 @@ ${cleanBrackets(paper.q3d.model)}
     "subtopic_4_2": {
       "primary": {
         "video_title": "2-minute AI Overview: My Lai, Silent Majority & Anti-War Movement",
-        "youtube_url": "https://www.youtube.com/watch?v=iiNc3nsIR2Y",
+        "youtube_url": "https://www.youtube.com/watch?v=7qrPo5ASv-o",
         "duration": "02:00",
         "production_source": "AI Revision Guide"
       },
@@ -12470,7 +12474,7 @@ ${cleanBrackets(paper.q3d.model)}
     "subtopic_4_3": {
       "primary": {
         "video_title": "2-minute AI Overview: Peace Negotiations & Fall of Saigon",
-        "youtube_url": "https://www.youtube.com/watch?v=jNAilp37isA",
+        "youtube_url": "https://www.youtube.com/watch?v=q69gxI2U9QE",
         "duration": "02:00",
         "production_source": "AI Revision Guide"
       },
@@ -12489,7 +12493,7 @@ ${cleanBrackets(paper.q3d.model)}
     "subtopic_4_4": {
       "primary": {
         "video_title": "2-minute AI Overview: Why the US Failed in Vietnam",
-        "youtube_url": "https://www.youtube.com/watch?v=ogoIQSjAFcc",
+        "youtube_url": "https://www.youtube.com/watch?v=KqsDh0eUc2M",
         "duration": "02:00",
         "production_source": "AI Revision Guide"
       },
@@ -12598,6 +12602,20 @@ ${cleanBrackets(paper.q3d.model)}
     if (overallBarEl) overallBarEl.style.width = `${overallPct}%`;
     const overallFractionEl = document.getElementById("stat-overall-fraction");
     if (overallFractionEl) overallFractionEl.textContent = `${totalMastered} / ${total} Mastered`;
+    const radialFill = document.getElementById("radial-progress-fill");
+    if (radialFill) {
+      const circumference = 213.63;
+      const offset = circumference - overallPct / 100 * circumference;
+      radialFill.style.strokeDashoffset = offset;
+    }
+    const radialPct = document.getElementById("radial-progress-percent");
+    if (radialPct) radialPct.textContent = `${overallPct}%`;
+    const radialFraction = document.getElementById("radial-fraction-text");
+    if (radialFraction) radialFraction.textContent = `${totalMastered} / ${total} Mastered`;
+    const radialBadgeMastered = document.getElementById("radial-badge-mastered");
+    if (radialBadgeMastered) radialBadgeMastered.textContent = `${totalMastered} Mastered`;
+    const radialBadgeBookmarks = document.getElementById("radial-badge-bookmarks");
+    if (radialBadgeBookmarks) radialBadgeBookmarks.textContent = `${state.bookmarks.length} Saved`;
     QUIZ_DATA.forEach((topic) => {
       topic.subtopics.forEach((sub) => {
         const subQuestions = state.allQuestions.filter((q) => q.subtopicId === sub.id);
@@ -12609,6 +12627,97 @@ ${cleanBrackets(paper.q3d.model)}
     });
   }
   function renderDashboard2() {
+    const quickActionsContainer = document.getElementById("dashboard-quick-actions-container");
+    if (quickActionsContainer) {
+      const lastSubtopicId = localStorage.getItem("edexcel_last_subtopic");
+      const bookmarkCount = state.bookmarks.length;
+      if (lastSubtopicId || bookmarkCount > 0) {
+        quickActionsContainer.style.display = "flex";
+        quickActionsContainer.innerHTML = "";
+        if (lastSubtopicId) {
+          const subtopicQuestion = state.allQuestions.find((q) => q.subtopicId === lastSubtopicId);
+          const subTitle = subtopicQuestion ? subtopicQuestion.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "") : "Last Studied Lesson";
+          const resumeCard = document.createElement("div");
+          resumeCard.className = "shortcut-card";
+          resumeCard.style.flex = "1";
+          resumeCard.style.minWidth = "240px";
+          resumeCard.style.display = "flex";
+          resumeCard.style.gap = "14px";
+          resumeCard.style.alignItems = "center";
+          resumeCard.style.padding = "14px 18px";
+          resumeCard.style.cursor = "pointer";
+          resumeCard.style.background = "rgba(56, 189, 248, 0.04)";
+          resumeCard.style.border = "1px solid rgba(56, 189, 248, 0.2)";
+          resumeCard.style.borderRadius = "var(--border-radius-sm)";
+          resumeCard.style.transition = "all var(--transition-fast)";
+          resumeCard.innerHTML = `
+          <div class="shortcut-icon" style="background: rgba(56, 189, 248, 0.1); color: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+            <i class="fa-solid fa-play"></i>
+          </div>
+          <div style="text-align: left;">
+            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; letter-spacing: 0.5px;">Quick Resume</span>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 2px;">${subTitle}</div>
+          </div>
+        `;
+          resumeCard.addEventListener("click", () => {
+            AudioEngine.play("click");
+            switchView("subtopic", lastSubtopicId);
+          });
+          resumeCard.addEventListener("mouseover", () => {
+            resumeCard.style.transform = "translateY(-2px)";
+            resumeCard.style.borderColor = "var(--primary)";
+            resumeCard.style.background = "rgba(56, 189, 248, 0.08)";
+          });
+          resumeCard.addEventListener("mouseout", () => {
+            resumeCard.style.transform = "none";
+            resumeCard.style.borderColor = "rgba(56, 189, 248, 0.2)";
+            resumeCard.style.background = "rgba(56, 189, 248, 0.04)";
+          });
+          quickActionsContainer.appendChild(resumeCard);
+        }
+        if (bookmarkCount > 0) {
+          const reviewCard = document.createElement("div");
+          reviewCard.className = "shortcut-card";
+          reviewCard.style.flex = "1";
+          reviewCard.style.minWidth = "240px";
+          reviewCard.style.display = "flex";
+          reviewCard.style.gap = "14px";
+          reviewCard.style.alignItems = "center";
+          reviewCard.style.padding = "14px 18px";
+          reviewCard.style.cursor = "pointer";
+          reviewCard.style.background = "rgba(250, 204, 21, 0.04)";
+          reviewCard.style.border = "1px solid rgba(250, 204, 21, 0.2)";
+          reviewCard.style.borderRadius = "var(--border-radius-sm)";
+          reviewCard.style.transition = "all var(--transition-fast)";
+          reviewCard.innerHTML = `
+          <div class="shortcut-icon" style="background: rgba(250, 204, 21, 0.1); color: #facc15; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div style="text-align: left;">
+            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; letter-spacing: 0.5px;">Smart Review</span>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 2px;">Study Bookmarked Cards (${bookmarkCount})</div>
+          </div>
+        `;
+          reviewCard.addEventListener("click", () => {
+            AudioEngine.play("click");
+            switchView("flashcards", "bookmarks");
+          });
+          reviewCard.addEventListener("mouseover", () => {
+            reviewCard.style.transform = "translateY(-2px)";
+            reviewCard.style.borderColor = "#facc15";
+            reviewCard.style.background = "rgba(250, 204, 21, 0.08)";
+          });
+          reviewCard.addEventListener("mouseout", () => {
+            reviewCard.style.transform = "none";
+            reviewCard.style.borderColor = "rgba(250, 204, 21, 0.2)";
+            reviewCard.style.background = "rgba(250, 204, 21, 0.04)";
+          });
+          quickActionsContainer.appendChild(reviewCard);
+        }
+      } else {
+        quickActionsContainer.style.display = "none";
+      }
+    }
     const container = document.getElementById("dashboard-topics-list");
     container.innerHTML = "";
     const topicInquiries = {
@@ -13770,7 +13879,12 @@ ${cleanBrackets(paper.q3d.model)}
     return match ? `KT ${match[1]}.${match[2]}` : "";
   }
   function startFlashcardSession(subtopicId) {
-    const questions = state.allQuestions.filter((q) => q.subtopicId === subtopicId);
+    let questions;
+    if (subtopicId === "bookmarks") {
+      questions = state.allQuestions.filter((q) => state.bookmarks.includes(q.id));
+    } else {
+      questions = state.allQuestions.filter((q) => q.subtopicId === subtopicId);
+    }
     state.flashcardSession.deck = [...questions].sort(() => Math.random() - 0.5);
     state.flashcardSession.activeIndex = 0;
     state.flashcardSession.originalLength = questions.length;
@@ -13778,6 +13892,8 @@ ${cleanBrackets(paper.q3d.model)}
     renderFlashcard();
   }
   function renderFlashcard() {
+    AudioEngine.stopSpeaking();
+    state.flashcardSession.wasDragged = false;
     const deck = state.flashcardSession.deck;
     const idx = state.flashcardSession.activeIndex;
     document.getElementById("flashcard-counter-text").textContent = `Card ${idx + 1} of ${deck.length}`;
@@ -13891,6 +14007,7 @@ ${cleanBrackets(paper.q3d.model)}
             <div class="card-top">
               <span class="badge" id="card-front-badge">Standard</span>
               <div style="display: flex; align-items: center; gap: 8px;">
+                <button class="tts-speak-btn" id="btn-front-tts" title="Read Question Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                 <span class="card-topic-indicator" id="card-front-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
                 <span class="bookmark-icon-container" id="card-front-bookmark"><i class="fa-regular fa-star"></i></span>
               </div>
@@ -13902,6 +14019,7 @@ ${cleanBrackets(paper.q3d.model)}
             <div class="card-top">
               <span class="badge badge-standard" id="card-back-badge">Standard</span>
               <div style="display: flex; align-items: center; gap: 8px;">
+                <button class="tts-speak-btn" id="btn-back-tts" title="Read Answer & Explanation Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                 <span class="card-topic-indicator" id="card-back-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
                 <span class="bookmark-icon-container" id="card-back-bookmark"><i class="fa-regular fa-star"></i></span>
               </div>
@@ -13937,6 +14055,10 @@ ${cleanBrackets(paper.q3d.model)}
     });
   }
   function flipFlashcard() {
+    if (state.flashcardSession.wasDragged) {
+      state.flashcardSession.wasDragged = false;
+      return;
+    }
     const card = document.getElementById("flashcard-card");
     card.classList.toggle("flipped");
     AudioEngine.play("flip");
@@ -20988,23 +21110,30 @@ ${cleanBrackets(paper.q3d.model)}
     let hwHtml = "";
     const hwQuestions = HOMEWORK_QUESTIONS[subtopicId];
     if (hwQuestions && hwQuestions.length > 0) {
-      const questionsListMarkup = hwQuestions.map((q, idx) => {
+      const stepNodesHtml = hwQuestions.map((q, idx) => `
+      <div class="journey-step-node ${idx === 0 ? "active" : ""}" data-step-index="${idx}" style="position: relative; z-index: 2; width: 26px; height: 26px; border-radius: 50%; background: var(--bg-card); border: 2px solid ${idx === 0 ? "var(--primary)" : "var(--border-glass)"}; color: ${idx === 0 ? "var(--primary)" : "var(--text-muted)"}; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; cursor: pointer; transition: all 0.2s;">
+        ${idx + 1}
+      </div>
+    `).join("");
+      const stepCardsHtml = hwQuestions.map((q, idx) => {
         const badgeClass = `badge-${q.type.toLowerCase().replace(/\s/g, "")}`;
         return `
-        <div class="journey-step-card" data-step="${idx}">
-          <div class="journey-step-header">
-            <div class="journey-step-left">
-              <div class="journey-step-circle">Q${idx + 1}</div>
-              <span class="journey-level-badge ${badgeClass}">Level ${q.level}: ${q.type}</span>
-            </div>
-            <div class="journey-step-right">
-              <i class="fa-solid fa-chevron-down journey-toggle-icon"></i>
+        <div class="journey-paginated-card ${idx === 0 ? "active" : ""}" data-step-index="${idx}" style="${idx === 0 ? "display: block;" : "display: none;"} background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; min-height: 140px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span class="journey-level-badge ${badgeClass}">Level ${q.level}: ${q.type}</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <button class="journey-tts-btn" data-step="${idx}" title="Read Question & Answer Guide Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.9rem; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
+              <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">Step ${idx + 1} of 10</span>
             </div>
           </div>
-          <p class="journey-step-question">${applyGlossaryTooltips(q.question)}</p>
-          <div class="journey-answer-guide">
-            <span class="journey-answer-title">\u{1F6E1}\uFE0F Answer Guide:</span>
-            <p class="journey-answer-text">${applyGlossaryTooltips(q.answer)}</p>
+          <p style="margin: 0 0 12px 0; font-size: 0.92rem; font-weight: 500; color: var(--text-main); line-height: 1.45;">
+            ${applyGlossaryTooltips(q.question)}
+          </p>
+          <div class="journey-answer-guide" style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 0 12px; background: rgba(0, 0, 0, 0.2); border-left: 3px solid var(--primary); border-radius: 0 3px 3px 0;">
+            <span class="journey-answer-title" style="font-size: 0.72rem; font-weight: bold; text-transform: uppercase; color: var(--primary); margin-bottom: 4px; display: block; padding-top: 8px;">\u{1F6E1}\uFE0F Answer Guide:</span>
+            <p class="journey-answer-text" style="margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; padding-bottom: 8px;">
+              ${applyGlossaryTooltips(q.answer)}
+            </p>
           </div>
         </div>
       `;
@@ -21013,11 +21142,39 @@ ${cleanBrackets(paper.q3d.model)}
       <div class="mastery-card homework-questions-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
         <h3 class="mastery-card-title"><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> \u{1F6E1}\uFE0F 10-Step Unit Mastery Journey</h3>
         <div class="mastery-card-body" style="padding-top: 6px;">
-          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted); font-size: 0.85rem;">
-            Missed this lesson or need a thorough refresh? Click through these 10 structured questions (ranging from basic recall to expert challenge) to master the unit!
+          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted); font-size: 0.82rem;">
+            Missed this lesson or need a thorough refresh? Work through these 10 structured steps (from basic recall to expert challenge) to master this unit!
           </p>
-          <div class="mastery-journey-container">
-            ${questionsListMarkup}
+          
+          <!-- Step Indicator Navigation Bar -->
+          <div class="mastery-journey-steps-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative; padding: 0 4px;">
+            <div class="steps-bar-line" style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--border-glass); z-index: 1; transform: translateY(-50%);"></div>
+            ${stepNodesHtml}
+          </div>
+
+          <!-- Active Step Card Content -->
+          <div class="mastery-journey-content-wrapper" style="position: relative; z-index: 2;">
+            ${stepCardsHtml}
+          </div>
+
+          <!-- Action Navigation Buttons -->
+          <div class="mastery-journey-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; border-top: 1px solid var(--border-glass); padding-top: 14px;">
+            <button class="mastery-btn journey-prev-btn" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass); color: var(--text-muted); cursor: not-allowed; border-radius: 4px; opacity: 0.5;" disabled>
+              <i class="fa-solid fa-arrow-left"></i> Previous
+            </button>
+            <button class="mastery-btn journey-reveal-answer-btn" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.1); border: 1px solid var(--primary); color: var(--primary); cursor: pointer; border-radius: 4px;">
+              <i class="fa-solid fa-eye"></i> Reveal Answer
+            </button>
+            <button class="mastery-btn journey-next-btn" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.2); border: 1px solid var(--primary); color: #fff; cursor: pointer; border-radius: 4px;">
+              Next <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Keyboard Shortcuts Info -->
+          <div class="desktop-only" style="margin-top: 12px; text-align: center; font-size: 0.68rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 10px; width: 100%;">
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">\u2190 / \u2192</kbd> Prev/Next</span>
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">Space</kbd> Reveal Answer</span>
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">1-0</kbd> Jump to Step</span>
           </div>
         </div>
       </div>
@@ -21684,20 +21841,128 @@ ${cleanBrackets(paper.q3d.model)}
         flipCard.classList.toggle("flipped");
       });
     }
-    const journeyCards = container.querySelectorAll(".journey-step-card");
-    journeyCards.forEach((card) => {
-      card.addEventListener("click", (e) => {
-        if (e.target.classList.contains("glossary-term")) {
-          return;
-        }
+    const stepsContainer = container.querySelector(".homework-questions-card");
+    if (stepsContainer) {
+      let updateStepUI = function(index) {
+        currentStep = index;
         AudioEngine.play("click");
-        const isActive = card.classList.contains("active");
-        journeyCards.forEach((c) => c.classList.remove("active"));
-        if (!isActive) {
-          card.classList.add("active");
+        stepNodes.forEach((node, idx) => {
+          node.classList.remove("active");
+          node.style.borderColor = "var(--border-glass)";
+          node.style.color = "var(--text-muted)";
+          node.style.background = "var(--bg-card)";
+          if (idx === currentStep) {
+            node.classList.add("active");
+            node.style.borderColor = "var(--primary)";
+            node.style.color = "var(--primary)";
+            node.style.background = "rgba(56, 189, 248, 0.08)";
+          } else if (idx < currentStep) {
+            node.style.borderColor = "var(--success)";
+            node.style.color = "var(--success)";
+            node.style.background = "rgba(34, 197, 94, 0.05)";
+          }
+        });
+        stepCards.forEach((card, idx) => {
+          if (idx === currentStep) {
+            card.style.display = "block";
+            const answerGuide = card.querySelector(".journey-answer-guide");
+            if (answerGuide) {
+              answerGuide.style.maxHeight = "0px";
+              answerGuide.style.paddingTop = "0px";
+              answerGuide.style.paddingBottom = "0px";
+            }
+          } else {
+            card.style.display = "none";
+          }
+        });
+        if (currentStep === 0) {
+          prevBtn.disabled = true;
+          prevBtn.style.opacity = "0.5";
+          prevBtn.style.cursor = "not-allowed";
+        } else {
+          prevBtn.disabled = false;
+          prevBtn.style.opacity = "1";
+          prevBtn.style.cursor = "pointer";
+        }
+        if (currentStep === stepCards.length - 1) {
+          nextBtn.innerHTML = 'Finish <i class="fa-solid fa-circle-check" style="margin-left: 4px; color: var(--success);"></i>';
+        } else {
+          nextBtn.innerHTML = 'Next <i class="fa-solid fa-arrow-right"></i>';
+        }
+        revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> Reveal Answer';
+        revealBtn.style.background = "rgba(56, 189, 248, 0.1)";
+        revealBtn.style.color = "var(--primary)";
+        revealBtn.style.borderColor = "var(--primary)";
+      };
+      let currentStep = 0;
+      const stepNodes = stepsContainer.querySelectorAll(".journey-step-node");
+      const stepCards = stepsContainer.querySelectorAll(".journey-paginated-card");
+      const prevBtn = stepsContainer.querySelector(".journey-prev-btn");
+      const nextBtn = stepsContainer.querySelector(".journey-next-btn");
+      const revealBtn = stepsContainer.querySelector(".journey-reveal-answer-btn");
+      stepNodes.forEach((node, idx) => {
+        node.addEventListener("click", () => updateStepUI(idx));
+      });
+      prevBtn.addEventListener("click", () => {
+        if (currentStep > 0) {
+          updateStepUI(currentStep - 1);
         }
       });
-    });
+      nextBtn.addEventListener("click", () => {
+        if (currentStep < stepCards.length - 1) {
+          updateStepUI(currentStep + 1);
+        } else {
+          AudioEngine.play("success");
+          alert("\u{1F389} Congratulations! You have completed the 10-Step Unit Mastery Journey!");
+        }
+      });
+      revealBtn.addEventListener("click", () => {
+        const activeCard = stepCards[currentStep];
+        const answerGuide = activeCard.querySelector(".journey-answer-guide");
+        if (answerGuide) {
+          const isRevealed = answerGuide.style.maxHeight && answerGuide.style.maxHeight !== "0px";
+          if (isRevealed) {
+            AudioEngine.play("click");
+            answerGuide.style.maxHeight = "0px";
+            revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> Reveal Answer';
+          } else {
+            AudioEngine.play("success");
+            answerGuide.style.maxHeight = "1000px";
+            revealBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Answer';
+          }
+        }
+      });
+      const ttsButtons = stepsContainer.querySelectorAll(".journey-tts-btn");
+      ttsButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          AudioEngine.play("click");
+          const idx = parseInt(btn.getAttribute("data-step"));
+          const q = hwQuestions[idx];
+          if (q) {
+            const activeCard = stepCards[idx];
+            const answerGuide = activeCard.querySelector(".journey-answer-guide");
+            const isAnswerRevealed = answerGuide && answerGuide.style.maxHeight && answerGuide.style.maxHeight !== "0px";
+            const textToSpeak = isAnswerRevealed ? `${q.question}. Answer Guide: ${q.answer}` : q.question;
+            btn.style.color = "var(--primary)";
+            AudioEngine.speak(
+              textToSpeak,
+              () => {
+                btn.innerHTML = '<i class="fa-solid fa-volume-high fa-beat"></i>';
+              },
+              () => {
+                btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+                btn.style.color = "";
+              },
+              () => {
+                btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+                btn.style.color = "";
+              }
+            );
+          }
+        });
+      });
+    }
     const vaultQuestionBtns = container.querySelectorAll(".vault-question-btn");
     vaultQuestionBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -22803,6 +23068,7 @@ ${cleanBrackets(paper.q3d.model)}
 
   // src/navigation.js
   function switchView(viewName, subtopicId = null) {
+    AudioEngine.stopSpeaking();
     state.currentView = viewName;
     const backBtn = document.getElementById("header-back-btn");
     if (backBtn) {
@@ -22875,10 +23141,19 @@ ${cleanBrackets(paper.q3d.model)}
       if (viewTitle) viewTitle.textContent = "2-Minute AI Video Overview";
       state.selectedSubtopicId = null;
       renderAiVideosView();
+    } else if (viewName === "flashcards") {
+      state.selectedSubtopicId = subtopicId;
+      if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
+      const viewTitle = document.getElementById("current-view-title");
+      if (viewTitle) {
+        viewTitle.textContent = subtopicId === "bookmarks" ? "Reviewing Bookmarked Deck" : "Flashcard Study";
+      }
+      startFlashcardSession(subtopicId);
     } else if (viewName === "subtopic" && subtopicId) {
       state.selectedSubtopicId = subtopicId;
       state.selectedKeyTopicId = null;
       if (headerModeSwitcher) headerModeSwitcher.style.display = "flex";
+      localStorage.setItem("edexcel_last_subtopic", subtopicId);
       const subNavBtn = document.getElementById(`nav-subtopic-${subtopicId}`);
       if (subNavBtn) subNavBtn.classList.add("active");
       const subtopic = state.allQuestions.find((q) => q.subtopicId === subtopicId);
@@ -22986,13 +23261,24 @@ ${cleanBrackets(paper.q3d.model)}
   }
   function updateSoundBtnUI() {
     const btn = document.getElementById("sound-toggle-btn");
-    if (!btn) return;
-    if (state.soundEnabled) {
-      btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
-      btn.title = "Sound Effects: On (Click to Mute)";
-    } else {
-      btn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
-      btn.title = "Sound Effects: Off (Click to Enable)";
+    if (btn) {
+      if (state.soundEnabled) {
+        btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+        btn.title = "Sound Effects: On (Click to Mute)";
+      } else {
+        btn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+        btn.title = "Sound Effects: Off (Click to Enable)";
+      }
+    }
+    const sidebarBtn = document.getElementById("sidebar-sound-toggle-btn");
+    if (sidebarBtn) {
+      if (state.soundEnabled) {
+        sidebarBtn.innerHTML = `<i class="fa-solid fa-volume-high"></i> <span>Sound Effects: On</span>`;
+        sidebarBtn.title = "Sound Effects: On (Click to Mute)";
+      } else {
+        sidebarBtn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i> <span>Sound Effects: Off</span>`;
+        sidebarBtn.title = "Sound Effects: Off (Click to Enable)";
+      }
     }
   }
   function initializePracticeDropdowns() {
@@ -23310,20 +23596,31 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       showExamSetup();
       switchView("dashboard");
     });
-    document.getElementById("sound-toggle-btn").addEventListener("click", () => {
+    const toggleSound = () => {
       state.soundEnabled = !state.soundEnabled;
       localStorage.setItem("edexcel_sound", JSON.stringify(state.soundEnabled));
       updateSoundBtnUI();
       AudioEngine.play("click");
-    });
-    document.getElementById("theme-selector").addEventListener("change", (e) => {
-      const nextTheme = e.target.value;
+    };
+    const soundBtn = document.getElementById("sound-toggle-btn");
+    if (soundBtn) soundBtn.addEventListener("click", toggleSound);
+    const sidebarSoundBtn = document.getElementById("sidebar-sound-toggle-btn");
+    if (sidebarSoundBtn) sidebarSoundBtn.addEventListener("click", toggleSound);
+    const changeTheme = (nextTheme) => {
       state.theme = nextTheme;
       localStorage.setItem("edexcel_theme", nextTheme);
       document.documentElement.setAttribute("data-theme", nextTheme);
+      const headerTheme = document.getElementById("theme-selector");
+      if (headerTheme) headerTheme.value = nextTheme;
+      const sidebarTheme = document.getElementById("sidebar-theme-selector");
+      if (sidebarTheme) sidebarTheme.value = nextTheme;
       AudioEngine.play("click");
-    });
-    document.getElementById("reset-progress-btn").addEventListener("click", () => {
+    };
+    const themeSel = document.getElementById("theme-selector");
+    if (themeSel) themeSel.addEventListener("change", (e) => changeTheme(e.target.value));
+    const sidebarThemeSel = document.getElementById("sidebar-theme-selector");
+    if (sidebarThemeSel) sidebarThemeSel.addEventListener("change", (e) => changeTheme(e.target.value));
+    const resetProgress = () => {
       if (confirm("WARNING: This will completely erase all your mastery stats. Bookmarks will be kept. Proceed?")) {
         state.mastery = {};
         saveProgress();
@@ -23336,7 +23633,11 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         }
         AudioEngine.play("fail");
       }
-    });
+    };
+    const resetBtn = document.getElementById("reset-progress-btn");
+    if (resetBtn) resetBtn.addEventListener("click", resetProgress);
+    const sidebarResetBtn = document.getElementById("sidebar-reset-progress-btn");
+    if (sidebarResetBtn) sidebarResetBtn.addEventListener("click", resetProgress);
     const navExamHub = document.getElementById("nav-exam-hub");
     if (navExamHub) {
       navExamHub.addEventListener("click", () => {
@@ -23995,6 +24296,239 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         generateMockExam();
       });
     }
+    document.addEventListener("keydown", (e) => {
+      const active = document.activeElement;
+      if (active && (active.tagName === "INPUT" || active.tagName === "TEXTAREA" || active.isContentEditable)) {
+        return;
+      }
+      if (e.key === "Escape" || e.key === "Esc") {
+        closeVideoModal();
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("sidebar-overlay");
+        if (sidebar && sidebar.classList.contains("active")) {
+          sidebar.classList.remove("active");
+        }
+        if (overlay && overlay.classList.contains("active")) {
+          overlay.classList.remove("active");
+        }
+        return;
+      }
+      const flashcardView = document.getElementById("view-flashcards");
+      if (flashcardView && flashcardView.classList.contains("active")) {
+        const cardEl = document.getElementById("flashcard-card");
+        if (cardEl && !state.flashcardSession.reinforcing) {
+          if (e.key === " " || e.key === "Spacebar") {
+            e.preventDefault();
+            flipFlashcard();
+          } else if (e.key === "ArrowLeft" || e.key === "Left") {
+            e.preventDefault();
+            handleFlashcardGrade(false);
+          } else if (e.key === "ArrowRight" || e.key === "Right") {
+            e.preventDefault();
+            handleFlashcardGrade(true);
+          }
+        }
+        return;
+      }
+      const masteryView = document.getElementById("view-mastery");
+      if (masteryView && masteryView.classList.contains("active")) {
+        const homeworkCard = masteryView.querySelector(".homework-questions-card");
+        if (homeworkCard) {
+          if (e.key === " " || e.key === "Spacebar") {
+            e.preventDefault();
+            const revealBtn = homeworkCard.querySelector(".journey-reveal-answer-btn");
+            if (revealBtn) revealBtn.click();
+          } else if (e.key === "ArrowLeft" || e.key === "Left") {
+            e.preventDefault();
+            const prevBtn = homeworkCard.querySelector(".journey-prev-btn");
+            if (prevBtn && !prevBtn.disabled) prevBtn.click();
+          } else if (e.key === "ArrowRight" || e.key === "Right") {
+            e.preventDefault();
+            const nextBtn = homeworkCard.querySelector(".journey-next-btn");
+            if (nextBtn && !nextBtn.disabled) nextBtn.click();
+          } else if (e.key >= "1" && e.key <= "9") {
+            e.preventDefault();
+            const idx = parseInt(e.key) - 1;
+            const node = homeworkCard.querySelector(`.journey-step-node[data-step-index="${idx}"]`);
+            if (node) node.click();
+          } else if (e.key === "0") {
+            e.preventDefault();
+            const node = homeworkCard.querySelector(`.journey-step-node[data-step-index="9"]`);
+            if (node) node.click();
+          }
+        }
+      }
+    });
+    const viewFlashcards = document.getElementById("view-flashcards");
+    if (viewFlashcards) {
+      let startDrag = function(e) {
+        cardEl = document.getElementById("flashcard-card");
+        if (!cardEl) return;
+        if (state.flashcardSession.reinforcing) return;
+        if (cardEl.classList.contains("swipe-right") || cardEl.classList.contains("swipe-left")) return;
+        const target = e.target;
+        if (target.closest("button") || target.closest(".bookmark-icon-container") || target.closest("#flashcard-reinforce-options")) {
+          return;
+        }
+        if (!cardEl.contains(target)) return;
+        isDragging = true;
+        state.flashcardSession.wasDragged = false;
+        const clientX = e.type.startsWith("touch") ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type.startsWith("touch") ? e.touches[0].clientY : e.clientY;
+        startX = clientX;
+        startY = clientY;
+        cardEl.classList.remove("resetting");
+        if (e.type === "mousedown") {
+          document.addEventListener("mousemove", drag);
+          document.addEventListener("mouseup", endDrag);
+        } else {
+          document.addEventListener("touchmove", drag, { passive: false });
+          document.addEventListener("touchend", endDrag);
+        }
+      }, drag = function(e) {
+        if (!isDragging || !cardEl) return;
+        const clientX = e.type.startsWith("touch") ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type.startsWith("touch") ? e.touches[0].clientY : e.clientY;
+        deltaX = clientX - startX;
+        const deltaY = clientY - startY;
+        if (e.type.startsWith("touch") && Math.abs(deltaY) > Math.abs(deltaX) * 1.5 && Math.abs(deltaX) < 15) {
+          endDrag();
+          return;
+        }
+        if (e.cancelable) e.preventDefault();
+        if (Math.abs(deltaX) > 10) {
+          state.flashcardSession.wasDragged = true;
+        }
+        const isFlipped = cardEl.classList.contains("flipped");
+        const rotationAngle = deltaX * 0.05 * (isFlipped ? -1 : 1);
+        cardEl.style.transform = `translateX(${deltaX}px) rotateY(${isFlipped ? 180 : 0}deg) rotate(${rotationAngle}deg)`;
+      }, endDrag = function() {
+        if (!isDragging || !cardEl) return;
+        isDragging = false;
+        document.removeEventListener("mousemove", drag);
+        document.removeEventListener("mouseup", endDrag);
+        document.removeEventListener("touchmove", drag);
+        document.removeEventListener("touchend", endDrag);
+        const threshold = 100;
+        if (deltaX > threshold) {
+          cardEl.style.transform = "";
+          handleFlashcardGrade(true);
+        } else if (deltaX < -threshold) {
+          cardEl.style.transform = "";
+          handleFlashcardGrade(false);
+        } else {
+          cardEl.classList.add("resetting");
+          cardEl.style.transform = "";
+          setTimeout(() => {
+            cardEl.classList.remove("resetting");
+          }, 200);
+        }
+        deltaX = 0;
+      };
+      let startX = 0;
+      let startY = 0;
+      let isDragging = false;
+      let deltaX = 0;
+      let cardEl = null;
+      viewFlashcards.addEventListener("mousedown", startDrag);
+      viewFlashcards.addEventListener("touchstart", startDrag);
+      viewFlashcards.addEventListener("click", (e) => {
+        const btn = e.target.closest(".tts-speak-btn");
+        if (btn) {
+          e.stopPropagation();
+          AudioEngine.play("click");
+          const isFront = btn.id === "btn-front-tts";
+          const deck = state.flashcardSession.deck;
+          const idx = state.flashcardSession.activeIndex;
+          if (deck && deck[idx]) {
+            const q = deck[idx];
+            const textToSpeak = isFront ? q.question : `${q.answer}. Explanation: ${q.explanation}`;
+            btn.style.color = "var(--primary)";
+            AudioEngine.speak(
+              textToSpeak,
+              () => {
+                btn.innerHTML = '<i class="fa-solid fa-volume-high fa-beat"></i>';
+              },
+              () => {
+                btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+                btn.style.color = "";
+              },
+              () => {
+                btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+                btn.style.color = "";
+              }
+            );
+          }
+        }
+      });
+    }
+    const btnToggle = document.getElementById("btn-settings-toggle");
+    const settingsOverlay = document.getElementById("settings-drawer-overlay");
+    const btnClose = document.getElementById("btn-settings-close");
+    if (btnToggle && settingsOverlay) {
+      btnToggle.addEventListener("click", () => {
+        AudioEngine.play("click");
+        settingsOverlay.style.display = "flex";
+      });
+    }
+    if (btnClose && settingsOverlay) {
+      btnClose.addEventListener("click", () => {
+        AudioEngine.play("click");
+        settingsOverlay.style.display = "none";
+      });
+      settingsOverlay.addEventListener("click", (e) => {
+        if (e.target === settingsOverlay) {
+          AudioEngine.play("click");
+          settingsOverlay.style.display = "none";
+        }
+      });
+    }
+    const fontBtns = document.querySelectorAll(".font-scale-btn");
+    fontBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        AudioEngine.play("click");
+        const scale = btn.getAttribute("data-scale");
+        fontBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.documentElement.style.fontSize = `${scale * 100}%`;
+        localStorage.setItem("edexcel_prefs_fontsize", scale);
+      });
+    });
+    const volumeSlider = document.getElementById("settings-volume-slider");
+    const percentText = document.getElementById("settings-volume-percent");
+    if (volumeSlider && percentText) {
+      volumeSlider.addEventListener("input", (e) => {
+        const val = e.target.value;
+        percentText.textContent = `${val}%`;
+        state.audioVolume = val / 100;
+        localStorage.setItem("edexcel_prefs_volume", state.audioVolume);
+      });
+      volumeSlider.addEventListener("change", () => {
+        AudioEngine.play("click");
+      });
+    }
+    function applyLoadedSettings() {
+      const savedScale = localStorage.getItem("edexcel_prefs_fontsize");
+      if (savedScale) {
+        document.documentElement.style.fontSize = `${savedScale * 100}%`;
+        const activeBtn = document.querySelector(`.font-scale-btn[data-scale="${savedScale}"]`);
+        if (activeBtn) {
+          fontBtns.forEach((b) => b.classList.remove("active"));
+          activeBtn.classList.add("active");
+        }
+      }
+      const savedVol = localStorage.getItem("edexcel_prefs_volume");
+      if (savedVol !== null) {
+        state.audioVolume = parseFloat(savedVol);
+        if (volumeSlider && percentText) {
+          volumeSlider.value = Math.round(state.audioVolume * 100);
+          percentText.textContent = `${volumeSlider.value}%`;
+        }
+      } else {
+        state.audioVolume = 0.8;
+      }
+    }
+    applyLoadedSettings();
   }
   function extractKeywordsFromAnswer(htmlAnswer) {
     if (!htmlAnswer) return [];
@@ -24253,6 +24787,8 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
     document.documentElement.setAttribute("data-theme", state.theme);
     const themeSelector = document.getElementById("theme-selector");
     if (themeSelector) themeSelector.value = state.theme;
+    const sidebarThemeSelector = document.getElementById("sidebar-theme-selector");
+    if (sidebarThemeSelector) sidebarThemeSelector.value = state.theme;
     updateSoundBtnUI();
   }
   function saveProgress() {

@@ -1284,6 +1284,10 @@ details > summary::marker {
   transform: rotateY(180deg);
 }
 
+.flashcard-card.resetting {
+  transition: transform 0.2s ease-out !important;
+}
+
 .flashcard-face {
   position: absolute;
   width: 100%;
@@ -6277,51 +6281,46 @@ details > summary::marker {
 .mastery-journey-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-.journey-step-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--border-radius-md);
-  padding: 16px;
+.journey-step-node {
   transition: all var(--transition-fast) ease;
-  position: relative;
-  cursor: pointer;
-  user-select: none;
 }
-
-.journey-step-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
+.journey-step-node:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+.journey-step-node.active {
+  transform: scale(1.12);
+  box-shadow: 0 0 12px var(--primary-glow);
 }
 
 .journey-step-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .journey-step-left {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .journey-step-circle {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 800;
   font-family: var(--font-heading);
   transition: all var(--transition-fast) ease;
@@ -6336,50 +6335,50 @@ details > summary::marker {
 }
 
 .journey-level-badge {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: 4px;
-  letter-spacing: 0.03em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
   font-family: var(--font-heading);
   display: inline-block;
 }
 
 /* Color codes for level types to look premium */
 .badge-recall {
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(59, 130, 246, 0.08);
   color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.15);
 }
 .badge-factcheck {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(16, 185, 129, 0.08);
   color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.15);
 }
 .badge-concept {
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(139, 92, 246, 0.08);
   color: #a78bfa;
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.15);
 }
 .badge-analysis {
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(245, 158, 11, 0.08);
   color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.15);
 }
 .badge-challenge {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(239, 68, 68, 0.08);
   color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.15);
 }
 
 .journey-step-question {
-  margin: 10px 0 0 0;
-  font-size: 0.95rem;
+  margin: 4px 0 0 0;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-main);
-  line-height: 1.45;
-  padding-left: 46px;
+  line-height: 1.4;
+  padding-left: 34px;
 }
 
 .journey-step-right {
@@ -6389,7 +6388,7 @@ details > summary::marker {
 }
 
 .journey-toggle-icon {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   transition: transform var(--transition-fast) ease;
 }
 
@@ -6402,34 +6401,34 @@ details > summary::marker {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.3s ease, padding 0.3s ease;
-  padding: 0 16px;
-  background: rgba(0, 0, 0, 0.25);
-  border-left: 3px solid var(--primary);
-  border-radius: 0 4px 4px 0;
+  padding: 0 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 2px solid var(--primary);
+  border-radius: 0 3px 3px 0;
   margin-top: 0;
-  margin-left: 46px;
+  margin-left: 34px;
 }
 
 .journey-step-card.active .journey-answer-guide {
   max-height: 1000px;
-  padding: 12px 16px;
-  margin-top: 12px;
+  padding: 8px 12px;
+  margin-top: 8px;
 }
 
 .journey-answer-title {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: bold;
   text-transform: uppercase;
   color: var(--primary);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   display: block;
 }
 
 .journey-answer-text {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* --- Taboo Cards Revision Game Styles --- */
@@ -7511,6 +7510,138 @@ details > summary::marker {
   #theme-selector {
     max-width: 60px; /* Further restrict selector size */
   }
+}
+
+/* --- Settings & Accessibility Drawer Styles --- */
+.settings-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1100;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.settings-drawer {
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  background: var(--bg-card);
+  border-left: 1px solid var(--border-glass);
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.settings-drawer-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-glass);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-drawer-header h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+}
+
+.settings-drawer-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.settings-drawer-close:hover {
+  color: var(--text-main);
+}
+
+.settings-drawer-body {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.font-scale-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.font-scale-btn {
+  flex: 1;
+  padding: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.font-scale-btn:hover {
+  border-color: var(--border-active);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+}
+
+.font-scale-btn.active {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Custom class for speaker icon hover pulse */
+.tts-speak-btn, .journey-tts-btn {
+  transition: all 0.2s ease;
+}
+
+.tts-speak-btn:hover, .journey-tts-btn:hover {
+  color: var(--primary) !important;
+  transform: scale(1.2);
 }
 
 

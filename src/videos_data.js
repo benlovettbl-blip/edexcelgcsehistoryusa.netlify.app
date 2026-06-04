@@ -211,7 +211,7 @@ export const VIDEOS_DATA = {
   "subtopic_3_4": {
     "primary": {
       "video_title": "2-minute AI Overview: Vietnamization & Nixon Doctrine",
-      "youtube_url": "https://www.youtube.com/watch?v=3zhZ3OVyBYY",
+      "youtube_url": "https://www.youtube.com/watch?v=yTZzZlLoE84",
       "duration": "02:00",
       "production_source": "AI Revision Guide"
     },
@@ -230,7 +230,7 @@ export const VIDEOS_DATA = {
   "subtopic_4_1": {
     "primary": {
       "video_title": "2-minute AI Overview: The Tet Offensive",
-      "youtube_url": "https://www.youtube.com/watch?v=KXXJLaGrHU8",
+      "youtube_url": "https://www.youtube.com/watch?v=KYE62XVdcrY",
       "duration": "02:00",
       "production_source": "AI Revision Guide"
     },
@@ -249,7 +249,7 @@ export const VIDEOS_DATA = {
   "subtopic_4_2": {
     "primary": {
       "video_title": "2-minute AI Overview: My Lai, Silent Majority & Anti-War Movement",
-      "youtube_url": "https://www.youtube.com/watch?v=iiNc3nsIR2Y",
+      "youtube_url": "https://www.youtube.com/watch?v=7qrPo5ASv-o",
       "duration": "02:00",
       "production_source": "AI Revision Guide"
     },
@@ -268,7 +268,7 @@ export const VIDEOS_DATA = {
   "subtopic_4_3": {
     "primary": {
       "video_title": "2-minute AI Overview: Peace Negotiations & Fall of Saigon",
-      "youtube_url": "https://www.youtube.com/watch?v=jNAilp37isA",
+      "youtube_url": "https://www.youtube.com/watch?v=q69gxI2U9QE",
       "duration": "02:00",
       "production_source": "AI Revision Guide"
     },
@@ -287,7 +287,7 @@ export const VIDEOS_DATA = {
   "subtopic_4_4": {
     "primary": {
       "video_title": "2-minute AI Overview: Why the US Failed in Vietnam",
-      "youtube_url": "https://www.youtube.com/watch?v=ogoIQSjAFcc",
+      "youtube_url": "https://www.youtube.com/watch?v=KqsDh0eUc2M",
       "duration": "02:00",
       "production_source": "AI Revision Guide"
     },

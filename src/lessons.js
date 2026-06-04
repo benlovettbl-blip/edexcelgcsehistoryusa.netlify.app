@@ -1492,37 +1492,73 @@ export function renderMasteryView(subtopicId) {
   let hwHtml = '';
   const hwQuestions = HOMEWORK_QUESTIONS[subtopicId];
   if (hwQuestions && hwQuestions.length > 0) {
-    const questionsListMarkup = hwQuestions.map((q, idx) => {
+    const stepNodesHtml = hwQuestions.map((q, idx) => `
+      <div class="journey-step-node ${idx === 0 ? 'active' : ''}" data-step-index="${idx}" style="position: relative; z-index: 2; width: 26px; height: 26px; border-radius: 50%; background: var(--bg-card); border: 2px solid ${idx === 0 ? 'var(--primary)' : 'var(--border-glass)'}; color: ${idx === 0 ? 'var(--primary)' : 'var(--text-muted)'}; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; cursor: pointer; transition: all 0.2s;">
+        ${idx + 1}
+      </div>
+    `).join('');
+
+    const stepCardsHtml = hwQuestions.map((q, idx) => {
       const badgeClass = `badge-${q.type.toLowerCase().replace(/\s/g, '')}`;
       return `
-        <div class="journey-step-card" data-step="${idx}">
-          <div class="journey-step-header">
-            <div class="journey-step-left">
-              <div class="journey-step-circle">Q${idx + 1}</div>
-              <span class="journey-level-badge ${badgeClass}">Level ${q.level}: ${q.type}</span>
-            </div>
-            <div class="journey-step-right">
-              <i class="fa-solid fa-chevron-down journey-toggle-icon"></i>
+        <div class="journey-paginated-card ${idx === 0 ? 'active' : ''}" data-step-index="${idx}" style="${idx === 0 ? 'display: block;' : 'display: none;'} background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; min-height: 140px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span class="journey-level-badge ${badgeClass}">Level ${q.level}: ${q.type}</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <button class="journey-tts-btn" data-step="${idx}" title="Read Question & Answer Guide Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.9rem; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
+              <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">Step ${idx + 1} of 10</span>
             </div>
           </div>
-          <p class="journey-step-question">${applyGlossaryTooltips(q.question)}</p>
-          <div class="journey-answer-guide">
-            <span class="journey-answer-title">🛡️ Answer Guide:</span>
-            <p class="journey-answer-text">${applyGlossaryTooltips(q.answer)}</p>
+          <p style="margin: 0 0 12px 0; font-size: 0.92rem; font-weight: 500; color: var(--text-main); line-height: 1.45;">
+            ${applyGlossaryTooltips(q.question)}
+          </p>
+          <div class="journey-answer-guide" style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 0 12px; background: rgba(0, 0, 0, 0.2); border-left: 3px solid var(--primary); border-radius: 0 3px 3px 0;">
+            <span class="journey-answer-title" style="font-size: 0.72rem; font-weight: bold; text-transform: uppercase; color: var(--primary); margin-bottom: 4px; display: block; padding-top: 8px;">🛡️ Answer Guide:</span>
+            <p class="journey-answer-text" style="margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; padding-bottom: 8px;">
+              ${applyGlossaryTooltips(q.answer)}
+            </p>
           </div>
         </div>
       `;
     }).join('');
-    
+
     hwHtml = `
       <div class="mastery-card homework-questions-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
         <h3 class="mastery-card-title"><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> 🛡️ 10-Step Unit Mastery Journey</h3>
         <div class="mastery-card-body" style="padding-top: 6px;">
-          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted); font-size: 0.85rem;">
-            Missed this lesson or need a thorough refresh? Click through these 10 structured questions (ranging from basic recall to expert challenge) to master the unit!
+          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted); font-size: 0.82rem;">
+            Missed this lesson or need a thorough refresh? Work through these 10 structured steps (from basic recall to expert challenge) to master this unit!
           </p>
-          <div class="mastery-journey-container">
-            ${questionsListMarkup}
+          
+          <!-- Step Indicator Navigation Bar -->
+          <div class="mastery-journey-steps-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; position: relative; padding: 0 4px;">
+            <div class="steps-bar-line" style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--border-glass); z-index: 1; transform: translateY(-50%);"></div>
+            ${stepNodesHtml}
+          </div>
+
+          <!-- Active Step Card Content -->
+          <div class="mastery-journey-content-wrapper" style="position: relative; z-index: 2;">
+            ${stepCardsHtml}
+          </div>
+
+          <!-- Action Navigation Buttons -->
+          <div class="mastery-journey-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; border-top: 1px solid var(--border-glass); padding-top: 14px;">
+            <button class="mastery-btn journey-prev-btn" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-glass); color: var(--text-muted); cursor: not-allowed; border-radius: 4px; opacity: 0.5;" disabled>
+              <i class="fa-solid fa-arrow-left"></i> Previous
+            </button>
+            <button class="mastery-btn journey-reveal-answer-btn" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.1); border: 1px solid var(--primary); color: var(--primary); cursor: pointer; border-radius: 4px;">
+              <i class="fa-solid fa-eye"></i> Reveal Answer
+            </button>
+            <button class="mastery-btn journey-next-btn" style="padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.2); border: 1px solid var(--primary); color: #fff; cursor: pointer; border-radius: 4px;">
+              Next <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <!-- Keyboard Shortcuts Info -->
+          <div class="desktop-only" style="margin-top: 12px; text-align: center; font-size: 0.68rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 10px; width: 100%;">
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">← / →</kbd> Prev/Next</span>
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">Space</kbd> Reveal Answer</span>
+            <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">1-0</kbd> Jump to Step</span>
           </div>
         </div>
       </div>
@@ -2274,26 +2310,155 @@ export function renderMasteryView(subtopicId) {
     });
   }
 
-  // Homework Journey Step Card Accordion Toggles
-  const journeyCards = container.querySelectorAll('.journey-step-card');
-  journeyCards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      // Don't toggle accordion if clicking on a glossary term
-      if (e.target.classList.contains('glossary-term')) {
-        return;
+  // Homework Journey Step Paginated Switcher
+  const stepsContainer = container.querySelector('.homework-questions-card');
+  if (stepsContainer) {
+    let currentStep = 0;
+    const stepNodes = stepsContainer.querySelectorAll('.journey-step-node');
+    const stepCards = stepsContainer.querySelectorAll('.journey-paginated-card');
+    const prevBtn = stepsContainer.querySelector('.journey-prev-btn');
+    const nextBtn = stepsContainer.querySelector('.journey-next-btn');
+    const revealBtn = stepsContainer.querySelector('.journey-reveal-answer-btn');
+
+    function updateStepUI(index) {
+      currentStep = index;
+      AudioEngine.play('click');
+
+      // Update nodes
+      stepNodes.forEach((node, idx) => {
+        node.classList.remove('active');
+        node.style.borderColor = 'var(--border-glass)';
+        node.style.color = 'var(--text-muted)';
+        node.style.background = 'var(--bg-card)';
+        
+        if (idx === currentStep) {
+          node.classList.add('active');
+          node.style.borderColor = 'var(--primary)';
+          node.style.color = 'var(--primary)';
+          node.style.background = 'rgba(56, 189, 248, 0.08)';
+        } else if (idx < currentStep) {
+          // Completed steps colored slightly
+          node.style.borderColor = 'var(--success)';
+          node.style.color = 'var(--success)';
+          node.style.background = 'rgba(34, 197, 94, 0.05)';
+        }
+      });
+
+      // Update cards
+      stepCards.forEach((card, idx) => {
+        if (idx === currentStep) {
+          card.style.display = 'block';
+          // Keep answer hidden initially when switching to a new step
+          const answerGuide = card.querySelector('.journey-answer-guide');
+          if (answerGuide) {
+            answerGuide.style.maxHeight = '0px';
+            answerGuide.style.paddingTop = '0px';
+            answerGuide.style.paddingBottom = '0px';
+          }
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update buttons
+      if (currentStep === 0) {
+        prevBtn.disabled = true;
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+      } else {
+        prevBtn.disabled = false;
+        prevBtn.style.opacity = '1';
+        prevBtn.style.cursor = 'pointer';
+      }
+
+      if (currentStep === stepCards.length - 1) {
+        nextBtn.innerHTML = 'Finish <i class="fa-solid fa-circle-check" style="margin-left: 4px; color: var(--success);"></i>';
+      } else {
+        nextBtn.innerHTML = 'Next <i class="fa-solid fa-arrow-right"></i>';
       }
       
-      AudioEngine.play('click');
-      const isActive = card.classList.contains('active');
-      
-      // Close all step cards in this container
-      journeyCards.forEach(c => c.classList.remove('active'));
-      
-      if (!isActive) {
-        card.classList.add('active');
+      revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> Reveal Answer';
+      revealBtn.style.background = 'rgba(56, 189, 248, 0.1)';
+      revealBtn.style.color = 'var(--primary)';
+      revealBtn.style.borderColor = 'var(--primary)';
+    }
+
+    // Bind Node Clicks
+    stepNodes.forEach((node, idx) => {
+      node.addEventListener('click', () => updateStepUI(idx));
+    });
+
+    // Bind Prev/Next Clicks
+    prevBtn.addEventListener('click', () => {
+      if (currentStep > 0) {
+        updateStepUI(currentStep - 1);
       }
     });
-  });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentStep < stepCards.length - 1) {
+        updateStepUI(currentStep + 1);
+      } else {
+        AudioEngine.play('success');
+        alert("🎉 Congratulations! You have completed the 10-Step Unit Mastery Journey!");
+      }
+    });
+
+    // Bind Reveal Click
+    revealBtn.addEventListener('click', () => {
+      const activeCard = stepCards[currentStep];
+      const answerGuide = activeCard.querySelector('.journey-answer-guide');
+      if (answerGuide) {
+        const isRevealed = answerGuide.style.maxHeight && answerGuide.style.maxHeight !== '0px';
+        if (isRevealed) {
+          AudioEngine.play('click');
+          answerGuide.style.maxHeight = '0px';
+          revealBtn.innerHTML = '<i class="fa-solid fa-eye"></i> Reveal Answer';
+        } else {
+          AudioEngine.play('success');
+          answerGuide.style.maxHeight = '1000px';
+          revealBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Answer';
+        }
+      }
+    });
+
+    // Bind TTS Button Click
+    const ttsButtons = stepsContainer.querySelectorAll('.journey-tts-btn');
+    ttsButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        AudioEngine.play('click');
+        
+        const idx = parseInt(btn.getAttribute('data-step'));
+        const q = hwQuestions[idx];
+        if (q) {
+          // Check if answer is currently revealed
+          const activeCard = stepCards[idx];
+          const answerGuide = activeCard.querySelector('.journey-answer-guide');
+          const isAnswerRevealed = answerGuide && answerGuide.style.maxHeight && answerGuide.style.maxHeight !== '0px';
+          
+          const textToSpeak = isAnswerRevealed 
+            ? `${q.question}. Answer Guide: ${q.answer}`
+            : q.question;
+            
+          btn.style.color = 'var(--primary)';
+          AudioEngine.speak(textToSpeak,
+            () => {
+              btn.innerHTML = '<i class="fa-solid fa-volume-high fa-beat"></i>';
+            },
+            () => {
+              btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+              btn.style.color = '';
+            },
+            () => {
+              btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+              btn.style.color = '';
+            }
+          );
+        }
+      });
+    });
+  }
 
   // Exam Question Vault Accordion Toggles
   const vaultQuestionBtns = container.querySelectorAll('.vault-question-btn');

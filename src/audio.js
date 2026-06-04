@@ -25,12 +25,14 @@ export const AudioEngine = {
       }
       
       const now = ctx.currentTime;
+      const vol = state.audioVolume !== undefined ? state.audioVolume : 0.8;
+      
       if (type === 'click') {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.frequency.setValueAtTime(600, now);
         osc.frequency.exponentialRampToValueAtTime(150, now + 0.04);
-        gain.gain.setValueAtTime(0.04, now);
+        gain.gain.setValueAtTime(0.04 * vol, now);
         gain.gain.linearRampToValueAtTime(0, now + 0.04);
         osc.connect(gain);
         gain.connect(ctx.destination);
@@ -42,7 +44,7 @@ export const AudioEngine = {
         osc.type = 'triangle';
         osc.frequency.setValueAtTime(280, now);
         osc.frequency.exponentialRampToValueAtTime(140, now + 0.12);
-        gain.gain.setValueAtTime(0.06, now);
+        gain.gain.setValueAtTime(0.06 * vol, now);
         gain.gain.linearRampToValueAtTime(0, now + 0.12);
         osc.connect(gain);
         gain.connect(ctx.destination);
@@ -55,10 +57,10 @@ export const AudioEngine = {
         osc.frequency.setValueAtTime(523.25, now);       // C5
         osc.frequency.setValueAtTime(659.25, now + 0.08);  // E5
         osc.frequency.setValueAtTime(783.99, now + 0.16);  // G5
-        gain.gain.setValueAtTime(0.05, now);
-        gain.gain.setValueAtTime(0.05, now + 0.08);
-        gain.gain.setValueAtTime(0.05, now + 0.16);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+        gain.gain.setValueAtTime(0.05 * vol, now);
+        gain.gain.setValueAtTime(0.05 * vol, now + 0.08);
+        gain.gain.setValueAtTime(0.05 * vol, now + 0.16);
+        gain.gain.exponentialRampToValueAtTime(0.001 * vol, now + 0.35);
         osc.connect(gain);
         gain.connect(ctx.destination);
         osc.start(now);
@@ -69,8 +71,8 @@ export const AudioEngine = {
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(180, now);
         osc.frequency.linearRampToValueAtTime(90, now + 0.2);
-        gain.gain.setValueAtTime(0.06, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+        gain.gain.setValueAtTime(0.06 * vol, now);
+        gain.gain.exponentialRampToValueAtTime(0.001 * vol, now + 0.2);
         const filter = ctx.createBiquadFilter();
         filter.type = 'lowpass';
         filter.frequency.setValueAtTime(450, now);
@@ -87,8 +89,8 @@ export const AudioEngine = {
           osc.type = 'sine';
           osc.frequency.setValueAtTime(freq, now + idx * 0.06);
           gain.gain.setValueAtTime(0, now);
-          gain.gain.linearRampToValueAtTime(0.04, now + idx * 0.06 + 0.02);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.06 + 0.3);
+          gain.gain.linearRampToValueAtTime(0.04 * vol, now + idx * 0.06 + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.001 * vol, now + idx * 0.06 + 0.3);
           osc.connect(gain);
           gain.connect(ctx.destination);
           osc.start(now + idx * 0.06);
@@ -121,6 +123,9 @@ export const AudioEngine = {
       const utterance = new SpeechSynthesisUtterance(cleanText);
       utterance.rate = 0.95; // Slightly slower for readability
       utterance.pitch = 1.0;
+      
+      const vol = state.audioVolume !== undefined ? state.audioVolume : 0.8;
+      utterance.volume = vol;
       
       const voices = window.speechSynthesis.getVoices();
       const enVoice = voices.find(v => v.lang === 'en-GB' || v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));

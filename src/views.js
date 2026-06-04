@@ -136,6 +136,25 @@ function updateGlobalStats() {
   
   const overallFractionEl = document.getElementById('stat-overall-fraction');
   if (overallFractionEl) overallFractionEl.textContent = `${totalMastered} / ${total} Mastered`;
+
+  // Radial Chart updates
+  const radialFill = document.getElementById('radial-progress-fill');
+  if (radialFill) {
+    const circumference = 213.63;
+    const offset = circumference - (overallPct / 100) * circumference;
+    radialFill.style.strokeDashoffset = offset;
+  }
+  const radialPct = document.getElementById('radial-progress-percent');
+  if (radialPct) radialPct.textContent = `${overallPct}%`;
+  
+  const radialFraction = document.getElementById('radial-fraction-text');
+  if (radialFraction) radialFraction.textContent = `${totalMastered} / ${total} Mastered`;
+  
+  const radialBadgeMastered = document.getElementById('radial-badge-mastered');
+  if (radialBadgeMastered) radialBadgeMastered.textContent = `${totalMastered} Mastered`;
+  
+  const radialBadgeBookmarks = document.getElementById('radial-badge-bookmarks');
+  if (radialBadgeBookmarks) radialBadgeBookmarks.textContent = `${state.bookmarks.length} Saved`;
   
   // Update sidebar subtopic nav percentages
   QUIZ_DATA.forEach(topic => {
@@ -152,6 +171,106 @@ function updateGlobalStats() {
 
 // 3. Render Dashboard list
 function renderDashboard() {
+  // --- Render Quick Actions (Resume / Bookmarks Review) ---
+  const quickActionsContainer = document.getElementById('dashboard-quick-actions-container');
+  if (quickActionsContainer) {
+    const lastSubtopicId = localStorage.getItem('edexcel_last_subtopic');
+    const bookmarkCount = state.bookmarks.length;
+    
+    if (lastSubtopicId || bookmarkCount > 0) {
+      quickActionsContainer.style.display = 'flex';
+      quickActionsContainer.innerHTML = '';
+      
+      // 1. Resume Last Lesson Card
+      if (lastSubtopicId) {
+        // Find friendly title of subtopic
+        const subtopicQuestion = state.allQuestions.find(q => q.subtopicId === lastSubtopicId);
+        const subTitle = subtopicQuestion ? subtopicQuestion.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "") : "Last Studied Lesson";
+        
+        const resumeCard = document.createElement('div');
+        resumeCard.className = 'shortcut-card';
+        resumeCard.style.flex = '1';
+        resumeCard.style.minWidth = '240px';
+        resumeCard.style.display = 'flex';
+        resumeCard.style.gap = '14px';
+        resumeCard.style.alignItems = 'center';
+        resumeCard.style.padding = '14px 18px';
+        resumeCard.style.cursor = 'pointer';
+        resumeCard.style.background = 'rgba(56, 189, 248, 0.04)';
+        resumeCard.style.border = '1px solid rgba(56, 189, 248, 0.2)';
+        resumeCard.style.borderRadius = 'var(--border-radius-sm)';
+        resumeCard.style.transition = 'all var(--transition-fast)';
+        resumeCard.innerHTML = `
+          <div class="shortcut-icon" style="background: rgba(56, 189, 248, 0.1); color: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+            <i class="fa-solid fa-play"></i>
+          </div>
+          <div style="text-align: left;">
+            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; letter-spacing: 0.5px;">Quick Resume</span>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 2px;">${subTitle}</div>
+          </div>
+        `;
+        resumeCard.addEventListener('click', () => {
+          AudioEngine.play('click');
+          switchView('subtopic', lastSubtopicId);
+        });
+        resumeCard.addEventListener('mouseover', () => {
+          resumeCard.style.transform = 'translateY(-2px)';
+          resumeCard.style.borderColor = 'var(--primary)';
+          resumeCard.style.background = 'rgba(56, 189, 248, 0.08)';
+        });
+        resumeCard.addEventListener('mouseout', () => {
+          resumeCard.style.transform = 'none';
+          resumeCard.style.borderColor = 'rgba(56, 189, 248, 0.2)';
+          resumeCard.style.background = 'rgba(56, 189, 248, 0.04)';
+        });
+        quickActionsContainer.appendChild(resumeCard);
+      }
+      
+      // 2. Smart Review Bookmarks Card
+      if (bookmarkCount > 0) {
+        const reviewCard = document.createElement('div');
+        reviewCard.className = 'shortcut-card';
+        reviewCard.style.flex = '1';
+        reviewCard.style.minWidth = '240px';
+        reviewCard.style.display = 'flex';
+        reviewCard.style.gap = '14px';
+        reviewCard.style.alignItems = 'center';
+        reviewCard.style.padding = '14px 18px';
+        reviewCard.style.cursor = 'pointer';
+        reviewCard.style.background = 'rgba(250, 204, 21, 0.04)';
+        reviewCard.style.border = '1px solid rgba(250, 204, 21, 0.2)';
+        reviewCard.style.borderRadius = 'var(--border-radius-sm)';
+        reviewCard.style.transition = 'all var(--transition-fast)';
+        reviewCard.innerHTML = `
+          <div class="shortcut-icon" style="background: rgba(250, 204, 21, 0.1); color: #facc15; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div style="text-align: left;">
+            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; letter-spacing: 0.5px;">Smart Review</span>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 2px;">Study Bookmarked Cards (${bookmarkCount})</div>
+          </div>
+        `;
+        reviewCard.addEventListener('click', () => {
+          AudioEngine.play('click');
+          switchView('flashcards', 'bookmarks');
+        });
+        reviewCard.addEventListener('mouseover', () => {
+          reviewCard.style.transform = 'translateY(-2px)';
+          reviewCard.style.borderColor = '#facc15';
+          reviewCard.style.background = 'rgba(250, 204, 21, 0.08)';
+        });
+        reviewCard.addEventListener('mouseout', () => {
+          reviewCard.style.transform = 'none';
+          reviewCard.style.borderColor = 'rgba(250, 204, 21, 0.2)';
+          reviewCard.style.background = 'rgba(250, 204, 21, 0.04)';
+        });
+        quickActionsContainer.appendChild(reviewCard);
+      }
+    } else {
+      quickActionsContainer.style.display = 'none';
+    }
+  }
+
   const container = document.getElementById('dashboard-topics-list');
   container.innerHTML = '';
   
@@ -1471,7 +1590,12 @@ export function formatSubtopicIdToKT(subtopicId) {
 
 // 5. Flashcard View logic
 function startFlashcardSession(subtopicId) {
-  const questions = state.allQuestions.filter(q => q.subtopicId === subtopicId);
+  let questions;
+  if (subtopicId === 'bookmarks') {
+    questions = state.allQuestions.filter(q => state.bookmarks.includes(q.id));
+  } else {
+    questions = state.allQuestions.filter(q => q.subtopicId === subtopicId);
+  }
   
   // Shuffle cards for study session
   state.flashcardSession.deck = [...questions].sort(() => Math.random() - 0.5);
@@ -1611,6 +1735,8 @@ function handleReinforceAnswer(selectedIndex, clickedBtn) {
 }
 
 function renderFlashcard() {
+  AudioEngine.stopSpeaking();
+  state.flashcardSession.wasDragged = false;
   const deck = state.flashcardSession.deck;
   const idx = state.flashcardSession.activeIndex;
   
@@ -1757,6 +1883,7 @@ function restoreFlashcardSkeleton() {
             <div class="card-top">
               <span class="badge" id="card-front-badge">Standard</span>
               <div style="display: flex; align-items: center; gap: 8px;">
+                <button class="tts-speak-btn" id="btn-front-tts" title="Read Question Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                 <span class="card-topic-indicator" id="card-front-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
                 <span class="bookmark-icon-container" id="card-front-bookmark"><i class="fa-regular fa-star"></i></span>
               </div>
@@ -1768,6 +1895,7 @@ function restoreFlashcardSkeleton() {
             <div class="card-top">
               <span class="badge badge-standard" id="card-back-badge">Standard</span>
               <div style="display: flex; align-items: center; gap: 8px;">
+                <button class="tts-speak-btn" id="btn-back-tts" title="Read Answer & Explanation Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                 <span class="card-topic-indicator" id="card-back-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
                 <span class="bookmark-icon-container" id="card-back-bookmark"><i class="fa-regular fa-star"></i></span>
               </div>
@@ -1807,6 +1935,10 @@ function restoreFlashcardSkeleton() {
 }
 
 function flipFlashcard() {
+  if (state.flashcardSession.wasDragged) {
+    state.flashcardSession.wasDragged = false;
+    return;
+  }
   const card = document.getElementById('flashcard-card');
   card.classList.toggle('flipped');
   AudioEngine.play('flip');
