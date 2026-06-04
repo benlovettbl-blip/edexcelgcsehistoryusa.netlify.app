@@ -1317,8 +1317,12 @@ export function initChatbot() {
     const localMatches = searchLocalApp(text);
     const bestMatch = localMatches[0];
 
+    // Determine match strength
+    const isStrongMatch = bestMatch && bestMatch.score >= 35;
+    const isMediumMatch = bestMatch && bestMatch.score >= 20;
+
     // If matching exam technique, navigate automatically!
-    if (bestMatch && bestMatch.id === 'exam_technique') {
+    if (bestMatch && bestMatch.id === 'exam_technique' && bestMatch.score >= 25) {
       appendBubble('assistant', 'Opening the **Exam Technique Guide** for you now...');
       setTimeout(() => {
         switchView('exam-skills');
@@ -1337,16 +1341,21 @@ export function initChatbot() {
     // Connect to AI Proxy with key fallback, or local search fallback
     appendThinkingBubble();
     try {
-      const responseText = await fetchGeminiResponse(apiKey, text, bestMatch);
+      // Only pass context to the AI if it is at least a medium match (score >= 20)
+      const aiContext = isMediumMatch ? bestMatch : null;
+      const responseText = await fetchGeminiResponse(apiKey, text, aiContext);
       removeThinkingBubble();
-      appendBubble('assistant', responseText, bestMatch);
+      
+      // Only attach study jump button if it is a strong match (score >= 35)
+      const bubbleLink = isStrongMatch ? bestMatch : null;
+      appendBubble('assistant', responseText, bubbleLink);
     } catch (err) {
       removeThinkingBubble();
-      if (bestMatch) {
+      if (isMediumMatch) {
         const fallbackText = getLocalStaticResponse(bestMatch, text);
-        appendBubble('assistant', `*Offline Mode (AI unavailable: ${err.message})*\n\n${fallbackText}`, bestMatch);
+        appendBubble('assistant', `*Offline Mode (AI unavailable: ${err.message})*\n\n${fallbackText}`, isStrongMatch ? bestMatch : null);
       } else {
-        appendBubble('assistant', `I couldn't contact the AI tutor (${err.message}).\n\nIf you are running this locally, you can enter your Gemini API Key in the settings (click the ⚙️ gear icon) to activate AI mode. Otherwise, please ask about a topic covered in the course (e.g., "Little Rock Nine" or "Montgomery Bus Boycott").`);
+        appendBubble('assistant', `I couldn't contact the AI tutor (${err.message}).\n\nPlease ask a history question about the Edexcel USA (1954–75) course.`);
       }
     }
   }

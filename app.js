@@ -24160,7 +24160,9 @@ Select a topic checklist to view:
       }
       const localMatches = searchLocalApp(text);
       const bestMatch = localMatches[0];
-      if (bestMatch && bestMatch.id === "exam_technique") {
+      const isStrongMatch = bestMatch && bestMatch.score >= 35;
+      const isMediumMatch = bestMatch && bestMatch.score >= 20;
+      if (bestMatch && bestMatch.id === "exam_technique" && bestMatch.score >= 25) {
         appendBubble("assistant", "Opening the **Exam Technique Guide** for you now...");
         setTimeout(() => {
           switchView("exam-skills");
@@ -24175,20 +24177,22 @@ Select a topic checklist to view:
       }
       appendThinkingBubble();
       try {
-        const responseText = await fetchGeminiResponse(apiKey, text, bestMatch);
+        const aiContext = isMediumMatch ? bestMatch : null;
+        const responseText = await fetchGeminiResponse(apiKey, text, aiContext);
         removeThinkingBubble();
-        appendBubble("assistant", responseText, bestMatch);
+        const bubbleLink = isStrongMatch ? bestMatch : null;
+        appendBubble("assistant", responseText, bubbleLink);
       } catch (err) {
         removeThinkingBubble();
-        if (bestMatch) {
+        if (isMediumMatch) {
           const fallbackText = getLocalStaticResponse(bestMatch, text);
           appendBubble("assistant", `*Offline Mode (AI unavailable: ${err.message})*
 
-${fallbackText}`, bestMatch);
+${fallbackText}`, isStrongMatch ? bestMatch : null);
         } else {
           appendBubble("assistant", `I couldn't contact the AI tutor (${err.message}).
 
-If you are running this locally, you can enter your Gemini API Key in the settings (click the \u2699\uFE0F gear icon) to activate AI mode. Otherwise, please ask about a topic covered in the course (e.g., "Little Rock Nine" or "Montgomery Bus Boycott").`);
+Please ask a history question about the Edexcel USA (1954\u201375) course.`);
         }
       }
     }
