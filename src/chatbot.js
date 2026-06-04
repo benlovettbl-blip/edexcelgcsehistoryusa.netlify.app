@@ -1173,9 +1173,7 @@ export function initChatbot() {
       const subtopicId = jumpLink.getAttribute('data-subtopic-id');
       if (subtopicId) {
         if (subtopicId === 'exam_technique') {
-          switchView('exam-skills');
-          const btn = document.querySelector('.exam-tab-btn[data-panel="technique"]');
-          if (btn) btn.click();
+          switchView('exam-hub', 'technique');
         } else {
           state.currentMode = 'lessons';
           switchView('subtopic', subtopicId);
@@ -1325,9 +1323,7 @@ export function initChatbot() {
     if (bestMatch && bestMatch.id === 'exam_technique' && bestMatch.score >= 25) {
       appendBubble('assistant', 'Opening the **Exam Technique Guide** for you now...');
       setTimeout(() => {
-        switchView('exam-skills');
-        const btn = document.querySelector('.exam-tab-btn[data-panel="technique"]');
-        if (btn) btn.click();
+        switchView('exam-hub', 'technique');
         
         // Hide window on mobile to avoid screen crowding
         if (window.innerWidth <= 480) {

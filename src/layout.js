@@ -13,7 +13,7 @@ import {
 } from './views.js';
 import { startExam, nextExamQuestion, displayExamQuestion, finishExam } from './exam.js';
 import { saveProgress } from './storage.js';
-import { startPastPaper, generateMockExam } from './past_papers.js';
+import { startPastPaper, generateMockExam, renderPastPapersView } from './past_papers.js';
 import { EXAM_SKILLS_DATA } from '../questions.js';
 
 // --- Sidebar Overlay Drawer (Mobile & Desktop UI Toggle) ---
@@ -172,7 +172,7 @@ function bindEvents() {
 
   document.getElementById('shortcut-exam-skills').addEventListener('click', () => {
     AudioEngine.play('click');
-    switchView('exam-skills');
+    switchView('exam-hub', 'technique');
   });
 
   document.getElementById('shortcut-games').addEventListener('click', () => {
@@ -440,18 +440,12 @@ function bindEvents() {
 
 
 
-  // Exam Practice Nav Click
-  document.getElementById('nav-exam-skills').addEventListener('click', () => {
-    AudioEngine.play('click');
-    switchView('exam-skills');
-  });
-
-  // Past Papers Nav Click
-  const navPastPapers = document.getElementById('nav-past-papers');
-  if (navPastPapers) {
-    navPastPapers.addEventListener('click', () => {
+  // Exam Hub Nav Click
+  const navExamHub = document.getElementById('nav-exam-hub');
+  if (navExamHub) {
+    navExamHub.addEventListener('click', () => {
       AudioEngine.play('click');
-      switchView('past-papers');
+      switchView('exam-hub', 'technique');
     });
   }
 
@@ -460,7 +454,7 @@ function bindEvents() {
   if (shortcutPastPapers) {
     shortcutPastPapers.addEventListener('click', () => {
       AudioEngine.play('click');
-      switchView('past-papers');
+      switchView('exam-hub', 'papers');
     });
   }
 
@@ -487,6 +481,10 @@ function bindEvents() {
       });
       const targetEl = document.getElementById(`panel-${targetPanel}`);
       if (targetEl) targetEl.style.display = 'block';
+      
+      if (targetPanel === 'papers') {
+        renderPastPapersView();
+      }
     });
   });
 

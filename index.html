@@ -79,16 +79,10 @@
               <span class="nav-text">Quiz Generator</span>
             </span>
           </a>
-          <a class="nav-item" id="nav-exam-skills" title="Exam Practice (Q1-Q3)">
+          <a class="nav-item" id="nav-exam-hub" title="Exam Hub">
             <span class="nav-item-content">
               <i class="fa-solid fa-pen-fancy"></i>
-              <span class="nav-text">Exam Practice (Q1-Q3)</span>
-            </span>
-          </a>
-          <a class="nav-item" id="nav-past-papers" title="Past Exam Papers">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-file-invoice"></i>
-              <span class="nav-text">Past Exam Papers</span>
+              <span class="nav-text">Exam Hub</span>
             </span>
           </a>
           <a class="nav-item" id="nav-bookmarks" title="Bookmarks">
@@ -660,58 +654,7 @@
         </div>
       </section>
 
-      <!-- 8. PAST EXAM PAPERS VIEW -->
-      <section class="content-view" id="view-past-papers">
-        <div class="past-papers-container" style="max-width: 800px; margin: 0 auto; padding: 12px 4px;">
-          <div class="exam-skills-header-card" style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md);">
-            <h2 class="exam-skills-title" style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: var(--text-main);">
-              <i class="fa-solid fa-file-invoice" style="color: var(--primary);"></i> Past Exam Papers & Mock Generator
-            </h2>
-            <p class="exam-skills-desc" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin: 0;">
-              Select an official Edexcel GCSE past paper from the archive, or generate a randomized full mock exam. Draft your responses in the textareas, toggle educator clues to guide your writing, and check your work against the official model answers.
-            </p>
-          </div>
 
-          <!-- Selector panel -->
-          <div class="dashboard-panel" style="padding: 24px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); box-shadow: var(--shadow-md); margin-bottom: 24px;">
-            <div style="display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; width: 100%;">
-              <div class="form-group" style="flex: 2; min-width: 250px; display: flex; flex-direction: column; gap: 8px;">
-                <label class="form-label" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Choose Exam Paper</label>
-                <select class="select-input" id="past-paper-select" style="width: 100%; padding: 12px 16px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-body); font-size: 0.95rem; outline: none; cursor: pointer;">
-                  <option value="" disabled selected>-- Select an Exam Paper --</option>
-                  <optgroup label="Official Edexcel Past Papers" style="background: var(--bg-card); color: var(--text-main);">
-                    <option value="2018_summer_usa">Summer 2018 Past Paper (Option 33)</option>
-                    <option value="2019_summer_usa">Summer 2019 Past Paper (Option 33)</option>
-                    <option value="2020_summer_usa">Summer 2020 Past Paper (Option 33)</option>
-                    <option value="2022_summer_usa">Summer 2022 Past Paper (Option 33)</option>
-                    <option value="2023_summer_usa">Summer 2023 Past Paper (Option 33)</option>
-                    <option value="2024_summer_usa">Summer 2024 Past Paper (Option 33)</option>
-                    <option value="2025_summer_usa">Summer 2025 Past Paper (Option 33)</option>
-                  </optgroup>
-                  <optgroup label="Best Guess Mock Exams" style="background: var(--bg-card); color: var(--text-main);">
-                    <option value="mock_exam_1">Best Guess Mock 1: Radicalism (1965–75)</option>
-                    <option value="mock_exam_2">Best Guess Mock 2: Vietnam Home Front (1968–73)</option>
-                    <option value="mock_exam_3">Best Guess Mock 3: Early Civil Rights (1954–60)</option>
-                  </optgroup>
-                </select>
-              </div>
-              <div style="flex: 1; min-width: 200px; display: flex; gap: 12px;">
-                <button class="btn-primary" id="btn-start-past-paper" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; padding: 12px;">
-                  <i class="fa-solid fa-play"></i> Open Paper
-                </button>
-                <button class="btn-secondary" id="btn-generate-mock" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; padding: 12px; border-color: var(--primary); color: var(--primary);">
-                  <i class="fa-solid fa-dice"></i> Generate Mock
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dynamic Exam Sheet Container (Hidden until paper is active) -->
-          <div id="past-paper-sheet-container" style="display: none;">
-            <!-- Sheet template rendered in app.js -->
-          </div>
-        </div>
-      </section>
 
       <!-- KEY TOPIC OVERVIEW VIEW -->
       <section class="content-view" id="view-key-topic">
@@ -777,27 +720,30 @@
         </div>
       </section>
 
-      <!-- 7. EXAM SKILLS VIEW -->
-      <section class="content-view" id="view-exam-skills">
+      <!-- 7. EXAM HUB VIEW -->
+      <section class="content-view" id="view-exam-hub">
         <div class="exam-skills-container" style="max-width: 800px; margin: 0 auto; padding: 12px 4px;">
           <!-- Tab Navigation Bar for Paper 3 -->
           <div class="exam-tabs-header" style="display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px; flex-wrap: wrap;">
-            <button class="exam-tab-btn active" data-panel="q1" style="padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-search" style="color: var(--primary); margin-right: 6px;"></i> Q1: Source Inference
+            <button class="exam-tab-btn active" data-panel="technique" style="padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
+              <i class="fa-solid fa-graduation-cap" style="color: var(--primary); margin-right: 6px;"></i> 1. Technique Guide
+            </button>
+            <button class="exam-tab-btn" data-panel="q1" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
+              <i class="fa-solid fa-search" style="color: var(--primary); margin-right: 6px;"></i> 2. Q1 Inference
             </button>
             <button class="exam-tab-btn" data-panel="q2" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-pen-nib" style="color: var(--primary); margin-right: 6px;"></i> Q2: Causation Essay
+              <i class="fa-solid fa-pen-nib" style="color: var(--primary); margin-right: 6px;"></i> 3. Q2 Causation
             </button>
             <button class="exam-tab-btn" data-panel="q3" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-scale-balanced" style="color: var(--primary); margin-right: 6px;"></i> Question 3 (a-d)
+              <i class="fa-solid fa-scale-balanced" style="color: var(--primary); margin-right: 6px;"></i> 4. Question 3 (a-d)
             </button>
-            <button class="exam-tab-btn" data-panel="technique" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-graduation-cap" style="color: var(--primary); margin-right: 6px;"></i> Technique Guide
+            <button class="exam-tab-btn" data-panel="papers" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
+              <i class="fa-solid fa-file-invoice" style="color: var(--primary); margin-right: 6px;"></i> 5. Papers & Mocks
             </button>
           </div>
 
           <!-- PANEL 1: Q1 SOURCE INFERENCE (4 Marks) -->
-          <div class="exam-panel-content" id="panel-q1" style="display: block;">
+          <div class="exam-panel-content" id="panel-q1" style="display: none;">
             <div class="exam-skills-header-card" style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md);">
               <h2 class="exam-skills-title" style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: var(--text-main);">
                 <i class="fa-solid fa-magnifying-glass" style="color: var(--primary);"></i> Q1: Source Inference (4 Marks)
@@ -1303,7 +1249,7 @@
           </div>
 
           <!-- PANEL 4: EXAM TECHNIQUE GUIDE -->
-          <div class="exam-panel-content" id="panel-technique" style="display: none;">
+          <div class="exam-panel-content" id="panel-technique" style="display: block;">
             <div class="exam-skills-header-card" style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md);">
               <h2 class="exam-skills-title" style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: var(--text-main);">
                 <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Edexcel Paper 3: Exam Technique Guide
@@ -1479,6 +1425,57 @@
                   </div>
                 </div>
               </details>
+            </div>
+          </div>
+
+          <!-- PANEL 5: PAST PAPERS & MOCKS -->
+          <div class="exam-panel-content" id="panel-papers" style="display: none;">
+            <div class="exam-skills-header-card" style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md);">
+              <h2 class="exam-skills-title" style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: var(--text-main);">
+                <i class="fa-solid fa-file-invoice" style="color: var(--primary);"></i> Past Exam Papers & Mock Generator
+              </h2>
+              <p class="exam-skills-desc" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin: 0;">
+                Select an official Edexcel GCSE past paper from the archive, or generate a randomized full mock exam. Draft your responses in the textareas, toggle educator clues to guide your writing, and check your work against the official model answers.
+              </p>
+            </div>
+
+            <!-- Selector panel -->
+            <div class="dashboard-panel" style="padding: 24px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); box-shadow: var(--shadow-md); margin-bottom: 24px;">
+              <div style="display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; width: 100%;">
+                <div class="form-group" style="flex: 2; min-width: 250px; display: flex; flex-direction: column; gap: 8px;">
+                  <label class="form-label" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Choose Exam Paper</label>
+                  <select class="select-input" id="past-paper-select" style="width: 100%; padding: 12px 16px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-body); font-size: 0.95rem; outline: none; cursor: pointer;">
+                    <option value="" disabled selected>-- Select an Exam Paper --</option>
+                    <optgroup label="Official Edexcel Past Papers" style="background: var(--bg-card); color: var(--text-main);">
+                      <option value="2018_summer_usa">Summer 2018 Past Paper (Option 33)</option>
+                      <option value="2019_summer_usa">Summer 2019 Past Paper (Option 33)</option>
+                      <option value="2020_summer_usa">Summer 2020 Past Paper (Option 33)</option>
+                      <option value="2022_summer_usa">Summer 2022 Past Paper (Option 33)</option>
+                      <option value="2023_summer_usa">Summer 2023 Past Paper (Option 33)</option>
+                      <option value="2024_summer_usa">Summer 2024 Past Paper (Option 33)</option>
+                      <option value="2025_summer_usa">Summer 2025 Past Paper (Option 33)</option>
+                    </optgroup>
+                    <optgroup label="Best Guess Mock Exams" style="background: var(--bg-card); color: var(--text-main);">
+                      <option value="mock_exam_1">Best Guess Mock 1: Radicalism (1965–75)</option>
+                      <option value="mock_exam_2">Best Guess Mock 2: Vietnam Home Front (1968–73)</option>
+                      <option value="mock_exam_3">Best Guess Mock 3: Early Civil Rights (1954–60)</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div style="flex: 1; min-width: 200px; display: flex; gap: 12px;">
+                  <button class="btn-primary" id="btn-start-past-paper" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; padding: 12px;">
+                    <i class="fa-solid fa-play"></i> Open Paper
+                  </button>
+                  <button class="btn-secondary" id="btn-generate-mock" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; padding: 12px; border-color: var(--primary); color: var(--primary);">
+                    <i class="fa-solid fa-dice"></i> Generate Mock
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Exam Sheet Container (Hidden until paper is active) -->
+            <div id="past-paper-sheet-container" style="display: none;">
+              <!-- Sheet template rendered in app.js -->
             </div>
           </div>
         </div>

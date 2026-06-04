@@ -11,6 +11,7 @@ import { MINDMAP_DATA } from './mindmap_data.js';
 import { getImageWebLink } from './image_links.js';
 import { TABOO_CARDS } from './taboo_data.js';
 import { KEY_TOPICS_OVERVIEWS } from './key_topics_data.js';
+import { renderPastPapersView } from './past_papers.js';
 
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
@@ -1240,7 +1241,7 @@ function verifyChronologySequence() {
 
 // 8. Exam Skills Practice View (SPA Integration)
 // 8. Exam Skills Practice View (SPA Integration)
-function renderExamSkillsView() {
+function renderExamSkillsView(targetPanel = 'technique') {
   // Q1 reset
   const q1Select = document.getElementById('q1-topic-select');
   if (q1Select) q1Select.value = "";
@@ -1313,10 +1314,11 @@ function renderExamSkillsView() {
 
   // Tab activation
   document.querySelectorAll('.exam-tab-btn').forEach(btn => {
-    if (btn.getAttribute('data-panel') === 'q1') {
+    if (btn.getAttribute('data-panel') === targetPanel) {
       btn.classList.add('active');
       btn.style.background = 'rgba(255, 255, 255, 0.05)';
       btn.style.color = 'var(--text-main)';
+      btn.style.borderColor = 'var(--border-glass)';
     } else {
       btn.classList.remove('active');
       btn.style.background = 'transparent';
@@ -1326,7 +1328,7 @@ function renderExamSkillsView() {
   });
 
   document.querySelectorAll('.exam-panel-content').forEach(p => {
-    if (p.id === 'panel-q1') {
+    if (p.id === `panel-${targetPanel}`) {
       p.style.display = 'block';
     } else {
       p.style.display = 'none';
@@ -5506,8 +5508,16 @@ export {
   initMindMapGame,
   initExamLeaderboard,
   initTabooGame,
-  renderKeyTopicOverview
+  renderKeyTopicOverview,
+  activateExamHubPanel
 };
+
+function activateExamHubPanel(targetPanel) {
+  renderExamSkillsView(targetPanel);
+  if (targetPanel === 'papers') {
+    renderPastPapersView();
+  }
+}
 
 
 

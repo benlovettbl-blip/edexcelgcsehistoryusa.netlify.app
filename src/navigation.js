@@ -7,7 +7,8 @@ import {
   renderGamesView,
   renderClassicView,
   startFlashcardSession,
-  renderKeyTopicOverview
+  renderKeyTopicOverview,
+  activateExamHubPanel
 } from './views.js';
 import { showExamSetup } from './exam.js';
 import { renderPastPapersView } from './past_papers.js';
@@ -61,22 +62,16 @@ export function switchView(viewName, subtopicId = null) {
     if (!state.examSession.isActive) {
       showExamSetup();
     }
-  } else if (viewName === 'exam-skills') {
-    const skillsNav = document.getElementById('nav-exam-skills');
-    if (skillsNav) skillsNav.classList.add('active');
+  } else if (viewName === 'exam-hub') {
+    const hubNav = document.getElementById('nav-exam-hub');
+    if (hubNav) hubNav.classList.add('active');
     if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
     const viewTitle = document.getElementById('current-view-title');
-    if (viewTitle) viewTitle.textContent = "Exam Practice (Q1-Q3)";
+    if (viewTitle) viewTitle.textContent = "Exam Hub (Technique, Practice & Mocks)";
     state.selectedSubtopicId = null;
-    renderExamSkillsView();
-  } else if (viewName === 'past-papers') {
-    const papersNav = document.getElementById('nav-past-papers');
-    if (papersNav) papersNav.classList.add('active');
-    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
-    const viewTitle = document.getElementById('current-view-title');
-    if (viewTitle) viewTitle.textContent = "Past Exam Papers";
-    state.selectedSubtopicId = null;
-    renderPastPapersView();
+    
+    const targetPanel = subtopicId || 'technique';
+    activateExamHubPanel(targetPanel);
   } else if (viewName === 'games') {
     const gamesNav = document.getElementById('nav-games');
     if (gamesNav) gamesNav.classList.add('active');
@@ -148,8 +143,7 @@ export function switchView(viewName, subtopicId = null) {
     'flashcards': 'view-flashcards',
     'lessons': 'view-mastery',
     'games': 'view-games',
-    'exam-skills': 'view-exam-skills',
-    'past-papers': 'view-past-papers',
+    'exam-hub': 'view-exam-hub',
     'key-topic': 'view-key-topic'
   };
 

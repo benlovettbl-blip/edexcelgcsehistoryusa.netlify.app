@@ -11386,6 +11386,740 @@ Source E is highly useful for showing the political and moral collapse of the wa
     }
   };
 
+  // src/past_papers.js
+  function updateDraftFeedback(qId, value, questionObj) {
+    const badge = document.getElementById(`feedback-badge-${qId}`);
+    const fill = document.getElementById(`feedback-fill-${qId}`);
+    const connTags = document.getElementById(`connective-tags-${qId}`);
+    const keyTags = document.getElementById(`keyword-tags-${qId}`);
+    const keyRow = document.getElementById(`keyword-feedback-row-${qId}`);
+    if (!badge || !fill) return;
+    const text = (value || "").toLowerCase().trim();
+    const connectives = ["because", "as a result", "led to", "resulted in", "provoked", "consequently", "enabled", "intensified", "forced", "therefore", "agree", "disagree", "however", "on the other hand"];
+    const matchedConnectives = connectives.filter((c) => text.includes(c));
+    const keywords = getKeywordsForQuestion(questionObj);
+    const matchedKeywords = keywords.filter((k) => text.includes(k.toLowerCase()));
+    const connectivesScore = Math.min(50, matchedConnectives.length * 10);
+    const keywordsScore = keywords.length > 0 ? Math.min(50, matchedKeywords.length * (50 / keywords.length)) : 50;
+    const totalScore = Math.round(connectivesScore + keywordsScore);
+    fill.style.width = `${totalScore}%`;
+    badge.className = "feedback-badge";
+    if (totalScore <= 20) {
+      badge.textContent = "Structure: Drafting";
+    } else if (totalScore <= 50) {
+      badge.textContent = "Structure: Developing";
+      badge.classList.add("status-developing");
+    } else if (totalScore <= 80) {
+      badge.textContent = "Structure: Strong";
+      badge.classList.add("status-strong");
+    } else {
+      badge.textContent = "Structure: Exam-Ready";
+      badge.classList.add("status-outstanding");
+    }
+    if (connTags) {
+      connTags.innerHTML = connectives.map((c) => {
+        const matched = matchedConnectives.includes(c);
+        return `<span class="feedback-tag ${matched ? "matched" : ""}">${matched ? "\u2714 " : ""}${c}</span>`;
+      }).join("");
+    }
+    if (keywords.length > 0) {
+      if (keyRow) keyRow.style.display = "block";
+      if (keyTags) {
+        keyTags.innerHTML = keywords.map((k) => {
+          const matched = matchedKeywords.includes(k);
+          return `<span class="feedback-tag ${matched ? "matched" : ""}">${matched ? "\u2714 " : ""}${k}</span>`;
+        }).join("");
+      }
+    } else {
+      if (keyRow) keyRow.style.display = "none";
+    }
+  }
+  function renderPastPapersView() {
+    const container = document.getElementById("past-paper-sheet-container");
+    if (state.pastPaperSession.activePaperId) {
+      renderExamSheet();
+      if (container) container.style.display = "block";
+    } else {
+      if (container) container.style.display = "none";
+    }
+  }
+  function startPastPaper(paperId) {
+    const paper = PAST_PAPERS_DATA.find((p) => p.id === paperId);
+    if (!paper) return;
+    state.pastPaperSession.activePaperId = paperId;
+    state.pastPaperSession.activePaperData = paper;
+    if (!state.pastPaperSession.answers[paperId]) {
+      state.pastPaperSession.answers[paperId] = {};
+    }
+    renderExamSheet();
+    const sheetContainer = document.getElementById("past-paper-sheet-container");
+    if (sheetContainer) sheetContainer.style.display = "block";
+  }
+  function generateMockExam() {
+    const q1Keys = Object.keys(EXAM_SKILLS_DATA.q1);
+    const randomQ1Key = q1Keys[Math.floor(Math.random() * q1Keys.length)];
+    const selectedQ1 = EXAM_SKILLS_DATA.q1[randomQ1Key];
+    const q2Keys = Object.keys(EXAM_SKILLS_DATA.q2);
+    const randomQ2Key = q2Keys[Math.floor(Math.random() * q2Keys.length)];
+    const selectedQ2 = EXAM_SKILLS_DATA.q2[randomQ2Key];
+    const q3Keys = Object.keys(EXAM_SKILLS_DATA.q3);
+    const randomQ3Key = q3Keys[Math.floor(Math.random() * q3Keys.length)];
+    const selectedQ3 = EXAM_SKILLS_DATA.q3[randomQ3Key];
+    const paper = {
+      id: "mock_random_" + Date.now(),
+      title: "Random Mock Exam (Paper 3)",
+      year: "Mock",
+      enquiryTopic: selectedQ3.questiona.replace("How useful are Sources B and C for an enquiry into ", "").replace("?", ""),
+      sourceA: selectedQ1.sourceA,
+      sourceB: selectedQ3.sourceB,
+      sourceC: selectedQ3.sourceC,
+      interpretation1: selectedQ3.interpretation1,
+      interpretation2: selectedQ3.interpretation2,
+      q1: {
+        id: selectedQ1.id,
+        question: selectedQ1.question + " (4 marks)",
+        clue: selectedQ1.clue,
+        model: selectedQ1.model
+      },
+      q2: {
+        id: selectedQ2.id,
+        question: selectedQ2.question + " (12 marks)",
+        stimulus: [selectedQ2.stimulus1, selectedQ2.stimulus2],
+        clue: selectedQ2.clue,
+        model: selectedQ2.model
+      },
+      q3a: {
+        id: selectedQ3.id + "_a",
+        question: selectedQ3.questiona + " (8 marks)",
+        clue: selectedQ3.cluea,
+        model: selectedQ3.modela
+      },
+      q3b: {
+        id: selectedQ3.id + "_b",
+        question: selectedQ3.questionb + " (4 marks)",
+        clue: selectedQ3.clueb,
+        model: selectedQ3.modelb
+      },
+      q3c: {
+        id: selectedQ3.id + "_c",
+        question: selectedQ3.questionc + " (4 marks)",
+        clue: selectedQ3.cluec,
+        model: selectedQ3.modelc
+      },
+      q3d: {
+        id: selectedQ3.id + "_d",
+        question: selectedQ3.questiond + " (16 marks)",
+        clue: selectedQ3.clued,
+        model: selectedQ3.modeld
+      }
+    };
+    state.pastPaperSession.activePaperId = paper.id;
+    state.pastPaperSession.activePaperData = paper;
+    state.pastPaperSession.answers[paper.id] = {};
+    renderExamSheet();
+    const sheetContainer = document.getElementById("past-paper-sheet-container");
+    if (sheetContainer) sheetContainer.style.display = "block";
+  }
+  function togglePastClue(qId) {
+    const box = document.getElementById(`past-clue-box-${qId}`);
+    if (!box) return;
+    const isHidden = box.style.display === "none";
+    box.style.display = isHidden ? "block" : "none";
+    AudioEngine.play(isHidden ? "flip" : "click");
+  }
+  function togglePastAnswer(qId) {
+    const box = document.getElementById(`past-answer-box-${qId}`);
+    if (!box) return;
+    const isHidden = box.style.display === "none";
+    box.style.display = isHidden ? "block" : "none";
+    AudioEngine.play(isHidden ? "success" : "click");
+  }
+  function togglePastQuestionComplete(qId, checked) {
+    const session = state.pastPaperSession;
+    if (checked) {
+      if (!session.completedQuestions.includes(qId)) {
+        session.completedQuestions.push(qId);
+        AudioEngine.play("success");
+      }
+    } else {
+      const idx = session.completedQuestions.indexOf(qId);
+      if (idx > -1) {
+        session.completedQuestions.splice(idx, 1);
+        AudioEngine.play("click");
+      }
+    }
+    saveProgress();
+  }
+  function renderExamSheet() {
+    const session = state.pastPaperSession;
+    const paper = session.activePaperData;
+    const container = document.getElementById("past-paper-sheet-container");
+    if (!paper || !container) return;
+    const questionsList = [
+      paper.id + "_q1",
+      paper.id + "_q2",
+      paper.id + "_q3a",
+      paper.id + "_q3b",
+      paper.id + "_q3c",
+      paper.id + "_q3d"
+    ];
+    const completedCount = questionsList.filter((id) => session.completedQuestions.includes(id)).length;
+    const pct = questionsList.length > 0 ? Math.round(completedCount / questionsList.length * 100) : 0;
+    let html = `
+    <div class="exam-sheet">
+      <div class="exam-sheet-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px;">
+        <div>
+          <h3 style="margin: 0; font-family: var(--font-heading); color: var(--text-main); font-size: 1.4rem;">${paper.title}</h3>
+          <div class="exam-metadata" style="margin-top: 6px; display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-muted);">
+            <span><i class="fa-solid fa-calendar"></i> Year: ${paper.year}</span>
+            <span><i class="fa-solid fa-check-double"></i> Complete: ${completedCount}/${questionsList.length} (${pct}%)</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn-secondary" id="btn-copy-exam-clean" style="font-size: 0.85rem; padding: 8px 14px; display: flex; align-items: center; gap: 6px; border-color: rgba(59, 130, 246, 0.3); color: #60a5fa; background: rgba(59, 130, 246, 0.1); cursor: pointer; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.2)'" onmouseout="this.style.background='rgba(59,130,246,0.1)'">
+            <i class="fa-solid fa-file-lines"></i> Copy Clean Exam (for Pupils)
+          </button>
+          <button class="btn-secondary" id="btn-copy-exam-answers" style="font-size: 0.85rem; padding: 8px 14px; display: flex; align-items: center; gap: 6px; border-color: rgba(16, 185, 129, 0.3); color: #34d399; background: rgba(16, 185, 129, 0.1); cursor: pointer; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='rgba(16,185,129,0.2)'" onmouseout="this.style.background='rgba(16,185,129,0.1)'">
+            <i class="fa-solid fa-file-invoice"></i> Copy Exam + Model Answers
+          </button>
+        </div>
+      </div>
+  `;
+    html += `
+    <div class="exam-sheet-section">
+      <h4>Section A: Source Inference (Q1 - 4 marks)</h4>
+      ${paper.sourceA ? `
+        <div class="skills-source-card" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 24px; position: relative;">
+          <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary);"></div>
+          <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 8px;">SOURCE A</span>
+          <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
+          ${paper.sourceA.image ? `
+            <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" />
+          ` : ""}
+          <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
+        </div>
+      ` : ""}
+      ${renderPastQuestionMarkup(paper.id + "_q1", paper.q1.question, paper.q1.clue, paper.q1.model, 4)}
+    </div>
+  `;
+    html += `
+    <div class="exam-sheet-section" style="margin-top: 32px;">
+      <h4>Section B: Causation Essay (Q2 - 12 marks)</h4>
+      ${renderPastQuestionMarkup(paper.id + "_q2", paper.q2.question, paper.q2.clue, paper.q2.model, 12, paper.q2.stimulus)}
+    </div>
+  `;
+    html += `
+    <div class="exam-sheet-section" style="margin-top: 32px;">
+      <h4>Section C: Source Utility (Q3a - 8 marks)</h4>
+      ${paper.sourceB && paper.sourceC ? `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; margin-bottom: 24px;">
+          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
+            ${paper.sourceB.image ? `
+              <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" />
+            ` : ""}
+            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+          </div>
+          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
+            ${paper.sourceC.image ? `
+              <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" />
+            ` : ""}
+            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+          </div>
+        </div>
+      ` : ""}
+      ${renderPastQuestionMarkup(paper.id + "_q3a", paper.q3a.question, paper.q3a.clue, paper.q3a.model, 8)}
+    </div>
+  `;
+    html += `
+    <div class="exam-sheet-section" style="margin-top: 32px;">
+      <h4>Section D: Interpretations Suite (Q3b-d - 24 marks total)</h4>
+      ${paper.interpretation1 && paper.interpretation2 ? `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; margin-bottom: 24px;">
+          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+            <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation1.author}</p>
+            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation1.content}</p>
+          </div>
+          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+            <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 2</span>
+            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation2.author}</p>
+            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation2.content}</p>
+          </div>
+        </div>
+      ` : ""}
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        ${renderPastQuestionMarkup(paper.id + "_q3b", paper.q3b.question, paper.q3b.clue, paper.q3b.model, 4)}
+        ${renderPastQuestionMarkup(paper.id + "_q3c", paper.q3c.question, paper.q3c.clue, paper.q3c.model, 4)}
+        ${renderPastQuestionMarkup(paper.id + "_q3d", paper.q3d.question, paper.q3d.clue, paper.q3d.model, "16 + 4 SPaG")}
+      </div>
+    </div>
+  `;
+    html += `
+      <div style="display: flex; justify-content: flex-end; margin-top: 32px;">
+        <button class="btn-secondary" id="btn-close-exam-sheet" style="font-weight: 600;">
+          Close Paper & Save Draft
+        </button>
+      </div>
+    </div>
+  `;
+    container.innerHTML = html;
+    questionsList.forEach((qId) => {
+      let qObj = null;
+      if (qId === paper.id + "_q1") qObj = paper.q1;
+      else if (qId === paper.id + "_q2") qObj = paper.q2;
+      else if (qId === paper.id + "_q3a") qObj = paper.q3a;
+      else if (qId === paper.id + "_q3b") qObj = paper.q3b;
+      else if (qId === paper.id + "_q3c") qObj = paper.q3c;
+      else if (qId === paper.id + "_q3d") qObj = paper.q3d;
+      const textarea = document.getElementById(`past-textarea-${qId}`);
+      if (textarea && qObj) {
+        textarea.value = session.answers[paper.id][qId] || "";
+        updateDraftFeedback(qId, textarea.value, qObj);
+        textarea.addEventListener("input", (e) => {
+          session.answers[paper.id][qId] = e.target.value;
+          updateDraftFeedback(qId, e.target.value, qObj);
+          saveProgress();
+        });
+      }
+      const chk = document.getElementById(`past-chk-${qId}`);
+      if (chk) {
+        chk.checked = session.completedQuestions.includes(qId);
+        chk.addEventListener("change", (e) => {
+          togglePastQuestionComplete(qId, e.target.checked);
+          renderExamSheetStats();
+        });
+      }
+      const btnClue = document.getElementById(`past-btn-clue-${qId}`);
+      if (btnClue) {
+        btnClue.addEventListener("click", () => togglePastClue(qId));
+      }
+      const btnScaffold = document.getElementById(`past-btn-scaffold-${qId}`);
+      if (btnScaffold) {
+        btnScaffold.addEventListener("click", () => {
+          const box = document.getElementById(`past-scaffold-box-${qId}`);
+          if (box) {
+            const isHidden = box.style.display === "none";
+            box.style.display = isHidden ? "block" : "none";
+            AudioEngine.play(isHidden ? "flip" : "click");
+          }
+        });
+      }
+      const scaffoldBox = document.getElementById(`past-scaffold-box-${qId}`);
+      if (scaffoldBox) {
+        const starterBtns = scaffoldBox.querySelectorAll(".scaffold-starter-btn");
+        starterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const starterText = btn.getAttribute("data-starter");
+            const textarea2 = document.getElementById(`past-textarea-${qId}`);
+            if (textarea2) {
+              AudioEngine.play("success");
+              const startPos = textarea2.selectionStart;
+              const endPos = textarea2.selectionEnd;
+              const originalVal = textarea2.value;
+              let insertStr = starterText;
+              if (startPos > 0 && originalVal[startPos - 1] !== " " && originalVal[startPos - 1] !== "\n") {
+                insertStr = " " + insertStr;
+              }
+              textarea2.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
+              textarea2.focus();
+              const newCursorPos = startPos + insertStr.length;
+              textarea2.setSelectionRange(newCursorPos, newCursorPos);
+              const event = new Event("input", { bubbles: true });
+              textarea2.dispatchEvent(event);
+            }
+          });
+        });
+      }
+      const btnCheck = document.getElementById(`past-btn-check-${qId}`);
+      if (btnCheck) {
+        btnCheck.addEventListener("click", () => togglePastAnswer(qId));
+      }
+    });
+    const closeBtn = document.getElementById("btn-close-exam-sheet");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        AudioEngine.play("click");
+        state.pastPaperSession.activePaperId = null;
+        state.pastPaperSession.activePaperData = null;
+        container.style.display = "none";
+        const selectEl = document.getElementById("past-paper-select");
+        if (selectEl) selectEl.value = "";
+      });
+    }
+    const handleCopyAction = (btnEl, includeAnswers) => {
+      let text = `${paper.title.toUpperCase()}
+`;
+      text += `Option 33: The USA, 1954-75: Conflict at Home and Abroad
+`;
+      text += `========================================================================
+
+`;
+      const cleanBrackets = (str) => (str || "").replace(/\[\[/g, "").replace(/\]\]/g, "").replace(/\{\{/g, "").replace(/\}\}/g, "").replace(/\[1\[/g, "").replace(/\]1\]/g, "").replace(/\[2\[/g, "").replace(/\]2\]/g, "");
+      text += `SECTION A: SOURCE INFERENCE
+`;
+      text += `-------------------------------------------
+`;
+      if (paper.sourceA) {
+        text += `SOURCE A:
+`;
+        text += `Provenance: ${paper.sourceA.provenance}
+`;
+        text += `"${paper.sourceA.content}"
+
+`;
+      }
+      text += `Question 1: ${paper.q1.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (4 Marks)
+
+`;
+      if (includeAnswers) {
+        text += `MODEL ANSWER:
+${cleanBrackets(paper.q1.model)}
+
+`;
+      }
+      text += `SECTION B: CAUSATION ESSAY
+`;
+      text += `-------------------------------------------
+`;
+      text += `Question 2: ${paper.q2.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (12 Marks)
+`;
+      if (paper.q2.stimulus && paper.q2.stimulus.length > 0) {
+        text += `You may use the following in your answer:
+`;
+        paper.q2.stimulus.forEach((s) => {
+          text += ` - ${s}
+`;
+        });
+        text += `You must also use information of your own.
+`;
+      }
+      text += `
+`;
+      if (includeAnswers) {
+        text += `MODEL ANSWER:
+${cleanBrackets(paper.q2.model)}
+
+`;
+      }
+      text += `SECTION C: SOURCES & INTERPRETATIONS ENQUIRY
+`;
+      text += `-------------------------------------------
+`;
+      text += `Enquiry Focus: ${paper.enquiryTopic || ""}
+
+`;
+      if (paper.sourceB) {
+        text += `SOURCE B:
+`;
+        text += `Provenance: ${paper.sourceB.provenance}
+`;
+        text += `"${paper.sourceB.content}"
+
+`;
+      }
+      if (paper.sourceC) {
+        text += `SOURCE C:
+`;
+        text += `Provenance: ${paper.sourceC.provenance}
+`;
+        text += `"${paper.sourceC.content}"
+
+`;
+      }
+      text += `Question 3a: ${paper.q3a.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (8 Marks)
+
+`;
+      if (includeAnswers) {
+        text += `MODEL ANSWER:
+${cleanBrackets(paper.q3a.model)}
+
+`;
+      }
+      if (paper.interpretation1) {
+        text += `INTERPRETATION 1:
+`;
+        text += `Author/Provenance: ${paper.interpretation1.author || ""}
+`;
+        text += `"${paper.interpretation1.content}"
+
+`;
+      }
+      if (paper.interpretation2) {
+        text += `INTERPRETATION 2:
+`;
+        text += `Author/Provenance: ${paper.interpretation2.author || ""}
+`;
+        text += `"${paper.interpretation2.content}"
+
+`;
+      }
+      text += `Question 3b: ${paper.q3b.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (4 Marks)
+
+`;
+      if (includeAnswers) {
+        text += `MODEL ANSWER:
+${cleanBrackets(paper.q3b.model)}
+
+`;
+      }
+      text += `Question 3c: ${paper.q3c.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (4 Marks)
+
+`;
+      if (includeAnswers) {
+        text += `MODEL ANSWER:
+${cleanBrackets(paper.q3c.model)}
+
+`;
+      }
+      text += `Question 3d: ${paper.q3d.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (16 + 4 SPaG Marks)
+`;
+      text += `Explain your answer, using both interpretations, and your knowledge of the historical context.
+`;
+      if (includeAnswers) {
+        text += `
+MODEL ANSWER:
+${cleanBrackets(paper.q3d.model)}
+`;
+      }
+      navigator.clipboard.writeText(text).then(() => {
+        AudioEngine.play("success");
+        const originalHTML = btnEl.innerHTML;
+        const originalBorder = btnEl.style.borderColor;
+        const originalColor = btnEl.style.color;
+        btnEl.innerHTML = `<i class="fa-solid fa-check"></i> Copied!`;
+        btnEl.style.borderColor = "rgba(16, 185, 129, 0.6)";
+        btnEl.style.color = "#10b981";
+        setTimeout(() => {
+          btnEl.innerHTML = originalHTML;
+          btnEl.style.borderColor = originalBorder;
+          btnEl.style.color = originalColor;
+        }, 2e3);
+      }).catch((err) => {
+        console.error("Failed to copy: ", err);
+        alert("Exam text copied to clipboard!\n\n" + text);
+      });
+    };
+    const btnCopyClean = document.getElementById("btn-copy-exam-clean");
+    if (btnCopyClean) {
+      btnCopyClean.addEventListener("click", () => handleCopyAction(btnCopyClean, false));
+    }
+    const btnCopyAnswers = document.getElementById("btn-copy-exam-answers");
+    if (btnCopyAnswers) {
+      btnCopyAnswers.addEventListener("click", () => handleCopyAction(btnCopyAnswers, true));
+    }
+  }
+  function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, marks, stimulus = null) {
+    let stimulusHTML = "";
+    if (stimulus && stimulus.length > 0) {
+      stimulusHTML = `
+      <div class="stimulus-container">
+        <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: flex; align-items: center;">Stimulus:</span>
+        ${stimulus.map((s) => `<span class="stimulus-item">${s}</span>`).join("")}
+      </div>
+    `;
+    }
+    const cleanQuestionText = questionText.replace(/\(\d+\s*marks?\)/gi, "").trim();
+    let instructionHTML = "";
+    if (qId.endsWith("_q3d")) {
+      instructionHTML = `
+      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+        Explain your answer, using both interpretations, and your knowledge of the historical context.
+      </p>
+    `;
+    }
+    let scaffoldBtn = "";
+    let scaffoldBoxHTML = "";
+    if (qId.endsWith("_q3b") || qId.endsWith("_q3c") || qId.endsWith("_q3d")) {
+      scaffoldBtn = `
+      <button class="btn-secondary" id="past-btn-scaffold-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px; background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">
+        <i class="fa-solid fa-pen-fancy"></i> Writing Scaffold
+      </button>
+    `;
+      let formula = "";
+      let starters = [];
+      if (qId.endsWith("_q3b")) {
+        formula = "<strong>Q3b Main Difference (4 Marks) Formula:</strong><br>1. State the main difference in their overall view.<br>2. Quote/detail from Interpretation 1.<br>3. Quote/detail from Interpretation 2.";
+        starters = [
+          "The main difference is that Interpretation 1 argues that...",
+          "This is shown when Interpretation 1 states...",
+          "In contrast, Interpretation 2 suggests that...",
+          "This is shown when Interpretation 2 states..."
+        ];
+      } else if (qId.endsWith("_q3c")) {
+        formula = "<strong>Q3c Reason for Difference (4 Marks) Formula:</strong><br>1. Explain the reason (weighed sources differently OR have different focuses).<br>2. Link Interpretation 1 to Source B (or Focus 1) with evidence.<br>3. Link Interpretation 2 to Source C (or Focus 2) with evidence.";
+        starters = [
+          "The interpretations differ because the historians have given weight to different sources...",
+          "Interpretation 1 is supported by Source B, which details...",
+          "On the other hand, Interpretation 2 is supported by Source C, which details...",
+          "Alternatively, the interpretations differ because they focus on different aspects...",
+          "Interpretation 1 focuses primarily on...",
+          "Whereas Interpretation 2 focuses primarily on..."
+        ];
+      } else if (qId.endsWith("_q3d")) {
+        formula = "<strong>Q3d Evaluation Essay (16+4 Marks) Formula:</strong><br>1. Support Interpretation 2 using your own knowledge (PEEL paragraph).<br>2. Support Interpretation 1 using your own knowledge (PEEL paragraph).<br>3. Conclude with a clear judgment explaining which interpretation is more convincing.";
+        starters = [
+          "I agree with Interpretation 2 to a large extent because...",
+          "My own knowledge confirms that...",
+          "This supports Interpretation 2's view that...",
+          "However, Interpretation 1 is also valid in highlighting that...",
+          "For example, I know that...",
+          "Overall, I find Interpretation 2 more convincing because..."
+        ];
+      }
+      scaffoldBoxHTML = `
+      <div class="past-scaffold-box" id="past-scaffold-box-${qId}" style="display: none; margin-top: 15px; padding: 15px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: var(--border-radius-sm);">
+        <p style="font-size: 0.88rem; color: var(--text-main); margin-top: 0; margin-bottom: 12px; line-height: 1.45;">${formula}</p>
+        <div style="font-size: 0.85rem; font-weight: bold; margin-bottom: 8px; color: var(--primary);">Click to insert sentence starters:</div>
+        <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px;">
+          ${starters.map((starter) => `
+            <button class="scaffold-starter-btn" data-starter="${starter}" style="text-align: left; padding: 8px 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-muted); cursor: pointer; font-size: 0.82rem; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.1)';this.style.color='#60a5fa'" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.color='var(--text-muted)'">
+              <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> ${starter}
+            </button>
+          `).join("")}
+        </div>
+      </div>
+    `;
+    }
+    const isQ3b = qId.endsWith("_q3b");
+    const isQ3c = qId.endsWith("_q3c");
+    const isQ3d = qId.endsWith("_q3d");
+    const isQ2 = qId.includes("_q2") || qId.includes("q2_");
+    let legendHTML = "";
+    if (isQ3b) {
+      legendHTML = `
+      <div class="model-answer-key">
+        <span class="model-key-title">Key:</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation 1 Quotes</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #10b981;"></span> Interpretation 2 Quotes</span>
+      </div>
+    `;
+    } else if (isQ3c) {
+      legendHTML = `
+      <div class="model-answer-key">
+        <span class="model-key-title">Key:</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
+      </div>
+    `;
+    } else if (isQ3d) {
+      legendHTML = `
+      <div class="model-answer-key">
+        <span class="model-key-title">Key:</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
+        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+      </div>
+    `;
+    } else if (isQ2) {
+      legendHTML = `
+      <div class="model-answer-key">
+        <span class="model-key-title">Key:</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Point</span>
+        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Own Knowledge</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Therefore Link Back</span>
+      </div>
+    `;
+    } else {
+      legendHTML = `
+      <div class="model-answer-key">
+        <span class="model-key-title">Key:</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
+        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Provenance</span>
+      </div>
+    `;
+    }
+    return `
+    <div class="exam-question-block" id="exam-q-block-${qId}">
+      <div class="exam-question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+        <div style="flex: 1;">
+          <h5 class="exam-question-title" style="margin: 0; font-size: 1.05rem; line-height: 1.4;">${cleanQuestionText}</h5>
+          ${instructionHTML}
+        </div>
+        <span class="exam-question-marks" style="flex-shrink: 0; background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">${marks} Marks</span>
+      </div>
+      ${stimulusHTML}
+      <textarea class="exam-textarea" id="past-textarea-${qId}" placeholder="Draft your answer here..." style="min-height: 120px;"></textarea>
+      
+      <!-- Live feedback card -->
+      <div class="draft-feedback-card" id="draft-feedback-${qId}">
+        <div class="feedback-stats">
+          <div class="feedback-badge" id="feedback-badge-${qId}">Structure: Drafting</div>
+          <div class="feedback-progress-bar">
+            <div class="feedback-progress-fill" id="feedback-fill-${qId}" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div class="feedback-checklist">
+          <div class="feedback-item">
+            <strong>Connectives checklist:</strong>
+            <div class="feedback-tags" id="connective-tags-${qId}"></div>
+          </div>
+          <div class="feedback-item" id="keyword-feedback-row-${qId}">
+            <strong>Key Terms:</strong>
+            <div class="feedback-tags" id="keyword-tags-${qId}"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exam-sheet-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <button class="btn-secondary" id="past-btn-clue-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px;">
+          <i class="fa-solid fa-lightbulb"></i> Educator Clue
+        </button>
+        ${scaffoldBtn}
+        <button class="btn-primary" id="past-btn-check-${qId}" style="flex: 2; min-width: 180px; font-size: 0.85rem; padding: 8px 12px;">
+          <i class="fa-solid fa-clipboard-check"></i> Self-Check Answer
+        </button>
+      </div>
+
+      <div class="past-clue-box" id="past-clue-box-${qId}" style="display: none;">
+        <strong>Clue:</strong> ${clue}
+      </div>
+
+      ${scaffoldBoxHTML}
+
+      <div class="past-model-answer" id="past-answer-box-${qId}" style="display: none;">
+        <div class="past-model-answer-title"><i class="fa-solid fa-star"></i> Level 3/4 Model Answer</div>
+        <div class="past-model-answer-content" style="white-space: pre-line;">${highlightModelQuotes(modelAnswer)}</div>
+        ${legendHTML}
+      </div>
+
+      <label class="completion-check-row">
+        <input type="checkbox" id="past-chk-${qId}">
+        Mark this question as complete
+      </label>
+    </div>
+  `;
+  }
+  function renderExamSheetStats() {
+    const session = state.pastPaperSession;
+    const paper = session.activePaperData;
+    if (!paper) return;
+    const questionsList = [
+      paper.id + "_q1",
+      paper.id + "_q2",
+      paper.id + "_q3a",
+      paper.id + "_q3b",
+      paper.id + "_q3c",
+      paper.id + "_q3d"
+    ];
+    const completedCount = questionsList.filter((id) => session.completedQuestions.includes(id)).length;
+    const pct = questionsList.length > 0 ? Math.round(completedCount / questionsList.length * 100) : 0;
+    const metaEl = document.querySelector(".exam-sheet-header .exam-metadata");
+    if (metaEl) {
+      metaEl.innerHTML = `
+      <span><i class="fa-solid fa-calendar"></i> Year: ${paper.year}</span>
+      <span><i class="fa-solid fa-check-double"></i> Complete: ${completedCount}/${questionsList.length} (${pct}%)</span>
+    `;
+    }
+  }
+
   // src/views.js
   var GOOGLE_SHEET_WEBAPP_URL = "";
   function renderSidebarNav() {
@@ -12450,7 +13184,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
       }
     }
   }
-  function renderExamSkillsView() {
+  function renderExamSkillsView(targetPanel = "technique") {
     const q1Select = document.getElementById("q1-topic-select");
     if (q1Select) q1Select.value = "";
     document.getElementById("q1-source-card").style.display = "none";
@@ -12512,10 +13246,11 @@ Source E is highly useful for showing the political and moral collapse of the wa
       if (chkd) chkd.checked = false;
     }
     document.querySelectorAll(".exam-tab-btn").forEach((btn) => {
-      if (btn.getAttribute("data-panel") === "q1") {
+      if (btn.getAttribute("data-panel") === targetPanel) {
         btn.classList.add("active");
         btn.style.background = "rgba(255, 255, 255, 0.05)";
         btn.style.color = "var(--text-main)";
+        btn.style.borderColor = "var(--border-glass)";
       } else {
         btn.classList.remove("active");
         btn.style.background = "transparent";
@@ -12524,7 +13259,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
       }
     });
     document.querySelectorAll(".exam-panel-content").forEach((p) => {
-      if (p.id === "panel-q1") {
+      if (p.id === `panel-${targetPanel}`) {
         p.style.display = "block";
       } else {
         p.style.display = "none";
@@ -16017,6 +16752,12 @@ Source E is highly useful for showing the political and moral collapse of the wa
       });
     }
   }
+  function activateExamHubPanel(targetPanel) {
+    renderExamSkillsView(targetPanel);
+    if (targetPanel === "papers") {
+      renderPastPapersView();
+    }
+  }
 
   // src/exam.js
   function showExamSetup2() {
@@ -16511,740 +17252,6 @@ Source E is highly useful for showing the political and moral collapse of the wa
     if (percentage >= 70) return "Expert";
     if (percentage >= 50) return "Scholar";
     return "Apprentice";
-  }
-
-  // src/past_papers.js
-  function updateDraftFeedback(qId, value, questionObj) {
-    const badge = document.getElementById(`feedback-badge-${qId}`);
-    const fill = document.getElementById(`feedback-fill-${qId}`);
-    const connTags = document.getElementById(`connective-tags-${qId}`);
-    const keyTags = document.getElementById(`keyword-tags-${qId}`);
-    const keyRow = document.getElementById(`keyword-feedback-row-${qId}`);
-    if (!badge || !fill) return;
-    const text = (value || "").toLowerCase().trim();
-    const connectives = ["because", "as a result", "led to", "resulted in", "provoked", "consequently", "enabled", "intensified", "forced", "therefore", "agree", "disagree", "however", "on the other hand"];
-    const matchedConnectives = connectives.filter((c) => text.includes(c));
-    const keywords = getKeywordsForQuestion(questionObj);
-    const matchedKeywords = keywords.filter((k) => text.includes(k.toLowerCase()));
-    const connectivesScore = Math.min(50, matchedConnectives.length * 10);
-    const keywordsScore = keywords.length > 0 ? Math.min(50, matchedKeywords.length * (50 / keywords.length)) : 50;
-    const totalScore = Math.round(connectivesScore + keywordsScore);
-    fill.style.width = `${totalScore}%`;
-    badge.className = "feedback-badge";
-    if (totalScore <= 20) {
-      badge.textContent = "Structure: Drafting";
-    } else if (totalScore <= 50) {
-      badge.textContent = "Structure: Developing";
-      badge.classList.add("status-developing");
-    } else if (totalScore <= 80) {
-      badge.textContent = "Structure: Strong";
-      badge.classList.add("status-strong");
-    } else {
-      badge.textContent = "Structure: Exam-Ready";
-      badge.classList.add("status-outstanding");
-    }
-    if (connTags) {
-      connTags.innerHTML = connectives.map((c) => {
-        const matched = matchedConnectives.includes(c);
-        return `<span class="feedback-tag ${matched ? "matched" : ""}">${matched ? "\u2714 " : ""}${c}</span>`;
-      }).join("");
-    }
-    if (keywords.length > 0) {
-      if (keyRow) keyRow.style.display = "block";
-      if (keyTags) {
-        keyTags.innerHTML = keywords.map((k) => {
-          const matched = matchedKeywords.includes(k);
-          return `<span class="feedback-tag ${matched ? "matched" : ""}">${matched ? "\u2714 " : ""}${k}</span>`;
-        }).join("");
-      }
-    } else {
-      if (keyRow) keyRow.style.display = "none";
-    }
-  }
-  function renderPastPapersView() {
-    const container = document.getElementById("past-paper-sheet-container");
-    if (state.pastPaperSession.activePaperId) {
-      renderExamSheet();
-      if (container) container.style.display = "block";
-    } else {
-      if (container) container.style.display = "none";
-    }
-  }
-  function startPastPaper(paperId) {
-    const paper = PAST_PAPERS_DATA.find((p) => p.id === paperId);
-    if (!paper) return;
-    state.pastPaperSession.activePaperId = paperId;
-    state.pastPaperSession.activePaperData = paper;
-    if (!state.pastPaperSession.answers[paperId]) {
-      state.pastPaperSession.answers[paperId] = {};
-    }
-    renderExamSheet();
-    const sheetContainer = document.getElementById("past-paper-sheet-container");
-    if (sheetContainer) sheetContainer.style.display = "block";
-  }
-  function generateMockExam() {
-    const q1Keys = Object.keys(EXAM_SKILLS_DATA.q1);
-    const randomQ1Key = q1Keys[Math.floor(Math.random() * q1Keys.length)];
-    const selectedQ1 = EXAM_SKILLS_DATA.q1[randomQ1Key];
-    const q2Keys = Object.keys(EXAM_SKILLS_DATA.q2);
-    const randomQ2Key = q2Keys[Math.floor(Math.random() * q2Keys.length)];
-    const selectedQ2 = EXAM_SKILLS_DATA.q2[randomQ2Key];
-    const q3Keys = Object.keys(EXAM_SKILLS_DATA.q3);
-    const randomQ3Key = q3Keys[Math.floor(Math.random() * q3Keys.length)];
-    const selectedQ3 = EXAM_SKILLS_DATA.q3[randomQ3Key];
-    const paper = {
-      id: "mock_random_" + Date.now(),
-      title: "Random Mock Exam (Paper 3)",
-      year: "Mock",
-      enquiryTopic: selectedQ3.questiona.replace("How useful are Sources B and C for an enquiry into ", "").replace("?", ""),
-      sourceA: selectedQ1.sourceA,
-      sourceB: selectedQ3.sourceB,
-      sourceC: selectedQ3.sourceC,
-      interpretation1: selectedQ3.interpretation1,
-      interpretation2: selectedQ3.interpretation2,
-      q1: {
-        id: selectedQ1.id,
-        question: selectedQ1.question + " (4 marks)",
-        clue: selectedQ1.clue,
-        model: selectedQ1.model
-      },
-      q2: {
-        id: selectedQ2.id,
-        question: selectedQ2.question + " (12 marks)",
-        stimulus: [selectedQ2.stimulus1, selectedQ2.stimulus2],
-        clue: selectedQ2.clue,
-        model: selectedQ2.model
-      },
-      q3a: {
-        id: selectedQ3.id + "_a",
-        question: selectedQ3.questiona + " (8 marks)",
-        clue: selectedQ3.cluea,
-        model: selectedQ3.modela
-      },
-      q3b: {
-        id: selectedQ3.id + "_b",
-        question: selectedQ3.questionb + " (4 marks)",
-        clue: selectedQ3.clueb,
-        model: selectedQ3.modelb
-      },
-      q3c: {
-        id: selectedQ3.id + "_c",
-        question: selectedQ3.questionc + " (4 marks)",
-        clue: selectedQ3.cluec,
-        model: selectedQ3.modelc
-      },
-      q3d: {
-        id: selectedQ3.id + "_d",
-        question: selectedQ3.questiond + " (16 marks)",
-        clue: selectedQ3.clued,
-        model: selectedQ3.modeld
-      }
-    };
-    state.pastPaperSession.activePaperId = paper.id;
-    state.pastPaperSession.activePaperData = paper;
-    state.pastPaperSession.answers[paper.id] = {};
-    renderExamSheet();
-    const sheetContainer = document.getElementById("past-paper-sheet-container");
-    if (sheetContainer) sheetContainer.style.display = "block";
-  }
-  function togglePastClue(qId) {
-    const box = document.getElementById(`past-clue-box-${qId}`);
-    if (!box) return;
-    const isHidden = box.style.display === "none";
-    box.style.display = isHidden ? "block" : "none";
-    AudioEngine.play(isHidden ? "flip" : "click");
-  }
-  function togglePastAnswer(qId) {
-    const box = document.getElementById(`past-answer-box-${qId}`);
-    if (!box) return;
-    const isHidden = box.style.display === "none";
-    box.style.display = isHidden ? "block" : "none";
-    AudioEngine.play(isHidden ? "success" : "click");
-  }
-  function togglePastQuestionComplete(qId, checked) {
-    const session = state.pastPaperSession;
-    if (checked) {
-      if (!session.completedQuestions.includes(qId)) {
-        session.completedQuestions.push(qId);
-        AudioEngine.play("success");
-      }
-    } else {
-      const idx = session.completedQuestions.indexOf(qId);
-      if (idx > -1) {
-        session.completedQuestions.splice(idx, 1);
-        AudioEngine.play("click");
-      }
-    }
-    saveProgress();
-  }
-  function renderExamSheet() {
-    const session = state.pastPaperSession;
-    const paper = session.activePaperData;
-    const container = document.getElementById("past-paper-sheet-container");
-    if (!paper || !container) return;
-    const questionsList = [
-      paper.id + "_q1",
-      paper.id + "_q2",
-      paper.id + "_q3a",
-      paper.id + "_q3b",
-      paper.id + "_q3c",
-      paper.id + "_q3d"
-    ];
-    const completedCount = questionsList.filter((id) => session.completedQuestions.includes(id)).length;
-    const pct = questionsList.length > 0 ? Math.round(completedCount / questionsList.length * 100) : 0;
-    let html = `
-    <div class="exam-sheet">
-      <div class="exam-sheet-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px;">
-        <div>
-          <h3 style="margin: 0; font-family: var(--font-heading); color: var(--text-main); font-size: 1.4rem;">${paper.title}</h3>
-          <div class="exam-metadata" style="margin-top: 6px; display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-muted);">
-            <span><i class="fa-solid fa-calendar"></i> Year: ${paper.year}</span>
-            <span><i class="fa-solid fa-check-double"></i> Complete: ${completedCount}/${questionsList.length} (${pct}%)</span>
-          </div>
-        </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <button class="btn-secondary" id="btn-copy-exam-clean" style="font-size: 0.85rem; padding: 8px 14px; display: flex; align-items: center; gap: 6px; border-color: rgba(59, 130, 246, 0.3); color: #60a5fa; background: rgba(59, 130, 246, 0.1); cursor: pointer; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.2)'" onmouseout="this.style.background='rgba(59,130,246,0.1)'">
-            <i class="fa-solid fa-file-lines"></i> Copy Clean Exam (for Pupils)
-          </button>
-          <button class="btn-secondary" id="btn-copy-exam-answers" style="font-size: 0.85rem; padding: 8px 14px; display: flex; align-items: center; gap: 6px; border-color: rgba(16, 185, 129, 0.3); color: #34d399; background: rgba(16, 185, 129, 0.1); cursor: pointer; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='rgba(16,185,129,0.2)'" onmouseout="this.style.background='rgba(16,185,129,0.1)'">
-            <i class="fa-solid fa-file-invoice"></i> Copy Exam + Model Answers
-          </button>
-        </div>
-      </div>
-  `;
-    html += `
-    <div class="exam-sheet-section">
-      <h4>Section A: Source Inference (Q1 - 4 marks)</h4>
-      ${paper.sourceA ? `
-        <div class="skills-source-card" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 24px; position: relative;">
-          <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary);"></div>
-          <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 8px;">SOURCE A</span>
-          <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
-          ${paper.sourceA.image ? `
-            <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" />
-          ` : ""}
-          <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
-        </div>
-      ` : ""}
-      ${renderPastQuestionMarkup(paper.id + "_q1", paper.q1.question, paper.q1.clue, paper.q1.model, 4)}
-    </div>
-  `;
-    html += `
-    <div class="exam-sheet-section" style="margin-top: 32px;">
-      <h4>Section B: Causation Essay (Q2 - 12 marks)</h4>
-      ${renderPastQuestionMarkup(paper.id + "_q2", paper.q2.question, paper.q2.clue, paper.q2.model, 12, paper.q2.stimulus)}
-    </div>
-  `;
-    html += `
-    <div class="exam-sheet-section" style="margin-top: 32px;">
-      <h4>Section C: Source Utility (Q3a - 8 marks)</h4>
-      ${paper.sourceB && paper.sourceC ? `
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; margin-bottom: 24px;">
-          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
-            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
-            ${paper.sourceB.image ? `
-              <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" />
-            ` : ""}
-            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
-          </div>
-          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
-            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
-            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
-            ${paper.sourceC.image ? `
-              <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" />
-            ` : ""}
-            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
-          </div>
-        </div>
-      ` : ""}
-      ${renderPastQuestionMarkup(paper.id + "_q3a", paper.q3a.question, paper.q3a.clue, paper.q3a.model, 8)}
-    </div>
-  `;
-    html += `
-    <div class="exam-sheet-section" style="margin-top: 32px;">
-      <h4>Section D: Interpretations Suite (Q3b-d - 24 marks total)</h4>
-      ${paper.interpretation1 && paper.interpretation2 ? `
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; margin-bottom: 24px;">
-          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-            <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
-            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation1.author}</p>
-            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation1.content}</p>
-          </div>
-          <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
-            <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 2</span>
-            <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation2.author}</p>
-            <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation2.content}</p>
-          </div>
-        </div>
-      ` : ""}
-      <div style="display: flex; flex-direction: column; gap: 24px;">
-        ${renderPastQuestionMarkup(paper.id + "_q3b", paper.q3b.question, paper.q3b.clue, paper.q3b.model, 4)}
-        ${renderPastQuestionMarkup(paper.id + "_q3c", paper.q3c.question, paper.q3c.clue, paper.q3c.model, 4)}
-        ${renderPastQuestionMarkup(paper.id + "_q3d", paper.q3d.question, paper.q3d.clue, paper.q3d.model, "16 + 4 SPaG")}
-      </div>
-    </div>
-  `;
-    html += `
-      <div style="display: flex; justify-content: flex-end; margin-top: 32px;">
-        <button class="btn-secondary" id="btn-close-exam-sheet" style="font-weight: 600;">
-          Close Paper & Save Draft
-        </button>
-      </div>
-    </div>
-  `;
-    container.innerHTML = html;
-    questionsList.forEach((qId) => {
-      let qObj = null;
-      if (qId === paper.id + "_q1") qObj = paper.q1;
-      else if (qId === paper.id + "_q2") qObj = paper.q2;
-      else if (qId === paper.id + "_q3a") qObj = paper.q3a;
-      else if (qId === paper.id + "_q3b") qObj = paper.q3b;
-      else if (qId === paper.id + "_q3c") qObj = paper.q3c;
-      else if (qId === paper.id + "_q3d") qObj = paper.q3d;
-      const textarea = document.getElementById(`past-textarea-${qId}`);
-      if (textarea && qObj) {
-        textarea.value = session.answers[paper.id][qId] || "";
-        updateDraftFeedback(qId, textarea.value, qObj);
-        textarea.addEventListener("input", (e) => {
-          session.answers[paper.id][qId] = e.target.value;
-          updateDraftFeedback(qId, e.target.value, qObj);
-          saveProgress();
-        });
-      }
-      const chk = document.getElementById(`past-chk-${qId}`);
-      if (chk) {
-        chk.checked = session.completedQuestions.includes(qId);
-        chk.addEventListener("change", (e) => {
-          togglePastQuestionComplete(qId, e.target.checked);
-          renderExamSheetStats();
-        });
-      }
-      const btnClue = document.getElementById(`past-btn-clue-${qId}`);
-      if (btnClue) {
-        btnClue.addEventListener("click", () => togglePastClue(qId));
-      }
-      const btnScaffold = document.getElementById(`past-btn-scaffold-${qId}`);
-      if (btnScaffold) {
-        btnScaffold.addEventListener("click", () => {
-          const box = document.getElementById(`past-scaffold-box-${qId}`);
-          if (box) {
-            const isHidden = box.style.display === "none";
-            box.style.display = isHidden ? "block" : "none";
-            AudioEngine.play(isHidden ? "flip" : "click");
-          }
-        });
-      }
-      const scaffoldBox = document.getElementById(`past-scaffold-box-${qId}`);
-      if (scaffoldBox) {
-        const starterBtns = scaffoldBox.querySelectorAll(".scaffold-starter-btn");
-        starterBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const starterText = btn.getAttribute("data-starter");
-            const textarea2 = document.getElementById(`past-textarea-${qId}`);
-            if (textarea2) {
-              AudioEngine.play("success");
-              const startPos = textarea2.selectionStart;
-              const endPos = textarea2.selectionEnd;
-              const originalVal = textarea2.value;
-              let insertStr = starterText;
-              if (startPos > 0 && originalVal[startPos - 1] !== " " && originalVal[startPos - 1] !== "\n") {
-                insertStr = " " + insertStr;
-              }
-              textarea2.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
-              textarea2.focus();
-              const newCursorPos = startPos + insertStr.length;
-              textarea2.setSelectionRange(newCursorPos, newCursorPos);
-              const event = new Event("input", { bubbles: true });
-              textarea2.dispatchEvent(event);
-            }
-          });
-        });
-      }
-      const btnCheck = document.getElementById(`past-btn-check-${qId}`);
-      if (btnCheck) {
-        btnCheck.addEventListener("click", () => togglePastAnswer(qId));
-      }
-    });
-    const closeBtn = document.getElementById("btn-close-exam-sheet");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        AudioEngine.play("click");
-        state.pastPaperSession.activePaperId = null;
-        state.pastPaperSession.activePaperData = null;
-        container.style.display = "none";
-        const selectEl = document.getElementById("past-paper-select");
-        if (selectEl) selectEl.value = "";
-      });
-    }
-    const handleCopyAction = (btnEl, includeAnswers) => {
-      let text = `${paper.title.toUpperCase()}
-`;
-      text += `Option 33: The USA, 1954-75: Conflict at Home and Abroad
-`;
-      text += `========================================================================
-
-`;
-      const cleanBrackets = (str) => (str || "").replace(/\[\[/g, "").replace(/\]\]/g, "").replace(/\{\{/g, "").replace(/\}\}/g, "").replace(/\[1\[/g, "").replace(/\]1\]/g, "").replace(/\[2\[/g, "").replace(/\]2\]/g, "");
-      text += `SECTION A: SOURCE INFERENCE
-`;
-      text += `-------------------------------------------
-`;
-      if (paper.sourceA) {
-        text += `SOURCE A:
-`;
-        text += `Provenance: ${paper.sourceA.provenance}
-`;
-        text += `"${paper.sourceA.content}"
-
-`;
-      }
-      text += `Question 1: ${paper.q1.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (4 Marks)
-
-`;
-      if (includeAnswers) {
-        text += `MODEL ANSWER:
-${cleanBrackets(paper.q1.model)}
-
-`;
-      }
-      text += `SECTION B: CAUSATION ESSAY
-`;
-      text += `-------------------------------------------
-`;
-      text += `Question 2: ${paper.q2.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (12 Marks)
-`;
-      if (paper.q2.stimulus && paper.q2.stimulus.length > 0) {
-        text += `You may use the following in your answer:
-`;
-        paper.q2.stimulus.forEach((s) => {
-          text += ` - ${s}
-`;
-        });
-        text += `You must also use information of your own.
-`;
-      }
-      text += `
-`;
-      if (includeAnswers) {
-        text += `MODEL ANSWER:
-${cleanBrackets(paper.q2.model)}
-
-`;
-      }
-      text += `SECTION C: SOURCES & INTERPRETATIONS ENQUIRY
-`;
-      text += `-------------------------------------------
-`;
-      text += `Enquiry Focus: ${paper.enquiryTopic || ""}
-
-`;
-      if (paper.sourceB) {
-        text += `SOURCE B:
-`;
-        text += `Provenance: ${paper.sourceB.provenance}
-`;
-        text += `"${paper.sourceB.content}"
-
-`;
-      }
-      if (paper.sourceC) {
-        text += `SOURCE C:
-`;
-        text += `Provenance: ${paper.sourceC.provenance}
-`;
-        text += `"${paper.sourceC.content}"
-
-`;
-      }
-      text += `Question 3a: ${paper.q3a.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (8 Marks)
-
-`;
-      if (includeAnswers) {
-        text += `MODEL ANSWER:
-${cleanBrackets(paper.q3a.model)}
-
-`;
-      }
-      if (paper.interpretation1) {
-        text += `INTERPRETATION 1:
-`;
-        text += `Author/Provenance: ${paper.interpretation1.author || ""}
-`;
-        text += `"${paper.interpretation1.content}"
-
-`;
-      }
-      if (paper.interpretation2) {
-        text += `INTERPRETATION 2:
-`;
-        text += `Author/Provenance: ${paper.interpretation2.author || ""}
-`;
-        text += `"${paper.interpretation2.content}"
-
-`;
-      }
-      text += `Question 3b: ${paper.q3b.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (4 Marks)
-
-`;
-      if (includeAnswers) {
-        text += `MODEL ANSWER:
-${cleanBrackets(paper.q3b.model)}
-
-`;
-      }
-      text += `Question 3c: ${paper.q3c.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (4 Marks)
-
-`;
-      if (includeAnswers) {
-        text += `MODEL ANSWER:
-${cleanBrackets(paper.q3c.model)}
-
-`;
-      }
-      text += `Question 3d: ${paper.q3d.question.replace(/\(\d+\s*marks?\)/gi, "").trim()} (16 + 4 SPaG Marks)
-`;
-      text += `Explain your answer, using both interpretations, and your knowledge of the historical context.
-`;
-      if (includeAnswers) {
-        text += `
-MODEL ANSWER:
-${cleanBrackets(paper.q3d.model)}
-`;
-      }
-      navigator.clipboard.writeText(text).then(() => {
-        AudioEngine.play("success");
-        const originalHTML = btnEl.innerHTML;
-        const originalBorder = btnEl.style.borderColor;
-        const originalColor = btnEl.style.color;
-        btnEl.innerHTML = `<i class="fa-solid fa-check"></i> Copied!`;
-        btnEl.style.borderColor = "rgba(16, 185, 129, 0.6)";
-        btnEl.style.color = "#10b981";
-        setTimeout(() => {
-          btnEl.innerHTML = originalHTML;
-          btnEl.style.borderColor = originalBorder;
-          btnEl.style.color = originalColor;
-        }, 2e3);
-      }).catch((err) => {
-        console.error("Failed to copy: ", err);
-        alert("Exam text copied to clipboard!\n\n" + text);
-      });
-    };
-    const btnCopyClean = document.getElementById("btn-copy-exam-clean");
-    if (btnCopyClean) {
-      btnCopyClean.addEventListener("click", () => handleCopyAction(btnCopyClean, false));
-    }
-    const btnCopyAnswers = document.getElementById("btn-copy-exam-answers");
-    if (btnCopyAnswers) {
-      btnCopyAnswers.addEventListener("click", () => handleCopyAction(btnCopyAnswers, true));
-    }
-  }
-  function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, marks, stimulus = null) {
-    let stimulusHTML = "";
-    if (stimulus && stimulus.length > 0) {
-      stimulusHTML = `
-      <div class="stimulus-container">
-        <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: flex; align-items: center;">Stimulus:</span>
-        ${stimulus.map((s) => `<span class="stimulus-item">${s}</span>`).join("")}
-      </div>
-    `;
-    }
-    const cleanQuestionText = questionText.replace(/\(\d+\s*marks?\)/gi, "").trim();
-    let instructionHTML = "";
-    if (qId.endsWith("_q3d")) {
-      instructionHTML = `
-      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using both interpretations, and your knowledge of the historical context.
-      </p>
-    `;
-    }
-    let scaffoldBtn = "";
-    let scaffoldBoxHTML = "";
-    if (qId.endsWith("_q3b") || qId.endsWith("_q3c") || qId.endsWith("_q3d")) {
-      scaffoldBtn = `
-      <button class="btn-secondary" id="past-btn-scaffold-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px; background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">
-        <i class="fa-solid fa-pen-fancy"></i> Writing Scaffold
-      </button>
-    `;
-      let formula = "";
-      let starters = [];
-      if (qId.endsWith("_q3b")) {
-        formula = "<strong>Q3b Main Difference (4 Marks) Formula:</strong><br>1. State the main difference in their overall view.<br>2. Quote/detail from Interpretation 1.<br>3. Quote/detail from Interpretation 2.";
-        starters = [
-          "The main difference is that Interpretation 1 argues that...",
-          "This is shown when Interpretation 1 states...",
-          "In contrast, Interpretation 2 suggests that...",
-          "This is shown when Interpretation 2 states..."
-        ];
-      } else if (qId.endsWith("_q3c")) {
-        formula = "<strong>Q3c Reason for Difference (4 Marks) Formula:</strong><br>1. Explain the reason (weighed sources differently OR have different focuses).<br>2. Link Interpretation 1 to Source B (or Focus 1) with evidence.<br>3. Link Interpretation 2 to Source C (or Focus 2) with evidence.";
-        starters = [
-          "The interpretations differ because the historians have given weight to different sources...",
-          "Interpretation 1 is supported by Source B, which details...",
-          "On the other hand, Interpretation 2 is supported by Source C, which details...",
-          "Alternatively, the interpretations differ because they focus on different aspects...",
-          "Interpretation 1 focuses primarily on...",
-          "Whereas Interpretation 2 focuses primarily on..."
-        ];
-      } else if (qId.endsWith("_q3d")) {
-        formula = "<strong>Q3d Evaluation Essay (16+4 Marks) Formula:</strong><br>1. Support Interpretation 2 using your own knowledge (PEEL paragraph).<br>2. Support Interpretation 1 using your own knowledge (PEEL paragraph).<br>3. Conclude with a clear judgment explaining which interpretation is more convincing.";
-        starters = [
-          "I agree with Interpretation 2 to a large extent because...",
-          "My own knowledge confirms that...",
-          "This supports Interpretation 2's view that...",
-          "However, Interpretation 1 is also valid in highlighting that...",
-          "For example, I know that...",
-          "Overall, I find Interpretation 2 more convincing because..."
-        ];
-      }
-      scaffoldBoxHTML = `
-      <div class="past-scaffold-box" id="past-scaffold-box-${qId}" style="display: none; margin-top: 15px; padding: 15px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: var(--border-radius-sm);">
-        <p style="font-size: 0.88rem; color: var(--text-main); margin-top: 0; margin-bottom: 12px; line-height: 1.45;">${formula}</p>
-        <div style="font-size: 0.85rem; font-weight: bold; margin-bottom: 8px; color: var(--primary);">Click to insert sentence starters:</div>
-        <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px;">
-          ${starters.map((starter) => `
-            <button class="scaffold-starter-btn" data-starter="${starter}" style="text-align: left; padding: 8px 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-muted); cursor: pointer; font-size: 0.82rem; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.1)';this.style.color='#60a5fa'" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.color='var(--text-muted)'">
-              <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> ${starter}
-            </button>
-          `).join("")}
-        </div>
-      </div>
-    `;
-    }
-    const isQ3b = qId.endsWith("_q3b");
-    const isQ3c = qId.endsWith("_q3c");
-    const isQ3d = qId.endsWith("_q3d");
-    const isQ2 = qId.includes("_q2") || qId.includes("q2_");
-    let legendHTML = "";
-    if (isQ3b) {
-      legendHTML = `
-      <div class="model-answer-key">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation 1 Quotes</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #10b981;"></span> Interpretation 2 Quotes</span>
-      </div>
-    `;
-    } else if (isQ3c) {
-      legendHTML = `
-      <div class="model-answer-key">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
-      </div>
-    `;
-    } else if (isQ3d) {
-      legendHTML = `
-      <div class="model-answer-key">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
-        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
-      </div>
-    `;
-    } else if (isQ2) {
-      legendHTML = `
-      <div class="model-answer-key">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Point</span>
-        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Own Knowledge</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Therefore Link Back</span>
-      </div>
-    `;
-    } else {
-      legendHTML = `
-      <div class="model-answer-key">
-        <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #f97316;"></span> Source Quotes</span>
-        <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Provenance</span>
-      </div>
-    `;
-    }
-    return `
-    <div class="exam-question-block" id="exam-q-block-${qId}">
-      <div class="exam-question-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
-        <div style="flex: 1;">
-          <h5 class="exam-question-title" style="margin: 0; font-size: 1.05rem; line-height: 1.4;">${cleanQuestionText}</h5>
-          ${instructionHTML}
-        </div>
-        <span class="exam-question-marks" style="flex-shrink: 0; background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">${marks} Marks</span>
-      </div>
-      ${stimulusHTML}
-      <textarea class="exam-textarea" id="past-textarea-${qId}" placeholder="Draft your answer here..." style="min-height: 120px;"></textarea>
-      
-      <!-- Live feedback card -->
-      <div class="draft-feedback-card" id="draft-feedback-${qId}">
-        <div class="feedback-stats">
-          <div class="feedback-badge" id="feedback-badge-${qId}">Structure: Drafting</div>
-          <div class="feedback-progress-bar">
-            <div class="feedback-progress-fill" id="feedback-fill-${qId}" style="width: 0%;"></div>
-          </div>
-        </div>
-        <div class="feedback-checklist">
-          <div class="feedback-item">
-            <strong>Connectives checklist:</strong>
-            <div class="feedback-tags" id="connective-tags-${qId}"></div>
-          </div>
-          <div class="feedback-item" id="keyword-feedback-row-${qId}">
-            <strong>Key Terms:</strong>
-            <div class="feedback-tags" id="keyword-tags-${qId}"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="exam-sheet-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <button class="btn-secondary" id="past-btn-clue-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px;">
-          <i class="fa-solid fa-lightbulb"></i> Educator Clue
-        </button>
-        ${scaffoldBtn}
-        <button class="btn-primary" id="past-btn-check-${qId}" style="flex: 2; min-width: 180px; font-size: 0.85rem; padding: 8px 12px;">
-          <i class="fa-solid fa-clipboard-check"></i> Self-Check Answer
-        </button>
-      </div>
-
-      <div class="past-clue-box" id="past-clue-box-${qId}" style="display: none;">
-        <strong>Clue:</strong> ${clue}
-      </div>
-
-      ${scaffoldBoxHTML}
-
-      <div class="past-model-answer" id="past-answer-box-${qId}" style="display: none;">
-        <div class="past-model-answer-title"><i class="fa-solid fa-star"></i> Level 3/4 Model Answer</div>
-        <div class="past-model-answer-content" style="white-space: pre-line;">${highlightModelQuotes(modelAnswer)}</div>
-        ${legendHTML}
-      </div>
-
-      <label class="completion-check-row">
-        <input type="checkbox" id="past-chk-${qId}">
-        Mark this question as complete
-      </label>
-    </div>
-  `;
-  }
-  function renderExamSheetStats() {
-    const session = state.pastPaperSession;
-    const paper = session.activePaperData;
-    if (!paper) return;
-    const questionsList = [
-      paper.id + "_q1",
-      paper.id + "_q2",
-      paper.id + "_q3a",
-      paper.id + "_q3b",
-      paper.id + "_q3c",
-      paper.id + "_q3d"
-    ];
-    const completedCount = questionsList.filter((id) => session.completedQuestions.includes(id)).length;
-    const pct = questionsList.length > 0 ? Math.round(completedCount / questionsList.length * 100) : 0;
-    const metaEl = document.querySelector(".exam-sheet-header .exam-metadata");
-    if (metaEl) {
-      metaEl.innerHTML = `
-      <span><i class="fa-solid fa-calendar"></i> Year: ${paper.year}</span>
-      <span><i class="fa-solid fa-check-double"></i> Complete: ${completedCount}/${questionsList.length} (${pct}%)</span>
-    `;
-    }
   }
 
   // src/videos_data.js
@@ -22119,22 +22126,15 @@ ${cleanBrackets(paper.q3d.model)}
       if (!state.examSession.isActive) {
         showExamSetup2();
       }
-    } else if (viewName === "exam-skills") {
-      const skillsNav = document.getElementById("nav-exam-skills");
-      if (skillsNav) skillsNav.classList.add("active");
+    } else if (viewName === "exam-hub") {
+      const hubNav = document.getElementById("nav-exam-hub");
+      if (hubNav) hubNav.classList.add("active");
       if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
       const viewTitle = document.getElementById("current-view-title");
-      if (viewTitle) viewTitle.textContent = "Exam Practice (Q1-Q3)";
+      if (viewTitle) viewTitle.textContent = "Exam Hub (Technique, Practice & Mocks)";
       state.selectedSubtopicId = null;
-      renderExamSkillsView();
-    } else if (viewName === "past-papers") {
-      const papersNav = document.getElementById("nav-past-papers");
-      if (papersNav) papersNav.classList.add("active");
-      if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
-      const viewTitle = document.getElementById("current-view-title");
-      if (viewTitle) viewTitle.textContent = "Past Exam Papers";
-      state.selectedSubtopicId = null;
-      renderPastPapersView();
+      const targetPanel = subtopicId || "technique";
+      activateExamHubPanel(targetPanel);
     } else if (viewName === "games") {
       const gamesNav = document.getElementById("nav-games");
       if (gamesNav) gamesNav.classList.add("active");
@@ -22192,8 +22192,7 @@ ${cleanBrackets(paper.q3d.model)}
       "flashcards": "view-flashcards",
       "lessons": "view-mastery",
       "games": "view-games",
-      "exam-skills": "view-exam-skills",
-      "past-papers": "view-past-papers",
+      "exam-hub": "view-exam-hub",
       "key-topic": "view-key-topic"
     };
     const targetViewId = viewName === "subtopic" ? viewIdMap[state.currentMode] : viewIdMap[viewName];
@@ -22369,7 +22368,7 @@ ${cleanBrackets(paper.q3d.model)}
     });
     document.getElementById("shortcut-exam-skills").addEventListener("click", () => {
       AudioEngine.play("click");
-      switchView("exam-skills");
+      switchView("exam-hub", "technique");
     });
     document.getElementById("shortcut-games").addEventListener("click", () => {
       AudioEngine.play("click");
@@ -22593,22 +22592,18 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         AudioEngine.play("fail");
       }
     });
-    document.getElementById("nav-exam-skills").addEventListener("click", () => {
-      AudioEngine.play("click");
-      switchView("exam-skills");
-    });
-    const navPastPapers = document.getElementById("nav-past-papers");
-    if (navPastPapers) {
-      navPastPapers.addEventListener("click", () => {
+    const navExamHub = document.getElementById("nav-exam-hub");
+    if (navExamHub) {
+      navExamHub.addEventListener("click", () => {
         AudioEngine.play("click");
-        switchView("past-papers");
+        switchView("exam-hub", "technique");
       });
     }
     const shortcutPastPapers = document.getElementById("shortcut-past-papers");
     if (shortcutPastPapers) {
       shortcutPastPapers.addEventListener("click", () => {
         AudioEngine.play("click");
-        switchView("past-papers");
+        switchView("exam-hub", "papers");
       });
     }
     document.querySelectorAll(".exam-tab-btn").forEach((btn) => {
@@ -22630,6 +22625,9 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         });
         const targetEl = document.getElementById(`panel-${targetPanel}`);
         if (targetEl) targetEl.style.display = "block";
+        if (targetPanel === "papers") {
+          renderPastPapersView();
+        }
       });
     });
     const q1Select = document.getElementById("q1-topic-select");
@@ -24644,9 +24642,7 @@ User Question: ${userInput}`;
         const subtopicId = jumpLink.getAttribute("data-subtopic-id");
         if (subtopicId) {
           if (subtopicId === "exam_technique") {
-            switchView("exam-skills");
-            const btn = document.querySelector('.exam-tab-btn[data-panel="technique"]');
-            if (btn) btn.click();
+            switchView("exam-hub", "technique");
           } else {
             state.currentMode = "lessons";
             switchView("subtopic", subtopicId);
@@ -24768,9 +24764,7 @@ Select a topic checklist to view:
       if (bestMatch && bestMatch.id === "exam_technique" && bestMatch.score >= 25) {
         appendBubble("assistant", "Opening the **Exam Technique Guide** for you now...");
         setTimeout(() => {
-          switchView("exam-skills");
-          const btn = document.querySelector('.exam-tab-btn[data-panel="technique"]');
-          if (btn) btn.click();
+          switchView("exam-hub", "technique");
           if (window.innerWidth <= 480) {
             fab.classList.remove("active");
             windowEl.classList.remove("active");
