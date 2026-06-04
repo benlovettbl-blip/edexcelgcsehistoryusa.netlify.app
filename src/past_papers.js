@@ -231,10 +231,10 @@ export function renderExamSheet() {
           </div>
         </div>
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <button class="btn-secondary" id="btn-copy-exam-clean" style="font-size: 0.85rem; padding: 8px 14px; display: flex; align-items: center; gap: 6px; border-color: rgba(59, 130, 246, 0.3); color: #60a5fa; background: rgba(59, 130, 246, 0.1); cursor: pointer; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.2)'" onmouseout="this.style.background='rgba(59,130,246,0.1)'">
+          <button class="btn-secondary btn-blue-variant" id="btn-copy-exam-clean">
             <i class="fa-solid fa-file-lines"></i> Copy Clean Exam (for Pupils)
           </button>
-          <button class="btn-secondary" id="btn-copy-exam-answers" style="font-size: 0.85rem; padding: 8px 14px; display: flex; align-items: center; gap: 6px; border-color: rgba(16, 185, 129, 0.3); color: #34d399; background: rgba(16, 185, 129, 0.1); cursor: pointer; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='rgba(16,185,129,0.2)'" onmouseout="this.style.background='rgba(16,185,129,0.1)'">
+          <button class="btn-secondary btn-green-variant" id="btn-copy-exam-answers">
             <i class="fa-solid fa-file-invoice"></i> Copy Exam + Model Answers
           </button>
         </div>
@@ -582,7 +582,7 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
   
   if (qId.endsWith('_q3b') || qId.endsWith('_q3c') || qId.endsWith('_q3d')) {
     scaffoldBtn = `
-      <button class="btn-secondary" id="past-btn-scaffold-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px; background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">
+      <button class="btn-secondary btn-blue-variant" id="past-btn-scaffold-${qId}" style="flex: 1; min-width: 130px;">
         <i class="fa-solid fa-pen-fancy"></i> Writing Scaffold
       </button>
     `;
@@ -625,7 +625,7 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
         <div style="font-size: 0.85rem; font-weight: bold; margin-bottom: 8px; color: var(--primary);">Click to insert sentence starters:</div>
         <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px;">
           ${starters.map(starter => `
-            <button class="scaffold-starter-btn" data-starter="${starter}" style="text-align: left; padding: 8px 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-muted); cursor: pointer; font-size: 0.82rem; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.1)';this.style.color='#60a5fa'" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.color='var(--text-muted)'">
+            <button class="scaffold-starter-btn" data-starter="${starter}">
               <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> ${starter}
             </button>
           `).join('')}

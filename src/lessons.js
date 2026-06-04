@@ -420,7 +420,7 @@ export function renderMasteryView(subtopicId) {
         let provenanceHtml = '';
         if (step.scholarlyDepth.imageProvenance) {
           provenanceHtml = `
-            <div class="scholarly-image-provenance" style="font-size: 0.8rem; color: #cbd5e1; margin-top: 8px; font-weight: 500; line-height: 1.4; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; box-sizing: border-box;">
+            <div class="scholarly-image-provenance" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; font-weight: 500; line-height: 1.4; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; box-sizing: border-box;">
               <strong style="color: inherit;">Provenance:</strong> ${step.scholarlyDepth.imageProvenance}
             </div>
           `;
@@ -726,12 +726,12 @@ export function renderMasteryView(subtopicId) {
       let clueContentHtml = '';
       if (q.clue) {
         clueBtnHtml = `
-          <button class="mastery-btn vault-clue-btn" data-vault-idx="${index}" style="max-width: fit-content; padding: 8px 16px; font-size: 0.85rem; border-radius: 20px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+          <button class="mastery-btn vault-clue-btn btn-amber-variant" data-vault-idx="${index}" style="max-width: fit-content;">
             <i class="fa-solid fa-lightbulb"></i> Educator Clue
           </button>
         `;
         clueContentHtml = `
-          <div class="vault-clue-content" style="display: none; margin-top: 12px; padding: 12px; background: rgba(245, 158, 11, 0.05); border-left: 4px solid #f59e0b; border-radius: var(--border-radius-sm); font-size: 0.88rem; line-height: 1.45; color: var(--text-base);">
+          <div class="vault-clue-content" style="display: none; margin-top: 12px; padding: 12px; background: var(--btn-amber-bg); border-left: 4px solid var(--btn-amber-text); border-radius: var(--border-radius-sm); font-size: 0.88rem; line-height: 1.45; color: var(--text-base);">
             <strong>Educator Clue/Pointers:</strong><br>${q.clue}
           </div>
         `;
@@ -1049,7 +1049,7 @@ export function renderMasteryView(subtopicId) {
         </div>
         <div id="context-clues-card" style="display: none; margin-bottom: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 12px; border-radius: var(--border-radius-md); font-size: 0.82rem; line-height: 1.45; text-align: left;">
           <strong style="color: var(--primary); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 4px;"><i class="fa-solid fa-brain"></i> Historical Context Clues (OK)</strong>
-          <ul style="margin: 4px 0 0 0; padding-left: 16px; color: #cbd5e1; display: flex; flex-direction: column; gap: 4px;">
+          <ul style="margin: 4px 0 0 0; padding-left: 16px; color: var(--text-main); display: flex; flex-direction: column; gap: 4px;">
             <li><strong>Brown v. Board of Education (1954)</strong> overturned the 1896 Plessy v. Ferguson decision.</li>
             <li><strong>Chief Justice Earl Warren</strong> led the court and worked tirelessly to ensure a 9-0 decision to present a solid federal front against resistance.</li>
           </ul>
@@ -1150,13 +1150,13 @@ export function renderMasteryView(subtopicId) {
                     ` : ''}
                   </div>
                   ${subtopicId === 'subtopic_1_2' ? `
-                  <div id="hotspot-tooltip-card" style="display: none; margin-top: 10px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; font-size: 0.8rem; line-height: 1.45; text-align: left; box-shadow: var(--shadow-sm);">
+                  <div id="hotspot-tooltip-card" style="display: none; margin-top: 10px; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; font-size: 0.8rem; line-height: 1.45; text-align: left; box-shadow: var(--shadow-sm);">
                     <strong style="color: var(--accent); display: block; font-size: 0.75rem; text-transform: uppercase;" id="hotspot-title">Hotspot Detail</strong>
-                    <span id="hotspot-desc" style="color: #cbd5e1;">Click a yellow hotspot dot on the image to inspect Content details...</span>
+                    <span id="hotspot-desc" style="color: var(--text-main);">Click a yellow hotspot dot on the image to inspect Content details...</span>
                   </div>
                   ` : ''}
-                  <div class="do-now-provenance-box" style="font-size: 0.75rem; color: #e2e8f0; font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: var(--border-radius-sm); line-height: 1.45;">
-                    <strong style="color: #94a3b8; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Source Provenance</strong> ${dn.provenance}
+                  <div class="do-now-provenance-box" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: var(--border-radius-sm); line-height: 1.45;">
+                    <strong style="color: var(--primary); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Source Provenance</strong> ${dn.provenance}
                   </div>
                 </div>
                 ${accessibilityHtml}
@@ -1203,21 +1203,21 @@ export function renderMasteryView(subtopicId) {
                 <!-- Bronze Recall -->
                 <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(205, 127, 50, 0.02); border: 1px solid rgba(205, 127, 50, 0.12); border-left: 4px solid #cd7f32; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
                   <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #cd7f32; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥉</div>
-                  <strong style="color: #d97706; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Bronze Challenge (Recall - Last Lesson)</strong>
+                  <strong style="color: var(--color-bronze); font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Bronze Challenge (Recall - Last Lesson)</strong>
                   <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.bronze}</p>
                 </div>
                 
                 <!-- Silver Analyze -->
                 <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(161, 161, 170, 0.02); border: 1px solid rgba(161, 161, 170, 0.12); border-left: 4px solid #a1a1aa; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
                   <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #a1a1aa; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥈</div>
-                  <strong style="color: #cbd5e1; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Silver Challenge (Analyze - Source Inference)</strong>
+                  <strong style="color: var(--color-silver); font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Silver Challenge (Analyze - Source Inference)</strong>
                   <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.silver}</p>
                 </div>
                 
                 <!-- Gold Evaluate -->
                 <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(251, 191, 36, 0.02); border: 1px solid rgba(251, 191, 36, 0.12); border-left: 4px solid #fbbf24; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
                   <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #ffd700; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">🥇</div>
-                  <strong style="color: #fbbf24; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Gold Challenge (Evaluate - Synoptic Link)</strong>
+                  <strong style="color: var(--color-gold); font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Gold Challenge (Evaluate - Synoptic Link)</strong>
                   <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.gold}</p>
                 </div>
               </div>
@@ -1236,15 +1236,15 @@ export function renderMasteryView(subtopicId) {
               <h4 style="margin: 0 0 14px 0; color: var(--success); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check"></i> Starter Evaluation Guide:</h4>
               <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem; line-height: 1.5;">
                 <div style="padding: 10px 12px; background: rgba(205, 127, 50, 0.04); border-left: 3px solid #cd7f32; border-radius: 4px;">
-                  <strong style="color: #cd7f32; display: block; font-size: 0.82rem; margin-bottom: 2px;">🥉 Bronze Answer Recall:</strong>
+                  <strong style="color: var(--color-bronze); display: block; font-size: 0.82rem; margin-bottom: 2px;">🥉 Bronze Answer Recall:</strong>
                   <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.bronzeAnswer}</p>
                 </div>
                 <div style="padding: 10px 12px; background: rgba(161, 161, 170, 0.04); border-left: 3px solid #a1a1aa; border-radius: 4px;">
-                  <strong style="color: #cbd5e1; display: block; font-size: 0.82rem; margin-bottom: 2px;">🥈 Silver Answer Analysis:</strong>
+                  <strong style="color: var(--color-silver); display: block; font-size: 0.82rem; margin-bottom: 2px;">🥈 Silver Answer Analysis:</strong>
                   <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.silverAnswer}</p>
                 </div>
                 <div style="padding: 10px 12px; background: rgba(251, 191, 36, 0.04); border-left: 3px solid #fbbf24; border-radius: 4px;">
-                  <strong style="color: #fbbf24; display: block; font-size: 0.82rem; margin-bottom: 2px;">🥇 Gold Answer Evaluation:</strong>
+                  <strong style="color: var(--color-gold); display: block; font-size: 0.82rem; margin-bottom: 2px;">🥇 Gold Answer Evaluation:</strong>
                   <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.goldAnswer}</p>
                 </div>
               </div>

@@ -199,7 +199,7 @@ function renderDashboard() {
           </span>
           <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700; flex-shrink: 0; margin-left: 8px;">${pct}%</span>
         </div>
-        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-muted); font-style: italic; line-height: 1.3; margin-top: 4px; display: flex; align-items: flex-start; gap: 6px;">
+        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-main); opacity: 0.8; font-style: italic; line-height: 1.3; margin-top: 4px; display: flex; align-items: flex-start; gap: 6px;">
           <i class="fa-solid fa-compass" style="color: var(--accent); margin-top: 2px; flex-shrink: 0; font-size: 0.85rem;"></i>
           <span>${inquiryText}</span>
         </div>
@@ -2511,7 +2511,7 @@ function renderTimelineView() {
         <div class="timeline-image-wrapper" style="margin-top: 10px; margin-bottom: 8px; border-radius: var(--border-radius-sm); overflow: hidden; background: #000; max-height: 200px; display: flex; align-items: center; justify-content: center;">
           <img src="${matchedImg.image}" alt="Visual Source" style="max-width: 100%; max-height: 200px; object-fit: contain; opacity: 0.9;">
         </div>
-        <div class="timeline-image-provenance" style="font-size: 0.75rem; color: #cbd5e1; font-weight: 500; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 8px 10px; border-radius: 4px; margin-bottom: 10px; line-height: 1.4; box-sizing: border-box;">
+        <div class="timeline-image-provenance" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 10px; border-radius: 4px; margin-bottom: 10px; line-height: 1.4; box-sizing: border-box;">
           <strong style="color: inherit;">Source Provenance:</strong> ${matchedImg.provenance}
         </div>
       `;
@@ -5043,7 +5043,7 @@ function renderKeyTopicOverview(topicId) {
         <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
           ${data.title}
         </h2>
-        <div style="font-size: 0.88rem; color: #cbd5e1; font-style: italic; display: flex; align-items: center; gap: 6px; margin-top: 2px;">
+        <div style="font-size: 0.88rem; color: var(--text-main); opacity: 0.85; font-style: italic; display: flex; align-items: center; gap: 6px; margin-top: 2px;">
           <i class="fa-solid fa-compass" style="color: var(--accent); font-size: 0.95rem;"></i>
           <span>Inquiry: ${inquiryText}</span>
         </div>

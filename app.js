@@ -11576,10 +11576,10 @@ Source E is highly useful for showing the political and moral collapse of the wa
           </div>
         </div>
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <button class="btn-secondary" id="btn-copy-exam-clean" style="font-size: 0.85rem; padding: 8px 14px; display: flex; align-items: center; gap: 6px; border-color: rgba(59, 130, 246, 0.3); color: #60a5fa; background: rgba(59, 130, 246, 0.1); cursor: pointer; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.2)'" onmouseout="this.style.background='rgba(59,130,246,0.1)'">
+          <button class="btn-secondary btn-blue-variant" id="btn-copy-exam-clean">
             <i class="fa-solid fa-file-lines"></i> Copy Clean Exam (for Pupils)
           </button>
-          <button class="btn-secondary" id="btn-copy-exam-answers" style="font-size: 0.85rem; padding: 8px 14px; display: flex; align-items: center; gap: 6px; border-color: rgba(16, 185, 129, 0.3); color: #34d399; background: rgba(16, 185, 129, 0.1); cursor: pointer; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='rgba(16,185,129,0.2)'" onmouseout="this.style.background='rgba(16,185,129,0.1)'">
+          <button class="btn-secondary btn-green-variant" id="btn-copy-exam-answers">
             <i class="fa-solid fa-file-invoice"></i> Copy Exam + Model Answers
           </button>
         </div>
@@ -11939,7 +11939,7 @@ ${cleanBrackets(paper.q3d.model)}
     let scaffoldBoxHTML = "";
     if (qId.endsWith("_q3b") || qId.endsWith("_q3c") || qId.endsWith("_q3d")) {
       scaffoldBtn = `
-      <button class="btn-secondary" id="past-btn-scaffold-${qId}" style="flex: 1; min-width: 130px; font-size: 0.85rem; padding: 8px 12px; background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">
+      <button class="btn-secondary btn-blue-variant" id="past-btn-scaffold-${qId}" style="flex: 1; min-width: 130px;">
         <i class="fa-solid fa-pen-fancy"></i> Writing Scaffold
       </button>
     `;
@@ -11980,7 +11980,7 @@ ${cleanBrackets(paper.q3d.model)}
         <div style="font-size: 0.85rem; font-weight: bold; margin-bottom: 8px; color: var(--primary);">Click to insert sentence starters:</div>
         <div class="scaffold-starters" style="display: flex; flex-direction: column; gap: 8px;">
           ${starters.map((starter) => `
-            <button class="scaffold-starter-btn" data-starter="${starter}" style="text-align: left; padding: 8px 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: 4px; color: var(--text-muted); cursor: pointer; font-size: 0.82rem; transition: all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.1)';this.style.color='#60a5fa'" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.color='var(--text-muted)'">
+            <button class="scaffold-starter-btn" data-starter="${starter}">
               <i class="fa-solid fa-plus" style="margin-right: 6px; font-size: 0.75rem;"></i> ${starter}
             </button>
           `).join("")}
@@ -12262,7 +12262,7 @@ ${cleanBrackets(paper.q3d.model)}
           </span>
           <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700; flex-shrink: 0; margin-left: 8px;">${pct}%</span>
         </div>
-        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-muted); font-style: italic; line-height: 1.3; margin-top: 4px; display: flex; align-items: flex-start; gap: 6px;">
+        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-main); opacity: 0.8; font-style: italic; line-height: 1.3; margin-top: 4px; display: flex; align-items: flex-start; gap: 6px;">
           <i class="fa-solid fa-compass" style="color: var(--accent); margin-top: 2px; flex-shrink: 0; font-size: 0.85rem;"></i>
           <span>${inquiryText}</span>
         </div>
@@ -14220,7 +14220,7 @@ ${cleanBrackets(paper.q3d.model)}
         <div class="timeline-image-wrapper" style="margin-top: 10px; margin-bottom: 8px; border-radius: var(--border-radius-sm); overflow: hidden; background: #000; max-height: 200px; display: flex; align-items: center; justify-content: center;">
           <img src="${matchedImg.image}" alt="Visual Source" style="max-width: 100%; max-height: 200px; object-fit: contain; opacity: 0.9;">
         </div>
-        <div class="timeline-image-provenance" style="font-size: 0.75rem; color: #cbd5e1; font-weight: 500; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 8px 10px; border-radius: 4px; margin-bottom: 10px; line-height: 1.4; box-sizing: border-box;">
+        <div class="timeline-image-provenance" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 10px; border-radius: 4px; margin-bottom: 10px; line-height: 1.4; box-sizing: border-box;">
           <strong style="color: inherit;">Source Provenance:</strong> ${matchedImg.provenance}
         </div>
       `;
@@ -16639,7 +16639,7 @@ ${cleanBrackets(paper.q3d.model)}
         <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
           ${data.title}
         </h2>
-        <div style="font-size: 0.88rem; color: #cbd5e1; font-style: italic; display: flex; align-items: center; gap: 6px; margin-top: 2px;">
+        <div style="font-size: 0.88rem; color: var(--text-main); opacity: 0.85; font-style: italic; display: flex; align-items: center; gap: 6px; margin-top: 2px;">
           <i class="fa-solid fa-compass" style="color: var(--accent); font-size: 0.95rem;"></i>
           <span>Inquiry: ${inquiryText}</span>
         </div>
@@ -19610,7 +19610,7 @@ ${cleanBrackets(paper.q3d.model)}
           let provenanceHtml = "";
           if (step.scholarlyDepth.imageProvenance) {
             provenanceHtml = `
-            <div class="scholarly-image-provenance" style="font-size: 0.8rem; color: #cbd5e1; margin-top: 8px; font-weight: 500; line-height: 1.4; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; box-sizing: border-box;">
+            <div class="scholarly-image-provenance" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; font-weight: 500; line-height: 1.4; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; box-sizing: border-box;">
               <strong style="color: inherit;">Provenance:</strong> ${step.scholarlyDepth.imageProvenance}
             </div>
           `;
@@ -19894,12 +19894,12 @@ ${cleanBrackets(paper.q3d.model)}
         let clueContentHtml = "";
         if (q.clue) {
           clueBtnHtml = `
-          <button class="mastery-btn vault-clue-btn" data-vault-idx="${index}" style="max-width: fit-content; padding: 8px 16px; font-size: 0.85rem; border-radius: 20px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+          <button class="mastery-btn vault-clue-btn btn-amber-variant" data-vault-idx="${index}" style="max-width: fit-content;">
             <i class="fa-solid fa-lightbulb"></i> Educator Clue
           </button>
         `;
           clueContentHtml = `
-          <div class="vault-clue-content" style="display: none; margin-top: 12px; padding: 12px; background: rgba(245, 158, 11, 0.05); border-left: 4px solid #f59e0b; border-radius: var(--border-radius-sm); font-size: 0.88rem; line-height: 1.45; color: var(--text-base);">
+          <div class="vault-clue-content" style="display: none; margin-top: 12px; padding: 12px; background: var(--btn-amber-bg); border-left: 4px solid var(--btn-amber-text); border-radius: var(--border-radius-sm); font-size: 0.88rem; line-height: 1.45; color: var(--text-base);">
             <strong>Educator Clue/Pointers:</strong><br>${q.clue}
           </div>
         `;
@@ -20204,7 +20204,7 @@ ${cleanBrackets(paper.q3d.model)}
         </div>
         <div id="context-clues-card" style="display: none; margin-bottom: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 12px; border-radius: var(--border-radius-md); font-size: 0.82rem; line-height: 1.45; text-align: left;">
           <strong style="color: var(--primary); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 4px;"><i class="fa-solid fa-brain"></i> Historical Context Clues (OK)</strong>
-          <ul style="margin: 4px 0 0 0; padding-left: 16px; color: #cbd5e1; display: flex; flex-direction: column; gap: 4px;">
+          <ul style="margin: 4px 0 0 0; padding-left: 16px; color: var(--text-main); display: flex; flex-direction: column; gap: 4px;">
             <li><strong>Brown v. Board of Education (1954)</strong> overturned the 1896 Plessy v. Ferguson decision.</li>
             <li><strong>Chief Justice Earl Warren</strong> led the court and worked tirelessly to ensure a 9-0 decision to present a solid federal front against resistance.</li>
           </ul>
@@ -20302,13 +20302,13 @@ ${cleanBrackets(paper.q3d.model)}
                     ` : ""}
                   </div>
                   ${subtopicId === "subtopic_1_2" ? `
-                  <div id="hotspot-tooltip-card" style="display: none; margin-top: 10px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; font-size: 0.8rem; line-height: 1.45; text-align: left; box-shadow: var(--shadow-sm);">
+                  <div id="hotspot-tooltip-card" style="display: none; margin-top: 10px; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; font-size: 0.8rem; line-height: 1.45; text-align: left; box-shadow: var(--shadow-sm);">
                     <strong style="color: var(--accent); display: block; font-size: 0.75rem; text-transform: uppercase;" id="hotspot-title">Hotspot Detail</strong>
-                    <span id="hotspot-desc" style="color: #cbd5e1;">Click a yellow hotspot dot on the image to inspect Content details...</span>
+                    <span id="hotspot-desc" style="color: var(--text-main);">Click a yellow hotspot dot on the image to inspect Content details...</span>
                   </div>
                   ` : ""}
-                  <div class="do-now-provenance-box" style="font-size: 0.75rem; color: #e2e8f0; font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: var(--border-radius-sm); line-height: 1.45;">
-                    <strong style="color: #94a3b8; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Source Provenance</strong> ${dn.provenance}
+                  <div class="do-now-provenance-box" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: var(--border-radius-sm); line-height: 1.45;">
+                    <strong style="color: var(--primary); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Source Provenance</strong> ${dn.provenance}
                   </div>
                 </div>
                 ${accessibilityHtml}
@@ -20355,21 +20355,21 @@ ${cleanBrackets(paper.q3d.model)}
                 <!-- Bronze Recall -->
                 <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(205, 127, 50, 0.02); border: 1px solid rgba(205, 127, 50, 0.12); border-left: 4px solid #cd7f32; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
                   <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #cd7f32; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">\u{1F949}</div>
-                  <strong style="color: #d97706; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Bronze Challenge (Recall - Last Lesson)</strong>
+                  <strong style="color: var(--color-bronze); font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Bronze Challenge (Recall - Last Lesson)</strong>
                   <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.bronze}</p>
                 </div>
                 
                 <!-- Silver Analyze -->
                 <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(161, 161, 170, 0.02); border: 1px solid rgba(161, 161, 170, 0.12); border-left: 4px solid #a1a1aa; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
                   <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #a1a1aa; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">\u{1F948}</div>
-                  <strong style="color: #cbd5e1; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Silver Challenge (Analyze - Source Inference)</strong>
+                  <strong style="color: var(--color-silver); font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Silver Challenge (Analyze - Source Inference)</strong>
                   <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.silver}</p>
                 </div>
                 
                 <!-- Gold Evaluate -->
                 <div style="position: relative; padding: 12px 14px 12px 46px; background: rgba(251, 191, 36, 0.02); border: 1px solid rgba(251, 191, 36, 0.12); border-left: 4px solid #fbbf24; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
                   <div style="position: absolute; top: 12px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: #ffd700; color: #000; font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">\u{1F947}</div>
-                  <strong style="color: #fbbf24; font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Gold Challenge (Evaluate - Synoptic Link)</strong>
+                  <strong style="color: var(--color-gold); font-size: 0.82rem; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">Gold Challenge (Evaluate - Synoptic Link)</strong>
                   <p style="margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-main);">${dn.gold}</p>
                 </div>
               </div>
@@ -20388,15 +20388,15 @@ ${cleanBrackets(paper.q3d.model)}
               <h4 style="margin: 0 0 14px 0; color: var(--success); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check"></i> Starter Evaluation Guide:</h4>
               <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem; line-height: 1.5;">
                 <div style="padding: 10px 12px; background: rgba(205, 127, 50, 0.04); border-left: 3px solid #cd7f32; border-radius: 4px;">
-                  <strong style="color: #cd7f32; display: block; font-size: 0.82rem; margin-bottom: 2px;">\u{1F949} Bronze Answer Recall:</strong>
+                  <strong style="color: var(--color-bronze); display: block; font-size: 0.82rem; margin-bottom: 2px;">\u{1F949} Bronze Answer Recall:</strong>
                   <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.bronzeAnswer}</p>
                 </div>
                 <div style="padding: 10px 12px; background: rgba(161, 161, 170, 0.04); border-left: 3px solid #a1a1aa; border-radius: 4px;">
-                  <strong style="color: #cbd5e1; display: block; font-size: 0.82rem; margin-bottom: 2px;">\u{1F948} Silver Answer Analysis:</strong>
+                  <strong style="color: var(--color-silver); display: block; font-size: 0.82rem; margin-bottom: 2px;">\u{1F948} Silver Answer Analysis:</strong>
                   <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.silverAnswer}</p>
                 </div>
                 <div style="padding: 10px 12px; background: rgba(251, 191, 36, 0.04); border-left: 3px solid #fbbf24; border-radius: 4px;">
-                  <strong style="color: #fbbf24; display: block; font-size: 0.82rem; margin-bottom: 2px;">\u{1F947} Gold Answer Evaluation:</strong>
+                  <strong style="color: var(--color-gold); display: block; font-size: 0.82rem; margin-bottom: 2px;">\u{1F947} Gold Answer Evaluation:</strong>
                   <p style="margin: 0; color: var(--text-muted); font-size: 0.88rem;">${dn.goldAnswer}</p>
                 </div>
               </div>

@@ -65,6 +65,23 @@
   --color-knowledge-bg: rgba(16, 185, 129, 0.12);
   --color-provenance-text: #d8b4fe;  /* Pastel Purple */
   --color-provenance-bg: rgba(168, 85, 247, 0.15);
+
+  /* Button Color coding variables */
+  --btn-blue-text: #60a5fa;
+  --btn-blue-bg: rgba(59, 130, 246, 0.1);
+  --btn-blue-border: rgba(59, 130, 246, 0.3);
+  
+  --btn-green-text: #34d399;
+  --btn-green-bg: rgba(16, 185, 129, 0.1);
+  --btn-green-border: rgba(16, 185, 129, 0.3);
+
+  --btn-amber-text: #f59e0b;
+  --btn-amber-bg: rgba(245, 158, 11, 0.15);
+  --btn-amber-border: rgba(245, 158, 11, 0.3);
+  
+  --color-bronze: #cd7f32;
+  --color-silver: #a1a1aa;
+  --color-gold: #fbbf24;
 }
 
 /* 2. Woodstock Gold Theme (Earthy 1970s Retro) */
@@ -112,6 +129,23 @@
   --color-knowledge-bg: rgba(22, 101, 52, 0.06);
   --color-provenance-text: #581c87;  /* Rich Royal Purple */
   --color-provenance-bg: rgba(168, 85, 247, 0.08);
+
+  /* Button Color coding variables */
+  --btn-blue-text: #0369a1;
+  --btn-blue-bg: rgba(3, 105, 161, 0.08);
+  --btn-blue-border: rgba(3, 105, 161, 0.25);
+  
+  --btn-green-text: #15803d;
+  --btn-green-bg: rgba(21, 128, 61, 0.08);
+  --btn-green-border: rgba(21, 128, 61, 0.25);
+
+  --btn-amber-text: #b45309;
+  --btn-amber-bg: rgba(180, 83, 9, 0.08);
+  --btn-amber-border: rgba(180, 83, 9, 0.25);
+  
+  --color-bronze: #9a3412;
+  --color-silver: #4b5563;
+  --color-gold: #b45309;
 }
 
 /* 3. Saigon Jungle Theme (Glowing Tropical Dark Mode) */
@@ -159,6 +193,23 @@
   --color-knowledge-bg: rgba(16, 185, 129, 0.15);
   --color-provenance-text: #d8b4fe;  /* Pastel Purple */
   --color-provenance-bg: rgba(168, 85, 247, 0.18);
+
+  /* Button Color coding variables */
+  --btn-blue-text: #22d3ee;
+  --btn-blue-bg: rgba(6, 182, 212, 0.1);
+  --btn-blue-border: rgba(6, 182, 212, 0.3);
+  
+  --btn-green-text: #34d399;
+  --btn-green-bg: rgba(16, 185, 129, 0.1);
+  --btn-green-border: rgba(16, 185, 129, 0.3);
+
+  --btn-amber-text: #fbbf24;
+  --btn-amber-bg: rgba(245, 158, 11, 0.15);
+  --btn-amber-border: rgba(245, 158, 11, 0.3);
+  
+  --color-bronze: #d97706;
+  --color-silver: #a1a1aa;
+  --color-gold: #fbbf24;
 }
 
 /* --- Base Styles --- */
@@ -1323,6 +1374,75 @@ details > summary::marker {
 .btn-secondary:hover {
   background-color: var(--bg-card-hover);
   border-color: var(--text-muted);
+}
+
+.btn-blue-variant {
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--btn-blue-text);
+  background-color: var(--btn-blue-bg);
+  border: 1px solid var(--btn-blue-border);
+  transition: all var(--transition-fast);
+}
+.btn-blue-variant:hover {
+  background-color: var(--btn-blue-border);
+}
+
+.btn-green-variant {
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--btn-green-text);
+  background-color: var(--btn-green-bg);
+  border: 1px solid var(--btn-green-border);
+  transition: all var(--transition-fast);
+}
+.btn-green-variant:hover {
+  background-color: var(--btn-green-border);
+}
+
+.btn-amber-variant {
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--btn-amber-text);
+  background-color: var(--btn-amber-bg);
+  border: 1px solid var(--btn-amber-border);
+  transition: all var(--transition-fast);
+}
+.btn-amber-variant:hover {
+  background-color: var(--btn-amber-border);
+}
+
+.scaffold-starter-btn {
+  text-align: left;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: all var(--transition-fast);
+}
+.scaffold-starter-btn:hover {
+  background-color: var(--btn-blue-bg);
+  color: var(--btn-blue-text);
+  border-color: var(--btn-blue-border);
 }
 
 .btn-correct {
@@ -7063,4 +7183,70 @@ details > summary::marker {
 }
 .do-now-card[open] .do-now-arrow {
   transform: rotate(180deg);
+}
+
+/* --- High Contrast/Readability Overrides for Woodstock Gold (Desert) Theme --- */
+[data-theme="desert"] .exam-paper-lines {
+  background: linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+}
+[data-theme="desert"] .exam-error-span {
+  color: #0369a1; /* Darker blue ink for contrast */
+}
+[data-theme="desert"] .exam-error-span:hover {
+  background-color: rgba(3, 105, 161, 0.08);
+}
+[data-theme="desert"] .feedback-badge.status-developing {
+  background: rgba(180, 83, 9, 0.08);
+  color: #b45309; /* Darker amber */
+  border-color: rgba(180, 83, 9, 0.25);
+}
+[data-theme="desert"] .feedback-badge.status-strong {
+  background: rgba(3, 105, 161, 0.08);
+  color: #0369a1; /* Darker blue */
+  border-color: rgba(3, 105, 161, 0.25);
+}
+[data-theme="desert"] .timeline-badge-keyfigure {
+  background: rgba(180, 83, 9, 0.08);
+  color: #b45309;
+  border-color: rgba(180, 83, 9, 0.25);
+}
+[data-theme="desert"] .historiographical-label.top-down {
+  background: rgba(3, 105, 161, 0.08);
+  color: #0369a1;
+  border-color: rgba(3, 105, 161, 0.25);
+}
+[data-theme="desert"] .historiographical-label.bottom-up {
+  background: rgba(21, 128, 61, 0.08);
+  color: #15803d;
+  border-color: rgba(21, 128, 61, 0.25);
+}
+[data-theme="desert"] .historiographical-label.orthodox {
+  background: rgba(180, 83, 9, 0.08);
+  color: #b45309;
+  border-color: rgba(180, 83, 9, 0.25);
+}
+[data-theme="desert"] .historiographical-label.revisionist {
+  background: rgba(190, 24, 74, 0.08);
+  color: #be185d;
+  border-color: rgba(190, 24, 74, 0.25);
+}
+[data-theme="desert"] .badge-factcheck {
+  background: rgba(21, 128, 61, 0.08);
+  color: #15803d;
+  border-color: rgba(21, 128, 61, 0.25);
+}
+[data-theme="desert"] .badge-concept {
+  background: rgba(109, 40, 217, 0.08);
+  color: #6d28d9;
+  border-color: rgba(109, 40, 217, 0.25);
+}
+[data-theme="desert"] .badge-analysis {
+  background: rgba(180, 83, 9, 0.08);
+  color: #b45309;
+  border-color: rgba(180, 83, 9, 0.25);
+}
+[data-theme="desert"] .badge-challenge {
+  background: rgba(185, 28, 28, 0.08);
+  color: #b91c1c;
+  border-color: rgba(185, 28, 28, 0.25);
 }
