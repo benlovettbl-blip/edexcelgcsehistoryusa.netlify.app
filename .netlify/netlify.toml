@@ -1,16 +1,15 @@
+functionsDirectory = "C:\\Users\\fives\\.gemini\\antigravity\\scratch\\edexcelgcsehistoryusa.netlify.app\\netlify\\functions"
+functionsDirectoryOrigin = "default"
 plugins = []
 headers = []
 redirects = []
-
-[functions]
-
-[functions."*"]
 
 [build]
 publish = "C:\\Users\\fives\\.gemini\\antigravity\\scratch\\edexcelgcsehistoryusa.netlify.app\\dist"
 publishOrigin = "config"
 commandOrigin = "config"
 command = "npm run build"
+functions = "C:\\Users\\fives\\.gemini\\antigravity\\scratch\\edexcelgcsehistoryusa.netlify.app\\netlify\\functions"
 
 [build.environment]
 
@@ -25,3 +24,7 @@ command = "npm run build"
 [build.processing.js]
 
 [build.services]
+
+[functions]
+
+[functions."*"]

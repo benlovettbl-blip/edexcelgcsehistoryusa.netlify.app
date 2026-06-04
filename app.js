@@ -23035,8 +23035,6 @@ Keep feedback concise, professional, encouraging, and under 150 words.`;
   };
   var WELCOME_HTML = `
   Hi! I am your AI history tutor. Ask me any question about the <strong>Edexcel GCSE USA (1954\u201375)</strong> course.
-  <br><br>
-  <em>Tip: If you add your Gemini API key via the settings gear (\u2699\uFE0F), I can use AI to answer custom history questions beyond the app!</em>
   <div class="chatbot-chips-container">
     <button class="chatbot-chip-btn" data-query="Why was Brown v. Topeka a turning point for desegregation?">
       \u{1F4A1} Why was Brown v. Topeka a turning point?
@@ -23749,27 +23747,9 @@ User Question: ${userInput}`;
         <button class="chatbot-action-btn" id="chatbot-clear-btn" title="Clear Chat Thread">
           <i class="fa-solid fa-trash-can"></i>
         </button>
-        <button class="chatbot-action-btn" id="chatbot-settings-toggle" title="Gemini API Key Settings">
-          <i class="fa-solid fa-gear"></i>
-        </button>
         <button class="chatbot-action-btn" id="chatbot-close-btn" title="Close Chat">
           <i class="fa-solid fa-xmark"></i>
         </button>
-      </div>
-    </div>
-
-    <!-- API Key settings panel -->
-    <div class="chatbot-settings-panel" id="chatbot-settings-panel">
-      <div class="chatbot-settings-label">Gemini API Key Setup</div>
-      <div class="chatbot-settings-input-row">
-        <input type="password" class="chatbot-input" id="chatbot-api-key-input" placeholder="${apiKey ? "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" : "Enter Gemini API Key..."}" />
-        <button class="chatbot-send-btn" id="chatbot-save-key-btn" title="Save Key">
-          <i class="fa-solid fa-check"></i>
-        </button>
-      </div>
-      <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 4px; line-height: 1.3;">
-        Your key is stored strictly on your device. Get a free API key at 
-        <a href="https://aistudio.google.com/" target="_blank" style="color: var(--primary); text-decoration: underline;">Google AI Studio</a>.
       </div>
     </div>
 
@@ -23799,7 +23779,7 @@ User Question: ${userInput}`;
     const userInput = document.getElementById("chatbot-user-input");
     const sendBtn = document.getElementById("chatbot-send-btn");
     const messagesContainer = document.getElementById("chatbot-messages");
-    if (apiKey) {
+    if (apiKey && apiKeyInput) {
       apiKeyInput.value = apiKey;
     }
     fab.addEventListener("click", () => {
@@ -23809,22 +23789,26 @@ User Question: ${userInput}`;
         userInput.focus();
       }
     });
-    toggleSettingsBtn.addEventListener("click", () => {
-      settingsPanel.classList.toggle("active");
-    });
-    saveKeyBtn.addEventListener("click", () => {
-      const value = apiKeyInput.value.trim();
-      if (value) {
-        apiKey = value;
-        localStorage.setItem("gemini_api_key", apiKey);
-        settingsPanel.classList.remove("active");
-        appendBubble("system", "API Key saved successfully! AI mode is active.");
-      } else {
-        apiKey = "";
-        localStorage.removeItem("gemini_api_key");
-        appendBubble("system", "API Key cleared. Switched back to app-only local database mode.");
-      }
-    });
+    if (toggleSettingsBtn && settingsPanel) {
+      toggleSettingsBtn.addEventListener("click", () => {
+        settingsPanel.classList.toggle("active");
+      });
+    }
+    if (saveKeyBtn && apiKeyInput && settingsPanel) {
+      saveKeyBtn.addEventListener("click", () => {
+        const value = apiKeyInput.value.trim();
+        if (value) {
+          apiKey = value;
+          localStorage.setItem("gemini_api_key", apiKey);
+          settingsPanel.classList.remove("active");
+          appendBubble("system", "API Key saved successfully! AI mode is active.");
+        } else {
+          apiKey = "";
+          localStorage.removeItem("gemini_api_key");
+          appendBubble("system", "API Key cleared. Switched back to app-only local database mode.");
+        }
+      });
+    }
     closeBtn.addEventListener("click", () => {
       fab.classList.remove("active");
       windowEl.classList.remove("active");
