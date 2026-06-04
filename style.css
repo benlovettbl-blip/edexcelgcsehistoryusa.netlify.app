@@ -7056,3 +7056,11 @@ details > summary::marker {
 .main-wrapper {
   margin-left: 0 !important;
 }
+
+/* Collapsible Do Now Starter Styles */
+.do-now-card summary::-webkit-details-marker {
+  display: none;
+}
+.do-now-card[open] .do-now-arrow {
+  transform: rotate(180deg);
+}

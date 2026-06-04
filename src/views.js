@@ -154,6 +154,13 @@ function renderDashboard() {
   const container = document.getElementById('dashboard-topics-list');
   container.innerHTML = '';
   
+  const topicInquiries = {
+    'topic_1': 'How did the early civil rights movement challenge segregation and fight for equality (1954–60)?',
+    'topic_2': 'How did the civil rights movement achieve legal changes, and why did it split (1960–75)?',
+    'topic_3': 'Why did the US get involved in Vietnam, and why did its military tactics struggle?',
+    'topic_4': 'Why did protests grow in America, and how did US involvement end?'
+  };
+  
   QUIZ_DATA.forEach(topic => {
     const card = document.createElement('div');
     card.className = 'topic-list-card';
@@ -182,12 +189,20 @@ function renderDashboard() {
       `;
     });
     
+    const inquiryText = topicInquiries[topic.id] || '';
+    
     card.innerHTML = `
       <div class="topic-list-info" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; margin-bottom: 4px;">
-        <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main);">
-          ${topic.title}
-        </span>
-        <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700;">${pct}%</span>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+          <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+            ${topic.title}
+          </span>
+          <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700; flex-shrink: 0; margin-left: 8px;">${pct}%</span>
+        </div>
+        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-muted); font-style: italic; line-height: 1.3; margin-top: 4px; display: flex; align-items: flex-start; gap: 6px;">
+          <i class="fa-solid fa-compass" style="color: var(--accent); margin-top: 2px; flex-shrink: 0; font-size: 0.85rem;"></i>
+          <span>${inquiryText}</span>
+        </div>
       </div>
       <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 6px;">
         <div class="topic-list-progress-fill" style="width: ${pct}%;"></div>
@@ -4939,6 +4954,14 @@ function renderKeyTopicOverview(topicId) {
   const container = document.getElementById('key-topic-content-container');
   if (!container) return;
 
+  const topicInquiries = {
+    'topic_1': 'How did the early civil rights movement challenge segregation and fight for equality (1954–60)?',
+    'topic_2': 'How did the civil rights movement achieve legal changes, and why did it split (1960–75)?',
+    'topic_3': 'Why did the US get involved in Vietnam, and why did its military tactics struggle?',
+    'topic_4': 'Why did protests grow in America, and how did US involvement end?'
+  };
+  const inquiryText = topicInquiries[topicId] || '';
+
   // Calculate Key Topic Progress
   const quizTopic = QUIZ_DATA.find(t => t.id === topicId);
   const subtopics = quizTopic ? quizTopic.subtopics : [];
@@ -5016,10 +5039,14 @@ function renderKeyTopicOverview(topicId) {
 
     container.innerHTML = `
       <!-- Top Progress Banner -->
-      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;">
+      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px;">
         <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
           ${data.title}
         </h2>
+        <div style="font-size: 0.88rem; color: #cbd5e1; font-style: italic; display: flex; align-items: center; gap: 6px; margin-top: 2px;">
+          <i class="fa-solid fa-compass" style="color: var(--accent); font-size: 0.95rem;"></i>
+          <span>Inquiry: ${inquiryText}</span>
+        </div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
           <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
           <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">

@@ -5401,7 +5401,7 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
   // src/lessons_data.js
   var LESSONS_DATA = {
     "subtopic_1_1": {
-      "headerTitle": "KT 1.1 - GCSE CORE MASTERY: A second emancipation or a broken promise? Why do historians disagree about the success of Brown v. Topeka?",
+      "headerTitle": "KT 1.1 - GCSE CORE MASTERY: How did the Brown v. Topeka school case change America, and was it a success?",
       "headerIntro": "By 1954, racial segregation in the United States was legally protected under the 1896 Plessy v. Ferguson 'separate but equal' ruling. The NAACP challenged this in court, leading to the landmark May 1954 Brown v. Board of Education decision where the Supreme Court declared school segregation unconstitutional. When Southern school boards stalled, activists took grassroots action. In December 1955, Rosa Parks was arrested for refusing to yield her seat on a Montgomery bus, sparking a 381-day bus boycott led by a young Martin Luther King Jr. that ultimately forced the Supreme Court to declare segregated transit unlawful in late 1956.",
       "steps": [
         {
@@ -5611,7 +5611,7 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
       }
     },
     "subtopic_1_2": {
-      "headerTitle": "KT 1.2 - GCSE CORE MASTERY: A triumph of federal supremacy or proof of deep local resistance? How significant was the integration of Central High School?",
+      "headerTitle": "KT 1.2 - GCSE CORE MASTERY: Why was the integration of Little Rock Central High School such a big struggle?",
       "headerIntro": "Following the 1954 Brown decision, the battleground shifted to local enforcement. In September 1957, Central High School in Little Rock, Arkansas, became a focal point when Governor Orval Faubus defied federal orders and deployed the Arkansas National Guard to block nine Black students from enrolling. Amid violent white mobs, President Eisenhower took the historic step of federalizing the state Guard and deploying the elite 101st Airborne Division. For the first time since Reconstruction, federal troops protected Black constitutional rights in the South, escorting the Little Rock Nine to class daily.",
       "steps": [
         {
@@ -5818,7 +5818,7 @@ Source E is highly useful for showing the scale of the state and military confli
       }
     },
     "subtopic_1_3": {
-      "headerTitle": "KT 1.3 - GCSE CORE MASTERY: A spontaneous outbreak of protest or the result of years of meticulous planning? What caused the Montgomery Bus Boycott to succeed?",
+      "headerTitle": "KT 1.3 - GCSE CORE MASTERY: How did the Montgomery Bus Boycott happen, and why did it succeed?",
       "headerIntro": "The Montgomery Bus Boycott (1955\u20131956) was the first major grassroots test of non-violent resistance. Beginning immediately after Rosa Parks' arrest on 1 December 1955, the local Black community organized the Montgomery Improvement Association (MIA), electing Martin Luther King Jr. as president. Black citizens, who made up 70% of bus riders, walked, carpooled, and organized private cabs for 381 days. Despite bombings, arrests, and intimidation, the boycott devastated bus revenues until November 1956, when the Supreme Court ruled segregated transport unconstitutional, proving the power of mass direct action.",
       "steps": [
         {
@@ -6029,7 +6029,7 @@ Source E is highly useful for showing the direct police criminalization of peace
       }
     },
     "subtopic_1_4": {
-      "headerTitle": "KT 1.4 - GCSE CORE MASTERY: Defending states' rights or protecting racial supremacy? How should we interpret the rapid growth of Southern white resistance?",
+      "headerTitle": "KT 1.4 - GCSE CORE MASTERY: Why did white people in the South resist integration, and how did they do it?",
       "headerIntro": "In the wake of the 1954 Brown decision and the 1956 Montgomery victory, Southern white resistance hardened. Southern politicians signed the 'Southern Manifesto' in 1956, pledging to defeat integration by all legal means. Segregationists formed White Citizens' Councils, using economic retaliation, firings, and mortgage foreclosures against Black activists. Concurrently, KKK violence erupted, targeting leaders with bombings. Governors like Orval Faubus (1957) and later Ross Barnett (1962) used state forces to defy federal mandates, creating a constitutional crisis over states' rights.",
       "steps": [
         {
@@ -6248,7 +6248,7 @@ Source E is highly useful for showing the violent and physical intimidation used
       }
     },
     "subtopic_2_1": {
-      "headerTitle": "KT 2.1 - GCSE CORE MASTERY: A strategic breakthrough or a dangerous provocation? How did non-violent direct action force federal intervention?",
+      "headerTitle": "KT 2.1 - GCSE CORE MASTERY: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?",
       "headerIntro": "By 1960, a new generation of student activists accelerated the movement. In February 1960, four Black students staged a sit-in at a Woolworth's lunch counter in Greensboro, North Carolina, launching a wave of sit-ins that integrated over 100 lunch counters. In May 1961, the Congress of Racial Equality (CORE) launched the Freedom Rides to test desegregation on interstate buses, facing brutal mob violence and bombings in Alabama. In September 1962, James Meredith became the first Black student at the University of Mississippi, requiring federal marshals and troops to suppress a segregationist riot that left two dead.",
       "steps": [
         {
@@ -6500,7 +6500,7 @@ Source E is highly useful for showing the extreme level of state resistance to u
       }
     },
     "subtopic_2_2": {
-      "headerTitle": "KT 2.2 - GCSE CORE MASTERY: A victory of grassroots moral pressure or of Washington political negotiation? Why was landmark legislation passed in 1964\u201365?",
+      "headerTitle": "KT 2.2 - GCSE CORE MASTERY: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?",
       "headerIntro": "In 1963 and 1965, the Southern Christian Leadership Conference (SCLC) targeted the most segregated cities. The Birmingham Campaign (April 1963) saw police chief Bull Connor use fire hoses and attack dogs on child protesters, sparking international outrage and forcing President Kennedy to draft civil rights legislation. Following the Civil Rights Act of 1964, attention shifted to voting. In March 1965, the Selma-to-Montgomery marches faced state trooper violence on 'Bloody Sunday', forcing President Johnson to pass the Voting Rights Act of 1965, which outlawed literacy tests.",
       "steps": [
         {
@@ -6726,7 +6726,7 @@ Source E is highly useful for showing the political and legislative outcomes of 
       }
     },
     "subtopic_2_3": {
-      "headerTitle": "KT 2.3 - GCSE CORE MASTERY: A necessary self-defense movement or a destructive split in the struggle? How do interpretations of Black Power differ?",
+      "headerTitle": "KT 2.3 - GCSE CORE MASTERY: What was the Black Power movement, and how did it differ from non-violent protests?",
       "headerIntro": "By the mid-1960s, frustration with slow progress and continued white violence led to a major ideological split. Malcolm X, representing the Nation of Islam, criticized MLK's integrationist non-violence and championed Black nationalism and self-defense 'by any means necessary'. Following Malcolm's 1965 assassination, Stokely Carmichael popularised the term 'Black Power' at a 1966 march. This philosophy was institutionalized by the Black Panther Party (founded 1966), which organized armed neighborhood patrols and community programs, reflecting a shift toward racial pride and economic independence.",
       "steps": [
         {
@@ -6948,7 +6948,7 @@ Source E is highly useful for showing how Black Power and militancy were institu
       }
     },
     "subtopic_2_4": {
-      "headerTitle": "KT 2.4 - GCSE CORE MASTERY: A violent rebellion against systemic oppression or lawless urban disorder? How should historians explain the riots of 1965\u201368?",
+      "headerTitle": "KT 2.4 - GCSE CORE MASTERY: Why did riots break out in American cities between 1965 and 1968?",
       "headerIntro": "Between 1965 and 1967, deep-seated grievances over poverty, housing, and police brutality triggered massive urban riots in Northern and Western cities, including Watts (1965) and Detroit (1967). In response, President Johnson established the Kerner Commission, which reported in 1968 that America was moving toward 'two societies, one Black, one white\u2014separate and unequal', blaming systemic white racism. Following Martin Luther King Jr.'s assassination in April 1968, Congress passed the Civil Rights Act of 1968 (Fair Housing Act), prohibiting racial discrimination in housing.",
       "steps": [
         {
@@ -7176,7 +7176,7 @@ Source E is highly useful for showing the immediate political and emotional impa
       }
     },
     "subtopic_3_1": {
-      "headerTitle": "KT 3.1 - GCSE CORE MASTERY: A noble crusade to protect democracy or an imperialist defense of a corrupt dictatorship? Why did the US support Diem?",
+      "headerTitle": "KT 3.1 - GCSE CORE MASTERY: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?",
       "headerIntro": "Following the 1954 Geneva Accords, which temporarily divided Vietnam at the 17th parallel, the United States committed to containing communism in Southeast Asia. Guided by President Eisenhower's 'Domino Theory'\u2014the belief that if Vietnam fell to communism, neighboring nations would follow\u2014the USA backed Ngo Dinh Diem's anti-communist government in South Vietnam. However, Diem's corrupt regime, Buddhist persecutions, and refusal to hold elections alienated the populace, leading to the 1960 formation of the Vietcong and Diem's ultimate assassination in November 1963.",
       "steps": [
         {
@@ -7409,7 +7409,7 @@ Source E is highly useful for showing the scale of religious opposition that und
       }
     },
     "subtopic_3_2": {
-      "headerTitle": "KT 3.2 - GCSE CORE MASTERY: A defensive reaction to foreign aggression or a fabricated excuse for pre-planned war? What caused the escalation of 1964\u201365?",
+      "headerTitle": "KT 3.2 - GCSE CORE MASTERY: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?",
       "headerIntro": "Following President Kennedy's assassination in 1963, President Johnson inherited a rapidly deteriorating situation in South Vietnam. In August 1964, reports of US destroyers being attacked by North Vietnamese patrol boats in the Gulf of Tonkin provided the pretext Johnson needed. Congress passed the Gulf of Tonkin Resolution, granting the president power to take 'all necessary measures' to repel attacks. In early 1965, Johnson launched Operation Rolling Thunder, a massive bombing campaign, and deployed the first US combat troops to Da Nang in March, escalating the conflict dramatically.",
       "steps": [
         {
@@ -7609,7 +7609,7 @@ Source E is highly useful for showing the transition to full combat operations a
       }
     },
     "subtopic_3_3": {
-      "headerTitle": "KT 3.3 - GCSE CORE MASTERY: High-tech military efficiency or a counterproductive campaign of terror? Why did US tactics fail to defeat the Vietcong?",
+      "headerTitle": "KT 3.3 - GCSE CORE MASTERY: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?",
       "headerIntro": "Between 1965 and 1968, the Vietnam War became a brutal conflict of contrasting strategies. The US military, led by General Westmoreland, relied on high-tech attrition tactics, including 'Search and Destroy' missions, massive carpet bombing, and chemical agents like Agent Orange and Napalm to clear jungles and crop cover. In contrast, the Vietcong fought a guerrilla war, avoiding pitched battles, hiding in complex underground tunnel networks, and deploying deadly booby traps, which neutralized US technological superiority and severely damaged US soldier morale.",
       "steps": [
         {
@@ -7834,7 +7834,7 @@ Source E is highly useful for showing the chemical warfare tactics used by the U
       }
     },
     "subtopic_3_4": {
-      "headerTitle": "KT 3.4 - GCSE CORE MASTERY: 'Peace with honour' or a face-saving withdrawal that prolonged the slaughter? How should we evaluate Vietnamization?",
+      "headerTitle": "KT 3.4 - GCSE CORE MASTERY: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?",
       "headerIntro": "Elected in 1968 on a promise of 'Peace with Honor', President Nixon sought to reduce US involvement without appearing to surrender. In 1969, he introduced 'Vietnamization'\u2014a policy to train and equip the South Vietnamese army (ARVN) to take over combat operations, allowing the gradual withdrawal of US troops. However, to disrupt communist supply lines along the Ho Chi Minh Trail, Nixon secretly ordered the bombing and invasion of neighboring Cambodia (1970) and Laos (1971), expanding the war geographic scale and triggering massive protests at home.",
       "steps": [
         {
@@ -8057,7 +8057,7 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
       }
     },
     "subtopic_4_1": {
-      "headerTitle": "KT 4.1 - GCSE CORE MASTERY: A patriotic defense of American values or an unpatriotic betrayal of troops? How did the anti-war movement shape public debate?",
+      "headerTitle": "KT 4.1 - GCSE CORE MASTERY: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?",
       "headerIntro": "As the war dragged on, domestic opposition erupted into a powerful movement. The introduction of the draft in 1965 and the first televised war brought graphic footage of civilian casualties directly into American living rooms, creating a 'credibility gap' between government claims and reality. The shock of the 1968 Tet Offensive and the 1969 exposure of the My Lai Massacre\u2014where US troops murdered over 500 civilians\u2014further fueled protests. Tension peaked in May 1970 at Kent State University, where National Guardsmen shot and killed four student protesters, polarizing the nation.",
       "steps": [
         {
@@ -8274,7 +8274,7 @@ Source E is highly useful for showing the lethal escalation of state suppression
       }
     },
     "subtopic_4_2": {
-      "headerTitle": "KT 4.2 - GCSE CORE MASTERY: A quiet majority defending global stability or a conservative backlash against counterculture? Why did many support the war?",
+      "headerTitle": "KT 4.2 - GCSE CORE MASTERY: Why did some Americans support the Vietnam War and the 'Silent Majority'?",
       "headerIntro": "Despite the high profile of the anti-war movement, millions of Americans supported the war or opposed the protests. In November 1969, President Nixon appealed to the 'Silent Majority'\u2014conservative, patriotic, working-class citizens who felt alienated by radical counterculture and anti-war demonstrations. Pro-war support was fueled by deep-seated anti-communism, respect for law and order, and the belief that protesting troops during wartime was unpatriotic. Nixon's strategy was highly successful, enabling him to secure a landslide re-election in 1972.",
       "steps": [
         {
@@ -8490,7 +8490,7 @@ Source E is highly useful for showing the working-class basis of this pro-war su
       }
     },
     "subtopic_4_3": {
-      "headerTitle": "KT 4.3 - GCSE CORE MASTERY: A diplomatic triumph of compromise or a betrayal of South Vietnamese sovereignty? Why did South Vietnam collapse so quickly?",
+      "headerTitle": "KT 4.3 - GCSE CORE MASTERY: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?",
       "headerIntro": "Peace negotiations began in Paris in 1968 but remained deadlocked for years. In late 1972, Nixon ordered the devastating 'Christmas Bombings' of Hanoi to pressure North Vietnam. In January 1973, the Paris Peace Accords were signed, leading to the complete withdrawal of all US combat forces. However, fighting resumed between Vietnamese forces, and without US air support, the ARVN crumbled. In April 1975, communist forces launched the Spring Offensive, capturing the capital and renaming it Ho Chi Minh City, completing the reunification of Vietnam under communist rule.",
       "steps": [
         {
@@ -8691,7 +8691,7 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
       }
     },
     "subtopic_4_4": {
-      "headerTitle": "KT 4.4 - GCSE CORE MASTERY: Lost on the battlefield, in the media, or at the ballot box? What was the primary reason for the US failure in Vietnam?",
+      "headerTitle": "KT 4.4 - GCSE CORE MASTERY: What were the main reasons why the US failed to win the war in Vietnam?",
       "headerIntro": "The failure of the USA to defeat communist forces in Vietnam was the result of interconnected military, political, and social factors. Militarily, the Vietcong's guerrilla tactics, local knowledge, and supplies from China and the USSR defeated US attrition strategies. Politically, the South Vietnamese government remained corrupt and unpopular, whereas the North Vietnamese exhibited absolute determination (the 'commitment bug'). Socially, the growing anti-war movement and draft resistance destroyed the domestic political support necessary to sustain a prolonged war, forcing US withdrawal.",
       "steps": [
         {
@@ -12224,6 +12224,12 @@ ${cleanBrackets(paper.q3d.model)}
   function renderDashboard2() {
     const container = document.getElementById("dashboard-topics-list");
     container.innerHTML = "";
+    const topicInquiries = {
+      "topic_1": "How did the early civil rights movement challenge segregation and fight for equality (1954\u201360)?",
+      "topic_2": "How did the civil rights movement achieve legal changes, and why did it split (1960\u201375)?",
+      "topic_3": "Why did the US get involved in Vietnam, and why did its military tactics struggle?",
+      "topic_4": "Why did protests grow in America, and how did US involvement end?"
+    };
     QUIZ_DATA.forEach((topic) => {
       const card = document.createElement("div");
       card.className = "topic-list-card";
@@ -12247,12 +12253,19 @@ ${cleanBrackets(paper.q3d.model)}
         </div>
       `;
       });
+      const inquiryText = topicInquiries[topic.id] || "";
       card.innerHTML = `
       <div class="topic-list-info" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; margin-bottom: 4px;">
-        <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main);">
-          ${topic.title}
-        </span>
-        <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700;">${pct}%</span>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+          <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+            ${topic.title}
+          </span>
+          <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700; flex-shrink: 0; margin-left: 8px;">${pct}%</span>
+        </div>
+        <div class="topic-list-inquiry" style="font-size: 0.78rem; color: var(--text-muted); font-style: italic; line-height: 1.3; margin-top: 4px; display: flex; align-items: flex-start; gap: 6px;">
+          <i class="fa-solid fa-compass" style="color: var(--accent); margin-top: 2px; flex-shrink: 0; font-size: 0.85rem;"></i>
+          <span>${inquiryText}</span>
+        </div>
       </div>
       <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 6px;">
         <div class="topic-list-progress-fill" style="width: ${pct}%;"></div>
@@ -16274,6 +16287,13 @@ ${cleanBrackets(paper.q3d.model)}
     if (!data) return;
     const container = document.getElementById("key-topic-content-container");
     if (!container) return;
+    const topicInquiries = {
+      "topic_1": "How did the early civil rights movement challenge segregation and fight for equality (1954\u201360)?",
+      "topic_2": "How did the civil rights movement achieve legal changes, and why did it split (1960\u201375)?",
+      "topic_3": "Why did the US get involved in Vietnam, and why did its military tactics struggle?",
+      "topic_4": "Why did protests grow in America, and how did US involvement end?"
+    };
+    const inquiryText = topicInquiries[topicId] || "";
     const quizTopic = QUIZ_DATA.find((t) => t.id === topicId);
     const subtopics = quizTopic ? quizTopic.subtopics : [];
     let totalQs = 0;
@@ -16615,10 +16635,14 @@ ${cleanBrackets(paper.q3d.model)}
       });
       container.innerHTML = `
       <!-- Top Progress Banner -->
-      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 12px;">
+      <div style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px;">
         <h2 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.3;">
           ${data.title}
         </h2>
+        <div style="font-size: 0.88rem; color: #cbd5e1; font-style: italic; display: flex; align-items: center; gap: 6px; margin-top: 2px;">
+          <i class="fa-solid fa-compass" style="color: var(--accent); font-size: 0.95rem;"></i>
+          <span>Inquiry: ${inquiryText}</span>
+        </div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
           <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
           <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
@@ -20234,12 +20258,18 @@ ${cleanBrackets(paper.q3d.model)}
       </span>
     `).join("");
       doNowHtml = `
-      <div class="mastery-card do-now-card" style="max-width: 800px; margin: 24px auto 32px auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-left: 5px solid var(--accent); border-radius: var(--border-radius-lg); position: relative; padding: 24px; box-shadow: var(--shadow-md); overflow: visible !important;">
-        <div style="position: absolute; top: -14px; left: 20px; background: var(--accent); color: #000; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 12px; letter-spacing: 0.8px; box-shadow: var(--shadow-sm); z-index: 10;">
-          \u26A1 DO NOW starter (5-10 MINS)
-        </div>
+      <details class="mastery-card do-now-card" style="max-width: 800px; margin: 24px auto 32px auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-left: 5px solid var(--accent); border-radius: var(--border-radius-lg); position: relative; padding: 16px 24px; box-shadow: var(--shadow-md); overflow: visible !important;">
+        <summary style="cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; user-select: none; font-family: var(--font-heading); outline: none;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: var(--accent); color: #000; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 12px; letter-spacing: 0.8px; box-shadow: var(--shadow-sm); display: inline-flex; align-items: center; gap: 4px;">
+              \u26A1 DO NOW starter <span style="font-size: 0.65rem; opacity: 0.75; font-weight: 700;">(5-10 MINS)</span>
+            </span>
+            <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">(Click to view activity)</span>
+          </div>
+          <i class="fa-solid fa-chevron-down do-now-arrow" style="color: var(--text-muted); transition: transform var(--transition-fast);"></i>
+        </summary>
         
-        <div class="mastery-card-body" style="padding-top: 8px; margin: 0;">
+        <div class="mastery-card-body" style="padding-top: 16px; margin: 0; border-top: 1px solid var(--border-glass); margin-top: 12px;">
           ${prevLessonLinkHtml}
           ${howUsefulBoxHtml}
           ${doNowPrototypesHtml}
@@ -20374,7 +20404,7 @@ ${cleanBrackets(paper.q3d.model)}
           </div>
           
         </div>
-      </div>
+      </details>
     `;
     }
     const video = VIDEOS_DATA[subtopicId];
