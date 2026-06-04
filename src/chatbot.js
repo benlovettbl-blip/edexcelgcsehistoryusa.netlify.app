@@ -37,7 +37,17 @@ const SEARCH_ALIASES = {
   "12 marker": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
   "16 marker": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
   "peel": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-  "source utility": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3"
+  "source utility": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "q1": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "q2": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "q3": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "q3a": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "q3b": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "q3c": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "q3d": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "technique": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "writing frame": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+  "writing frames": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3"
 };
 
 const WELCOME_HTML = `
@@ -205,10 +215,14 @@ function getSearchScore(queryText, textBlob) {
   const query = queryText.toLowerCase().trim();
   if (!query) return 0;
 
-  const stopWords = new Set(["the", "and", "a", "in", "of", "to", "for", "is", "on", "that", "by", "this", "with", "from", "at", "an", "was", "were", "who", "what", "why", "how", "when", "about", "are", "but", "not", "you", "your", "can", "have", "has", "had"]);
+  const stopWords = new Set([
+    "the", "and", "a", "in", "of", "to", "for", "is", "on", "that", "by", "this", "with", "from", "at", "an", "was", "were", 
+    "who", "what", "why", "how", "when", "about", "are", "but", "not", "you", "your", "can", "have", "has", "had",
+    "it", "he", "we", "me", "my", "so", "if", "or", "no", "do", "up", "go", "as", "am", "be", "do", "did", "does", "get"
+  ]);
   const terms = query.split(/\s+/)
     .map(t => t.replace(/[^a-z0-9]/g, ''))
-    .filter(t => t.length >= 3 && !stopWords.has(t));
+    .filter(t => t.length >= 2 && !stopWords.has(t));
 
   if (terms.length === 0) {
     return 0;
