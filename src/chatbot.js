@@ -6,6 +6,62 @@ import { state } from './state.js';
 let searchDatabase = [];
 let chatHistory = [];
 
+const SEARCH_ALIASES = {
+  "mlk": "martin luther king jr leader civil rights non violence",
+  "sclc": "southern christian leadership conference mlk church pastors",
+  "sncc": "student nonviolent coordinating committee sit ins students john lewis",
+  "core": "congress of racial equality freedom rides sit ins jim crow",
+  "naacp": "national association for the advancement of colored people thurgood marshall litigation",
+  "little rock 9": "little rock nine central high school integration faubus eisenhower 1957",
+  "little rock": "little rock nine central high school integration faubus eisenhower 1957",
+  "vietnam war": "vietnam escalation gulf of tonkin saigon tet offensive draft my lai",
+  "vietnam": "vietnam escalation gulf of tonkin saigon tet offensive draft my lai",
+  "bus boycott": "montgomery bus boycott rosa parks mlk 1955 browder v gayle",
+  "emmett till": "murder lynching of emmett till milam bryant 1955 open casket",
+  "brown case": "brown board of education topeka 1954 separate but equal unconstitutional",
+  "brown v topeka": "brown board of education topeka 1954 separate but equal unconstitutional",
+  "black panthers": "black panther party bobby seale huey newton ten point program",
+  "malcolm x": "nation of islam malcolm x self defense",
+  "selma": "selma march voting rights act 1965 bloody sunday sheriff clark",
+  "voting rights": "voting rights act 1965 literacy tests poll taxes",
+  "civil rights act": "civil rights act 1964 1957 1960",
+  "freedom rides": "freedom riders 1961 core sncc james farmer",
+  "sit ins": "greensboro lunch counter sit ins 1960 woolworths counter",
+  "tet offensive": "tet offensive 1968 north vietnamese surprise attack media impact",
+  "my lai": "my lai massacre 1968 calley search and destroy atrocities",
+  "watergate": "watergate scandal nixon bugging cover up resignation 1974",
+  "hard hat": "hard hat riots 1970 construction workers anti war protest"
+};
+
+const WELCOME_HTML = `
+  Hi! I am your AI history tutor. Ask me any question about the <strong>Edexcel GCSE USA (1954–75)</strong> course.
+  <br><br>
+  <em>Tip: If you add your Gemini API key via the settings gear (⚙️), I can use AI to answer custom history questions beyond the app!</em>
+  <div class="chatbot-chips-container">
+    <button class="chatbot-chip-btn" data-query="Why was Brown v. Topeka a turning point for desegregation?">
+      💡 Why was Brown v. Topeka a turning point?
+    </button>
+    <button class="chatbot-chip-btn" data-query="Explain the 1957 integration crisis at Little Rock.">
+      💡 Explain the 1957 Little Rock crisis
+    </button>
+    <button class="chatbot-chip-btn" data-query="What was the impact of the Gulf of Tonkin incident?">
+      💡 What was the Gulf of Tonkin incident?
+    </button>
+  </div>
+`;
+
+// Expand search queries using syllabus synonyms
+function expandQuerySynonyms(query) {
+  let expanded = query.toLowerCase();
+  Object.keys(SEARCH_ALIASES).forEach(key => {
+    const regex = new RegExp(`\\b${key}\\b`, 'g');
+    if (regex.test(expanded)) {
+      expanded += " " + SEARCH_ALIASES[key];
+    }
+  });
+  return expanded;
+}
+
 // Prepare the text index for local search
 function buildSearchDatabase() {
   if (searchDatabase.length > 0) return;
@@ -40,7 +96,6 @@ function buildSearchDatabase() {
       lesson.steps.forEach(step => {
         if (step.title) contentParts.push(step.title);
         if (step.bodyHtml) {
-          // Strip HTML tags for clean text indexing
           const plainText = step.bodyHtml.replace(/<[^>]*>/g, ' ');
           contentParts.push(plainText);
         }
@@ -155,13 +210,14 @@ function getSearchScore(queryText, textBlob) {
   return score;
 }
 
-// Search app local database
+// Search app local database with synonym expansion
 function searchLocalApp(query) {
   buildSearchDatabase();
 
+  const expandedQuery = expandQuerySynonyms(query);
   const results = [];
   searchDatabase.forEach(item => {
-    const score = getSearchScore(query, item.fullText);
+    const score = getSearchScore(expandedQuery, item.fullText);
     if (score > 6) { // Threshold for relevance
       results.push({
         id: item.id,
@@ -179,7 +235,8 @@ function searchLocalApp(query) {
 
 // Extract a matching question/answer or paragraph for local fallback when API key is missing
 function getLocalStaticResponse(bestMatch, query) {
-  const queryTerms = query.toLowerCase().split(/\s+/).map(t => t.replace(/[^a-z0-9]/g, '')).filter(t => t.length > 2);
+  const expandedQuery = expandQuerySynonyms(query);
+  const queryTerms = expandedQuery.toLowerCase().split(/\s+/).map(t => t.replace(/[^a-z0-9]/g, '')).filter(t => t.length > 2);
   const lesson = LESSONS_DATA[bestMatch.id];
   let bestFact = "";
   let bestFactScore = 0;
@@ -358,7 +415,7 @@ function removeThinkingBubble() {
 
 // Core Chatbot Initialization
 export function initChatbot() {
-  // Inject pulsing dots styles in header
+  // Inject custom stylesheet for solid styling, quick chips, and animation
   const style = document.createElement('style');
   style.textContent = `
     @keyframes chatbotPulse {
@@ -378,6 +435,65 @@ export function initChatbot() {
     }
     .chatbot-loading-dots span:nth-child(3) {
       animation-delay: 0.4s;
+    }
+
+    /* CSS Overrides for Solid theme-matching readability */
+    .chatbot-window {
+      background: var(--bg-sidebar) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: 1px solid var(--border-active) !important;
+    }
+    .chatbot-bubble.assistant {
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: var(--text-main) !important;
+      border: 1px solid var(--border-glass) !important;
+    }
+    [data-theme="desert"] .chatbot-bubble.assistant {
+      background: rgba(0, 0, 0, 0.04) !important;
+      color: var(--text-main) !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    }
+    .chatbot-bubble.user {
+      color: #ffffff !important;
+    }
+
+    /* Suggested Chips styling */
+    .chatbot-chips-container {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .chatbot-chip-btn {
+      background: rgba(59, 130, 246, 0.08);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      color: #60a5fa;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      outline: none;
+      font-family: inherit;
+    }
+    .chatbot-chip-btn:hover {
+      background: rgba(59, 130, 246, 0.16);
+      border-color: #3b82f6;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    [data-theme="desert"] .chatbot-chip-btn {
+      background: rgba(194, 65, 12, 0.06);
+      border-color: rgba(194, 65, 12, 0.15);
+      color: #c2410c;
+    }
+    [data-theme="desert"] .chatbot-chip-btn:hover {
+      background: rgba(194, 65, 12, 0.12);
+      border-color: #c2410c;
+      color: #c2410c;
     }
   `;
   document.head.appendChild(style);
@@ -401,6 +517,9 @@ export function initChatbot() {
         <i class="fa-solid fa-robot"></i> GCSE History AI Tutor
       </div>
       <div class="chatbot-actions">
+        <button class="chatbot-action-btn" id="chatbot-clear-btn" title="Clear Chat Thread">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
         <button class="chatbot-action-btn" id="chatbot-settings-toggle" title="Gemini API Key Settings">
           <i class="fa-solid fa-gear"></i>
         </button>
@@ -428,9 +547,7 @@ export function initChatbot() {
     <!-- Messages Container -->
     <div class="chatbot-messages" id="chatbot-messages">
       <div class="chatbot-bubble assistant">
-        Hi! I am your AI history tutor. Ask me any question about the <strong>Edexcel GCSE USA (1954–75)</strong> course.
-        <br><br>
-        <em>Tip: If you add your Gemini API key via the settings gear (⚙️), I can use AI to answer custom history questions beyond the app!</em>
+        ${WELCOME_HTML}
       </div>
     </div>
 
@@ -447,6 +564,7 @@ export function initChatbot() {
   document.body.appendChild(windowEl);
 
   const toggleSettingsBtn = document.getElementById('chatbot-settings-toggle');
+  const clearBtn = document.getElementById('chatbot-clear-btn');
   const settingsPanel = document.getElementById('chatbot-settings-panel');
   const apiKeyInput = document.getElementById('chatbot-api-key-input');
   const saveKeyBtn = document.getElementById('chatbot-save-key-btn');
@@ -495,19 +613,37 @@ export function initChatbot() {
     windowEl.classList.remove('active');
   });
 
-  // 5. In-app navigation links (Event delegation)
+  // 5. Clear Chat Thread
+  clearBtn.addEventListener('click', () => {
+    chatHistory = [];
+    messagesContainer.innerHTML = `<div class="chatbot-bubble assistant">${WELCOME_HTML}</div>`;
+    appendBubble('system', 'Chat history cleared.');
+  });
+
+  // 6. In-app navigation links & Suggestion Prompt Chips (Event delegation)
   messagesContainer.addEventListener('click', (e) => {
+    // Jump to lesson link clicks
     const jumpLink = e.target.closest('.chatbot-jump-link');
     if (jumpLink) {
       const subtopicId = jumpLink.getAttribute('data-subtopic-id');
       if (subtopicId) {
         state.currentMode = 'lessons';
         switchView('subtopic', subtopicId);
-        // On small displays, close the chat window on navigation to avoid screen clutter
         if (window.innerWidth <= 480) {
           fab.classList.remove('active');
           windowEl.classList.remove('active');
         }
+      }
+      return;
+    }
+
+    // Suggestion chips clicks
+    const chipBtn = e.target.closest('.chatbot-chip-btn');
+    if (chipBtn) {
+      const query = chipBtn.getAttribute('data-query');
+      if (query) {
+        userInput.value = query;
+        handleSend();
       }
     }
   });
@@ -549,7 +685,7 @@ export function initChatbot() {
     }
   }
 
-  // 6. Action Bindings
+  // 7. Action Bindings
   sendBtn.addEventListener('click', handleSend);
   userInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
