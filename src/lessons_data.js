@@ -112,7 +112,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "By 1954, segregation in the USA was protected by the [[1896]] Plessy v. Ferguson decision. In May [[1956 -> 1954]], the Supreme Court ruled in Brown v. Board of Education that segregation in public schools was [[constitutional -> unconstitutional]]. Southern resistance was fierce. In December [[1956 -> 1955]], Rosa Parks was arrested in Montgomery, launching a [[381-day]] bus boycott led by [[Malcolm X -> Martin Luther King Jr.]] that forced bus desegregation in late [[1957 -> 1956]]."
+      "text": "By the early 1950s, segregation in the Southern states was protected by the [[1918 -> 1896]] Plessy v. Ferguson Supreme Court decision, which established the 'separate and equal' doctrine. In May [[1956 -> 1954]], the Supreme Court ruled in Brown v. Board of Education that segregation in public schools was [[constitutional -> unconstitutional]]. While [[legalistic -> revisionist]] historians argue that court battles alone did little to change daily reality for Black citizens, integrationist historians view Brown as the vital catalyst. Indeed, local action quickly followed when Rosa Parks was arrested in December [[1956 -> 1955]], launching a [[381-day]] bus boycott led by [[Malcolm X -> Martin Luther King Jr.]]. While critics argued the boycott had little national importance, historians now agree it proved that [[violent retaliation -> grassroots non-violent action]] could force local authorities to capitulate."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the segregation of public facilities and the response of activists in the Southern states in the 1950s? (8 marks)",
@@ -303,7 +303,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "In September [[1959 -> 1957]], Central High School in Little Rock, Arkansas, integrated. Governor Orval Faubus [[supported -> defied]] federal court orders, calling in the National Guard to [[protect -> block]] nine Black students. As angry white mobs gathered, President [[Truman -> Eisenhower]] took action, sending in the [[US Marines -> 101st Airborne]] Division to escort the students. This was the first time since [[the New Deal -> Reconstruction]] that federal troops were sent to the South to protect Black rights."
+      "text": "In September [[1959 -> 1957]], Central High School in Little Rock, Arkansas, became a flashpoint for school integration. Governor Orval Faubus [[supported -> defied]] federal court orders, calling in the state's National Guard to [[protect -> block]] the nine Black students. As white mobs gathered, President [[Truman -> Eisenhower]] reluctantly intervened, sending in the [[US Navy -> 101st Airborne]] to escort the students. Orthodox historians interpret this as a [[hostile attack on -> victory for]] federal authority and civil rights. However, critical historians argue the crisis exposed the weakness of the federal government, highlighting that Eisenhower's delay encouraged Southern whites, leading Faubus to [[fully integrate -> close]] all Little Rock high schools the following year in defiance."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the levels of opposition to integration at Little Rock Central High School in 1957? (8 marks)",
@@ -486,7 +486,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "The Montgomery Bus Boycott began after Rosa Parks was arrested on 1 December [[1957 -> 1955]]. The local community formed the Montgomery Improvement Association, led by [[Malcolm X -> Martin Luther King Jr.]]. Black citizens, who made up [[20% -> 70%]] of bus riders, boycotted the system for [[30 days -> 381 days]], severely hitting bus company revenues. The boycott ended in success when the [[Congress -> Supreme Court]] ruled segregated buses were [[legal -> illegal]] in late [[1959 -> 1956]]."
+      "text": "The Montgomery Bus Boycott (1955–56) began after Rosa Parks refused to give up her seat. The Montgomery Improvement Association (MIA) was formed, choosing a young [[Malcolm X -> Martin Luther King Jr.]] as leader. To sustain the protest, activists organized a highly complex [[private train -> carpool]] system to transport workers. Early accounts focus almost exclusively on King's charismatic leadership. However, modern social historians argue that the success was actually driven by [[federal funding -> grassroots local organizers]] like Jo Ann Robinson and the Women's Political Council. This interpretation emphasizes that the boycott was a community effort rather than a one-man show, culminating in the [[1896 -> 1956]] Supreme Court ruling in Browder v. Gayle which declared transit segregation [[legal -> unconstitutional]]."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the methods and leadership of the Montgomery Bus Boycott? (8 marks)",
@@ -677,7 +677,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "Southern white opposition to integration grew in the late 1950s. Politicians signed the 'Southern Manifesto' in [[1950 -> 1956]], promising to [[embrace -> resist]] integration. [[SCLC -> White Citizens' Councils]] used [[physical violence -> economic pressure]] to stop activists, while KKK violence rose, including the murder of [[Martin Luther King -> Emmett Till]] in [[1959 -> 1955]]. Southern governors like Orval Faubus used state authority to [[support -> defy]] federal integration rulings."
+      "text": "In response to civil rights gains, Southern white resistance intensified. In 1956, Southern congressmen signed the [[Declaration of Independence -> Southern Manifesto]] to resist integration by 'lawful means'. Meanwhile, middle-class segregationists formed the [[Ku Klux Klan -> White Citizens' Councils]] to apply economic pressure, firing Black workers who petitioned for school integration. While some historians view the opposition as a [[peaceful -> monolithic]] block, others argue there was a clear division between these 'respectable' councils and the working-class [[Dixiecrats -> Ku Klux Klan]] who used raw physical terror, such as the brutal [[1965 -> 1955]] lynching of 14-year-old Emmett Till. This terror was highly effective on the ground; revisionist historians argue it succeeded in delaying school integration because the federal government [[refused to compromise -> failed to protect]] local activists."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the methods used by Southern white opposition to resist civil rights in the 1950s? (8 marks)",
@@ -875,7 +875,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "In February [[1964 -> 1960]], student-led sit-ins began at a Greensboro Woolworth's counter. In May [[1965 -> 1961]], [[SCLC -> CORE]] launched the Freedom Rides to test interstate bus desegregation, meeting violent mobs in Alabama. In [[1968 -> 1962]], James Meredith challenged university segregation, becoming the first Black student at the University of [[Alabama -> Mississippi]], which required [[local police -> federal marshals]] to suppress a riot that left [[twenty -> two]] dead."
+      "text": "Between 1960 and 1962, student activists accelerated the struggle. In 1960, four students in Greensboro, North Carolina, launched a lunch counter [[boycott -> sit-in]] that rapidly spread. This led to the creation of [[SCLC -> SNCC]] to coordinate student protests. In 1961, CORE launched the Freedom Rides to test interstate bus integration, which met with brutal white violence in [[New York -> Alabama]]. Traditional histories present these campaigns as a [[hostile -> unified]] effort. However, revisionist historians argue that this period exposed deep [[theological -> strategic]] divisions, particularly between the cautious, top-down SCLC and the radical, impatient student activists. These tensions escalated in 1962 when James Meredith integrated the University of Mississippi, requiring [[no -> 30,000]] federal troops to suppress segregationist riots."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the tactics of direct action and the response of Southern white opposition? (8 marks)",
@@ -1102,7 +1102,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "The SCLC targeted Birmingham in [[1965 -> 1963]], where police chief [[Jim Clark -> Bull Connor]] used fire hoses on protesters, forcing President [[Eisenhower -> Kennedy]] to draft civil rights laws. In March [[1967 -> 1965]], marches in Selma faced brutality on 'Bloody Sunday'. These campaigns led directly to the [[Voting Rights Act of 1965 -> Civil Rights Act of 1964]], which ended segregation in public places, and the [[Civil Rights Act of 1964 -> Voting Rights Act of 1965]], which banned [[poll taxes -> literacy tests]]."
+      "text": "The peak of legislative success occurred in 1964–65. SCLC launched the Birmingham Campaign in [[1961 -> 1963]], provoking Police Commissioner Bull Connor to use fire hoses against children. This was followed by the March on Washington, where King gave his famous speech. Orthodox historians argue that these bills were passed primarily due to [[John F. Kennedy's -> Lyndon B. Johnson's]] legislative skill. In contrast, grassroots historians argue that the SCLC's strategy of [[conciliatory negotiations -> deliberate provocation]] of white violence was the true driver. By forcing televised brutality, such as the police attacks at the [[1968 -> 1965]] Selma march, activists shocked the nation's conscience, making it politically impossible for Congress to block the Civil Rights Act of 1964 and the [[Fair Housing -> Voting Rights]] Act of 1965."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the impact of non-violent campaigns on federal civil rights legislation in the 1960s? (8 marks)",
@@ -1305,7 +1305,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "Malcolm X of the [[NAACP -> Nation of Islam]] advocated for Black nationalism and self-defense [[non-violently -> by any means necessary]] before his assassination in [[1968 -> 1965]]. In [[1969 -> 1966]], Stokely Carmichael of [[CORE -> SNCC]] popularized the phrase '[[Black Power]]'. This philosophy was institutionalized by the Black Panther Party, founded by Huey Newton and Bobby Seale in [[1962 -> 1966]], who organized armed patrols and [[violent riots -> community programs]]."
+      "text": "By the mid-1960s, the civil rights movement split. Stokely Carmichael coined the phrase 'Black Power' in 1966, reflecting frustration with slow progress. Malcolm X advocated Black nationalism and self-defense 'by [[any means necessary]]'. Traditional historians often criticize Black Power as a [[peaceful -> destructive]] distraction that fractured the movement and alienated white liberals. However, modern revisionist historians argue it was a [[racist -> positive, empowering]] movement that promoted Black pride and addressed urban economic issues. The Black Panther Party, founded by Huey Newton and Bobby Seale, created free breakfast programs while also conducting [[armed patrols]] to monitor police brutality. This militancy was symbolized at the [[1960 -> 1968]] Olympics, where US athletes raised black-gloved fists, signifying solidarity with [[the KKK -> Black Power]]."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the shift from non-violence to Black nationalism and self-defense in the mid-1960s? (8 marks)",
@@ -1505,7 +1505,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "Urban riots erupted in Northern cities between [[1960 and 1962 -> 1965 and 1967]], including in [[Chicago -> Watts]] (1965) and Detroit (1967), due to poverty and police brutality. The Kerner Commission report in [[1972 -> 1968]] blamed [[Black activists -> white racism]] for the unrest, stating America was moving toward 'two societies, separate and unequal'. Following MLK's assassination in [[1970 -> 1968]], Congress passed the [[Civil Rights Act of 1964 -> Fair Housing Act]] in [[1975 -> 1968]], banning housing discrimination."
+      "text": "Between 1965 and 1968, massive urban riots erupted in Northern cities, beginning in the Watts district of [[Chicago -> Los Angeles]]. Conservative politicians argued that the riots were caused by [[systemic white racism -> lawless black extremists]] and outside agitators. However, the official [[Warren -> Kerner]] Commission in 1968 concluded that the primary cause was [[black supremacy -> systemic white racism]] and economic inequality, warning that America was split into 'two societies, one black, one white—separate and unequal'. The assassination of King in April [[1965 -> 1968]] triggered riots in over 100 cities. In response, Congress passed the Fair Housing Act of 1968, which revisionist historians argue was [[fully successful in ending -> a symbolic gesture that failed to solve]] inner-city economic deprivation."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the causes and consequences of urban unrest in the late 1960s? (8 marks)",
@@ -1722,7 +1722,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "US foreign policy aimed to contain communism, guided by the [[Marshall Plan -> Domino Theory]] which suggested that if South Vietnam fell, neighboring Asian countries would also fall. The US backed South Vietnam's leader, Ngo Dinh Diem, in [[1961 -> 1954]]. However, Diem's regime was corrupt and persecuted [[Catholics -> Buddhists]], leading to the formation of the [[Vietminh -> National Liberation Front (Vietcong)]] in [[1965 -> 1960]] and Diem's assassination in [[1968 -> 1963]]."
+      "text": "US involvement in Vietnam grew during the 1950s. Fearing the [[Rollback -> Domino]] Theory, President Eisenhower supported South Vietnam's President Ngo Dinh Diem, a corrupt anti-communist dictator who persecuted the [[Christian -> Buddhist]] majority. Kennedy escalated involvement by sending 16,000 military advisers. In 1962, the US launched the Strategic Hamlet Program, forcing peasants into fortified villages. Traditional historians view this escalation as a [[deliberate imperial invasion -> well-intentioned containment effort]]. However, critical historians interpret the US actions as [[democratic assistance -> imperialist intervention]], arguing the Strategic Hamlets were essentially [[luxury resorts -> concentration camps]] that alienated the rural population, destroying their loyalty to Saigon and driving them into alliances with the [[ARVN -> Vietcong]]."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the unpopularity and collapse of Ngo Dinh Diem's regime in South Vietnam? (8 marks)",
@@ -1924,7 +1924,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "In August [[1962 -> 1964]], the Gulf of Tonkin incident occurred when the destroyer [[USS Maddox]] was reportedly attacked by [[Chinese -> North Vietnamese]] patrol boats. In response, Congress passed the Gulf of Tonkin Resolution, giving President [[Nixon -> Johnson]] power to take 'all necessary measures'. This led to Operation Rolling Thunder, a massive [[peace campaign -> bombing campaign]] in early [[1968 -> 1965]], and the deployment of the first US combat troops to Da Nang in March [[1967 -> 1965]]."
+      "text": "In August 1964, the Gulf of Tonkin incident occurred. The US destroyer Maddox claimed it was attacked by North Vietnamese patrol boats. In response, Congress passed the Gulf of Tonkin Resolution, which served as a 'blank check' for President Johnson. Johnson then launched Operation [[Desert Storm -> Rolling Thunder]], a massive bombing campaign, and sent the first combat troops to Da Nang in March [[1968 -> 1965]]. Defensive historians argue that Johnson escalated the war to defend [[communism -> South Vietnamese sovereignty]] against unprovoked aggression. However, revisionist historians argue that the incident was [[entirely true and accurate -> exaggerated or fabricated]] by the administration to justify a pre-planned military expansion, locking the US into an unwinnable ground war."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the escalation of US involvement and the deployment of combat troops to Vietnam? (8 marks)",
@@ -2121,7 +2121,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "The Vietnam War was fought with highly contrasting tactics. The USA relied on [[defensive -> attrition]] tactics, including [[hearts and minds -> search-and-destroy]] missions and chemical weapons like Agent Orange and [[tear gas -> Napalm]]. In contrast, the Vietcong fought a [[conventional -> guerrilla]] war, avoiding large battles, utilizing underground [[bunker -> tunnel]] networks, and setting deadly booby traps, which severely [[boosted -> damaged]] US troop morale."
+      "text": "The US military relied on high-tech firepower, using Search and Destroy missions and chemical defoliants like [[Agent Orange]]. The Vietcong countered with guerrilla tactics, booby traps, and the Ho Chi Minh Trail. Orthodox historians argue that US military tactics were [[flawless -> fundamentally flawed]] because heavy firepower alienated the peasantry, driving them to support the communists. Conversely, revisionist military historians argue that the tactics [[failed because they were too aggressive -> were militarily sound but undermined by political restrictions]] in Washington. The debate intensified after the [[1965 -> 1968]] Tet Offensive; while it was a military [[defeat -> victory]] for the US/ARVN on the ground, it proved to the American public that the government's claims of imminent victory were [[entirely accurate -> false]]."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the tactics used by the US military in the Vietnam War? (8 marks)",
@@ -2325,7 +2325,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "Elected in [[1964 -> 1968]], President Nixon introduced [[escalation -> Vietnamization]] to withdraw US forces while training the ARVN to fight. However, to disrupt communist supply lines along the [[Mekong River -> Ho Chi Minh Trail]], Nixon expanded the war by ordering the secret bombing and invasion of [[North Vietnam -> Cambodia]] in [[1974 -> 1970]] and Laos in [[1975 -> 1971]], sparking massive [[celebrations -> protests]] back in the USA."
+      "text": "In 1969, President Nixon introduced 'Vietnamisation', aiming to withdraw US troops and train the [[Vietcong -> ARVN]] to take over the fighting. Nixon also expanded the war, invading Cambodia in 1970 and Laos in 1971 to destroy communist sanctuaries. Sympathetic historians argue that Vietnamisation was [[a total failure from day one -> a successful strategy that built up ARVN capability]]. However, critical historians argue it was a [[military triumph -> political sham]] designed to cover up US withdrawal. The ARVN was plagued by corruption and high desertion rates. When Nixon ordered the Linebacker bombing campaigns in [[1968 -> 1972]] to force North Vietnam to negotiate, it highlighted that the ARVN was still [[completely self-sufficient -> heavily dependent on US air support]], confirming it could not survive alone."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the effectiveness of Nixon's policy of Vietnamization? (8 marks)",
@@ -2524,7 +2524,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "Anti-war opposition in the US grew due to [[voluntary recruitment -> the draft]] and televised coverage. The shock of the [[1965 -> 1968]] Tet Offensive and the exposure of the [[1972 -> 1969]] My Lai Massacre, where US troops murdered over [[50 -> 500]] civilians, fueled protests. Anti-war tension reached its peak in May [[1975 -> 1970]] at [[Harvard -> Kent State]] University, where National Guardsmen shot and killed [[forty -> four]] protesting students."
+      "text": "Public opposition to the war peaked between 1968 and 1970. Graphic television coverage brought the war into living rooms. Protests grew due to the draft system, which exempted many [[poor -> wealthy]] college students. In 1969, the public learned of the [[1965 -> 1968]] My Lai Massacre, where US troops killed over 500 civilians. Standard histories argue that the anti-war movement was led by [[patriotic hard hats -> middle-class college students]]. However, revisionist historians argue that working-class families were the [[strongest supporters of -> driving force behind]] opposition because they suffered the most casualties. Tensions culminated in May 1970 when National Guardsmen shot dead four students at [[Oxford -> Kent State]] University during protests against the invasion of Cambodia."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the anti-war movement and the response of the government? (8 marks)",
@@ -2723,7 +2723,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "While anti-war protests dominated the media, President [[Johnson -> Nixon]] appealed to the '[[Loud Minority -> Silent Majority]]'—conservative, patriotic working-class Americans who supported his war policies. Pro-war sentiment was driven by deep [[pacifism -> anti-communism]] and a belief that protesting during war was [[patriotic -> unpatriotic]]. This support helped Nixon win a landslide re-election in [[1976 -> 1972]], defeating [[George Wallace -> George McGovern]]."
+      "text": "Despite vocal protests, millions of Americans supported the war. In November 1969, Nixon appealed to the '[[Loud Minority -> Silent Majority]]' of patriotic, conservative citizens. In May 1970, working-class construction workers, known as 'Hard Hats', clashed with anti-war students in New York. Critical historians argue that pro-war sentiment was driven by [[rational diplomatic strategy -> blind anti-communism]] and hostility toward social change. Conversely, conservative historians argue that support represented a [[rebellion against -> reasonable patriotic defense of]] national honor. This interpretation highlights that many working-class Americans supported containment because they feared the global spread of [[capitalism -> communism]] and felt alienated by the anti-war movement's radical counterculture and disrespect for the flag."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the views of the 'Silent Majority' and support for the Vietnam War? (8 marks)",
@@ -2919,7 +2919,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "Following Nixon's [[1970 -> 1972]] Christmas bombings of Hanoi, the [[Geneva -> Paris Peace]] Accords were signed in January [[1975 -> 1973]], leading to the withdrawal of US troops. However, fighting between Vietnamese forces resumed. In April [[1979 -> 1975]], North Vietnamese forces launched a final offensive, capturing the capital of [[Hanoi -> Saigon]] and reunifying Vietnam under a [[democratic -> communist]] government."
+      "text": "In January 1973, the Paris Peace Accords were signed by Henry Kissinger and Le Duc Tho. The agreement ended US combat involvement, allowing North Vietnamese troops to remain in the South. Nixon claimed this achieved '[[Victory in Vietnam -> Peace with Honor]]'. However, critical historians argue the accords were a [[complete success -> face-saving exit strategy]] designed to create a 'decent interval' between US withdrawal and the inevitable defeat of the South. The peace collapsed quickly. In Spring [[1973 -> 1975]], North Vietnam launched a massive offensive. Without US air support, the ARVN collapsed, and the Fall of Saigon occurred in April [[1979 -> 1975]], resulting in the [[division -> reunification]] of Vietnam under communist rule."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the peace process and the final withdrawal of the US from Vietnam? (8 marks)",
@@ -3109,7 +3109,7 @@ export const LESSONS_DATA = {
       }
     ],
     "summaryCorrection": {
-      "text": "The US failed to defeat communist forces due to military, political, and social factors. Vietcong [[guerrilla]] tactics and supply lines from [[Canada -> China]] and the [[USA -> USSR]] resisted US firepower. Politically, the South Vietnamese government was [[popular -> corrupt]] and lacked [[military aid -> popular support]], while North Vietnam had [[low -> high]] resolve. Socially, the [[pro-war -> anti-war]] movement at home destroyed political support for the conflict."
+      "text": "The US failed to win in Vietnam due to several factors. The US military faced low morale, drug abuse, and racial tensions. Additionally, US search-and-destroy tactics and chemical defoliants alienated civilians. Traditionalist historians blame the failure on [[communist superiority -> US military and political errors]]. In contrast, revisionist historians argue that the defeat was inevitable because of the [[weakness -> unbreakable nationalist motivation]] of the Vietnamese communists, who were fighting a war of liberation. They could replace their casualties indefinitely, whereas the US public was only willing to tolerate a [[total -> limited]] war. This interpretation suggests that even if the US had used different tactics, it could never have defeated a population willing to sacrifice millions to end [[communist -> foreign]] control."
     },
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the military and political reasons for the US failure in Vietnam? (8 marks)",
