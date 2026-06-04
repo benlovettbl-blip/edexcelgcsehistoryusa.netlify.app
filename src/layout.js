@@ -470,13 +470,23 @@ function bindEvents() {
       AudioEngine.play('click');
       const targetPanel = btn.getAttribute('data-panel');
       
-      document.querySelectorAll('.exam-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.exam-tab-btn').forEach(b => {
+        b.classList.remove('active');
+        b.style.background = 'transparent';
+        b.style.borderColor = 'transparent';
+        b.style.color = 'var(--text-muted)';
+      });
+      
       btn.classList.add('active');
+      btn.style.background = 'rgba(255, 255, 255, 0.05)';
+      btn.style.color = 'var(--text-main)';
+      btn.style.borderColor = 'var(--border-glass)';
       
       document.querySelectorAll('.exam-panel-content').forEach(panel => {
         panel.style.display = 'none';
       });
-      document.getElementById(`panel-${targetPanel}`).style.display = 'block';
+      const targetEl = document.getElementById(`panel-${targetPanel}`);
+      if (targetEl) targetEl.style.display = 'block';
     });
   });
 

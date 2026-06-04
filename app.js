@@ -22006,12 +22006,21 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       btn.addEventListener("click", () => {
         AudioEngine.play("click");
         const targetPanel = btn.getAttribute("data-panel");
-        document.querySelectorAll(".exam-tab-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".exam-tab-btn").forEach((b) => {
+          b.classList.remove("active");
+          b.style.background = "transparent";
+          b.style.borderColor = "transparent";
+          b.style.color = "var(--text-muted)";
+        });
         btn.classList.add("active");
+        btn.style.background = "rgba(255, 255, 255, 0.05)";
+        btn.style.color = "var(--text-main)";
+        btn.style.borderColor = "var(--border-glass)";
         document.querySelectorAll(".exam-panel-content").forEach((panel) => {
           panel.style.display = "none";
         });
-        document.getElementById(`panel-${targetPanel}`).style.display = "block";
+        const targetEl = document.getElementById(`panel-${targetPanel}`);
+        if (targetEl) targetEl.style.display = "block";
       });
     });
     const q1Select = document.getElementById("q1-topic-select");
@@ -22975,7 +22984,14 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
     "tet offensive": "tet offensive 1968 north vietnamese surprise attack media impact",
     "my lai": "my lai massacre 1968 calley search and destroy atrocities",
     "watergate": "watergate scandal nixon bugging cover up resignation 1974",
-    "hard hat": "hard hat riots 1970 construction workers anti war protest"
+    "hard hat": "hard hat riots 1970 construction workers anti war protest",
+    "exam technique": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+    "question technique": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+    "essay writing": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+    "12 marker": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+    "16 marker": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+    "peel": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
+    "source utility": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3"
   };
   var WELCOME_HTML = `
   Hi! I am your AI history tutor. Ask me any question about the <strong>Edexcel GCSE USA (1954\u201375)</strong> course.
@@ -23100,6 +23116,18 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         fullText: contentParts.join("\n\n")
       });
     });
+    searchDatabase.push({
+      id: "exam_technique",
+      title: "Exam Technique Guide",
+      cleanTitle: "Exam Technique Guide",
+      fullText: `
+      Edexcel GCSE History Paper 3 Exam Question Technique Guide
+      Questions: Q1 Source Inference, Q2 Causation Essay, Q3a Source Utility, Q3b Interpretation Difference, Q3c Interpretation Disagreement Reason, Q3d Interpretation Evaluation
+      Marks: Q1 4 marks, Q2 12 marks, Q3a 8 marks, Q3b 4 marks, Q3c 4 marks, Q3d 16 marks + 4 SPaG marks.
+      Timings: Q1 5 minutes, Q2 18 minutes, Q3a 15 minutes, Q3b 5 minutes, Q3c 5 minutes, Q3d 25 minutes.
+      Structure, templates, writing frames, PEEL paragraphs, sources utility content nature origin purpose NOP, interpretations difference reason.
+    `
+    });
   }
   function getSearchScore(queryText, textBlob) {
     const query = queryText.toLowerCase().trim();
@@ -23142,6 +23170,9 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
     return results;
   }
   function getLocalStaticResponse(bestMatch, query) {
+    if (bestMatch.id === "exam_technique") {
+      return `Here is the **Edexcel Paper 3 Exam Technique Guide**! It covers all question types in this specification (Q1, Q2, and Q3 a-d), with exact marks, suggested timings, writing frames, and examiner secrets. Click the button below to open the guide!`;
+    }
     const expandedQuery = expandQuerySynonyms(query);
     const queryTerms = expandedQuery.toLowerCase().split(/\s+/).map((t) => t.replace(/[^a-z0-9]/g, "")).filter((t) => t.length > 2);
     const lesson = LESSONS_DATA[bestMatch.id];
@@ -23476,8 +23507,14 @@ User Question: ${userInput}`;
       if (jumpLink) {
         const subtopicId = jumpLink.getAttribute("data-subtopic-id");
         if (subtopicId) {
-          state.currentMode = "lessons";
-          switchView("subtopic", subtopicId);
+          if (subtopicId === "exam_technique") {
+            switchView("exam-skills");
+            const btn = document.querySelector('.exam-tab-btn[data-panel="technique"]');
+            if (btn) btn.click();
+          } else {
+            state.currentMode = "lessons";
+            switchView("subtopic", subtopicId);
+          }
           if (window.innerWidth <= 480) {
             fab.classList.remove("active");
             windowEl.classList.remove("active");
