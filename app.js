@@ -23132,20 +23132,22 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
   function getSearchScore(queryText, textBlob) {
     const query = queryText.toLowerCase().trim();
     if (!query) return 0;
-    const terms = query.split(/\s+/).map((t) => t.replace(/[^a-z0-9]/g, "")).filter((t) => t.length > 2);
+    const stopWords = /* @__PURE__ */ new Set(["the", "and", "a", "in", "of", "to", "for", "is", "on", "that", "by", "this", "with", "from", "at", "an", "was", "were", "who", "what", "why", "how", "when", "about", "are", "but", "not", "you", "your", "can", "have", "has", "had"]);
+    const terms = query.split(/\s+/).map((t) => t.replace(/[^a-z0-9]/g, "")).filter((t) => t.length >= 3 && !stopWords.has(t));
     if (terms.length === 0) {
-      return textBlob.toLowerCase().includes(query) ? 10 : 0;
+      return 0;
     }
     let score = 0;
     const lowerBlob = textBlob.toLowerCase();
     if (lowerBlob.includes(query)) {
-      score += 40;
+      score += 50;
     }
     terms.forEach((term) => {
-      let index = lowerBlob.indexOf(term);
-      while (index !== -1) {
-        score += 2;
-        index = lowerBlob.indexOf(term, index + 1);
+      const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+      const regex = new RegExp(`\\b${escapedTerm}\\b`, "g");
+      const matches = lowerBlob.match(regex);
+      if (matches) {
+        score += matches.length * 6;
       }
     });
     return score;
@@ -23156,7 +23158,7 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
     const results = [];
     searchDatabase.forEach((item) => {
       const score = getSearchScore(expandedQuery, item.fullText);
-      if (score > 6) {
+      if (score > 12) {
         results.push({
           id: item.id,
           title: item.title,
@@ -23538,6 +23540,19 @@ User Question: ${userInput}`;
       userInput.value = "";
       const localMatches = searchLocalApp(text);
       const bestMatch = localMatches[0];
+      if (bestMatch && bestMatch.id === "exam_technique") {
+        appendBubble("assistant", "Opening the **Exam Technique Guide** for you now...");
+        setTimeout(() => {
+          switchView("exam-skills");
+          const btn = document.querySelector('.exam-tab-btn[data-panel="technique"]');
+          if (btn) btn.click();
+          if (window.innerWidth <= 480) {
+            fab.classList.remove("active");
+            windowEl.classList.remove("active");
+          }
+        }, 700);
+        return;
+      }
       if (apiKey) {
         appendThinkingBubble();
         try {

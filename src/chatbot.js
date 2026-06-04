@@ -200,15 +200,18 @@ function buildSearchDatabase() {
   });
 }
 
-// Compute keyword relevance match score
+// Compute keyword relevance match score using whole words and filtering stop words
 function getSearchScore(queryText, textBlob) {
   const query = queryText.toLowerCase().trim();
   if (!query) return 0;
 
-  // Split into clean words of size >= 3
-  const terms = query.split(/\s+/).map(t => t.replace(/[^a-z0-9]/g, '')).filter(t => t.length > 2);
+  const stopWords = new Set(["the", "and", "a", "in", "of", "to", "for", "is", "on", "that", "by", "this", "with", "from", "at", "an", "was", "were", "who", "what", "why", "how", "when", "about", "are", "but", "not", "you", "your", "can", "have", "has", "had"]);
+  const terms = query.split(/\s+/)
+    .map(t => t.replace(/[^a-z0-9]/g, ''))
+    .filter(t => t.length >= 3 && !stopWords.has(t));
+
   if (terms.length === 0) {
-    return textBlob.toLowerCase().includes(query) ? 10 : 0;
+    return 0;
   }
 
   let score = 0;
@@ -216,15 +219,16 @@ function getSearchScore(queryText, textBlob) {
 
   // Substring phrase match bonus
   if (lowerBlob.includes(query)) {
-    score += 40;
+    score += 50;
   }
 
-  // Word overlap matching
+  // Word overlap matching (whole words only to avoid matching word parts)
   terms.forEach(term => {
-    let index = lowerBlob.indexOf(term);
-    while (index !== -1) {
-      score += 2;
-      index = lowerBlob.indexOf(term, index + 1);
+    const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const regex = new RegExp(`\\b${escapedTerm}\\b`, 'g');
+    const matches = lowerBlob.match(regex);
+    if (matches) {
+      score += matches.length * 6;
     }
   });
 
@@ -239,7 +243,7 @@ function searchLocalApp(query) {
   const results = [];
   searchDatabase.forEach(item => {
     const score = getSearchScore(expandedQuery, item.fullText);
-    if (score > 6) { // Threshold for relevance
+    if (score > 12) { // Increased threshold to filter out weak matches
       results.push({
         id: item.id,
         title: item.title,
@@ -691,6 +695,23 @@ export function initChatbot() {
     // Step 1: Perform local app database match search
     const localMatches = searchLocalApp(text);
     const bestMatch = localMatches[0];
+
+    // If matching exam technique, navigate automatically!
+    if (bestMatch && bestMatch.id === 'exam_technique') {
+      appendBubble('assistant', 'Opening the **Exam Technique Guide** for you now...');
+      setTimeout(() => {
+        switchView('exam-skills');
+        const btn = document.querySelector('.exam-tab-btn[data-panel="technique"]');
+        if (btn) btn.click();
+        
+        // Hide window on mobile to avoid screen crowding
+        if (window.innerWidth <= 480) {
+          fab.classList.remove('active');
+          windowEl.classList.remove('active');
+        }
+      }, 700);
+      return;
+    }
 
     // If API Key is present, leverage Gemini AI
     if (apiKey) {
