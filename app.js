@@ -12205,21 +12205,12 @@ ${cleanBrackets(paper.q3d.model)}
     const total = state.allQuestions.length;
     const totalMastered = state.allQuestions.filter((q) => state.mastery[q.id]).length;
     const overallPct = total > 0 ? Math.round(totalMastered / total * 100) : 0;
-    const standardQuestions = state.allQuestions.filter((q) => q.type === "standard");
-    const standardMastered = standardQuestions.filter((q) => state.mastery[q.id]).length;
-    const standardPct = standardQuestions.length > 0 ? Math.round(standardMastered / standardQuestions.length * 100) : 0;
-    const depthQuestions = state.allQuestions.filter((q) => q.type === "depth");
-    const depthMastered = depthQuestions.filter((q) => state.mastery[q.id]).length;
-    const depthPct = depthQuestions.length > 0 ? Math.round(depthMastered / depthQuestions.length * 100) : 0;
-    document.getElementById("stat-overall-progress").textContent = `${overallPct}%`;
-    document.getElementById("stat-overall-progress-bar").style.width = `${overallPct}%`;
-    document.getElementById("stat-overall-fraction").textContent = `${totalMastered} / ${total}`;
-    document.getElementById("stat-standard-progress").textContent = `${standardPct}%`;
-    document.getElementById("stat-standard-progress-bar").style.width = `${standardPct}%`;
-    document.getElementById("stat-standard-fraction").textContent = `${standardMastered} / ${standardQuestions.length}`;
-    document.getElementById("stat-depth-progress").textContent = `${depthPct}%`;
-    document.getElementById("stat-depth-progress-bar").style.width = `${depthPct}%`;
-    document.getElementById("stat-depth-fraction").textContent = `${depthMastered} / ${depthQuestions.length}`;
+    const overallPctEl = document.getElementById("stat-overall-progress");
+    if (overallPctEl) overallPctEl.textContent = `${overallPct}%`;
+    const overallBarEl = document.getElementById("stat-overall-progress-bar");
+    if (overallBarEl) overallBarEl.style.width = `${overallPct}%`;
+    const overallFractionEl = document.getElementById("stat-overall-fraction");
+    if (overallFractionEl) overallFractionEl.textContent = `${totalMastered} / ${total} Mastered`;
     QUIZ_DATA.forEach((topic) => {
       topic.subtopics.forEach((sub) => {
         const subQuestions = state.allQuestions.filter((q) => q.subtopicId === sub.id);
@@ -13316,7 +13307,7 @@ ${cleanBrackets(paper.q3d.model)}
           <span class="summary-text">${q.question}</span>
         </div>
         <div class="summary-badges">
-          <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Standard" : "Top Tier Trivia"}</span>
+          <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
           <span class="badge badge-year">${q.year}</span>
           <div class="mastery-checkbox-container ${isMastered ? "mastered" : ""}" data-qid="${q.id}" title="Mark as Mastered">
             <i class="fa-solid fa-check"></i>
@@ -13384,10 +13375,10 @@ ${cleanBrackets(paper.q3d.model)}
     const q = deck[idx];
     const isBookmarked = state.bookmarks.includes(q.id);
     const frontBadge = document.getElementById("card-front-badge");
-    frontBadge.textContent = q.type === "standard" ? "Standard" : "Top Tier Trivia";
+    frontBadge.textContent = q.type === "standard" ? "Core" : "Level 7-9 Detail";
     frontBadge.className = `badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}`;
     const backBadge = document.getElementById("card-back-badge");
-    backBadge.textContent = q.type === "standard" ? "Standard" : "Top Tier Trivia";
+    backBadge.textContent = q.type === "standard" ? "Core" : "Level 7-9 Detail";
     backBadge.className = `badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}`;
     document.getElementById("card-front-question").textContent = q.question;
     document.getElementById("card-back-answer").textContent = q.answer;
@@ -14249,7 +14240,7 @@ ${cleanBrackets(paper.q3d.model)}
             <span>${topicName}</span>
             ${keyFigureIndicator}
           </span>
-          <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Standard" : "Top Tier Trivia"}</span>
+          <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
         </div>
         <div class="timeline-q-title" style="font-weight: bold; line-height: 1.4;">${q.question}</div>
         
@@ -14428,7 +14419,7 @@ ${cleanBrackets(paper.q3d.model)}
           <span class="summary-text">${q.question}</span>
         </div>
         <div class="summary-badges">
-          <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Standard" : "Top Tier Trivia"}</span>
+          <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
           <span class="badge badge-year">${q.year}</span>
           <div class="bookmark-icon-container bookmarked" data-qid="${q.id}" title="Remove Bookmark">
             <i class="fa-solid fa-star"></i>
@@ -16468,7 +16459,7 @@ ${cleanBrackets(paper.q3d.model)}
             <!-- Front Face -->
             <div class="flashcard-face flashcard-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-glass); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card); background-image: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);">
               <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Standard" : "Top Tier Trivia"}</span>
+                <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
                   <span class="bookmark-icon-container ${isBookmarked ? "bookmarked" : ""}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? "fa-solid" : "fa-regular"} fa-star" style="color: var(--primary);"></i></span>
@@ -16482,7 +16473,7 @@ ${cleanBrackets(paper.q3d.model)}
             <!-- Back Face -->
             <div class="flashcard-face flashcard-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-active); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card-hover); background-image: radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%); transform: rotateY(180deg);">
               <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Standard" : "Top Tier Trivia"}</span>
+                <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
                   <span class="bookmark-icon-container ${isBookmarked ? "bookmarked" : ""}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? "fa-solid" : "fa-regular"} fa-star" style="color: var(--primary);"></i></span>
