@@ -214,7 +214,14 @@ const SUBTOPIC_EXAM_MAPPING = {
   "subtopic_1_4": [
     { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" }
   ],
-  "subtopic_2_1": [],
+  "subtopic_2_1": [
+    { paperId: "mock_exam_8", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 8" },
+    { paperId: "mock_exam_8", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 8" }
+  ],
   "subtopic_2_2": [
     { paperId: "2019_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2019" },
     { paperId: "2019_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2019" },
@@ -255,7 +262,12 @@ const SUBTOPIC_EXAM_MAPPING = {
   ],
   "subtopic_3_3": [
     { paperId: "2022_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2022" },
-    { paperId: "2025_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2025" }
+    { paperId: "2025_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2025" },
+    { paperId: "mock_exam_5", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 5" },
+    { paperId: "mock_exam_5", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 5" },
+    { paperId: "mock_exam_5", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 5" },
+    { paperId: "mock_exam_5", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 5" },
+    { paperId: "mock_exam_5", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 5" }
   ],
   "subtopic_3_4": [
     { paperId: "2019_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2019" }

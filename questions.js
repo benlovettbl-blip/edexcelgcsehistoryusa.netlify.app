@@ -3288,6 +3288,48 @@ export const EXAM_SKILLS_DATA = {
         0,
         1
       ]
+    },
+    "mock_exam_5": {
+      "id": "mock_5_q1",
+      "topicCode": "Mock 5",
+      "question": "Give two things you can infer from Source A about the difficulties faced by US soldiers on Search and Destroy missions.",
+      "sourceA": {
+        "provenance": "From a letter written by a US soldier to his family, describing his experiences on a Search and Destroy mission in South Vietnam, 1967.",
+        "content": "We patrol through this thick jungle for days, carrying 60 pounds of gear in 100-degree heat. You can't see the enemy, but you know they are watching. Suddenly, a tripwire is hit and a homemade booby trap goes off, killing two of our buddies. There are no North Vietnamese soldiers to shoot back at, just empty jungle and suspicious villagers who refuse to speak to us. Out of frustration and fear, our guys burned down their thatch huts. We are fighting a shadow, and it is driving us crazy."
+      },
+      "clue": "Look at what the source says about visibility, booby traps, and the reaction of the local population.",
+      "model": "Inference 1: I can infer that US soldiers faced severe psychological stress because the enemy was invisible but booby traps were a constant danger.\nDetails: 'You can't see the enemy, but you know they are watching. Suddenly, a tripwire is hit and a homemade booby trap goes off...'\nInference 2: I can infer that US troops struggled to get cooperation from local villagers, leading to frustration and destructive behavior.\nDetails: 'suspicious villagers who refuse to speak to us. Out of frustration and fear, our guys burned down their thatch huts.'",
+      "options": [
+        "US soldiers faced extreme psychological strain due to invisible enemies and lethal booby traps.",
+        "US troops struggled with uncooperative villagers, leading to frustration and the burning of huts.",
+        "US troops easily found Vietcong camps using advanced satellite radar.",
+        "Local villagers welcomed US troops warmly and provided intelligence on the enemy."
+      ],
+      "correctIndices": [
+        0,
+        1
+      ]
+    },
+    "mock_exam_8": {
+      "id": "mock_8_q1",
+      "topicCode": "Mock 8",
+      "question": "Give two things you can infer from Source A about the police response to civil rights protesters in Birmingham.",
+      "sourceA": {
+        "provenance": "From a report by a journalist who witnessed the civil rights demonstrations in Birmingham, Alabama, May 1963.",
+        "content": "We saw hundreds of young schoolchildren marching peacefully down the street. Police Commissioner Bull Connor ordered his men to turn high-pressure fire hoses on them. The water was so powerful it knocked them off their feet and ripped their clothes. Then, they released police dogs that bit several children. The sounds of screaming children and barking dogs filled the air, all captured on television cameras."
+      },
+      "clue": "Identify what methods the police used (e.g. fire hoses, police dogs) and how they treated peaceful child marchers.",
+      "model": "Inference 1: I can infer that the Birmingham police used extreme and brutal force against peaceful child protesters.\nDetails: 'Bull Connor ordered his men to turn high-pressure fire hoses on them. The water was so powerful it knocked them off their feet...'\nInference 2: I can infer that the police used dogs to attack the marchers and that the events were recorded for the public.\nDetails: 'they released police dogs that bit several children... all captured on television cameras.'",
+      "options": [
+        "The police used extreme force against children, including 'high-pressure fire hoses' that knocked them over.",
+        "The authorities deployed police dogs to attack and bite the young protesters.",
+        "The police protected the schoolchildren and helped them march down the street.",
+        "The entire response was kept secret from the press and TV cameras."
+      ],
+      "correctIndices": [
+        0,
+        1
+      ]
     }
   },
   "q2": {
@@ -3618,6 +3660,62 @@ export const EXAM_SKILLS_DATA = {
         "furthermore"
       ],
       "model": "“One reason why the Brown v. Board of Education decision (1954) was significant was that it was legally revolutionary, overturning the Plessy v. Ferguson doctrine.” The Supreme Court ruled unanimously that segregation in public schools was inherently unequal, violating the 14th Amendment. This provided a powerful legal precedent that civil rights lawyers, especially the [[NAACP]] led by Thurgood Marshall, could use to challenge all segregation. {{Therefore, the legal precedent established by the Supreme Court was a primary reason why the Brown v. Board of Education decision (1954) was significant because it began the systematic dismantling of the Jim Crow legal framework.}}\n\n“A second reason why the Brown v. Board of Education decision (1954) was significant was that the decision gave immense psychological momentum to Black activists and civil rights campaigns.” By showing that the federal government and the Supreme Court backed school integration, it gave activists the confidence that the law was on their side, encouraging leaders to launch active campaigns and boycotts like the [[Montgomery Bus Boycott]]. {{Therefore, the psychological impact of the ruling was a key reason why the Brown v. Board of Education decision (1954) was significant because it acted as a catalyst for a decade of mass-participation civil rights protests.}}\n\n“A third reason why the Brown v. Board of Education decision (1954) was significant was that it provoked massive white resistance across the Southern states.” In response to the ruling, white Southerners formed [[White Citizens' Councils]] to use economic intimidation, and state governors defied the court, leading to the Southern Manifesto and federal showdowns like the Little Rock crisis. {{Therefore, the white backlash it triggered was a major reason why the Brown v. Board of Education decision (1954) was significant because it intensified racial polarization and forced the federal government to intervene physically to enforce civil rights.}}"
+    },
+    "mock_exam_5": {
+      "id": "mock_5_q2",
+      "topicCode": "Mock 5",
+      "question": "Explain why the USA used chemical weapons, such as Agent Orange and Napalm, in Vietnam.",
+      "stimulus1": "The Ho Chi Minh Trail",
+      "stimulus2": "Guerrilla tactics",
+      "clue": "Explain how the Vietcong used the thick jungle canopy for cover, how Agent Orange was used to defoliate the jungle to expose their positions and supply lines like the Ho Chi Minh Trail, and how Napalm was used to destroy Vietcong strongholds and tunnel exits.",
+      "knowledgeWords": [
+        "Agent Orange",
+        "Napalm",
+        "guerrilla",
+        "jungle",
+        "Ho Chi Minh Trail",
+        "Westmoreland",
+        "defoliant"
+      ],
+      "connectiveWords": [
+        "as a result",
+        "consequently",
+        "this led to",
+        "therefore",
+        "because of",
+        "due to",
+        "furthermore"
+      ],
+      "model": "“One reason why the USA used chemical weapons, such as Agent Orange, was to destroy the thick jungle cover used by the Vietcong.” The Vietcong relied on [[guerrilla tactics]], hiding in the dense tropical forests of South Vietnam to launch surprise ambushes and disappear. By spraying the chemical defoliant Agent Orange, the US military aimed to strip away the leaves and expose enemy positions. {{Therefore, destroying the jungle canopy was a primary cause of why the USA used chemical weapons, because it sought to neutralize the natural cover that allowed Vietcong forces to operate invisibly.}}\n\n“A second reason why the USA used chemical weapons was to expose and disrupt the Ho Chi Minh Trail.” The Vietcong and North Vietnamese Army moved troops and supplies from North to South Vietnam along a network of paths hidden beneath the jungle canopy. Using Agent Orange allowed the US Air Force to locate these supply lines, making it easier to launch targeted bombing raids. {{Therefore, disrupting supply lines like the [[Ho Chi Minh Trail]] was a key cause of why the USA used chemical weapons, as the US military wanted to cut off the flow of weapons and soldiers to the South.}}\n\n“A third reason why the USA used chemical weapons, such as Napalm, was to destroy Vietcong bunkers, tunnels, and troop concentrations.” Napalm, a highly flammable jellied gasoline, burned at intense temperatures, consuming oxygen and burning through thick foliage and underground shelters. The US military used it to clear large areas of land and flush Vietcong fighters out of their tunnel networks during [[Search and Destroy]] missions. {{Therefore, destroying enemy strongholds and flushing out guerrilla fighters was a vital reason why the USA used chemical weapons, as it provided US forces with a weapon capable of penetrating the Vietcong's defensive networks.}}"
+    },
+    "mock_exam_8": {
+      "id": "mock_8_q2",
+      "topicCode": "Mock 8",
+      "question": "Explain why the Birmingham Campaign (1963) was launched.",
+      "stimulus1": "Project C (Confrontation)",
+      "stimulus2": "Police Commissioner Bull Connor",
+      "clue": "Explain how Birmingham was known as the most segregated city in America, the failure of negotiations, the plan for Project C to provoke Bull Connor, and the desire to gain national television coverage to force federal action.",
+      "knowledgeWords": [
+        "Bull Connor",
+        "Project C",
+        "segregation",
+        "SCLC",
+        "King",
+        "Kennedy",
+        "media",
+        "hoses",
+        "Sixteenth Street"
+      ],
+      "connectiveWords": [
+        "as a result",
+        "consequently",
+        "this led to",
+        "therefore",
+        "because of",
+        "due to",
+        "furthermore"
+      ],
+      "model": "“One reason why the Birmingham Campaign (1963) was launched was that Birmingham was widely known as the most segregated city in America.” The local SCLC and Alabama Christian Movement for Human Rights had tried to negotiate with local merchants, but white businesses refused to desegregate lunch counters or hire Black workers, and local authorities banned all protests. {{Therefore, deep-seated local segregation and the failure of negotiations were a primary cause of why the Birmingham Campaign was launched, as activists realized direct action was the only way to break the stalemate.}}\n\n“A second reason why the Birmingham Campaign (1963) was launched was to implement 'Project C' (Confrontation) to provoke a federal response.” The organizers, led by Wyatt Tee Walker and Martin Luther King Jr., designed a strategy of public demonstrations to provoke a violent reaction from the notorious segregationist [[Police Commissioner Bull Connor]]. They knew Connor's aggressive methods would expose the brutality of Southern racism. {{Therefore, Project C was a key cause of why the Birmingham Campaign was launched, because it aimed to force federal intervention by creating a public crisis that Washington could not ignore.}}\n\n“A third reason why the Birmingham Campaign (1963) was launched was to capture national media and television coverage to win public support.” Activists knew that visual media would shock the northern public and international community. When Connor used high-pressure water [[hoses]] and attack dogs against child marchers, the images were broadcast worldwide, generating massive moral outrage. {{Therefore, the strategic use of media exposure was a decisive cause of why the Birmingham Campaign was launched, because it mobilized national opinion and forced President Kennedy to draft the Civil Rights Act.}}"
     }
   },
   "q3": {
@@ -4117,6 +4215,39 @@ export const EXAM_SKILLS_DATA = {
       "questiond": "How far do you agree with Interpretation 2 about the reasons for the US defeat in Vietnam?",
       "clued": "A balanced essay. Support Interpretation 2 (anti-war movement, media coverage, Tet Offensive credibility gap, Kent State, economic cost of $167 billion) and evaluate against Interpretation 1 (guerrilla tactics, hanging onto US belts, Ho Chi Minh Trail, nationalist motivation).",
       "modeld": "I agree to a moderate extent with Interpretation 2 that the collapse of domestic support was a decisive reason for the US defeat. The Vietnam War was the first television war, and graphic footage of combat and atrocities like the My Lai Massacre created a massive [[credibility gap]]. Following the [[1968]] Tet Offensive, public opinion turned sharply, and the anti-war movement grew rapidly, culminating in events like the Kent State shootings. Furthermore, the war cost the US over [[$167 billion]], causing inflation. As Source C notes, the communist strategy was to keep fighting until the [[American public grew tired of the war]] and forced withdrawal. This domestic pressure made it politically impossible for the government to sustain the conflict, confirming Interpretation 2's view that the defeat was caused by the [1[collapse of support for the war back home in America]1] which made it [1[politically impossible]1] to continue.\n\nHowever, Interpretation 1 is more convincing in highlighting that the military defeat was caused by communist guerrilla tactics. As described in the soldier's diary in Source B, US troops faced constant danger from an invisible enemy and [[booby traps]] in the swamp, while local villagers secretly supported the VC. The Vietcong used the jungle, booby traps, and a massive network of [[tunnels]] to neutralize US technological superiority and avoid conventional battles, keeping the [[Ho Chi Minh Trail]] open. This supports Interpretation 1's view that the primary reason for defeat was the [1[superior motivation and guerrilla tactics]1] of the communist forces which [1[neutralised US technological superiority]1].\n\nOverall, while the anti-war movement (Interpretation 2) determined the timing of the US withdrawal, it was the military success of communist guerrilla tactics (Interpretation 1) that created the stalemate. The Vietcong's resilience and tactical adaptability are what broke the morale of US troops and convinced the American public that the war could not be won, meaning the failure on the battlefield caused the collapse of support at home."
+    },
+    "mock_exam_8": {
+      "id": "mock_exam_8",
+      "topicCode": "Mock 8",
+      "enquiryTopic": "The significance of the Birmingham Campaign (1963)",
+      "sourceB": {
+        "provenance": "From a letter written by Martin Luther King Jr. while imprisoned in Birmingham Jail, April 1963.",
+        "content": "We did not create this tension in Birmingham; we merely brought to the surface a tension that was already alive. For years, our people have been told to 'Wait!' But this 'Wait' has almost always meant 'Never.' Non-violent direct action seeks to create such a crisis and establish such a creative tension that a community which has constantly refused to negotiate is forced to confront the issue."
+      },
+      "sourceC": {
+        "provenance": "From a statement by Albert Boutwell, the newly elected moderate Mayor of Birmingham, published in a local newspaper, May 1963.",
+        "content": "These outside agitators have come to Birmingham just as we were starting to make progress on our own. Their demonstrations are ill-timed and have caused unnecessary chaos, hurting our local merchants. The integration of our department stores and lunch counters cannot be forced overnight by street mobs. We need calm discussion between local leaders, not racial confrontation."
+      },
+      "interpretation1": {
+        "author": "From 'Parting the Waters: America in the King Years' by historian Taylor Branch, published in 1988.",
+        "content": "The Birmingham campaign was a brilliant tactical victory that transformed the civil rights movement. By deliberately provoking Connor's brutal response, King created shocking television footage that horrified the global public. This media coverage put immense moral pressure on President Kennedy, forcing his administration to abandon its cautious approach and draft the landmark civil rights legislation that became the Civil Rights Act of 1964."
+      },
+      "interpretation2": {
+        "author": "From 'The Civil Rights Movement' by historian Glenn T. Eskew, published in 1997.",
+        "content": "While Birmingham was a public relations success, its immediate achievements on the ground were highly limited. The local agreement signed to end the marches did very little to desegregate the city or improve the lives of poor Black residents, who still faced poverty and discrimination. Indeed, the campaign triggered a violent white backlash, including the bombing of the Sixteenth Street Baptist Church, which showed that segregationists remained undefeated."
+      },
+      "questiona": "How useful are Sources B and C for an enquiry into the significance of the Birmingham Campaign (1963)? (8 marks)",
+      "cluea": "Evaluate Source B (MLK Letter from Birmingham Jail, explains philosophy of creative tension and direct action to force negotiations, reliable insider view) and Source C (Mayor Boutwell statement, claims protests are ill-timed outside agitation causing chaos, represents moderate white resistance) for usefulness.",
+      "modela": "<span style=\"color: blue;\"> Source B is highly useful for explaining the strategic philosophy of non-violent direct action during the Birmingham campaign. King explains that they did not create the tension, but rather brought it to the surface, and that direct action was necessary to create a \"creative tension\" that forces a community to negotiate. </span> <span style=\"color: green;\"> This content is highly useful because it is supported by my knowledge that King and the SCLC deliberately chose Birmingham in 1963 to force integration after local merchants broke previous promises, showing that the letter accurately outlines their tactical intent. </span> <span style=\"color: purple;\"> The provenance of a letter written by MLK while imprisoned in Birmingham Jail in April 1963 makes it extremely useful. As a key leader of the movement writing in the midst of the campaign, it represents an authentic, high-stakes defense of their methods against critics, although it naturally downplays any tactical divisions within the civil rights leadership. </span>\n\n<span style=\"color: blue;\"> Source C is highly useful for demonstrating the opposition and arguments used by local white authorities against the marches. Mayor Boutwell claims that \"outside agitators\" have caused \"unnecessary chaos\" and that integration cannot be forced overnight by \"street mobs,\" advocating for calm local discussion instead. </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that white moderates in Birmingham, including local clergy, criticized King's timing and methods, arguing that the protests disrupted progress and polarized the city, which verifies that the Mayor's complaints were representative of local white political opinion. </span> <span style=\"color: purple;\"> The provenance of a public statement by the newly elected moderate Mayor in May 1963 makes the source very useful because it captures the official segregationist and moderate white resistance at the height of the crisis. However, it is limited because it minimizes the systemic violence and bombings that Black residents faced, framing the conflict purely as a disturbance of the peace. </span>",
+      "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+      "clueb": "Identify the disagreement: Interpretation 1 argues Birmingham was a brilliant tactical victory that led directly to the Civil Rights Act of 1964, while Interpretation 2 argues its immediate successes on the ground were limited and provoked violent backlash.",
+      "modelb": "The main difference is that Interpretation 1 views the Birmingham campaign as a [1[brilliant tactical victory]1] that successfully forced the federal government to draft the Civil Rights Act of 1964. In contrast, Interpretation 2 argues that its [1[immediate achievements on the ground were highly limited]1] and triggered a violent white backlash.",
+      "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+      "cluec": "Link the interpretations to the sources: Interpretation 1 is supported by Source B (focusing on the national success of forcing negotiation/tension); Interpretation 2 is supported by Source C (focusing on local disruption, white resentment, and backlash).",
+      "modelc": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that direct action seeks to force a community that has refused to negotiate to \"confront the issue\", leading to the view that the campaign was a [1[brilliant tactical victory]1]. Conversely, Interpretation 2 is supported by Source C, which states that the marches caused \"unnecessary chaos, hurting our local merchants\", leading to the view that its [1[immediate achievements on the ground were highly limited]1].",
+      "questiond": "How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? (16 marks)",
+      "clued": "A balanced essay. Support Interpretation 1 (provoked Bull Connor, television coverage, shocked Kennedy, draft of 1964 Civil Rights Act) and evaluate against Interpretation 2 (bombings of homes, Sixteenth Street Church bombing, slow pace of school integration in Birmingham, local agreement had little impact on poverty).",
+      "modeld": "I agree to a large extent with Interpretation 1 that the Birmingham campaign was a highly significant victory that transformed the civil rights struggle. By using children in the marches, the SCLC provoked [[Bull Connor]] into deploying fire hoses and police dogs, as described in Source A's shocking report of water [[knocking them off their feet]]. The resulting television footage shocked the nation and put immense pressure on the federal government. President Kennedy declared that Birmingham had forced the administration to act, leading directly to his June 1963 address and the drafting of the Civil Rights Bill. This supports Interpretation 1's claim that the campaign was a [1[brilliant tactical victory]1] that forced the drafting of the [[Civil Rights Act of 1964]].\n\nHowever, Interpretation 2 is also valid in highlighting that the immediate local impact was limited and met with violent resistance. The actual local desegregation agreement was minimal, and department store integration did not solve systemic housing and employment poverty. As Source C shows, white residents resented the marches, calling them [[ill-timed]] and causing [[unnecessary chaos]]. Furthermore, the campaign sparked a wave of segregationist violence, culminating in the KKK bombing of the [[Sixteenth Street]] Baptist Church in September 1963, which killed four young girls. This confirms Interpretation 2's view that local progress was [1[highly limited]1] and provoked [1[violent white backlash]1].\n\nOverall, while the local gains in Birmingham itself were slow and met with white terror (Interpretation 2), the campaign's national significance was monumental. It succeeded because it nationalized the crisis, turning civil rights into a moral issue that forced the federal government to pass the Civil Rights Act of 1964 (Interpretation 1)."
     }
   }
 };
@@ -4784,6 +4915,138 @@ export const PAST_PAPERS_DATA = [
       "question": "How far do you agree with Interpretation 2 about the escalation of US involvement in the conflict in Vietnam in the 1960s? (16 marks)",
       "clue": "A balanced essay. Support Interpretation 2 (Gulf of Tonkin Resolution 1964, Operation Rolling Thunder 1965, sending combat troops, draft system, Westmoreland strategy) and evaluate against Interpretation 1 (Kennedy's Green Berets, 16,000 advisers by 1963, Strategic Hamlets, chemical defoliants, Diem coup involvement).",
       "model": "I agree to a large extent with Interpretation 2 that President Johnson was the president most responsible for the combat escalation of the war. After the [[1964]] [[Gulf of Tonkin incident]], Johnson secured the Gulf of Tonkin Resolution, which gave him a blank check to wage war. As broadcast in Source C, Johnson ordered an additional Air Division to Vietnam, raising fighting strength from 74,000 to [[125,000]] men, and increased the number of men called up by the [[draft system]]. This transformed Vietnam from an advisory mission into an all-out combat war, supporting Interpretation 2's view that Johnson was [1[most responsible for escalating]1] the conflict into an [1[all-out fighting war]1].\n\nHowever, Interpretation 1 is also valid in identifying Kennedy's administration as the initial, critical turning point. As detailed in the top-secret 1961 document in Source B, Kennedy authorized [[increased air support]], helicopters, and military [[advisers for the South Vietnamese government]]. Under Kennedy, advisers rose from under 1,000 to over [[16,000]] by 1963, and he approved the use of chemical defoliants like [[Agent Orange]]. This supports Interpretation 1's argument that Kennedy's 1961 decisions were a [1[key turning point]1] that [1[dramatically expanded]1] the US role.\n\nOverall, while Kennedy made the crucial decisions that committed the US militarily (Interpretation 1), it was Johnson who took the decisive step of initiating a direct, large-scale American ground war (Interpretation 2). Until Johnson deployed combat troops and began bombing North Vietnam, the US role was theoretically advisory. Therefore, Interpretation 2 is the stronger explanation because Johnson's policies fundamentally changed the nature of the conflict into an American war."
+    }
+  },
+  {
+    "id": "mock_exam_5",
+    "title": "Best Guess Mock Exam 5: US Search & Destroy vs Vietcong Guerrilla Tactics (1965–68)",
+    "year": "Mock 5",
+    "enquiryTopic": "The effectiveness of US search and destroy tactics versus Vietcong guerrilla tactics",
+    "sourceA": {
+      "provenance": "From a letter written by a US soldier to his family, describing his experiences on a Search and Destroy mission in South Vietnam, 1967.",
+      "content": "We patrol through this thick jungle for days, carrying 60 pounds of gear in 100-degree heat. You can't see the enemy, but you know they are watching. Suddenly, a tripwire is hit and a homemade booby trap goes off, killing two of our buddies. There are no North Vietnamese soldiers to shoot back at, just empty jungle and suspicious villagers who refuse to speak to us. Out of frustration and fear, our guys burned down their thatch huts. We are fighting a shadow, and it is driving us crazy."
+    },
+    "sourceB": {
+      "provenance": "From a report by a US Senate Subcommittee investigating the refugee crisis in South Vietnam, 1968.",
+      "content": "Our heavy reliance on search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees. When we burn villages suspected of aiding the Vietcong and spray crops with Agent Orange, we are not winning the hearts and minds of the peasants. Instead, we are driving them directly into the arms of the enemy. The destruction of their ancestral lands has caused deep hatred of the US military."
+    },
+    "sourceC": {
+      "provenance": "From an interview with a Vietcong veteran, recalling the impact of US bombing and search-and-destroy missions, 1985.",
+      "content": "The Americans had helicopters and napalm, but they did not know who the enemy was. When they came to our villages, they treated everyone as Vietcong. They burned our huts and killed our livestock. This made even the quietest peasants want to fight them. The American soldiers were terrified of our booby traps and snipers, so they responded with massive firepower that destroyed everything, making the people hate them even more."
+    },
+    "interpretation1": {
+      "author": "From 'The Irony of Vietnam' by historian L. Gelb, published in 1979.",
+      "content": "US tactics in Vietnam were self-defeating. The search-and-destroy missions and the widespread use of chemical defoliants like Agent Orange and napalm devastated the countryside. By destroying the homes and crops of the South Vietnamese peasants, these tactics alienated the civilian population and drove them to support the Vietcong, making a US victory impossible."
+    },
+    "interpretation2": {
+      "author": "From 'A Better War' by historian L. Sorley, published in 1999.",
+      "content": "US tactics were militarily necessary to counter Vietcong guerrilla warfare. Search-and-destroy missions successfully killed large numbers of enemy fighters and disrupted their supply bases in the jungle. Without these aggressive operations, the Vietcong would have easily overrun South Vietnam. The tactics prevented a communist victory and gave the South Vietnamese government time to build its own forces."
+    },
+    "q1": {
+      "id": "mock_5_q1",
+      "question": "Give two things you can infer from Source A about the difficulties faced by US soldiers on Search and Destroy missions. (4 marks)",
+      "clue": "Look at what the source says about visibility, booby traps, and the reaction of the local population.",
+      "model": "Inference 1: I can infer that US soldiers faced severe psychological stress because the enemy was invisible but booby traps were a constant danger.\nDetails: 'You can't see the enemy, but you know they are watching. Suddenly, a tripwire is hit and a homemade booby trap goes off...'\nInference 2: I can infer that US troops struggled to get cooperation from local villagers, leading to frustration and destructive behavior.\nDetails: 'suspicious villagers who refuse to speak to us. Out of frustration and fear, our guys burned down their thatch huts.'"
+    },
+    "q2": {
+      "id": "mock_5_q2",
+      "question": "Explain why the USA used chemical weapons, such as Agent Orange and Napalm, in Vietnam. (12 marks)",
+      "stimulus": [
+        "The Ho Chi Minh Trail",
+        "Guerrilla tactics"
+      ],
+      "clue": "Explain how the Vietcong used the thick jungle canopy for cover, how Agent Orange was used to defoliate the jungle to expose their positions and supply lines like the Ho Chi Minh Trail, and how Napalm was used to destroy Vietcong strongholds and tunnel exits.",
+      "model": "“One reason why the USA used chemical weapons, such as Agent Orange, was to destroy the thick jungle cover used by the Vietcong.” The Vietcong relied on [[guerrilla tactics]], hiding in the dense tropical forests of South Vietnam to launch surprise ambushes and disappear. By spraying the chemical defoliant Agent Orange, the US military aimed to strip away the leaves and expose enemy positions. {{Therefore, destroying the jungle canopy was a primary cause of why the USA used chemical weapons, because it sought to neutralize the natural cover that allowed Vietcong forces to operate invisibly.}}\n\n“A second reason why the USA used chemical weapons was to expose and disrupt the Ho Chi Minh Trail.” The Vietcong and North Vietnamese Army moved troops and supplies from North to South Vietnam along a network of paths hidden beneath the jungle canopy. Using Agent Orange allowed the US Air Force to locate these supply lines, making it easier to launch targeted bombing raids. {{Therefore, disrupting supply lines like the [[Ho Chi Minh Trail]] was a key cause of why the USA used chemical weapons, as the US military wanted to cut off the flow of weapons and soldiers to the South.}}\n\n“A third reason why the USA used chemical weapons, such as Napalm, was to destroy Vietcong bunkers, tunnels, and troop concentrations.” Napalm, a highly flammable jellied gasoline, burned at intense temperatures, consuming oxygen and burning through thick foliage and underground shelters. The US military used it to clear large areas of land and flush Vietcong fighters out of their tunnel networks during [[Search and Destroy]] missions. {{Therefore, destroying enemy strongholds and flushing out guerrilla fighters was a vital reason why the USA used chemical weapons, as it provided US forces with a weapon capable of penetrating the Vietcong's defensive networks.}}"
+    },
+    "q3a": {
+      "id": "mock_5_q3a",
+      "question": "How useful are Sources B and C for an enquiry into the effectiveness of US search and destroy tactics versus Vietcong guerrilla tactics? (8 marks)",
+      "clue": "Evaluate Source B (Senate Subcommittee report, impact on refugees, alienation of peasants) and Source C (Vietcong veteran interview, peasant anger, US soldiers' fear and firepower) for usefulness.",
+      "model": "<span style=\"color: blue;\"> Source B is highly useful for demonstrating the tactical adaptability and resilience of the Vietcong. The commander describes their strategy to \"cling to the enemy's belt\" to prevent US artillery strikes, and how they use the jungle and tunnels to survive the bombing campaigns while relying on peasant support. </span> <span style=\"color: green;\"> This content is highly useful because it is supported by my knowledge that the Vietcong built extensive tunnel networks like those at Cu Chi and successfully avoided pitch battles to neutralize US technological superiority, which confirms that the commander's tactical account is highly accurate. </span> <span style=\"color: purple;\"> The provenance of a report by a North Vietnamese military commander in 1966 makes the source very useful. Writing during the war for internal planning, it represents a realistic and highly reliable explanation of how the communists countered US firepower, though it naturally emphasizes their own discipline and downplays their heavy casualties. </span>\n\n<span style=\"color: blue;\"> Source C is highly useful for understanding the US military's strategy of attrition and their official confidence. General Westmoreland asserts that US Search and Destroy missions are inflicting heavy casualties at a ten-to-one ratio and that air superiority and Agent Orange will destroy the enemy's hiding places and force them to surrender. </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that Westmoreland believed in a war of attrition based on 'body counts' and crossover points, which verifies that the statement represents the official US military strategy in 1966. </span> <span style=\"color: purple;\"> The provenance of a public statement to journalists in Saigon in 1966 makes the source useful because it captures the official public relations message of the US command at the height of the troop deployment. However, it is less useful for evaluating the actual success of their tactics, as it is a piece of optimistic propaganda that hides the high US casualty rates and the resilience of the enemy. </span>"
+    },
+    "q3b": {
+      "id": "mock_5_q3b",
+      "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+      "clue": "Identify the disagreement: Interpretation 1 argues that US tactics like Search and Destroy were flawed and counterproductive because they alienated the South Vietnamese peasantry. In contrast, Interpretation 2 argues that Vietcong guerrilla tactics were the decisive factor in defeating the US by neutralizing their air superiority and wearing down morale.",
+      "model": "The main difference is that Interpretation 1 argues that US tactics like Search and Destroy failed because they were counterproductive and [1[alienated the South Vietnamese peasantry]1]. In contrast, Interpretation 2 argues that the [1[Vietcong's guerrilla tactics were the decisive factor]1] because they neutralized American air superiority and wore down US morale."
+    },
+    "q3c": {
+      "id": "mock_5_q3c",
+      "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+      "clue": "Link the interpretations to the sources: Interpretation 1 is supported by Source A/C (focusing on the destructive US tactics and peasant alienation); Interpretation 2 is supported by Source B (focusing on Vietcong tunnel and jungle cover strategies).",
+      "model": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source A, which describes US troops burning down thatched huts out of frustration, leading to the view that US tactics [1[alienated the South Vietnamese peasantry]1]. Conversely, Interpretation 2 is supported by Source B, which outlines Vietcong tactics like using tunnels and jungle cover to neutralise US air power, leading to the view that [1[Vietcong's guerrilla tactics were the decisive factor]1]."
+    },
+    "q3d": {
+      "id": "mock_5_q3d",
+      "question": "How far do you agree with Interpretation 2 about the reasons for the US failure to defeat the Vietcong? (16 marks)",
+      "clue": "A balanced essay. Support Interpretation 2 (Vietcong booby traps, Cu Chi tunnels, ambush tactics, Ho Chi Minh Trail supply lines) and evaluate against Interpretation 1 (US Search and Destroy raids, Agent Orange chemical warfare, burning villages, failing to win hearts and minds, alienating peasants).",
+      "model": "I agree to a large extent with Interpretation 2 that Vietcong guerrilla tactics were the primary reason for the US failure. The Vietcong successfully neutralized US air and technological superiority by fighting in close quarters—what Source B calls [[cling to the enemy's belt]]—and hiding in dense jungle canopy. They constructed over 250 miles of underground [[tunnels]] (e.g. Cu Chi) that protected them from heavy bombing, and deployed cheap but deadly booby traps that caused massive US casualties. As described in Source A, these tactics created constant paranoia, making soldiers feel they were [[fighting a shadow]]. This supports Interpretation 2's view that guerrilla tactics were the [1[decisive factor]1] that [1[neutralized American technological and air superiority]1] and wore down American morale.\n\nHowever, Interpretation 1 is also valid in arguing that flawed US tactics actively caused their own failure. The strategy of attrition relied on [[Search and Destroy]] missions which measured success in body counts rather than holding territory. These raids, along with the spraying of [[Agent Orange]] and Napalm, devastated the countryside and destroyed peasant crops. As Source A reports, US troops burned down villages out of frustration. This chemical warfare and destruction of villages alienated the South Vietnamese peasantry, driving them to support the Vietcong. This confirms Interpretation 1's view that US tactics were [1[fundamentally flawed]1] because they [1[alienated the South Vietnamese peasantry]1], making political victory impossible.\n\nOverall, while the brutality of US tactics (Interpretation 1) lost the political battle for hearts and minds, it was the military effectiveness of Vietcong guerrilla warfare (Interpretation 2) that created the stalemate in the first place. The Vietcong's ability to survive US firepower using tunnels and the Ho Chi Minh Trail forced the US into the destructive search-and-destroy tactics that ultimately destroyed their own political credibility."
+    }
+  },
+  {
+    "id": "mock_exam_8",
+    "title": "Best Guess Mock Exam 8: Non-Violent Direct Action and the Birmingham Campaign (1960–63)",
+    "year": "Mock 8",
+    "enquiryTopic": "The significance of the Birmingham Campaign (1963)",
+    "sourceA": {
+      "provenance": "From a report by a journalist who witnessed the civil rights demonstrations in Birmingham, Alabama, May 1963.",
+      "content": "We saw hundreds of young schoolchildren marching peacefully down the street. Police Commissioner Bull Connor ordered his men to turn high-pressure fire hoses on them. The water was so powerful it knocked them off their feet and ripped their clothes. Then, they released police dogs that bit several children. The sounds of screaming children and barking dogs filled the air, all captured on television cameras."
+    },
+    "sourceB": {
+      "provenance": "From a letter written by Martin Luther King Jr. while imprisoned in Birmingham Jail, April 1963.",
+      "content": "We did not create this tension in Birmingham; we merely brought to the surface a tension that was already alive. For years, our people have been told to 'Wait!' But this 'Wait' has almost always meant 'Never.' Non-violent direct action seeks to create such a crisis and establish such a creative tension that a community which has constantly refused to negotiate is forced to confront the issue."
+    },
+    "sourceC": {
+      "provenance": "From a statement by Albert Boutwell, the newly elected moderate Mayor of Birmingham, published in a local newspaper, May 1963.",
+      "content": "These outside agitators have come to Birmingham just as we were starting to make progress on our own. Their demonstrations are ill-timed and have caused unnecessary chaos, hurting our local merchants. The integration of our department stores and lunch counters cannot be forced overnight by street mobs. We need calm discussion between local leaders, not racial confrontation."
+    },
+    "interpretation1": {
+      "author": "From 'Parting the Waters: America in the King Years' by historian Taylor Branch, published in 1988.",
+      "content": "The Birmingham campaign was a brilliant tactical victory that transformed the civil rights movement. By deliberately provoking Connor's brutal response, King created shocking television footage that horrified the global public. This media coverage put immense moral pressure on President Kennedy, forcing his administration to abandon its cautious approach and draft the landmark civil rights legislation that became the Civil Rights Act of 1964."
+    },
+    "interpretation2": {
+      "author": "From 'The Civil Rights Movement' by historian Glenn T. Eskew, published in 1997.",
+      "content": "While Birmingham was a public relations success, its immediate achievements on the ground were highly limited. The local agreement signed to end the marches did very little to desegregate the city or improve the lives of poor Black residents, who still faced poverty and discrimination. Indeed, the campaign triggered a violent white backlash, including the bombing of the Sixteenth Street Baptist Church, which showed that segregationists remained undefeated."
+    },
+    "q1": {
+      "id": "mock_8_q1",
+      "question": "Give two things you can infer from Source A about the police response to civil rights protesters in Birmingham. (4 marks)",
+      "clue": "Identify what methods the police used (e.g. fire hoses, police dogs) and how they treated peaceful child marchers.",
+      "model": "Inference 1: I can infer that the Birmingham police used extreme and brutal force against peaceful child protesters.\nDetails: 'Bull Connor ordered his men to turn high-pressure fire hoses on them. The water was so powerful it knocked them off their feet...'\nInference 2: I can infer that the police used dogs to attack the marchers and that the events were recorded for the public.\nDetails: 'they released police dogs that bit several children... all captured on television cameras.'"
+    },
+    "q2": {
+      "id": "mock_8_q2",
+      "question": "Explain why the Birmingham Campaign (1963) was launched. (12 marks)",
+      "stimulus": [
+        "Project C (Confrontation)",
+        "Police Commissioner Bull Connor"
+      ],
+      "clue": "Explain how Birmingham was known as the most segregated city in America, the failure of negotiations, the plan for Project C to provoke Bull Connor, and the desire to gain national television coverage to force federal action.",
+      "model": "“One reason why the Birmingham Campaign (1963) was launched was that Birmingham was widely known as the most segregated city in America.” The local SCLC and Alabama Christian Movement for Human Rights had tried to negotiate with local merchants, but white businesses refused to desegregate lunch counters or hire Black workers, and local authorities banned all protests. {{Therefore, deep-seated local segregation and the failure of negotiations were a primary cause of why the Birmingham Campaign was launched, as activists realized direct action was the only way to break the stalemate.}}\n\n“A second reason why the Birmingham Campaign (1963) was launched was to implement 'Project C' (Confrontation) to provoke a federal response.” The organizers, led by Wyatt Tee Walker and Martin Luther King Jr., designed a strategy of public demonstrations to provoke a violent reaction from the notorious segregationist [[Police Commissioner Bull Connor]]. They knew Connor's aggressive methods would expose the brutality of Southern racism. {{Therefore, Project C was a key cause of why the Birmingham Campaign was launched, because it aimed to force federal intervention by creating a public crisis that Washington could not ignore.}}\n\n“A third reason why the Birmingham Campaign (1963) was launched was to capture national media and television coverage to win public support.” Activists knew that visual media would shock the northern public and international community. When Connor used high-pressure water [[hoses]] and attack dogs against child marchers, the images were broadcast worldwide, generating massive moral outrage. {{Therefore, the strategic use of media exposure was a decisive cause of why the Birmingham Campaign was launched, because it mobilized national opinion and forced President Kennedy to draft the Civil Rights Act.}}"
+    },
+    "q3a": {
+      "id": "mock_8_q3a",
+      "question": "How useful are Sources B and C for an enquiry into the significance of the Birmingham Campaign (1963)? (8 marks)",
+      "clue": "Evaluate Source B (MLK Letter from Birmingham Jail, explains philosophy of creative tension and direct action to force negotiations, reliable insider view) and Source C (Mayor Boutwell statement, claims protests are ill-timed outside agitation causing chaos, represents moderate white resistance) for usefulness.",
+      "model": "<span style=\"color: blue;\"> Source B is highly useful for explaining the strategic philosophy of non-violent direct action during the Birmingham campaign. King explains that they did not create the tension, but rather brought it to the surface, and that direct action was necessary to create a \"creative tension\" that forces a community to negotiate. </span> <span style=\"color: green;\"> This content is highly useful because it is supported by my knowledge that King and the SCLC deliberately chose Birmingham in 1963 to force integration after local merchants broke previous promises, showing that the letter accurately outlines their tactical intent. </span> <span style=\"color: purple;\"> The provenance of a letter written by MLK while imprisoned in Birmingham Jail in April 1963 makes it extremely useful. As a key leader of the movement writing in the midst of the campaign, it represents an authentic, high-stakes defense of their methods against critics, although it naturally downplays any tactical divisions within the civil rights leadership. </span>\n\n<span style=\"color: blue;\"> Source C is highly useful for demonstrating the opposition and arguments used by local white authorities against the marches. Mayor Boutwell claims that \"outside agitators\" have caused \"unnecessary chaos\" and that integration cannot be forced overnight by \"street mobs,\" advocating for calm local discussion instead. </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that white moderates in Birmingham, including local clergy, criticized King's timing and methods, arguing that the protests disrupted progress and polarized the city, which verifies that the Mayor's complaints were representative of local white political opinion. </span> <span style=\"color: purple;\"> The provenance of a public statement by the newly elected moderate Mayor in May 1963 makes the source very useful because it captures the official segregationist and moderate white resistance at the height of the crisis. However, it is limited because it minimizes the systemic violence and bombings that Black residents faced, framing the conflict purely as a disturbance of the peace. </span>"
+    },
+    "q3b": {
+      "id": "mock_8_q3b",
+      "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+      "clue": "Identify the disagreement: Interpretation 1 argues Birmingham was a brilliant tactical victory that led directly to the Civil Rights Act of 1964, while Interpretation 2 argues its immediate successes on the ground were limited and provoked violent backlash.",
+      "model": "The main difference is that Interpretation 1 views the Birmingham campaign as a [1[brilliant tactical victory]1] that successfully forced the federal government to draft the Civil Rights Act of 1964. In contrast, Interpretation 2 argues that its [1[immediate achievements on the ground were highly limited]1] and triggered a violent white backlash."
+    },
+    "q3c": {
+      "id": "mock_8_q3c",
+      "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+      "clue": "Link the interpretations to the sources: Interpretation 1 is supported by Source B (focusing on the national success of forcing negotiation/tension); Interpretation 2 is supported by Source C (focusing on local disruption, white resentment, and backlash).",
+      "model": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that direct action seeks to force a community that has refused to negotiate to \"confront the issue\", leading to the view that the campaign was a [1[brilliant tactical victory]1]. Conversely, Interpretation 2 is supported by Source C, which states that the marches caused \"unnecessary chaos, hurting our local merchants\", leading to the view that its [1[immediate achievements on the ground were highly limited]1]."
+    },
+    "q3d": {
+      "id": "mock_8_q3d",
+      "question": "How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? (16 marks)",
+      "clue": "A balanced essay. Support Interpretation 1 (provoked Bull Connor, television coverage, shocked Kennedy, draft of 1964 Civil Rights Act) and evaluate against Interpretation 2 (bombings of homes, Sixteenth Street Church bombing, slow pace of school integration in Birmingham, local agreement had little impact on poverty).",
+      "model": "I agree to a large extent with Interpretation 1 that the Birmingham campaign was a highly significant victory that transformed the civil rights struggle. By using children in the marches, the SCLC provoked [[Bull Connor]] into deploying fire hoses and police dogs, as described in Source A's shocking report of water [[knocking them off their feet]]. The resulting television footage shocked the nation and put immense pressure on the federal government. President Kennedy declared that Birmingham had forced the administration to act, leading directly to his June 1963 address and the drafting of the Civil Rights Bill. This supports Interpretation 1's claim that the campaign was a [1[brilliant tactical victory]1] that forced the drafting of the [[Civil Rights Act of 1964]].\n\nHowever, Interpretation 2 is also valid in highlighting that the immediate local impact was limited and met with violent resistance. The actual local desegregation agreement was minimal, and department store integration did not solve systemic housing and employment poverty. As Source C shows, white residents resented the marches, calling them [[ill-timed]] and causing [[unnecessary chaos]]. Furthermore, the campaign sparked a wave of segregationist violence, culminating in the KKK bombing of the [[Sixteenth Street]] Baptist Church in September 1963, which killed four young girls. This confirms Interpretation 2's view that local progress was [1[highly limited]1] and provoked [1[violent white backlash]1].\n\nOverall, while the local gains in Birmingham itself were slow and met with white terror (Interpretation 2), the campaign's national significance was monumental. It succeeded because it nationalized the crisis, turning civil rights into a moral issue that forced the federal government to pass the Civil Rights Act of 1964 (Interpretation 1)."
     }
   }
 ];
