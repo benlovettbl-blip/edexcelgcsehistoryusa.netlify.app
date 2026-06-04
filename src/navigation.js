@@ -164,6 +164,10 @@ export function switchView(viewName, subtopicId = null) {
   
   closeMobileSidebar();
   updateBrandBanner();
+
+  window.dispatchEvent(new CustomEvent('appViewChanged', {
+    detail: { view: viewName, subtopicId: state.selectedSubtopicId }
+  }));
 }
 
 export function switchSubtopicMode(mode) {
@@ -198,4 +202,8 @@ export function switchSubtopicMode(mode) {
   }
 
   updateBrandBanner();
+
+  window.dispatchEvent(new CustomEvent('appViewChanged', {
+    detail: { view: 'subtopic', subtopicId: state.selectedSubtopicId, mode: mode }
+  }));
 }

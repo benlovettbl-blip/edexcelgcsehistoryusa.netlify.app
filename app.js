@@ -21601,6 +21601,9 @@ ${cleanBrackets(paper.q3d.model)}
     if (targetView) targetView.classList.add("active");
     closeMobileSidebar();
     updateBrandBanner();
+    window.dispatchEvent(new CustomEvent("appViewChanged", {
+      detail: { view: viewName, subtopicId: state.selectedSubtopicId }
+    }));
   }
   function switchSubtopicMode(mode) {
     state.currentMode = mode;
@@ -21628,6 +21631,9 @@ ${cleanBrackets(paper.q3d.model)}
       startFlashcardSession(state.selectedSubtopicId);
     }
     updateBrandBanner();
+    window.dispatchEvent(new CustomEvent("appViewChanged", {
+      detail: { view: "subtopic", subtopicId: state.selectedSubtopicId, mode }
+    }));
   }
 
   // src/layout.js
@@ -23322,7 +23328,46 @@ ${bestFact}`;
   }
   function formatMessageText(text) {
     if (!text) return "";
-    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/\*(.*?)\*/g, "<em>$1</em>").replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\n/g, "<br>");
+    let html = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const lines = html.split("\n");
+    let inTable = false;
+    let tableHtml = "";
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (line.startsWith("|") && line.endsWith("|")) {
+        if (!inTable) {
+          inTable = true;
+          tableHtml = '<table class="chatbot-table">';
+        }
+        if (line.includes("---") || line.includes(":---")) {
+          continue;
+        }
+        const cells = line.split("|").slice(1, -1).map((c) => c.trim());
+        tableHtml += "<tr>";
+        cells.forEach((cell) => {
+          const isHeader = !tableHtml.includes("<td>") && !tableHtml.includes("</th>");
+          const tag = isHeader ? "th" : "td";
+          tableHtml += `<${tag}>${cell}</${tag}>`;
+        });
+        tableHtml += "</tr>";
+        lines[i] = "";
+      } else {
+        if (inTable) {
+          inTable = false;
+          tableHtml += "</table>";
+          lines[i] = tableHtml + "\n" + lines[i];
+        }
+      }
+    }
+    if (inTable) {
+      tableHtml += "</table>";
+      lines.push(tableHtml);
+    }
+    html = lines.filter((l) => l !== "").join("\n");
+    html = html.replace(/^(?:\*|-)\s+(.+)$/gm, "<li>$1</li>");
+    html = html.replace(/(<li>.*?<\/li>)+/gs, "<ul>$&</ul>");
+    html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/\*(.*?)\*/g, "<em>$1</em>").replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\n/g, "<br>");
+    return html;
   }
   async function fetchGeminiResponse(localApiKey, userInput, localContext, customSystemInstruction = null) {
     const systemInstruction = customSystemInstruction || `You are a strict, helpful AI history tutor for Edexcel GCSE History, Paper 3: Modern Depth Study - USA (1954-75).
@@ -23433,6 +23478,16 @@ User Question: ${userInput}`;
     }
     container.appendChild(bubble);
     container.scrollTop = container.scrollHeight;
+    if (sender === "user" || sender === "assistant") {
+      const isAlreadyInHistory = chatHistory.some((h) => h.parts?.[0]?.text === contentText);
+      if (!isAlreadyInHistory) {
+        chatHistory.push({
+          role: sender === "user" ? "user" : "model",
+          parts: [{ text: contentText }]
+        });
+        saveHistoryToLocalStorage();
+      }
+    }
   }
   function appendThinkingBubble() {
     const container = document.getElementById("chatbot-messages");
@@ -23712,8 +23767,7 @@ User Question: ${userInput}`;
       cursor: pointer;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       transition: all var(--transition-fast);
-      z-index: 10;
-    }
+          }
     .chatbot-tts-btn:hover {
       color: var(--text-main);
       border-color: var(--primary);
@@ -23726,6 +23780,90 @@ User Question: ${userInput}`;
     }
     .chatbot-bubble.assistant, .chatbot-bubble.system {
       position: relative;
+    }
+
+    /* Voice mic styling */
+    .chatbot-mic-btn {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid var(--border-glass);
+      border-radius: 4px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      flex-shrink: 0;
+    }
+    .chatbot-mic-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      border-color: var(--primary);
+    }
+    .chatbot-mic-btn.recording {
+      background: rgba(239, 68, 68, 0.25) !important;
+      color: #f87171 !important;
+      border-color: #ef4444 !important;
+      animation: chatbotPulse 1s infinite alternate;
+    }
+
+    /* Command Toolbar styling */
+    .chatbot-command-row {
+      padding: 8px 16px;
+      display: flex;
+      gap: 8px;
+      border-top: 1px solid var(--border-glass);
+      background: rgba(0, 0, 0, 0.15);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .chatbot-command-row::-webkit-scrollbar {
+      display: none;
+    }
+    .chatbot-cmd-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      color: var(--text-muted);
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .chatbot-cmd-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      border-color: var(--primary);
+    }
+
+    /* Table styling */
+    .chatbot-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      font-size: 0.76rem;
+    }
+    .chatbot-table th, .chatbot-table td {
+      border: 1px solid var(--border-glass);
+      padding: 6px 8px;
+      text-align: left;
+    }
+    .chatbot-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    .chatbot-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
     }
   `;
     document.head.appendChild(style);
@@ -23760,9 +23898,20 @@ User Question: ${userInput}`;
       </div>
     </div>
 
+    <!-- Command Toolbar -->
+    <div class="chatbot-command-row">
+      <button class="chatbot-cmd-btn" data-cmd="quiz"><i class="fa-solid fa-gamepad"></i> Quiz</button>
+      <button class="chatbot-cmd-btn" data-cmd="grade"><i class="fa-solid fa-marker"></i> Grade PEEL</button>
+      <button class="chatbot-cmd-btn" data-cmd="checklist"><i class="fa-solid fa-list-check"></i> Checklist</button>
+      <button class="chatbot-cmd-btn" data-cmd="clear"><i class="fa-solid fa-trash-can"></i> Clear</button>
+    </div>
+
     <!-- Footer Input Area -->
     <div class="chatbot-input-row">
       <input type="text" class="chatbot-input" id="chatbot-user-input" placeholder="Ask a question..." autocomplete="off" />
+      <button class="chatbot-mic-btn" id="chatbot-mic-btn" title="Voice Input (Speech-to-Text)" style="display: none;">
+        <i class="fa-solid fa-microphone"></i>
+      </button>
       <button class="chatbot-send-btn" id="chatbot-send-btn" title="Send Message">
         <i class="fa-solid fa-paper-plane"></i>
       </button>
@@ -23779,6 +23928,73 @@ User Question: ${userInput}`;
     const userInput = document.getElementById("chatbot-user-input");
     const sendBtn = document.getElementById("chatbot-send-btn");
     const messagesContainer = document.getElementById("chatbot-messages");
+    const micBtn = document.getElementById("chatbot-mic-btn");
+    const commandRow = document.querySelector(".chatbot-command-row");
+    loadAndRenderHistory();
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition = null;
+    let isListening = false;
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = "en-US";
+    }
+    if (recognition && micBtn) {
+      micBtn.style.display = "flex";
+      micBtn.addEventListener("click", () => {
+        if (isListening) {
+          recognition.stop();
+        } else {
+          recognition.start();
+        }
+      });
+      recognition.onstart = () => {
+        isListening = true;
+        micBtn.classList.add("recording");
+        userInput.placeholder = "Listening...";
+      };
+      recognition.onresult = (e) => {
+        const transcript = e.results[0][0].transcript;
+        userInput.value = transcript;
+      };
+      recognition.onend = () => {
+        isListening = false;
+        micBtn.classList.remove("recording");
+        userInput.placeholder = "Ask a question...";
+      };
+      recognition.onerror = () => {
+        isListening = false;
+        micBtn.classList.remove("recording");
+        userInput.placeholder = "Ask a question...";
+      };
+    }
+    if (commandRow) {
+      commandRow.addEventListener("click", (e) => {
+        const btn = e.target.closest(".chatbot-cmd-btn");
+        if (!btn) return;
+        const cmd = btn.getAttribute("data-cmd");
+        if (cmd === "quiz") {
+          startChatbotQuiz();
+        } else if (cmd === "grade") {
+          gradingState.isActive = true;
+          appendBubble("assistant", "I am ready to grade your paragraph! Please paste your essay paragraph or outline below, and I will critique it against GCSE PEEL criteria.");
+        } else if (cmd === "checklist") {
+          handleSpecChecklistQuery("");
+        } else if (cmd === "clear") {
+          chatHistory = [];
+          localStorage.removeItem("chatbot_history");
+          messagesContainer.innerHTML = `<div class="chatbot-bubble assistant">${WELCOME_HTML}</div>`;
+          appendBubble("system", "Chat history cleared.");
+        }
+      });
+    }
+    window.addEventListener("appViewChanged", (e) => {
+      const detail = e.detail;
+      if (detail.view === "subtopic" && detail.subtopicId) {
+        updateChatbotSuggestionsForSubtopic(detail.subtopicId);
+      }
+    });
     if (apiKey && apiKeyInput) {
       apiKeyInput.value = apiKey;
     }
@@ -23815,6 +24031,7 @@ User Question: ${userInput}`;
     });
     clearBtn.addEventListener("click", () => {
       chatHistory = [];
+      localStorage.removeItem("chatbot_history");
       messagesContainer.innerHTML = `<div class="chatbot-bubble assistant">${WELCOME_HTML}</div>`;
       appendBubble("system", "Chat history cleared.");
     });
@@ -24287,7 +24504,11 @@ Select a Unit to view its topics and syllabus requirements:`;
     btn.classList.add("speaking");
     const utterance = new SpeechSynthesisUtterance(rawText);
     const voices = window.speechSynthesis.getVoices();
-    const englishVoice = voices.find((v) => v.lang.startsWith("en") && (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Microsoft")));
+    const customVoice = voices.find((v) => {
+      const name = v.name.toLowerCase();
+      return name.includes("personal") || name.includes("custom") || name.includes("cloned") || name.includes("user") || name.includes("self");
+    });
+    const englishVoice = customVoice || voices.find((v) => v.lang.startsWith("en") && (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Microsoft")));
     if (englishVoice) {
       utterance.voice = englishVoice;
     }
@@ -24307,6 +24528,71 @@ Select a Unit to view its topics and syllabus requirements:`;
       }
     };
     window.speechSynthesis.speak(utterance);
+  }
+  function saveHistoryToLocalStorage() {
+    if (chatHistory.length > 15) {
+      chatHistory = chatHistory.slice(-15);
+    }
+    localStorage.setItem("chatbot_history", JSON.stringify(chatHistory));
+  }
+  function loadAndRenderHistory() {
+    const savedHistory = localStorage.getItem("chatbot_history");
+    if (savedHistory) {
+      try {
+        chatHistory = JSON.parse(savedHistory);
+      } catch (e) {
+        chatHistory = [];
+      }
+    }
+    const messagesContainer = document.getElementById("chatbot-messages");
+    if (!messagesContainer) return;
+    if (chatHistory.length > 0) {
+      messagesContainer.innerHTML = "";
+      chatHistory.forEach((msg) => {
+        const sender = msg.role === "user" ? "user" : "assistant";
+        const text = msg.parts?.[0]?.text || "";
+        if (text.startsWith("[App Course Content Context:")) {
+          const parts = text.split("\n\nUser Question: ");
+          const userQuestion = parts.length > 1 ? parts[1] : "Factual inquiry";
+          appendBubble("user", userQuestion);
+        } else {
+          const isHtml = text.includes("<div") || text.includes("<button") || text.includes("<table") || text.includes("<ul>");
+          appendBubble(sender, text, null, isHtml);
+        }
+      });
+    }
+  }
+  function updateChatbotSuggestionsForSubtopic(subtopicId) {
+    let subtopicObj = null;
+    QUIZ_DATA.forEach((topic) => {
+      if (topic.subtopics) {
+        const found = topic.subtopics.find((s) => s.id === subtopicId);
+        if (found) subtopicObj = found;
+      }
+    });
+    const lesson = LESSONS_DATA[subtopicId];
+    const title = subtopicObj ? subtopicObj.title : lesson ? lesson.headerTitle : "this topic";
+    const cleanTitle = title.replace(/^Topic \d\.\d:\s*/, "");
+    const questions = subtopicObj ? [...subtopicObj.standard || [], ...subtopicObj.depth || []] : [];
+    if (questions.length === 0) return;
+    const shuffled = questions.sort(() => Math.random() - 0.5);
+    const selectedQ = shuffled.slice(0, 2);
+    let hintHtml = `\u{1F4DA} **Active Study Topic:** *${cleanTitle}*
+Here are some questions you can ask me about this lesson:`;
+    hintHtml += `<div class="chatbot-chips-container">`;
+    selectedQ.forEach((q) => {
+      hintHtml += `
+      <button class="chatbot-chip-btn" data-query="${q.question.replace(/"/g, "&quot;")}">
+        \u{1F4A1} ${q.question}
+      </button>
+    `;
+    });
+    hintHtml += `</div>`;
+    const lastHistoryMsg = chatHistory[chatHistory.length - 1];
+    const isSameSubtopic = lastHistoryMsg && lastHistoryMsg.parts?.[0]?.text.includes(cleanTitle);
+    if (!isSameSubtopic) {
+      appendBubble("assistant", hintHtml, null, true);
+    }
   }
 
   // src/main.js
