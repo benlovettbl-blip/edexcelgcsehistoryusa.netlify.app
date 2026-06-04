@@ -218,12 +218,12 @@ function renderDashboard() {
       });
     });
     
-    // Clicking anywhere on topic card takes user to the first subtopic of that topic
+    // Clicking anywhere on topic card (except subtopics) takes user to the Key Topic Overview page
     card.addEventListener('click', (e) => {
-      // Don't trigger if click was inside interactive elements
-      if (e.target.closest('a') || e.target.closest('button')) return;
+      // Don't trigger if click was inside interactive elements or subtopic rows
+      if (e.target.closest('.dashboard-subtopic-row') || e.target.closest('a') || e.target.closest('button')) return;
       AudioEngine.play('click');
-      switchView('subtopic', topic.subtopics[0].id);
+      switchView('key-topic', topic.id);
     });
     
     container.appendChild(card);

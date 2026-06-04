@@ -12277,9 +12277,9 @@ ${cleanBrackets(paper.q3d.model)}
         });
       });
       card.addEventListener("click", (e) => {
-        if (e.target.closest("a") || e.target.closest("button")) return;
+        if (e.target.closest(".dashboard-subtopic-row") || e.target.closest("a") || e.target.closest("button")) return;
         AudioEngine.play("click");
-        switchView("subtopic", topic.subtopics[0].id);
+        switchView("key-topic", topic.id);
       });
       container.appendChild(card);
     });

@@ -234,49 +234,57 @@
           </div>
         </div>
 
-        <!-- Global Stats Grid -->
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-header">
-              <span>Overall<span class="desktop-only"> Progress</span></span>
-              <i class="fa-solid fa-circle-notch"></i>
+        <!-- Global Stats Grid (Unified & Compacted) -->
+        <div class="stats-card-compact" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; box-shadow: var(--shadow-sm);">
+          
+          <!-- Overall Progress -->
+          <div style="flex: 1; min-width: 150px; display: flex; flex-direction: column; gap: 4px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+              <span>Overall Progress</span>
+              <span id="stat-overall-fraction">0 / 52 Mastered</span>
             </div>
-            <div class="stat-value" id="stat-overall-progress">0%</div>
-            <div class="stat-progress-bar">
-              <div class="stat-progress-fill" id="stat-overall-progress-bar"></div>
-            </div>
-            <div class="stat-desc">
-              <span id="stat-overall-fraction">0 / 52</span><span class="stat-label"> Questions Mastered</span>
-            </div>
-          </div>
- 
-          <div class="stat-card">
-            <div class="stat-header">
-              <span>Standard<span class="desktop-only"> Recall</span></span>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="stat-value" id="stat-standard-progress">0%</div>
-            <div class="stat-progress-bar">
-              <div class="stat-progress-fill" id="stat-standard-progress-bar"></div>
-            </div>
-            <div class="stat-desc">
-              <span id="stat-standard-fraction">0 / 36</span><span class="stat-label"> Standard Questions Mastered</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="stat-progress-bar" style="flex: 1; height: 6px; margin: 0; background: var(--border-glass); border-radius: 3px; overflow: hidden;">
+                <div class="stat-progress-fill" id="stat-overall-progress-bar" style="height: 100%; background: var(--primary); transition: width var(--transition-normal); width: 0%;"></div>
+              </div>
+              <span id="stat-overall-progress" style="font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--text-main); min-width: 32px; text-align: right;">0%</span>
             </div>
           </div>
- 
-          <div class="stat-card">
-            <div class="stat-header">
-              <span><span class="desktop-only">Top Tier </span>Trivia</span>
-              <i class="fa-solid fa-bolt"></i>
+
+          <!-- Divider -->
+          <div class="desktop-only" style="width: 1px; height: 32px; background: var(--border-glass);"></div>
+
+          <!-- Standard Recall -->
+          <div style="flex: 1; min-width: 150px; display: flex; flex-direction: column; gap: 4px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+              <span>Standard Recall</span>
+              <span id="stat-standard-fraction">0 / 36 Mastered</span>
             </div>
-            <div class="stat-value" id="stat-depth-progress">0%</div>
-            <div class="stat-progress-bar">
-              <div class="stat-progress-fill" id="stat-depth-progress-bar"></div>
-            </div>
-            <div class="stat-desc">
-              <span id="stat-depth-fraction">0 / 16</span><span class="stat-label"> Depth Questions Mastered</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="stat-progress-bar" style="flex: 1; height: 6px; margin: 0; background: var(--border-glass); border-radius: 3px; overflow: hidden;">
+                <div class="stat-progress-fill" id="stat-standard-progress-bar" style="height: 100%; background: var(--secondary); transition: width var(--transition-normal); width: 0%;"></div>
+              </div>
+              <span id="stat-standard-progress" style="font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--text-main); min-width: 32px; text-align: right;">0%</span>
             </div>
           </div>
+
+          <!-- Divider -->
+          <div class="desktop-only" style="width: 1px; height: 32px; background: var(--border-glass);"></div>
+
+          <!-- Top Tier Trivia -->
+          <div style="flex: 1; min-width: 150px; display: flex; flex-direction: column; gap: 4px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+              <span>Top Tier Trivia</span>
+              <span id="stat-depth-fraction">0 / 16 Mastered</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="stat-progress-bar" style="flex: 1; height: 6px; margin: 0; background: var(--border-glass); border-radius: 3px; overflow: hidden;">
+                <div class="stat-progress-fill" id="stat-depth-progress-bar" style="height: 100%; background: var(--accent); transition: width var(--transition-normal); width: 0%;"></div>
+              </div>
+              <span id="stat-depth-progress" style="font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--text-main); min-width: 32px; text-align: right;">0%</span>
+            </div>
+          </div>
+
         </div>
 
         <div class="dashboard-sections">
