@@ -19094,6 +19094,180 @@ ${cleanBrackets(paper.q3d.model)}
     </div>
   `;
   }
+  var SUBTOPIC_EXAM_MAPPING = {
+    "subtopic_1_1": [
+      { paperId: "2018_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2018" },
+      { paperId: "2018_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2018" },
+      { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "2024_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2024" }
+    ],
+    "subtopic_1_2": [
+      { paperId: "2019_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2019" }
+    ],
+    "subtopic_1_3": [
+      { paperId: "mock_exam_3", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_3", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "2025_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2025" }
+    ],
+    "subtopic_1_4": [
+      { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" }
+    ],
+    "subtopic_2_1": [],
+    "subtopic_2_2": [
+      { paperId: "2019_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2019" },
+      { paperId: "2019_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2019" },
+      { paperId: "2019_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2019" },
+      { paperId: "2019_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2019" },
+      { paperId: "2020_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2020" },
+      { paperId: "2023_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2023" },
+      { paperId: "2023_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2023" },
+      { paperId: "2023_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2023" },
+      { paperId: "2023_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2023" },
+      { paperId: "2024_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2024" },
+      { paperId: "2024_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2024" },
+      { paperId: "2024_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2024" },
+      { paperId: "2024_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2024" }
+    ],
+    "subtopic_2_3": [
+      { paperId: "mock_exam_1", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 1" },
+      { paperId: "mock_exam_1", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 1" },
+      { paperId: "2022_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2022" },
+      { paperId: "2022_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2022" },
+      { paperId: "2022_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2022" },
+      { paperId: "2022_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2022" }
+    ],
+    "subtopic_2_4": [
+      { paperId: "mock_exam_1", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 1" },
+      { paperId: "mock_exam_1", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 1" },
+      { paperId: "mock_exam_1", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 1" },
+      { paperId: "mock_exam_1", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 1" }
+    ],
+    "subtopic_3_1": [
+      { paperId: "2023_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2023" }
+    ],
+    "subtopic_3_2": [
+      { paperId: "2025_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2025" },
+      { paperId: "2025_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2025" },
+      { paperId: "2025_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2025" },
+      { paperId: "2025_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2025" }
+    ],
+    "subtopic_3_3": [
+      { paperId: "2022_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2022" },
+      { paperId: "2025_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2025" }
+    ],
+    "subtopic_3_4": [
+      { paperId: "2019_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2019" }
+    ],
+    "subtopic_4_1": [
+      { paperId: "mock_exam_2", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "mock_exam_2", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 2" },
+      { paperId: "2022_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2022" }
+    ],
+    "subtopic_4_2": [
+      { paperId: "mock_exam_2", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 2" }
+    ],
+    "subtopic_4_3": [
+      { paperId: "2023_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2023" }
+    ],
+    "subtopic_4_4": [
+      { paperId: "2020_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2020" },
+      { paperId: "2020_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2020" },
+      { paperId: "2024_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2024" }
+    ]
+  };
+  function bindEmbeddedExamQuestionListeners(container, qId, qObj, paperId) {
+    const textarea = container.querySelector(`#past-textarea-${qId}`);
+    if (textarea && qObj) {
+      if (!state.pastPaperSession.answers[paperId]) {
+        state.pastPaperSession.answers[paperId] = {};
+      }
+      textarea.value = state.pastPaperSession.answers[paperId][qId] || "";
+      updateDraftFeedback(qId, textarea.value, qObj);
+      textarea.addEventListener("input", (e) => {
+        state.pastPaperSession.answers[paperId][qId] = e.target.value;
+        updateDraftFeedback(qId, e.target.value, qObj);
+        saveProgress();
+      });
+    }
+    const chk = container.querySelector(`#past-chk-${qId}`);
+    if (chk) {
+      chk.checked = state.pastPaperSession.completedQuestions.includes(qId);
+      chk.addEventListener("change", (e) => {
+        togglePastQuestionComplete(qId, e.target.checked);
+      });
+    }
+    const btnClue = container.querySelector(`#past-btn-clue-${qId}`);
+    if (btnClue) {
+      btnClue.addEventListener("click", () => {
+        const box = container.querySelector(`#past-clue-box-${qId}`);
+        if (box) {
+          const isHidden = box.style.display === "none";
+          box.style.display = isHidden ? "block" : "none";
+          AudioEngine.play(isHidden ? "flip" : "click");
+        }
+      });
+    }
+    const btnScaffold = container.querySelector(`#past-btn-scaffold-${qId}`);
+    if (btnScaffold) {
+      btnScaffold.addEventListener("click", () => {
+        const box = container.querySelector(`#past-scaffold-box-${qId}`);
+        if (box) {
+          const isHidden = box.style.display === "none";
+          box.style.display = isHidden ? "block" : "none";
+          AudioEngine.play(isHidden ? "flip" : "click");
+        }
+      });
+    }
+    const scaffoldBox = container.querySelector(`#past-scaffold-box-${qId}`);
+    if (scaffoldBox) {
+      const starterBtns = scaffoldBox.querySelectorAll(".scaffold-starter-btn");
+      starterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const starterText = btn.getAttribute("data-starter");
+          const textarea2 = container.querySelector(`#past-textarea-${qId}`);
+          if (textarea2) {
+            AudioEngine.play("success");
+            const startPos = textarea2.selectionStart;
+            const endPos = textarea2.selectionEnd;
+            const originalVal = textarea2.value;
+            let insertStr = starterText;
+            if (startPos > 0 && originalVal[startPos - 1] !== " " && originalVal[startPos - 1] !== "\n") {
+              insertStr = " " + insertStr;
+            }
+            textarea2.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
+            textarea2.focus();
+            const newCursorPos = startPos + insertStr.length;
+            textarea2.setSelectionRange(newCursorPos, newCursorPos);
+            const event = new Event("input", { bubbles: true });
+            textarea2.dispatchEvent(event);
+          }
+        });
+      });
+    }
+    const btnCheck = container.querySelector(`#past-btn-check-${qId}`);
+    if (btnCheck) {
+      btnCheck.addEventListener("click", () => {
+        const box = container.querySelector(`#past-answer-box-${qId}`);
+        if (box) {
+          const isHidden = box.style.display === "none";
+          box.style.display = isHidden ? "block" : "none";
+          AudioEngine.play(isHidden ? "success" : "click");
+        }
+      });
+    }
+  }
   function renderMasteryView(subtopicId) {
     highlightedKeywords.clear();
     const container = document.getElementById("mastery-content-container");
@@ -20102,6 +20276,110 @@ ${cleanBrackets(paper.q3d.model)}
       </div>
     `;
     }
+    let embeddedExamsHtml = "";
+    const mappedExams = SUBTOPIC_EXAM_MAPPING[subtopicId];
+    if (mappedExams && mappedExams.length > 0) {
+      let dropdownsMarkup = "";
+      mappedExams.forEach((item) => {
+        const paper = PAST_PAPERS_DATA.find((p) => p.id === item.paperId);
+        if (!paper) return;
+        const qObj = paper[item.qType];
+        if (!qObj) return;
+        const cleanQuestionText = qObj.question.replace(/\(\d+\s*marks?\)/gi, "").trim();
+        let sourcesHtml = "";
+        if (item.qType === "q1" && paper.sourceA) {
+          sourcesHtml = `
+          <div class="skills-source-card" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 24px; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary);"></div>
+            <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 8px;">SOURCE A</span>
+            <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
+            ${paper.sourceA.image ? `
+              <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 250px; object-fit: contain; margin-bottom: 12px; border-radius: 4px;" />
+            ` : ""}
+            <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
+          </div>
+        `;
+        } else if (item.qType === "q3a" && paper.sourceB && paper.sourceC) {
+          sourcesHtml = `
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
+            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+              <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE B</span>
+              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceB.provenance}</p>
+              ${paper.sourceB.image ? `
+                <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
+              ` : ""}
+              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+            </div>
+            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
+              <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">SOURCE C</span>
+              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.sourceC.provenance}</p>
+              ${paper.sourceC.image ? `
+                <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
+              ` : ""}
+              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+            </div>
+          </div>
+        `;
+        } else if ((item.qType === "q3b" || item.qType === "q3c" || item.qType === "q3d") && paper.interpretation1 && paper.interpretation2) {
+          sourcesHtml = `
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; margin-bottom: 24px;">
+            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+              <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 1</span>
+              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation1.author}</p>
+              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation1.content}</p>
+            </div>
+            <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
+              <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--secondary);"></div>
+              <span class="badge" style="background: var(--secondary-glow); color: var(--secondary); padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: inline-block;">INTERPRETATION 2</span>
+              <p style="font-size: 0.8rem; font-weight: bold; color: var(--text-main); margin-bottom: 8px; line-height: 1.35;">${paper.interpretation2.author}</p>
+              <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.interpretation2.content}</p>
+            </div>
+          </div>
+        `;
+        }
+        const qId = `${paper.id}_${item.qType}`;
+        const marks = item.qType === "q1" ? "4" : item.qType === "q2" ? "12" : item.qType === "q3a" ? "8" : item.qType === "q3b" ? "4" : item.qType === "q3c" ? "4" : "16 + 4 SPaG";
+        const stimulus = item.qType === "q2" ? qObj.stimulus : null;
+        const questionMarkup = renderPastQuestionMarkup(qId, qObj.question, qObj.clue, qObj.model, marks, stimulus);
+        const yearOrMockLabel = item.yearLabel;
+        dropdownsMarkup += `
+        <div class="mastery-card lesson-exam-practice-card" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+          <details class="lesson-exam-details" style="width: 100%; padding: 24px; box-sizing: border-box;">
+            <summary class="lesson-exam-summary" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0; font-size: 1.1rem; color: var(--text-main);">
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+                Exam Practice (${yearOrMockLabel}): ${item.label} - ${cleanQuestionText}
+              </span>
+              <i class="fa-solid fa-chevron-down lesson-exam-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+            </summary>
+            <div class="lesson-exam-expanded-content" style="margin-top: 16px;">
+              ${sourcesHtml}
+              ${questionMarkup}
+            </div>
+          </details>
+        </div>
+      `;
+      });
+      embeddedExamsHtml = `
+      <style>
+        details.lesson-exam-details summary::-webkit-details-marker {
+          display: none;
+        }
+        details.lesson-exam-details[open] .lesson-exam-toggle-icon {
+          transform: rotate(180deg);
+        }
+      </style>
+      <div class="lesson-embedded-exams-container" style="margin-top: 24px;">
+        <h4 style="max-width: 800px; margin: 0 auto 16px auto; font-family: var(--font-heading); color: var(--text-main); font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-pen-fancy" style="color: var(--primary);"></i> Exam Practice Vault
+        </h4>
+        ${dropdownsMarkup}
+      </div>
+    `;
+    }
     container.innerHTML = `
     ${doNowHtml}
     
@@ -20164,6 +20442,8 @@ ${cleanBrackets(paper.q3d.model)}
         \u2713 Mark Topic ${subtopicId.replace("subtopic_", "").replace("_", ".")} as Mastered
       </button>
     </div>
+
+    ${embeddedExamsHtml}
   `;
     const audioButtons = container.querySelectorAll(".btn-audio-read");
     audioButtons.forEach((btn) => {
@@ -21006,6 +21286,16 @@ ${cleanBrackets(paper.q3d.model)}
     formatVaultImportanceAnswers(container);
     setupWrapUpChallenge(container, subtopicId);
     wrapImagesInLinks(container);
+    if (mappedExams && mappedExams.length > 0) {
+      mappedExams.forEach((item) => {
+        const paper = PAST_PAPERS_DATA.find((p) => p.id === item.paperId);
+        if (!paper) return;
+        const qObj = paper[item.qType];
+        if (!qObj) return;
+        const qId = `${paper.id}_${item.qType}`;
+        bindEmbeddedExamQuestionListeners(container, qId, qObj, paper.id);
+      });
+    }
   }
   function setupWrapUpChallenge(container, subtopicId) {
     const wrapUpCard = container.querySelector(".lesson-wrap-up-card");
