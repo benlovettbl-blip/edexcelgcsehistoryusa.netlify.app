@@ -12233,38 +12233,47 @@ ${cleanBrackets(paper.q3d.model)}
   function renderDashboard2() {
     const container = document.getElementById("dashboard-topics-list");
     container.innerHTML = "";
+    const topicIcons = {
+      "topic_1": "fa-people-group",
+      "topic_2": "fa-bullhorn",
+      "topic_3": "fa-crosshairs",
+      "topic_4": "fa-dove"
+    };
     QUIZ_DATA.forEach((topic) => {
       const card = document.createElement("div");
       card.className = "topic-list-card";
       const topicQuestions = state.allQuestions.filter((q) => q.topicId === topic.id);
       const mastered = topicQuestions.filter((q) => state.mastery[q.id]);
       const pct = topicQuestions.length > 0 ? Math.round(mastered.length / topicQuestions.length * 100) : 0;
+      const iconClass = topicIcons[topic.id] || "fa-book-open";
       let subtopicsHTML = "";
       topic.subtopics.forEach((sub) => {
         const subQs = state.allQuestions.filter((q) => q.subtopicId === sub.id);
         const subMastered = subQs.filter((q) => state.mastery[q.id]).length;
         const subPct = subQs.length > 0 ? Math.round(subMastered / subQs.length * 100) : 0;
         subtopicsHTML += `
-        <div class="dashboard-subtopic-row" data-subtopic-id="${sub.id}" style="margin-top: 10px; padding: 6px 8px; border-left: 2px solid var(--border-glass); cursor: pointer; transition: all var(--transition-fast); border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;" onmouseover="this.style.background='rgba(255,255,255,0.03)'; this.style.borderLeftColor='var(--primary)';" onmouseout="this.style.background='transparent'; this.style.borderLeftColor='var(--border-glass)';">
-          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 4px;">
-            <span style="color: var(--text-main); font-weight: 500;">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
-            <span style="color: var(--primary); font-weight: 600;">${subMastered}/${subQs.length} Secured</span>
+        <div class="dashboard-subtopic-row" data-subtopic-id="${sub.id}">
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 500; align-items: center; margin-bottom: 2px;">
+            <span style="color: var(--text-main);">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
+            <span style="color: var(--primary); font-weight: 600; font-size: 0.76rem;">${subMastered}/${subQs.length} Secured</span>
           </div>
-          <div class="topic-list-progress-bar" style="height: 3px;">
+          <div class="topic-list-progress-bar" style="height: 3px; margin: 0;">
             <div class="topic-list-progress-fill" style="width: ${subPct}%;"></div>
           </div>
         </div>
       `;
       });
       card.innerHTML = `
-      <div class="topic-list-info">
-        <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700;">${topic.title}</span>
-        <span class="nav-item-progress" style="font-size: 0.8rem;">${pct}% Secured</span>
+      <div class="topic-list-info" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; margin-bottom: 4px;">
+        <span class="topic-list-name" style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; gap: 8px; color: var(--text-main);">
+          <i class="fa-solid ${iconClass}" style="color: var(--primary); font-size: 1.1rem; width: 24px; text-align: center;"></i> ${topic.title}
+        </span>
+        <span class="nav-item-progress" style="font-size: 0.75rem; background: var(--primary-glow); color: var(--primary); padding: 2px 8px; border-radius: 12px; font-weight: 700;">${pct}%</span>
       </div>
-      <div class="topic-list-progress-bar">
+      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 6px;">
         <div class="topic-list-progress-fill" style="width: ${pct}%;"></div>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
         ${subtopicsHTML}
       </div>
     `;

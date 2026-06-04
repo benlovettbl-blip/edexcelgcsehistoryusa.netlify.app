@@ -760,20 +760,40 @@ body {
 
 .topics-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
 }
 
 .topic-list-card {
   border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-md);
+  padding: 20px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.dashboard-subtopic-row {
+  background-color: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--border-glass);
   border-radius: var(--border-radius-sm);
-  padding: 16px;
+  padding: 10px 14px;
   cursor: pointer;
   transition: all var(--transition-fast);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
+
+.dashboard-subtopic-row:hover {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-color: var(--primary) !important;
+  transform: translateX(4px);
+}
+
 
 .topic-list-card:hover {
   background-color: var(--bg-card-hover);
