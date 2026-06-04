@@ -154,14 +154,14 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_3": {
-    "video_title": "The Fall of Saigon (April 30th, 1975)",
-    "youtube_url": "https://www.youtube.com/watch?v=dsSXMQ306iU",
-    "duration": "03:15",
-    "production_source": "Simple History",
+    "video_title": "Witnessing History: The Fall of Saigon: 50 Years On",
+    "youtube_url": "https://www.youtube.com/watch?v=Y0PaYMWsENs&t=188s",
+    "duration": "18:34",
+    "production_source": "ITV News",
     "questions": [
-      "In which month and year did the Fall of Saigon occur?",
-      "What was the name of the evacuation operation carried out by the U.S. as Saigon fell?",
-      "What did the Fall of Saigon mark in terms of the political division of Vietnam?"
+      "Which British news network was on the ground reporting the evacuation and fall of Saigon in April 1975?",
+      "What actions did the U.S. take to evacuate people from Saigon as North Vietnamese forces advanced?",
+      "What did the fall of Saigon mark in terms of the political unification of Vietnam?"
     ]
   },
   "subtopic_4_4": {

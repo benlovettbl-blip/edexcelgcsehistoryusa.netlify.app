@@ -1430,7 +1430,8 @@ function updateRealTimeFeedback(type, value, questionObj, questionId) {
 
 export function highlightModelQuotes(text) {
   if (!text) return '';
-  let highlighted = text;
+  // Convert style/class double quotes inside HTML tags to single quotes to prevent breaking them with double quotes regex
+  let highlighted = text.replace(/style="([^"]*)"/g, "style='$1'").replace(/class="([^"]*)"/g, "class='$1'");
   
   let i1Text = '';
   let i2Text = '';

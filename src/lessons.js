@@ -11,6 +11,7 @@ import { VIDEOS_DATA } from './videos_data.js';
 import { HOMEWORK_QUESTIONS } from './homework_data.js';
 import { getImageWebLink } from './image_links.js';
 import { SPEC_CHECKLIST_DATA } from './spec_checklist_data.js';
+import { WRAPUP_DATA } from './wrapup_data.js';
 
 const GLOSSARY_DB = {
   "segregation": "The legally or socially enforced separation of different racial groups in public spaces, housing, or education.",
@@ -312,57 +313,13 @@ export function renderMasteryView(subtopicId) {
   let dualHtml = '';
   if (data.dualPerspective) {
     let historiographicalSubtitle = '';
-    let disagreeSourceCard = '';
     
-    // Choose appropriate historiographical debate label based on subtopic ID
+    // Choose appropriate historiographical debate label based on subtopic ID (Orthodox/Revisionist removed as requested)
     if (subtopicId.startsWith('subtopic_1') || subtopicId.startsWith('subtopic_2')) {
       historiographicalSubtitle = `
         <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
           <span class="historiographical-label top-down">Top-Down Legalistic</span>
           <span class="historiographical-label bottom-up">Bottom-Up Grassroots</span>
-        </div>
-      `;
-      disagreeSourceCard = `
-        <div class="disagree-analysis-card">
-          <div class="disagree-analysis-title">
-            <i class="fa-solid fa-code-branch"></i> Why Historians Disagree: Source Selection Analysis
-          </div>
-          <div class="disagree-analysis-body">
-            <p style="margin-bottom: 8px;">Historians of the Civil Rights era reach conflicting interpretations because they select and prioritize different primary sources:</p>
-            <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px;">
-              <li>
-                <strong>Presidential Papers & court rulings (Top-Down):</strong> Historians prioritizing Eisenhower's transcripts or Supreme Court decrees conclude that change was driven by constitutional authority and institutional reforms.
-              </li>
-              <li>
-                <strong>Oral Histories & Local records (Bottom-Up):</strong> Historians prioritizing SNCC field reports, church diaries, or Rosa Parks' notes conclude that the federal government only acted when forced by grassroots mobilization and disruption.
-              </li>
-            </ul>
-          </div>
-        </div>
-      `;
-    } else {
-      historiographicalSubtitle = `
-        <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="historiographical-label orthodox">Orthodox Interpretation</span>
-          <span class="historiographical-label revisionist">Revisionist Interpretation</span>
-        </div>
-      `;
-      disagreeSourceCard = `
-        <div class="disagree-analysis-card">
-          <div class="disagree-analysis-title">
-            <i class="fa-solid fa-code-branch"></i> Why Historians Disagree: Source Selection Analysis
-          </div>
-          <div class="disagree-analysis-body">
-            <p style="margin-bottom: 8px;">Historians of the Vietnam War period disagree due to their methodological frameworks and source preferences:</p>
-            <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px;">
-              <li>
-                <strong>Orthodox Historians (National Security Archives):</strong> Prioritizing Pentagon planning files and US military reports, they conclude the war was an inevitable tragedy of Cold War containment policy and military overreach.
-              </li>
-              <li>
-                <strong>Revisionist/Vietnamese Sources (Local Accounts):</strong> Prioritizing translated NLF/PAVN diaries, local guerrilla interviews, and rural intelligence reports, they argue the US failed primarily because it ignored the nationalist, anti-colonial nature of the Vietnamese struggle.
-              </li>
-            </ul>
-          </div>
         </div>
       `;
     }
@@ -389,7 +346,6 @@ export function renderMasteryView(subtopicId) {
         </div>
         ${data.dualPerspective.tipHtml || ''}
       </div>
-      ${disagreeSourceCard}
     `;
   }
 
@@ -426,51 +382,40 @@ export function renderMasteryView(subtopicId) {
     });
     
     causalHtml = `
-      <div class="causal-connector-container" style="max-width: 800px; margin: 0 auto 24px auto;">
-        <h3 class="causal-title"><i class="fa-solid fa-link" style="color: var(--primary);"></i> Causal Link Builder</h3>
-        <p class="chain-instruction" style="margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted);">Paper 3 essays require linking factors to their historical effects. Match each causal factor to its correct analytical consequence link!</p>
-        <div class="causal-question">
-          <strong>Essay Question:</strong> ${data.causalLinks.question}
-        </div>
-        <div class="causal-factors-grid">
-          ${factorsHtml}
-        </div>
-        <div class="causal-success-panel" id="causal-success-panel">
-          <h4><i class="fa-solid fa-trophy"></i> Causation Mastered!</h4>
-          <p id="causal-success-text">${data.causalLinks.successText}</p>
-        </div>
-      </div>
-    `;
-  }
-
-  // Generate Knowledge Check HTML
-  let kcQuestionsHtml = '';
-  data.knowledgeCheck.forEach((q, index) => {
-    kcQuestionsHtml += `
-      <div class="quiz-question-item">
-        <div class="quiz-question-text">${index + 1}. ${q.question}</div>
-        <div class="quiz-answer-text" id="ans-${index + 1}">Answer: ${q.answer}</div>
-      </div>
-    `;
-  });
-
-  let kcHtml = '';
-  if (data.knowledgeCheck.length > 0) {
-    kcHtml = `
-      <div class="mastery-card" id="mastery-quiz-card" style="max-width: 800px; margin: 0 auto 24px auto;">
-        <h3 class="mastery-card-title">Knowledge Check</h3>
-        <div class="mastery-card-body">
-          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted);">
-            Test your memory on the exact facts examiners are looking for!
-          </p>
-          
-          <div class="quiz-questions-list">
-            ${kcQuestionsHtml}
+      <style>
+        details.causal-details summary::-webkit-details-marker {
+          display: none;
+        }
+        details.causal-details[open] .causal-toggle-icon {
+          transform: rotate(180deg);
+        }
+      </style>
+      <div class="causal-connector-container" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+        <details class="causal-details" style="width: 100%; padding: 20px; box-sizing: border-box;">
+          <summary class="causal-title" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0;">
+            <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-link" style="color: var(--primary);"></i> Causal Link Builder</span>
+            <i class="fa-solid fa-chevron-down causal-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+          </summary>
+          <div class="causal-expanded-content" style="margin-top: 16px;">
+            <p class="chain-instruction" style="margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">Paper 3 essays require linking factors to their historical effects. Match each causal factor to its correct analytical consequence link!</p>
+            <div class="causal-question">
+              <strong>Essay Question:</strong> ${data.causalLinks.question}
+            </div>
+            <div class="causal-factors-grid">
+              ${factorsHtml}
+            </div>
+            <div class="causal-success-panel" id="causal-success-panel">
+              <h4><i class="fa-solid fa-trophy"></i> Causation Mastered!</h4>
+              <p id="causal-success-text">${data.causalLinks.successText}</p>
+            </div>
           </div>
-        </div>
+        </details>
       </div>
     `;
   }
+
+  // Generate Knowledge Check HTML (Disabled)
+  let kcHtml = '';
 
   // Generate Importance Analyser HTML
   let impHtml = '';
@@ -791,47 +736,8 @@ export function renderMasteryView(subtopicId) {
     `;
   }
 
-  // Generate Deep Thinking HTML
+  // Generate Deep Thinking HTML (Disabled)
   let deepThinkingHtml = '';
-  if (data.deepThinkingQuestions && data.deepThinkingQuestions.length > 0) {
-    let dtQuestionsMarkup = '';
-    data.deepThinkingQuestions.forEach((q, idx) => {
-      const savedVal = state.deepThinkingAnswers[q.id] || '';
-      dtQuestionsMarkup += `
-        <div class="deep-thinking-question-card" style="margin-bottom: 24px; padding: 16px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-            <strong style="color: var(--accent); font-size: 0.95rem;">Question ${idx + 1}: ${q.question}</strong>
-            <span class="dt-save-status" id="dt-save-status-${q.id}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${savedVal ? 'inline' : 'none'};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
-          </div>
-          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; font-style: italic;">
-            <i class="fa-solid fa-lightbulb" style="color: var(--primary);"></i> Hint: ${q.hint}
-          </div>
-          <textarea class="deep-thinking-textarea" data-q-id="${q.id}" placeholder="Type your reflection here to develop your historical analysis..." style="width: 100%; height: 100px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; margin-bottom: 12px; line-height: 1.45; font-family: inherit;">${savedVal}</textarea>
-          <div class="dt-guide-section" style="margin-top: 10px;">
-            <button class="mastery-btn dt-guide-btn" data-q-id="${q.id}" style="max-width: fit-content; padding: 8px 16px; font-size: 0.85rem; border-radius: 20px; background: rgba(255, 255, 255, 0.05); color: var(--text-base); border: 1px solid var(--border-glass); font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-graduation-cap"></i> Reveal Teacher Evaluation Guide
-            </button>
-            <div class="dt-guide-content" id="dt-guide-content-${q.id}" style="display: none; margin-top: 12px; padding: 12px; background: rgba(234, 179, 8, 0.05); border-left: 4px solid var(--warning); border-radius: var(--border-radius-sm); font-size: 0.88rem; line-height: 1.45; color: var(--text-muted);">
-              <strong style="color: var(--warning); display: block; margin-bottom: 4px;">Self-Evaluation Criteria:</strong>
-              ${q.teacherGuide}
-            </div>
-          </div>
-        </div>
-      `;
-    });
-
-    deepThinkingHtml = `
-      <div class="mastery-card deep-thinking-card" style="max-width: 800px; margin: 0 auto 24px auto;">
-        <h3 class="mastery-card-title"><i class="fa-solid fa-brain" style="color: var(--accent);"></i> Deep Reflection & Pedagogy Prompts</h3>
-        <div class="mastery-card-body">
-          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted);">
-            GCSE top marks require deep thinking. Formulate your answers to these conceptual prompts, then check them against the teacher response guides.
-          </p>
-          ${dtQuestionsMarkup}
-        </div>
-      </div>
-    `;
-  }
 
   let doNowHtml = '';
   if (data.doNowStarter) {
@@ -839,32 +745,119 @@ export function renderMasteryView(subtopicId) {
     let prevLessonLinkHtml = '';
     if (dn.prevSubtopicId && dn.prevSubtopicTitle) {
       prevLessonLinkHtml = `
-        <div style="margin-bottom: 14px; font-size: 0.88rem;">
+        <div style="margin-bottom: 14px; font-size: 0.88rem; display: flex; align-items: center; gap: 6px;">
           <i class="fa-solid fa-arrow-left" style="color: var(--primary);"></i> 
-          Prior Topic Retrieval: 
+          <span style="color: var(--text-muted);">Prior Topic Retrieval:</span> 
           <button class="do-now-prev-link-btn" data-prev-id="${dn.prevSubtopicId}" style="background: none; border: none; color: var(--primary); font-weight: 700; text-decoration: underline; cursor: pointer; padding: 0; font-size: 0.88rem;">
             ${dn.prevSubtopicTitle}
           </button>
         </div>
       `;
-    } else {
-      prevLessonLinkHtml = `
-        <div style="margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); padding: 12px 16px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); width: 100%; box-sizing: border-box;">
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-circle-question"></i>
-            <span>How useful is this source for an enquiry into segregation and discrimination in the Southern states in the 1950s?</span>
+    }
+
+    const enquiryText = dn.enquiry || 'segregation and discrimination in the Southern states in the 1950s';
+    const howUsefulBoxHtml = `
+      <div style="margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); padding: 12px 16px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); width: 100%; box-sizing: border-box;">
+        <div style="font-size: 0.88rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px; flex: 1; min-width: 250px;">
+          <i class="fa-solid fa-circle-question" style="color: var(--accent);"></i>
+          <span>How useful is this source for an enquiry into ${enquiryText}?</span>
+        </div>
+        <div class="do-now-checkboxes" style="display: flex; gap: 14px; align-items: center;">
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;" title="Content Analysis (what the source shows)">
+            <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> C
+          </label>
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;" title="Provenance (Nature, Origin, Purpose)">
+            <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> NOP
+          </label>
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;" title="Own Knowledge (historical context)">
+            <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> OK
+          </label>
+        </div>
+      </div>
+    `;
+
+    let doNowPrototypesHtml = '';
+    if (subtopicId === 'subtopic_1_1') {
+      doNowPrototypesHtml = `
+        <div id="do-now-drafting-container" style="display: none; flex-direction: column; gap: 10px; margin-bottom: 18px; padding: 14px; border: 1px dashed var(--border-glass); border-radius: var(--border-radius-md); background: rgba(255,255,255,0.01);">
+          <strong style="font-size: 0.82rem; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-pen-to-square"></i> Drafting Assistant</strong>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: none;" id="textarea-wrap-c">
+              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Content Analysis (C):</label>
+              <textarea id="draft-c" placeholder="Describe what you see in the Jim Crow sign that is useful..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
+            </div>
+            <div style="display: none;" id="textarea-wrap-nop">
+              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Provenance Analysis (NOP):</label>
+              <textarea id="draft-nop" placeholder="Explain how the nature (public sign) and timing (circa 1950s) impact its utility..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
+            </div>
+            <div style="display: none;" id="textarea-wrap-ok">
+              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Own Knowledge (OK):</label>
+              <textarea id="draft-ok" placeholder="Introduce one fact from your own knowledge about Jim Crow laws..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
+            </div>
           </div>
-          <div class="do-now-checkboxes" style="display: flex; gap: 14px; align-items: center;">
-            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
-              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> C
-            </label>
-            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
-              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> NOP
-            </label>
-            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
-              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> OK
-            </label>
+          <button id="compile-draft-btn" class="mastery-btn" style="background: var(--accent); color: #000; font-size: 0.8rem; font-weight: 800; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; margin-top: 4px; align-self: flex-start; display: none;">Compile & Compare Draft</button>
+          <div id="compiled-draft-display" style="display: none; flex-direction: column; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-glass);">
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--accent);">Your Compiled Answer:</div>
+            <p id="compiled-draft-text" style="margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); background: rgba(255,255,255,0.02); padding: 8px; border-radius: 4px; border: 1px solid var(--border-glass);"></p>
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--success); margin-top: 6px;">Smithsonian Exhibit Model Answer:</div>
+            <p style="margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); background: rgba(16, 185, 129, 0.03); padding: 8px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.15);">Source E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading "COLORED WAITING ROOM" hanging above a public entrance. This content's utility is supported by my knowledge that Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions. The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of segregation infrastructure, though it fails to document the personal experiences of Black passengers who suffered under it.</p>
           </div>
+        </div>
+      `;
+    } else if (subtopicId === 'subtopic_1_2') {
+      doNowPrototypesHtml = `
+        <div id="provenance-explanation-card" style="display: none; margin-bottom: 12px; background: rgba(245, 158, 11, 0.05); border: 1px dashed rgba(245, 158, 11, 0.3); padding: 12px; border-radius: var(--border-radius-md); font-size: 0.82rem; line-height: 1.45; text-align: left;">
+          <strong style="color: var(--accent); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 4px;"><i class="fa-solid fa-scroll"></i> Provenance Insight (NOP)</strong>
+          <span>As an official Supreme Court group portrait, it is a highly reliable record of the bench's composition in 1954 under Earl Warren. However, it is a posed photograph designed to project unity and authority, concealing the fierce private debates and compromise leading up to the unanimous 9-0 ruling.</span>
+        </div>
+        <div id="context-clues-card" style="display: none; margin-bottom: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 12px; border-radius: var(--border-radius-md); font-size: 0.82rem; line-height: 1.45; text-align: left;">
+          <strong style="color: var(--primary); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 4px;"><i class="fa-solid fa-brain"></i> Historical Context Clues (OK)</strong>
+          <ul style="margin: 4px 0 0 0; padding-left: 16px; color: #cbd5e1; display: flex; flex-direction: column; gap: 4px;">
+            <li><strong>Brown v. Board of Education (1954)</strong> overturned the 1896 Plessy v. Ferguson decision.</li>
+            <li><strong>Chief Justice Earl Warren</strong> led the court and worked tirelessly to ensure a 9-0 decision to present a solid federal front against resistance.</li>
+          </ul>
+        </div>
+      `;
+    } else if (subtopicId === 'subtopic_1_3') {
+      doNowPrototypesHtml = `
+        <div id="do-now-quiz-overlay" style="display: none; flex-direction: column; gap: 8px; margin-bottom: 18px; background: rgba(0, 0, 0, 0.45); border: 1px solid var(--border-glass); border-left: 4px solid var(--accent); padding: 12px 14px; border-radius: var(--border-radius-md);">
+          <div style="font-weight: 800; font-size: 0.82rem; color: var(--accent); display: flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-circle-question"></i> Quiz Challenge: Verify your checkbox!
+          </div>
+          <div id="quiz-question-text" style="font-size: 0.88rem; color: var(--text-main); margin-top: 4px; font-weight: 600;">Question text...</div>
+          <div id="quiz-options-container" style="display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+            <!-- Options will be rendered dynamically -->
+          </div>
+        </div>
+      `;
+    } else if (subtopicId === 'subtopic_1_4') {
+      doNowPrototypesHtml = `
+        <div id="do-now-lens-container" style="display: none; flex-direction: column; gap: 10px; margin-bottom: 18px; padding: 14px; border: 1px dashed var(--border-glass); border-radius: var(--border-radius-md); background: rgba(255,255,255,0.01);">
+          <strong style="font-size: 0.82rem; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-magnifying-glass"></i> Examiner's Lens (Rosa Parks bus photo)</strong>
+          <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Checking the boxes highlights how the answer evaluates that skill: <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 1px 4px; border-radius: 2px; font-weight: bold;">C</span>, <span style="background: rgba(168, 85, 247, 0.15); color: #c084fc; padding: 1px 4px; border-radius: 2px; font-weight: bold;">NOP</span>, <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; padding: 1px 4px; border-radius: 2px; font-weight: bold;">OK</span>.</p>
+          <div id="lens-model-answer" style="font-size: 0.85rem; line-height: 1.5; color: var(--text-muted); padding: 12px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 10px;">
+            <p style="margin: 0;"><span class="lens-part lens-c" style="transition: all 0.3s; padding: 2px; border-radius: 2px;">Source A is highly useful for showing the success and social impact of the Montgomery Bus Boycott. The photograph shows Rosa Parks sitting in the front seats of a city bus (previously reserved for white passengers only) and a white man sitting peacefully behind her.</span></p>
+            
+            <p style="margin: 0;"><span class="lens-part lens-ok" style="transition: all 0.3s; padding: 2px; border-radius: 2px;">This content's utility is supported by my knowledge that after a 381-day boycott, the Supreme Court ruled in Browder v. Gayle that transit segregation was unconstitutional, and this photograph documents the successful enforcement of that ruling.</span></p>
+            
+            <p style="margin: 0;"><span class="lens-part lens-nop" style="transition: all 0.3s; padding: 2px; border-radius: 2px;">The provenance of December 1956 makes it extremely useful as it captures the immediate aftermath of the legal victory when integration took effect. However, it is slightly less useful because it was a staged publicity photo taken by the press to project peace, hiding the fact that integration was met with sniper attacks and the bombing of Black churches.</span></p>
+          </div>
+        </div>
+      `;
+    }
+
+    let accessibilityHtml = '';
+    if (dn.visualDetails) {
+      accessibilityHtml = `
+        <div class="do-now-accessibility-box" style="margin-top: 10px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 10px 12px; border-radius: var(--border-radius-sm); font-size: 0.82rem; text-align: left; line-height: 1.45;">
+          <details style="cursor: pointer;">
+            <summary style="font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 4px; user-select: none;">
+              <i class="fa-solid fa-eye" style="color: var(--primary);"></i> Source Accessibility Guide (Key Details)
+            </summary>
+            <div style="margin-top: 6px; padding-left: 12px; border-left: 2px solid var(--primary); color: var(--text-base); font-style: normal;">
+              ${dn.visualDetails}
+            </div>
+          </details>
         </div>
       `;
     }
@@ -883,6 +876,8 @@ export function renderMasteryView(subtopicId) {
         
         <div class="mastery-card-body" style="padding-top: 8px; margin: 0;">
           ${prevLessonLinkHtml}
+          ${howUsefulBoxHtml}
+          ${doNowPrototypesHtml}
           
           <div class="do-now-split-container" style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 8px;">
             
@@ -890,11 +885,39 @@ export function renderMasteryView(subtopicId) {
             <div class="do-now-left-col" style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 14px;">
               <div>
                 <div style="background: #000; border-radius: var(--border-radius-md); overflow: hidden; padding: 8px; border: 1px solid var(--border-glass); text-align: center; box-shadow: var(--shadow-sm);">
-                  <img src="${dn.image}" alt="Starter Image" style="max-width: 100%; max-height: 180px; object-fit: contain; border-radius: var(--border-radius-sm);">
+                  <div style="position: relative; display: inline-block; max-width: 100%;">
+                    <img id="do-now-court-img" src="${dn.image}" alt="Starter Image" style="max-width: 100%; max-height: 180px; object-fit: contain; border-radius: var(--border-radius-sm);">
+                    ${subtopicId === 'subtopic_1_2' ? `
+                    <style>
+                      @keyframes pulse-glow {
+                        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+                        70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+                        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+                      }
+                      @keyframes pulse-border {
+                        0% { border-color: rgba(245, 158, 11, 0.3); }
+                        50% { border-color: rgba(245, 158, 11, 0.8); }
+                        100% { border-color: rgba(245, 158, 11, 0.3); }
+                      }
+                    </style>
+                    <div id="do-now-hotspots-container" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                      <button class="hotspot-dot" data-title="Chief Justice Earl Warren" data-desc="Warren led the Supreme Court from 1953 to 1969 and fought to ensure the Brown v. Board decision was a unanimous 9-0 to prevent legal loopholes." style="position: absolute; top: 38%; left: 47%; width: 16px; height: 16px; border-radius: 50%; background: #fbbf24; border: 2px solid #fff; cursor: pointer; box-shadow: var(--shadow-md); animation: pulse-glow 2s infinite; padding: 0; outline: none; z-index: 15;"></button>
+                      <button class="hotspot-dot" data-title="Federal Judges (Unanimous Front)" data-desc="The other eight justices in formal black robes. Their unified stance represented institutional federal authority overriding Southern segregation laws." style="position: absolute; top: 48%; left: 22%; width: 16px; height: 16px; border-radius: 50%; background: #fbbf24; border: 2px solid #fff; cursor: pointer; box-shadow: var(--shadow-md); animation: pulse-glow 2s infinite; padding: 0; outline: none; z-index: 15;"></button>
+                    </div>
+                    ` : ''}
+                  </div>
+                  ${subtopicId === 'subtopic_1_2' ? `
+                  <div id="hotspot-tooltip-card" style="display: none; margin-top: 10px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; font-size: 0.8rem; line-height: 1.45; text-align: left; box-shadow: var(--shadow-sm);">
+                    <strong style="color: var(--accent); display: block; font-size: 0.75rem; text-transform: uppercase;" id="hotspot-title">Hotspot Detail</strong>
+                    <span id="hotspot-desc" style="color: #cbd5e1;">Click a yellow hotspot dot on the image to inspect Content details...</span>
+                  </div>
+                  ` : ''}
                   <div class="do-now-provenance-box" style="font-size: 0.75rem; color: #e2e8f0; font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: var(--border-radius-sm); line-height: 1.45;">
                     <strong style="color: #94a3b8; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Source Provenance</strong> ${dn.provenance}
                   </div>
                 </div>
+                ${accessibilityHtml}
+
                 
                 <!-- See Think Wonder Prompt Box -->
                 <div style="background: rgba(245, 158, 11, 0.03); border: 1px solid rgba(245, 158, 11, 0.15); padding: 14px; border-radius: var(--border-radius-md); font-size: 0.82rem; margin-top: 14px; box-shadow: var(--shadow-sm);">
@@ -1019,30 +1042,107 @@ export function renderMasteryView(subtopicId) {
   }
 
   let lessonWrapUpHtml = '';
-  if (data.lessonWrapUp) {
-    const wu = data.lessonWrapUp;
+  const wuChallenge = WRAPUP_DATA[subtopicId];
+  if (wuChallenge) {
+    const factCardsHtml = wuChallenge.facts.map(f => `
+      <div class="wrapup-fact-card" draggable="true" data-fact-id="${f.id}">
+        ${f.text}
+      </div>
+    `).join('');
+
+    const bucketsHtml = wuChallenge.categories.map(cat => `
+      <div class="wrapup-bucket" data-category="${cat}">
+        <strong style="color: var(--accent); font-size: 0.88rem; display: block; border-bottom: 1px solid var(--border-glass); padding-bottom: 6px; margin-bottom: 4px;">
+          ${cat}
+        </strong>
+        <div class="wrapup-bucket-slots"></div>
+      </div>
+    `).join('');
+
     lessonWrapUpHtml = `
+      <style>
+        .wrapup-fact-card {
+          padding: 12px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid var(--border-glass);
+          border-radius: 6px;
+          font-size: 0.82rem;
+          line-height: 1.45;
+          color: var(--text-base);
+          cursor: grab;
+          user-select: none;
+          transition: all 0.2s;
+        }
+        .wrapup-fact-card:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: var(--primary);
+        }
+        .wrapup-fact-card.selected {
+          border-color: var(--accent);
+          background: rgba(245, 158, 11, 0.08);
+        }
+        .wrapup-fact-card.dragging {
+          opacity: 0.4;
+        }
+        .wrapup-bucket {
+          flex: 1;
+          min-width: 260px;
+          background: rgba(0, 0, 0, 0.15);
+          border: 1px solid var(--border-glass);
+          border-radius: 6px;
+          padding: 14px;
+          transition: all 0.2s;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .wrapup-bucket.drag-over {
+          border-color: var(--accent);
+          background: rgba(255, 255, 255, 0.02);
+        }
+        .wrapup-bucket-slots {
+          min-height: 100px;
+          border: 2px dashed rgba(255, 255, 255, 0.05);
+          border-radius: 4px;
+          padding: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          background: rgba(0, 0, 0, 0.08);
+          transition: background 0.2s;
+        }
+        .wrapup-bucket.drag-over .wrapup-bucket-slots {
+          background: rgba(245, 158, 11, 0.02);
+          border-color: rgba(245, 158, 11, 0.3);
+        }
+      </style>
       <div class="mastery-card lesson-wrap-up-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--accent); background: rgba(249, 115, 22, 0.02);">
         <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; font-size: 1rem; color: var(--accent); margin: 0 0 12px 0;">
-          <span><i class="fa-solid fa-graduation-cap"></i> Lesson Wrap-up</span>
-          <button class="btn-audio-read" data-text-selector=".wrap-up-read-target" title="Read Wrap-up Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1rem; padding: 4px 8px; border-radius: var(--border-radius-sm); transition: all var(--transition-fast);">
-            <i class="fa-solid fa-volume-high"></i>
-          </button>
+          <span><i class="fa-solid fa-graduation-cap"></i> Lesson Wrap-up: Historiographical Decider</span>
         </h3>
-        <div class="mastery-card-body wrap-up-read-target" style="padding-top: 4px;">
-          <p class="wrap-up-summary" style="margin-top: 0; line-height: 1.5; color: var(--text-base); font-size: 0.95rem;">
-            <strong>Key Takeaway:</strong> ${applyGlossaryTooltips(wu.summary)}
+        <div class="mastery-card-body" style="padding-top: 4px;">
+          <p style="font-style: italic; color: var(--text-muted); font-size: 0.82rem; margin-top: 0; margin-bottom: 16px; line-height: 1.45;">
+            <strong>Depth of Knowledge Challenge:</strong> Drag and drop the advanced facts below into their correct analytical categories (or click a card to select it, then click a target category to place it).
           </p>
-          <p class="wrap-up-interpretation" style="line-height: 1.5; color: var(--text-muted); font-size: 0.9rem; font-style: italic; border-left: 3px solid var(--border-glass); padding-left: 12px; margin: 14px 0;">
-            <strong>Historical Interpretation:</strong> ${applyGlossaryTooltips(wu.interpretation)}
-          </p>
-          <div class="discussion-question-box" style="margin-top: 14px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px 14px;">
-            <strong style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">
-              <i class="fa-solid fa-comments"></i> Class Discussion Prompt:
-            </strong>
-            <p style="margin: 0; font-size: 0.92rem; font-weight: 550; color: var(--text-main); line-height: 1.4;">
-              ${applyGlossaryTooltips(wu.discussionQuestion)}
-            </p>
+          
+          <!-- Draggable Fact Cards -->
+          <div class="wrapup-cards-pool" style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+            ${factCardsHtml}
+          </div>
+          
+          <!-- Category Buckets -->
+          <div class="wrapup-buckets-container" style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px;">
+            ${bucketsHtml}
+          </div>
+          
+          <!-- Success Feedback Drawer -->
+          <div class="wrapup-success-drawer" style="display: none; padding: 14px; background: rgba(16, 185, 129, 0.04); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); margin-top: 14px;">
+            <h4 style="margin: 0 0 8px 0; color: var(--success); font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-circle-check"></i> Depth of Knowledge Mastered!
+            </h4>
+            <div class="wrapup-explanations-list" style="font-size: 0.8rem; line-height: 1.45; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+              <!-- Explanations will be appended here -->
+            </div>
           </div>
         </div>
       </div>
@@ -1158,6 +1258,8 @@ export function renderMasteryView(subtopicId) {
     
     ${summaryCorrectionHtml}
     
+    ${hwHtml}
+    
     ${causalHtml}
     
     ${impHtml}
@@ -1167,8 +1269,6 @@ export function renderMasteryView(subtopicId) {
     ${howUsefulHtml}
     
     ${deepThinkingHtml}
-    
-    ${hwHtml}
 
     <!-- Mastery Progress Button -->
     <div style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
@@ -1297,17 +1397,7 @@ export function renderMasteryView(subtopicId) {
     }
   });
 
-  // Individual quiz question click to toggle answer reveal
-  const questionsList = container.querySelector('.quiz-questions-list');
-  if (questionsList) {
-    questionsList.addEventListener('click', (e) => {
-      const item = e.target.closest('.quiz-question-item');
-      if (item) {
-        AudioEngine.play('click');
-        item.classList.toggle('revealed');
-      }
-    });
-  }
+  // Individual quiz question click to toggle answer reveal (Disabled)
 
   // Interactive Map Toggle with Fallbacks
   const btnPartition = document.getElementById('btn-map-partition');
@@ -1741,60 +1831,7 @@ export function renderMasteryView(subtopicId) {
     }
   }
 
-  // Deep Thinking Prompts Event Listeners
-  if (data.deepThinkingQuestions && data.deepThinkingQuestions.length > 0) {
-    const dtCard = container.querySelector('.deep-thinking-card');
-    if (dtCard) {
-      // Auto-save input
-      const textareas = dtCard.querySelectorAll('.deep-thinking-textarea');
-      textareas.forEach(textarea => {
-        const qId = textarea.getAttribute('data-q-id');
-        const saveStatus = document.getElementById(`dt-save-status-${qId}`);
-        
-        // Debounce saving slightly
-        let saveTimeout;
-        textarea.addEventListener('input', () => {
-          if (saveTimeout) clearTimeout(saveTimeout);
-          
-          if (saveStatus) {
-            saveStatus.style.display = 'inline';
-            saveStatus.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Saving...`;
-            saveStatus.style.color = 'var(--text-muted)';
-          }
-
-          saveTimeout = setTimeout(() => {
-            state.deepThinkingAnswers[qId] = textarea.value;
-            saveProgress();
-            if (saveStatus) {
-              saveStatus.innerHTML = `<i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved`;
-              saveStatus.style.color = 'var(--success)';
-            }
-          }, 800);
-        });
-      });
-
-      // Reveal Teacher Guide
-      const guideBtns = dtCard.querySelectorAll('.dt-guide-btn');
-      guideBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          AudioEngine.play('click');
-          const qId = btn.getAttribute('data-q-id');
-          const guideContent = document.getElementById(`dt-guide-content-${qId}`);
-          if (guideContent) {
-            const isHidden = guideContent.style.display === 'none';
-            if (isHidden) {
-              guideContent.style.display = 'block';
-              btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Evaluation Guide`;
-              guideContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            } else {
-              guideContent.style.display = 'none';
-              btn.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> Reveal Teacher Evaluation Guide`;
-            }
-          }
-        });
-      });
-    }
-  }
+  // Deep Thinking Prompts Event Listeners (Disabled)
 
   // Bind Timeline Bridge Buttons
   const bridgeBtns = container.querySelectorAll('.timeline-bridge-btn');
@@ -1894,7 +1931,10 @@ export function renderMasteryView(subtopicId) {
     const doNowCbs = doNowCard.querySelectorAll('.do-now-cb');
     doNowCbs.forEach(cb => {
       cb.addEventListener('change', () => {
-        AudioEngine.play('click');
+        // Skip default sound for 1.3 since quiz triggers its own sounds
+        if (subtopicId !== 'subtopic_1_3') {
+          AudioEngine.play('click');
+        }
         const allChecked = Array.from(doNowCbs).every(c => c.checked);
         const parentContainer = cb.closest('.do-now-checkboxes').parentElement;
         if (allChecked) {
@@ -1911,6 +1951,299 @@ export function renderMasteryView(subtopicId) {
         }
       });
     });
+
+    // Subtopic 1.1: Interactive Drafting Assistant
+    if (subtopicId === 'subtopic_1_1') {
+      const draftingContainer = doNowCard.querySelector('#do-now-drafting-container');
+      const wrapC = doNowCard.querySelector('#textarea-wrap-c');
+      const wrapNop = doNowCard.querySelector('#textarea-wrap-nop');
+      const wrapOk = doNowCard.querySelector('#textarea-wrap-ok');
+      const txtC = doNowCard.querySelector('#draft-c');
+      const txtNop = doNowCard.querySelector('#draft-nop');
+      const txtOk = doNowCard.querySelector('#draft-ok');
+      const compileBtn = doNowCard.querySelector('#compile-draft-btn');
+      const displayDiv = doNowCard.querySelector('#compiled-draft-display');
+      const compiledText = doNowCard.querySelector('#compiled-draft-text');
+
+      const updateDraftingAssistant = () => {
+        const anyChecked = Array.from(doNowCbs).some(c => c.checked);
+        if (draftingContainer) {
+          draftingContainer.style.display = anyChecked ? 'flex' : 'none';
+        }
+        if (wrapC) wrapC.style.display = doNowCbs[0].checked ? 'block' : 'none';
+        if (wrapNop) wrapNop.style.display = doNowCbs[1].checked ? 'block' : 'none';
+        if (wrapOk) wrapOk.style.display = doNowCbs[2].checked ? 'block' : 'none';
+
+        const allChecked = Array.from(doNowCbs).every(c => c.checked);
+        const hasC = txtC && txtC.value.trim().length > 0;
+        const hasNop = txtNop && txtNop.value.trim().length > 0;
+        const hasOk = txtOk && txtOk.value.trim().length > 0;
+
+        if (compileBtn) {
+          compileBtn.style.display = (allChecked && hasC && hasNop && hasOk) ? 'block' : 'none';
+        }
+      };
+
+      doNowCbs.forEach(cb => {
+        cb.addEventListener('change', updateDraftingAssistant);
+      });
+
+      [txtC, txtNop, txtOk].forEach(txt => {
+        if (txt) {
+          txt.addEventListener('input', updateDraftingAssistant);
+        }
+      });
+
+      if (compileBtn) {
+        compileBtn.addEventListener('click', () => {
+          AudioEngine.play('success');
+          const valC = txtC ? txtC.value.trim() : '';
+          const valNop = txtNop ? txtNop.value.trim() : '';
+          const valOk = txtOk ? txtOk.value.trim() : '';
+          
+          if (compiledText) {
+            compiledText.innerHTML = `<strong>Content (C):</strong> ${valC}<br><br><strong>Provenance (NOP):</strong> ${valNop}<br><br><strong>Own Knowledge (OK):</strong> ${valOk}`;
+          }
+          if (displayDiv) {
+            displayDiv.style.display = 'flex';
+          }
+          if (typeof Confetti !== 'undefined' && typeof Confetti.spawn === 'function') {
+            Confetti.spawn(50);
+          }
+        });
+      }
+    }
+
+    // Subtopic 1.2: Hotspots & Context Overlays
+    if (subtopicId === 'subtopic_1_2') {
+      const hotspotsContainer = doNowCard.querySelector('#do-now-hotspots-container');
+      const tooltipCard = doNowCard.querySelector('#hotspot-tooltip-card');
+      const provBox = doNowCard.querySelector('.do-now-provenance-box');
+      const provExplanation = doNowCard.querySelector('#provenance-explanation-card');
+      const contextClues = doNowCard.querySelector('#context-clues-card');
+
+      doNowCbs[0].addEventListener('change', () => {
+        const isChecked = doNowCbs[0].checked;
+        if (hotspotsContainer) hotspotsContainer.style.display = isChecked ? 'block' : 'none';
+        if (tooltipCard) {
+          tooltipCard.style.display = isChecked ? 'block' : 'none';
+          if (!isChecked) {
+            const tTitle = doNowCard.querySelector('#hotspot-title');
+            const tDesc = doNowCard.querySelector('#hotspot-desc');
+            if (tTitle) tTitle.textContent = "Hotspot Detail";
+            if (tDesc) tDesc.textContent = "Click a yellow hotspot dot on the image to inspect Content details...";
+          }
+        }
+      });
+
+      const dots = doNowCard.querySelectorAll('.hotspot-dot');
+      dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+          e.preventDefault();
+          AudioEngine.play('click');
+          const title = dot.getAttribute('data-title');
+          const desc = dot.getAttribute('data-desc');
+          const tTitle = doNowCard.querySelector('#hotspot-title');
+          const tDesc = doNowCard.querySelector('#hotspot-desc');
+          if (tTitle) tTitle.textContent = title;
+          if (tDesc) tDesc.textContent = desc;
+        });
+      });
+
+      doNowCbs[1].addEventListener('change', () => {
+        const isChecked = doNowCbs[1].checked;
+        if (provBox) {
+          if (isChecked) {
+            provBox.style.animation = 'pulse-border 2s infinite';
+            provBox.style.borderWidth = '2px';
+          } else {
+            provBox.style.animation = 'none';
+            provBox.style.borderWidth = '1px';
+          }
+        }
+        if (provExplanation) {
+          provExplanation.style.display = isChecked ? 'block' : 'none';
+        }
+      });
+
+      doNowCbs[2].addEventListener('change', () => {
+        const isChecked = doNowCbs[2].checked;
+        if (contextClues) {
+          contextClues.style.display = isChecked ? 'block' : 'none';
+        }
+      });
+    }
+
+    // Subtopic 1.3: Mini-Challenge Popups
+    if (subtopicId === 'subtopic_1_3') {
+      const quizOverlay = doNowCard.querySelector('#do-now-quiz-overlay');
+      const quizQuestionText = doNowCard.querySelector('#quiz-question-text');
+      const quizOptionsContainer = doNowCard.querySelector('#quiz-options-container');
+
+      const quizzes = {
+        0: {
+          type: 'C',
+          question: "What does the protester's sign claim about integration?",
+          options: [
+            { text: "Integration is a communist plot and is being forced by a dictator", correct: true },
+            { text: "Integration is supported by the Southern governors", correct: false },
+            { text: "Integration is a democratic reform that will help everyone", correct: false }
+          ]
+        },
+        1: {
+          type: 'NOP',
+          question: "Why is the timing of this photo (September 1957) highly useful for historians?",
+          options: [
+            { text: "It captures the peak of white resistance during the Little Rock Nine integration crisis", correct: true },
+            { text: "It was taken before Brown v. Board of Education was decided", correct: false },
+            { text: "It shows the immediate response to the Civil Rights Act of 1964", correct: false }
+          ]
+        },
+        2: {
+          type: 'OK',
+          question: "Which historical fact explains why federal troops were deployed to Central High School?",
+          options: [
+            { text: "Governor Orval Faubus used the state National Guard to block the Black students, forcing Eisenhower to send the 101st Airborne", correct: true },
+            { text: "Martin Luther King Jr. requested federal troops to guard the marchers", correct: false },
+            { text: "The local school board requested army protection for the school buildings", correct: false }
+          ]
+        }
+      };
+
+      const triggerQuiz = (cb, idx) => {
+        const quiz = quizzes[idx];
+        if (!quiz) return;
+
+        if (quizQuestionText) {
+          quizQuestionText.innerHTML = `<span style="color: var(--accent);">[Challenge ${quiz.type}]</span> ${quiz.question}`;
+        }
+        if (quizOptionsContainer) {
+          quizOptionsContainer.innerHTML = '';
+          quiz.options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-option-btn';
+            btn.innerHTML = opt.text;
+            btn.style.width = '100%';
+            btn.style.padding = '8px 12px';
+            btn.style.background = 'rgba(255, 255, 255, 0.05)';
+            btn.style.border = '1px solid var(--border-glass)';
+            btn.style.borderRadius = '4px';
+            btn.style.color = 'var(--text-base)';
+            btn.style.textAlign = 'left';
+            btn.style.fontSize = '0.82rem';
+            btn.style.cursor = 'pointer';
+            btn.style.transition = 'all 0.2s';
+            btn.style.marginBottom = '6px';
+            
+            btn.addEventListener('mouseenter', () => {
+              btn.style.background = 'rgba(255, 255, 255, 0.1)';
+              btn.style.borderColor = 'var(--accent)';
+            });
+            btn.addEventListener('mouseleave', () => {
+              btn.style.background = 'rgba(255, 255, 255, 0.05)';
+              btn.style.borderColor = 'var(--border-glass)';
+            });
+
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              if (opt.correct) {
+                AudioEngine.play('success');
+                btn.style.background = 'rgba(16, 185, 129, 0.2)';
+                btn.style.borderColor = '#10b981';
+                btn.style.color = '#10b981';
+                
+                cb.dataset.unlocked = "true";
+                cb.checked = true;
+                
+                // Dispatch change event to update outer styling
+                cb.dispatchEvent(new Event('change'));
+
+                setTimeout(() => {
+                  if (quizOverlay) quizOverlay.style.display = 'none';
+                }, 800);
+              } else {
+                AudioEngine.play('error');
+                btn.style.background = 'rgba(239, 68, 68, 0.2)';
+                btn.style.borderColor = '#ef4444';
+                btn.style.color = '#ef4444';
+                
+                btn.style.transform = 'translateX(5px)';
+                setTimeout(() => { btn.style.transform = 'none'; }, 100);
+              }
+            });
+            quizOptionsContainer.appendChild(btn);
+          });
+        }
+        if (quizOverlay) {
+          quizOverlay.style.display = 'flex';
+        }
+      };
+
+      doNowCbs.forEach((cb, idx) => {
+        cb.addEventListener('click', (e) => {
+          if (cb.dataset.unlocked !== "true") {
+            e.preventDefault();
+            triggerQuiz(cb, idx);
+          }
+        });
+        cb.addEventListener('change', () => {
+          if (!cb.checked) {
+            cb.dataset.unlocked = "false";
+          }
+        });
+      });
+    }
+
+    // Subtopic 1.4: Examiner's Lens
+    if (subtopicId === 'subtopic_1_4') {
+      const lensContainer = doNowCard.querySelector('#do-now-lens-container');
+      if (lensContainer) {
+        lensContainer.style.display = 'flex';
+      }
+      const lensC = doNowCard.querySelector('.lens-c');
+      const lensNop = doNowCard.querySelector('.lens-nop');
+      const lensOk = doNowCard.querySelector('.lens-ok');
+
+      const updateLensHighlighting = () => {
+        if (lensC) {
+          if (doNowCbs[0].checked) {
+            lensC.style.background = 'rgba(59, 130, 246, 0.25)';
+            lensC.style.color = '#60a5fa';
+            lensC.style.fontWeight = 'bold';
+          } else {
+            lensC.style.background = 'transparent';
+            lensC.style.color = 'inherit';
+            lensC.style.fontWeight = 'normal';
+          }
+        }
+        if (lensNop) {
+          if (doNowCbs[1].checked) {
+            lensNop.style.background = 'rgba(168, 85, 247, 0.25)';
+            lensNop.style.color = '#c084fc';
+            lensNop.style.fontWeight = 'bold';
+          } else {
+            lensNop.style.background = 'transparent';
+            lensNop.style.color = 'inherit';
+            lensNop.style.fontWeight = 'normal';
+          }
+        }
+        if (lensOk) {
+          if (doNowCbs[2].checked) {
+            lensOk.style.background = 'rgba(34, 197, 94, 0.25)';
+            lensOk.style.color = '#4ade80';
+            lensOk.style.fontWeight = 'bold';
+          } else {
+            lensOk.style.background = 'transparent';
+            lensOk.style.color = 'inherit';
+            lensOk.style.fontWeight = 'normal';
+          }
+        }
+      };
+
+      doNowCbs.forEach(cb => {
+        cb.addEventListener('change', updateLensHighlighting);
+      });
+    }
   }
 
   // Bind Specification Checklist click listeners
@@ -1948,8 +2281,148 @@ export function renderMasteryView(subtopicId) {
   // Formatting vault answers
   formatVaultImportanceAnswers(container);
 
+  // Set up Lesson Wrap-up interactive sorting challenge
+  setupWrapUpChallenge(container, subtopicId);
+
   // Wrap all images in links for high-res inspection
   wrapImagesInLinks(container);
+}
+
+function setupWrapUpChallenge(container, subtopicId) {
+  const wrapUpCard = container.querySelector('.lesson-wrap-up-card');
+  if (!wrapUpCard) return;
+
+  const challenge = WRAPUP_DATA[subtopicId];
+  if (!challenge) return;
+
+  const cards = Array.from(wrapUpCard.querySelectorAll('.wrapup-fact-card'));
+  const buckets = Array.from(wrapUpCard.querySelectorAll('.wrapup-bucket'));
+  const pool = wrapUpCard.querySelector('.wrapup-cards-pool');
+  const successDrawer = wrapUpCard.querySelector('.wrapup-success-drawer');
+  const explanationsList = wrapUpCard.querySelector('.wrapup-explanations-list');
+
+  let selectedCard = null;
+  const placements = {}; // factId -> category name
+
+  const checkVictory = () => {
+    let allCorrect = true;
+    challenge.facts.forEach(f => {
+      if (placements[f.id] !== f.correctCategory) {
+        allCorrect = false;
+      }
+    });
+
+    if (allCorrect && Object.keys(placements).length === challenge.facts.length) {
+      AudioEngine.play('cheer');
+      if (successDrawer) {
+        successDrawer.style.display = 'block';
+        if (explanationsList) {
+          explanationsList.innerHTML = challenge.facts.map(f => `
+            <div style="padding: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 4px; margin-bottom: 8px; text-align: left;">
+              <strong style="color: var(--success); display: block; margin-bottom: 2px; font-size: 0.82rem;">✓ ${f.correctCategory}:</strong>
+              <span style="color: var(--text-base); font-size: 0.82rem; line-height: 1.45;">${f.text}</span>
+              <p style="margin: 6px 0 0 0; font-style: italic; color: var(--text-muted); font-size: 0.78rem; border-top: 1px dashed var(--border-glass); padding-top: 4px;">${f.feedback}</p>
+            </div>
+          `).join('');
+        }
+        successDrawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      if (typeof Confetti !== 'undefined' && typeof Confetti.spawn === 'function') {
+        Confetti.spawn(50);
+      }
+    }
+  };
+
+  cards.forEach(card => {
+    card.addEventListener('dragstart', (e) => {
+      card.classList.add('dragging');
+      e.dataTransfer.setData('text/plain', card.getAttribute('data-fact-id'));
+    });
+
+    card.addEventListener('dragend', () => {
+      card.classList.remove('dragging');
+    });
+
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+      AudioEngine.play('click');
+      if (selectedCard === card) {
+        card.classList.remove('selected');
+        selectedCard = null;
+      } else {
+        if (selectedCard) {
+          selectedCard.classList.remove('selected');
+        }
+        selectedCard = card;
+        card.classList.add('selected');
+      }
+    });
+  });
+
+  buckets.forEach(bucket => {
+    const slots = bucket.querySelector('.wrapup-bucket-slots');
+    const category = bucket.getAttribute('data-category');
+
+    bucket.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      bucket.classList.add('drag-over');
+    });
+
+    bucket.addEventListener('dragleave', () => {
+      bucket.classList.remove('drag-over');
+    });
+
+    bucket.addEventListener('drop', (e) => {
+      e.preventDefault();
+      bucket.classList.remove('drag-over');
+      const factId = e.dataTransfer.getData('text/plain');
+      const card = wrapUpCard.querySelector(`[data-fact-id="${factId}"]`);
+      if (card && slots) {
+        AudioEngine.play('click');
+        slots.appendChild(card);
+        placements[factId] = category;
+        checkVictory();
+      }
+    });
+
+    bucket.addEventListener('click', () => {
+      if (selectedCard && slots) {
+        const factId = selectedCard.getAttribute('data-fact-id');
+        slots.appendChild(selectedCard);
+        placements[factId] = category;
+        selectedCard.classList.remove('selected');
+        selectedCard = null;
+        checkVictory();
+      }
+    });
+  });
+
+  if (pool) {
+    pool.addEventListener('click', () => {
+      if (selectedCard) {
+        const factId = selectedCard.getAttribute('data-fact-id');
+        pool.appendChild(selectedCard);
+        placements[factId] = null;
+        selectedCard.classList.remove('selected');
+        selectedCard = null;
+      }
+    });
+
+    pool.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
+
+    pool.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const factId = e.dataTransfer.getData('text/plain');
+      const card = wrapUpCard.querySelector(`[data-fact-id="${factId}"]`);
+      if (card) {
+        AudioEngine.play('click');
+        pool.appendChild(card);
+        placements[factId] = null;
+      }
+    });
+  }
 }
 
 function blankFirstWord(block) {

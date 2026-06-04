@@ -1800,7 +1800,7 @@ const TIMELINE_IMAGES = [
   {
     keywords: ["101st airborne", "airborne division", "central high guard", "federalized the arkansas"],
     image: "assets/sources/airborne-little-rock-patrol.jpg",
-    provenance: "Members of the 101st Airborne Division standing guard outside Central High School, September 1957."
+    provenance: "Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, September 1957."
   },
   {
     keywords: ["rosa parks fingerprint", "parks booking", "parks arrest", "arrest of rosa parks"],
@@ -1815,12 +1815,12 @@ const TIMELINE_IMAGES = [
   {
     keywords: ["southern manifesto", "manifesto signing", "strom thurmond"],
     image: "assets/sources/southern-manifesto-signing.jpg",
-    provenance: "Southern politicians signing the Southern Manifesto to coordinate opposition and resist federal desegregation mandates."
+    provenance: "Senator Strom Thurmond signing the Southern Manifesto in 1956, surrounded by other Southern politicians."
   },
   {
     keywords: ["ku klux klan march", "kkk march", "robes and hoods"],
     image: "assets/sources/kkk-march-washington-1926.jpg",
-    provenance: "A Ku Klux Klan parade demonstrating the public presence of white supremacist groups, 1957."
+    provenance: "A Ku Klux Klan parade marching in front of the U.S. Treasury Building in Washington D.C., 1926."
   },
   {
     keywords: ["greensboro sit-in", "woolworth's lunch counter", "greensboro lunch counter"],
@@ -1918,9 +1918,9 @@ const TIMELINE_IMAGES = [
     provenance: "Student demonstrators facing the National Guard at Kent State University, May 1970."
   },
   {
-    keywords: ["demonstrators marching near the pentagon", "pentagon in washington", "anti-war protest pentagon"],
+    keywords: ["u.s. marshals carrying", "marshals carrying demonstrator", "pentagon protest arrest", "carrying away demonstrator"],
     image: "assets/sources/antiwar-pentagon-protest-1967.jpg",
-    provenance: "Anti-war demonstrators facing military police outside the Pentagon, October 1967."
+    provenance: "U.S. Marshals carrying away an anti-war demonstrator outside the Pentagon, October 1967."
   },
   {
     keywords: ["pro-war demonstrators", "silent majority speaks", "silent majority rally"],

@@ -165,7 +165,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "Segregation is the enforced separation of different racial groups in a country, community, or establishment. The 1896 ruling that legalized this was Plessy v. Ferguson.",
       "silverAnswer": "The Supreme Court ruled that separate schools were unequal and unconstitutional. This decision gave civil rights lawyers the legal power to demand that all-white schools admit Black students.",
-      "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment."
+      "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment.",
+      "enquiry": "segregation and discrimination in the Southern states in the 1950s"
     },
     "specPoints": [
       "Segregation, discrimination and voting rights in the Southern states.",
@@ -313,12 +314,12 @@ export const LESSONS_DATA = {
         "caption": "Segregationist demonstrators protesting against school integration in Little Rock."
       },
       "sourceE": {
-        "provenance": "From a photograph showing soldiers of the 101st Airborne Division patrolling Central High School in late September 1957.",
-        "content": "[A photograph of armed federal troops standing in single file outside Central High School, holding bayonets. A military jeep is parked nearby, and no civilians are allowed near the entrance.]",
+        "provenance": "From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.",
+        "content": "[A photograph showing soldiers of the 101st Airborne Division in a military jeep guarding a station wagon as Black students get inside the vehicle, with another soldier walking on patrol.]",
         "image": "assets/sources/airborne-little-rock-patrol.jpg",
-        "caption": "Members of the 101st Airborne Division standing guard outside Central High School."
+        "caption": "Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students."
       },
-      "modelAnswer": "Source D is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an \"angry white crowd\" of students and adults protesting, with some carrying signs reading \"Keep Central High Clean\". This content is highly useful because it is supported by my contextual knowledge that [[when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school]], which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. {{The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.}}\n\nSource E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows \"armed federal troops standing in single file\" holding bayonets. This content's usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a staged, orderly military patrol, which hides the constant, daily psychological harassment the students endured from white classmates inside the classrooms.}}"
+      "modelAnswer": "Source D is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an \"angry white crowd\" of students and adults protesting, with some carrying signs reading \"Keep Central High Clean\". This content is highly useful because it is supported by my contextual knowledge that [[when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school]], which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. {{The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.}}\n\nSource E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows \"soldiers of the 101st Airborne Division in a military jeep guarding a station wagon\" as Black students enter it. This content's usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.}}"
     },
     "deepThinkingQuestions": [
       {
@@ -355,7 +356,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "In May 1954, the Supreme Court ruled unanimously (9-0) that racial segregation in public schools was unconstitutional.",
       "silverAnswer": "The decision ruled that separate educational facilities are inherently unequal, directly overturning the 1896 Plessy v. Ferguson ruling and violating the 14th Amendment's Equal Protection Clause.",
-      "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow."
+      "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow.",
+      "enquiry": "the role of the Supreme Court in challenging school segregation"
     },
     "specPoints": [
       "Reasons for, key features and significance of the events at Little Rock High School (1957)."
@@ -537,7 +539,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "Eisenhower sent the troops because Governor Faubus used the state National Guard to defy a federal court order, forcing the President to uphold federal authority and the Constitution.",
       "silverAnswer": "The sign argues that (1) integration is being forced by a 'dictator' (federal overreach), and (2) desegregation is a threat to the education and culture of white children ('stolen' school).",
-      "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern school boards used this loophole to delay integration, leading to angry public protests and state defiance in Little Rock."
+      "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern school boards used this loophole to delay integration, leading to angry public protests and state defiance in Little Rock.",
+      "enquiry": "the level of opposition to school integration in Little Rock"
     },
     "specPoints": [
       "The significance of Rosa Parks.",
@@ -679,18 +682,18 @@ export const LESSONS_DATA = {
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the methods used by Southern white opposition to resist civil rights in the 1950s? (8 marks)",
       "sourceD": {
-        "provenance": "A photograph of Southern politicians signing the Southern Manifesto in March 1956 to coordinate resistance to school integration.",
-        "content": "[A photograph showing a group of Southern Senators and Congressmen signing the Southern Manifesto, pledging to use 'all lawful means' to resist federal desegregation rulings.]",
+        "provenance": "A photograph showing Senator Strom Thurmond signing the Southern Manifesto in March 1956, surrounded by other Southern politicians.",
+        "content": "[A photograph showing Senator Strom Thurmond sitting at a desk and signing the Southern Manifesto, while a group of five other Southern Senators stand around him watching.]",
         "image": "assets/sources/southern-manifesto-signing.jpg",
         "caption": "Southern Congressmen signing the Southern Manifesto in March 1956."
       },
       "sourceE": {
-        "provenance": "A photograph of a Ku Klux Klan parade marching through a Southern town, taken in 1957.",
-        "content": "[A photograph showing dozens of Klansmen in white robes and pointed hoods marching down a main street. Crowds of onlookers are lined up, and local police officers are standing by without intervening.]",
+        "provenance": "A photograph of a massive Ku Klux Klan parade marching in front of the U.S. Treasury Building in Washington D.C. in 1926.",
+        "content": "[A photograph showing a large line of Klansmen in white robes and hoods marching down a street in Washington D.C. in front of the U.S. Treasury Building, carrying American flags, with crowds of onlookers watching from the sidewalk.]",
         "image": "assets/sources/kkk-march-washington-1926.jpg",
-        "caption": "A KKK march demonstrating the public, unchecked presence of white supremacist groups in the South."
+        "caption": "A Ku Klux Klan parade marching in front of the U.S. Treasury Building in Washington D.C. in 1926."
       },
-      "modelAnswer": "Source D is highly useful for showing the official, legalistic methods of resistance deployed by Southern politicians to defy integration. The photograph depicts \"a group of Southern Senators and Congressmen signing the Southern Manifesto\", pledging to use all lawful means to resist federal rulings. This content is highly useful because it is supported by my contextual knowledge that [[in March 1956, over 100 Southern politicians signed the Southern Manifesto to coordinate resistance, falsely claiming the Supreme Court's Brown ruling was an abuse of judicial power]], which confirms that the photograph is an accurate representation of how Southern elites lent political legitimacy to segregation. {{The provenance makes the source highly useful because it documents a historic moment of political mobilization in March 1956, showing the unity of Southern lawmakers. However, it is limited because it only captures a public signing ceremony, concealing the illegal, violent tactics and economic intimidation that these same state authorities quietly condoned on the ground.}}\n\nSource E is highly useful for showing the violent and physical intimidation used by extremist groups to enforce segregation. The photograph depicts \"dozens of Klansmen in white robes and pointed hoods marching\" down a street while police stand by. This content's utility is supported by my knowledge that [[the Ku Klux Klan experienced a major revival in the 1950s, using bombings, beatings, and lynchings to terrorize civil rights workers with local police collusion]], which confirms the accuracy of the source as a record of KKK activity. {{The provenance, showing a KKK march in 1957, makes the source highly useful because it shows the public, unchecked presence of white supremacist groups. However, it is less useful because it only captures a public parade, failing to document the illegal, clandestine nature of KKK violence and their collusion with local police.}}"
+      "modelAnswer": "Source D is highly useful for showing the official, legalistic methods of resistance deployed by Southern politicians to defy integration. The photograph depicts \"Senator Strom Thurmond sitting at a desk and signing the Southern Manifesto\", with other senators standing around him. This content is highly useful because it is supported by my contextual knowledge that [[in March 1956, over 100 Southern politicians signed the Southern Manifesto to coordinate resistance, falsely claiming the Supreme Court's Brown ruling was an abuse of judicial power]], which confirms that the photograph is an accurate representation of how Southern elites lent political legitimacy to segregation. {{The provenance makes the source highly useful because it documents a historic moment of political mobilization in March 1956, showing the unity of Southern lawmakers. However, it is limited because it only captures a staged photo opportunity of a signing ceremony, concealing the illegal, violent tactics and economic intimidation that these same state authorities quietly condoned on the ground.}}\n\nSource E is highly useful for showing the violent and physical intimidation used by extremist groups to enforce segregation. The photograph depicts \"a large line of Klansmen in white robes and hoods marching\" in Washington D.C. This content's utility is supported by my knowledge that [[the Ku Klux Klan experienced a major revival in the 1950s, using bombings, beatings, and lynchings to terrorize civil rights workers with local police collusion]], which confirms the accuracy of the source as a record of KKK activity. {{The provenance, showing a KKK march in Washington D.C. in 1926, makes the source useful for showing the national scale and public visibility of the Klan in the 1920s. However, its usefulness is significantly limited for an enquiry into the 1950s South because it was taken decades earlier in the North (D.C.) and fails to document the specific 1950s Southern civil rights context, KKK violence, or their collusion with local Southern police.}}"
     },
     "deepThinkingQuestions": [
       {
@@ -727,7 +730,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "The Montgomery Bus Boycott lasted 381 days and was officially ended by the Supreme Court's Browder v. Gayle decision in late 1956.",
       "silverAnswer": "The image shows Parks sitting in the front seats of the bus (previously reserved for whites only) and a white man sitting peacefully behind her, proving the laws had changed.",
-      "goldAnswer": "This image represents the dismantling of the Jim Crow system shown in Topic 1.1. By refusing to comply with segregated seating, activists forced a Supreme Court ruling (Browder v. Gayle) that declared segregated transit unconstitutional, legally removing signs like the one in Topic 1.1."
+      "goldAnswer": "This image represents the dismantling of the Jim Crow system shown in Topic 1.1. By refusing to comply with segregated seating, activists forced a Supreme Court ruling (Browder v. Gayle) that declared segregated transit unconstitutional, legally removing signs like the one in Topic 1.1.",
+      "enquiry": "the success of the Montgomery Bus Boycott"
     },
     "specPoints": [
       "Opposition to desegregation in the South, including the ‘Dixiecrats’ and the setting up of White Citizens’ Councils.",
@@ -876,10 +880,10 @@ export const LESSONS_DATA = {
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the tactics of direct action and the response of Southern white opposition? (8 marks)",
       "sourceD": {
-        "provenance": "From a photograph showing student activists staging a sit-in at a Woolworth's lunch counter in Greensboro, North Carolina, February 1960.",
-        "content": "[A photograph showing four Black college students sitting quietly on stools at a lunch counter. A white waitress stands behind the counter refusing to serve them, while white teenagers stand behind the students, making faces and pouring sugar on them.]",
+        "provenance": "A photograph of the preserved Greensboro Woolworth's lunch counter and stools on display as an historical exhibit at the Smithsonian National Museum of American History.",
+        "content": "[A photograph of the empty, preserved section of the Greensboro Woolworth's lunch counter and four stools, displayed as an exhibit in a museum to commemorate the 1960 sit-in protests.]",
         "image": "assets/sources/greensboro-sit-in-counter.jpg",
-        "caption": "Student activists enduring harassment during the Greensboro Woolworth's lunch counter sit-in."
+        "caption": "The Greensboro Woolworth's lunch counter and stools, now preserved as an exhibit at the Smithsonian."
       },
       "sourceE": {
         "provenance": "From a photograph showing James Meredith walking to class at the University of Mississippi, October 1962.",
@@ -887,7 +891,7 @@ export const LESSONS_DATA = {
         "image": "assets/sources/james-meredith-walking.jpg",
         "caption": "James Meredith under heavy armed escort during the integration of 'Ole Miss'."
       },
-      "modelAnswer": "Source D is highly useful for showing the non-violent direct action tactics used by student activists to challenge retail segregation. The photograph shows \"four Black college students sitting quietly\" on counter stools while white teenagers pour sugar on them. This content is highly useful because it is supported by my knowledge that [[the Greensboro sit-in of February 1960 at Woolworth's sparked a massive sit-in movement across the South, demonstrating SNCC's commitment to non-violent resistance]], which validates that the photograph is an accurate representation of the physical harassment activists endured to expose Southern bigotry. {{The provenance, taken in February 1960, makes the source highly useful because it provides an authentic, contemporary record of the protests. However, it is less useful because it only shows the counter itself, omitting the wider economic boycott of the store organized by the local community that forced integration.}}\n\nSource E is highly useful for showing the extreme level of state resistance to university integration and the federal intervention needed to override it. The photograph depicts James Meredith walking \"flanked by several tall, serious US Marshals\" wearing helmets. This content's utility is supported by my knowledge that [[Governor Ross Barnett defied federal orders, prompting President Kennedy to send 30,000 troops and US Marshals to force the integration of the University of Mississippi in October 1962, sparking riots that killed two people]], which explains the military necessity of using armed guards to protect a single Black student. {{The provenance of October 1962 makes the source extremely useful because it visually documents the armed federal power needed to protect Black rights. However, it is less useful because it depicts a controlled walk, failing to capture the chaos and violence of the Ole Miss riot itself.}}"
+      "modelAnswer": "Source D is highly useful for showing the non-violent direct action tactics used by student activists to challenge retail segregation. The photograph shows the \"empty, preserved section of the Greensboro Woolworth's lunch counter and four stools\" on display inside the Smithsonian Museum. This content is highly useful because it is supported by my knowledge that [[the Greensboro sit-in of February 1960 at Woolworth's was a turning point that sparked sit-ins across the South, and this preserved counter stands as a significant material artifact representing that struggle]], which confirms that the preserved counter stands as a significant material artifact representing that struggle. {{The provenance, showing the counter preserved at the Smithsonian, makes the source highly useful as it demonstrates the national historical significance and public recognition of the sit-ins. However, it is limited because it shows an empty museum exhibit rather than the actual 1960 protest, failing to capture the student activists, the hostile white crowds, or the harassment they endured.}}\n\nSource E is highly useful for showing the extreme level of state resistance to university integration and the federal intervention needed to override it. The photograph depicts James Meredith walking \"flanked by several tall, serious US Marshals\" wearing helmets. This content's utility is supported by my knowledge that [[Governor Ross Barnett defied federal orders, prompting President Kennedy to send 30,000 troops and US Marshals to force the integration of the University of Mississippi in October 1962, sparking riots that killed two people]], which explains the military necessity of using armed guards to protect a single Black student. {{The provenance of October 1962 makes the source extremely useful because it visually documents the armed federal power needed to protect Black rights. However, it is less useful because it depicts a controlled walk, failing to capture the chaos and violence of the Ole Miss riot itself.}}"
     },
     "deepThinkingQuestions": [
       {
@@ -907,14 +911,14 @@ export const LESSONS_DATA = {
       "prevSubtopicId": "subtopic_1_4",
       "prevSubtopicTitle": "Topic 1.4: Southern White Resistance",
       "image": "assets/sources/southern-manifesto-signing.jpg",
-      "provenance": "A group of Southern senators and congressmen signing the 'Southern Manifesto' in 1956 to coordinate resistance against school desegregation.",
+      "provenance": "Senator Strom Thurmond signing the 'Southern Manifesto' in 1956, surrounded by other Southern politicians.",
       "seeThinkWonder": {
         "see": "Observe the formal setting and the documents being signed by the Southern politicians.",
         "think": "Why did Southern politicians feel the need to document their opposition to desegregation in a formal 'Manifesto'?",
         "wonder": "How did this political declaration encourage segregationist groups like the Ku Klux Klan and White Citizens' Councils?"
       },
       "bronze": "Identify two ways in which white segregationists in the South resisted civil rights progress in the late 1950s.",
-      "silver": "Study the source image. Explain how the Southern Manifesto signed by Southern congressmen in 1956 opposed the Supreme Court's authority.",
+      "silver": "Study the source image. Explain how the Southern Manifesto signed by Strom Thurmond and other Southern politicians in 1956 opposed the Supreme Court's authority.",
       "gold": "Contrast the Southern White Resistance tactics (such as the Southern Manifesto and White Citizens' Councils) with the direct action methods used in the Montgomery Bus Boycott.",
       "keywords": [
         "Southern Manifesto",
@@ -924,7 +928,9 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "They resisted through (1) political measures like the Southern Manifesto and 'massive resistance', and (2) social/economic intimidation by White Citizens' Councils and KKK violence.",
       "silverAnswer": "The Southern Manifesto claimed the Supreme Court had abused its power in the Brown decision, asserting that education was a state matter and encouraging states to resist federal integration orders.",
-      "goldAnswer": "While Montgomery activists used non-violent economic pressure, Southern White Resistance used legal obstruction (states' rights arguments) and economic/physical intimidation to prevent integration and maintain white supremacy."
+      "goldAnswer": "While Montgomery activists used non-violent economic pressure, Southern White Resistance used legal obstruction (states' rights arguments) and economic/physical intimidation to prevent integration and maintain white supremacy.",
+      "visualDetails": "Senator Strom Thurmond is seated at a desk signing the 'Southern Manifesto' (officially the Declaration of Constitutional Principles) in 1956, while five other Southern senators stand around him watching. This represents the official political coordination of white resistance to integration.",
+      "enquiry": "the methods used by Southern white opposition to resist integration"
     },
     "specPoints": [
       "The significance of Greensboro and the sit-in movement.",
@@ -1132,14 +1138,14 @@ export const LESSONS_DATA = {
       "prevSubtopicId": "subtopic_2_1",
       "prevSubtopicTitle": "Topic 2.1: Non-Violent Direct Action",
       "image": "assets/sources/greensboro-sit-in-counter.jpg",
-      "provenance": "Student activists enduring harassment during the Greensboro Woolworth's lunch counter sit-in, February 1960.",
+      "provenance": "The Greensboro Woolworth's lunch counter and stools, now preserved as an exhibit at the Smithsonian National Museum of American History.",
       "seeThinkWonder": {
-        "see": "Look at the students sitting at the counter and the crowd of white youths standing directly behind them.",
-        "think": "Why did the activists refuse to react or retaliate when food and liquids were poured over them?",
-        "wonder": "How did student-led groups like SNCC organize such highly disciplined campaigns?"
+        "see": "Observe the empty lunch counter and stools on display in the museum.",
+        "think": "Why was this specific section of the Woolworth's lunch counter preserved and placed in a national museum?",
+        "wonder": "How did this physical space become a focal point for the civil rights struggle in 1960?"
       },
       "bronze": "What student-led civil rights organization was founded in 1960 to coordinate sit-ins and voter registration?",
-      "silver": "Study the source image. Identify two ways white segregationists are harassing the Black students at the counter.",
+      "silver": "Study the source image. Identify two features of the lunch counter layout, and explain why sit-ins at such counters were highly visible.",
       "gold": "Contrast the student sit-ins with the Montgomery Bus Boycott (Topic 1.2). How did the sit-in strategy differ in its target, speed of mobilization, and direct confrontation?",
       "keywords": [
         "SNCC",
@@ -1148,8 +1154,10 @@ export const LESSONS_DATA = {
         "Desegregation"
       ],
       "bronzeAnswer": "The Student Nonviolent Coordinating Committee (SNCC) was founded in 1960.",
-      "silverAnswer": "White segregationists are (1) crowding closely behind the students to intimidate them, and (2) pouring sugar, condiments, and liquids over their heads and clothes.",
-      "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention."
+      "silverAnswer": "The counter features (1) stools bolted to the floor facing the service area, and (2) a long, open counter, making any protest there highly public and disruptive to normal business operations.",
+      "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention.",
+      "visualDetails": "The photo shows the empty Greensboro lunch counter and four stools on display in a museum. There are no people in the photo. It represents the material culture and national preservation of the sit-in protests of 1960.",
+      "enquiry": "the significance of student-led sit-in protests in challenging segregation"
     },
     "specPoints": [
       "King and the peace marches of 1963 in Birmingham and Washington.",
@@ -1350,7 +1358,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "The Birmingham Police Chief was Eugene 'Bull' Connor.",
       "silverAnswer": "The shocking TV news coverage of police beating peaceful marchers horrified the public. This put massive political pressure on President Johnson to pass a law protecting Black voters.",
-      "goldAnswer": "In both Selma and Little Rock (Topic 1.3), state governors openly defied civil rights. In both cases, shocking media coverage (television broadcasts of white mobs in Little Rock and troopers beating marchers in Selma) provoked national outrage, forcing the Presidents (Eisenhower and Johnson) to intervene with federal authority."
+      "goldAnswer": "In both Selma and Little Rock (Topic 1.3), state governors openly defied civil rights. In both cases, shocking media coverage (television broadcasts of white mobs in Little Rock and troopers beating marchers in Selma) provoked national outrage, forcing the Presidents (Eisenhower and Johnson) to intervene with federal authority.",
+      "enquiry": "the policing of civil rights protests in Selma"
     },
     "specPoints": [
       "Malcolm X, his beliefs, methods and involvement with the Black Muslims.",
@@ -1549,7 +1558,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "The Black Panther Party (founded by Huey Newton and Bobby Seale in Oakland in 1966).",
       "silverAnswer": "Martin Luther King Jr. believed in peaceful, non-violent protest to win over white support, whereas Malcolm X believed that Black Americans had the right to defend themselves by any means necessary if they were attacked by racists.",
-      "goldAnswer": "Legal victories like the Montgomery Bus Boycott (Topic 1.2) and the Civil Rights Act ended legal segregation in the South, but did not solve Northern problems of poverty, unemployment, and police brutality. Malcolm X's focus on economic self-reliance and self-defense appealed to Northern Blacks who felt non-violence had failed to improve their daily lives."
+      "goldAnswer": "Legal victories like the Montgomery Bus Boycott (Topic 1.2) and the Civil Rights Act ended legal segregation in the South, but did not solve Northern problems of poverty, unemployment, and police brutality. Malcolm X's focus on economic self-reliance and self-defense appealed to Northern Blacks who felt non-violence had failed to improve their daily lives.",
+      "enquiry": "the beliefs and methods of Malcolm X"
     },
     "specPoints": [
       "The riots of 1965–67 and the Kerner Report (1968).",
@@ -1748,14 +1758,14 @@ export const LESSONS_DATA = {
       "prevSubtopicId": "subtopic_2_4",
       "prevSubtopicTitle": "Topic 2.4: Urban Riots (1965–68)",
       "image": "assets/sources/detroit-riot-guard-1967.jpg",
-      "provenance": "A photograph showing National Guard troops patrolling a street during the Detroit Riot, July 1967.",
+      "provenance": "A photograph showing a National Guard soldier patrolling a street during the Detroit Riot, July 1967.",
       "seeThinkWonder": {
         "see": "Observe the armed soldier in combat gear patrolling a residential street with smoke in the background.",
         "think": "Why did the US government deploy military forces (National Guard) to American cities in the late 1960s?",
         "wonder": "How did these violent urban riots affect the public support for the civil rights movement's non-violent goals?"
       },
       "bronze": "State two major US cities that experienced significant urban riots between 1965 and 1968.",
-      "silver": "Study the source image. Identify two details indicating the scale of civil unrest and state military deployment during this riot.",
+      "silver": "Study the source image. Identify two details in the photo indicating state military deployment and the destruction caused by the riot.",
       "gold": "Contrast the causes of the urban riots (1965–68) with the goals of the Southern civil rights campaigns led by the SCLC.",
       "keywords": [
         "Watts Riot",
@@ -1764,8 +1774,10 @@ export const LESSONS_DATA = {
         "De Facto Segregation"
       ],
       "bronzeAnswer": "Two major cities that experienced significant urban riots were Los Angeles (Watts in 1965) and Detroit (1967) or Newark (1967).",
-      "silverAnswer": "The image shows (1) armed National Guard soldiers deployed in combat gear patrolling a street, and (2) burning buildings with thick smoke filling the sky, showing widespread unrest.",
-      "goldAnswer": "While Southern SCLC campaigns focused on de jure segregation (legal rights, voting access), the Northern urban riots arose from de facto segregation (economic deprivation, discrimination, and police bias) which legal reforms could not easily solve."
+      "silverAnswer": "The image shows (1) a single armed National Guard soldier deployed in combat gear patrolling a street, and (2) burning buildings with thick smoke rising in the background, showing the destruction caused by the riot.",
+      "goldAnswer": "While Southern SCLC campaigns focused on de jure segregation (legal rights, voting access), the Northern urban riots arose from de facto segregation (economic deprivation, discrimination, and police bias) which legal reforms could not easily solve.",
+      "visualDetails": "A single armed soldier in combat gear patrols a street with smoke rising from burning buildings in the background. This shows the militarized response to the riots and the collapse of order in Detroit.",
+      "enquiry": "the causes and scale of urban riots in the late 1960s"
     },
     "specPoints": [
       "Reasons for greater US involvement under Eisenhower, including the domino theory and weaknesses of the Diem government.",
@@ -1950,12 +1962,12 @@ export const LESSONS_DATA = {
       "image": "assets/sources/ngo-dinh-diem-parade.jpg",
       "provenance": "President Ngo Dinh Diem of South Vietnam during an official military parade in Saigon, late 1950s.",
       "seeThinkWonder": {
-        "see": "Observe Diem riding in the open-top vehicle surrounded by military officers.",
+        "see": "Observe President Ngo Dinh Diem walking on foot in a white suit during a parade, with South Vietnamese soldiers standing in the foreground.",
         "think": "What image of stability and control is the Diem regime attempting to project here?",
         "wonder": "How did Diem's Catholicism and nepotism undermine the military strength shown in this parade?"
       },
       "bronze": "What theory, coined by President Eisenhower, argued that if South Vietnam fell to communism, its neighbors would follow?",
-      "silver": "Study the source image. Identify two visual details that indicate Diem relied heavily on military force to maintain his regime.",
+      "silver": "Study the source image. Identify two visual details that indicate a heavy military presence surrounded Diem during this parade.",
       "gold": "Connect the Buddhist Crisis of 1963 (Topic 3.1) to the SCLC's strategy of provoking police violence in Birmingham (Topic 2.2). How did both use media images of suffering to achieve political goals?",
       "keywords": [
         "Geneva Accords",
@@ -1964,8 +1976,10 @@ export const LESSONS_DATA = {
         "Buddhist Crisis"
       ],
       "bronzeAnswer": "The Domino Theory.",
-      "silverAnswer": "The image shows Diem (1) riding in a military parade, and (2) surrounded by heavily armed officers and armored transport, showing his dependence on military power.",
-      "goldAnswer": "Both campaigns relied on media exposure of violence to shock public opinion. In Birmingham (Topic 2.2), SCLC knew Bull Connor's brutality would build support for civil rights. In South Vietnam, the Buddhist crisis and Thich Quang Duc's self-immolation exposed Diem's tyranny, forcing the US government to withdraw its support for his regime."
+      "silverAnswer": "The image shows (1) President Ngo Dinh Diem walking on foot in a white suit during a parade, and (2) South Vietnamese soldiers in uniform standing in the foreground with their backs to us, lining the parade route to provide security.",
+      "goldAnswer": "Both campaigns relied on media exposure of violence to shock public opinion. In Birmingham (Topic 2.2), SCLC knew Bull Connor's brutality would build support for civil rights. In South Vietnam, the Buddhist crisis and Thich Quang Duc's self-immolation exposed Diem's tyranny, forcing the US government to withdraw its support for his regime.",
+      "visualDetails": "President Ngo Dinh Diem is walking on foot in a white suit during a parade in Saigon, while South Vietnamese soldiers in uniforms stand in the foreground with their backs to us. This shows the heavy military presence surrounding him to project control.",
+      "enquiry": "the unpopularity and militaristic nature of Ngo Dinh Diem's regime"
     },
     "specPoints": [
       "Reasons for the escalation of the conflict and increased US involvement in Vietnam, including the increasing threat of the Vietcong and the Gulf of Tonkin incident (1964)."
@@ -2160,7 +2174,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "The Gulf of Tonkin Resolution.",
       "silverAnswer": "The USS Maddox is equipped with (1) large naval guns (turrets) for combat, and (2) advanced radar and antenna masts for electronic surveillance.",
-      "goldAnswer": "Diem's failure and the collapse of the Strategic Hamlet Program (Topic 3.1) allowed the Vietcong to control large areas of South Vietnam. To prevent a total communist victory, President Johnson had to shift from sending advisory aid to directly patrolling the coast, leading to the Maddox incident and full military escalation."
+      "goldAnswer": "Diem's failure and the collapse of the Strategic Hamlet Program (Topic 3.1) allowed the Vietcong to control large areas of South Vietnam. To prevent a total communist victory, President Johnson had to shift from sending advisory aid to directly patrolling the coast, leading to the Maddox incident and full military escalation.",
+      "enquiry": "the escalation of US military involvement in Vietnam"
     },
     "specPoints": [
       "The methods used by the USA, including Search and Destroy, Operation Rolling Thunder and chemical weapons.",
@@ -2363,7 +2378,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "The tactics were (1) Search and Destroy missions, and (2) the spraying of chemical defoliants like Agent Orange.",
       "silverAnswer": "The US military had far superior firepower, technology, and air support. The Vietcong avoided open battles to survive, choosing instead to use hit-and-run guerrilla tactics and booby traps in the jungle.",
-      "goldAnswer": "US tactics (Topic 3.3) relied on heavy bombing of industrial targets. However, the Ho Chi Minh Trail was a decentralized, hidden network of dirt paths. When a path was bombed, Vietcong engineers repaired it immediately. Using simple bicycles and human porters meant they did not rely on fuel depots or paved roads."
+      "goldAnswer": "US tactics (Topic 3.3) relied on heavy bombing of industrial targets. However, the Ho Chi Minh Trail was a decentralized, hidden network of dirt paths. When a path was bombed, Vietcong engineers repaired it immediately. Using simple bicycles and human porters meant they did not rely on fuel depots or paved roads.",
+      "enquiry": "the transport methods and tactics used by communist forces in Vietnam"
     },
     "specPoints": [
       "The Nixon Doctrine and the withdrawal of US troops.",
@@ -2513,10 +2529,10 @@ export const LESSONS_DATA = {
     "howUsefulAnalyser": {
       "question": "How useful are Sources D and E for an enquiry into the anti-war movement and the response of the government? (8 marks)",
       "sourceD": {
-        "provenance": "From a photograph showing anti-war demonstrators marching near the Pentagon in Washington D.C., October 1967.",
-        "content": "[A photograph showing a massive line of young demonstrators carrying peace signs, flower symbols, and banners reading 'Draft Beer, Not Boys' facing a wall of military police officers standing guard.]",
+        "provenance": "From a photograph showing U.S. Marshals carrying away an anti-war demonstrator outside the Pentagon, October 1967.",
+        "content": "[A photograph showing two U.S. Marshals wearing white helmets carrying away a civilian demonstrator, while media reporters and cameras watch in the background.]",
         "image": "assets/sources/antiwar-pentagon-protest-1967.jpg",
-        "caption": "Anti-war demonstrators facing military police outside the Pentagon during a 1967 march."
+        "caption": "A civilian demonstrator being carried away by U.S. Marshals at the Pentagon."
       },
       "sourceE": {
         "provenance": "From a photograph showing student demonstrators facing the National Guard at Kent State University, May 1970.",
@@ -2524,7 +2540,7 @@ export const LESSONS_DATA = {
         "image": "assets/sources/kent-state-protests-1970.jpg",
         "caption": "Kent State University students protesting shortly before National Guardsmen opened fire."
       },
-      "modelAnswer": "Source D is highly useful for showing the youth-led, confrontational nature of the anti-war movement. The photograph shows \"young demonstrators carrying peace signs... facing a wall of military police\". This content's utility is supported by my knowledge that [[the Pentagon protest of October 1967 reflected the rapid growth of the anti-war movement as the draft escalated, with draft card burning and peaceful marches becoming common]], which confirms the growing polarization and student involvement at this time. {{The provenance of October 1967 makes the source highly useful because it captures the direct, non-violent confrontation with military authority. However, it is less useful because it focuses on a single demonstration in Washington D.C., failing to show the wider, working-class opposition or moderate critics of the war.}}\n\nSource E is highly useful for showing the lethal escalation of state suppression of student protests on campus. The photograph shows a \"line of National Guard soldiers... aimed toward them, holding rifles\" at Kent State. This content is highly useful because it is supported by my knowledge that [[the Kent State shootings of May 1970, where National Guardsmen killed four students protesting the invasion of Cambodia, triggered a strike of 4 million students nationwide]], which validates the high tension and physical danger student protesters faced. {{The provenance of May 1970 makes the source extremely useful because it documents the tense standoff just before the shooting. However, it is less useful because it captures the standoff, failing to explain the panic, chaos, and nationwide student strike that followed.}}"
+      "modelAnswer": "Source D is highly useful for showing the direct confrontation and physical arrest of anti-war protestors by federal authorities. The photograph shows \"two U.S. Marshals wearing white helmets carrying away a civilian demonstrator\". This content's utility is supported by my knowledge that [[the Pentagon protest of October 1967 reflected the rapid growth of the anti-war movement as the draft escalated, with draft card burning and peaceful marches becoming common]], which confirms the growing polarization and student involvement at this time. {{The provenance of October 1967 makes the source highly useful because it captures the direct, physical conflict and state response to anti-war protestors. However, it is less useful because it focuses on a single demonstration in Washington D.C., failing to show the wider, working-class opposition or moderate critics of the war.}}\n\nSource E is highly useful for showing the lethal escalation of state suppression of student protests on campus. The photograph shows a \"line of National Guard soldiers... aimed toward them, holding rifles\" at Kent State. This content is highly useful because it is supported by my knowledge that [[the Kent State shootings of May 1970, where National Guardsmen killed four students protesting the invasion of Cambodia, triggered a strike of 4 million students nationwide]], which validates the high tension and physical danger student protesters faced. {{The provenance of May 1970 makes the source extremely useful because it documents the tense standoff just before the shooting. However, it is less useful because it captures the standoff, failing to explain the panic, chaos, and nationwide student strike that followed.}}"
     },
     "deepThinkingQuestions": [
       {
@@ -2546,12 +2562,12 @@ export const LESSONS_DATA = {
       "image": "assets/sources/nixon-visiting-troops.jpg",
       "provenance": "President Richard Nixon visiting US troops in South Vietnam, July 1969.",
       "seeThinkWonder": {
-        "see": "Observe Nixon standing on a vehicle surrounded by smiling, cheering American soldiers.",
+        "see": "Observe Nixon standing at eye level on the ground, surrounded by a dense crowd of helmeted American soldiers.",
         "think": "What political message is the Nixon administration attempting to send to voters back home through this photo?",
         "wonder": "How did this visit contrast with the secret bombing campaigns Nixon was launching in Cambodia?"
       },
       "bronze": "What was Vietnamization, and what was its main objective?",
-      "silver": "Study the source image. Identify two details indicating the visit was carefully staged to project troop morale and support for the President.",
+      "silver": "Study the source image. Identify two details showing how the President is positioned relative to the soldiers to project solidarity.",
       "gold": "How did Nixon's invasion of Cambodia in 1970 (Topic 3.4) compare to Eisenhower's initial domino theory logic (Topic 3.1) in terms of expanding regional conflict?",
       "keywords": [
         "Vietnamization",
@@ -2560,8 +2576,10 @@ export const LESSONS_DATA = {
         "Withdrawal"
       ],
       "bronzeAnswer": "Vietnamization was Nixon's policy to withdraw US ground troops and transfer the responsibility of fighting to the South Vietnamese army (ARVN), with the objective of ending US involvement 'with honor'.",
-      "silverAnswer": "The image shows (1) Nixon positioned high on a vehicle to be visible to the entire crowd, and (2) soldiers smiling and holding up cameras, creating a positive public relations image.",
-      "goldAnswer": "Nixon's invasion of Cambodia in 1970 (Topic 3.4) expanded the war into a neutral country to destroy communist sanctuaries, echoing Eisenhower's domino theory (Topic 3.1) that communist expansion in any neighboring state threatened the entire region's stability."
+      "silverAnswer": "The image shows (1) Nixon standing at eye level on the ground in the middle of the crowd rather than on an elevated platform, and (2) Nixon being closely surrounded and touched by soldiers, projecting personal connection and solidarity.",
+      "goldAnswer": "Nixon's invasion of Cambodia in 1970 (Topic 3.4) expanded the war into a neutral country to destroy communist sanctuaries, echoing Eisenhower's domino theory (Topic 3.1) that communist expansion in any neighboring state threatened the entire region's stability.",
+      "visualDetails": "President Nixon is standing on the ground at eye level, in the middle of a dense crowd of helmeted US soldiers, surrounded by them. This projection of close, personal contact was used to show solidarity and strong troop morale.",
+      "enquiry": "Nixon's policy of Vietnamization and troop morale"
     },
     "specPoints": [
       "Reasons for the growth of opposition, including TV and media coverage of the war and the draft system.",
@@ -2741,14 +2759,14 @@ export const LESSONS_DATA = {
       "prevSubtopicId": "subtopic_4_1",
       "prevSubtopicTitle": "Topic 4.1: Rise of the Anti-War Movement",
       "image": "assets/sources/antiwar-pentagon-protest-1967.jpg",
-      "provenance": "Anti-war demonstrators facing military police outside the Pentagon, October 1967.",
+      "provenance": "A photograph showing U.S. Marshals carrying away an anti-war demonstrator at the Pentagon, October 1967.",
       "seeThinkWonder": {
-        "see": "Observe the proximity of the young protestors to the armed military police guard line.",
+        "see": "Observe the two U.S. Marshals physically lifting and carrying a civilian demonstrator away.",
         "think": "Why would protestors target the Pentagon rather than local draft board offices?",
         "wonder": "How did images of armed soldiers facing young civilians affect public support for the war?"
       },
       "bronze": "What is a 'credibility gap,' and how did the My Lai Massacre (1968) widen it?",
-      "silver": "Study the source image. Identify two details showing that this protest was a direct confrontation between young civilians and state military power.",
+      "silver": "Study the source image. Identify two details showing that the authorities are physically arresting and removing a demonstrator.",
       "gold": "How did the television coverage of the draft and the My Lai Massacre (Topic 4.1) compare to the media coverage of the Birmingham campaign in 1963 (Topic 2.2) in terms of shaping public opinion?",
       "keywords": [
         "Draft Resistance",
@@ -2757,8 +2775,10 @@ export const LESSONS_DATA = {
         "Credibility Gap"
       ],
       "bronzeAnswer": "A credibility gap is the difference between government claims and reality. My Lai widened it because the military attempted to cover up the slaughter of hundreds of unarmed civilians, contradicting claims of humanitarian efforts.",
-      "silverAnswer": "The image shows (1) young civilian protestors standing inches away from a solid line of (2) armed military police holding rifles and wearing combat gear.",
-      "goldAnswer": "Television coverage of the draft and My Lai (Topic 4.1) exposed the human cost and brutality of the war, generating anti-war sentiment, much like the media coverage of police dogs and water cannons in Birmingham (Topic 2.2) generated support for civil rights by exposing Southern white brutality."
+      "silverAnswer": "The image shows (1) two U.S. Marshals in white helmets and suits lifting and carrying a demonstrator by their limbs, and (2) civilian onlookers and journalists watching in the background as the arrest takes place.",
+      "goldAnswer": "Television coverage of the draft and My Lai (Topic 4.1) exposed the human cost and brutality of the war, generating anti-war sentiment, much like the media coverage of police dogs and water cannons in Birmingham (Topic 2.2) generated support for civil rights by exposing Southern white brutality.",
+      "visualDetails": "Two U.S. Marshals wearing white helmets and suits are physically carrying/dragging away a protestor, while other onlookers and media stand nearby. This shows the direct confrontation and state arrest of anti-war protestors.",
+      "enquiry": "the anti-war movement and the government's response to protests"
     },
     "specPoints": [
       "Reasons for support for the war, including the fear of communism and the ‘silent majority’.",
@@ -2952,7 +2972,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "The 'Silent Majority' was Nixon's term for the moderate, working-class, patriotic Americans who supported his war policies but did not actively participate in protests.",
       "silverAnswer": "Working-class citizens resented privileged middle-class student protestors who avoided the draft through college deferments, and they supported the government's call for patriotism and law and order.",
-      "goldAnswer": "Both events exposed deep social divisions. The urban riots (Topic 2.4) exposed racial and economic neglect of Black Americans in inner cities. The pro-war construction worker rallies exposed a deep class divide between working-class patriots (who felt a duty to support the government) and middle-class student protestors."
+      "goldAnswer": "Both events exposed deep social divisions. The urban riots (Topic 2.4) exposed racial and economic neglect of Black Americans in inner cities. The pro-war construction worker rallies exposed a deep class divide between working-class patriots (who felt a duty to support the government) and middle-class student protestors.",
+      "enquiry": "pro-war sentiment and divisions on the home front"
     },
     "specPoints": [
       "Reasons for, and key features of, the peace negotiations (1972–73).",
@@ -3141,7 +3162,8 @@ export const LESSONS_DATA = {
       ],
       "bronzeAnswer": "They were signed in 1973 and demanded the complete withdrawal of all US combat forces from Vietnam within 60 days.",
       "silverAnswer": "Without US air support and financial aid, the South Vietnamese army (ARVN) was demoralized, corrupt, and lacked fuel and ammunition. This allowed the North Vietnamese forces to launch a swift offensive and capture Saigon.",
-      "goldAnswer": "The collapse of 1975 was prefigured by Diem's regime (Topic 3.1). Diem failed to build a democratic, popular government, creating corruption and sectarian divide. The ARVN remained corrupt and politically dependent on US money and air power. When the US withdrew, the state collapsed instantly."
+      "goldAnswer": "The collapse of 1975 was prefigured by Diem's regime (Topic 3.1). Diem failed to build a democratic, popular government, creating corruption and sectarian divide. The ARVN remained corrupt and politically dependent on US money and air power. When the US withdrew, the state collapsed instantly.",
+      "enquiry": "the US withdrawal from Vietnam and the Fall of Saigon"
     },
     "specPoints": [
       "The strengths of North Vietnam, including the significance of Russian and Chinese support, Vietcong tactics and the Ho Chi Minh Trail.",

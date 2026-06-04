@@ -3711,9 +3711,9 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         },
         "questiona": "How useful are Sources B and C for an enquiry into the work of civil rights organisations in the early 1950s?",
         "cluea": "Address both sources. Assess content utility, verify with own knowledge (cases, sit-ins), and evaluate provenance reliability and limitations.",
-        "modela": `Source B is highly useful for demonstrating the legal litigation strategy of the NAACP. The content highlights how their legal campaigns are "finally bearing fruit" by targeting segregated institutions, allowing them to successfully challenge segregation in courts. This content is highly useful because it is supported by my contextual knowledge that [[the NAACP won the Brown v. Board of Education case in 1954, declaring segregated schools unconstitutional, and had previously won Sweatt v. Painter in 1950]], which confirms that their legal strategy successfully dismantled segregation's constitutional basis. {{The provenance makes the source more useful because it is an internal, private report written by lead lawyer Thurgood Marshall in 1953. Since it was not intended for public propaganda, it represents a highly reliable, realistic assessment of NAACP strategy and confidence just before their major legal victories.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for demonstrating the legal litigation strategy of the NAACP. The content highlights how their legal campaigns are "finally bearing fruit" by targeting segregated institutions, allowing them to successfully challenge segregation in courts. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the NAACP won the Brown v. Board of Education case in 1954, declaring segregated schools unconstitutional, and had previously won Sweatt v. Painter in 1950, which confirms that their legal strategy successfully dismantled segregation's constitutional basis. </span> <span style="color: purple;"> The provenance makes the source more useful because it is an internal, private report written by lead lawyer Thurgood Marshall in 1953. Since it was not intended for public propaganda, it represents a highly reliable, realistic assessment of NAACP strategy and confidence just before their major legal victories. </span>
 
-Source C is highly useful for showing the direct action methods of CORE and the severe grassroots opposition they faced. The activist describes staging a "peaceful sit-in at the downtown lunch counter" but being met with a white mob that "spat on, kicked, and dragged" them while police stood by. This content's utility is supported by my knowledge that [[CORE pioneered non-violent direct action, including lunch counter sit-ins, in Northern and Midwestern cities in the 1940s and 1950s, though they faced intense local resistance]], which verifies that changing federal laws did not automatically protect activists from local hostility. {{The provenance increases its usefulness because it is a first-hand account by a CORE activist published in a contemporary newsletter in 1952. While the newsletter was designed to motivate members, which might emphasize the drama, it is extremely useful for revealing the immediate physical dangers, emotional frustrations, and reliance on alternative media to publicize their struggle.}}`,
+<span style="color: blue;"> Source C is highly useful for showing the direct action methods of CORE and the severe grassroots opposition they faced. The activist describes staging a "peaceful sit-in at the downtown lunch counter" but being met with a white mob that "spat on, kicked, and dragged" them while police stood by. </span> <span style="color: green;"> This content's utility is supported by my knowledge that CORE pioneered non-violent direct action, including lunch counter sit-ins, in Northern and Midwestern cities in the 1940s and 1950s, though they faced intense local resistance, which verifies that changing federal laws did not automatically protect activists from local hostility. </span> <span style="color: purple;"> The provenance increases its usefulness because it is a first-hand account by a CORE activist published in a contemporary newsletter in 1952. While the newsletter was designed to motivate members, which might emphasize the drama, it is extremely useful for revealing the immediate physical dangers, emotional frustrations, and reliance on alternative media to publicize their struggle. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Contrast Interpretation 1's focus on legal breakthroughs with Interpretation 2's emphasis on local realities and violence.",
         "modelb": "The main difference is that Interpretation 1 argues the work of civil rights organisations was highly successful, stating they made [1[monumental and highly effective breakthroughs]1] by destroying the legal foundations of segregation. In contrast, Interpretation 2 argues their work made very little practical difference, stating that the reality for Black Americans [1[remained bleak and unchanged]1] because legal victories in court were ultimately ignored by violent white opposition.",
@@ -3746,9 +3746,9 @@ Source C is highly useful for showing the direct action methods of CORE and the 
         },
         "questiona": "How useful are Sources B and C for an enquiry into the extent of progress in civil rights by 1975? (8 marks)",
         "cluea": "Address both sources. Assess content utility, verify with own knowledge (ghetto conditions, Watts riots vs Voting Rights Act, affirmative action), and evaluate provenance reliability and limitations.",
-        "modela": `Source B is highly useful for showing the persistent racial inequalities and lack of economic progress by the late 1960s. The report warns that the nation is "moving toward two societies, one black, one white\u2014separate and unequal" due to the maintaining of segregated ghettos. This content is highly useful because it is supported by my contextual knowledge that [[despite civil rights legislation, deep-seated economic inequality and police brutality led to major race riots in Watts (1965), Newark, and Detroit (1967), showing the limits of legal progress]], which confirms that the report is an accurate and typical representation of the deep social divide. {{The provenance strengthens its usefulness because it is an official government-commissioned report from the Kerner Commission in 1968. Since it was compiled by moderate white politicians who concluded that white institutional racism was responsible, it provides a highly reliable, objective official admission of the limits of legal progress.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the persistent racial inequalities and lack of economic progress by the late 1960s. The report warns that the nation is "moving toward two societies, one black, one white\u2014separate and unequal" due to the maintaining of segregated ghettos. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that despite civil rights legislation, deep-seated economic inequality and police brutality led to major race riots in Watts (1965), Newark, and Detroit (1967), showing the limits of legal progress, which confirms that the report is an accurate and typical representation of the deep social divide. </span> <span style="color: purple;"> The provenance strengthens its usefulness because it is an official government-commissioned report from the Kerner Commission in 1968. Since it was compiled by moderate white politicians who concluded that white institutional racism was responsible, it provides a highly reliable, objective official admission of the limits of legal progress. </span>
 
-Source C is highly useful for demonstrating the significant political and social achievements of the civil rights movement by the mid-1970s. The politician asserts that the changes are "monumental" because the "Whites Only" signs are gone and Black citizens are electing "black mayors in major American cities". This content's utility is supported by my knowledge that [[the Voting Rights Act of 1965 led to a dramatic increase in Black political representation and the election of Black mayors, while Nixon's affirmative action policies opened corporate hiring]], which confirms that the politician's optimism is based on tangible structural progress. {{The provenance increases its usefulness because it is a contemporary interview from 1974 with a politician active in the movement. While he may have a bias toward highlighting political success to justify his career, it is highly useful for showing the perspective of Black leaders who successfully transitioned from street activism to institutional political power.}}`,
+<span style="color: blue;"> Source C is highly useful for demonstrating the significant political and social achievements of the civil rights movement by the mid-1970s. The politician asserts that the changes are "monumental" because the "Whites Only" signs are gone and Black citizens are electing "black mayors in major American cities". </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Voting Rights Act of 1965 led to a dramatic increase in Black political representation and the election of Black mayors, while Nixon's affirmative action policies opened corporate hiring, which confirms that the politician's optimism is based on tangible structural progress. </span> <span style="color: purple;"> The provenance increases its usefulness because it is a contemporary interview from 1974 with a politician active in the movement. While he may have a bias toward highlighting political success to justify his career, it is highly useful for showing the perspective of Black leaders who successfully transitioned from street activism to institutional political power. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
         "clueb": "Contrast Interpretation 1's focus on legal and political successes with Interpretation 2's emphasis on economic failures and Northern ghetto poverty.",
         "modelb": "The main difference is that Interpretation 1 argues that the civil rights movement was highly successful by 1975, highlighting that it had achieved [1[remarkable success]1] in dismantling Jim Crow and securing voting rights. In contrast, Interpretation 2 argues that the movement was unsuccessful, emphasizing that it had [1[failed to achieve true equality]1] for the millions of Black Americans trapped in Northern ghettos.",
@@ -3782,9 +3782,9 @@ Source C is highly useful for demonstrating the significant political and social
         },
         "questiona": "How useful are Sources B and C for an enquiry into the achievements of the civil rights movement in the years 1964\u201365? (8 marks)",
         "cluea": "Address both sources. Assess content utility, verify with own knowledge (1964 Civil Rights Act, Selma, 1965 Voting Rights Act), and evaluate provenance reliability and limitations.",
-        "modela": `Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. This content is highly useful because it is supported by my contextual knowledge that [[the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott]], which confirms that the newsletter provides an accurate representation of the movement's religious foundation. {{The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
 
-Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that [[Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation]], which confirms that the Mayor's public resistance was typical of Southern political elites. {{The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground.}}`,
+<span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
         "clueb": "Contrast Interpretation 1's view of the 1964 Civil Rights Act as the most important law with Interpretation 2's view of the 1965 Voting Rights Act as the greatest achievement.",
         "modelb": "The main difference is that Interpretation 1 argues that the Civil Rights Act of 1964 was the primary achievement of the movement, describing it as [1[the most important law passed by Congress in the 20th century]1] because it banned segregation. In contrast, Interpretation 2 argues that the Voting Rights Act of 1965 was the [1[greatest achievement]1] because it ended the Jim Crow era by banning literacy tests.",
@@ -3817,9 +3817,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         },
         "questiona": "How useful are Sources B and C for an enquiry into the reasons for the failure of the USA in Vietnam? (8 marks)",
         "cluea": "Address both sources. Assess content utility, verify with own knowledge (Rolling Thunder, Ho Chi Minh Trail, conscription, drug use, fragging), and evaluate provenance reliability and limitations.",
-        "modela": `Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. This content is highly useful because it is supported by my contextual knowledge that [[the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott]], which confirms that the newsletter provides an accurate representation of the movement's religious foundation. {{The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
 
-Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that [[Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation]], which confirms that the Mayor's public resistance was typical of Southern political elites. {{The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground.}}`,
+<span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
         "clueb": "Contrast Interpretation 1's focus on the strategic failure of US bombing with Interpretation 2's emphasis on the collapse of US troop morale.",
         "modelb": "The main difference is that Interpretation 1 focuses on the failure of US military tactics, arguing that Operation Rolling Thunder was [1[failing to defeat the enemy]1] because the communists repaired routes. In contrast, Interpretation 2 focuses on the collapse of morale from within, arguing that drafted soldiers began to [1[lose belief in the cause]1] which led to drug use and desertions.",
@@ -3852,9 +3852,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         },
         "questiona": "How useful are Sources B and C for an enquiry into the methods used by the Black Panther movement? (8 marks)",
         "cluea": "Assess Source B (Bobby Seale interview, first-hand details of armed patrols to observe police and stop brutality, potential hindsight bias in 1988) and Source C (BPP newspaper article, free breakfast community program, potential propaganda purpose) for usefulness.",
-        "modela": `Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. This content is highly useful because it is supported by my contextual knowledge that [[the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott]], which confirms that the newsletter provides an accurate representation of the movement's religious foundation. {{The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing that armed patrols and direct observation of the police were key methods used by the Black Panthers to protect their community. The content highlights that members carried guns on "armed patrols" to "observe these police in the community" and prevent "police brutality". </span> <span style="color: green;"> This accurately aligns with my contextual knowledge that the Black Panther Party, founded in Oakland in 1966, rejected SCLC's non-violence and exercised their constitutional right to carry loaded weapons openly, patrolling neighborhoods to monitor police actions and protect Black citizens. </span> <span style="color: purple;"> Regarding its provenance, as a television interview with co-founder Bobby Seale in 1988, its nature as a retrospective account means it may contain hindsight bias, as Seale might want to emphasize their defensive and protective role. However, this actually enhances its utility because it provides a first-hand, insider perspective from one of the party's founders explaining the exact ideological motives and tactical reasoning behind their controversial armed patrols. </span>
 
-Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that [[Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation]], which confirms that the Mayor's public resistance was typical of Southern political elites. {{The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground.}}`,
+<span style="color: blue;"> Source C is highly useful for revealing that the Black Panthers used community social welfare programs as a key method to support Black communities. The content outlines their creation of the "Free Breakfast for School Children" scheme to ensure children receive a "healthy breakfast every morning to help them learn". </span> <span style="color: green;"> My contextual knowledge confirms that the Panthers established dozens of 'survival programs'\u2014including free health clinics, clothing distribution, and breakfast programs that successfully fed up to 10,000 children daily\u2014which built massive grassroots popularity and demonstrated that Black Power was about community care, not just armed militancy. </span> <span style="color: purple;"> Regarding its provenance, the nature of the source as the official party newspaper, published in 1969, means its purpose was to promote the party's image and mobilize support. While it has a highly partisan, promotional tone that downplays their armed confrontations and highlights their "love for the people", it is extremely useful as direct evidence of the official propaganda and community-focused messaging the Black Panthers used to build solidarity and challenge hostile media representations. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
         "clueb": "Identify the core disagreement: Interpretation 1 focuses on confrontational methods, armed patrols, and conflict with police. Interpretation 2 focuses on community support, social programs, and education.",
         "modelb": "The main difference is that Interpretation 1 argues the Panthers' methods focused on [1[confrontation and armed self-defence]1] to stop police brutality. In contrast, Interpretation 2 argues their methods were designed to [1[improve black people\u2019s lives]1] through community support programs.",
@@ -3887,9 +3887,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         },
         "questiona": "How useful are Sources B and C for an enquiry into the Freedom Summer (1964)? (8 marks)",
         "cluea": "Evaluate Source B (first-hand recollections of a Black student, highlights empowerment and inspiration, potential recall bias in 2015) and Source C (contemporary log of 67 incidents of violence and intimidation, lists specific towns, reveals scale of hostility) for usefulness.",
-        "modela": `Source B is highly useful for showing how US military tactics alienated the civilian population in South Vietnam. The report states that heavy reliance on "search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees" and is driving peasants "directly into the arms of the enemy". This content's utility is supported by my knowledge that [[tactics like search-and-destroy and the chemical spraying of Agent Orange under Operation Ranch Hand alienated the rural population, making it impossible to win the hearts and minds campaign]], which confirms that US tactics actively fueled the communist insurgency. {{The provenance strengthens its usefulness because it is an official report by a US Senate Subcommittee in 1968. Since it is a self-critical government investigation, it provides a highly reliable, objective contemporary record of the counterproductive nature of US military operations.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing how US military tactics alienated the civilian population in South Vietnam. The report states that heavy reliance on "search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees" and is driving peasants "directly into the arms of the enemy". </span> <span style="color: green;"> This content's utility is supported by my knowledge that tactics like search-and-destroy and the chemical spraying of Agent Orange under Operation Ranch Hand alienated the rural population, making it impossible to win the hearts and minds campaign, which confirms that US tactics actively fueled the communist insurgency. </span> <span style="color: purple;"> The provenance strengthens its usefulness because it is an official report by a US Senate Subcommittee in 1968. Since it is a self-critical government investigation, it provides a highly reliable, objective contemporary record of the counterproductive nature of US military operations. </span>
 
-Source C is highly useful for understanding the Vietcong perspective on US military actions and their effect on peasant recruitment. The veteran recalls that because US troops "did not know who the enemy was", they treated everyone as Vietcong and "burned our huts and killed our livestock. This made even the quietest peasants want to fight". This content is highly useful because it is supported by my knowledge that [[the Vietcong guerrilla strategy relied on hiding among civilians, which led frustrated US soldiers to treat all villagers as hostile, driving many peasants to support the communists]], which explains how US high-firepower tactics actively drove recruits to the VC. {{The provenance of a 1985 interview with a Vietcong veteran makes it useful for providing an insider's recollection of the conflict. While it may contain retrospective communist propaganda, it is highly useful for explaining how US tactical errors strengthened the insurgency.}}`,
+<span style="color: blue;"> Source C is highly useful for understanding the Vietcong perspective on US military actions and their effect on peasant recruitment. The veteran recalls that because US troops "did not know who the enemy was", they treated everyone as Vietcong and "burned our huts and killed our livestock. This made even the quietest peasants want to fight". </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the Vietcong guerrilla strategy relied on hiding among civilians, which led frustrated US soldiers to treat all villagers as hostile, driving many peasants to support the communists, which explains how US high-firepower tactics actively drove recruits to the VC. </span> <span style="color: purple;"> The provenance of a 1985 interview with a Vietcong veteran makes it useful for providing an insider's recollection of the conflict. While it may contain retrospective communist propaganda, it is highly useful for explaining how US tactical errors strengthened the insurgency. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
         "clueb": "Contrast Interpretation 1's positive view of achievements (schools, leadership skills, applications to vote) with Interpretation 2's focus on failure and bitter experiences (violence, low registration numbers, internal racial divisions).",
         "modelb": "The main difference is that Interpretation 1 argues that the Freedom Summer [1[achieved a number of things]1], such as setting up Freedom Schools and developing leadership. In contrast, Interpretation 2 argues the campaign was a [1[bitter experience]1] due to violence, low voter registration, and racial division.",
@@ -3923,9 +3923,9 @@ Source C is highly useful for understanding the Vietcong perspective on US milit
         },
         "questiona": "How useful are Sources B and C for an enquiry into the achievements of Martin Luther King in the civil rights movement? (8 marks)",
         "cluea": "Evaluate Source B (photograph of March on Washington, shows King's massive popularity, support from federal government, potential staging bias) and Source C (Bob Lucas interview, shows failure of Chicago Freedom Movement in 1966, divisions between Black and white activists, first-hand witness perspective) for usefulness.",
-        "modela": `Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". This content's utility is supported by my knowledge that [[the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers]], which explains the intense exhaustion and fear expressed in his diary. {{The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers, which explains the intense exhaustion and fear expressed in his diary. </span> <span style="color: purple;"> The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare. </span>
 
-Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". This content is highly useful because it is supported by my contextual knowledge that [[the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal]], which confirms the accuracy of the commander's strategic recollections. {{The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a natural interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower.}}`,
+<span style="color: blue;"> Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal, which confirms the accuracy of the commander's strategic recollections. </span> <span style="color: purple;"> The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a natural interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
         "clueb": "Identify the core disagreement: Interpretation 1 argues King achieved major successes (federal backing, Civil Rights Act 1964, Voting Rights Act 1965, Nobel Prize). Interpretation 2 argues King's achievements were limited and failed to change daily lives, particularly in northern cities like Chicago.",
         "modelb": "The main difference is that Interpretation 1 highlights King's [1[commitment to non-violent direct action]1] which won federal support and new laws. In contrast, Interpretation 2 argues that despite the progress, the [1[lives of many remained unchanged]1], particularly in northern cities where segregation persisted.",
@@ -3958,9 +3958,9 @@ Source C is highly useful for understanding the military strategy and resilience
         },
         "questiona": "How useful are Sources B and C for an enquiry into the escalation of US involvement in the conflict in Vietnam in the 1960s? (8 marks)",
         "cluea": "Evaluate Source B (top-secret document 1961, shows Kennedy's early escalation via advisers, helicopters, and aid, highly reliable private source) and Source C (LBJ speech 1965, shows transition to ground combat forces up to 125,000 and draft increase, public speech justifying war) for usefulness.",
-        "modela": `Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that [[the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression]], which confirms that the eyewitness account captures the authentic feeling of shock and alienation. {{The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. </span> <span style="color: green;"> The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression, which confirms that the eyewitness account captures the authentic feeling of shock and alienation. </span> <span style="color: purple;"> The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction. </span>
 
-Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that [[Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions]], which confirms that the speech is typical of Nixon's political strategy. {{The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy.}}`,
+<span style="color: blue;"> Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... </span> <span style="color: green;"> tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions, which confirms that the speech is typical of Nixon's political strategy. </span> <span style="color: purple;"> The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
         "clueb": "Identify the core disagreement: Interpretation 1 argues that President Kennedy's 1961 decisions were the key turning point in expanding the US role. Interpretation 2 argues that President Johnson was most responsible for escalating the war into an all-out fighting combat war.",
         "modelb": "The main difference is that Interpretation 1 argues that Kennedy's decisions in 1961 were a [1[key turning point]1] in expanding US involvement. In contrast, Interpretation 2 argues that President Johnson was [1[most responsible for escalating]1] the conflict into an all-out fighting war.",
@@ -3993,9 +3993,9 @@ Source C is highly useful for understanding the Nixon administration's perspecti
         },
         "questiona": "How useful are Sources B and C for an enquiry into King\u2019s campaign in the North (Chicago, 1966)?",
         "cluea": "Assess both sources' content and provenance. Explain how Source B shows local white working-class opposition and blame, while Source C shows SCLC's view of Northern violence and housing discrimination.",
-        "modela": `Source B is highly useful for showing the hostile reaction of northern white working-class residents to King's campaign. The resident complains that King "stirred up trouble where there was none" and that the marches "just made people angry" and caused riots. This content is highly useful because it is supported by my contextual knowledge that [[King's Chicago campaign in 1966 targeted housing segregation, which faced fierce opposition from white working-class neighborhoods who feared falling property values and integration]], which confirms that the source is an accurate representation of the defensive white backlash in Chicago. {{The provenance makes this source useful because it is an interview published in a local newspaper shortly after the marches in 1966. While it reflects a narrow, defensive viewpoint that downplays systemic northern racism, it is highly useful for showing the immediate resentment and racial defensiveness of Chicago's white residents who refused to see their city as segregated.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the hostile reaction of northern white working-class residents to King's campaign. The resident complains that King "stirred up trouble where there was none" and that the marches "just made people angry" and caused riots. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that King's Chicago campaign in 1966 targeted housing segregation, which faced fierce opposition from white working-class neighborhoods who feared falling property values and integration, which confirms that the source is an accurate representation of the defensive white backlash in Chicago. </span> <span style="color: purple;"> The provenance makes this source useful because it is an interview published in a local newspaper shortly after the marches in 1966. While it reflects a narrow, defensive viewpoint that downplays systemic northern racism, it is highly useful for showing the immediate resentment and racial defensiveness of Chicago's white residents who refused to see their city as segregated. </span>
 
-Source C is highly useful for demonstrating the extreme violence that civil rights protestors faced in the North. The activist describes marching through Cicero and being met with "bricks and bottles from a white mob", noting that the hatred was "worse than anything he had faced in Mississippi". This content's utility is supported by my knowledge that [[during the SCLC marches in Chicago suburbs like Cicero and Marquette Park, protestors were met by thousands of violent white residents throwing bricks, showing that Northern housing segregation was maintained with the same brutality as Southern Jim Crow]], which verifies that northern segregation was actively defended by grassroots violence. {{The provenance strengthens the source's usefulness because it is a first-hand account by an SCLC activist who participated in the march. While he has an interest in emphasizing the violence to expose Northern racism to the world, it is highly useful for capturing the physical danger and disillusionment of the campaigners.}}`,
+<span style="color: blue;"> Source C is highly useful for demonstrating the extreme violence that civil rights protestors faced in the North. The activist describes marching through Cicero and being met with "bricks and bottles from a white mob", noting that the hatred was "worse than anything he had faced in Mississippi". </span> <span style="color: green;"> This content's utility is supported by my knowledge that during the SCLC marches in Chicago suburbs like Cicero and Marquette Park, protestors were met by thousands of violent white residents throwing bricks, showing that Northern housing segregation was maintained with the same brutality as Southern Jim Crow, which verifies that northern segregation was actively defended by grassroots violence. </span> <span style="color: purple;"> The provenance strengthens the source's usefulness because it is a first-hand account by an SCLC activist who participated in the march. While he has an interest in emphasizing the violence to expose Northern racism to the world, it is highly useful for capturing the physical danger and disillusionment of the campaigners. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Identify the core disagreement regarding the outcome of the Chicago campaign: failure vs foundational success.",
         "modelb": "The main difference is that Interpretation 1 views King's Chicago campaign as a [1[disastrous miscalculation]1] that failed to achieve housing improvements. In contrast, Interpretation 2 views the campaign as a [1[crucial foundational success]1] that laid the groundwork for the Fair Housing Act.",
@@ -4028,9 +4028,9 @@ Source C is highly useful for demonstrating the extreme violence that civil righ
         },
         "questiona": "How useful are Sources B and C for an enquiry into the significance of the Kent State University shootings (1970)?",
         "cluea": "Assess the usefulness of Source B (student eyewitness, feelings of government brutality, student magazine) and Source C (Nixon's television speech, blaming radical students, silent majority perspective) for this enquiry.",
-        "modela": `Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that [[the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression]], which confirms that the eyewitness account captures the authentic feeling of shock and alienation. {{The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. </span> <span style="color: green;"> The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression, which confirms that the eyewitness account captures the authentic feeling of shock and alienation. </span> <span style="color: purple;"> The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction. </span>
 
-Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that [[Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions]], which confirms that the speech is typical of Nixon's political strategy. {{The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy.}}`,
+<span style="color: blue;"> Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... </span> <span style="color: green;"> tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions, which confirms that the speech is typical of Nixon's political strategy. </span> <span style="color: purple;"> The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Identify the core disagreement: Interpretation 1 argues Kent State shattered Nixon's war strategy and forced troop withdrawals, while Interpretation 2 argues it hardened conservative support and exposed class/cultural divides.",
         "modelb": "The main difference is that Interpretation 1 argues Kent State was a [1[fatal, decisive blow]1] to Nixon's war strategy. In contrast, Interpretation 2 argues it [1[hardened the resolve of conservative America]1] to support the war, exposing deep cultural divides.",
@@ -4063,9 +4063,9 @@ Source C is highly useful for understanding the Nixon administration's perspecti
         },
         "questiona": "How useful are Sources B and C for an enquiry into the significance of the Montgomery Bus Boycott?",
         "cluea": "Assess the usefulness of Source B (civil rights activist, positive view, confidence in non-violence) and Source C (local segregationist newspaper, negative view, racial bitterness and economic impact) for this enquiry.",
-        "modela": `Source B is highly useful for showing the official, legalistic methods of resistance deployed by Southern politicians to defy integration. The photograph depicts "a group of Southern Senators and Congressmen signing the Southern Manifesto", pledging to use all lawful means to resist federal rulings. This content is highly useful because it is supported by my contextual knowledge that [[in March 1956, over 100 Southern politicians signed the Southern Manifesto to coordinate resistance, falsely claiming the Supreme Court's Brown ruling was an abuse of judicial power]], which confirms that the photograph is an accurate representation of how Southern elites lent political legitimacy to segregation. {{The provenance makes the source highly useful because it documents a historic moment of political mobilization in March 1956, showing the unity of Southern lawmakers. However, it is limited because it only captures a public signing ceremony, concealing the illegal, violent tactics and economic intimidation that these same state authorities quietly condoned on the ground.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the official, legalistic methods of resistance deployed by Southern politicians to defy integration. The photograph depicts "a group of Southern Senators and Congressmen signing the Southern Manifesto", pledging to use all lawful means to resist federal rulings. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that in March 1956, over 100 Southern politicians signed the Southern Manifesto to coordinate resistance, falsely claiming the Supreme Court's Brown ruling was an abuse of judicial power, which confirms that the photograph is an accurate representation of how Southern elites lent political legitimacy to segregation. </span> <span style="color: purple;"> The provenance makes the source highly useful because it documents a historic moment of political mobilization in March 1956, showing the unity of Southern lawmakers. However, it is limited because it only captures a public signing ceremony, concealing the illegal, violent tactics and economic intimidation that these same state authorities quietly condoned on the ground. </span>
 
-Source E is highly useful for showing the violent and physical intimidation used by extremist groups to enforce segregation. The photograph depicts "dozens of Klansmen in white robes and pointed hoods marching" down a street while police stand by. This content's utility is supported by my knowledge that [[the Ku Klux Klan experienced a major revival in the 1950s, using bombings, beatings, and lynchings to terrorize civil rights workers with local police collusion]], which confirms the accuracy of the source as a record of KKK activity. {{The provenance, showing a KKK march in 1957, makes the source highly useful because it shows the public, unchecked presence of white supremacist groups. However, it is less useful because it only captures a public parade, failing to document the illegal, clandestine nature of KKK violence and their collusion with local police.}}`,
+<span style="color: blue;"> Source E is highly useful for showing the violent and physical intimidation used by extremist groups to enforce segregation. The photograph depicts "dozens of Klansmen in white robes and pointed hoods marching" down a street while police stand by. </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Ku Klux Klan experienced a major revival in the 1950s, using bombings, beatings, and lynchings to terrorize civil rights workers with local police collusion, which confirms the accuracy of the source as a record of KKK activity. </span> <span style="color: purple;"> The provenance, showing a KKK march in 1957, makes the source highly useful because it shows the public, unchecked presence of white supremacist groups. However, it is less useful because it only captures a public parade, failing to document the illegal, clandestine nature of KKK violence and their collusion with local police. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Identify the disagreement: Interpretation 1 views the boycott as a watershed moment that launched the movement, while Interpretation 2 views it as a symbolic victory whose impact is exaggerated.",
         "modelb": "The main difference is that Interpretation 1 views the boycott as a [1[watershed moment]1] that launched the modern civil rights movement. In contrast, Interpretation 2 argues that [1[its actual impact has been exaggerated]1] because segregation was ended by a legal case and white backlash intensified.",
@@ -4098,9 +4098,9 @@ Source E is highly useful for showing the violent and physical intimidation used
         },
         "questiona": "How useful are Sources B and C for an enquiry into the Little Rock High School crisis (1957)?",
         "cluea": "Assess Source B (first-hand terror of Elizabeth Eckford, mob hostility, personal experience) and Source C (President Eisenhower's radio address, reason for sending federal troops, duty to enforce federal law) for usefulness.",
-        "modela": `Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that [[the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression]], which confirms that the eyewitness account captures the authentic feeling of shock and alienation. {{The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. </span> <span style="color: green;"> The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression, which confirms that the eyewitness account captures the authentic feeling of shock and alienation. </span> <span style="color: purple;"> The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction. </span>
 
-Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that [[Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions]], which confirms that the speech is typical of Nixon's political strategy. {{The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy.}}`,
+<span style="color: blue;"> Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... </span> <span style="color: green;"> tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions, which confirms that the speech is typical of Nixon's political strategy. </span> <span style="color: purple;"> The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Contrast Interpretation 1's view of Little Rock as a huge victory showing federal willingness to enforce desegregation with Interpretation 2's focus on the limitations of federal power and hardening white resistance.",
         "modelb": "The main difference is that Interpretation 1 views the crisis as a [1[huge victory for the civil rights movement]1] that proved the federal government's willingness to enforce desegregation. In contrast, Interpretation 2 argues that the events showed the [1[severe limitations of federal intervention]1] because integration relied on military protection and prompted Faubus to close the schools.",
@@ -4133,9 +4133,9 @@ Source C is highly useful for understanding the Nixon administration's perspecti
         },
         "questiona": "How useful are Sources B and C for an enquiry into the impact of US military tactics in Vietnam?",
         "cluea": "Assess Source B (Senate Subcommittee report, impact on refugees, alienation of peasants) and Source C (Vietcong veteran interview, peasant anger, US soldiers' fear and firepower) for usefulness.",
-        "modela": `Source B is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". This content is highly useful because it is supported by my contextual knowledge that [[the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal]], which confirms that the commander's statement is an accurate reflection of their military strategy. {{The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a natural interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal, which confirms that the commander's statement is an accurate reflection of their military strategy. </span> <span style="color: purple;"> The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a natural interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower. </span>
 
-Source C is highly useful for showing how US military tactics alienated the civilian population in South Vietnam. The report states that heavy reliance on "search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees" and is driving peasants "directly into the arms of the enemy". This content's utility is supported by my knowledge that [[tactics like search-and-destroy and the chemical spraying of Agent Orange under Operation Ranch Hand alienated the rural population, making it impossible to win the hearts and minds campaign]], which explains why US tactics actively fueled the communist insurgency. {{The provenance strengthens its usefulness because it is an official report by a US Senate Subcommittee in 1968. Since it is a self-critical government investigation, it provides a highly reliable, objective contemporary record of the counterproductive nature of US military operations.}}`,
+<span style="color: blue;"> Source C is highly useful for showing how US military tactics alienated the civilian population in South Vietnam. The report states that heavy reliance on "search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees" and is driving peasants "directly into the arms of the enemy". </span> <span style="color: green;"> This content's utility is supported by my knowledge that tactics like search-and-destroy and the chemical spraying of Agent Orange under Operation Ranch Hand alienated the rural population, making it impossible to win the hearts and minds campaign, which explains why US tactics actively fueled the communist insurgency. </span> <span style="color: purple;"> The provenance strengthens its usefulness because it is an official report by a US Senate Subcommittee in 1968. Since it is a self-critical government investigation, it provides a highly reliable, objective contemporary record of the counterproductive nature of US military operations. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Contrast Interpretation 1's view that US tactics were self-defeating and drove peasants to support the Vietcong with Interpretation 2's view that they were militarily necessary to prevent a communist victory.",
         "modelb": "The main difference is that Interpretation 1 argues that US military tactics were [1[self-defeating]1] because they devastated the countryside and alienated the peasants. In contrast, Interpretation 2 argues that these tactics were [1[militarily necessary]1] to disrupt the Vietcong and prevent a communist takeover of South Vietnam.",
@@ -4168,9 +4168,9 @@ Source C is highly useful for showing how US military tactics alienated the civi
         },
         "questiona": "How useful are Sources B and C for an enquiry into Vietnamization and Nixon's peace policy?",
         "cluea": "Assess Source B (military adviser's report, ARVN dependency, panic in Laos, corruption, high desertion) and Source C (Nixon's peace speech, peace with honor, ARVN capability, public relations focus) for usefulness.",
-        "modela": `Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. This content is highly useful because it is supported by my contextual knowledge that [[the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott]], which confirms that the newsletter provides an accurate representation of the movement's religious foundation. {{The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
 
-Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that [[Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation]], which confirms that the Mayor's public resistance was typical of Southern political elites. {{The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground.}}`,
+<span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Contrast Interpretation 1's view that Vietnamization successfully built a strong ARVN and secured peace with honor with Interpretation 2's view that it was a political cover for withdrawal that left a corrupt ARVN doomed to collapse.",
         "modelb": "The main difference is that Interpretation 1 argues that Vietnamization was a [1[highly successful policy]1] that built a strong ARVN and secured independence. In contrast, Interpretation 2 argues that the policy was merely a [1[political cover for American withdrawal]1] that left the ARVN weak, corrupt, and doomed to collapse.",
@@ -4203,9 +4203,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         },
         "questiona": "How useful are Sources B and C for an enquiry into the reasons for the US defeat in Vietnam?",
         "cluea": "Assess Source B (soldier's diary, Mekong Delta, invisible enemy, peasant support for VC, psychological toll) and Source C (North Vietnamese commander interview, national determination, neutralizing technology, wearing down public opinion) for usefulness.",
-        "modela": `Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". This content's utility is supported by my knowledge that [[the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers]], which explains the intense exhaustion and fear expressed in his diary. {{The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare.}}
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers, which explains the intense exhaustion and fear expressed in his diary. </span> <span style="color: purple;"> The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare. </span>
 
-Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". This content is highly useful because it is supported by my contextual knowledge that [[the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal]], which confirms the accuracy of the commander's strategic recollections. {{The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower.}}`,
+<span style="color: blue;"> Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal, which confirms the accuracy of the commander's strategic recollections. </span> <span style="color: purple;"> The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Contrast Interpretation 1's view that the defeat was caused by communist motivation and superior guerrilla tactics with Interpretation 2's focus on the domestic collapse of support and the anti-war movement in the US.",
         "modelb": "The main difference is that Interpretation 1 argues the defeat was caused by the [1[superior motivation and guerrilla tactics]1] of the communist forces which neutralized US technology. In contrast, Interpretation 2 argues that the defeat was caused by the [1[collapse of support for the war back home]1] in America due to protests and media coverage.",
@@ -4267,9 +4267,9 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
         "id": "q3a_1",
         "question": "How useful are Sources B and C for an enquiry into the work of civil rights organisations in the early 1950s? (8 marks)",
         "clue": "Address both sources. Assess content utility, verify with own knowledge (cases, sit-ins), and evaluate provenance reliability and limitations.",
-        "model": `Source B is highly useful for demonstrating the legal litigation strategy of the NAACP. The content highlights how their legal campaigns are "finally bearing fruit" by targeting segregated institutions, allowing them to successfully challenge segregation in courts. This content is highly useful because it is supported by my contextual knowledge that [[the NAACP won the Brown v. Board of Education case in 1954, declaring segregated schools unconstitutional, and had previously won Sweatt v. Painter in 1950]], which confirms that their legal strategy successfully dismantled segregation's constitutional basis. {{The provenance makes the source more useful because it is an internal, private report written by lead lawyer Thurgood Marshall in 1953. Since it was not intended for public propaganda, it represents a highly reliable, realistic assessment of NAACP strategy and confidence just before their major legal victories.}}
+        "model": `<span style="color: blue;"> Source B is highly useful for demonstrating the legal litigation strategy of the NAACP. The content highlights how their legal campaigns are "finally bearing fruit" by targeting segregated institutions, allowing them to successfully challenge segregation in courts. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the NAACP won the Brown v. Board of Education case in 1954, declaring segregated schools unconstitutional, and had previously won Sweatt v. Painter in 1950, which confirms that their legal strategy successfully dismantled segregation's constitutional basis. </span> <span style="color: purple;"> The provenance makes the source more useful because it is an internal, private report written by lead lawyer Thurgood Marshall in 1953. Since it was not intended for public propaganda, it represents a highly reliable, realistic assessment of NAACP strategy and confidence just before their major legal victories. </span>
 
-Source C is highly useful for showing the direct action methods of CORE and the severe grassroots opposition they faced. The activist describes staging a "peaceful sit-in at the downtown lunch counter" but being met with a white mob that "spat on, kicked, and dragged" them while police stood by. This content's utility is supported by my knowledge that [[CORE pioneered non-violent direct action, including lunch counter sit-ins, in Northern and Midwestern cities in the 1940s and 1950s, though they faced intense local resistance]], which verifies that changing federal laws did not automatically protect activists from local hostility. {{The provenance increases its usefulness because it is a first-hand account by a CORE activist published in a contemporary newsletter in 1952. While the newsletter was designed to motivate members, which might emphasize the drama, it is extremely useful for revealing the immediate physical dangers, emotional frustrations, and reliance on alternative media to publicize their struggle.}}`
+<span style="color: blue;"> Source C is highly useful for showing the direct action methods of CORE and the severe grassroots opposition they faced. The activist describes staging a "peaceful sit-in at the downtown lunch counter" but being met with a white mob that "spat on, kicked, and dragged" them while police stood by. </span> <span style="color: green;"> This content's utility is supported by my knowledge that CORE pioneered non-violent direct action, including lunch counter sit-ins, in Northern and Midwestern cities in the 1940s and 1950s, though they faced intense local resistance, which verifies that changing federal laws did not automatically protect activists from local hostility. </span> <span style="color: purple;"> The provenance increases its usefulness because it is a first-hand account by a CORE activist published in a contemporary newsletter in 1952. While the newsletter was designed to motivate members, which might emphasize the drama, it is extremely useful for revealing the immediate physical dangers, emotional frustrations, and reliance on alternative media to publicize their struggle. </span>`
       },
       "q3b": {
         "id": "q3b_1",
@@ -4336,9 +4336,9 @@ Source C is highly useful for showing the direct action methods of CORE and the 
         "id": "p_2019_q3a",
         "question": "How useful are Sources B and C for an enquiry into the achievements of the civil rights movement in the years 1964\u201365? (8 marks)",
         "clue": "Address both sources. Assess content utility, verify with own knowledge (1964 Civil Rights Act, Selma, 1965 Voting Rights Act), and evaluate provenance reliability and limitations.",
-        "model": `Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. This content is highly useful because it is supported by my contextual knowledge that [[the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott]], which confirms that the newsletter provides an accurate representation of the movement's religious foundation. {{The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis.}}
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
 
-Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that [[Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation]], which confirms that the Mayor's public resistance was typical of Southern political elites. {{The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground.}}`
+<span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`
       },
       "q3b": {
         "id": "p_2019_q3b",
@@ -4405,9 +4405,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         "id": "p_2020_q3a",
         "question": "How useful are Sources B and C for an enquiry into the reasons for the failure of the USA in Vietnam? (8 marks)",
         "clue": "Address both sources. Assess content utility, verify with own knowledge (Rolling Thunder, Ho Chi Minh Trail, conscription, drug use, fragging), and evaluate provenance reliability and limitations.",
-        "model": `Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. This content is highly useful because it is supported by my contextual knowledge that [[the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott]], which confirms that the newsletter provides an accurate representation of the movement's religious foundation. {{The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis.}}
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
 
-Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that [[Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation]], which confirms that the Mayor's public resistance was typical of Southern political elites. {{The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground.}}`
+<span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`
       },
       "q3b": {
         "id": "p_2020_q3b",
@@ -4473,7 +4473,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         "id": "mock_1_q3a",
         "question": "How useful are Sources B and C for an enquiry into King\u2019s campaign in the North (Chicago, 1966)?",
         "clue": "Assess both sources' content and provenance. Explain how Source B shows local white working-class opposition and blame, while Source C shows SCLC's view of Northern violence and housing discrimination.",
-        "model": "Source B is highly useful for showing the hostile reaction of northern white working-class residents to King's campaign. The resident complains that King \u201Cstirred up trouble where there was none\u201D and that the marches \u201Cjust made people angry\u201D and caused riots. {{This is supported by my knowledge that [[King's Chicago campaign in 1966 targeted housing segregation, which faced fierce opposition from white working-class neighborhoods who feared falling property values and integration]]. {{The provenance makes this source useful because it is an interview published in a local newspaper shortly after the marches in 1966. While it reflects a narrow, defensive viewpoint that downplays systemic northern racism, it is highly useful for showing the immediate resentment and racial defensiveness of Chicago's white residents who refused to see their city as segregated.}}}}\n\nSource C is highly useful for demonstrating the extreme violence that civil rights protestors faced in the North. The activist describes marching through Cicero and being met with \u201Cbricks and bottles from a white mob\u201D, noting that the hatred was \u201Cworse than anything he had faced in Mississippi\u201D. {{This is supported by my knowledge that [[during the SCLC marches in Chicago suburbs like Cicero and Marquette Park, protestors were met by thousands of violent white residents throwing bricks, showing that Northern housing segregation was maintained with the same brutality as Southern Jim Crow]]. {{The provenance strengthens the source's usefulness because it is a first-hand account by an SCLC activist who participated in the march. While he has an interest in emphasizing the violence to expose Northern racism to the world, it is highly useful for capturing the physical danger and disillusionment of the campaigners.}}}}"
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the hostile reaction of northern white working-class residents to King's campaign. The resident complains that King \u201Cstirred up trouble where there was none\u201D and that the marches \u201Cjust made people angry\u201D and caused riots. </span> <span style="color: green;">  </span> <span style="color: purple;"> This is supported by my knowledge that [[King's Chicago campaign in 1966 targeted housing segregation, which faced fierce opposition from white working-class neighborhoods who feared falling property values and integration]]. {{The provenance makes this source useful because it is an interview published in a local newspaper shortly after the marches in 1966. While it reflects a narrow, defensive viewpoint that downplays systemic northern racism, it is highly useful for showing the immediate resentment and racial defensiveness of Chicago's white residents who refused to see their city as segregated. </span>
+
+<span style="color: blue;"> Source C is highly useful for demonstrating the extreme violence that civil rights protestors faced in the North. The activist describes marching through Cicero and being met with \u201Cbricks and bottles from a white mob\u201D, noting that the hatred was \u201Cworse than anything he had faced in Mississippi\u201D. </span> <span style="color: green;">  </span> <span style="color: purple;"> This is supported by my knowledge that [[during the SCLC marches in Chicago suburbs like Cicero and Marquette Park, protestors were met by thousands of violent white residents throwing bricks, showing that Northern housing segregation was maintained with the same brutality as Southern Jim Crow]]. {{The provenance strengthens the source's usefulness because it is a first-hand account by an SCLC activist who participated in the march. While he has an interest in emphasizing the violence to expose Northern racism to the world, it is highly useful for capturing the physical danger and disillusionment of the campaigners. </span>`
       },
       "q3b": {
         "id": "mock_1_q3b",
@@ -4539,7 +4541,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         "id": "mock_2_q3a",
         "question": "How useful are Sources B and C for an enquiry into the significance of the Kent State University shootings (1970)?",
         "clue": "Assess the usefulness of Source B (student eyewitness, feelings of government brutality, student magazine) and Source C (Nixon's television speech, blaming radical students, silent majority perspective) for this enquiry.",
-        "model": "Source B is highly useful for showing the shock and anger felt by students at Kent State and their view of government repression. The student describes holding a \u201Cpeaceful rally against the President's illegal invasion of Cambodia\u201D when the National Guard fired, showing that \u201Cthe government was willing to murder its own youth\u201D. {{This is supported by my knowledge that [[the Kent State shooting in May 1970 occurred during protests against Nixon's expansion of the war into Cambodia, triggering a nationwide student strike of over 4 million students]]. {{The provenance makes it useful because it is a contemporary, eyewitness account published in a student magazine in May 1970. While it is highly emotional and presents the protest as entirely peaceful, it is highly useful for capturing the immediate sense of betrayal and the radicalization of the anti-war movement.}}}}\n\nSource C is highly useful for understanding the Nixon administration's justification for the shootings and their political strategy. Nixon argues that \u201Ctragedy is inevitable\u201D when students resort to throwing rocks and burning buildings, calling them \u201Cviolent, anti-American radicals\u201D. {{This is supported by my knowledge that [[Nixon appealed directly to the 'Silent Majority' of middle-class Americans who were growing increasingly tired of student protests, riots, and counter-culture, using law-and-order rhetoric to isolate the protestors]]. {{The provenance makes the source useful because it is an official speech by President Nixon in May 1970. Although it is a politically motivated speech designed to deflect blame from the National Guard and consolidate his conservative base, it is highly useful for showing how the government sought to frame the Kent State tragedy to maintain public support for its foreign policy.}}}}"
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the shock and anger felt by students at Kent State and their view of government repression. The student describes holding a \u201Cpeaceful rally against the President's illegal invasion of Cambodia\u201D when the National Guard fired, showing that \u201Cthe government was willing to murder its own youth\u201D. </span> <span style="color: green;">  </span> <span style="color: purple;"> This is supported by my knowledge that [[the Kent State shooting in May 1970 occurred during protests against Nixon's expansion of the war into Cambodia, triggering a nationwide student strike of over 4 million students]]. {{The provenance makes it useful because it is a contemporary, eyewitness account published in a student magazine in May 1970. While it is highly emotional and presents the protest as entirely peaceful, it is highly useful for capturing the immediate sense of betrayal and the radicalization of the anti-war movement. </span>
+
+<span style="color: blue;"> Source C is highly useful for understanding the Nixon administration's justification for the shootings and their political strategy. Nixon argues that \u201Ctragedy is inevitable\u201D when students resort to throwing rocks and burning buildings, calling them \u201Cviolent, anti-American radicals\u201D. </span> <span style="color: green;">  </span> <span style="color: purple;"> This is supported by my knowledge that [[Nixon appealed directly to the 'Silent Majority' of middle-class Americans who were growing increasingly tired of student protests, riots, and counter-culture, using law-and-order rhetoric to isolate the protestors]]. {{The provenance makes the source useful because it is an official speech by President Nixon in May 1970. Although it is a politically motivated speech designed to deflect blame from the National Guard and consolidate his conservative base, it is highly useful for showing how the government sought to frame the Kent State tragedy to maintain public support for its foreign policy. </span>`
       },
       "q3b": {
         "id": "mock_2_q3b",
@@ -4605,7 +4609,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         "id": "mock_3_q3a",
         "question": "How useful are Sources B and C for an enquiry into the significance of the Montgomery Bus Boycott?",
         "clue": "Assess the usefulness of Source B (civil rights activist, positive view, confidence in non-violence) and Source C (local segregationist newspaper, negative view, racial bitterness and economic impact) for this enquiry.",
-        "model": "Source B is highly useful for understanding how the Montgomery Bus Boycott empowered the Black community and validated non-violent direct action. The activist states that the boycott showed the \u201Cpower of our community\u201D by refusing to be intimidated for 381 days, proving that \u201Cnon-violent direct action could break the back of segregation\u201D. This is supported by my knowledge that [[the Montgomery Bus Boycott of 1955-56 successfully challenged segregation after Rosa Parks' arrest, leading to the Supreme Court ruling Browder v. {{Gayle that declared bus segregation unconstitutional]]. {{The provenance makes it useful because it is a contemporary interview with an activist in 1956. While it reflects the natural optimism and pride of a participant celebrating a major victory, it is highly useful for capturing the newfound confidence and tactical resolve that the boycott instilled in civil rights campaigners.}}}}\n\nSource C is highly useful for understanding the resentment and resistance of white segregationists to the boycott's success. The editorial asserts that the boycott achieved nothing but \u201Cracial bitterness\u201D and that Black maids still face \u201Clow wages and hostility from white citizens who resent being forced to mix\u201D. {{This is supported by my knowledge that [[despite the legal victory on the buses, white backlash in Montgomery was severe, and Black domestic workers continued to suffer from economic inequality and white violence]]. {{The provenance increases its usefulness because it is an editorial in a local Montgomery newspaper published in December 1956. Although it has a clear segregationist bias designed to minimize the civil rights victory, it is highly useful for demonstrating that legal desegregation did not change deep-seated racial prejudice and instead provoked a hostile white backlash.}}}}"
+        "model": `<span style="color: blue;"> Source B is highly useful for understanding how the Montgomery Bus Boycott empowered the Black community and validated non-violent direct action. The activist states that the boycott showed the \u201Cpower of our community\u201D by refusing to be intimidated for 381 days, proving that \u201Cnon-violent direct action could break the back of segregation\u201D. </span> <span style="color: green;"> This is supported by my knowledge that the Montgomery Bus Boycott of 1955-56 successfully challenged segregation after Rosa Parks' arrest, leading to the Supreme Court ruling Browder v. </span> <span style="color: purple;"> Gayle that declared bus segregation unconstitutional]]. {{The provenance makes it useful because it is a contemporary interview with an activist in 1956. While it reflects the natural optimism and pride of a participant celebrating a major victory, it is highly useful for capturing the newfound confidence and tactical resolve that the boycott instilled in civil rights campaigners. </span>
+
+<span style="color: blue;"> Source C is highly useful for understanding the resentment and resistance of white segregationists to the boycott's success. The editorial asserts that the boycott achieved nothing but \u201Cracial bitterness\u201D and that Black maids still face \u201Clow wages and hostility from white citizens who resent being forced to mix\u201D. </span> <span style="color: green;">  </span> <span style="color: purple;"> This is supported by my knowledge that [[despite the legal victory on the buses, white backlash in Montgomery was severe, and Black domestic workers continued to suffer from economic inequality and white violence]]. {{The provenance increases its usefulness because it is an editorial in a local Montgomery newspaper published in December 1956. Although it has a clear segregationist bias designed to minimize the civil rights victory, it is highly useful for demonstrating that legal desegregation did not change deep-seated racial prejudice and instead provoked a hostile white backlash. </span>`
       },
       "q3b": {
         "id": "mock_3_q3b",
@@ -4671,9 +4677,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         "id": "p_2022_q3a",
         "question": "How useful are Sources B and C for an enquiry into the methods used by the Black Panther movement? (8 marks)",
         "clue": "Assess Source B (Bobby Seale interview, first-hand details of armed patrols to observe police and stop brutality, potential hindsight bias in 1988) and Source C (BPP newspaper article, free breakfast community program, potential propaganda purpose) for usefulness.",
-        "model": `Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. This content is highly useful because it is supported by my contextual knowledge that [[the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott]], which confirms that the newsletter provides an accurate representation of the movement's religious foundation. {{The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis.}}
+        "model": `<span style="color: blue;"> Source B is highly useful for showing that armed patrols and direct observation of the police were key methods used by the Black Panthers to protect their community. The content highlights that members carried guns on "armed patrols" to "observe these police in the community" and prevent "police brutality". </span> <span style="color: green;"> This accurately aligns with my contextual knowledge that the Black Panther Party, founded in Oakland in 1966, rejected SCLC's non-violence and exercised their constitutional right to carry loaded weapons openly, patrolling neighborhoods to monitor police actions and protect Black citizens. </span> <span style="color: purple;"> Regarding its provenance, as a television interview with co-founder Bobby Seale in 1988, its nature as a retrospective account means it may contain hindsight bias, as Seale might want to emphasize their defensive and protective role. However, this actually enhances its utility because it provides a first-hand, insider perspective from one of the party's founders explaining the exact ideological motives and tactical reasoning behind their controversial armed patrols. </span>
 
-Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that [[Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation]], which confirms that the Mayor's public resistance was typical of Southern political elites. {{The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground.}}`
+<span style="color: blue;"> Source C is highly useful for revealing that the Black Panthers used community social welfare programs as a key method to support Black communities. The content outlines their creation of the "Free Breakfast for School Children" scheme to ensure children receive a "healthy breakfast every morning to help them learn". </span> <span style="color: green;"> My contextual knowledge confirms that the Panthers established dozens of 'survival programs'\u2014including free health clinics, clothing distribution, and breakfast programs that successfully fed up to 10,000 children daily\u2014which built massive grassroots popularity and demonstrated that Black Power was about community care, not just armed militancy. </span> <span style="color: purple;"> Regarding its provenance, the nature of the source as the official party newspaper, published in 1969, means its purpose was to promote the party's image and mobilize support. While it has a highly partisan, promotional tone that downplays their armed confrontations and highlights their "love for the people", it is extremely useful as direct evidence of the official propaganda and community-focused messaging the Black Panthers used to build solidarity and challenge hostile media representations. </span>`
       },
       "q3b": {
         "id": "p_2022_q3b",
@@ -4739,9 +4745,9 @@ Source C is highly useful for demonstrating the legal opposition and hostile rea
         "id": "p_2023_q3a",
         "question": "How useful are Sources B and C for an enquiry into the Freedom Summer (1964)? (8 marks)",
         "clue": "Evaluate Source B (first-hand recollections of a Black student, highlights empowerment and inspiration, potential recall bias in 2015) and Source C (contemporary log of 67 incidents of violence and intimidation, lists specific towns, reveals scale of hostility) for usefulness.",
-        "model": `Source B is highly useful for showing how US military tactics alienated the civilian population in South Vietnam. The report states that heavy reliance on "search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees" and is driving peasants "directly into the arms of the enemy". This content's utility is supported by my knowledge that [[tactics like search-and-destroy and the chemical spraying of Agent Orange under Operation Ranch Hand alienated the rural population, making it impossible to win the hearts and minds campaign]], which confirms that US tactics actively fueled the communist insurgency. {{The provenance strengthens its usefulness because it is an official report by a US Senate Subcommittee in 1968. Since it is a self-critical government investigation, it provides a highly reliable, objective contemporary record of the counterproductive nature of US military operations.}}
+        "model": `<span style="color: blue;"> Source B is highly useful for showing how US military tactics alienated the civilian population in South Vietnam. The report states that heavy reliance on "search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees" and is driving peasants "directly into the arms of the enemy". </span> <span style="color: green;"> This content's utility is supported by my knowledge that tactics like search-and-destroy and the chemical spraying of Agent Orange under Operation Ranch Hand alienated the rural population, making it impossible to win the hearts and minds campaign, which confirms that US tactics actively fueled the communist insurgency. </span> <span style="color: purple;"> The provenance strengthens its usefulness because it is an official report by a US Senate Subcommittee in 1968. Since it is a self-critical government investigation, it provides a highly reliable, objective contemporary record of the counterproductive nature of US military operations. </span>
 
-Source C is highly useful for understanding the Vietcong perspective on US military actions and their effect on peasant recruitment. The veteran recalls that because US troops "did not know who the enemy was", they treated everyone as Vietcong and "burned our huts and killed our livestock. This made even the quietest peasants want to fight". This content is highly useful because it is supported by my knowledge that [[the Vietcong guerrilla strategy relied on hiding among civilians, which led frustrated US soldiers to treat all villagers as hostile, driving many peasants to support the communists]], which explains how US high-firepower tactics actively drove recruits to the VC. {{The provenance of a 1985 interview with a Vietcong veteran makes it useful for providing an insider's recollection of the conflict. While it may contain retrospective communist propaganda, it is highly useful for explaining how US tactical errors strengthened the insurgency.}}`
+<span style="color: blue;"> Source C is highly useful for understanding the Vietcong perspective on US military actions and their effect on peasant recruitment. The veteran recalls that because US troops "did not know who the enemy was", they treated everyone as Vietcong and "burned our huts and killed our livestock. This made even the quietest peasants want to fight". </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the Vietcong guerrilla strategy relied on hiding among civilians, which led frustrated US soldiers to treat all villagers as hostile, driving many peasants to support the communists, which explains how US high-firepower tactics actively drove recruits to the VC. </span> <span style="color: purple;"> The provenance of a 1985 interview with a Vietcong veteran makes it useful for providing an insider's recollection of the conflict. While it may contain retrospective communist propaganda, it is highly useful for explaining how US tactical errors strengthened the insurgency. </span>`
       },
       "q3b": {
         "id": "p_2023_q3b",
@@ -4811,9 +4817,9 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         "id": "p_2024_q3a",
         "question": "How useful are Sources B and C for an enquiry into the achievements of Martin Luther King in the civil rights movement? (8 marks)",
         "clue": "Evaluate Source B (photograph of March on Washington, shows King's massive popularity, support from federal government, potential staging bias) and Source C (Bob Lucas interview, shows failure of Chicago Freedom Movement in 1966, divisions between Black and white activists, first-hand witness perspective) for usefulness.",
-        "model": `Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". This content's utility is supported by my knowledge that [[the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers]], which explains the intense exhaustion and fear expressed in his diary. {{The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare.}}
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers, which explains the intense exhaustion and fear expressed in his diary. </span> <span style="color: purple;"> The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare. </span>
 
-Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". This content is highly useful because it is supported by my contextual knowledge that [[the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal]], which confirms the accuracy of the commander's strategic recollections. {{The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a natural interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower.}}`
+<span style="color: blue;"> Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal, which confirms the accuracy of the commander's strategic recollections. </span> <span style="color: purple;"> The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a natural interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower. </span>`
       },
       "q3b": {
         "id": "p_2024_q3b",
@@ -4880,9 +4886,9 @@ Source C is highly useful for understanding the military strategy and resilience
         "id": "p_2025_q3a",
         "question": "How useful are Sources B and C for an enquiry into the escalation of US involvement in the conflict in Vietnam in the 1960s? (8 marks)",
         "clue": "Evaluate Source B (top-secret document 1961, shows Kennedy's early escalation via advisers, helicopters, and aid, highly reliable private source) and Source C (LBJ speech 1965, shows transition to ground combat forces up to 125,000 and draft increase, public speech justifying war) for usefulness.",
-        "model": `Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that [[the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression]], which confirms that the eyewitness account captures the authentic feeling of shock and alienation. {{The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction.}}
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. </span> <span style="color: green;"> The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression, which confirms that the eyewitness account captures the authentic feeling of shock and alienation. </span> <span style="color: purple;"> The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction. </span>
 
-Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that [[Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions]], which confirms that the speech is typical of Nixon's political strategy. {{The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy.}}`
+<span style="color: blue;"> Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... </span> <span style="color: green;"> tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions, which confirms that the speech is typical of Nixon's political strategy. </span> <span style="color: purple;"> The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy. </span>`
       },
       "q3b": {
         "id": "p_2025_q3b",
@@ -5302,7 +5308,8 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
         ],
         "bronzeAnswer": "Segregation is the enforced separation of different racial groups in a country, community, or establishment. The 1896 ruling that legalized this was Plessy v. Ferguson.",
         "silverAnswer": "The Supreme Court ruled that separate schools were unequal and unconstitutional. This decision gave civil rights lawyers the legal power to demand that all-white schools admit Black students.",
-        "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment."
+        "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment.",
+        "enquiry": "segregation and discrimination in the Southern states in the 1950s"
       },
       "specPoints": [
         "Segregation, discrimination and voting rights in the Southern states.",
@@ -5471,14 +5478,14 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
           "caption": "Segregationist demonstrators protesting against school integration in Little Rock."
         },
         "sourceE": {
-          "provenance": "From a photograph showing soldiers of the 101st Airborne Division patrolling Central High School in late September 1957.",
-          "content": "[A photograph of armed federal troops standing in single file outside Central High School, holding bayonets. A military jeep is parked nearby, and no civilians are allowed near the entrance.]",
+          "provenance": "From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.",
+          "content": "[A photograph showing soldiers of the 101st Airborne Division in a military jeep guarding a station wagon as Black students get inside the vehicle, with another soldier walking on patrol.]",
           "image": "assets/sources/airborne-little-rock-patrol.jpg",
-          "caption": "Members of the 101st Airborne Division standing guard outside Central High School."
+          "caption": "Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students."
         },
         "modelAnswer": `Source D is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an "angry white crowd" of students and adults protesting, with some carrying signs reading "Keep Central High Clean". This content is highly useful because it is supported by my contextual knowledge that [[when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school]], which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. {{The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.}}
 
-Source E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows "armed federal troops standing in single file" holding bayonets. This content's usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a staged, orderly military patrol, which hides the constant, daily psychological harassment the students endured from white classmates inside the classrooms.}}`
+Source E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows "soldiers of the 101st Airborne Division in a military jeep guarding a station wagon" as Black students enter it. This content's usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.}}`
       },
       "deepThinkingQuestions": [
         {
@@ -5515,7 +5522,8 @@ Source E is highly useful for showing the scale of the state and military confli
         ],
         "bronzeAnswer": "In May 1954, the Supreme Court ruled unanimously (9-0) that racial segregation in public schools was unconstitutional.",
         "silverAnswer": "The decision ruled that separate educational facilities are inherently unequal, directly overturning the 1896 Plessy v. Ferguson ruling and violating the 14th Amendment's Equal Protection Clause.",
-        "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow."
+        "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow.",
+        "enquiry": "the role of the Supreme Court in challenging school segregation"
       },
       "specPoints": [
         "Reasons for, key features and significance of the events at Little Rock High School (1957)."
@@ -5719,7 +5727,8 @@ Source E is highly useful for showing the direct police criminalization of peace
         ],
         "bronzeAnswer": "Eisenhower sent the troops because Governor Faubus used the state National Guard to defy a federal court order, forcing the President to uphold federal authority and the Constitution.",
         "silverAnswer": "The sign argues that (1) integration is being forced by a 'dictator' (federal overreach), and (2) desegregation is a threat to the education and culture of white children ('stolen' school).",
-        "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern school boards used this loophole to delay integration, leading to angry public protests and state defiance in Little Rock."
+        "goldAnswer": "Following the Brown ruling (Topic 1.1), Southern politicians signed the Southern Manifesto and vowed 'massive resistance'. When the Supreme Court issued Brown II ordering integration 'with all deliberate speed', Southern school boards used this loophole to delay integration, leading to angry public protests and state defiance in Little Rock.",
+        "enquiry": "the level of opposition to school integration in Little Rock"
       },
       "specPoints": [
         "The significance of Rosa Parks.",
@@ -5887,20 +5896,20 @@ Source E is highly useful for showing the direct police criminalization of peace
       "howUsefulAnalyser": {
         "question": "How useful are Sources D and E for an enquiry into the methods used by Southern white opposition to resist civil rights in the 1950s? (8 marks)",
         "sourceD": {
-          "provenance": "A photograph of Southern politicians signing the Southern Manifesto in March 1956 to coordinate resistance to school integration.",
-          "content": "[A photograph showing a group of Southern Senators and Congressmen signing the Southern Manifesto, pledging to use 'all lawful means' to resist federal desegregation rulings.]",
+          "provenance": "A photograph showing Senator Strom Thurmond signing the Southern Manifesto in March 1956, surrounded by other Southern politicians.",
+          "content": "[A photograph showing Senator Strom Thurmond sitting at a desk and signing the Southern Manifesto, while a group of five other Southern Senators stand around him watching.]",
           "image": "assets/sources/southern-manifesto-signing.jpg",
           "caption": "Southern Congressmen signing the Southern Manifesto in March 1956."
         },
         "sourceE": {
-          "provenance": "A photograph of a Ku Klux Klan parade marching through a Southern town, taken in 1957.",
-          "content": "[A photograph showing dozens of Klansmen in white robes and pointed hoods marching down a main street. Crowds of onlookers are lined up, and local police officers are standing by without intervening.]",
+          "provenance": "A photograph of a massive Ku Klux Klan parade marching in front of the U.S. Treasury Building in Washington D.C. in 1926.",
+          "content": "[A photograph showing a large line of Klansmen in white robes and hoods marching down a street in Washington D.C. in front of the U.S. Treasury Building, carrying American flags, with crowds of onlookers watching from the sidewalk.]",
           "image": "assets/sources/kkk-march-washington-1926.jpg",
-          "caption": "A KKK march demonstrating the public, unchecked presence of white supremacist groups in the South."
+          "caption": "A Ku Klux Klan parade marching in front of the U.S. Treasury Building in Washington D.C. in 1926."
         },
-        "modelAnswer": `Source D is highly useful for showing the official, legalistic methods of resistance deployed by Southern politicians to defy integration. The photograph depicts "a group of Southern Senators and Congressmen signing the Southern Manifesto", pledging to use all lawful means to resist federal rulings. This content is highly useful because it is supported by my contextual knowledge that [[in March 1956, over 100 Southern politicians signed the Southern Manifesto to coordinate resistance, falsely claiming the Supreme Court's Brown ruling was an abuse of judicial power]], which confirms that the photograph is an accurate representation of how Southern elites lent political legitimacy to segregation. {{The provenance makes the source highly useful because it documents a historic moment of political mobilization in March 1956, showing the unity of Southern lawmakers. However, it is limited because it only captures a public signing ceremony, concealing the illegal, violent tactics and economic intimidation that these same state authorities quietly condoned on the ground.}}
+        "modelAnswer": `Source D is highly useful for showing the official, legalistic methods of resistance deployed by Southern politicians to defy integration. The photograph depicts "Senator Strom Thurmond sitting at a desk and signing the Southern Manifesto", with other senators standing around him. This content is highly useful because it is supported by my contextual knowledge that [[in March 1956, over 100 Southern politicians signed the Southern Manifesto to coordinate resistance, falsely claiming the Supreme Court's Brown ruling was an abuse of judicial power]], which confirms that the photograph is an accurate representation of how Southern elites lent political legitimacy to segregation. {{The provenance makes the source highly useful because it documents a historic moment of political mobilization in March 1956, showing the unity of Southern lawmakers. However, it is limited because it only captures a staged photo opportunity of a signing ceremony, concealing the illegal, violent tactics and economic intimidation that these same state authorities quietly condoned on the ground.}}
 
-Source E is highly useful for showing the violent and physical intimidation used by extremist groups to enforce segregation. The photograph depicts "dozens of Klansmen in white robes and pointed hoods marching" down a street while police stand by. This content's utility is supported by my knowledge that [[the Ku Klux Klan experienced a major revival in the 1950s, using bombings, beatings, and lynchings to terrorize civil rights workers with local police collusion]], which confirms the accuracy of the source as a record of KKK activity. {{The provenance, showing a KKK march in 1957, makes the source highly useful because it shows the public, unchecked presence of white supremacist groups. However, it is less useful because it only captures a public parade, failing to document the illegal, clandestine nature of KKK violence and their collusion with local police.}}`
+Source E is highly useful for showing the violent and physical intimidation used by extremist groups to enforce segregation. The photograph depicts "a large line of Klansmen in white robes and hoods marching" in Washington D.C. This content's utility is supported by my knowledge that [[the Ku Klux Klan experienced a major revival in the 1950s, using bombings, beatings, and lynchings to terrorize civil rights workers with local police collusion]], which confirms the accuracy of the source as a record of KKK activity. {{The provenance, showing a KKK march in Washington D.C. in 1926, makes the source useful for showing the national scale and public visibility of the Klan in the 1920s. However, its usefulness is significantly limited for an enquiry into the 1950s South because it was taken decades earlier in the North (D.C.) and fails to document the specific 1950s Southern civil rights context, KKK violence, or their collusion with local Southern police.}}`
       },
       "deepThinkingQuestions": [
         {
@@ -5937,7 +5946,8 @@ Source E is highly useful for showing the violent and physical intimidation used
         ],
         "bronzeAnswer": "The Montgomery Bus Boycott lasted 381 days and was officially ended by the Supreme Court's Browder v. Gayle decision in late 1956.",
         "silverAnswer": "The image shows Parks sitting in the front seats of the bus (previously reserved for whites only) and a white man sitting peacefully behind her, proving the laws had changed.",
-        "goldAnswer": "This image represents the dismantling of the Jim Crow system shown in Topic 1.1. By refusing to comply with segregated seating, activists forced a Supreme Court ruling (Browder v. Gayle) that declared segregated transit unconstitutional, legally removing signs like the one in Topic 1.1."
+        "goldAnswer": "This image represents the dismantling of the Jim Crow system shown in Topic 1.1. By refusing to comply with segregated seating, activists forced a Supreme Court ruling (Browder v. Gayle) that declared segregated transit unconstitutional, legally removing signs like the one in Topic 1.1.",
+        "enquiry": "the success of the Montgomery Bus Boycott"
       },
       "specPoints": [
         "Opposition to desegregation in the South, including the \u2018Dixiecrats\u2019 and the setting up of White Citizens\u2019 Councils.",
@@ -6107,10 +6117,10 @@ Source E is highly useful for showing the violent and physical intimidation used
       "howUsefulAnalyser": {
         "question": "How useful are Sources D and E for an enquiry into the tactics of direct action and the response of Southern white opposition? (8 marks)",
         "sourceD": {
-          "provenance": "From a photograph showing student activists staging a sit-in at a Woolworth's lunch counter in Greensboro, North Carolina, February 1960.",
-          "content": "[A photograph showing four Black college students sitting quietly on stools at a lunch counter. A white waitress stands behind the counter refusing to serve them, while white teenagers stand behind the students, making faces and pouring sugar on them.]",
+          "provenance": "A photograph of the preserved Greensboro Woolworth's lunch counter and stools on display as an historical exhibit at the Smithsonian National Museum of American History.",
+          "content": "[A photograph of the empty, preserved section of the Greensboro Woolworth's lunch counter and four stools, displayed as an exhibit in a museum to commemorate the 1960 sit-in protests.]",
           "image": "assets/sources/greensboro-sit-in-counter.jpg",
-          "caption": "Student activists enduring harassment during the Greensboro Woolworth's lunch counter sit-in."
+          "caption": "The Greensboro Woolworth's lunch counter and stools, now preserved as an exhibit at the Smithsonian."
         },
         "sourceE": {
           "provenance": "From a photograph showing James Meredith walking to class at the University of Mississippi, October 1962.",
@@ -6118,7 +6128,7 @@ Source E is highly useful for showing the violent and physical intimidation used
           "image": "assets/sources/james-meredith-walking.jpg",
           "caption": "James Meredith under heavy armed escort during the integration of 'Ole Miss'."
         },
-        "modelAnswer": `Source D is highly useful for showing the non-violent direct action tactics used by student activists to challenge retail segregation. The photograph shows "four Black college students sitting quietly" on counter stools while white teenagers pour sugar on them. This content is highly useful because it is supported by my knowledge that [[the Greensboro sit-in of February 1960 at Woolworth's sparked a massive sit-in movement across the South, demonstrating SNCC's commitment to non-violent resistance]], which validates that the photograph is an accurate representation of the physical harassment activists endured to expose Southern bigotry. {{The provenance, taken in February 1960, makes the source highly useful because it provides an authentic, contemporary record of the protests. However, it is less useful because it only shows the counter itself, omitting the wider economic boycott of the store organized by the local community that forced integration.}}
+        "modelAnswer": `Source D is highly useful for showing the non-violent direct action tactics used by student activists to challenge retail segregation. The photograph shows the "empty, preserved section of the Greensboro Woolworth's lunch counter and four stools" on display inside the Smithsonian Museum. This content is highly useful because it is supported by my knowledge that [[the Greensboro sit-in of February 1960 at Woolworth's was a turning point that sparked sit-ins across the South, and this preserved counter stands as a significant material artifact representing that struggle]], which confirms that the preserved counter stands as a significant material artifact representing that struggle. {{The provenance, showing the counter preserved at the Smithsonian, makes the source highly useful as it demonstrates the national historical significance and public recognition of the sit-ins. However, it is limited because it shows an empty museum exhibit rather than the actual 1960 protest, failing to capture the student activists, the hostile white crowds, or the harassment they endured.}}
 
 Source E is highly useful for showing the extreme level of state resistance to university integration and the federal intervention needed to override it. The photograph depicts James Meredith walking "flanked by several tall, serious US Marshals" wearing helmets. This content's utility is supported by my knowledge that [[Governor Ross Barnett defied federal orders, prompting President Kennedy to send 30,000 troops and US Marshals to force the integration of the University of Mississippi in October 1962, sparking riots that killed two people]], which explains the military necessity of using armed guards to protect a single Black student. {{The provenance of October 1962 makes the source extremely useful because it visually documents the armed federal power needed to protect Black rights. However, it is less useful because it depicts a controlled walk, failing to capture the chaos and violence of the Ole Miss riot itself.}}`
       },
@@ -6140,14 +6150,14 @@ Source E is highly useful for showing the extreme level of state resistance to u
         "prevSubtopicId": "subtopic_1_4",
         "prevSubtopicTitle": "Topic 1.4: Southern White Resistance",
         "image": "assets/sources/southern-manifesto-signing.jpg",
-        "provenance": "A group of Southern senators and congressmen signing the 'Southern Manifesto' in 1956 to coordinate resistance against school desegregation.",
+        "provenance": "Senator Strom Thurmond signing the 'Southern Manifesto' in 1956, surrounded by other Southern politicians.",
         "seeThinkWonder": {
           "see": "Observe the formal setting and the documents being signed by the Southern politicians.",
           "think": "Why did Southern politicians feel the need to document their opposition to desegregation in a formal 'Manifesto'?",
           "wonder": "How did this political declaration encourage segregationist groups like the Ku Klux Klan and White Citizens' Councils?"
         },
         "bronze": "Identify two ways in which white segregationists in the South resisted civil rights progress in the late 1950s.",
-        "silver": "Study the source image. Explain how the Southern Manifesto signed by Southern congressmen in 1956 opposed the Supreme Court's authority.",
+        "silver": "Study the source image. Explain how the Southern Manifesto signed by Strom Thurmond and other Southern politicians in 1956 opposed the Supreme Court's authority.",
         "gold": "Contrast the Southern White Resistance tactics (such as the Southern Manifesto and White Citizens' Councils) with the direct action methods used in the Montgomery Bus Boycott.",
         "keywords": [
           "Southern Manifesto",
@@ -6157,7 +6167,9 @@ Source E is highly useful for showing the extreme level of state resistance to u
         ],
         "bronzeAnswer": "They resisted through (1) political measures like the Southern Manifesto and 'massive resistance', and (2) social/economic intimidation by White Citizens' Councils and KKK violence.",
         "silverAnswer": "The Southern Manifesto claimed the Supreme Court had abused its power in the Brown decision, asserting that education was a state matter and encouraging states to resist federal integration orders.",
-        "goldAnswer": "While Montgomery activists used non-violent economic pressure, Southern White Resistance used legal obstruction (states' rights arguments) and economic/physical intimidation to prevent integration and maintain white supremacy."
+        "goldAnswer": "While Montgomery activists used non-violent economic pressure, Southern White Resistance used legal obstruction (states' rights arguments) and economic/physical intimidation to prevent integration and maintain white supremacy.",
+        "visualDetails": "Senator Strom Thurmond is seated at a desk signing the 'Southern Manifesto' (officially the Declaration of Constitutional Principles) in 1956, while five other Southern senators stand around him watching. This represents the official political coordination of white resistance to integration.",
+        "enquiry": "the methods used by Southern white opposition to resist integration"
       },
       "specPoints": [
         "The significance of Greensboro and the sit-in movement.",
@@ -6378,14 +6390,14 @@ Source E is highly useful for showing the political and legislative outcomes of 
         "prevSubtopicId": "subtopic_2_1",
         "prevSubtopicTitle": "Topic 2.1: Non-Violent Direct Action",
         "image": "assets/sources/greensboro-sit-in-counter.jpg",
-        "provenance": "Student activists enduring harassment during the Greensboro Woolworth's lunch counter sit-in, February 1960.",
+        "provenance": "The Greensboro Woolworth's lunch counter and stools, now preserved as an exhibit at the Smithsonian National Museum of American History.",
         "seeThinkWonder": {
-          "see": "Look at the students sitting at the counter and the crowd of white youths standing directly behind them.",
-          "think": "Why did the activists refuse to react or retaliate when food and liquids were poured over them?",
-          "wonder": "How did student-led groups like SNCC organize such highly disciplined campaigns?"
+          "see": "Observe the empty lunch counter and stools on display in the museum.",
+          "think": "Why was this specific section of the Woolworth's lunch counter preserved and placed in a national museum?",
+          "wonder": "How did this physical space become a focal point for the civil rights struggle in 1960?"
         },
         "bronze": "What student-led civil rights organization was founded in 1960 to coordinate sit-ins and voter registration?",
-        "silver": "Study the source image. Identify two ways white segregationists are harassing the Black students at the counter.",
+        "silver": "Study the source image. Identify two features of the lunch counter layout, and explain why sit-ins at such counters were highly visible.",
         "gold": "Contrast the student sit-ins with the Montgomery Bus Boycott (Topic 1.2). How did the sit-in strategy differ in its target, speed of mobilization, and direct confrontation?",
         "keywords": [
           "SNCC",
@@ -6394,8 +6406,10 @@ Source E is highly useful for showing the political and legislative outcomes of 
           "Desegregation"
         ],
         "bronzeAnswer": "The Student Nonviolent Coordinating Committee (SNCC) was founded in 1960.",
-        "silverAnswer": "White segregationists are (1) crowding closely behind the students to intimidate them, and (2) pouring sugar, condiments, and liquids over their heads and clothes.",
-        "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention."
+        "silverAnswer": "The counter features (1) stools bolted to the floor facing the service area, and (2) a long, open counter, making any protest there highly public and disruptive to normal business operations.",
+        "goldAnswer": "While the Montgomery boycott (Topic 1.2) was a year-long economic withdrawal that avoided direct physical confrontation, the sit-ins were immediate, high-risk confrontations designed to occupy segregated spaces and force business owners to either integrate or call the police, drawing instant national attention.",
+        "visualDetails": "The photo shows the empty Greensboro lunch counter and four stools on display in a museum. There are no people in the photo. It represents the material culture and national preservation of the sit-in protests of 1960.",
+        "enquiry": "the significance of student-led sit-in protests in challenging segregation"
       },
       "specPoints": [
         "King and the peace marches of 1963 in Birmingham and Washington.",
@@ -6623,7 +6637,8 @@ Source E is highly useful for showing how Black Power and militancy were institu
         ],
         "bronzeAnswer": "The Birmingham Police Chief was Eugene 'Bull' Connor.",
         "silverAnswer": "The shocking TV news coverage of police beating peaceful marchers horrified the public. This put massive political pressure on President Johnson to pass a law protecting Black voters.",
-        "goldAnswer": "In both Selma and Little Rock (Topic 1.3), state governors openly defied civil rights. In both cases, shocking media coverage (television broadcasts of white mobs in Little Rock and troopers beating marchers in Selma) provoked national outrage, forcing the Presidents (Eisenhower and Johnson) to intervene with federal authority."
+        "goldAnswer": "In both Selma and Little Rock (Topic 1.3), state governors openly defied civil rights. In both cases, shocking media coverage (television broadcasts of white mobs in Little Rock and troopers beating marchers in Selma) provoked national outrage, forcing the Presidents (Eisenhower and Johnson) to intervene with federal authority.",
+        "enquiry": "the policing of civil rights protests in Selma"
       },
       "specPoints": [
         "Malcolm X, his beliefs, methods and involvement with the Black Muslims.",
@@ -6846,7 +6861,8 @@ Source E is highly useful for showing the immediate political and emotional impa
         ],
         "bronzeAnswer": "The Black Panther Party (founded by Huey Newton and Bobby Seale in Oakland in 1966).",
         "silverAnswer": "Martin Luther King Jr. believed in peaceful, non-violent protest to win over white support, whereas Malcolm X believed that Black Americans had the right to defend themselves by any means necessary if they were attacked by racists.",
-        "goldAnswer": "Legal victories like the Montgomery Bus Boycott (Topic 1.2) and the Civil Rights Act ended legal segregation in the South, but did not solve Northern problems of poverty, unemployment, and police brutality. Malcolm X's focus on economic self-reliance and self-defense appealed to Northern Blacks who felt non-violence had failed to improve their daily lives."
+        "goldAnswer": "Legal victories like the Montgomery Bus Boycott (Topic 1.2) and the Civil Rights Act ended legal segregation in the South, but did not solve Northern problems of poverty, unemployment, and police brutality. Malcolm X's focus on economic self-reliance and self-defense appealed to Northern Blacks who felt non-violence had failed to improve their daily lives.",
+        "enquiry": "the beliefs and methods of Malcolm X"
       },
       "specPoints": [
         "The riots of 1965\u201367 and the Kerner Report (1968).",
@@ -7068,14 +7084,14 @@ Source E is highly useful for showing the scale of religious opposition that und
         "prevSubtopicId": "subtopic_2_4",
         "prevSubtopicTitle": "Topic 2.4: Urban Riots (1965\u201368)",
         "image": "assets/sources/detroit-riot-guard-1967.jpg",
-        "provenance": "A photograph showing National Guard troops patrolling a street during the Detroit Riot, July 1967.",
+        "provenance": "A photograph showing a National Guard soldier patrolling a street during the Detroit Riot, July 1967.",
         "seeThinkWonder": {
           "see": "Observe the armed soldier in combat gear patrolling a residential street with smoke in the background.",
           "think": "Why did the US government deploy military forces (National Guard) to American cities in the late 1960s?",
           "wonder": "How did these violent urban riots affect the public support for the civil rights movement's non-violent goals?"
         },
         "bronze": "State two major US cities that experienced significant urban riots between 1965 and 1968.",
-        "silver": "Study the source image. Identify two details indicating the scale of civil unrest and state military deployment during this riot.",
+        "silver": "Study the source image. Identify two details in the photo indicating state military deployment and the destruction caused by the riot.",
         "gold": "Contrast the causes of the urban riots (1965\u201368) with the goals of the Southern civil rights campaigns led by the SCLC.",
         "keywords": [
           "Watts Riot",
@@ -7084,8 +7100,10 @@ Source E is highly useful for showing the scale of religious opposition that und
           "De Facto Segregation"
         ],
         "bronzeAnswer": "Two major cities that experienced significant urban riots were Los Angeles (Watts in 1965) and Detroit (1967) or Newark (1967).",
-        "silverAnswer": "The image shows (1) armed National Guard soldiers deployed in combat gear patrolling a street, and (2) burning buildings with thick smoke filling the sky, showing widespread unrest.",
-        "goldAnswer": "While Southern SCLC campaigns focused on de jure segregation (legal rights, voting access), the Northern urban riots arose from de facto segregation (economic deprivation, discrimination, and police bias) which legal reforms could not easily solve."
+        "silverAnswer": "The image shows (1) a single armed National Guard soldier deployed in combat gear patrolling a street, and (2) burning buildings with thick smoke rising in the background, showing the destruction caused by the riot.",
+        "goldAnswer": "While Southern SCLC campaigns focused on de jure segregation (legal rights, voting access), the Northern urban riots arose from de facto segregation (economic deprivation, discrimination, and police bias) which legal reforms could not easily solve.",
+        "visualDetails": "A single armed soldier in combat gear patrols a street with smoke rising from burning buildings in the background. This shows the militarized response to the riots and the collapse of order in Detroit.",
+        "enquiry": "the causes and scale of urban riots in the late 1960s"
       },
       "specPoints": [
         "Reasons for greater US involvement under Eisenhower, including the domino theory and weaknesses of the Diem government.",
@@ -7272,12 +7290,12 @@ Source E is highly useful for showing the transition to full combat operations a
         "image": "assets/sources/ngo-dinh-diem-parade.jpg",
         "provenance": "President Ngo Dinh Diem of South Vietnam during an official military parade in Saigon, late 1950s.",
         "seeThinkWonder": {
-          "see": "Observe Diem riding in the open-top vehicle surrounded by military officers.",
+          "see": "Observe President Ngo Dinh Diem walking on foot in a white suit during a parade, with South Vietnamese soldiers standing in the foreground.",
           "think": "What image of stability and control is the Diem regime attempting to project here?",
           "wonder": "How did Diem's Catholicism and nepotism undermine the military strength shown in this parade?"
         },
         "bronze": "What theory, coined by President Eisenhower, argued that if South Vietnam fell to communism, its neighbors would follow?",
-        "silver": "Study the source image. Identify two visual details that indicate Diem relied heavily on military force to maintain his regime.",
+        "silver": "Study the source image. Identify two visual details that indicate a heavy military presence surrounded Diem during this parade.",
         "gold": "Connect the Buddhist Crisis of 1963 (Topic 3.1) to the SCLC's strategy of provoking police violence in Birmingham (Topic 2.2). How did both use media images of suffering to achieve political goals?",
         "keywords": [
           "Geneva Accords",
@@ -7286,8 +7304,10 @@ Source E is highly useful for showing the transition to full combat operations a
           "Buddhist Crisis"
         ],
         "bronzeAnswer": "The Domino Theory.",
-        "silverAnswer": "The image shows Diem (1) riding in a military parade, and (2) surrounded by heavily armed officers and armored transport, showing his dependence on military power.",
-        "goldAnswer": "Both campaigns relied on media exposure of violence to shock public opinion. In Birmingham (Topic 2.2), SCLC knew Bull Connor's brutality would build support for civil rights. In South Vietnam, the Buddhist crisis and Thich Quang Duc's self-immolation exposed Diem's tyranny, forcing the US government to withdraw its support for his regime."
+        "silverAnswer": "The image shows (1) President Ngo Dinh Diem walking on foot in a white suit during a parade, and (2) South Vietnamese soldiers in uniform standing in the foreground with their backs to us, lining the parade route to provide security.",
+        "goldAnswer": "Both campaigns relied on media exposure of violence to shock public opinion. In Birmingham (Topic 2.2), SCLC knew Bull Connor's brutality would build support for civil rights. In South Vietnam, the Buddhist crisis and Thich Quang Duc's self-immolation exposed Diem's tyranny, forcing the US government to withdraw its support for his regime.",
+        "visualDetails": "President Ngo Dinh Diem is walking on foot in a white suit during a parade in Saigon, while South Vietnamese soldiers in uniforms stand in the foreground with their backs to us. This shows the heavy military presence surrounding him to project control.",
+        "enquiry": "the unpopularity and militaristic nature of Ngo Dinh Diem's regime"
       },
       "specPoints": [
         "Reasons for the escalation of the conflict and increased US involvement in Vietnam, including the increasing threat of the Vietcong and the Gulf of Tonkin incident (1964)."
@@ -7503,7 +7523,8 @@ Source E is highly useful for showing the chemical warfare tactics used by the U
         ],
         "bronzeAnswer": "The Gulf of Tonkin Resolution.",
         "silverAnswer": "The USS Maddox is equipped with (1) large naval guns (turrets) for combat, and (2) advanced radar and antenna masts for electronic surveillance.",
-        "goldAnswer": "Diem's failure and the collapse of the Strategic Hamlet Program (Topic 3.1) allowed the Vietcong to control large areas of South Vietnam. To prevent a total communist victory, President Johnson had to shift from sending advisory aid to directly patrolling the coast, leading to the Maddox incident and full military escalation."
+        "goldAnswer": "Diem's failure and the collapse of the Strategic Hamlet Program (Topic 3.1) allowed the Vietcong to control large areas of South Vietnam. To prevent a total communist victory, President Johnson had to shift from sending advisory aid to directly patrolling the coast, leading to the Maddox incident and full military escalation.",
+        "enquiry": "the escalation of US military involvement in Vietnam"
       },
       "specPoints": [
         "The methods used by the USA, including Search and Destroy, Operation Rolling Thunder and chemical weapons.",
@@ -7730,7 +7751,8 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
         ],
         "bronzeAnswer": "The tactics were (1) Search and Destroy missions, and (2) the spraying of chemical defoliants like Agent Orange.",
         "silverAnswer": "The US military had far superior firepower, technology, and air support. The Vietcong avoided open battles to survive, choosing instead to use hit-and-run guerrilla tactics and booby traps in the jungle.",
-        "goldAnswer": "US tactics (Topic 3.3) relied on heavy bombing of industrial targets. However, the Ho Chi Minh Trail was a decentralized, hidden network of dirt paths. When a path was bombed, Vietcong engineers repaired it immediately. Using simple bicycles and human porters meant they did not rely on fuel depots or paved roads."
+        "goldAnswer": "US tactics (Topic 3.3) relied on heavy bombing of industrial targets. However, the Ho Chi Minh Trail was a decentralized, hidden network of dirt paths. When a path was bombed, Vietcong engineers repaired it immediately. Using simple bicycles and human porters meant they did not rely on fuel depots or paved roads.",
+        "enquiry": "the transport methods and tactics used by communist forces in Vietnam"
       },
       "specPoints": [
         "The Nixon Doctrine and the withdrawal of US troops.",
@@ -7897,10 +7919,10 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
       "howUsefulAnalyser": {
         "question": "How useful are Sources D and E for an enquiry into the anti-war movement and the response of the government? (8 marks)",
         "sourceD": {
-          "provenance": "From a photograph showing anti-war demonstrators marching near the Pentagon in Washington D.C., October 1967.",
-          "content": "[A photograph showing a massive line of young demonstrators carrying peace signs, flower symbols, and banners reading 'Draft Beer, Not Boys' facing a wall of military police officers standing guard.]",
+          "provenance": "From a photograph showing U.S. Marshals carrying away an anti-war demonstrator outside the Pentagon, October 1967.",
+          "content": "[A photograph showing two U.S. Marshals wearing white helmets carrying away a civilian demonstrator, while media reporters and cameras watch in the background.]",
           "image": "assets/sources/antiwar-pentagon-protest-1967.jpg",
-          "caption": "Anti-war demonstrators facing military police outside the Pentagon during a 1967 march."
+          "caption": "A civilian demonstrator being carried away by U.S. Marshals at the Pentagon."
         },
         "sourceE": {
           "provenance": "From a photograph showing student demonstrators facing the National Guard at Kent State University, May 1970.",
@@ -7908,7 +7930,7 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
           "image": "assets/sources/kent-state-protests-1970.jpg",
           "caption": "Kent State University students protesting shortly before National Guardsmen opened fire."
         },
-        "modelAnswer": `Source D is highly useful for showing the youth-led, confrontational nature of the anti-war movement. The photograph shows "young demonstrators carrying peace signs... facing a wall of military police". This content's utility is supported by my knowledge that [[the Pentagon protest of October 1967 reflected the rapid growth of the anti-war movement as the draft escalated, with draft card burning and peaceful marches becoming common]], which confirms the growing polarization and student involvement at this time. {{The provenance of October 1967 makes the source highly useful because it captures the direct, non-violent confrontation with military authority. However, it is less useful because it focuses on a single demonstration in Washington D.C., failing to show the wider, working-class opposition or moderate critics of the war.}}
+        "modelAnswer": `Source D is highly useful for showing the direct confrontation and physical arrest of anti-war protestors by federal authorities. The photograph shows "two U.S. Marshals wearing white helmets carrying away a civilian demonstrator". This content's utility is supported by my knowledge that [[the Pentagon protest of October 1967 reflected the rapid growth of the anti-war movement as the draft escalated, with draft card burning and peaceful marches becoming common]], which confirms the growing polarization and student involvement at this time. {{The provenance of October 1967 makes the source highly useful because it captures the direct, physical conflict and state response to anti-war protestors. However, it is less useful because it focuses on a single demonstration in Washington D.C., failing to show the wider, working-class opposition or moderate critics of the war.}}
 
 Source E is highly useful for showing the lethal escalation of state suppression of student protests on campus. The photograph shows a "line of National Guard soldiers... aimed toward them, holding rifles" at Kent State. This content is highly useful because it is supported by my knowledge that [[the Kent State shootings of May 1970, where National Guardsmen killed four students protesting the invasion of Cambodia, triggered a strike of 4 million students nationwide]], which validates the high tension and physical danger student protesters faced. {{The provenance of May 1970 makes the source extremely useful because it documents the tense standoff just before the shooting. However, it is less useful because it captures the standoff, failing to explain the panic, chaos, and nationwide student strike that followed.}}`
       },
@@ -7932,12 +7954,12 @@ Source E is highly useful for showing the lethal escalation of state suppression
         "image": "assets/sources/nixon-visiting-troops.jpg",
         "provenance": "President Richard Nixon visiting US troops in South Vietnam, July 1969.",
         "seeThinkWonder": {
-          "see": "Observe Nixon standing on a vehicle surrounded by smiling, cheering American soldiers.",
+          "see": "Observe Nixon standing at eye level on the ground, surrounded by a dense crowd of helmeted American soldiers.",
           "think": "What political message is the Nixon administration attempting to send to voters back home through this photo?",
           "wonder": "How did this visit contrast with the secret bombing campaigns Nixon was launching in Cambodia?"
         },
         "bronze": "What was Vietnamization, and what was its main objective?",
-        "silver": "Study the source image. Identify two details indicating the visit was carefully staged to project troop morale and support for the President.",
+        "silver": "Study the source image. Identify two details showing how the President is positioned relative to the soldiers to project solidarity.",
         "gold": "How did Nixon's invasion of Cambodia in 1970 (Topic 3.4) compare to Eisenhower's initial domino theory logic (Topic 3.1) in terms of expanding regional conflict?",
         "keywords": [
           "Vietnamization",
@@ -7946,8 +7968,10 @@ Source E is highly useful for showing the lethal escalation of state suppression
           "Withdrawal"
         ],
         "bronzeAnswer": "Vietnamization was Nixon's policy to withdraw US ground troops and transfer the responsibility of fighting to the South Vietnamese army (ARVN), with the objective of ending US involvement 'with honor'.",
-        "silverAnswer": "The image shows (1) Nixon positioned high on a vehicle to be visible to the entire crowd, and (2) soldiers smiling and holding up cameras, creating a positive public relations image.",
-        "goldAnswer": "Nixon's invasion of Cambodia in 1970 (Topic 3.4) expanded the war into a neutral country to destroy communist sanctuaries, echoing Eisenhower's domino theory (Topic 3.1) that communist expansion in any neighboring state threatened the entire region's stability."
+        "silverAnswer": "The image shows (1) Nixon standing at eye level on the ground in the middle of the crowd rather than on an elevated platform, and (2) Nixon being closely surrounded and touched by soldiers, projecting personal connection and solidarity.",
+        "goldAnswer": "Nixon's invasion of Cambodia in 1970 (Topic 3.4) expanded the war into a neutral country to destroy communist sanctuaries, echoing Eisenhower's domino theory (Topic 3.1) that communist expansion in any neighboring state threatened the entire region's stability.",
+        "visualDetails": "President Nixon is standing on the ground at eye level, in the middle of a dense crowd of helmeted US soldiers, surrounded by them. This projection of close, personal contact was used to show solidarity and strong troop morale.",
+        "enquiry": "Nixon's policy of Vietnamization and troop morale"
       },
       "specPoints": [
         "Reasons for the growth of opposition, including TV and media coverage of the war and the draft system.",
@@ -8146,14 +8170,14 @@ Source E is highly useful for showing the working-class basis of this pro-war su
         "prevSubtopicId": "subtopic_4_1",
         "prevSubtopicTitle": "Topic 4.1: Rise of the Anti-War Movement",
         "image": "assets/sources/antiwar-pentagon-protest-1967.jpg",
-        "provenance": "Anti-war demonstrators facing military police outside the Pentagon, October 1967.",
+        "provenance": "A photograph showing U.S. Marshals carrying away an anti-war demonstrator at the Pentagon, October 1967.",
         "seeThinkWonder": {
-          "see": "Observe the proximity of the young protestors to the armed military police guard line.",
+          "see": "Observe the two U.S. Marshals physically lifting and carrying a civilian demonstrator away.",
           "think": "Why would protestors target the Pentagon rather than local draft board offices?",
           "wonder": "How did images of armed soldiers facing young civilians affect public support for the war?"
         },
         "bronze": "What is a 'credibility gap,' and how did the My Lai Massacre (1968) widen it?",
-        "silver": "Study the source image. Identify two details showing that this protest was a direct confrontation between young civilians and state military power.",
+        "silver": "Study the source image. Identify two details showing that the authorities are physically arresting and removing a demonstrator.",
         "gold": "How did the television coverage of the draft and the My Lai Massacre (Topic 4.1) compare to the media coverage of the Birmingham campaign in 1963 (Topic 2.2) in terms of shaping public opinion?",
         "keywords": [
           "Draft Resistance",
@@ -8162,8 +8186,10 @@ Source E is highly useful for showing the working-class basis of this pro-war su
           "Credibility Gap"
         ],
         "bronzeAnswer": "A credibility gap is the difference between government claims and reality. My Lai widened it because the military attempted to cover up the slaughter of hundreds of unarmed civilians, contradicting claims of humanitarian efforts.",
-        "silverAnswer": "The image shows (1) young civilian protestors standing inches away from a solid line of (2) armed military police holding rifles and wearing combat gear.",
-        "goldAnswer": "Television coverage of the draft and My Lai (Topic 4.1) exposed the human cost and brutality of the war, generating anti-war sentiment, much like the media coverage of police dogs and water cannons in Birmingham (Topic 2.2) generated support for civil rights by exposing Southern white brutality."
+        "silverAnswer": "The image shows (1) two U.S. Marshals in white helmets and suits lifting and carrying a demonstrator by their limbs, and (2) civilian onlookers and journalists watching in the background as the arrest takes place.",
+        "goldAnswer": "Television coverage of the draft and My Lai (Topic 4.1) exposed the human cost and brutality of the war, generating anti-war sentiment, much like the media coverage of police dogs and water cannons in Birmingham (Topic 2.2) generated support for civil rights by exposing Southern white brutality.",
+        "visualDetails": "Two U.S. Marshals wearing white helmets and suits are physically carrying/dragging away a protestor, while other onlookers and media stand nearby. This shows the direct confrontation and state arrest of anti-war protestors.",
+        "enquiry": "the anti-war movement and the government's response to protests"
       },
       "specPoints": [
         "Reasons for support for the war, including the fear of communism and the \u2018silent majority\u2019.",
@@ -8361,7 +8387,8 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
         ],
         "bronzeAnswer": "The 'Silent Majority' was Nixon's term for the moderate, working-class, patriotic Americans who supported his war policies but did not actively participate in protests.",
         "silverAnswer": "Working-class citizens resented privileged middle-class student protestors who avoided the draft through college deferments, and they supported the government's call for patriotism and law and order.",
-        "goldAnswer": "Both events exposed deep social divisions. The urban riots (Topic 2.4) exposed racial and economic neglect of Black Americans in inner cities. The pro-war construction worker rallies exposed a deep class divide between working-class patriots (who felt a duty to support the government) and middle-class student protestors."
+        "goldAnswer": "Both events exposed deep social divisions. The urban riots (Topic 2.4) exposed racial and economic neglect of Black Americans in inner cities. The pro-war construction worker rallies exposed a deep class divide between working-class patriots (who felt a duty to support the government) and middle-class student protestors.",
+        "enquiry": "pro-war sentiment and divisions on the home front"
       },
       "specPoints": [
         "Reasons for, and key features of, the peace negotiations (1972\u201373).",
@@ -8575,7 +8602,8 @@ Source E is highly useful for showing the political and moral collapse of the wa
         ],
         "bronzeAnswer": "They were signed in 1973 and demanded the complete withdrawal of all US combat forces from Vietnam within 60 days.",
         "silverAnswer": "Without US air support and financial aid, the South Vietnamese army (ARVN) was demoralized, corrupt, and lacked fuel and ammunition. This allowed the North Vietnamese forces to launch a swift offensive and capture Saigon.",
-        "goldAnswer": "The collapse of 1975 was prefigured by Diem's regime (Topic 3.1). Diem failed to build a democratic, popular government, creating corruption and sectarian divide. The ARVN remained corrupt and politically dependent on US money and air power. When the US withdrew, the state collapsed instantly."
+        "goldAnswer": "The collapse of 1975 was prefigured by Diem's regime (Topic 3.1). Diem failed to build a democratic, popular government, creating corruption and sectarian divide. The ARVN remained corrupt and politically dependent on US money and air power. When the US withdrew, the state collapsed instantly.",
+        "enquiry": "the US withdrawal from Vietnam and the Fall of Saigon"
       },
       "specPoints": [
         "The strengths of North Vietnam, including the significance of Russian and Chinese support, Vietcong tactics and the Ho Chi Minh Trail.",
@@ -12512,7 +12540,7 @@ Source E is highly useful for showing the political and moral collapse of the wa
     {
       keywords: ["101st airborne", "airborne division", "central high guard", "federalized the arkansas"],
       image: "assets/sources/airborne-little-rock-patrol.jpg",
-      provenance: "Members of the 101st Airborne Division standing guard outside Central High School, September 1957."
+      provenance: "Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, September 1957."
     },
     {
       keywords: ["rosa parks fingerprint", "parks booking", "parks arrest", "arrest of rosa parks"],
@@ -12527,12 +12555,12 @@ Source E is highly useful for showing the political and moral collapse of the wa
     {
       keywords: ["southern manifesto", "manifesto signing", "strom thurmond"],
       image: "assets/sources/southern-manifesto-signing.jpg",
-      provenance: "Southern politicians signing the Southern Manifesto to coordinate opposition and resist federal desegregation mandates."
+      provenance: "Senator Strom Thurmond signing the Southern Manifesto in 1956, surrounded by other Southern politicians."
     },
     {
       keywords: ["ku klux klan march", "kkk march", "robes and hoods"],
       image: "assets/sources/kkk-march-washington-1926.jpg",
-      provenance: "A Ku Klux Klan parade demonstrating the public presence of white supremacist groups, 1957."
+      provenance: "A Ku Klux Klan parade marching in front of the U.S. Treasury Building in Washington D.C., 1926."
     },
     {
       keywords: ["greensboro sit-in", "woolworth's lunch counter", "greensboro lunch counter"],
@@ -12630,9 +12658,9 @@ Source E is highly useful for showing the political and moral collapse of the wa
       provenance: "Student demonstrators facing the National Guard at Kent State University, May 1970."
     },
     {
-      keywords: ["demonstrators marching near the pentagon", "pentagon in washington", "anti-war protest pentagon"],
+      keywords: ["u.s. marshals carrying", "marshals carrying demonstrator", "pentagon protest arrest", "carrying away demonstrator"],
       image: "assets/sources/antiwar-pentagon-protest-1967.jpg",
-      provenance: "Anti-war demonstrators facing military police outside the Pentagon, October 1967."
+      provenance: "U.S. Marshals carrying away an anti-war demonstrator outside the Pentagon, October 1967."
     },
     {
       keywords: ["pro-war demonstrators", "silent majority speaks", "silent majority rally"],
@@ -17107,14 +17135,14 @@ ${cleanBrackets(paper.q3d.model)}
       ]
     },
     "subtopic_4_3": {
-      "video_title": "The Fall of Saigon (April 30th, 1975)",
-      "youtube_url": "https://www.youtube.com/watch?v=dsSXMQ306iU",
-      "duration": "03:15",
-      "production_source": "Simple History",
+      "video_title": "Witnessing History: The Fall of Saigon: 50 Years On",
+      "youtube_url": "https://www.youtube.com/watch?v=Y0PaYMWsENs&t=188s",
+      "duration": "18:34",
+      "production_source": "ITV News",
       "questions": [
-        "In which month and year did the Fall of Saigon occur?",
-        "What was the name of the evacuation operation carried out by the U.S. as Saigon fell?",
-        "What did the Fall of Saigon mark in terms of the political division of Vietnam?"
+        "Which British news network was on the ground reporting the evacuation and fall of Saigon in April 1975?",
+        "What actions did the U.S. take to evacuate people from Saigon as North Vietnamese forces advanced?",
+        "What did the fall of Saigon mark in terms of the political unification of Vietnam?"
       ]
     },
     "subtopic_4_4": {
@@ -18527,6 +18555,394 @@ ${cleanBrackets(paper.q3d.model)}
     ]
   };
 
+  // src/wrapup_data.js
+  var WRAPUP_DATA = {
+    "subtopic_1_1": {
+      "question": "Sort these advanced historical facts into the correct analytical categories to evaluate the impact of the Brown v. Topeka decision.",
+      "categories": ["Top-Down / Legalist Perspective", "Bottom-Up / Grassroots Perspective"],
+      "facts": [
+        {
+          "id": "1_1_1",
+          "text": "Thurgood Marshall introduced Kenneth and Mamie Clark's social psychology 'Doll Test' studies to legally prove school segregation caused psychological harm to Black children.",
+          "correctCategory": "Top-Down / Legalist Perspective",
+          "feedback": "Using empirical psychological studies directly influenced the Supreme Court justices' legal logic, proving the value of constitutional/judicial pathways."
+        },
+        {
+          "id": "1_1_2",
+          "text": "Local Black parents in Clay, Kentucky, formed their own independent NAACP branches to physically escort children to integrated schools despite hostile white mobs.",
+          "correctCategory": "Bottom-Up / Grassroots Perspective",
+          "feedback": "This shows how school integration relied on local, everyday bravery and community action rather than just high-court decrees."
+        },
+        {
+          "id": "1_1_3",
+          "text": "The Supreme Court's secondary ruling, 'Brown II' (1955), ordered school integration to proceed 'with all deliberate speed'\u2014a vague phrase that allowed Southern states a legal loophole to delay.",
+          "correctCategory": "Top-Down / Legalist Perspective",
+          "feedback": "This legal compromise highlights how court-led reforms could be undermined by their own terminology, frustrating grassroots activists."
+        }
+      ]
+    },
+    "subtopic_1_2": {
+      "question": "Sort these deeper details about the Little Rock Nine crisis into the correct categories.",
+      "categories": ["Federal / Presidential Intervention", "Local Resistance & Grassroots Activism"],
+      "facts": [
+        {
+          "id": "1_2_1",
+          "text": "Private memos reveal President Eisenhower deployed the 101st Airborne to Little Rock to uphold federal authority and U.S. international prestige during the Cold War, rather than out of personal support for desegregation.",
+          "correctCategory": "Federal / Presidential Intervention",
+          "feedback": "Federal actions were often driven by geopolitical pressure (Cold War propaganda) rather than moral support for civil rights."
+        },
+        {
+          "id": "1_2_2",
+          "text": "Governor Orval Faubus closed all four Little Rock public high schools for the entire 1958-1959 academic year to bypass integration, a period locals called the 'Lost Year'.",
+          "correctCategory": "Local Resistance & Grassroots Activism",
+          "feedback": "This local state resistance bypassed court orders by shutting down public facilities entirely."
+        },
+        {
+          "id": "1_2_3",
+          "text": "White allies, including local resident Grace Lorch, stepped forward to shield Elizabeth Eckford from the hostile mob when she was separated from the group on the first day.",
+          "correctCategory": "Local Resistance & Grassroots Activism",
+          "feedback": "This highlight focuses on immediate, local human solidarity and community courage during structural confrontations."
+        }
+      ]
+    },
+    "subtopic_1_3": {
+      "question": "Sort these detailed details of the Montgomery Bus Boycott.",
+      "categories": ["Legal & Leadership Actions", "Local Mobilization & Logistics"],
+      "facts": [
+        {
+          "id": "1_3_1",
+          "text": "While the boycott grabbed media attention, civil rights lawyers focused on *Browder v. Gayle*, a federal lawsuit bypass that declared transit segregation laws unconstitutional.",
+          "correctCategory": "Legal & Leadership Actions",
+          "feedback": "This legal strategy bypassed state-level delays and achieved a binding federal victory."
+        },
+        {
+          "id": "1_3_2",
+          "text": "The Montgomery Improvement Association (MIA) purchased a fleet of station wagons, known as 'rolling churches,' to run an organized carpool system for 20,000 boycotters.",
+          "correctCategory": "Local Mobilization & Logistics",
+          "feedback": "Maintaining a year-long boycott required massive local logistical planning, funding, and community cooperation."
+        },
+        {
+          "id": "1_3_3",
+          "text": "The NAACP initially bypassed 15-year-old Claudette Colvin's arrest, nine months before Rosa Parks, because they feared her pregnancy would make her a target for hostile Southern press.",
+          "correctCategory": "Legal & Leadership Actions",
+          "feedback": "NAACP leaders carefully selected litigants to present the most respectable, strategic image to federal courts."
+        }
+      ]
+    },
+    "subtopic_1_4": {
+      "question": "Sort these advanced facts regarding Southern opposition to the Civil Rights Movement.",
+      "categories": ["Legalistic / 'Massive Resistance'", "Extralegal Coercion & Vigilantism"],
+      "facts": [
+        {
+          "id": "1_4_1",
+          "text": "Virginia's Stanley Plan cut off state funding to any school district that integrated, leading to some county public schools closing entirely for up to five years.",
+          "correctCategory": "Legalistic / 'Massive Resistance'",
+          "feedback": "Massive Resistance used state legislature powers to starve integrated systems of resources legally."
+        },
+        {
+          "id": "1_4_2",
+          "text": "The White Citizens' Councils published blacklists of civil rights sympathizers, causing local activists to lose their jobs, home mortgages, and insurance policies.",
+          "correctCategory": "Extralegal Coercion & Vigilantism",
+          "feedback": "Opposition utilized economic warfare to quietly destroy activist bases without visible violence."
+        },
+        {
+          "id": "1_4_3",
+          "text": "Southern states created 'Pupil Placement Boards' using complex psychological and moral tests to redirect Black transfers without mentioning race.",
+          "correctCategory": "Legalistic / 'Massive Resistance'",
+          "feedback": "This clever legal sidestepping avoided explicit racial references while maintaining segregation."
+        }
+      ]
+    },
+    "subtopic_2_1": {
+      "question": "Sort these detailed details of the early 1960s direct action campaigns.",
+      "categories": ["Federal Intervention & Policy", "Youth Radicalism & Activist Strategy"],
+      "facts": [
+        {
+          "id": "2_1_1",
+          "text": "Attorney General Robert F. Kennedy petitioned the Interstate Commerce Commission (ICC) to issue a strict federal ban on interstate bus terminal segregation in late 1961.",
+          "correctCategory": "Federal Intervention & Policy",
+          "feedback": "Federal enforcement was triggered by the international outcry and violence of the Freedom Rides."
+        },
+        {
+          "id": "2_1_2",
+          "text": "The Student Nonviolent Coordinating Committee (SNCC) was deliberately structured to be leaderless and group-centered, rejecting the top-down authority of Martin Luther King Jr.'s SCLC.",
+          "correctCategory": "Youth Radicalism & Activist Strategy",
+          "feedback": "Youth activists favored decentralized local organizing over centralized leadership."
+        },
+        {
+          "id": "2_1_3",
+          "text": "Freedom Riders adopted a 'Jail, No Bail' strategy, deliberately filling Mississippi's notorious Parchman Penitentiary to overburden state budgets.",
+          "correctCategory": "Youth Radicalism & Activist Strategy",
+          "feedback": "Activists turned their own arrests into economic leverage against hostile local governments."
+        }
+      ]
+    },
+    "subtopic_2_2": {
+      "question": "Sort these advanced facts about Birmingham and Selma.",
+      "categories": ["Geopolitical & Legislative Leverage", "Direct Confrontation Tactics"],
+      "facts": [
+        {
+          "id": "2_2_1",
+          "text": "SCLC strategist James Bevel organized school children for the Birmingham marches ('Children's Crusade') because children had no jobs or mortgages for white councils to target.",
+          "correctCategory": "Direct Confrontation Tactics",
+          "feedback": "This tactic neutralized the economic coercion usually deployed by white opponents."
+        },
+        {
+          "id": "2_2_2",
+          "text": "Soviet media highlighted the brutal attacks on Selma marchers to court newly independent African nations, pressuring LBJ to speed up the Voting Rights Act of 1965.",
+          "correctCategory": "Geopolitical & Legislative Leverage",
+          "feedback": "Cold War competition made U.S. domestic racism a severe foreign policy liability."
+        },
+        {
+          "id": "2_2_3",
+          "text": "King's SCLC and local SNCC workers clashed in Selma, with SNCC accusing SCLC of swooping in for media coverage and leaving local organizers to face long-term retaliation.",
+          "correctCategory": "Direct Confrontation Tactics",
+          "feedback": "This reveals strategic divisions between media-focused organizations and grassroots community organizers."
+        }
+      ]
+    },
+    "subtopic_2_3": {
+      "question": "Sort these deeper details about Malcolm X and the Black Power movement.",
+      "categories": ["Community Self-Reliance Programs", "Global Anti-Colonial Strategy"],
+      "facts": [
+        {
+          "id": "2_3_1",
+          "text": "The Black Panther Party's Free Breakfast for Children Program fed over 20,000 children daily, leading FBI Director J. Edgar Hoover to label it the party's most dangerous program.",
+          "correctCategory": "Community Self-Reliance Programs",
+          "feedback": "Providing social services challenged state legitimacy and built deep community loyalty."
+        },
+        {
+          "id": "2_3_2",
+          "text": "In 1964, Malcolm X founded the Organization of Afro-American Unity (OAAU) to charge the United States with human rights violations before the United Nations.",
+          "correctCategory": "Global Anti-Colonial Strategy",
+          "feedback": "This strategy sought to bypass U.S. domestic law by appealing directly to international human rights standards."
+        },
+        {
+          "id": "2_3_3",
+          "text": "The Black Panthers demanded exemption from military service for all Black men, arguing they should not fight for a racist nation in the Vietnam War.",
+          "correctCategory": "Global Anti-Colonial Strategy",
+          "feedback": "This stance linked domestic racial oppression to U.S. military imperialism in Southeast Asia."
+        }
+      ]
+    },
+    "subtopic_2_4": {
+      "question": "Sort these detailed facts on the late 1960s riots and King's shifting focus.",
+      "categories": ["Institutional Analysis & Inquiries", "Economic Rights Campaigns"],
+      "facts": [
+        {
+          "id": "2_4_1",
+          "text": "The 1968 Kerner Commission report warned that the nation was dividing into two societies\u2014one black, one white, separate and unequal\u2014citing systemic white racism as the core cause of violence.",
+          "correctCategory": "Institutional Analysis & Inquiries",
+          "feedback": "An official government inquiry validated radical claims about systemic and institutional racism."
+        },
+        {
+          "id": "2_4_2",
+          "text": "MLK's 1966 Chicago Open Housing Freedom March faced fierce white resistance, leading King to remark that the mobs in Chicago were more hostile than those in Mississippi.",
+          "correctCategory": "Economic Rights Campaigns",
+          "feedback": "Shifting the civil rights campaign to Northern cities exposed deep, non-legalistic economic segregation."
+        },
+        {
+          "id": "2_4_3",
+          "text": "King planned the 'Poor People's Campaign' to build a multiracial coalition of impoverished Americans to occupy Washington D.C. and demand economic reform.",
+          "correctCategory": "Economic Rights Campaigns",
+          "feedback": "King's late career shifted from racial legal rights to structural economic redistribution."
+        }
+      ]
+    },
+    "subtopic_3_1": {
+      "question": "Sort these advanced details regarding early U.S. intervention and Ngo Dinh Diem.",
+      "categories": ["Cold War Containment Policy", "South Vietnamese Domestic Realities"],
+      "facts": [
+        {
+          "id": "3_1_1",
+          "text": "U.S. policy was guided by NSC-68, a top-secret security document declaring that any expansion of communist influence anywhere threatened U.S. survival.",
+          "correctCategory": "Cold War Containment Policy",
+          "feedback": "This strategic framework committed the U.S. to global containment, making Vietnam a vital theater."
+        },
+        {
+          "id": "3_1_2",
+          "text": "Diem's brother, Ngo Dinh Nhu, directed the Strategic Hamlet Program, which Peasants resented due to forced relocation away from their ancestral lands.",
+          "correctCategory": "South Vietnamese Domestic Realities",
+          "feedback": "The program alienated the rural base it was meant to protect, helping NLF recruitment."
+        },
+        {
+          "id": "3_1_3",
+          "text": "Diem's regime banned the display of Buddhist flags, sparking self-immolations by Buddhist monks that undermined Diem's international legitimacy.",
+          "correctCategory": "South Vietnamese Domestic Realities",
+          "feedback": "Internal religious discrimination fractured the regime and forced the U.S. to consider a change in leadership."
+        }
+      ]
+    },
+    "subtopic_3_2": {
+      "question": "Sort these deeper details about the Gulf of Tonkin incident.",
+      "categories": ["Executive & Political Strategy", "Operational & Espionage Factors"],
+      "facts": [
+        {
+          "id": "3_2_1",
+          "text": "National Security Advisor McGeorge Bundy drafted the text of the Gulf of Tonkin Resolution months before the incident, waiting for a crisis to push it through Congress.",
+          "correctCategory": "Executive & Political Strategy",
+          "feedback": "The administration was already planning an escalation and used the incident as a pre-planned political vehicle."
+        },
+        {
+          "id": "3_2_2",
+          "text": "The USS Maddox was carrying out electronic intelligence patrols in support of Operation 34A\u2014covert South Vietnamese commando raids against North Vietnam.",
+          "correctCategory": "Operational & Espionage Factors",
+          "feedback": "The U.S. was actively involved in covert operations against North Vietnam, undermining claims of unprovoked attacks."
+        },
+        {
+          "id": "3_2_3",
+          "text": "Declassified NSA archives reveal that the second reported North Vietnamese patrol boat attack on August 4, 1964, was a false alarm caused by radar errors and anxious sonar operators.",
+          "correctCategory": "Operational & Espionage Factors",
+          "feedback": "The primary trigger for direct U.S. combat entry was based on non-existent radar returns."
+        }
+      ]
+    },
+    "subtopic_3_3": {
+      "question": "Sort these tactical details of the military conflict in Vietnam.",
+      "categories": ["U.S. Industrial / Attrition Strategy", "NLF / PAVN Guerilla Adaptation"],
+      "facts": [
+        {
+          "id": "3_3_1",
+          "text": "U.S. commanders used 'body counts' as the primary metric of victory, creating institutional pressure for soldiers to count civilian casualties as dead combatants.",
+          "correctCategory": "U.S. Industrial / Attrition Strategy",
+          "feedback": "The attrition strategy focused on kill ratios, leading to severe abuses and alienating local populations."
+        },
+        {
+          "id": "3_3_2",
+          "text": "The Vietcong built a complex subterranean command network in Cu Chi, featuring clinics and barracks, situated directly beneath U.S. base perimeters.",
+          "correctCategory": "NLF / PAVN Guerilla Adaptation",
+          "feedback": "Tunnel networks neutralized U.S. air superiority and allowed guerrillas to strike anywhere."
+        },
+        {
+          "id": "3_3_3",
+          "text": "Operation Ranch Hand sprayed over 20 million gallons of herbicides, including Agent Orange, to clear jungle canopy and destroy peasant crops suspected of feeding guerrillas.",
+          "correctCategory": "U.S. Industrial / Attrition Strategy",
+          "feedback": "Chemical defoliation aimed to strip the enemy of physical hiding spaces and food sources."
+        }
+      ]
+    },
+    "subtopic_3_4": {
+      "question": "Sort these advanced details about Nixon's policies and peace negotiations.",
+      "categories": ["Secret Military Escalations", "Diplomatic Maneuver & 'Decent Interval'"],
+      "facts": [
+        {
+          "id": "3_4_1",
+          "text": "Under 'Operation Menu,' Nixon secretly bombed neutral Cambodia, ordering the Pentagon to falsify flight logs to hide the raids from Congress and the public.",
+          "correctCategory": "Secret Military Escalations",
+          "feedback": "Nixon expanded the war geographically while claiming to wind it down through Vietnamization."
+        },
+        {
+          "id": "3_4_2",
+          "text": "Secret transcripts reveal Nixon and Kissinger sought a 'decent interval'\u2014withdrawing troops so South Vietnam's collapse would happen years later, shielding the U.S. from political blame.",
+          "correctCategory": "Diplomatic Maneuver & 'Decent Interval'",
+          "feedback": "This strategy aimed to save political face rather than secure long-term South Vietnamese independence."
+        },
+        {
+          "id": "3_4_3",
+          "text": "Nixon utilized the 'Madman Theory,' instructing diplomats to tell the North Vietnamese he was unstable and prepared to use nuclear weapons to force concessions.",
+          "correctCategory": "Diplomatic Maneuver & 'Decent Interval'",
+          "feedback": "This psychological tactic was intended to force Hanoi to negotiate out of fear of unpredictable escalation."
+        }
+      ]
+    },
+    "subtopic_4_1": {
+      "question": "Sort these detailed facts on the Tet Offensive.",
+      "categories": ["Battlefield & Military Outcomes", "Domestic Political & Public Repercussions"],
+      "facts": [
+        {
+          "id": "4_1_1",
+          "text": "Tactically, Tet was a military disaster for the communists; the Vietcong lost 40,000 veteran fighters and failed to trigger any popular Southern uprising.",
+          "correctCategory": "Battlefield & Military Outcomes",
+          "feedback": "The Vietcong was effectively broken as a fighting force, leaving North Vietnam's regular army to carry the war."
+        },
+        {
+          "id": "4_1_2",
+          "text": "Walter Cronkite's post-Tet TV broadcast declaring the war was mired in a stalemate broke President Lyndon Johnson's resolve to seek re-election.",
+          "correctCategory": "Domestic Political & Public Repercussions",
+          "feedback": "Media consensus shifted public opinion and destroyed political support for continuation of the war."
+        },
+        {
+          "id": "4_1_3",
+          "text": "During their short occupation of Hue, communist forces rounded up and executed approximately 3,000 government officials, teachers, and intellectuals.",
+          "correctCategory": "Battlefield & Military Outcomes",
+          "feedback": "This purge illustrated the brutal political nature of North Vietnamese revolutionary warfare."
+        }
+      ]
+    },
+    "subtopic_4_2": {
+      "question": "Sort these detailed details of the U.S. home front during the war.",
+      "categories": ["Grassroots Dissent & Leaks", "Covert State Responses"],
+      "facts": [
+        {
+          "id": "4_2_1",
+          "text": "Daniel Ellsberg leaked the 'Pentagon Papers' to the press, proving the U.S. government had lied to Congress and the public about the expansion of the war.",
+          "correctCategory": "Grassroots Dissent & Leaks",
+          "feedback": "This leak destroyed public trust by proving U.S. officials privately knew the war was un-winnable."
+        },
+        {
+          "id": "4_2_2",
+          "text": "The FBI's COINTELPRO program deployed covert wiretaps, fake letters, and infiltrators to illegally disrupt anti-war groups and civil rights groups.",
+          "correctCategory": "Covert State Responses",
+          "feedback": "The government used covert intelligence operations to suppress legal domestic political dissent."
+        },
+        {
+          "id": "4_2_3",
+          "text": "In 1969, Nixon introduced a draft lottery based on birth dates to defuse student protests by making the induction process transparent.",
+          "correctCategory": "Grassroots Dissent & Leaks",
+          "feedback": "Alleviating draft uncertainty reduced middle-class student outrage and undermined protest mobilization."
+        }
+      ]
+    },
+    "subtopic_4_3": {
+      "question": "Sort these advanced details about the peace process and the fall of Saigon.",
+      "categories": ["Geopolitics & Diplomatic Pressures", "Domestic & Economic Collapse of the South"],
+      "facts": [
+        {
+          "id": "4_3_1",
+          "text": "Nixon visited Beijing and Moscow to establish relations, hoping to isolate Hanoi by convincing its communist sponsors to reduce military aid.",
+          "correctCategory": "Geopolitics & Diplomatic Pressures",
+          "feedback": "Triangular diplomacy was used to pressure North Vietnam through its superpower allies."
+        },
+        {
+          "id": "4_3_2",
+          "text": "In 1974, the U.S. Congress slashed aid to Saigon from $1.6 billion to $700 million, leaving the South Vietnamese army unable to purchase fuel, parts, or ammunition.",
+          "correctCategory": "Domestic & Economic Collapse of the South",
+          "feedback": "Congress used its power over the budget to end U.S. involvement, leaving ARVN defenseless."
+        },
+        {
+          "id": "4_3_3",
+          "text": "Saigon's final collapse was triggered by a mass panic ('Flight of the Accordions') when ARVN troops abandoned their posts during withdrawals from the Central Highlands.",
+          "correctCategory": "Domestic & Economic Collapse of the South",
+          "feedback": "Saigon collapsed due to structural panic and leadership errors before North Vietnam's main army arrived."
+        }
+      ]
+    },
+    "subtopic_4_4": {
+      "question": "Sort these advanced arguments regarding why the U.S. failed in Vietnam.",
+      "categories": ["Strategic & Tactical Failures", "Political & Diplomatic Constraints"],
+      "facts": [
+        {
+          "id": "4_4_1",
+          "text": "The U.S. military failed to sever the Ho Chi Minh Trail effectively or invade North Vietnam due to fears of triggering a direct war with China and the USSR.",
+          "correctCategory": "Political & Diplomatic Constraints",
+          "feedback": "Cold War boundaries prevented the U.S. from launching the offensive operations needed to win."
+        },
+        {
+          "id": "4_4_2",
+          "text": "The heavy reliance on Search and Destroy missions and heavy firepower alienated the peasant population, driving them to support the NLF.",
+          "correctCategory": "Strategic & Tactical Failures",
+          "feedback": "The military's tactical approach destroyed the very villages it was trying to protect."
+        },
+        {
+          "id": "4_4_3",
+          "text": "The U.S. underestimated the tenacity of North Vietnamese nationalism, treating the war as a simple chess move in global anti-communist containment.",
+          "correctCategory": "Political & Diplomatic Constraints",
+          "feedback": "Failing to see the conflict as a anti-colonial nationalist struggle led to severe strategic misjudgments."
+        }
+      ]
+    }
+  };
+
   // src/lessons.js
   var GLOSSARY_DB = {
     "segregation": "The legally or socially enforced separation of different racial groups in public spaces, housing, or education.",
@@ -18799,55 +19215,11 @@ ${cleanBrackets(paper.q3d.model)}
     let dualHtml = "";
     if (data.dualPerspective) {
       let historiographicalSubtitle = "";
-      let disagreeSourceCard = "";
       if (subtopicId.startsWith("subtopic_1") || subtopicId.startsWith("subtopic_2")) {
         historiographicalSubtitle = `
         <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
           <span class="historiographical-label top-down">Top-Down Legalistic</span>
           <span class="historiographical-label bottom-up">Bottom-Up Grassroots</span>
-        </div>
-      `;
-        disagreeSourceCard = `
-        <div class="disagree-analysis-card">
-          <div class="disagree-analysis-title">
-            <i class="fa-solid fa-code-branch"></i> Why Historians Disagree: Source Selection Analysis
-          </div>
-          <div class="disagree-analysis-body">
-            <p style="margin-bottom: 8px;">Historians of the Civil Rights era reach conflicting interpretations because they select and prioritize different primary sources:</p>
-            <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px;">
-              <li>
-                <strong>Presidential Papers & court rulings (Top-Down):</strong> Historians prioritizing Eisenhower's transcripts or Supreme Court decrees conclude that change was driven by constitutional authority and institutional reforms.
-              </li>
-              <li>
-                <strong>Oral Histories & Local records (Bottom-Up):</strong> Historians prioritizing SNCC field reports, church diaries, or Rosa Parks' notes conclude that the federal government only acted when forced by grassroots mobilization and disruption.
-              </li>
-            </ul>
-          </div>
-        </div>
-      `;
-      } else {
-        historiographicalSubtitle = `
-        <div style="margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="historiographical-label orthodox">Orthodox Interpretation</span>
-          <span class="historiographical-label revisionist">Revisionist Interpretation</span>
-        </div>
-      `;
-        disagreeSourceCard = `
-        <div class="disagree-analysis-card">
-          <div class="disagree-analysis-title">
-            <i class="fa-solid fa-code-branch"></i> Why Historians Disagree: Source Selection Analysis
-          </div>
-          <div class="disagree-analysis-body">
-            <p style="margin-bottom: 8px;">Historians of the Vietnam War period disagree due to their methodological frameworks and source preferences:</p>
-            <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px;">
-              <li>
-                <strong>Orthodox Historians (National Security Archives):</strong> Prioritizing Pentagon planning files and US military reports, they conclude the war was an inevitable tragedy of Cold War containment policy and military overreach.
-              </li>
-              <li>
-                <strong>Revisionist/Vietnamese Sources (Local Accounts):</strong> Prioritizing translated NLF/PAVN diaries, local guerrilla interviews, and rural intelligence reports, they argue the US failed primarily because it ignored the nationalist, anti-colonial nature of the Vietnamese struggle.
-              </li>
-            </ul>
-          </div>
         </div>
       `;
       }
@@ -18873,7 +19245,6 @@ ${cleanBrackets(paper.q3d.model)}
         </div>
         ${data.dualPerspective.tipHtml || ""}
       </div>
-      ${disagreeSourceCard}
     `;
     }
     let causalHtml = "";
@@ -18905,48 +19276,38 @@ ${cleanBrackets(paper.q3d.model)}
       `;
       });
       causalHtml = `
-      <div class="causal-connector-container" style="max-width: 800px; margin: 0 auto 24px auto;">
-        <h3 class="causal-title"><i class="fa-solid fa-link" style="color: var(--primary);"></i> Causal Link Builder</h3>
-        <p class="chain-instruction" style="margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted);">Paper 3 essays require linking factors to their historical effects. Match each causal factor to its correct analytical consequence link!</p>
-        <div class="causal-question">
-          <strong>Essay Question:</strong> ${data.causalLinks.question}
-        </div>
-        <div class="causal-factors-grid">
-          ${factorsHtml}
-        </div>
-        <div class="causal-success-panel" id="causal-success-panel">
-          <h4><i class="fa-solid fa-trophy"></i> Causation Mastered!</h4>
-          <p id="causal-success-text">${data.causalLinks.successText}</p>
-        </div>
-      </div>
-    `;
-    }
-    let kcQuestionsHtml = "";
-    data.knowledgeCheck.forEach((q, index) => {
-      kcQuestionsHtml += `
-      <div class="quiz-question-item">
-        <div class="quiz-question-text">${index + 1}. ${q.question}</div>
-        <div class="quiz-answer-text" id="ans-${index + 1}">Answer: ${q.answer}</div>
-      </div>
-    `;
-    });
-    let kcHtml = "";
-    if (data.knowledgeCheck.length > 0) {
-      kcHtml = `
-      <div class="mastery-card" id="mastery-quiz-card" style="max-width: 800px; margin: 0 auto 24px auto;">
-        <h3 class="mastery-card-title">Knowledge Check</h3>
-        <div class="mastery-card-body">
-          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted);">
-            Test your memory on the exact facts examiners are looking for!
-          </p>
-          
-          <div class="quiz-questions-list">
-            ${kcQuestionsHtml}
+      <style>
+        details.causal-details summary::-webkit-details-marker {
+          display: none;
+        }
+        details.causal-details[open] .causal-toggle-icon {
+          transform: rotate(180deg);
+        }
+      </style>
+      <div class="causal-connector-container" style="max-width: 800px; margin: 0 auto 24px auto; padding: 0;">
+        <details class="causal-details" style="width: 100%; padding: 20px; box-sizing: border-box;">
+          <summary class="causal-title" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 700; user-select: none; outline: none; list-style: none; cursor: pointer; margin: 0;">
+            <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-link" style="color: var(--primary);"></i> Causal Link Builder</span>
+            <i class="fa-solid fa-chevron-down causal-toggle-icon" style="transition: transform 0.2s; font-size: 0.95rem; color: var(--text-muted);"></i>
+          </summary>
+          <div class="causal-expanded-content" style="margin-top: 16px;">
+            <p class="chain-instruction" style="margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">Paper 3 essays require linking factors to their historical effects. Match each causal factor to its correct analytical consequence link!</p>
+            <div class="causal-question">
+              <strong>Essay Question:</strong> ${data.causalLinks.question}
+            </div>
+            <div class="causal-factors-grid">
+              ${factorsHtml}
+            </div>
+            <div class="causal-success-panel" id="causal-success-panel">
+              <h4><i class="fa-solid fa-trophy"></i> Causation Mastered!</h4>
+              <p id="causal-success-text">${data.causalLinks.successText}</p>
+            </div>
           </div>
-        </div>
+        </details>
       </div>
     `;
     }
+    let kcHtml = "";
     let impHtml = "";
     if (data.importanceAnalyser) {
       impHtml = `
@@ -19253,76 +19614,122 @@ ${cleanBrackets(paper.q3d.model)}
     `;
     }
     let deepThinkingHtml = "";
-    if (data.deepThinkingQuestions && data.deepThinkingQuestions.length > 0) {
-      let dtQuestionsMarkup = "";
-      data.deepThinkingQuestions.forEach((q, idx) => {
-        const savedVal = state.deepThinkingAnswers[q.id] || "";
-        dtQuestionsMarkup += `
-        <div class="deep-thinking-question-card" style="margin-bottom: 24px; padding: 16px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-            <strong style="color: var(--accent); font-size: 0.95rem;">Question ${idx + 1}: ${q.question}</strong>
-            <span class="dt-save-status" id="dt-save-status-${q.id}" style="font-size: 0.7rem; color: var(--success); opacity: 0.8; display: ${savedVal ? "inline" : "none"};"><i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved</span>
-          </div>
-          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; font-style: italic;">
-            <i class="fa-solid fa-lightbulb" style="color: var(--primary);"></i> Hint: ${q.hint}
-          </div>
-          <textarea class="deep-thinking-textarea" data-q-id="${q.id}" placeholder="Type your reflection here to develop your historical analysis..." style="width: 100%; height: 100px; padding: 10px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-base); font-size: 0.9rem; resize: vertical; margin-bottom: 12px; line-height: 1.45; font-family: inherit;">${savedVal}</textarea>
-          <div class="dt-guide-section" style="margin-top: 10px;">
-            <button class="mastery-btn dt-guide-btn" data-q-id="${q.id}" style="max-width: fit-content; padding: 8px 16px; font-size: 0.85rem; border-radius: 20px; background: rgba(255, 255, 255, 0.05); color: var(--text-base); border: 1px solid var(--border-glass); font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-graduation-cap"></i> Reveal Teacher Evaluation Guide
-            </button>
-            <div class="dt-guide-content" id="dt-guide-content-${q.id}" style="display: none; margin-top: 12px; padding: 12px; background: rgba(234, 179, 8, 0.05); border-left: 4px solid var(--warning); border-radius: var(--border-radius-sm); font-size: 0.88rem; line-height: 1.45; color: var(--text-muted);">
-              <strong style="color: var(--warning); display: block; margin-bottom: 4px;">Self-Evaluation Criteria:</strong>
-              ${q.teacherGuide}
-            </div>
-          </div>
-        </div>
-      `;
-      });
-      deepThinkingHtml = `
-      <div class="mastery-card deep-thinking-card" style="max-width: 800px; margin: 0 auto 24px auto;">
-        <h3 class="mastery-card-title"><i class="fa-solid fa-brain" style="color: var(--accent);"></i> Deep Reflection & Pedagogy Prompts</h3>
-        <div class="mastery-card-body">
-          <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted);">
-            GCSE top marks require deep thinking. Formulate your answers to these conceptual prompts, then check them against the teacher response guides.
-          </p>
-          ${dtQuestionsMarkup}
-        </div>
-      </div>
-    `;
-    }
     let doNowHtml = "";
     if (data.doNowStarter) {
       const dn = data.doNowStarter;
       let prevLessonLinkHtml = "";
       if (dn.prevSubtopicId && dn.prevSubtopicTitle) {
         prevLessonLinkHtml = `
-        <div style="margin-bottom: 14px; font-size: 0.88rem;">
+        <div style="margin-bottom: 14px; font-size: 0.88rem; display: flex; align-items: center; gap: 6px;">
           <i class="fa-solid fa-arrow-left" style="color: var(--primary);"></i> 
-          Prior Topic Retrieval: 
+          <span style="color: var(--text-muted);">Prior Topic Retrieval:</span> 
           <button class="do-now-prev-link-btn" data-prev-id="${dn.prevSubtopicId}" style="background: none; border: none; color: var(--primary); font-weight: 700; text-decoration: underline; cursor: pointer; padding: 0; font-size: 0.88rem;">
             ${dn.prevSubtopicTitle}
           </button>
         </div>
       `;
-      } else {
-        prevLessonLinkHtml = `
-        <div style="margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); padding: 12px 16px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); width: 100%; box-sizing: border-box;">
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-circle-question"></i>
-            <span>How useful is this source for an enquiry into segregation and discrimination in the Southern states in the 1950s?</span>
+      }
+      const enquiryText = dn.enquiry || "segregation and discrimination in the Southern states in the 1950s";
+      const howUsefulBoxHtml = `
+      <div style="margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); padding: 12px 16px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm); width: 100%; box-sizing: border-box;">
+        <div style="font-size: 0.88rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px; flex: 1; min-width: 250px;">
+          <i class="fa-solid fa-circle-question" style="color: var(--accent);"></i>
+          <span>How useful is this source for an enquiry into ${enquiryText}?</span>
+        </div>
+        <div class="do-now-checkboxes" style="display: flex; gap: 14px; align-items: center;">
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;" title="Content Analysis (what the source shows)">
+            <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> C
+          </label>
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;" title="Provenance (Nature, Origin, Purpose)">
+            <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> NOP
+          </label>
+          <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;" title="Own Knowledge (historical context)">
+            <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> OK
+          </label>
+        </div>
+      </div>
+    `;
+      let doNowPrototypesHtml = "";
+      if (subtopicId === "subtopic_1_1") {
+        doNowPrototypesHtml = `
+        <div id="do-now-drafting-container" style="display: none; flex-direction: column; gap: 10px; margin-bottom: 18px; padding: 14px; border: 1px dashed var(--border-glass); border-radius: var(--border-radius-md); background: rgba(255,255,255,0.01);">
+          <strong style="font-size: 0.82rem; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-pen-to-square"></i> Drafting Assistant</strong>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: none;" id="textarea-wrap-c">
+              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Content Analysis (C):</label>
+              <textarea id="draft-c" placeholder="Describe what you see in the Jim Crow sign that is useful..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
+            </div>
+            <div style="display: none;" id="textarea-wrap-nop">
+              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Provenance Analysis (NOP):</label>
+              <textarea id="draft-nop" placeholder="Explain how the nature (public sign) and timing (circa 1950s) impact its utility..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
+            </div>
+            <div style="display: none;" id="textarea-wrap-ok">
+              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Own Knowledge (OK):</label>
+              <textarea id="draft-ok" placeholder="Introduce one fact from your own knowledge about Jim Crow laws..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
+            </div>
           </div>
-          <div class="do-now-checkboxes" style="display: flex; gap: 14px; align-items: center;">
-            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
-              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> C
-            </label>
-            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
-              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> NOP
-            </label>
-            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: var(--text-main); cursor: pointer; user-select: none;">
-              <input type="checkbox" class="do-now-cb" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);"> OK
-            </label>
+          <button id="compile-draft-btn" class="mastery-btn" style="background: var(--accent); color: #000; font-size: 0.8rem; font-weight: 800; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; margin-top: 4px; align-self: flex-start; display: none;">Compile & Compare Draft</button>
+          <div id="compiled-draft-display" style="display: none; flex-direction: column; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-glass);">
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--accent);">Your Compiled Answer:</div>
+            <p id="compiled-draft-text" style="margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); background: rgba(255,255,255,0.02); padding: 8px; border-radius: 4px; border: 1px solid var(--border-glass);"></p>
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--success); margin-top: 6px;">Smithsonian Exhibit Model Answer:</div>
+            <p style="margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); background: rgba(16, 185, 129, 0.03); padding: 8px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.15);">Source E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading "COLORED WAITING ROOM" hanging above a public entrance. This content's utility is supported by my knowledge that Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions. The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of segregation infrastructure, though it fails to document the personal experiences of Black passengers who suffered under it.</p>
           </div>
+        </div>
+      `;
+      } else if (subtopicId === "subtopic_1_2") {
+        doNowPrototypesHtml = `
+        <div id="provenance-explanation-card" style="display: none; margin-bottom: 12px; background: rgba(245, 158, 11, 0.05); border: 1px dashed rgba(245, 158, 11, 0.3); padding: 12px; border-radius: var(--border-radius-md); font-size: 0.82rem; line-height: 1.45; text-align: left;">
+          <strong style="color: var(--accent); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 4px;"><i class="fa-solid fa-scroll"></i> Provenance Insight (NOP)</strong>
+          <span>As an official Supreme Court group portrait, it is a highly reliable record of the bench's composition in 1954 under Earl Warren. However, it is a posed photograph designed to project unity and authority, concealing the fierce private debates and compromise leading up to the unanimous 9-0 ruling.</span>
+        </div>
+        <div id="context-clues-card" style="display: none; margin-bottom: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 12px; border-radius: var(--border-radius-md); font-size: 0.82rem; line-height: 1.45; text-align: left;">
+          <strong style="color: var(--primary); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 4px;"><i class="fa-solid fa-brain"></i> Historical Context Clues (OK)</strong>
+          <ul style="margin: 4px 0 0 0; padding-left: 16px; color: #cbd5e1; display: flex; flex-direction: column; gap: 4px;">
+            <li><strong>Brown v. Board of Education (1954)</strong> overturned the 1896 Plessy v. Ferguson decision.</li>
+            <li><strong>Chief Justice Earl Warren</strong> led the court and worked tirelessly to ensure a 9-0 decision to present a solid federal front against resistance.</li>
+          </ul>
+        </div>
+      `;
+      } else if (subtopicId === "subtopic_1_3") {
+        doNowPrototypesHtml = `
+        <div id="do-now-quiz-overlay" style="display: none; flex-direction: column; gap: 8px; margin-bottom: 18px; background: rgba(0, 0, 0, 0.45); border: 1px solid var(--border-glass); border-left: 4px solid var(--accent); padding: 12px 14px; border-radius: var(--border-radius-md);">
+          <div style="font-weight: 800; font-size: 0.82rem; color: var(--accent); display: flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-circle-question"></i> Quiz Challenge: Verify your checkbox!
+          </div>
+          <div id="quiz-question-text" style="font-size: 0.88rem; color: var(--text-main); margin-top: 4px; font-weight: 600;">Question text...</div>
+          <div id="quiz-options-container" style="display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+            <!-- Options will be rendered dynamically -->
+          </div>
+        </div>
+      `;
+      } else if (subtopicId === "subtopic_1_4") {
+        doNowPrototypesHtml = `
+        <div id="do-now-lens-container" style="display: none; flex-direction: column; gap: 10px; margin-bottom: 18px; padding: 14px; border: 1px dashed var(--border-glass); border-radius: var(--border-radius-md); background: rgba(255,255,255,0.01);">
+          <strong style="font-size: 0.82rem; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-magnifying-glass"></i> Examiner's Lens (Rosa Parks bus photo)</strong>
+          <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Checking the boxes highlights how the answer evaluates that skill: <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 1px 4px; border-radius: 2px; font-weight: bold;">C</span>, <span style="background: rgba(168, 85, 247, 0.15); color: #c084fc; padding: 1px 4px; border-radius: 2px; font-weight: bold;">NOP</span>, <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; padding: 1px 4px; border-radius: 2px; font-weight: bold;">OK</span>.</p>
+          <div id="lens-model-answer" style="font-size: 0.85rem; line-height: 1.5; color: var(--text-muted); padding: 12px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 10px;">
+            <p style="margin: 0;"><span class="lens-part lens-c" style="transition: all 0.3s; padding: 2px; border-radius: 2px;">Source A is highly useful for showing the success and social impact of the Montgomery Bus Boycott. The photograph shows Rosa Parks sitting in the front seats of a city bus (previously reserved for white passengers only) and a white man sitting peacefully behind her.</span></p>
+            
+            <p style="margin: 0;"><span class="lens-part lens-ok" style="transition: all 0.3s; padding: 2px; border-radius: 2px;">This content's utility is supported by my knowledge that after a 381-day boycott, the Supreme Court ruled in Browder v. Gayle that transit segregation was unconstitutional, and this photograph documents the successful enforcement of that ruling.</span></p>
+            
+            <p style="margin: 0;"><span class="lens-part lens-nop" style="transition: all 0.3s; padding: 2px; border-radius: 2px;">The provenance of December 1956 makes it extremely useful as it captures the immediate aftermath of the legal victory when integration took effect. However, it is slightly less useful because it was a staged publicity photo taken by the press to project peace, hiding the fact that integration was met with sniper attacks and the bombing of Black churches.</span></p>
+          </div>
+        </div>
+      `;
+      }
+      let accessibilityHtml = "";
+      if (dn.visualDetails) {
+        accessibilityHtml = `
+        <div class="do-now-accessibility-box" style="margin-top: 10px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 10px 12px; border-radius: var(--border-radius-sm); font-size: 0.82rem; text-align: left; line-height: 1.45;">
+          <details style="cursor: pointer;">
+            <summary style="font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 4px; user-select: none;">
+              <i class="fa-solid fa-eye" style="color: var(--primary);"></i> Source Accessibility Guide (Key Details)
+            </summary>
+            <div style="margin-top: 6px; padding-left: 12px; border-left: 2px solid var(--primary); color: var(--text-base); font-style: normal;">
+              ${dn.visualDetails}
+            </div>
+          </details>
         </div>
       `;
       }
@@ -19339,6 +19746,8 @@ ${cleanBrackets(paper.q3d.model)}
         
         <div class="mastery-card-body" style="padding-top: 8px; margin: 0;">
           ${prevLessonLinkHtml}
+          ${howUsefulBoxHtml}
+          ${doNowPrototypesHtml}
           
           <div class="do-now-split-container" style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 8px;">
             
@@ -19346,11 +19755,39 @@ ${cleanBrackets(paper.q3d.model)}
             <div class="do-now-left-col" style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 14px;">
               <div>
                 <div style="background: #000; border-radius: var(--border-radius-md); overflow: hidden; padding: 8px; border: 1px solid var(--border-glass); text-align: center; box-shadow: var(--shadow-sm);">
-                  <img src="${dn.image}" alt="Starter Image" style="max-width: 100%; max-height: 180px; object-fit: contain; border-radius: var(--border-radius-sm);">
+                  <div style="position: relative; display: inline-block; max-width: 100%;">
+                    <img id="do-now-court-img" src="${dn.image}" alt="Starter Image" style="max-width: 100%; max-height: 180px; object-fit: contain; border-radius: var(--border-radius-sm);">
+                    ${subtopicId === "subtopic_1_2" ? `
+                    <style>
+                      @keyframes pulse-glow {
+                        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+                        70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+                        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+                      }
+                      @keyframes pulse-border {
+                        0% { border-color: rgba(245, 158, 11, 0.3); }
+                        50% { border-color: rgba(245, 158, 11, 0.8); }
+                        100% { border-color: rgba(245, 158, 11, 0.3); }
+                      }
+                    </style>
+                    <div id="do-now-hotspots-container" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                      <button class="hotspot-dot" data-title="Chief Justice Earl Warren" data-desc="Warren led the Supreme Court from 1953 to 1969 and fought to ensure the Brown v. Board decision was a unanimous 9-0 to prevent legal loopholes." style="position: absolute; top: 38%; left: 47%; width: 16px; height: 16px; border-radius: 50%; background: #fbbf24; border: 2px solid #fff; cursor: pointer; box-shadow: var(--shadow-md); animation: pulse-glow 2s infinite; padding: 0; outline: none; z-index: 15;"></button>
+                      <button class="hotspot-dot" data-title="Federal Judges (Unanimous Front)" data-desc="The other eight justices in formal black robes. Their unified stance represented institutional federal authority overriding Southern segregation laws." style="position: absolute; top: 48%; left: 22%; width: 16px; height: 16px; border-radius: 50%; background: #fbbf24; border: 2px solid #fff; cursor: pointer; box-shadow: var(--shadow-md); animation: pulse-glow 2s infinite; padding: 0; outline: none; z-index: 15;"></button>
+                    </div>
+                    ` : ""}
+                  </div>
+                  ${subtopicId === "subtopic_1_2" ? `
+                  <div id="hotspot-tooltip-card" style="display: none; margin-top: 10px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: 4px; font-size: 0.8rem; line-height: 1.45; text-align: left; box-shadow: var(--shadow-sm);">
+                    <strong style="color: var(--accent); display: block; font-size: 0.75rem; text-transform: uppercase;" id="hotspot-title">Hotspot Detail</strong>
+                    <span id="hotspot-desc" style="color: #cbd5e1;">Click a yellow hotspot dot on the image to inspect Content details...</span>
+                  </div>
+                  ` : ""}
                   <div class="do-now-provenance-box" style="font-size: 0.75rem; color: #e2e8f0; font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: var(--border-radius-sm); line-height: 1.45;">
                     <strong style="color: #94a3b8; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Source Provenance</strong> ${dn.provenance}
                   </div>
                 </div>
+                ${accessibilityHtml}
+
                 
                 <!-- See Think Wonder Prompt Box -->
                 <div style="background: rgba(245, 158, 11, 0.03); border: 1px solid rgba(245, 158, 11, 0.15); padding: 14px; border-radius: var(--border-radius-md); font-size: 0.82rem; margin-top: 14px; box-shadow: var(--shadow-sm);">
@@ -19449,7 +19886,7 @@ ${cleanBrackets(paper.q3d.model)}
     let videoHtml = "";
     if (video) {
       const cleanDuration = video.duration.startsWith("0") ? video.duration.slice(1) : video.duration;
-      const questionsList2 = video.questions.map((q) => `<li>${q}</li>`).join("");
+      const questionsList = video.questions.map((q) => `<li>${q}</li>`).join("");
       videoHtml = `
       <div class="lesson-video-wrapper" style="margin-top: 14px; border-top: 1px dashed var(--border-glass); padding-top: 12px;">
         <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-main); margin: 0 0 10px 0;">
@@ -19465,37 +19902,112 @@ ${cleanBrackets(paper.q3d.model)}
             <i class="fa-solid fa-clipboard-question"></i> Video Study Questions:
           </strong>
           <ul style="margin: 0; padding-left: 20px; font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px; line-height: 1.45;">
-            ${questionsList2}
+            ${questionsList}
           </ul>
         </div>
       </div>
     `;
     }
     let lessonWrapUpHtml = "";
-    if (data.lessonWrapUp) {
-      const wu = data.lessonWrapUp;
+    const wuChallenge = WRAPUP_DATA[subtopicId];
+    if (wuChallenge) {
+      const factCardsHtml = wuChallenge.facts.map((f) => `
+      <div class="wrapup-fact-card" draggable="true" data-fact-id="${f.id}">
+        ${f.text}
+      </div>
+    `).join("");
+      const bucketsHtml = wuChallenge.categories.map((cat) => `
+      <div class="wrapup-bucket" data-category="${cat}">
+        <strong style="color: var(--accent); font-size: 0.88rem; display: block; border-bottom: 1px solid var(--border-glass); padding-bottom: 6px; margin-bottom: 4px;">
+          ${cat}
+        </strong>
+        <div class="wrapup-bucket-slots"></div>
+      </div>
+    `).join("");
       lessonWrapUpHtml = `
+      <style>
+        .wrapup-fact-card {
+          padding: 12px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid var(--border-glass);
+          border-radius: 6px;
+          font-size: 0.82rem;
+          line-height: 1.45;
+          color: var(--text-base);
+          cursor: grab;
+          user-select: none;
+          transition: all 0.2s;
+        }
+        .wrapup-fact-card:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: var(--primary);
+        }
+        .wrapup-fact-card.selected {
+          border-color: var(--accent);
+          background: rgba(245, 158, 11, 0.08);
+        }
+        .wrapup-fact-card.dragging {
+          opacity: 0.4;
+        }
+        .wrapup-bucket {
+          flex: 1;
+          min-width: 260px;
+          background: rgba(0, 0, 0, 0.15);
+          border: 1px solid var(--border-glass);
+          border-radius: 6px;
+          padding: 14px;
+          transition: all 0.2s;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .wrapup-bucket.drag-over {
+          border-color: var(--accent);
+          background: rgba(255, 255, 255, 0.02);
+        }
+        .wrapup-bucket-slots {
+          min-height: 100px;
+          border: 2px dashed rgba(255, 255, 255, 0.05);
+          border-radius: 4px;
+          padding: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          background: rgba(0, 0, 0, 0.08);
+          transition: background 0.2s;
+        }
+        .wrapup-bucket.drag-over .wrapup-bucket-slots {
+          background: rgba(245, 158, 11, 0.02);
+          border-color: rgba(245, 158, 11, 0.3);
+        }
+      </style>
       <div class="mastery-card lesson-wrap-up-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--accent); background: rgba(249, 115, 22, 0.02);">
         <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; font-size: 1rem; color: var(--accent); margin: 0 0 12px 0;">
-          <span><i class="fa-solid fa-graduation-cap"></i> Lesson Wrap-up</span>
-          <button class="btn-audio-read" data-text-selector=".wrap-up-read-target" title="Read Wrap-up Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1rem; padding: 4px 8px; border-radius: var(--border-radius-sm); transition: all var(--transition-fast);">
-            <i class="fa-solid fa-volume-high"></i>
-          </button>
+          <span><i class="fa-solid fa-graduation-cap"></i> Lesson Wrap-up: Historiographical Decider</span>
         </h3>
-        <div class="mastery-card-body wrap-up-read-target" style="padding-top: 4px;">
-          <p class="wrap-up-summary" style="margin-top: 0; line-height: 1.5; color: var(--text-base); font-size: 0.95rem;">
-            <strong>Key Takeaway:</strong> ${applyGlossaryTooltips(wu.summary)}
+        <div class="mastery-card-body" style="padding-top: 4px;">
+          <p style="font-style: italic; color: var(--text-muted); font-size: 0.82rem; margin-top: 0; margin-bottom: 16px; line-height: 1.45;">
+            <strong>Depth of Knowledge Challenge:</strong> Drag and drop the advanced facts below into their correct analytical categories (or click a card to select it, then click a target category to place it).
           </p>
-          <p class="wrap-up-interpretation" style="line-height: 1.5; color: var(--text-muted); font-size: 0.9rem; font-style: italic; border-left: 3px solid var(--border-glass); padding-left: 12px; margin: 14px 0;">
-            <strong>Historical Interpretation:</strong> ${applyGlossaryTooltips(wu.interpretation)}
-          </p>
-          <div class="discussion-question-box" style="margin-top: 14px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 12px 14px;">
-            <strong style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">
-              <i class="fa-solid fa-comments"></i> Class Discussion Prompt:
-            </strong>
-            <p style="margin: 0; font-size: 0.92rem; font-weight: 550; color: var(--text-main); line-height: 1.4;">
-              ${applyGlossaryTooltips(wu.discussionQuestion)}
-            </p>
+          
+          <!-- Draggable Fact Cards -->
+          <div class="wrapup-cards-pool" style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+            ${factCardsHtml}
+          </div>
+          
+          <!-- Category Buckets -->
+          <div class="wrapup-buckets-container" style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px;">
+            ${bucketsHtml}
+          </div>
+          
+          <!-- Success Feedback Drawer -->
+          <div class="wrapup-success-drawer" style="display: none; padding: 14px; background: rgba(16, 185, 129, 0.04); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); margin-top: 14px;">
+            <h4 style="margin: 0 0 8px 0; color: var(--success); font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-circle-check"></i> Depth of Knowledge Mastered!
+            </h4>
+            <div class="wrapup-explanations-list" style="font-size: 0.8rem; line-height: 1.45; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+              <!-- Explanations will be appended here -->
+            </div>
           </div>
         </div>
       </div>
@@ -19604,6 +20116,8 @@ ${cleanBrackets(paper.q3d.model)}
     
     ${summaryCorrectionHtml}
     
+    ${hwHtml}
+    
     ${causalHtml}
     
     ${impHtml}
@@ -19613,8 +20127,6 @@ ${cleanBrackets(paper.q3d.model)}
     ${howUsefulHtml}
     
     ${deepThinkingHtml}
-    
-    ${hwHtml}
 
     <!-- Mastery Progress Button -->
     <div style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
@@ -19717,16 +20229,6 @@ ${cleanBrackets(paper.q3d.model)}
         }
       }
     });
-    const questionsList = container.querySelector(".quiz-questions-list");
-    if (questionsList) {
-      questionsList.addEventListener("click", (e) => {
-        const item = e.target.closest(".quiz-question-item");
-        if (item) {
-          AudioEngine.play("click");
-          item.classList.toggle("revealed");
-        }
-      });
-    }
     const btnPartition = document.getElementById("btn-map-partition");
     const btnBorders = document.getElementById("btn-map-borders");
     const mapImg = document.getElementById("map-image-placeholder");
@@ -20081,52 +20583,6 @@ ${cleanBrackets(paper.q3d.model)}
         }
       }
     }
-    if (data.deepThinkingQuestions && data.deepThinkingQuestions.length > 0) {
-      const dtCard = container.querySelector(".deep-thinking-card");
-      if (dtCard) {
-        const textareas = dtCard.querySelectorAll(".deep-thinking-textarea");
-        textareas.forEach((textarea) => {
-          const qId = textarea.getAttribute("data-q-id");
-          const saveStatus = document.getElementById(`dt-save-status-${qId}`);
-          let saveTimeout;
-          textarea.addEventListener("input", () => {
-            if (saveTimeout) clearTimeout(saveTimeout);
-            if (saveStatus) {
-              saveStatus.style.display = "inline";
-              saveStatus.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Saving...`;
-              saveStatus.style.color = "var(--text-muted)";
-            }
-            saveTimeout = setTimeout(() => {
-              state.deepThinkingAnswers[qId] = textarea.value;
-              saveProgress();
-              if (saveStatus) {
-                saveStatus.innerHTML = `<i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved`;
-                saveStatus.style.color = "var(--success)";
-              }
-            }, 800);
-          });
-        });
-        const guideBtns = dtCard.querySelectorAll(".dt-guide-btn");
-        guideBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            AudioEngine.play("click");
-            const qId = btn.getAttribute("data-q-id");
-            const guideContent = document.getElementById(`dt-guide-content-${qId}`);
-            if (guideContent) {
-              const isHidden = guideContent.style.display === "none";
-              if (isHidden) {
-                guideContent.style.display = "block";
-                btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Evaluation Guide`;
-                guideContent.scrollIntoView({ behavior: "smooth", block: "nearest" });
-              } else {
-                guideContent.style.display = "none";
-                btn.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> Reveal Teacher Evaluation Guide`;
-              }
-            }
-          });
-        });
-      }
-    }
     const bridgeBtns = container.querySelectorAll(".timeline-bridge-btn");
     bridgeBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -20207,7 +20663,9 @@ ${cleanBrackets(paper.q3d.model)}
       const doNowCbs = doNowCard.querySelectorAll(".do-now-cb");
       doNowCbs.forEach((cb) => {
         cb.addEventListener("change", () => {
-          AudioEngine.play("click");
+          if (subtopicId !== "subtopic_1_3") {
+            AudioEngine.play("click");
+          }
           const allChecked = Array.from(doNowCbs).every((c) => c.checked);
           const parentContainer = cb.closest(".do-now-checkboxes").parentElement;
           if (allChecked) {
@@ -20224,6 +20682,269 @@ ${cleanBrackets(paper.q3d.model)}
           }
         });
       });
+      if (subtopicId === "subtopic_1_1") {
+        const draftingContainer = doNowCard.querySelector("#do-now-drafting-container");
+        const wrapC = doNowCard.querySelector("#textarea-wrap-c");
+        const wrapNop = doNowCard.querySelector("#textarea-wrap-nop");
+        const wrapOk = doNowCard.querySelector("#textarea-wrap-ok");
+        const txtC = doNowCard.querySelector("#draft-c");
+        const txtNop = doNowCard.querySelector("#draft-nop");
+        const txtOk = doNowCard.querySelector("#draft-ok");
+        const compileBtn = doNowCard.querySelector("#compile-draft-btn");
+        const displayDiv = doNowCard.querySelector("#compiled-draft-display");
+        const compiledText = doNowCard.querySelector("#compiled-draft-text");
+        const updateDraftingAssistant = () => {
+          const anyChecked = Array.from(doNowCbs).some((c) => c.checked);
+          if (draftingContainer) {
+            draftingContainer.style.display = anyChecked ? "flex" : "none";
+          }
+          if (wrapC) wrapC.style.display = doNowCbs[0].checked ? "block" : "none";
+          if (wrapNop) wrapNop.style.display = doNowCbs[1].checked ? "block" : "none";
+          if (wrapOk) wrapOk.style.display = doNowCbs[2].checked ? "block" : "none";
+          const allChecked = Array.from(doNowCbs).every((c) => c.checked);
+          const hasC = txtC && txtC.value.trim().length > 0;
+          const hasNop = txtNop && txtNop.value.trim().length > 0;
+          const hasOk = txtOk && txtOk.value.trim().length > 0;
+          if (compileBtn) {
+            compileBtn.style.display = allChecked && hasC && hasNop && hasOk ? "block" : "none";
+          }
+        };
+        doNowCbs.forEach((cb) => {
+          cb.addEventListener("change", updateDraftingAssistant);
+        });
+        [txtC, txtNop, txtOk].forEach((txt) => {
+          if (txt) {
+            txt.addEventListener("input", updateDraftingAssistant);
+          }
+        });
+        if (compileBtn) {
+          compileBtn.addEventListener("click", () => {
+            AudioEngine.play("success");
+            const valC = txtC ? txtC.value.trim() : "";
+            const valNop = txtNop ? txtNop.value.trim() : "";
+            const valOk = txtOk ? txtOk.value.trim() : "";
+            if (compiledText) {
+              compiledText.innerHTML = `<strong>Content (C):</strong> ${valC}<br><br><strong>Provenance (NOP):</strong> ${valNop}<br><br><strong>Own Knowledge (OK):</strong> ${valOk}`;
+            }
+            if (displayDiv) {
+              displayDiv.style.display = "flex";
+            }
+            if (typeof Confetti !== "undefined" && typeof Confetti.spawn === "function") {
+              Confetti.spawn(50);
+            }
+          });
+        }
+      }
+      if (subtopicId === "subtopic_1_2") {
+        const hotspotsContainer = doNowCard.querySelector("#do-now-hotspots-container");
+        const tooltipCard = doNowCard.querySelector("#hotspot-tooltip-card");
+        const provBox = doNowCard.querySelector(".do-now-provenance-box");
+        const provExplanation = doNowCard.querySelector("#provenance-explanation-card");
+        const contextClues = doNowCard.querySelector("#context-clues-card");
+        doNowCbs[0].addEventListener("change", () => {
+          const isChecked = doNowCbs[0].checked;
+          if (hotspotsContainer) hotspotsContainer.style.display = isChecked ? "block" : "none";
+          if (tooltipCard) {
+            tooltipCard.style.display = isChecked ? "block" : "none";
+            if (!isChecked) {
+              const tTitle = doNowCard.querySelector("#hotspot-title");
+              const tDesc = doNowCard.querySelector("#hotspot-desc");
+              if (tTitle) tTitle.textContent = "Hotspot Detail";
+              if (tDesc) tDesc.textContent = "Click a yellow hotspot dot on the image to inspect Content details...";
+            }
+          }
+        });
+        const dots = doNowCard.querySelectorAll(".hotspot-dot");
+        dots.forEach((dot) => {
+          dot.addEventListener("click", (e) => {
+            e.preventDefault();
+            AudioEngine.play("click");
+            const title = dot.getAttribute("data-title");
+            const desc = dot.getAttribute("data-desc");
+            const tTitle = doNowCard.querySelector("#hotspot-title");
+            const tDesc = doNowCard.querySelector("#hotspot-desc");
+            if (tTitle) tTitle.textContent = title;
+            if (tDesc) tDesc.textContent = desc;
+          });
+        });
+        doNowCbs[1].addEventListener("change", () => {
+          const isChecked = doNowCbs[1].checked;
+          if (provBox) {
+            if (isChecked) {
+              provBox.style.animation = "pulse-border 2s infinite";
+              provBox.style.borderWidth = "2px";
+            } else {
+              provBox.style.animation = "none";
+              provBox.style.borderWidth = "1px";
+            }
+          }
+          if (provExplanation) {
+            provExplanation.style.display = isChecked ? "block" : "none";
+          }
+        });
+        doNowCbs[2].addEventListener("change", () => {
+          const isChecked = doNowCbs[2].checked;
+          if (contextClues) {
+            contextClues.style.display = isChecked ? "block" : "none";
+          }
+        });
+      }
+      if (subtopicId === "subtopic_1_3") {
+        const quizOverlay = doNowCard.querySelector("#do-now-quiz-overlay");
+        const quizQuestionText = doNowCard.querySelector("#quiz-question-text");
+        const quizOptionsContainer = doNowCard.querySelector("#quiz-options-container");
+        const quizzes = {
+          0: {
+            type: "C",
+            question: "What does the protester's sign claim about integration?",
+            options: [
+              { text: "Integration is a communist plot and is being forced by a dictator", correct: true },
+              { text: "Integration is supported by the Southern governors", correct: false },
+              { text: "Integration is a democratic reform that will help everyone", correct: false }
+            ]
+          },
+          1: {
+            type: "NOP",
+            question: "Why is the timing of this photo (September 1957) highly useful for historians?",
+            options: [
+              { text: "It captures the peak of white resistance during the Little Rock Nine integration crisis", correct: true },
+              { text: "It was taken before Brown v. Board of Education was decided", correct: false },
+              { text: "It shows the immediate response to the Civil Rights Act of 1964", correct: false }
+            ]
+          },
+          2: {
+            type: "OK",
+            question: "Which historical fact explains why federal troops were deployed to Central High School?",
+            options: [
+              { text: "Governor Orval Faubus used the state National Guard to block the Black students, forcing Eisenhower to send the 101st Airborne", correct: true },
+              { text: "Martin Luther King Jr. requested federal troops to guard the marchers", correct: false },
+              { text: "The local school board requested army protection for the school buildings", correct: false }
+            ]
+          }
+        };
+        const triggerQuiz = (cb, idx) => {
+          const quiz = quizzes[idx];
+          if (!quiz) return;
+          if (quizQuestionText) {
+            quizQuestionText.innerHTML = `<span style="color: var(--accent);">[Challenge ${quiz.type}]</span> ${quiz.question}`;
+          }
+          if (quizOptionsContainer) {
+            quizOptionsContainer.innerHTML = "";
+            quiz.options.forEach((opt) => {
+              const btn = document.createElement("button");
+              btn.className = "quiz-option-btn";
+              btn.innerHTML = opt.text;
+              btn.style.width = "100%";
+              btn.style.padding = "8px 12px";
+              btn.style.background = "rgba(255, 255, 255, 0.05)";
+              btn.style.border = "1px solid var(--border-glass)";
+              btn.style.borderRadius = "4px";
+              btn.style.color = "var(--text-base)";
+              btn.style.textAlign = "left";
+              btn.style.fontSize = "0.82rem";
+              btn.style.cursor = "pointer";
+              btn.style.transition = "all 0.2s";
+              btn.style.marginBottom = "6px";
+              btn.addEventListener("mouseenter", () => {
+                btn.style.background = "rgba(255, 255, 255, 0.1)";
+                btn.style.borderColor = "var(--accent)";
+              });
+              btn.addEventListener("mouseleave", () => {
+                btn.style.background = "rgba(255, 255, 255, 0.05)";
+                btn.style.borderColor = "var(--border-glass)";
+              });
+              btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (opt.correct) {
+                  AudioEngine.play("success");
+                  btn.style.background = "rgba(16, 185, 129, 0.2)";
+                  btn.style.borderColor = "#10b981";
+                  btn.style.color = "#10b981";
+                  cb.dataset.unlocked = "true";
+                  cb.checked = true;
+                  cb.dispatchEvent(new Event("change"));
+                  setTimeout(() => {
+                    if (quizOverlay) quizOverlay.style.display = "none";
+                  }, 800);
+                } else {
+                  AudioEngine.play("error");
+                  btn.style.background = "rgba(239, 68, 68, 0.2)";
+                  btn.style.borderColor = "#ef4444";
+                  btn.style.color = "#ef4444";
+                  btn.style.transform = "translateX(5px)";
+                  setTimeout(() => {
+                    btn.style.transform = "none";
+                  }, 100);
+                }
+              });
+              quizOptionsContainer.appendChild(btn);
+            });
+          }
+          if (quizOverlay) {
+            quizOverlay.style.display = "flex";
+          }
+        };
+        doNowCbs.forEach((cb, idx) => {
+          cb.addEventListener("click", (e) => {
+            if (cb.dataset.unlocked !== "true") {
+              e.preventDefault();
+              triggerQuiz(cb, idx);
+            }
+          });
+          cb.addEventListener("change", () => {
+            if (!cb.checked) {
+              cb.dataset.unlocked = "false";
+            }
+          });
+        });
+      }
+      if (subtopicId === "subtopic_1_4") {
+        const lensContainer = doNowCard.querySelector("#do-now-lens-container");
+        if (lensContainer) {
+          lensContainer.style.display = "flex";
+        }
+        const lensC = doNowCard.querySelector(".lens-c");
+        const lensNop = doNowCard.querySelector(".lens-nop");
+        const lensOk = doNowCard.querySelector(".lens-ok");
+        const updateLensHighlighting = () => {
+          if (lensC) {
+            if (doNowCbs[0].checked) {
+              lensC.style.background = "rgba(59, 130, 246, 0.25)";
+              lensC.style.color = "#60a5fa";
+              lensC.style.fontWeight = "bold";
+            } else {
+              lensC.style.background = "transparent";
+              lensC.style.color = "inherit";
+              lensC.style.fontWeight = "normal";
+            }
+          }
+          if (lensNop) {
+            if (doNowCbs[1].checked) {
+              lensNop.style.background = "rgba(168, 85, 247, 0.25)";
+              lensNop.style.color = "#c084fc";
+              lensNop.style.fontWeight = "bold";
+            } else {
+              lensNop.style.background = "transparent";
+              lensNop.style.color = "inherit";
+              lensNop.style.fontWeight = "normal";
+            }
+          }
+          if (lensOk) {
+            if (doNowCbs[2].checked) {
+              lensOk.style.background = "rgba(34, 197, 94, 0.25)";
+              lensOk.style.color = "#4ade80";
+              lensOk.style.fontWeight = "bold";
+            } else {
+              lensOk.style.background = "transparent";
+              lensOk.style.color = "inherit";
+              lensOk.style.fontWeight = "normal";
+            }
+          }
+        };
+        doNowCbs.forEach((cb) => {
+          cb.addEventListener("change", updateLensHighlighting);
+        });
+      }
     }
     const checklistItems = container.querySelectorAll(".spec-checklist-item");
     checklistItems.forEach((item) => {
@@ -20253,7 +20974,128 @@ ${cleanBrackets(paper.q3d.model)}
       });
     });
     formatVaultImportanceAnswers(container);
+    setupWrapUpChallenge(container, subtopicId);
     wrapImagesInLinks(container);
+  }
+  function setupWrapUpChallenge(container, subtopicId) {
+    const wrapUpCard = container.querySelector(".lesson-wrap-up-card");
+    if (!wrapUpCard) return;
+    const challenge = WRAPUP_DATA[subtopicId];
+    if (!challenge) return;
+    const cards = Array.from(wrapUpCard.querySelectorAll(".wrapup-fact-card"));
+    const buckets = Array.from(wrapUpCard.querySelectorAll(".wrapup-bucket"));
+    const pool = wrapUpCard.querySelector(".wrapup-cards-pool");
+    const successDrawer = wrapUpCard.querySelector(".wrapup-success-drawer");
+    const explanationsList = wrapUpCard.querySelector(".wrapup-explanations-list");
+    let selectedCard = null;
+    const placements = {};
+    const checkVictory = () => {
+      let allCorrect = true;
+      challenge.facts.forEach((f) => {
+        if (placements[f.id] !== f.correctCategory) {
+          allCorrect = false;
+        }
+      });
+      if (allCorrect && Object.keys(placements).length === challenge.facts.length) {
+        AudioEngine.play("cheer");
+        if (successDrawer) {
+          successDrawer.style.display = "block";
+          if (explanationsList) {
+            explanationsList.innerHTML = challenge.facts.map((f) => `
+            <div style="padding: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 4px; margin-bottom: 8px; text-align: left;">
+              <strong style="color: var(--success); display: block; margin-bottom: 2px; font-size: 0.82rem;">\u2713 ${f.correctCategory}:</strong>
+              <span style="color: var(--text-base); font-size: 0.82rem; line-height: 1.45;">${f.text}</span>
+              <p style="margin: 6px 0 0 0; font-style: italic; color: var(--text-muted); font-size: 0.78rem; border-top: 1px dashed var(--border-glass); padding-top: 4px;">${f.feedback}</p>
+            </div>
+          `).join("");
+          }
+          successDrawer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+        if (typeof Confetti !== "undefined" && typeof Confetti.spawn === "function") {
+          Confetti.spawn(50);
+        }
+      }
+    };
+    cards.forEach((card) => {
+      card.addEventListener("dragstart", (e) => {
+        card.classList.add("dragging");
+        e.dataTransfer.setData("text/plain", card.getAttribute("data-fact-id"));
+      });
+      card.addEventListener("dragend", () => {
+        card.classList.remove("dragging");
+      });
+      card.addEventListener("click", (e) => {
+        e.stopPropagation();
+        AudioEngine.play("click");
+        if (selectedCard === card) {
+          card.classList.remove("selected");
+          selectedCard = null;
+        } else {
+          if (selectedCard) {
+            selectedCard.classList.remove("selected");
+          }
+          selectedCard = card;
+          card.classList.add("selected");
+        }
+      });
+    });
+    buckets.forEach((bucket) => {
+      const slots = bucket.querySelector(".wrapup-bucket-slots");
+      const category = bucket.getAttribute("data-category");
+      bucket.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        bucket.classList.add("drag-over");
+      });
+      bucket.addEventListener("dragleave", () => {
+        bucket.classList.remove("drag-over");
+      });
+      bucket.addEventListener("drop", (e) => {
+        e.preventDefault();
+        bucket.classList.remove("drag-over");
+        const factId = e.dataTransfer.getData("text/plain");
+        const card = wrapUpCard.querySelector(`[data-fact-id="${factId}"]`);
+        if (card && slots) {
+          AudioEngine.play("click");
+          slots.appendChild(card);
+          placements[factId] = category;
+          checkVictory();
+        }
+      });
+      bucket.addEventListener("click", () => {
+        if (selectedCard && slots) {
+          const factId = selectedCard.getAttribute("data-fact-id");
+          slots.appendChild(selectedCard);
+          placements[factId] = category;
+          selectedCard.classList.remove("selected");
+          selectedCard = null;
+          checkVictory();
+        }
+      });
+    });
+    if (pool) {
+      pool.addEventListener("click", () => {
+        if (selectedCard) {
+          const factId = selectedCard.getAttribute("data-fact-id");
+          pool.appendChild(selectedCard);
+          placements[factId] = null;
+          selectedCard.classList.remove("selected");
+          selectedCard = null;
+        }
+      });
+      pool.addEventListener("dragover", (e) => {
+        e.preventDefault();
+      });
+      pool.addEventListener("drop", (e) => {
+        e.preventDefault();
+        const factId = e.dataTransfer.getData("text/plain");
+        const card = wrapUpCard.querySelector(`[data-fact-id="${factId}"]`);
+        if (card) {
+          AudioEngine.play("click");
+          pool.appendChild(card);
+          placements[factId] = null;
+        }
+      });
+    }
   }
   function blankFirstWord(block) {
     const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, null, false);
@@ -21955,7 +22797,7 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
   }
   function highlightModelQuotes(text) {
     if (!text) return "";
-    let highlighted = text;
+    let highlighted = text.replace(/style="([^"]*)"/g, "style='$1'").replace(/class="([^"]*)"/g, "class='$1'");
     let i1Text = "";
     let i2Text = "";
     if (state && state.pastPaperSession && state.pastPaperSession.activePaperData) {
@@ -22106,6 +22948,457 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
     AudioEngine.play("click");
   }
 
+  // src/chatbot.js
+  var searchDatabase = [];
+  var chatHistory = [];
+  function buildSearchDatabase() {
+    if (searchDatabase.length > 0) return;
+    const subtopicMap = /* @__PURE__ */ new Map();
+    QUIZ_DATA.forEach((topic) => {
+      if (topic.subtopics) {
+        topic.subtopics.forEach((sub) => {
+          subtopicMap.set(sub.id, {
+            id: sub.id,
+            title: sub.title,
+            quizQuestions: [...sub.standard || [], ...sub.depth || []]
+          });
+        });
+      }
+    });
+    Object.keys(LESSONS_DATA).forEach((subtopicId) => {
+      const lesson = LESSONS_DATA[subtopicId];
+      const quizSub = subtopicMap.get(subtopicId);
+      const title = quizSub ? quizSub.title : lesson.headerTitle || subtopicId;
+      let contentParts = [];
+      if (lesson.headerTitle) contentParts.push(lesson.headerTitle);
+      if (lesson.headerIntro) contentParts.push(lesson.headerIntro);
+      if (lesson.steps) {
+        lesson.steps.forEach((step) => {
+          if (step.title) contentParts.push(step.title);
+          if (step.bodyHtml) {
+            const plainText = step.bodyHtml.replace(/<[^>]*>/g, " ");
+            contentParts.push(plainText);
+          }
+          if (step.scholarlyDepth) {
+            if (step.scholarlyDepth.title) contentParts.push(step.scholarlyDepth.title);
+            if (step.scholarlyDepth.body) contentParts.push(step.scholarlyDepth.body);
+          }
+        });
+      }
+      if (lesson.dualPerspective) {
+        const dp = lesson.dualPerspective;
+        if (dp.neutralTitle) contentParts.push(dp.neutralTitle);
+        if (dp.leftHeadline) contentParts.push(dp.leftHeadline);
+        if (dp.leftText) contentParts.push(dp.leftText);
+        if (dp.rightHeadline) contentParts.push(dp.rightHeadline);
+        if (dp.rightText) contentParts.push(dp.rightText);
+      }
+      if (lesson.causalLinks) {
+        const cl = lesson.causalLinks;
+        if (cl.question) contentParts.push(cl.question);
+        if (cl.successText) contentParts.push(cl.successText);
+        if (cl.factors) {
+          cl.factors.forEach((f) => {
+            if (f.title) contentParts.push(f.title);
+            if (f.linkageText) contentParts.push(f.linkageText);
+            if (f.options) contentParts.push(f.options.join(" "));
+          });
+        }
+      }
+      if (lesson.knowledgeCheck) {
+        lesson.knowledgeCheck.forEach((kc) => {
+          if (kc.question) contentParts.push(kc.question);
+          if (kc.answer) contentParts.push(kc.answer);
+        });
+      }
+      if (lesson.questionVault) {
+        lesson.questionVault.forEach((qv) => {
+          if (qv.question) contentParts.push(qv.question);
+          if (qv.sourceA) contentParts.push(qv.sourceA);
+          if (qv.answer) contentParts.push(qv.answer);
+        });
+      }
+      if (lesson.summaryCorrection && lesson.summaryCorrection.text) {
+        contentParts.push(lesson.summaryCorrection.text.replace(/\[\[(.*?)\]\]/g, "$1"));
+      }
+      if (lesson.howUsefulAnalyser) {
+        const hua = lesson.howUsefulAnalyser;
+        if (hua.question) contentParts.push(hua.question);
+        if (hua.modelAnswer) contentParts.push(hua.modelAnswer);
+      }
+      if (lesson.deepThinkingQuestions) {
+        lesson.deepThinkingQuestions.forEach((dt) => {
+          if (dt.question) contentParts.push(dt.question);
+          if (dt.hint) contentParts.push(dt.hint);
+          if (dt.teacherGuide) contentParts.push(dt.teacherGuide);
+        });
+      }
+      if (quizSub && quizSub.quizQuestions) {
+        quizSub.quizQuestions.forEach((q) => {
+          if (q.question) contentParts.push(q.question);
+          if (q.answer) contentParts.push(q.answer);
+          if (q.explanation) contentParts.push(q.explanation);
+          if (q.distractors) contentParts.push(q.distractors.join(" "));
+        });
+      }
+      searchDatabase.push({
+        id: subtopicId,
+        title,
+        cleanTitle: title.replace(/^Topic \d\.\d:\s*/, ""),
+        fullText: contentParts.join("\n\n")
+      });
+    });
+  }
+  function getSearchScore(queryText, textBlob) {
+    const query = queryText.toLowerCase().trim();
+    if (!query) return 0;
+    const terms = query.split(/\s+/).map((t) => t.replace(/[^a-z0-9]/g, "")).filter((t) => t.length > 2);
+    if (terms.length === 0) {
+      return textBlob.toLowerCase().includes(query) ? 10 : 0;
+    }
+    let score = 0;
+    const lowerBlob = textBlob.toLowerCase();
+    if (lowerBlob.includes(query)) {
+      score += 40;
+    }
+    terms.forEach((term) => {
+      let index = lowerBlob.indexOf(term);
+      while (index !== -1) {
+        score += 2;
+        index = lowerBlob.indexOf(term, index + 1);
+      }
+    });
+    return score;
+  }
+  function searchLocalApp(query) {
+    buildSearchDatabase();
+    const results = [];
+    searchDatabase.forEach((item) => {
+      const score = getSearchScore(query, item.fullText);
+      if (score > 6) {
+        results.push({
+          id: item.id,
+          title: item.title,
+          cleanTitle: item.cleanTitle,
+          score,
+          fullText: item.fullText
+        });
+      }
+    });
+    results.sort((a, b) => b.score - a.score);
+    return results;
+  }
+  function getLocalStaticResponse(bestMatch, query) {
+    const queryTerms = query.toLowerCase().split(/\s+/).map((t) => t.replace(/[^a-z0-9]/g, "")).filter((t) => t.length > 2);
+    const lesson = LESSONS_DATA[bestMatch.id];
+    let bestFact = "";
+    let bestFactScore = 0;
+    const checkFact = (text) => {
+      if (!text) return;
+      let score = 0;
+      const lowerText = text.toLowerCase();
+      queryTerms.forEach((term) => {
+        if (lowerText.includes(term)) score += 2;
+      });
+      if (score > bestFactScore) {
+        bestFactScore = score;
+        bestFact = text;
+      }
+    };
+    if (lesson && lesson.steps) {
+      lesson.steps.forEach((step) => {
+        if (step.bodyHtml) {
+          const tempDiv = document.createElement("div");
+          tempDiv.innerHTML = step.bodyHtml;
+          const paragraphs = Array.from(tempDiv.querySelectorAll("p, li")).map((el) => el.textContent.trim());
+          paragraphs.forEach((p) => checkFact(p));
+        }
+        if (step.scholarlyDepth && step.scholarlyDepth.body) {
+          checkFact(step.scholarlyDepth.body);
+        }
+      });
+    }
+    const quizSub = QUIZ_DATA.flatMap((t) => t.subtopics || []).find((sub) => sub.id === bestMatch.id);
+    if (quizSub) {
+      const qList = [...quizSub.standard || [], ...quizSub.depth || []];
+      qList.forEach((q) => {
+        let score = 0;
+        const combined = `${q.question} ${q.answer} ${q.explanation}`.toLowerCase();
+        queryTerms.forEach((term) => {
+          if (combined.includes(term)) score += 2;
+        });
+        if (score > bestFactScore) {
+          bestFactScore = score;
+          bestFact = `**Question:** ${q.question}
+**Answer:** ${q.answer}
+*Explanation:* ${q.explanation}`;
+        }
+      });
+    }
+    if (bestFactScore >= 2 && bestFact) {
+      return `I found this matching fact in the lesson **${bestMatch.cleanTitle}**:
+
+${bestFact}`;
+    }
+    return `I found matching lesson content for **${bestMatch.cleanTitle}** in the course materials. Click below to jump directly to this lesson!`;
+  }
+  function formatMessageText(text) {
+    if (!text) return "";
+    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/\*(.*?)\*/g, "<em>$1</em>").replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\n/g, "<br>");
+  }
+  async function fetchGeminiResponse(apiKey, userInput, localContext) {
+    const systemInstruction = `You are a strict, helpful AI history tutor for Edexcel GCSE History, Paper 3: Modern Depth Study - USA (1954-75).
+Your task is to answer the student's question accurately, concisely, and at a GCSE level (appropriate for 14-16 year olds).
+Rules:
+- Keep the response short (strictly under 100 words).
+- Focus strictly on historical facts relevant to the Edexcel GCSE USA specification.
+- If the question is outside the scope of the Edexcel USA (1954-75) specification, politely guide the student back to the history course.
+- State precise years, names, acts, and numbers (e.g. 1954 Brown v. Topeka, 1957 Little Rock Nine, 1964 Civil Rights Act, 1965 Voting Rights Act, etc.).
+- If local app context is provided, prioritize using it to answer the question.`;
+    let userText = userInput;
+    if (localContext) {
+      userText = `[App Course Content Context: Use this info if helpful]
+${localContext.fullText.substring(0, 3e3)}
+
+User Question: ${userInput}`;
+    }
+    chatHistory.push({
+      role: "user",
+      parts: [{ text: userText }]
+    });
+    if (chatHistory.length > 8) {
+      chatHistory = chatHistory.slice(-8);
+    }
+    const requestBody = {
+      contents: chatHistory,
+      systemInstruction: {
+        parts: [{ text: systemInstruction }]
+      },
+      generationConfig: {
+        temperature: 0.3,
+        maxOutputTokens: 250
+      }
+    };
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(requestBody)
+    });
+    if (!response.ok) {
+      const errData = await response.json().catch(() => ({}));
+      throw new Error(errData.error?.message || `HTTP error ${response.status}`);
+    }
+    const data = await response.json();
+    if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+      const aiText = data.candidates[0].content.parts[0].text.trim();
+      chatHistory.push({
+        role: "model",
+        parts: [{ text: aiText }]
+      });
+      return aiText;
+    } else {
+      throw new Error("No response content from Gemini.");
+    }
+  }
+  function appendBubble(sender, contentText, subtopicLink = null) {
+    const container = document.getElementById("chatbot-messages");
+    if (!container) return;
+    const bubble = document.createElement("div");
+    bubble.className = `chatbot-bubble ${sender}`;
+    bubble.innerHTML = formatMessageText(contentText);
+    if (subtopicLink) {
+      const linkBtn = document.createElement("button");
+      linkBtn.className = "chatbot-jump-link";
+      linkBtn.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> Study: ${subtopicLink.cleanTitle}`;
+      linkBtn.setAttribute("data-subtopic-id", subtopicLink.id);
+      bubble.appendChild(linkBtn);
+    }
+    container.appendChild(bubble);
+    container.scrollTop = container.scrollHeight;
+  }
+  function appendThinkingBubble() {
+    const container = document.getElementById("chatbot-messages");
+    if (!container) return;
+    const bubble = document.createElement("div");
+    bubble.className = "chatbot-bubble assistant";
+    bubble.id = "chatbot-thinking";
+    bubble.innerHTML = `Thinking<span class="chatbot-loading-dots"><span>.</span><span>.</span><span>.</span></span>`;
+    container.appendChild(bubble);
+    container.scrollTop = container.scrollHeight;
+  }
+  function removeThinkingBubble() {
+    const el = document.getElementById("chatbot-thinking");
+    if (el) el.remove();
+  }
+  function initChatbot() {
+    const style = document.createElement("style");
+    style.textContent = `
+    @keyframes chatbotPulse {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+    .chatbot-loading-dots span {
+      animation: chatbotPulse 1.4s infinite both;
+      font-weight: bold;
+      display: inline-block;
+      width: 4px;
+      text-align: center;
+    }
+    .chatbot-loading-dots span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .chatbot-loading-dots span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  `;
+    document.head.appendChild(style);
+    let apiKey = localStorage.getItem("gemini_api_key") || "";
+    const fab = document.createElement("div");
+    fab.className = "chatbot-fab";
+    fab.id = "chatbot-fab";
+    fab.title = "Ask GCSE History AI Tutor";
+    fab.innerHTML = '<i class="fa-solid fa-comment-dots"></i>';
+    const windowEl = document.createElement("div");
+    windowEl.className = "chatbot-window";
+    windowEl.id = "chatbot-window";
+    windowEl.innerHTML = `
+    <div class="chatbot-header">
+      <div class="chatbot-title">
+        <i class="fa-solid fa-robot"></i> GCSE History AI Tutor
+      </div>
+      <div class="chatbot-actions">
+        <button class="chatbot-action-btn" id="chatbot-settings-toggle" title="Gemini API Key Settings">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        <button class="chatbot-action-btn" id="chatbot-close-btn" title="Close Chat">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- API Key settings panel -->
+    <div class="chatbot-settings-panel" id="chatbot-settings-panel">
+      <div class="chatbot-settings-label">Gemini API Key Setup</div>
+      <div class="chatbot-settings-input-row">
+        <input type="password" class="chatbot-input" id="chatbot-api-key-input" placeholder="${apiKey ? "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" : "Enter Gemini API Key..."}" />
+        <button class="chatbot-send-btn" id="chatbot-save-key-btn" title="Save Key">
+          <i class="fa-solid fa-check"></i>
+        </button>
+      </div>
+      <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 4px; line-height: 1.3;">
+        Your key is stored strictly on your device. Get a free API key at 
+        <a href="https://aistudio.google.com/" target="_blank" style="color: var(--primary); text-decoration: underline;">Google AI Studio</a>.
+      </div>
+    </div>
+
+    <!-- Messages Container -->
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chatbot-bubble assistant">
+        Hi! I am your AI history tutor. Ask me any question about the <strong>Edexcel GCSE USA (1954\u201375)</strong> course.
+        <br><br>
+        <em>Tip: If you add your Gemini API key via the settings gear (\u2699\uFE0F), I can use AI to answer custom history questions beyond the app!</em>
+      </div>
+    </div>
+
+    <!-- Footer Input Area -->
+    <div class="chatbot-input-row">
+      <input type="text" class="chatbot-input" id="chatbot-user-input" placeholder="Ask a question..." autocomplete="off" />
+      <button class="chatbot-send-btn" id="chatbot-send-btn" title="Send Message">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  `;
+    document.body.appendChild(fab);
+    document.body.appendChild(windowEl);
+    const toggleSettingsBtn = document.getElementById("chatbot-settings-toggle");
+    const settingsPanel = document.getElementById("chatbot-settings-panel");
+    const apiKeyInput = document.getElementById("chatbot-api-key-input");
+    const saveKeyBtn = document.getElementById("chatbot-save-key-btn");
+    const closeBtn = document.getElementById("chatbot-close-btn");
+    const userInput = document.getElementById("chatbot-user-input");
+    const sendBtn = document.getElementById("chatbot-send-btn");
+    const messagesContainer = document.getElementById("chatbot-messages");
+    if (apiKey) {
+      apiKeyInput.value = apiKey;
+    }
+    fab.addEventListener("click", () => {
+      fab.classList.toggle("active");
+      windowEl.classList.toggle("active");
+      if (windowEl.classList.contains("active")) {
+        userInput.focus();
+      }
+    });
+    toggleSettingsBtn.addEventListener("click", () => {
+      settingsPanel.classList.toggle("active");
+    });
+    saveKeyBtn.addEventListener("click", () => {
+      const value = apiKeyInput.value.trim();
+      if (value) {
+        apiKey = value;
+        localStorage.setItem("gemini_api_key", apiKey);
+        settingsPanel.classList.remove("active");
+        appendBubble("system", "API Key saved successfully! AI mode is active.");
+      } else {
+        apiKey = "";
+        localStorage.removeItem("gemini_api_key");
+        appendBubble("system", "API Key cleared. Switched back to app-only local database mode.");
+      }
+    });
+    closeBtn.addEventListener("click", () => {
+      fab.classList.remove("active");
+      windowEl.classList.remove("active");
+    });
+    messagesContainer.addEventListener("click", (e) => {
+      const jumpLink = e.target.closest(".chatbot-jump-link");
+      if (jumpLink) {
+        const subtopicId = jumpLink.getAttribute("data-subtopic-id");
+        if (subtopicId) {
+          state.currentMode = "lessons";
+          switchView("subtopic", subtopicId);
+          if (window.innerWidth <= 480) {
+            fab.classList.remove("active");
+            windowEl.classList.remove("active");
+          }
+        }
+      }
+    });
+    async function handleSend() {
+      const text = userInput.value.trim();
+      if (!text) return;
+      appendBubble("user", text);
+      userInput.value = "";
+      const localMatches = searchLocalApp(text);
+      const bestMatch = localMatches[0];
+      if (apiKey) {
+        appendThinkingBubble();
+        try {
+          const responseText = await fetchGeminiResponse(apiKey, text, bestMatch);
+          removeThinkingBubble();
+          appendBubble("assistant", responseText, bestMatch);
+        } catch (err) {
+          removeThinkingBubble();
+          appendBubble("system", `API Error: ${err.message}. Please double-check your Gemini API key settings.`);
+        }
+      } else {
+        if (bestMatch) {
+          const fallbackText = getLocalStaticResponse(bestMatch, text);
+          appendBubble("assistant", fallbackText, bestMatch);
+        } else {
+          appendBubble("assistant", `I couldn't find a direct match for that in the course content. To draw answers from the wider internet, please enter your Gemini API Key in the settings (click the \u2699\uFE0F gear icon).`);
+        }
+      }
+    }
+    sendBtn.addEventListener("click", handleSend);
+    userInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        handleSend();
+      }
+    });
+  }
+
   // src/main.js
   window.addEventListener("DOMContentLoaded", () => {
     window.switchView = switchView;
@@ -22113,6 +23406,7 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
     renderSidebarNav();
     updateGlobalStats();
     bindEvents();
+    initChatbot();
     switchView("dashboard");
   });
 })();
