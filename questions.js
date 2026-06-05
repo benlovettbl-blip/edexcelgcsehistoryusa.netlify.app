@@ -3973,18 +3973,18 @@ export const EXAM_SKILLS_DATA = {
     "mock_exam_5": {
       "id": "mock_5_q2",
       "topicCode": "Mock 5",
-      "question": "Explain why the USA used chemical weapons, such as Agent Orange and Napalm, in Vietnam.",
-      "stimulus1": "The Ho Chi Minh Trail",
-      "stimulus2": "Guerrilla tactics",
-      "clue": "Explain how the Vietcong used the thick jungle canopy for cover, how Agent Orange was used to defoliate the jungle to expose their positions and supply lines like the Ho Chi Minh Trail, and how Napalm was used to destroy Vietcong strongholds and tunnel exits.",
+      "question": "Explain why US Search and Destroy tactics were unsuccessful in the years 1965–68.",
+      "stimulus1": "Guerrilla tactics",
+      "stimulus2": "Hearts and minds",
+      "clue": "Explain how the Vietcong used guerrilla tactics and tunnel networks to ambush US patrols, how Search and Destroy raids alienated civilians and failed to win hearts and minds, and how the reliance on body counts meant the US could not hold territory permanently.",
       "knowledgeWords": [
-        "Agent Orange",
-        "Napalm",
+        "Search and Destroy",
         "guerrilla",
-        "jungle",
-        "Ho Chi Minh Trail",
-        "Westmoreland",
-        "defoliant"
+        "tunnels",
+        "booby traps",
+        "hearts and minds",
+        "attrition",
+        "alienated"
       ],
       "connectiveWords": [
         "as a result",
@@ -3995,7 +3995,7 @@ export const EXAM_SKILLS_DATA = {
         "due to",
         "furthermore"
       ],
-      "model": "“One reason why the USA used chemical weapons, such as Agent Orange, was to destroy the thick jungle cover used by the Vietcong.” The Vietcong relied on [[guerrilla tactics]], hiding in the dense tropical forests of South Vietnam to launch surprise ambushes and disappear. By spraying the chemical defoliant Agent Orange, the US military aimed to strip away the leaves and expose enemy positions. {{Therefore, destroying the jungle canopy was a primary cause of why the USA used chemical weapons, because it sought to neutralize the natural cover that allowed Vietcong forces to operate invisibly.}}\n\n“A second reason why the USA used chemical weapons was to expose and disrupt the Ho Chi Minh Trail.” The Vietcong and North Vietnamese Army moved troops and supplies from North to South Vietnam along a network of paths hidden beneath the jungle canopy. Using Agent Orange allowed the US Air Force to locate these supply lines, making it easier to launch targeted bombing raids. {{Therefore, disrupting supply lines like the [[Ho Chi Minh Trail]] was a key cause of why the USA used chemical weapons, as the US military wanted to cut off the flow of weapons and soldiers to the South.}}\n\n“A third reason why the USA used chemical weapons, such as Napalm, was to destroy Vietcong bunkers, tunnels, and troop concentrations.” Napalm, a highly flammable jellied gasoline, burned at intense temperatures, consuming oxygen and burning through thick foliage and underground shelters. The US military used it to clear large areas of land and flush Vietcong fighters out of their tunnel networks during [[Search and Destroy]] missions. {{Therefore, destroying enemy strongholds and flushing out guerrilla fighters was a vital reason why the USA used chemical weapons, as it provided US forces with a weapon capable of penetrating the Vietcong's defensive networks.}}"
+      "model": "“One reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was that Vietcong guerrilla tactics neutralized the American advantage in firepower.” The Vietcong avoided large-scale conventional battles, choosing to fight in close proximity and utilize complex underground [[tunnels]] to evade detection. They deployed lethal [[booby traps]], such as Punji pits and tripwires, which caused high casualties and constant paranoia among US troops. {{Therefore, the Vietcong's guerrilla tactics made Search and Destroy missions unsuccessful because US patrols were constantly ambushed by an invisible enemy, preventing them from utilizing their superior weapons.}}\n\n“A second reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was that they actively alienated the South Vietnamese peasant population.” Search and Destroy operations relied on burning suspected villages, destroying crops, and killing livestock in what were often called 'Zippo raids.' This destruction of rural livelihoods completely undermined the US policy of winning the [[hearts and minds]] of the civilian population. {{Therefore, civilian alienation made Search and Destroy tactics unsuccessful because it drove local peasants to support the Vietcong, providing them with food, cover, and vital intelligence.}}\n\n“A third reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was the flawed focus on body counts rather than holding territory.” The US military strategy of [[attrition]] aimed to kill more enemy fighters than they could replace, using helicopters to temporarily sweep areas before returning to base. However, this meant that once US forces withdrew, the Vietcong simply returned and re-established control over the villages. {{Therefore, the focus on body counts and lack of territorial control made Search and Destroy unsuccessful because it resulted in temporary tactical raids that failed to establish permanent security or political control.}}"
     },
     "mock_exam_8": {
       "id": "mock_8_q2",
@@ -5321,13 +5321,13 @@ export const PAST_PAPERS_DATA = [
     },
     "q2": {
       "id": "mock_5_q2",
-      "question": "Explain why the USA used chemical weapons, such as Agent Orange and Napalm, in Vietnam. (12 marks)",
+      "question": "Explain why US Search and Destroy tactics were unsuccessful in the years 1965–68. (12 marks)",
       "stimulus": [
-        "The Ho Chi Minh Trail",
-        "Guerrilla tactics"
+        "Guerrilla tactics",
+        "Hearts and minds"
       ],
-      "clue": "Explain how the Vietcong used the thick jungle canopy for cover, how Agent Orange was used to defoliate the jungle to expose their positions and supply lines like the Ho Chi Minh Trail, and how Napalm was used to destroy Vietcong strongholds and tunnel exits.",
-      "model": "“One reason why the USA used chemical weapons, such as Agent Orange, was to destroy the thick jungle cover used by the Vietcong.” The Vietcong relied on [[guerrilla tactics]], hiding in the dense tropical forests of South Vietnam to launch surprise ambushes and disappear. By spraying the chemical defoliant Agent Orange, the US military aimed to strip away the leaves and expose enemy positions. {{Therefore, destroying the jungle canopy was a primary cause of why the USA used chemical weapons, because it sought to neutralize the natural cover that allowed Vietcong forces to operate invisibly.}}\n\n“A second reason why the USA used chemical weapons was to expose and disrupt the Ho Chi Minh Trail.” The Vietcong and North Vietnamese Army moved troops and supplies from North to South Vietnam along a network of paths hidden beneath the jungle canopy. Using Agent Orange allowed the US Air Force to locate these supply lines, making it easier to launch targeted bombing raids. {{Therefore, disrupting supply lines like the [[Ho Chi Minh Trail]] was a key cause of why the USA used chemical weapons, as the US military wanted to cut off the flow of weapons and soldiers to the South.}}\n\n“A third reason why the USA used chemical weapons, such as Napalm, was to destroy Vietcong bunkers, tunnels, and troop concentrations.” Napalm, a highly flammable jellied gasoline, burned at intense temperatures, consuming oxygen and burning through thick foliage and underground shelters. The US military used it to clear large areas of land and flush Vietcong fighters out of their tunnel networks during [[Search and Destroy]] missions. {{Therefore, destroying enemy strongholds and flushing out guerrilla fighters was a vital reason why the USA used chemical weapons, as it provided US forces with a weapon capable of penetrating the Vietcong's defensive networks.}}"
+      "clue": "Explain how the Vietcong used guerrilla tactics and tunnel networks to ambush US patrols, how Search and Destroy raids alienated civilians and failed to win hearts and minds, and how the reliance on body counts meant the US could not hold territory permanently.",
+      "model": "“One reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was that Vietcong guerrilla tactics neutralized the American advantage in firepower.” The Vietcong avoided large-scale conventional battles, choosing to fight in close proximity and utilize complex underground [[tunnels]] to evade detection. They deployed lethal [[booby traps]], such as Punji pits and tripwires, which caused high casualties and constant paranoia among US troops. {{Therefore, the Vietcong's guerrilla tactics made Search and Destroy missions unsuccessful because US patrols were constantly ambushed by an invisible enemy, preventing them from utilizing their superior weapons.}}\n\n“A second reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was that they actively alienated the South Vietnamese peasant population.” Search and Destroy operations relied on burning suspected villages, destroying crops, and killing livestock in what were often called 'Zippo raids.' This destruction of rural livelihoods completely undermined the US policy of winning the [[hearts and minds]] of the civilian population. {{Therefore, civilian alienation made Search and Destroy tactics unsuccessful because it drove local peasants to support the Vietcong, providing them with food, cover, and vital intelligence.}}\n\n“A third reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was the flawed focus on body counts rather than holding territory.” The US military strategy of [[attrition]] aimed to kill more enemy fighters than they could replace, using helicopters to temporarily sweep areas before returning to base. However, this meant that once US forces withdrew, the Vietcong simply returned and re-established control over the villages. {{Therefore, the focus on body counts and lack of territorial control made Search and Destroy unsuccessful because it resulted in temporary tactical raids that failed to establish permanent security or political control.}}"
     },
     "q3a": {
       "id": "mock_5_q3a",
