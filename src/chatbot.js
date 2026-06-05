@@ -236,7 +236,7 @@ function buildSearchDatabase() {
       Edexcel GCSE History Paper 3 Exam Question Technique Guide
       Questions: Q1 Source Inference, Q2 Causation Essay, Q3a Source Utility, Q3b Interpretation Difference, Q3c Interpretation Disagreement Reason, Q3d Interpretation Evaluation
       Marks: Q1 4 marks, Q2 12 marks, Q3a 8 marks, Q3b 4 marks, Q3c 4 marks, Q3d 16 marks + 4 SPaG marks.
-      Timings: Q1 5 minutes, Q2 18 minutes, Q3a 15 minutes, Q3b 5 minutes, Q3c 5 minutes, Q3d 25 minutes.
+      Timings: Q1 5 minutes, Q2 20 minutes, Q3a 15 minutes, Q3b 5 minutes, Q3c 5 minutes, Q3d 35 minutes.
       Structure, templates, writing frames, PEEL paragraphs, sources utility content nature origin purpose NOP, interpretations difference reason.
     `
   });

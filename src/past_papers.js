@@ -227,6 +227,7 @@ export function renderExamSheet() {
           <h3 style="margin: 0; font-family: var(--font-heading); color: var(--text-main); font-size: 1.4rem;">${paper.title}</h3>
           <div class="exam-metadata" style="margin-top: 6px; display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-muted);">
             <span><i class="fa-solid fa-calendar"></i> Year: ${paper.year}</span>
+            <span><i class="fa-solid fa-clock"></i> Duration: 1h 30m</span>
             <span><i class="fa-solid fa-check-double"></i> Complete: ${completedCount}/${questionsList.length} (${pct}%)</span>
           </div>
         </div>
@@ -794,6 +795,7 @@ export function renderExamSheetStats() {
   if (metaEl) {
     metaEl.innerHTML = `
       <span><i class="fa-solid fa-calendar"></i> Year: ${paper.year}</span>
+      <span><i class="fa-solid fa-clock"></i> Duration: 1h 30m</span>
       <span><i class="fa-solid fa-check-double"></i> Complete: ${completedCount}/${questionsList.length} (${pct}%)</span>
     `;
   }

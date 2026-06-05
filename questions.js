@@ -1448,6 +1448,30 @@ export const QUIZ_DATA = [
               "Over 50 cities",
               "Over 200 cities"
             ]
+          },
+          {
+            "id": "q_2_4_s11",
+            "question": "Which economic campaign was launched by the SCLC in Chicago in 1966 to boycott businesses that refused to hire Black workers?",
+            "answer": "Operation Breadbasket",
+            "explanation": "Operation Breadbasket, run by activists like Jesse Jackson, used consumer boycotts to pressure Northern businesses to employ Black workers.",
+            "year": 1966,
+            "distractors": [
+              "Operation Chicago Slums",
+              "Operation Tenant Rights",
+              "Operation Northern Uplift"
+            ]
+          },
+          {
+            "id": "q_2_4_s12",
+            "question": "By 1970, what percentage of all elected officials in the United States were Black, representing a major political success?",
+            "answer": "10.9%",
+            "explanation": "Following the Voting Rights Act of 1965, Black political participation surged, resulting in 10.9% of elected officials being Black by 1970.",
+            "year": 1970,
+            "distractors": [
+              "5.2%",
+              "15.5%",
+              "20.1%"
+            ]
           }
         ],
         "depth": [
@@ -1509,6 +1533,30 @@ export const QUIZ_DATA = [
               "1964",
               "1967",
               "1968"
+            ]
+          },
+          {
+            "id": "q_2_4_d6",
+            "question": "What was a major reason why MLK's 1966 Chicago Freedom Movement failed to achieve its housing integration goals?",
+            "answer": "Northern white politicians and residents put up fierce resistance, and promises were ignored",
+            "explanation": "King faced violent white mobs and political obstruction from Chicago Mayor Richard Daley, who reneged on agreements once King left.",
+            "year": 1966,
+            "distractors": [
+              "The federal government cut off all funding for the campaign",
+              "The Supreme Court declared housing desegregation campaigns illegal",
+              "Black residents in Chicago refused to participate in any marches"
+            ]
+          },
+          {
+            "id": "q_2_4_d7",
+            "question": "What policies were introduced to give preference to minority groups in employment and education to correct past injustices?",
+            "answer": "Affirmative action",
+            "explanation": "Affirmative action policies were implemented in the late 1960s and 1970s to improve education and job opportunities for historically excluded minorities.",
+            "year": 1969,
+            "distractors": [
+              "Equalisation initiatives",
+              "Redistribution measures",
+              "Integration directives"
             ]
           }
         ]
@@ -1642,6 +1690,30 @@ export const QUIZ_DATA = [
               "Rural Pacification Program",
               "Civilian Defense Hamlet Initiative"
             ]
+          },
+          {
+            "id": "q_3_1_s11",
+            "question": "By 1954, approximately what percentage of the French war effort in Indochina was funded by the United States?",
+            "answer": "80%",
+            "explanation": "Fearing the spread of communism in Asia, the US heavily backed the French militarily, paying for 80% of their war costs.",
+            "year": 1954,
+            "distractors": [
+              "20%",
+              "50%",
+              "95%"
+            ]
+          },
+          {
+            "id": "q_3_1_s12",
+            "question": "What was the name of the elite US Special Forces deployed by President Kennedy to train South Vietnamese troops in counter-insurgency?",
+            "answer": "Green Berets",
+            "explanation": "President Kennedy expanded US involvement by sending the elite Green Berets to train the South Vietnamese army (ARVN).",
+            "year": 1961,
+            "distractors": [
+              "Navy SEALs",
+              "Delta Force",
+              "Army Rangers"
+            ]
           }
         ],
         "depth": [
@@ -1703,6 +1775,18 @@ export const QUIZ_DATA = [
               "People's Army of Vietnam (PAVN)",
               "Communist Party of South Vietnam (CPSV)",
               "Democratic Republic Alliance (DRA)"
+            ]
+          },
+          {
+            "id": "q_3_1_d6",
+            "question": "Which Buddhist monk committed self-immolation in Saigon in 1963 to protest Ngo Dinh Diem's religious persecution?",
+            "answer": "Thích Quảng Đức",
+            "explanation": "Thích Quảng Đức burned himself to death at a busy intersection in Saigon. The televised photographs shocked the world and destroyed Diem's international credibility.",
+            "year": 1963,
+            "distractors": [
+              "Thich Nhat Hanh",
+              "Thich Tri Quang",
+              "Thich Tam Chau"
             ]
           }
         ]
@@ -1830,6 +1914,18 @@ export const QUIZ_DATA = [
               "Clark Clifford",
               "McGeorge Bundy"
             ]
+          },
+          {
+            "id": "q_3_2_s11",
+            "question": "Approximately what percentage of the South Vietnamese countryside was under Vietcong control by early 1965?",
+            "answer": "35%",
+            "explanation": "The Vietcong made rapid gains in the rural areas, controlling 35% of the countryside and prompting US fears of an imminent collapse of South Vietnam.",
+            "year": 1965,
+            "distractors": [
+              "10%",
+              "50%",
+              "75%"
+            ]
           }
         ],
         "depth": [
@@ -1891,6 +1987,18 @@ export const QUIZ_DATA = [
               "Le Duan",
               "Van Tien Dung",
               "Nguyen Chi Thanh"
+            ]
+          },
+          {
+            "id": "q_3_2_d6",
+            "question": "How did declassified records later clarify the events of the Gulf of Tonkin Incident on 4 August 1964?",
+            "answer": "The second attack was a 'phantom' event caused by weather and sonar errors, and never occurred",
+            "explanation": "Declassified reports showed that the second attack on the USS Maddox and USS Turner Joy never happened. It was a false alarm that the Johnson administration used to gain war powers.",
+            "year": 1964,
+            "distractors": [
+              "The attack was actually launched by Chinese warships, not North Vietnamese",
+              "The USS Maddox was sunk with all hands, which was covered up by the US Navy",
+              "The North Vietnamese launched a full amphibious invasion of the Gulf"
             ]
           }
         ]
@@ -2018,6 +2126,30 @@ export const QUIZ_DATA = [
               "Christmas Offensive",
               "Gulf of Tonkin Incident"
             ]
+          },
+          {
+            "id": "q_3_3_s11",
+            "question": "What Vietcong tactic involved fighting in extremely close quarters to prevent U.S. troops from calling in air and artillery support?",
+            "answer": "Hanging onto the belts",
+            "explanation": "By staying physically close to US units ('hanging onto their belts'), the Vietcong ensured that any US air strikes or artillery would also kill American soldiers.",
+            "year": 1965,
+            "distractors": [
+              "Clinch and clear",
+              "Jungle hugging",
+              "Shield tactics"
+            ]
+          },
+          {
+            "id": "q_3_3_s12",
+            "question": "Approximately what percentage of all US soldier deaths in the Vietnam War was caused by Vietcong booby traps?",
+            "answer": "11%",
+            "explanation": "Booby traps like punji pits, tripwires, and mines caused approximately 11% of all US military fatalities, creating constant paranoia.",
+            "year": 1965,
+            "distractors": [
+              "5%",
+              "25%",
+              "40%"
+            ]
           }
         ],
         "depth": [
@@ -2079,6 +2211,18 @@ export const QUIZ_DATA = [
               "Search-and-destroy sweeps",
               "Search-and-burn actions",
               "Burn-and-clear missions"
+            ]
+          },
+          {
+            "id": "q_3_3_d6",
+            "question": "What was the approximate total length of the Ho Chi Minh Trail supply network running through Laos and Cambodia?",
+            "answer": "15,000 km",
+            "explanation": "The Ho Chi Minh Trail was not a single road, but a massive 15,000 km network of jungle paths, roads, and fuel pipelines that the US could never fully disrupt.",
+            "year": 1965,
+            "distractors": [
+              "1,500 km",
+              "5,000 km",
+              "30,000 km"
             ]
           }
         ]
@@ -2206,6 +2350,30 @@ export const QUIZ_DATA = [
               "Nguyen Co Thach",
               "Xuan Thuy"
             ]
+          },
+          {
+            "id": "q_3_4_s11",
+            "question": "What term describes the collapse of US military discipline where soldiers murdered their own commanding officers to avoid combat?",
+            "answer": "Fragging",
+            "explanation": "Fragging, often using fragmentation grenades, became a symptom of plummeting troop morale and opposition to the war among draftees.",
+            "year": 1970,
+            "distractors": [
+              "Mutiny bombing",
+              "Grenading",
+              "Red lining"
+            ]
+          },
+          {
+            "id": "q_3_4_s12",
+            "question": "What was the code name of the secret bombing campaign of Cambodia ordered by President Nixon in 1969?",
+            "answer": "Operation Menu",
+            "explanation": "Operation Menu was a series of secret bombings targeting North Vietnamese sanctuaries in neutral Cambodia, hidden from the US public and Congress.",
+            "year": 1969,
+            "distractors": [
+              "Operation Breakfast",
+              "Operation Arc Light",
+              "Operation Linebacker"
+            ]
           }
         ],
         "depth": [
@@ -2267,6 +2435,30 @@ export const QUIZ_DATA = [
               "Tet Offensive",
               "Christmas Offensive",
               "Vietnamisation Test Drive"
+            ]
+          },
+          {
+            "id": "q_3_4_d6",
+            "question": "How many US and ARVN ground troops were committed to the ground invasion of Cambodia in April 1970?",
+            "answer": "30,000 troops",
+            "explanation": "Nixon sent 30,000 troops into Cambodia to clear out communist sanctuaries, triggering massive protests on US college campuses.",
+            "year": 1970,
+            "distractors": [
+              "5,000 troops",
+              "10,000 troops",
+              "100,000 troops"
+            ]
+          },
+          {
+            "id": "q_3_4_d7",
+            "question": "Approximately how many tons of explosives were dropped on North Vietnam during the 1972 Christmas Bombings (Linebacker II)?",
+            "answer": "20,000 tons",
+            "explanation": "Operation Linebacker II saw US B-52 bombers drop over 20,000 tons of bombs on Hanoi and Haiphong, forcing North Vietnam to finalize peace talks.",
+            "year": 1972,
+            "distractors": [
+              "5,000 tons",
+              "50,000 tons",
+              "100,000 tons"
             ]
           }
         ]
@@ -2400,6 +2592,18 @@ export const QUIZ_DATA = [
               "Chet Huntley",
               "David Brinkley"
             ]
+          },
+          {
+            "id": "q_4_1_s11",
+            "question": "How many unarmed students were shot and killed by National Guardsmen at Kent State University in May 1970?",
+            "answer": "Four",
+            "explanation": "The killing of four students at Kent State during protests against the Cambodian invasion shocked the nation and triggered massive strikes.",
+            "year": 1970,
+            "distractors": [
+              "Two",
+              "Six",
+              "Ten"
+            ]
           }
         ],
         "depth": [
@@ -2461,6 +2665,18 @@ export const QUIZ_DATA = [
               "Neil Sheehan",
               "Anthony Russo",
               "Arthur Ochs Sulzberger"
+            ]
+          },
+          {
+            "id": "q_4_1_d6",
+            "question": "What was the scale of the nationwide student strike triggered by the Kent State shootings in May 1970?",
+            "answer": "Over 2 million students strike across 400 campuses",
+            "explanation": "The shootings galvanized the student anti-war movement, leading to a massive strike of over two million students and closing hundreds of colleges.",
+            "year": 1970,
+            "distractors": [
+              "100,000 students strike",
+              "500,000 students strike",
+              "5 million students strike"
             ]
           }
         ]
@@ -2650,6 +2866,18 @@ export const QUIZ_DATA = [
               "The collapse of the United Nations coalition and loss of European allies",
               "A direct Soviet military invasion of other non-communist countries in Asia"
             ]
+          },
+          {
+            "id": "q_4_2_d6",
+            "question": "Approximately how many construction workers charged and attacked student anti-war protesters during the 1970 Hard Hat Riot?",
+            "answer": "200 workers",
+            "explanation": "About 200 construction workers wearing hard hats attacked student protesters in Lower Manhattan, demonstrating working-class support for Nixon's policies.",
+            "year": 1970,
+            "distractors": [
+              "50 workers",
+              "500 workers",
+              "1,000 workers"
+            ]
           }
         ]
       },
@@ -2775,6 +3003,30 @@ export const QUIZ_DATA = [
               "24th Amendment",
               "25th Amendment",
               "27th Amendment"
+            ]
+          },
+          {
+            "id": "q_4_3_s11",
+            "question": "Approximately how many American military personnel lost their lives in the Vietnam War?",
+            "answer": "58,000",
+            "explanation": "The human cost for the United States was high, with over 58,000 American soldiers killed during the conflict.",
+            "year": 1973,
+            "distractors": [
+              "25,000",
+              "100,000",
+              "250,000"
+            ]
+          },
+          {
+            "id": "q_4_3_s12",
+            "question": "What was the approximate total financial cost of the Vietnam War to the US government?",
+            "answer": "Between $167 billion and $170 billion",
+            "explanation": "The war cost the US around $167-$170 billion, triggering severe inflation and deficits, and forcing cuts to domestic social programs.",
+            "year": 1975,
+            "distractors": [
+              "$10 billion",
+              "$50 billion",
+              "$500 billion"
             ]
           }
         ],
@@ -2976,6 +3228,18 @@ export const QUIZ_DATA = [
               "Stock market collapse",
               "Severe trade deficits"
             ]
+          },
+          {
+            "id": "q_4_4_s11",
+            "question": "Approximately how much financial and military aid did the Soviet Union and China provide to North Vietnam annually?",
+            "answer": "Over $3 billion",
+            "explanation": "Communist superpowers provided North Vietnam with over $3 billion in aid, enabling them to resist US military pressure and supply their forces.",
+            "year": 1970,
+            "distractors": [
+              "$100 million",
+              "$500 million",
+              "$10 billion"
+            ]
           }
         ],
         "depth": [
@@ -3037,6 +3301,18 @@ export const QUIZ_DATA = [
               "Its refusal to accept any economic or military aid from western allies",
               "Its decision to outlaw all political parties except the ruling military junta",
               "Its failure to build any public schools, roads, or clinics in the countryside"
+            ]
+          },
+          {
+            "id": "q_4_4_d6",
+            "question": "What was the average age of a US combat soldier in Vietnam, which contributed to low morale and inexperience?",
+            "answer": "19 years old",
+            "explanation": "Unlike World War II (where the average age was 26), the average US soldier in Vietnam was just 19 years old, young, and often draft-conscripted.",
+            "year": 1968,
+            "distractors": [
+              "21 years old",
+              "24 years old",
+              "26 years old"
             ]
           }
         ]

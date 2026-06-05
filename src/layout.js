@@ -1549,6 +1549,58 @@ function bindEvents() {
     });
   }
 
+  const contrastToggle = document.getElementById('settings-contrast-toggle');
+  if (contrastToggle) {
+    contrastToggle.addEventListener('change', (e) => {
+      AudioEngine.play('click');
+      const isHigh = e.target.checked;
+      if (isHigh) {
+        document.documentElement.setAttribute('data-contrast', 'high');
+        localStorage.setItem('edexcel_prefs_contrast', 'high');
+      } else {
+        document.documentElement.setAttribute('data-contrast', 'normal');
+        localStorage.setItem('edexcel_prefs_contrast', 'normal');
+      }
+    });
+  }
+
+  // Accessibility Keyboard Shortcuts for Flashcards
+  window.addEventListener('keydown', (e) => {
+    if (state.currentView === 'flashcards') {
+      const completionCard = document.querySelector('.flashcard-completion-card');
+      if (completionCard) return;
+
+      // Ignore keydown if the user is typing in a text area or input field
+      if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        flipFlashcard();
+      } else if (e.key === 'ArrowLeft') {
+        const incorrectBtn = document.getElementById('btn-flashcard-incorrect');
+        if (incorrectBtn && incorrectBtn.style.display !== 'none' && !state.flashcardSession.reinforcing) {
+          e.preventDefault();
+          handleFlashcardGrade(false);
+        }
+      } else if (e.key === 'ArrowRight') {
+        const correctBtn = document.getElementById('btn-flashcard-correct');
+        if (correctBtn && correctBtn.style.display !== 'none' && !state.flashcardSession.reinforcing) {
+          e.preventDefault();
+          handleFlashcardGrade(true);
+        }
+      } else if (state.flashcardSession.reinforcing && ['1', '2', '3', '4'].includes(e.key)) {
+        e.preventDefault();
+        const optionBtns = document.querySelectorAll('.flashcard-mcq-option');
+        const optIdx = parseInt(e.key) - 1;
+        if (optionBtns[optIdx]) {
+          optionBtns[optIdx].click();
+        }
+      }
+    }
+  });
+
   function applyLoadedSettings() {
     const savedScale = localStorage.getItem('edexcel_prefs_fontsize');
     if (savedScale) {
@@ -1569,6 +1621,15 @@ function bindEvents() {
       }
     } else {
       state.audioVolume = 0.8;
+    }
+
+    const savedContrast = localStorage.getItem('edexcel_prefs_contrast');
+    if (savedContrast === 'high') {
+      document.documentElement.setAttribute('data-contrast', 'high');
+      if (contrastToggle) contrastToggle.checked = true;
+    } else {
+      document.documentElement.setAttribute('data-contrast', 'normal');
+      if (contrastToggle) contrastToggle.checked = false;
     }
   }
   

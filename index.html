@@ -1264,7 +1264,7 @@
                 <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Edexcel Paper 3: Exam Technique Guide
               </h2>
               <p class="exam-skills-desc" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin: 0;">
-                Master the exact recipe for every question type in the GCSE USA (1954–75) Depth Study. Select a question type below to reveal structure frames, timing guides, and model templates.
+                Master the exact recipe for every question type in the GCSE USA (1954–75) Depth Study. The total exam length is 1 hour and 30 minutes (90 minutes). Select a question type below to reveal structure frames, timing guides, and model templates.
               </p>
             </div>
 
@@ -1304,7 +1304,7 @@
                     <i class="fa-solid fa-pen-nib" style="color: var(--primary); font-size: 1.1rem;"></i>
                     <span>Question 2: Causation Essay (12 Marks)</span>
                   </div>
-                  <span style="background: var(--primary-glow); color: var(--primary); font-size: 0.72rem; padding: 4px 10px; border-radius: 20px; font-weight: 700; border: 1px solid rgba(37,99,235,0.2);">18 Mins</span>
+                  <span style="background: var(--primary-glow); color: var(--primary); font-size: 0.72rem; padding: 4px 10px; border-radius: 20px; font-weight: 700; border: 1px solid rgba(37,99,235,0.2);">20 Mins</span>
                 </summary>
                 <div style="padding: 20px; border-top: 1px solid var(--border-glass); background: rgba(0, 0, 0, 0.15); display: flex; flex-direction: column; gap: 14px;">
                   <div>
@@ -1413,7 +1413,7 @@
                     <i class="fa-solid fa-circle-check" style="color: var(--primary); font-size: 1.1rem;"></i>
                     <span>Question 3d: Interpretation Essay (16 + 4 Marks)</span>
                   </div>
-                  <span style="background: var(--primary-glow); color: var(--primary); font-size: 0.72rem; padding: 4px 10px; border-radius: 20px; font-weight: 700; border: 1px solid rgba(37,99,235,0.2);">25 Mins</span>
+                  <span style="background: var(--primary-glow); color: var(--primary); font-size: 0.72rem; padding: 4px 10px; border-radius: 20px; font-weight: 700; border: 1px solid rgba(37,99,235,0.2);">35 Mins</span>
                 </summary>
                 <div style="padding: 20px; border-top: 1px solid var(--border-glass); background: rgba(0, 0, 0, 0.15); display: flex; flex-direction: column; gap: 14px;">
                   <div>
@@ -1444,7 +1444,7 @@
                 <i class="fa-solid fa-file-invoice" style="color: var(--primary);"></i> Past Exam Papers & Mock Generator
               </h2>
               <p class="exam-skills-desc" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin: 0;">
-                Select an official Edexcel GCSE past paper from the archive, or generate a randomized full mock exam. Draft your responses in the textareas, toggle educator clues to guide your writing, and check your work against the official model answers.
+                Select an official Edexcel GCSE past paper from the archive, or generate a randomized full mock exam (designed for the 1 hour 30 minutes exam limit). Draft your responses in the textareas, toggle educator clues to guide your writing, and check your work against the official model answers.
               </p>
             </div>
 
@@ -1640,8 +1640,7 @@
 
 
   <!-- Scripts -->
-  <script src="questions.js"></script>
-  <script src="app.js"></script>
+  <script type="module" src="src/main.js"></script>
   <script>
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
@@ -1727,6 +1726,29 @@
             <span id="settings-volume-percent" style="font-size: 0.8rem; font-weight: 700; color: var(--text-main); width: 35px; text-align: right;">80%</span>
           </div>
           <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 4px; display: block;">Applies to both click/cheer effects and Speech Synthesis (TTS).</span>
+        </div>
+
+        <!-- High Contrast Mode Setting -->
+        <div class="settings-section" style="border-top: 1px solid var(--border-glass); padding-top: 20px;">
+          <div class="settings-toggle-row">
+            <label class="settings-label" style="margin-bottom: 0;"><i class="fa-solid fa-circle-half-stroke"></i> High Contrast Mode</label>
+            <label class="switch-control">
+              <input type="checkbox" id="settings-contrast-toggle">
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+          <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 6px; display: block;">Removes gradients and translucent overlays, replacing them with solid high-contrast borders and backgrounds for outdoor reading.</span>
+        </div>
+
+        <!-- Keyboard Shortcuts Guide -->
+        <div class="settings-section" style="border-top: 1px solid var(--border-glass); padding-top: 20px;">
+          <label class="settings-label"><i class="fa-solid fa-keyboard"></i> Keyboard Study Controls</label>
+          <ul style="font-size: 0.78rem; color: var(--text-muted); padding-left: 18px; margin: 0; line-height: 1.6; display: flex; flex-direction: column; gap: 6px;">
+            <li><kbd style="background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: monospace; border: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-main);">Space</kbd> or <kbd style="background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: monospace; border: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-main);">Enter</kbd> : Flip flashcard</li>
+            <li><kbd style="background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: monospace; border: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-main);">← Left Arrow</kbd> : Mark "Study Again"</li>
+            <li><kbd style="background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: monospace; border: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-main);">→ Right Arrow</kbd> : Mark "Got It!"</li>
+            <li><kbd style="background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: monospace; border: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-main);">1</kbd>, <kbd style="background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: monospace; border: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-main);">2</kbd>, <kbd style="background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: monospace; border: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-main);">3</kbd>, <kbd style="background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: monospace; border: 1px solid var(--border-glass); font-size: 0.75rem; color: var(--text-main);">4</kbd> : Select reinforcement MCQ options</li>
+          </ul>
         </div>
       </div>
     </div>

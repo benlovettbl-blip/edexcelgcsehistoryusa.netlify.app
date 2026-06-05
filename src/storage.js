@@ -65,6 +65,35 @@ export function initData() {
   const sidebarThemeSelector = document.getElementById('sidebar-theme-selector');
   if (sidebarThemeSelector) sidebarThemeSelector.value = state.theme;
   updateSoundBtnUI();
+
+  // Load and apply accessibility preferences on startup
+  try {
+    const storedFontSize = localStorage.getItem('edexcel_prefs_fontsize');
+    if (storedFontSize) {
+      document.documentElement.style.fontSize = `${parseFloat(storedFontSize) * 100}%`;
+      const fontBtns = document.querySelectorAll('.font-scale-btn');
+      fontBtns.forEach(btn => {
+        if (btn.getAttribute('data-scale') === storedFontSize) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    const storedContrast = localStorage.getItem('edexcel_prefs_contrast');
+    if (storedContrast === 'high') {
+      document.documentElement.setAttribute('data-contrast', 'high');
+      const contrastToggle = document.getElementById('settings-contrast-toggle');
+      if (contrastToggle) contrastToggle.checked = true;
+    } else {
+      document.documentElement.setAttribute('data-contrast', 'normal');
+      const contrastToggle = document.getElementById('settings-contrast-toggle');
+      if (contrastToggle) contrastToggle.checked = false;
+    }
+  } catch (e) {
+    console.error("Accessibility preferences initialization error:", e);
+  }
 }
 
 export function saveProgress() {

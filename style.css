@@ -7633,7 +7633,6 @@ details > summary::marker {
   from { transform: translateX(100%); }
   to { transform: translateX(0); }
 }
-
 /* Custom class for speaker icon hover pulse */
 .tts-speak-btn, .journey-tts-btn {
   transition: all 0.2s ease;
@@ -7644,5 +7643,139 @@ details > summary::marker {
   transform: scale(1.2);
 }
 
+/* --- High Contrast Accessibility Theme Overrides --- */
+[data-contrast="high"] {
+  /* Remove transparency and blur from glassmorphic backgrounds */
+  --bg-card: #000000 !important;
+  --bg-card-hover: #111827 !important;
+  --bg-sidebar: #020617 !important;
+  --bg-app: #030712 !important;
 
+  /* Standardize high-contrast borders and active selections */
+  --border-glass: #ffffff !important;
+  --border-active: #3b82f6 !important;
+  
+  /* Guarantee bright/dark contrasts */
+  --text-main: #ffffff !important;
+  --text-muted: #e5e7eb !important;
+  
+  /* Thicker, high-visibility borders for interactive cards and panels */
+  border-width: 2px !important;
+}
 
+/* Specific theme overrides under high contrast mode */
+[data-theme="desert"][data-contrast="high"] {
+  --bg-app: #ffffff !important;
+  --bg-sidebar: #f3f4f6 !important;
+  --bg-card: #ffffff !important;
+  --bg-card-hover: #e5e7eb !important;
+  --border-glass: #000000 !important;
+  --border-active: #1e3a8a !important;
+  --text-main: #000000 !important;
+  --text-muted: #1f2937 !important;
+  
+  /* Text highlight adjustments for desert high-contrast readability */
+  --color-quote-text: #7c2d12 !important;
+  --color-quote-bg: #ffedd5 !important;
+  --color-quote-i1-text: #1e3a8a !important;
+  --color-quote-i1-bg: #dbeafe !important;
+  --color-quote-i2-text: #064e3b !important;
+  --color-quote-i2-bg: #d1fae5 !important;
+  --color-knowledge-text: #064e3b !important;
+  --color-knowledge-bg: #d1fae5 !important;
+  --color-provenance-text: #581c87 !important;
+  --color-provenance-bg: #f3e8ff !important;
+}
+
+[data-theme="midnight"][data-contrast="high"],
+[data-theme="teal"][data-contrast="high"] {
+  --bg-app: #000000 !important;
+  --bg-sidebar: #0f172a !important;
+  --bg-card: #000000 !important;
+  --bg-card-hover: #1e293b !important;
+  --border-glass: #ffffff !important;
+  --border-active: #3b82f6 !important;
+  --text-main: #ffffff !important;
+  --text-muted: #f3f4f6 !important;
+
+  /* Text highlight adjustments for dark high-contrast readability */
+  --color-quote-text: #fdba74 !important;
+  --color-quote-bg: #431407 !important;
+  --color-quote-i1-text: #93c5fd !important;
+  --color-quote-i1-bg: #1e3a8a !important;
+  --color-quote-i2-text: #86efac !important;
+  --color-quote-i2-bg: #064e3b !important;
+  --color-knowledge-text: #86efac !important;
+  --color-knowledge-bg: #064e3b !important;
+  --color-provenance-text: #d8b4fe !important;
+  --color-provenance-bg: #581c87 !important;
+}
+
+/* Force solid styling and outlines under high contrast mode */
+[data-contrast="high"] .stat-card,
+[data-contrast="high"] .dashboard-panel,
+[data-contrast="high"] .topic-list-card,
+[data-contrast="high"] .mcq-option-btn,
+[data-contrast="high"] .flashcard-card,
+[data-contrast="high"] .exam-question-block,
+[data-contrast="high"] .details-collapse,
+[data-contrast="high"] .skills-source-card {
+  border: 2px solid var(--border-glass) !important;
+  background-color: var(--bg-card) !important;
+  box-shadow: none !important;
+}
+
+[data-contrast="high"] .mcq-option-btn:hover,
+[data-contrast="high"] .topic-list-card:hover {
+  background-color: var(--bg-card-hover) !important;
+  border-color: var(--border-active) !important;
+}
+
+[data-contrast="high"] .settings-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+/* Toggle Switch Styling */
+.switch-control {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+.switch-control input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: .3s;
+  border-radius: 24px;
+  border: 1px solid var(--border-glass);
+}
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--text-main);
+  transition: .3s;
+  border-radius: 50%;
+}
+input:checked + .switch-slider {
+  background-color: var(--primary);
+}
+input:checked + .switch-slider:before {
+  transform: translateX(24px);
+}
