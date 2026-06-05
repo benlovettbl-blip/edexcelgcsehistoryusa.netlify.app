@@ -14,7 +14,9 @@ export const SPEC_CHECKLIST_DATA = {
         "<strong>NAACP:</strong> The National Association for the Advancement of Colored People focused on legal challenges to segregation, led by Thurgood Marshall.",
         "<strong>CORE:</strong> The Congress of Racial Equality pioneered non-violent direct action, organizing early sit-ins and boycotts."
       ]
-    },
+    }
+  ],
+  "subtopic_1_2": [
     {
       "point": "Reasons for, key features and significance of the Brown v. Topeka case (1954).",
       "keyFacts": [
@@ -22,9 +24,7 @@ export const SPEC_CHECKLIST_DATA = {
         "<strong>Doctrine Overturned:</strong> The court declared that separate educational facilities are 'inherently unequal,' dismantling the constitutional basis for Jim Crow.",
         "<strong>Southern Resistance:</strong> Southern politicians signed the 'Southern Manifesto' and formed White Citizens' Councils to delay and block school integration."
       ]
-    }
-  ],
-  "subtopic_1_2": [
+    },
     {
       "point": "Reasons for, key features and significance of the events at Little Rock High School (1957).",
       "keyFacts": [

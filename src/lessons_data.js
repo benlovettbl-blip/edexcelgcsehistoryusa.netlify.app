@@ -1,387 +1,385 @@
 export const LESSONS_DATA = {
   "subtopic_1_1": {
-    "headerTitle": "KT 1.1 - GCSE CORE MASTERY: How did the Brown v. Topeka school case change America, and was it a success?",
-    "headerIntro": "By 1954, racial segregation in the United States was legally protected under the 1896 Plessy v. Ferguson 'separate but equal' ruling. The NAACP challenged this in court, leading to the landmark May 1954 Brown v. Board of Education decision where the Supreme Court declared school segregation unconstitutional. When Southern school boards stalled, activists took grassroots action. In December 1955, Rosa Parks was arrested for refusing to yield her seat on a Montgomery bus, sparking a 381-day bus boycott led by a young Martin Luther King Jr. that ultimately forced the Supreme Court to declare segregated transit unlawful in late 1956.",
-    "steps": [
-      {
-        "title": "Step 1: Southern Segregation & Civil Rights Organisations",
-        "isSplit": true,
-        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In the early 1950s, Black Americans in the Southern states faced legal segregation and systemic discrimination:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Enforced strict de jure segregation in public accommodations, transit, and schools. Facilities were separate but rarely equal.</li>\n              <li><strong>Voting Disenfranchisement:</strong> Southern states used literacy tests, poll taxes, and threats of violence to prevent Black Americans from registering. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Civil Rights Organisations:</strong> The <strong>NAACP</strong> (National Association for the Advancement of Colored People) fought segregation through legal battles led by lawyers like Thurgood Marshall. Simultaneously, <strong>CORE</strong> (Congress of Racial Equality), founded in 1942, pioneered non-violent direct action tactics, such as early boycotts and sit-ins.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus: Jim Crow</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              Always emphasize that segregation was legally enforced by state laws in the South, creating systemic barriers in education, employment, and the ballot box.\n            </p>\n          </div>\n        </div>",
-        "scholarlyDepth": {
-          "title": "Scholarly Perspective: Legalism vs. Direct Action",
-          "body": "Historians debate whether the legal triumphs of the NAACP (like the Brown case) or direct action campaigns were more important. Top-down legal historians emphasize the constitutional basis provided by litigation, while grassroots scholars argue that bottom-up local activism was the true engine of change."
-        }
-      },
-      {
-        "title": "Step 2: The Legal Battle - Brown v. Board of Education (1954)",
-        "isSplit": false,
-        "bodyHtml": "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\r\n        <ul>\r\n          <li><strong>The Ruling:</strong> Led by Chief Justice Earl Warren, the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>.</li>\r\n          <li><strong>Plessy Overturned & Precedents:</strong> Overturned the 1896 'separate but equal' doctrine, building on precedents like <strong>Sweatt v. Painter (1950)</strong>.</li>\r\n          <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' to resist integration. In 1955, the Court issued **Brown II**, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\r\n        </ul>",
-        "scholarlyDepth": {
-          "title": "Scholarly Perspective: Warren's Unanimity Strategy",
-          "body": "Chief Justice Earl Warren spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public.",
-          "image": "assets/sources/warren-court-1954.jpg",
-          "imageAlt": "Scholarly Perspective: Warren's Unanimity Strategy",
-          "imageProvenance": "A formal group portrait of the members of the Warren Court, the Supreme Court of the United States, taken in Washington D.C., 1954."
-        }
+  "headerTitle": "KT 1.1 - GCSE CORE MASTERY: What was the position of Black Americans in the early 1950s?",
+  "headerIntro": "In the early 1950s, Black Americans in the Southern states lived under the oppressive system of Jim Crow. Racial segregation was legally enforced by state laws, and voting rights were systematically denied through arbitrary tests and economic terror. To fight this institutionalised inequality, civil rights organisations deployed different strategies: the NAACP used legal litigation in federal courts, while CORE pioneered non-violent direct action protests.",
+  "steps": [
+    {
+      "title": "Step 1: Southern Segregation, Discrimination & Voting Rights",
+      "isSplit": true,
+      "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In the early 1950s, Black Americans in the Southern states faced a rigid, legally enforced system of white supremacy:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Southern states enforced <em>de jure</em> segregation in all public facilities (schools, transit, parks). Under the 1896 <em>Plessy v. Ferguson</em> ruling, segregation was legal if facilities were 'separate but equal' (though Black facilities were always vastly inferior).</li>\n              <li><strong>Voter Disenfranchisement:</strong> Southern registrars prevented Black citizens from voting using poll taxes, arbitrary literacy tests (e.g. asking Black applicants to explain complex constitutional clauses or answer impossible questions like <em>\"How many bubbles are in a bar of soap?\"</em>), and threats of violence. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Daily Discrimination:</strong> Segregated bus layouts forced Black passengers to pay at the front, exit, and re-enter via the back door. Black workers faced the 'last hired, first fired' policy, keeping them in low-wage menial labor.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus: Jim Crow Seating</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              Be prepared to explain how legal segregation was physically enforced in daily transit—such as Black passengers standing so white riders could sit—which created a climate of constant humiliation.\n            </p>\n          </div>\n        </div>",
+      "scholarlyDepth": {
+        "title": "Scholarly Perspective: De Jure vs. De Facto",
+        "body": "While de jure (legal) segregation defined the South, historians note that Black Americans in the North faced de facto segregation. Although Northern Black citizens had the right to vote, they were restricted to overcrowded ghettos by informal housing discrimination (redlining) and faced severe employment bias, showing that discrimination was a national, rather than solely Southern, issue."
       }
-    ],
-    "dualPerspective": {
-      "leftHeadline": "A Vital Legal Breakthrough",
-      "leftText": "The Brown ruling was a monumental victory for justice, proving that the legal system could dismantle institutional segregation and inspiring a generation of activists to demand civil rights in other public spaces.",
-      "rightHeadline": "A Violent Incursion on States' Rights",
-      "rightText": "Southern segregationists viewed the ruling as an abuse of federal power and a direct violation of states' rights, arguing that local communities should decide their own social and educational arrangements.",
-      "neutralTitle": "⚖️ Dual Interpretation: The Impact of Brown v. Board (1954)",
-      "leftLabel": "NAACP Activists",
-      "rightLabel": "Dixiecrats",
-      "tipHtml": "<div class=\"examiner-tip-box\" style=\"margin-top: 18px; margin-bottom: 0;\">\r\n        <span class=\"tip-icon\">💡</span>\r\n        <div>\r\n          <strong>Paper 3 Interpretation Skill:</strong> In your 16-mark essay, you must analyze why historians arrive at different interpretations of the Civil Rights movement's successes.\r\n        </div>"
     },
-    "causalLinks": {
-      "question": "Explain why the Brown v. Board of Education decision (1954) was a turning point for desegregation.",
-      "successText": "Excellent causal linkage! Overturning Plessy v. Ferguson dismantled segregation's constitutional basis, while Southern white backlash led to organized resistance that forced federal enforcement later on.",
-      "factors": [
-        {
-          "id": "s11_f1",
-          "title": "Supreme Court overturned Plessy v. Ferguson's separate but equal doctrine.",
-          "options": [
-            "This meant segregation in public education became constitutionally unlawful, encouraging litigation in other public sectors.",
-            "This immediately ended all school segregation across the entire South within days of the ruling."
-          ],
-          "correctIndex": 0,
-          "linkageText": "This meant segregation in public education became constitutionally unlawful, encouraging litigation in other public sectors."
-        },
-        {
-          "id": "s11_f2",
-          "title": "Massive white backlash and creation of White Citizens' Councils.",
-          "options": [
-            "Which led civil rights organizations to abandon legal avenues entirely.",
-            "Which showed court rulings alone were insufficient, forcing activists to adopt non-violent direct action to demand enforcement."
-          ],
-          "correctIndex": 1,
-          "linkageText": "Which showed court rulings alone were insufficient, forcing activists to adopt non-violent direct action to demand enforcement."
-        },
-        {
-          "id": "s11_f3",
-          "title": "Grassroots organization of the 381-day Montgomery Bus Boycott.",
-          "options": [
-            "This proved that non-violent direct action and economic pressure could force local authorities to desegregate transport.",
-            "This led to the immediate resignation of President Eisenhower."
-          ],
-          "correctIndex": 0,
-          "linkageText": "This proved that non-violent direct action and economic pressure could force local authorities to desegregate transport."
-        }
-      ]
-    },
-    "knowledgeCheck": [
-      {
-        "question": "In what year did the Montgomery Bus Boycott begin?",
-        "answer": "1955"
-      },
-      {
-        "question": "Who was the chief justice of the Supreme Court during the Brown ruling?",
-        "answer": "Earl Warren"
-      },
-      {
-        "question": "In what year was the Brown v. Board of Education ruling delivered?",
-        "answer": "1954"
-      },
-      {
-        "question": "What 1896 doctrine of segregation was overturned by the Brown v. Board decision?",
-        "answer": "Separate but equal"
-      },
-      {
-        "question": "What does MIA stand for in the context of the Montgomery Bus Boycott?",
-        "answer": "Montgomery Improvement Association"
+    {
+      "title": "Step 2: NAACP Litigation vs. CORE Direct Action",
+      "isSplit": true,
+      "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>Civil rights organisations utilized contrasting strategies to attack white supremacy:</p>\n            <ul>\n              <li><strong>NAACP (Legal Litigation):</strong> Founded in 1909, the NAACP focused on challenging segregation in federal courts. Led by Thurgood Marshall, they targeted legal precedents, winning landmark cases like <em>Smith v. Allwright</em> (1944), which declared white primaries unconstitutional, and <em>Sweatt v. Painter</em> (1950), desegregating law schools.</li>\n              <li><strong>CORE (Direct Action):</strong> Founded in Chicago in 1942, the Congress of Racial Equality was committed to non-violent direct action. Influenced by Gandhi's teachings, CORE activists used sit-ins, boycotts, and early interstate bus rides (the 1947 Journey of Reconciliation) to expose segregation.</li>\n              <li><strong>Competing Philosophies:</strong> NAACP believed that legal change must precede social change, while CORE argued that grassroots direct action was needed to force authorities to enforce federal rulings.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Examiner Tip: Contrasting Strategies</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              GCSE questions often ask you to compare the methods of the NAACP and CORE. Remember to distinguish between top-down legal litigation (NAACP) and bottom-up non-violent direct action (CORE).\n            </p>\n          </div>\n        </div>",
+      "scholarlyDepth": {
+        "title": "Scholarly Perspective: Legalism vs. Direct Action",
+        "body": "Historians debate whether top-down litigation or bottom-up direct action was the true engine of progress. Legal historians argue that the NAACP's court battles established the constitutional basis for civil rights, while grassroots scholars emphasize that without CORE's direct action exposing white resistance, court decisions would have remained unenforced symbols."
       }
-    ],
-    "importanceAnalyser": null,
-    "questionVault": [
+    }
+  ],
+  "dualPerspective": {
+    "leftHeadline": "The Power of Constitutional Law",
+    "leftText": "The only way to dismantle segregation permanently is through federal court rulings that establish binding constitutional precedents. Grassroots actions are easily crushed by local police without federal legal protection.",
+    "rightHeadline": "Direct Action on the Streets",
+    "rightText": "Court rulings are empty promises without mass direct action. By peacefully disobeying segregation laws, we expose the violence of white supremacy to the public and force federal intervention.",
+    "neutralTitle": "⚖️ Dual Interpretation: Challenging Segregation",
+    "leftLabel": "NAACP Leadership",
+    "rightLabel": "CORE Activists",
+    "tipHtml": "<div class=\"examiner-tip-box\" style=\"margin-top: 18px; margin-bottom: 0;\">\n        <span class=\"tip-icon\">💡</span>\n        <div>\n          <strong>Paper 3 Interpretation Skill:</strong> In your 16-mark essay, you must analyze why historians arrive at different interpretations of the Civil Rights movement's successes.\n        </div>"
+  },
+  "causalLinks": {
+    "question": "Explain why Black Americans faced segregation and discrimination in the Southern states in the early 1950s.",
+    "successText": "Excellent causal analysis! You have successfully linked early Southern segregation to its historical causes, including Plessy v. Ferguson's separate but equal doctrine, political disenfranchisement, and white supremacist terror.",
+    "factors": [
       {
-        "question": "Give two things you can infer from Source A about voting rights in the Southern states. (4 marks)",
-        "sourceA": "From a report published in a Northern newspaper in 1954, investigating the situation for Black Americans in the South.\n\n\"In states like Mississippi and Alabama, registering to vote is practically impossible for a Black citizen. They are forced to take 'literacy tests' where they must explain obscure, highly complex constitutional legal terms, while white citizens are simply asked to write their own names. Even if a Black man somehow passes the test, his employer will likely fire him the very next day. The fear is constant.\"",
-        "answer": "Inference 1: I can infer that the voter registration system was deliberately corrupt and rigged in favour of white citizens.\nDetails: \"They are forced to take 'literacy tests' where they must explain obscure, highly complex constitutional legal terms, while white citizens are simply asked to write their own names.\"\nInference 2: I can infer that economic intimidation was used as a weapon to stop Black Americans from trying to vote.\nDetails: \"Even if a Black man somehow passes the test, his employer will likely fire him the very next day.\"",
+        "id": "s11_f1",
+        "title": "The Supreme Court's Plessy v. Ferguson (1896) ruling.",
         "options": [
-          "Voter registration was rigged to be practically impossible, as Black citizens were 'forced to take literacy tests' on complex legal terms.",
-          "Economic intimidation was used to deter voters, as shown by the warning that a Black voter's 'employer will likely fire him the very next day'.",
-          "Federal troops successfully protected registration offices, meaning 'registering to vote' was easy for everyone.",
-          "Literacy tests were simple writing exercises where white citizens had to 'explain obscure constitutional terms'."
+          "This established the 'separate but equal' doctrine, providing legal and constitutional backing for state-level segregation.",
+          "This immediately ordered all Southern states to end Jim Crow segregation."
         ],
-        "correctIndices": [
-          0,
-          1
-        ]
-      }
-    ],
-    "summaryCorrection": {
-      "text": "By the early 1950s, segregation in the Southern states was protected by the [[1918 -> 1896]] Plessy v. Ferguson Supreme Court decision, which established the 'separate and equal' doctrine. In May [[1956 -> 1954]], the Supreme Court ruled in Brown v. Board of Education that segregation in public schools was [[constitutional -> unconstitutional]]. While [[legalistic -> revisionist]] historians argue that court battles alone did little to change daily reality for Black citizens, integrationist historians view Brown as the vital catalyst. Indeed, local action quickly followed when Rosa Parks was arrested in December [[1956 -> 1955]], launching a [[381-day]] bus boycott led by [[Malcolm X -> Martin Luther King Jr.]]. While critics argued the boycott had little national importance, historians now agree it proved that [[violent retaliation -> grassroots non-violent action]] could force local authorities to capitulate."
-    },
-    "howUsefulAnalyser": {
-      "question": "How useful are Sources D and E for an enquiry into the segregation of public facilities and the response of activists in the Southern states in the 1950s? (8 marks)",
-      "sourceD": {
-        "provenance": "A photograph of Rosa Parks being fingerprinted by police officer Alsop after her arrest during the Montgomery Bus Boycott, 22 February 1956.",
-        "content": "[A photograph showing civil rights activist Rosa Parks standing calm and dignified as a police officer in uniform applies ink to her fingers to take her fingerprints.]",
-        "image": "assets/sources/rosa-parks-fingerprint.jpg",
-        "caption": "Rosa Parks being fingerprinted in Montgomery, Alabama, after defying segregation laws."
-      },
-      "sourceE": {
-        "provenance": "A photograph of a segregation sign over a terminal entrance, taken in the Southern United States in the early 1950s.",
-        "content": "[A photograph of a wooden sign reading 'COLORED WAITING ROOM' hanging above an entranceway of a public bus terminal.]",
-        "image": "assets/sources/colored-waiting-room-sign.jpg",
-        "caption": "A typical segregation sign directing Black passengers to separate facilities at a Southern bus station."
-      },
-      "modelAnswer": "Source D is highly useful for showing the response of activists and the direct police criminalization of peaceful protestors in the South. For example, the photograph depicts \"Rosa Parks standing calm and dignified\" while being fingerprinted by a police officer in uniform. This content is highly useful because it is supported by my contextual knowledge that [[Rosa Parks' refusal to give up her seat in December 1955 sparked the Montgomery Bus Boycott, which lasted 381 days and successfully desegregated buses]], which confirms that the photograph is an accurate representation of the active resistance and the direct police intimidation that activists had to overcome in the Southern states. {{The provenance strengthens the source's utility because it was taken on 22 February 1956, during the height of the boycott, making it a reliable, contemporary visual record of the state's attempt to criminalize and intimidate boycott leaders. However, its usefulness is slightly limited because it is a staged publicity photo that only captures a single moment of arrest, failing to show the SCLC's broader legal strategy.}}\n\nSource E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading \"COLORED WAITING ROOM\" hanging above a public entrance. This content's utility is supported by my knowledge that [[Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions]], which confirms that the sign is an accurate representation of how segregation was physically and legally enforced in Southern public spaces. {{The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of state-sanctioned segregation infrastructure. However, it is less useful because it only shows the sign itself, failing to document the personal experiences of the Black passengers who suffered under segregation or the active resistance against it.}}"
-    },
-    "deepThinkingQuestions": [
-      {
-        "id": "dt_1_1_1",
-        "question": "Why was the legal unanimity of the 9-0 Supreme Court decision in Brown v. Board so important politically?",
-        "hint": "Think about Southern resistance and potential loopholes.",
-        "teacherGuide": "Unanimity (9-0) was crucial because it prevented Southern segregationists from claiming the court was divided or exploiting dissenting opinions as legal loopholes. It sent an unequivocal moral and constitutional message of federal authority."
+        "correctIndex": 0,
+        "linkageText": "This established the 'separate but equal' doctrine, providing legal and constitutional backing for state-level segregation."
       },
       {
-        "id": "dt_1_1_2",
-        "question": "How did the Montgomery Bus Boycott demonstrate the effectiveness of economic pressure as a non-violent protest tactic?",
-        "hint": "Think about the percentage of riders who boycotted and bus company revenues.",
-        "teacherGuide": "Since Black passengers made up over 70% of transit riders, their unified boycott directly threatened the bus company with bankruptcy. This proved that moral arguments were most effective when combined with severe financial leverage."
-      }
-    ],
-    "doNowStarter": {
-      "prevSubtopicId": null,
-      "prevSubtopicTitle": null,
-      "image": "assets/sources/colored-waiting-room-sign.jpg",
-      "provenance": "A Jim Crow sign designating a segregated 'Colored Waiting Room' in a bus terminal in the Southern United States, circa 1950s.",
-      "seeThinkWonder": {
-        "see": "Observe the bold letters and the physical placement of the sign near public entrances.",
-        "think": "Why did Southern states legislate separation down to waiting rooms, water fountains, and ticket windows?",
-        "wonder": "What would be the emotional and economic cost of defying this sign as a Black traveler in the 1950s?"
+        "id": "s11_f2",
+        "title": "Systematic disenfranchisement of Black voters in the South.",
+        "options": [
+          "Which meant Black citizens could not vote for sympathetic politicians or sit on juries to challenge racist local laws.",
+          "Which allowed civil rights groups to take control of Southern state legislatures."
+        ],
+        "correctIndex": 0,
+        "linkageText": "Which meant Black citizens could not vote for sympathetic politicians or sit on juries to challenge racist local laws."
       },
-      "bronze": "Define 'segregation' and name the landmark 1896 Supreme Court ruling that legalized it under the 'separate but equal' doctrine.",
-      "silver": "Explain how the Supreme Court's decision in Brown v. Board of Education (1954) led to a demand for school integration in the South.",
-      "gold": "Explain how this visual source demonstrates the limitations of civil liberties and constitutional rights for Black Americans in the South in the early 1950s.",
-      "keywords": [
-        "Jim Crow",
-        "Plessy v. Ferguson",
-        "Segregation",
-        "14th Amendment"
-      ],
-      "bronzeAnswer": "Segregation is the enforced separation of different racial groups in a country, community, or establishment. The 1896 ruling that legalized this was Plessy v. Ferguson.",
-      "silverAnswer": "The Supreme Court ruled that separate schools were unequal and unconstitutional. This decision gave civil rights lawyers the legal power to demand that all-white schools admit Black students.",
-      "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment.",
-      "enquiry": "segregation and discrimination in the Southern states in the 1950s"
-    },
-    "specPoints": [
-      "Segregation, discrimination and voting rights in the Southern states.",
-      "The work of civil rights organisations, including the NAACP and CORE.",
-      "Reasons for, key features and significance of the Brown v. Topeka case (1954)."
-    ],
-    "lessonWrapUp": {
-      "summary": "In the early 1950s, Southern Black Americans faced legal segregation under Jim Crow and systemic disenfranchisement. The NAACP challenged this legally, culminating in the 1954 Brown v. Topeka Supreme Court ruling that unconstitutionalized segregated schools, overturning the 1896 Plessy v. Ferguson 'separate but equal' doctrine.",
-      "interpretation": "Orthodox historians view Brown as a monumental triumph that destroyed segregation's legal legitimacy. However, revisionist historians highlight that without local and federal enforcement, the decision was largely a symbolic victory in the short term.",
-      "discussionQuestion": "To what extent was the legal strategy of the NAACP more effective than the non-violent direct action tactics pioneered by CORE in the early 1950s?"
-    },
-    "mapConfig": {
-      "type": "usa",
-      "title": "Topeka (Kansas) & Montgomery (Alabama)",
-      "highlightedPoints": [
-        "topeka",
-        "montgomery"
-      ],
-      "description": "The landmark Brown v. Topeka case (1954) was launched in Kansas, challenging school segregation in the Midwest. In December 1955, the Montgomery Bus Boycott erupted in Alabama, shifting the movement's focus to non-violent direct action in the Deep South.",
-      "points": {
-        "topeka": {
-          "title": "Topeka, Kansas",
-          "text": "Linda Brown challenged segregation here, leading to the 1954 Brown v. Board ruling."
-        },
-        "montgomery": {
-          "title": "Montgomery, Alabama",
-          "text": "Rosa Parks' arrest sparked the 381-day transit boycott led by Martin Luther King Jr."
-        }
+      {
+        "id": "s11_f3",
+        "title": "Resurgence of the Ku Klux Klan and grassroots white terror.",
+        "options": [
+          "This created a climate of fear, using bombings and lynchings to suppress Black political and social activism.",
+          "This forced the federal government to immediately deploy troops to desegregate the South."
+        ],
+        "correctIndex": 0,
+        "linkageText": "This created a climate of fear, using bombings and lynchings to suppress Black political and social activism."
       }
-    }
+    ]
   },
-  "subtopic_1_2": {
-    "headerTitle": "KT 1.2 - GCSE CORE MASTERY: Why was the integration of Little Rock Central High School such a big struggle?",
-    "headerIntro": "Following the 1954 Brown decision, the battleground shifted to local enforcement. In September 1957, Central High School in Little Rock, Arkansas, became a focal point when Governor Orval Faubus defied federal orders and deployed the Arkansas National Guard to block nine Black students from enrolling. Amid violent white mobs, President Eisenhower took the historic step of federalizing the state Guard and deploying the elite 101st Airborne Division. For the first time since Reconstruction, federal troops protected Black constitutional rights in the South, escorting the Little Rock Nine to class daily.",
-    "steps": [
-      {
-        "title": "Step 1: The Crisis at Little Rock (1957)",
-        "isSplit": false,
-        "bodyHtml": "<p>In September 1957, desegregation was put to the test at Central High School in Little Rock, Arkansas:</p>\r\n        <ul>\r\n          <li><strong>The Nine Students & Daisy Bates:</strong> Nine Black students, organized and mentored by Arkansas NAACP leader <strong>Daisy Bates</strong>, attempted to enroll at the previously all-white school.</li>\r\n          <li><strong>State Interference:</strong> Governor Orval Faubus defied federal court orders, calling in the state's National Guard to block the Black students from entering.</li>\r\n          <li><strong>Mob Violence:</strong> Angry white mobs gathered outside. 15-year-old **Elizabeth Eckford** arrived alone and faced the screaming crowd, a moment captured in photographs that shocked the world.</li>\r\n        </ul>",
-        "scholarlyDepth": {
-          "title": "Scholarly Perspective: The Media and the Crisis",
-          "body": "Little Rock was the first civil rights crisis to be broadcast on national television. The images of angry white mobs screaming at the dignified Little Rock Nine shocked northern viewers. Harry Ashmore, the editor of the local Arkansas Gazette, won a Pulitzer Prize for his editorials calling for compliance with the law, despite facing a massive advertising boycott from segregationists.",
-          "image": "assets/sources/eisenhower-little-rock-speech.jpg",
-          "imageAlt": "Scholarly Perspective: The Media and the Crisis",
-          "imageProvenance": "A photograph of President Dwight D. Eisenhower giving a televised address from the White House, explaining his decision to send federal troops to Little Rock, Arkansas, 24 September 1957."
-        }
-      },
-      {
-        "title": "Step 2: Federal Intervention & Aftermath",
-        "isSplit": true,
-        "bodyHtml": "<div class=\"mastery-text-column\">\r\n          <div class=\"mastery-card-body card-content\">\r\n            <p>To enforce the law, President Dwight D. Eisenhower was forced to take unprecedented federal action:</p>\r\n            <ul>\r\n              <li><strong>Federal Troops:</strong> Eisenhower federalised the Arkansas National Guard and sent <strong>1,000 soldiers</strong> of the elite <strong>101st Airborne Division</strong> to protect the students.</li>\r\n              <li><strong>Daily Escorts:</strong> Soldiers escorted and guarded the Little Rock Nine inside the school corridors, demonstrating that the federal government would physically enforce desegregation.</li>\r\n              <li><strong>The 'Lost Year' (1958-59):</strong> Governor Faubus closed all four Little Rock high schools the following year to prevent further integration. Over <strong>70%</strong> of white voters backed this closure in a local referendum, leaving 4,000 students without education.</li>\r\n            </ul>\r\n          </div>\r\n        </div>\r\n        <div class=\"mastery-media-column\">\r\n          <div class=\"lesson-image-wrapper\">\r\n            <img src=\"assets/sources/little-rock-nine-1957.jpg\" alt=\"The Little Rock Nine entering Central High School under soldier escort\" class=\"lesson-source-img\" />\r\n            <div class=\"lesson-image-caption\">The Little Rock Nine entering Central High School in September 1957, protected by soldiers of the 101st Airborne Division.</div>\r\n          </div>\r\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;\">\r\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus: Little Rock</strong>\r\n            <p style=\"color: var(--text-muted); margin: 0;\">\r\n              The Little Rock crisis was the first time since the Civil War that federal troops were sent to the South to protect the rights of Black Americans. This sent a powerful message of federal authority.\r\n            </p>\r\n          </div>\r\n        </div>",
-        "scholarlyDepth": {
-          "title": "Scholarly Perspective: Cold War Pressures on Eisenhower",
-          "body": "President Eisenhower's decision to send the 101st Airborne was heavily influenced by international relations. During the Cold War, the Soviet Union used images of racial violence in Little Rock as propaganda in Asia and Africa to argue that American democracy was a sham. To maintain US moral authority globally, Eisenhower felt compelled to show that the federal government would enforce constitutional rights by military force."
-        }
-      }
-    ],
-    "dualPerspective": {
-      "leftHeadline": "Defending Constitutional Law",
-      "leftText": "Civil rights leaders argued that desegregation was a federal constitutional mandate, and that Governor Faubus' rebellion against court decisions was an act of treason that required immediate military suppression.",
-      "rightHeadline": "Preventing Federal Tyranny",
-      "rightText": "Southern segregationists and Governor Faubus claimed Eisenhower's troop deployment was an military invasion that violated Arkansas sovereignty and forced social integration against community wishes.",
-      "neutralTitle": "⚖️ Dual Interpretation: Federal Intervention at Little Rock",
-      "leftLabel": "NAACP Leadership",
-      "rightLabel": "Southern Segregationists",
-      "tipHtml": ""
+  "knowledgeCheck": [
+    {
+      "question": "What 1896 Supreme Court ruling legalized segregation under the 'separate but equal' doctrine?",
+      "answer": "Plessy v. Ferguson"
     },
-    "causalLinks": {
-      "question": "Explain why Governor Faubus resisted integration at Central High School in 1957.",
-      "successText": "Excellent! Faubus was politically motivated by white voter support, but Eisenhower was forced to intervene to defend federal authority and suppress public disorder.",
-      "factors": [
-        {
-          "id": "s12_f1",
-          "title": "Governor Faubus faced a tough re-election campaign in Arkansas.",
-          "options": [
-            "This motivated him to align with segregationist voters by publicly blocking the integration of the Little Rock Nine.",
-            "This caused him to actively support civil rights activists to win the Black electorate's votes."
-          ],
-          "correctIndex": 0,
-          "linkageText": "This motivated him to align with segregationist voters by publicly blocking the integration of the Little Rock Nine."
-        },
-        {
-          "id": "s12_f2",
-          "title": "Eisenhower's concern about America's international reputation during the Cold War.",
-          "options": [
-            "This made him reluctant to involve the military, leaving the students unprotected.",
-            "This pressured him to send the 101st Airborne to show that the US system of democracy upheld civil rights."
-          ],
-          "correctIndex": 1,
-          "linkageText": "This pressured him to send the 101st Airborne to show that the US system of democracy upheld civil rights."
-        },
-        {
-          "id": "s12_f3",
-          "title": "The federalization of the Arkansas National Guard by President Eisenhower.",
-          "options": [
-            "Which showed that the federal government was prepared to use military force to enforce Supreme Court rulings on desegregation.",
-            "Which allowed Governor Faubus to ignore federal law indefinitely."
-          ],
-          "correctIndex": 0,
-          "linkageText": "Which showed that the federal government was prepared to use military force to enforce Supreme Court rulings on desegregation."
-        }
+    {
+      "question": "What term refers to Southern state laws that legally enforced racial segregation?",
+      "answer": "Jim Crow"
+    },
+    {
+      "question": "Which civil rights organization, founded in 1909, focused on legal challenges to segregation?",
+      "answer": "NAACP"
+    },
+    {
+      "question": "Which civil rights organization, founded in 1942, pioneered non-violent direct action tactics?",
+      "answer": "CORE"
+    },
+    {
+      "question": "What percentage of eligible Black adults were registered to vote in Mississippi in the early 1950s?",
+      "answer": "5%"
+    }
+  ],
+  "importanceAnalyser": null,
+  "questionVault": [
+    {
+      "question": "Give two things you can infer from Source A about voting rights in the Southern states. (4 marks)",
+      "sourceA": "From a report published in a Northern newspaper in 1954, investigating the situation for Black Americans in the South.\n\n\"In states like Mississippi and Alabama, registering to vote is practically impossible for a Black citizen. They are forced to take 'literacy tests' where they must explain obscure, highly complex constitutional legal terms, while white citizens are simply asked to write their own names. Even if a Black man somehow passes the test, his employer will likely fire him the very next day. The fear is constant.\"",
+      "answer": "Inference 1: I can infer that the voter registration system was deliberately corrupt and rigged in favour of white citizens.\nDetails: \"They are forced to take 'literacy tests' where they must explain obscure, highly complex constitutional legal terms, while white citizens are simply asked to write their own names.\"\nInference 2: I can infer that economic intimidation was used as a weapon to stop Black Americans from trying to vote.\nDetails: \"Even if a Black man somehow passes the test, his employer will likely fire him the very next day.\"",
+      "options": [
+        "Voter registration was rigged to be practically impossible, as Black citizens were 'forced to take literacy tests' on complex legal terms.",
+        "Economic intimidation was used to deter voters, as shown by the warning that a Black voter's 'employer will likely fire him the very next day'.",
+        "Federal troops successfully protected registration offices, meaning 'registering to vote' was easy for everyone.",
+        "Literacy tests were simple writing exercises where white citizens had to 'explain obscure constitutional terms'."
+      ],
+      "correctIndices": [
+        0,
+        1
       ]
-    },
-    "knowledgeCheck": [
-      {
-        "question": "What was the name of the high school integrated in Little Rock?",
-        "answer": "Central High School"
-      },
-      {
-        "question": "Which military division was deployed by Eisenhower?",
-        "answer": "101st Airborne Division"
-      },
-      {
-        "question": "In what year did the Little Rock Central High School integration crisis occur?",
-        "answer": "1957"
-      },
-      {
-        "question": "Who was the Governor of Arkansas who opposed the integration of Central High School?",
-        "answer": "Orval Faubus"
-      },
-      {
-        "question": "Who was the president of the United States who sent the 101st Airborne to Little Rock?",
-        "answer": "Dwight D. Eisenhower"
-      }
-    ],
-    "importanceAnalyser": null,
-    "questionVault": [
-      {
-        "question": "Explain why desegregation in education faced severe resistance in the years 1954–57. (12 marks)",
-        "stimulus1": "Supreme Court rulings (Brown v. Board)",
-        "stimulus2": "Governor Orval Faubus",
-        "clue": "Focus on the political opposition from Southern state governors, the social backlash from White Citizens' Councils and the KKK, and how these groups physically blocked integration in places like Little Rock.",
-        "answer": "“One reason why desegregation in education faced severe resistance in the years 1954–57 was that Southern politicians organized systematic legal and political blockades.” Southern senators signed the [[Southern Manifesto]] in 1956, pledging to resist integration. State governors like [[Orval Faubus]] of Arkansas used state forces like the [[National Guard]] at Little Rock to directly defy federal court orders. {{Therefore, political obstruction by Southern leaders was a major reason why desegregation in education faced severe resistance in the years 1954–57 because it validated local white opposition and delayed federal enforcement.}}\n\n“A second reason why desegregation in education faced severe resistance in the years 1954–57 was the aggressive social backlash and vigilante terror from grassroots segregationist groups.” [[White Citizens' Councils]] were formed to apply economic pressure, firing Black workers who supported integration. The [[Ku Klux Klan]] revived, using bombings, threats, and mob violence at school gates to intimidate the [[Little Rock Nine]]. {{Therefore, grassroots white resistance and vigilante terror were key reasons why desegregation in education faced severe resistance in the years 1954–57 because they made attending integrated schools physically dangerous for Black students.}}\n\n“A third reason why desegregation in education faced severe resistance in the years 1954–57 was the reluctance of the federal government to enforce Supreme Court rulings, which emboldened segregationists.” President Eisenhower initially refused to publicly endorse the [[Brown v. Board of Education]] decision, and only sent the [[101st Airborne Division]] to Little Rock when the governor openly defied federal law. The school board then closed Little Rock high schools in 1958 to avoid integration. {{Therefore, weak federal enforcement and local school board closures were critical reasons why desegregation in education faced severe resistance in the years 1954–57 because they allowed Southern states to evade integration orders for years.}}"
-      }
-    ],
-    "summaryCorrection": {
-      "text": "In September [[1959 -> 1957]], Central High School in Little Rock, Arkansas, became a flashpoint for school integration. Governor Orval Faubus [[supported -> defied]] federal court orders, calling in the state's National Guard to [[protect -> block]] the nine Black students. As white mobs gathered, President [[Truman -> Eisenhower]] reluctantly intervened, sending in the [[US Navy -> 101st Airborne]] to escort the students. Orthodox historians interpret this as a [[hostile attack on -> victory for]] federal authority and civil rights. However, critical historians argue the crisis exposed the weakness of the federal government, highlighting that Eisenhower's delay encouraged Southern whites, leading Faubus to [[fully integrate -> close]] all Little Rock high schools the following year in defiance."
-    },
-    "howUsefulAnalyser": {
-      "question": "How useful are Sources D and E for an enquiry into the levels of opposition to integration at Little Rock Central High School in 1957? (8 marks)",
-      "sourceD": {
-        "provenance": "From a photograph of white protestors gathered outside Central High School in September 1957.",
-        "content": "[A photograph showing an angry white crowd of students and adults protesting. Some are holding signs reading 'Keep Central High Clean' and yelling as Black students arrive.]",
-        "image": "assets/sources/little-rock-protest-1957.jpg",
-        "caption": "Segregationist demonstrators protesting against school integration in Little Rock."
-      },
-      "sourceE": {
-        "provenance": "From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.",
-        "content": "[A photograph showing soldiers of the 101st Airborne Division in a military jeep guarding a station wagon as Black students get inside the vehicle, with another soldier walking on patrol.]",
-        "image": "assets/sources/airborne-little-rock-patrol.jpg",
-        "caption": "Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students."
-      },
-      "modelAnswer": "Source D is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an \"angry white crowd\" of students and adults protesting, with some carrying signs reading \"Keep Central High Clean\". This content is highly useful because it is supported by my contextual knowledge that [[when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school]], which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. {{The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.}}\n\nSource E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows \"soldiers of the 101st Airborne Division in a military jeep guarding a station wagon\" as Black students enter it. This content's usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.}}"
-    },
-    "deepThinkingQuestions": [
-      {
-        "id": "dt_1_2_1",
-        "question": "Why did Governor Faubus choose to defy federal law at Little Rock, and what does this show about Southern state politics?",
-        "hint": "Think about white voter support and upcoming elections.",
-        "teacherGuide": "Faubus needed segregationist votes for re-election. It shows that state governors were willing to trigger constitutional crises and defy federal authority for local political survival."
-      },
-      {
-        "id": "dt_1_2_2",
-        "question": "How did the deployment of the 101st Airborne shift the balance of power between state and federal authorities?",
-        "hint": "Think about executive power and the enforcement of the US Constitution.",
-        "teacherGuide": "It was the first time since Reconstruction that federal forces intervened to protect Black rights. It asserted federal supremacy over state defiance, proving the executive branch would enforce desegregation by military force if necessary."
-      }
-    ],
-    "doNowStarter": {
-      "prevSubtopicId": "subtopic_1_1",
-      "prevSubtopicTitle": "Topic 1.1: Segregation & Brown v. Board",
+    }
+  ],
+  "summaryCorrection": {
+    "text": "By the early 1950s, segregation in the Southern states was protected by the [[1918 -> 1896]] Plessy v. Ferguson Supreme Court decision, which established the 'separate and equal' doctrine. State laws, commonly known as [[Black Codes -> Jim Crow]] laws, enforced segregation in all public facilities. To challenge this, civil rights groups used different methods. The NAACP, founded in [[1942 -> 1909]], focused on [[armed self-defense -> legal litigation]] led by Thurgood Marshall. Meanwhile, CORE, founded in [[1909 -> 1942]], pioneered [[courtroom battles -> non-violent direct action]] like sit-ins. While critics argued legal battles did little on the ground, integrationist historians view early legal wins as the vital catalyst for dismantling segregation."
+  },
+  "howUsefulAnalyser": {
+    "question": "How useful are Sources D and E for an enquiry into the position of Black Americans in the Southern states in the early 1950s? (8 marks)",
+    "sourceD": {
+      "provenance": "From an NAACP legal report written by Thurgood Marshall in 1953, detailing court actions against segregated public facilities.",
+      "content": "\"We are taking our cases directly to the federal courts, challenging the legal base of Jim Crow. Southern registrars and school boards claim state sovereignty shields them, but the Constitution guarantees equal protection. Through litigation, we are showing that separate facilities are never equal.\"",
       "image": "assets/sources/warren-court-1954.jpg",
-      "provenance": "A formal group portrait of the members of the Warren Court, the Supreme Court of the United States, taken in Washington D.C., 1954.",
-      "seeThinkWonder": {
-        "see": "Observe the formal attire and serious expressions of the Supreme Court justices in the portrait.",
-        "think": "Why did Chief Justice Earl Warren strive for a unanimous (9-0) decision in the Brown v. Board case?",
-        "wonder": "How did Southern states weaponize legal delays and massive resistance against a ruling issued by this court?"
-      },
-      "bronze": "State the date and outcome of the landmark Brown v. Board of Education decision.",
-      "silver": "Study the source image. Explain how the Supreme Court's decision in Brown v. Board of Education (1954) challenged the 1896 'separate but equal' doctrine.",
-      "gold": "How did the Warren Court's unanimity in the Brown ruling attempt to address Southern resistance to desegregation?",
-      "keywords": [
-        "Earl Warren",
-        "Plessy v. Ferguson",
-        "14th Amendment",
-        "Unanimous Ruling"
-      ],
-      "bronzeAnswer": "In May 1954, the Supreme Court ruled unanimously (9-0) that racial segregation in public schools was unconstitutional.",
-      "silverAnswer": "The decision ruled that separate educational facilities are inherently unequal, directly overturning the 1896 Plessy v. Ferguson ruling and violating the 14th Amendment's Equal Protection Clause.",
-      "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow.",
-      "enquiry": "the role of the Supreme Court in challenging school segregation"
+      "caption": "The NAACP Legal Defense Fund, led by Thurgood Marshall, challenged segregation laws in the federal courts."
     },
-    "specPoints": [
-      "Reasons for, key features and significance of the events at Little Rock High School (1957)."
+    "sourceE": {
+      "provenance": "A photograph of a segregation sign over a terminal entrance, taken in the Southern United States in the early 1950s.",
+      "content": "[A photograph of a wooden sign reading 'COLORED WAITING ROOM' hanging above an entranceway of a public bus terminal.]",
+      "image": "assets/sources/colored-waiting-room-sign.jpg",
+      "caption": "A typical segregation sign directing Black passengers to separate facilities at a Southern bus station."
+    },
+    "modelAnswer": "Source D is highly useful for demonstrating the legal litigation strategy of the NAACP. The content outlines Marshall's defense of the Constitution's equal protection clause to challenge the legal basis of Jim Crow. This content is highly useful because it is supported by my knowledge that [[the NAACP Legal Defense Fund, led by Thurgood Marshall, spent the early 1950s systematically challenging segregation in courts, winning key rulings like Sweatt v. Painter in 1950]], which confirms that their legal strategy successfully targeted segregation's constitutional framework. {{The provenance makes the source extremely useful because it is an internal report written in 1953 by Thurgood Marshall himself, providing a reliable, direct account of NAACP legal tactics and their legal confidence just before their major victories. However, it is limited because it represents a top-down legal perspective, failing to show the daily experiences of ordinary Black citizens on the ground.}}\n\nSource E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading \"COLORED WAITING ROOM\" hanging above a public entrance. This content's utility is supported by my knowledge that [[Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions]], which confirms that the sign is an accurate representation of how segregation was physically and legally enforced in Southern public spaces. {{The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of state-sanctioned segregation infrastructure. However, it is less useful because it only shows the sign itself, failing to document the personal experiences of the Black passengers who suffered under segregation or the active resistance against it.}}"
+  },
+  "deepThinkingQuestions": [
+    {
+      "id": "dt_1_1_1",
+      "question": "Why did the NAACP focus on legal litigation in federal courts rather than mass direct action in the early 1950s?",
+      "hint": "Consider the lack of federal protection and the power of binding precedents.",
+      "teacherGuide": "The NAACP believed that federal court victories could establish binding, national constitutional precedents that local Southern governments could not legally ignore, providing a top-down dismantling of Jim Crow under federal protection."
+    },
+    {
+      "id": "dt_1_1_2",
+      "question": "How did voting disenfranchisement (like literacy tests and poll taxes) prevent Black Americans from challenging segregation locally?",
+      "hint": "Think about who elects judges, sheriffs, and school board members.",
+      "teacherGuide": "Without the vote, Black Americans had no political power to elect local school boards, sheriffs, or judges who enforced segregation laws. This ensured that the legal and political systems remained entirely under white control."
+    }
+  ],
+  "doNowStarter": {
+    "prevSubtopicId": null,
+    "prevSubtopicTitle": null,
+    "image": "assets/sources/colored-waiting-room-sign.jpg",
+    "provenance": "A Jim Crow sign designating a segregated 'Colored Waiting Room' in a bus terminal in the Southern United States, circa 1950s.",
+    "seeThinkWonder": {
+      "see": "Observe the bold letters and the physical placement of the sign near public entrances.",
+      "think": "Why did Southern states legislate separation down to waiting rooms, water fountains, and ticket windows?",
+      "wonder": "What would be the emotional and economic cost of defying this sign as a Black traveler in the 1950s?"
+    },
+    "bronze": "Define 'segregation' and name the landmark 1896 Supreme Court ruling that legalized it under the 'separate but equal' doctrine.",
+    "silver": "Explain how the work of the NAACP in the early 1950s challenged the legal system represented by this sign.",
+    "gold": "Explain how this visual source demonstrates the limitations of civil liberties and constitutional rights for Black Americans in the South in the early 1950s.",
+    "keywords": [
+      "Jim Crow",
+      "Plessy v. Ferguson",
+      "Segregation",
+      "14th Amendment"
     ],
-    "lessonWrapUp": {
-      "summary": "The desegregation of Central High School in Little Rock, Arkansas (1957) tested the enforcement of the Brown ruling. Governor Orval Faubus used state troops to block nine Black students, forcing President Eisenhower to federalize the National Guard and deploy the elite 101st Airborne Division to protect them, demonstrating federal supremacy.",
-      "interpretation": "Historians debate whether Little Rock was a success for federal authority or a demonstration of the extreme lengths to which Southern states would go to resist integration, as shown by Faubus closing the schools the following year.",
-      "discussionQuestion": "Did the Little Rock crisis prove that federal military force was essential to achieve school integration in the South?"
-    },
-    "mapConfig": {
-      "type": "usa",
-      "title": "Little Rock Central High School (1957)",
-      "highlightedPoints": [
-        "littlerock"
-      ],
-      "description": "Following the Brown ruling, enforcement was tested in Little Rock, Arkansas. Governor Faubus used the National Guard to block nine Black students, forcing President Eisenhower to send the elite 101st Airborne Division to protect them.",
-      "points": {
-        "littlerock": {
-          "title": "Little Rock, Arkansas",
-          "text": "Where federal soldiers escorted the Little Rock Nine to class daily in September 1957."
-        }
+    "bronzeAnswer": "Segregation is the enforced separation of different racial groups in a country, community, or establishment. The 1896 ruling that legalized this was Plessy v. Ferguson.",
+    "silverAnswer": "The NAACP challenged this legal framework in court, arguing that segregation violated the Equal Protection Clause of the 14th Amendment, aiming to make signs like this unconstitutional.",
+    "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment.",
+    "enquiry": "segregation and discrimination in the Southern states in the 1950s"
+  },
+  "specPoints": [
+    "Segregation, discrimination and voting rights in the Southern states.",
+    "The work of civil rights organisations, including the NAACP and CORE."
+  ],
+  "lessonWrapUp": {
+    "summary": "In the early 1950s, Southern Black Americans faced legal segregation under Jim Crow and systemic disenfranchisement. The NAACP challenged this legally through court battles (litigation), while CORE pioneered non-violent direct action protests to challenge local segregation rules.",
+    "interpretation": "Top-down legal historians argue that litigation was the vital prerequisite that destroyed segregation's legal basis. Bottom-up social historians argue that grassroots direct action was the true engine of progress because laws were ignored without active street protests.",
+    "discussionQuestion": "To what extent was the legal strategy of the NAACP more effective than the non-violent direct action tactics pioneered by CORE in the early 1950s?"
+  },
+  "mapConfig": {
+    "type": "usa",
+    "title": "Civil Rights Battles in the early 1950s",
+    "highlightedPoints": [
+      "washington",
+      "money"
+    ],
+    "description": "Early civil rights actions occurred across the South, from legal actions in Washington D.C. to grassroots activism in Midwestern and Southern cities, combating Jim Crow and voting barriers.",
+    "points": {
+      "washington": {
+        "title": "Washington D.C.",
+        "text": "Where the NAACP argued landmark constitutional cases before the Supreme Court."
+      },
+      "money": {
+        "title": "Money, Mississippi",
+        "text": "A symbol of the extreme voter disenfranchisement and violence that Black citizens faced in the Deep South."
       }
     }
+  }
+},
+  "subtopic_1_2": {
+  "headerTitle": "KT 1.2 - GCSE CORE MASTERY: How did developments in education challenge segregation (1954–57)?",
+  "headerIntro": "The desegregation of public schools became the first major battleground of the civil rights movement. In 1954, the NAACP won the landmark Brown v. Board of Education case, with the Supreme Court declaring school segregation unconstitutional. However, this sparked 'Massive Resistance' across the South, culminating in the Little Rock High School crisis in 1957. Here, Arkansas Governor Orval Faubus defied federal law, forcing President Eisenhower to deploy federal troops to protect Black students.",
+  "steps": [
+    {
+      "title": "Step 1: The Brown v. Board of Education Ruling (1954)",
+      "isSplit": false,
+      "bodyHtml": "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\n    <ul>\n      <li><strong>The Case:</strong> Young Linda Brown was forced to walk long distances to a segregated Black school despite living near an all-white school. Supported by the NAACP, her father sued the Topeka school board.</li>\n      <li><strong>The Ruling:</strong> Led by Chief Justice Earl Warren, the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>. Warren wrote that separate educational facilities are <em>'inherently unequal'</em>.</li>\n      <li><strong>Precedents & Clark Doll Experiments:</strong> NAACP lawyers, led by Thurgood Marshall, used psychological studies showing that segregation gave Black children a sense of inferiority (the Clark doll experiments), successfully overturning the 1896 <em>Plessy v. Ferguson</em> separate but equal doctrine.</li>\n      <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist integration. In 1955, the Court issued <em>Brown II</em>, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\n    </ul>",
+      "scholarlyDepth": {
+        "title": "Scholarly Perspective: Warren's Unanimity Strategy",
+        "body": "Chief Justice Earl Warren spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public."
+      }
+    },
+    {
+      "title": "Step 2: The Little Rock High School Crisis (1957)",
+      "isSplit": true,
+      "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In September 1957, school desegregation was put to a major test at Central High School in Little Rock, Arkansas:</p>\n            <ul>\n              <li><strong>The Little Rock Nine:</strong> Nine Black students, mentored by Arkansas NAACP leader <strong>Daisy Bates</strong>, attempted to enroll at the previously all-white school.</li>\n              <li><strong>State Defiance:</strong> Governor Orval Faubus defied federal courts by deploying the state's National Guard to block the students. An angry white mob gathered, and 15-year-old **Elizabeth Eckford** had to face the screaming crowd alone.</li>\n              <li><strong>Federal Troops:</strong> To uphold federal law and combat Soviet Cold War propaganda pointing out American racial violence, President Eisenhower federalized the Arkansas National Guard and deployed 1,000 soldiers of the elite <strong>101st Airborne Division</strong> to protect and escort the students daily.</li>\n              <li><strong>The 'Lost Year' (1958-59):</strong> Rather than integrate, Governor Faubus closed all Little Rock public high schools the following year, leaving 4,000 students without education.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"lesson-image-wrapper\">\n            <img src=\"assets/sources/little-rock-nine-1957.jpg\" alt=\"The Little Rock Nine entering Central High School under soldier escort\" class=\"lesson-source-img\" />\n            <div class=\"lesson-image-caption\">The Little Rock Nine entering Central High School in September 1957, protected by soldiers of the 101st Airborne Division.</div>\n          </div>\n        </div>",
+      "scholarlyDepth": {
+        "title": "Scholarly Perspective: Cold War Pressures on Eisenhower",
+        "body": "President Eisenhower's decision to send the 101st Airborne was heavily influenced by international relations. During the Cold War, the Soviet Union used images of racial violence in Little Rock as propaganda in Asia and Africa to argue that American democracy was a sham. To maintain US moral authority globally, Eisenhower felt compelled to show that the federal government would enforce constitutional rights by military force."
+      }
+    }
+  ],
+  "dualPerspective": {
+    "leftHeadline": "Defending Constitutional Law",
+    "leftText": "Desegregation is a federal constitutional mandate. Governor Faubus' rebellion against federal court decisions was an act of defiance that required immediate presidential military suppression to assert federal supremacy.",
+    "rightHeadline": "Preventing Federal Tyranny",
+    "rightText": "Eisenhower's troop deployment was an military invasion that violated Arkansas sovereignty and states' rights, forcing social integration against the wishes of the local white community.",
+    "neutralTitle": "⚖️ Dual Interpretation: Federal Intervention at Little Rock",
+    "leftLabel": "NAACP Leadership",
+    "rightLabel": "Southern Segregationists"
   },
+  "causalLinks": {
+    "question": "Explain why the integration of Little Rock Central High School in 1957 became a major civil rights crisis.",
+    "successText": "Excellent logic! The crisis arose because Governor Faubus defied federal courts to win segregationist votes, forcing Eisenhower to send federal troops to assert federal supremacy and protect the Black students.",
+    "factors": [
+      {
+        "id": "s12_f1",
+        "title": "Governor Orval Faubus defied federal court integration orders.",
+        "options": [
+          "This motivated him to align with segregationist voters by deploying the state's National Guard to block the Little Rock Nine.",
+          "This led him to immediately protect the students from the white mob."
+        ],
+        "correctIndex": 0,
+        "linkageText": "This motivated him to align with segregationist voters by deploying the state's National Guard to block the Little Rock Nine."
+      },
+      {
+        "id": "s12_f2",
+        "title": "Televised images of white mobs screaming at Elizabeth Eckford.",
+        "options": [
+          "Which built national sympathy for the students and damaged America's international reputation during the Cold War.",
+          "Which caused the Supreme Court to declare school desegregation unconstitutional."
+        ],
+        "correctIndex": 0,
+        "linkageText": "Which built national sympathy for the students and damaged America's international reputation during the Cold War."
+      },
+      {
+        "id": "s12_f3",
+        "title": "President Eisenhower's deployment of the 101st Airborne Division.",
+        "options": [
+          "Which demonstrated that the federal government would use military force to enforce Supreme Court rulings over state resistance.",
+          "Which allowed the state governor to close the school permanently without federal objection."
+        ],
+        "correctIndex": 0,
+        "linkageText": "Which demonstrated that the federal government would use military force to enforce Supreme Court rulings over state resistance."
+      }
+    ]
+  },
+  "knowledgeCheck": [
+    {
+      "question": "In what year did the Supreme Court deliver the Brown v. Board of Education decision?",
+      "answer": "1954"
+    },
+    {
+      "question": "Who was the chief justice of the Supreme Court during the Brown ruling?",
+      "answer": "Earl Warren"
+    },
+    {
+      "question": "Which Governor of Arkansas deployed the National Guard to block the Little Rock Nine?",
+      "answer": "Orval Faubus"
+    },
+    {
+      "question": "Which military division did President Eisenhower deploy to protect the students at Little Rock?",
+      "answer": "101st Airborne Division"
+    },
+    {
+      "question": "What name is given to the school year 1958-59 when Governor Faubus closed Little Rock high schools?",
+      "answer": "The Lost Year"
+    }
+  ],
+  "importanceAnalyser": null,
+  "questionVault": [
+    {
+      "question": "Explain why desegregation in education faced severe resistance in the years 1954–57. (12 marks)",
+      "stimulus1": "Supreme Court rulings (Brown v. Board)",
+      "stimulus2": "Governor Orval Faubus",
+      "clue": "Focus on the political opposition from Southern state governors, the social backlash from White Citizens' Councils and the KKK, and how these groups physically blocked integration in places like Little Rock.",
+      "answer": "“One reason why desegregation in education faced severe resistance in the years 1954–57 was that Southern politicians organized systematic legal and political blockades.” Southern senators signed the [[Southern Manifesto]] in 1956, pledging to resist integration. State governors like [[Orval Faubus]] of Arkansas used state forces like the [[National Guard]] at Little Rock to directly defy federal court orders. {{Therefore, political obstruction by Southern leaders was a major reason why desegregation in education faced severe resistance in the years 1954–57 because it validated local white opposition and delayed federal enforcement.}}\n\n“A second reason why desegregation in education faced severe resistance in the years 1954–57 was the aggressive social backlash and vigilante terror from grassroots segregationist groups.” [[White Citizens' Councils]] were formed to apply economic pressure, firing Black workers who supported integration. The [[Ku Klux Klan]] revived, using bombings, threats, and mob violence at school gates to intimidate the [[Little Rock Nine]]. {{Therefore, grassroots white resistance and vigilante terror were key reasons why desegregation in education faced severe resistance in the years 1954–57 because they made attending integrated schools physically dangerous for Black students.}}\n\n“A third reason why desegregation in education faced severe resistance in the years 1954–57 was the reluctance of the federal government to enforce Supreme Court rulings, which emboldened segregationists.” President Eisenhower initially refused to publicly endorse the [[Brown v. Board of Education]] decision, and only sent the [[101st Airborne Division]] to Little Rock when the governor openly defied federal law. The school board then closed Little Rock high schools in 1958 to avoid integration. {{Therefore, weak federal enforcement and local school board closures were critical reasons why desegregation in education faced severe resistance in the years 1954–57 because they allowed Southern states to evade integration orders for years.}}"
+    }
+  ],
+  "summaryCorrection": {
+    "text": "In May [[1956 -> 1954]], the Supreme Court ruled in Brown v. Board of Education that school segregation was [[constitutional -> unconstitutional]], overturning Plessy v. Ferguson. However, school integration met severe resistance. In September [[1959 -> 1957]], Central High School in Little Rock, Arkansas, became a major crisis. Governor Orval Faubus [[supported -> defied]] federal orders, using the state's National Guard to [[protect -> block]] the nine Black students. As white mobs harassed them, President [[Truman -> Eisenhower]] reluctantly sent in the [[US Navy -> 101st Airborne]] to escort the students. The crisis exposed the depth of Southern resistance, leading Faubus to [[fully integrate -> close]] all Little Rock high schools the following year."
+  },
+  "howUsefulAnalyser": {
+    "question": "How useful are Sources D and E for an enquiry into the levels of opposition to integration at Little Rock Central High School in 1957? (8 marks)",
+    "sourceD": {
+      "provenance": "From a photograph of white protestors gathered outside Central High School in September 1957.",
+      "content": "[A photograph showing an angry white crowd of students and adults protesting. Some are holding signs reading 'Keep Central High Clean' and yelling as Black students arrive.]",
+      "image": "assets/sources/little-rock-protest-1957.jpg",
+      "caption": "Segregationist demonstrators protesting against school integration in Little Rock."
+    },
+    "sourceE": {
+      "provenance": "From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.",
+      "content": "[A photograph showing soldiers of the 101st Airborne Division in a military jeep guarding a station wagon as Black students get inside the vehicle, with another soldier walking on patrol.]",
+      "image": "assets/sources/airborne-little-rock-patrol.jpg",
+      "caption": "Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students."
+    },
+    "modelAnswer": "Source D is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an \"angry white crowd\" of students and adults protesting, with some carrying signs reading \"Keep Central High Clean\". This content is highly useful because it is supported by my contextual knowledge that [[when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school]], which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. {{The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.}}\n\nSource E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows \"soldiers of the 101st Airborne Division in a military jeep guarding a station wagon\" as Black students enter it. This content's usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.}}"
+  },
+  "deepThinkingQuestions": [
+    {
+      "id": "dt_1_2_1",
+      "question": "Why did Governor Faubus choose to defy federal law at Little Rock, and what does this show about Southern state politics?",
+      "hint": "Think about white voter support and upcoming elections.",
+      "teacherGuide": "Faubus needed segregationist votes for re-election. It shows that state governors were willing to trigger constitutional crises and defy federal authority for local political survival."
+    },
+    {
+      "id": "dt_1_2_2",
+      "question": "How did the deployment of the 101st Airborne shift the balance of power between state and federal authorities?",
+      "hint": "Think about executive power and the enforcement of the US Constitution.",
+      "teacherGuide": "It was the first time since Reconstruction that federal forces intervened to protect Black rights. It asserted federal supremacy over state defiance, proving the executive branch would enforce desegregation by military force if necessary."
+    }
+  ],
+  "doNowStarter": {
+    "prevSubtopicId": "subtopic_1_1",
+    "prevSubtopicTitle": "Topic 1.1: Segregation & Civil Rights Organisations",
+    "image": "assets/sources/warren-court-1954.jpg",
+    "provenance": "A formal group portrait of the members of the Warren Court, the Supreme Court of the United States, taken in Washington D.C., 1954.",
+    "seeThinkWonder": {
+      "see": "Observe the formal attire and serious expressions of the Supreme Court justices in the portrait.",
+      "think": "Why did Chief Justice Earl Warren strive for a unanimous (9-0) decision in the Brown v. Board case?",
+      "wonder": "How did Southern states weaponize legal delays and massive resistance against a ruling issued by this court?"
+    },
+    "bronze": "State the date and outcome of the landmark Brown v. Board of Education decision.",
+    "silver": "Study the source image. Explain how the Supreme Court's decision in Brown v. Board of Education (1954) challenged the 1896 'separate but equal' doctrine.",
+    "gold": "How did the Warren Court's unanimity in the Brown ruling attempt to address Southern resistance to desegregation?",
+    "keywords": [
+      "Earl Warren",
+      "Plessy v. Ferguson",
+      "14th Amendment",
+      "Unanimous Ruling"
+    ],
+    "bronzeAnswer": "In May 1954, the Supreme Court ruled unanimously (9-0) that racial segregation in public schools was unconstitutional.",
+    "silverAnswer": "The decision ruled that separate educational facilities are inherently unequal, directly overturning the 1896 Plessy v. Ferguson ruling and violating the 14th Amendment's Equal Protection Clause.",
+    "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow.",
+    "enquiry": "the role of the Supreme Court in challenging school segregation"
+  },
+  "specPoints": [
+    "Reasons for, key features and significance of the Brown v. Topeka case (1954).",
+    "Reasons for, key features and significance of the events at Little Rock High School (1957)."
+  ],
+  "lessonWrapUp": {
+    "summary": "The desegregation of public schools (1954-57) was a critical battle. The NAACP won the landmark Brown v. Topeka case, declaring segregated schools unconstitutional. This sparked Southern white 'Massive Resistance', which culminated in the Little Rock High School integration crisis (1957) where President Eisenhower deployed the 101st Airborne to escort Black students in the face of state governor Orval Faubus' defiance.",
+    "interpretation": "Traditionalist historians interpret Brown and Little Rock as monumental victories for federal law and civil rights. Revisionist historians highlight the severe limitations of these victories, pointing out that local resistance remained intense and the school board successfully shut down schools (the Lost Year) to avoid integration.",
+    "discussionQuestion": "Did the Little Rock crisis prove that federal military force was essential to achieve school integration in the South?"
+  },
+  "mapConfig": {
+    "type": "usa",
+    "title": "Topeka (Kansas) & Little Rock (Arkansas)",
+    "highlightedPoints": [
+      "topeka",
+      "littlerock"
+    ],
+    "description": "School desegregation challenges started in Topeka, Kansas, with the Brown case (1954), before moving to a direct federal confrontation in Little Rock, Arkansas, at Central High School (1957).",
+    "points": {
+      "topeka": {
+        "title": "Topeka, Kansas",
+        "text": "Linda Brown challenged segregation here, leading to the 1954 Brown v. Board ruling."
+      },
+      "littlerock": {
+        "title": "Little Rock, Arkansas",
+        "text": "Where federal soldiers escorted the Little Rock Nine to class daily in September 1957."
+      }
+    }
+  }
+},
   "subtopic_1_3": {
     "headerTitle": "KT 1.3 - GCSE CORE MASTERY: How did the Montgomery Bus Boycott happen, and why did it succeed?",
     "headerIntro": "The Montgomery Bus Boycott (1955–1956) was the first major grassroots test of non-violent resistance. Beginning immediately after Rosa Parks' arrest on 1 December 1955, the local Black community organized the Montgomery Improvement Association (MIA), electing Martin Luther King Jr. as president. Black citizens, who made up 70% of bus riders, walked, carpooled, and organized private cabs for 381 days. Despite bombings, arrests, and intimidation, the boycott devastated bus revenues until November 1956, when the Supreme Court ruled segregated transport unconstitutional, proving the power of mass direct action.",
