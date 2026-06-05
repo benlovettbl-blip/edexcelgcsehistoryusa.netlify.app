@@ -497,6 +497,7 @@ export function renderMasteryView(subtopicId) {
 
   // Generate Steps HTML
   let stepsHtml = '';
+  const halfPoint = Math.ceil(data.steps.length / 2);
   data.steps.forEach((step, index) => {
     let scholarlyHtml = '';
     if (step.scholarlyDepth) {
@@ -596,6 +597,37 @@ export function renderMasteryView(subtopicId) {
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
+        </div>
+      `;
+    }
+
+    // Insert Lived Experience discussion card half-way through the lesson
+    if (index + 1 === halfPoint && data.livedExperience) {
+      const le = data.livedExperience;
+      stepsHtml += `
+        <div class="mastery-card lived-experience-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--accent);">
+          <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <span style="color: var(--accent);"><i class="fa-solid fa-comments"></i> Mid-Lesson Class Discussion: Lived Experience</span>
+            <button class="btn-audio-read" title="Read Source Aloud" style="margin-left: 8px;">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+          </h3>
+          <div class="mastery-card-body card-content">
+            <div class="source-provenance" style="font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">
+              <strong>Source Context:</strong> ${le.context}
+            </div>
+            <blockquote class="source-quote" style="font-size: 1.05rem; font-style: italic; border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 20px 0; color: var(--text-main); line-height: 1.55; font-family: Georgia, 'Times New Roman', serif;">
+              "${le.quote}"
+            </blockquote>
+            <div class="discussion-prompt" style="background: var(--accent-glow); border: 1px dashed var(--accent); border-radius: var(--border-radius-sm); padding: 16px; margin-top: 16px; box-sizing: border-box;">
+              <h4 style="margin: 0 0 8px 0; color: var(--accent); display: flex; align-items: center; gap: 8px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-heading); font-weight: 700;">
+                <i class="fa-solid fa-circle-question"></i> Class Discussion Prompt
+              </h4>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-weight: 500;">
+                ${le.discussionQuestion}
+              </p>
+            </div>
+          </div>
         </div>
       `;
     }
