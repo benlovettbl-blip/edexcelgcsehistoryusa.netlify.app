@@ -285,7 +285,6 @@ const SUBTOPIC_EXAM_MAPPING = {
     { paperId: "2025_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2025" }
   ],
   "subtopic_3_2": [
-    { paperId: "mock_exam_5", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 5" },
     { paperId: "2025_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2025" },
     { paperId: "2025_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2025" },
     { paperId: "2025_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2025" },
