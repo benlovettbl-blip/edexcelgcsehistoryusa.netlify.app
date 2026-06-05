@@ -47,6 +47,7 @@ export const state = {
   
   // Cache flattened questions list for quick access
   allQuestions: [],
+  analyticalQuestions: [],
 
   // Past Exam Session State
   pastPaperSession: {

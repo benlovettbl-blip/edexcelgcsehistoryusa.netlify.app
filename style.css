@@ -7779,3 +7779,28 @@ input:checked + .switch-slider {
 input:checked + .switch-slider:before {
   transform: translateX(24px);
 }
+
+/* Mobile-specific flashcard and keyboard helper enhancements */
+@media (max-width: 1023px) {
+  .flashcard-keyboard-help,
+  .lesson-keyboard-help {
+    display: none !important;
+  }
+
+  .flashcard-controls button,
+  #flashcard-self-grade-actions button {
+    padding: 15px 20px !important; /* Larger tap targets */
+    font-size: 1rem !important;
+    border-radius: var(--border-radius-md) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  
+  .flashcard-controls button:active,
+  #flashcard-self-grade-actions button:active {
+    transform: scale(0.97) !important; /* Visual tactile response */
+    opacity: 0.95 !important;
+  }
+}

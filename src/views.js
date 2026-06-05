@@ -13,6 +13,7 @@ import { TABOO_CARDS } from './taboo_data.js';
 import { KEY_TOPICS_OVERVIEWS } from './key_topics_data.js';
 import { renderPastPapersView } from './past_papers.js';
 import { VIDEOS_DATA } from './videos_data.js';
+import { initChronologyGame } from './chronology.js';
 
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
@@ -167,6 +168,23 @@ function updateGlobalStats() {
       if (badge) badge.textContent = `${pct}%`;
     });
   });
+
+  // Key Topics Progress Breakdown
+  for (let i = 1; i <= 4; i++) {
+    const topicId = `topic_${i}`;
+    const topicData = QUIZ_DATA.find(t => t.id === topicId);
+    if (topicData) {
+      const subtopicIds = topicData.subtopics.map(s => s.id);
+      const topicQuestions = state.allQuestions.filter(q => subtopicIds.includes(q.subtopicId));
+      const mastered = topicQuestions.filter(q => state.mastery[q.id]).length;
+      const pct = topicQuestions.length > 0 ? Math.round((mastered / topicQuestions.length) * 100) : 0;
+      
+      const pctEl = document.getElementById(`sidebar-kt${i}-progress`);
+      if (pctEl) pctEl.textContent = `${pct}%`;
+      const barEl = document.getElementById(`sidebar-kt${i}-bar`);
+      if (barEl) barEl.style.width = `${pct}%`;
+    }
+  }
 }
 
 // 3. Render Dashboard list
@@ -703,7 +721,7 @@ function playCausalGame(subtopicId) {
   });
 }
 
-const CHRONOLOGY_EVENTS = {
+export const CHRONOLOGY_EVENTS = {
   "topic_1": [
     {
       id: "chrono_t1_1",
@@ -1054,345 +1072,7 @@ const CHRONOLOGY_EVENTS = {
   ]
 };
 
-let chronoState = {
-  selectedEvents: [],
-  shuffledEvents: [],
-  placedEvents: [null, null, null, null, null],
-  score: 0,
-  hasChecked: false
-};
-
-function initChronologyGame() {
-  const container = document.getElementById('chronology-game-play-area');
-  if (!container) return;
-
-  const topicSelect = document.getElementById('chrono-game-topic-select');
-  const topicId = topicSelect ? topicSelect.value : 'topic_1';
-  
-  const pool = CHRONOLOGY_EVENTS[topicId] || CHRONOLOGY_EVENTS["topic_1"];
-
-  // Randomly select 5 unique events
-  const selected = [...pool].sort(() => 0.5 - Math.random()).slice(0, 5);
-
-  // Sort them chronologically to get the correct sequence
-  chronoState.selectedEvents = [...selected].sort((a, b) => a.year - b.year);
-  
-  // Shuffle events for option cards
-  chronoState.shuffledEvents = [...selected].sort(() => 0.5 - Math.random());
-  chronoState.placedEvents = [null, null, null, null, null];
-  chronoState.hasChecked = false;
-
-  renderChronologyGameUI();
-}
-
-function renderChronologyGameUI() {
-  const container = document.getElementById('chronology-game-play-area');
-  if (!container) return;
-
-  // Generate Slots HTML
-  let slotsHtml = '';
-  chronoState.placedEvents.forEach((placedEvent, idx) => {
-    if (idx > 0) {
-      slotsHtml += `
-        <div class="mindmap-arrow" id="chrono-arrow-${idx}" style="opacity: 0.25; display: flex; align-items: center; justify-content: center;">
-          <i class="fa-solid fa-arrow-right horizontal-arrow" style="color: var(--primary); font-size: 1.1rem;"></i>
-          <i class="fa-solid fa-arrow-down vertical-arrow" style="color: var(--primary); font-size: 1.1rem; margin: 4px 0;"></i>
-        </div>
-      `;
-    }
-    
-    if (placedEvent) {
-      slotsHtml += `
-        <div class="chrono-slot filled" id="chrono-slot-${idx}" data-index="${idx}">
-          <span class="chrono-slot-label">Step ${idx + 1}</span>
-          <div class="chrono-card-content">
-            <strong>${placedEvent.answer}</strong>
-            <p>${placedEvent.question}</p>
-          </div>
-        </div>
-      `;
-    } else {
-      slotsHtml += `
-        <div class="chrono-slot" id="chrono-slot-${idx}" data-index="${idx}">
-          <span class="chrono-slot-label">Step ${idx + 1}</span>
-          <div class="chrono-slot-placeholder-text">Empty Slot</div>
-        </div>
-      `;
-    }
-  });
-
-  // Generate Shuffled Option Cards HTML
-  let optionsHtml = chronoState.shuffledEvents.map((q) => {
-    const isPlaced = chronoState.placedEvents.some(p => p && p.id === q.id);
-    const cleanId = `chrono-opt-${q.id}`;
-    return `
-      <div class="chrono-option-card ${isPlaced ? 'placed' : ''}" id="${cleanId}" data-qid="${q.id}">
-        <strong style="color: var(--primary); font-size: 0.88rem; display: block; margin-bottom: 2px; line-height: 1.25;">${q.answer}</strong>
-        <p style="font-size: 0.72rem; line-height: 1.35; color: var(--text-muted); margin: 0; font-style: italic;">Clue: ${q.question}</p>
-      </div>
-    `;
-  }).join('');
-
-  const isAllFilled = chronoState.placedEvents.every(p => p !== null);
-
-  container.innerHTML = `
-    <div class="causal-connector-container" style="background: var(--bg-card); padding: 24px; border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); box-shadow: var(--shadow-md);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-hourglass-half" style="color: var(--primary);"></i> Chronology Challenge
-        </h3>
-        <span style="font-weight: 700; font-size: 0.95rem; color: var(--success);" id="chrono-score-display">Score: ${chronoState.score}</span>
-      </div>
-      <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0 0 20px 0;">
-        Paper 3 requires solid chronological reasoning. Tap option cards below to place them in the timeline. Tapping a placed event removes it back to the options. Arrange all 5 in the correct chronological sequence (earliest to latest) and verify!
-      </p>
-
-      <!-- Chronology slots panel (Top viewport) -->
-      <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Chronology Timeline</div>
-      <div class="chrono-slots-container">
-        ${slotsHtml}
-      </div>
-
-      <!-- Success panel placed right underneath the timeline slots -->
-      <div class="causal-success-panel" id="chrono-success-panel" style="display: none; text-align: center; margin-top: 16px; padding: 20px; background: rgba(16, 185, 129, 0.05); border: 1px solid var(--success); border-radius: var(--border-radius-md);">
-        <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--success); margin: 0 0 8px 0; display: flex; align-items: center; justify-content: center; gap: 8px;">
-          <i class="fa-solid fa-medal"></i> Chronology Mastered!
-        </h4>
-        <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-main); margin-bottom: 16px;">
-          Outstanding work! You successfully ordered all 5 milestones in their correct chronological sequence.
-        </p>
-        <div id="chrono-narrative-container" style="margin-bottom: 20px;"></div>
-        <button class="btn-primary" id="btn-chrono-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
-          <i class="fa-solid fa-rotate-right"></i> Play Again (New Events)
-        </button>
-      </div>
-
-      <div id="chrono-play-controls-area">
-        <!-- Shuffled event cards shelf (Bottom viewport) -->
-        <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Timeline Event Options</div>
-        <div class="chrono-options-container">
-          ${optionsHtml}
-        </div>
-
-        <!-- Clue Feedback box -->
-        <div id="chrono-feedback-message" style="display: none; font-size: 0.82rem; line-height: 1.45; padding: 10px 14px; border-radius: var(--border-radius-sm); margin-top: 16px; font-weight: 600; text-align: center;"></div>
-
-        <!-- Action buttons -->
-        <div style="display: flex; gap: 12px; margin-top: 24px; justify-content: center; align-items: center; flex-wrap: wrap;">
-          <button class="btn-primary" id="btn-chrono-check" ${isAllFilled ? '' : 'disabled'} style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: ${isAllFilled ? 'pointer' : 'not-allowed'}; opacity: ${isAllFilled ? '1' : '0.5'}; display: ${chronoState.hasChecked ? 'none' : 'inline-flex'}; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-clipboard-check"></i> Verify Sequence
-          </button>
-          <button class="btn-secondary" id="btn-chrono-reset" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-arrow-rotate-left"></i> Clear All
-          </button>
-        </div>
-      </div>
-    </div>
-  `;
-
-  bindChronologyEvents();
-}
-
-function bindChronologyEvents() {
-  const container = document.getElementById('game-chronology-container');
-  if (!container) return;
-
-  // Shelf cards
-  container.querySelectorAll('.chrono-option-card').forEach(card => {
-    card.addEventListener('click', () => {
-      if (chronoState.hasChecked) return;
-      
-      const qid = card.getAttribute('data-qid');
-      const eventObj = chronoState.shuffledEvents.find(e => e.id === qid);
-      if (!eventObj) return;
-
-      // Find first empty slot
-      const emptyIdx = chronoState.placedEvents.indexOf(null);
-      if (emptyIdx > -1) {
-        AudioEngine.play('click');
-        chronoState.placedEvents[emptyIdx] = eventObj;
-        renderChronologyGameUI();
-      }
-    });
-  });
-
-  // Placed slots
-  container.querySelectorAll('.chrono-slot.filled').forEach(slot => {
-    slot.addEventListener('click', () => {
-      const idx = parseInt(slot.getAttribute('data-index'));
-      
-      AudioEngine.play('click');
-      chronoState.placedEvents[idx] = null;
-      chronoState.hasChecked = false; // Reset checked status
-      renderChronologyGameUI();
-    });
-  });
-
-  // Check button
-  const checkBtn = document.getElementById('btn-chrono-check');
-  if (checkBtn) {
-    checkBtn.addEventListener('click', () => {
-      verifyChronologySequence();
-    });
-  }
-
-  // Reset button
-  const resetBtn = document.getElementById('btn-chrono-reset');
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      AudioEngine.play('click');
-      chronoState.placedEvents = [null, null, null, null, null];
-      chronoState.hasChecked = false;
-      renderChronologyGameUI();
-    });
-  }
-
-  // Success panel Play Again button
-  const playAgainBtn = document.getElementById('btn-chrono-play-again');
-  if (playAgainBtn) {
-    playAgainBtn.addEventListener('click', () => {
-      AudioEngine.play('click');
-      initChronologyGame();
-    });
-  }
-}
-
-function generateChronoNarrativeParagraph(events) {
-  const parts = events.map((e, idx) => {
-    const qText = e.question.trim();
-    const ansText = e.answer.trim();
-    
-    if (idx === 0) {
-      return `In <strong>${e.year}</strong>, the <strong>${ansText}</strong> occurred (${qText})`;
-    } else if (idx === 1) {
-      return `this was followed in <strong>${e.year}</strong> by the <strong>${ansText}</strong> (${qText})`;
-    } else if (idx === 2) {
-      return `subsequently, in <strong>${e.year}</strong>, the <strong>${ansText}</strong> took place (${qText})`;
-    } else if (idx === 3) {
-      return `next, in <strong>${e.year}</strong>, the <strong>${ansText}</strong> happened (${qText})`;
-    } else {
-      return `and finally, in <strong>${e.year}</strong>, this story culminated in the <strong>${ansText}</strong> (${qText})`;
-    }
-  });
-
-  let narrative = parts.join("; ");
-  narrative = narrative.charAt(0).toUpperCase() + narrative.slice(1);
-  if (!narrative.endsWith('.')) {
-    narrative += '.';
-  }
-
-  return `
-    <div style="text-align: left; background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--success); padding: 14px 18px; border-radius: var(--border-radius-sm); margin-top: 16px;">
-      <strong style="color: var(--success); display: block; margin-bottom: 6px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-        <i class="fa-solid fa-book-open"></i> Historical Narrative:
-      </strong>
-      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-main); margin: 0; font-style: italic;">
-        ${narrative}
-      </p>
-    </div>
-  `;
-}
-
-function getChronologyClue() {
-  const incorrectIndices = [];
-  chronoState.placedEvents.forEach((event, idx) => {
-    const expectedEvent = chronoState.selectedEvents[idx];
-    if (!event || event.id !== expectedEvent.id) {
-      incorrectIndices.push(idx);
-    }
-  });
-
-  if (incorrectIndices.length === 0) return "";
-
-  const firstWrongIdx = incorrectIndices[0];
-  const expectedEvent = chronoState.selectedEvents[firstWrongIdx];
-  return `Consider the timing of **${expectedEvent.answer}**. It belongs in the sequence at **Step ${firstWrongIdx + 1}**! Check your order and try again.`;
-}
-
-function verifyChronologySequence() {
-  const container = document.getElementById('chronology-game-play-area');
-  if (!container) return;
-
-  chronoState.hasChecked = true;
-  let allCorrect = true;
-
-  // Check sequence correctness
-  chronoState.placedEvents.forEach((event, idx) => {
-    const expectedEvent = chronoState.selectedEvents[idx];
-    const slot = document.getElementById(`chrono-slot-${idx}`);
-    if (!slot) return;
-
-    if (event && event.id === expectedEvent.id) {
-      slot.classList.remove('incorrect');
-      slot.classList.add('correct');
-    } else {
-      slot.classList.remove('correct');
-      slot.classList.add('incorrect');
-      allCorrect = false;
-    }
-  });
-
-  if (allCorrect) {
-    AudioEngine.play('cheer');
-    if (typeof Confetti !== 'undefined' && typeof Confetti.spawn === 'function') {
-      Confetti.spawn(100);
-    }
-    
-    chronoState.score += 20;
-    const scoreDisplay = document.getElementById('chrono-score-display');
-    if (scoreDisplay) scoreDisplay.textContent = `Score: ${chronoState.score}`;
-
-    // Reveal years in slots
-    chronoState.placedEvents.forEach((event, idx) => {
-      const slot = document.getElementById(`chrono-slot-${idx}`);
-      if (slot) {
-        const content = slot.querySelector('.chrono-card-content');
-        if (content) {
-          content.innerHTML = `
-            <div class="chrono-slot-year-badge">${event.year}</div>
-            <strong>${event.answer}</strong>
-            <p>${event.question}</p>
-          `;
-        }
-      }
-    });
-
-    const successPanel = document.getElementById('chrono-success-panel');
-    if (successPanel) {
-      successPanel.style.display = 'block';
-    }
-
-    const narrativeContainer = document.getElementById('chrono-narrative-container');
-    if (narrativeContainer) {
-      narrativeContainer.innerHTML = generateChronoNarrativeParagraph(chronoState.placedEvents);
-    }
-
-    const feedbackMsg = document.getElementById('chrono-feedback-message');
-    if (feedbackMsg) {
-      feedbackMsg.style.display = 'none';
-    }
-    
-    const checkBtn = document.getElementById('btn-chrono-check');
-    if (checkBtn) checkBtn.style.display = 'none';
-
-    const playControls = document.getElementById('chrono-play-controls-area');
-    if (playControls) playControls.style.display = 'none';
-  } else {
-    AudioEngine.play('failure');
-    chronoState.score = Math.max(0, chronoState.score - 5);
-    const scoreDisplay = document.getElementById('chrono-score-display');
-    if (scoreDisplay) scoreDisplay.textContent = `Score: ${chronoState.score}`;
-
-    const feedbackMsg = document.getElementById('chrono-feedback-message');
-    if (feedbackMsg) {
-      feedbackMsg.style.display = 'block';
-      feedbackMsg.style.background = 'rgba(239, 68, 68, 0.1)';
-      feedbackMsg.style.color = 'var(--accent)';
-      feedbackMsg.style.borderLeft = '3px solid var(--accent)';
-      feedbackMsg.innerHTML = `<i class="fa-solid fa-lightbulb"></i> ${getChronologyClue()}`;
-    }
-  }
-}
+// Note: Chronology Game (Sequence Challenger) functions moved to src/chronology.js
 
 // 8. Exam Skills Practice View (SPA Integration)
 // 8. Exam Skills Practice View (SPA Integration)
@@ -5773,6 +5453,21 @@ function renderAiVideosView() {
   if (!container) return;
   container.innerHTML = '';
 
+  const getYouTubeId = (url) => {
+    let videoId = '';
+    if (url.includes('youtube.com/watch')) {
+      const u = new URL(url);
+      videoId = u.searchParams.get('v');
+    } else if (url.includes('youtu.be/')) {
+      const parts = url.split('youtu.be/');
+      videoId = parts[1]?.split('?')[0];
+    } else if (url.includes('youtube.com/embed/')) {
+      const parts = url.split('youtube.com/embed/');
+      videoId = parts[1]?.split('?')[0];
+    }
+    return videoId;
+  };
+
   const subtopicIds = Object.keys(VIDEOS_DATA).sort();
 
   subtopicIds.forEach(subtopicId => {
@@ -5814,16 +5509,20 @@ function renderAiVideosView() {
       </div>
     `;
 
+    const ytid = getYouTubeId(video.primary.youtube_url);
+    const thumbnailUrl = ytid ? `https://img.youtube.com/vi/${ytid}/mqdefault.jpg` : '';
+
     const thumbnail = `
-      <div class="video-thumbnail-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); margin-bottom: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <div class="video-thumbnail-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); margin-bottom: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        ${thumbnailUrl ? `<img src="${thumbnailUrl}" alt="${lessonTitle}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.65; transition: opacity 0.2s;" />` : `
         <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; padding: 10px; font-family: var(--font-body); font-weight: 500;">
           <i class="fa-solid fa-film" style="font-size: 1.8rem; display: block; margin-bottom: 6px; color: var(--primary);"></i>
           2-Minute AI Overview
-        </div>
-        <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); transition: transform 0.2s;" class="play-btn">
+        </div>`}
+        <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); transition: transform 0.2s; z-index: 2;" class="play-btn">
           <i class="fa-solid fa-play" style="margin-left: 2px;"></i>
         </div>
-        <span style="position: absolute; bottom: 8px; right: 8px; font-size: 0.7rem; font-weight: 700; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading);">${video.primary.duration} mins</span>
+        <span style="position: absolute; bottom: 8px; right: 8px; font-size: 0.7rem; font-weight: 700; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); z-index: 2;">${video.primary.duration} mins</span>
       </div>
     `;
 

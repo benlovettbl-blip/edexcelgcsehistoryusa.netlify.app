@@ -47,7 +47,7 @@
       </div>
 
       <!-- Syllabus Mastery Progress Widget in Sidebar -->
-      <div class="sidebar-mastery-widget" style="padding: 14px; margin: 8px 14px 16px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm);">
+      <div class="sidebar-mastery-widget" style="padding: 14px; margin: 8px 14px 0 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-bottom: none; border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;">
         <div style="display: flex; justify-content: space-between; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">
           <span>Syllabus Mastery</span>
           <span id="stat-overall-progress" style="color: var(--primary); font-weight: 700;">0%</span>
@@ -56,6 +56,53 @@
           <div class="stat-progress-fill" id="stat-overall-progress-bar" style="height: 100%; background: var(--primary); width: 0%; transition: width var(--transition-normal);"></div>
         </div>
         <div style="font-size: 0.65rem; color: var(--text-muted); text-align: right;" id="stat-overall-fraction">0 / 240 Mastered</div>
+      </div>
+
+      <!-- Key Topics Progress Breakdown -->
+      <div id="sidebar-topics-breakdown" style="padding: 10px 14px 14px 14px; margin: 0 14px 16px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-top: 1px dashed rgba(255,255,255,0.08); border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm); display: flex; flex-direction: column; gap: 8px;">
+        <!-- KT1 -->
+        <div class="sidebar-kt-row" style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--text-muted); font-weight: 600;">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 130px;" title="KT1: Civil Rights (1954-65)">KT1: Civil Rights</span>
+            <span id="sidebar-kt1-progress" style="font-weight: 700; color: var(--text-main);">0%</span>
+          </div>
+          <div style="height: 3px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden;">
+            <div id="sidebar-kt1-bar" style="height: 100%; background: var(--primary); width: 0%; transition: width var(--transition-normal);"></div>
+          </div>
+        </div>
+
+        <!-- KT2 -->
+        <div class="sidebar-kt-row" style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--text-muted); font-weight: 600;">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 130px;" title="KT2: Protest & Change (1962-75)">KT2: Protest & Change</span>
+            <span id="sidebar-kt2-progress" style="font-weight: 700; color: var(--text-main);">0%</span>
+          </div>
+          <div style="height: 3px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden;">
+            <div id="sidebar-kt2-bar" style="height: 100%; background: var(--primary); width: 0%; transition: width var(--transition-normal);"></div>
+          </div>
+        </div>
+
+        <!-- KT3 -->
+        <div class="sidebar-kt-row" style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--text-muted); font-weight: 600;">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 130px;" title="KT3: Vietnam Escalation (1954-69)">KT3: Vietnam Escalation</span>
+            <span id="sidebar-kt3-progress" style="font-weight: 700; color: var(--text-main);">0%</span>
+          </div>
+          <div style="height: 3px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden;">
+            <div id="sidebar-kt3-bar" style="height: 100%; background: var(--primary); width: 0%; transition: width var(--transition-normal);"></div>
+          </div>
+        </div>
+
+        <!-- KT4 -->
+        <div class="sidebar-kt-row" style="display: flex; flex-direction: column; gap: 3px;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--text-muted); font-weight: 600;">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 130px;" title="KT4: Vietnam Peace (1969-75)">KT4: Vietnam Peace</span>
+            <span id="sidebar-kt4-progress" style="font-weight: 700; color: var(--text-main);">0%</span>
+          </div>
+          <div style="height: 3px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden;">
+            <div id="sidebar-kt4-bar" style="height: 100%; background: var(--primary); width: 0%; transition: width var(--transition-normal);"></div>
+          </div>
+        </div>
       </div>
 
       <nav class="sidebar-nav">
@@ -126,19 +173,6 @@
           <span>Sound Effects</span>
         </button>
 
-        <!-- Theme Selector -->
-        <div class="theme-toggle-btn" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-palette"></i>
-            <span>Theme</span>
-          </div>
-          <select class="select-input" id="sidebar-theme-selector" style="font-size: 0.8rem; padding: 4px 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main); cursor: pointer; outline: none; height: 32px; width: auto; margin: 0;">
-            <option value="midnight">Midnight</option>
-            <option value="desert">Desert</option>
-            <option value="teal">Teal</option>
-          </select>
-        </div>
-
         <!-- Reset Button -->
         <button class="reset-btn" id="sidebar-reset-progress-btn" title="Reset Study Progress">
           <i class="fa-solid fa-rotate-left"></i>
@@ -177,16 +211,6 @@
           <button class="header-icon-btn desktop-only" id="sound-toggle-btn" title="Toggle Sound Effects">
             <i class="fa-solid fa-volume-high"></i>
           </button>
-
-          <!-- Aesthetic Theme Selector Dropdown -->
-          <div class="header-theme-selector-container desktop-only" style="display: flex; align-items: center; gap: 6px; padding: 0 4px;">
-            <i class="fa-solid fa-palette" style="font-size: 1.1rem; color: var(--text-muted);" title="Aesthetic Theme"></i>
-            <select class="select-input" id="theme-selector" style="font-size: 0.8rem; padding: 4px 24px 4px 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main); cursor: pointer; outline: none; height: 32px; width: auto; margin: 0;">
-              <option value="desert">Woodstock Gold (70s Vibe)</option>
-              <option value="midnight">Washington Midnight (Patriot Dark)</option>
-              <option value="teal">New Frontier Teal (Sleek Modern)</option>
-            </select>
-          </div>
 
           <!-- Reset Study Progress Button -->
           <button class="header-icon-btn desktop-only" id="reset-progress-btn" title="Reset Study Progress">
@@ -446,7 +470,7 @@
           </div>
 
           <!-- Desktop Keyboard Shortcuts Help -->
-          <div class="desktop-only" style="margin-top: 14px; text-align: center; font-size: 0.72rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 12px; width: 100%;">
+          <div class="desktop-only flashcard-keyboard-help" style="margin-top: 14px; text-align: center; font-size: 0.72rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 12px; width: 100%;">
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 2px 5px; border-radius: 3px; border: 1px solid var(--border-glass);">Space</kbd> Flip Card</span>
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 2px 5px; border-radius: 3px; border: 1px solid var(--border-glass);">←</kbd> Study Again</span>
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 2px 5px; border-radius: 3px; border: 1px solid var(--border-glass);">→</kbd> Got It!</span>
@@ -529,6 +553,20 @@
               </div>
             </div>
 
+            <!-- Analytical Mode Toggle -->
+            <div style="margin: 15px 0 10px 0; padding: 12px 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <label class="form-label" style="margin-bottom: 2px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                  <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Analytical Mode (GCSE High-Yield)
+                </label>
+                <span style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-top: 2px;">Switch from simple recall to exam-style questions on causation, consequence, and significance.</span>
+              </div>
+              <label class="switch-control">
+                <input type="checkbox" id="exam-mode-analytical">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
             <button class="btn-primary" id="btn-exam-start" style="margin-top: 10px;">
               <i class="fa-solid fa-circle-play"></i> Start Challenge
             </button>
@@ -546,8 +584,8 @@
                 <div class="exam-stat-value timer" id="exam-timer-text">05:00</div>
               </div>
               <div class="exam-stat-panel">
-                <div class="exam-stat-label">GCSE Grade Estimate</div>
-                <div class="exam-stat-value" id="exam-current-mastery">Grade 9 Est.</div>
+                <div class="exam-stat-label">Knowledge Security Index</div>
+                <div class="exam-stat-value" id="exam-current-mastery">100% Security</div>
               </div>
             </div>
 
@@ -622,9 +660,15 @@
               </div>
             </div>
 
-            <p class="explanation-value" id="results-feedback-text" style="max-width: 500px; margin-top: 12px;">
+            <p class="explanation-value" id="results-feedback-text" style="max-width: 500px; margin-top: 12px; margin-left: auto; margin-right: auto; text-align: center;">
               Superb historical knowledge! You have achieved the highest mark standard. Continue reviewing and consolidating level 9 details.
             </p>
+
+            <!-- Knowledge Security Warning Disclaimer -->
+            <div class="disclaimer-warning-box" style="max-width: 500px; margin: 16px auto 20px auto; padding: 12px 16px; background: rgba(239, 68, 68, 0.05); border-left: 3px solid var(--accent); border-radius: var(--border-radius-sm); text-align: left; font-size: 0.78rem; line-height: 1.45; color: var(--text-muted);">
+              <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent); margin-right: 6px;"></i>
+              <strong>Knowledge Security Note:</strong> This index measures factual recall precision. To secure this grade standard in the actual Edexcel Paper 3 exam, you must combine this recall with structured writing practice (Source Utility & Causation Essays) in the <strong>Exam Hub</strong>.
+            </div>
 
             <!-- High Score Input Box -->
             <div id="exam-highscore-input-box" style="margin-bottom: 24px; padding: 16px; background: rgba(0,0,0,0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); max-width: 380px; margin-left: auto; margin-right: auto; text-align: center; width: 100%; display: none;">
@@ -1728,6 +1772,17 @@
           <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 4px; display: block;">Applies to both click/cheer effects and Speech Synthesis (TTS).</span>
         </div>
 
+        <!-- Aesthetic Theme Setting -->
+        <div class="settings-section" style="border-top: 1px solid var(--border-glass); padding-top: 20px;">
+          <label class="settings-label"><i class="fa-solid fa-palette"></i> Aesthetic Theme</label>
+          <select class="select-input" id="theme-selector" style="font-size: 0.85rem; padding: 6px 12px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: var(--bg-card); color: var(--text-main); cursor: pointer; outline: none; height: 36px; width: 100%; margin-top: 6px; box-sizing: border-box;">
+            <option value="desert">Woodstock Gold (70s Vibe)</option>
+            <option value="midnight">Washington Midnight (Patriot Dark)</option>
+            <option value="teal">New Frontier Teal (Sleek Modern)</option>
+          </select>
+          <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 4px; display: block;">Choose a color palette for your revision session.</span>
+        </div>
+
         <!-- High Contrast Mode Setting -->
         <div class="settings-section" style="border-top: 1px solid var(--border-glass); padding-top: 20px;">
           <div class="settings-toggle-row">
@@ -1738,6 +1793,35 @@
             </label>
           </div>
           <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 6px; display: block;">Removes gradients and translucent overlays, replacing them with solid high-contrast borders and backgrounds for outdoor reading.</span>
+        </div>
+
+        <!-- Progress Synchronization Setting -->
+        <div class="settings-section" style="border-top: 1px solid var(--border-glass); padding-top: 20px;">
+          <label class="settings-label"><i class="fa-solid fa-cloud-arrow-up"></i> Sync Study Progress</label>
+          <span style="font-size: 0.68rem; color: var(--text-muted); margin-bottom: 8px; display: block;">Transfer your completed lessons, quiz scores, and bookmarks to another device without creating an account.</span>
+          
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="font-scale-btn" id="btn-sync-generate" style="width: 100%; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; font-weight: bold; background: rgba(56, 189, 248, 0.1); border-color: var(--primary); color: var(--primary);">
+              <i class="fa-solid fa-key"></i> Generate Save Code
+            </button>
+            
+            <div id="sync-code-output-container" style="display: none; flex-direction: column; gap: 6px;">
+              <div style="display: flex; gap: 6px;">
+                <input type="text" id="sync-code-output-field" readonly style="flex: 1; padding: 8px 12px; font-family: monospace; font-size: 0.75rem; background: rgba(0,0,0,0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); outline: none;" />
+                <button class="font-scale-btn" id="btn-sync-copy" style="flex: 0 0 70px; padding: 8px;">Copy</button>
+              </div>
+              <span id="sync-copy-toast" style="font-size: 0.65rem; color: var(--success); text-align: right; display: none;">Code copied to clipboard!</span>
+            </div>
+            
+            <div style="border-top: 1px dashed var(--border-glass); margin: 6px 0; padding-top: 8px;">
+              <span style="font-size: 0.7rem; font-weight: bold; color: var(--text-muted); display: block; margin-bottom: 6px;">Load Saved Progress:</span>
+              <div style="display: flex; gap: 6px;">
+                <input type="text" id="sync-code-input-field" placeholder="Paste save code here..." style="flex: 1; padding: 8px 12px; font-size: 0.8rem; background: rgba(0,0,0,0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); outline: none;" />
+                <button class="font-scale-btn" id="btn-sync-load" style="flex: 0 0 70px; padding: 8px; font-weight: bold; background: rgba(16, 185, 129, 0.1); border-color: var(--success); color: var(--success);">Load</button>
+              </div>
+              <span id="sync-load-feedback" style="font-size: 0.68rem; margin-top: 4px; display: block; font-weight: 600;"></span>
+            </div>
+          </div>
         </div>
 
         <!-- Keyboard Shortcuts Guide -->

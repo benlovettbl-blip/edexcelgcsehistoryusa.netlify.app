@@ -29,8 +29,11 @@ function startExam(scope, length, timeLimit) {
   state.examSession.grades = {};
   state.examSession.startTime = Date.now();
 
-  // Filter pool of questions based on chosen Scope
-  let pool = [...state.allQuestions];
+  // Filter pool of questions based on chosen Scope and Mode
+  const analyticalToggle = document.getElementById('exam-mode-analytical');
+  const isAnalytical = analyticalToggle ? analyticalToggle.checked : false;
+  let pool = isAnalytical ? [...state.analyticalQuestions] : [...state.allQuestions];
+  
   if (scope !== 'all') {
     if (scope.startsWith('subtopic_')) {
       pool = pool.filter(q => q.subtopicId === scope);
@@ -434,7 +437,7 @@ function displayExamQuestion() {
   const gradedQuestionsCount = gradesMap.length;
   const scoreRatio = gradedQuestionsCount > 0 ? (correctCount / gradedQuestionsCount) : 1; // Start high
   
-  document.getElementById('exam-current-mastery').textContent = Math.round(scoreRatio * 100) + "% Accuracy";
+  document.getElementById('exam-current-mastery').textContent = Math.round(scoreRatio * 100) + "% Security";
   
   // Question Card elements
   const badge = document.getElementById('exam-q-badge');

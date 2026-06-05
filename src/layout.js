@@ -1,6 +1,7 @@
 import { state } from './state.js';
 import { AudioEngine } from './audio.js';
 import { switchView, switchSubtopicMode } from './navigation.js';
+import { generateSyncCode, loadSyncCode } from './sync.js';
 import { 
   flipFlashcard, 
   handleFlashcardGrade, 
@@ -1560,6 +1561,75 @@ function bindEvents() {
       } else {
         document.documentElement.setAttribute('data-contrast', 'normal');
         localStorage.setItem('edexcel_prefs_contrast', 'normal');
+      }
+    });
+  }
+
+  // Progress Sync Listeners
+  const btnSyncGenerate = document.getElementById('btn-sync-generate');
+  const syncOutputContainer = document.getElementById('sync-code-output-container');
+  const syncOutputField = document.getElementById('sync-code-output-field');
+  const btnSyncCopy = document.getElementById('btn-sync-copy');
+  const syncCopyToast = document.getElementById('sync-copy-toast');
+  const btnSyncLoad = document.getElementById('btn-sync-load');
+  const syncInputField = document.getElementById('sync-code-input-field');
+  const syncLoadFeedback = document.getElementById('sync-load-feedback');
+
+  if (btnSyncGenerate && syncOutputContainer && syncOutputField) {
+    btnSyncGenerate.addEventListener('click', () => {
+      AudioEngine.play('click');
+      try {
+        const code = generateSyncCode();
+        syncOutputField.value = code;
+        syncOutputContainer.style.display = 'flex';
+        if (syncCopyToast) syncCopyToast.style.display = 'none';
+      } catch (err) {
+        console.error(err);
+        alert("Failed to generate sync code: " + err.message);
+      }
+    });
+  }
+
+  if (btnSyncCopy && syncOutputField) {
+    btnSyncCopy.addEventListener('click', () => {
+      AudioEngine.play('click');
+      syncOutputField.select();
+      syncOutputField.setSelectionRange(0, 99999); // For mobile devices
+      navigator.clipboard.writeText(syncOutputField.value)
+        .then(() => {
+          if (syncCopyToast) {
+            syncCopyToast.style.display = 'block';
+            setTimeout(() => {
+              syncCopyToast.style.display = 'none';
+            }, 3000);
+          }
+        })
+        .catch(err => {
+          console.error("Failed to copy text: ", err);
+        });
+    });
+  }
+
+  if (btnSyncLoad && syncInputField && syncLoadFeedback) {
+    btnSyncLoad.addEventListener('click', () => {
+      AudioEngine.play('click');
+      const code = syncInputField.value.trim();
+      if (!code) {
+        syncLoadFeedback.style.color = 'var(--accent)';
+        syncLoadFeedback.textContent = 'Please paste a save code first.';
+        return;
+      }
+      
+      try {
+        loadSyncCode(code);
+        syncLoadFeedback.style.color = 'var(--success)';
+        syncLoadFeedback.textContent = 'Progress loaded successfully! Reloading...';
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
+      } catch (err) {
+        syncLoadFeedback.style.color = 'var(--accent)';
+        syncLoadFeedback.textContent = err.message;
       }
     });
   }

@@ -7,6 +7,7 @@ import { Confetti } from './confetti.js';
 
 export function initData() {
   state.allQuestions = [];
+  state.analyticalQuestions = [];
   QUIZ_DATA.forEach(topic => {
     topic.subtopics.forEach(subtopic => {
       subtopic.standard.forEach(q => {
@@ -29,6 +30,18 @@ export function initData() {
           subtopicTitle: subtopic.title
         });
       });
+      if (subtopic.analytical) {
+        subtopic.analytical.forEach(q => {
+          state.analyticalQuestions.push({
+            ...q,
+            type: 'analytical',
+            topicId: topic.id,
+            topicTitle: topic.title,
+            subtopicId: subtopic.id,
+            subtopicTitle: subtopic.title
+          });
+        });
+      }
     });
   });
 

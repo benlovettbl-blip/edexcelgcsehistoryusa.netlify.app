@@ -1564,7 +1564,7 @@ export function renderMasteryView(subtopicId) {
           </div>
 
           <!-- Keyboard Shortcuts Info -->
-          <div class="desktop-only" style="margin-top: 12px; text-align: center; font-size: 0.68rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 10px; width: 100%;">
+          <div class="desktop-only lesson-keyboard-help" style="margin-top: 12px; text-align: center; font-size: 0.68rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 10px; width: 100%;">
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">← / →</kbd> Prev/Next</span>
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">Space</kbd> Reveal Answer</span>
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">1-0</kbd> Jump to Step</span>

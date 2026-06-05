@@ -50,6 +50,7 @@
     },
     // Cache flattened questions list for quick access
     allQuestions: [],
+    analyticalQuestions: [],
     // Past Exam Session State
     pastPaperSession: {
       activePaperId: null,
@@ -253,6 +254,32 @@
                 "Because federal marshals would refuse to protect them at registration offices"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_1_1_a1",
+              "question": "Which of the following was the primary consequence of Southern states using literacy tests and poll taxes in the early 1950s?",
+              "answer": "The systemic disenfranchisement of Black voters, preventing them from electing sympathetic local officials.",
+              "explanation": "Literacy tests and poll taxes were deliberately designed to bypass the 15th Amendment, systematically preventing Black Americans from voting and securing political representation.",
+              "year": 1950,
+              "distractors": [
+                "The rise of a new wave of Black politicians in local governments",
+                "The sudden integration of state legislatures across the Deep South",
+                "The immediate federal abolition of voter registration fees"
+              ]
+            },
+            {
+              "id": "q_1_1_a2",
+              "question": "Which of the following best explains why the NAACP focused heavily on legal challenges through the courts in the early 1950s?",
+              "answer": "To establish binding legal precedents that could dismantle segregation nationwide.",
+              "explanation": "The NAACP's legal strategy aimed to challenge the 'separate but equal' doctrine in courts, creating legal precedents (like Brown) that applied to the entire country.",
+              "year": 1950,
+              "distractors": [
+                "Because mass direct action was banned by federal law",
+                "Because the President had promised to enforce any Supreme Court ruling immediately",
+                "To avoid raising funds from Northern liberal groups"
+              ]
+            }
           ]
         },
         {
@@ -439,6 +466,32 @@
                 "Because the President refused to support the Supreme Court decision in public",
                 "Because the NAACP lacked the financial resources to bring lawsuits to local courts",
                 "Because the majority of Black parents in the South preferred segregated schools"
+              ]
+            }
+          ],
+          "analytical": [
+            {
+              "id": "q_1_2_a1",
+              "question": "Which of the following best explains why President Eisenhower sent the 101st Airborne Division to Little Rock in 1957?",
+              "answer": "To assert federal authority and enforce the Supreme Court desegregation order against state-level resistance.",
+              "explanation": "Eisenhower was forced to act when Governor Orval Faubus used the National Guard to block desegregation, creating a constitutional crisis between state and federal authority.",
+              "year": 1957,
+              "distractors": [
+                "To arrest Governor Orval Faubus for treason",
+                "To implement martial law and shut down the state legislature",
+                "To support Governor Faubus in maintaining segregation"
+              ]
+            },
+            {
+              "id": "q_1_2_a2",
+              "question": "What was the most significant consequence of the Little Rock Crisis on the civil rights movement?",
+              "answer": "It demonstrated that federal intervention was necessary to overcome active Southern state resistance to integration.",
+              "explanation": "Little Rock showed that legal rulings alone were not enough; active federal enforcement and military protection were required to overcome segregationist state resistance.",
+              "year": 1957,
+              "distractors": [
+                "It led to the immediate integration of all schools across the Deep South",
+                "It caused a split between the SCLC and SNCC over tactics",
+                "It forced Governor Faubus to retire from public life"
               ]
             }
           ]
@@ -629,6 +682,32 @@
                 "Student Nonviolent Coordinating Committee (SNCC)"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_1_3_a1",
+              "question": "Which of the following was the primary reason for the success of the Montgomery Bus Boycott?",
+              "answer": "The high level of community organization and the economic pressure of sustained Black boycotts.",
+              "explanation": "The boycott succeeded because the Black community coordinated alternative transport (carpools) and stood united for 381 days, causing massive financial losses to the bus company.",
+              "year": 1955,
+              "distractors": [
+                "The immediate support of the Montgomery city council and mayor",
+                "The federal deployment of troops to protect Black bus riders",
+                "The lack of white backlash or opposition in the city"
+              ]
+            },
+            {
+              "id": "q_1_3_a2",
+              "question": "What was the most significant political consequence of the Montgomery Bus Boycott?",
+              "answer": "It established non-violent direct action as a viable national tactic and elevated MLK to national leadership.",
+              "explanation": "The success of the boycott showed the power of non-violent mass protest and launched the Southern Christian Leadership Conference (SCLC) led by Martin Luther King Jr.",
+              "year": 1956,
+              "distractors": [
+                "It forced the immediate passage of the Civil Rights Act of 1957",
+                "It led directly to the formation of the Black Panther Party",
+                "It completely ended segregation on all Southern public transport systems"
+              ]
+            }
           ]
         },
         {
@@ -815,6 +894,32 @@
                 "Medgar Evers",
                 "Jimmie Lee Jackson",
                 "James Chaney"
+              ]
+            }
+          ],
+          "analytical": [
+            {
+              "id": "q_1_4_a1",
+              "question": "Which of the following explains why the Civil Rights Act of 1957 was considered weak by civil rights leaders?",
+              "answer": "It lacked robust enforcement mechanisms to verify voter registration and protect voters on the ground.",
+              "explanation": "Although it established the Civil Rights Commission, the Act relied on civil cases rather than federal enforcement, which did not stop Southern voter discrimination.",
+              "year": 1957,
+              "distractors": [
+                "It did not outlaw desegregation in housing",
+                "It was declared unconstitutional by the Supreme Court shortly after passage",
+                "It only applied to Northern states, leaving the South untouched"
+              ]
+            },
+            {
+              "id": "q_1_4_a2",
+              "question": "What was the main significance of the formation of the Southern Christian Leadership Conference (SCLC) in 1957?",
+              "answer": "It provided a coordinated, church-backed network for organizing non-violent protest across the South.",
+              "explanation": "The SCLC allowed Southern Black churches to pool resources and moral authority, creating a resilient network that could withstand segregationist intimidation.",
+              "year": 1957,
+              "distractors": [
+                "It shifted the movement's focus away from non-violence to armed self-defense",
+                "It focused entirely on legal court challenges, bypassing direct action",
+                "It was the first student-led civil rights organization"
               ]
             }
           ]
@@ -1011,6 +1116,32 @@
                 "Daisy Bates"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_2_1_a1",
+              "question": "Which of the following best explains why the Greensboro Sit-ins of 1960 succeeded in desegregating lunch counters?",
+              "answer": "The economic impact of the boycotts and the national media coverage of peaceful protestors facing violence.",
+              "explanation": "The combination of economic pressure on Woolworth's and the shocking media coverage of well-dressed students being abused forced business owners to desegregate.",
+              "year": 1960,
+              "distractors": [
+                "The immediate intervention of federal marshals to desegregate private businesses",
+                "The swift passage of local desegregation laws by North Carolina",
+                "The lack of white opposition or protest in the area"
+              ]
+            },
+            {
+              "id": "q_2_1_a2",
+              "question": "What was the primary consequence of the Freedom Rides in 1961 on federal policy?",
+              "answer": "It forced the federal government to actively enforce desegregation rulings on interstate buses and terminals.",
+              "explanation": "Faced with mob violence against riders, Attorney General Robert Kennedy ordered the Interstate Commerce Commission to enforce federal integration rulings.",
+              "year": 1961,
+              "distractors": [
+                "It led to the immediate repeal of the Jim Crow laws by Southern state legislatures",
+                "It prompted President Kennedy to veto the Civil Rights Bill",
+                "It caused SNCC to dissolve and join the Black Muslims"
+              ]
+            }
           ]
         },
         {
@@ -1199,6 +1330,32 @@
                 "Lemuel Penn, Virgil Ware, and Johnny Robinson"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_2_2_a1",
+              "question": "Which of the following best explains why the Birmingham Campaign of 1963 was a turning point in the civil rights struggle?",
+              "answer": "The shocking media images of police brutality against peaceful children forced federal intervention and public outrage.",
+              "explanation": "Images of Bull Connor's police dogs and fire hoses attacking school children shocked the nation, prompting President Kennedy to draft the Civil Rights Bill.",
+              "year": 1963,
+              "distractors": [
+                "It resulted in the immediate arrest and conviction of Police Chief Bull Connor",
+                "It was the first civil rights march that met zero opposition from local authorities",
+                "It convinced Southern segregationists to voluntarily end Jim Crow laws"
+              ]
+            },
+            {
+              "id": "q_2_2_a2",
+              "question": "What was the most significant consequence of the Civil Rights Act of 1964?",
+              "answer": "It outlawed segregation in public accommodations and gave the federal government power to desegregate schools.",
+              "explanation": "The 1964 Act was a landmark law that officially ended the legal basis of Jim Crow segregation in businesses and public spaces.",
+              "year": 1964,
+              "distractors": [
+                "It instantly secured voting rights for all Black Americans in the South",
+                "It ended de facto segregation in Northern housing markets",
+                "It was vetoed by President Johnson, causing mass riots"
+              ]
+            }
           ]
         },
         {
@@ -1385,6 +1542,32 @@
                 "Freedom Summer campaign",
                 "March on Washington",
                 "Greensboro sit-ins"
+              ]
+            }
+          ],
+          "analytical": [
+            {
+              "id": "q_2_3_a1",
+              "question": "Which of the following best explains why the Selma Campaign of 1965 led directly to the Voting Rights Act?",
+              "answer": "The public violence of 'Bloody Sunday' generated massive public outcry and pressured President Johnson to act.",
+              "explanation": "State troopers attacking peaceful marchers at the Edmund Pettus Bridge was broadcast on television, generating moral outrage that forced the passage of voting rights legislation.",
+              "year": 1965,
+              "distractors": [
+                "It was the first march to receive the full endorsement of Southern governors",
+                "It convinced the Supreme Court to rule poll taxes illegal",
+                "It was led entirely by Malcolm X's armed supporters"
+              ]
+            },
+            {
+              "id": "q_2_3_a2",
+              "question": "Which of the following explains why the concept of 'Black Power' grew in popularity in the mid-1960s?",
+              "answer": "Frustration with the slow pace of economic progress and ongoing white violence despite legislative gains.",
+              "explanation": "Many young urban activists felt that SCLC's non-violent campaigns had failed to address poverty, ghetto housing conditions, and police brutality in northern and western cities.",
+              "year": 1966,
+              "distractors": [
+                "The sudden disbandment of the SCLC and MLK's retirement",
+                "The federal government's endorsement of segregation in Northern cities",
+                "The total failure of the Voting Rights Act to register any voters"
               ]
             }
           ]
@@ -1623,6 +1806,32 @@
                 "Integration directives"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_2_4_a1",
+              "question": "Which of the following best explains the primary cause of the Watts Riots in Los Angeles in 1965?",
+              "answer": "Sustained anger over police brutality, high unemployment, and systemic de facto segregation in housing.",
+              "explanation": "While triggered by a police arrest, the Watts riots were fueled by deep-seated resentment of police discrimination and structural inequality in the ghetto.",
+              "year": 1965,
+              "distractors": [
+                "The SCLC's call for violent uprising in Western cities",
+                "The passage of the Voting Rights Act of 1965",
+                "The sudden integration of public schools in California"
+              ]
+            },
+            {
+              "id": "q_2_4_a2",
+              "question": "What was a major consequence of the Kerner Commission report (1968) on American society?",
+              "answer": "It warned that America was moving toward two separate and unequal societies and blamed white racism for inner-city conditions.",
+              "explanation": "The Kerner Commission warned that structural racism, urban poverty, and lack of opportunities were driving a deep divide in America.",
+              "year": 1968,
+              "distractors": [
+                "It recommended the immediate deployment of troops to occupy Northern cities permanently",
+                "It argued that civil rights legislation had gone too far and should be rolled back",
+                "It concluded that urban poverty had been completely solved by the Great Society"
+              ]
+            }
           ]
         }
       ]
@@ -1853,6 +2062,32 @@
                 "Thich Tam Chau"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_3_1_a1",
+              "question": "Which of the following best explains why the Domino Theory was central to US foreign policy in Southeast Asia?",
+              "answer": "It created the belief that if one country fell to communism, neighboring nations would quickly follow, threatening US security.",
+              "explanation": "The domino theory justified the containment strategy in Asia, convincing US leaders that keeping South Vietnam non-communist was vital to prevent all of Southeast Asia from falling.",
+              "year": 1954,
+              "distractors": [
+                "It argued that Asian nations were naturally democratic and would resist communism on their own",
+                "It was a strategy to colonize Indochina for US economic exploitation",
+                "It advocated for peaceful coexistence with the Soviet Union in Asia"
+              ]
+            },
+            {
+              "id": "q_3_1_a2",
+              "question": "What was the primary consequence of the French defeat at Dien Bien Phu in 1954?",
+              "answer": "The end of French colonial rule in Indochina and the division of Vietnam at the Geneva Conference.",
+              "explanation": "The defeat forced France to withdraw, leading to the Geneva Accords which temporarily divided Vietnam at the 17th parallel pending elections.",
+              "year": 1954,
+              "distractors": [
+                "The immediate deployment of 100,000 US combat troops to Hanoi",
+                "The signing of a permanent peace treaty between North and South Vietnam",
+                "The coronation of Bao Dai as Emperor of a unified Vietnam"
+              ]
+            }
           ]
         },
         {
@@ -2063,6 +2298,32 @@
                 "The attack was actually launched by Chinese warships, not North Vietnamese",
                 "The USS Maddox was sunk with all hands, which was covered up by the US Navy",
                 "The North Vietnamese launched a full amphibious invasion of the Gulf"
+              ]
+            }
+          ],
+          "analytical": [
+            {
+              "id": "q_3_2_a1",
+              "question": "Which of the following best explains why the Gulf of Tonkin Resolution was a turning point in the Vietnam War?",
+              "answer": "It gave the President blank-check authority to deploy combat troops without a formal declaration of war by Congress.",
+              "explanation": "The resolution shifted war-making power to the executive branch, allowing LBJ to rapidly escalate and send US ground troops into combat.",
+              "year": 1964,
+              "distractors": [
+                "It marked the first time the US entered a formal alliance with South Vietnam",
+                "It led to an immediate joint invasion of North Vietnam by US and Chinese forces",
+                "It forced Richard Nixon to resign his presidency"
+              ]
+            },
+            {
+              "id": "q_3_2_a2",
+              "question": "What was a major consequence of the launch of Operation Rolling Thunder in 1965?",
+              "answer": "It marked the systematic escalation of the air war but failed to stop the flow of supplies from North Vietnam.",
+              "explanation": "Despite dropping massive amounts of explosives, the bombing campaign failed to break North Vietnamese morale or block the Ho Chi Minh Trail.",
+              "year": 1965,
+              "distractors": [
+                "It immediately forced Ho Chi Minh to surrender in Geneva",
+                "It convinced China to enter the war on the side of South Vietnam",
+                "It led to the total destruction of the Vietcong's underground tunnels"
               ]
             }
           ]
@@ -2287,6 +2548,32 @@
                 "1,500 km",
                 "5,000 km",
                 "30,000 km"
+              ]
+            }
+          ],
+          "analytical": [
+            {
+              "id": "q_3_3_a1",
+              "question": "Which of the following best explains why the Ho Chi Minh Trail was crucial to the Vietcong's military strategy?",
+              "answer": "It allowed North Vietnam to continuously supply guerrillas in the South via routes in Laos and Cambodia.",
+              "explanation": "The trail bypassed the DMZ by going through neutral Laos and Cambodia, allowing the NVA to supply the Vietcong with arms and troops.",
+              "year": 1965,
+              "distractors": [
+                "It was a paved highway that allowed North Vietnamese tanks to invade Saigon directly",
+                "It was built entirely within the Demilitarized Zone (DMZ), protected by international law",
+                "It was a major trade route that supplied food from China directly to South Vietnam"
+              ]
+            },
+            {
+              "id": "q_3_3_a2",
+              "question": "What was the primary consequence of the US military's heavy reliance on 'Search and Destroy' tactics?",
+              "answer": "It alienated the South Vietnamese peasantry, driving many to support the Vietcong.",
+              "explanation": "Search and destroy missions caused high civilian casualties and destroyed villages, which turned local peasants against the US and the Saigon government.",
+              "year": 1965,
+              "distractors": [
+                "It successfully wiped out the Vietcong's organizational structure within two years",
+                "It led to a swift capture of Hanoi by US ground forces",
+                "It reduced the need for US draft calls and troop deployments"
               ]
             }
           ]
@@ -2525,6 +2812,32 @@
                 "100,000 tons"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_3_4_a1",
+              "question": "Which of the following best explains the main objective of Nixon's policy of 'Vietnamization'?",
+              "answer": "To withdraw US troops while transferring combat responsibility to the South Vietnamese forces.",
+              "explanation": "Vietnamization aimed to de-escalate US involvement and quiet domestic protests by training the ARVN to fight the war on their own.",
+              "year": 1969,
+              "distractors": [
+                "To completely annex South Vietnam as a permanent US territory",
+                "To replace President Thieu with a communist coalition government",
+                "To launch a full-scale joint invasion of North Vietnam using allied troops"
+              ]
+            },
+            {
+              "id": "q_3_4_a2",
+              "question": "What was the most significant domestic consequence of Nixon's invasion of Cambodia in 1970?",
+              "answer": "It triggered massive anti-war protests, including the Kent State shootings, and deep public outrage.",
+              "explanation": "The invasion of Cambodia was seen as expanding the war rather than ending it, leading to a massive wave of student demonstrations.",
+              "year": 1970,
+              "distractors": [
+                "It convinced Congress to double the defense budget for the war",
+                "It led to the immediate surrender of North Vietnamese forces",
+                "It was widely praised by the public and united the country behind Nixon"
+              ]
+            }
           ]
         }
       ]
@@ -2743,6 +3056,32 @@
                 "5 million students strike"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_4_1_a1",
+              "question": "Which of the following best explains why the Tet Offensive was a turning point in the Vietnam War?",
+              "answer": "It shattered US government claims that the enemy was near defeat, widening the 'credibility gap.'",
+              "explanation": "Although a tactical military failure for the communists, the size of the offensive shocked the public, proving that the war was far from over.",
+              "year": 1968,
+              "distractors": [
+                "It was a decisive military victory for the Vietcong that captured Saigon",
+                "It forced President Johnson to run for a third term to finish the war",
+                "It convinced North Vietnam that a military victory was impossible"
+              ]
+            },
+            {
+              "id": "q_4_1_a2",
+              "question": "What was the most significant political consequence of the Tet Offensive on US domestic politics?",
+              "answer": "It led President Johnson to halt bombing, begin peace talks, and announce he would not run for re-election.",
+              "explanation": "The political fallout convinced Johnson that military victory was impossible and that his presidency had lost the consensus needed to govern.",
+              "year": 1968,
+              "distractors": [
+                "It resulted in Congress passing a declaration of war against North Vietnam",
+                "It led to the immediate impeachment of Richard Nixon",
+                "It forced the US to draft all men over the age of 30"
+              ]
+            }
           ]
         },
         {
@@ -2941,6 +3280,32 @@
                 "50 workers",
                 "500 workers",
                 "1,000 workers"
+              ]
+            }
+          ],
+          "analytical": [
+            {
+              "id": "q_4_2_a1",
+              "question": "Which of the following best explains why the revelation of the My Lai Massacre in 1969 deeply shocked the American public?",
+              "answer": "It exposed the brutal killing of unarmed Vietnamese civilians by US soldiers and a subsequent military cover-up.",
+              "explanation": "My Lai undermined the moral authority of the US mission, showing that US troops had committed war crimes against innocent women and children.",
+              "year": 1969,
+              "distractors": [
+                "It showed that the South Vietnamese army had betrayed US troops in combat",
+                "It was the first battle where the Vietcong used chemical weapons against civilians",
+                "It proved that the US had won the war but refused to accept victory"
+              ]
+            },
+            {
+              "id": "q_4_2_a2",
+              "question": "What was the primary consequence of the Kent State shootings in 1970?",
+              "answer": "It intensified the student anti-war movement, leading to a national student strike of over 4 million students.",
+              "explanation": "The shooting of unarmed student protestors by National Guardsmen polarized the nation, forcing hundreds of colleges to close down.",
+              "year": 1970,
+              "distractors": [
+                "It caused President Nixon to immediately resign from office",
+                "It led to the outlawing of all anti-war protests by the Supreme Court",
+                "It prompted the immediate withdrawal of all US troops from Southeast Asia"
               ]
             }
           ]
@@ -3167,6 +3532,32 @@
                 "Cooper-Church Amendment"
               ]
             }
+          ],
+          "analytical": [
+            {
+              "id": "q_4_3_a1",
+              "question": "Which of the following best explains why the Paris Peace Accords of 1973 did not lead to a lasting peace in Vietnam?",
+              "answer": "The agreement allowed North Vietnamese troops to remain in the South, leading to renewed conflict once US forces left.",
+              "explanation": "Because Nixon wanted to withdraw US troops, the accords left South Vietnam vulnerable by allowing North Vietnamese units to hold their positions.",
+              "year": 1973,
+              "distractors": [
+                "Richard Nixon refused to sign the final agreement in Paris",
+                "The Soviet Union launched a nuclear strike on Saigon immediately after the signing",
+                "South Vietnam invaded North Vietnam in violation of the cease-fire"
+              ]
+            },
+            {
+              "id": "q_4_3_a2",
+              "question": "What was the primary consequence of the Fall of Saigon in April 1975?",
+              "answer": "The total defeat of South Vietnam, the evacuation of US personnel, and the unification of Vietnam under a communist government.",
+              "explanation": "Saigon's surrender to the NVA marked the end of the Vietnam War and the establishment of a unified Socialist Republic of Vietnam.",
+              "year": 1975,
+              "distractors": [
+                "The outbreak of a war between China and a unified communist Vietnam",
+                "The immediate deployment of a new US expeditionary force by President Ford",
+                "The establishment of a permanent coalition government between communists and nationalists"
+              ]
+            }
           ]
         },
         {
@@ -3377,6 +3768,32 @@
                 "21 years old",
                 "24 years old",
                 "26 years old"
+              ]
+            }
+          ],
+          "analytical": [
+            {
+              "id": "q_4_4_a1",
+              "question": "Which of the following is the most significant reason why US military power failed to defeat the Vietcong?",
+              "answer": "The Vietcong's effective guerrilla tactics, local knowledge, and determination outlasted the US political will to fight.",
+              "explanation": "Guerrilla warfare made it impossible to identify the enemy or win ground permanently, while NVA determination made the cost of the war unsustainable for the US.",
+              "year": 1975,
+              "distractors": [
+                "The US military lacked advanced weaponry and air power",
+                "The South Vietnamese army (ARVN) was highly disciplined but too small",
+                "The US public refused to pay any taxes to fund the military"
+              ]
+            },
+            {
+              "id": "q_4_4_a2",
+              "question": "What was the primary consequence of the War Powers Act passed by Congress in 1973?",
+              "answer": "It restricted the President's power to commit US troops to foreign conflicts without congressional approval.",
+              "explanation": "Passed in the wake of Vietnam and Cambodia escalations, the Act reasserted Congressional oversight on military actions, limiting unilateral presidential deployments.",
+              "year": 1973,
+              "distractors": [
+                "It gave the military complete control over domestic foreign policy decisions",
+                "It abolished the draft and replaced it with a volunteer army permanently",
+                "It repealed the Constitution's definition of commander-in-chief"
               ]
             }
           ]
@@ -4042,19 +4459,19 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       "mock_exam_5": {
         "id": "mock_5_q2",
         "topicCode": "Mock 5",
-        "question": "Explain why US Search and Destroy tactics were unsuccessful in the years 1965–68.",
+        "question": "Explain why US Search and Destroy tactics were unsuccessful in the years 1965\u201368.",
         "stimulus1": "Guerrilla tactics",
-      "stimulus2": "Hearts and minds",
+        "stimulus2": "Hearts and minds",
         "clue": "Explain how the Vietcong used guerrilla tactics and tunnel networks to ambush US patrols, how Search and Destroy raids alienated civilians and failed to win hearts and minds, and how the reliance on body counts meant the US could not hold territory permanently.",
         "knowledgeWords": [
-        "Search and Destroy",
-        "guerrilla",
-        "tunnels",
-        "booby traps",
-        "hearts and minds",
-        "attrition",
-        "alienated"
-      ],
+          "Search and Destroy",
+          "guerrilla",
+          "tunnels",
+          "booby traps",
+          "hearts and minds",
+          "attrition",
+          "alienated"
+        ],
         "connectiveWords": [
           "as a result",
           "consequently",
@@ -4064,7 +4481,7 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "due to",
           "furthermore"
         ],
-        "model": "\u201COne reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was that Vietcong guerrilla tactics neutralized the American advantage in firepower.\u201D The Vietcong avoided large-scale conventional battles, choosing to fight in close proximity and utilize complex underground [[tunnels]] to evade detection. They deployed lethal [[booby traps]], such as Punji pits and tripwires, which caused high casualties and constant paranoia among US troops. {{Therefore, the Vietcong's guerrilla tactics made Search and Destroy missions unsuccessful because US patrols were constantly ambushed by an invisible enemy, preventing them from utilizing their superior weapons.}}\n\n\u201CA second reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was that they actively alienated the South Vietnamese peasant population.\u201D Search and Destroy operations relied on burning suspected villages, destroying crops, and killing livestock in what were often called 'Zippo raids.' This destruction of rural livelihoods completely undermined the US policy of winning the [[hearts and minds]] of the civilian population. {{Therefore, civilian alienation made Search and Destroy tactics unsuccessful because it drove local peasants to support the Vietcong, providing them with food, cover, and vital intelligence.}}\n\n\u201CA third reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was the flawed focus on body counts rather than holding territory.\u201D The US military strategy of [[attrition]] aimed to kill more enemy fighters than they could replace, using helicopters to temporarily sweep areas before returning to base. However, this meant that once US forces withdrew, the Vietcong simply returned and re-established control over the villages. {{Therefore, the focus on body counts and lack of territorial control made Search and Destroy unsuccessful because it resulted in temporary tactical raids that failed to establish permanent security or political control.}}"
+        "model": "\u201COne reason why US Search and Destroy tactics were unsuccessful in the years 1965\u201368 was that Vietcong guerrilla tactics neutralized the American advantage in firepower.\u201D The Vietcong avoided large-scale conventional battles, choosing to fight in close proximity and utilize complex underground [[tunnels]] to evade detection. They deployed lethal [[booby traps]], such as Punji pits and tripwires, which caused high casualties and constant paranoia among US troops. {{Therefore, the Vietcong's guerrilla tactics made Search and Destroy missions unsuccessful because US patrols were constantly ambushed by an invisible enemy, preventing them from utilizing their superior weapons.}}\n\n\u201CA second reason why US Search and Destroy tactics were unsuccessful in the years 1965\u201368 was that they actively alienated the South Vietnamese peasant population.\u201D Search and Destroy operations relied on burning suspected villages, destroying crops, and killing livestock in what were often called 'Zippo raids.' This destruction of rural livelihoods completely undermined the US policy of winning the [[hearts and minds]] of the civilian population. {{Therefore, civilian alienation made Search and Destroy tactics unsuccessful because it drove local peasants to support the Vietcong, providing them with food, cover, and vital intelligence.}}\n\n\u201CA third reason why US Search and Destroy tactics were unsuccessful in the years 1965\u201368 was the flawed focus on body counts rather than holding territory.\u201D The US military strategy of [[attrition]] aimed to kill more enemy fighters than they could replace, using helicopters to temporarily sweep areas before returning to base. However, this meant that once US forces withdrew, the Vietcong simply returned and re-established control over the villages. {{Therefore, the focus on body counts and lack of territorial control made Search and Destroy unsuccessful because it resulted in temporary tactical raids that failed to establish permanent security or political control.}}"
       },
       "mock_exam_8": {
         "id": "mock_8_q2",
@@ -5453,13 +5870,13 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q2": {
         "id": "mock_5_q2",
-        "question": "Explain why US Search and Destroy tactics were unsuccessful in the years 1965–68. (12 marks)",
+        "question": "Explain why US Search and Destroy tactics were unsuccessful in the years 1965\u201368. (12 marks)",
         "stimulus": [
-        "Guerrilla tactics",
-        "Hearts and minds"
-      ],
+          "Guerrilla tactics",
+          "Hearts and minds"
+        ],
         "clue": "Explain how the Vietcong used guerrilla tactics and tunnel networks to ambush US patrols, how Search and Destroy raids alienated civilians and failed to win hearts and minds, and how the reliance on body counts meant the US could not hold territory permanently.",
-        "model": "\u201COne reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was that Vietcong guerrilla tactics neutralized the American advantage in firepower.\u201D The Vietcong avoided large-scale conventional battles, choosing to fight in close proximity and utilize complex underground [[tunnels]] to evade detection. They deployed lethal [[booby traps]], such as Punji pits and tripwires, which caused high casualties and constant paranoia among US troops. {{Therefore, the Vietcong's guerrilla tactics made Search and Destroy missions unsuccessful because US patrols were constantly ambushed by an invisible enemy, preventing them from utilizing their superior weapons.}}\n\n\u201CA second reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was that they actively alienated the South Vietnamese peasant population.\u201D Search and Destroy operations relied on burning suspected villages, destroying crops, and killing livestock in what were often called 'Zippo raids.' This destruction of rural livelihoods completely undermined the US policy of winning the [[hearts and minds]] of the civilian population. {{Therefore, civilian alienation made Search and Destroy tactics unsuccessful because it drove local peasants to support the Vietcong, providing them with food, cover, and vital intelligence.}}\n\n\u201CA third reason why US Search and Destroy tactics were unsuccessful in the years 1965–68 was the flawed focus on body counts rather than holding territory.\u201D The US military strategy of [[attrition]] aimed to kill more enemy fighters than they could replace, using helicopters to temporarily sweep areas before returning to base. However, this meant that once US forces withdrew, the Vietcong simply returned and re-established control over the villages. {{Therefore, the focus on body counts and lack of territorial control made Search and Destroy unsuccessful because it resulted in temporary tactical raids that failed to establish permanent security or political control.}}"
+        "model": "\u201COne reason why US Search and Destroy tactics were unsuccessful in the years 1965\u201368 was that Vietcong guerrilla tactics neutralized the American advantage in firepower.\u201D The Vietcong avoided large-scale conventional battles, choosing to fight in close proximity and utilize complex underground [[tunnels]] to evade detection. They deployed lethal [[booby traps]], such as Punji pits and tripwires, which caused high casualties and constant paranoia among US troops. {{Therefore, the Vietcong's guerrilla tactics made Search and Destroy missions unsuccessful because US patrols were constantly ambushed by an invisible enemy, preventing them from utilizing their superior weapons.}}\n\n\u201CA second reason why US Search and Destroy tactics were unsuccessful in the years 1965\u201368 was that they actively alienated the South Vietnamese peasant population.\u201D Search and Destroy operations relied on burning suspected villages, destroying crops, and killing livestock in what were often called 'Zippo raids.' This destruction of rural livelihoods completely undermined the US policy of winning the [[hearts and minds]] of the civilian population. {{Therefore, civilian alienation made Search and Destroy tactics unsuccessful because it drove local peasants to support the Vietcong, providing them with food, cover, and vital intelligence.}}\n\n\u201CA third reason why US Search and Destroy tactics were unsuccessful in the years 1965\u201368 was the flawed focus on body counts rather than holding territory.\u201D The US military strategy of [[attrition]] aimed to kill more enemy fighters than they could replace, using helicopters to temporarily sweep areas before returning to base. However, this meant that once US forces withdrew, the Vietcong simply returned and re-established control over the villages. {{Therefore, the focus on body counts and lack of territorial control made Search and Destroy unsuccessful because it resulted in temporary tactical raids that failed to establish permanent security or political control.}}"
       },
       "q3a": {
         "id": "mock_5_q3a",
@@ -5854,6 +6271,12 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
   // src/lessons_data.js
   var LESSONS_DATA = {
     "subtopic_1_1": {
+      "livedExperience": {
+        "witness": "John Lewis",
+        "context": "Civil rights activist and later Congressman, writing in his memoir *Walking with the Wind: A Memoir of the Movement* (1998) about growing up in rural Troy, Alabama.",
+        "quote": "I remember going into town and seeing the clean, beautiful water fountain for white people, and the dirty, rusted fountain for us. I remember the signs: WHITE and COLORED. It was a physical and psychological barrier that told us every day that we were less than human. When I asked my parents why, they said, 'That's the way it is. Don't get in the way.'",
+        "discussionQuestion": "How does John Lewis's childhood experience illustrate the difference between the physical enforcement of segregation and its psychological impact on young Black Americans?"
+      },
       "headerTitle": "KT 1.1 - GCSE CORE MASTERY: What was the position of Black Americans in the early 1950s?",
       "headerIntro": "In the early 1950s, Black Americans in the Southern states lived under the oppressive system of Jim Crow. Racial segregation was legally enforced by state laws, and voting rights were systematically denied through arbitrary tests and economic terror. To fight this institutionalised inequality, civil rights organisations deployed different strategies: the NAACP used legal litigation in federal courts, while CORE pioneered non-violent direct action protests.",
       "steps": [
@@ -6109,6 +6532,12 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
       }
     },
     "subtopic_1_2": {
+      "livedExperience": {
+        "witness": "Elizabeth Eckford",
+        "context": "One of the 'Little Rock Nine' students, recalling her attempt to enter Central High School in Arkansas on September 4, 1957.",
+        "quote": "I looked for a friendly face in the crowd... I saw an elderly lady and she seemed to have a kind face, but when I looked at her again she spat on me. They surged closer, shouting, 'Lynch her! Lynch her!' I went to the bus stop and sat down on the bench. I couldn't keep from crying. I just wanted to go home.",
+        "discussionQuestion": "Elizabeth Eckford was just 15 years old. Why do you think school desegregation provoked such intense personal anger from ordinary white citizens?"
+      },
       "headerTitle": "KT 1.2 - GCSE CORE MASTERY: How did developments in education challenge segregation (1954\u201357)?",
       "headerIntro": "The desegregation of public schools became the first major battleground of the civil rights movement. In 1954, the NAACP won the landmark Brown v. Board of Education case, with the Supreme Court declaring school segregation unconstitutional. However, this sparked 'Massive Resistance' across the South, culminating in the Little Rock High School crisis in 1957. Here, Arkansas Governor Orval Faubus defied federal law, forcing President Eisenhower to deploy federal troops to protect Black students.",
       "steps": [
@@ -6323,6 +6752,12 @@ Source E is highly useful for showing the scale of the state and military confli
       }
     },
     "subtopic_1_3": {
+      "livedExperience": {
+        "witness": "Jo Ann Robinson",
+        "context": "President of the Women's Political Council (WPC), recalling the night of Rosa Parks's arrest in December 1955.",
+        "quote": "I did not go to bed that night. I went to the college and called two of my students. We stayed up all night, typing the stencils and running off 35,000 leaflets. By 6:00 a.m. we had them divided into neat piles for distribution. The leaflets said: 'Don't ride the buses on Monday.' We were tired, but we knew this was the moment we had waited for.",
+        "discussionQuestion": "Rosa Parks's arrest is famous, but Jo Ann Robinson's account shows the massive organization behind the scenes. How does this source challenge the idea that the boycott was just a spontaneous event?"
+      },
       "headerTitle": "KT 1.3 - GCSE CORE MASTERY: How did the Montgomery Bus Boycott happen, and why did it succeed?",
       "headerIntro": "The Montgomery Bus Boycott (1955\u20131956) was the first major grassroots test of non-violent resistance. Beginning immediately after Rosa Parks' arrest on 1 December 1955, the local Black community organized the Montgomery Improvement Association (MIA), electing Martin Luther King Jr. as president. Black citizens, who made up 70% of bus riders, walked, carpooled, and organized private cabs for 381 days. Despite bombings, arrests, and intimidation, the boycott devastated bus revenues until November 1956, when the Supreme Court ruled segregated transport unconstitutional, proving the power of mass direct action.",
       "steps": [
@@ -6549,6 +6984,12 @@ Source E is highly useful for showing the direct police criminalization of peace
       }
     },
     "subtopic_1_4": {
+      "livedExperience": {
+        "witness": "Mose Wright",
+        "context": "Emmett Till's great-uncle, testifying at the trial of the killers in Mississippi (September 1955).",
+        "quote": "They came to my house at 2:00 in the morning. Bryant had a pistol in one hand and a flashlight in the other. He asked me if I had two boys from Chicago. I said yes. He told Emmett to get his clothes on. Emmett's aunt offered them money to leave him, but they told her to shut up. In court, I had to stand up, look at those white men, and point my finger at them. I said: 'There he is.' I knew the danger of pointing my finger at a white man in Mississippi, but I had to do it.",
+        "discussionQuestion": "Why was Mose Wright's action in court\u2014openly accusing and pointing at white men in Mississippi\u2014considered a revolutionary act of bravery in 1955?"
+      },
       "headerTitle": "KT 1.4 - GCSE CORE MASTERY: Why did white people in the South resist integration, and how did they do it?",
       "headerIntro": "In the wake of the 1954 Brown decision and the 1956 Montgomery victory, Southern white resistance hardened. Southern politicians signed the 'Southern Manifesto' in 1956, pledging to defeat integration by all legal means. Segregationists formed White Citizens' Councils, using economic retaliation, firings, and mortgage foreclosures against Black activists. Concurrently, KKK violence erupted, targeting leaders with bombings. Governors like Orval Faubus (1957) and later Ross Barnett (1962) used state forces to defy federal mandates, creating a constitutional crisis over states' rights.",
       "steps": [
@@ -6792,6 +7233,12 @@ Source E is highly useful for showing the direct police criminalization of peace
       }
     },
     "subtopic_2_1": {
+      "livedExperience": {
+        "witness": "Franklin McCain",
+        "context": "One of the 'Greensboro Four' student activists, recalling the sit-in on February 1, 1960.",
+        "quote": "The waitress told us, 'We don't serve you here.' We said, 'We'd like to be served.' I had this feeling of absolute liberation. I felt like I had finally stood up and claimed my manhood. I had been afraid before, but sitting on that stool, I felt ten feet tall. A white police officer came in, paced behind us, and shook his nightstick, but he didn't know what to do because we were just sitting there quietly, asking for a cup of coffee. That's when I knew we had won a moral victory.",
+        "discussionQuestion": "How can sitting quietly at a lunch counter be a powerful form of protest? Why was the police officer unable to stop them?"
+      },
       "headerTitle": "KT 2.1 - GCSE CORE MASTERY: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?",
       "headerIntro": "By 1960, a new generation of student activists accelerated the movement. In February 1960, four Black students staged a sit-in at a Woolworth's lunch counter in Greensboro, North Carolina, launching a wave of sit-ins that integrated over 100 lunch counters. In May 1961, the Congress of Racial Equality (CORE) launched the Freedom Rides to test desegregation on interstate buses, facing brutal mob violence and bombings in Alabama. In September 1962, James Meredith became the first Black student at the University of Mississippi, requiring federal marshals and troops to suppress a segregationist riot that left two dead.",
       "steps": [
@@ -7057,6 +7504,12 @@ Source E is highly useful for showing the extreme level of state resistance to u
       }
     },
     "subtopic_2_2": {
+      "livedExperience": {
+        "witness": "Sheyann Webb-Christburg",
+        "context": "Recalling her experience as an 8-year-old participant in the 'Bloody Sunday' march in Selma, Alabama on March 7, 1965.",
+        "quote": "All I could see was a sea of blue state troopers. Suddenly, they charged. I saw horses, and I heard people screaming. Tear gas filled the air, and it burned my eyes. People were being beaten with nightsticks, falling all around me. I turned and ran for my life. A young white minister, Hosea Williams, grabbed my hand and helped me run. I thought I was going to die. When I got home, I was shaking, but I told my mother, 'I'm still going to march until we get our freedom.'",
+        "discussionQuestion": "Given the extreme danger, why do you think civil rights leaders allowed children to march? How did the public reaction to this violence change federal policy?"
+      },
       "headerTitle": "KT 2.2 - GCSE CORE MASTERY: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?",
       "headerIntro": "In 1963 and 1965, the Southern Christian Leadership Conference (SCLC) targeted the most segregated cities. The Birmingham Campaign (April 1963) saw police chief Bull Connor use fire hoses and attack dogs on child protesters, sparking international outrage and forcing President Kennedy to draft civil rights legislation. Following the Civil Rights Act of 1964, attention shifted to voting. In March 1965, the Selma-to-Montgomery marches faced state trooper violence on 'Bloody Sunday', forcing President Johnson to pass the Voting Rights Act of 1965, which outlawed literacy tests.",
       "steps": [
@@ -7316,6 +7769,12 @@ Source E is highly useful for showing the political and legislative outcomes of 
       }
     },
     "subtopic_2_3": {
+      "livedExperience": {
+        "witness": "Kathleen Cleaver",
+        "context": "Communications Secretary for the Black Panther Party, interviewed in 1968 about the philosophy of Black Power and self-defense.",
+        "quote": "For years, we were taught to hate ourselves. We were told our hair was too nappy, our skin too dark, our culture non-existent. Black Power means we define ourselves. We are proud of our African heritage. We wear our hair in Afros, and we do not beg white people for integration. We demand control of our own communities\u2014our schools, our housing, our police. And if the police attack us, we have a constitutional right to defend ourselves. That is not hate; that is self-preservation.",
+        "discussionQuestion": "How did the Black Power philosophy shift the goal of the movement from 'integration' to 'self-determination'? What were the potential benefits and risks of this new approach?"
+      },
       "headerTitle": "KT 2.3 - GCSE CORE MASTERY: What was the Black Power movement, and how did it differ from non-violent protests?",
       "headerIntro": "By the mid-1960s, frustration with slow progress and continued white violence led to a major ideological split. Malcolm X, representing the Nation of Islam, criticized MLK's integrationist non-violence and championed Black nationalism and self-defense 'by any means necessary'. Following Malcolm's 1965 assassination, Stokely Carmichael popularised the term 'Black Power' at a 1966 march. This philosophy was institutionalized by the Black Panther Party (founded 1966), which organized armed neighborhood patrols and community programs, reflecting a shift toward racial pride and economic independence.",
       "steps": [
@@ -7574,6 +8033,12 @@ Source E is highly useful for showing how Black Power and militancy were institu
       }
     },
     "subtopic_2_4": {
+      "livedExperience": {
+        "witness": "Watts Resident",
+        "context": "An anonymous resident of Watts, Los Angeles, interviewed during the Watts Uprising in August 1965.",
+        "quote": "People call this a riot. We call it an uprising. We aren't just destroying things; we are crying out. We've got no jobs, the police beat us up every day, and we live in rundown tenements where the rent is sky-high. The civil rights laws in Washington didn't change anything for us in Watts. We still can't feed our kids. If we have to burn down these white-owned stores that cheat us every day just to make the country look at us, then that's what we will do.",
+        "discussionQuestion": "According to this resident, why did federal laws like the Civil Rights Act fail to prevent urban riots? What does this tell us about the limits of legal rights when economic misery remains?"
+      },
       "headerTitle": "KT 2.4 - GCSE CORE MASTERY: Why did riots break out in American cities between 1965 and 1968?",
       "headerIntro": "Between 1965 and 1967, deep-seated grievances over poverty, housing, and police brutality triggered massive urban riots in Northern and Western cities, including Watts (1965) and Detroit (1967). In response, President Johnson established the Kerner Commission, which reported in 1968 that America was moving toward 'two societies, one Black, one white\u2014separate and unequal', blaming systemic white racism. Following Martin Luther King Jr.'s assassination in April 1968, Congress passed the Civil Rights Act of 1968 (Fair Housing Act), prohibiting racial discrimination in housing.",
       "steps": [
@@ -7838,6 +8303,12 @@ Source E is highly useful for showing how Black Power and militancy were institu
       }
     },
     "subtopic_3_1": {
+      "livedExperience": {
+        "witness": "Thich Thien Hao",
+        "context": "A Buddhist monk and eyewitness to the self-immolation of Thich Quang Duc in Saigon on June 11, 1963.",
+        "quote": "I watched as brother Quang Duc sat in the lotus position in the middle of the street. Another monk poured gasoline over him. He struck a match and was instantly enveloped in flames. He did not cry out, nor did he move a muscle. The air was thick with the smell of burning flesh, and the crowd around him began to weep and bow down. He burned for ten minutes before falling. He did this so the world would see the unbearable oppression of the Diem regime against the Buddhist majority.",
+        "discussionQuestion": "What does this extreme act of protest reveal about the intensity of Buddhist opposition to Diem? How did this impact US support for Diem?"
+      },
       "headerTitle": "KT 3.1 - GCSE CORE MASTERY: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?",
       "headerIntro": "Following the 1954 Geneva Accords, which temporarily divided Vietnam at the 17th parallel, the United States committed to containing communism in Southeast Asia. Guided by President Eisenhower's 'Domino Theory'\u2014the belief that if Vietnam fell to communism, neighboring nations would follow\u2014the USA backed Ngo Dinh Diem's anti-communist government in South Vietnam. However, Diem's corrupt regime, Buddhist persecutions, and refusal to hold elections alienated the populace, leading to the 1960 formation of the Vietcong and Diem's ultimate assassination in November 1963.",
       "steps": [
@@ -8085,6 +8556,12 @@ Source E is highly useful for showing the scale of religious opposition that und
       }
     },
     "subtopic_3_2": {
+      "livedExperience": {
+        "witness": "James Stockdale",
+        "context": "US Navy pilot flying over the Gulf of Tonkin on the night of August 4, 1964.",
+        "quote": "I had the best seat in the house from my cockpit, flying low over the destroyers Maddox and Turner Joy in the pitch black. I was ordered to look for North Vietnamese PT boats attacking our ships. I fired my guns where the sonar men said the targets were, but there was nothing there. No boats, no wakes, no gunfire from the Vietnamese. It was just our own ships shooting at ghost targets on their radars. When I landed, I was told we were launching retaliatory airstrikes for an 'attack' that I knew had never happened.",
+        "discussionQuestion": "If the second Gulf of Tonkin attack was a 'ghost' event, how does this affect the moral and political justification for the US escalation of the war?"
+      },
       "headerTitle": "KT 3.2 - GCSE CORE MASTERY: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?",
       "headerIntro": "Following President Kennedy's assassination in 1963, President Johnson inherited a rapidly deteriorating situation in South Vietnam. In August 1964, reports of US destroyers being attacked by North Vietnamese patrol boats in the Gulf of Tonkin provided the pretext Johnson needed. Congress passed the Gulf of Tonkin Resolution, granting the president power to take 'all necessary measures' to repel attacks. In early 1965, Johnson launched Operation Rolling Thunder, a massive bombing campaign, and deployed the first US combat troops to Da Nang in March, escalating the conflict dramatically.",
       "steps": [
@@ -8321,6 +8798,12 @@ Source E is highly useful for showing the transition to full combat operations a
       }
     },
     "subtopic_3_3": {
+      "livedExperience": {
+        "witness": "Nguyen Thi Binh",
+        "context": "A female Vietcong guerrilla fighter, interviewed about surviving search-and-destroy missions in the Cu Chi tunnels.",
+        "quote": "We lived like rats under the ground. The tunnels of Cu Chi were dark, damp, and crawled with centipedes and scorpions. When the Americans bombed, the earth shook and dirt fell in our eyes. But we stayed. We learned to cook without smoke and walk without leaving footprints. We waited until the American soldiers walked past, then we would pop up, fire, and disappear into the ground. They had tanks and helicopters, but they could not fight what they could not see.",
+        "discussionQuestion": "How did the Vietcong use the tunnels and hit-and-run tactics to render the US military's technological superiority ineffective?"
+      },
       "headerTitle": "KT 3.3 - GCSE CORE MASTERY: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?",
       "headerIntro": "Between 1965 and 1968, the Vietnam War became a brutal conflict of contrasting strategies. The US military, led by General Westmoreland, relied on high-tech attrition tactics, including 'Search and Destroy' missions, massive carpet bombing, and chemical agents like Agent Orange and Napalm to clear jungles and crop cover. In contrast, the Vietcong fought a guerrilla war, avoiding pitched battles, hiding in complex underground tunnel networks, and deploying deadly booby traps, which neutralized US technological superiority and severely damaged US soldier morale.",
       "steps": [
@@ -8593,6 +9076,12 @@ Source E is highly useful for showing the chemical warfare tactics used by the U
       }
     },
     "subtopic_3_4": {
+      "livedExperience": {
+        "witness": "ARVN Soldier",
+        "context": "A soldier in the South Vietnamese army, recalling the disastrous invasion of Laos (Operation Lam Son 719) in 1971.",
+        "quote": "The Americans told us we were ready to fight alone. They gave us their M16 rifles and their tanks, and then they told us to cross the border into Laos to cut the Ho Chi Minh trail. But once we crossed, we met massive North Vietnamese artillery and tanks. The Americans provided air support, but it wasn't enough. We were slaughtered. Our commanders panicked and fled. I saw soldiers clinging to the skids of departing American helicopters just to escape. We were not ready, and we knew it.",
+        "discussionQuestion": "What does this soldier's account of the Laos invasion tell us about the practical weaknesses and failures of Nixon's 'Vietnamization' policy?"
+      },
       "headerTitle": "KT 3.4 - GCSE CORE MASTERY: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?",
       "headerIntro": "Elected in 1968 on a promise of 'Peace with Honor', President Nixon sought to reduce US involvement without appearing to surrender. In 1969, he introduced 'Vietnamization'\u2014a policy to train and equip the South Vietnamese army (ARVN) to take over combat operations, allowing the gradual withdrawal of US troops. However, to disrupt communist supply lines along the Ho Chi Minh Trail, Nixon secretly ordered the bombing and invasion of neighboring Cambodia (1970) and Laos (1971), expanding the war geographic scale and triggering massive protests at home.",
       "steps": [
@@ -8849,6 +9338,12 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
       }
     },
     "subtopic_4_1": {
+      "livedExperience": {
+        "witness": "Ron Kovic",
+        "context": "Decorated US Marine veteran paralyzed in Vietnam and author of the memoir *Born on the Fourth of July* (1976).",
+        "quote": "I went to Vietnam believing in the war, believing I was defending democracy. But I returned paralyzed from the chest down, sitting in a wheelchair in a rundown veterans' hospital full of rats and neglected men. I realized we had been lied to. We weren't heroes; we were sent to kill women and children in villages we didn't know, for a cause that was unjust. When I joined the protest outside the Republican National Convention, I threw my medals away. I wanted the country to know the truth of what they had done to us and to the Vietnamese.",
+        "discussionQuestion": "Why did testimonies from returning veterans like Ron Kovic have such a powerful emotional and political impact on the American public compared to student protests?"
+      },
       "headerTitle": "KT 4.1 - GCSE CORE MASTERY: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?",
       "headerIntro": "As the war dragged on, domestic opposition erupted into a powerful movement. The introduction of the draft in 1965 and the first televised war brought graphic footage of civilian casualties directly into American living rooms, creating a 'credibility gap' between government claims and reality. The shock of the 1968 Tet Offensive and the 1969 exposure of the My Lai Massacre\u2014where US troops murdered over 500 civilians\u2014further fueled protests. Tension peaked in May 1970 at Kent State University, where National Guardsmen shot and killed four student protesters, polarizing the nation.",
       "steps": [
@@ -9088,6 +9583,12 @@ Source E is highly useful for showing the lethal escalation of state suppression
       }
     },
     "subtopic_4_2": {
+      "livedExperience": {
+        "witness": "Construction Worker",
+        "context": "A New York construction worker (hardhat) interviewed after the 'Hardhat Riots' of May 8, 1970.",
+        "quote": "These students are coddled brats. They get deferments from the draft, they live in comfortable university dorms, and then they spit on the American flag and call our boys in Vietnam 'baby killers.' My brother is over there right now, risking his life in the jungle. We work hard every day to build this city, and we love our country. When we saw them protesting and lowering the flag, we couldn't take it anymore. We went down there to show them that working men support the President and support our troops. You don't insult America and get away with it.",
+        "discussionQuestion": "How did the anti-war movement create deep social and class divisions in American society? How did Nixon capitalize on these divisions?"
+      },
       "headerTitle": "KT 4.2 - GCSE CORE MASTERY: Why did some Americans support the Vietnam War and the 'Silent Majority'?",
       "headerIntro": "Despite the high profile of the anti-war movement, millions of Americans supported the war or opposed the protests. In November 1969, President Nixon appealed to the 'Silent Majority'\u2014conservative, patriotic, working-class citizens who felt alienated by radical counterculture and anti-war demonstrations. Pro-war support was fueled by deep-seated anti-communism, respect for law and order, and the belief that protesting troops during wartime was unpatriotic. Nixon's strategy was highly successful, enabling him to secure a landslide re-election in 1972.",
       "steps": [
@@ -9316,6 +9817,12 @@ Source E is highly useful for showing the working-class basis of this pro-war su
       }
     },
     "subtopic_4_3": {
+      "livedExperience": {
+        "witness": "US Embassy Employee",
+        "context": "A South Vietnamese employee at the US Embassy in Saigon, recalling the chaotic evacuation on April 29-30, 1975.",
+        "quote": "The gates of the embassy were surrounded by thousands of desperate people screaming to get in. We had worked for the Americans for years; we knew that if the Communists captured us, we would be sent to re-education camps or shot. I managed to climb the wall with my wife and get inside the courtyard. We watched helicopters land on the roof, load people, and fly away. But many were left behind. The American marines suddenly shut the doors, went to the roof, and locked the gates. They abandoned us. The helicopters stopped coming, and we heard the tanks of the North Vietnamese entering the city.",
+        "discussionQuestion": "How does this eyewitness account challenge the idea that the US exit from Vietnam was an orderly, honorable retreat? What was the human cost of the sudden withdrawal?"
+      },
       "headerTitle": "KT 4.3 - GCSE CORE MASTERY: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?",
       "headerIntro": "Peace negotiations began in Paris in 1968 but remained deadlocked for years. In late 1972, Nixon ordered the devastating 'Christmas Bombings' of Hanoi to pressure North Vietnam. In January 1973, the Paris Peace Accords were signed, leading to the complete withdrawal of all US combat forces. However, fighting resumed between Vietnamese forces, and without US air support, the ARVN crumbled. In April 1975, communist forces launched the Spring Offensive, capturing the capital and renaming it Ho Chi Minh City, completing the reunification of Vietnam under communist rule.",
       "steps": [
@@ -9551,6 +10058,12 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
       }
     },
     "subtopic_4_4": {
+      "livedExperience": {
+        "witness": "Colonel Harry G. Summers Jr.",
+        "context": "US Army historian and veteran, recounting an exchange in Hanoi in April 1975 with North Vietnamese Colonel Nguyen Don Tu.",
+        "quote": "I told the North Vietnamese colonel: 'You know, you never defeated us on the battlefield.' He looked at me, thought for a moment, and replied: 'That may be so. But it is also irrelevant.' We had all the firepower, we won almost every major engagement, and we killed ten times as many of their men. But they won the war because they were willing to suffer and die indefinitely for their independence, while our public at home lost the will to fight. They understood that war is a political struggle, not just a military scorecard.",
+        "discussionQuestion": "Why is it possible to win every military battle but still lose a war? How does this sum up the core failure of the US intervention in Vietnam?"
+      },
       "headerTitle": "KT 4.4 - GCSE CORE MASTERY: What were the main reasons why the US failed to win the war in Vietnam?",
       "headerIntro": "The failure of the USA to defeat communist forces in Vietnam was the result of interconnected military, political, and social factors. Militarily, the Vietcong's guerrilla tactics, local knowledge, and supplies from China and the USSR defeated US attrition strategies. Politically, the South Vietnamese government remained corrupt and unpopular, whereas the North Vietnamese exhibited absolute determination (the 'commitment bug'). Socially, the growing anti-war movement and draft resistance destroyed the domestic political support necessary to sustain a prolonged war, forcing US withdrawal.",
       "steps": [
@@ -13325,6 +13838,462 @@ ${cleanBrackets(paper.q3d.model)}
     }
   };
 
+  // src/chronology.js
+  var chronoState = {
+    selectedEvents: [],
+    // 4 selected events sorted chronologically (earliest to latest)
+    shuffledEvents: [],
+    // 4 selected events scrambled
+    placedEvents: [null, null, null, null],
+    // 4 slots
+    selectedCardId: null,
+    // For mobile tap-to-place
+    hasChecked: false,
+    score: 0
+  };
+  function initChronologyGame() {
+    const container = document.getElementById("chronology-game-play-area");
+    if (!container) return;
+    const topicSelect = document.getElementById("chrono-game-topic-select");
+    const topicId = topicSelect ? topicSelect.value : "topic_1";
+    const pool = CHRONOLOGY_EVENTS[topicId] || CHRONOLOGY_EVENTS["topic_1"];
+    const selected = [...pool].sort(() => 0.5 - Math.random()).slice(0, 4);
+    chronoState.selectedEvents = [...selected].sort((a, b) => a.year - b.year);
+    chronoState.shuffledEvents = [...selected].sort(() => 0.5 - Math.random());
+    chronoState.placedEvents = [null, null, null, null];
+    chronoState.selectedCardId = null;
+    chronoState.hasChecked = false;
+    renderChronologyGameUI();
+  }
+  function renderChronologyGameUI() {
+    const container = document.getElementById("chronology-game-play-area");
+    if (!container) return;
+    let slotsHtml = "";
+    chronoState.placedEvents.forEach((placedEvent, idx) => {
+      if (idx > 0) {
+        slotsHtml += `
+        <div class="mindmap-arrow" id="chrono-arrow-${idx}" style="opacity: 0.25; display: flex; align-items: center; justify-content: center;">
+          <i class="fa-solid fa-arrow-right horizontal-arrow" style="color: var(--primary); font-size: 1.1rem;"></i>
+          <i class="fa-solid fa-arrow-down vertical-arrow" style="color: var(--primary); font-size: 1.1rem; margin: 4px 0;"></i>
+        </div>
+      `;
+      }
+      if (placedEvent) {
+        slotsHtml += `
+        <div class="chrono-slot filled" id="chrono-slot-${idx}" data-index="${idx}" dropzone="true">
+          <span class="chrono-slot-label">Step ${idx + 1}</span>
+          <div class="chrono-card-content" draggable="true" data-qid="${placedEvent.id}">
+            <strong>${placedEvent.answer}</strong>
+            <p>${placedEvent.question}</p>
+          </div>
+        </div>
+      `;
+      } else {
+        slotsHtml += `
+        <div class="chrono-slot" id="chrono-slot-${idx}" data-index="${idx}" dropzone="true">
+          <span class="chrono-slot-label">Step ${idx + 1}</span>
+          <div class="chrono-slot-placeholder-text">Drop Event Here</div>
+        </div>
+      `;
+      }
+    });
+    let optionsHtml = chronoState.shuffledEvents.map((q) => {
+      const isPlaced = chronoState.placedEvents.some((p) => p && p.id === q.id);
+      const cleanId = `chrono-opt-${q.id}`;
+      return `
+      <div class="chrono-option-card ${isPlaced ? "placed" : ""}" id="${cleanId}" data-qid="${q.id}" draggable="true">
+        <strong style="color: var(--primary); font-size: 0.88rem; display: block; margin-bottom: 2px; line-height: 1.25;">${q.answer}</strong>
+        <p style="font-size: 0.72rem; line-height: 1.35; color: var(--text-muted); margin: 0; font-style: italic;">Clue: ${q.question}</p>
+      </div>
+    `;
+    }).join("");
+    const isAllFilled = chronoState.placedEvents.every((p) => p !== null);
+    container.innerHTML = `
+    <div class="causal-connector-container" style="background: var(--bg-card); padding: 24px; border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); box-shadow: var(--shadow-md);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-hourglass-half" style="color: var(--primary);"></i> Sequence Challenger
+        </h3>
+        <span style="font-weight: 700; font-size: 0.95rem; color: var(--success);" id="chrono-score-display">Score: ${chronoState.score}</span>
+      </div>
+      <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0 0 20px 0;">
+        Edexcel Paper 3 requires clear chronological analysis. Drag and drop the cards below into the correct sequence (earliest to latest), or tap a card and tap a slot to place it.
+      </p>
+
+      <!-- Chronology slots panel (Top viewport) -->
+      <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Chronology Timeline</div>
+      <div class="chrono-slots-container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px;">
+        ${slotsHtml}
+      </div>
+
+      <!-- Success panel -->
+      <div class="causal-success-panel" id="chrono-success-panel" style="display: none; text-align: center; margin-top: 16px; padding: 20px; background: rgba(16, 185, 129, 0.05); border: 1px solid var(--success); border-radius: var(--border-radius-md);">
+        <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--success); margin: 0 0 8px 0; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fa-solid fa-medal"></i> Chronology Mastered!
+        </h4>
+        <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-main); margin-bottom: 16px;">
+          Outstanding work! You successfully ordered all 4 milestones in their correct chronological sequence.
+        </p>
+        <div id="chrono-narrative-container" style="margin-bottom: 20px;"></div>
+        <button class="btn-primary" id="btn-chrono-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+          <i class="fa-solid fa-rotate-right"></i> Play Again (New Events)
+        </button>
+      </div>
+
+      <div id="chrono-play-controls-area">
+        <!-- Shuffled event cards shelf (Bottom viewport) -->
+        <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Timeline Event Options</div>
+        <div class="chrono-options-container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px;">
+          ${optionsHtml}
+        </div>
+
+        <!-- Clue Feedback box -->
+        <div id="chrono-feedback-message" style="display: none; font-size: 0.82rem; line-height: 1.45; padding: 10px 14px; border-radius: var(--border-radius-sm); margin-top: 16px; font-weight: 600; text-align: center;"></div>
+
+        <!-- Action buttons -->
+        <div style="display: flex; gap: 12px; margin-top: 24px; justify-content: center; align-items: center; flex-wrap: wrap;">
+          <button class="btn-primary" id="btn-chrono-check" ${isAllFilled ? "" : "disabled"} style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: ${isAllFilled ? "pointer" : "not-allowed"}; opacity: ${isAllFilled ? "1" : "0.5"}; display: ${chronoState.hasChecked ? "none" : "inline-flex"}; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-clipboard-check"></i> Verify Sequence
+          </button>
+          <button class="btn-secondary" id="btn-chrono-reset" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-arrow-rotate-left"></i> Clear All
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+    addGameStylesIfMissing();
+    bindSequenceChallengerEvents();
+  }
+  function addGameStylesIfMissing() {
+    if (document.getElementById("chrono-game-styles")) return;
+    const style = document.createElement("style");
+    style.id = "chrono-game-styles";
+    style.innerHTML = `
+    .chrono-slots-container {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 12px !important;
+    }
+    .chrono-options-container {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 12px !important;
+    }
+    @media (max-width: 768px) {
+      .chrono-slots-container, .chrono-options-container {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .chrono-slot {
+      border: 2px dashed var(--border-glass);
+      border-radius: var(--border-radius-sm);
+      min-height: 100px;
+      padding: 10px;
+      background: rgba(255,255,255,0.01);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .chrono-slot.filled {
+      border-style: solid;
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+    }
+    .chrono-slot-label {
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .chrono-slot-placeholder-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .chrono-card-content strong {
+      font-size: 0.82rem;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .chrono-card-content p {
+      font-size: 0.68rem;
+      margin: 0;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .chrono-option-card {
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-sm);
+      padding: 12px;
+      background: var(--bg-card);
+      cursor: grab;
+      transition: all 0.2s;
+    }
+    .chrono-option-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-2px);
+    }
+    .chrono-option-card.placed {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .chrono-option-card.selected-tap {
+      border-color: var(--primary) !important;
+      background: rgba(56, 189, 248, 0.08) !important;
+    }
+    .chrono-slot.correct {
+      border-color: var(--success) !important;
+      background: rgba(16, 185, 129, 0.05) !important;
+    }
+    .chrono-slot.incorrect {
+      border-color: var(--accent) !important;
+      background: rgba(244, 63, 94, 0.05) !important;
+      animation: shake 0.4s ease-in-out;
+    }
+    .chrono-slot-year-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #fff;
+      background: var(--success);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+  `;
+    document.head.appendChild(style);
+  }
+  function bindSequenceChallengerEvents() {
+    const container = document.getElementById("game-chronology-container");
+    if (!container) return;
+    const optionCards = container.querySelectorAll(".chrono-option-card:not(.placed)");
+    const slots = container.querySelectorAll(".chrono-slot");
+    optionCards.forEach((card) => {
+      card.addEventListener("dragstart", (e) => {
+        if (chronoState.hasChecked) return;
+        e.dataTransfer.setData("text/plain", card.getAttribute("data-qid"));
+        card.style.opacity = "0.5";
+      });
+      card.addEventListener("dragend", () => {
+        card.style.opacity = "";
+      });
+      card.addEventListener("click", (e) => {
+        if (chronoState.hasChecked) return;
+        AudioEngine.play("click");
+        const qid = card.getAttribute("data-qid");
+        if (chronoState.selectedCardId === qid) {
+          chronoState.selectedCardId = null;
+          card.classList.remove("selected-tap");
+        } else {
+          container.querySelectorAll(".chrono-option-card").forEach((c) => c.classList.remove("selected-tap"));
+          chronoState.selectedCardId = qid;
+          card.classList.add("selected-tap");
+        }
+      });
+    });
+    slots.forEach((slot) => {
+      slot.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        if (chronoState.hasChecked) return;
+        slot.style.background = "rgba(56, 189, 248, 0.05)";
+      });
+      slot.addEventListener("dragleave", () => {
+        slot.style.background = "";
+      });
+      slot.addEventListener("drop", (e) => {
+        e.preventDefault();
+        slot.style.background = "";
+        if (chronoState.hasChecked) return;
+        const qid = e.dataTransfer.getData("text/plain");
+        const eventObj = chronoState.shuffledEvents.find((ev) => ev.id === qid);
+        if (!eventObj) return;
+        const slotIdx = parseInt(slot.getAttribute("data-index"));
+        AudioEngine.play("click");
+        const existingIdx = chronoState.placedEvents.findIndex((p) => p && p.id === qid);
+        if (existingIdx > -1) {
+          chronoState.placedEvents[existingIdx] = null;
+        }
+        chronoState.placedEvents[slotIdx] = eventObj;
+        renderChronologyGameUI();
+      });
+      slot.addEventListener("click", () => {
+        if (chronoState.hasChecked) return;
+        const slotIdx = parseInt(slot.getAttribute("data-index"));
+        if (chronoState.selectedCardId) {
+          const qid = chronoState.selectedCardId;
+          const eventObj = chronoState.shuffledEvents.find((ev) => ev.id === qid);
+          if (!eventObj) return;
+          AudioEngine.play("click");
+          const existingIdx = chronoState.placedEvents.findIndex((p) => p && p.id === qid);
+          if (existingIdx > -1) {
+            chronoState.placedEvents[existingIdx] = null;
+          }
+          chronoState.placedEvents[slotIdx] = eventObj;
+          chronoState.selectedCardId = null;
+          renderChronologyGameUI();
+        } else if (chronoState.placedEvents[slotIdx]) {
+          AudioEngine.play("click");
+          chronoState.placedEvents[slotIdx] = null;
+          renderChronologyGameUI();
+        }
+      });
+    });
+    const checkBtn = document.getElementById("btn-chrono-check");
+    if (checkBtn) {
+      checkBtn.addEventListener("click", () => {
+        verifyChronologySequence();
+      });
+    }
+    const resetBtn = document.getElementById("btn-chrono-reset");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        AudioEngine.play("click");
+        chronoState.placedEvents = [null, null, null, null];
+        chronoState.selectedCardId = null;
+        chronoState.hasChecked = false;
+        renderChronologyGameUI();
+      });
+    }
+    const playAgainBtn = document.getElementById("btn-chrono-play-again");
+    if (playAgainBtn) {
+      playAgainBtn.addEventListener("click", () => {
+        AudioEngine.play("click");
+        initChronologyGame();
+      });
+    }
+  }
+  function verifyChronologySequence() {
+    const container = document.getElementById("chronology-game-play-area");
+    if (!container) return;
+    chronoState.hasChecked = true;
+    let allCorrect = true;
+    chronoState.placedEvents.forEach((event, idx) => {
+      const expectedEvent = chronoState.selectedEvents[idx];
+      const slot = document.getElementById(`chrono-slot-${idx}`);
+      if (!slot) return;
+      if (event && event.id === expectedEvent.id) {
+        slot.classList.remove("incorrect");
+        slot.classList.add("correct");
+      } else {
+        slot.classList.remove("correct");
+        slot.classList.add("incorrect");
+        allCorrect = false;
+      }
+    });
+    const feedbackMsg = document.getElementById("chrono-feedback-message");
+    if (allCorrect) {
+      AudioEngine.play("cheer");
+      if (typeof Confetti !== "undefined" && typeof Confetti.spawn === "function") {
+        Confetti.spawn(100);
+      }
+      chronoState.score += 20;
+      const scoreDisplay = document.getElementById("chrono-score-display");
+      if (scoreDisplay) scoreDisplay.textContent = `Score: ${chronoState.score}`;
+      chronoState.placedEvents.forEach((event, idx) => {
+        const slot = document.getElementById(`chrono-slot-${idx}`);
+        if (slot) {
+          const content = slot.querySelector(".chrono-card-content");
+          if (content) {
+            content.innerHTML = `
+            <div class="chrono-slot-year-badge">${event.year}</div>
+            <strong>${event.answer}</strong>
+            <p>${event.question}</p>
+          `;
+          }
+        }
+      });
+      if (feedbackMsg) feedbackMsg.style.display = "none";
+      const narrativeContainer = document.getElementById("chrono-narrative-container");
+      if (narrativeContainer) {
+        narrativeContainer.innerHTML = generateChronoNarrativeParagraph(chronoState.placedEvents);
+      }
+      const successPanel = document.getElementById("chrono-success-panel");
+      if (successPanel) {
+        successPanel.style.display = "block";
+      }
+      const controlsArea = document.getElementById("chrono-play-controls-area");
+      if (controlsArea) {
+        controlsArea.style.display = "none";
+      }
+    } else {
+      AudioEngine.play("fail");
+      if (feedbackMsg) {
+        feedbackMsg.style.color = "var(--accent)";
+        feedbackMsg.style.background = "rgba(244, 63, 94, 0.08)";
+        feedbackMsg.innerHTML = getChronologyClue();
+        feedbackMsg.style.display = "block";
+      }
+      setTimeout(() => {
+        chronoState.placedEvents.forEach((event, idx) => {
+          const expectedEvent = chronoState.selectedEvents[idx];
+          if (!event || event.id !== expectedEvent.id) {
+            chronoState.placedEvents[idx] = null;
+          }
+        });
+        chronoState.hasChecked = false;
+        renderChronologyGameUI();
+      }, 1500);
+    }
+  }
+  function getChronologyClue() {
+    const incorrectIndices = [];
+    chronoState.placedEvents.forEach((event, idx) => {
+      const expectedEvent2 = chronoState.selectedEvents[idx];
+      if (!event || event.id !== expectedEvent2.id) {
+        incorrectIndices.push(idx);
+      }
+    });
+    if (incorrectIndices.length === 0) return "";
+    const firstWrongIdx = incorrectIndices[0];
+    const expectedEvent = chronoState.selectedEvents[firstWrongIdx];
+    return `<i class="fa-solid fa-lightbulb"></i> Clue: Consider the timing of <strong>${expectedEvent.answer}</strong>. It occurred earlier in the sequence!`;
+  }
+  function generateChronoNarrativeParagraph(events) {
+    const parts = events.map((e, idx) => {
+      const qText = e.question.trim();
+      const ansText = e.answer.trim();
+      if (idx === 0) {
+        return `In <strong>${e.year}</strong>, the <strong>${ansText}</strong> occurred (${qText})`;
+      } else if (idx === 1) {
+        return `this was followed in <strong>${e.year}</strong> by the <strong>${ansText}</strong> (${qText})`;
+      } else if (idx === 2) {
+        return `subsequently, in <strong>${e.year}</strong>, the <strong>${ansText}</strong> took place (${qText})`;
+      } else {
+        return `and finally, in <strong>${e.year}</strong>, this story culminated in the <strong>${ansText}</strong> (${qText})`;
+      }
+    });
+    let narrative = parts.join("; ");
+    narrative = narrative.charAt(0).toUpperCase() + narrative.slice(1);
+    if (!narrative.endsWith(".")) {
+      narrative += ".";
+    }
+    return `
+    <div style="text-align: left; background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--success); padding: 14px 18px; border-radius: var(--border-radius-sm); margin-top: 16px;">
+      <strong style="color: var(--success); display: block; margin-bottom: 6px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
+        <i class="fa-solid fa-book-open"></i> Historical Narrative:
+      </strong>
+      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-main); margin: 0; font-style: italic;">
+        ${narrative}
+      </p>
+    </div>
+  `;
+  }
+
   // src/views.js
   var GOOGLE_SHEET_WEBAPP_URL = "";
   function renderSidebarNav() {
@@ -13439,6 +14408,20 @@ ${cleanBrackets(paper.q3d.model)}
         if (badge) badge.textContent = `${pct}%`;
       });
     });
+    for (let i = 1; i <= 4; i++) {
+      const topicId = `topic_${i}`;
+      const topicData = QUIZ_DATA.find((t) => t.id === topicId);
+      if (topicData) {
+        const subtopicIds = topicData.subtopics.map((s) => s.id);
+        const topicQuestions = state.allQuestions.filter((q) => subtopicIds.includes(q.subtopicId));
+        const mastered = topicQuestions.filter((q) => state.mastery[q.id]).length;
+        const pct = topicQuestions.length > 0 ? Math.round(mastered / topicQuestions.length * 100) : 0;
+        const pctEl = document.getElementById(`sidebar-kt${i}-progress`);
+        if (pctEl) pctEl.textContent = `${pct}%`;
+        const barEl = document.getElementById(`sidebar-kt${i}-bar`);
+        if (barEl) barEl.style.width = `${pct}%`;
+      }
+    }
   }
   function renderDashboard2() {
     const quickActionsContainer = document.getElementById("dashboard-quick-actions-container");
@@ -14245,289 +15228,6 @@ ${cleanBrackets(paper.q3d.model)}
       { id: "chrono_s44_5", year: 1971, answer: "Laos Invasion Failure", question: "ARVN failure in Operation Lam Son 719 proves Vietnamization is not working." }
     ]
   };
-  var chronoState = {
-    selectedEvents: [],
-    shuffledEvents: [],
-    placedEvents: [null, null, null, null, null],
-    score: 0,
-    hasChecked: false
-  };
-  function initChronologyGame() {
-    const container = document.getElementById("chronology-game-play-area");
-    if (!container) return;
-    const topicSelect = document.getElementById("chrono-game-topic-select");
-    const topicId = topicSelect ? topicSelect.value : "topic_1";
-    const pool = CHRONOLOGY_EVENTS[topicId] || CHRONOLOGY_EVENTS["topic_1"];
-    const selected = [...pool].sort(() => 0.5 - Math.random()).slice(0, 5);
-    chronoState.selectedEvents = [...selected].sort((a, b) => a.year - b.year);
-    chronoState.shuffledEvents = [...selected].sort(() => 0.5 - Math.random());
-    chronoState.placedEvents = [null, null, null, null, null];
-    chronoState.hasChecked = false;
-    renderChronologyGameUI();
-  }
-  function renderChronologyGameUI() {
-    const container = document.getElementById("chronology-game-play-area");
-    if (!container) return;
-    let slotsHtml = "";
-    chronoState.placedEvents.forEach((placedEvent, idx) => {
-      if (idx > 0) {
-        slotsHtml += `
-        <div class="mindmap-arrow" id="chrono-arrow-${idx}" style="opacity: 0.25; display: flex; align-items: center; justify-content: center;">
-          <i class="fa-solid fa-arrow-right horizontal-arrow" style="color: var(--primary); font-size: 1.1rem;"></i>
-          <i class="fa-solid fa-arrow-down vertical-arrow" style="color: var(--primary); font-size: 1.1rem; margin: 4px 0;"></i>
-        </div>
-      `;
-      }
-      if (placedEvent) {
-        slotsHtml += `
-        <div class="chrono-slot filled" id="chrono-slot-${idx}" data-index="${idx}">
-          <span class="chrono-slot-label">Step ${idx + 1}</span>
-          <div class="chrono-card-content">
-            <strong>${placedEvent.answer}</strong>
-            <p>${placedEvent.question}</p>
-          </div>
-        </div>
-      `;
-      } else {
-        slotsHtml += `
-        <div class="chrono-slot" id="chrono-slot-${idx}" data-index="${idx}">
-          <span class="chrono-slot-label">Step ${idx + 1}</span>
-          <div class="chrono-slot-placeholder-text">Empty Slot</div>
-        </div>
-      `;
-      }
-    });
-    let optionsHtml = chronoState.shuffledEvents.map((q) => {
-      const isPlaced = chronoState.placedEvents.some((p) => p && p.id === q.id);
-      const cleanId = `chrono-opt-${q.id}`;
-      return `
-      <div class="chrono-option-card ${isPlaced ? "placed" : ""}" id="${cleanId}" data-qid="${q.id}">
-        <strong style="color: var(--primary); font-size: 0.88rem; display: block; margin-bottom: 2px; line-height: 1.25;">${q.answer}</strong>
-        <p style="font-size: 0.72rem; line-height: 1.35; color: var(--text-muted); margin: 0; font-style: italic;">Clue: ${q.question}</p>
-      </div>
-    `;
-    }).join("");
-    const isAllFilled = chronoState.placedEvents.every((p) => p !== null);
-    container.innerHTML = `
-    <div class="causal-connector-container" style="background: var(--bg-card); padding: 24px; border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); box-shadow: var(--shadow-md);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-hourglass-half" style="color: var(--primary);"></i> Chronology Challenge
-        </h3>
-        <span style="font-weight: 700; font-size: 0.95rem; color: var(--success);" id="chrono-score-display">Score: ${chronoState.score}</span>
-      </div>
-      <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0 0 20px 0;">
-        Paper 3 requires solid chronological reasoning. Tap option cards below to place them in the timeline. Tapping a placed event removes it back to the options. Arrange all 5 in the correct chronological sequence (earliest to latest) and verify!
-      </p>
-
-      <!-- Chronology slots panel (Top viewport) -->
-      <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Chronology Timeline</div>
-      <div class="chrono-slots-container">
-        ${slotsHtml}
-      </div>
-
-      <!-- Success panel placed right underneath the timeline slots -->
-      <div class="causal-success-panel" id="chrono-success-panel" style="display: none; text-align: center; margin-top: 16px; padding: 20px; background: rgba(16, 185, 129, 0.05); border: 1px solid var(--success); border-radius: var(--border-radius-md);">
-        <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--success); margin: 0 0 8px 0; display: flex; align-items: center; justify-content: center; gap: 8px;">
-          <i class="fa-solid fa-medal"></i> Chronology Mastered!
-        </h4>
-        <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-main); margin-bottom: 16px;">
-          Outstanding work! You successfully ordered all 5 milestones in their correct chronological sequence.
-        </p>
-        <div id="chrono-narrative-container" style="margin-bottom: 20px;"></div>
-        <button class="btn-primary" id="btn-chrono-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
-          <i class="fa-solid fa-rotate-right"></i> Play Again (New Events)
-        </button>
-      </div>
-
-      <div id="chrono-play-controls-area">
-        <!-- Shuffled event cards shelf (Bottom viewport) -->
-        <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Timeline Event Options</div>
-        <div class="chrono-options-container">
-          ${optionsHtml}
-        </div>
-
-        <!-- Clue Feedback box -->
-        <div id="chrono-feedback-message" style="display: none; font-size: 0.82rem; line-height: 1.45; padding: 10px 14px; border-radius: var(--border-radius-sm); margin-top: 16px; font-weight: 600; text-align: center;"></div>
-
-        <!-- Action buttons -->
-        <div style="display: flex; gap: 12px; margin-top: 24px; justify-content: center; align-items: center; flex-wrap: wrap;">
-          <button class="btn-primary" id="btn-chrono-check" ${isAllFilled ? "" : "disabled"} style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: ${isAllFilled ? "pointer" : "not-allowed"}; opacity: ${isAllFilled ? "1" : "0.5"}; display: ${chronoState.hasChecked ? "none" : "inline-flex"}; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-clipboard-check"></i> Verify Sequence
-          </button>
-          <button class="btn-secondary" id="btn-chrono-reset" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-arrow-rotate-left"></i> Clear All
-          </button>
-        </div>
-      </div>
-    </div>
-  `;
-    bindChronologyEvents();
-  }
-  function bindChronologyEvents() {
-    const container = document.getElementById("game-chronology-container");
-    if (!container) return;
-    container.querySelectorAll(".chrono-option-card").forEach((card) => {
-      card.addEventListener("click", () => {
-        if (chronoState.hasChecked) return;
-        const qid = card.getAttribute("data-qid");
-        const eventObj = chronoState.shuffledEvents.find((e) => e.id === qid);
-        if (!eventObj) return;
-        const emptyIdx = chronoState.placedEvents.indexOf(null);
-        if (emptyIdx > -1) {
-          AudioEngine.play("click");
-          chronoState.placedEvents[emptyIdx] = eventObj;
-          renderChronologyGameUI();
-        }
-      });
-    });
-    container.querySelectorAll(".chrono-slot.filled").forEach((slot) => {
-      slot.addEventListener("click", () => {
-        const idx = parseInt(slot.getAttribute("data-index"));
-        AudioEngine.play("click");
-        chronoState.placedEvents[idx] = null;
-        chronoState.hasChecked = false;
-        renderChronologyGameUI();
-      });
-    });
-    const checkBtn = document.getElementById("btn-chrono-check");
-    if (checkBtn) {
-      checkBtn.addEventListener("click", () => {
-        verifyChronologySequence();
-      });
-    }
-    const resetBtn = document.getElementById("btn-chrono-reset");
-    if (resetBtn) {
-      resetBtn.addEventListener("click", () => {
-        AudioEngine.play("click");
-        chronoState.placedEvents = [null, null, null, null, null];
-        chronoState.hasChecked = false;
-        renderChronologyGameUI();
-      });
-    }
-    const playAgainBtn = document.getElementById("btn-chrono-play-again");
-    if (playAgainBtn) {
-      playAgainBtn.addEventListener("click", () => {
-        AudioEngine.play("click");
-        initChronologyGame();
-      });
-    }
-  }
-  function generateChronoNarrativeParagraph(events) {
-    const parts = events.map((e, idx) => {
-      const qText = e.question.trim();
-      const ansText = e.answer.trim();
-      if (idx === 0) {
-        return `In <strong>${e.year}</strong>, the <strong>${ansText}</strong> occurred (${qText})`;
-      } else if (idx === 1) {
-        return `this was followed in <strong>${e.year}</strong> by the <strong>${ansText}</strong> (${qText})`;
-      } else if (idx === 2) {
-        return `subsequently, in <strong>${e.year}</strong>, the <strong>${ansText}</strong> took place (${qText})`;
-      } else if (idx === 3) {
-        return `next, in <strong>${e.year}</strong>, the <strong>${ansText}</strong> happened (${qText})`;
-      } else {
-        return `and finally, in <strong>${e.year}</strong>, this story culminated in the <strong>${ansText}</strong> (${qText})`;
-      }
-    });
-    let narrative = parts.join("; ");
-    narrative = narrative.charAt(0).toUpperCase() + narrative.slice(1);
-    if (!narrative.endsWith(".")) {
-      narrative += ".";
-    }
-    return `
-    <div style="text-align: left; background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--success); padding: 14px 18px; border-radius: var(--border-radius-sm); margin-top: 16px;">
-      <strong style="color: var(--success); display: block; margin-bottom: 6px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-        <i class="fa-solid fa-book-open"></i> Historical Narrative:
-      </strong>
-      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--text-main); margin: 0; font-style: italic;">
-        ${narrative}
-      </p>
-    </div>
-  `;
-  }
-  function getChronologyClue() {
-    const incorrectIndices = [];
-    chronoState.placedEvents.forEach((event, idx) => {
-      const expectedEvent2 = chronoState.selectedEvents[idx];
-      if (!event || event.id !== expectedEvent2.id) {
-        incorrectIndices.push(idx);
-      }
-    });
-    if (incorrectIndices.length === 0) return "";
-    const firstWrongIdx = incorrectIndices[0];
-    const expectedEvent = chronoState.selectedEvents[firstWrongIdx];
-    return `Consider the timing of **${expectedEvent.answer}**. It belongs in the sequence at **Step ${firstWrongIdx + 1}**! Check your order and try again.`;
-  }
-  function verifyChronologySequence() {
-    const container = document.getElementById("chronology-game-play-area");
-    if (!container) return;
-    chronoState.hasChecked = true;
-    let allCorrect = true;
-    chronoState.placedEvents.forEach((event, idx) => {
-      const expectedEvent = chronoState.selectedEvents[idx];
-      const slot = document.getElementById(`chrono-slot-${idx}`);
-      if (!slot) return;
-      if (event && event.id === expectedEvent.id) {
-        slot.classList.remove("incorrect");
-        slot.classList.add("correct");
-      } else {
-        slot.classList.remove("correct");
-        slot.classList.add("incorrect");
-        allCorrect = false;
-      }
-    });
-    if (allCorrect) {
-      AudioEngine.play("cheer");
-      if (typeof Confetti !== "undefined" && typeof Confetti.spawn === "function") {
-        Confetti.spawn(100);
-      }
-      chronoState.score += 20;
-      const scoreDisplay = document.getElementById("chrono-score-display");
-      if (scoreDisplay) scoreDisplay.textContent = `Score: ${chronoState.score}`;
-      chronoState.placedEvents.forEach((event, idx) => {
-        const slot = document.getElementById(`chrono-slot-${idx}`);
-        if (slot) {
-          const content = slot.querySelector(".chrono-card-content");
-          if (content) {
-            content.innerHTML = `
-            <div class="chrono-slot-year-badge">${event.year}</div>
-            <strong>${event.answer}</strong>
-            <p>${event.question}</p>
-          `;
-          }
-        }
-      });
-      const successPanel = document.getElementById("chrono-success-panel");
-      if (successPanel) {
-        successPanel.style.display = "block";
-      }
-      const narrativeContainer = document.getElementById("chrono-narrative-container");
-      if (narrativeContainer) {
-        narrativeContainer.innerHTML = generateChronoNarrativeParagraph(chronoState.placedEvents);
-      }
-      const feedbackMsg = document.getElementById("chrono-feedback-message");
-      if (feedbackMsg) {
-        feedbackMsg.style.display = "none";
-      }
-      const checkBtn = document.getElementById("btn-chrono-check");
-      if (checkBtn) checkBtn.style.display = "none";
-      const playControls = document.getElementById("chrono-play-controls-area");
-      if (playControls) playControls.style.display = "none";
-    } else {
-      AudioEngine.play("failure");
-      chronoState.score = Math.max(0, chronoState.score - 5);
-      const scoreDisplay = document.getElementById("chrono-score-display");
-      if (scoreDisplay) scoreDisplay.textContent = `Score: ${chronoState.score}`;
-      const feedbackMsg = document.getElementById("chrono-feedback-message");
-      if (feedbackMsg) {
-        feedbackMsg.style.display = "block";
-        feedbackMsg.style.background = "rgba(239, 68, 68, 0.1)";
-        feedbackMsg.style.color = "var(--accent)";
-        feedbackMsg.style.borderLeft = "3px solid var(--accent)";
-        feedbackMsg.innerHTML = `<i class="fa-solid fa-lightbulb"></i> ${getChronologyClue()}`;
-      }
-    }
-  }
   function renderExamSkillsView(targetPanel = "technique") {
     const q1Select = document.getElementById("q1-topic-select");
     if (q1Select) q1Select.value = "";
@@ -18182,6 +18882,20 @@ ${cleanBrackets(paper.q3d.model)}
     const container = document.getElementById("video-revision-grid");
     if (!container) return;
     container.innerHTML = "";
+    const getYouTubeId = (url) => {
+      let videoId = "";
+      if (url.includes("youtube.com/watch")) {
+        const u = new URL(url);
+        videoId = u.searchParams.get("v");
+      } else if (url.includes("youtu.be/")) {
+        const parts = url.split("youtu.be/");
+        videoId = parts[1]?.split("?")[0];
+      } else if (url.includes("youtube.com/embed/")) {
+        const parts = url.split("youtube.com/embed/");
+        videoId = parts[1]?.split("?")[0];
+      }
+      return videoId;
+    };
     const subtopicIds = Object.keys(VIDEOS_DATA).sort();
     subtopicIds.forEach((subtopicId) => {
       const video = VIDEOS_DATA[subtopicId];
@@ -18217,16 +18931,19 @@ ${cleanBrackets(paper.q3d.model)}
         <h3 style="font-size: 0.95rem; font-weight: 700; margin: 0; line-height: 1.3; color: var(--text-main);">${lessonTitle.split(":").slice(1).join(":").trim() || lessonTitle}</h3>
       </div>
     `;
+      const ytid = getYouTubeId(video.primary.youtube_url);
+      const thumbnailUrl = ytid ? `https://img.youtube.com/vi/${ytid}/mqdefault.jpg` : "";
       const thumbnail = `
-      <div class="video-thumbnail-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); margin-bottom: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <div class="video-thumbnail-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); margin-bottom: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        ${thumbnailUrl ? `<img src="${thumbnailUrl}" alt="${lessonTitle}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.65; transition: opacity 0.2s;" />` : `
         <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; padding: 10px; font-family: var(--font-body); font-weight: 500;">
           <i class="fa-solid fa-film" style="font-size: 1.8rem; display: block; margin-bottom: 6px; color: var(--primary);"></i>
           2-Minute AI Overview
-        </div>
-        <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); transition: transform 0.2s;" class="play-btn">
+        </div>`}
+        <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); transition: transform 0.2s; z-index: 2;" class="play-btn">
           <i class="fa-solid fa-play" style="margin-left: 2px;"></i>
         </div>
-        <span style="position: absolute; bottom: 8px; right: 8px; font-size: 0.7rem; font-weight: 700; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading);">${video.primary.duration} mins</span>
+        <span style="position: absolute; bottom: 8px; right: 8px; font-size: 0.7rem; font-weight: 700; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); z-index: 2;">${video.primary.duration} mins</span>
       </div>
     `;
       const body = `
@@ -18304,7 +19021,9 @@ ${cleanBrackets(paper.q3d.model)}
     state.examSession.answers = {};
     state.examSession.grades = {};
     state.examSession.startTime = Date.now();
-    let pool = [...state.allQuestions];
+    const analyticalToggle = document.getElementById("exam-mode-analytical");
+    const isAnalytical = analyticalToggle ? analyticalToggle.checked : false;
+    let pool = isAnalytical ? [...state.analyticalQuestions] : [...state.allQuestions];
     if (scope !== "all") {
       if (scope.startsWith("subtopic_")) {
         pool = pool.filter((q) => q.subtopicId === scope);
@@ -18637,7 +19356,7 @@ ${cleanBrackets(paper.q3d.model)}
     const correctCount = gradesMap.filter((g) => g === true).length;
     const gradedQuestionsCount = gradesMap.length;
     const scoreRatio = gradedQuestionsCount > 0 ? correctCount / gradedQuestionsCount : 1;
-    document.getElementById("exam-current-mastery").textContent = Math.round(scoreRatio * 100) + "% Accuracy";
+    document.getElementById("exam-current-mastery").textContent = Math.round(scoreRatio * 100) + "% Security";
     const badge = document.getElementById("exam-q-badge");
     if (badge) {
       badge.style.display = "none";
@@ -20773,7 +21492,6 @@ ${cleanBrackets(paper.q3d.model)}
       { paperId: "2025_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2025" }
     ],
     "subtopic_3_2": [
-      { paperId: "mock_exam_5", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 5" },
       { paperId: "2025_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2025" },
       { paperId: "2025_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2025" },
       { paperId: "2025_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2025" },
@@ -20962,6 +21680,7 @@ ${cleanBrackets(paper.q3d.model)}
       return;
     }
     let stepsHtml = "";
+    const halfPoint = Math.ceil(data.steps.length / 2);
     data.steps.forEach((step, index) => {
       let scholarlyHtml = "";
       if (step.scholarlyDepth) {
@@ -21057,6 +21776,35 @@ ${cleanBrackets(paper.q3d.model)}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
+        </div>
+      `;
+      }
+      if (index + 1 === halfPoint && data.livedExperience) {
+        const le = data.livedExperience;
+        stepsHtml += `
+        <div class="mastery-card lived-experience-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--accent);">
+          <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <span style="color: var(--accent);"><i class="fa-solid fa-comments"></i> Mid-Lesson Class Discussion: Lived Experience</span>
+            <button class="btn-audio-read" title="Read Source Aloud" style="margin-left: 8px;">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+          </h3>
+          <div class="mastery-card-body card-content">
+            <div class="source-provenance" style="font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">
+              <strong>Source Context:</strong> ${le.context}
+            </div>
+            <blockquote class="source-quote" style="font-size: 1.05rem; font-style: italic; border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 20px 0; color: var(--text-main); line-height: 1.55; font-family: Georgia, 'Times New Roman', serif;">
+              "${le.quote}"
+            </blockquote>
+            <div class="discussion-prompt" style="background: var(--accent-glow); border: 1px dashed var(--accent); border-radius: var(--border-radius-sm); padding: 16px; margin-top: 16px; box-sizing: border-box;">
+              <h4 style="margin: 0 0 8px 0; color: var(--accent); display: flex; align-items: center; gap: 8px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-heading); font-weight: 700;">
+                <i class="fa-solid fa-circle-question"></i> Class Discussion Prompt
+              </h4>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-weight: 500;">
+                ${le.discussionQuestion}
+              </p>
+            </div>
+          </div>
         </div>
       `;
       }
@@ -21963,7 +22711,7 @@ ${cleanBrackets(paper.q3d.model)}
           </div>
 
           <!-- Keyboard Shortcuts Info -->
-          <div class="desktop-only" style="margin-top: 12px; text-align: center; font-size: 0.68rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 10px; width: 100%;">
+          <div class="desktop-only lesson-keyboard-help" style="margin-top: 12px; text-align: center; font-size: 0.68rem; color: var(--text-muted); opacity: 0.75; display: flex; justify-content: center; gap: 10px; width: 100%;">
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">\u2190 / \u2192</kbd> Prev/Next</span>
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">Space</kbd> Reveal Answer</span>
             <span><kbd style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid var(--border-glass);">1-0</kbd> Jump to Step</span>
@@ -24038,6 +24786,135 @@ ${cleanBrackets(paper.q3d.model)}
     }));
   }
 
+  // src/sync.js
+  function calculateHash(bytes) {
+    let hash = 0;
+    for (let i = 0; i < bytes.length; i++) {
+      hash = hash * 31 + bytes[i] & 4294967295;
+    }
+    return hash;
+  }
+  function compressBytes(bytes) {
+    const dict = /* @__PURE__ */ new Map();
+    const out = [];
+    let phrase = [];
+    let code = 256;
+    for (let i = 0; i < bytes.length; i++) {
+      const currByte = bytes[i];
+      const nextPhrase = phrase.length > 0 ? [...phrase, currByte] : [currByte];
+      const nextPhraseKey = nextPhrase.join(",");
+      if (phrase.length === 0) {
+        phrase = [currByte];
+      } else if (dict.has(nextPhraseKey)) {
+        phrase = nextPhrase;
+      } else {
+        const phraseKey = phrase.join(",");
+        out.push(phrase.length > 1 ? dict.get(phraseKey) : phrase[0]);
+        dict.set(nextPhraseKey, code);
+        code++;
+        phrase = [currByte];
+      }
+    }
+    if (phrase.length > 0) {
+      const phraseKey = phrase.join(",");
+      out.push(phrase.length > 1 ? dict.get(phraseKey) : phrase[0]);
+    }
+    let binaryStr = "";
+    for (let i = 0; i < out.length; i++) {
+      const val = out[i];
+      binaryStr += String.fromCharCode(val & 255, val >> 8 & 255);
+    }
+    const b64 = btoa(binaryStr);
+    return b64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+  function decompressToBytes(safeB64) {
+    let b64 = safeB64.replace(/-/g, "+").replace(/_/g, "/");
+    while (b64.length % 4) {
+      b64 += "=";
+    }
+    const binaryStr = atob(b64);
+    const codes = [];
+    for (let i = 0; i < binaryStr.length; i += 2) {
+      const low = binaryStr.charCodeAt(i);
+      const high = binaryStr.charCodeAt(i + 1);
+      codes.push(low | high << 8);
+    }
+    if (codes.length === 0) return new Uint8Array();
+    const dict = /* @__PURE__ */ new Map();
+    let currByte = codes[0];
+    let oldPhrase = [currByte];
+    const out = [currByte];
+    let code = 256;
+    for (let i = 1; i < codes.length; i++) {
+      const currCode = codes[i];
+      let phrase = [];
+      if (currCode < 256) {
+        phrase = [currCode];
+      } else {
+        phrase = dict.has(currCode) ? dict.get(currCode) : [...oldPhrase, currByte];
+      }
+      out.push(...phrase);
+      currByte = phrase[0];
+      dict.set(code, [...oldPhrase, currByte]);
+      code++;
+      oldPhrase = phrase;
+    }
+    return new Uint8Array(out);
+  }
+  function generateSyncCode() {
+    const data = {
+      mastery: JSON.parse(localStorage.getItem("edexcel_mastery") || "{}"),
+      bookmarks: JSON.parse(localStorage.getItem("edexcel_bookmarks") || "[]"),
+      past_answers: JSON.parse(localStorage.getItem("edexcel_past_answers") || "{}"),
+      past_completed: JSON.parse(localStorage.getItem("edexcel_past_completed") || "[]"),
+      deep_thinking: JSON.parse(localStorage.getItem("edexcel_deep_thinking") || "{}"),
+      how_useful: JSON.parse(localStorage.getItem("edexcel_how_useful") || "{}"),
+      spec_objectives: JSON.parse(localStorage.getItem("edexcel_spec_objectives") || "{}"),
+      spec_checklist: JSON.parse(localStorage.getItem("edexcel_spec_checklist") || "{}")
+    };
+    const masteredKeys = [];
+    for (const k in data.mastery) {
+      if (data.mastery[k] === true) {
+        masteredKeys.push(k);
+      }
+    }
+    data.mastery = masteredKeys;
+    const jsonStr = JSON.stringify(data);
+    const bytes = new TextEncoder().encode(jsonStr);
+    const hash = calculateHash(bytes);
+    const comp = compressBytes(bytes);
+    return comp + "-" + Math.abs(hash).toString(36);
+  }
+  function loadSyncCode(code) {
+    const parts = code.trim().split("-");
+    if (parts.length !== 2) throw new Error("Invalid sync code format.");
+    const [comp, hashStr] = parts;
+    const bytes = decompressToBytes(comp);
+    const hash = calculateHash(bytes);
+    if (Math.abs(hash).toString(36) !== hashStr) {
+      throw new Error("Integrity check failed. Code may have been typed incorrectly.");
+    }
+    const jsonStr = new TextDecoder().decode(bytes);
+    const data = JSON.parse(jsonStr);
+    const mastery = {};
+    if (Array.isArray(data.mastery)) {
+      data.mastery.forEach((k) => {
+        mastery[k] = true;
+      });
+    } else if (data.mastery) {
+      Object.assign(mastery, data.mastery);
+    }
+    localStorage.setItem("edexcel_mastery", JSON.stringify(mastery));
+    localStorage.setItem("edexcel_bookmarks", JSON.stringify(data.bookmarks || []));
+    localStorage.setItem("edexcel_past_answers", JSON.stringify(data.past_answers || {}));
+    localStorage.setItem("edexcel_past_completed", JSON.stringify(data.past_completed || []));
+    localStorage.setItem("edexcel_deep_thinking", JSON.stringify(data.deep_thinking || {}));
+    localStorage.setItem("edexcel_how_useful", JSON.stringify(data.how_useful || {}));
+    localStorage.setItem("edexcel_spec_objectives", JSON.stringify(data.spec_objectives || {}));
+    localStorage.setItem("edexcel_spec_checklist", JSON.stringify(data.spec_checklist || {}));
+    return true;
+  }
+
   // src/layout.js
   function toggleMobileSidebar() {
     if (window.innerWidth <= 768) {
@@ -25313,6 +26190,67 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         }
       });
     }
+    const btnSyncGenerate = document.getElementById("btn-sync-generate");
+    const syncOutputContainer = document.getElementById("sync-code-output-container");
+    const syncOutputField = document.getElementById("sync-code-output-field");
+    const btnSyncCopy = document.getElementById("btn-sync-copy");
+    const syncCopyToast = document.getElementById("sync-copy-toast");
+    const btnSyncLoad = document.getElementById("btn-sync-load");
+    const syncInputField = document.getElementById("sync-code-input-field");
+    const syncLoadFeedback = document.getElementById("sync-load-feedback");
+    if (btnSyncGenerate && syncOutputContainer && syncOutputField) {
+      btnSyncGenerate.addEventListener("click", () => {
+        AudioEngine.play("click");
+        try {
+          const code = generateSyncCode();
+          syncOutputField.value = code;
+          syncOutputContainer.style.display = "flex";
+          if (syncCopyToast) syncCopyToast.style.display = "none";
+        } catch (err) {
+          console.error(err);
+          alert("Failed to generate sync code: " + err.message);
+        }
+      });
+    }
+    if (btnSyncCopy && syncOutputField) {
+      btnSyncCopy.addEventListener("click", () => {
+        AudioEngine.play("click");
+        syncOutputField.select();
+        syncOutputField.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(syncOutputField.value).then(() => {
+          if (syncCopyToast) {
+            syncCopyToast.style.display = "block";
+            setTimeout(() => {
+              syncCopyToast.style.display = "none";
+            }, 3e3);
+          }
+        }).catch((err) => {
+          console.error("Failed to copy text: ", err);
+        });
+      });
+    }
+    if (btnSyncLoad && syncInputField && syncLoadFeedback) {
+      btnSyncLoad.addEventListener("click", () => {
+        AudioEngine.play("click");
+        const code = syncInputField.value.trim();
+        if (!code) {
+          syncLoadFeedback.style.color = "var(--accent)";
+          syncLoadFeedback.textContent = "Please paste a save code first.";
+          return;
+        }
+        try {
+          loadSyncCode(code);
+          syncLoadFeedback.style.color = "var(--success)";
+          syncLoadFeedback.textContent = "Progress loaded successfully! Reloading...";
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
+        } catch (err) {
+          syncLoadFeedback.style.color = "var(--accent)";
+          syncLoadFeedback.textContent = err.message;
+        }
+      });
+    }
     window.addEventListener("keydown", (e) => {
       if (state.currentView === "flashcards") {
         const completionCard = document.querySelector(".flashcard-completion-card");
@@ -25584,6 +26522,7 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
   // src/storage.js
   function initData() {
     state.allQuestions = [];
+    state.analyticalQuestions = [];
     QUIZ_DATA.forEach((topic) => {
       topic.subtopics.forEach((subtopic) => {
         subtopic.standard.forEach((q) => {
@@ -25606,6 +26545,18 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
             subtopicTitle: subtopic.title
           });
         });
+        if (subtopic.analytical) {
+          subtopic.analytical.forEach((q) => {
+            state.analyticalQuestions.push({
+              ...q,
+              type: "analytical",
+              topicId: topic.id,
+              topicTitle: topic.title,
+              subtopicId: subtopic.id,
+              subtopicTitle: subtopic.title
+            });
+          });
+        }
       });
     });
     try {

@@ -189,6 +189,32 @@ export const QUIZ_DATA = [
               "Because federal marshals would refuse to protect them at registration offices"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_1_1_a1",
+            "question": "Which of the following was the primary consequence of Southern states using literacy tests and poll taxes in the early 1950s?",
+            "answer": "The systemic disenfranchisement of Black voters, preventing them from electing sympathetic local officials.",
+            "explanation": "Literacy tests and poll taxes were deliberately designed to bypass the 15th Amendment, systematically preventing Black Americans from voting and securing political representation.",
+            "year": 1950,
+            "distractors": [
+              "The rise of a new wave of Black politicians in local governments",
+              "The sudden integration of state legislatures across the Deep South",
+              "The immediate federal abolition of voter registration fees"
+            ]
+          },
+          {
+            "id": "q_1_1_a2",
+            "question": "Which of the following best explains why the NAACP focused heavily on legal challenges through the courts in the early 1950s?",
+            "answer": "To establish binding legal precedents that could dismantle segregation nationwide.",
+            "explanation": "The NAACP's legal strategy aimed to challenge the 'separate but equal' doctrine in courts, creating legal precedents (like Brown) that applied to the entire country.",
+            "year": 1950,
+            "distractors": [
+              "Because mass direct action was banned by federal law",
+              "Because the President had promised to enforce any Supreme Court ruling immediately",
+              "To avoid raising funds from Northern liberal groups"
+            ]
+          }
         ]
       },
       {
@@ -375,6 +401,32 @@ export const QUIZ_DATA = [
               "Because the President refused to support the Supreme Court decision in public",
               "Because the NAACP lacked the financial resources to bring lawsuits to local courts",
               "Because the majority of Black parents in the South preferred segregated schools"
+            ]
+          }
+        ],
+        "analytical": [
+          {
+            "id": "q_1_2_a1",
+            "question": "Which of the following best explains why President Eisenhower sent the 101st Airborne Division to Little Rock in 1957?",
+            "answer": "To assert federal authority and enforce the Supreme Court desegregation order against state-level resistance.",
+            "explanation": "Eisenhower was forced to act when Governor Orval Faubus used the National Guard to block desegregation, creating a constitutional crisis between state and federal authority.",
+            "year": 1957,
+            "distractors": [
+              "To arrest Governor Orval Faubus for treason",
+              "To implement martial law and shut down the state legislature",
+              "To support Governor Faubus in maintaining segregation"
+            ]
+          },
+          {
+            "id": "q_1_2_a2",
+            "question": "What was the most significant consequence of the Little Rock Crisis on the civil rights movement?",
+            "answer": "It demonstrated that federal intervention was necessary to overcome active Southern state resistance to integration.",
+            "explanation": "Little Rock showed that legal rulings alone were not enough; active federal enforcement and military protection were required to overcome segregationist state resistance.",
+            "year": 1957,
+            "distractors": [
+              "It led to the immediate integration of all schools across the Deep South",
+              "It caused a split between the SCLC and SNCC over tactics",
+              "It forced Governor Faubus to retire from public life"
             ]
           }
         ]
@@ -565,6 +617,32 @@ export const QUIZ_DATA = [
               "Student Nonviolent Coordinating Committee (SNCC)"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_1_3_a1",
+            "question": "Which of the following was the primary reason for the success of the Montgomery Bus Boycott?",
+            "answer": "The high level of community organization and the economic pressure of sustained Black boycotts.",
+            "explanation": "The boycott succeeded because the Black community coordinated alternative transport (carpools) and stood united for 381 days, causing massive financial losses to the bus company.",
+            "year": 1955,
+            "distractors": [
+              "The immediate support of the Montgomery city council and mayor",
+              "The federal deployment of troops to protect Black bus riders",
+              "The lack of white backlash or opposition in the city"
+            ]
+          },
+          {
+            "id": "q_1_3_a2",
+            "question": "What was the most significant political consequence of the Montgomery Bus Boycott?",
+            "answer": "It established non-violent direct action as a viable national tactic and elevated MLK to national leadership.",
+            "explanation": "The success of the boycott showed the power of non-violent mass protest and launched the Southern Christian Leadership Conference (SCLC) led by Martin Luther King Jr.",
+            "year": 1956,
+            "distractors": [
+              "It forced the immediate passage of the Civil Rights Act of 1957",
+              "It led directly to the formation of the Black Panther Party",
+              "It completely ended segregation on all Southern public transport systems"
+            ]
+          }
         ]
       },
       {
@@ -751,6 +829,32 @@ export const QUIZ_DATA = [
               "Medgar Evers",
               "Jimmie Lee Jackson",
               "James Chaney"
+            ]
+          }
+        ],
+        "analytical": [
+          {
+            "id": "q_1_4_a1",
+            "question": "Which of the following explains why the Civil Rights Act of 1957 was considered weak by civil rights leaders?",
+            "answer": "It lacked robust enforcement mechanisms to verify voter registration and protect voters on the ground.",
+            "explanation": "Although it established the Civil Rights Commission, the Act relied on civil cases rather than federal enforcement, which did not stop Southern voter discrimination.",
+            "year": 1957,
+            "distractors": [
+              "It did not outlaw desegregation in housing",
+              "It was declared unconstitutional by the Supreme Court shortly after passage",
+              "It only applied to Northern states, leaving the South untouched"
+            ]
+          },
+          {
+            "id": "q_1_4_a2",
+            "question": "What was the main significance of the formation of the Southern Christian Leadership Conference (SCLC) in 1957?",
+            "answer": "It provided a coordinated, church-backed network for organizing non-violent protest across the South.",
+            "explanation": "The SCLC allowed Southern Black churches to pool resources and moral authority, creating a resilient network that could withstand segregationist intimidation.",
+            "year": 1957,
+            "distractors": [
+              "It shifted the movement's focus away from non-violence to armed self-defense",
+              "It focused entirely on legal court challenges, bypassing direct action",
+              "It was the first student-led civil rights organization"
             ]
           }
         ]
@@ -947,6 +1051,32 @@ export const QUIZ_DATA = [
               "Daisy Bates"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_2_1_a1",
+            "question": "Which of the following best explains why the Greensboro Sit-ins of 1960 succeeded in desegregating lunch counters?",
+            "answer": "The economic impact of the boycotts and the national media coverage of peaceful protestors facing violence.",
+            "explanation": "The combination of economic pressure on Woolworth's and the shocking media coverage of well-dressed students being abused forced business owners to desegregate.",
+            "year": 1960,
+            "distractors": [
+              "The immediate intervention of federal marshals to desegregate private businesses",
+              "The swift passage of local desegregation laws by North Carolina",
+              "The lack of white opposition or protest in the area"
+            ]
+          },
+          {
+            "id": "q_2_1_a2",
+            "question": "What was the primary consequence of the Freedom Rides in 1961 on federal policy?",
+            "answer": "It forced the federal government to actively enforce desegregation rulings on interstate buses and terminals.",
+            "explanation": "Faced with mob violence against riders, Attorney General Robert Kennedy ordered the Interstate Commerce Commission to enforce federal integration rulings.",
+            "year": 1961,
+            "distractors": [
+              "It led to the immediate repeal of the Jim Crow laws by Southern state legislatures",
+              "It prompted President Kennedy to veto the Civil Rights Bill",
+              "It caused SNCC to dissolve and join the Black Muslims"
+            ]
+          }
         ]
       },
       {
@@ -1135,6 +1265,32 @@ export const QUIZ_DATA = [
               "Lemuel Penn, Virgil Ware, and Johnny Robinson"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_2_2_a1",
+            "question": "Which of the following best explains why the Birmingham Campaign of 1963 was a turning point in the civil rights struggle?",
+            "answer": "The shocking media images of police brutality against peaceful children forced federal intervention and public outrage.",
+            "explanation": "Images of Bull Connor's police dogs and fire hoses attacking school children shocked the nation, prompting President Kennedy to draft the Civil Rights Bill.",
+            "year": 1963,
+            "distractors": [
+              "It resulted in the immediate arrest and conviction of Police Chief Bull Connor",
+              "It was the first civil rights march that met zero opposition from local authorities",
+              "It convinced Southern segregationists to voluntarily end Jim Crow laws"
+            ]
+          },
+          {
+            "id": "q_2_2_a2",
+            "question": "What was the most significant consequence of the Civil Rights Act of 1964?",
+            "answer": "It outlawed segregation in public accommodations and gave the federal government power to desegregate schools.",
+            "explanation": "The 1964 Act was a landmark law that officially ended the legal basis of Jim Crow segregation in businesses and public spaces.",
+            "year": 1964,
+            "distractors": [
+              "It instantly secured voting rights for all Black Americans in the South",
+              "It ended de facto segregation in Northern housing markets",
+              "It was vetoed by President Johnson, causing mass riots"
+            ]
+          }
         ]
       },
       {
@@ -1321,6 +1477,32 @@ export const QUIZ_DATA = [
               "Freedom Summer campaign",
               "March on Washington",
               "Greensboro sit-ins"
+            ]
+          }
+        ],
+        "analytical": [
+          {
+            "id": "q_2_3_a1",
+            "question": "Which of the following best explains why the Selma Campaign of 1965 led directly to the Voting Rights Act?",
+            "answer": "The public violence of 'Bloody Sunday' generated massive public outcry and pressured President Johnson to act.",
+            "explanation": "State troopers attacking peaceful marchers at the Edmund Pettus Bridge was broadcast on television, generating moral outrage that forced the passage of voting rights legislation.",
+            "year": 1965,
+            "distractors": [
+              "It was the first march to receive the full endorsement of Southern governors",
+              "It convinced the Supreme Court to rule poll taxes illegal",
+              "It was led entirely by Malcolm X's armed supporters"
+            ]
+          },
+          {
+            "id": "q_2_3_a2",
+            "question": "Which of the following explains why the concept of 'Black Power' grew in popularity in the mid-1960s?",
+            "answer": "Frustration with the slow pace of economic progress and ongoing white violence despite legislative gains.",
+            "explanation": "Many young urban activists felt that SCLC's non-violent campaigns had failed to address poverty, ghetto housing conditions, and police brutality in northern and western cities.",
+            "year": 1966,
+            "distractors": [
+              "The sudden disbandment of the SCLC and MLK's retirement",
+              "The federal government's endorsement of segregation in Northern cities",
+              "The total failure of the Voting Rights Act to register any voters"
             ]
           }
         ]
@@ -1559,6 +1741,32 @@ export const QUIZ_DATA = [
               "Integration directives"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_2_4_a1",
+            "question": "Which of the following best explains the primary cause of the Watts Riots in Los Angeles in 1965?",
+            "answer": "Sustained anger over police brutality, high unemployment, and systemic de facto segregation in housing.",
+            "explanation": "While triggered by a police arrest, the Watts riots were fueled by deep-seated resentment of police discrimination and structural inequality in the ghetto.",
+            "year": 1965,
+            "distractors": [
+              "The SCLC's call for violent uprising in Western cities",
+              "The passage of the Voting Rights Act of 1965",
+              "The sudden integration of public schools in California"
+            ]
+          },
+          {
+            "id": "q_2_4_a2",
+            "question": "What was a major consequence of the Kerner Commission report (1968) on American society?",
+            "answer": "It warned that America was moving toward two separate and unequal societies and blamed white racism for inner-city conditions.",
+            "explanation": "The Kerner Commission warned that structural racism, urban poverty, and lack of opportunities were driving a deep divide in America.",
+            "year": 1968,
+            "distractors": [
+              "It recommended the immediate deployment of troops to occupy Northern cities permanently",
+              "It argued that civil rights legislation had gone too far and should be rolled back",
+              "It concluded that urban poverty had been completely solved by the Great Society"
+            ]
+          }
         ]
       }
     ]
@@ -1789,6 +1997,32 @@ export const QUIZ_DATA = [
               "Thich Tam Chau"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_3_1_a1",
+            "question": "Which of the following best explains why the Domino Theory was central to US foreign policy in Southeast Asia?",
+            "answer": "It created the belief that if one country fell to communism, neighboring nations would quickly follow, threatening US security.",
+            "explanation": "The domino theory justified the containment strategy in Asia, convincing US leaders that keeping South Vietnam non-communist was vital to prevent all of Southeast Asia from falling.",
+            "year": 1954,
+            "distractors": [
+              "It argued that Asian nations were naturally democratic and would resist communism on their own",
+              "It was a strategy to colonize Indochina for US economic exploitation",
+              "It advocated for peaceful coexistence with the Soviet Union in Asia"
+            ]
+          },
+          {
+            "id": "q_3_1_a2",
+            "question": "What was the primary consequence of the French defeat at Dien Bien Phu in 1954?",
+            "answer": "The end of French colonial rule in Indochina and the division of Vietnam at the Geneva Conference.",
+            "explanation": "The defeat forced France to withdraw, leading to the Geneva Accords which temporarily divided Vietnam at the 17th parallel pending elections.",
+            "year": 1954,
+            "distractors": [
+              "The immediate deployment of 100,000 US combat troops to Hanoi",
+              "The signing of a permanent peace treaty between North and South Vietnam",
+              "The coronation of Bao Dai as Emperor of a unified Vietnam"
+            ]
+          }
         ]
       },
       {
@@ -1999,6 +2233,32 @@ export const QUIZ_DATA = [
               "The attack was actually launched by Chinese warships, not North Vietnamese",
               "The USS Maddox was sunk with all hands, which was covered up by the US Navy",
               "The North Vietnamese launched a full amphibious invasion of the Gulf"
+            ]
+          }
+        ],
+        "analytical": [
+          {
+            "id": "q_3_2_a1",
+            "question": "Which of the following best explains why the Gulf of Tonkin Resolution was a turning point in the Vietnam War?",
+            "answer": "It gave the President blank-check authority to deploy combat troops without a formal declaration of war by Congress.",
+            "explanation": "The resolution shifted war-making power to the executive branch, allowing LBJ to rapidly escalate and send US ground troops into combat.",
+            "year": 1964,
+            "distractors": [
+              "It marked the first time the US entered a formal alliance with South Vietnam",
+              "It led to an immediate joint invasion of North Vietnam by US and Chinese forces",
+              "It forced Richard Nixon to resign his presidency"
+            ]
+          },
+          {
+            "id": "q_3_2_a2",
+            "question": "What was a major consequence of the launch of Operation Rolling Thunder in 1965?",
+            "answer": "It marked the systematic escalation of the air war but failed to stop the flow of supplies from North Vietnam.",
+            "explanation": "Despite dropping massive amounts of explosives, the bombing campaign failed to break North Vietnamese morale or block the Ho Chi Minh Trail.",
+            "year": 1965,
+            "distractors": [
+              "It immediately forced Ho Chi Minh to surrender in Geneva",
+              "It convinced China to enter the war on the side of South Vietnam",
+              "It led to the total destruction of the Vietcong's underground tunnels"
             ]
           }
         ]
@@ -2223,6 +2483,32 @@ export const QUIZ_DATA = [
               "1,500 km",
               "5,000 km",
               "30,000 km"
+            ]
+          }
+        ],
+        "analytical": [
+          {
+            "id": "q_3_3_a1",
+            "question": "Which of the following best explains why the Ho Chi Minh Trail was crucial to the Vietcong's military strategy?",
+            "answer": "It allowed North Vietnam to continuously supply guerrillas in the South via routes in Laos and Cambodia.",
+            "explanation": "The trail bypassed the DMZ by going through neutral Laos and Cambodia, allowing the NVA to supply the Vietcong with arms and troops.",
+            "year": 1965,
+            "distractors": [
+              "It was a paved highway that allowed North Vietnamese tanks to invade Saigon directly",
+              "It was built entirely within the Demilitarized Zone (DMZ), protected by international law",
+              "It was a major trade route that supplied food from China directly to South Vietnam"
+            ]
+          },
+          {
+            "id": "q_3_3_a2",
+            "question": "What was the primary consequence of the US military's heavy reliance on 'Search and Destroy' tactics?",
+            "answer": "It alienated the South Vietnamese peasantry, driving many to support the Vietcong.",
+            "explanation": "Search and destroy missions caused high civilian casualties and destroyed villages, which turned local peasants against the US and the Saigon government.",
+            "year": 1965,
+            "distractors": [
+              "It successfully wiped out the Vietcong's organizational structure within two years",
+              "It led to a swift capture of Hanoi by US ground forces",
+              "It reduced the need for US draft calls and troop deployments"
             ]
           }
         ]
@@ -2461,6 +2747,32 @@ export const QUIZ_DATA = [
               "100,000 tons"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_3_4_a1",
+            "question": "Which of the following best explains the main objective of Nixon's policy of 'Vietnamization'?",
+            "answer": "To withdraw US troops while transferring combat responsibility to the South Vietnamese forces.",
+            "explanation": "Vietnamization aimed to de-escalate US involvement and quiet domestic protests by training the ARVN to fight the war on their own.",
+            "year": 1969,
+            "distractors": [
+              "To completely annex South Vietnam as a permanent US territory",
+              "To replace President Thieu with a communist coalition government",
+              "To launch a full-scale joint invasion of North Vietnam using allied troops"
+            ]
+          },
+          {
+            "id": "q_3_4_a2",
+            "question": "What was the most significant domestic consequence of Nixon's invasion of Cambodia in 1970?",
+            "answer": "It triggered massive anti-war protests, including the Kent State shootings, and deep public outrage.",
+            "explanation": "The invasion of Cambodia was seen as expanding the war rather than ending it, leading to a massive wave of student demonstrations.",
+            "year": 1970,
+            "distractors": [
+              "It convinced Congress to double the defense budget for the war",
+              "It led to the immediate surrender of North Vietnamese forces",
+              "It was widely praised by the public and united the country behind Nixon"
+            ]
+          }
         ]
       }
     ]
@@ -2679,6 +2991,32 @@ export const QUIZ_DATA = [
               "5 million students strike"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_4_1_a1",
+            "question": "Which of the following best explains why the Tet Offensive was a turning point in the Vietnam War?",
+            "answer": "It shattered US government claims that the enemy was near defeat, widening the 'credibility gap.'",
+            "explanation": "Although a tactical military failure for the communists, the size of the offensive shocked the public, proving that the war was far from over.",
+            "year": 1968,
+            "distractors": [
+              "It was a decisive military victory for the Vietcong that captured Saigon",
+              "It forced President Johnson to run for a third term to finish the war",
+              "It convinced North Vietnam that a military victory was impossible"
+            ]
+          },
+          {
+            "id": "q_4_1_a2",
+            "question": "What was the most significant political consequence of the Tet Offensive on US domestic politics?",
+            "answer": "It led President Johnson to halt bombing, begin peace talks, and announce he would not run for re-election.",
+            "explanation": "The political fallout convinced Johnson that military victory was impossible and that his presidency had lost the consensus needed to govern.",
+            "year": 1968,
+            "distractors": [
+              "It resulted in Congress passing a declaration of war against North Vietnam",
+              "It led to the immediate impeachment of Richard Nixon",
+              "It forced the US to draft all men over the age of 30"
+            ]
+          }
         ]
       },
       {
@@ -2877,6 +3215,32 @@ export const QUIZ_DATA = [
               "50 workers",
               "500 workers",
               "1,000 workers"
+            ]
+          }
+        ],
+        "analytical": [
+          {
+            "id": "q_4_2_a1",
+            "question": "Which of the following best explains why the revelation of the My Lai Massacre in 1969 deeply shocked the American public?",
+            "answer": "It exposed the brutal killing of unarmed Vietnamese civilians by US soldiers and a subsequent military cover-up.",
+            "explanation": "My Lai undermined the moral authority of the US mission, showing that US troops had committed war crimes against innocent women and children.",
+            "year": 1969,
+            "distractors": [
+              "It showed that the South Vietnamese army had betrayed US troops in combat",
+              "It was the first battle where the Vietcong used chemical weapons against civilians",
+              "It proved that the US had won the war but refused to accept victory"
+            ]
+          },
+          {
+            "id": "q_4_2_a2",
+            "question": "What was the primary consequence of the Kent State shootings in 1970?",
+            "answer": "It intensified the student anti-war movement, leading to a national student strike of over 4 million students.",
+            "explanation": "The shooting of unarmed student protestors by National Guardsmen polarized the nation, forcing hundreds of colleges to close down.",
+            "year": 1970,
+            "distractors": [
+              "It caused President Nixon to immediately resign from office",
+              "It led to the outlawing of all anti-war protests by the Supreme Court",
+              "It prompted the immediate withdrawal of all US troops from Southeast Asia"
             ]
           }
         ]
@@ -3103,6 +3467,32 @@ export const QUIZ_DATA = [
               "Cooper-Church Amendment"
             ]
           }
+        ],
+        "analytical": [
+          {
+            "id": "q_4_3_a1",
+            "question": "Which of the following best explains why the Paris Peace Accords of 1973 did not lead to a lasting peace in Vietnam?",
+            "answer": "The agreement allowed North Vietnamese troops to remain in the South, leading to renewed conflict once US forces left.",
+            "explanation": "Because Nixon wanted to withdraw US troops, the accords left South Vietnam vulnerable by allowing North Vietnamese units to hold their positions.",
+            "year": 1973,
+            "distractors": [
+              "Richard Nixon refused to sign the final agreement in Paris",
+              "The Soviet Union launched a nuclear strike on Saigon immediately after the signing",
+              "South Vietnam invaded North Vietnam in violation of the cease-fire"
+            ]
+          },
+          {
+            "id": "q_4_3_a2",
+            "question": "What was the primary consequence of the Fall of Saigon in April 1975?",
+            "answer": "The total defeat of South Vietnam, the evacuation of US personnel, and the unification of Vietnam under a communist government.",
+            "explanation": "Saigon's surrender to the NVA marked the end of the Vietnam War and the establishment of a unified Socialist Republic of Vietnam.",
+            "year": 1975,
+            "distractors": [
+              "The outbreak of a war between China and a unified communist Vietnam",
+              "The immediate deployment of a new US expeditionary force by President Ford",
+              "The establishment of a permanent coalition government between communists and nationalists"
+            ]
+          }
         ]
       },
       {
@@ -3313,6 +3703,32 @@ export const QUIZ_DATA = [
               "21 years old",
               "24 years old",
               "26 years old"
+            ]
+          }
+        ],
+        "analytical": [
+          {
+            "id": "q_4_4_a1",
+            "question": "Which of the following is the most significant reason why US military power failed to defeat the Vietcong?",
+            "answer": "The Vietcong's effective guerrilla tactics, local knowledge, and determination outlasted the US political will to fight.",
+            "explanation": "Guerrilla warfare made it impossible to identify the enemy or win ground permanently, while NVA determination made the cost of the war unsustainable for the US.",
+            "year": 1975,
+            "distractors": [
+              "The US military lacked advanced weaponry and air power",
+              "The South Vietnamese army (ARVN) was highly disciplined but too small",
+              "The US public refused to pay any taxes to fund the military"
+            ]
+          },
+          {
+            "id": "q_4_4_a2",
+            "question": "What was the primary consequence of the War Powers Act passed by Congress in 1973?",
+            "answer": "It restricted the President's power to commit US troops to foreign conflicts without congressional approval.",
+            "explanation": "Passed in the wake of Vietnam and Cambodia escalations, the Act reasserted Congressional oversight on military actions, limiting unilateral presidential deployments.",
+            "year": 1973,
+            "distractors": [
+              "It gave the military complete control over domestic foreign policy decisions",
+              "It abolished the draft and replaced it with a volunteer army permanently",
+              "It repealed the Constitution's definition of commander-in-chief"
             ]
           }
         ]
