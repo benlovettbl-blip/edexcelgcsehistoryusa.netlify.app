@@ -7566,15 +7566,24 @@ Source E is highly useful for showing how Black Power and militancy were institu
       "headerIntro": "Following the 1954 Geneva Accords, which temporarily divided Vietnam at the 17th parallel, the United States committed to containing communism in Southeast Asia. Guided by President Eisenhower's 'Domino Theory'\u2014the belief that if Vietnam fell to communism, neighboring nations would follow\u2014the USA backed Ngo Dinh Diem's anti-communist government in South Vietnam. However, Diem's corrupt regime, Buddhist persecutions, and refusal to hold elections alienated the populace, leading to the 1960 formation of the Vietcong and Diem's ultimate assassination in November 1963.",
       "steps": [
         {
-          "title": "Step 1: The Domino Theory & Partition (1954)",
+          "title": "Step 1: The Battle of Dien Bien Phu and the End of French Rule (1954)",
           "isSplit": false,
-          "bodyHtml": "<p>Following the defeat of the French at Dien Bien Phu, the 1954 Geneva Accords divided Vietnam along the 17th Parallel:</p>\n        <ul>\n          <li><strong>Geneva & French Defeat:</strong> Prior to the French defeat at Dien Bien Phu (where General Giap besieged French forces), the US funded **80%** of the French war effort. The Accords partitioned Vietnam at the 17th Parallel.</li>\n          <li><strong>The Domino Theory:</strong> President Eisenhower warned that if South Vietnam fell to communism, neighboring nations would fall like dominoes. This containment fear drove greater US involvement.</li>\n          <li><strong>Backing Diem:</strong> Rather than holding the nationwide 1956 elections (which the US feared Ho Chi Minh would win), Eisenhower supported Ngo Dinh Diem in establishing a separate, anti-communist government in South Vietnam.</li>\n          <li><strong>Early Weaknesses & SEATO:</strong> The US formed SEATO and sent military advisers to support South Vietnam. However, Diem's early weaknesses (corruption and nepotism) made his government unpopular, requiring ever-greater US aid to survive.</li>\n        </ul>",
+          "bodyHtml": "<p>Prior to the mid-1950s, Vietnam was part of the French empire, but a nationalist and communist rebellion challenged colonial rule:</p>\n        <ul>\n          <li><strong>French Rule & Viet Minh:</strong> Before the Second World War, Vietnam was part of the French empire (known as French Indochina). After the war, a communist independence movement known as the <strong>Viet Minh</strong>, led by <strong>Ho Chi Minh</strong>, began fighting to kick the French out of the country.</li>\n          <li><strong>US Financial Backing:</strong> Because Ho Chi Minh was a communist, the USA viewed the Viet Minh as a major threat and paid for a massive portion (**80%**) of the French war effort to try and stop them.</li>\n          <li><strong>Dien Bien Phu (1954):</strong> Despite heavy US financial backing, the French army suffered a crushing and humiliating defeat by the Viet Minh at the Battle of <strong>Dien Bien Phu</strong> in May 1954. This disaster forced France to withdraw entirely, ending French colonial rule in Vietnam.</li>\n          <li><strong>The Geneva Accords (1954):</strong> Following the French defeat, a peace conference produced the Geneva Accords. This agreement temporarily divided Vietnam in half along the <strong>17th Parallel</strong>. The North was controlled by the communist Ho Chi Minh, while the South was ruled by a non-communist, US-backed leader named <strong>Ngo Dinh Diem</strong>.</li>\n          <li><strong>Elections Refused:</strong> The agreement promised that nationwide elections would be held in 1956 to reunite the country, but the USA and Diem refused to hold them, knowing Ho Chi Minh would easily win.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: NSC-68 and the Roots of Intervention",
             "body": "The Domino Theory was rooted in National Security Council Report 68 (NSC-68), a classified 1950 policy paper. NSC-68 argued that the Soviet Union was engaged in a global, monolithic conspiracy for world domination. This framework led US policymakers to view local anti-colonial struggles, like Ho Chi Minh's nationalist movement against the French, as Soviet-directed aggression rather than local struggles for independence.",
             "image": "assets/sources/ngo-dinh-diem-parade.jpg",
             "imageAlt": "Scholarly Perspective: NSC-68 and the Roots of Intervention",
-            "imageProvenance": "A photograph of President Ngo Dinh Diem standing in a military vehicle during a parade in Saigon, October 1957, displaying the military forces supporting his regime.",
+            "imageProvenance": "A photograph of President Ngo Dinh Diem standing in a military vehicle during a parade in Saigon, October 1957, displaying the military forces supporting his regime."
+          }
+        },
+        {
+          "title": "Step 2: Greater US Involvement under Eisenhower (1954\u201360)",
+          "isSplit": false,
+          "bodyHtml": "<p>Following partition, the US government justified its intervention through global containment theories:</p>\n        <ul>\n          <li><strong>The Domino Theory:</strong> President Dwight D. Eisenhower justified deeper US involvement in Vietnam using the <strong>'Domino Theory'</strong>. He argued that if South Vietnam was allowed to fall to communism, neighbouring countries like Laos, Cambodia, Thailand, and potentially even India, would inevitably fall one after the other, just like a row of dominoes.</li>\n          <li><strong>Diem's Weaknesses \u2014 Corruption and Nepotism:</strong> To prevent the dominoes from falling, Eisenhower heavily supported Ngo Dinh Diem's government in South Vietnam. However, Diem was an incredibly weak and unpopular leader. He ruled as a dictator, gave all the top government jobs to his own family members, and took land away from poor peasants.</li>\n          <li><strong>Diem's Weaknesses \u2014 Religious Persecution:</strong> Diem was a strict Catholic ruling a country that was overwhelmingly Buddhist. He heavily discriminated against the Buddhist majority, leading to widespread anger.</li>\n          <li><strong>Rise of the Vietcong:</strong> Because Diem was so hated, many South Vietnamese peasants began supporting the communist rebels in the South, who became known as the <strong>Vietcong</strong>.</li>\n          <li><strong>Eisenhower's Action:</strong> To prop up Diem's failing government, Eisenhower sent millions of dollars, weapons, and a small number of US military <strong>'advisors'</strong> to train the South Vietnamese Army (ARVN).</li>\n        </ul>",
+          "scholarlyDepth": {
+            "title": "Scholarly Perspective: Diem's Social Base",
+            "body": "Historians point out that Diem's regime relied almost entirely on Catholic refugees who fled from the North after 1954, urban elites, and large landowners. By returning land to landlords that the Viet Minh had previously distributed to peasants, Diem alienated the rural majority, creating the very grievances the Vietcong exploited.",
             "vietnameseSource": {
               "perspective": "South Vietnamese Buddhist Protest (1963)",
               "originalText": "Ch\xFAng ta \u0111\u1EA5u tranh cho t\u1EF1 do t\xF4n gi\xE1o v\xE0 s\u1EF1 b\xECnh \u0111\u1EB3ng. Ch\xEDnh quy\u1EC1n Gia \u0111\xECnh tr\u1ECB Ng\xF4 \u0110\xECnh Di\u1EC7m \u0111\xE0n \xE1p Ph\u1EADt gi\xE1o, tri\u1EC7t h\u1EA1 c\u1EDD Ph\u1EADt gi\xE1o l\xE0 \u0111i ng\u01B0\u1EE3c l\u1EA1i l\xF2ng d\xE2n.",
@@ -7584,23 +7593,28 @@ Source E is highly useful for showing how Black Power and militancy were institu
           }
         },
         {
-          "title": "Step 2: Diem's Weaknesses and Overthrow",
+          "title": "Step 3: Greater Involvement under Kennedy (1961\u201363)",
           "isSplit": true,
           "bodyHtml": `<div class="mastery-text-column">
           <div class="mastery-card-body card-content">
-            <p>To contain the North, the US backed South Vietnam's President Ngo Dinh Diem, whose regime was highly corrupt:</p>
+            <p>When John F. Kennedy became President in 1961, the situation in South Vietnam was deteriorating rapidly as the Vietcong took control of the countryside:</p>
             <ul>
-              <li><strong>Catholic Favoritism:</strong> Diem favored the Catholic minority in a Buddhist-majority country. After a ban on the Buddhist flag sparked shootings in Hue, monk **Thich Quang Duc** self-immolated in Saigon in June 1963, destroying the regime's legitimacy.</li>
-              <li><strong>Strategic Hamlet Program:</strong> Managed by Diem's brother **Ngo Dinh Nhu**, the US moved peasants into armed villages. The program failed because Nhu forced peasants to build them at their own expense, alienating them and driving them to support the Vietcong.</li>
-              <li><strong>Diem's Overthrow (1963):</strong> Recognizing Diem could not win the war, President Kennedy approved a military coup in November 1963. Diem was overthrown and assassinated, leading to a period of extreme political instability in South Vietnam.</li>
+              <li><strong>Kennedy's Escalation:</strong> Kennedy drastically increased the number of US military 'advisors' in Vietnam, raising the total from around **900** to **16,000** by 1963. He also deployed elite US Special Forces (the <strong>'Green Berets'</strong>) and authorised the use of chemical defoliants (like <strong>Agent Orange</strong>) to destroy the jungle cover used by the Vietcong.</li>
+              <li><strong>The Strategic Hamlet Program (1962):</strong> To cut off the Vietcong from their peasant supporters, Kennedy and Diem launched the Strategic Hamlet Program, forcibly moving South Vietnamese peasants into fortified camps surrounded by barbed wire and armed guards.</li>
+              <li><strong>Failure of Hamlets:</strong> The program was a total disaster. Peasants deeply resented being forced off their sacred ancestral lands and treated like prisoners. Corrupt officials failed to provide enough food, which drove even more starving and angry peasants into the arms of the Vietcong.</li>
+              <li><strong>The Overthrow of Diem (1963):</strong> In 1963, Diem's persecution of Buddhists triggered a crisis, highlighted by Buddhist monk <strong>Th\xEDch Qu\u1EA3ng \u0110\u1EE9c</strong> burning himself to death on a Saigon street. Realising Diem was too corrupt to win, the Kennedy administration gave a 'green light' to South Vietnamese generals. On 1 November 1963, a coup was launched; Diem and his brother were overthrown and assassinated, plunging the country into a chaotic period of weak, constantly changing military governments.</li>
             </ul>
+            <div class="revision-task-box" style="margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.08); border-left: 4px solid var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);">
+              <h4 style="margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;">\u{1F4DD} Revision Task</h4>
+              <p style="margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;">To check your understanding of this topic, complete the following in your study notes:</p>
+              <ul style="margin: 0; padding-left: 18px; font-size: 0.9em; line-height: 1.5;">
+                <li>Write down the definition of the Domino Theory.</li>
+                <li>List two specific reasons why the Strategic Hamlet Program backfired and increased support for the Vietcong.</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="mastery-media-column">
-          <div class="lesson-image-wrapper">
-            <img src="assets/sources/little-rock-nine-1957.jpg" alt="Strategic Hamlet Program peasants" class="lesson-source-img" style="display: none;" />
-            <!-- We hide the placeholder image as it does not match, but we keep the structure -->
-          </div>
           <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;">
             <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Context Focus: Overthrow of Diem</strong>
             <p style="color: var(--text-muted); margin: 0;">
