@@ -3411,6 +3411,27 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           0,
           1
         ]
+      },
+      "mock_exam_9": {
+        "id": "mock_exam_9",
+        "topicCode": "Mock 9",
+        "question": "Give two inferences from Source A about the 'Freedom Summer' and the Mississippi murders (1964).",
+        "sourceA": {
+          "provenance": "From a diary entry written by a white college student volunteering in Mississippi, July 1964.",
+          "content": "We are told never to stand near windows at night and to always check our cars before starting the engines. Everyone is terrified after the disappearance of the three boys, but seeing the courage of the local black families who still show up to our Freedom Schools makes me determined not to leave."
+        },
+        "clue": "Identify specific details showing the dangers volunteers faced and the impact on their determination.",
+        "model": "Inference 1: civil rights volunteers faced the constant threat of violent and potentially lethal attacks.\nDetails: 'We are told never to stand near windows at night and to always check our cars before starting the engines.'\nInference 2: the murder of civil rights workers failed to completely destroy the morale of the campaign.\nDetails: 'seeing the courage of the local black families who still show up to our Freedom Schools makes me determined not to leave.'",
+        "options": [
+          "Civil rights volunteers faced persistent threats of violence and lethal attacks, requiring extreme daily precautions.",
+          "The abduction and murder of the three civil rights workers failed to destroy the determination and morale of the campaign.",
+          "Local police forces actively protected the volunteers' housing and vehicles from attack.",
+          "The volunteers decided to leave Mississippi immediately after the disappearance of the three boys."
+        ],
+        "correctIndices": [
+          0,
+          1
+        ]
       }
     },
     "q2": {
@@ -3797,6 +3818,35 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "furthermore"
         ],
         "model": "\u201COne reason why the Birmingham Campaign (1963) was launched was that Birmingham was widely known as the most segregated city in America.\u201D The local SCLC and Alabama Christian Movement for Human Rights had tried to negotiate with local merchants, but white businesses refused to desegregate lunch counters or hire Black workers, and local authorities banned all protests. {{Therefore, deep-seated local segregation and the failure of negotiations were a primary cause of why the Birmingham Campaign was launched, as activists realized direct action was the only way to break the stalemate.}}\n\n\u201CA second reason why the Birmingham Campaign (1963) was launched was to implement 'Project C' (Confrontation) to provoke a federal response.\u201D The organizers, led by Wyatt Tee Walker and Martin Luther King Jr., designed a strategy of public demonstrations to provoke a violent reaction from the notorious segregationist [[Police Commissioner Bull Connor]]. They knew Connor's aggressive methods would expose the brutality of Southern racism. {{Therefore, Project C was a key cause of why the Birmingham Campaign was launched, because it aimed to force federal intervention by creating a public crisis that Washington could not ignore.}}\n\n\u201CA third reason why the Birmingham Campaign (1963) was launched was to capture national media and television coverage to win public support.\u201D Activists knew that visual media would shock the northern public and international community. When Connor used high-pressure water [[hoses]] and attack dogs against child marchers, the images were broadcast worldwide, generating massive moral outrage. {{Therefore, the strategic use of media exposure was a decisive cause of why the Birmingham Campaign was launched, because it mobilized national opinion and forced President Kennedy to draft the Civil Rights Act.}}"
+      },
+      "mock_exam_9": {
+        "id": "mock_9_q2",
+        "topicCode": "Mock 9",
+        "question": "Explain why the campaign in Selma (1965) was successful.",
+        "stimulus1": "Televised media ('Bloody Sunday')",
+        "stimulus2": "President Lyndon B. Johnson",
+        "clue": "Explain how Selma's selection provoked aggressive white resistance, how television media broadcasted police brutality on Bloody Sunday, and how this forced federal intervention and voting rights legislation.",
+        "knowledgeWords": [
+          "Selma",
+          "Bloody Sunday",
+          "Pettus",
+          "Johnson",
+          "troopers",
+          "Jim Clark",
+          "disenfranchise",
+          "literacy tests",
+          "VRA"
+        ],
+        "connectiveWords": [
+          "as a result",
+          "consequently",
+          "this led to",
+          "therefore",
+          "because of",
+          "due to",
+          "furthermore"
+        ],
+        "model": "\u201COne reason why the campaign in Selma (1965) was successful was Martin Luther King Jr.'s strategic choice of location to deliberately provoke a violent reaction.\u201D The SCLC intentionally chose Selma because of its notoriously aggressive local sheriff, Jim Clark, and its appealing voter registration record (where only 383 of 15,000 eligible Black adults were registered). King knew that peaceful marchers demanding the vote would be met with unwarranted police brutality. {{Therefore, this strategic provocation led to success because it guaranteed that the oppressive reality of Southern voter suppression could no longer be hidden from the rest of the nation.}}\n\n\u201CAnother reason for its success was the immense power of television media in shocking the national public.\u201D During the first attempted march to Montgomery on 7 March 1965, peaceful demonstrators were viciously attacked with tear gas, whips, and clubs by state troopers on the [[Edmund Pettus Bridge]]. This event became known as [[Bloody Sunday]]. The unprovoked savagery was broadcast directly into millions of living rooms across America and around the world. {{Therefore, the campaign succeeded because the horrific visual evidence generated massive national sympathy and outrage, transforming a local Alabama protest into an urgent national political crisis.}}\n\n\u201CA final reason the campaign was successful was that it forced immediate and decisive federal intervention.\u201D In the wake of the public outcry over Bloody Sunday, President [[Lyndon B. Johnson]] federalised the National Guard to protect the marchers so they could successfully complete their journey to Montgomery. More importantly, Johnson used the momentum of the crisis to demand that Congress pass new legislation. {{Therefore, the campaign ultimately succeeded because it gave LBJ the exact political leverage he needed to sign the historic [[Voting Rights Act of 1965]], which banned literacy tests and finally guaranteed the vote for Black Americans.}}\n\nIn conclusion, the Selma campaign was successful because the calculated bravery of the marchers created a violent media spectacle, which in turn left the federal government with no choice but to forcefully intervene and change the law."
       }
     },
     "q3": {
@@ -4279,9 +4329,9 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         },
         "questiona": "How useful are Sources B and C for an enquiry into Vietnamization and Nixon's peace policy?",
         "cluea": "Assess Source B (military adviser's report, ARVN dependency, panic in Laos, corruption, high desertion) and Source C (Nixon's peace speech, peace with honor, ARVN capability, public relations focus) for usefulness.",
-        "modela": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
+        "modela": `<span style="color: blue;"> Source B is highly useful for showing the military weakness and dependence of the South Vietnamese forces under Vietnamization. The adviser reports that the ARVN is "heavily dependent on US air support" and panics when facing enemy tanks, suffering heavy casualties in Laos due to incompetent and corrupt officers. </span> <span style="color: green;"> This content's utility is supported by my knowledge of Operation Lam Son 719 in 1971, where the ARVN attempted to invade Laos to cut off the Ho Chi Minh Trail but suffered a disastrous defeat and high casualties despite US air support, which confirms the adviser's claims about their military instability. </span> <span style="color: purple;"> The provenance of an internal report by a US military adviser sent to the Department of Defense in 1971 makes it extremely useful. Since it was a confidential report intended to inform military planning rather than a public relations piece, it represents a highly reliable, realistic assessment of ARVN capabilities. </span>
 
-<span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`,
+<span style="color: blue;"> Source C is highly useful for showing how President Nixon publicly presented the success of his Vietnamization policy. Nixon claims they have achieved "peace with honor", that ARVN is now "strong" and capable of defending South Vietnam, and that their self-determination is guaranteed. </span> <span style="color: green;"> This content is supported by my knowledge that Nixon negotiated the Paris Peace Accords in January 1973 to secure US withdrawal, but the claim of ARVN's strength was exaggerated for political purposes, as the ARVN collapsed rapidly once US aid was cut. </span> <span style="color: purple;"> The provenance of a televised public speech in January 1973 increases its usefulness for studying the political rhetoric and justifications used by Nixon to appease the anti-war movement. However, it is limited because it is a public address designed to salvage US pride and frame a military exit as a victory, concealing the known weaknesses of the South Vietnamese state. </span>`,
         "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
         "clueb": "Contrast Interpretation 1's view that Vietnamization successfully built a strong ARVN and secured peace with honor with Interpretation 2's view that it was a political cover for withdrawal that left a corrupt ARVN doomed to collapse.",
         "modelb": "The main difference is that Interpretation 1 argues that Vietnamization was a [1[highly successful policy]1] that built a strong ARVN and secured independence. In contrast, Interpretation 2 argues that the policy was merely a [1[political cover for American withdrawal]1] that left the ARVN weak, corrupt, and doomed to collapse.",
@@ -4361,6 +4411,45 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         "questiond": "How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? (16 marks)",
         "clued": "A balanced essay. Support Interpretation 1 (provoked Bull Connor, television coverage, shocked Kennedy, draft of 1964 Civil Rights Act) and evaluate against Interpretation 2 (bombings of homes, Sixteenth Street Church bombing, slow pace of school integration in Birmingham, local agreement had little impact on poverty).",
         "modeld": "I agree to a large extent with Interpretation 1 that the Birmingham campaign was a highly significant victory that transformed the civil rights struggle. By using children in the marches, the SCLC provoked [[Bull Connor]] into deploying fire hoses and police dogs, as described in Source A's shocking report of water [[knocking them off their feet]]. The resulting television footage shocked the nation and put immense pressure on the federal government. President Kennedy declared that Birmingham had forced the administration to act, leading directly to his June 1963 address and the drafting of the Civil Rights Bill. This supports Interpretation 1's claim that the campaign was a [1[brilliant tactical victory]1] that forced the drafting of the [[Civil Rights Act of 1964]].\n\nHowever, Interpretation 2 is also valid in highlighting that the immediate local impact was limited and met with violent resistance. The actual local desegregation agreement was minimal, and department store integration did not solve systemic housing and employment poverty. As Source C shows, white residents resented the marches, calling them [[ill-timed]] and causing [[unnecessary chaos]]. Furthermore, the campaign sparked a wave of segregationist violence, culminating in the KKK bombing of the [[Sixteenth Street]] Baptist Church in September 1963, which killed four young girls. This confirms Interpretation 2's view that local progress was [1[highly limited]1] and provoked [1[violent white backlash]1].\n\nOverall, while the local gains in Birmingham itself were slow and met with white terror (Interpretation 2), the campaign's national significance was monumental. It succeeded because it nationalized the crisis, turning civil rights into a moral issue that forced the federal government to pass the Civil Rights Act of 1964 (Interpretation 1)."
+      },
+      "mock_exam_9": {
+        "id": "mock_exam_9",
+        "topicCode": "Mock 9",
+        "enquiryTopic": "The role of Presidents Kennedy and Johnson in civil rights legislation (1963-65)",
+        "sourceB": {
+          "provenance": "From President Lyndon B. Johnson's address to a joint session of Congress on voting rights, 15 March 1965.",
+          "content": "At times history and fate meet at a single time in a single place to shape a turning point... So it was at Lexington and Concord. So it was at Selma, Alabama. There, long-suffering men and women peacefully protested the denial of their rights as Americans... It is wrong\u2014deadly wrong\u2014to deny any of your fellow Americans the right to vote in this country."
+        },
+        "sourceC": {
+          "provenance": "From John Lewis's autobiography, Walking with the Wind, published in 1998, recalling the march on 7 March 1965.",
+          "content": "We were walking in pairs, quiet and disciplined. As we reached the crest of the Edmund Pettus Bridge, we saw a wall of blue state troopers. The sheriff, Jim Clark, ordered us to disperse. Within seconds, tear gas canisters were flying, and troopers began lunging on horseback, swinging clubs. I felt a blow to my head and fell. But that terrible violence, captured by the cameras, shocked the conscience of the nation."
+        },
+        "interpretation1": {
+          "author": "From a history book published in 2008.",
+          "content": "The landmark civil rights laws of the 1960s were ultimately a triumph of presidential leadership. It was President Johnson\u2019s masterful political skills and his manipulation of Kennedy\u2019s tragic legacy that finally broke the stubborn Southern opposition in Congress to secure equality."
+        },
+        "interpretation2": {
+          "author": "From 'The Origins of the Civil Rights Movement' by historian Aldon Morris, published in 1984.",
+          "content": "The landmark legislation of the 1960s was not a gift from the White House, but a prize won through the blood and courage of the grassroots movement. Presidents Kennedy and Johnson were highly cautious politicians who only acted when direct action campaigns in Birmingham and Selma created such severe domestic crises that federal inaction became impossible. The true source of change was the organized masses who made the status quo unsustainable."
+        },
+        "questiona": "How useful are Sources B and C for an enquiry into the reasons for the introduction of the Voting Rights Act of 1965? (8 marks)",
+        "cluea": "Assess Source B (LBJ joint address, explains federal moral stance post-Selma, highlights historical significance, official public speech to persuade Congress) and Source C (John Lewis first-hand account of bridge assault, shows police brutality as the catalyst, personal memoir showing direct experience) for usefulness.",
+        "modela": `<span style="color: blue;"> Source B is highly useful for explaining the political and moral pressure on the federal government to introduce the Voting Rights Act of 1965. President Johnson explicitly compares the crisis at Selma to historic turning points like "Lexington and Concord," declaring it "deadly wrong" to deny Black citizens the right to vote. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the violence in Selma shocked the nation, giving Johnson the political mandate to introduce the Voting Rights Act and deliver his famous "We Shall Overcome" speech to Congress in March 1965, which confirms that the address represents the official federal commitment to intervene. </span> <span style="color: purple;"> The provenance of an address to a joint session of Congress on 15 March 1965 makes the source extremely useful because it captures the direct legislative reaction of the presidency at the absolute peak of the Selma crisis. However, it is limited because it presents Johnson's actions as a purely moral decision, downplaying his administration's earlier political reluctance to introduce voting rights legislation until forced by grassroots pressure. </span>
+
+<span style="color: blue;"> Source C is highly useful for showing the immediate, violent catalyst that forced the federal government to act. John Lewis describes how state troopers attacked peaceful marchers on the "Edmund Pettus Bridge" with "tear gas" and "clubs," and notes that the televised brutality "shocked the conscience of the nation." </span> <span style="color: green;"> This content's utility is supported by my knowledge that the events of "Bloody Sunday" on 7 March 1965 were broadcast to millions of American homes, generating widespread moral outrage and prompting national protests, which directly forced President Johnson to federalise the National Guard and demand immediate voting rights legislation. </span> <span style="color: purple;"> The provenance of a first-hand autobiography by John Lewis, who led the march and was beaten on the bridge, makes the source highly useful by providing an authentic, inside perspective of the tactical discipline and physical sacrifices of the activists. However, because it was written decades later in 1998, it represents a polished, retrospective narrative of the event's historic significance rather than a raw, unfiltered record of the immediate tactical decisions of the marchers. </span>`,
+        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "clueb": "Contrast Interpretation 1's view that the landmark civil rights laws were a triumph of presidential leadership achieved through Johnson's political skill. In contrast, Interpretation 2 argues that the legislation was a prize won through the blood and courage of the grassroots movement which forced reluctant presidents to act.",
+        "modelb": "The main difference is that Interpretation 1 argues that the landmark civil rights laws were a [1[triumph of presidential leadership]1] achieved through Johnson's political skill. In contrast, Interpretation 2 argues that the legislation was a [1[prize won through the blood and courage of the grassroots movement]1] which forced reluctant presidents to act.",
+        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "cluec": "Link the interpretations to the sources: Interpretation 1 relies on Source B (focusing on Johnson's presidential leadership and congressional address); Interpretation 2 relies on Source C (focusing on Lewis's account of grassroots activists being beaten on the bridge to create a crisis).",
+        "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which show President Johnson taking command in his speech and declaring that it is "deadly wrong" to deny the vote, leading to the view that the laws were a [1[triumph of presidential leadership]1]. Conversely, Interpretation 2 is supported by Source C, which details how the grassroots marchers faced police brutality on the bridge to "shock the conscience of the nation", leading to the view that the legislation was a [1[prize won through the blood and courage of the grassroots movement]1].',
+        "questiond": "How far do you agree with Interpretation 1 about the role of Presidents Kennedy and Johnson in passing the Civil Rights Act (1964) and Voting Rights Act (1965)? (16 marks)",
+        "clued": "A balanced essay. Support Interpretation 1 (LBJ's political skill, breaking Dixiecrat filibusters, Great Society vision, manipulating JFK's legacy) and evaluate against Interpretation 2 (grassroots pressure in Birmingham and Selma forcing presidential action, presidents' initial caution and reluctance).",
+        "modeld": `I agree to a large extent with Interpretation 1 because President Johnson's political skill was essential to get the bills passed through a divided Congress. The interpretation argues that the laws were a "triumph of presidential leadership" due to "President Johnson's masterful political skills". From my own knowledge, I know this to be accurate; Johnson was a veteran Southern politician from Texas who knew exactly how to bully and persuade opposing politicians. When Dixiecrat politicians attempted to block the 1964 Civil Rights Act using a filibuster, it was LBJ's political mastery that gathered enough Republican support to break it. Furthermore, LBJ brilliantly manipulated "Kennedy's tragic legacy" by explicitly telling Congress that passing the 1964 Act was the only way to truly honour the assassinated president's memory, as shown in Source B's focus on the moral authority of the presidency. This supports Interpretation 1's view that these acts were a [1[triumph of presidential leadership]1] due to Johnson's [1[masterful political skills]1].
+
+However, Interpretation 2 is more convincing in highlighting that both Kennedy and Johnson were forced into action by the grassroots civil rights movement. Interpretation 1 focuses purely on presidential leadership, but from my own knowledge, neither president proactively introduced these bills without being pressured by extreme crises. President Kennedy only proposed the Civil Rights Bill in 1963 because the global embarrassment of police dogs attacking children in Birmingham left him no choice. Similarly, President Johnson only introduced the Voting Rights Act of 1965 as a direct reaction to the events in Selma. As Lewis describes in Source C, activists deliberately provoked the violence of [[Bloody Sunday]] on the [[Edmund Pettus Bridge]] because they knew televised police brutality was the only way to force LBJ's hand. Therefore, the true catalyst for the legislation was not presidential initiative, but the blood and bravery of ordinary Black Americans who made the status quo politically impossible to maintain, supporting Interpretation 2's view that it was a [1[prize won through the blood and courage of the grassroots movement]1].
+
+In conclusion, while I agree with Interpretation 1 that the actual passage of the acts required the formidable legislative skills of President Johnson, the interpretation gives too much credit to the White House. The presidents were reactors, not initiators; they only wielded their political power to pass the Civil Rights and Voting Rights Acts because the unrelenting courage of the grassroots civil rights movement forced them to do so.`
       }
     }
   };
@@ -5189,6 +5278,78 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
         "question": "How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? (16 marks)",
         "clue": "A balanced essay. Support Interpretation 1 (provoked Bull Connor, television coverage, shocked Kennedy, draft of 1964 Civil Rights Act) and evaluate against Interpretation 2 (bombings of homes, Sixteenth Street Church bombing, slow pace of school integration in Birmingham, local agreement had little impact on poverty).",
         "model": "I agree to a large extent with Interpretation 1 that the Birmingham campaign was a highly significant victory that transformed the civil rights struggle. By using children in the marches, the SCLC provoked [[Bull Connor]] into deploying fire hoses and police dogs, as described in Source A's shocking report of water [[knocking them off their feet]]. The resulting television footage shocked the nation and put immense pressure on the federal government. President Kennedy declared that Birmingham had forced the administration to act, leading directly to his June 1963 address and the drafting of the Civil Rights Bill. This supports Interpretation 1's claim that the campaign was a [1[brilliant tactical victory]1] that forced the drafting of the [[Civil Rights Act of 1964]].\n\nHowever, Interpretation 2 is also valid in highlighting that the immediate local impact was limited and met with violent resistance. The actual local desegregation agreement was minimal, and department store integration did not solve systemic housing and employment poverty. As Source C shows, white residents resented the marches, calling them [[ill-timed]] and causing [[unnecessary chaos]]. Furthermore, the campaign sparked a wave of segregationist violence, culminating in the KKK bombing of the [[Sixteenth Street]] Baptist Church in September 1963, which killed four young girls. This confirms Interpretation 2's view that local progress was [1[highly limited]1] and provoked [1[violent white backlash]1].\n\nOverall, while the local gains in Birmingham itself were slow and met with white terror (Interpretation 2), the campaign's national significance was monumental. It succeeded because it nationalized the crisis, turning civil rights into a moral issue that forced the federal government to pass the Civil Rights Act of 1964 (Interpretation 1)."
+      }
+    },
+    {
+      "id": "mock_exam_9",
+      "title": "Best Guess Mock Exam 9: Peaceful Protests and their Impact (1963\u201365)",
+      "year": "Mock 9",
+      "enquiryTopic": "The impact of peaceful protests and the role of presidents in passing civil rights legislation",
+      "sourceA": {
+        "provenance": "From a diary entry written by a white college student volunteering in Mississippi, July 1964.",
+        "content": "We are told never to stand near windows at night and to always check our cars before starting the engines. Everyone is terrified after the disappearance of the three boys, but seeing the courage of the local black families who still show up to our Freedom Schools makes me determined not to leave."
+      },
+      "sourceB": {
+        "provenance": "From President Lyndon B. Johnson's address to a joint session of Congress on voting rights, 15 March 1965.",
+        "content": "At times history and fate meet at a single time in a single place to shape a turning point... So it was at Lexington and Concord. So it was at Selma, Alabama. There, long-suffering men and women peacefully protested the denial of their rights as Americans... It is wrong\u2014deadly wrong\u2014to deny any of your fellow Americans the right to vote in this country."
+      },
+      "sourceC": {
+        "provenance": "From John Lewis's autobiography, Walking with the Wind, published in 1998, recalling the march on 7 March 1965.",
+        "content": "We were walking in pairs, quiet and disciplined. As we reached the crest of the Edmund Pettus Bridge, we saw a wall of blue state troopers. The sheriff, Jim Clark, ordered us to disperse. Within seconds, tear gas canisters were flying, and troopers began lunging on horseback, swinging clubs. I felt a blow to my head and fell. But that terrible violence, captured by the cameras, shocked the conscience of the nation."
+      },
+      "interpretation1": {
+        "author": "From a history book published in 2008.",
+        "content": "The landmark civil rights laws of the 1960s were ultimately a triumph of presidential leadership. It was President Johnson\u2019s masterful political skills and his manipulation of Kennedy\u2019s tragic legacy that finally broke the stubborn Southern opposition in Congress to secure equality."
+      },
+      "interpretation2": {
+        "author": "From 'The Origins of the Civil Rights Movement' by historian Aldon Morris, published in 1984.",
+        "content": "The landmark legislation of the 1960s was not a gift from the White House, but a prize won through the blood and courage of the grassroots movement. Presidents Kennedy and Johnson were highly cautious politicians who only acted when direct action campaigns in Birmingham and Selma created such severe domestic crises that federal inaction became impossible. The true source of change was the organized masses who made the status quo unsustainable."
+      },
+      "q1": {
+        "id": "mock_9_q1",
+        "question": "Give two things you can infer from Source A about the 'Freedom Summer' and the Mississippi murders (1964). (4 marks)",
+        "clue": "Identify specific details showing the dangers volunteers faced and the impact on their determination.",
+        "model": "Inference 1: I can infer that civil rights volunteers faced the constant threat of violent and potentially lethal attacks.\nDetails: 'We are told never to stand near windows at night and to always check our cars before starting the engines.'\nInference 2: I can infer that the murder of civil rights workers failed to completely destroy the morale of the campaign.\nDetails: 'seeing the courage of the local black families who still show up to our Freedom Schools makes me determined not to leave.'"
+      },
+      "q2": {
+        "id": "mock_9_q2",
+        "question": "Explain why the campaign in Selma (1965) was successful. (12 marks)",
+        "stimulus": [
+          "Televised media ('Bloody Sunday')",
+          "President Lyndon B. Johnson"
+        ],
+        "clue": "Explain how Selma's selection provoked aggressive white resistance, how television media broadcasted police brutality on Bloody Sunday, and how this forced federal intervention and voting rights legislation.",
+        "model": "\u201COne reason why the campaign in Selma (1965) was successful was Martin Luther King Jr.'s strategic choice of location to deliberately provoke a violent reaction.\u201D The SCLC intentionally chose Selma because of its notoriously aggressive local sheriff, Jim Clark, and its appealing voter registration record (where only 383 of 15,000 eligible Black adults were registered). King knew that peaceful marchers demanding the vote would be met with unwarranted police brutality. {{Therefore, this strategic provocation led to success because it guaranteed that the oppressive reality of Southern voter suppression could no longer be hidden from the rest of the nation.}}\n\n\u201CAnother reason for its success was the immense power of television media in shocking the national public.\u201D During the first attempted march to Montgomery on 7 March 1965, peaceful demonstrators were viciously attacked with tear gas, whips, and clubs by state troopers on the [[Edmund Pettus Bridge]]. This event became known as [[Bloody Sunday]]. The unprovoked savagery was broadcast directly into millions of living rooms across America and around the world. {{Therefore, the campaign succeeded because the horrific visual evidence generated massive national sympathy and outrage, transforming a local Alabama protest into an urgent national political crisis.}}\n\n\u201CA final reason the campaign was successful was that it forced immediate and decisive federal intervention.\u201D In the wake of the public outcry over Bloody Sunday, President [[Lyndon B. Johnson]] federalised the National Guard to protect the marchers so they could successfully complete their journey to Montgomery. More importantly, Johnson used the momentum of the crisis to demand that Congress pass new legislation. {{Therefore, the campaign ultimately succeeded because it gave LBJ the exact political leverage he needed to sign the historic [[Voting Rights Act of 1965]], which banned literacy tests and finally guaranteed the vote for Black Americans.}}\n\nIn conclusion, the Selma campaign was successful because the calculated bravery of the marchers created a violent media spectacle, which in turn left the federal government with no choice but to forcefully intervene and change the law."
+      },
+      "q3a": {
+        "id": "mock_9_q3a",
+        "question": "How useful are Sources B and C for an enquiry into the reasons for the introduction of the Voting Rights Act of 1965? (8 marks)",
+        "clue": "Assess Source B (LBJ joint address, explains federal moral stance post-Selma, highlights historical significance, official public speech to persuade Congress) and Source C (John Lewis first-hand account of bridge assault, shows police brutality as the catalyst, personal memoir showing direct experience) for usefulness.",
+        "model": `<span style="color: blue;"> Source B is highly useful for explaining the political and moral pressure on the federal government to introduce the Voting Rights Act of 1965. President Johnson explicitly compares the crisis at Selma to historic turning points like "Lexington and Concord," declaring it "deadly wrong" to deny Black citizens the right to vote. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the violence in Selma shocked the nation, giving Johnson the political mandate to introduce the Voting Rights Act and deliver his famous "We Shall Overcome" speech to Congress in March 1965, which confirms that the address represents the official federal commitment to intervene. </span> <span style="color: purple;"> The provenance of an address to a joint session of Congress on 15 March 1965 makes the source extremely useful because it captures the direct legislative reaction of the presidency at the absolute peak of the Selma crisis. However, it is limited because it presents Johnson's actions as a purely moral decision, downplaying his administration's earlier political reluctance to introduce voting rights legislation until forced by grassroots pressure. </span>
+
+<span style="color: blue;"> Source C is highly useful for showing the immediate, violent catalyst that forced the federal government to act. John Lewis describes how state troopers attacked peaceful marchers on the "Edmund Pettus Bridge" with "tear gas" and "clubs," and notes that the televised brutality "shocked the conscience of the nation." </span> <span style="color: green;"> This content's utility is supported by my knowledge that the events of "Bloody Sunday" on 7 March 1965 were broadcast to millions of American homes, generating widespread moral outrage and prompting national protests, which directly forced President Johnson to federalise the National Guard and demand immediate voting rights legislation. </span> <span style="color: purple;"> The provenance of a first-hand autobiography by John Lewis, who led the march and was beaten on the bridge, makes the source highly useful by providing an authentic, inside perspective of the tactical discipline and physical sacrifices of the activists. However, because it was written decades later in 1998, it represents a polished, retrospective narrative of the event's historic significance rather than a raw, unfiltered record of the immediate tactical decisions of the marchers. </span>`
+      },
+      "q3b": {
+        "id": "mock_9_q3b",
+        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "clue": "Identify the core disagreement: Interpretation 1 argues that the landmark civil rights laws were a triumph of presidential leadership achieved through Johnson's political skill. In contrast, Interpretation 2 argues that the legislation was a prize won through the blood and courage of the grassroots movement which forced reluctant presidents to act.",
+        "model": "The main difference is that Interpretation 1 argues that the landmark civil rights laws were a [1[triumph of presidential leadership]1] achieved through Johnson's political skill. In contrast, Interpretation 2 argues that the legislation was a [1[prize won through the blood and courage of the grassroots movement]1] which forced reluctant presidents to act."
+      },
+      "q3c": {
+        "id": "mock_9_q3c",
+        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "clue": "Link the interpretations to the sources: Interpretation 1 relies on Source B (focusing on Johnson's presidential leadership and congressional address); Interpretation 2 relies on Source C (focusing on Lewis's account of grassroots activists being beaten on the bridge to create a crisis).",
+        "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which show President Johnson taking command in his speech and declaring that it is "deadly wrong" to deny the vote, leading to the view that the laws were a [1[triumph of presidential leadership]1]. Conversely, Interpretation 2 is supported by Source C, which details how the grassroots marchers faced police brutality on the bridge to "shock the conscience of the nation", leading to the view that the legislation was a [1[prize won through the blood and courage of the grassroots movement]1].'
+      },
+      "q3d": {
+        "id": "mock_9_q3d",
+        "question": "How far do you agree with Interpretation 1 about the role of Presidents Kennedy and Johnson in passing the Civil Rights Act (1964) and Voting Rights Act (1965)? (16 marks)",
+        "clue": "A balanced essay. Support Interpretation 1 (LBJ's political skill, breaking Dixiecrat filibusters, Great Society vision, manipulating JFK's legacy) and evaluate against Interpretation 2 (grassroots pressure in Birmingham and Selma forcing presidential action, presidents' initial caution and reluctance).",
+        "model": `I agree to a large extent with Interpretation 1 because President Johnson's political skill was essential to get the bills passed through a divided Congress. The interpretation argues that the laws were a "triumph of presidential leadership" due to "President Johnson's masterful political skills". From my own knowledge, I know this to be accurate; Johnson was a veteran Southern politician from Texas who knew exactly how to bully and persuade opposing politicians. When Dixiecrat politicians attempted to block the 1964 Civil Rights Act using a filibuster, it was LBJ's political mastery that gathered enough Republican support to break it. Furthermore, LBJ brilliantly manipulated "Kennedy's tragic legacy" by explicitly telling Congress that passing the 1964 Act was the only way to truly honour the assassinated president's memory, as shown in Source B's focus on the moral authority of the presidency. This supports Interpretation 1's view that these acts were a [1[triumph of presidential leadership]1] due to Johnson's [1[masterful political skills]1].
+
+However, Interpretation 2 is more convincing in highlighting that both Kennedy and Johnson were forced into action by the grassroots civil rights movement. Interpretation 1 focuses purely on presidential leadership, but from my own knowledge, neither president proactively introduced these bills without being pressured by extreme crises. President Kennedy only proposed the Civil Rights Bill in 1963 because the global embarrassment of police dogs attacking children in Birmingham left him no choice. Similarly, President Johnson only introduced the Voting Rights Act of 1965 as a direct reaction to the events in Selma. As Lewis describes in Source C, activists deliberately provoked the violence of [[Bloody Sunday]] on the [[Edmund Pettus Bridge]] because they knew televised police brutality was the only way to force LBJ's hand. Therefore, the true catalyst for the legislation was not presidential initiative, but the blood and bravery of ordinary Black Americans who made the status quo politically impossible to maintain, supporting Interpretation 2's view that it was a [1[prize won through the blood and courage of the grassroots movement]1].
+
+In conclusion, while I agree with Interpretation 1 that the actual passage of the acts required the formidable legislative skills of President Johnson, the interpretation gives too much credit to the White House. The presidents were reactors, not initiators; they only wielded their political power to pass the Civil Rights and Voting Rights Acts because the unrelenting courage of the grassroots civil rights movement forced them to do so.`
       }
     }
   ];
@@ -6624,37 +6785,71 @@ Source E is highly useful for showing the extreme level of state resistance to u
       "headerIntro": "In 1963 and 1965, the Southern Christian Leadership Conference (SCLC) targeted the most segregated cities. The Birmingham Campaign (April 1963) saw police chief Bull Connor use fire hoses and attack dogs on child protesters, sparking international outrage and forcing President Kennedy to draft civil rights legislation. Following the Civil Rights Act of 1964, attention shifted to voting. In March 1965, the Selma-to-Montgomery marches faced state trooper violence on 'Bloody Sunday', forcing President Johnson to pass the Voting Rights Act of 1965, which outlawed literacy tests.",
       "steps": [
         {
-          "title": "Step 1: The Birmingham Campaign & 'Letter' (1963)",
+          "title": "Step 1: Events in Birmingham & March on Washington (1963)",
           "isSplit": false,
-          "bodyHtml": `<p>In April 1963, SCLC launched a campaign to desegregate Birmingham, Alabama, one of the most segregated cities in the US:</p>
-        <ul>
-          <li><strong>Project C:</strong> SCLC used non-violent direct action (called **'Project C'** for Confrontation) to deliberately provoke a crisis, knowing the local police chief Eugene 'Bull' Connor would react violently.</li>
-          <li><strong>The Children's Crusade & Jail:</strong> MLK was arrested and wrote his famous **'Letter from Birmingham Jail'** on scraps of paper. When adult numbers dwindled, SCLC recruited school children. Connor ordered police dogs and high-pressure fire hoses to be used against them.</li>
-          <li><strong>The Impact:</strong> Televised images of children being attacked shocked the world. President John F. Kennedy declared segregation a "moral issue" and committed to a civil rights bill.</li>
-        </ul>`,
+          "bodyHtml": "<p>In April 1963, the SCLC launched <strong>'Project C'</strong> (Confrontation) in Birmingham, knowing the hot-headed police chief, <strong>Eugene 'Bull' Connor</strong>, would overreact to peaceful protests:</p>\n        <ul>\n          <li><strong>The Birmingham Campaign:</strong> When MLK was jailed (writing his famous <em>'Letter from a Birmingham Jail'</em>), the movement controversially used children to march; Connor unleashed attack dogs and high-pressure fire hoses on the students.</li>\n          <li><strong>The March on Washington (28 August 1963):</strong> To capitalise on the resulting national outrage and pressure Congress to pass a civil rights bill, <strong>250,000</strong> people (including 75,000 white Americans) gathered for the March on Washington, demanding <strong>'Jobs and Freedom'</strong>. The peaceful, globally televised event was highlighted by Martin Luther King Jr.'s iconic <strong>'I have a dream'</strong> speech.</li>\n          <li><strong>So What?</strong> The horrifying violence in Birmingham forced the President to finally propose sweeping civil rights legislation, while the monumental scale of the Washington march demonstrated unstoppable, unified national support for equality.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Bull Connor as a Strategic Target",
             "body": "Civil rights historians point out that SCLC chose Birmingham precisely because they knew Bull Connor would react with public brutality. Without Connor's violent reaction, the campaign would not have captured national television coverage, proving that the media was a key target of the protests."
           }
         },
         {
-          "title": "Step 2: The March on Washington & Freedom Summer (1963-64)",
+          "title": "Step 2: 'Freedom Summer' & Mississippi Murders (1964)",
           "isSplit": false,
-          "bodyHtml": `<p>Protests shifted to national-level demands and voter registration drives:</p>
+          "bodyHtml": `<p>In 1964, SNCC and CORE targeted Mississippi (where only 7% of eligible Black voters were registered) for a massive voter registration drive known as <strong>Freedom Summer</strong>:</p>
         <ul>
-          <li><strong>March on Washington (August 1963):</strong> Organised by **A. Philip Randolph and Bayard Rustin**, over **250,000** demonstrators (including **60,000 whites**) gathered at the Lincoln Memorial. Dr. King delivered his iconic "I Have a Dream" speech, placing massive moral pressure on JFK.</li>
-          <li><strong>Freedom Summer & Murders (1964):</strong> A major voter registration drive launched in Mississippi by SNCC and CORE. Three activists (**James Chaney, Andrew Goodman, and Michael Schwerner**) were abducted and murdered by the KKK with local police collusion, triggering national outrage.</li>
-          <li><strong>Civil Rights Act (1964):</strong> Signed by President Johnson, this landmark law banned segregation in public accommodations, schools, and employment (**Title VII**), and created the Equal Employment Opportunity Commission (**EEOC**). Both Kennedy's initial bill and Johnson's legislative skill were key to its passage.</li>
-        </ul>`,
+          <li><strong>Voter Registration Drive:</strong> Thousands of mostly white Northern college student volunteers arrived to help and set up <strong>Freedom Schools</strong>, facing severe violence and church bombings from the Ku Klux Klan.</li>
+          <li><strong>The Mississippi Murders (June 1964):</strong> Three civil rights workers\u2014<strong>James Chaney</strong> (Black), <strong>Andrew Goodman</strong> (white), and <strong>Michael Schwerner</strong> (white)\u2014were abducted and murdered by the KKK with the help of local police.</li>
+          <li><strong>So What?</strong> While the campaign only successfully registered 1,600 new voters due to extreme intimidation, the horrific murders became a national scandal that highlighted the deadly reality of voter suppression and pushed some activists to question non-violence.</li>
+        </ul>
+        <div class="mind-map-task-box" style="margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.05); border: 1px dashed var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);">
+          <h4 style="margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;">\u{1F5FA}\uFE0F Mind Map Task</h4>
+          <p style="margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;">Draw a mind map connecting the main themes and events from the specification bullet points. Use the following words:</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">Project C</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">Eugene 'Bull' Connor</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">I have a dream</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">Freedom Summer</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">disenfranchisement</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">Bloody Sunday</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">Edmund Pettus Bridge</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">Lyndon B. Johnson</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">legislation</span>
+            <span style="padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);">turning point</span>
+          </div>
+        </div>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Media and the Mississippi Murders",
             "body": "Historians note that the murder of Chaney, Goodman, and Schwerner received massive national coverage because two of the victims were white Northern college students. This exposed a bitter reality: the media and federal government paid far more attention to civil rights violence when it affected white citizens."
           }
         },
         {
-          "title": "Step 3: Selma and the Voting Rights Act (1965)",
+          "title": "Step 3: Selma, Presidents & Landmark Legislation (1964-65)",
           "isSplit": true,
-          "bodyHtml": '<div class="mastery-text-column">\n          <div class="mastery-card-body card-content">\n            <p>To secure voting rights, SCLC organized a march from Selma to Montgomery in March 1965 after local activist **Jimmie Lee Jackson** was shot by state troopers:</p>\n            <ul>\n              <li><strong>Bloody Sunday:</strong> State troopers under Sheriff **Jim Clark** attacked peaceful marchers with tear gas and bullwhips on the **Edmund Pettus Bridge**. The televised brutality shocked the nation and forced federal intervention.</li>\n              <li><strong>Voting Rights Act (1965) & Impact:</strong> President Johnson signed this act into law, banning literacy tests and allowing federal registrars. It transformed voter turnout; in Mississippi, Black registration rose from **6% in 1964 to 60% by 1968**.</li>\n            </ul>\n          </div>\n        </div>\n        <div class="mastery-media-column">\n          <div class="lesson-image-wrapper">\n            <img src="assets/sources/selma-troopers-bridge.jpg" alt="State troopers lined up on the bridge at Selma" class="lesson-source-img" />\n            <div class="lesson-image-caption">State troopers confronting civil rights marchers in Selma, Alabama, on 7 March 1965.</div>\n          </div>\n        </div>',
+          "bodyHtml": `<div class="mastery-text-column">
+          <div class="mastery-card-body card-content">
+            <p>By 1965, the civil rights movement reached its dramatic peak through highly publicised, peaceful direct action targeting racist authorities:</p>
+            <ul>
+              <li><strong>The Campaign in Selma (1965):</strong> In 1965, King and the SCLC organised a voting rights campaign in Selma, Alabama, where only 383 out of 15,000 eligible Black citizens were registered. On 7 March 1965, 600 marchers attempting to walk to Montgomery were brutally attacked by state troopers with tear gas and clubs on the <strong>Edmund Pettus Bridge</strong>, an event dubbed <strong>'Bloody Sunday'</strong>.</li>
+              <li><strong>The Role of Presidents Kennedy & Johnson:</strong> President John F. Kennedy had appointed Black federal judges and sent troops to Ole Miss, but only firmly committed to a Civil Rights Bill after the Birmingham crisis forced his hand in 1963. Following JFK's assassination, President <strong>Lyndon B. Johnson</strong> masterfully used his Southern background and the nation's grief to push the <strong>Civil Rights Act of 1964</strong> through Congress, legally banning segregation in public places and employment. Following the outrage over Selma, LBJ urgently introduced and passed the <strong>Voting Rights Act of 1965</strong>, which banned discriminatory literacy tests and sent federal officials to the South to enforce registration.</li>
+              <li><strong>So What?</strong> The shocking television footage of 'Bloody Sunday' provided the immediate catalyst for President Johnson to demand that Congress urgently pass federal voting rights legislation. Kennedy provided the initial legislative blueprint, but it was Johnson's unparalleled political skill that ultimately dismantled the legal pillars of white supremacy and fundamentally transformed the US political landscape.</li>
+            </ul>
+            <div class="revision-task-box" style="margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.08); border-left: 4px solid var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);">
+              <h4 style="margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;">\u{1F4DD} Revision Task: Competing Narratives Controversy</h4>
+              <p style="margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;">To check your understanding of the debate, write a short response in your study notes comparing these narratives:</p>
+              <ul style="margin: 0; padding-left: 18px; font-size: 0.9em; line-height: 1.5;">
+                <li><strong>'Top-Down' Narrative:</strong> Focuses on presidential power; it argues that without President Johnson's ruthless political genius, his ability to break Dixiecrat filibusters, and his genuine commitment to a 'Great Society', the bills would never have become law.</li>
+                <li><strong>'Bottom-Up' Grassroots Narrative:</strong> Argues that the Presidents were actually reluctant and overly cautious; it insists that legislation was only achieved because brave activists deliberately provoked crises in Birmingham and Selma, shedding their own blood to force a hesitant government into action.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mastery-media-column">
+          <div class="lesson-image-wrapper">
+            <img src="assets/sources/selma-troopers-bridge.jpg" alt="State troopers lined up on the bridge at Selma" class="lesson-source-img" />
+            <div class="lesson-image-caption">State troopers confronting civil rights marchers in Selma, Alabama, on 7 March 1965.</div>
+          </div>
+        </div>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Johnson and King's Collaboration",
             "body": "While historians emphasize the pressure of Bloody Sunday, they also note the collaborative relationship between President Johnson and Dr. King. Johnson used the public shock of Selma to draft and pass the Voting Rights Act, showcasing a successful convergence of grassroots pressure and executive power."
@@ -20009,6 +20204,12 @@ ${cleanBrackets(paper.q3d.model)}
       { paperId: "2024_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2024" }
     ],
     "subtopic_2_2": [
+      { paperId: "mock_exam_9", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 9" },
+      { paperId: "mock_exam_9", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 9" },
+      { paperId: "mock_exam_9", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 9" },
+      { paperId: "mock_exam_9", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 9" },
+      { paperId: "mock_exam_9", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 9" },
+      { paperId: "mock_exam_9", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 9" },
       { paperId: "2019_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2019" },
       { paperId: "2019_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2019" },
       { paperId: "2019_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2019" },

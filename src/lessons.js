@@ -232,6 +232,12 @@ const SUBTOPIC_EXAM_MAPPING = {
     { paperId: "2024_summer_usa", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "2024" }
   ],
   "subtopic_2_2": [
+    { paperId: "mock_exam_9", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 9" },
+    { paperId: "mock_exam_9", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 9" },
+    { paperId: "mock_exam_9", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 9" },
+    { paperId: "mock_exam_9", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 9" },
+    { paperId: "mock_exam_9", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 9" },
+    { paperId: "mock_exam_9", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 9" },
     { paperId: "2019_summer_usa", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "2019" },
     { paperId: "2019_summer_usa", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "2019" },
     { paperId: "2019_summer_usa", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "2019" },
