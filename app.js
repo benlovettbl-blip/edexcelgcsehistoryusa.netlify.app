@@ -7302,9 +7302,9 @@ Source E is highly useful for showing how Black Power and militancy were institu
       "headerIntro": "Between 1965 and 1967, deep-seated grievances over poverty, housing, and police brutality triggered massive urban riots in Northern and Western cities, including Watts (1965) and Detroit (1967). In response, President Johnson established the Kerner Commission, which reported in 1968 that America was moving toward 'two societies, one Black, one white\u2014separate and unequal', blaming systemic white racism. Following Martin Luther King Jr.'s assassination in April 1968, Congress passed the Civil Rights Act of 1968 (Fair Housing Act), prohibiting racial discrimination in housing.",
       "steps": [
         {
-          "title": "Step 1: The Urban Riots & The Kerner Report",
+          "title": "Step 1: The Riots of 1965\u201367 and the Kerner Report (1968)",
           "isSplit": false,
-          "bodyHtml": "<p>Between 1965 and 1968, massive riots erupted in over 100 US cities, including Watts, Detroit, and Newark:</p>\r\n        <ul>\r\n          <li><strong>Watts Riot (August 1965):</strong> Triggered by the arrest of Marquette Frye. The violence lasted 6 days, resulting in **34 deaths**, over **1,000 injured**, and **$40 million** in property damage.</li>\r\n          <li><strong>Detroit Riot (July 1967):</strong> One of the most destructive riots in US history, resulting in **43 deaths**, **7,200 arrests**, and **2,000 buildings destroyed**.</li>\r\n          <li><strong>Kerner Commission (1968):</strong> Appointed by Johnson, the report warned that 'our nation is moving toward two societies, one Black, one white\u2014separate and unequal.' It blamed systemic 'white racism' and de facto segregation rather than Black criminality, recommending massive federal spending.</li>\r\n        </ul>",
+          "bodyHtml": '<p>Between 1964 and 1968, massive frustration in Northern and Western city ghettos erupted into over 300 major riots. The intense summer heat often made overcrowded ghetto conditions worse and tempers short:</p>\n        <ul>\n          <li><strong>Causes:</strong> The riots were primarily driven by high unemployment, terrible housing, and deep-seated poverty, but they were usually sparked by a specific incident of police brutality against a young Black man.</li>\n          <li><strong>Key Riots:</strong> In August 1965, a major riot broke out in the Watts neighborhood of Los Angeles after a Black motorist was violently arrested, resulting in <strong>34 deaths</strong> and millions of dollars in damage. In 1967, violence peaked with riots in over 125 cities, including devastating unrest in Detroit that left over <strong>40 dead</strong> and <strong>7,000 arrested</strong>.</li>\n          <li><strong>The Kerner Report (1968):</strong> President Johnson set up an enquiry to investigate the causes of these riots, led by Otto Kerner. The 1968 report shockingly concluded that the riots were caused by white racism, police bias, and poverty, famously stating that the USA was becoming <em>"two societies, one black, one white\u2014separate and unequal"</em>.</li>\n          <li><strong>So What?</strong> The report recommended sweeping government spending to improve ghetto housing and employment, but these suggestions were largely ignored as the government diverted its funds to the escalating Vietnam War.</li>\n        </ul>',
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The McCone Commission Findings",
             "body": "Following the 1965 Watts riots, the McCone Commission investigated the causes of the unrest. While conservative politicians blamed outside agitators and criminals, the commission concluded that the riots were a protest against systemic socioeconomic conditions: a lack of jobs, substandard housing, inadequate schooling, and widespread resentment of police brutality in the ghetto.",
@@ -7314,16 +7314,24 @@ Source E is highly useful for showing how Black Power and militancy were institu
           }
         },
         {
-          "title": "Step 2: MLK's Northern Campaign, Chicago, and his Assassination",
+          "title": "Step 2: King\u2019s Campaign in the North (1966)",
+          "isSplit": false,
+          "bodyHtml": "<p>Following the Watts riots, Martin Luther King Jr. realised that eradicating slums and securing jobs was much harder than integrating lunch counters. He moved his focus North to tackle 'de facto' (in practice) segregation and economic inequality:</p>\n        <ul>\n          <li><strong>The Chicago Freedom Movement:</strong> In January 1966, King launched the Chicago Freedom Movement. Alongside activists like Jesse Jackson (who ran <strong>'Operation Breadbasket'</strong> to boycott white businesses that refused to hire Black workers), King organised marches to protest segregated housing.</li>\n          <li><strong>Why it Failed \u2014 Northern Racism:</strong> King faced white mobs in Chicago that he described as even more hateful and violent than those in the South.</li>\n          <li><strong>Why it Failed \u2014 Lack of Support:</strong> Many of Chicago's Black politicians opposed King's interference, and his non-violent methods failed to connect with frustrated ghetto gangs who were increasingly drawn to Black Power.</li>\n          <li><strong>Why it Failed \u2014 Broken Promises:</strong> The city\u2019s Mayor, Richard Daley, made promises to improve housing just to get King to leave, but completely ignored these agreements once the campaign ended.</li>\n        </ul>",
+          "scholarlyDepth": {
+            "title": "Scholarly Perspective: The Challenge of De Facto Segregation",
+            "body": "Historians emphasize that the Chicago campaign exposed the limits of Southern civil rights strategies. In the North, segregation was maintained not by state laws (de jure) but by private real estate practices, bank redlining, and systemic job discrimination (de facto). Overcoming these economic structures required radical resource redistribution, which met fierce resistance from white Northern voters and politicians."
+          }
+        },
+        {
+          "title": "Step 3: The Assassination of Martin Luther King (1968)",
           "isSplit": true,
           "bodyHtml": `<div class="mastery-text-column">
           <div class="mastery-card-body card-content">
-            <p>The year 1968 marked a tragic turning point and a final legislative push:</p>
+            <p>On 4 April 1968, Martin Luther King Jr. was shot and killed by a white racist named James Earl Ray while standing on the balcony of the Lorraine Motel in Memphis, Tennessee. He was there to support a strike by poorly paid Black sanitation workers:</p>
             <ul>
-              <li><strong>Northern Campaign (Chicago Freedom Movement):</strong> In 1966, MLK moved his campaign to the North, launching protests in <strong>Chicago</strong> to highlight discrimination in housing, employment, and slum conditions. He faced intense white backlash and found that Northern economic segregation was harder to defeat than Southern legal segregation.</li>
-              <li><strong>MLK Assassination:</strong> On 4 April 1968, Martin Luther King Jr. was assassinated by **James Earl Ray** in Memphis, Tennessee. His death triggered riots in over 100 cities, marking the end of the non-violent civil rights era.</li>
-              <li><strong>Fair Housing Act (1968):</strong> In the wake of King's death, Congress passed the Civil Rights Act of 1968, banning discrimination in housing.</li>
-              <li><strong>Progress by 1975:</strong> By 1975, legal (de jure) segregation was dismantled, and the number of Black elected officials had skyrocketed. However, economic inequality, ghetto conditions, and de facto segregation remained deep challenges.</li>
+              <li><strong>Massive Rioting:</strong> His murder sparked immediate, nationwide grief and rage. Violent riots broke out in over 100 cities; <strong>46 people died</strong>, over <strong>21,000 were arrested</strong>, and nearly <strong>$70 million</strong> in property was damaged.</li>
+              <li><strong>Radicalisation:</strong> Many Black Americans felt that the assassination proved peaceful protest was useless. Civil rights groups became more militant; for example, SNCC changed its name from 'Non-violent' to 'National' and pushed out its white members.</li>
+              <li><strong>The 1968 Civil Rights Act:</strong> In the aftermath of his death, Congress quickly passed the Civil Rights Act of 1968 (also known as the <strong>Fair Housing Act</strong>), which made it illegal to discriminate based on race when selling or renting housing.</li>
             </ul>
           </div>
         </div>
@@ -7332,6 +7340,31 @@ Source E is highly useful for showing how Black Power and militancy were institu
             <img src="assets/sources/mourners-mlk-assassination.jpg" alt="Mourners gathered after MLK's assassination" class="lesson-source-img" />
             <div class="lesson-image-caption">Mourners and protestors gathered in Washington D.C. following the assassination of Martin Luther King Jr., April 1968.</div>
           </div>
+        </div>`,
+          "scholarlyDepth": {
+            "title": "Scholarly Perspective: King's Radicalization",
+            "body": "In his final years, King became increasingly radical. He opposed the Vietnam War and launched the Poor People's Campaign, arguing that integration was meaningless without economic justice. Historians argue that his assassination cut short a movement that was shifting from civil rights to human rights."
+          }
+        },
+        {
+          "title": "Step 4: The Extent of Progress in Civil Rights by 1975",
+          "isSplit": false,
+          "bodyHtml": `<p>By 1975, the civil rights movement had transformed America, but significant inequalities remained:</p>
+        <ul>
+          <li><strong>Successes and Progress \u2014 Political Power:</strong> The Voting Rights Act was highly successful. By 1970, <strong>10.9%</strong> of all elected officials were Black, and thousands of Black representatives were elected across the South. Shirley Chisholm made history as the first Black woman elected to Congress.</li>
+          <li><strong>Successes and Progress \u2014 Education:</strong> Desegregation in schools vastly improved. By 1974, only <strong>8%</strong> of Southern Black children remained in fully segregated schools, aided by 'bussing' children to mixed schools.</li>
+          <li><strong>Successes and Progress \u2014 Affirmative Action:</strong> To correct past injustices, <strong>'affirmative action'</strong> policies were introduced, deliberately giving preference to minority groups in jobs and education.</li>
+          <li><strong>Limitations \u2014 Economic Inequality:</strong> While legal rights were secure, the economic gap remained huge. Black Americans were still paid significantly less than white Americans on average, and poverty rates stayed high.</li>
+          <li><strong>Limitations \u2014 Ghettos and Police:</strong> Many Black Americans remained trapped in poor inner-city ghettos and continued to face regular harassment from the police.</li>
+          <li><strong>Limitations \u2014 Lack of Presidential Support:</strong> By 1969, Richard Nixon was President. He showed very little sympathy for the civil rights movement, refused to meet with Black leaders, and dealt harshly with groups like the Black Panthers.</li>
+        </ul>
+        <div class="revision-task-box" style="margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.08); border-left: 4px solid var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);">
+          <h4 style="margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;">\u{1F4DD} Revision Task</h4>
+          <p style="margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;">To check your understanding of this topic, complete the following in your study notes:</p>
+          <ul style="margin: 0; padding-left: 18px; font-size: 0.9em; line-height: 1.5;">
+            <li>Write down the main conclusion of the 1968 Kerner Report in one sentence.</li>
+            <li>List two reasons why Martin Luther King's 1966 Chicago campaign was ultimately unsuccessful.</li>
+          </ul>
         </div>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Evaluating Progress by 1975",
