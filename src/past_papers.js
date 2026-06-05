@@ -597,12 +597,30 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
   // Clean trailing marks suffix e.g. (16 marks) from question title
   const cleanQuestionText = questionText.replace(/\(\d+\s*marks?\)/gi, '').trim();
 
-  // Appending the official instruction line for Q3d questions
+  // Appending the official instruction line for Q3 questions
   let instructionHTML = '';
-  if (qId.endsWith('_q3d')) {
+  if (qId.endsWith('_q3a')) {
     instructionHTML = `
       <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using both interpretations, and your knowledge of the historical context.
+        Explain your answer, using Sources B and C and your own knowledge of the historical context.
+      </p>
+    `;
+  } else if (qId.endsWith('_q3b')) {
+    instructionHTML = `
+      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+        Explain your answer, using details from both interpretations.
+      </p>
+    `;
+  } else if (qId.endsWith('_q3c')) {
+    instructionHTML = `
+      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+        Explain your answer, using both interpretations and written sources.
+      </p>
+    `;
+  } else if (qId.endsWith('_q3d')) {
+    instructionHTML = `
+      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+        Explain your answer, using both interpretations and your own knowledge of the historical context.
       </p>
     `;
   }

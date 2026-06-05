@@ -202,7 +202,11 @@ const SUBTOPIC_EXAM_MAPPING = {
   ],
   "subtopic_1_2": [
     { paperId: "2019_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2019" },
-    { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" }
+    { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
+    { paperId: "mock_exam_4", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 4" },
+    { paperId: "mock_exam_4", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 4" },
+    { paperId: "mock_exam_4", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 4" },
+    { paperId: "mock_exam_4", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 4" }
   ],
   "subtopic_1_3": [
     { paperId: "mock_exam_3", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 3" },
@@ -213,7 +217,11 @@ const SUBTOPIC_EXAM_MAPPING = {
     { paperId: "2025_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2025" }
   ],
   "subtopic_1_4": [
-    { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" }
+    { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" },
+    { paperId: "mock_exam_10", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 10" },
+    { paperId: "mock_exam_10", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 10" },
+    { paperId: "mock_exam_10", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 10" },
+    { paperId: "mock_exam_10", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 10" }
   ],
   "subtopic_2_1": [
     { paperId: "mock_exam_8", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 8" },
@@ -1663,6 +1671,9 @@ export function renderMasteryView(subtopicId) {
             <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
               <span style="font-weight: bold; color: var(--primary);">Question 3a (8 Marks):</span>
               <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3a.question.replace(/\(8\s*marks?\)/gi, '').trim()}</span>
+              <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+                Explain your answer, using Sources B and C and your own knowledge of the historical context.
+              </p>
             </div>
           `;
         }
@@ -1671,6 +1682,9 @@ export function renderMasteryView(subtopicId) {
             <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
               <span style="font-weight: bold; color: var(--primary);">Question 3b (4 Marks):</span>
               <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3b.question.replace(/\(4\s*marks?\)/gi, '').trim()}</span>
+              <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+                Explain your answer, using details from both interpretations.
+              </p>
             </div>
           `;
         }
@@ -1679,6 +1693,9 @@ export function renderMasteryView(subtopicId) {
             <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
               <span style="font-weight: bold; color: var(--primary);">Question 3c (4 Marks):</span>
               <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3c.question.replace(/\(4\s*marks?\)/gi, '').trim()}</span>
+              <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+                Explain your answer, using both interpretations and written sources.
+              </p>
             </div>
           `;
         }
@@ -1688,7 +1705,7 @@ export function renderMasteryView(subtopicId) {
               <span style="font-weight: bold; color: var(--primary);">Question 3d (16 + 4 SPaG Marks):</span>
               <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3d.question.replace(/\(16\s*marks?\)/gi, '').replace(/\(16\+4\s*marks?\)/gi, '').trim()}</span>
               <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
-                Explain your answer, using both interpretations, and your knowledge of the historical context.
+                Explain your answer, using both interpretations and your own knowledge of the historical context.
               </p>
             </div>
           `;

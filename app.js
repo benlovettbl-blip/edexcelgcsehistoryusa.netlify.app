@@ -3803,6 +3803,28 @@
   ];
   var EXAM_SKILLS_DATA = {
     "q1": {
+      "mock_exam_10": {
+        "id": "mock_exam_10",
+        "topicCode": "Mock 10",
+        "question": "Give two inferences from Source A about how segregationists intended to defeat integration.",
+        "sourceA": {
+          "provenance": "From a pamphlet distributed by the White Citizens Council in Alabama, 1956.",
+          "content": "We must stand together to protect our schools and neighborhoods. If any local merchant employs integrationists, we must withdraw our business immediately. If any landlord rents to those who support integration, they must be evicted. Economic non-cooperation is our most powerful peaceful weapon to defeat this Northern conspiracy against our traditions."
+        },
+        "clue": "Look at the actions recommended for merchants and landlords.",
+        "model": "Inference 1: Segregationists used economic boycotts to punish supporters of integration.\nDetails: 'If any local merchant employs integrationists, we must withdraw our business immediately.'\nInference 2: Segregationists targeted the housing security of civil rights supporters.\nDetails: 'If any landlord rents to those who support integration, they must be evicted.'"
+      },
+      "mock_exam_4": {
+        "id": "mock_exam_4",
+        "topicCode": "Mock 4",
+        "question": "Give two inferences from Source A about the situation at Central High School in September 1957.",
+        "sourceA": {
+          "provenance": "From a report by a federal observer at Central High School, Little Rock, September 1957.",
+          "content": "The crowd outside the school is extremely loud and aggressive. When the nine Negro students arrived, white adults began shouting abuse and spitting in their direction. The Arkansas National Guard, stationed by order of the Governor, stood in a line blockading the entrance. They did not attempt to disperse the mob; instead, their presence clearly prevented the children from entering the school building."
+        },
+        "clue": "Look at what the guards did, and how the crowd acted toward the students.",
+        "model": "Inference 1: The local authorities were actively preventing school integration.\nDetails: 'The Arkansas National Guard... stood in a line blockading the entrance.'\nInference 2: The Black students faced extreme hostility and danger from the local public.\nDetails: 'white adults began shouting abuse and spitting in their direction.'"
+      },
       "q1_1": {
         "id": "q1_1",
         "topicCode": "1.1",
@@ -4128,6 +4150,24 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       }
     },
     "q2": {
+      "mock_exam_10": {
+        "id": "mock_exam_10",
+        "topicCode": "Mock 10",
+        "question": "Explain why opposition to the civil rights movement was successful in delaying progress in the years 1954\u201360.",
+        "stimulus1": "Southern Manifesto (1956)",
+        "stimulus2": "Ku Klux Klan (KKK)",
+        "clue": "Explain how the Southern Manifesto unified politicians to defy rulings, and how the KKK used violence and terror to intimidate Black voters and activists.",
+        "model": "\u201COne reason why opposition to the civil rights movement was successful in delaying progress in the years 1954\u201360 was the unified political defiance of Southern leaders.\u201D In 1956, 101 Southern members of Congress signed the [[Southern Manifesto]], which accused the Supreme Court of abusing its power in the Brown ruling and urged states to resist desegregation. {{Therefore, this political defiance legitimized state-level resistance, encouraging Southern governors to pass laws closing public schools rather than desegregating them.}}\n\n\u201CA second reason why opposition to the civil rights movement was successful in delaying progress was the use of violence and physical intimidation.\u201D The [[KKK]] experienced a revival, using bombings, beatings, and threats of violence against civil rights activists. For example, during the Montgomery Bus Boycott, the homes of leaders were bombed, and local registrars used poll taxes and literacy tests backed by economic threats to keep Black voter registration extremely low. {{Therefore, this climate of terror and systemic disenfranchisement intimidated many Black citizens, successfully slowing the growth of grassroots campaigns.}}"
+      },
+      "mock_exam_4": {
+        "id": "mock_exam_4",
+        "topicCode": "Mock 4",
+        "question": "Explain why school desegregation met with significant opposition in the years 1954\u201357.",
+        "stimulus1": "Brown v. Board of Education (1954)",
+        "stimulus2": "Governor Orval Faubus",
+        "clue": "Explain how the Brown ruling outraged segregationists who believed in 'state rights', and how Southern governors used the National Guard to defy federal law.",
+        "model": "\u201COne reason why school desegregation met with significant opposition in the years 1954\u201357 was the deep-seated resistance to federal intervention in Southern states.\u201D The 1954 [[Brown v. Topeka]] Supreme Court ruling overturned [[Plessy]]'s separate but equal doctrine, which angered segregationists who believed education was a state matter. {{Therefore, this anger led to the creation of White Citizens Councils and a unified political resistance, slowing desegregation efforts.}}\n\n\u201CA second reason why school desegregation met with significant opposition was the active resistance of Southern political leaders.\u201D In 1957, Governor [[Faubus]] of Arkansas deployed the National Guard to block the [[Little Rock Nine]] from entering Central High School, choosing to defy federal law to appeal to white voters. {{Therefore, state-level opposition made integration impossible without federal military escort, hardening public defiance.}}"
+      },
       "q2_1": {
         "id": "q2_1",
         "topicCode": "1.1",
@@ -4543,6 +4583,39 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       }
     },
     "q3": {
+      "mock_exam_10": {
+        "id": "mock_exam_10",
+        "topicCode": "Mock 10",
+        "enquiryTopic": "the opposition to the civil rights movement in the late 1950s",
+        "sourceB": {
+          "provenance": "From the 'Southern Manifesto' (Declaration of Constitutional Principles) signed by 101 Southern members of Congress in March 1956.",
+          "content": "We regard the decision of the Supreme Court in the school cases as a clear abuse of judicial power. It climaxes a trend in the Federal judiciary to legislate, in derogation of the authority of Congress, and to encroach upon the reserved rights of the States and the people. We pledge ourselves to use all lawful means to bring about a reversal of this decision which is contrary to the Constitution and to prevent the use of force in its implementation."
+        },
+        "sourceC": {
+          "provenance": "From a speech by a leader of the Montgomery White Citizens Council in Alabama, speaking to a segregationist rally in 1956.",
+          "content": "The Negroes think that a court ruling can force us to integrate. But we hold the economic power in this town. If they continue to demand integration, they will find themselves without jobs, without credit at our banks, and without homes. We will organize economic boycotts against any business that surrenders, and we will use every social pressure to protect our segregated Southern way of life."
+        },
+        "interpretation1": {
+          "author": "From 'The Entrenched South' by historian H. Lawson, published in 2005.",
+          "content": "Opposition to civil rights in the late 1950s was highly organized and politically entrenched, successfully stalling desegregation. By signing the Southern Manifesto, Southern congressmen created a unified political front that legitimized defiance. At the local level, White Citizens Councils waged economic warfare, firing Black workers and denying them loans. This combination of political resistance and economic terror effectively delayed integration for years."
+        },
+        "interpretation2": {
+          "author": "From 'The Civil Rights Breakthrough' by historian J. Miller, published in 2012.",
+          "content": "Although Southern opposition was loud and politically unified on paper, it ultimately failed to halt civil rights progress. The extreme nature of the opposition's resistance and local violence actually backfired. It shocked Northern public opinion and forced a reluctant federal government to intervene, culminating in the passage of the Civil Rights Acts of 1957 and 1960. These laws established the vital precedent of federal voting rights protection."
+        },
+        "questiona": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s?",
+        "cluea": "Assess Source B (political resistance of Southern congressmen, constitutional arguments) and Source C (economic warfare of White Citizens Councils, grassroots white resistance) for usefulness.",
+        "modela": `<span style="color: blue;"> Source B is highly useful for demonstrating the politically organized, constitutional nature of Southern resistance. Southern congressmen assert that the Supreme Court's desegregation rulings are a \\"clear abuse of judicial power\\" and pledge to use \\"all lawful means to bring about a reversal\\". </span> <span style="color: green;"> This is supported by my knowledge that 101 Southern politicians signed the Southern Manifesto in 1956, which encouraged states to resist desegregation (known as 'Massive Resistance'), showing how opposition was led by the political elite. </span> <span style="color: purple;"> The provenance of the Southern Manifesto increases its usefulness because it is an official, public declaration signed by nearly all Southern members of Congress. While it is a piece of political propaganda designed to rally Southern voters and pressure the courts, it is highly useful for showing how desegregation was legally and politically challenged at the highest levels of government. </span>\\n\\n<span style="color: blue;"> Source C is highly useful for showing the local, economic methods of opposition used by segregationists. The speaker boasts that \\"we hold the economic power\\" and threatens Black citizens with being \\"without jobs, without credit... and without homes\\" if they demand integration. </span> <span style="color: green;"> This content's utility is supported by my knowledge that White Citizens Councils were formed throughout the South in the mid-1950s, using economic coercion, firings, and mortgage foreclosures to ruin civil rights activists financially, which verifies the speaker's threats. </span> <span style="color: purple;"> The provenance of a speech at a public segregationist rally in 1956 makes it useful for revealing the public rhetoric, intimidation tactics, and confidence of local segregationist organizations. While it is a highly partisan and aggressive speech designed to mobilize opposition and terrorize Black activists, it is very useful for capturing the grassroots economic warfare used to defend segregation. </span>`,
+        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "clueb": "Contrast Interpretation 1's view of opposition as highly effective in delaying integration with Interpretation 2's view that it backfired, leading to federal intervention and the Civil Rights Acts.",
+        "modelb": "The main difference is that Interpretation 1 argues that the opposition to civil rights was highly successful, stating that it [1[effectively delayed integration for years]1] through a combination of political resistance and economic terror. In contrast, Interpretation 2 argues that the opposition ultimately failed to halt progress, stating that its extreme resistance [1[actually backfired]1] and forced the federal government to pass the Civil Rights Acts of 1957 and 1960.",
+        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "cluec": "Explain how they focus on different aspects of resistance (the effectiveness of economic terror and political fronts vs the passage of federal laws) or rely on different sources (Source C's economic threats vs Source B's constitutional manifesto).",
+        "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which details how White Citizens Councils threatened to leave Black citizens \\"without jobs\\" and \\"without homes\\", leading to the view that opposition was highly [1[politically entrenched, successfully stalling desegregation]1]. Conversely, Interpretation 2 is supported by Source B, which show that despite the Southern politicians promising to resist \\"judicial power\\", the Federal government was forced to intervene, leading to the view that the opposition [1[ultimately failed to halt civil rights progress]1].',
+        "questiond": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s?",
+        "clued": "A balanced essay. Support Interpretation 1 (White Citizens Councils growth, KKK violence, very low integration percentage in South) and evaluate against Interpretation 2 (Civil Rights Acts of 1957 and 1960 passed, Eisenhower sending troops to Little Rock).",
+        "modeld": "I agree to a large extent with Interpretation 1 that the opposition was highly effective in stalling progress. White Citizens Councils grew to over [[250,000]] members, unleashing economic terror that devastated Black activists' livelihoods. The [[KKK]] was revived, committing bombings and lynchings. Southern states implemented 'Massive Resistance', passing laws to close integrated schools. As a result, by 1960, less than [[1%]] of Southern Black students attended desegregated schools. This supports Interpretation 1's view that local opposition was [1[highly organized and politically entrenched]1] and [1[effectively delayed integration for years]1].\\n\\nHowever, Interpretation 2 is also valid in noting that opposition backfired politically. The extreme obstruction by Southern leaders forced a reluctant President [[Eisenhower]] to introduce the [[1957]] [[Civil Rights Act]], the first federal civil rights legislation since Reconstruction, followed by the [[1960]] Act. While these acts were politically weak and only raised Southern Black voter registration by [[3%]], they established the crucial precedent of federal intervention. Defiance at Little Rock forced Eisenhower to deploy the [[101st Airborne Division]], proving that local resistance could trigger federal military force, confirming Interpretation 2's view that opposition [1[actually backfired]1] and prompted [1[federal voting rights protection]1].\\n\\nOverall, while the political backlash (Interpretation 2) laid the legal groundwork for future intervention, Interpretation 1 is more convincing for the late 1950s. On the ground, the combination of state resistance, economic terror, and white violence successfully nullified federal rulings, ensuring that segregation remained the daily reality for the vast majority of Southern Black Americans."
+      },
       "q3_1": {
         "id": "q3_1",
         "topicCode": "1.1",
@@ -6043,6 +6116,128 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
 However, Interpretation 2 is more convincing in highlighting that both Kennedy and Johnson were forced into action by the grassroots civil rights movement. Interpretation 1 focuses purely on presidential leadership, but from my own knowledge, neither president proactively introduced these bills without being pressured by extreme crises. President Kennedy only proposed the Civil Rights Bill in 1963 because the global embarrassment of police dogs attacking children in Birmingham left him no choice. Similarly, President Johnson only introduced the Voting Rights Act of 1965 as a direct reaction to the events in Selma. As Lewis describes in Source C, activists deliberately provoked the violence of [[Bloody Sunday]] on the [[Edmund Pettus Bridge]] because they knew televised police brutality was the only way to force LBJ's hand. Therefore, the true catalyst for the legislation was not presidential initiative, but the blood and bravery of ordinary Black Americans who made the status quo politically impossible to maintain, supporting Interpretation 2's view that it was a [1[prize won through the blood and courage of the grassroots movement]1].
 
 In conclusion, while I agree with Interpretation 1 that the actual passage of the acts required the formidable legislative skills of President Johnson, the interpretation gives too much credit to the White House. The presidents were reactors, not initiators; they only wielded their political power to pass the Civil Rights and Voting Rights Acts because the unrelenting courage of the grassroots civil rights movement forced them to do so.`
+      }
+    },
+    {
+      "id": "mock_exam_4",
+      "title": "Best Guess Mock Exam 4: School Desegregation and Little Rock (1957)",
+      "year": "Best Guess Mock 4",
+      "enquiryTopic": "the Little Rock High School crisis (1957)",
+      "sourceA": {
+        "provenance": "From a report by a federal observer at Central High School, Little Rock, September 1957.",
+        "content": "The crowd outside the school is extremely loud and aggressive. When the nine Negro students arrived, white adults began shouting abuse and spitting in their direction. The Arkansas National Guard, stationed by order of the Governor, stood in a line blockading the entrance. They did not attempt to disperse the mob; instead, their presence clearly prevented the children from entering the school building."
+      },
+      "sourceB": {
+        "provenance": "From an interview with Elizabeth Eckford, one of the Little Rock Nine, recalling her experience on 4 September 1957.",
+        "content": "I walked up to the guard who had let the white students in. When I tried to pass, he raised his bayonet and then the other guards closed in. They did not let me pass. The crowd began to follow me, screaming, 'Lynch her! Lynch her!' I looked for a friendly face, but everyone was hostile. I finally made it to the bus stop and just sat there crying. It was the most terrifying day of my life."
+      },
+      "sourceC": {
+        "provenance": "From a radio address by President Dwight D. Eisenhower to the American people, 24 September 1957.",
+        "content": "Mob rule in Little Rock cannot be allowed to override the decisions of our courts. I have sent units of the 101st Airborne Division to Little Rock and have federalised the Arkansas National Guard. We are a nation where laws, not violence, must govern. The integration of Central High School must proceed in an orderly fashion, and the safety of the nine students must be guaranteed by the federal government."
+      },
+      "interpretation1": {
+        "author": "From 'The Long Shadow of Little Rock' by historian L. Jones, published in 2003.",
+        "content": "The Little Rock crisis was a huge victory for the civil rights movement. By sending in the 101st Airborne Division, President Eisenhower showed that the federal government was willing to use military force to enforce desegregation. It proved to Southern governors that they could not simply ignore the Supreme Court's rulings, giving civil rights activists a massive boost."
+      },
+      "interpretation2": {
+        "author": "From 'Race Relations in the American South' by historian R. Davis, published in 1999.",
+        "content": "The events at Little Rock showed the severe limitations of federal intervention. Central High School was only integrated because soldiers with bayonets protected the Black students daily. The following year, Governor Faubus closed all Little Rock high schools to prevent further integration. The crisis actually slowed down the pace of integration across the Deep South as white resistance hardened."
+      },
+      "q1": {
+        "question": "Give two inferences from Source A about the situation at Central High School in September 1957.",
+        "clue": "Look at what the guards did, and how the crowd acted toward the students.",
+        "model": "Inference 1: The local authorities were actively preventing school integration.\nDetails: 'The Arkansas National Guard... stood in a line blockading the entrance.'\nInference 2: The Black students faced extreme hostility and danger from the local public.\nDetails: 'white adults began shouting abuse and spitting in their direction.'"
+      },
+      "q2": {
+        "question": "Explain why school desegregation met with significant opposition in the years 1954\u201357.",
+        "stimulus": [
+          "Brown v. Board of Education (1954)",
+          "Governor Orval Faubus"
+        ],
+        "clue": "Explain how the Brown ruling outraged segregationists who believed in 'state rights', and how Southern governors used the National Guard to defy federal law.",
+        "model": "\u201COne reason why school desegregation met with significant opposition in the years 1954\u201357 was the deep-seated resistance to federal intervention in Southern states.\u201D The 1954 [[Brown v. Topeka]] Supreme Court ruling overturned [[Plessy]]'s separate but equal doctrine, which angered segregationists who believed education was a state matter. {{Therefore, this anger led to the creation of White Citizens Councils and a unified political resistance, slowing desegregation efforts.}}\n\n\u201CA second reason why school desegregation met with significant opposition was the active resistance of Southern political leaders.\u201D In 1957, Governor [[Faubus]] of Arkansas deployed the National Guard to block the [[Little Rock Nine]] from entering Central High School, choosing to defy federal law to appeal to white voters. {{Therefore, state-level opposition made integration impossible without federal military escort, hardening public defiance.}}"
+      },
+      "q3a": {
+        "question": "How useful are Sources B and C for an enquiry into the Little Rock High School crisis (1957)?",
+        "clue": "Assess Source B (first-hand terror of Elizabeth Eckford, mob hostility, personal experience) and Source C (President Eisenhower's radio address, reason for sending federal troops, duty to enforce federal law) for usefulness.",
+        "model": `<span style="color: blue;"> Source B is highly useful for showing the extreme racial hostility and physical danger faced by the Little Rock Nine. Elizabeth Eckford describes the state guards raising their "bayonet" to block her, and a hostile white mob following her screaming "Lynch her! Lynch her!". </span> <span style="color: green;"> This content's utility is supported by my knowledge that on 4 September 1957, Governor Orval Faubus deployed the Arkansas National Guard to block the nine Black students from entering Central High School, exposing them to angry white segregationist mobs, which confirms the source's accurate representation of the terror faced by the students. </span> <span style="color: purple;"> The provenance makes it highly useful because it is a first-hand account by Elizabeth Eckford, one of the Little Rock Nine, recalling her direct experience. While it represents a highly personal and emotional memory of a terrifying event, which naturally focuses on her individual fear, it provides an invaluable and authentic record of the grassroots white resistance to school integration. </span>
+
+<span style="color: blue;"> Source C is highly useful for understanding the federal government's response and the reasons for direct presidential intervention in the Little Rock crisis. President Eisenhower states that "mob rule... cannot be allowed to override the decisions of our courts" and explains that he has sent the "101st Airborne Division" to guarantee the safety of the nine students. </span> <span style="color: green;"> This is supported by my knowledge that Governor Faubus's open defiance of federal court desegregation orders forced a reluctant President Eisenhower to take the unprecedented step of sending 1,000 elite federal troops to protect the Black students, which confirms that the speech shows the official rationale for federal intervention. </span> <span style="color: purple;"> The provenance of a national radio address on 24 September 1957 increases its usefulness because it shows how the President officially justified the use of military force against a state governor to the American public. However, it is limited as a public political address designed to present Eisenhower as a decisive defender of the law, downplaying his initial reluctance to support the Brown decision. </span>`
+      },
+      "q3b": {
+        "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "clue": "Contrast Interpretation 1's view of Little Rock as a huge victory showing federal willingness to enforce desegregation with Interpretation 2's focus on the limitations of federal power and hardening white resistance.",
+        "model": "The main difference is that Interpretation 1 views the crisis as a [1[huge victory for the civil rights movement]1] that proved the federal government's willingness to enforce desegregation. In contrast, Interpretation 2 argues that the events showed the [1[severe limitations of federal intervention]1] because integration relied on military protection and prompted Faubus to close the schools."
+      },
+      "q3c": {
+        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "clue": "Explain how they focus on different aspects (Eisenhower's deployment of the 101st Airborne vs Faubus closing the schools) or rely on different sources (Source C's federal deployment vs Source B's mob hostility).",
+        "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which states that Eisenhower "sent units of the 101st Airborne Division" to enforce desegregation, leading to the view that the crisis was a [1[huge victory for the civil rights movement]1]. Conversely, Interpretation 2 is supported by Source B, which states that when she tried to pass, the guard "raised his bayonet", leading to the view that the events showed the [1[severe limitations of federal intervention]1].'
+      },
+      "q3d": {
+        "question": "How far do you agree with Interpretation 2 about the Little Rock High School crisis (1957)?",
+        "clue": "A balanced essay. Support Interpretation 2 (Governor Faubus closing schools in 1958, slow integration in South, need for constant military guards) and evaluate against Interpretation 1 (101st Airborne sent, federal authority asserted, media coverage showing southern racism).",
+        "model": "I agree to a moderate extent with Interpretation 2 that the Little Rock crisis showed the limitations of federal power. Although the [[Little Rock Nine]] entered the school, they required daily protection from armed soldiers of the [[101st Airborne Division]] due to constant harassment. As Source B details, when Elizabeth Eckford tried to enter, the guards [[raised his bayonet]] and a hostile mob followed her. Furthermore, in 1958, Governor [[Faubus]] closed all public high schools in Little Rock for a year to prevent integration. Across the Deep South, integration remained extremely slow, with less than [[1%]] of Black students attending integrated schools by 1960. This supports Interpretation 2's view that the events showed the [1[severe limitations of federal intervention]1] and that [1[white resistance hardened]1].\n\nHowever, Interpretation 1 is also valid in arguing that Little Rock was a monumental victory. As broadcast in Source C, President [[Eisenhower]] declared that [[mob rule in Little Rock cannot be allowed]] to override the courts, and federalised the National Guard. By deploying elite troops, Eisenhower successfully asserted federal authority over state defiance. The crisis was broadcast on television, showing the world the dignity of the Black students compared to the hatred of the white mob. This media coverage shocked the nation and won widespread sympathy, confirming Interpretation 1's view that it was a [1[huge victory for the civil rights movement]1] that proved the government's willingness to use [1[military force to enforce desegregation]1].\n\nOverall, while the immediate local aftermath of Little Rock demonstrated the stubbornness of white resistance and the limits of enforcement (Interpretation 2), the crisis was a crucial turning point. It established the precedent that the federal government would use military force to defend civil rights, making it a vital political victory that paved the way for future federal intervention (Interpretation 1)."
+      }
+    },
+    {
+      "id": "mock_exam_10",
+      "title": "Best Guess Mock Exam 10: Opposition and Civil Rights Acts (1957\u201360)",
+      "year": "Best Guess Mock 10",
+      "enquiryTopic": "the opposition to the civil rights movement in the late 1950s",
+      "sourceA": {
+        "provenance": "From a pamphlet distributed by the White Citizens Council in Alabama, 1956.",
+        "content": "We must stand together to protect our schools and neighborhoods. If any local merchant employs integrationists, we must withdraw our business immediately. If any landlord rents to those who support integration, they must be evicted. Economic non-cooperation is our most powerful peaceful weapon to defeat this Northern conspiracy against our traditions."
+      },
+      "sourceB": {
+        "provenance": "From the 'Southern Manifesto' (Declaration of Constitutional Principles) signed by 101 Southern members of Congress in March 1956.",
+        "content": "We regard the decision of the Supreme Court in the school cases as a clear abuse of judicial power. It climaxes a trend in the Federal judiciary to legislate, in derogation of the authority of Congress, and to encroach upon the reserved rights of the States and the people. We pledge ourselves to use all lawful means to bring about a reversal of this decision which is contrary to the Constitution and to prevent the use of force in its implementation."
+      },
+      "sourceC": {
+        "provenance": "From a speech by a leader of the Montgomery White Citizens Council in Alabama, speaking to a segregationist rally in 1956.",
+        "content": "The Negroes think that a court ruling can force us to integrate. But we hold the economic power in this town. If they continue to demand integration, they will find themselves without jobs, without credit at our banks, and without homes. We will organize economic boycotts against any business that surrenders, and we will use every social pressure to protect our segregated Southern way of life."
+      },
+      "interpretation1": {
+        "author": "From 'The Entrenched South' by historian H. Lawson, published in 2005.",
+        "content": "Opposition to civil rights in the late 1950s was highly organized and politically entrenched, successfully stalling desegregation. By signing the Southern Manifesto, Southern congressmen created a unified political front that legitimized defiance. At the local level, White Citizens Councils waged economic warfare, firing Black workers and denying them loans. This combination of political resistance and economic terror effectively delayed integration for years."
+      },
+      "interpretation2": {
+        "author": "From 'The Civil Rights Breakthrough' by historian J. Miller, published in 2012.",
+        "content": "Although Southern opposition was loud and politically unified on paper, it ultimately failed to halt civil rights progress. The extreme nature of the opposition's resistance and local violence actually backfired. It shocked Northern public opinion and forced a reluctant federal government to intervene, culminating in the passage of the Civil Rights Acts of 1957 and 1960. These laws established the vital precedent of federal voting rights protection."
+      },
+      "q1": {
+        "question": "Give two inferences from Source A about how segregationists intended to defeat integration.",
+        "clue": "Look at the actions recommended for merchants and landlords.",
+        "model": "Inference 1: Segregationists used economic boycotts to punish supporters of integration.\nDetails: 'If any local merchant employs integrationists, we must withdraw our business immediately.'\nInference 2: Segregationists targeted the housing security of civil rights supporters.\nDetails: 'If any landlord rents to those who support integration, they must be evicted.'"
+      },
+      "q2": {
+        "question": "Explain why opposition to the civil rights movement was successful in delaying progress in the years 1954\u201360.",
+        "stimulus": [
+          "Southern Manifesto (1956)",
+          "Ku Klux Klan (KKK)"
+        ],
+        "clue": "Explain how the Southern Manifesto unified politicians to defy rulings, and how the KKK used violence and terror to intimidate Black voters and activists.",
+        "model": "\u201COne reason why opposition to the civil rights movement was successful in delaying progress in the years 1954\u201360 was the unified political defiance of Southern leaders.\u201D In 1956, 101 Southern members of Congress signed the [[Southern Manifesto]], which accused the Supreme Court of abusing its power in the Brown ruling and urged states to resist desegregation. {{Therefore, this political defiance legitimized state-level resistance, encouraging Southern governors to pass laws closing public schools rather than desegregating them.}}\n\n\u201CA second reason why opposition to the civil rights movement was successful in delaying progress was the use of violence and physical intimidation.\u201D The [[KKK]] experienced a revival, using bombings, beatings, and threats of violence against civil rights activists. For example, during the Montgomery Bus Boycott, the homes of leaders were bombed, and local registrars used poll taxes and literacy tests backed by economic threats to keep Black voter registration extremely low. {{Therefore, this climate of terror and systemic disenfranchisement intimidated many Black citizens, successfully slowing the growth of grassroots campaigns.}}"
+      },
+      "q3a": {
+        "question": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s?",
+        "clue": "Assess Source B (political resistance of Southern congressmen, constitutional arguments) and Source C (economic warfare of White Citizens Councils, grassroots white resistance) for usefulness.",
+        "model": `<span style="color: blue;"> Source B is highly useful for demonstrating the politically organized, constitutional nature of Southern resistance. Southern congressmen assert that the Supreme Court's desegregation rulings are a \\"clear abuse of judicial power\\" and pledge to use \\"all lawful means to bring about a reversal\\". </span> <span style="color: green;"> This is supported by my knowledge that 101 Southern politicians signed the Southern Manifesto in 1956, which encouraged states to resist desegregation (known as 'Massive Resistance'), showing how opposition was led by the political elite. </span> <span style="color: purple;"> The provenance of the Southern Manifesto increases its usefulness because it is an official, public declaration signed by nearly all Southern members of Congress. While it is a piece of political propaganda designed to rally Southern voters and pressure the courts, it is highly useful for showing how desegregation was legally and politically challenged at the highest levels of government. </span>\\n\\n<span style="color: blue;"> Source C is highly useful for showing the local, economic methods of opposition used by segregationists. The speaker boasts that \\"we hold the economic power\\" and threatens Black citizens with being \\"without jobs, without credit... and without homes\\" if they demand integration. </span> <span style="color: green;"> This content's utility is supported by my knowledge that White Citizens Councils were formed throughout the South in the mid-1950s, using economic coercion, firings, and mortgage foreclosures to ruin civil rights activists financially, which verifies the speaker's threats. </span> <span style="color: purple;"> The provenance of a speech at a public segregationist rally in 1956 makes it useful for revealing the public rhetoric, intimidation tactics, and confidence of local segregationist organizations. While it is a highly partisan and aggressive speech designed to mobilize opposition and terrorize Black activists, it is very useful for capturing the grassroots economic warfare used to defend segregation. </span>`
+      },
+      "q3b": {
+        "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "clue": "Contrast Interpretation 1's view of opposition as highly effective in delaying integration with Interpretation 2's view that it backfired, leading to federal intervention and the Civil Rights Acts.",
+        "model": "The main difference is that Interpretation 1 argues that the opposition to civil rights was highly successful, stating that it [1[effectively delayed integration for years]1] through a combination of political resistance and economic terror. In contrast, Interpretation 2 argues that the opposition ultimately failed to halt progress, stating that its extreme resistance [1[actually backfired]1] and forced the federal government to pass the Civil Rights Acts of 1957 and 1960."
+      },
+      "q3c": {
+        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "clue": "Explain how they focus on different aspects of resistance (the effectiveness of economic terror and political fronts vs the passage of federal laws) or rely on different sources (Source C's economic threats vs Source B's constitutional manifesto).",
+        "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which details how White Citizens Councils threatened to leave Black citizens \\"without jobs\\" and \\"without homes\\", leading to the view that opposition was highly [1[politically entrenched, successfully stalling desegregation]1]. Conversely, Interpretation 2 is supported by Source B, which show that despite the Southern politicians promising to resist \\"judicial power\\", the Federal government was forced to intervene, leading to the view that the opposition [1[ultimately failed to halt civil rights progress]1].'
+      },
+      "q3d": {
+        "question": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s?",
+        "clue": "A balanced essay. Support Interpretation 1 (White Citizens Councils growth, KKK violence, very low integration percentage in South) and evaluate against Interpretation 2 (Civil Rights Acts of 1957 and 1960 passed, Eisenhower sending troops to Little Rock).",
+        "model": "I agree to a large extent with Interpretation 1 that the opposition was highly effective in stalling progress. White Citizens Councils grew to over [[250,000]] members, unleashing economic terror that devastated Black activists' livelihoods. The [[KKK]] was revived, committing bombings and lynchings. Southern states implemented 'Massive Resistance', passing laws to close integrated schools. As a result, by 1960, less than [[1%]] of Southern Black students attended desegregated schools. This supports Interpretation 1's view that local opposition was [1[highly organized and politically entrenched]1] and [1[effectively delayed integration for years]1].\\n\\nHowever, Interpretation 2 is also valid in noting that opposition backfired politically. The extreme obstruction by Southern leaders forced a reluctant President [[Eisenhower]] to introduce the [[1957]] [[Civil Rights Act]], the first federal civil rights legislation since Reconstruction, followed by the [[1960]] Act. While these acts were politically weak and only raised Southern Black voter registration by [[3%]], they established the crucial precedent of federal intervention. Defiance at Little Rock forced Eisenhower to deploy the [[101st Airborne Division]], proving that local resistance could trigger federal military force, confirming Interpretation 2's view that opposition [1[actually backfired]1] and prompted [1[federal voting rights protection]1].\\n\\nOverall, while the political backlash (Interpretation 2) laid the legal groundwork for future intervention, Interpretation 1 is more convincing for the late 1950s. On the ground, the combination of state resistance, economic terror, and white violence successfully nullified federal rulings, ensuring that segregation remained the daily reality for the vast majority of Southern Black Americans."
       }
     }
   ];
@@ -13340,10 +13535,28 @@ ${cleanBrackets(paper.q3d.model)}
     }
     const cleanQuestionText = questionText.replace(/\(\d+\s*marks?\)/gi, "").trim();
     let instructionHTML = "";
-    if (qId.endsWith("_q3d")) {
+    if (qId.endsWith("_q3a")) {
       instructionHTML = `
       <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using both interpretations, and your knowledge of the historical context.
+        Explain your answer, using Sources B and C and your own knowledge of the historical context.
+      </p>
+    `;
+    } else if (qId.endsWith("_q3b")) {
+      instructionHTML = `
+      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+        Explain your answer, using details from both interpretations.
+      </p>
+    `;
+    } else if (qId.endsWith("_q3c")) {
+      instructionHTML = `
+      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+        Explain your answer, using both interpretations and written sources.
+      </p>
+    `;
+    } else if (qId.endsWith("_q3d")) {
+      instructionHTML = `
+      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+        Explain your answer, using both interpretations and your own knowledge of the historical context.
       </p>
     `;
     }
@@ -21409,7 +21622,11 @@ ${cleanBrackets(paper.q3d.model)}
     ],
     "subtopic_1_2": [
       { paperId: "2019_summer_usa", qType: "q1", label: "Source Inference (Q1)", yearLabel: "2019" },
-      { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" }
+      { paperId: "mock_exam_3", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "Best Guess Mock 3" },
+      { paperId: "mock_exam_4", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 4" },
+      { paperId: "mock_exam_4", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 4" },
+      { paperId: "mock_exam_4", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 4" },
+      { paperId: "mock_exam_4", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 4" }
     ],
     "subtopic_1_3": [
       { paperId: "mock_exam_3", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 3" },
@@ -21420,7 +21637,11 @@ ${cleanBrackets(paper.q3d.model)}
       { paperId: "2025_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2025" }
     ],
     "subtopic_1_4": [
-      { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" }
+      { paperId: "2020_summer_usa", qType: "q2", label: "Causation Essay (Q2)", yearLabel: "2020" },
+      { paperId: "mock_exam_10", qType: "q3a", label: "Source Utility (Q3a)", yearLabel: "Best Guess Mock 10" },
+      { paperId: "mock_exam_10", qType: "q3b", label: "Interpretations Difference (Q3b)", yearLabel: "Best Guess Mock 10" },
+      { paperId: "mock_exam_10", qType: "q3c", label: "Interpretations Difference Reason (Q3c)", yearLabel: "Best Guess Mock 10" },
+      { paperId: "mock_exam_10", qType: "q3d", label: "Interpretations Evaluation (Q3d)", yearLabel: "Best Guess Mock 10" }
     ],
     "subtopic_2_1": [
       { paperId: "mock_exam_8", qType: "q1", label: "Source Inference (Q1)", yearLabel: "Best Guess Mock 8" },
@@ -22800,6 +23021,9 @@ ${cleanBrackets(paper.q3d.model)}
             <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
               <span style="font-weight: bold; color: var(--primary);">Question 3a (8 Marks):</span>
               <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3a.question.replace(/\(8\s*marks?\)/gi, "").trim()}</span>
+              <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+                Explain your answer, using Sources B and C and your own knowledge of the historical context.
+              </p>
             </div>
           `;
           }
@@ -22808,6 +23032,9 @@ ${cleanBrackets(paper.q3d.model)}
             <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
               <span style="font-weight: bold; color: var(--primary);">Question 3b (4 Marks):</span>
               <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3b.question.replace(/\(4\s*marks?\)/gi, "").trim()}</span>
+              <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+                Explain your answer, using details from both interpretations.
+              </p>
             </div>
           `;
           }
@@ -22816,6 +23043,9 @@ ${cleanBrackets(paper.q3d.model)}
             <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
               <span style="font-weight: bold; color: var(--primary);">Question 3c (4 Marks):</span>
               <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3c.question.replace(/\(4\s*marks?\)/gi, "").trim()}</span>
+              <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
+                Explain your answer, using both interpretations and written sources.
+              </p>
             </div>
           `;
           }
@@ -22825,7 +23055,7 @@ ${cleanBrackets(paper.q3d.model)}
               <span style="font-weight: bold; color: var(--primary);">Question 3d (16 + 4 SPaG Marks):</span>
               <span style="color: var(--text-main); font-size: 0.95rem;">${paper.q3d.question.replace(/\(16\s*marks?\)/gi, "").replace(/\(16\+4\s*marks?\)/gi, "").trim()}</span>
               <p style="font-style: italic; font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; margin-bottom: 0;">
-                Explain your answer, using both interpretations, and your knowledge of the historical context.
+                Explain your answer, using both interpretations and your own knowledge of the historical context.
               </p>
             </div>
           `;
