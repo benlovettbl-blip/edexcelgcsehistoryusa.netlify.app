@@ -7044,26 +7044,30 @@ Source E is highly useful for showing the political and legislative outcomes of 
       "headerIntro": "By the mid-1960s, frustration with slow progress and continued white violence led to a major ideological split. Malcolm X, representing the Nation of Islam, criticized MLK's integrationist non-violence and championed Black nationalism and self-defense 'by any means necessary'. Following Malcolm's 1965 assassination, Stokely Carmichael popularised the term 'Black Power' at a 1966 march. This philosophy was institutionalized by the Black Panther Party (founded 1966), which organized armed neighborhood patrols and community programs, reflecting a shift toward racial pride and economic independence.",
       "steps": [
         {
-          "title": "Step 1: Malcolm X & The Black Muslims",
+          "title": "Step 1: Malcolm X and the Nation of Islam (1963\u201365)",
           "isSplit": false,
-          "bodyHtml": '<p>Malcolm X offered a powerful critique of the mainstream civil rights movement:</p>\n        <ul>\n          <li><strong>Black Nationalism:</strong> Malcolm rejected integration, arguing that Black Americans should create their own independent institutions. He believed in self-defense "by any means necessary."</li>\n          <li><strong>The Nation of Islam (Black Muslims):</strong> As the chief spokesman for the Nation of Islam, Malcolm preached self-reliance and racial pride, drawing support from Northern urban ghettos.</li>\n          <li><strong>OAAU & Assassination:</strong> After breaking with the Nation of Islam in 1964, he visited Mecca and founded the **Organization of Afro-American Unity (OAAU)** to advocate for international human rights. He was assassinated in February 1965.</li>\n        </ul>',
+          "bodyHtml": `<p>In the early 1960s, Malcolm X offered a powerful militant alternative to the mainstream civil rights movement:</p>
+        <ul>
+          <li><strong>Beliefs and Methods (Pre-1964):</strong> Malcolm X was a brilliant public speaker and the leading figure of the <strong>Nation of Islam (NOI)</strong>, led by Elijah Muhammad. Unlike MLK, Malcolm initially completely rejected integration. He believed that white society was inherently racist, that Black Americans needed to create their own separate nation, and that they should rely entirely on themselves.</li>
+          <li><strong>Self-Defence:</strong> He famously rejected MLK's non-violent methods, calling them the <em>"philosophy of the fool"</em>, and believed Black Americans had the right to defend themselves against white violence <strong>"by any means necessary"</strong>. He heavily criticised the 1963 March on Washington, calling it a <em>"farce"</em> run by white people.</li>
+          <li><strong>Change of Attitude:</strong> In 1964, Malcolm X left the Nation of Islam and went on a religious pilgrimage to Mecca. Seeing Muslims of all different races interacting as equals profoundly changed his views. He began to believe that racial integration might be possible and softened his stance, becoming more willing to work with white people and mainstream civil rights groups.</li>
+          <li><strong>Assassination (1965):</strong> The Nation of Islam was furious at his change in beliefs and departure. On 21 February 1965, Malcolm X was shot dead by three NOI members while giving a speech in New York. However, his earlier ideas of Black pride and self-defence lived on to inspire the next generation.</li>
+        </ul>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The North/South Divide",
             "body": "Historians argue that Malcolm X's appeal was rooted in Northern cities. While MLK's Southern campaigns targeted legal segregation, Northern Blacks faced economic discrimination and police brutality that legal rulings did not fix. Malcolm's militant rhetoric resonated with urban youth who felt non-violence had failed them."
           }
         },
         {
-          "title": "Step 2: The Black Panthers & Carmichael",
+          "title": "Step 2: The Emergence of Black Power (1966\u201368)",
           "isSplit": true,
           "bodyHtml": `<div class="mastery-text-column">
           <div class="mastery-card-body card-content">
-            <p>In 1966, the term 'Black Power' was popularized by Stokely Carmichael of SNCC:</p>
+            <p>By 1966, a shift occurred in the civil rights movement, giving rise to radical new leaders and methods:</p>
             <ul>
-              <li><strong>Emergence of Black Power:</strong> Slow progress in Northern ghettos, economic discrimination, and police brutality led SNCC and CORE to move away from non-violence.</li>
-              <li><strong>Stokely Carmichael:</strong> Popularized the slogan 'Black Power' in 1966, arguing that Black people must unite to form their own political and social force.</li>
-              <li><strong>The 1968 Mexico Olympics:</strong> U.S. athletes Tommie Smith and John Carlos staged a famous silent protest on the podium, raising black-gloved fists during the U.S. national anthem to showcase Black Power to a global audience.</li>
-              <li><strong>Black Panthers & Ten-Point Program:</strong> Founded by Huey Newton and Bobby Seale in late 1966 in Oakland, California, they had a **Ten-Point Program** demanding housing, education, and exemption from the military draft. They patrolled neighborhoods with weapons for self-defense and ran free school breakfasts.</li>
-              <li><strong>Cultural Pride:</strong> The movement promoted Black pride, Afrocentric fashion, and the slogan 'Black is Beautiful'.</li>
+              <li><strong>Reasons for the Emergence:</strong> The Civil Rights Acts had ended legal segregation, but did nothing to solve the severe poverty, poor housing, and unemployment in Northern city ghettos. Younger activists felt peaceful protests were too slow and left them defenceless against police brutality, while Malcolm X's influence provided an appealing alternative.</li>
+              <li><strong>Stokely Carmichael:</strong> In 1966, Stokely Carmichael became the leader of SNCC. Having grown tired of peaceful protests, he pushed white members out of the group and popularised the slogan <strong>"Black Power"</strong>. This urged Black Americans to reject white help, take control of their own communities, and celebrate their African heritage (using the slogan <em>"Black is beautiful"</em>, wearing traditional clothing and natural afros).</li>
+              <li><strong>The 1968 Mexico Olympics:</strong> The Black Power movement gained massive worldwide publicity. When American gold and bronze medalists <strong>Tommie Smith</strong> and <strong>John Carlos</strong> stood on the podium during the US national anthem, they raised their fists in the <strong>Black Power salute</strong> (wearing black gloves). They also wore no shoes to protest Black poverty. They were sent home in disgrace and received death threats, but successfully brought global attention to the struggle for racial equality.</li>
             </ul>
           </div>
         </div>
@@ -7071,6 +7075,38 @@ Source E is highly useful for showing the political and legislative outcomes of 
           <div class="lesson-image-wrapper">
             <img src="assets/sources/olympics-black-power-1968.jpg" alt="Tommie Smith and John Carlos raising black-gloved fists in protest at the 1968 Olympics" class="lesson-source-img" />
             <div class="lesson-image-caption">U.S. athletes Tommie Smith and John Carlos staging a silent protest on the podium at the 1968 Mexico City Olympic Games.</div>
+          </div>
+        </div>`,
+          "scholarlyDepth": {
+            "title": "Scholarly Perspective: Stokely Carmichael's Transformation",
+            "body": "Historians point to the 1966 Meredith March Against Fear as a turning point. After James Meredith was shot, Carmichael and King marched together, but Carmichael's frustration boiled over, leading him to declare that Black people had been begging for rights for years. His call for 'Black Power' signaled a final break with the SCLC's non-violent integrationist goals."
+          }
+        },
+        {
+          "title": "Step 3: The Black Panther Movement (1966\u201370)",
+          "isSplit": true,
+          "bodyHtml": `<div class="mastery-text-column">
+          <div class="mastery-card-body card-content">
+            <p>Founded by Huey Newton and Bobby Seale in California in October 1966, the Black Panther Party was the most militant and radical Black Power group:</p>
+            <ul>
+              <li><strong>Militant Methods:</strong> The Panthers completely rejected peaceful protest. They wore a distinct uniform of black leather jackets and black berets, trained members in weapons, and engaged in armed patrols of the streets to observe the police and protect Black citizens from police brutality. This frequently led to violent and deadly shootouts with authorities.</li>
+              <li><strong>Ten-Point Programme:</strong> They published a 'Ten-Point Programme' demanding full employment, decent housing, education, and an immediate end to police brutality.</li>
+              <li><strong>Welfare Achievements:</strong> Despite constant harassment by the FBI, they ran highly successful community 'Survival Programs' in ghettos. The most famous was the <strong>'Free Breakfast for Children'</strong> program, which fed up to 10,000 poor children a day. They also set up free health clinics, provided clothing, and ran classes teaching Black history and pride.</li>
+            </ul>
+            <div class="revision-task-box" style="margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.08); border-left: 4px solid var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);">
+              <h4 style="margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;">\u{1F4DD} Revision Task</h4>
+              <p style="margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;">To check your understanding of this topic, complete the following in your study notes:</p>
+              <ul style="margin: 0; padding-left: 18px; font-size: 0.9em; line-height: 1.5;">
+                <li>Write a short comparison (2-3 sentences) explaining the difference in methods between Martin Luther King Jr. and the Black Panthers.</li>
+                <li>List two reasons why Stokely Carmichael and others felt the "Black Power" movement was necessary by 1966.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mastery-media-column">
+          <div class="lesson-image-wrapper">
+            <img src="assets/sources/black-panthers-marching.jpg" alt="Black Panthers marching in uniform" class="lesson-source-img" />
+            <div class="lesson-image-caption">Members of the Black Panther Party marching in Oakland, California, 1968.</div>
           </div>
           <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;">
             <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Ideology Focus</strong>
@@ -7081,7 +7117,7 @@ Source E is highly useful for showing the political and legislative outcomes of 
         </div>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: COINTELPRO and the Black Panthers",
-            "body": "The rapid decline of the Black Panthers was accelerated by the FBI's Counterintelligence Program (COINTELPRO). Under J. Edgar Hoover, the FBI infiltrated the Panthers, sowed internal paranoia, and coordinated with local police to launch armed raids on Panther headquarters, leading to the killing of leaders like **Fred Hampton** in Chicago in 1969. Hoover declared the Panthers' free breakfast program the 'greatest threat to internal security' because it built deep community loyalty."
+            "body": "The rapid decline of the Black Panthers was accelerated by the FBI's Counterintelligence Program (COINTELPRO). Under J. Edgar Hoover, the FBI infiltrated the Panthers, sowed internal paranoia, and coordinated with local police to launch armed raids on Panther headquarters, leading to the killing of leaders like Fred Hampton in Chicago in 1969. Hoover declared the Panthers' free breakfast program the 'greatest threat to internal security' because it built deep community loyalty."
           }
         }
       ],
