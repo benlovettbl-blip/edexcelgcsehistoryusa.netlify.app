@@ -8525,6 +8525,19 @@ input:checked + .switch-slider:before {
   gap: 4px;
 }
 
+.highscore-badge-xp {
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .highscore-achievement {
   text-align: left;
 }

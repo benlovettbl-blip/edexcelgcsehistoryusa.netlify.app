@@ -5025,18 +5025,21 @@ export function getStreakHighScores() {
   }
 }
 
-export function saveStreakHighScoreLocal(name, yearGroup, streak, level) {
+export function saveStreakHighScoreLocal(name, yearGroup, streak, level, xp) {
   const scores = getStreakHighScores();
   
   const existingIndex = scores.findIndex(s => s.name === name && s.yearGroup === yearGroup);
   if (existingIndex !== -1) {
     const existing = scores[existingIndex];
-    if (streak > existing.streak || (streak === existing.streak && level > existing.level)) {
+    if (streak > existing.streak || 
+        (streak === existing.streak && (xp || 0) > (existing.xp || 0)) ||
+        (streak === existing.streak && (xp || 0) === (existing.xp || 0) && level > existing.level)) {
       scores[existingIndex] = {
         name: name,
         yearGroup: yearGroup,
         streak: streak,
         level: level,
+        xp: xp || 0,
         date: new Date().toISOString().split('T')[0]
       };
     }
@@ -5046,11 +5049,12 @@ export function saveStreakHighScoreLocal(name, yearGroup, streak, level) {
       yearGroup: yearGroup,
       streak: streak,
       level: level,
+      xp: xp || 0,
       date: new Date().toISOString().split('T')[0]
     });
   }
 
-  scores.sort((a, b) => b.streak - a.streak || b.level - a.level || b.date.localeCompare(a.date));
+  scores.sort((a, b) => b.streak - a.streak || (b.xp || 0) - (a.xp || 0) || b.level - a.level || (b.date || '').localeCompare(a.date || ''));
   localStorage.setItem('streak_highscores', JSON.stringify(scores.slice(0, 7)));
 }
 
@@ -5073,7 +5077,7 @@ export function renderStreakLeaderboardList() {
   }
 
   function renderResults(scoresList) {
-    scoresList.sort((a, b) => b.streak - a.streak || b.level - a.level || (b.date || '').localeCompare(a.date || ''));
+    scoresList.sort((a, b) => b.streak - a.streak || (b.xp || 0) - (a.xp || 0) || b.level - a.level || (b.date || '').localeCompare(a.date || ''));
     
     let rowsHtml = scoresList.slice(0, 7).map((s, idx) => {
       let medal = '';
@@ -5124,6 +5128,10 @@ export function renderStreakLeaderboardList() {
             <!-- Level Badge -->
             <span class="highscore-badge-level">
               Lv ${s.level}
+            </span>
+            <!-- XP Badge -->
+            <span class="highscore-badge-xp">
+              <i class="fa-solid fa-star"></i> ${s.xp || 0} XP
             </span>
           </div>
           
@@ -5195,8 +5203,9 @@ export function initStreakLeaderboardListeners() {
 
       const streak = state.userStats ? state.userStats.streak : 1;
       const level = state.userStats ? state.userStats.level : 1;
+      const xp = state.userStats ? state.userStats.xp : 0;
 
-      saveStreakHighScoreLocal(initials, yearGroup, streak, level);
+      saveStreakHighScoreLocal(initials, yearGroup, streak, level, xp);
       
       localStorage.setItem('last_streak_initials', initials);
       localStorage.setItem('last_streak_year', yearGroup);
@@ -5210,6 +5219,7 @@ export function initStreakLeaderboardListeners() {
           yearGroup: yearGroup,
           streak: streak,
           level: level,
+          xp: xp,
           date: new Date().toISOString().split('T')[0]
         };
 

@@ -20560,17 +20560,18 @@ ${cleanBrackets(paper.q3d.model)}
       return [];
     }
   }
-  function saveStreakHighScoreLocal(name, yearGroup, streak, level) {
+  function saveStreakHighScoreLocal(name, yearGroup, streak, level, xp) {
     const scores = getStreakHighScores();
     const existingIndex = scores.findIndex((s) => s.name === name && s.yearGroup === yearGroup);
     if (existingIndex !== -1) {
       const existing = scores[existingIndex];
-      if (streak > existing.streak || streak === existing.streak && level > existing.level) {
+      if (streak > existing.streak || streak === existing.streak && (xp || 0) > (existing.xp || 0) || streak === existing.streak && (xp || 0) === (existing.xp || 0) && level > existing.level) {
         scores[existingIndex] = {
           name,
           yearGroup,
           streak,
           level,
+          xp: xp || 0,
           date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0]
         };
       }
@@ -20580,10 +20581,11 @@ ${cleanBrackets(paper.q3d.model)}
         yearGroup,
         streak,
         level,
+        xp: xp || 0,
         date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0]
       });
     }
-    scores.sort((a, b) => b.streak - a.streak || b.level - a.level || b.date.localeCompare(a.date));
+    scores.sort((a, b) => b.streak - a.streak || (b.xp || 0) - (a.xp || 0) || b.level - a.level || (b.date || "").localeCompare(a.date || ""));
     localStorage.setItem("streak_highscores", JSON.stringify(scores.slice(0, 7)));
   }
   function renderStreakLeaderboardList() {
@@ -20599,7 +20601,7 @@ ${cleanBrackets(paper.q3d.model)}
       }).catch((err) => console.error("Error loading remote streak leaderboard:", err));
     }
     function renderResults(scoresList) {
-      scoresList.sort((a, b) => b.streak - a.streak || b.level - a.level || (b.date || "").localeCompare(a.date || ""));
+      scoresList.sort((a, b) => b.streak - a.streak || (b.xp || 0) - (a.xp || 0) || b.level - a.level || (b.date || "").localeCompare(a.date || ""));
       let rowsHtml = scoresList.slice(0, 7).map((s, idx) => {
         let medal = "";
         let rankClass = "";
@@ -20644,6 +20646,10 @@ ${cleanBrackets(paper.q3d.model)}
             <!-- Level Badge -->
             <span class="highscore-badge-level">
               Lv ${s.level}
+            </span>
+            <!-- XP Badge -->
+            <span class="highscore-badge-xp">
+              <i class="fa-solid fa-star"></i> ${s.xp || 0} XP
             </span>
           </div>
           
@@ -20704,7 +20710,8 @@ ${cleanBrackets(paper.q3d.model)}
         }
         const streak = state.userStats ? state.userStats.streak : 1;
         const level = state.userStats ? state.userStats.level : 1;
-        saveStreakHighScoreLocal(initials, yearGroup, streak, level);
+        const xp = state.userStats ? state.userStats.xp : 0;
+        saveStreakHighScoreLocal(initials, yearGroup, streak, level, xp);
         localStorage.setItem("last_streak_initials", initials);
         localStorage.setItem("last_streak_year", yearGroup);
         AudioEngine.play("success");
@@ -20715,6 +20722,7 @@ ${cleanBrackets(paper.q3d.model)}
             yearGroup,
             streak,
             level,
+            xp,
             date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0]
           };
           fetch(GOOGLE_SHEET_WEBAPP_URL, {
