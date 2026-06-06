@@ -8615,5 +8615,156 @@ input:checked + .switch-slider:before {
   }
 }
 
+/* --- Narrative Adventure Game Styles --- */
+.adventure-layout {
+  display: flex;
+  gap: 20px;
+  max-width: 1150px;
+  margin: 20px auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.adventure-terminal {
+  flex: 2;
+  background-color: #0d1117;
+  border: 2px solid #30363d;
+  border-radius: 8px;
+  color: #c9d1d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.evidence-sidebar {
+  flex: 1;
+  background-color: #161b22;
+  border: 2px solid #30363d;
+  border-radius: 8px;
+  padding: 18px;
+  color: #c9d1d9;
+  max-height: 650px;
+  overflow-y: auto;
+}
+
+.evidence-sidebar h3 {
+  margin-top: 0;
+  color: #ffb703;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #30363d;
+  padding-bottom: 10px;
+}
+
+.sidebar-meta {
+  font-size: 0.8rem;
+  color: #8b949e;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.evidence-tracker {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evidence-item {
+  font-size: 0.85rem;
+  padding: 10px;
+  background: rgba(42, 157, 143, 0.08);
+  border-left: 4px solid #2a9d8f;
+  border-radius: 0 6px 6px 0;
+  color: #e6edf3;
+  line-height: 1.4;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.terminal-header {
+  background-color: #161b22;
+  padding: 14px 20px;
+  border-bottom: 2px solid #30363d;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+.terminal-screen {
+  padding: 25px;
+  min-height: 260px;
+  background-color: #090d13;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.story-passage {
+  margin-bottom: 20px;
+  color: #e6edf3;
+  white-space: pre-line;
+}
+
+.insight-box {
+  background-color: rgba(230, 57, 70, 0.08);
+  border-left: 4px solid #e63946;
+  padding: 14px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #f8a5a5;
+  border-radius: 0 4px 4px 0;
+  line-height: 1.5;
+}
+
+.insight-box.correct-node {
+  border-left-color: #2a9d8f;
+  color: #a3e2d7;
+  background-color: rgba(42, 157, 143, 0.08);
+}
+
+.options-stack {
+  padding: 20px;
+  background-color: #161b22;
+  border-top: 2px solid #30363d;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-option {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 14px 18px;
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btn-option:hover {
+  background: #30363d;
+  color: #fff;
+  transform: translateX(3px);
+}
+
+@media (max-width: 850px) {
+  .adventure-layout {
+    flex-direction: column;
+  }
+  .evidence-sidebar {
+    max-height: 300px;
+  }
+}
+
+
 
 

@@ -15,6 +15,7 @@ import { KEY_TOPICS_OVERVIEWS } from './key_topics_data.js';
 import { renderPastPapersView } from './past_papers.js';
 import { VIDEOS_DATA } from './videos_data.js';
 import { initChronologyGame } from './chronology.js';
+import { initAdventureGame } from './adventure.js';
 
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
@@ -727,22 +728,24 @@ function renderGamesView() {
   const tabDecisions = document.getElementById('btn-tab-game-decisions');
   const tabMindMap = document.getElementById('btn-tab-game-mindmap');
   const tabTaboo = document.getElementById('btn-tab-game-taboo');
+  const tabAdventure = document.getElementById('btn-tab-game-adventure');
   const paneCausal = document.getElementById('game-causal-container');
   const paneChronology = document.getElementById('game-chronology-container');
   const paneMastery = document.getElementById('game-mastery-container');
   const paneDecisions = document.getElementById('game-decisions-container');
   const paneMindMap = document.getElementById('game-mindmap-container');
   const paneTaboo = document.getElementById('game-taboo-container');
+  const paneAdventure = document.getElementById('game-adventure-container');
 
-  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && 
-      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo) {
+  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure &&
+      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure) {
     const showCausal = () => {
       tabCausal.classList.add('active');
       tabCausal.style.borderColor = 'var(--primary)';
       tabCausal.style.color = 'var(--primary)';
       tabCausal.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo].forEach(t => {
+      [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -755,6 +758,7 @@ function renderGamesView() {
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
+      paneAdventure.style.display = 'none';
     };
 
     const showChronology = () => {
@@ -763,7 +767,7 @@ function renderGamesView() {
       tabChronology.style.color = 'var(--primary)';
       tabChronology.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo].forEach(t => {
+      [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -776,6 +780,7 @@ function renderGamesView() {
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
+      paneAdventure.style.display = 'none';
       
       initChronologyGame();
     };
@@ -786,7 +791,7 @@ function renderGamesView() {
       tabMastery.style.color = 'var(--primary)';
       tabMastery.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo].forEach(t => {
+      [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -799,6 +804,7 @@ function renderGamesView() {
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
+      paneAdventure.style.display = 'none';
 
       initMasteryMatchGame();
     };
@@ -809,7 +815,7 @@ function renderGamesView() {
       tabDecisions.style.color = 'var(--primary)';
       tabDecisions.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -822,6 +828,7 @@ function renderGamesView() {
       paneDecisions.style.display = 'block';
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
+      paneAdventure.style.display = 'none';
 
       initDecisionsGame();
     };
@@ -832,7 +839,7 @@ function renderGamesView() {
       tabMindMap.style.color = 'var(--primary)';
       tabMindMap.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo, tabAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -845,6 +852,7 @@ function renderGamesView() {
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'block';
       paneTaboo.style.display = 'none';
+      paneAdventure.style.display = 'none';
 
       initMindMapGame();
     };
@@ -855,7 +863,7 @@ function renderGamesView() {
       tabTaboo.style.color = 'var(--primary)';
       tabTaboo.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -868,8 +876,33 @@ function renderGamesView() {
       paneDecisions.style.display = 'none';
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'block';
+      paneAdventure.style.display = 'none';
 
       initTabooGame();
+    };
+
+    const showAdventure = () => {
+      tabAdventure.classList.add('active');
+      tabAdventure.style.borderColor = 'var(--primary)';
+      tabAdventure.style.color = 'var(--primary)';
+      tabAdventure.style.background = 'rgba(59, 130, 246, 0.1)';
+
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo].forEach(t => {
+        t.classList.remove('active');
+        t.style.borderColor = 'var(--border-glass)';
+        t.style.color = 'var(--text-muted)';
+        t.style.background = 'rgba(255,255,255,0.03)';
+      });
+
+      paneCausal.style.display = 'none';
+      paneChronology.style.display = 'none';
+      paneMastery.style.display = 'none';
+      paneDecisions.style.display = 'none';
+      paneMindMap.style.display = 'none';
+      paneTaboo.style.display = 'none';
+      paneAdventure.style.display = 'block';
+
+      initAdventureGame();
     };
 
     tabCausal.addEventListener('click', () => {
@@ -900,6 +933,11 @@ function renderGamesView() {
     tabTaboo.addEventListener('click', () => {
       AudioEngine.play('click');
       showTaboo();
+    });
+
+    tabAdventure.addEventListener('click', () => {
+      AudioEngine.play('click');
+      showAdventure();
     });
   }
 }
@@ -6440,6 +6478,7 @@ export {
   initMindMapGame,
   initExamLeaderboard,
   initTabooGame,
+  initAdventureGame,
   renderKeyTopicOverview,
   activateExamHubPanel,
   renderAiVideosView,

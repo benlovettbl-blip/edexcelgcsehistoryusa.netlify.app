@@ -1812,6 +1812,9 @@
             <button class="tab-btn" id="btn-tab-game-taboo" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
               <i class="fa-solid fa-ban"></i> Taboo Cards
             </button>
+            <button class="tab-btn" id="btn-tab-game-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
+              <i class="fa-solid fa-compass"></i> Narrative Adventure
+            </button>
           </div>
 
           <!-- Container for Causal Link Builder Game -->
@@ -1901,6 +1904,39 @@
           <div id="game-taboo-container" class="game-view-pane" style="display: none;">
             <div id="taboo-game-play-area">
               <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Container for Narrative Adventure Game -->
+          <div id="game-adventure-container" class="game-view-pane" style="display: none;">
+            <div class="adventure-game-wrapper">
+              <div class="adventure-layout">
+                
+                <div class="adventure-terminal">
+                  <div class="terminal-header">
+                    <span class="status-item">📅 Year: <strong id="adv-year">1954</strong></span>
+                    <span class="status-item">📋 Topic: <strong id="adv-topic">KT1</strong></span>
+                    <span class="status-item">🛡️ Factual Score: <strong id="adv-score">0</strong></span>
+                  </div>
+
+                  <div class="terminal-screen">
+                    <p id="story-text" class="story-passage"></p>
+                    <div id="historical-insight" class="insight-box hidden"></div>
+                  </div>
+
+                  <div class="terminal-input">
+                    <div id="options-container" class="options-stack"></div>
+                  </div>
+                </div>
+
+                <div class="evidence-sidebar">
+                  <h3>🎒 Your Essay Evidence Bank</h3>
+                  <p class="sidebar-meta">Unlock these precise facts to back up your 12 and 16-mark answers:</p>
+                  <ul id="evidence-list" class="evidence-tracker">
+                  </ul>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
