@@ -15,7 +15,7 @@ import { KEY_TOPICS_OVERVIEWS } from './key_topics_data.js';
 import { renderPastPapersView } from './past_papers.js';
 import { VIDEOS_DATA } from './videos_data.js';
 import { initChronologyGame } from './chronology.js';
-import { initAdventureGame } from './adventure.js';
+import { initAdventureGame, initVietnamAdventureGame } from './adventure.js';
 
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
@@ -729,6 +729,7 @@ function renderGamesView() {
   const tabMindMap = document.getElementById('btn-tab-game-mindmap');
   const tabTaboo = document.getElementById('btn-tab-game-taboo');
   const tabAdventure = document.getElementById('btn-tab-game-adventure');
+  const tabVietnamAdventure = document.getElementById('btn-tab-game-vietnam-adventure');
   const paneCausal = document.getElementById('game-causal-container');
   const paneChronology = document.getElementById('game-chronology-container');
   const paneMastery = document.getElementById('game-mastery-container');
@@ -736,16 +737,17 @@ function renderGamesView() {
   const paneMindMap = document.getElementById('game-mindmap-container');
   const paneTaboo = document.getElementById('game-taboo-container');
   const paneAdventure = document.getElementById('game-adventure-container');
+  const paneVietnamAdventure = document.getElementById('game-vietnam-adventure-container');
 
-  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure &&
-      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure) {
+  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure &&
+      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure) {
     const showCausal = () => {
       tabCausal.classList.add('active');
       tabCausal.style.borderColor = 'var(--primary)';
       tabCausal.style.color = 'var(--primary)';
       tabCausal.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
+      [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -759,6 +761,7 @@ function renderGamesView() {
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
       paneAdventure.style.display = 'none';
+      paneVietnamAdventure.style.display = 'none';
     };
 
     const showChronology = () => {
@@ -767,7 +770,7 @@ function renderGamesView() {
       tabChronology.style.color = 'var(--primary)';
       tabChronology.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
+      [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -781,6 +784,7 @@ function renderGamesView() {
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
       paneAdventure.style.display = 'none';
+      paneVietnamAdventure.style.display = 'none';
       
       initChronologyGame();
     };
@@ -791,7 +795,7 @@ function renderGamesView() {
       tabMastery.style.color = 'var(--primary)';
       tabMastery.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
+      [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -805,6 +809,7 @@ function renderGamesView() {
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
       paneAdventure.style.display = 'none';
+      paneVietnamAdventure.style.display = 'none';
 
       initMasteryMatchGame();
     };
@@ -815,7 +820,7 @@ function renderGamesView() {
       tabDecisions.style.color = 'var(--primary)';
       tabDecisions.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -829,6 +834,7 @@ function renderGamesView() {
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
       paneAdventure.style.display = 'none';
+      paneVietnamAdventure.style.display = 'none';
 
       initDecisionsGame();
     };
@@ -839,7 +845,7 @@ function renderGamesView() {
       tabMindMap.style.color = 'var(--primary)';
       tabMindMap.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo, tabAdventure].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo, tabAdventure, tabVietnamAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -853,6 +859,7 @@ function renderGamesView() {
       paneMindMap.style.display = 'block';
       paneTaboo.style.display = 'none';
       paneAdventure.style.display = 'none';
+      paneVietnamAdventure.style.display = 'none';
 
       initMindMapGame();
     };
@@ -863,7 +870,7 @@ function renderGamesView() {
       tabTaboo.style.color = 'var(--primary)';
       tabTaboo.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabAdventure].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabAdventure, tabVietnamAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -877,6 +884,7 @@ function renderGamesView() {
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'block';
       paneAdventure.style.display = 'none';
+      paneVietnamAdventure.style.display = 'none';
 
       initTabooGame();
     };
@@ -887,7 +895,7 @@ function renderGamesView() {
       tabAdventure.style.color = 'var(--primary)';
       tabAdventure.style.background = 'rgba(59, 130, 246, 0.1)';
 
-      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo].forEach(t => {
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabVietnamAdventure].forEach(t => {
         t.classList.remove('active');
         t.style.borderColor = 'var(--border-glass)';
         t.style.color = 'var(--text-muted)';
@@ -901,8 +909,34 @@ function renderGamesView() {
       paneMindMap.style.display = 'none';
       paneTaboo.style.display = 'none';
       paneAdventure.style.display = 'block';
+      paneVietnamAdventure.style.display = 'none';
 
       initAdventureGame();
+    };
+
+    const showVietnamAdventure = () => {
+      tabVietnamAdventure.classList.add('active');
+      tabVietnamAdventure.style.borderColor = 'var(--primary)';
+      tabVietnamAdventure.style.color = 'var(--primary)';
+      tabVietnamAdventure.style.background = 'rgba(59, 130, 246, 0.1)';
+
+      [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure].forEach(t => {
+        t.classList.remove('active');
+        t.style.borderColor = 'var(--border-glass)';
+        t.style.color = 'var(--text-muted)';
+        t.style.background = 'rgba(255,255,255,0.03)';
+      });
+
+      paneCausal.style.display = 'none';
+      paneChronology.style.display = 'none';
+      paneMastery.style.display = 'none';
+      paneDecisions.style.display = 'none';
+      paneMindMap.style.display = 'none';
+      paneTaboo.style.display = 'none';
+      paneAdventure.style.display = 'none';
+      paneVietnamAdventure.style.display = 'block';
+
+      initVietnamAdventureGame();
     };
 
     tabCausal.addEventListener('click', () => {
@@ -938,6 +972,11 @@ function renderGamesView() {
     tabAdventure.addEventListener('click', () => {
       AudioEngine.play('click');
       showAdventure();
+    });
+
+    tabVietnamAdventure.addEventListener('click', () => {
+      AudioEngine.play('click');
+      showVietnamAdventure();
     });
   }
 }

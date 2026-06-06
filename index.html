@@ -1813,7 +1813,10 @@
               <i class="fa-solid fa-ban"></i> Taboo Cards
             </button>
             <button class="tab-btn" id="btn-tab-game-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
-              <i class="fa-solid fa-compass"></i> Narrative Adventure
+              <i class="fa-solid fa-compass"></i> US Civil Rights Adventure
+            </button>
+            <button class="tab-btn" id="btn-tab-game-vietnam-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
+              <i class="fa-solid fa-compass"></i> Vietnam Campaign Adventure
             </button>
           </div>
 
@@ -1933,6 +1936,39 @@
                   <h3>🎒 Your Essay Evidence Bank</h3>
                   <p class="sidebar-meta">Unlock these precise facts to back up your 12 and 16-mark answers:</p>
                   <ul id="evidence-list" class="evidence-tracker">
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Container for Vietnam Campaign Adventure Game -->
+          <div id="game-vietnam-adventure-container" class="game-view-pane" style="display: none;">
+            <div class="adventure-game-wrapper">
+              <div class="adventure-layout">
+                
+                <div class="adventure-terminal">
+                  <div class="terminal-header">
+                    <span class="status-item">📅 Year: <strong id="v-year">1954</strong></span>
+                    <span class="status-item">📋 Topic: <strong id="v-topic">KT3</strong></span>
+                    <span class="status-item">🛡️ Factual Score: <strong id="v-score">0</strong></span>
+                  </div>
+
+                  <div class="terminal-screen">
+                    <p id="v-story-text" class="story-passage"></p>
+                    <div id="v-historical-insight" class="insight-box hidden"></div>
+                  </div>
+
+                  <div class="terminal-input">
+                    <div id="v-options-container" class="options-stack"></div>
+                  </div>
+                </div>
+
+                <div class="evidence-sidebar">
+                  <h3>🎒 Vietnam Essay Evidence Bank</h3>
+                  <p class="sidebar-meta">Secure these vital exam case studies for your 12 and 16-mark causal explanations:</p>
+                  <ul id="v-evidence-list" class="evidence-tracker">
                   </ul>
                 </div>
 

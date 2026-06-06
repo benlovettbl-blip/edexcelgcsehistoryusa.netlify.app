@@ -8765,6 +8765,53 @@ input:checked + .switch-slider:before {
   }
 }
 
+/* --- Vietnam Campaign Adventure Game Styles --- */
+#game-vietnam-adventure-container .adventure-terminal {
+  background-color: #0b0f14;
+  border: 2px solid #232931;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+#game-vietnam-adventure-container .evidence-sidebar {
+  background-color: #1a1f26;
+  border: 2px solid #232931;
+}
+
+#game-vietnam-adventure-container .evidence-sidebar h3 {
+  color: #4ea8de;
+  border-bottom: 2px solid #232931;
+}
+
+#game-vietnam-adventure-container .evidence-item {
+  background: rgba(78, 168, 222, 0.08);
+  border-left: 4px solid #4ea8de;
+  animation: vFadeIn 0.4s ease-out;
+}
+
+@keyframes vFadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#game-vietnam-adventure-container .terminal-header {
+  background-color: #1a1f26;
+  border-bottom: 2px solid #232931;
+}
+
+#game-vietnam-adventure-container .terminal-screen {
+  background-color: #05070a;
+}
+
+#game-vietnam-adventure-container .options-stack {
+  background-color: #1a1f26;
+  border-top: 2px solid #232931;
+}
+
+#game-vietnam-adventure-container .btn-option {
+  background: #232931;
+}
+
+
 
 
 
