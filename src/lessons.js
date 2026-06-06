@@ -1,8 +1,10 @@
 import { LESSONS_DATA } from './lessons_data.js';
 import { state } from './state.js';
 import { switchView } from './navigation.js';
-import { renderSidebarNav, updateGlobalStats, openVideoModal } from './views.js';
+import { renderSidebarNav, updateGlobalStats, openVideoModal, addXp } from './views.js';
 import { saveProgress } from './storage.js';
+
+const viewedSlides = new Set();
 import { AudioEngine } from './audio.js';
 import { Confetti } from './confetti.js';
 import { QUIZ_DATA, PAST_PAPERS_DATA } from '../questions.js';
@@ -483,6 +485,7 @@ function bindEmbeddedExamQuestionListeners(container, qId, qObj, paperId) {
 
 export function renderMasteryView(subtopicId) {
   highlightedKeywords.clear();
+  viewedSlides.clear();
   const container = document.getElementById('mastery-content-container');
   if (!container) return;
 
@@ -549,11 +552,10 @@ export function renderMasteryView(subtopicId) {
       scholarlyHtml = `
         <details class="scholarly-extension" style="margin-top: 16px;">
           <summary class="scholarly-summary">
-            <i class="fa-solid fa-graduation-cap"></i> Scholarly Perspective - Expand for depth
+            <i class="fa-solid fa-graduation-cap"></i> ${step.scholarlyDepth.title} (Click to expand)
           </summary>
           <div class="scholarly-content" style="margin-top: 12px; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
             ${scholarlyImgHtml}
-            <strong style="display: block; margin-bottom: 6px; color: var(--primary); font-size: 0.95rem;">${step.scholarlyDepth.title}</strong>
             <p style="margin: 0 0 12px 0; font-style: italic;">${applyGlossaryTooltips(step.scholarlyDepth.body)}</p>
             ${scholarlySourceHtml}
           </div>
@@ -2231,6 +2233,7 @@ export function renderMasteryView(subtopicId) {
             // Check if all are linked
             if (linkedFactors.size === totalFactors) {
               AudioEngine.play('cheer');
+              addXp(15);
               const successPanel = document.getElementById('causal-success-panel');
               if (successPanel) {
                 successPanel.style.display = 'block';
@@ -2349,6 +2352,13 @@ export function renderMasteryView(subtopicId) {
     function updateStepUI(index) {
       currentStep = index;
       AudioEngine.play('click');
+
+      // Award XP for viewing the slide for the first time
+      const slideKey = `${state.selectedSubtopicId || 'unknown'}_${index}`;
+      if (!viewedSlides.has(slideKey)) {
+        viewedSlides.add(slideKey);
+        addXp(5);
+      }
 
       // Update nodes
       stepNodes.forEach((node, idx) => {

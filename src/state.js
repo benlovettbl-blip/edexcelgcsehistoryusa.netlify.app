@@ -26,7 +26,9 @@ export const state = {
     masteredCount: 0,
     reinforcing: false,
     reinforceQuestion: null,
-    wasDragged: false
+    wasDragged: false,
+    failedCardIds: [],
+    speedStudyMode: false
   },
   
   // Quiz Generator State
@@ -55,5 +57,13 @@ export const state = {
     activePaperData: null,
     answers: {},                     // { questionId: string }
     completedQuestions: []           // Array of questionIds
+  },
+
+  // Gamification Player Stats
+  userStats: {
+    xp: 0,
+    level: 1,
+    streak: 0,
+    lastLoginDate: null
   }
 };

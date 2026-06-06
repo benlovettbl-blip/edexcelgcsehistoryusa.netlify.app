@@ -9,7 +9,8 @@ import {
   startFlashcardSession,
   renderKeyTopicOverview,
   activateExamHubPanel,
-  renderAiVideosView
+  renderAiVideosView,
+  openStreakLeaderboard
 } from './views.js';
 import { showExamSetup } from './exam.js';
 import { renderPastPapersView } from './past_papers.js';
@@ -47,6 +48,14 @@ export function switchView(viewName, subtopicId = null) {
     if (viewTitle) viewTitle.textContent = "Study Dashboard";
     state.selectedSubtopicId = null;
     renderDashboard();
+  } else if (viewName === 'leaderboard') {
+    const leaderboardNav = document.getElementById('nav-leaderboard');
+    if (leaderboardNav) leaderboardNav.classList.add('active');
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) viewTitle.textContent = "Streak & Level Leaderboard";
+    state.selectedSubtopicId = null;
+    openStreakLeaderboard();
   } else if (viewName === 'bookmarks') {
     const bookmarksNav = document.getElementById('nav-bookmarks');
     if (bookmarksNav) bookmarksNav.classList.add('active');
@@ -99,6 +108,14 @@ export function switchView(viewName, subtopicId = null) {
     if (viewTitle) viewTitle.textContent = "2-Minute AI Video Overview";
     state.selectedSubtopicId = null;
     renderAiVideosView();
+  } else if (viewName === 'map') {
+    const mapNav = document.getElementById('nav-map');
+    if (mapNav) mapNav.classList.add('active');
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) viewTitle.textContent = "Geographic Map Explorer";
+    state.selectedSubtopicId = null;
+    window.dispatchEvent(new CustomEvent('mapViewActivated'));
   } else if (viewName === 'flashcards') {
     state.selectedSubtopicId = subtopicId;
     if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
@@ -166,6 +183,7 @@ export function switchView(viewName, subtopicId = null) {
     'dashboard': 'view-dashboard',
     'bookmarks': 'view-bookmarks',
     'timeline': 'view-timeline',
+    'map': 'view-map',
     'exam': 'view-exam',
     'classic': 'view-classic',
     'flashcards': 'view-flashcards',
@@ -173,7 +191,8 @@ export function switchView(viewName, subtopicId = null) {
     'games': 'view-games',
     'exam-hub': 'view-exam-hub',
     'key-topic': 'view-key-topic',
-    'ai-videos': 'view-ai-videos'
+    'ai-videos': 'view-ai-videos',
+    'leaderboard': 'view-leaderboard'
   };
 
   const targetViewId = viewName === 'subtopic' ? viewIdMap[state.currentMode] : viewIdMap[viewName];

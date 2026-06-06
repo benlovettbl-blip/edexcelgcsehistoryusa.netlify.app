@@ -72,7 +72,7 @@ export function updateBrandBanner() {
 
   // Setup click listener once to cycle/refresh quotes on demand
   if (!bannerListenerInitialized) {
-    container.addEventListener('click', () => {
+    const cycleQuote = () => {
       AudioEngine.play('click');
       const config = BRAND_CONFIG.units["conflict_middle_east"];
       if (config) {
@@ -85,7 +85,15 @@ export function updateBrandBanner() {
         container.style.opacity = '1';
         startDismissTimer();
       }
-    });
+    };
+    
+    container.addEventListener('click', cycleQuote);
+    
+    const logoEl = document.getElementById('header-brand-logo');
+    if (logoEl) {
+      logoEl.addEventListener('click', cycleQuote);
+    }
+    
     bannerListenerInitialized = true;
   }
 

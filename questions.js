@@ -11,7 +11,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_s1",
             "question": "Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?",
             "answer": "Jim Crow laws",
-            "explanation": "Jim Crow laws legalised segregation in public transport, schools, restaurants, and other public facilities across the South.",
+            "explanation": "Jim Crow laws legalised segregation in public transport, schools, restaurants, and other public facilities across the South. This institutionalised racial discrimination across the South, forcing Black Americans to endure daily public humiliation and reinforcing their status as second-class citizens.",
             "year": 1950,
             "distractors": [
               "Black Codes",
@@ -23,7 +23,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_s2",
             "question": "What does the abbreviation NAACP stand for?",
             "answer": "National Association for the Advancement of Colored People",
-            "explanation": "Founded in 1909, the NAACP focused on challenging segregation and discrimination through legal action and the courts.",
+            "explanation": "Founded in 1909, the NAACP focused on challenging segregation and discrimination through legal action and the courts. This established a highly successful legal framework that systematically challenged and dismantled segregation laws in federal courts.",
             "year": 1909,
             "distractors": [
               "National Association for the Advancement of Civil Rights",
@@ -35,7 +35,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_s3",
             "question": "Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?",
             "answer": "CORE (Congress of Racial Equality)",
-            "explanation": "CORE pioneered non-violent tactics, including early sit-ins, and later co-organised the Freedom Rides.",
+            "explanation": "CORE pioneered non-violent tactics, including early sit-ins, and later co-organised the Freedom Rides. This pioneered non-violent direct action tactics, laying the operational foundation for the massive protests of the 1960s.",
             "year": 1942,
             "distractors": [
               "SCLC (Southern Christian Leadership Conference)",
@@ -47,7 +47,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_s4",
             "question": "What primary method did the NAACP use in the early 1950s to fight racial inequality?",
             "answer": "Legal action through the courts",
-            "explanation": "The NAACP chose to challenge segregation using the judicial system, filing lawsuits to prove that segregated facilities violated the US Constitution.",
+            "explanation": "The NAACP chose to challenge segregation using the judicial system, filing lawsuits to prove that segregated facilities violated the US Constitution. This allowed the movement to secure permanent, legally binding constitutional precedents that Southern state governments could not easily ignore.",
             "year": 1950,
             "distractors": [
               "Non-violent direct action and marches",
@@ -59,7 +59,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_s5",
             "question": "Why did Black Americans find it almost impossible to register to vote in the South in the early 1950s?",
             "answer": "Due to literacy tests, poll taxes, and white intimidation",
-            "explanation": "Southern states used discriminatory literacy tests, financial poll taxes, and threats of violence or job loss to disenfranchise Black voters.",
+            "explanation": "Southern states used discriminatory literacy tests, financial poll taxes, and threats of violence or job loss to disenfranchise Black voters. This systematically denied Black communities political power, maintaining white supremacist control of Southern local governments.",
             "year": 1950,
             "distractors": [
               "Due to federal voting laws, state bans, and Supreme Court rulings",
@@ -83,7 +83,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_s7",
             "question": "Why did the Congress of Racial Equality (CORE) choose to use non-violent direct action?",
             "answer": "To expose the injustice of segregation to the public and force change",
-            "explanation": "CORE believed that peaceful boycotts and sit-ins would gain public support, embarrass segregationists, and pressure authorities to act.",
+            "explanation": "CORE believed that peaceful boycotts and sit-ins would gain public support, embarrass segregationists, and pressure authorities to act. This strategy aimed to expose the moral injustice of segregation to the national public, forcing the federal government to intervene.",
             "year": 1942,
             "distractors": [
               "To build political coalitions with Southern Democrats and lobby Congress",
@@ -95,7 +95,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_s8",
             "question": "Who was the first Black American to head the NAACP Legal Defense and Educational Fund, coordinating early court battles?",
             "answer": "Thurgood Marshall",
-            "explanation": "Thurgood Marshall was the chief legal strategist for the NAACP, directing the legal campaign against Jim Crow segregation in public facilities and education.",
+            "explanation": "Thurgood Marshall was the chief legal strategist for the NAACP, directing the legal campaign against Jim Crow segregation in public facilities and education. His brilliant litigation strategy led to major Supreme Court victories that legally undermined the entire constitutional basis for segregation.",
             "year": 1940,
             "distractors": [
               "Charles Hamilton Houston",
@@ -107,7 +107,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_s9",
             "question": "Which US President issued Executive Order 9981 in 1948 to desegregate the United States Armed Forces?",
             "answer": "Harry S. Truman",
-            "explanation": "President Truman's executive order desegregated the military, representing a landmark early federal action for civil rights.",
+            "explanation": "President Truman's executive order desegregated the military, representing a landmark early federal action for civil rights. This represented a landmark early federal action for civil rights, demonstrating that the executive branch could bypass Southern congressional obstruction.",
             "year": 1948,
             "distractors": [
               "Franklin D. Roosevelt",
@@ -145,7 +145,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_d2",
             "question": "What tests were designed to prevent Black citizens from registering to vote by asking complex questions?",
             "answer": "Literacy tests",
-            "explanation": "Literacy tests were applied corruptly: Black applicants faced impossible legal questions, while whites were exempted.",
+            "explanation": "Literacy tests were applied corruptly: Black applicants faced impossible legal questions, while whites were exempted. This corrupt administration of tests effectively blocked the vast majority of Black citizens in the Deep South from registering to vote.",
             "year": 1950,
             "distractors": [
               "Character tests",
@@ -169,7 +169,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_d4",
             "question": "Which landmark Supreme Court case struck down the Texas 'white primary' voting restriction in 1944?",
             "answer": "Smith v. Allwright",
-            "explanation": "The ruling declared that primary elections could not exclude Black voters, a major early legal victory for the NAACP.",
+            "explanation": "The ruling declared that primary elections could not exclude Black voters, a major early legal victory for the NAACP. This ruling established a vital early legal precedent for desegregating the Southern political process and primaries.",
             "year": 1944,
             "distractors": [
               "Sweatt v. Painter",
@@ -181,7 +181,7 @@ export const QUIZ_DATA = [
             "id": "q_1_1_d5",
             "question": "Why did many Black Americans face severe economic intimidation if they attempted to register to vote in the South?",
             "answer": "Because white landowners and employers would fire or evict them",
-            "explanation": "White citizens and businesses actively cooperated to punish civil rights activists by firing them from jobs or evicting them from their sharecropping lands.",
+            "explanation": "White citizens and businesses actively cooperated to punish civil rights activists by firing them from jobs or evicting them from their sharecropping lands. This economic intimidation was highly effective in suppressing grassroots activism by threatening the basic livelihoods of Black families.",
             "year": 1950,
             "distractors": [
               "Because state police forces would arrest them on false vagrancy charges",
@@ -237,7 +237,7 @@ export const QUIZ_DATA = [
             "id": "q_1_2_s2",
             "question": "What was the name given to the group of Black students who integrated Central High School in Arkansas in 1957?",
             "answer": "The Little Rock Nine",
-            "explanation": "President Eisenhower had to send federal troops from the 101st Airborne Division to protect the nine students from violent mobs.",
+            "explanation": "President Eisenhower had to send federal troops from the 101st Airborne Division to protect the nine students from violent mobs. This intervention proved that the federal government was prepared to deploy military force to uphold civil rights laws against state defiance.",
             "year": 1957,
             "distractors": [
               "The Greensboro Four",
@@ -261,7 +261,7 @@ export const QUIZ_DATA = [
             "id": "q_1_2_s4",
             "question": "Who was the Governor of Arkansas who defied federal court orders and blocked school integration in 1957?",
             "answer": "Orval Faubus",
-            "explanation": "Faubus used the state's National Guard to block the Black students from entering Central High School.",
+            "explanation": "Faubus used the state's National Guard to block the Black students from entering Central High School. His open defiance of a federal court order precipitated a major constitutional crisis over state rights versus federal authority.",
             "year": 1957,
             "distractors": [
               "George Wallace",
@@ -285,7 +285,7 @@ export const QUIZ_DATA = [
             "id": "q_1_2_s6",
             "question": "Who was the lead NAACP lawyer who successfully argued the Brown case before the Supreme Court?",
             "answer": "Thurgood Marshall",
-            "explanation": "Marshall led the NAACP Legal Defense Fund, using social and legal arguments to dismantle 'separate but equal'.",
+            "explanation": "Marshall led the NAACP Legal Defense Fund, using social and legal arguments to dismantle 'separate but equal'. His pioneering social science arguments successfully convinced the Supreme Court that segregated education was psychologically damaging and unconstitutional.",
             "year": 1954,
             "distractors": [
               "Charles Hamilton Houston",
@@ -297,7 +297,7 @@ export const QUIZ_DATA = [
             "id": "q_1_2_s7",
             "question": "In what year did the integration crisis at Little Rock Central High School occur?",
             "answer": "1957",
-            "explanation": "The crisis lasted throughout September 1957, drawing international media attention to Southern white resistance.",
+            "explanation": "The crisis lasted throughout September 1957, drawing international media attention to Southern white resistance. The resulting media coverage shocked the international public and put pressure on the US government to address racial injustice.",
             "year": 1957,
             "distractors": [
               "1954",
@@ -309,7 +309,7 @@ export const QUIZ_DATA = [
             "id": "q_1_2_s8",
             "question": "What was the full name of the high school integrated in Little Rock?",
             "answer": "Central High School",
-            "explanation": "Central High School was a prestigious, previously all-white school chosen by the local school board for gradual integration.",
+            "explanation": "Central High School was a prestigious, previously all-white school chosen by the local school board for gradual integration. The integration of this prestigious school became the primary testing ground for federal enforcement of school desegregation.",
             "year": 1957,
             "distractors": [
               "Little Rock High School",
@@ -321,7 +321,7 @@ export const QUIZ_DATA = [
             "id": "q_1_2_s9",
             "question": "What action did Governor Faubus take in 1958 to prevent further school integration?",
             "answer": "Closed all Little Rock high schools",
-            "explanation": "Rather than integrate, Faubus shut down the city's high schools for the 1958-59 academic year, known as 'The Lost Year'.",
+            "explanation": "Rather than integrate, Faubus shut down the city's high schools for the 1958-59 academic year, known as 'The Lost Year'. This desperate measure showed that segregationist politicians were willing to destroy their own public school system to avoid integration.",
             "year": 1958,
             "distractors": [
               "Deported the Little Rock Nine from the state",
@@ -371,7 +371,7 @@ export const QUIZ_DATA = [
             "id": "q_1_2_d3",
             "question": "Who was the first Black child to integrate an all-white elementary school in the South, in New Orleans in 1960?",
             "answer": "Ruby Bridges",
-            "explanation": "Bridges had to be escorted to school by federal marshals every day due to fierce white protests and boycotts.",
+            "explanation": "Bridges had to be escorted to school by federal marshals every day due to fierce white protests and boycotts. Her brave integration of the school highlighted the intense danger and hostility faced by Black children during the integration process.",
             "year": 1960,
             "distractors": [
               "Claudette Colvin",
@@ -463,7 +463,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_s3",
             "question": "What does the abbreviation SCLC stand for?",
             "answer": "Southern Christian Leadership Conference",
-            "explanation": "SCLC was formed in 1957, led by MLK, to coordinate civil rights protests using non-violent resistance through Southern churches.",
+            "explanation": "SCLC was formed in 1957, led by MLK, to coordinate civil rights protests using non-violent resistance through Southern churches. This church-led organization became the central coordinating force for non-violent direct action campaigns across the South.",
             "year": 1957,
             "distractors": [
               "Student Campaign for Liberation and Equality",
@@ -475,7 +475,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_s4",
             "question": "How many days did the Montgomery Bus Boycott last?",
             "answer": "381 days",
-            "explanation": "The boycott began on 5 December 1955 and ended on 21 December 1956 when desegregation was officially enforced.",
+            "explanation": "The boycott began on 5 December 1955 and ended on 21 December 1956 when desegregation was officially enforced. This prolonged struggle proved the efficiency, discipline, and economic power of organized Black grassroots communities.",
             "year": 1956,
             "distractors": [
               "100 days",
@@ -487,7 +487,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_s5",
             "question": "Who was the Mayor of Montgomery who strongly opposed the boycott and joined the White Citizens' Council?",
             "answer": "W. A. Gayle",
-            "explanation": "Mayor Gayle took a hardline stance, refusing to compromise with the MIA and launching a legal crackdown on carpools.",
+            "explanation": "Mayor Gayle took a hardline stance, refusing to compromise with the MIA and launching a legal crackdown on carpools. His confrontational approach united the Black community and drew wider national attention and sympathy to the boycott.",
             "year": 1956,
             "distractors": [
               "Bull Connor",
@@ -499,7 +499,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_s6",
             "question": "What logistics system did the MIA set up to allow boycotters to travel without using buses?",
             "answer": "Carpool system",
-            "explanation": "The carpool involved over 300 private vehicles and designated pickup stations, running with military-like efficiency.",
+            "explanation": "The carpool involved over 300 private vehicles and designated pickup stations, running with military-like efficiency. This organized transport network allowed the boycott to survive for over a year despite constant police harassment and legal challenges.",
             "year": 1955,
             "distractors": [
               "Bicycle relay system",
@@ -523,7 +523,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_s8",
             "question": "What percentage of Montgomery's daily bus passengers were Black before the boycott?",
             "answer": "70%",
-            "explanation": "Because Black residents made up the vast majority of riders, their boycott devastated the bus company's finances.",
+            "explanation": "Because Black residents made up the vast majority of riders, their boycott devastated the bus company's finances. This severe loss of revenue forced the private bus company to advocate for desegregation to save itself from bankruptcy.",
             "year": 1955,
             "distractors": [
               "40%",
@@ -535,7 +535,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_s9",
             "question": "Who was the local NAACP president in Montgomery who bailed Rosa Parks out and helped organize the boycott?",
             "answer": "E.D. Nixon",
-            "explanation": "Nixon was a union leader who recognized the potential of Parks' arrest to challenge transit segregation laws.",
+            "explanation": "Nixon was a union leader who recognized the potential of Parks' arrest to challenge transit segregation laws. His early organizational and financial support was essential to launching the Montgomery Improvement Association.",
             "year": 1955,
             "distractors": [
               "Fred Shuttlesworth",
@@ -561,7 +561,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_d1",
             "question": "What was the exact date the Supreme Court's desegregation order was served on Montgomery city authorities?",
             "answer": "20 December 1956",
-            "explanation": "The desegregation order arrived on Dec 20, and MLK and other leaders rode integrated buses the next morning.",
+            "explanation": "The desegregation order arrived on Dec 20, and MLK and other leaders rode integrated buses the next morning. This marked the official legal victory of the boycott, declaring transit segregation unconstitutional under the 14th Amendment.",
             "year": 1956,
             "distractors": [
               "1 December 1955",
@@ -597,7 +597,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_d4",
             "question": "Who was the president of the Women's Political Council (WPC) who mimeographed 52,000 leaflets calling for a boycott?",
             "answer": "Jo Ann Robinson",
-            "explanation": "Robinson and the WPC organized the initial call for the boycott within hours of Rosa Parks' arrest.",
+            "explanation": "Robinson and the WPC organized the initial call for the boycott within hours of Rosa Parks' arrest. Her rapid mobilization of the community was the critical catalyst that turned Parks' arrest into a massive, organized boycott.",
             "year": 1955,
             "distractors": [
               "Daisy Bates",
@@ -609,7 +609,7 @@ export const QUIZ_DATA = [
             "id": "q_1_3_d5",
             "question": "What was the name of the women's political activist group led by Jo Ann Robinson in Montgomery?",
             "answer": "Women's Political Council (WPC)",
-            "explanation": "The WPC was a civic group of professional Black women that had complained about bus treatment for years.",
+            "explanation": "The WPC was a civic group of professional Black women that had complained about bus treatment for years. Their years of political lobbying and research laid the structural foundation for the Montgomery bus boycott.",
             "year": 1955,
             "distractors": [
               "National Council of Negro Women (NCNW)",
@@ -653,7 +653,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s1",
             "question": "What document signed by over 100 Southern congressmen in 1956 urged defiance of school integration?",
             "answer": "The Southern Manifesto",
-            "explanation": "The Manifesto declared the Brown ruling a clear abuse of judicial power and encouraged states to resist it.",
+            "explanation": "The Manifesto declared the Brown ruling a clear abuse of judicial power and encouraged states to resist it. This document united Southern politicians in their opposition to school integration, encouraging local school boards to delay desegregation indefinitely.",
             "year": 1956,
             "distractors": [
               "The Declaration of Constitutional Defiance",
@@ -677,7 +677,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s3",
             "question": "Which white supremacist organization saw a major resurgence in the mid-1950s, using violence and bombings?",
             "answer": "Ku Klux Klan",
-            "explanation": "The KKK terrorized civil rights workers and Black families with bombings, beatings, and cross-burnings.",
+            "explanation": "The KKK terrorized civil rights workers and Black families with bombings, beatings, and cross-burnings. Their campaign of terror aimed to maintain white supremacy and prevent civil rights reforms through violence and intimidation.",
             "year": 1955,
             "distractors": [
               "The White League",
@@ -689,7 +689,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s4",
             "question": "Which Southern Senator conducted a record-breaking 24-hour filibuster against the 1957 Civil Rights Act?",
             "answer": "Strom Thurmond",
-            "explanation": "Thurmond spoke for over 24 hours to block the bill, representing the deep political opposition in Congress.",
+            "explanation": "Thurmond spoke for over 24 hours to block the bill, representing the deep political opposition in Congress. His record-setting filibuster highlighted the intense legislative obstruction faced by civil rights bills in the Senate.",
             "year": 1957,
             "distractors": [
               "Richard Russell",
@@ -701,7 +701,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s5",
             "question": "In what year was the Southern Manifesto signed and published by Southern politicians?",
             "answer": "1956",
-            "explanation": "Signed by 19 Senators and 82 Representatives, it united Southern political resistance under the banner of states' rights.",
+            "explanation": "Signed by 19 Senators and 82 Representatives, it united Southern political resistance under the banner of states' rights. This collective signing institutionalized political resistance and defiance of the Supreme Court's desegregation rulings.",
             "year": 1956,
             "distractors": [
               "1954",
@@ -713,7 +713,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s6",
             "question": "Which US president signed the Civil Rights Act of 1957 into law?",
             "answer": "Dwight D. Eisenhower",
-            "explanation": "It was the first civil rights legislation passed since Reconstruction, though it was heavily weakened by Southern amendments.",
+            "explanation": "It was the first civil rights legislation passed since Reconstruction, though it was heavily weakened by Southern amendments. This represented a symbolic breakthrough, showing the first federal civil rights legislation passed since Reconstruction.",
             "year": 1957,
             "distractors": [
               "Harry S. Truman",
@@ -725,7 +725,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s7",
             "question": "What parliamentary delaying tactic did Southern senators (Dixiecrats) use to block civil rights bills?",
             "answer": "Filibuster",
-            "explanation": "Senators would speak indefinitely to prevent a vote on civil rights bills, requiring a supermajority to stop them.",
+            "explanation": "Senators would speak indefinitely to prevent a vote on civil rights bills, requiring a supermajority to stop them. This tactic allowed a minority of Southern segregationist senators to successfully block or dilute civil rights bills for years.",
             "year": 1957,
             "distractors": [
               "Gerrymandering",
@@ -737,7 +737,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s8",
             "question": "What was the primary focus of the Civil Rights Act of 1957?",
             "answer": "Voting rights",
-            "explanation": "The act created the Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination.",
+            "explanation": "The act created the Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination. This legislation established the federal Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination.",
             "year": 1957,
             "distractors": [
               "School integration",
@@ -749,7 +749,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s9",
             "question": "What was the main purpose of the Civil Rights Act of 1960?",
             "answer": "Federal inspection of local voter registration records",
-            "explanation": "The act introduced federal penalties for obstructing voter registration and allowed federal judges to appoint voter referees.",
+            "explanation": "The act introduced federal penalties for obstructing voter registration and allowed federal judges to appoint voter referees. This act introduced federal penalties for obstructing registration, expanding federal judicial oversight of Southern elections.",
             "year": 1960,
             "distractors": [
               "Federal funding for integrated schools in the South",
@@ -761,7 +761,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_s10",
             "question": "How many Southern congressmen signed the Southern Manifesto in 1956?",
             "answer": "101 congressmen",
-            "explanation": "A total of 101 senators and representatives signed the document, showing the unity of the segregationist political bloc.",
+            "explanation": "A total of 101 senators and representatives signed the document, showing the unity of the segregationist political bloc. This unified political opposition showed that Southern representatives would fight civil rights reforms as a collective bloc.",
             "year": 1956,
             "distractors": [
               "50 congressmen",
@@ -775,7 +775,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_d1",
             "question": "What was the exact length of Strom Thurmond's record-breaking solo filibuster against the 1957 Civil Rights Act?",
             "answer": "24 hours and 18 minutes",
-            "explanation": "Thurmond read election laws, Washington's farewell address, and recipe books to sustain his record-setting speech.",
+            "explanation": "Thurmond read election laws, Washington's farewell address, and recipe books to sustain his record-setting speech. This record-setting filibuster demonstrated the extreme lengths Southern politicians would go to preserve segregation.",
             "year": 1957,
             "distractors": [
               "12 hours and 30 minutes",
@@ -811,7 +811,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_d4",
             "question": "What economic warfare method did the White Citizens' Councils use to punish civil rights activists?",
             "answer": "Job dismissals and mortgage foreclosures",
-            "explanation": "By firing activists, denying bank loans, and cancelling insurance policies, the Councils financially ruined integrationists.",
+            "explanation": "By firing activists, denying bank loans, and cancelling insurance policies, the Councils financially ruined integrationists. This economic retaliation was highly effective in suppressing grassroots activism by financially ruining integrationists.",
             "year": 1954,
             "distractors": [
               "Voter registration purge and literacy re-testing",
@@ -823,7 +823,7 @@ export const QUIZ_DATA = [
             "id": "q_1_4_d5",
             "question": "Who was the 14-year-old Black boy from Chicago brutally lynched in Mississippi in August 1955 for allegedly whistling at a white woman?",
             "answer": "Emmett Till",
-            "explanation": "Till's mother held an open-casket funeral in Chicago, exposing the extreme brutality of Southern racism to the world.",
+            "explanation": "Till's mother held an open-casket funeral in Chicago, exposing the extreme brutality of Southern racism to the world. The international outrage over his brutal murder and the acquittal of his killers galvanized the modern civil rights movement.",
             "year": 1955,
             "distractors": [
               "Medgar Evers",
@@ -873,7 +873,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s1",
             "question": "In which city did the famous 1960 lunch counter sit-ins begin?",
             "answer": "Greensboro, North Carolina",
-            "explanation": "Four Black college students sat at a Woolworth's lunch counter, launching a wave of sit-ins across the South.",
+            "explanation": "Four Black college students sat at a Woolworth's lunch counter, launching a wave of sit-ins across the South. This launched a massive wave of student-led lunch counter protests across the South, demonstrating the power of youth-driven direct action.",
             "year": 1960,
             "distractors": [
               "Nashville, Tennessee",
@@ -885,7 +885,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s2",
             "question": "What does the abbreviation SNCC stand for?",
             "answer": "Student Nonviolent Coordinating Committee",
-            "explanation": "Formed in 1960, SNCC allowed younger student activists to organize sit-ins and voter registration drives.",
+            "explanation": "Formed in 1960, SNCC allowed younger student activists to organize sit-ins and voter registration drives. This organization gave young people a primary voice in the civil rights movement, focusing on high-risk grassroots direct action.",
             "year": 1960,
             "distractors": [
               "Student Nonviolent Coalition Committee",
@@ -897,7 +897,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s3",
             "question": "Which tactic was used by activists in 1961 to test the desegregation of interstate bus terminals?",
             "answer": "Freedom Rides",
-            "explanation": "Freedom Riders rode buses into the Deep South, encountering severe violence that forced federal intervention.",
+            "explanation": "Freedom Riders rode buses into the Deep South, encountering severe violence that forced federal intervention. The riders faced extreme violence and firebombings, forcing the federal government to actively ban transit terminal segregation.",
             "year": 1961,
             "distractors": [
               "Sit-ins",
@@ -921,7 +921,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s5",
             "question": "Which civil rights organization organized the first Freedom Rides in 1961?",
             "answer": "CORE (Congress of Racial Equality)",
-            "explanation": "CORE planned the original route under director James Farmer, though SNCC students later resumed the rides.",
+            "explanation": "CORE planned the original route under director James Farmer, though SNCC students later resumed the rides. Their collaboration showed the growing unity and coordination between national civil rights organizations and young student activists.",
             "year": 1961,
             "distractors": [
               "SCLC (Southern Christian Leadership Conference)",
@@ -933,7 +933,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s6",
             "question": "Who was the first Black student to register and enroll at the University of Mississippi in 1962?",
             "answer": "James Meredith",
-            "explanation": "Meredith's enrollment led to violent riots that required 30,000 federal troops to secure his safety.",
+            "explanation": "Meredith's enrollment led to violent riots that required 30,000 federal troops to secure his safety. His enrollment forced the federal government to use military force to integrate Southern universities, demonstrating federal supremacy.",
             "year": 1962,
             "distractors": [
               "James Hood",
@@ -945,7 +945,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s7",
             "question": "Who was the president of the United States during the Freedom Rides and the James Meredith crisis?",
             "answer": "John F. Kennedy",
-            "explanation": "Kennedy was forced to send federal marshals and troops to protect activists and enforce court integration orders.",
+            "explanation": "Kennedy was forced to send federal marshals and troops to protect activists and enforce court integration orders. His administration was forced to send federal marshals and troops, marking a growing federal commitment to enforcing civil rights laws.",
             "year": 1961,
             "distractors": [
               "Dwight D. Eisenhower",
@@ -957,7 +957,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s8",
             "question": "Who was the Attorney General who sent federal marshals to protect James Meredith in Mississippi?",
             "answer": "Robert Kennedy",
-            "explanation": "Robert Kennedy managed the federal response, ordering marshals and military police to secure the campus.",
+            "explanation": "Robert Kennedy managed the federal response, ordering marshals and military police to secure the campus. His direct intervention demonstrated the administration's determination to uphold federal law against state defiance.",
             "year": 1962,
             "distractors": [
               "Nicholas Katzenbach",
@@ -969,7 +969,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s9",
             "question": "In which Alabama city was a Freedom Riders bus firebombed by a white mob in May 1961?",
             "answer": "Anniston",
-            "explanation": "A mob slashed the bus tires, chased it out of town, firebombed the vehicle, and attacked the escaping passengers.",
+            "explanation": "A mob slashed the bus tires, chased it out of town, firebombed the vehicle, and attacked the escaping passengers. The televised images of this firebombing shocked the nation, exposing the extreme violence of segregationist mobs.",
             "year": 1961,
             "distractors": [
               "Birmingham",
@@ -981,7 +981,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_s10",
             "question": "Which Georgia city was the target of SNCC's first major, though unsuccessful, desegregation campaign in 1961-62?",
             "answer": "Albany",
-            "explanation": "The Albany Movement failed because Police Chief Pritchett used non-violent arrests and avoided media-sensational violence.",
+            "explanation": "The Albany Movement failed because Police Chief Pritchett used non-violent arrests and avoided media-sensational violence. This campaign taught civil rights leaders that non-violent protest was only effective when it provoked visible, public opposition.",
             "year": 1961,
             "distractors": [
               "Savannah",
@@ -1007,7 +1007,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_d2",
             "question": "Who was the National Director of CORE who designed and launched the first Freedom Rides?",
             "answer": "James Farmer",
-            "explanation": "Farmer organized the rides to provoke federal enforcement of Supreme Court desegregation rulings.",
+            "explanation": "Farmer organized the rides to provoke federal enforcement of Supreme Court desegregation rulings. His tactical leadership was critical to utilizing federal desegregation rulings to challenge Southern state laws directly.",
             "year": 1961,
             "distractors": [
               "Roy Wilkins",
@@ -1031,7 +1031,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_d4",
             "question": "Who was the segregationist Governor of Mississippi who actively defied federal orders to block James Meredith from enrolling in 1962?",
             "answer": "Ross Barnett",
-            "explanation": "Governor Ross Barnett physically blocked Meredith from entering the university doors, defying federal integration mandates and prompting a deployment of federal marshals.",
+            "explanation": "Governor Ross Barnett physically blocked Meredith from entering the university doors, defying federal integration mandates and prompting a deployment of federal marshals. His actions prompted a direct confrontation between the state of Mississippi and federal authority, forcing Kennedy to deploy troops.",
             "year": 1962,
             "distractors": [
               "George Wallace",
@@ -1043,7 +1043,7 @@ export const QUIZ_DATA = [
             "id": "q_2_1_d5",
             "question": "Which prominent civil rights adviser and SCLC executive secretary helped student activists organize SNCC in April 1960?",
             "answer": "Ella Baker",
-            "explanation": "Baker encouraged students to form their own independent organization rather than join MLK's SCLC.",
+            "explanation": "Baker encouraged students to form their own independent organization rather than join MLK's SCLC. Her guidance helped SNCC remain independent, preserving its focus on democratic, grassroots community organizing.",
             "year": 1960,
             "distractors": [
               "Septima Clark",
@@ -1087,7 +1087,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s1",
             "question": "Which Alabama city was the site of the 1963 civil rights campaign where police used dogs and fire hoses against children?",
             "answer": "Birmingham, Alabama",
-            "explanation": "The campaign was organized by SCLC to provoke national outrage, leading directly to Kennedy drafting the Civil Rights Bill.",
+            "explanation": "The campaign was organized by SCLC to provoke national outrage, leading directly to Kennedy drafting the Civil Rights Bill. This campaign provoked global outrage, forcing President Kennedy to draft the landmark Civil Rights Bill.",
             "year": 1963,
             "distractors": [
               "Montgomery, Alabama",
@@ -1099,7 +1099,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s2",
             "question": "Who was the segregationist Police Commissioner of Birmingham who ordered the brutal response to protesters?",
             "answer": "Eugene 'Bull' Connor",
-            "explanation": "Connor's use of attack dogs and high-pressure fire hoses on television screens shocked the American public.",
+            "explanation": "Connor's use of attack dogs and high-pressure fire hoses on television screens shocked the American public. His brutal response on television screens alienated moderate whites and generated massive public sympathy for the movement.",
             "year": 1963,
             "distractors": [
               "Laurie Pritchett",
@@ -1111,7 +1111,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s3",
             "question": "What was the name of the famous document written by Martin Luther King Jr. while imprisoned in Alabama in 1963?",
             "answer": "Letter from Birmingham Jail",
-            "explanation": "Written on scraps of paper, the letter defended non-violent direct action against moderate white clergy who urged patience.",
+            "explanation": "Written on scraps of paper, the letter defended non-violent direct action against moderate white clergy who urged patience. This letter provided a powerful theological and moral defense of non-violent civil disobedience against critics who urged patience.",
             "year": 1963,
             "distractors": [
               "The Birmingham Manifesto",
@@ -1123,7 +1123,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s4",
             "question": "In what month and year did the historic March on Washington take place?",
             "answer": "August 1963",
-            "explanation": "Over 250,000 people gathered at the Lincoln Memorial to demand 'Jobs and Freedom' and support the Civil Rights Bill.",
+            "explanation": "Over 250,000 people gathered at the Lincoln Memorial to demand 'Jobs and Freedom' and support the Civil Rights Bill. This massive demonstration proved the broad multiracial support for the civil rights movement and legislative reform.",
             "year": 1963,
             "distractors": [
               "June 1963",
@@ -1135,7 +1135,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s5",
             "question": "What was the title of Martin Luther King Jr.'s famous speech delivered at the March on Washington?",
             "answer": "I Have a Dream",
-            "explanation": "King departed from his written text to deliver a powerful vision of racial integration and equality.",
+            "explanation": "King departed from his written text to deliver a powerful vision of racial integration and equality. His speech became a defining moment of the movement, framing civil rights in the language of the American Dream.",
             "year": 1963,
             "distractors": [
               "I've Been to the Mountaintop",
@@ -1159,7 +1159,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s7",
             "question": "Which US president signed the historic Civil Rights Act of 1964 into law?",
             "answer": "Lyndon B. Johnson",
-            "explanation": "Johnson used his political skill and the memory of Kennedy to guide the bill through a lengthy Southern filibuster.",
+            "explanation": "Johnson used his political skill and the memory of Kennedy to guide the bill through a lengthy Southern filibuster. His political skill and utilization of Kennedy's memory guided the bill through a lengthy Southern filibuster.",
             "year": 1964,
             "distractors": [
               "John F. Kennedy",
@@ -1171,7 +1171,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s8",
             "question": "Which Alabama city was the starting point for the 1965 marches where protesters were beaten on 'Bloody Sunday'?",
             "answer": "Selma, Alabama",
-            "explanation": "The march from Selma to Montgomery aimed to demand federal voting rights protection for Black citizens.",
+            "explanation": "The march from Selma to Montgomery aimed to demand federal voting rights protection for Black citizens. The state violence during this campaign shocked the nation and forced the federal government to draft voting rights legislation.",
             "year": 1965,
             "distractors": [
               "Birmingham, Alabama",
@@ -1183,7 +1183,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s9",
             "question": "What landmark voting law was passed in 1965 in response to the Selma campaign?",
             "answer": "Voting Rights Act of 1965",
-            "explanation": "The act outlawed literacy tests and sent federal registrars to Southern states, drastically increasing voter turnout.",
+            "explanation": "The act outlawed literacy tests and sent federal registrars to Southern states, drastically increasing voter turnout. This act outlawed literacy tests and sent federal registrars to Southern states, permanently expanding the Black electorate.",
             "year": 1965,
             "distractors": [
               "Civil Rights Act of 1964",
@@ -1195,7 +1195,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_s10",
             "question": "How many demonstrators participated in the March on Washington in August 1963?",
             "answer": "Over 250,000",
-            "explanation": "It was one of the largest political rallies in US history, bringing immense moral pressure to bear on Congress.",
+            "explanation": "It was one of the largest political rallies in US history, bringing immense moral pressure to bear on Congress. This massive turnout demonstrated the scale of the civil rights coalition, putting intense moral pressure on Congress.",
             "year": 1963,
             "distractors": [
               "Over 100,000",
@@ -1209,7 +1209,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_d1",
             "question": "What was the name of the bridge in Selma where state troopers brutally attacked marching protesters on 7 March 1965?",
             "answer": "Edmund Pettus Bridge",
-            "explanation": "Troopers used tear gas and clubs on the peaceful marchers in an event known as 'Bloody Sunday'.",
+            "explanation": "Troopers used tear gas and clubs on the peaceful marchers in an event known as 'Bloody Sunday'. Televised images of this brutal attack shocked the nation, accelerating federal voting rights legislation.",
             "year": 1965,
             "distractors": [
               "George Washington Bridge",
@@ -1221,7 +1221,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_d2",
             "question": "Why did the SCLC choose Birmingham, Alabama, for a major campaign in 1963?",
             "answer": "Because it was heavily segregated and had a notoriously hot-tempered police chief",
-            "explanation": "MLK and SCLC targeted Birmingham because they knew Police Commissioner 'Bull' Connor would react violently to peaceful protests, creating media coverage that would force federal intervention.",
+            "explanation": "MLK and SCLC targeted Birmingham because they knew Police Commissioner 'Bull' Connor would react violently to peaceful protests, creating media coverage that would force federal intervention. This strategic choice successfully forced a national civil rights crisis through the power of televised media.",
             "year": 1963,
             "distractors": [
               "Because the city had a highly active local NAACP chapter ready to march",
@@ -1257,7 +1257,7 @@ export const QUIZ_DATA = [
             "id": "q_2_2_d5",
             "question": "Which three civil rights activists were abducted and murdered by the KKK in Mississippi during Freedom Summer in 1964?",
             "answer": "James Chaney, Andrew Goodman, and Michael Schwerner",
-            "explanation": "The murders of Chaney, Goodman, and Schwerner in Neshoba County shocked the nation and accelerated the passage of the Civil Rights Act of 1964.",
+            "explanation": "The murders of Chaney, Goodman, and Schwerner in Neshoba County shocked the nation and accelerated the passage of the Civil Rights Act of 1964. Their tragic murders drew national attention to the extreme dangers faced by voting rights volunteers in Mississippi.",
             "year": 1964,
             "distractors": [
               "Medgar Evers, Jimmie Lee Jackson, and Viola Liuzzo",
@@ -1301,7 +1301,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s1",
             "question": "Who was the leading spokesperson for the Nation of Islam (commonly known as the Black Muslims) who advocated self-defense in the early 1960s?",
             "answer": "Malcolm X",
-            "explanation": "Malcolm X offered a militant alternative to MLK, urging Black Americans to defend themselves 'by any means necessary'.",
+            "explanation": "Malcolm X offered a militant alternative to MLK, urging Black Americans to defend themselves 'by any means necessary'. His rhetoric offered a powerful, militant alternative to MLK's integrationist and non-violent approach.",
             "year": 1964,
             "distractors": [
               "Elijah Muhammad",
@@ -1313,7 +1313,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s2",
             "question": "Which radical civil rights slogan was popularized by Stokely Carmichael during a 1966 march in Mississippi?",
             "answer": "Black Power",
-            "explanation": "The slogan marked a shift toward self-reliance, racial pride, and rejection of white integrationist control.",
+            "explanation": "The slogan marked a shift toward self-reliance, racial pride, and rejection of white integrationist control. The slogan marked a major shift in the movement toward self-reliance, racial pride, and rejection of white control.",
             "year": 1966,
             "distractors": [
               "Black Nationalism",
@@ -1325,7 +1325,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s3",
             "question": "Who were the two co-founders of the Black Panther Party for Self-Defense, created in Oakland in 1966?",
             "answer": "Huey Newton and Bobby Seale",
-            "explanation": "They founded the party in October 1966, adopting a 10-Point Program and carrying loaded weapons to monitor police.",
+            "explanation": "They founded the party in October 1966, adopting a 10-Point Program and carrying loaded weapons to monitor police. Their armed patrols and community survival programs highlighted a new focus on Northern urban police brutality and poverty.",
             "year": 1966,
             "distractors": [
               "Stokely Carmichael and H. Rap Brown",
@@ -1337,7 +1337,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s4",
             "question": "Which leader of the Nation of Islam (the Black Muslims) did Malcolm X clash with before breaking away in 1964?",
             "answer": "Elijah Muhammad",
-            "explanation": "Malcolm left the Nation of Islam in 1964 due to Elijah Muhammad's personal scandals and political passivity.",
+            "explanation": "Malcolm left the Nation of Islam in 1964 due to Elijah Muhammad's personal scandals and political passivity. His departure allowed Malcolm to develop a more politically active and global approach to human rights.",
             "year": 1964,
             "distractors": [
               "Louis Farrakhan",
@@ -1349,7 +1349,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s5",
             "question": "In what year was Malcolm X assassinated while giving a speech in New York City?",
             "answer": "1965",
-            "explanation": "Malcolm X was shot on 21 February 1965 by members of the Nation of Islam at the Audubon Ballroom.",
+            "explanation": "Malcolm X was shot on 21 February 1965 by members of the Nation of Islam at the Audubon Ballroom. His death shocked the nation, but his ideas continued to inspire the rising Black Power movement.",
             "year": 1965,
             "distractors": [
               "1963",
@@ -1361,7 +1361,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s6",
             "question": "In what year was the Black Panther Party for Self-Defense founded?",
             "answer": "1966",
-            "explanation": "Created in October 1966, the party quickly expanded to cities across the nation, becoming icons of revolutionary nationalism.",
+            "explanation": "Created in October 1966, the party quickly expanded to cities across the nation, becoming icons of revolutionary nationalism. This group became the most prominent icon of revolutionary Black Power and community self-defense in Northern cities.",
             "year": 1966,
             "distractors": [
               "1964",
@@ -1373,7 +1373,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s7",
             "question": "Which two US athletes raised black-gloved fists during the medal ceremony at the 1968 Olympics?",
             "answer": "Tommie Smith and John Carlos",
-            "explanation": "Their silent protest on the podium in Mexico City drew international attention to racial inequality in the US.",
+            "explanation": "Their silent protest on the podium in Mexico City drew international attention to racial inequality in the US. Their silent protest on the podium drew international media attention to systemic racism in the United States.",
             "year": 1968,
             "distractors": [
               "Jesse Owens and Ralph Metcalfe",
@@ -1397,7 +1397,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s9",
             "question": "Which student organization officially rejected non-violence and adopted Black Power under Stokely Carmichael in 1966?",
             "answer": "SNCC",
-            "explanation": "Under Carmichael, SNCC expelled its white members and focused on militant community organizing.",
+            "explanation": "Under Carmichael, SNCC expelled its white members and focused on militant community organizing. This transition fractured the traditional civil rights coalition and marked the rise of militant activism.",
             "year": 1966,
             "distractors": [
               "CORE",
@@ -1409,7 +1409,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_s10",
             "question": "What secular activist organization did Malcolm X found after leaving the Nation of Islam in 1964?",
             "answer": "OAAU (Organization of Afro-American Unity)",
-            "explanation": "The OAAU aimed to unite African Americans and link their struggle to African human rights movements.",
+            "explanation": "The OAAU aimed to unite African Americans and link their struggle to African human rights movements. This organization reflected Malcolm's post-Nation of Islam shift toward international pan-African solidarity.",
             "year": 1964,
             "distractors": [
               "Muslim Mosque, Inc. (MMI)",
@@ -1423,7 +1423,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_d1",
             "question": "Why did the Black Power movement gain popularity among young urban Black Americans in the mid-1960s?",
             "answer": "Due to frustration with the slow pace of legislative change and ongoing police brutality",
-            "explanation": "Many young urban Black Americans in the North and West felt that civil rights laws did not improve their daily lives, stop police violence, or solve poverty, leading them to embrace self-defense and Black pride.",
+            "explanation": "Many young urban Black Americans in the North and West felt that civil rights laws did not improve their daily lives, stop police violence, or solve poverty, leading them to embrace self-defense and Black pride. This growing alienation fueled a wave of urban riots and the rise of Black Power in the late 1960s.",
             "year": 1966,
             "distractors": [
               "Because of the active recruitment efforts of the Nation of Islam in colleges",
@@ -1435,7 +1435,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_d2",
             "question": "What famous book detailing Malcolm X's life was published shortly after his death in 1965?",
             "answer": "The Autobiography of Malcolm X",
-            "explanation": "Co-authored with Alex Haley, the book sold millions and deeply influenced the nascent Black Power movement.",
+            "explanation": "Co-authored with Alex Haley, the book sold millions and deeply influenced the nascent Black Power movement. This book became a seminal text of Black nationalism, inspiring a generation of young civil rights activists.",
             "year": 1965,
             "distractors": [
               "The Fire Next Time",
@@ -1447,7 +1447,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_d3",
             "question": "What was the name of the popular community service program created by the Black Panthers to feed school children?",
             "answer": "Free Breakfast for Children Program",
-            "explanation": "The breakfast program fed thousands of children daily, earning the party deep respect in local communities.",
+            "explanation": "The breakfast program fed thousands of children daily, earning the party deep respect in local communities. This survival program built massive grassroots popularity and proved that Black Power was about community care.",
             "year": 1969,
             "distractors": [
               "Community Medical Clinics Program",
@@ -1459,7 +1459,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_d4",
             "question": "What term was popularized by Stokely Carmichael to describe systemic discrimination embedded in social institutions?",
             "answer": "Institutional racism",
-            "explanation": "Carmichael argued that racism was not just individual prejudice but built into housing, education, and employment.",
+            "explanation": "Carmichael argued that racism was not just individual prejudice but built into housing, education, and employment. His definition of this term helped shift the civil rights debate to address hidden, systemic bias in Northern institutions.",
             "year": 1967,
             "distractors": [
               "Systemic prejudice",
@@ -1471,7 +1471,7 @@ export const QUIZ_DATA = [
             "id": "q_2_3_d5",
             "question": "Which voting rights campaign did Malcolm X visit and support in early 1965 shortly before his death?",
             "answer": "Selma campaign",
-            "explanation": "Malcolm spoke in Selma in February 1965 to support the campaign, offering a militant warning to white authorities.",
+            "explanation": "Malcolm spoke in Selma in February 1965 to support the campaign, offering a militant warning to white authorities. His visit demonstrated his willingness to support mainstream campaigns while warning of more militant alternatives.",
             "year": 1965,
             "distractors": [
               "Freedom Summer campaign",
@@ -1527,7 +1527,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_s2",
             "question": "What was the name of the federal commission appointed by Johnson that blamed white racism for the 1960s riots?",
             "answer": "Kerner Commission",
-            "explanation": "The 1968 report warned that America was moving toward two separate and unequal societies: one Black, one white.",
+            "explanation": "The 1968 report warned that America was moving toward two separate and unequal societies: one Black, one white. The report warned that unless massive federal aid was directed to urban ghettos, the racial division would become permanent.",
             "year": 1968,
             "distractors": [
               "Warren Commission",
@@ -1551,7 +1551,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_s4",
             "question": "In which Southern city was Martin Luther King Jr. assassinated in 1968?",
             "answer": "Memphis, Tennessee",
-            "explanation": "King had travelled to Memphis to support a strike of municipal Black sanitation workers.",
+            "explanation": "King had travelled to Memphis to support a strike of municipal Black sanitation workers. His assassination here triggered nationwide urban riots and marked the end of the non-violent civil rights era.",
             "year": 1968,
             "distractors": [
               "Atlanta, Georgia",
@@ -1563,7 +1563,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_s5",
             "question": "What was the name of the 1966 campaign where MLK moved into a slum to highlight poor housing in the North?",
             "answer": "Chicago Freedom Movement",
-            "explanation": "It was MLK's first major campaign in a Northern city, encountering violent white opposition during marches.",
+            "explanation": "It was MLK's first major campaign in a Northern city, encountering violent white opposition during marches. This campaign exposed the depth of Northern racism and showed that non-violent tactics faced different obstacles outside the South.",
             "year": 1966,
             "distractors": [
               "Poor People's Campaign",
@@ -1575,7 +1575,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_s6",
             "question": "Who was convicted of the assassination of Martin Luther King Jr.?",
             "answer": "James Earl Ray",
-            "explanation": "Ray pleaded guilty in 1969 to avoid the death penalty, though he later spent years retracting his confession.",
+            "explanation": "Ray pleaded guilty in 1969 to avoid the death penalty, though he later spent years retracting his confession. His capture and conviction closed a major chapter of the investigation, though conspiracy theories persisted.",
             "year": 1968,
             "distractors": [
               "Lee Harvey Oswald",
@@ -1587,7 +1587,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_s7",
             "question": "Which federal law passed in April 1968 banned racial discrimination in the sale or rental of housing?",
             "answer": "Civil Rights Act of 1968 (Fair Housing Act)",
-            "explanation": "The act was passed quickly during the national mourning period following MLK's assassination.",
+            "explanation": "The act was passed quickly during the national mourning period following MLK's assassination. This act outlawed housing discrimination, representing the final major legislative victory of the civil rights era.",
             "year": 1968,
             "distractors": [
               "Voting Rights Act of 1965",
@@ -1599,7 +1599,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_s8",
             "question": "What SCLC campaign launched in 1968 aimed to bring thousands of poor Americans to camp out in Washington?",
             "answer": "Poor People's Campaign",
-            "explanation": "Planned by MLK before his death, the campaign went ahead under Ralph Abernathy, setting up 'Resurrection City'.",
+            "explanation": "Planned by MLK before his death, the campaign went ahead under Ralph Abernathy, setting up 'Resurrection City'. Its eventual failure to achieve policy reforms highlighted the fragmentation of the civil rights coalition after King's death.",
             "year": 1968,
             "distractors": [
               "March on Washington for Jobs and Freedom",
@@ -1623,7 +1623,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_s10",
             "question": "In how many US cities did major race riots break out in the week following Martin Luther King Jr.'s assassination?",
             "answer": "Over 100 cities",
-            "explanation": "The riots led to 46 deaths, 20,000 arrests, and required the deployment of 50,000 national guard and federal troops.",
+            "explanation": "The riots led to 46 deaths, 20,000 arrests, and required the deployment of 50,000 national guard and federal troops. This explosive reaction highlighted the deep anger and despair of Black communities following King's assassination.",
             "year": 1968,
             "distractors": [
               "Over 20 cities",
@@ -1635,7 +1635,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_s11",
             "question": "Which economic campaign was launched by the SCLC in Chicago in 1966 to boycott businesses that refused to hire Black workers?",
             "answer": "Operation Breadbasket",
-            "explanation": "Operation Breadbasket, run by activists like Jesse Jackson, used consumer boycotts to pressure Northern businesses to employ Black workers.",
+            "explanation": "Operation Breadbasket, run by activists like Jesse Jackson, used consumer boycotts to pressure Northern businesses to employ Black workers. This program successfully secured jobs and economic opportunities for Black workers in Northern retail chains.",
             "year": 1966,
             "distractors": [
               "Operation Chicago Slums",
@@ -1673,7 +1673,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_d2",
             "question": "What famous conclusion did the Kerner Commission draw about the future division of American society?",
             "answer": "Moving toward two societies, one Black, one white - separate and unequal",
-            "explanation": "The report warned that unless massive federal aid was directed to urban ghettos, the division would become permanent.",
+            "explanation": "The report warned that unless massive federal aid was directed to urban ghettos, the division would become permanent. This warning challenged the US government to address systemic poverty and de facto segregation in Northern cities.",
             "year": 1968,
             "distractors": [
               "Leading toward a classless society, unified in economic progress - equal and free",
@@ -1685,7 +1685,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_d3",
             "question": "Which Chicago suburb saw MLK's housing march met by thousands of white residents throwing bricks and bottles?",
             "answer": "Cicero",
-            "explanation": "King remarked that he had never seen mobs as hostile or hateful as those in Chicago, even in Mississippi or Alabama.",
+            "explanation": "King remarked that he had never seen mobs as hostile or hateful as those in Chicago, even in Mississippi or Alabama. This comment highlighted the extreme and violent white resistance to housing integration in Chicago.",
             "year": 1966,
             "distractors": [
               "Evanston",
@@ -1697,7 +1697,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_d4",
             "question": "What municipal labor strike was Martin Luther King Jr. supporting when he was shot in Memphis?",
             "answer": "Sanitation workers' strike",
-            "explanation": "King marched with the workers who were striking for safety, union recognition, and equal wages.",
+            "explanation": "King marched with the workers who were striking for safety, union recognition, and equal wages. His support for this strike demonstrated his commitment to linking civil rights to labor and economic justice.",
             "year": 1968,
             "distractors": [
               "Transit workers' strike",
@@ -1709,7 +1709,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_d5",
             "question": "In what year did the destructive Watts Riots occur in Los Angeles?",
             "answer": "1965",
-            "explanation": "The riots occurred in August 1965, just days after the Voting Rights Act was signed, showing the limits of legislative civil rights.",
+            "explanation": "The riots occurred in August 1965, just days after the Voting Rights Act was signed, showing the limits of legislative civil rights. This violence proved that legislative victories in the South had failed to resolve the economic grievances of Northern ghettos.",
             "year": 1965,
             "distractors": [
               "1964",
@@ -1721,7 +1721,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_d6",
             "question": "What was a major reason why MLK's 1966 Chicago Freedom Movement failed to achieve its housing integration goals?",
             "answer": "Northern white politicians and residents put up fierce resistance, and promises were ignored",
-            "explanation": "King faced violent white mobs and political obstruction from Chicago Mayor Richard Daley, who reneged on agreements once King left.",
+            "explanation": "King faced violent white mobs and political obstruction from Chicago Mayor Richard Daley, who reneged on agreements once King left. This failure proved that Daley's machine politics and Northern de facto segregation were highly resistant to Southern-style protests.",
             "year": 1966,
             "distractors": [
               "The federal government cut off all funding for the campaign",
@@ -1733,7 +1733,7 @@ export const QUIZ_DATA = [
             "id": "q_2_4_d7",
             "question": "What policies were introduced to give preference to minority groups in employment and education to correct past injustices?",
             "answer": "Affirmative action",
-            "explanation": "Affirmative action policies were implemented in the late 1960s and 1970s to improve education and job opportunities for historically excluded minorities.",
+            "explanation": "Affirmative action policies were implemented in the late 1960s and 1970s to improve education and job opportunities for historically excluded minorities. These policies aimed to bridge the economic gap by actively integrating workplaces and higher education.",
             "year": 1969,
             "distractors": [
               "Equalisation initiatives",
@@ -1783,7 +1783,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s1",
             "question": "Who was the leader of the communist forces and President of North Vietnam?",
             "answer": "Ho Chi Minh",
-            "explanation": "Ho Chi Minh led the Vietminh against the French and later directed the struggle to unify Vietnam under communism.",
+            "explanation": "Ho Chi Minh led the Vietminh against the French and later directed the struggle to unify Vietnam under communism. His leadership successfully unified the nationalist and communist forces to defeat French and American intervention.",
             "year": 1954,
             "distractors": [
               "Ngo Dinh Diem",
@@ -1807,7 +1807,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s3",
             "question": "Which parallel divided Vietnam into North and South according to the 1954 Geneva Accords?",
             "answer": "17th Parallel",
-            "explanation": "The division was intended to be temporary until national elections could be held in 1956.",
+            "explanation": "The division was intended to be temporary until national elections could be held in 1956. This boundary became a major Cold War fault line, separating the communist North from the capitalist South.",
             "year": 1954,
             "distractors": [
               "38th Parallel",
@@ -1819,7 +1819,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s4",
             "question": "What theory did President Eisenhower use in 1954 to justify U.S. intervention in Southeast Asia?",
             "answer": "The Domino Theory",
-            "explanation": "The theory argued that if one nation fell to communism, neighboring nations would collapse like dominoes.",
+            "explanation": "The theory argued that if one nation fell to communism, neighboring nations would collapse like dominoes. This containment doctrine drove successive US presidents to steadily escalate military involvement in Vietnam.",
             "year": 1954,
             "distractors": [
               "The Containment Doctrine",
@@ -1831,7 +1831,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s5",
             "question": "Who was the first US president to send military advisors to South Vietnam?",
             "answer": "Dwight D. Eisenhower",
-            "explanation": "Eisenhower backed the South Vietnamese regime with money and hundreds of military advisors starting in 1954.",
+            "explanation": "Eisenhower backed the South Vietnamese regime with money and hundreds of military advisors starting in 1954. His support committed the United States to maintaining a separate, anti-communist South Vietnamese state.",
             "year": 1954,
             "distractors": [
               "Harry S. Truman",
@@ -1843,7 +1843,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s6",
             "question": "Which US president increased the number of military advisors in Vietnam to over 16,000 by late 1963?",
             "answer": "John F. Kennedy",
-            "explanation": "Kennedy resisted sending combat troops but heavily expanded advisors and Green Beret special forces.",
+            "explanation": "Kennedy resisted sending combat troops but heavily expanded advisors and Green Beret special forces. His escalation set the stage for direct combat involvement, increasing the US military presence in the region.",
             "year": 1961,
             "distractors": [
               "Dwight D. Eisenhower",
@@ -1855,7 +1855,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s7",
             "question": "What was the capital city of South Vietnam?",
             "answer": "Saigon",
-            "explanation": "Saigon was the seat of the anti-communist South Vietnamese government backed by the United States.",
+            "explanation": "Saigon was the seat of the anti-communist South Vietnamese government backed by the United States. The defense of this city became the central focus of the US campaign to prevent a communist takeover of the South.",
             "year": 1954,
             "distractors": [
               "Hanoi",
@@ -1867,7 +1867,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s8",
             "question": "What was the capital city of North Vietnam?",
             "answer": "Hanoi",
-            "explanation": "Hanoi was the capital of the communist Democratic Republic of Vietnam led by Ho Chi Minh.",
+            "explanation": "Hanoi was the capital of the communist Democratic Republic of Vietnam led by Ho Chi Minh. This city directed the infiltration of troops and supplies along the Ho Chi Minh Trail to support the southern insurgency.",
             "year": 1954,
             "distractors": [
               "Saigon",
@@ -1879,7 +1879,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s9",
             "question": "Which South Vietnamese president was overthrown and assassinated in a coup in November 1963?",
             "answer": "Ngo Dinh Diem",
-            "explanation": "Diem's Catholic-centered discrimination and corruption led the US to tacitly support his overthrow by his generals.",
+            "explanation": "Diem's Catholic-centered discrimination and corruption led the US to tacitly support his overthrow by his generals. His assassination left South Vietnam in severe political instability, forcing the US to intervene directly.",
             "year": 1963,
             "distractors": [
               "Nguyen Van Thieu",
@@ -1903,7 +1903,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s11",
             "question": "By 1954, approximately what percentage of the French war effort in Indochina was funded by the United States?",
             "answer": "80%",
-            "explanation": "Fearing the spread of communism in Asia, the US heavily backed the French militarily, paying for 80% of their war costs.",
+            "explanation": "Fearing the spread of communism in Asia, the US heavily backed the French militarily, paying for 80% of their war costs. This massive financial aid showed how early US involvement was driven by Cold War containment of communism.",
             "year": 1954,
             "distractors": [
               "20%",
@@ -1915,7 +1915,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_s12",
             "question": "What was the name of the elite US Special Forces deployed by President Kennedy to train South Vietnamese troops in counter-insurgency?",
             "answer": "Green Berets",
-            "explanation": "President Kennedy expanded US involvement by sending the elite Green Berets to train the South Vietnamese army (ARVN).",
+            "explanation": "President Kennedy expanded US involvement by sending the elite Green Berets to train the South Vietnamese army (ARVN). Their deployment marked a significant step in the militarization of US support for the Saigon regime.",
             "year": 1961,
             "distractors": [
               "Navy SEALs",
@@ -1929,7 +1929,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_d1",
             "question": "What was the name of the communist-led nationalist coalition that fought the French for independence?",
             "answer": "Vietminh",
-            "explanation": "Founded by Ho Chi Minh in 1941, the Vietminh fought Japanese occupiers and then French colonial forces.",
+            "explanation": "Founded by Ho Chi Minh in 1941, the Vietminh fought Japanese occupiers and then French colonial forces. Their victory at Dien Bien Phu permanently ended French colonial rule in Indochina.",
             "year": 1941,
             "distractors": [
               "Vietcong",
@@ -1941,7 +1941,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_d2",
             "question": "Which major religious group faced severe discrimination under Ngo Dinh Diem's Catholic-dominated government?",
             "answer": "Buddhists",
-            "explanation": "Diem's ban on Buddhist flags led to mass protests, self-immolations by monks, and a major political crisis in 1963.",
+            "explanation": "Diem's ban on Buddhist flags led to mass protests, self-immolations by monks, and a major political crisis in 1963. This persecution destroyed Diem's popular legitimacy and prompted the US to support a military coup against him.",
             "year": 1963,
             "distractors": [
               "Hindus",
@@ -1953,7 +1953,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_d3",
             "question": "Why did the Strategic Hamlet Program (1962) fail and actually increase support for the Vietcong?",
             "answer": "It forcibly relocated peasants from their ancestral lands and villages",
-            "explanation": "The program alienated South Vietnam's rural population by uprooting them from their land and farming fields to move them into fortified hamlets, building resentment and VC recruits.",
+            "explanation": "The program alienated South Vietnam's rural population by uprooting them from their land and farming fields to move them into fortified hamlets, building resentment and VC recruits. This forced relocation alienated the peasantry, actively driving many to join the Vietcong insurgency.",
             "year": 1962,
             "distractors": [
               "It failed to provide adequate medical care and schooling for children in the hamlets",
@@ -1977,7 +1977,7 @@ export const QUIZ_DATA = [
             "id": "q_3_1_d5",
             "question": "What was the official name of the political and military organization commonly known as the Vietcong?",
             "answer": "National Liberation Front (NLF)",
-            "explanation": "The NLF was established in December 1960 to unite all opponents of Diem's US-backed regime in the South.",
+            "explanation": "The NLF was established in December 1960 to unite all opponents of Diem's US-backed regime in the South. This broad coalition organized the political and military opposition that fought to overthrow the Saigon regime.",
             "year": 1960,
             "distractors": [
               "People's Army of Vietnam (PAVN)",
@@ -2033,7 +2033,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s1",
             "question": "Which US destroyer was reportedly attacked by North Vietnamese torpedo boats in August 1964?",
             "answer": "USS Maddox",
-            "explanation": "The clash in the Gulf of Tonkin provided the justification Johnson needed to seek congressional war powers.",
+            "explanation": "The clash in the Gulf of Tonkin provided the justification Johnson needed to seek congressional war powers. The incident served as the immediate catalyst for Congress to grant the president broad war-making powers.",
             "year": 1964,
             "distractors": [
               "USS Turner Joy",
@@ -2045,7 +2045,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s2",
             "question": "Which congressional resolution in August 1964 gave President Johnson war powers to defend South Vietnam?",
             "answer": "Gulf of Tonkin Resolution",
-            "explanation": "The resolution allowed Johnson to take 'all necessary measures' to repel attacks, acting as a blank check.",
+            "explanation": "The resolution allowed Johnson to take 'all necessary measures' to repel attacks, acting as a blank check. This resolution gave President Johnson authority to conduct combat operations without a formal declaration of war.",
             "year": 1964,
             "distractors": [
               "Gulf of Tonkin Declaration",
@@ -2057,7 +2057,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s3",
             "question": "In what year did Congress pass the Gulf of Tonkin Resolution?",
             "answer": "1964",
-            "explanation": "It was passed nearly unanimously in August 1964, following reported clashes off the coast of North Vietnam.",
+            "explanation": "It was passed nearly unanimously in August 1964, following reported clashes off the coast of North Vietnam. This year marked the critical turning point where the US shifted from an advisory role to direct military action.",
             "year": 1964,
             "distractors": [
               "1963",
@@ -2069,7 +2069,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s4",
             "question": "What was the code name of the sustained US bombing campaign of North Vietnam started in early 1965?",
             "answer": "Operation Rolling Thunder",
-            "explanation": "The campaign aimed to destroy North Vietnamese infrastructure and disrupt supply lines to the South.",
+            "explanation": "The campaign aimed to destroy North Vietnamese infrastructure and disrupt supply lines to the South. This bombing campaign failed to break North Vietnam's resolve or stop the flow of supplies to the South.",
             "year": 1965,
             "distractors": [
               "Operation Linebacker",
@@ -2081,7 +2081,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s5",
             "question": "In what year did Operation Rolling Thunder begin?",
             "answer": "1965",
-            "explanation": "It began in March 1965 and ran almost continuously until November 1968, dropping over 600,000 tons of bombs.",
+            "explanation": "It began in March 1965 and ran almost continuously until November 1968, dropping over 600,000 tons of bombs. This escalation marked the beginning of a massive, multi-year air campaign against North Vietnam.",
             "year": 1965,
             "distractors": [
               "1964",
@@ -2093,7 +2093,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s6",
             "question": "Who was the commander of US forces in Vietnam during the period of escalation (1964-68)?",
             "answer": "General William Westmoreland",
-            "explanation": "Westmoreland advocated a strategy of attrition, aiming to kill communist forces faster than they could be replaced.",
+            "explanation": "Westmoreland advocated a strategy of attrition, aiming to kill communist forces faster than they could be replaced. His attrition strategy failed to account for North Vietnam's high population and willingness to absorb massive casualties.",
             "year": 1964,
             "distractors": [
               "General Creighton Abrams",
@@ -2105,7 +2105,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s7",
             "question": "In what year were the first US combat troops officially deployed to South Vietnam?",
             "answer": "1965",
-            "explanation": "The first ground combat troops (3,500 Marines) landed at Da Nang in March 1965 to protect the US air base.",
+            "explanation": "The first ground combat troops (3,500 Marines) landed at Da Nang in March 1965 to protect the US air base. This landing marked the formal transition of the United States into a direct ground combat role in Vietnam.",
             "year": 1965,
             "distractors": [
               "1963",
@@ -2129,7 +2129,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s9",
             "question": "What was the peak troop level of US servicemen in Vietnam under President Johnson's administration?",
             "answer": "Over 500,000",
-            "explanation": "By late 1968, US forces in Vietnam exceeded 536,000, representing a massive escalation from advisors.",
+            "explanation": "By late 1968, US forces in Vietnam exceeded 536,000, representing a massive escalation from advisors. This massive troop commitment illustrated how the US had taken over the primary burden of the ground war.",
             "year": 1968,
             "distractors": [
               "Over 100,000",
@@ -2153,7 +2153,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_s11",
             "question": "Approximately what percentage of the South Vietnamese countryside was under Vietcong control by early 1965?",
             "answer": "35%",
-            "explanation": "The Vietcong made rapid gains in the rural areas, controlling 35% of the countryside and prompting US fears of an imminent collapse of South Vietnam.",
+            "explanation": "The Vietcong made rapid gains in the rural areas, controlling 35% of the countryside and prompting US fears of an imminent collapse of South Vietnam. This widespread VC influence proved that the South Vietnamese government was losing control of its rural population.",
             "year": 1965,
             "distractors": [
               "10%",
@@ -2179,7 +2179,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_d2",
             "question": "Which South Vietnamese air base was the landing site for the first official US ground combat troops in March 1965?",
             "answer": "Da Nang",
-            "explanation": "The landing of the 9th Marine Expeditionary Brigade marked the formal commitment of US ground combat forces.",
+            "explanation": "The landing of the 9th Marine Expeditionary Brigade marked the formal commitment of US ground combat forces. This arrival began the massive build-up of US combat forces on the Asian mainland.",
             "year": 1965,
             "distractors": [
               "Cam Ranh Bay",
@@ -2203,7 +2203,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_d4",
             "question": "How many members of Congress voted against the Gulf of Tonkin Resolution in August 1964?",
             "answer": "Two",
-            "explanation": "The resolution passed 416-0 in the House and 88-2 in the Senate, with only Senators Morse and Gruening voting against.",
+            "explanation": "The resolution passed 416-0 in the House and 88-2 in the Senate, with only Senators Morse and Gruening voting against. Their opposition represented a rare early warning against granting the executive branch unchecked military power.",
             "year": 1964,
             "distractors": [
               "Zero",
@@ -2215,7 +2215,7 @@ export const QUIZ_DATA = [
             "id": "q_3_2_d5",
             "question": "Who was the military commander of the North Vietnamese Army (NVA) who planned the strategy against the French and Americans?",
             "answer": "Vo Nguyen Giap",
-            "explanation": "Giap was the Minister of Defense who planned the victories at Dien Bien Phu and directed the Tet Offensive.",
+            "explanation": "Giap was the Minister of Defense who planned the victories at Dien Bien Phu and directed the Tet Offensive. His military strategies successfully countered US technological superiority and wore down American political will.",
             "year": 1965,
             "distractors": [
               "Le Duan",
@@ -2271,7 +2271,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_s1",
             "question": "What Vietcong military tactic involved hit-and-run ambushes, traps, and avoiding conventional pitched battles?",
             "answer": "Guerrilla warfare",
-            "explanation": "Guerrilla warfare aimed to wear down US troop morale and resources without offering a fixed target for airpower.",
+            "explanation": "Guerrilla warfare aimed to wear down US troop morale and resources without offering a fixed target for airpower. These tactics neutralized US technological superiority and severely wore down American soldier morale.",
             "year": 1965,
             "distractors": [
               "Conventional warfare",
@@ -2319,7 +2319,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_s5",
             "question": "What was the name of the complex supply route running from North to South Vietnam through Laos and Cambodia?",
             "answer": "Ho Chi Minh Trail",
-            "explanation": "The trail kept communist forces in the South supplied with weapons and reinforcements despite constant US bombing.",
+            "explanation": "The trail kept communist forces in the South supplied with weapons and reinforcements despite constant US bombing. This supply line funneled troops and materials, ensuring the VC could replace their losses indefinitely.",
             "year": 1965,
             "distractors": [
               "Vietcong Supply Highway",
@@ -2331,7 +2331,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_s6",
             "question": "What underground structures did the Vietcong construct to hide, store supplies, and launch surprise attacks?",
             "answer": "Tunnel systems",
-            "explanation": "Tunnels (like those at Cu Chi) contained barracks, hospitals, and command centers, protecting fighters from bombing.",
+            "explanation": "Tunnels (like those at Cu Chi) contained barracks, hospitals, and command centers, protecting fighters from bombing. These tunnels allowed fighters to survive heavy US artillery and air strikes, launch surprise attacks, and retreat safely.",
             "year": 1965,
             "distractors": [
               "Fortified bunkers",
@@ -2343,7 +2343,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_s7",
             "question": "What simple Vietcong traps used sharpened bamboo stakes hidden in pits and smeared with excrement?",
             "answer": "Punji traps",
-            "explanation": "Punji traps were designed to wound rather than kill, slowing down patrols and causing severe infections.",
+            "explanation": "Punji traps were designed to wound rather than kill, slowing down patrols and causing severe infections. These booby traps created constant anxiety among US soldiers and slowed down search-and-destroy patrols.",
             "year": 1965,
             "distractors": [
               "Tripwire bombs",
@@ -2367,7 +2367,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_s9",
             "question": "What helicopter model was widely used by the US for troop transport, medical evacuation, and gunship support?",
             "answer": "UH-1 Huey",
-            "explanation": "The Huey became the symbol of the Vietnam War, defining the airmobile tactics of the conflict.",
+            "explanation": "The Huey became the symbol of the Vietnam War, defining the airmobile tactics of the conflict. This helicopter allowed US forces to deploy quickly to remote areas, overcoming the dense jungle terrain.",
             "year": 1965,
             "distractors": [
               "CH-47 Chinook",
@@ -2379,7 +2379,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_s10",
             "question": "Which major North Vietnamese and Vietcong offensive in January 1968 marked the turning point of the war?",
             "answer": "Tet Offensive",
-            "explanation": "Although a military failure for the communists, Tet shattered the US public's belief that victory was near.",
+            "explanation": "Although a military failure for the communists, Tet shattered the US public's belief that victory was near. This offensive shattered the US public's trust in claims that the war was near a successful end.",
             "year": 1968,
             "distractors": [
               "Easter Offensive",
@@ -2391,7 +2391,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_s11",
             "question": "What Vietcong tactic involved fighting in extremely close quarters to prevent U.S. troops from calling in air and artillery support?",
             "answer": "Hanging onto the belts",
-            "explanation": "By staying physically close to US units ('hanging onto their belts'), the Vietcong ensured that any US air strikes or artillery would also kill American soldiers.",
+            "explanation": "By staying physically close to US units ('hanging onto their belts'), the Vietcong ensured that any US air strikes or artillery would also kill American soldiers. This tactic made US artillery and air strikes highly risky, as they would also kill American troops.",
             "year": 1965,
             "distractors": [
               "Clinch and clear",
@@ -2403,7 +2403,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_s12",
             "question": "Approximately what percentage of all US soldier deaths in the Vietnam War was caused by Vietcong booby traps?",
             "answer": "11%",
-            "explanation": "Booby traps like punji pits, tripwires, and mines caused approximately 11% of all US military fatalities, creating constant paranoia.",
+            "explanation": "Booby traps like punji pits, tripwires, and mines caused approximately 11% of all US military fatalities, creating constant paranoia. This high casualty rate created deep paranoia and caution among US soldiers on patrol.",
             "year": 1965,
             "distractors": [
               "5%",
@@ -2417,7 +2417,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_d1",
             "question": "Why was the 1968 Tet Offensive considered a major political turning point for the US homefront?",
             "answer": "It shattered the public belief that the US was winning the war",
-            "explanation": "Despite military claims of progress, the size and coordination of the communist offensive, broadcast on TV, created a massive credibility gap for the US government.",
+            "explanation": "Despite military claims of progress, the size and coordination of the communist offensive, broadcast on TV, created a massive credibility gap for the US government. This psychological shock forced President Johnson to halt escalation and begin the path to US withdrawal.",
             "year": 1968,
             "distractors": [
               "It forced President Johnson to resign from office immediately",
@@ -2453,7 +2453,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_d4",
             "question": "Which high-profile building in Saigon was attacked by a Vietcong commando squad during the Tet Offensive?",
             "answer": "US Embassy",
-            "explanation": "Although the attackers were killed, images of combat inside the embassy compound shocked the US public.",
+            "explanation": "Although the attackers were killed, images of combat inside the embassy compound shocked the US public. This dramatic attack proved that communist forces could penetrate the most secure US installations in South Vietnam.",
             "year": 1968,
             "distractors": [
               "Presidential Palace",
@@ -2465,7 +2465,7 @@ export const QUIZ_DATA = [
             "id": "q_3_3_d5",
             "question": "What slang term was used by US soldiers for search-and-destroy missions that ended in burning down peasant huts?",
             "answer": "Zippo missions",
-            "explanation": "Named after the popular Zippo lighter, soldiers used them to burn thatched roofs of suspected Vietcong villages.",
+            "explanation": "Named after the popular Zippo lighter, soldiers used them to burn thatched roofs of suspected Vietcong villages. These operations alienated the rural peasantry, pushing them to support the Vietcong.",
             "year": 1965,
             "distractors": [
               "Search-and-destroy sweeps",
@@ -2521,7 +2521,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s1",
             "question": "What policy under President Nixon aimed to withdraw US troops and hand over combat duties to the South Vietnamese army?",
             "answer": "Vietnamisation",
-            "explanation": "Vietnamisation aimed to reduce US ground casualties and shift the military burden to the ARVN forces.",
+            "explanation": "Vietnamisation aimed to reduce US ground casualties and shift the military burden to the ARVN forces. This policy aimed to quiet anti-war protests at home, but left South Vietnam highly vulnerable to North Vietnamese forces.",
             "year": 1969,
             "distractors": [
               "De-escalation policy",
@@ -2533,7 +2533,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s2",
             "question": "What was the name of the foreign policy doctrine declaring that US allies must provide their own ground troops?",
             "answer": "Nixon Doctrine",
-            "explanation": "The doctrine stated that while the US would offer economic and air support, it would not fight ground wars for allies.",
+            "explanation": "The doctrine stated that while the US would offer economic and air support, it would not fight ground wars for allies. This doctrine marked a major shift in US foreign policy, limiting direct ground troop commitments to allies.",
             "year": 1969,
             "distractors": [
               "Truman Doctrine",
@@ -2545,7 +2545,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s3",
             "question": "What slogan did Richard Nixon use to describe his goal of achieving a negotiated exit from the war?",
             "answer": "Peace with Honor",
-            "explanation": "Nixon sought an exit that did not look like a defeat, preserving US credibility and South Vietnam's independence.",
+            "explanation": "Nixon sought an exit that did not look like a defeat, preserving US credibility and South Vietnam's independence. This phrase represented Nixon's attempt to negotiate an exit that preserved South Vietnam's independence and US prestige.",
             "year": 1969,
             "distractors": [
               "Victory with Dignity",
@@ -2569,7 +2569,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s5",
             "question": "Which country neighboring Vietnam was invaded by ARVN forces with US air support in 1971?",
             "answer": "Laos",
-            "explanation": "The invasion (Lam Son 719) aimed to cut the Ho Chi Minh Trail but ended in a disastrous ARVN retreat.",
+            "explanation": "The invasion (Lam Son 719) aimed to cut the Ho Chi Minh Trail but ended in a disastrous ARVN retreat. The invasion here resulted in a disastrous ARVN retreat, proving that Vietnamization was failing.",
             "year": 1971,
             "distractors": [
               "Cambodia",
@@ -2581,7 +2581,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s6",
             "question": "Which North Vietnamese capital city was hit by heavy U.S. B-52 bomber raids during the 1972 Christmas Bombings?",
             "answer": "Hanoi",
-            "explanation": "The bombings aimed to force North Vietnam back to the negotiating table to finalize the peace treaty.",
+            "explanation": "The bombings aimed to force North Vietnam back to the negotiating table to finalize the peace treaty. The heavy bombing of this capital forced North Vietnamese negotiators to finalize the ceasefire terms.",
             "year": 1972,
             "distractors": [
               "Haiphong",
@@ -2593,7 +2593,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s7",
             "question": "What was the official code name of the December 1972 Christmas Bombing campaign?",
             "answer": "Operation Linebacker II",
-            "explanation": "It was the largest campaign of heavy bomber attacks launched by the US Air Force since World War II.",
+            "explanation": "It was the largest campaign of heavy bomber attacks launched by the US Air Force since World War II. This intensive bombing campaign forced North Vietnam to return to negotiations and sign the Paris Peace Accords.",
             "year": 1972,
             "distractors": [
               "Operation Rolling Thunder",
@@ -2617,7 +2617,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s9",
             "question": "Who was Nixon's National Security Advisor and lead negotiator at the Paris peace talks?",
             "answer": "Henry Kissinger",
-            "explanation": "Kissinger conducted years of secret negotiations with North Vietnam, earning the Nobel Peace Prize in 1973.",
+            "explanation": "Kissinger conducted years of secret negotiations with North Vietnam, earning the Nobel Peace Prize in 1973. His diplomatic efforts led to the signing of the Paris Peace Accords, ending direct US combat involvement.",
             "year": 1972,
             "distractors": [
               "William P. Rogers",
@@ -2629,7 +2629,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s10",
             "question": "Who was the chief negotiator for North Vietnam who negotiated the peace accords with Henry Kissinger?",
             "answer": "Le Duc Tho",
-            "explanation": "Le Duc Tho declined the Nobel Peace Prize, stating that true peace had not yet been achieved in Vietnam.",
+            "explanation": "Le Duc Tho declined the Nobel Peace Prize, stating that true peace had not yet been achieved in Vietnam. His refusal to accept the award highlighted the incomplete nature of the peace agreement as fighting continued.",
             "year": 1973,
             "distractors": [
               "Le Duan",
@@ -2641,7 +2641,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s11",
             "question": "What term describes the collapse of US military discipline where soldiers murdered their own commanding officers to avoid combat?",
             "answer": "Fragging",
-            "explanation": "Fragging, often using fragmentation grenades, became a symptom of plummeting troop morale and opposition to the war among draftees.",
+            "explanation": "Fragging, often using fragmentation grenades, became a symptom of plummeting troop morale and opposition to the war among draftees. This extreme violence reflected the severe breakdown in military discipline and morale during the withdrawal phase.",
             "year": 1970,
             "distractors": [
               "Mutiny bombing",
@@ -2653,7 +2653,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_s12",
             "question": "What was the code name of the secret bombing campaign of Cambodia ordered by President Nixon in 1969?",
             "answer": "Operation Menu",
-            "explanation": "Operation Menu was a series of secret bombings targeting North Vietnamese sanctuaries in neutral Cambodia, hidden from the US public and Congress.",
+            "explanation": "Operation Menu was a series of secret bombings targeting North Vietnamese sanctuaries in neutral Cambodia, hidden from the US public and Congress. The secrecy of these bombings created deep controversy and accelerated public distrust when they were exposed.",
             "year": 1969,
             "distractors": [
               "Operation Breakfast",
@@ -2691,7 +2691,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_d3",
             "question": "Why did President Nixon order the military invasion of Cambodia in 1970?",
             "answer": "To destroy Vietcong supply sanctuaries and disrupt the Ho Chi Minh Trail",
-            "explanation": "Nixon wanted to weaken communist forces using neutral Cambodian territory as safe havens, hoping to buy time for South Vietnam's army to build strength.",
+            "explanation": "Nixon wanted to weaken communist forces using neutral Cambodian territory as safe havens, hoping to buy time for South Vietnam's army to build strength. This military escalation triggered massive anti-war protests in the United States, including the Kent State shootings.",
             "year": 1970,
             "distractors": [
               "To retaliate against North Vietnamese artillery shelling of South Vietnamese cities",
@@ -2703,7 +2703,7 @@ export const QUIZ_DATA = [
             "id": "q_3_4_d4",
             "question": "What was the code name of the disastrous 1971 ARVN invasion of Laos that ended in panic and retreat?",
             "answer": "Operation Lam Son 719",
-            "explanation": "The operation showed that without US ground commanders, the ARVN was unable to defeat NVA forces.",
+            "explanation": "The operation showed that without US ground commanders, the ARVN was unable to defeat NVA forces. The disastrous retreat of ARVN troops proved their severe weakness without US ground commanders.",
             "year": 1971,
             "distractors": [
               "Operation Lam Son 720",
@@ -2789,7 +2789,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_s1",
             "question": "What was the name of the system used to select young men for compulsory military service in Vietnam?",
             "answer": "The Draft",
-            "explanation": "The draft was highly controversial, particularly because college students could obtain deferments, favoring wealthier whites.",
+            "explanation": "The draft was highly controversial, particularly because college students could obtain deferments, favoring wealthier whites. This conscription system created deep resentment and sparked widespread draft resistance and campus protests.",
             "year": 1965,
             "distractors": [
               "Conscription Act",
@@ -2813,7 +2813,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_s3",
             "question": "Which student organization was at the forefront of the early anti-war protest movement?",
             "answer": "Students for a Democratic Society (SDS)",
-            "explanation": "SDS organized the first major national anti-war march in Washington in April 1965, drawing 20,000.",
+            "explanation": "SDS organized the first major national anti-war march in Washington in April 1965, drawing 20,000. This organization became the primary vehicle for coordinating the early student-led anti-war movement.",
             "year": 1965,
             "distractors": [
               "Student Mobilization Committee (SMC)",
@@ -2837,7 +2837,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_s5",
             "question": "Which heavyweight boxing champion famously refused to be drafted in 1967, citing religious beliefs?",
             "answer": "Muhammad Ali",
-            "explanation": "Ali was stripped of his title and banned from boxing, declaring: 'I ain't got no quarrel with them Viet Cong.'",
+            "explanation": "Ali was stripped of his title and banned from boxing, declaring: 'I ain't got no quarrel with them Viet Cong.' He was stripped of his heavyweight title, becoming a global icon of anti-war opposition and Black pride.",
             "year": 1967,
             "distractors": [
               "Joe Frazier",
@@ -2849,7 +2849,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_s6",
             "question": "What term describes the difference between what the government reported about the war and what journalists showed on TV?",
             "answer": "Credibility gap",
-            "explanation": "The credibility gap eroded public trust in the presidency, especially after the Tet Offensive showed the war was not won.",
+            "explanation": "The credibility gap eroded public trust in the presidency, especially after the Tet Offensive showed the war was not won. This gap eroded public trust in the presidency, peaking after the Tet Offensive and driving anti-war sentiment.",
             "year": 1968,
             "distractors": [
               "Information mismatch",
@@ -2861,7 +2861,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_s7",
             "question": "In which South Vietnamese village did US troops massacre over 500 unarmed civilians in March 1968?",
             "answer": "My Lai",
-            "explanation": "The massacre of women, children, and old men was covered up by the military until journalist Seymour Hersh broke the story.",
+            "explanation": "The massacre of women, children, and old men was covered up by the military until journalist Seymour Hersh broke the story. The exposure of this massacre shocked the nation, severely damaging the moral legitimacy of the war.",
             "year": 1968,
             "distractors": [
               "Song My",
@@ -2885,7 +2885,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_s9",
             "question": "What was the name of the top-secret government history of the war leaked to the press in 1971?",
             "answer": "The Pentagon Papers",
-            "explanation": "The papers revealed that the government had systematically lied to Congress and the public about the scope of the war.",
+            "explanation": "The papers revealed that the government had systematically lied to Congress and the public about the scope of the war. The papers proved that successive administrations had systematically deceived Congress and the public about the war.",
             "year": 1971,
             "distractors": [
               "The McNamara Report",
@@ -2909,7 +2909,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_s11",
             "question": "How many unarmed students were shot and killed by National Guardsmen at Kent State University in May 1970?",
             "answer": "Four",
-            "explanation": "The killing of four students at Kent State during protests against the Cambodian invasion shocked the nation and triggered massive strikes.",
+            "explanation": "The killing of four students at Kent State during protests against the Cambodian invasion shocked the nation and triggered massive strikes. These deaths triggered a massive nationwide student strike of over 4 million students, closing campuses.",
             "year": 1970,
             "distractors": [
               "Two",
@@ -2923,7 +2923,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_d1",
             "question": "What justification did Muhammad Ali give for refusing to fight in the Vietnam War?",
             "answer": "His religious beliefs and opposition to fighting other people of color",
-            "explanation": "Ali cited his faith as a Muslim and argued that Black Americans should not fight for a country that denied them civil rights at home.",
+            "explanation": "Ali cited his faith as a Muslim and argued that Black Americans should not fight for a country that denied them civil rights at home. His refusal linked the anti-war movement to the domestic struggle for civil rights, inspiring other activists.",
             "year": 1967,
             "distractors": [
               "His alignment with anti-war student movements and the Students for a Democratic Society",
@@ -2935,7 +2935,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_d2",
             "question": "What was the exact date of the Kent State shootings in Ohio?",
             "answer": "4 May 1970",
-            "explanation": "Guardsmen fired 67 rounds into the crowd, killing 4 students and wounding 9 others, including one who was paralyzed.",
+            "explanation": "Guardsmen fired 67 rounds into the crowd, killing 4 students and wounding 9 others, including one who was paralyzed. This tragedy shocked the nation, polarizing public opinion and deepening divisions over the war.",
             "year": 1970,
             "distractors": [
               "1 May 1970",
@@ -2947,7 +2947,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_d3",
             "question": "Why did the My Lai Massacre (1968) have such a devastating impact on the US homefront when it was revealed in 1969?",
             "answer": "It exposed the moral cost of the war and shocked the public's conscience",
-            "explanation": "The brutal killing of over 500 unarmed Vietnamese civilians by US soldiers undermined the government's claim that the war was a moral defense of democracy.",
+            "explanation": "The brutal killing of over 500 unarmed Vietnamese civilians by US soldiers undermined the government's claim that the war was a moral defense of democracy. The exposure of this atrocity undermined the moral justification for US involvement in Southeast Asia.",
             "year": 1968,
             "distractors": [
               "It resulted in the immediate cut-off of congressional funds for military operations",
@@ -2959,7 +2959,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_d4",
             "question": "Who was the independent investigative journalist who broke the My Lai massacre story in November 1969?",
             "answer": "Seymour Hersh",
-            "explanation": "Hersh traced Calley's court-martial charges, interviewed soldiers, and won the Pulitzer Prize for his reporting.",
+            "explanation": "Hersh traced Calley's court-martial charges, interviewed soldiers, and won the Pulitzer Prize for his reporting. His reporting broke the military's cover-up of the massacre, exposing the war's horrors to the public.",
             "year": 1969,
             "distractors": [
               "Ronald Ridenhour",
@@ -2971,7 +2971,7 @@ export const QUIZ_DATA = [
             "id": "q_4_1_d5",
             "question": "Who was the military analyst who leaked the Pentagon Papers to newspapers in 1971?",
             "answer": "Daniel Ellsberg",
-            "explanation": "Ellsberg was a former defense analyst who copied the documents to expose the deception of the war.",
+            "explanation": "Ellsberg was a former defense analyst who copied the documents to expose the deception of the war. His leak of the Pentagon Papers was a major victory for press freedom and severely damaged Nixon's administration.",
             "year": 1971,
             "distractors": [
               "Neil Sheehan",
@@ -3027,7 +3027,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s1",
             "question": "What term did Nixon use in November 1969 to describe the patriotic Americans who supported his war policy?",
             "answer": "The Silent Majority",
-            "explanation": "Nixon argued that the loud anti-war protesters were a minority, and most Americans supported his efforts.",
+            "explanation": "Nixon argued that the loud anti-war protesters were a minority, and most Americans supported his efforts. Nixon successfully mobilized this group to counter anti-war demonstrations and secure a landslide re-election in 1972.",
             "year": 1969,
             "distractors": [
               "The Great Majority",
@@ -3039,7 +3039,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s2",
             "question": "What was the primary political motivation for pro-war supporters in the US, fearing the global spread of communism?",
             "answer": "Anti-communism",
-            "explanation": "Supporters believed that stopping communism in Vietnam was essential to protect American security and democracy.",
+            "explanation": "Supporters believed that stopping communism in Vietnam was essential to protect American security and democracy. This Cold War containment mindset led many Americans to view the war as a vital defense of democratic values.",
             "year": 1965,
             "distractors": [
               "Democratic capitalism",
@@ -3063,7 +3063,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s4",
             "question": "What informal term was used to describe politicians and citizens who supported the escalation of the war?",
             "answer": "Hawks",
-            "explanation": "Hawks favored military pressure, believing that the US should use all necessary force to win in Vietnam.",
+            "explanation": "Hawks favored military pressure, believing that the US should use all necessary force to win in Vietnam. Their political influence put pressure on the administration to escalate the war to achieve a military victory.",
             "year": 1965,
             "distractors": [
               "Eagles",
@@ -3075,7 +3075,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s5",
             "question": "What informal term was used to describe politicians and citizens who favored a peaceful exit from the war?",
             "answer": "Doves",
-            "explanation": "Doves argued that the war was a civil conflict that could not be won militarily and urged immediate negotiations.",
+            "explanation": "Doves argued that the war was a civil conflict that could not be won militarily and urged immediate negotiations. Their advocacy shifted public opinion and put pressure on Nixon to accelerate the withdrawal of US troops.",
             "year": 1965,
             "distractors": [
               "Pigeons",
@@ -3087,7 +3087,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s6",
             "question": "What popular pro-war slogan expressed the view that citizens who criticized the war should emigrate?",
             "answer": "America: Love It or Leave It",
-            "explanation": "The slogan reflected the intense patriotism and hostility toward anti-war protesters among supporters.",
+            "explanation": "The slogan reflected the intense patriotism and hostility toward anti-war protesters among supporters. This slogan highlighted the deep polarization of American society, equating protest with treason.",
             "year": 1969,
             "distractors": [
               "My Country: Right or Wrong",
@@ -3099,7 +3099,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s7",
             "question": "Which US president made the famous 'Silent Majority' speech on television in November 1969?",
             "answer": "Richard Nixon",
-            "explanation": "The speech was highly successful, rallying conservative and working-class support to his administration.",
+            "explanation": "The speech was highly successful, rallying conservative and working-class support to his administration. His appeal successfully divided public opinion, isolating radical anti-war protesters from mainstream voters.",
             "year": 1969,
             "distractors": [
               "Lyndon B. Johnson",
@@ -3111,7 +3111,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s8",
             "question": "Which major national labor union coalition supported Nixon's war policy and helped organize the Hard Hat Riots?",
             "answer": "AFL-CIO",
-            "explanation": "Led by George Meany, the union leadership was strongly anti-communist and patriotic, aligning with Nixon.",
+            "explanation": "Led by George Meany, the union leadership was strongly anti-communist and patriotic, aligning with Nixon. Their stance showed that a significant portion of the working-class rejected the anti-war movement.",
             "year": 1970,
             "distractors": [
               "Teamsters",
@@ -3123,7 +3123,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s9",
             "question": "In what month and year did President Nixon deliver his famous 'Silent Majority' address?",
             "answer": "November 1969",
-            "explanation": "Delivered on 3 November 1969, the speech sought to buy time for his Vietnamisation policy.",
+            "explanation": "Delivered on 3 November 1969, the speech sought to buy time for his Vietnamisation policy. This speech bought Nixon valuable political time to implement his Vietnamisation policy.",
             "year": 1969,
             "distractors": [
               "May 1970",
@@ -3135,7 +3135,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_s10",
             "question": "What pro-war student organization was formed to counter the radical anti-war Student Mobilization Committee?",
             "answer": "Young Americans for Freedom (YAF)",
-            "explanation": "YAF was a conservative youth organization that organized pro-war rallies and supported the draft.",
+            "explanation": "YAF was a conservative youth organization that organized pro-war rallies and supported the draft. Their activism showed that the youth of the 1960s were not unified, with many supporting conservative Cold War policies.",
             "year": 1969,
             "distractors": [
               "Students for America (SFA)",
@@ -3149,7 +3149,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_d1",
             "question": "How many construction workers marched in support of Nixon in New York City in the days following the Hard Hat Riots?",
             "answer": "Over 20,000",
-            "explanation": "The workers marched to City Hall carrying American flags, showing the depth of working-class support for the troops.",
+            "explanation": "The workers marched to City Hall carrying American flags, showing the depth of working-class support for the troops. This counter-protest demonstrated the deep division between working-class patriots and anti-war student radicals.",
             "year": 1970,
             "distractors": [
               "Over 5,000",
@@ -3161,7 +3161,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_d2",
             "question": "What concept of national duty and pride did working-class supporters frequently cite when criticizing student protesters?",
             "answer": "Patriotism",
-            "explanation": "Supporters felt that refusing the draft and burning flags was a betrayal of those who had served in previous wars.",
+            "explanation": "Supporters felt that refusing the draft and burning flags was a betrayal of those who had served in previous wars. This belief drove working-class families to support the war effort, seeing protests as a betrayal of their sons in combat.",
             "year": 1969,
             "distractors": [
               "Constitutional duty",
@@ -3185,7 +3185,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_d4",
             "question": "What demographic groups formed the primary social base for Nixon's Silent Majority?",
             "answer": "Working-class, suburban, and older conservative Americans",
-            "explanation": "Often called 'Middle America', they were alienated by the counterculture, student riots, and radical civil rights.",
+            "explanation": "Often called 'Middle America', they were alienated by the counterculture, student riots, and radical civil rights. This base was alienated by the counterculture and student protests, forming the core of Nixon's political coalition.",
             "year": 1969,
             "distractors": [
               "Academic intellectuals, university students, and liberal media columnists",
@@ -3197,7 +3197,7 @@ export const QUIZ_DATA = [
             "id": "q_4_2_d5",
             "question": "What did pro-war advocates fear would happen to US allies if the United States withdrew from Vietnam in defeat?",
             "answer": "Loss of US global credibility and containment failure",
-            "explanation": "They feared a communist takeover of the region and that allies would no longer trust US security commitments.",
+            "explanation": "They feared a communist takeover of the region and that allies would no longer trust US security commitments. This fear drove hawks to demand a military victory, believing that withdrawal would embolden communist expansion.",
             "year": 1965,
             "distractors": [
               "Immediate economic recession on the homefront due to loss of trade routes",
@@ -3289,7 +3289,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_s4",
             "question": "Who was the South Vietnamese President who surrendered Saigon to North Vietnamese forces?",
             "answer": "Duong Van Minh",
-            "explanation": "Minh surrendered on 30 April, telling the NVA: 'I am waiting to hand over the power to you to avoid bloodshed.'",
+            "explanation": "Minh surrendered on 30 April, telling the NVA: 'I am waiting to hand over the power to you to avoid bloodshed.' His surrender officially ended the Vietnam War, marking the transition of Saigon to communist control.",
             "year": 1975,
             "distractors": [
               "Nguyen Van Thieu",
@@ -3313,7 +3313,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_s6",
             "question": "How many days did the US have to withdraw all troops under the 1973 Accords?",
             "answer": "60 days",
-            "explanation": "The accords mandated the complete withdrawal of all US military personnel and the release of all POWs within 60 days.",
+            "explanation": "The accords mandated the complete withdrawal of all US military personnel and the release of all POWs within 60 days. The complete US exit marked the official end of direct American military involvement in Vietnam.",
             "year": 1973,
             "distractors": [
               "30 days",
@@ -3325,7 +3325,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_s7",
             "question": "Why did South Vietnamese President Thieu initially refuse to sign the accords?",
             "answer": "North Vietnamese troops stayed in the South",
-            "explanation": "Thieu knew that leaving North Vietnamese troops inside South Vietnam would make a communist takeover inevitable once US forces left.",
+            "explanation": "Thieu knew that leaving North Vietnamese troops inside South Vietnam would make a communist takeover inevitable once US forces left. This concession allowed the NVA to launch a final offensive to overrun the South once US forces left.",
             "year": 1972,
             "distractors": [
               "The US refused to provide any further economic aid to the South",
@@ -3337,7 +3337,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_s8",
             "question": "What bombing campaign was ordered to force the signing of the accords in late 1972?",
             "answer": "Operation Linebacker II (Christmas Bombings)",
-            "explanation": "Nixon launched intense B-52 raids against Hanoi and Haiphong in December 1972 to force North Vietnam back to the negotiating table.",
+            "explanation": "Nixon launched intense B-52 raids against Hanoi and Haiphong in December 1972 to force North Vietnam back to the negotiating table. These heavy B-52 raids forced North Vietnam to return to the negotiations and finalize the peace accords.",
             "year": 1972,
             "distractors": [
               "Operation Rolling Thunder",
@@ -3349,7 +3349,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_s9",
             "question": "Which 1973 Act of Congress limited the president's power to commit troops to foreign conflicts without approval?",
             "answer": "War Powers Act",
-            "explanation": "Passed over Nixon's veto, the act required congressional approval within 60 days of deploying troops.",
+            "explanation": "Passed over Nixon's veto, the act required congressional approval within 60 days of deploying troops. This act reasserted congressional control over war-making powers, severely limiting the president's military authority.",
             "year": 1973,
             "distractors": [
               "National Security Act",
@@ -3361,7 +3361,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_s10",
             "question": "Which constitutional amendment lowered the US voting age to 18 in 1971, prompted by the draft?",
             "answer": "26th Amendment",
-            "explanation": "The slogan 'old enough to fight, old enough to vote' led to the rapid ratification of the amendment.",
+            "explanation": "The slogan 'old enough to fight, old enough to vote' led to the rapid ratification of the amendment. This extension of the vote represented a lasting political consequence of the youth-driven draft resistance.",
             "year": 1971,
             "distractors": [
               "24th Amendment",
@@ -3373,7 +3373,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_s11",
             "question": "Approximately how many American military personnel lost their lives in the Vietnam War?",
             "answer": "58,000",
-            "explanation": "The human cost for the United States was high, with over 58,000 American soldiers killed during the conflict.",
+            "explanation": "The human cost for the United States was high, with over 58,000 American soldiers killed during the conflict. This high death toll had a profound impact, creating a long-term public reluctance to commit ground troops in foreign conflicts.",
             "year": 1973,
             "distractors": [
               "25,000",
@@ -3399,7 +3399,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_d1",
             "question": "What was the exact date of the Fall of Saigon, marking the official end of South Vietnam?",
             "answer": "30 April 1975",
-            "explanation": "Tanks entered the city, raised the Vietcong flag on the palace, and South Vietnam surrendered unconditionally.",
+            "explanation": "Tanks entered the city, raised the Vietcong flag on the palace, and South Vietnam surrendered unconditionally. This capture marked the formal reunification of Vietnam under communism and the definitive failure of US containment.",
             "year": 1975,
             "distractors": [
               "27 January 1973",
@@ -3423,7 +3423,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_d3",
             "question": "Under the War Powers Act of 1973, within how many hours must a president notify Congress of troop deployment?",
             "answer": "48 hours",
-            "explanation": "The president must explain the reasons for the deployment and withdraw forces within 60 days unless Congress approves.",
+            "explanation": "The president must explain the reasons for the deployment and withdraw forces within 60 days unless Congress approves. This requirement aimed to prevent presidents from escalating conflicts secretly without consulting Congress.",
             "year": 1973,
             "distractors": [
               "24 hours",
@@ -3435,7 +3435,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_d4",
             "question": "Why did the US Congress pass the War Powers Act in 1973?",
             "answer": "To limit the president's ability to wage undeclared war without congressional approval",
-            "explanation": "After Nixon escalated the war in Cambodia and Laos without consulting Congress, politicians wanted to reassert their constitutional control over military commitments.",
+            "explanation": "After Nixon escalated the war in Cambodia and Laos without consulting Congress, politicians wanted to reassert their constitutional control over military commitments. This law represented a major constitutional shift, clawing back war powers from the executive branch after the imperial presidency era.",
             "year": 1973,
             "distractors": [
               "To cut off all presidential funding for international diplomatic treaties",
@@ -3459,7 +3459,7 @@ export const QUIZ_DATA = [
             "id": "q_4_3_d6",
             "question": "Which June 1973 congressional amendment prohibited all further US military action in Indochina after 15 August 1973?",
             "answer": "Case-Church Amendment",
-            "explanation": "The Case-Church Amendment legally prevented the US president from ordering air support or military intervention to protect South Vietnam during the final 1975 Spring Offensive.",
+            "explanation": "The Case-Church Amendment legally prevented the US president from ordering air support or military intervention to protect South Vietnam during the final 1975 Spring Offensive. This legislation legally blocked any possibility of US air intervention, sealing South Vietnam's defeat.",
             "year": 1973,
             "distractors": [
               "War Powers Amendment",
@@ -3503,7 +3503,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_s1",
             "question": "What was the name of the highly resilient supply route running through Laos and Cambodia that the US failed to block?",
             "answer": "Ho Chi Minh Trail",
-            "explanation": "The trail funneled troops and supplies from North Vietnam into the South, rebuilt constantly by volunteers despite intense bombing.",
+            "explanation": "The trail funneled troops and supplies from North Vietnam into the South, rebuilt constantly by volunteers despite intense bombing. This trail successfully funneled reinforcements and weapons, rendering US containment efforts ineffective.",
             "year": 1965,
             "distractors": [
               "Hanoi Bypass Route",
@@ -3515,7 +3515,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_s2",
             "question": "Which two communist superpowers provided essential military hardware, air defenses, and financial aid to North Vietnam?",
             "answer": "Soviet Union and China",
-            "explanation": "Soviet surface-to-air missiles and Chinese military hardware/labor provided North Vietnam the material support to match US firepower.",
+            "explanation": "Soviet surface-to-air missiles and Chinese military hardware/labor provided North Vietnam the material support to match US firepower. This support enabled North Vietnam to sustain its military campaign against the full weight of US technology.",
             "year": 1965,
             "distractors": [
               "Soviet Union and North Korea",
@@ -3527,7 +3527,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_s3",
             "question": "What term was used to describe the collapse of morale behavior where US soldiers intentionally killed their own officers with grenades?",
             "answer": "Fragging",
-            "explanation": "Usually involving fragmentation grenades, fragging reflected severe drug abuse, frustration, and rebellion among conscripted soldiers.",
+            "explanation": "Usually involving fragmentation grenades, fragging reflected severe drug abuse, frustration, and rebellion among conscripted soldiers. This internal violence highlighted the collapse of military authority and morale among draftees.",
             "year": 1970,
             "distractors": [
               "Mutiny",
@@ -3563,7 +3563,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_s6",
             "question": "What chemical weapons and defoliants dropped by the US ruined its global reputation and alienated South Vietnamese peasants?",
             "answer": "Agent Orange and Napalm",
-            "explanation": "The drop of toxic herbicides and incendiary weapons destroyed crops and villages, pushing rural populations to support the Vietcong.",
+            "explanation": "The drop of toxic herbicides and incendiary weapons destroyed crops and villages, pushing rural populations to support the Vietcong. These chemicals devastated crops and villages, alienating the peasantry and pushing them to support the Vietcong.",
             "year": 1965,
             "distractors": [
               "Thermite and White Phosphorus",
@@ -3575,7 +3575,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_s7",
             "question": "Which 1968 offensive, though a military defeat for the Vietcong, was a political victory that shattered US support?",
             "answer": "Tet Offensive",
-            "explanation": "Tet proved to the American public that the government's optimistic claims about winning the war were false, fueling opposition.",
+            "explanation": "Tet proved to the American public that the government's optimistic claims about winning the war were false, fueling opposition. Tet destroyed public confidence in the US government, forcing a policy shift toward military de-escalation.",
             "year": 1968,
             "distractors": [
               "Easter Offensive",
@@ -3599,7 +3599,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_s9",
             "question": "What term describes the psychological reluctance of the US public and politicians to intervene militarily abroad after Vietnam?",
             "answer": "Vietnam Syndrome",
-            "explanation": "The national trauma of the defeat made subsequent US administrations highly hesitant to commit ground troops in foreign conflicts.",
+            "explanation": "The national trauma of the defeat made subsequent US administrations highly hesitant to commit ground troops in foreign conflicts. This trauma made subsequent administrations highly hesitant to commit US ground forces in foreign conflicts.",
             "year": 1975,
             "distractors": [
               "Vietnam Reluctance",
@@ -3611,7 +3611,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_s10",
             "question": "What was the primary economic consequence of the war's high military expenditure on the US homefront?",
             "answer": "High inflation and deficits",
-            "explanation": "President Johnson's attempt to fund both the war and Great Society programs without raising taxes triggered severe inflation and economic stagflation.",
+            "explanation": "President Johnson's attempt to fund both the war and Great Society programs without raising taxes triggered severe inflation and economic stagflation. This spending triggered severe economic stagflation that plagued the United States throughout the 1970s.",
             "year": 1970,
             "distractors": [
               "High unemployment rates",
@@ -3623,7 +3623,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_s11",
             "question": "Approximately how much financial and military aid did the Soviet Union and China provide to North Vietnam annually?",
             "answer": "Over $3 billion",
-            "explanation": "Communist superpowers provided North Vietnam with over $3 billion in aid, enabling them to resist US military pressure and supply their forces.",
+            "explanation": "Communist superpowers provided North Vietnam with over $3 billion in aid, enabling them to resist US military pressure and supply their forces. This military hardware and financial aid allowed Hanoi to match the logistical capacity of US forces.",
             "year": 1970,
             "distractors": [
               "$100 million",
@@ -3661,7 +3661,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_d3",
             "question": "How did the one-year tour of duty system affect the combat effectiveness and morale of the US military?",
             "answer": "Prevented experience build-up and lowered unit cohesion",
-            "explanation": "As soon as soldiers became experienced and street-smart, they were sent home, meaning the US army was constantly filled with raw, un-cohesive recruits.",
+            "explanation": "As soon as soldiers became experienced and street-smart, they were sent home, meaning the US army was constantly filled with raw, un-cohesive recruits. This system prevented experience build-up and lowered unit cohesion, severely undermining combat effectiveness.",
             "year": 1968,
             "distractors": [
               "Increased training expenses and created administrative delays in recruiting",
@@ -3685,7 +3685,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_d5",
             "question": "Why was the South Vietnamese (Saigon) government unable to win the 'hearts and minds' of its own people?",
             "answer": "Extreme political corruption, religious bias, and reliance on US force",
-            "explanation": "The ruling elites in Saigon were viewed as Western puppets, highly corrupt, and biased against the Buddhist majority, denying them popular legitimacy.",
+            "explanation": "The ruling elites in Saigon were viewed as Western puppets, highly corrupt, and biased against the Buddhist majority, denying them popular legitimacy. This lack of popular support meant South Vietnam could not survive as an independent state without permanent US military aid.",
             "year": 1963,
             "distractors": [
               "Its refusal to accept any economic or military aid from western allies",
@@ -3697,7 +3697,7 @@ export const QUIZ_DATA = [
             "id": "q_4_4_d6",
             "question": "What was the average age of a US combat soldier in Vietnam, which contributed to low morale and inexperience?",
             "answer": "19 years old",
-            "explanation": "Unlike World War II (where the average age was 26), the average US soldier in Vietnam was just 19 years old, young, and often draft-conscripted.",
+            "explanation": "Unlike World War II (where the average age was 26), the average US soldier in Vietnam was just 19 years old, young, and often draft-conscripted. The youth of the troops contributed to high levels of combat stress, drug abuse, and disillusionment in the field.",
             "year": 1968,
             "distractors": [
               "21 years old",
@@ -3740,26 +3740,26 @@ export const QUIZ_DATA = [
 export const EXAM_SKILLS_DATA = {
   "q1": {
     "mock_exam_10": {
-          "id": "mock_exam_10",
-          "topicCode": "Mock 10",
-          "question": "Give two inferences from Source A about how segregationists intended to defeat integration.",
-          "sourceA": {
-                "provenance": "From a pamphlet distributed by the White Citizens Council in Alabama, 1956.",
-                "content": "We must stand together to protect our schools and neighborhoods. If any local merchant employs integrationists, we must withdraw our business immediately. If any landlord rents to those who support integration, they must be evicted. Economic non-cooperation is our most powerful peaceful weapon to defeat this Northern conspiracy against our traditions."
-          },
-          "clue": "Look at the actions recommended for merchants and landlords.",
-          "model": "Inference 1: Segregationists used economic boycotts to punish supporters of integration.\nDetails: 'If any local merchant employs integrationists, we must withdraw our business immediately.'\nInference 2: Segregationists targeted the housing security of civil rights supporters.\nDetails: 'If any landlord rents to those who support integration, they must be evicted.'"
+      "id": "mock_exam_10",
+      "topicCode": "Mock 10",
+      "question": "Give two inferences from Source A about how segregationists intended to defeat integration.",
+      "sourceA": {
+        "provenance": "From a pamphlet distributed by the White Citizens Council in Alabama, 1956.",
+        "content": "We must stand together to protect our schools and neighborhoods. If any local merchant employs integrationists, we must withdraw our business immediately. If any landlord rents to those who support integration, they must be evicted. Economic non-cooperation is our most powerful peaceful weapon to defeat this Northern conspiracy against our traditions."
+      },
+      "clue": "Look at the actions recommended for merchants and landlords.",
+      "model": "Inference 1: Segregationists used economic boycotts to punish supporters of integration.\nDetails: 'If any local merchant employs integrationists, we must withdraw our business immediately.'\nInference 2: Segregationists targeted the housing security of civil rights supporters.\nDetails: 'If any landlord rents to those who support integration, they must be evicted.'"
     },
     "mock_exam_4": {
-          "id": "mock_exam_4",
-          "topicCode": "Mock 4",
-          "question": "Give two inferences from Source A about the situation at Central High School in September 1957.",
-          "sourceA": {
-                "provenance": "From a report by a federal observer at Central High School, Little Rock, September 1957.",
-                "content": "The crowd outside the school is extremely loud and aggressive. When the nine Negro students arrived, white adults began shouting abuse and spitting in their direction. The Arkansas National Guard, stationed by order of the Governor, stood in a line blockading the entrance. They did not attempt to disperse the mob; instead, their presence clearly prevented the children from entering the school building."
-          },
-          "clue": "Look at what the guards did, and how the crowd acted toward the students.",
-          "model": "Inference 1: The local authorities were actively preventing school integration.\nDetails: 'The Arkansas National Guard... stood in a line blockading the entrance.'\nInference 2: The Black students faced extreme hostility and danger from the local public.\nDetails: 'white adults began shouting abuse and spitting in their direction.'"
+      "id": "mock_exam_4",
+      "topicCode": "Mock 4",
+      "question": "Give two inferences from Source A about the situation at Central High School in September 1957.",
+      "sourceA": {
+        "provenance": "From a report by a federal observer at Central High School, Little Rock, September 1957.",
+        "content": "The crowd outside the school is extremely loud and aggressive. When the nine Negro students arrived, white adults began shouting abuse and spitting in their direction. The Arkansas National Guard, stationed by order of the Governor, stood in a line blockading the entrance. They did not attempt to disperse the mob; instead, their presence clearly prevented the children from entering the school building."
+      },
+      "clue": "Look at what the guards did, and how the crowd acted toward the students.",
+      "model": "Inference 1: The local authorities were actively preventing school integration.\nDetails: 'The Arkansas National Guard... stood in a line blockading the entrance.'\nInference 2: The Black students faced extreme hostility and danger from the local public.\nDetails: 'white adults began shouting abuse and spitting in their direction.'"
     },
     "q1_1": {
       "id": "q1_1",
@@ -4081,22 +4081,22 @@ export const EXAM_SKILLS_DATA = {
   },
   "q2": {
     "mock_exam_10": {
-          "id": "mock_exam_10",
-          "topicCode": "Mock 10",
-          "question": "Explain why opposition to the civil rights movement was successful in delaying progress in the years 1954–60.",
-          "stimulus1": "Southern Manifesto (1956)",
-          "stimulus2": "Ku Klux Klan (KKK)",
-          "clue": "Explain how the Southern Manifesto unified politicians to defy rulings, and how the KKK used violence and terror to intimidate Black voters and activists.",
-          "model": "“One reason why opposition to the civil rights movement was successful in delaying progress in the years 1954–60 was the unified political defiance of Southern leaders.” In 1956, 101 Southern members of Congress signed the [[Southern Manifesto]], which accused the Supreme Court of abusing its power in the Brown ruling and urged states to resist desegregation. {{Therefore, this political defiance legitimized state-level resistance, encouraging Southern governors to pass laws closing public schools rather than desegregating them.}}\n\n“A second reason why opposition to the civil rights movement was successful in delaying progress was the use of violence and physical intimidation.” The [[KKK]] experienced a revival, using bombings, beatings, and threats of violence against civil rights activists. For example, during the Montgomery Bus Boycott, the homes of leaders were bombed, and local registrars used poll taxes and literacy tests backed by economic threats to keep Black voter registration extremely low. {{Therefore, this climate of terror and systemic disenfranchisement intimidated many Black citizens, successfully slowing the growth of grassroots campaigns.}}"
+      "id": "mock_exam_10",
+      "topicCode": "Mock 10",
+      "question": "Explain why opposition to the civil rights movement was successful in delaying progress in the years 1954–60.",
+      "stimulus1": "Southern Manifesto (1956)",
+      "stimulus2": "Ku Klux Klan (KKK)",
+      "clue": "Explain how the Southern Manifesto unified politicians to defy rulings, and how the KKK used violence and terror to intimidate Black voters and activists.",
+      "model": "“One reason why opposition to the civil rights movement was successful in delaying progress in the years 1954–60 was the unified political defiance of Southern leaders.” In 1956, 101 Southern members of Congress signed the [[Southern Manifesto]], which accused the Supreme Court of abusing its power in the Brown ruling and urged states to resist desegregation. {{Therefore, this political defiance legitimized state-level resistance, encouraging Southern governors to pass laws closing public schools rather than desegregating them.}}\n\n“A second reason why opposition to the civil rights movement was successful in delaying progress was the use of violence and physical intimidation.” The [[KKK]] experienced a revival, using bombings, beatings, and threats of violence against civil rights activists. For example, during the Montgomery Bus Boycott, the homes of leaders were bombed, and local registrars used poll taxes and literacy tests backed by economic threats to keep Black voter registration extremely low. {{Therefore, this climate of terror and systemic disenfranchisement intimidated many Black citizens, successfully slowing the growth of grassroots campaigns.}}"
     },
     "mock_exam_4": {
-          "id": "mock_exam_4",
-          "topicCode": "Mock 4",
-          "question": "Explain why school desegregation met with significant opposition in the years 1954–57.",
-          "stimulus1": "Brown v. Board of Education (1954)",
-          "stimulus2": "Governor Orval Faubus",
-          "clue": "Explain how the Brown ruling outraged segregationists who believed in 'state rights', and how Southern governors used the National Guard to defy federal law.",
-          "model": "“One reason why school desegregation met with significant opposition in the years 1954–57 was the deep-seated resistance to federal intervention in Southern states.” The 1954 [[Brown v. Topeka]] Supreme Court ruling overturned [[Plessy]]'s separate but equal doctrine, which angered segregationists who believed education was a state matter. {{Therefore, this anger led to the creation of White Citizens Councils and a unified political resistance, slowing desegregation efforts.}}\n\n“A second reason why school desegregation met with significant opposition was the active resistance of Southern political leaders.” In 1957, Governor [[Faubus]] of Arkansas deployed the National Guard to block the [[Little Rock Nine]] from entering Central High School, choosing to defy federal law to appeal to white voters. {{Therefore, state-level opposition made integration impossible without federal military escort, hardening public defiance.}}"
+      "id": "mock_exam_4",
+      "topicCode": "Mock 4",
+      "question": "Explain why school desegregation met with significant opposition in the years 1954–57.",
+      "stimulus1": "Brown v. Board of Education (1954)",
+      "stimulus2": "Governor Orval Faubus",
+      "clue": "Explain how the Brown ruling outraged segregationists who believed in 'state rights', and how Southern governors used the National Guard to defy federal law.",
+      "model": "“One reason why school desegregation met with significant opposition in the years 1954–57 was the deep-seated resistance to federal intervention in Southern states.” The 1954 [[Brown v. Topeka]] Supreme Court ruling overturned [[Plessy]]'s separate but equal doctrine, which angered segregationists who believed education was a state matter. {{Therefore, this anger led to the creation of White Citizens Councils and a unified political resistance, slowing desegregation efforts.}}\n\n“A second reason why school desegregation met with significant opposition was the active resistance of Southern political leaders.” In 1957, Governor [[Faubus]] of Arkansas deployed the National Guard to block the [[Little Rock Nine]] from entering Central High School, choosing to defy federal law to appeal to white voters. {{Therefore, state-level opposition made integration impossible without federal military escort, hardening public defiance.}}"
     },
     "q2_1": {
       "id": "q2_1",
@@ -4514,37 +4514,37 @@ export const EXAM_SKILLS_DATA = {
   },
   "q3": {
     "mock_exam_10": {
-          "id": "mock_exam_10",
-          "topicCode": "Mock 10",
-          "enquiryTopic": "the opposition to the civil rights movement in the late 1950s",
-          "sourceB": {
-                "provenance": "From the 'Southern Manifesto' (Declaration of Constitutional Principles) signed by 101 Southern members of Congress in March 1956.",
-                "content": "We regard the decision of the Supreme Court in the school cases as a clear abuse of judicial power. It climaxes a trend in the Federal judiciary to legislate, in derogation of the authority of Congress, and to encroach upon the reserved rights of the States and the people. We pledge ourselves to use all lawful means to bring about a reversal of this decision which is contrary to the Constitution and to prevent the use of force in its implementation."
-          },
-          "sourceC": {
-                "provenance": "From a speech by a leader of the Montgomery White Citizens Council in Alabama, speaking to a segregationist rally in 1956.",
-                "content": "The Negroes think that a court ruling can force us to integrate. But we hold the economic power in this town. If they continue to demand integration, they will find themselves without jobs, without credit at our banks, and without homes. We will organize economic boycotts against any business that surrenders, and we will use every social pressure to protect our segregated Southern way of life."
-          },
-          "interpretation1": {
-                "author": "From 'The Entrenched South' by historian H. Lawson, published in 2005.",
-                "content": "Opposition to civil rights in the late 1950s was highly organized and politically entrenched, successfully stalling desegregation. By signing the Southern Manifesto, Southern congressmen created a unified political front that legitimized defiance. At the local level, White Citizens Councils waged economic warfare, firing Black workers and denying them loans. This combination of political resistance and economic terror effectively delayed integration for years."
-          },
-          "interpretation2": {
-                "author": "From 'The Civil Rights Breakthrough' by historian J. Miller, published in 2012.",
-                "content": "Although Southern opposition was loud and politically unified on paper, it ultimately failed to halt civil rights progress. The extreme nature of the opposition's resistance and local violence actually backfired. It shocked Northern public opinion and forced a reluctant federal government to intervene, culminating in the passage of the Civil Rights Acts of 1957 and 1960. These laws established the vital precedent of federal voting rights protection."
-          },
-          "questiona": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s?",
-          "cluea": "Assess Source B (political resistance of Southern congressmen, constitutional arguments) and Source C (economic warfare of White Citizens Councils, grassroots white resistance) for usefulness.",
-          "modela": "<span style=\"color: blue;\"> Source B is highly useful for demonstrating the politically organized, constitutional nature of Southern resistance. Southern congressmen assert that the Supreme Court's desegregation rulings are a \\\"clear abuse of judicial power\\\" and pledge to use \\\"all lawful means to bring about a reversal\\\". </span> <span style=\"color: green;\"> This is supported by my knowledge that 101 Southern politicians signed the Southern Manifesto in 1956, which encouraged states to resist desegregation (known as 'Massive Resistance'), showing how opposition was led by the political elite. </span> <span style=\"color: purple;\"> The provenance of the Southern Manifesto increases its usefulness because it is an official, public declaration signed by nearly all Southern members of Congress. While it is a piece of political propaganda designed to rally Southern voters and pressure the courts, it is highly useful for showing how desegregation was legally and politically challenged at the highest levels of government. </span>\\n\\n<span style=\"color: blue;\"> Source C is highly useful for showing the local, economic methods of opposition used by segregationists. The speaker boasts that \\\"we hold the economic power\\\" and threatens Black citizens with being \\\"without jobs, without credit... and without homes\\\" if they demand integration. </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that White Citizens Councils were formed throughout the South in the mid-1950s, using economic coercion, firings, and mortgage foreclosures to ruin civil rights activists financially, which verifies the speaker's threats. </span> <span style=\"color: purple;\"> The provenance of a speech at a public segregationist rally in 1956 makes it useful for revealing the public rhetoric, intimidation tactics, and confidence of local segregationist organizations. While it is a highly partisan and aggressive speech designed to mobilize opposition and terrorize Black activists, it is very useful for capturing the grassroots economic warfare used to defend segregation. </span>",
-          "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
-          "clueb": "Contrast Interpretation 1's view of opposition as highly effective in delaying integration with Interpretation 2's view that it backfired, leading to federal intervention and the Civil Rights Acts.",
-          "modelb": "The main difference is that Interpretation 1 argues that the opposition to civil rights was highly successful, stating that it [1[effectively delayed integration for years]1] through a combination of political resistance and economic terror. In contrast, Interpretation 2 argues that the opposition ultimately failed to halt progress, stating that its extreme resistance [1[actually backfired]1] and forced the federal government to pass the Civil Rights Acts of 1957 and 1960.",
-          "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
-          "cluec": "Explain how they focus on different aspects of resistance (the effectiveness of economic terror and political fronts vs the passage of federal laws) or rely on different sources (Source C's economic threats vs Source B's constitutional manifesto).",
-          "modelc": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which details how White Citizens Councils threatened to leave Black citizens \\\"without jobs\\\" and \\\"without homes\\\", leading to the view that opposition was highly [1[politically entrenched, successfully stalling desegregation]1]. Conversely, Interpretation 2 is supported by Source B, which show that despite the Southern politicians promising to resist \\\"judicial power\\\", the Federal government was forced to intervene, leading to the view that the opposition [1[ultimately failed to halt civil rights progress]1].",
-          "questiond": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s?",
-          "clued": "A balanced essay. Support Interpretation 1 (White Citizens Councils growth, KKK violence, very low integration percentage in South) and evaluate against Interpretation 2 (Civil Rights Acts of 1957 and 1960 passed, Eisenhower sending troops to Little Rock).",
-          "modeld": "I agree to a large extent with Interpretation 1 that the opposition was highly effective in stalling progress. White Citizens Councils grew to over [[250,000]] members, unleashing economic terror that devastated Black activists' livelihoods. The [[KKK]] was revived, committing bombings and lynchings. Southern states implemented 'Massive Resistance', passing laws to close integrated schools. As a result, by 1960, less than [[1%]] of Southern Black students attended desegregated schools. This supports Interpretation 1's view that local opposition was [1[highly organized and politically entrenched]1] and [1[effectively delayed integration for years]1].\\n\\nHowever, Interpretation 2 is also valid in noting that opposition backfired politically. The extreme obstruction by Southern leaders forced a reluctant President [[Eisenhower]] to introduce the [[1957]] [[Civil Rights Act]], the first federal civil rights legislation since Reconstruction, followed by the [[1960]] Act. While these acts were politically weak and only raised Southern Black voter registration by [[3%]], they established the crucial precedent of federal intervention. Defiance at Little Rock forced Eisenhower to deploy the [[101st Airborne Division]], proving that local resistance could trigger federal military force, confirming Interpretation 2's view that opposition [1[actually backfired]1] and prompted [1[federal voting rights protection]1].\\n\\nOverall, while the political backlash (Interpretation 2) laid the legal groundwork for future intervention, Interpretation 1 is more convincing for the late 1950s. On the ground, the combination of state resistance, economic terror, and white violence successfully nullified federal rulings, ensuring that segregation remained the daily reality for the vast majority of Southern Black Americans."
+      "id": "mock_exam_10",
+      "topicCode": "Mock 10",
+      "enquiryTopic": "the opposition to the civil rights movement in the late 1950s",
+      "sourceB": {
+        "provenance": "From the 'Southern Manifesto' (Declaration of Constitutional Principles) signed by 101 Southern members of Congress in March 1956.",
+        "content": "We regard the decision of the Supreme Court in the school cases as a clear abuse of judicial power. It climaxes a trend in the Federal judiciary to legislate, in derogation of the authority of Congress, and to encroach upon the reserved rights of the States and the people. We pledge ourselves to use all lawful means to bring about a reversal of this decision which is contrary to the Constitution and to prevent the use of force in its implementation."
+      },
+      "sourceC": {
+        "provenance": "From a speech by a leader of the Montgomery White Citizens Council in Alabama, speaking to a segregationist rally in 1956.",
+        "content": "The Negroes think that a court ruling can force us to integrate. But we hold the economic power in this town. If they continue to demand integration, they will find themselves without jobs, without credit at our banks, and without homes. We will organize economic boycotts against any business that surrenders, and we will use every social pressure to protect our segregated Southern way of life."
+      },
+      "interpretation1": {
+        "author": "From 'The Entrenched South' by historian H. Lawson, published in 2005.",
+        "content": "Opposition to civil rights in the late 1950s was highly organized and politically entrenched, successfully stalling desegregation. By signing the Southern Manifesto, Southern congressmen created a unified political front that legitimized defiance. At the local level, White Citizens Councils waged economic warfare, firing Black workers and denying them loans. This combination of political resistance and economic terror effectively delayed integration for years."
+      },
+      "interpretation2": {
+        "author": "From 'The Civil Rights Breakthrough' by historian J. Miller, published in 2012.",
+        "content": "Although Southern opposition was loud and politically unified on paper, it ultimately failed to halt civil rights progress. The extreme nature of the opposition's resistance and local violence actually backfired. It shocked Northern public opinion and forced a reluctant federal government to intervene, culminating in the passage of the Civil Rights Acts of 1957 and 1960. These laws established the vital precedent of federal voting rights protection."
+      },
+      "questiona": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s?",
+      "cluea": "Assess Source B (political resistance of Southern congressmen, constitutional arguments) and Source C (economic warfare of White Citizens Councils, grassroots white resistance) for usefulness.",
+      "modela": "<span style=\"color: blue;\"> Source B is highly useful for demonstrating the politically organized, constitutional nature of Southern resistance. Southern congressmen assert that the Supreme Court's desegregation rulings are a \\\"clear abuse of judicial power\\\" and pledge to use \\\"all lawful means to bring about a reversal\\\". </span> <span style=\"color: green;\"> This is supported by my knowledge that 101 Southern politicians signed the Southern Manifesto in 1956, which encouraged states to resist desegregation (known as 'Massive Resistance'), showing how opposition was led by the political elite. </span> <span style=\"color: purple;\"> The provenance of the Southern Manifesto increases its usefulness because it is an official, public declaration signed by nearly all Southern members of Congress. While it is a piece of political propaganda designed to rally Southern voters and pressure the courts, it is highly useful for showing how desegregation was legally and politically challenged at the highest levels of government. </span>\\n\\n<span style=\"color: blue;\"> Source C is highly useful for showing the local, economic methods of opposition used by segregationists. The speaker boasts that \\\"we hold the economic power\\\" and threatens Black citizens with being \\\"without jobs, without credit... and without homes\\\" if they demand integration. </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that White Citizens Councils were formed throughout the South in the mid-1950s, using economic coercion, firings, and mortgage foreclosures to ruin civil rights activists financially, which verifies the speaker's threats. </span> <span style=\"color: purple;\"> The provenance of a speech at a public segregationist rally in 1956 makes it useful for revealing the public rhetoric, intimidation tactics, and confidence of local segregationist organizations. While it is a highly partisan and aggressive speech designed to mobilize opposition and terrorize Black activists, it is very useful for capturing the grassroots economic warfare used to defend segregation. </span>",
+      "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+      "clueb": "Contrast Interpretation 1's view of opposition as highly effective in delaying integration with Interpretation 2's view that it backfired, leading to federal intervention and the Civil Rights Acts.",
+      "modelb": "The main difference is that Interpretation 1 argues that the opposition to civil rights was highly successful, stating that it [1[effectively delayed integration for years]1] through a combination of political resistance and economic terror. In contrast, Interpretation 2 argues that the opposition ultimately failed to halt progress, stating that its extreme resistance [1[actually backfired]1] and forced the federal government to pass the Civil Rights Acts of 1957 and 1960.",
+      "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+      "cluec": "Explain how they focus on different aspects of resistance (the effectiveness of economic terror and political fronts vs the passage of federal laws) or rely on different sources (Source C's economic threats vs Source B's constitutional manifesto).",
+      "modelc": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which details how White Citizens Councils threatened to leave Black citizens \\\"without jobs\\\" and \\\"without homes\\\", leading to the view that opposition was highly [1[politically entrenched, successfully stalling desegregation]1]. Conversely, Interpretation 2 is supported by Source B, which show that despite the Southern politicians promising to resist \\\"judicial power\\\", the Federal government was forced to intervene, leading to the view that the opposition [1[ultimately failed to halt civil rights progress]1].",
+      "questiond": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s?",
+      "clued": "A balanced essay. Support Interpretation 1 (White Citizens Councils growth, KKK violence, very low integration percentage in South) and evaluate against Interpretation 2 (Civil Rights Acts of 1957 and 1960 passed, Eisenhower sending troops to Little Rock).",
+      "modeld": "I agree to a large extent with Interpretation 1 that the opposition was highly effective in stalling progress. White Citizens Councils grew to over [[250,000]] members, unleashing economic terror that devastated Black activists' livelihoods. The [[KKK]] was revived, committing bombings and lynchings. Southern states implemented 'Massive Resistance', passing laws to close integrated schools. As a result, by 1960, less than [[1%]] of Southern Black students attended desegregated schools. This supports Interpretation 1's view that local opposition was [1[highly organized and politically entrenched]1] and [1[effectively delayed integration for years]1].\\n\\nHowever, Interpretation 2 is also valid in noting that opposition backfired politically. The extreme obstruction by Southern leaders forced a reluctant President [[Eisenhower]] to introduce the [[1957]] [[Civil Rights Act]], the first federal civil rights legislation since Reconstruction, followed by the [[1960]] Act. While these acts were politically weak and only raised Southern Black voter registration by [[3%]], they established the crucial precedent of federal intervention. Defiance at Little Rock forced Eisenhower to deploy the [[101st Airborne Division]], proving that local resistance could trigger federal military force, confirming Interpretation 2's view that opposition [1[actually backfired]1] and prompted [1[federal voting rights protection]1].\\n\\nOverall, while the political backlash (Interpretation 2) laid the legal groundwork for future intervention, Interpretation 1 is more convincing for the late 1950s. On the ground, the combination of state resistance, economic terror, and white violence successfully nullified federal rulings, ensuring that segregation remained the daily reality for the vast majority of Southern Black Americans."
     },
     "q3_1": {
       "id": "q3_1",
@@ -5975,124 +5975,124 @@ export const PAST_PAPERS_DATA = [
       "model": "I agree to a large extent with Interpretation 1 because President Johnson's political skill was essential to get the bills passed through a divided Congress. The interpretation argues that the laws were a \"triumph of presidential leadership\" due to \"President Johnson's masterful political skills\". From my own knowledge, I know this to be accurate; Johnson was a veteran Southern politician from Texas who knew exactly how to bully and persuade opposing politicians. When Dixiecrat politicians attempted to block the 1964 Civil Rights Act using a filibuster, it was LBJ's political mastery that gathered enough Republican support to break it. Furthermore, LBJ brilliantly manipulated \"Kennedy's tragic legacy\" by explicitly telling Congress that passing the 1964 Act was the only way to truly honour the assassinated president's memory, as shown in Source B's focus on the moral authority of the presidency. This supports Interpretation 1's view that these acts were a [1[triumph of presidential leadership]1] due to Johnson's [1[masterful political skills]1].\n\nHowever, Interpretation 2 is more convincing in highlighting that both Kennedy and Johnson were forced into action by the grassroots civil rights movement. Interpretation 1 focuses purely on presidential leadership, but from my own knowledge, neither president proactively introduced these bills without being pressured by extreme crises. President Kennedy only proposed the Civil Rights Bill in 1963 because the global embarrassment of police dogs attacking children in Birmingham left him no choice. Similarly, President Johnson only introduced the Voting Rights Act of 1965 as a direct reaction to the events in Selma. As Lewis describes in Source C, activists deliberately provoked the violence of [[Bloody Sunday]] on the [[Edmund Pettus Bridge]] because they knew televised police brutality was the only way to force LBJ's hand. Therefore, the true catalyst for the legislation was not presidential initiative, but the blood and bravery of ordinary Black Americans who made the status quo politically impossible to maintain, supporting Interpretation 2's view that it was a [1[prize won through the blood and courage of the grassroots movement]1].\n\nIn conclusion, while I agree with Interpretation 1 that the actual passage of the acts required the formidable legislative skills of President Johnson, the interpretation gives too much credit to the White House. The presidents were reactors, not initiators; they only wielded their political power to pass the Civil Rights and Voting Rights Acts because the unrelenting courage of the grassroots civil rights movement forced them to do so."
     }
   },
-{
-  "id": "mock_exam_4",
-  "title": "Best Guess Mock Exam 4: School Desegregation and Little Rock (1957)",
-  "year": "Best Guess Mock 4",
-  "enquiryTopic": "the Little Rock High School crisis (1957)",
-  "sourceA": {
-    "provenance": "From a report by a federal observer at Central High School, Little Rock, September 1957.",
-    "content": "The crowd outside the school is extremely loud and aggressive. When the nine Negro students arrived, white adults began shouting abuse and spitting in their direction. The Arkansas National Guard, stationed by order of the Governor, stood in a line blockading the entrance. They did not attempt to disperse the mob; instead, their presence clearly prevented the children from entering the school building."
+  {
+    "id": "mock_exam_4",
+    "title": "Best Guess Mock Exam 4: School Desegregation and Little Rock (1957)",
+    "year": "Best Guess Mock 4",
+    "enquiryTopic": "the Little Rock High School crisis (1957)",
+    "sourceA": {
+      "provenance": "From a report by a federal observer at Central High School, Little Rock, September 1957.",
+      "content": "The crowd outside the school is extremely loud and aggressive. When the nine Negro students arrived, white adults began shouting abuse and spitting in their direction. The Arkansas National Guard, stationed by order of the Governor, stood in a line blockading the entrance. They did not attempt to disperse the mob; instead, their presence clearly prevented the children from entering the school building."
+    },
+    "sourceB": {
+      "provenance": "From an interview with Elizabeth Eckford, one of the Little Rock Nine, recalling her experience on 4 September 1957.",
+      "content": "I walked up to the guard who had let the white students in. When I tried to pass, he raised his bayonet and then the other guards closed in. They did not let me pass. The crowd began to follow me, screaming, 'Lynch her! Lynch her!' I looked for a friendly face, but everyone was hostile. I finally made it to the bus stop and just sat there crying. It was the most terrifying day of my life."
+    },
+    "sourceC": {
+      "provenance": "From a radio address by President Dwight D. Eisenhower to the American people, 24 September 1957.",
+      "content": "Mob rule in Little Rock cannot be allowed to override the decisions of our courts. I have sent units of the 101st Airborne Division to Little Rock and have federalised the Arkansas National Guard. We are a nation where laws, not violence, must govern. The integration of Central High School must proceed in an orderly fashion, and the safety of the nine students must be guaranteed by the federal government."
+    },
+    "interpretation1": {
+      "author": "From 'The Long Shadow of Little Rock' by historian L. Jones, published in 2003.",
+      "content": "The Little Rock crisis was a huge victory for the civil rights movement. By sending in the 101st Airborne Division, President Eisenhower showed that the federal government was willing to use military force to enforce desegregation. It proved to Southern governors that they could not simply ignore the Supreme Court's rulings, giving civil rights activists a massive boost."
+    },
+    "interpretation2": {
+      "author": "From 'Race Relations in the American South' by historian R. Davis, published in 1999.",
+      "content": "The events at Little Rock showed the severe limitations of federal intervention. Central High School was only integrated because soldiers with bayonets protected the Black students daily. The following year, Governor Faubus closed all Little Rock high schools to prevent further integration. The crisis actually slowed down the pace of integration across the Deep South as white resistance hardened."
+    },
+    "q1": {
+      "question": "Give two inferences from Source A about the situation at Central High School in September 1957.",
+      "clue": "Look at what the guards did, and how the crowd acted toward the students.",
+      "model": "Inference 1: The local authorities were actively preventing school integration.\nDetails: 'The Arkansas National Guard... stood in a line blockading the entrance.'\nInference 2: The Black students faced extreme hostility and danger from the local public.\nDetails: 'white adults began shouting abuse and spitting in their direction.'"
+    },
+    "q2": {
+      "question": "Explain why school desegregation met with significant opposition in the years 1954–57.",
+      "stimulus": [
+        "Brown v. Board of Education (1954)",
+        "Governor Orval Faubus"
+      ],
+      "clue": "Explain how the Brown ruling outraged segregationists who believed in 'state rights', and how Southern governors used the National Guard to defy federal law.",
+      "model": "“One reason why school desegregation met with significant opposition in the years 1954–57 was the deep-seated resistance to federal intervention in Southern states.” The 1954 [[Brown v. Topeka]] Supreme Court ruling overturned [[Plessy]]'s separate but equal doctrine, which angered segregationists who believed education was a state matter. {{Therefore, this anger led to the creation of White Citizens Councils and a unified political resistance, slowing desegregation efforts.}}\n\n“A second reason why school desegregation met with significant opposition was the active resistance of Southern political leaders.” In 1957, Governor [[Faubus]] of Arkansas deployed the National Guard to block the [[Little Rock Nine]] from entering Central High School, choosing to defy federal law to appeal to white voters. {{Therefore, state-level opposition made integration impossible without federal military escort, hardening public defiance.}}"
+    },
+    "q3a": {
+      "question": "How useful are Sources B and C for an enquiry into the Little Rock High School crisis (1957)?",
+      "clue": "Assess Source B (first-hand terror of Elizabeth Eckford, mob hostility, personal experience) and Source C (President Eisenhower's radio address, reason for sending federal troops, duty to enforce federal law) for usefulness.",
+      "model": "<span style=\"color: blue;\"> Source B is highly useful for showing the extreme racial hostility and physical danger faced by the Little Rock Nine. Elizabeth Eckford describes the state guards raising their \"bayonet\" to block her, and a hostile white mob following her screaming \"Lynch her! Lynch her!\". </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that on 4 September 1957, Governor Orval Faubus deployed the Arkansas National Guard to block the nine Black students from entering Central High School, exposing them to angry white segregationist mobs, which confirms the source's accurate representation of the terror faced by the students. </span> <span style=\"color: purple;\"> The provenance makes it highly useful because it is a first-hand account by Elizabeth Eckford, one of the Little Rock Nine, recalling her direct experience. While it represents a highly personal and emotional memory of a terrifying event, which naturally focuses on her individual fear, it provides an invaluable and authentic record of the grassroots white resistance to school integration. </span>\n\n<span style=\"color: blue;\"> Source C is highly useful for understanding the federal government's response and the reasons for direct presidential intervention in the Little Rock crisis. President Eisenhower states that \"mob rule... cannot be allowed to override the decisions of our courts\" and explains that he has sent the \"101st Airborne Division\" to guarantee the safety of the nine students. </span> <span style=\"color: green;\"> This is supported by my knowledge that Governor Faubus's open defiance of federal court desegregation orders forced a reluctant President Eisenhower to take the unprecedented step of sending 1,000 elite federal troops to protect the Black students, which confirms that the speech shows the official rationale for federal intervention. </span> <span style=\"color: purple;\"> The provenance of a national radio address on 24 September 1957 increases its usefulness because it shows how the President officially justified the use of military force against a state governor to the American public. However, it is limited as a public political address designed to present Eisenhower as a decisive defender of the law, downplaying his initial reluctance to support the Brown decision. </span>"
+    },
+    "q3b": {
+      "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+      "clue": "Contrast Interpretation 1's view of Little Rock as a huge victory showing federal willingness to enforce desegregation with Interpretation 2's focus on the limitations of federal power and hardening white resistance.",
+      "model": "The main difference is that Interpretation 1 views the crisis as a [1[huge victory for the civil rights movement]1] that proved the federal government's willingness to enforce desegregation. In contrast, Interpretation 2 argues that the events showed the [1[severe limitations of federal intervention]1] because integration relied on military protection and prompted Faubus to close the schools."
+    },
+    "q3c": {
+      "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+      "clue": "Explain how they focus on different aspects (Eisenhower's deployment of the 101st Airborne vs Faubus closing the schools) or rely on different sources (Source C's federal deployment vs Source B's mob hostility).",
+      "model": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which states that Eisenhower \"sent units of the 101st Airborne Division\" to enforce desegregation, leading to the view that the crisis was a [1[huge victory for the civil rights movement]1]. Conversely, Interpretation 2 is supported by Source B, which states that when she tried to pass, the guard \"raised his bayonet\", leading to the view that the events showed the [1[severe limitations of federal intervention]1]."
+    },
+    "q3d": {
+      "question": "How far do you agree with Interpretation 2 about the Little Rock High School crisis (1957)?",
+      "clue": "A balanced essay. Support Interpretation 2 (Governor Faubus closing schools in 1958, slow integration in South, need for constant military guards) and evaluate against Interpretation 1 (101st Airborne sent, federal authority asserted, media coverage showing southern racism).",
+      "model": "I agree to a moderate extent with Interpretation 2 that the Little Rock crisis showed the limitations of federal power. Although the [[Little Rock Nine]] entered the school, they required daily protection from armed soldiers of the [[101st Airborne Division]] due to constant harassment. As Source B details, when Elizabeth Eckford tried to enter, the guards [[raised his bayonet]] and a hostile mob followed her. Furthermore, in 1958, Governor [[Faubus]] closed all public high schools in Little Rock for a year to prevent integration. Across the Deep South, integration remained extremely slow, with less than [[1%]] of Black students attending integrated schools by 1960. This supports Interpretation 2's view that the events showed the [1[severe limitations of federal intervention]1] and that [1[white resistance hardened]1].\n\nHowever, Interpretation 1 is also valid in arguing that Little Rock was a monumental victory. As broadcast in Source C, President [[Eisenhower]] declared that [[mob rule in Little Rock cannot be allowed]] to override the courts, and federalised the National Guard. By deploying elite troops, Eisenhower successfully asserted federal authority over state defiance. The crisis was broadcast on television, showing the world the dignity of the Black students compared to the hatred of the white mob. This media coverage shocked the nation and won widespread sympathy, confirming Interpretation 1's view that it was a [1[huge victory for the civil rights movement]1] that proved the government's willingness to use [1[military force to enforce desegregation]1].\n\nOverall, while the immediate local aftermath of Little Rock demonstrated the stubbornness of white resistance and the limits of enforcement (Interpretation 2), the crisis was a crucial turning point. It established the precedent that the federal government would use military force to defend civil rights, making it a vital political victory that paved the way for future federal intervention (Interpretation 1)."
+    }
   },
-  "sourceB": {
-    "provenance": "From an interview with Elizabeth Eckford, one of the Little Rock Nine, recalling her experience on 4 September 1957.",
-    "content": "I walked up to the guard who had let the white students in. When I tried to pass, he raised his bayonet and then the other guards closed in. They did not let me pass. The crowd began to follow me, screaming, 'Lynch her! Lynch her!' I looked for a friendly face, but everyone was hostile. I finally made it to the bus stop and just sat there crying. It was the most terrifying day of my life."
-  },
-  "sourceC": {
-    "provenance": "From a radio address by President Dwight D. Eisenhower to the American people, 24 September 1957.",
-    "content": "Mob rule in Little Rock cannot be allowed to override the decisions of our courts. I have sent units of the 101st Airborne Division to Little Rock and have federalised the Arkansas National Guard. We are a nation where laws, not violence, must govern. The integration of Central High School must proceed in an orderly fashion, and the safety of the nine students must be guaranteed by the federal government."
-  },
-  "interpretation1": {
-    "author": "From 'The Long Shadow of Little Rock' by historian L. Jones, published in 2003.",
-    "content": "The Little Rock crisis was a huge victory for the civil rights movement. By sending in the 101st Airborne Division, President Eisenhower showed that the federal government was willing to use military force to enforce desegregation. It proved to Southern governors that they could not simply ignore the Supreme Court's rulings, giving civil rights activists a massive boost."
-  },
-  "interpretation2": {
-    "author": "From 'Race Relations in the American South' by historian R. Davis, published in 1999.",
-    "content": "The events at Little Rock showed the severe limitations of federal intervention. Central High School was only integrated because soldiers with bayonets protected the Black students daily. The following year, Governor Faubus closed all Little Rock high schools to prevent further integration. The crisis actually slowed down the pace of integration across the Deep South as white resistance hardened."
-  },
-  "q1": {
-    "question": "Give two inferences from Source A about the situation at Central High School in September 1957.",
-    "clue": "Look at what the guards did, and how the crowd acted toward the students.",
-    "model": "Inference 1: The local authorities were actively preventing school integration.\nDetails: 'The Arkansas National Guard... stood in a line blockading the entrance.'\nInference 2: The Black students faced extreme hostility and danger from the local public.\nDetails: 'white adults began shouting abuse and spitting in their direction.'"
-  },
-  "q2": {
-    "question": "Explain why school desegregation met with significant opposition in the years 1954–57.",
-    "stimulus": [
-      "Brown v. Board of Education (1954)",
-      "Governor Orval Faubus"
-    ],
-    "clue": "Explain how the Brown ruling outraged segregationists who believed in 'state rights', and how Southern governors used the National Guard to defy federal law.",
-    "model": "“One reason why school desegregation met with significant opposition in the years 1954–57 was the deep-seated resistance to federal intervention in Southern states.” The 1954 [[Brown v. Topeka]] Supreme Court ruling overturned [[Plessy]]'s separate but equal doctrine, which angered segregationists who believed education was a state matter. {{Therefore, this anger led to the creation of White Citizens Councils and a unified political resistance, slowing desegregation efforts.}}\n\n“A second reason why school desegregation met with significant opposition was the active resistance of Southern political leaders.” In 1957, Governor [[Faubus]] of Arkansas deployed the National Guard to block the [[Little Rock Nine]] from entering Central High School, choosing to defy federal law to appeal to white voters. {{Therefore, state-level opposition made integration impossible without federal military escort, hardening public defiance.}}"
-  },
-  "q3a": {
-    "question": "How useful are Sources B and C for an enquiry into the Little Rock High School crisis (1957)?",
-    "clue": "Assess Source B (first-hand terror of Elizabeth Eckford, mob hostility, personal experience) and Source C (President Eisenhower's radio address, reason for sending federal troops, duty to enforce federal law) for usefulness.",
-    "model": "<span style=\"color: blue;\"> Source B is highly useful for showing the extreme racial hostility and physical danger faced by the Little Rock Nine. Elizabeth Eckford describes the state guards raising their \"bayonet\" to block her, and a hostile white mob following her screaming \"Lynch her! Lynch her!\". </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that on 4 September 1957, Governor Orval Faubus deployed the Arkansas National Guard to block the nine Black students from entering Central High School, exposing them to angry white segregationist mobs, which confirms the source's accurate representation of the terror faced by the students. </span> <span style=\"color: purple;\"> The provenance makes it highly useful because it is a first-hand account by Elizabeth Eckford, one of the Little Rock Nine, recalling her direct experience. While it represents a highly personal and emotional memory of a terrifying event, which naturally focuses on her individual fear, it provides an invaluable and authentic record of the grassroots white resistance to school integration. </span>\n\n<span style=\"color: blue;\"> Source C is highly useful for understanding the federal government's response and the reasons for direct presidential intervention in the Little Rock crisis. President Eisenhower states that \"mob rule... cannot be allowed to override the decisions of our courts\" and explains that he has sent the \"101st Airborne Division\" to guarantee the safety of the nine students. </span> <span style=\"color: green;\"> This is supported by my knowledge that Governor Faubus's open defiance of federal court desegregation orders forced a reluctant President Eisenhower to take the unprecedented step of sending 1,000 elite federal troops to protect the Black students, which confirms that the speech shows the official rationale for federal intervention. </span> <span style=\"color: purple;\"> The provenance of a national radio address on 24 September 1957 increases its usefulness because it shows how the President officially justified the use of military force against a state governor to the American public. However, it is limited as a public political address designed to present Eisenhower as a decisive defender of the law, downplaying his initial reluctance to support the Brown decision. </span>"
-  },
-  "q3b": {
-    "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
-    "clue": "Contrast Interpretation 1's view of Little Rock as a huge victory showing federal willingness to enforce desegregation with Interpretation 2's focus on the limitations of federal power and hardening white resistance.",
-    "model": "The main difference is that Interpretation 1 views the crisis as a [1[huge victory for the civil rights movement]1] that proved the federal government's willingness to enforce desegregation. In contrast, Interpretation 2 argues that the events showed the [1[severe limitations of federal intervention]1] because integration relied on military protection and prompted Faubus to close the schools."
-  },
-  "q3c": {
-    "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
-    "clue": "Explain how they focus on different aspects (Eisenhower's deployment of the 101st Airborne vs Faubus closing the schools) or rely on different sources (Source C's federal deployment vs Source B's mob hostility).",
-    "model": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which states that Eisenhower \"sent units of the 101st Airborne Division\" to enforce desegregation, leading to the view that the crisis was a [1[huge victory for the civil rights movement]1]. Conversely, Interpretation 2 is supported by Source B, which states that when she tried to pass, the guard \"raised his bayonet\", leading to the view that the events showed the [1[severe limitations of federal intervention]1]."
-  },
-  "q3d": {
-    "question": "How far do you agree with Interpretation 2 about the Little Rock High School crisis (1957)?",
-    "clue": "A balanced essay. Support Interpretation 2 (Governor Faubus closing schools in 1958, slow integration in South, need for constant military guards) and evaluate against Interpretation 1 (101st Airborne sent, federal authority asserted, media coverage showing southern racism).",
-    "model": "I agree to a moderate extent with Interpretation 2 that the Little Rock crisis showed the limitations of federal power. Although the [[Little Rock Nine]] entered the school, they required daily protection from armed soldiers of the [[101st Airborne Division]] due to constant harassment. As Source B details, when Elizabeth Eckford tried to enter, the guards [[raised his bayonet]] and a hostile mob followed her. Furthermore, in 1958, Governor [[Faubus]] closed all public high schools in Little Rock for a year to prevent integration. Across the Deep South, integration remained extremely slow, with less than [[1%]] of Black students attending integrated schools by 1960. This supports Interpretation 2's view that the events showed the [1[severe limitations of federal intervention]1] and that [1[white resistance hardened]1].\n\nHowever, Interpretation 1 is also valid in arguing that Little Rock was a monumental victory. As broadcast in Source C, President [[Eisenhower]] declared that [[mob rule in Little Rock cannot be allowed]] to override the courts, and federalised the National Guard. By deploying elite troops, Eisenhower successfully asserted federal authority over state defiance. The crisis was broadcast on television, showing the world the dignity of the Black students compared to the hatred of the white mob. This media coverage shocked the nation and won widespread sympathy, confirming Interpretation 1's view that it was a [1[huge victory for the civil rights movement]1] that proved the government's willingness to use [1[military force to enforce desegregation]1].\n\nOverall, while the immediate local aftermath of Little Rock demonstrated the stubbornness of white resistance and the limits of enforcement (Interpretation 2), the crisis was a crucial turning point. It established the precedent that the federal government would use military force to defend civil rights, making it a vital political victory that paved the way for future federal intervention (Interpretation 1)."
+  {
+    "id": "mock_exam_10",
+    "title": "Best Guess Mock Exam 10: Opposition and Civil Rights Acts (1957–60)",
+    "year": "Best Guess Mock 10",
+    "enquiryTopic": "the opposition to the civil rights movement in the late 1950s",
+    "sourceA": {
+      "provenance": "From a pamphlet distributed by the White Citizens Council in Alabama, 1956.",
+      "content": "We must stand together to protect our schools and neighborhoods. If any local merchant employs integrationists, we must withdraw our business immediately. If any landlord rents to those who support integration, they must be evicted. Economic non-cooperation is our most powerful peaceful weapon to defeat this Northern conspiracy against our traditions."
+    },
+    "sourceB": {
+      "provenance": "From the 'Southern Manifesto' (Declaration of Constitutional Principles) signed by 101 Southern members of Congress in March 1956.",
+      "content": "We regard the decision of the Supreme Court in the school cases as a clear abuse of judicial power. It climaxes a trend in the Federal judiciary to legislate, in derogation of the authority of Congress, and to encroach upon the reserved rights of the States and the people. We pledge ourselves to use all lawful means to bring about a reversal of this decision which is contrary to the Constitution and to prevent the use of force in its implementation."
+    },
+    "sourceC": {
+      "provenance": "From a speech by a leader of the Montgomery White Citizens Council in Alabama, speaking to a segregationist rally in 1956.",
+      "content": "The Negroes think that a court ruling can force us to integrate. But we hold the economic power in this town. If they continue to demand integration, they will find themselves without jobs, without credit at our banks, and without homes. We will organize economic boycotts against any business that surrenders, and we will use every social pressure to protect our segregated Southern way of life."
+    },
+    "interpretation1": {
+      "author": "From 'The Entrenched South' by historian H. Lawson, published in 2005.",
+      "content": "Opposition to civil rights in the late 1950s was highly organized and politically entrenched, successfully stalling desegregation. By signing the Southern Manifesto, Southern congressmen created a unified political front that legitimized defiance. At the local level, White Citizens Councils waged economic warfare, firing Black workers and denying them loans. This combination of political resistance and economic terror effectively delayed integration for years."
+    },
+    "interpretation2": {
+      "author": "From 'The Civil Rights Breakthrough' by historian J. Miller, published in 2012.",
+      "content": "Although Southern opposition was loud and politically unified on paper, it ultimately failed to halt civil rights progress. The extreme nature of the opposition's resistance and local violence actually backfired. It shocked Northern public opinion and forced a reluctant federal government to intervene, culminating in the passage of the Civil Rights Acts of 1957 and 1960. These laws established the vital precedent of federal voting rights protection."
+    },
+    "q1": {
+      "question": "Give two inferences from Source A about how segregationists intended to defeat integration.",
+      "clue": "Look at the actions recommended for merchants and landlords.",
+      "model": "Inference 1: Segregationists used economic boycotts to punish supporters of integration.\nDetails: 'If any local merchant employs integrationists, we must withdraw our business immediately.'\nInference 2: Segregationists targeted the housing security of civil rights supporters.\nDetails: 'If any landlord rents to those who support integration, they must be evicted.'"
+    },
+    "q2": {
+      "question": "Explain why opposition to the civil rights movement was successful in delaying progress in the years 1954–60.",
+      "stimulus": [
+        "Southern Manifesto (1956)",
+        "Ku Klux Klan (KKK)"
+      ],
+      "clue": "Explain how the Southern Manifesto unified politicians to defy rulings, and how the KKK used violence and terror to intimidate Black voters and activists.",
+      "model": "“One reason why opposition to the civil rights movement was successful in delaying progress in the years 1954–60 was the unified political defiance of Southern leaders.” In 1956, 101 Southern members of Congress signed the [[Southern Manifesto]], which accused the Supreme Court of abusing its power in the Brown ruling and urged states to resist desegregation. {{Therefore, this political defiance legitimized state-level resistance, encouraging Southern governors to pass laws closing public schools rather than desegregating them.}}\n\n“A second reason why opposition to the civil rights movement was successful in delaying progress was the use of violence and physical intimidation.” The [[KKK]] experienced a revival, using bombings, beatings, and threats of violence against civil rights activists. For example, during the Montgomery Bus Boycott, the homes of leaders were bombed, and local registrars used poll taxes and literacy tests backed by economic threats to keep Black voter registration extremely low. {{Therefore, this climate of terror and systemic disenfranchisement intimidated many Black citizens, successfully slowing the growth of grassroots campaigns.}}"
+    },
+    "q3a": {
+      "question": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s?",
+      "clue": "Assess Source B (political resistance of Southern congressmen, constitutional arguments) and Source C (economic warfare of White Citizens Councils, grassroots white resistance) for usefulness.",
+      "model": "<span style=\"color: blue;\"> Source B is highly useful for demonstrating the politically organized, constitutional nature of Southern resistance. Southern congressmen assert that the Supreme Court's desegregation rulings are a \\\"clear abuse of judicial power\\\" and pledge to use \\\"all lawful means to bring about a reversal\\\". </span> <span style=\"color: green;\"> This is supported by my knowledge that 101 Southern politicians signed the Southern Manifesto in 1956, which encouraged states to resist desegregation (known as 'Massive Resistance'), showing how opposition was led by the political elite. </span> <span style=\"color: purple;\"> The provenance of the Southern Manifesto increases its usefulness because it is an official, public declaration signed by nearly all Southern members of Congress. While it is a piece of political propaganda designed to rally Southern voters and pressure the courts, it is highly useful for showing how desegregation was legally and politically challenged at the highest levels of government. </span>\\n\\n<span style=\"color: blue;\"> Source C is highly useful for showing the local, economic methods of opposition used by segregationists. The speaker boasts that \\\"we hold the economic power\\\" and threatens Black citizens with being \\\"without jobs, without credit... and without homes\\\" if they demand integration. </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that White Citizens Councils were formed throughout the South in the mid-1950s, using economic coercion, firings, and mortgage foreclosures to ruin civil rights activists financially, which verifies the speaker's threats. </span> <span style=\"color: purple;\"> The provenance of a speech at a public segregationist rally in 1956 makes it useful for revealing the public rhetoric, intimidation tactics, and confidence of local segregationist organizations. While it is a highly partisan and aggressive speech designed to mobilize opposition and terrorize Black activists, it is very useful for capturing the grassroots economic warfare used to defend segregation. </span>"
+    },
+    "q3b": {
+      "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+      "clue": "Contrast Interpretation 1's view of opposition as highly effective in delaying integration with Interpretation 2's view that it backfired, leading to federal intervention and the Civil Rights Acts.",
+      "model": "The main difference is that Interpretation 1 argues that the opposition to civil rights was highly successful, stating that it [1[effectively delayed integration for years]1] through a combination of political resistance and economic terror. In contrast, Interpretation 2 argues that the opposition ultimately failed to halt progress, stating that its extreme resistance [1[actually backfired]1] and forced the federal government to pass the Civil Rights Acts of 1957 and 1960."
+    },
+    "q3c": {
+      "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+      "clue": "Explain how they focus on different aspects of resistance (the effectiveness of economic terror and political fronts vs the passage of federal laws) or rely on different sources (Source C's economic threats vs Source B's constitutional manifesto).",
+      "model": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which details how White Citizens Councils threatened to leave Black citizens \\\"without jobs\\\" and \\\"without homes\\\", leading to the view that opposition was highly [1[politically entrenched, successfully stalling desegregation]1]. Conversely, Interpretation 2 is supported by Source B, which show that despite the Southern politicians promising to resist \\\"judicial power\\\", the Federal government was forced to intervene, leading to the view that the opposition [1[ultimately failed to halt civil rights progress]1]."
+    },
+    "q3d": {
+      "question": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s?",
+      "clue": "A balanced essay. Support Interpretation 1 (White Citizens Councils growth, KKK violence, very low integration percentage in South) and evaluate against Interpretation 2 (Civil Rights Acts of 1957 and 1960 passed, Eisenhower sending troops to Little Rock).",
+      "model": "I agree to a large extent with Interpretation 1 that the opposition was highly effective in stalling progress. White Citizens Councils grew to over [[250,000]] members, unleashing economic terror that devastated Black activists' livelihoods. The [[KKK]] was revived, committing bombings and lynchings. Southern states implemented 'Massive Resistance', passing laws to close integrated schools. As a result, by 1960, less than [[1%]] of Southern Black students attended desegregated schools. This supports Interpretation 1's view that local opposition was [1[highly organized and politically entrenched]1] and [1[effectively delayed integration for years]1].\\n\\nHowever, Interpretation 2 is also valid in noting that opposition backfired politically. The extreme obstruction by Southern leaders forced a reluctant President [[Eisenhower]] to introduce the [[1957]] [[Civil Rights Act]], the first federal civil rights legislation since Reconstruction, followed by the [[1960]] Act. While these acts were politically weak and only raised Southern Black voter registration by [[3%]], they established the crucial precedent of federal intervention. Defiance at Little Rock forced Eisenhower to deploy the [[101st Airborne Division]], proving that local resistance could trigger federal military force, confirming Interpretation 2's view that opposition [1[actually backfired]1] and prompted [1[federal voting rights protection]1].\\n\\nOverall, while the political backlash (Interpretation 2) laid the legal groundwork for future intervention, Interpretation 1 is more convincing for the late 1950s. On the ground, the combination of state resistance, economic terror, and white violence successfully nullified federal rulings, ensuring that segregation remained the daily reality for the vast majority of Southern Black Americans."
+    }
   }
-},
-{
-  "id": "mock_exam_10",
-  "title": "Best Guess Mock Exam 10: Opposition and Civil Rights Acts (1957–60)",
-  "year": "Best Guess Mock 10",
-  "enquiryTopic": "the opposition to the civil rights movement in the late 1950s",
-  "sourceA": {
-    "provenance": "From a pamphlet distributed by the White Citizens Council in Alabama, 1956.",
-    "content": "We must stand together to protect our schools and neighborhoods. If any local merchant employs integrationists, we must withdraw our business immediately. If any landlord rents to those who support integration, they must be evicted. Economic non-cooperation is our most powerful peaceful weapon to defeat this Northern conspiracy against our traditions."
-  },
-  "sourceB": {
-    "provenance": "From the 'Southern Manifesto' (Declaration of Constitutional Principles) signed by 101 Southern members of Congress in March 1956.",
-    "content": "We regard the decision of the Supreme Court in the school cases as a clear abuse of judicial power. It climaxes a trend in the Federal judiciary to legislate, in derogation of the authority of Congress, and to encroach upon the reserved rights of the States and the people. We pledge ourselves to use all lawful means to bring about a reversal of this decision which is contrary to the Constitution and to prevent the use of force in its implementation."
-  },
-  "sourceC": {
-    "provenance": "From a speech by a leader of the Montgomery White Citizens Council in Alabama, speaking to a segregationist rally in 1956.",
-    "content": "The Negroes think that a court ruling can force us to integrate. But we hold the economic power in this town. If they continue to demand integration, they will find themselves without jobs, without credit at our banks, and without homes. We will organize economic boycotts against any business that surrenders, and we will use every social pressure to protect our segregated Southern way of life."
-  },
-  "interpretation1": {
-    "author": "From 'The Entrenched South' by historian H. Lawson, published in 2005.",
-    "content": "Opposition to civil rights in the late 1950s was highly organized and politically entrenched, successfully stalling desegregation. By signing the Southern Manifesto, Southern congressmen created a unified political front that legitimized defiance. At the local level, White Citizens Councils waged economic warfare, firing Black workers and denying them loans. This combination of political resistance and economic terror effectively delayed integration for years."
-  },
-  "interpretation2": {
-    "author": "From 'The Civil Rights Breakthrough' by historian J. Miller, published in 2012.",
-    "content": "Although Southern opposition was loud and politically unified on paper, it ultimately failed to halt civil rights progress. The extreme nature of the opposition's resistance and local violence actually backfired. It shocked Northern public opinion and forced a reluctant federal government to intervene, culminating in the passage of the Civil Rights Acts of 1957 and 1960. These laws established the vital precedent of federal voting rights protection."
-  },
-  "q1": {
-    "question": "Give two inferences from Source A about how segregationists intended to defeat integration.",
-    "clue": "Look at the actions recommended for merchants and landlords.",
-    "model": "Inference 1: Segregationists used economic boycotts to punish supporters of integration.\nDetails: 'If any local merchant employs integrationists, we must withdraw our business immediately.'\nInference 2: Segregationists targeted the housing security of civil rights supporters.\nDetails: 'If any landlord rents to those who support integration, they must be evicted.'"
-  },
-  "q2": {
-    "question": "Explain why opposition to the civil rights movement was successful in delaying progress in the years 1954–60.",
-    "stimulus": [
-      "Southern Manifesto (1956)",
-      "Ku Klux Klan (KKK)"
-    ],
-    "clue": "Explain how the Southern Manifesto unified politicians to defy rulings, and how the KKK used violence and terror to intimidate Black voters and activists.",
-    "model": "“One reason why opposition to the civil rights movement was successful in delaying progress in the years 1954–60 was the unified political defiance of Southern leaders.” In 1956, 101 Southern members of Congress signed the [[Southern Manifesto]], which accused the Supreme Court of abusing its power in the Brown ruling and urged states to resist desegregation. {{Therefore, this political defiance legitimized state-level resistance, encouraging Southern governors to pass laws closing public schools rather than desegregating them.}}\n\n“A second reason why opposition to the civil rights movement was successful in delaying progress was the use of violence and physical intimidation.” The [[KKK]] experienced a revival, using bombings, beatings, and threats of violence against civil rights activists. For example, during the Montgomery Bus Boycott, the homes of leaders were bombed, and local registrars used poll taxes and literacy tests backed by economic threats to keep Black voter registration extremely low. {{Therefore, this climate of terror and systemic disenfranchisement intimidated many Black citizens, successfully slowing the growth of grassroots campaigns.}}"
-  },
-  "q3a": {
-    "question": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s?",
-    "clue": "Assess Source B (political resistance of Southern congressmen, constitutional arguments) and Source C (economic warfare of White Citizens Councils, grassroots white resistance) for usefulness.",
-    "model": "<span style=\"color: blue;\"> Source B is highly useful for demonstrating the politically organized, constitutional nature of Southern resistance. Southern congressmen assert that the Supreme Court's desegregation rulings are a \\\"clear abuse of judicial power\\\" and pledge to use \\\"all lawful means to bring about a reversal\\\". </span> <span style=\"color: green;\"> This is supported by my knowledge that 101 Southern politicians signed the Southern Manifesto in 1956, which encouraged states to resist desegregation (known as 'Massive Resistance'), showing how opposition was led by the political elite. </span> <span style=\"color: purple;\"> The provenance of the Southern Manifesto increases its usefulness because it is an official, public declaration signed by nearly all Southern members of Congress. While it is a piece of political propaganda designed to rally Southern voters and pressure the courts, it is highly useful for showing how desegregation was legally and politically challenged at the highest levels of government. </span>\\n\\n<span style=\"color: blue;\"> Source C is highly useful for showing the local, economic methods of opposition used by segregationists. The speaker boasts that \\\"we hold the economic power\\\" and threatens Black citizens with being \\\"without jobs, without credit... and without homes\\\" if they demand integration. </span> <span style=\"color: green;\"> This content's utility is supported by my knowledge that White Citizens Councils were formed throughout the South in the mid-1950s, using economic coercion, firings, and mortgage foreclosures to ruin civil rights activists financially, which verifies the speaker's threats. </span> <span style=\"color: purple;\"> The provenance of a speech at a public segregationist rally in 1956 makes it useful for revealing the public rhetoric, intimidation tactics, and confidence of local segregationist organizations. While it is a highly partisan and aggressive speech designed to mobilize opposition and terrorize Black activists, it is very useful for capturing the grassroots economic warfare used to defend segregation. </span>"
-  },
-  "q3b": {
-    "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
-    "clue": "Contrast Interpretation 1's view of opposition as highly effective in delaying integration with Interpretation 2's view that it backfired, leading to federal intervention and the Civil Rights Acts.",
-    "model": "The main difference is that Interpretation 1 argues that the opposition to civil rights was highly successful, stating that it [1[effectively delayed integration for years]1] through a combination of political resistance and economic terror. In contrast, Interpretation 2 argues that the opposition ultimately failed to halt progress, stating that its extreme resistance [1[actually backfired]1] and forced the federal government to pass the Civil Rights Acts of 1957 and 1960."
-  },
-  "q3c": {
-    "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
-    "clue": "Explain how they focus on different aspects of resistance (the effectiveness of economic terror and political fronts vs the passage of federal laws) or rely on different sources (Source C's economic threats vs Source B's constitutional manifesto).",
-    "model": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which details how White Citizens Councils threatened to leave Black citizens \\\"without jobs\\\" and \\\"without homes\\\", leading to the view that opposition was highly [1[politically entrenched, successfully stalling desegregation]1]. Conversely, Interpretation 2 is supported by Source B, which show that despite the Southern politicians promising to resist \\\"judicial power\\\", the Federal government was forced to intervene, leading to the view that the opposition [1[ultimately failed to halt civil rights progress]1]."
-  },
-  "q3d": {
-    "question": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s?",
-    "clue": "A balanced essay. Support Interpretation 1 (White Citizens Councils growth, KKK violence, very low integration percentage in South) and evaluate against Interpretation 2 (Civil Rights Acts of 1957 and 1960 passed, Eisenhower sending troops to Little Rock).",
-    "model": "I agree to a large extent with Interpretation 1 that the opposition was highly effective in stalling progress. White Citizens Councils grew to over [[250,000]] members, unleashing economic terror that devastated Black activists' livelihoods. The [[KKK]] was revived, committing bombings and lynchings. Southern states implemented 'Massive Resistance', passing laws to close integrated schools. As a result, by 1960, less than [[1%]] of Southern Black students attended desegregated schools. This supports Interpretation 1's view that local opposition was [1[highly organized and politically entrenched]1] and [1[effectively delayed integration for years]1].\\n\\nHowever, Interpretation 2 is also valid in noting that opposition backfired politically. The extreme obstruction by Southern leaders forced a reluctant President [[Eisenhower]] to introduce the [[1957]] [[Civil Rights Act]], the first federal civil rights legislation since Reconstruction, followed by the [[1960]] Act. While these acts were politically weak and only raised Southern Black voter registration by [[3%]], they established the crucial precedent of federal intervention. Defiance at Little Rock forced Eisenhower to deploy the [[101st Airborne Division]], proving that local resistance could trigger federal military force, confirming Interpretation 2's view that opposition [1[actually backfired]1] and prompted [1[federal voting rights protection]1].\\n\\nOverall, while the political backlash (Interpretation 2) laid the legal groundwork for future intervention, Interpretation 1 is more convincing for the late 1950s. On the ground, the combination of state resistance, economic terror, and white violence successfully nullified federal rulings, ensuring that segregation remained the daily reality for the vast majority of Southern Black Americans."
-  }
-}
 ];

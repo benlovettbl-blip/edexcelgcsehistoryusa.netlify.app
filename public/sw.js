@@ -1,28 +1,32 @@
-// Self-destroying service worker to clear caching issues on both local and production
+const CACHE_NAME = 'edexcel-history-usa-v2';
+
 self.addEventListener('install', event => {
-  self.skipWaiting();
+  // Let the user trigger activation via the reload notification prompt
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys().then(keys => {
       return Promise.all(
-        cacheNames.map(cache => {
-          console.log('Clearing cache:', cache);
-          return caches.delete(cache);
+        keys.map(key => {
+          if (key !== CACHE_NAME) {
+            console.log('Clearing old cache:', key);
+            return caches.delete(key);
+          }
         })
       );
-    }).then(() => {
-      return self.registration.unregister();
-    }).then(() => {
-      console.log('Service worker unregistered successfully.');
-      return self.clients.matchAll();
-    }).then(clients => {
-      clients.forEach(client => {
-        if (client.url) {
-          client.navigate(client.url);
-        }
-      });
     })
+  );
+});
+
+self.addEventListener('message', event => {
+  if (event.data && event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    fetch(event.request).catch(() => caches.match(event.request))
   );
 });

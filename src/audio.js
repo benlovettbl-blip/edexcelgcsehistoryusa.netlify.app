@@ -96,6 +96,30 @@ export const AudioEngine = {
           osc.start(now + idx * 0.06);
           osc.stop(now + idx * 0.06 + 0.3);
         });
+      } else if (type === 'ping_usa') {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, now); // C5
+        osc.frequency.linearRampToValueAtTime(783.99, now + 0.15); // G5
+        gain.gain.setValueAtTime(0.08 * vol, now);
+        gain.gain.exponentialRampToValueAtTime(0.001 * vol, now + 0.4);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.4);
+      } else if (type === 'ping_vietnam') {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(220, now); // A3
+        osc.frequency.linearRampToValueAtTime(110, now + 0.25); // A2
+        gain.gain.setValueAtTime(0.12 * vol, now);
+        gain.gain.exponentialRampToValueAtTime(0.001 * vol, now + 0.6);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.6);
       }
     } catch (e) {
       console.warn("Audio Context synth error:", e);

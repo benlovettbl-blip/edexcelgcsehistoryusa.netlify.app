@@ -45,29 +45,137 @@ export function initData() {
     });
   });
 
+  // Try to load from either edexcel_ or firefly_ namespaces
+  const getStoredItem = (edexcelKey, fireflyKey) => {
+    return localStorage.getItem(edexcelKey) || localStorage.getItem(fireflyKey);
+  };
+
   try {
-    const storedMastery = localStorage.getItem('edexcel_mastery') || localStorage.getItem('firefly_mastery');
-    const storedBookmarks = localStorage.getItem('edexcel_bookmarks') || localStorage.getItem('firefly_bookmarks');
-    const storedSound = localStorage.getItem('edexcel_sound') || localStorage.getItem('firefly_sound');
-    let storedTheme = localStorage.getItem('edexcel_theme') || localStorage.getItem('firefly_theme');
-    const storedPastAnswers = localStorage.getItem('edexcel_past_answers');
-    const storedPastCompleted = localStorage.getItem('edexcel_past_completed');
+    const storedMasteryVal = getStoredItem('edexcel_mastery', 'firefly_mastery');
+    if (storedMasteryVal) {
+      try {
+        const parsed = JSON.parse(storedMasteryVal);
+        if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+          state.mastery = parsed;
+        }
+      } catch (e) {
+        console.error("Error parsing stored mastery:", e);
+      }
+    }
+
+    const storedBookmarksVal = getStoredItem('edexcel_bookmarks', 'firefly_bookmarks');
+    if (storedBookmarksVal) {
+      try {
+        const parsed = JSON.parse(storedBookmarksVal);
+        if (Array.isArray(parsed)) {
+          state.bookmarks = parsed;
+        }
+      } catch (e) {
+        console.error("Error parsing stored bookmarks:", e);
+      }
+    }
+
+    const storedSoundVal = getStoredItem('edexcel_sound', 'firefly_sound');
+    if (storedSoundVal) {
+      try {
+        const parsed = JSON.parse(storedSoundVal);
+        state.soundEnabled = !!parsed;
+      } catch (e) {}
+    }
+
+    const storedThemeVal = getStoredItem('edexcel_theme', 'firefly_theme');
+    if (storedThemeVal) {
+      state.theme = storedThemeVal;
+    }
+
+    const storedPastAnswersVal = localStorage.getItem('edexcel_past_answers');
+    if (storedPastAnswersVal) {
+      try {
+        const parsed = JSON.parse(storedPastAnswersVal);
+        if (parsed && typeof parsed === 'object') {
+          state.pastPaperSession.answers = parsed;
+        }
+      } catch (e) {}
+    }
+
+    const storedPastCompletedVal = localStorage.getItem('edexcel_past_completed');
+    if (storedPastCompletedVal) {
+      try {
+        const parsed = JSON.parse(storedPastCompletedVal);
+        if (Array.isArray(parsed)) {
+          state.pastPaperSession.completedQuestions = parsed;
+        }
+      } catch (e) {}
+    }
+
+    const storedDeepThinkingVal = localStorage.getItem('edexcel_deep_thinking');
+    if (storedDeepThinkingVal) {
+      try {
+        const parsed = JSON.parse(storedDeepThinkingVal);
+        if (parsed && typeof parsed === 'object') {
+          state.deepThinkingAnswers = parsed;
+        }
+      } catch (e) {}
+    }
+
+    const storedHowUsefulVal = localStorage.getItem('edexcel_how_useful');
+    if (storedHowUsefulVal) {
+      try {
+        const parsed = JSON.parse(storedHowUsefulVal);
+        if (parsed && typeof parsed === 'object') {
+          state.howUsefulAnswers = parsed;
+        }
+      } catch (e) {}
+    }
+
+    const storedObjectivesVal = localStorage.getItem('edexcel_spec_objectives');
+    if (storedObjectivesVal) {
+      try {
+        const parsed = JSON.parse(storedObjectivesVal);
+        if (parsed && typeof parsed === 'object') {
+          state.specObjectives = parsed;
+        }
+      } catch (e) {}
+    }
     
-    if (storedMastery) state.mastery = JSON.parse(storedMastery);
-    if (storedBookmarks) state.bookmarks = JSON.parse(storedBookmarks);
-    if (storedSound) state.soundEnabled = JSON.parse(storedSound);
-    if (storedTheme) state.theme = storedTheme;
-    if (storedPastAnswers) state.pastPaperSession.answers = JSON.parse(storedPastAnswers);
-    if (storedPastCompleted) state.pastPaperSession.completedQuestions = JSON.parse(storedPastCompleted);
+    const storedSpeedStudy = localStorage.getItem('edexcel_prefs_speed_study');
+    if (storedSpeedStudy) {
+      try {
+        state.flashcardSession.speedStudyMode = JSON.parse(storedSpeedStudy) === true;
+      } catch (e) {}
+    }
+
+    // Load Gamification stats
+    const storedStats = localStorage.getItem('edexcel_prefs_user_stats');
+    if (storedStats) {
+      try {
+        const parsed = JSON.parse(storedStats);
+        if (parsed && typeof parsed === 'object') {
+          state.userStats = { ...state.userStats, ...parsed };
+        }
+      } catch (e) {}
+    }
     
-    const storedDeepThinking = localStorage.getItem('edexcel_deep_thinking');
-    if (storedDeepThinking) state.deepThinkingAnswers = JSON.parse(storedDeepThinking);
-    
-    const storedHowUseful = localStorage.getItem('edexcel_how_useful');
-    if (storedHowUseful) state.howUsefulAnswers = JSON.parse(storedHowUseful);
-    
-    const storedObjectives = localStorage.getItem('edexcel_spec_objectives');
-    if (storedObjectives) state.specObjectives = JSON.parse(storedObjectives);
+    // Update daily study streak
+    const todayStr = new Date().toDateString();
+    if (state.userStats.lastLoginDate) {
+      const lastLogin = new Date(state.userStats.lastLoginDate);
+      const today = new Date(todayStr);
+      const diffTime = today - lastLogin;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      
+      if (diffDays === 1) {
+        state.userStats.streak += 1;
+        state.userStats.lastLoginDate = todayStr;
+      } else if (diffDays > 1) {
+        state.userStats.streak = 1;
+        state.userStats.lastLoginDate = todayStr;
+      }
+    } else {
+      state.userStats.streak = 1;
+      state.userStats.lastLoginDate = todayStr;
+    }
+    localStorage.setItem('edexcel_prefs_user_stats', JSON.stringify(state.userStats));
   } catch (e) {
     console.error("LocalStorage load error:", e);
   }
@@ -118,26 +226,69 @@ export function saveProgress() {
     localStorage.setItem('edexcel_deep_thinking', JSON.stringify(state.deepThinkingAnswers || {}));
     localStorage.setItem('edexcel_how_useful', JSON.stringify(state.howUsefulAnswers || {}));
     localStorage.setItem('edexcel_spec_objectives', JSON.stringify(state.specObjectives || {}));
+    localStorage.setItem('edexcel_prefs_speed_study', JSON.stringify(state.flashcardSession.speedStudyMode));
+    localStorage.setItem('edexcel_prefs_user_stats', JSON.stringify(state.userStats));
   } catch (e) {
     console.error("LocalStorage save error:", e);
   }
   updateGlobalStats();
 }
 
+export function getMasteryStatus(questionId) {
+  if (!state.mastery) return null;
+  const entry = state.mastery[questionId];
+  if (!entry) return null;
+  if (entry === true) return 'secured';
+  if (typeof entry === 'string') return entry;
+  return entry.status || 'secured';
+}
+
 export function setMastered(questionId, isMastered) {
-  const previousStatus = !!state.mastery[questionId];
-  if (previousStatus === isMastered) return;
-  
-  state.mastery[questionId] = isMastered;
+  if (!isMastered) {
+    if (state.mastery[questionId]) {
+      delete state.mastery[questionId];
+      saveProgress();
+    }
+    return;
+  }
+
+  const entry = state.mastery[questionId];
+  let newStatus = 'secured';
+  const now = Date.now();
+
+  if (entry) {
+    if (entry === true) {
+      newStatus = 'secured';
+    } else if (typeof entry === 'object') {
+      if (entry.status === 'secured') {
+        const hoursElapsed = (now - (entry.timestamp || 0)) / (1000 * 60 * 60);
+        if (hoursElapsed >= 24) {
+          newStatus = 'mastered';
+        } else {
+          newStatus = 'secured';
+        }
+      } else if (entry.status === 'mastered') {
+        newStatus = 'mastered';
+      }
+    }
+  }
+
+  state.mastery[questionId] = {
+    status: newStatus,
+    timestamp: now
+  };
   saveProgress();
 
-  if (isMastered) {
+  if (newStatus === 'mastered') {
     const question = state.allQuestions.find(q => q.id === questionId);
     if (question) {
       const subtopicQuestions = state.allQuestions.filter(q => q.subtopicId === question.subtopicId);
-      const masteredInSubtopic = subtopicQuestions.filter(q => state.mastery[q.id]);
+      const fullyMastered = subtopicQuestions.every(q => {
+        const status = getMasteryStatus(q.id);
+        return status === 'mastered';
+      });
       
-      if (masteredInSubtopic.length === subtopicQuestions.length) {
+      if (fullyMastered) {
         AudioEngine.play('cheer');
         Confetti.spawn(100);
       }

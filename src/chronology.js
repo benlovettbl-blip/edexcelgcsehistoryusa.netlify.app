@@ -2,6 +2,7 @@ import { CHRONOLOGY_EVENTS } from './views.js';
 import { state } from './state.js';
 import { AudioEngine } from './audio.js';
 import { Confetti } from './confetti.js';
+import { switchView } from './navigation.js';
 
 let chronoState = {
   selectedEvents: [],   // 4 selected events sorted chronologically (earliest to latest)
@@ -113,9 +114,14 @@ function renderChronologyGameUI() {
           Outstanding work! You successfully ordered all 4 milestones in their correct chronological sequence.
         </p>
         <div id="chrono-narrative-container" style="margin-bottom: 20px;"></div>
-        <button class="btn-primary" id="btn-chrono-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
-          <i class="fa-solid fa-rotate-right"></i> Play Again (New Events)
-        </button>
+        <div style="display: flex; gap: 12px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
+          <button class="btn-primary" id="btn-chrono-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+            <i class="fa-solid fa-rotate-right"></i> Play Again (New Events)
+          </button>
+          <button class="btn-secondary" id="btn-chrono-go-dashboard" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+            <i class="fa-solid fa-house"></i> Return to Dashboard
+          </button>
+        </div>
       </div>
 
       <div id="chrono-play-controls-area">
@@ -382,6 +388,14 @@ function bindSequenceChallengerEvents() {
     playAgainBtn.addEventListener('click', () => {
       AudioEngine.play('click');
       initChronologyGame();
+    });
+  }
+
+  const goDashboardBtn = document.getElementById('btn-chrono-go-dashboard');
+  if (goDashboardBtn) {
+    goDashboardBtn.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('dashboard');
     });
   }
 }

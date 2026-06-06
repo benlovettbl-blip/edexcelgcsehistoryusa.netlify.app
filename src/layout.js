@@ -163,6 +163,11 @@ function bindEvents() {
     switchView('timeline');
   });
   
+  document.getElementById('nav-map').addEventListener('click', () => {
+    AudioEngine.play('click');
+    switchView('map');
+  });
+  
   document.getElementById('nav-exam-sim').addEventListener('click', () => {
     AudioEngine.play('click');
     switchView('exam');
@@ -178,11 +183,27 @@ function bindEvents() {
     switchView('ai-videos');
   });
 
+  const navLeaderboard = document.getElementById('nav-leaderboard');
+  if (navLeaderboard) {
+    navLeaderboard.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('leaderboard');
+    });
+  }
+
   // Dashboard Shortcuts
   document.getElementById('shortcut-timeline').addEventListener('click', () => {
     AudioEngine.play('click');
     switchView('timeline');
   });
+  
+  const shortcutMap = document.getElementById('shortcut-map');
+  if (shortcutMap) {
+    shortcutMap.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('map');
+    });
+  }
 
   document.getElementById('shortcut-exam-sim').addEventListener('click', () => {
     AudioEngine.play('click');
@@ -210,13 +231,27 @@ function bindEvents() {
   });
 
   // Mobile Menu Toggle
-  document.getElementById('menu-toggle').addEventListener('click', toggleMobileSidebar);
-  document.getElementById('sidebar-overlay').addEventListener('click', closeMobileSidebar);
+  const menuToggle = document.getElementById('menu-toggle');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', toggleMobileSidebar);
+  }
+  const sidebarOverlay = document.getElementById('sidebar-overlay');
+  if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeMobileSidebar);
+  }
 
   // Header Back Button
   const backBtn = document.getElementById('header-back-btn');
   if (backBtn) {
     backBtn.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('dashboard');
+    });
+  }
+
+  const leaderboardBackBtn = document.getElementById('btn-leaderboard-back');
+  if (leaderboardBackBtn) {
+    leaderboardBackBtn.addEventListener('click', () => {
       AudioEngine.play('click');
       switchView('dashboard');
     });
@@ -315,6 +350,34 @@ function bindEvents() {
       AudioEngine.play('click');
       peopleToggle.classList.toggle('active');
       renderTimelineView();
+    });
+  }
+  
+  const causalToggle = document.getElementById('timeline-causal-toggle');
+  if (causalToggle) {
+    causalToggle.addEventListener('click', () => {
+      AudioEngine.play('click');
+      causalToggle.classList.toggle('active');
+      renderTimelineView();
+    });
+  }
+
+  // Timeline Scroll to Top FAB Handler
+  const timelineView = document.getElementById('view-timeline');
+  const backToTopBtn = document.getElementById('btn-timeline-back-to-top');
+  if (timelineView && backToTopBtn) {
+    timelineView.addEventListener('scroll', () => {
+      if (timelineView.scrollTop > 300) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      AudioEngine.play('click');
+      timelineView.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
@@ -1419,7 +1482,7 @@ function bindEvents() {
       if (cardEl.classList.contains('swipe-right') || cardEl.classList.contains('swipe-left')) return;
 
       const target = e.target;
-      if (target.closest('button') || target.closest('.bookmark-icon-container') || target.closest('#flashcard-reinforce-options')) {
+      if (target.closest('button') || target.closest('.bookmark-icon-container') || target.closest('#flashcard-reinforce-options') || target.closest('.rubric-checklist-container')) {
         return;
       }
       if (!cardEl.contains(target)) return;

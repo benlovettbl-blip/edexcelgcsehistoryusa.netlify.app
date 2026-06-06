@@ -48,7 +48,13 @@ const sandbox = {
     },
     dispatchEvent: () => {},
     location: {
-      origin: 'http://localhost'
+      origin: 'http://localhost',
+      hostname: 'localhost'
+    }
+  },
+  navigator: {
+    serviceWorker: {
+      register: () => Promise.resolve()
     }
   },
   document: {

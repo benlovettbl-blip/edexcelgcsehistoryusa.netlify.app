@@ -1,8 +1,10 @@
 import { initData } from './storage.js';
-import { renderSidebarNav, updateGlobalStats, closeVideoModal } from './views.js';
+import { renderSidebarNav, updateGlobalStats, closeVideoModal, showToast, initStreakLeaderboardListeners } from './views.js';
 import { bindEvents } from './layout.js';
 import { switchView } from './navigation.js';
 import { initChatbot } from './chatbot.js';
+import { initEssayPlanner } from './essay_planner.js';
+import { initMapExplorer } from './map_explorer.js';
 
 // --- Application Entry Point ---
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +15,9 @@ window.addEventListener('DOMContentLoaded', () => {
   updateGlobalStats();
   bindEvents();
   initChatbot();
+  initEssayPlanner();
+  initMapExplorer();
+  initStreakLeaderboardListeners();
 
   // Bind video modal close events
   const closeBtn = document.getElementById('video-modal-close-btn');
@@ -51,3 +56,36 @@ window.addEventListener('DOMContentLoaded', () => {
   // Render default Dashboard view
   switchView('dashboard');
 });
+
+// --- Service Worker Registration and Update Detection ---
+if ('serviceWorker' in navigator && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      // Check for updates
+      reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            showToast(
+              'A new version of the app is available!',
+              'info',
+              'Reload Now',
+              () => {
+                newWorker.postMessage({ action: 'skipWaiting' });
+              }
+            );
+          }
+        });
+      });
+    });
+
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!refreshing) {
+        window.location.reload();
+        refreshing = true;
+      }
+    });
+  });
+}

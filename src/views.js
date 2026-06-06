@@ -2,9 +2,10 @@ import { state } from './state.js';
 import { QUIZ_DATA, EXAM_SKILLS_DATA } from '../questions.js';
 import { AudioEngine } from './audio.js';
 import { switchView } from './navigation.js';
-import { setMastered, toggleBookmark } from './storage.js';
+import { setMastered, toggleBookmark, getMasteryStatus } from './storage.js';
 import { Confetti } from './confetti.js';
 import { LESSONS_DATA } from './lessons_data.js';
+import { NARRATIVE_FRAMINGS, SYNTHESIS_CHALLENGES, getFactSplit, getElaborativePrompt, EXPLANATION_SPLITS, getCardRubrics } from './flashcard_upgrades.js';
 import { MASTERY_DATA } from './mastery_data.js';
 import { DECISIONS_DATA } from './decisions_data.js';
 import { MINDMAP_DATA } from './mindmap_data.js';
@@ -87,7 +88,7 @@ function renderSidebarNav() {
       
       // Calculate individual subtopic progress
       const subQuestions = state.allQuestions.filter(q => q.subtopicId === sub.id);
-      const mastered = subQuestions.filter(q => state.mastery[q.id]);
+      const mastered = subQuestions.filter(q => getMasteryStatus(q.id));
       const pct = subQuestions.length > 0 ? Math.round((mastered.length / subQuestions.length) * 100) : 0;
       
       a.innerHTML = `
@@ -125,18 +126,27 @@ function updateBookmarksUI() {
 // 2. Global statistics calculation
 function updateGlobalStats() {
   const total = state.allQuestions.length;
-  const totalMastered = state.allQuestions.filter(q => state.mastery[q.id]).length;
-  const overallPct = total > 0 ? Math.round((totalMastered / total) * 100) : 0;
+  const totalMastered = state.allQuestions.filter(q => getMasteryStatus(q.id) === 'mastered').length;
+  const totalSecured = state.allQuestions.filter(q => getMasteryStatus(q.id) === 'secured').length;
+  const totalAnyMastered = totalMastered + totalSecured;
+  const overallPct = total > 0 ? Math.round((totalAnyMastered / total) * 100) : 0;
   
   // Update DOM values
   const overallPctEl = document.getElementById('stat-overall-progress');
   if (overallPctEl) overallPctEl.textContent = `${overallPct}%`;
   
   const overallBarEl = document.getElementById('stat-overall-progress-bar');
-  if (overallBarEl) overallBarEl.style.width = `${overallPct}%`;
+  if (overallBarEl) {
+    const goldPct = total > 0 ? Math.round((totalMastered / total) * 100) : 0;
+    const silverPct = total > 0 ? Math.round((totalSecured / total) * 100) : 0;
+    overallBarEl.style.width = '100%';
+    overallBarEl.style.background = `linear-gradient(to right, #eab308 0%, #eab308 ${goldPct}%, #06b6d4 ${goldPct}%, #06b6d4 ${goldPct + silverPct}%, rgba(255,255,255,0.05) ${goldPct + silverPct}%)`;
+  }
   
   const overallFractionEl = document.getElementById('stat-overall-fraction');
-  if (overallFractionEl) overallFractionEl.textContent = `${totalMastered} / ${total} Mastered`;
+  if (overallFractionEl) {
+    overallFractionEl.textContent = `${totalMastered} Mastered • ${totalSecured} Secured`;
+  }
 
   // Radial Chart updates
   const radialFill = document.getElementById('radial-progress-fill');
@@ -149,20 +159,31 @@ function updateGlobalStats() {
   if (radialPct) radialPct.textContent = `${overallPct}%`;
   
   const radialFraction = document.getElementById('radial-fraction-text');
-  if (radialFraction) radialFraction.textContent = `${totalMastered} / ${total} Mastered`;
+  if (radialFraction) radialFraction.textContent = `${totalMastered} Mastered • ${totalSecured} Secured`;
   
   const radialBadgeMastered = document.getElementById('radial-badge-mastered');
-  if (radialBadgeMastered) radialBadgeMastered.textContent = `${totalMastered} Mastered`;
+  if (radialBadgeMastered) {
+    radialBadgeMastered.textContent = `${totalMastered} Mastered`;
+    radialBadgeMastered.style.background = 'rgba(234, 179, 8, 0.1)';
+    radialBadgeMastered.style.color = '#eab308';
+    radialBadgeMastered.style.borderColor = 'rgba(234, 179, 8, 0.2)';
+  }
   
   const radialBadgeBookmarks = document.getElementById('radial-badge-bookmarks');
   if (radialBadgeBookmarks) radialBadgeBookmarks.textContent = `${state.bookmarks.length} Saved`;
+  
+  const heroStreakCount = document.getElementById('hero-streak-count');
+  if (heroStreakCount && state.userStats) {
+    heroStreakCount.textContent = `${state.userStats.streak} Day${state.userStats.streak === 1 ? '' : 's'}`;
+  }
   
   // Update sidebar subtopic nav percentages
   QUIZ_DATA.forEach(topic => {
     topic.subtopics.forEach(sub => {
       const subQuestions = state.allQuestions.filter(q => q.subtopicId === sub.id);
-      const mastered = subQuestions.filter(q => state.mastery[q.id]);
-      const pct = subQuestions.length > 0 ? Math.round((mastered.length / subQuestions.length) * 100) : 0;
+      const subMastered = subQuestions.filter(q => getMasteryStatus(q.id) === 'mastered').length;
+      const subSecured = subQuestions.filter(q => getMasteryStatus(q.id) === 'secured').length;
+      const pct = subQuestions.length > 0 ? Math.round(((subMastered + subSecured) / subQuestions.length) * 100) : 0;
       
       const badge = document.getElementById(`nav-pct-${sub.id}`);
       if (badge) badge.textContent = `${pct}%`;
@@ -176,19 +197,270 @@ function updateGlobalStats() {
     if (topicData) {
       const subtopicIds = topicData.subtopics.map(s => s.id);
       const topicQuestions = state.allQuestions.filter(q => subtopicIds.includes(q.subtopicId));
-      const mastered = topicQuestions.filter(q => state.mastery[q.id]).length;
-      const pct = topicQuestions.length > 0 ? Math.round((mastered / topicQuestions.length) * 100) : 0;
+      const topicMastered = topicQuestions.filter(q => getMasteryStatus(q.id) === 'mastered').length;
+      const topicSecured = topicQuestions.filter(q => getMasteryStatus(q.id) === 'secured').length;
+      const pct = topicQuestions.length > 0 ? Math.round(((topicMastered + topicSecured) / topicQuestions.length) * 100) : 0;
       
       const pctEl = document.getElementById(`sidebar-kt${i}-progress`);
       if (pctEl) pctEl.textContent = `${pct}%`;
       const barEl = document.getElementById(`sidebar-kt${i}-bar`);
-      if (barEl) barEl.style.width = `${pct}%`;
+      if (barEl) {
+        const goldPct = topicQuestions.length > 0 ? Math.round((topicMastered / topicQuestions.length) * 100) : 0;
+        const silverPct = topicQuestions.length > 0 ? Math.round((topicSecured / topicQuestions.length) * 100) : 0;
+        barEl.style.width = '100%';
+        barEl.style.background = `linear-gradient(to right, #eab308 0%, #eab308 ${goldPct}%, #06b6d4 ${goldPct}%, #06b6d4 ${goldPct + silverPct}%, rgba(255,255,255,0.05) ${goldPct + silverPct}%)`;
+      }
     }
+  }
+}
+
+// Gamification & Mappings Data Mapped Here
+
+export const CAUSAL_VECTORS = {
+  "q_1_2_s1": { targetId: "q_1_2_s2", relation: "Governor Faubus' state defiance blocks integration" },
+  "q_1_2_s2": { targetId: "q_1_2_s5", relation: "Forces President Eisenhower to deploy federal 101st Airborne troops" },
+  "q_3_3_s2": { targetId: "q_3_3_s3", relation: "Gulf of Tonkin incident prompts immediate escalation request" },
+  "q_3_3_s3": { targetId: "q_3_3_s4", relation: "Congress passes resolution authorizing Operation Rolling Thunder bombings" },
+  "q_4_1_s2": { targetId: "q_4_1_s3", relation: "Tet Offensive shatters public confidence in victory" },
+  "q_4_1_s3": { targetId: "q_4_1_s4", relation: "Credibility Gap fuels major domestic anti-war protests" }
+};
+
+export function getLevelTitle(level) {
+  const titles = {
+    1: "Novice Historian",
+    2: "Grassroots Activist",
+    3: "Campaign Strategist",
+    4: "Battlefield Commander",
+    5: "Chief Negotiator"
+  };
+  return titles[level] || "Veteran Scholar";
+}
+
+export function getXpForNextLevel(level) {
+  const levels = {
+    1: 100,
+    2: 300,
+    3: 600,
+    4: 1000,
+    5: 2000
+  };
+  return levels[level] || 999999;
+}
+
+export function showToast(message, type = 'info', actionText = null, actionCallback = null) {
+  let container = document.getElementById('app-toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'app-toast-container';
+    container.style.position = 'fixed';
+    container.style.bottom = '24px';
+    container.style.right = '24px';
+    container.style.zIndex = '9999';
+    container.style.display = 'flex';
+    container.style.flexDirection = 'column';
+    container.style.gap = '10px';
+    container.style.maxWidth = '360px';
+    document.body.appendChild(container);
+  }
+  
+  const toast = document.createElement('div');
+  toast.className = `app-toast toast-${type}`;
+  toast.style.background = 'var(--bg-card)';
+  toast.style.border = '1px solid var(--border-glass)';
+  toast.style.borderRadius = 'var(--border-radius-sm)';
+  toast.style.padding = '14px 18px';
+  toast.style.boxShadow = 'var(--shadow-lg)';
+  toast.style.display = 'flex';
+  toast.style.flexDirection = 'column';
+  toast.style.gap = '8px';
+  toast.style.color = 'var(--text-main)';
+  toast.style.fontSize = '0.88rem';
+  toast.style.lineHeight = '1.4';
+  toast.style.transform = 'translateY(100px)';
+  toast.style.opacity = '0';
+  toast.style.transition = 'all var(--transition-normal)';
+  
+  let leftBorderColor = 'var(--primary)';
+  if (type === 'success') leftBorderColor = 'var(--success)';
+  if (type === 'warning') leftBorderColor = 'var(--accent)';
+  toast.style.borderLeft = `4px solid ${leftBorderColor}`;
+  
+  let actionHtml = '';
+  if (actionText && actionCallback) {
+    actionHtml = `<button class="toast-action-btn" style="background: var(--primary); border: none; color: #fff; padding: 6px 12px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; cursor: pointer; align-self: flex-start; margin-top: 4px;">${actionText}</button>`;
+  }
+  
+  toast.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+      <div style="flex: 1;">${message}</div>
+      <button class="toast-close-btn" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 0; font-size: 0.9rem; line-height: 1;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    ${actionHtml}
+  `;
+  
+  container.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.style.transform = 'translateY(0)';
+    toast.style.opacity = '1';
+  }, 10);
+  
+  const closeBtn = toast.querySelector('.toast-close-btn');
+  closeBtn.addEventListener('click', () => {
+    toast.style.transform = 'translateY(100px)';
+    toast.style.opacity = '0';
+    setTimeout(() => toast.remove(), 300);
+  });
+  
+  if (actionText && actionCallback) {
+    const actionBtn = toast.querySelector('.toast-action-btn');
+    actionBtn.addEventListener('click', () => {
+      actionCallback();
+      toast.remove();
+    });
+  }
+  
+  if (!actionText) {
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.style.transform = 'translateY(100px)';
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }
+    }, 5000);
+  }
+}
+
+export function showLevelUpNotification(level) {
+  const title = getLevelTitle(level);
+  showToast(`🎉 <strong>Level Up!</strong> You are now a <strong>Level ${level}: ${title}</strong>!`, 'success');
+}
+
+export function addXp(amount) {
+  state.userStats.xp += amount;
+  let currentLevel = state.userStats.level;
+  let nextXpThreshold = getXpForNextLevel(currentLevel);
+  
+  while (state.userStats.xp >= nextXpThreshold && currentLevel < 5) {
+    currentLevel++;
+    nextXpThreshold = getXpForNextLevel(currentLevel);
+  }
+  
+  if (currentLevel > state.userStats.level) {
+    state.userStats.level = currentLevel;
+    setTimeout(() => {
+      AudioEngine.play('cheer');
+      if (typeof Confetti !== 'undefined' && typeof Confetti.spawn === 'function') {
+        Confetti.spawn(100);
+      }
+      showLevelUpNotification(currentLevel);
+    }, 500);
+  }
+  
+  localStorage.setItem('edexcel_prefs_user_stats', JSON.stringify(state.userStats));
+  if (state.currentView === 'dashboard') {
+    renderPlayerProfileWidget();
+  }
+}
+
+export function renderPlayerProfileWidget() {
+  const container = document.getElementById('dashboard-player-profile-container');
+  if (!container) return;
+  
+  const stats = state.userStats;
+  const levelTitle = getLevelTitle(stats.level);
+  const nextXp = getXpForNextLevel(stats.level);
+  const prevXp = stats.level === 1 ? 0 : getXpForNextLevel(stats.level - 1);
+  const levelProgressPct = stats.level === 5 ? 100 : Math.round(((stats.xp - prevXp) / (nextXp - prevXp)) * 100);
+  
+  container.innerHTML = `
+    <div class="gamification-widget" style="padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--border-glass); background: rgba(0, 0, 0, 0.15); border-radius: var(--border-radius-sm); height: 72px; box-sizing: border-box;">
+      <div style="display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary-glow); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--primary); font-weight: bold; flex-shrink: 0;" title="Level ${stats.level}">
+          ${stats.level}
+        </div>
+        <div style="flex: 1; text-align: left; min-width: 0;">
+          <div style="font-size: 0.55rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; line-height: 1;">Level ${stats.level} Profile</div>
+          <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 800; color: var(--text-main); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${levelTitle}">${levelTitle}</div>
+          
+          <!-- XP Progress Bar -->
+          <div style="margin-top: 3px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.6rem; color: var(--text-muted); margin-bottom: 2px; line-height: 1;">
+              <span>XP: ${stats.xp}/${stats.level === 5 ? 'Max' : nextXp}</span>
+              <span>${levelProgressPct}%</span>
+            </div>
+            <div style="height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; border: 1px solid var(--border-glass);">
+              <div style="height: 100%; background: var(--gradient-main); width: ${levelProgressPct}%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Streak Inside Profile -->
+      <div class="streak-widget-panel" style="display: flex; align-items: center; gap: 6px; background: rgba(239, 68, 68, 0.08); padding: 6px 10px; border: 1px solid rgba(239, 68, 68, 0.25); border-radius: var(--border-radius-sm); flex-shrink: 0;" title="Study Streak">
+        <i class="fa-solid fa-fire" style="color: var(--accent); font-size: 1.1rem;"></i>
+        <div style="text-align: left;">
+          <span style="font-size: 0.55rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; line-height: 1;">Streak</span>
+          <strong style="font-size: 0.85rem; color: var(--text-main); line-height: 1.1; white-space: nowrap;">${stats.streak} Days</strong>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const widget = container.querySelector('.gamification-widget');
+  if (widget) {
+    widget.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('leaderboard');
+    });
+  }
+}
+
+export function jumpToTimelineEvent(qid) {
+  let targetItem = document.querySelector(`.timeline-item[data-qid="${qid}"]`);
+  
+  if (!targetItem) {
+    const eraSelect = document.getElementById('timeline-era-select');
+    if (eraSelect) eraSelect.value = 'all';
+    
+    const searchInput = document.getElementById('timeline-search-input');
+    if (searchInput) searchInput.value = '';
+    
+    const peopleToggle = document.getElementById('timeline-people-toggle');
+    if (peopleToggle) peopleToggle.classList.remove('active');
+    
+    const causalToggle = document.getElementById('timeline-causal-toggle');
+    if (causalToggle) causalToggle.classList.remove('active');
+    
+    // Re-render timeline to populate the targets
+    renderTimelineView();
+    
+    // Re-query target item
+    targetItem = document.querySelector(`.timeline-item[data-qid="${qid}"]`);
+  }
+
+  if (!targetItem) {
+    showToast("Linked consequence is not currently visible.", "warning");
+    return;
+  }
+  
+  const card = targetItem.querySelector('.timeline-content-card');
+  if (card) {
+    if (!card.classList.contains('revealed')) {
+      card.classList.add('revealed');
+    }
+    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.add('causal-highlight-flash');
+    AudioEngine.play('click');
+    setTimeout(() => {
+      card.classList.remove('causal-highlight-flash');
+    }, 2000);
   }
 }
 
 // 3. Render Dashboard list
 function renderDashboard() {
+  renderPlayerProfileWidget();
   // --- Render Quick Actions (Resume / Bookmarks Review) ---
   const quickActionsContainer = document.getElementById('dashboard-quick-actions-container');
   if (quickActionsContainer) {
@@ -310,14 +582,29 @@ function renderDashboard() {
     
     // Topic header progress
     const topicQuestions = state.allQuestions.filter(q => q.topicId === topic.id);
-    const mastered = topicQuestions.filter(q => state.mastery[q.id]);
-    const pct = topicQuestions.length > 0 ? Math.round((mastered.length / topicQuestions.length) * 100) : 0;
+    const topicMastered = topicQuestions.filter(q => getMasteryStatus(q.id) === 'mastered').length;
+    const topicSecured = topicQuestions.filter(q => getMasteryStatus(q.id) === 'secured').length;
+    const pct = topicQuestions.length > 0 ? Math.round(((topicMastered + topicSecured) / topicQuestions.length) * 100) : 0;
+    const goldPct = topicQuestions.length > 0 ? Math.round((topicMastered / topicQuestions.length) * 100) : 0;
+    const silverPct = topicQuestions.length > 0 ? Math.round((topicSecured / topicQuestions.length) * 100) : 0;
     
     let subtopicsHTML = '';
     topic.subtopics.forEach(sub => {
       const subQs = state.allQuestions.filter(q => q.subtopicId === sub.id);
-      const subMastered = subQs.filter(q => state.mastery[q.id]).length;
-      const subPct = subQs.length > 0 ? Math.round((subMastered / subQs.length) * 100) : 0;
+      const subMastered = subQs.filter(q => getMasteryStatus(q.id) === 'mastered').length;
+      const subSecured = subQs.filter(q => getMasteryStatus(q.id) === 'secured').length;
+      const subPct = subQs.length > 0 ? Math.round(((subMastered + subSecured) / subQs.length) * 100) : 0;
+      const subGoldPct = subQs.length > 0 ? Math.round((subMastered / subQs.length) * 100) : 0;
+      const subSilverPct = subQs.length > 0 ? Math.round((subSecured / subQs.length) * 100) : 0;
+      
+      let progressLabel = '';
+      if (subMastered > 0 && subSecured > 0) {
+        progressLabel = `${subMastered} Mastered • ${subSecured} Secured`;
+      } else if (subMastered > 0) {
+        progressLabel = `${subMastered}/${subQs.length} Mastered`;
+      } else {
+        progressLabel = `${subSecured}/${subQs.length} Secured`;
+      }
       
       let subInquiryText = '';
       const lesson = LESSONS_DATA[sub.id];
@@ -334,15 +621,15 @@ function renderDashboard() {
         <div class="dashboard-subtopic-row" data-subtopic-id="${sub.id}">
           <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; align-items: center; margin-bottom: 2px;">
             <span style="color: var(--text-main); font-family: var(--font-heading);">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
-            <span style="color: var(--primary); font-weight: 700; font-size: 0.74rem;">${subMastered}/${subQs.length} Secured</span>
+            <span style="color: var(--primary); font-weight: 700; font-size: 0.74rem;">${progressLabel}</span>
           </div>
           ${subInquiryText ? `
           <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.35; font-weight: 400; margin: 2px 0 6px 0;">
             ${subInquiryText}
           </div>
           ` : ''}
-          <div class="topic-list-progress-bar" style="height: 3px; margin: 0;">
-            <div class="topic-list-progress-fill" style="width: ${subPct}%;"></div>
+          <div class="topic-list-progress-bar" style="height: 3px; margin: 0; background: rgba(255,255,255,0.05);">
+            <div class="topic-list-progress-fill" style="width: 100%; height: 100%; background: linear-gradient(to right, #eab308 0%, #eab308 ${subGoldPct}%, #06b6d4 ${subGoldPct}%, #06b6d4 ${subGoldPct + subSilverPct}%, transparent ${subGoldPct + subSilverPct}%);"></div>
           </div>
         </div>
       `;
@@ -363,8 +650,8 @@ function renderDashboard() {
           <span>${inquiryText}</span>
         </div>
       </div>
-      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 10px;">
-        <div class="topic-list-progress-fill" style="width: ${pct}%;"></div>
+      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 10px; background: rgba(255,255,255,0.05);">
+        <div class="topic-list-progress-fill" style="width: 100%; height: 100%; background: linear-gradient(to right, #eab308 0%, #eab308 ${goldPct}%, #06b6d4 ${goldPct}%, #06b6d4 ${goldPct + silverPct}%, transparent ${goldPct + silverPct}%);"></div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         ${subtopicsHTML}
@@ -674,7 +961,11 @@ function playCausalGame(subtopicId) {
         <h4 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: #34d399; margin: 0 0 8px 0; display: flex; align-items: center; justify-content: center; gap: 8px;">
           <i class="fa-solid fa-trophy"></i> Causation Mastered!
         </h4>
-        <p style="font-size: 0.92rem; line-height: 1.5; color: #a7f3d0; margin: 0;">${causalLinks.successText}</p>
+        <p style="font-size: 0.92rem; line-height: 1.5; color: #a7f3d0; margin: 0 0 16px 0;">${causalLinks.successText}</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button class="btn-primary" id="btn-causal-play-again" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 4px; cursor: pointer;">Play Again</button>
+          <button class="btn-secondary" id="btn-causal-go-dashboard" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 4px; cursor: pointer;">Return to Dashboard</button>
+        </div>
       </div>
     </div>
   `;
@@ -704,8 +995,24 @@ function playCausalGame(subtopicId) {
           if (linkedFactors.size === totalFactors) {
             AudioEngine.play('cheer');
             Confetti.spawn();
+            addXp(15);
             const panel = document.getElementById('causal-game-success-panel');
             if (panel) panel.style.display = 'block';
+            
+            const btnAgain = document.getElementById('btn-causal-play-again');
+            if (btnAgain) {
+              btnAgain.addEventListener('click', () => {
+                AudioEngine.play('click');
+                playCausalGame(subtopicId);
+              });
+            }
+            const btnDash = document.getElementById('btn-causal-go-dashboard');
+            if (btnDash) {
+              btnDash.addEventListener('click', () => {
+                AudioEngine.play('click');
+                switchView('dashboard');
+              });
+            }
           }
         } else {
           AudioEngine.play('fail');
@@ -1189,7 +1496,7 @@ function renderClassicView() {
   } else if (activeClassicFilter === 'depth') {
     questions = questions.filter(q => q.type === 'depth');
   } else if (activeClassicFilter === 'unmastered') {
-    questions = questions.filter(q => !state.mastery[q.id]);
+    questions = questions.filter(q => !getMasteryStatus(q.id));
   }
   
   // Update count display
@@ -1207,13 +1514,18 @@ function renderClassicView() {
   }
   
   questions.forEach((q, idx) => {
-    const isMastered = !!state.mastery[q.id];
+    const status = getMasteryStatus(q.id);
     const isBookmarked = state.bookmarks.includes(q.id);
+    const splits = getFactSplit(q);
+    
+    let checkboxClass = 'mastery-checkbox-container';
+    if (status === 'mastered') checkboxClass += ' mastered-gold';
+    else if (status === 'secured') checkboxClass += ' mastered-secured';
     
     const details = document.createElement('details');
     details.className = 'quiz-card-details';
     details.id = `accordion-${q.id}`;
-        details.innerHTML = `
+    details.innerHTML = `
       <summary class="quiz-card-summary">
         <div class="summary-content">
           <span class="summary-num">${idx + 1}</span>
@@ -1222,32 +1534,40 @@ function renderClassicView() {
         <div class="summary-badges">
           <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Core' : 'Level 7-9 Detail'}</span>
           <span class="badge badge-year">${q.year}</span>
-          <div class="mastery-checkbox-container ${isMastered ? 'mastered' : ''}" data-qid="${q.id}" title="Mark as Mastered">
+          <div class="${checkboxClass}" data-qid="${q.id}" title="Mark as Mastered">
             <i class="fa-solid fa-check"></i>
           </div>
           <i class="fa-solid fa-chevron-down summary-arrow"></i>
         </div>
       </summary>
-      <div class="details-content">
-        <div class="answer-header">
-          <i class="fa-solid fa-circle-check"></i> Correct Key Term / Answer
+      <div class="details-content" style="padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--border-glass);">
+        <div class="answer-header" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 6px; text-transform: uppercase;">
+          <i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Correct Answer: <strong style="color: var(--text-main); font-size: 0.9rem; margin-left: 4px;">${q.answer}</strong>
         </div>
-        <div class="answer-value">${q.answer}</div>
-        <div class="explanation-value">${q.explanation}</div>
+        <div class="card-back-bullet-blocks" style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="context-block" style="background: rgba(255, 255, 255, 0.015); border-left: 3px solid var(--primary); padding: 8px 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;">
+            <strong style="font-size: 0.68rem; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 2px;">Context (What it was)</strong>
+            <p style="font-size: 0.76rem; line-height: 1.4; color: var(--text-main); margin: 0;">${splits.context}</p>
+          </div>
+          <div class="significance-block" style="background: rgba(255, 255, 255, 0.015); border-left: 3px solid var(--success); padding: 8px 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;">
+            <strong style="font-size: 0.68rem; color: var(--success); text-transform: uppercase; display: block; margin-bottom: 2px;">Exam Significance (Why it matters)</strong>
+            <p style="font-size: 0.76rem; line-height: 1.4; color: var(--text-main); margin: 0;">${splits.significance}</p>
+          </div>
+        </div>
       </div>
     `;
     const checkBtn = details.querySelector('.mastery-checkbox-container');
     checkBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const nextState = !checkBtn.classList.contains('mastered');
+      const nextState = !checkBtn.classList.contains('mastered-gold') && !checkBtn.classList.contains('mastered-secured');
       setMastered(q.id, nextState);
-      checkBtn.classList.toggle('mastered', nextState);
       
-      // Update checkmark UI inside
       if (nextState) {
+        checkBtn.className = 'mastery-checkbox-container mastered-secured';
         AudioEngine.play('success');
       } else {
+        checkBtn.className = 'mastery-checkbox-container';
         AudioEngine.play('click');
       }
     });
@@ -1269,59 +1589,182 @@ export function formatSubtopicIdToKT(subtopicId) {
 }
 
 // 5. Flashcard View logic
-function startFlashcardSession(subtopicId) {
+function formatMarkdown(str) {
+  return str.replace(/\*\*(.*?)\*\?/g, '<strong>$1</strong>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+
+function formatSynthesisMarkdown(md) {
+  if (!md) return "";
+  let html = md;
+  // Replace headers
+  html = html.replace(/### (.*?)(\n|$)/g, '<h3>$1</h3>');
+  // Replace lists
+  const lines = html.split('\n');
+  let inList = false;
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i].trim();
+    if (line.startsWith('* ')) {
+      if (!inList) {
+        lines[i] = '<ul><li>' + line.slice(2) + '</li>';
+        inList = true;
+      } else {
+        lines[i] = '<li>' + line.slice(2) + '</li>';
+      }
+    } else {
+      if (inList) {
+        lines[i] = '</ul>' + lines[i];
+        inList = false;
+      }
+    }
+  }
+  if (inList) {
+    lines.push('</ul>');
+  }
+  html = lines.join('\n');
+  // Bold
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  return html;
+}
+
+function getMasteryBadgeHtml(status) {
+  if (status === 'secured') {
+    return `<span class="badge badge-secured-mastery"><i class="fa-solid fa-shield-halved"></i> Secured</span>`;
+  }
+  if (status === 'mastered') {
+    return `<span class="badge badge-gold-mastery"><i class="fa-solid fa-crown"></i> Mastered</span>`;
+  }
+  return '';
+}
+
+function showNarrativeFramingScreen(subtopicId) {
+  const container = document.getElementById('view-flashcards');
+  if (!container) return;
+  
+  const sampleQ = state.allQuestions.find(q => q.subtopicId === subtopicId);
+  const subtopicTitle = sampleQ ? sampleQ.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "") : "Historical Lesson Overview";
+  const ktLabel = formatSubtopicIdToKT(subtopicId);
+  const bullets = NARRATIVE_FRAMINGS[subtopicId] || [];
+  
+  container.innerHTML = `
+    <div class="pre-deck-framing-screen" style="max-width: 600px; margin: 40px auto; padding: 30px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); text-align: center;">
+      <div class="pre-deck-header" style="margin-bottom: 24px;">
+        <span class="pre-deck-subtitle" style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase;">Chronological Prime</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--text-main); margin: 8px 0 12px 0;">${ktLabel}: ${subtopicTitle}</h2>
+        <p class="pre-deck-meta" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          Read the historical narrative below to establish the context of cause and consequence before you begin active recall.
+        </p>
+      </div>
+      
+      <div class="pre-deck-timeline" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px; text-align: left;">
+        <div class="pre-deck-card" style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--primary); padding: 14px 18px; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; display: flex; gap: 12px; align-items: flex-start;">
+          <div class="pre-deck-step" style="background: var(--primary); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</div>
+          <div class="pre-deck-content" style="font-size: 0.9rem; line-height: 1.45; color: var(--text-normal);">${formatMarkdown(bullets[0] || "")}</div>
+        </div>
+        <div class="pre-deck-card" style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--primary); padding: 14px 18px; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; display: flex; gap: 12px; align-items: flex-start;">
+          <div class="pre-deck-step" style="background: var(--primary); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</div>
+          <div class="pre-deck-content" style="font-size: 0.9rem; line-height: 1.45; color: var(--text-normal);">${formatMarkdown(bullets[1] || "")}</div>
+        </div>
+        <div class="pre-deck-card" style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--primary); padding: 14px 18px; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; display: flex; gap: 12px; align-items: flex-start;">
+          <div class="pre-deck-step" style="background: var(--primary); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</div>
+          <div class="pre-deck-content" style="font-size: 0.9rem; line-height: 1.45; color: var(--text-normal);">${formatMarkdown(bullets[2] || "")}</div>
+        </div>
+      </div>
+      
+      <button class="btn-primary start-active-retrieval-btn" id="btn-start-active-retrieval" style="width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 700; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <i class="fa-solid fa-play"></i> Start Active Retrieval Loop
+      </button>
+    </div>
+  `;
+  
+  document.getElementById('btn-start-active-retrieval').addEventListener('click', () => {
+    AudioEngine.play('click');
+    startFlashcardSessionDirect(subtopicId);
+  });
+}
+
+function startFlashcardSessionDirect(subtopicId) {
+  restoreFlashcardSkeleton();
+  
   let questions;
   if (subtopicId === 'bookmarks') {
     questions = state.allQuestions.filter(q => state.bookmarks.includes(q.id));
+    state.flashcardSession.deck = [...questions].sort(() => Math.random() - 0.5);
   } else {
     questions = state.allQuestions.filter(q => q.subtopicId === subtopicId);
+    let deck = [...questions].sort(() => Math.random() - 0.5);
+    deck = deck.slice(0, 14);
+    
+    // Add Synthesis Card as the 15th card
+    const challenge = SYNTHESIS_CHALLENGES[subtopicId];
+    if (challenge) {
+      deck.push({
+        id: `${subtopicId}_synthesis`,
+        type: 'synthesis',
+        question: challenge.front,
+        answer: "Model Synthesis Guide",
+        explanation: challenge.back,
+        subtopicId: subtopicId
+      });
+    }
+    state.flashcardSession.deck = deck;
   }
   
-  // Shuffle cards for study session
-  state.flashcardSession.deck = [...questions].sort(() => Math.random() - 0.5);
   state.flashcardSession.activeIndex = 0;
-  state.flashcardSession.originalLength = questions.length;
+  state.flashcardSession.originalLength = state.flashcardSession.deck.length;
   state.flashcardSession.masteredCount = 0;
+  state.flashcardSession.failedCardIds = [];
   
   renderFlashcard();
+
+  const speedStudyToggle = document.getElementById('flashcard-speed-study-toggle');
+  if (speedStudyToggle) {
+    speedStudyToggle.checked = state.flashcardSession.speedStudyMode;
+    speedStudyToggle.onchange = (e) => {
+      state.flashcardSession.speedStudyMode = e.target.checked;
+      localStorage.setItem('edexcel_prefs_speed_study', JSON.stringify(state.flashcardSession.speedStudyMode));
+      AudioEngine.play('click');
+      updateGotItButtonState();
+      
+      const rubContainer = document.querySelector('.rubric-checklist-container');
+      if (rubContainer) {
+        const checkboxes = rubContainer.querySelectorAll('.rubric-checkbox');
+        if (state.flashcardSession.speedStudyMode) {
+          rubContainer.style.opacity = '0.5';
+          rubContainer.style.pointerEvents = 'none';
+          checkboxes.forEach(cb => cb.checked = true);
+        } else {
+          rubContainer.style.opacity = '1';
+          rubContainer.style.pointerEvents = 'auto';
+          checkboxes.forEach(cb => cb.checked = false);
+        }
+      }
+    };
+  }
+}
+
+function startFlashcardSession(subtopicId) {
+  state.selectedSubtopicId = subtopicId;
+  if (subtopicId !== 'bookmarks' && NARRATIVE_FRAMINGS[subtopicId]) {
+    showNarrativeFramingScreen(subtopicId);
+  } else {
+    startFlashcardSessionDirect(subtopicId);
+  }
 }
 
 function generateReinforcementMCQ(q) {
-  // Determine if answer is too long for a clean prompt
-  const wordCount = q.answer.split(/\s+/).length;
-  const useExplanation = wordCount > 5 || Math.random() < 0.5;
-
   let pool = state.allQuestions.filter(other => other.subtopicId === q.subtopicId && other.id !== q.id);
-  // Fallback to topic level if subtopic pool is too small
   if (pool.length < 3) {
     pool = state.allQuestions.filter(other => other.topicId === q.topicId && other.id !== q.id);
   }
 
-  let correctText = '';
-  let distractors = [];
-  let prompt = '';
-
-  if (useExplanation) {
-    prompt = `Select the correct historical context/detail associated with <strong>${q.answer}</strong>:`;
-    correctText = q.explanation;
-    // Get unique explanations as distractors
-    const uniqueExps = [...new Set(pool.map(other => other.explanation).filter(e => e !== correctText))];
-    distractors = uniqueExps.slice(0, 3);
-    // If not enough unique explanations, fallback to general ones
-    while (distractors.length < 3) {
-      distractors.push("Alternative historical context overview for Paper 3 studies.");
-    }
-  } else {
-    prompt = `Which historical question/definition is answered by <strong>'${q.answer}'</strong>?`;
-    correctText = q.question;
-    const uniqueQs = [...new Set(pool.map(other => other.question).filter(qst => qst !== correctText))];
-    distractors = uniqueQs.slice(0, 3);
-    while (distractors.length < 3) {
-      distractors.push("Alternative lesson question and check of key facts.");
-    }
+  const prompt = getElaborativePrompt(q);
+  const correctText = q.explanation;
+  const uniqueExps = [...new Set(pool.map(other => other.explanation).filter(e => e !== correctText))];
+  const distractors = uniqueExps.slice(0, 3);
+  while (distractors.length < 3) {
+    distractors.push("Alternative historical context overview for Paper 3 studies.");
   }
 
-  // Combine and shuffle
   const options = [correctText, ...distractors].sort(() => Math.random() - 0.5);
   const correctIndex = options.indexOf(correctText);
 
@@ -1414,23 +1857,68 @@ function handleReinforceAnswer(selectedIndex, clickedBtn) {
   }
 }
 
+function generateFadedHint(str) {
+  if (!str) return "";
+  if (/^\d+$/.test(str)) {
+    if (str.length <= 2) return str[0] + " " + "_ ".repeat(str.length - 1).trim();
+    return str.slice(0, 2) + " " + "_ ".repeat(str.length - 2).trim();
+  }
+  return str.split(/(\s+|-|v\.)/).map(part => {
+    if (/^(\s+|-|v\.)$/.test(part)) return part;
+    const low = part.toLowerCase();
+    if (low === 'of' || low === 'the' || low === 'and' || low === 'in' || low === 'to' || low === 'for' || low === 'by') {
+      return part;
+    }
+    if (part.length <= 1) return part;
+    return part[0] + " " + "_ ".repeat(part.length - 1).trim();
+  }).join("");
+}
+
+function updateGotItButtonState() {
+  const correctBtn = document.getElementById('btn-flashcard-correct');
+  if (!correctBtn) return;
+  
+  if (state.flashcardSession.speedStudyMode) {
+    correctBtn.disabled = false;
+    correctBtn.style.opacity = '1';
+    correctBtn.style.pointerEvents = 'auto';
+    correctBtn.style.cursor = 'pointer';
+    return;
+  }
+  
+  const checkboxes = document.querySelectorAll('.rubric-checkbox');
+  const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+  
+  if (checkedCount >= 2) {
+    correctBtn.disabled = false;
+    correctBtn.style.opacity = '1';
+    correctBtn.style.pointerEvents = 'auto';
+    correctBtn.style.cursor = 'pointer';
+  } else {
+    correctBtn.disabled = true;
+    correctBtn.style.opacity = '0.4';
+    correctBtn.style.pointerEvents = 'none';
+    correctBtn.style.cursor = 'not-allowed';
+  }
+}
+
 function renderFlashcard() {
   AudioEngine.stopSpeaking();
   state.flashcardSession.wasDragged = false;
   const deck = state.flashcardSession.deck;
   const idx = state.flashcardSession.activeIndex;
   
-  // Update progress headers
-  document.getElementById('flashcard-counter-text').textContent = `Card ${idx + 1} of ${deck.length}`;
-  const masteryPct = deck.length > 0 ? Math.round((state.flashcardSession.masteredCount / state.flashcardSession.originalLength) * 100) : 0;
-  document.getElementById('flashcard-mastery-text').textContent = `${masteryPct}% resolved this session`;
-  document.getElementById('flashcard-progress-bar-fill').style.width = `${Math.min(100, Math.round(((idx) / deck.length) * 100))}%`;
-  
   if (idx >= deck.length) {
     // Finished session
     showFlashcardCompletion();
     return;
   }
+  
+  // Update progress headers
+  document.getElementById('flashcard-counter-text').textContent = `Card ${idx + 1} of ${deck.length}`;
+  const masteryPct = deck.length > 0 ? Math.round((state.flashcardSession.masteredCount / state.flashcardSession.originalLength) * 100) : 0;
+  document.getElementById('flashcard-mastery-text').textContent = `${masteryPct}% resolved this session`;
+  document.getElementById('flashcard-progress-bar-fill').style.width = `${Math.min(100, Math.round(((idx) / deck.length) * 100))}%`;
   
   // Reset Reinforcing State for new card!
   state.flashcardSession.reinforcing = false;
@@ -1440,21 +1928,99 @@ function renderFlashcard() {
 
   const q = deck[idx];
   const isBookmarked = state.bookmarks.includes(q.id);
+  const ktLabel = formatSubtopicIdToKT(q.subtopicId);
   
   // Render Front & Back Content
   const frontBadge = document.getElementById('card-front-badge');
-  frontBadge.textContent = q.type === 'standard' ? 'Core' : 'Level 7-9 Detail';
-  frontBadge.className = `badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}`;
-  
   const backBadge = document.getElementById('card-back-badge');
-  backBadge.textContent = q.type === 'standard' ? 'Core' : 'Level 7-9 Detail';
-  backBadge.className = `badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}`;
+  const backBody = document.getElementById('flashcard-back-standard-body');
   
-  document.getElementById('card-front-question').textContent = q.question;
-  document.getElementById('card-back-answer').textContent = q.answer;
-  document.getElementById('card-back-explanation').textContent = q.explanation;
+  const status = getMasteryStatus(q.id);
+  const statusBadgeHtml = getMasteryBadgeHtml(status);
+  document.getElementById('card-front-status-badge').innerHTML = statusBadgeHtml;
+  document.getElementById('card-back-status-badge').innerHTML = statusBadgeHtml;
+
+  // Clear previous hint if any
+  const oldHint = document.getElementById('card-front-hint-box');
+  if (oldHint) oldHint.remove();
+
+  if (q.type === 'synthesis') {
+    frontBadge.textContent = 'Synoptic Synthesis';
+    frontBadge.className = 'badge badge-synthesis';
+    backBadge.textContent = 'Synoptic Synthesis';
+    backBadge.className = 'badge badge-synthesis';
+    
+    document.getElementById('card-front-question').textContent = q.question;
+    
+    backBody.innerHTML = `
+      <span class="card-answer-label">Synthesis Guidance</span>
+      <h2 class="card-answer-text" style="font-size: 1.25rem;">Macro-Argument Analysis</h2>
+      <div class="synthesis-guide-container" style="text-align: left; margin-top: 15px; max-height: 250px; overflow-y: auto; padding-right: 5px;">
+        ${formatSynthesisMarkdown(q.explanation)}
+      </div>
+      <div class="rubric-checklist-container" style="margin-top: 12px; padding: 10px 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); text-align: left; width: 100%; box-sizing: border-box;">
+        <span style="font-size: 0.68rem; font-weight: 700; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+          <i class="fa-solid fa-brain"></i> Synthesis Rubric
+        </span>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
+            <input type="checkbox" class="rubric-checkbox" data-idx="0" style="accent-color: var(--accent); cursor: pointer;">
+            <span>Compared both historical factors?</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
+            <input type="checkbox" class="rubric-checkbox" data-idx="1" style="accent-color: var(--accent); cursor: pointer;">
+            <span>Identified a primary factor with evidence?</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
+            <input type="checkbox" class="rubric-checkbox" data-idx="2" style="accent-color: var(--accent); cursor: pointer;">
+            <span>Formulated a clear synthesis conclusion?</span>
+          </label>
+        </div>
+      </div>
+    `;
+  } else {
+    frontBadge.textContent = q.type === 'standard' ? 'Core' : 'Level 7-9 Detail';
+    frontBadge.className = `badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}`;
+    backBadge.textContent = q.type === 'standard' ? 'Core' : 'Level 7-9 Detail';
+    backBadge.className = `badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}`;
+    
+    document.getElementById('card-front-question').textContent = q.question;
+
+
+    
+    // Add faded hint to front body if failed in this session
+    if (state.flashcardSession.failedCardIds && state.flashcardSession.failedCardIds.includes(q.id)) {
+      const hintText = generateFadedHint(q.answer);
+      const hintHtml = `
+        <div id="card-front-hint-box" class="faded-hint-container" style="margin-top: 15px; padding: 10px; background: rgba(6, 182, 212, 0.05); border: 1px dashed var(--primary); border-radius: var(--border-radius-sm); font-size: 0.85rem; text-align: center;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 4px;">Scaffolded Retrieval Hint</span>
+          <code style="font-family: monospace; font-size: 1.02rem; letter-spacing: 2px; color: var(--text-main); font-weight: 700;">${hintText}</code>
+        </div>
+      `;
+      const frontBody = document.querySelector('.flashcard-front .card-body');
+      if (frontBody) {
+        frontBody.insertAdjacentHTML('beforeend', hintHtml);
+      }
+    }
+    
+    const split = getFactSplit(q);
+    const rubrics = getCardRubrics(q);
+    const rubricItemsHtml = rubrics.map((rub, index) => `
+      <label style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0; line-height: 1.3;">
+        <input type="checkbox" class="rubric-checkbox" data-idx="${index}" style="accent-color: var(--primary); cursor: pointer; margin-top: 2px; flex-shrink: 0;">
+        <span><strong>${rub.label}:</strong> ${rub.text}</span>
+      </label>
+    `).join('');
+    backBody.innerHTML = `
+      <h2 class="card-answer-text" id="card-back-answer" style="margin-top: 0; margin-bottom: 10px;">${q.answer}</h2>
+      <div class="rubric-checklist-container" style="margin-top: 8px; padding: 12px 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); text-align: left; width: 100%; box-sizing: border-box;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          ${rubricItemsHtml}
+        </div>
+      </div>
+    `;
+  }
   
-  const ktLabel = formatSubtopicIdToKT(q.subtopicId);
   document.getElementById('card-front-topic-indicator').textContent = ktLabel;
   document.getElementById('card-back-topic-indicator').textContent = ktLabel;
   
@@ -1463,9 +2029,11 @@ function renderFlashcard() {
   const backBkmk = document.getElementById('card-back-bookmark');
   
   [frontBkmk, backBkmk].forEach(b => {
-    b.setAttribute('data-qid', q.id);
-    b.className = `bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}`;
-    b.querySelector('i').className = isBookmarked ? 'fa-solid fa-star' : 'fa-regular fa-star';
+    if (b) {
+      b.setAttribute('data-qid', q.id);
+      b.className = `bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}`;
+      b.querySelector('i').className = isBookmarked ? 'fa-solid fa-star' : 'fa-regular fa-star';
+    }
   });
 
   // Ensure card is unflipped
@@ -1476,6 +2044,38 @@ function renderFlashcard() {
   // Reset buttons
   document.getElementById('btn-flashcard-reveal').style.display = 'flex';
   document.getElementById('flashcard-self-grade-actions').style.display = 'none';
+
+  // Attach rubric listeners
+  const checkboxes = document.querySelectorAll('.rubric-checkbox');
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      AudioEngine.play('click');
+      updateGotItButtonState();
+    });
+  });
+
+  const rubContainer = document.querySelector('.rubric-checklist-container');
+  if (rubContainer) {
+    rubContainer.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+    if (state.flashcardSession.speedStudyMode) {
+      rubContainer.style.opacity = '0.5';
+      rubContainer.style.pointerEvents = 'none';
+      const checkboxes = rubContainer.querySelectorAll('.rubric-checkbox');
+      checkboxes.forEach(cb => cb.checked = true);
+    } else {
+      rubContainer.style.opacity = '1';
+      rubContainer.style.pointerEvents = 'auto';
+    }
+  }
+
+  const speedStudyToggle = document.getElementById('flashcard-speed-study-toggle');
+  if (speedStudyToggle) {
+    speedStudyToggle.checked = state.flashcardSession.speedStudyMode;
+  }
+
+  updateGotItButtonState();
 }
 
 function handleFlashcardGrade(correct) {
@@ -1489,8 +2089,24 @@ function handleFlashcardGrade(correct) {
   const q = deck[idx];
   
   if (correct) {
+    // Rubric enforcement
+    if (!state.flashcardSession.speedStudyMode) {
+      const checkboxes = document.querySelectorAll('.rubric-checkbox');
+      const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+      if (checkedCount < 2) {
+        AudioEngine.play('click');
+        const correctBtn = document.getElementById('btn-flashcard-correct');
+        if (correctBtn) {
+          correctBtn.classList.add('shake');
+          setTimeout(() => correctBtn.classList.remove('shake'), 400);
+        }
+        return;
+      }
+    }
+
     AudioEngine.play('success');
     setMastered(q.id, true);
+    addXp(10);
     state.flashcardSession.masteredCount++;
     
     cardEl.classList.add('swipe-right');
@@ -1499,6 +2115,11 @@ function handleFlashcardGrade(correct) {
       renderFlashcard();
     }, 300);
   } else {
+    // Push card to failed tracking
+    if (state.flashcardSession.failedCardIds && !state.flashcardSession.failedCardIds.includes(q.id)) {
+      state.flashcardSession.failedCardIds.push(q.id);
+    }
+
     setMastered(q.id, false);
     AudioEngine.play('fail');
     
@@ -1534,7 +2155,6 @@ function showFlashcardCompletion() {
   
   document.getElementById('btn-fc-restart').addEventListener('click', () => {
     AudioEngine.play('click');
-    // Restore normal structure first
     restoreFlashcardSkeleton();
     startFlashcardSession(state.selectedSubtopicId);
   });
@@ -1550,9 +2170,20 @@ function restoreFlashcardSkeleton() {
   const container = document.getElementById('view-flashcards');
   container.innerHTML = `
     <div class="flashcard-view-container">
-      <div class="flashcard-progress-header">
-        <span id="flashcard-counter-text">Card 1 of 15</span>
-        <span id="flashcard-mastery-text">0% resolved this session</span>
+      <div class="flashcard-progress-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span id="flashcard-counter-text">Card 1 of 15</span>
+          <span id="flashcard-mastery-text" style="font-size: 0.7rem; color: var(--text-muted);">0% resolved this session</span>
+        </div>
+        <div class="speed-study-toggle-container" style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border-glass);">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 4px;" id="speed-study-label">
+            <i class="fa-solid fa-bolt" style="color: var(--accent);"></i> Whiz Mode
+          </span>
+          <label class="switch-control" style="margin: 0;">
+            <input type="checkbox" id="flashcard-speed-study-toggle">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
       </div>
       <div class="flashcard-progress-bar">
         <div class="flashcard-progress-fill" id="flashcard-progress-bar-fill"></div>
@@ -1561,7 +2192,10 @@ function restoreFlashcardSkeleton() {
         <div class="flashcard-card" id="flashcard-card">
           <div class="flashcard-face flashcard-front">
             <div class="card-top">
-              <span class="badge" id="card-front-badge">Standard</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span class="badge" id="card-front-badge">Standard</span>
+                <span id="card-front-status-badge"></span>
+              </div>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <button class="tts-speak-btn" id="btn-front-tts" title="Read Question Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                 <span class="card-topic-indicator" id="card-front-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
@@ -1573,19 +2207,27 @@ function restoreFlashcardSkeleton() {
           </div>
           <div class="flashcard-face flashcard-back">
             <div class="card-top">
-              <span class="badge badge-standard" id="card-back-badge">Standard</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span class="badge badge-standard" id="card-back-badge">Standard</span>
+                <span id="card-back-status-badge"></span>
+              </div>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <button class="tts-speak-btn" id="btn-back-tts" title="Read Answer & Explanation Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                 <span class="card-topic-indicator" id="card-back-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
                 <span class="bookmark-icon-container" id="card-back-bookmark"><i class="fa-regular fa-star"></i></span>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="flashcard-back-standard-body" style="width: 100%;">
               <span class="card-answer-label">Correct Answer</span>
               <h2 class="card-answer-text" id="card-back-answer"></h2>
               <p class="card-explanation-text" id="card-back-explanation"></p>
             </div>
-            <div class="card-bottom"><i class="fa-solid fa-rotate"></i> Click card to flip back</div>
+            <div class="card-body" id="flashcard-back-reinforce-body" style="display: none; width: 100%; text-align: left; align-items: stretch; height: 100%; justify-content: flex-start; padding-top: 10px; overflow-y: auto;">
+              <span class="card-answer-label" style="text-align: center; display: block; margin-bottom: 6px;">🧠 Double-Check Understanding</span>
+              <h4 id="flashcard-reinforce-question" style="font-size: 0.8rem; font-weight: 600; line-height: 1.3; margin: 0 0 10px 0; color: var(--text-normal); text-align: center;">...</h4>
+              <div id="flashcard-reinforce-options" style="display: flex; flex-direction: column; gap: 8px; width: 100%;"></div>
+            </div>
+            <div class="card-bottom" id="flashcard-back-footer"><i class="fa-solid fa-rotate"></i> Click card to flip back</div>
           </div>
         </div>
       </div>
@@ -1607,19 +2249,29 @@ function restoreFlashcardSkeleton() {
   
   const bkmks = [document.getElementById('card-front-bookmark'), document.getElementById('card-back-bookmark')];
   bkmks.forEach(b => {
-    b.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleBookmark(b.getAttribute('data-qid'));
-    });
+    if (b) {
+      b.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleBookmark(b.getAttribute('data-qid'));
+      });
+    }
   });
 }
 
-function flipFlashcard() {
+function flipFlashcard(e) {
   if (state.flashcardSession.wasDragged) {
     state.flashcardSession.wasDragged = false;
     return;
   }
+  
+  if (e && e.target) {
+    if (e.target.closest('.rubric-checklist-container') || e.target.closest('.tts-speak-btn') || e.target.closest('.bookmark-icon-container') || e.target.closest('#flashcard-self-grade-actions') || e.target.closest('#flashcard-reinforce-options')) {
+      return;
+    }
+  }
+
   const card = document.getElementById('flashcard-card');
+  if (!card) return;
   card.classList.toggle('flipped');
   AudioEngine.play('flip');
   
@@ -1630,6 +2282,7 @@ function flipFlashcard() {
   if (isFlipped) {
     revealBtn.style.display = 'none';
     actionBtns.style.display = 'flex';
+    updateGotItButtonState();
   } else {
     revealBtn.style.display = 'flex';
     actionBtns.style.display = 'none';
@@ -2307,6 +2960,12 @@ function renderTimelineView() {
     });
   }
   
+  const causalToggle = document.getElementById('timeline-causal-toggle');
+  const causalOnly = causalToggle && causalToggle.classList.contains('active');
+  if (causalOnly) {
+    questions = questions.filter(q => !!CAUSAL_VECTORS[q.id]);
+  }
+  
   // Sort chronologically by year ascending
   questions.sort((a, b) => a.year - b.year);
   
@@ -2328,6 +2987,7 @@ function renderTimelineView() {
   questions.forEach(q => {
     const item = document.createElement('div');
     item.className = 'timeline-item';
+    item.setAttribute('data-qid', q.id);
     
     let topicName = "Key Topic 1";
     if (q.topicId === 'topic_2') topicName = "Key Topic 2";
@@ -2347,6 +3007,23 @@ function renderTimelineView() {
         </div>
         <div class="timeline-image-provenance" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 10px; border-radius: 4px; margin-bottom: 10px; line-height: 1.4; box-sizing: border-box;">
           <strong style="color: inherit;">Source Provenance:</strong> ${matchedImg.provenance}
+        </div>
+      `;
+    }
+
+    // Check for causal consequence vector
+    let causalHtml = '';
+    if (CAUSAL_VECTORS[q.id]) {
+      const vector = CAUSAL_VECTORS[q.id];
+      causalHtml = `
+        <div class="causal-vector-box" style="margin-top: 12px; padding: 12px 14px; background: var(--gradient-hero); border: 1px solid var(--border-glass); border-left: 4px solid var(--primary); border-radius: var(--border-radius-sm); font-size: 0.85rem; line-height: 1.5; text-align: left; box-shadow: var(--shadow-sm);">
+          <strong style="color: var(--primary); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.6px; display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+            <i class="fa-solid fa-circle-nodes"></i> Chronological Causal Vector
+          </strong>
+          <span style="color: var(--text-main); font-weight: 600; display: block; margin-bottom: 8px;">${vector.relation}</span>
+          <button class="causal-jump-btn" data-target="${vector.targetId}" style="display: inline-flex; align-items: center; gap: 6px; background: var(--primary); border: none; color: #fff; padding: 6px 12px; font-size: 0.75rem; font-weight: bold; border-radius: var(--border-radius-sm); cursor: pointer; transition: all var(--transition-fast); box-shadow: var(--shadow-sm);">
+            Jump to Consequence <i class="fa-solid fa-arrow-down-long"></i>
+          </button>
         </div>
       `;
     }
@@ -2375,6 +3052,8 @@ function renderTimelineView() {
     const lessonButton = `<button class="timeline-lesson-btn" data-subtopic="${q.subtopicId}" style="margin-right: 6px; margin-top: 6px; padding: 4px 10px; font-size: 0.72rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); color: var(--primary); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-book-open"></i> Go to Lesson</button>`;
     const combinedButtonsHtml = `<div class="timeline-buttons-row" style="margin-top: 8px; display: flex; flex-wrap: wrap;">${lessonButton}${buttons}</div>`;
     
+    const causalVectorBadge = CAUSAL_VECTORS[q.id] ? `<span class="badge badge-causal" style="background: rgba(230, 92, 0, 0.12); border: 1px solid var(--primary); color: var(--primary); font-size: 0.65rem; padding: 2px 8px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; box-sizing: border-box;" title="Causal Link Available"><i class="fa-solid fa-bolt"></i> Causal Link</span>` : '';
+
     item.innerHTML = `
       <div class="timeline-marker"></div>
       <div class="timeline-year">${q.year}</div>
@@ -2384,7 +3063,10 @@ function renderTimelineView() {
             <span>${topicName}</span>
             ${keyFigureIndicator}
           </span>
-          <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Core' : 'Level 7-9 Detail'}</span>
+          <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
+            ${causalVectorBadge}
+            <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Core' : 'Level 7-9 Detail'}</span>
+          </div>
         </div>
         <div class="timeline-q-title" style="font-weight: bold; line-height: 1.4;">${q.question}</div>
         
@@ -2394,6 +3076,7 @@ function renderTimelineView() {
             <div class="timeline-a-text" style="color: var(--primary); font-weight: bold;">${q.answer}</div>
             <p class="timeline-exp" style="margin-top: 4px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">${q.explanation}</p>
           </div>
+          ${causalHtml}
         </div>
         ${combinedButtonsHtml}
       </div>
@@ -2401,10 +3084,19 @@ function renderTimelineView() {
     
     const card = item.querySelector('.timeline-content-card');
     card.addEventListener('click', (e) => {
-      if (e.target.closest('.timeline-bio-btn') || e.target.closest('.timeline-lesson-btn')) return;
+      if (e.target.closest('.timeline-bio-btn') || e.target.closest('.timeline-lesson-btn') || e.target.closest('.causal-jump-btn')) return;
       AudioEngine.play('click');
       card.classList.toggle('revealed');
     });
+
+    const jumpBtn = item.querySelector('.causal-jump-btn');
+    if (jumpBtn) {
+      jumpBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetQid = jumpBtn.getAttribute('data-target');
+        jumpToTimelineEvent(targetQid);
+      });
+    }
 
     const bioBtns = item.querySelectorAll('.timeline-bio-btn');
     bioBtns.forEach(btn => {
@@ -2591,7 +3283,7 @@ function renderBookmarksView() {
   }
   
   bookmarkedQs.forEach((q, idx) => {
-    const isMastered = !!state.mastery[q.id];
+    const isMastered = !!getMasteryStatus(q.id);
     
     const details = document.createElement('details');
     details.className = 'quiz-card-details';
@@ -2710,6 +3402,81 @@ function getHighScores(unitId) {
     scores = JSON.parse(scores);
   }
   return scores.sort((a, b) => b.score - a.score).slice(0, 5);
+}
+
+export function showWarningToast(message) {
+  let existing = document.getElementById('warning-toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.id = 'warning-toast';
+  toast.style.position = 'fixed';
+  toast.style.bottom = '24px';
+  toast.style.right = '24px';
+  toast.style.background = '#7f1d1d';
+  toast.style.color = '#fecaca';
+  toast.style.border = '1.5px solid #dc2626';
+  toast.style.padding = '14px 20px';
+  toast.style.borderRadius = '8px';
+  toast.style.boxShadow = '0 10px 25px rgba(0,0,0,0.4)';
+  toast.style.zIndex = '999999';
+  toast.style.fontFamily = 'var(--font-heading)';
+  toast.style.fontWeight = '700';
+  toast.style.fontSize = '0.9rem';
+  toast.style.display = 'flex';
+  toast.style.alignItems = 'center';
+  toast.style.gap = '10px';
+  toast.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+  toast.style.transform = 'translateY(80px)';
+  toast.style.opacity = '0';
+
+  toast.innerHTML = `
+    <i class="fa-solid fa-triangle-exclamation" style="color: #fbbf24; font-size: 1.1rem;"></i>
+    <span>${message}</span>
+  `;
+
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.transform = 'translateY(0)';
+    toast.style.opacity = '1';
+  }, 50);
+
+  setTimeout(() => {
+    toast.style.transform = 'translateY(80px)';
+    toast.style.opacity = '0';
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 4000);
+}
+
+function triggerChimneyAnger() {
+  const logo = document.getElementById('header-brand-logo');
+  if (logo) {
+    logo.classList.add('angry');
+    AudioEngine.play('fail');
+    setTimeout(() => {
+      logo.classList.remove('angry');
+    }, 4000);
+  }
+}
+
+export function validateScoreBoardInitials(initials) {
+  if (!/^[A-Z]{3}$/.test(initials)) {
+    return { valid: false, message: "Please enter exactly 3 letters for your initials." };
+  }
+  const profane = new Set([
+    'ASS', 'WTF', 'FUC', 'SHI', 'CNT', 'CUM', 'FAG', 'DIK', 'KYS', 'KKK', 'SEX', 
+    'NIG', 'TIT', 'FAP', 'WOP', 'PIS', 'HEL', 'DAM', 'SOB', 'PEE', 'POO', 'DIE', 
+    'GAY', 'PNS', 'VAG', 'KOK', 'FUK', 'FCK', 'BCH', 'MLF', 'DCK', 'BUM', 'FUG',
+    'SHT', 'XXX', 'SUK', 'HOE', 'SLT', 'WHR', 'NOB', 'KNO', 'COK', 'TAD', 'PUB'
+  ]);
+  if (profane.has(initials)) {
+    triggerChimneyAnger();
+    return { valid: false, message: "The Fareham chimney master will not allow that." };
+  }
+  return { valid: true };
 }
 
 function saveHighScoreLocal(unitId, name, yearGroup, score) {
@@ -3065,12 +3832,15 @@ function playDecisionsPhase3(gameId, choiceLetter, subChoice) {
         </p>
       </div>
 
-      <div style="display: flex; gap: 12px; justify-content: center; border-top: 1px solid var(--border-glass); padding-top: 18px;">
+      <div style="display: flex; gap: 12px; justify-content: center; border-top: 1px solid var(--border-glass); padding-top: 18px; flex-wrap: wrap;">
         <button class="btn-secondary" id="btn-dec-menu" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-left"></i> Scenario Menu
         </button>
         <button class="btn-primary" id="btn-dec-retry" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-right"></i> Try Alternative Path
+        </button>
+        <button class="btn-secondary" id="btn-dec-go-dashboard" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+          <i class="fa-solid fa-house"></i> Return to Dashboard
         </button>
       </div>
     </div>
@@ -3084,6 +3854,11 @@ function playDecisionsPhase3(gameId, choiceLetter, subChoice) {
   document.getElementById('btn-dec-retry').addEventListener('click', () => {
     AudioEngine.play('click');
     playDecisionsScenario(gameId);
+  });
+
+  document.getElementById('btn-dec-go-dashboard').addEventListener('click', () => {
+    AudioEngine.play('click');
+    switchView('dashboard');
   });
 }
 
@@ -3434,6 +4209,7 @@ function endMasteryGame(success) {
   if (success) {
     AudioEngine.play('cheer');
     Confetti.spawn(100);
+    addXp(15);
   } else {
     AudioEngine.play('fail');
   }
@@ -3492,12 +4268,15 @@ function endMasteryGame(success) {
       <!-- Results Leaderboard Rankings -->
       <div id="mastery-results-leaderboard" style="max-width: 360px; margin: 0 auto 24px;"></div>
 
-      <div style="display: flex; gap: 12px; justify-content: center;">
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <button class="btn-secondary" id="btn-mastery-return" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-left"></i> Setup Screen
         </button>
         <button class="btn-primary" id="btn-mastery-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-right"></i> Play Again (Same Topic)
+        </button>
+        <button class="btn-secondary" id="btn-mastery-go-dashboard" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+          <i class="fa-solid fa-house"></i> Return to Dashboard
         </button>
       </div>
     </div>
@@ -3515,12 +4294,13 @@ function endMasteryGame(success) {
       let initials = initialsInput ? initialsInput.value.trim().toUpperCase() : "";
       let yearGroup = yearInput ? yearInput.value : "";
       
-      if (initials.length !== 3 || !/^[A-Z]{3}$/.test(initials)) {
-        alert("Please enter exactly 3 letters for your initials (e.g. ABC).");
+      const val = validateScoreBoardInitials(initials);
+      if (!val.valid) {
+        showWarningToast(val.message);
         return;
       }
       if (!yearGroup) {
-        alert("Please select your Year Group.");
+        showWarningToast("Please select your Year Group.");
         return;
       }
       
@@ -3564,6 +4344,11 @@ function endMasteryGame(success) {
   document.getElementById('btn-mastery-play-again').addEventListener('click', () => {
     AudioEngine.play('click');
     startMasteryMatch(masteryState.unitId, masteryState.isSpeedRun);
+  });
+
+  document.getElementById('btn-mastery-go-dashboard').addEventListener('click', () => {
+    AudioEngine.play('click');
+    switchView('dashboard');
   });
 }
 
@@ -3948,6 +4733,7 @@ function endMindMapGame(success) {
   if (success) {
     AudioEngine.play('cheer');
     Confetti.spawn(100);
+    addXp(15);
   } else {
     AudioEngine.play('fail');
   }
@@ -4005,12 +4791,15 @@ function endMindMapGame(success) {
       <!-- Results Leaderboard Rankings -->
       <div id="mindmap-results-leaderboard" style="max-width: 360px; margin: 0 auto 24px;"></div>
 
-      <div style="display: flex; gap: 12px; justify-content: center;">
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <button class="btn-secondary" id="btn-mindmap-return" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-left"></i> Setup Screen
         </button>
         <button class="btn-primary" id="btn-mindmap-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-right"></i> Play Again (Same Topic)
+        </button>
+        <button class="btn-secondary" id="btn-mindmap-go-dashboard" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+          <i class="fa-solid fa-house"></i> Return to Dashboard
         </button>
       </div>
     </div>
@@ -4027,12 +4816,13 @@ function endMindMapGame(success) {
       let initials = initialsInput ? initialsInput.value.trim().toUpperCase() : "";
       let yearGroup = yearInput ? yearInput.value : "";
       
-      if (initials.length !== 3 || !/^[A-Z]{3}$/.test(initials)) {
-        alert("Please enter exactly 3 letters for your initials (e.g. ABC).");
+      const val = validateScoreBoardInitials(initials);
+      if (!val.valid) {
+        showWarningToast(val.message);
         return;
       }
       if (!yearGroup) {
-        alert("Please select your Year Group.");
+        showWarningToast("Please select your Year Group.");
         return;
       }
       
@@ -4075,6 +4865,11 @@ function endMindMapGame(success) {
   document.getElementById('btn-mindmap-play-again').addEventListener('click', () => {
     AudioEngine.play('click');
     startMindMapGame(mindmapState.subtopicId, mindmapState.isSpeedRun);
+  });
+
+  document.getElementById('btn-mindmap-go-dashboard').addEventListener('click', () => {
+    AudioEngine.play('click');
+    switchView('dashboard');
   });
 }
 
@@ -4176,12 +4971,13 @@ function initExamLeaderboard(scope, pct) {
       const initials = (initialsInput.value || '').trim().toUpperCase();
       const yearGroup = yearInput.value;
 
-      if (!/^[A-Z]{3}$/.test(initials)) {
-        alert("Please enter exactly 3 uppercase letters for your initials.");
+      const val = validateScoreBoardInitials(initials);
+      if (!val.valid) {
+        showWarningToast(val.message);
         return;
       }
       if (!yearGroup) {
-        alert("Please select your Year Group.");
+        showWarningToast("Please select your Year Group.");
         return;
       }
 
@@ -4210,6 +5006,235 @@ function initExamLeaderboard(scope, pct) {
 
       if (inputBox) inputBox.style.display = 'none';
       renderExamResultsLeaderboard(scope);
+    });
+  }
+}
+
+// Spaced Repetition / Highscore Helpers for Streak & Level Profile
+export function getStreakHighScores() {
+  const key = 'streak_highscores';
+  let scores = localStorage.getItem(key);
+  if (!scores) {
+    const defaults = [
+      { name: "BLB", yearGroup: "Year 10", streak: 12, level: 4, date: "2026-06-01" },
+      { name: "JHS", yearGroup: "Year 11", streak: 8, level: 3, date: "2026-06-03" },
+      { name: "MCR", yearGroup: "Year 9", streak: 5, level: 2, date: "2026-06-05" },
+      { name: "HND", yearGroup: "Year 8", streak: 3, level: 2, date: "2026-06-05" },
+      { name: "KPT", yearGroup: "Year 7", streak: 2, level: 1, date: "2026-06-06" }
+    ];
+    localStorage.setItem(key, JSON.stringify(defaults));
+    return defaults;
+  }
+  try {
+    return JSON.parse(scores);
+  } catch (e) {
+    return [];
+  }
+}
+
+export function saveStreakHighScoreLocal(name, yearGroup, streak, level) {
+  const scores = getStreakHighScores();
+  
+  const existingIndex = scores.findIndex(s => s.name === name && s.yearGroup === yearGroup);
+  if (existingIndex !== -1) {
+    const existing = scores[existingIndex];
+    if (streak > existing.streak || (streak === existing.streak && level > existing.level)) {
+      scores[existingIndex] = {
+        name: name,
+        yearGroup: yearGroup,
+        streak: streak,
+        level: level,
+        date: new Date().toISOString().split('T')[0]
+      };
+    }
+  } else {
+    scores.push({
+      name: name,
+      yearGroup: yearGroup,
+      streak: streak,
+      level: level,
+      date: new Date().toISOString().split('T')[0]
+    });
+  }
+
+  scores.sort((a, b) => b.streak - a.streak || b.level - a.level || b.date.localeCompare(a.date));
+  localStorage.setItem('streak_highscores', JSON.stringify(scores.slice(0, 7)));
+}
+
+export function renderStreakLeaderboardList() {
+  const container = document.getElementById('streak-leaderboard-list');
+  if (!container) return;
+
+  const localScores = getStreakHighScores();
+  renderResults(localScores);
+
+  if (GOOGLE_SHEET_WEBAPP_URL) {
+    fetch(`${GOOGLE_SHEET_WEBAPP_URL}?type=streak`)
+      .then(res => res.json())
+      .then(scores => {
+        if (Array.isArray(scores)) {
+          renderResults(scores);
+        }
+      })
+      .catch(err => console.error("Error loading remote streak leaderboard:", err));
+  }
+
+  function renderResults(scoresList) {
+    scoresList.sort((a, b) => b.streak - a.streak || b.level - a.level || (b.date || '').localeCompare(a.date || ''));
+    
+    let rowsHtml = scoresList.slice(0, 7).map((s, idx) => {
+      let medal = '';
+      let rankClass = '';
+
+      if (idx === 0) {
+        medal = '🥇';
+        rankClass = 'rank-gold';
+      } else if (idx === 1) {
+        medal = '🥈';
+        rankClass = 'rank-silver';
+      } else if (idx === 2) {
+        medal = '🥉';
+        rankClass = 'rank-bronze';
+      }
+
+      let achievementTitle = '📚 STUDY ACTIVE';
+      if (s.level === 5) achievementTitle = '👑 ELITE HISTORIAN';
+      else if (s.streak >= 10) achievementTitle = '🔥 STREAK LEGEND';
+      else if (s.level >= 4) achievementTitle = '🛡️ COMMANDER';
+      else if (s.streak >= 5) achievementTitle = '⚡ SUPER SCHOLAR';
+      else if (s.level >= 3) achievementTitle = '📣 STRATEGIST';
+
+      const isCurrentUser = (state.userStats && s.name === localStorage.getItem('last_streak_initials') && s.yearGroup === localStorage.getItem('last_streak_year'));
+      const highlightStyle = isCurrentUser ? 'box-shadow: 0 0 16px rgba(239, 68, 68, 0.22) !important; border-color: rgba(239, 68, 68, 0.5) !important; background: rgba(239, 68, 68, 0.06) !important;' : '';
+
+      const dateText = s.date ? s.date.split('-').reverse().slice(0, 2).reverse().join('/') : '';
+
+      return `
+        <div class="highscore-card-row ${rankClass}" style="animation-delay: ${idx * 0.07}s; ${highlightStyle}">
+          <!-- Rank Column -->
+          <div class="highscore-rank">
+            ${medal || `<span style="font-size: 1.05rem; opacity: 0.7;">#${idx + 1}</span>`}
+          </div>
+          
+          <!-- Initials & Year Column -->
+          <div class="highscore-info">
+            <span class="highscore-name">${s.name}</span>
+            <span class="highscore-year">${s.yearGroup || 'Year Group'}</span>
+          </div>
+          
+          <!-- Stats Column -->
+          <div class="highscore-stats">
+            <!-- Streak Badge -->
+            <span class="highscore-badge-streak">
+              <i class="fa-solid fa-fire ${idx === 0 ? 'fire-flicker-animation' : ''}"></i> ${s.streak} Day${s.streak === 1 ? '' : 's'}
+            </span>
+            <!-- Level Badge -->
+            <span class="highscore-badge-level">
+              Lv ${s.level}
+            </span>
+          </div>
+          
+          <!-- Achievement Title Column -->
+          <div class="highscore-achievement">
+            <span class="highscore-achievement-title">
+              ${achievementTitle}
+            </span>
+          </div>
+          
+          <!-- Date Column -->
+          <div class="highscore-date">
+            ${dateText}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = `
+      <div style="display: flex; flex-direction: column; padding: 10px 0; margin-top: 10px;">
+        ${rowsHtml || '<div style="font-size: 0.9rem; color: var(--text-muted); text-align: center; padding: 24px 0; background: rgba(0,0,0,0.1); border: 1px dashed var(--border-glass); border-radius: var(--border-radius-sm);">No high scores. Be the first to submit!</div>'}
+      </div>
+    `;
+  }
+}
+
+export function openStreakLeaderboard() {
+  const lastInitials = localStorage.getItem('last_streak_initials') || '';
+  const lastYear = localStorage.getItem('last_streak_year') || '';
+  
+  const initialsInput = document.getElementById('streak-highscore-initials');
+  const yearInput = document.getElementById('streak-highscore-year');
+  const inputBox = document.getElementById('streak-highscore-input-box');
+  
+  if (initialsInput) {
+    initialsInput.value = lastInitials;
+  }
+  if (yearInput) {
+    yearInput.value = lastYear;
+  }
+  
+  if (inputBox) {
+    // Always display submission box for layout symmetry and so users can update their scores anytime
+    inputBox.style.display = 'block';
+  }
+
+  renderStreakLeaderboardList();
+}
+
+export function initStreakLeaderboardListeners() {
+  const submitBtn = document.getElementById('btn-submit-streak-highscore');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+      const initialsInput = document.getElementById('streak-highscore-initials');
+      const yearInput = document.getElementById('streak-highscore-year');
+      
+      const initials = (initialsInput ? initialsInput.value : '').trim().toUpperCase();
+      const yearGroup = yearInput ? yearInput.value : '';
+
+      const val = validateScoreBoardInitials(initials);
+      if (!val.valid) {
+        showWarningToast(val.message);
+        return;
+      }
+      if (!yearGroup) {
+        showWarningToast("Please select your Year Group.");
+        return;
+      }
+
+      const streak = state.userStats ? state.userStats.streak : 1;
+      const level = state.userStats ? state.userStats.level : 1;
+
+      saveStreakHighScoreLocal(initials, yearGroup, streak, level);
+      
+      localStorage.setItem('last_streak_initials', initials);
+      localStorage.setItem('last_streak_year', yearGroup);
+
+      AudioEngine.play('success');
+
+      if (GOOGLE_SHEET_WEBAPP_URL) {
+        const payload = {
+          type: "streak",
+          name: initials,
+          yearGroup: yearGroup,
+          streak: streak,
+          level: level,
+          date: new Date().toISOString().split('T')[0]
+        };
+
+        fetch(GOOGLE_SHEET_WEBAPP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        }).catch(err => console.error("Error saving remote streak score:", err));
+      }
+
+      const inputBox = document.getElementById('streak-highscore-input-box');
+      if (inputBox) {
+        inputBox.style.display = 'none';
+      }
+      renderStreakLeaderboardList();
     });
   }
 }
@@ -4710,6 +5735,7 @@ function endTabooGame() {
 
   // Play cheer audio
   AudioEngine.play('cheer');
+  addXp(15);
 
   // Trigger confetti
   Confetti.trigger();
@@ -4768,9 +5794,14 @@ function endTabooGame() {
           </table>
         </div>
 
-        <button id="btn-taboo-reset" class="btn-primary" style="width: 100%; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-          <i class="fa-solid fa-rotate-left"></i> Play Again
-        </button>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
+          <button id="btn-taboo-reset" class="btn-primary" style="flex: 1; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
+            <i class="fa-solid fa-rotate-left"></i> Play Again
+          </button>
+          <button id="btn-taboo-go-dashboard" class="btn-secondary" style="flex: 1; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
+            <i class="fa-solid fa-house"></i> Return to Dashboard
+          </button>
+        </div>
       </div>
     </div>
   `;
@@ -4778,6 +5809,11 @@ function endTabooGame() {
   document.getElementById('btn-taboo-reset').addEventListener('click', () => {
     AudioEngine.play('click');
     initTabooGame();
+  });
+
+  document.getElementById('btn-taboo-go-dashboard').addEventListener('click', () => {
+    AudioEngine.play('click');
+    switchView('dashboard');
   });
 }
 
@@ -4802,19 +5838,33 @@ function renderKeyTopicOverview(topicId) {
   
   let totalQs = 0;
   let totalMastered = 0;
+  let totalSecured = 0;
   subtopics.forEach(sub => {
     const subQs = state.allQuestions.filter(q => q.subtopicId === sub.id);
     totalQs += subQs.length;
-    totalMastered += subQs.filter(q => state.mastery[q.id]).length;
+    totalMastered += subQs.filter(q => getMasteryStatus(q.id) === 'mastered').length;
+    totalSecured += subQs.filter(q => getMasteryStatus(q.id) === 'secured').length;
   });
-  const overallPct = totalQs > 0 ? Math.round((totalMastered / totalQs) * 100) : 0;
+  const overallPct = totalQs > 0 ? Math.round(((totalMastered + totalSecured) / totalQs) * 100) : 0;
+  const goldPct = totalQs > 0 ? Math.round((totalMastered / totalQs) * 100) : 0;
+  const silverPct = totalQs > 0 ? Math.round((totalSecured / totalQs) * 100) : 0;
 
   // Build Subtopics Portal HTML
   let subtopicsHtml = '';
   subtopics.forEach(sub => {
     const subQs = state.allQuestions.filter(q => q.subtopicId === sub.id);
-    const subMastered = subQs.filter(q => state.mastery[q.id]).length;
-    const pct = subQs.length > 0 ? Math.round((subMastered / subQs.length) * 100) : 0;
+    const subMastered = subQs.filter(q => getMasteryStatus(q.id) === 'mastered').length;
+    const subSecured = subQs.filter(q => getMasteryStatus(q.id) === 'secured').length;
+    
+    let progressLabel = '';
+    if (subMastered > 0 && subSecured > 0) {
+      progressLabel = `${subMastered} Mastered • ${subSecured} Secured`;
+    } else if (subMastered > 0) {
+      progressLabel = `${subMastered}/${subQs.length} Mastered`;
+    } else {
+      progressLabel = `${subSecured}/${subQs.length} Secured`;
+    }
+    
     const cleanTitle = sub.title.replace(/^Topic \d\.\d:\s*/, "");
     const subNum = sub.title.match(/Topic\s(\d\.\d)/)?.[1] || "";
     
@@ -4823,7 +5873,7 @@ function renderKeyTopicOverview(topicId) {
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
             <span style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: 0.5px;">LESSON ${subNum}</span>
-            <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${pct}% Mastered</span>
+            <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${progressLabel}</span>
           </div>
           <h3 style="font-size: 0.95rem; font-weight: 600; margin: 0; line-height: 1.3; color: var(--text-main);">${cleanTitle}</h3>
         </div>
@@ -4882,9 +5932,9 @@ function renderKeyTopicOverview(topicId) {
           <span>Inquiry: ${inquiryText}</span>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
-          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
-          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
-            <div style="background: var(--gradient-main); height: 100%; width: ${overallPct}%;"></div>
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${totalMastered} Mastered • ${totalSecured} Secured</span>
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden; display: flex;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(to right, #eab308 0%, #eab308 ${goldPct}%, #06b6d4 ${goldPct}%, #06b6d4 ${goldPct + silverPct}%, transparent ${goldPct + silverPct}%);"></div>
           </div>
         </div>
       </div>
@@ -5161,6 +6211,8 @@ function renderKeyTopicOverview(topicId) {
       const q = currentQuestion;
       const isBookmarked = state.bookmarks.includes(q.id);
       const ktLabel = formatSubtopicIdToKT(q.subtopicId);
+      const status = getMasteryStatus(q.id);
+      const statusBadgeHtml = getMasteryBadgeHtml(status);
 
       let mcqOptionsHtml = '';
       if (reinforcing && reinforceMcq) {
@@ -5175,11 +6227,14 @@ function renderKeyTopicOverview(topicId) {
 
       stageContainer.innerHTML = `
         <div class="overview-flashcard-stage" style="perspective: 1000px; position: relative; width: 100%; height: 380px; margin-bottom: 16px;">
-          <div class="flashcard-card" id="overview-flashcard-card" style="cursor: pointer; position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+          <div class="flashcard-card ${reinforcing ? 'flipped' : ''}" id="overview-flashcard-card" style="cursor: pointer; position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
             <!-- Front Face -->
             <div class="flashcard-face flashcard-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-glass); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card); background-image: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);">
               <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Core' : 'Level 7-9 Detail'}</span>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                  <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Core' : 'Level 7-9 Detail'}</span>
+                  ${statusBadgeHtml}
+                </div>
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
                   <span class="bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-star" style="color: var(--primary);"></i></span>
@@ -5193,7 +6248,10 @@ function renderKeyTopicOverview(topicId) {
             <!-- Back Face -->
             <div class="flashcard-face flashcard-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-active); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card-hover); background-image: radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%); transform: rotateY(180deg);">
               <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Core' : 'Level 7-9 Detail'}</span>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                  <span class="badge ${q.type === 'standard' ? 'badge-standard' : 'badge-depth'}">${q.type === 'standard' ? 'Core' : 'Level 7-9 Detail'}</span>
+                  ${statusBadgeHtml}
+                </div>
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
                   <span class="bookmark-icon-container ${isBookmarked ? 'bookmarked' : ''}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? 'fa-solid' : 'fa-regular'} fa-star" style="color: var(--primary);"></i></span>
@@ -5202,9 +6260,13 @@ function renderKeyTopicOverview(topicId) {
               
               <!-- Standard back body (Question detail) -->
               <div id="overview-flashcard-back-standard-body" style="display: ${reinforcing ? 'none' : 'flex'}; flex-direction: column; flex: 1; padding: 10px 0; overflow-y: auto; text-align: center; justify-content: center; gap: 4px;">
-                <span class="card-answer-label" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; margin-bottom: 2px;">Correct Answer</span>
-                <h2 class="card-answer-text" style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0 0 6px 0; line-height: 1.2;">${q.answer}</h2>
-                <p class="card-explanation-text" style="font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); margin: 0; max-height: 160px; overflow-y: auto;">${q.explanation}</p>
+                <h2 class="card-answer-text" style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0 0 10px 0; line-height: 1.2;">${q.answer}</h2>
+                <div class="card-back-split-container" style="text-align: left; display: flex; flex-direction: column; gap: 8px; margin-top: 0;">
+                  <div class="context-block" style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--primary); padding: 8px; border-radius: 4px;">
+                    <div class="block-header" style="font-size: 0.75rem; font-weight: 700; color: var(--primary); margin-bottom: 3px;"><i class="fa-solid fa-circle-info"></i> Explanation</div>
+                    <p style="font-size: 0.76rem; line-height: 1.35; color: var(--text-normal); margin: 0;">${EXPLANATION_SPLITS[q.id] ? `${getFactSplit(q).context} ${getFactSplit(q).significance}` : q.explanation}</p>
+                  </div>
+                </div>
               </div>
 
               <!-- MCQ reinforce back body -->
@@ -5295,6 +6357,16 @@ function renderKeyTopicOverview(topicId) {
           renderCard();
         }, 300);
       });
+
+      if (reinforcing && reinforceMcq) {
+        const optionBtns = stageContainer.querySelectorAll('.overview-mcq-option');
+        optionBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const idx = parseInt(btn.getAttribute('data-index'));
+            handleOverviewMcqSelection(idx, btn, document.getElementById('overview-flashcard-back-reinforce-body'), cardEl, q);
+          });
+        });
+      }
 
       // Attach bookmarks listeners
       const bkmkBtns = stageContainer.querySelectorAll('.bookmark-icon-container');

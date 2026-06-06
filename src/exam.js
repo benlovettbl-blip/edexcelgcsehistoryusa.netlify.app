@@ -2,7 +2,7 @@ import { state } from './state.js';
 import { AudioEngine } from './audio.js';
 import { Confetti } from './confetti.js';
 import { switchView } from './navigation.js';
-import { initExamLeaderboard } from './views.js';
+import { initExamLeaderboard, addXp } from './views.js';
 
 
 // --- Quiz Generator Engine ---
@@ -609,6 +609,7 @@ function finishExam() {
   
   // Initialize points-based leaderboard
   initExamLeaderboard(state.examSession.scope || 'all', pct);
+  addXp(25);
 
   document.getElementById('exam-runner-panel').style.display = 'none';
   document.getElementById('exam-results-panel').style.display = 'flex';

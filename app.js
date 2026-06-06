@@ -29,7 +29,9 @@
       masteredCount: 0,
       reinforcing: false,
       reinforceQuestion: null,
-      wasDragged: false
+      wasDragged: false,
+      failedCardIds: [],
+      speedStudyMode: false
     },
     // Quiz Generator State
     examSession: {
@@ -59,6 +61,13 @@
       // { questionId: string }
       completedQuestions: []
       // Array of questionIds
+    },
+    // Gamification Player Stats
+    userStats: {
+      xp: 0,
+      level: 1,
+      streak: 0,
+      lastLoginDate: null
     }
   };
 
@@ -76,7 +85,7 @@
               "id": "q_1_1_s1",
               "question": "Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?",
               "answer": "Jim Crow laws",
-              "explanation": "Jim Crow laws legalised segregation in public transport, schools, restaurants, and other public facilities across the South.",
+              "explanation": "Jim Crow laws legalised segregation in public transport, schools, restaurants, and other public facilities across the South. This institutionalised racial discrimination across the South, forcing Black Americans to endure daily public humiliation and reinforcing their status as second-class citizens.",
               "year": 1950,
               "distractors": [
                 "Black Codes",
@@ -88,7 +97,7 @@
               "id": "q_1_1_s2",
               "question": "What does the abbreviation NAACP stand for?",
               "answer": "National Association for the Advancement of Colored People",
-              "explanation": "Founded in 1909, the NAACP focused on challenging segregation and discrimination through legal action and the courts.",
+              "explanation": "Founded in 1909, the NAACP focused on challenging segregation and discrimination through legal action and the courts. This established a highly successful legal framework that systematically challenged and dismantled segregation laws in federal courts.",
               "year": 1909,
               "distractors": [
                 "National Association for the Advancement of Civil Rights",
@@ -100,7 +109,7 @@
               "id": "q_1_1_s3",
               "question": "Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?",
               "answer": "CORE (Congress of Racial Equality)",
-              "explanation": "CORE pioneered non-violent tactics, including early sit-ins, and later co-organised the Freedom Rides.",
+              "explanation": "CORE pioneered non-violent tactics, including early sit-ins, and later co-organised the Freedom Rides. This pioneered non-violent direct action tactics, laying the operational foundation for the massive protests of the 1960s.",
               "year": 1942,
               "distractors": [
                 "SCLC (Southern Christian Leadership Conference)",
@@ -112,7 +121,7 @@
               "id": "q_1_1_s4",
               "question": "What primary method did the NAACP use in the early 1950s to fight racial inequality?",
               "answer": "Legal action through the courts",
-              "explanation": "The NAACP chose to challenge segregation using the judicial system, filing lawsuits to prove that segregated facilities violated the US Constitution.",
+              "explanation": "The NAACP chose to challenge segregation using the judicial system, filing lawsuits to prove that segregated facilities violated the US Constitution. This allowed the movement to secure permanent, legally binding constitutional precedents that Southern state governments could not easily ignore.",
               "year": 1950,
               "distractors": [
                 "Non-violent direct action and marches",
@@ -124,7 +133,7 @@
               "id": "q_1_1_s5",
               "question": "Why did Black Americans find it almost impossible to register to vote in the South in the early 1950s?",
               "answer": "Due to literacy tests, poll taxes, and white intimidation",
-              "explanation": "Southern states used discriminatory literacy tests, financial poll taxes, and threats of violence or job loss to disenfranchise Black voters.",
+              "explanation": "Southern states used discriminatory literacy tests, financial poll taxes, and threats of violence or job loss to disenfranchise Black voters. This systematically denied Black communities political power, maintaining white supremacist control of Southern local governments.",
               "year": 1950,
               "distractors": [
                 "Due to federal voting laws, state bans, and Supreme Court rulings",
@@ -148,7 +157,7 @@
               "id": "q_1_1_s7",
               "question": "Why did the Congress of Racial Equality (CORE) choose to use non-violent direct action?",
               "answer": "To expose the injustice of segregation to the public and force change",
-              "explanation": "CORE believed that peaceful boycotts and sit-ins would gain public support, embarrass segregationists, and pressure authorities to act.",
+              "explanation": "CORE believed that peaceful boycotts and sit-ins would gain public support, embarrass segregationists, and pressure authorities to act. This strategy aimed to expose the moral injustice of segregation to the national public, forcing the federal government to intervene.",
               "year": 1942,
               "distractors": [
                 "To build political coalitions with Southern Democrats and lobby Congress",
@@ -160,7 +169,7 @@
               "id": "q_1_1_s8",
               "question": "Who was the first Black American to head the NAACP Legal Defense and Educational Fund, coordinating early court battles?",
               "answer": "Thurgood Marshall",
-              "explanation": "Thurgood Marshall was the chief legal strategist for the NAACP, directing the legal campaign against Jim Crow segregation in public facilities and education.",
+              "explanation": "Thurgood Marshall was the chief legal strategist for the NAACP, directing the legal campaign against Jim Crow segregation in public facilities and education. His brilliant litigation strategy led to major Supreme Court victories that legally undermined the entire constitutional basis for segregation.",
               "year": 1940,
               "distractors": [
                 "Charles Hamilton Houston",
@@ -172,7 +181,7 @@
               "id": "q_1_1_s9",
               "question": "Which US President issued Executive Order 9981 in 1948 to desegregate the United States Armed Forces?",
               "answer": "Harry S. Truman",
-              "explanation": "President Truman's executive order desegregated the military, representing a landmark early federal action for civil rights.",
+              "explanation": "President Truman's executive order desegregated the military, representing a landmark early federal action for civil rights. This represented a landmark early federal action for civil rights, demonstrating that the executive branch could bypass Southern congressional obstruction.",
               "year": 1948,
               "distractors": [
                 "Franklin D. Roosevelt",
@@ -210,7 +219,7 @@
               "id": "q_1_1_d2",
               "question": "What tests were designed to prevent Black citizens from registering to vote by asking complex questions?",
               "answer": "Literacy tests",
-              "explanation": "Literacy tests were applied corruptly: Black applicants faced impossible legal questions, while whites were exempted.",
+              "explanation": "Literacy tests were applied corruptly: Black applicants faced impossible legal questions, while whites were exempted. This corrupt administration of tests effectively blocked the vast majority of Black citizens in the Deep South from registering to vote.",
               "year": 1950,
               "distractors": [
                 "Character tests",
@@ -234,7 +243,7 @@
               "id": "q_1_1_d4",
               "question": "Which landmark Supreme Court case struck down the Texas 'white primary' voting restriction in 1944?",
               "answer": "Smith v. Allwright",
-              "explanation": "The ruling declared that primary elections could not exclude Black voters, a major early legal victory for the NAACP.",
+              "explanation": "The ruling declared that primary elections could not exclude Black voters, a major early legal victory for the NAACP. This ruling established a vital early legal precedent for desegregating the Southern political process and primaries.",
               "year": 1944,
               "distractors": [
                 "Sweatt v. Painter",
@@ -246,7 +255,7 @@
               "id": "q_1_1_d5",
               "question": "Why did many Black Americans face severe economic intimidation if they attempted to register to vote in the South?",
               "answer": "Because white landowners and employers would fire or evict them",
-              "explanation": "White citizens and businesses actively cooperated to punish civil rights activists by firing them from jobs or evicting them from their sharecropping lands.",
+              "explanation": "White citizens and businesses actively cooperated to punish civil rights activists by firing them from jobs or evicting them from their sharecropping lands. This economic intimidation was highly effective in suppressing grassroots activism by threatening the basic livelihoods of Black families.",
               "year": 1950,
               "distractors": [
                 "Because state police forces would arrest them on false vagrancy charges",
@@ -302,7 +311,7 @@
               "id": "q_1_2_s2",
               "question": "What was the name given to the group of Black students who integrated Central High School in Arkansas in 1957?",
               "answer": "The Little Rock Nine",
-              "explanation": "President Eisenhower had to send federal troops from the 101st Airborne Division to protect the nine students from violent mobs.",
+              "explanation": "President Eisenhower had to send federal troops from the 101st Airborne Division to protect the nine students from violent mobs. This intervention proved that the federal government was prepared to deploy military force to uphold civil rights laws against state defiance.",
               "year": 1957,
               "distractors": [
                 "The Greensboro Four",
@@ -326,7 +335,7 @@
               "id": "q_1_2_s4",
               "question": "Who was the Governor of Arkansas who defied federal court orders and blocked school integration in 1957?",
               "answer": "Orval Faubus",
-              "explanation": "Faubus used the state's National Guard to block the Black students from entering Central High School.",
+              "explanation": "Faubus used the state's National Guard to block the Black students from entering Central High School. His open defiance of a federal court order precipitated a major constitutional crisis over state rights versus federal authority.",
               "year": 1957,
               "distractors": [
                 "George Wallace",
@@ -350,7 +359,7 @@
               "id": "q_1_2_s6",
               "question": "Who was the lead NAACP lawyer who successfully argued the Brown case before the Supreme Court?",
               "answer": "Thurgood Marshall",
-              "explanation": "Marshall led the NAACP Legal Defense Fund, using social and legal arguments to dismantle 'separate but equal'.",
+              "explanation": "Marshall led the NAACP Legal Defense Fund, using social and legal arguments to dismantle 'separate but equal'. His pioneering social science arguments successfully convinced the Supreme Court that segregated education was psychologically damaging and unconstitutional.",
               "year": 1954,
               "distractors": [
                 "Charles Hamilton Houston",
@@ -362,7 +371,7 @@
               "id": "q_1_2_s7",
               "question": "In what year did the integration crisis at Little Rock Central High School occur?",
               "answer": "1957",
-              "explanation": "The crisis lasted throughout September 1957, drawing international media attention to Southern white resistance.",
+              "explanation": "The crisis lasted throughout September 1957, drawing international media attention to Southern white resistance. The resulting media coverage shocked the international public and put pressure on the US government to address racial injustice.",
               "year": 1957,
               "distractors": [
                 "1954",
@@ -374,7 +383,7 @@
               "id": "q_1_2_s8",
               "question": "What was the full name of the high school integrated in Little Rock?",
               "answer": "Central High School",
-              "explanation": "Central High School was a prestigious, previously all-white school chosen by the local school board for gradual integration.",
+              "explanation": "Central High School was a prestigious, previously all-white school chosen by the local school board for gradual integration. The integration of this prestigious school became the primary testing ground for federal enforcement of school desegregation.",
               "year": 1957,
               "distractors": [
                 "Little Rock High School",
@@ -386,7 +395,7 @@
               "id": "q_1_2_s9",
               "question": "What action did Governor Faubus take in 1958 to prevent further school integration?",
               "answer": "Closed all Little Rock high schools",
-              "explanation": "Rather than integrate, Faubus shut down the city's high schools for the 1958-59 academic year, known as 'The Lost Year'.",
+              "explanation": "Rather than integrate, Faubus shut down the city's high schools for the 1958-59 academic year, known as 'The Lost Year'. This desperate measure showed that segregationist politicians were willing to destroy their own public school system to avoid integration.",
               "year": 1958,
               "distractors": [
                 "Deported the Little Rock Nine from the state",
@@ -436,7 +445,7 @@
               "id": "q_1_2_d3",
               "question": "Who was the first Black child to integrate an all-white elementary school in the South, in New Orleans in 1960?",
               "answer": "Ruby Bridges",
-              "explanation": "Bridges had to be escorted to school by federal marshals every day due to fierce white protests and boycotts.",
+              "explanation": "Bridges had to be escorted to school by federal marshals every day due to fierce white protests and boycotts. Her brave integration of the school highlighted the intense danger and hostility faced by Black children during the integration process.",
               "year": 1960,
               "distractors": [
                 "Claudette Colvin",
@@ -528,7 +537,7 @@
               "id": "q_1_3_s3",
               "question": "What does the abbreviation SCLC stand for?",
               "answer": "Southern Christian Leadership Conference",
-              "explanation": "SCLC was formed in 1957, led by MLK, to coordinate civil rights protests using non-violent resistance through Southern churches.",
+              "explanation": "SCLC was formed in 1957, led by MLK, to coordinate civil rights protests using non-violent resistance through Southern churches. This church-led organization became the central coordinating force for non-violent direct action campaigns across the South.",
               "year": 1957,
               "distractors": [
                 "Student Campaign for Liberation and Equality",
@@ -540,7 +549,7 @@
               "id": "q_1_3_s4",
               "question": "How many days did the Montgomery Bus Boycott last?",
               "answer": "381 days",
-              "explanation": "The boycott began on 5 December 1955 and ended on 21 December 1956 when desegregation was officially enforced.",
+              "explanation": "The boycott began on 5 December 1955 and ended on 21 December 1956 when desegregation was officially enforced. This prolonged struggle proved the efficiency, discipline, and economic power of organized Black grassroots communities.",
               "year": 1956,
               "distractors": [
                 "100 days",
@@ -552,7 +561,7 @@
               "id": "q_1_3_s5",
               "question": "Who was the Mayor of Montgomery who strongly opposed the boycott and joined the White Citizens' Council?",
               "answer": "W. A. Gayle",
-              "explanation": "Mayor Gayle took a hardline stance, refusing to compromise with the MIA and launching a legal crackdown on carpools.",
+              "explanation": "Mayor Gayle took a hardline stance, refusing to compromise with the MIA and launching a legal crackdown on carpools. His confrontational approach united the Black community and drew wider national attention and sympathy to the boycott.",
               "year": 1956,
               "distractors": [
                 "Bull Connor",
@@ -564,7 +573,7 @@
               "id": "q_1_3_s6",
               "question": "What logistics system did the MIA set up to allow boycotters to travel without using buses?",
               "answer": "Carpool system",
-              "explanation": "The carpool involved over 300 private vehicles and designated pickup stations, running with military-like efficiency.",
+              "explanation": "The carpool involved over 300 private vehicles and designated pickup stations, running with military-like efficiency. This organized transport network allowed the boycott to survive for over a year despite constant police harassment and legal challenges.",
               "year": 1955,
               "distractors": [
                 "Bicycle relay system",
@@ -588,7 +597,7 @@
               "id": "q_1_3_s8",
               "question": "What percentage of Montgomery's daily bus passengers were Black before the boycott?",
               "answer": "70%",
-              "explanation": "Because Black residents made up the vast majority of riders, their boycott devastated the bus company's finances.",
+              "explanation": "Because Black residents made up the vast majority of riders, their boycott devastated the bus company's finances. This severe loss of revenue forced the private bus company to advocate for desegregation to save itself from bankruptcy.",
               "year": 1955,
               "distractors": [
                 "40%",
@@ -600,7 +609,7 @@
               "id": "q_1_3_s9",
               "question": "Who was the local NAACP president in Montgomery who bailed Rosa Parks out and helped organize the boycott?",
               "answer": "E.D. Nixon",
-              "explanation": "Nixon was a union leader who recognized the potential of Parks' arrest to challenge transit segregation laws.",
+              "explanation": "Nixon was a union leader who recognized the potential of Parks' arrest to challenge transit segregation laws. His early organizational and financial support was essential to launching the Montgomery Improvement Association.",
               "year": 1955,
               "distractors": [
                 "Fred Shuttlesworth",
@@ -626,7 +635,7 @@
               "id": "q_1_3_d1",
               "question": "What was the exact date the Supreme Court's desegregation order was served on Montgomery city authorities?",
               "answer": "20 December 1956",
-              "explanation": "The desegregation order arrived on Dec 20, and MLK and other leaders rode integrated buses the next morning.",
+              "explanation": "The desegregation order arrived on Dec 20, and MLK and other leaders rode integrated buses the next morning. This marked the official legal victory of the boycott, declaring transit segregation unconstitutional under the 14th Amendment.",
               "year": 1956,
               "distractors": [
                 "1 December 1955",
@@ -662,7 +671,7 @@
               "id": "q_1_3_d4",
               "question": "Who was the president of the Women's Political Council (WPC) who mimeographed 52,000 leaflets calling for a boycott?",
               "answer": "Jo Ann Robinson",
-              "explanation": "Robinson and the WPC organized the initial call for the boycott within hours of Rosa Parks' arrest.",
+              "explanation": "Robinson and the WPC organized the initial call for the boycott within hours of Rosa Parks' arrest. Her rapid mobilization of the community was the critical catalyst that turned Parks' arrest into a massive, organized boycott.",
               "year": 1955,
               "distractors": [
                 "Daisy Bates",
@@ -674,7 +683,7 @@
               "id": "q_1_3_d5",
               "question": "What was the name of the women's political activist group led by Jo Ann Robinson in Montgomery?",
               "answer": "Women's Political Council (WPC)",
-              "explanation": "The WPC was a civic group of professional Black women that had complained about bus treatment for years.",
+              "explanation": "The WPC was a civic group of professional Black women that had complained about bus treatment for years. Their years of political lobbying and research laid the structural foundation for the Montgomery bus boycott.",
               "year": 1955,
               "distractors": [
                 "National Council of Negro Women (NCNW)",
@@ -718,7 +727,7 @@
               "id": "q_1_4_s1",
               "question": "What document signed by over 100 Southern congressmen in 1956 urged defiance of school integration?",
               "answer": "The Southern Manifesto",
-              "explanation": "The Manifesto declared the Brown ruling a clear abuse of judicial power and encouraged states to resist it.",
+              "explanation": "The Manifesto declared the Brown ruling a clear abuse of judicial power and encouraged states to resist it. This document united Southern politicians in their opposition to school integration, encouraging local school boards to delay desegregation indefinitely.",
               "year": 1956,
               "distractors": [
                 "The Declaration of Constitutional Defiance",
@@ -742,7 +751,7 @@
               "id": "q_1_4_s3",
               "question": "Which white supremacist organization saw a major resurgence in the mid-1950s, using violence and bombings?",
               "answer": "Ku Klux Klan",
-              "explanation": "The KKK terrorized civil rights workers and Black families with bombings, beatings, and cross-burnings.",
+              "explanation": "The KKK terrorized civil rights workers and Black families with bombings, beatings, and cross-burnings. Their campaign of terror aimed to maintain white supremacy and prevent civil rights reforms through violence and intimidation.",
               "year": 1955,
               "distractors": [
                 "The White League",
@@ -754,7 +763,7 @@
               "id": "q_1_4_s4",
               "question": "Which Southern Senator conducted a record-breaking 24-hour filibuster against the 1957 Civil Rights Act?",
               "answer": "Strom Thurmond",
-              "explanation": "Thurmond spoke for over 24 hours to block the bill, representing the deep political opposition in Congress.",
+              "explanation": "Thurmond spoke for over 24 hours to block the bill, representing the deep political opposition in Congress. His record-setting filibuster highlighted the intense legislative obstruction faced by civil rights bills in the Senate.",
               "year": 1957,
               "distractors": [
                 "Richard Russell",
@@ -766,7 +775,7 @@
               "id": "q_1_4_s5",
               "question": "In what year was the Southern Manifesto signed and published by Southern politicians?",
               "answer": "1956",
-              "explanation": "Signed by 19 Senators and 82 Representatives, it united Southern political resistance under the banner of states' rights.",
+              "explanation": "Signed by 19 Senators and 82 Representatives, it united Southern political resistance under the banner of states' rights. This collective signing institutionalized political resistance and defiance of the Supreme Court's desegregation rulings.",
               "year": 1956,
               "distractors": [
                 "1954",
@@ -778,7 +787,7 @@
               "id": "q_1_4_s6",
               "question": "Which US president signed the Civil Rights Act of 1957 into law?",
               "answer": "Dwight D. Eisenhower",
-              "explanation": "It was the first civil rights legislation passed since Reconstruction, though it was heavily weakened by Southern amendments.",
+              "explanation": "It was the first civil rights legislation passed since Reconstruction, though it was heavily weakened by Southern amendments. This represented a symbolic breakthrough, showing the first federal civil rights legislation passed since Reconstruction.",
               "year": 1957,
               "distractors": [
                 "Harry S. Truman",
@@ -790,7 +799,7 @@
               "id": "q_1_4_s7",
               "question": "What parliamentary delaying tactic did Southern senators (Dixiecrats) use to block civil rights bills?",
               "answer": "Filibuster",
-              "explanation": "Senators would speak indefinitely to prevent a vote on civil rights bills, requiring a supermajority to stop them.",
+              "explanation": "Senators would speak indefinitely to prevent a vote on civil rights bills, requiring a supermajority to stop them. This tactic allowed a minority of Southern segregationist senators to successfully block or dilute civil rights bills for years.",
               "year": 1957,
               "distractors": [
                 "Gerrymandering",
@@ -802,7 +811,7 @@
               "id": "q_1_4_s8",
               "question": "What was the primary focus of the Civil Rights Act of 1957?",
               "answer": "Voting rights",
-              "explanation": "The act created the Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination.",
+              "explanation": "The act created the Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination. This legislation established the federal Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination.",
               "year": 1957,
               "distractors": [
                 "School integration",
@@ -814,7 +823,7 @@
               "id": "q_1_4_s9",
               "question": "What was the main purpose of the Civil Rights Act of 1960?",
               "answer": "Federal inspection of local voter registration records",
-              "explanation": "The act introduced federal penalties for obstructing voter registration and allowed federal judges to appoint voter referees.",
+              "explanation": "The act introduced federal penalties for obstructing voter registration and allowed federal judges to appoint voter referees. This act introduced federal penalties for obstructing registration, expanding federal judicial oversight of Southern elections.",
               "year": 1960,
               "distractors": [
                 "Federal funding for integrated schools in the South",
@@ -826,7 +835,7 @@
               "id": "q_1_4_s10",
               "question": "How many Southern congressmen signed the Southern Manifesto in 1956?",
               "answer": "101 congressmen",
-              "explanation": "A total of 101 senators and representatives signed the document, showing the unity of the segregationist political bloc.",
+              "explanation": "A total of 101 senators and representatives signed the document, showing the unity of the segregationist political bloc. This unified political opposition showed that Southern representatives would fight civil rights reforms as a collective bloc.",
               "year": 1956,
               "distractors": [
                 "50 congressmen",
@@ -840,7 +849,7 @@
               "id": "q_1_4_d1",
               "question": "What was the exact length of Strom Thurmond's record-breaking solo filibuster against the 1957 Civil Rights Act?",
               "answer": "24 hours and 18 minutes",
-              "explanation": "Thurmond read election laws, Washington's farewell address, and recipe books to sustain his record-setting speech.",
+              "explanation": "Thurmond read election laws, Washington's farewell address, and recipe books to sustain his record-setting speech. This record-setting filibuster demonstrated the extreme lengths Southern politicians would go to preserve segregation.",
               "year": 1957,
               "distractors": [
                 "12 hours and 30 minutes",
@@ -876,7 +885,7 @@
               "id": "q_1_4_d4",
               "question": "What economic warfare method did the White Citizens' Councils use to punish civil rights activists?",
               "answer": "Job dismissals and mortgage foreclosures",
-              "explanation": "By firing activists, denying bank loans, and cancelling insurance policies, the Councils financially ruined integrationists.",
+              "explanation": "By firing activists, denying bank loans, and cancelling insurance policies, the Councils financially ruined integrationists. This economic retaliation was highly effective in suppressing grassroots activism by financially ruining integrationists.",
               "year": 1954,
               "distractors": [
                 "Voter registration purge and literacy re-testing",
@@ -888,7 +897,7 @@
               "id": "q_1_4_d5",
               "question": "Who was the 14-year-old Black boy from Chicago brutally lynched in Mississippi in August 1955 for allegedly whistling at a white woman?",
               "answer": "Emmett Till",
-              "explanation": "Till's mother held an open-casket funeral in Chicago, exposing the extreme brutality of Southern racism to the world.",
+              "explanation": "Till's mother held an open-casket funeral in Chicago, exposing the extreme brutality of Southern racism to the world. The international outrage over his brutal murder and the acquittal of his killers galvanized the modern civil rights movement.",
               "year": 1955,
               "distractors": [
                 "Medgar Evers",
@@ -938,7 +947,7 @@
               "id": "q_2_1_s1",
               "question": "In which city did the famous 1960 lunch counter sit-ins begin?",
               "answer": "Greensboro, North Carolina",
-              "explanation": "Four Black college students sat at a Woolworth's lunch counter, launching a wave of sit-ins across the South.",
+              "explanation": "Four Black college students sat at a Woolworth's lunch counter, launching a wave of sit-ins across the South. This launched a massive wave of student-led lunch counter protests across the South, demonstrating the power of youth-driven direct action.",
               "year": 1960,
               "distractors": [
                 "Nashville, Tennessee",
@@ -950,7 +959,7 @@
               "id": "q_2_1_s2",
               "question": "What does the abbreviation SNCC stand for?",
               "answer": "Student Nonviolent Coordinating Committee",
-              "explanation": "Formed in 1960, SNCC allowed younger student activists to organize sit-ins and voter registration drives.",
+              "explanation": "Formed in 1960, SNCC allowed younger student activists to organize sit-ins and voter registration drives. This organization gave young people a primary voice in the civil rights movement, focusing on high-risk grassroots direct action.",
               "year": 1960,
               "distractors": [
                 "Student Nonviolent Coalition Committee",
@@ -962,7 +971,7 @@
               "id": "q_2_1_s3",
               "question": "Which tactic was used by activists in 1961 to test the desegregation of interstate bus terminals?",
               "answer": "Freedom Rides",
-              "explanation": "Freedom Riders rode buses into the Deep South, encountering severe violence that forced federal intervention.",
+              "explanation": "Freedom Riders rode buses into the Deep South, encountering severe violence that forced federal intervention. The riders faced extreme violence and firebombings, forcing the federal government to actively ban transit terminal segregation.",
               "year": 1961,
               "distractors": [
                 "Sit-ins",
@@ -986,7 +995,7 @@
               "id": "q_2_1_s5",
               "question": "Which civil rights organization organized the first Freedom Rides in 1961?",
               "answer": "CORE (Congress of Racial Equality)",
-              "explanation": "CORE planned the original route under director James Farmer, though SNCC students later resumed the rides.",
+              "explanation": "CORE planned the original route under director James Farmer, though SNCC students later resumed the rides. Their collaboration showed the growing unity and coordination between national civil rights organizations and young student activists.",
               "year": 1961,
               "distractors": [
                 "SCLC (Southern Christian Leadership Conference)",
@@ -998,7 +1007,7 @@
               "id": "q_2_1_s6",
               "question": "Who was the first Black student to register and enroll at the University of Mississippi in 1962?",
               "answer": "James Meredith",
-              "explanation": "Meredith's enrollment led to violent riots that required 30,000 federal troops to secure his safety.",
+              "explanation": "Meredith's enrollment led to violent riots that required 30,000 federal troops to secure his safety. His enrollment forced the federal government to use military force to integrate Southern universities, demonstrating federal supremacy.",
               "year": 1962,
               "distractors": [
                 "James Hood",
@@ -1010,7 +1019,7 @@
               "id": "q_2_1_s7",
               "question": "Who was the president of the United States during the Freedom Rides and the James Meredith crisis?",
               "answer": "John F. Kennedy",
-              "explanation": "Kennedy was forced to send federal marshals and troops to protect activists and enforce court integration orders.",
+              "explanation": "Kennedy was forced to send federal marshals and troops to protect activists and enforce court integration orders. His administration was forced to send federal marshals and troops, marking a growing federal commitment to enforcing civil rights laws.",
               "year": 1961,
               "distractors": [
                 "Dwight D. Eisenhower",
@@ -1022,7 +1031,7 @@
               "id": "q_2_1_s8",
               "question": "Who was the Attorney General who sent federal marshals to protect James Meredith in Mississippi?",
               "answer": "Robert Kennedy",
-              "explanation": "Robert Kennedy managed the federal response, ordering marshals and military police to secure the campus.",
+              "explanation": "Robert Kennedy managed the federal response, ordering marshals and military police to secure the campus. His direct intervention demonstrated the administration's determination to uphold federal law against state defiance.",
               "year": 1962,
               "distractors": [
                 "Nicholas Katzenbach",
@@ -1034,7 +1043,7 @@
               "id": "q_2_1_s9",
               "question": "In which Alabama city was a Freedom Riders bus firebombed by a white mob in May 1961?",
               "answer": "Anniston",
-              "explanation": "A mob slashed the bus tires, chased it out of town, firebombed the vehicle, and attacked the escaping passengers.",
+              "explanation": "A mob slashed the bus tires, chased it out of town, firebombed the vehicle, and attacked the escaping passengers. The televised images of this firebombing shocked the nation, exposing the extreme violence of segregationist mobs.",
               "year": 1961,
               "distractors": [
                 "Birmingham",
@@ -1046,7 +1055,7 @@
               "id": "q_2_1_s10",
               "question": "Which Georgia city was the target of SNCC's first major, though unsuccessful, desegregation campaign in 1961-62?",
               "answer": "Albany",
-              "explanation": "The Albany Movement failed because Police Chief Pritchett used non-violent arrests and avoided media-sensational violence.",
+              "explanation": "The Albany Movement failed because Police Chief Pritchett used non-violent arrests and avoided media-sensational violence. This campaign taught civil rights leaders that non-violent protest was only effective when it provoked visible, public opposition.",
               "year": 1961,
               "distractors": [
                 "Savannah",
@@ -1072,7 +1081,7 @@
               "id": "q_2_1_d2",
               "question": "Who was the National Director of CORE who designed and launched the first Freedom Rides?",
               "answer": "James Farmer",
-              "explanation": "Farmer organized the rides to provoke federal enforcement of Supreme Court desegregation rulings.",
+              "explanation": "Farmer organized the rides to provoke federal enforcement of Supreme Court desegregation rulings. His tactical leadership was critical to utilizing federal desegregation rulings to challenge Southern state laws directly.",
               "year": 1961,
               "distractors": [
                 "Roy Wilkins",
@@ -1096,7 +1105,7 @@
               "id": "q_2_1_d4",
               "question": "Who was the segregationist Governor of Mississippi who actively defied federal orders to block James Meredith from enrolling in 1962?",
               "answer": "Ross Barnett",
-              "explanation": "Governor Ross Barnett physically blocked Meredith from entering the university doors, defying federal integration mandates and prompting a deployment of federal marshals.",
+              "explanation": "Governor Ross Barnett physically blocked Meredith from entering the university doors, defying federal integration mandates and prompting a deployment of federal marshals. His actions prompted a direct confrontation between the state of Mississippi and federal authority, forcing Kennedy to deploy troops.",
               "year": 1962,
               "distractors": [
                 "George Wallace",
@@ -1108,7 +1117,7 @@
               "id": "q_2_1_d5",
               "question": "Which prominent civil rights adviser and SCLC executive secretary helped student activists organize SNCC in April 1960?",
               "answer": "Ella Baker",
-              "explanation": "Baker encouraged students to form their own independent organization rather than join MLK's SCLC.",
+              "explanation": "Baker encouraged students to form their own independent organization rather than join MLK's SCLC. Her guidance helped SNCC remain independent, preserving its focus on democratic, grassroots community organizing.",
               "year": 1960,
               "distractors": [
                 "Septima Clark",
@@ -1152,7 +1161,7 @@
               "id": "q_2_2_s1",
               "question": "Which Alabama city was the site of the 1963 civil rights campaign where police used dogs and fire hoses against children?",
               "answer": "Birmingham, Alabama",
-              "explanation": "The campaign was organized by SCLC to provoke national outrage, leading directly to Kennedy drafting the Civil Rights Bill.",
+              "explanation": "The campaign was organized by SCLC to provoke national outrage, leading directly to Kennedy drafting the Civil Rights Bill. This campaign provoked global outrage, forcing President Kennedy to draft the landmark Civil Rights Bill.",
               "year": 1963,
               "distractors": [
                 "Montgomery, Alabama",
@@ -1164,7 +1173,7 @@
               "id": "q_2_2_s2",
               "question": "Who was the segregationist Police Commissioner of Birmingham who ordered the brutal response to protesters?",
               "answer": "Eugene 'Bull' Connor",
-              "explanation": "Connor's use of attack dogs and high-pressure fire hoses on television screens shocked the American public.",
+              "explanation": "Connor's use of attack dogs and high-pressure fire hoses on television screens shocked the American public. His brutal response on television screens alienated moderate whites and generated massive public sympathy for the movement.",
               "year": 1963,
               "distractors": [
                 "Laurie Pritchett",
@@ -1176,7 +1185,7 @@
               "id": "q_2_2_s3",
               "question": "What was the name of the famous document written by Martin Luther King Jr. while imprisoned in Alabama in 1963?",
               "answer": "Letter from Birmingham Jail",
-              "explanation": "Written on scraps of paper, the letter defended non-violent direct action against moderate white clergy who urged patience.",
+              "explanation": "Written on scraps of paper, the letter defended non-violent direct action against moderate white clergy who urged patience. This letter provided a powerful theological and moral defense of non-violent civil disobedience against critics who urged patience.",
               "year": 1963,
               "distractors": [
                 "The Birmingham Manifesto",
@@ -1188,7 +1197,7 @@
               "id": "q_2_2_s4",
               "question": "In what month and year did the historic March on Washington take place?",
               "answer": "August 1963",
-              "explanation": "Over 250,000 people gathered at the Lincoln Memorial to demand 'Jobs and Freedom' and support the Civil Rights Bill.",
+              "explanation": "Over 250,000 people gathered at the Lincoln Memorial to demand 'Jobs and Freedom' and support the Civil Rights Bill. This massive demonstration proved the broad multiracial support for the civil rights movement and legislative reform.",
               "year": 1963,
               "distractors": [
                 "June 1963",
@@ -1200,7 +1209,7 @@
               "id": "q_2_2_s5",
               "question": "What was the title of Martin Luther King Jr.'s famous speech delivered at the March on Washington?",
               "answer": "I Have a Dream",
-              "explanation": "King departed from his written text to deliver a powerful vision of racial integration and equality.",
+              "explanation": "King departed from his written text to deliver a powerful vision of racial integration and equality. His speech became a defining moment of the movement, framing civil rights in the language of the American Dream.",
               "year": 1963,
               "distractors": [
                 "I've Been to the Mountaintop",
@@ -1224,7 +1233,7 @@
               "id": "q_2_2_s7",
               "question": "Which US president signed the historic Civil Rights Act of 1964 into law?",
               "answer": "Lyndon B. Johnson",
-              "explanation": "Johnson used his political skill and the memory of Kennedy to guide the bill through a lengthy Southern filibuster.",
+              "explanation": "Johnson used his political skill and the memory of Kennedy to guide the bill through a lengthy Southern filibuster. His political skill and utilization of Kennedy's memory guided the bill through a lengthy Southern filibuster.",
               "year": 1964,
               "distractors": [
                 "John F. Kennedy",
@@ -1236,7 +1245,7 @@
               "id": "q_2_2_s8",
               "question": "Which Alabama city was the starting point for the 1965 marches where protesters were beaten on 'Bloody Sunday'?",
               "answer": "Selma, Alabama",
-              "explanation": "The march from Selma to Montgomery aimed to demand federal voting rights protection for Black citizens.",
+              "explanation": "The march from Selma to Montgomery aimed to demand federal voting rights protection for Black citizens. The state violence during this campaign shocked the nation and forced the federal government to draft voting rights legislation.",
               "year": 1965,
               "distractors": [
                 "Birmingham, Alabama",
@@ -1248,7 +1257,7 @@
               "id": "q_2_2_s9",
               "question": "What landmark voting law was passed in 1965 in response to the Selma campaign?",
               "answer": "Voting Rights Act of 1965",
-              "explanation": "The act outlawed literacy tests and sent federal registrars to Southern states, drastically increasing voter turnout.",
+              "explanation": "The act outlawed literacy tests and sent federal registrars to Southern states, drastically increasing voter turnout. This act outlawed literacy tests and sent federal registrars to Southern states, permanently expanding the Black electorate.",
               "year": 1965,
               "distractors": [
                 "Civil Rights Act of 1964",
@@ -1260,7 +1269,7 @@
               "id": "q_2_2_s10",
               "question": "How many demonstrators participated in the March on Washington in August 1963?",
               "answer": "Over 250,000",
-              "explanation": "It was one of the largest political rallies in US history, bringing immense moral pressure to bear on Congress.",
+              "explanation": "It was one of the largest political rallies in US history, bringing immense moral pressure to bear on Congress. This massive turnout demonstrated the scale of the civil rights coalition, putting intense moral pressure on Congress.",
               "year": 1963,
               "distractors": [
                 "Over 100,000",
@@ -1274,7 +1283,7 @@
               "id": "q_2_2_d1",
               "question": "What was the name of the bridge in Selma where state troopers brutally attacked marching protesters on 7 March 1965?",
               "answer": "Edmund Pettus Bridge",
-              "explanation": "Troopers used tear gas and clubs on the peaceful marchers in an event known as 'Bloody Sunday'.",
+              "explanation": "Troopers used tear gas and clubs on the peaceful marchers in an event known as 'Bloody Sunday'. Televised images of this brutal attack shocked the nation, accelerating federal voting rights legislation.",
               "year": 1965,
               "distractors": [
                 "George Washington Bridge",
@@ -1286,7 +1295,7 @@
               "id": "q_2_2_d2",
               "question": "Why did the SCLC choose Birmingham, Alabama, for a major campaign in 1963?",
               "answer": "Because it was heavily segregated and had a notoriously hot-tempered police chief",
-              "explanation": "MLK and SCLC targeted Birmingham because they knew Police Commissioner 'Bull' Connor would react violently to peaceful protests, creating media coverage that would force federal intervention.",
+              "explanation": "MLK and SCLC targeted Birmingham because they knew Police Commissioner 'Bull' Connor would react violently to peaceful protests, creating media coverage that would force federal intervention. This strategic choice successfully forced a national civil rights crisis through the power of televised media.",
               "year": 1963,
               "distractors": [
                 "Because the city had a highly active local NAACP chapter ready to march",
@@ -1322,7 +1331,7 @@
               "id": "q_2_2_d5",
               "question": "Which three civil rights activists were abducted and murdered by the KKK in Mississippi during Freedom Summer in 1964?",
               "answer": "James Chaney, Andrew Goodman, and Michael Schwerner",
-              "explanation": "The murders of Chaney, Goodman, and Schwerner in Neshoba County shocked the nation and accelerated the passage of the Civil Rights Act of 1964.",
+              "explanation": "The murders of Chaney, Goodman, and Schwerner in Neshoba County shocked the nation and accelerated the passage of the Civil Rights Act of 1964. Their tragic murders drew national attention to the extreme dangers faced by voting rights volunteers in Mississippi.",
               "year": 1964,
               "distractors": [
                 "Medgar Evers, Jimmie Lee Jackson, and Viola Liuzzo",
@@ -1366,7 +1375,7 @@
               "id": "q_2_3_s1",
               "question": "Who was the leading spokesperson for the Nation of Islam (commonly known as the Black Muslims) who advocated self-defense in the early 1960s?",
               "answer": "Malcolm X",
-              "explanation": "Malcolm X offered a militant alternative to MLK, urging Black Americans to defend themselves 'by any means necessary'.",
+              "explanation": "Malcolm X offered a militant alternative to MLK, urging Black Americans to defend themselves 'by any means necessary'. His rhetoric offered a powerful, militant alternative to MLK's integrationist and non-violent approach.",
               "year": 1964,
               "distractors": [
                 "Elijah Muhammad",
@@ -1378,7 +1387,7 @@
               "id": "q_2_3_s2",
               "question": "Which radical civil rights slogan was popularized by Stokely Carmichael during a 1966 march in Mississippi?",
               "answer": "Black Power",
-              "explanation": "The slogan marked a shift toward self-reliance, racial pride, and rejection of white integrationist control.",
+              "explanation": "The slogan marked a shift toward self-reliance, racial pride, and rejection of white integrationist control. The slogan marked a major shift in the movement toward self-reliance, racial pride, and rejection of white control.",
               "year": 1966,
               "distractors": [
                 "Black Nationalism",
@@ -1390,7 +1399,7 @@
               "id": "q_2_3_s3",
               "question": "Who were the two co-founders of the Black Panther Party for Self-Defense, created in Oakland in 1966?",
               "answer": "Huey Newton and Bobby Seale",
-              "explanation": "They founded the party in October 1966, adopting a 10-Point Program and carrying loaded weapons to monitor police.",
+              "explanation": "They founded the party in October 1966, adopting a 10-Point Program and carrying loaded weapons to monitor police. Their armed patrols and community survival programs highlighted a new focus on Northern urban police brutality and poverty.",
               "year": 1966,
               "distractors": [
                 "Stokely Carmichael and H. Rap Brown",
@@ -1402,7 +1411,7 @@
               "id": "q_2_3_s4",
               "question": "Which leader of the Nation of Islam (the Black Muslims) did Malcolm X clash with before breaking away in 1964?",
               "answer": "Elijah Muhammad",
-              "explanation": "Malcolm left the Nation of Islam in 1964 due to Elijah Muhammad's personal scandals and political passivity.",
+              "explanation": "Malcolm left the Nation of Islam in 1964 due to Elijah Muhammad's personal scandals and political passivity. His departure allowed Malcolm to develop a more politically active and global approach to human rights.",
               "year": 1964,
               "distractors": [
                 "Louis Farrakhan",
@@ -1414,7 +1423,7 @@
               "id": "q_2_3_s5",
               "question": "In what year was Malcolm X assassinated while giving a speech in New York City?",
               "answer": "1965",
-              "explanation": "Malcolm X was shot on 21 February 1965 by members of the Nation of Islam at the Audubon Ballroom.",
+              "explanation": "Malcolm X was shot on 21 February 1965 by members of the Nation of Islam at the Audubon Ballroom. His death shocked the nation, but his ideas continued to inspire the rising Black Power movement.",
               "year": 1965,
               "distractors": [
                 "1963",
@@ -1426,7 +1435,7 @@
               "id": "q_2_3_s6",
               "question": "In what year was the Black Panther Party for Self-Defense founded?",
               "answer": "1966",
-              "explanation": "Created in October 1966, the party quickly expanded to cities across the nation, becoming icons of revolutionary nationalism.",
+              "explanation": "Created in October 1966, the party quickly expanded to cities across the nation, becoming icons of revolutionary nationalism. This group became the most prominent icon of revolutionary Black Power and community self-defense in Northern cities.",
               "year": 1966,
               "distractors": [
                 "1964",
@@ -1438,7 +1447,7 @@
               "id": "q_2_3_s7",
               "question": "Which two US athletes raised black-gloved fists during the medal ceremony at the 1968 Olympics?",
               "answer": "Tommie Smith and John Carlos",
-              "explanation": "Their silent protest on the podium in Mexico City drew international attention to racial inequality in the US.",
+              "explanation": "Their silent protest on the podium in Mexico City drew international attention to racial inequality in the US. Their silent protest on the podium drew international media attention to systemic racism in the United States.",
               "year": 1968,
               "distractors": [
                 "Jesse Owens and Ralph Metcalfe",
@@ -1462,7 +1471,7 @@
               "id": "q_2_3_s9",
               "question": "Which student organization officially rejected non-violence and adopted Black Power under Stokely Carmichael in 1966?",
               "answer": "SNCC",
-              "explanation": "Under Carmichael, SNCC expelled its white members and focused on militant community organizing.",
+              "explanation": "Under Carmichael, SNCC expelled its white members and focused on militant community organizing. This transition fractured the traditional civil rights coalition and marked the rise of militant activism.",
               "year": 1966,
               "distractors": [
                 "CORE",
@@ -1474,7 +1483,7 @@
               "id": "q_2_3_s10",
               "question": "What secular activist organization did Malcolm X found after leaving the Nation of Islam in 1964?",
               "answer": "OAAU (Organization of Afro-American Unity)",
-              "explanation": "The OAAU aimed to unite African Americans and link their struggle to African human rights movements.",
+              "explanation": "The OAAU aimed to unite African Americans and link their struggle to African human rights movements. This organization reflected Malcolm's post-Nation of Islam shift toward international pan-African solidarity.",
               "year": 1964,
               "distractors": [
                 "Muslim Mosque, Inc. (MMI)",
@@ -1488,7 +1497,7 @@
               "id": "q_2_3_d1",
               "question": "Why did the Black Power movement gain popularity among young urban Black Americans in the mid-1960s?",
               "answer": "Due to frustration with the slow pace of legislative change and ongoing police brutality",
-              "explanation": "Many young urban Black Americans in the North and West felt that civil rights laws did not improve their daily lives, stop police violence, or solve poverty, leading them to embrace self-defense and Black pride.",
+              "explanation": "Many young urban Black Americans in the North and West felt that civil rights laws did not improve their daily lives, stop police violence, or solve poverty, leading them to embrace self-defense and Black pride. This growing alienation fueled a wave of urban riots and the rise of Black Power in the late 1960s.",
               "year": 1966,
               "distractors": [
                 "Because of the active recruitment efforts of the Nation of Islam in colleges",
@@ -1500,7 +1509,7 @@
               "id": "q_2_3_d2",
               "question": "What famous book detailing Malcolm X's life was published shortly after his death in 1965?",
               "answer": "The Autobiography of Malcolm X",
-              "explanation": "Co-authored with Alex Haley, the book sold millions and deeply influenced the nascent Black Power movement.",
+              "explanation": "Co-authored with Alex Haley, the book sold millions and deeply influenced the nascent Black Power movement. This book became a seminal text of Black nationalism, inspiring a generation of young civil rights activists.",
               "year": 1965,
               "distractors": [
                 "The Fire Next Time",
@@ -1512,7 +1521,7 @@
               "id": "q_2_3_d3",
               "question": "What was the name of the popular community service program created by the Black Panthers to feed school children?",
               "answer": "Free Breakfast for Children Program",
-              "explanation": "The breakfast program fed thousands of children daily, earning the party deep respect in local communities.",
+              "explanation": "The breakfast program fed thousands of children daily, earning the party deep respect in local communities. This survival program built massive grassroots popularity and proved that Black Power was about community care.",
               "year": 1969,
               "distractors": [
                 "Community Medical Clinics Program",
@@ -1524,7 +1533,7 @@
               "id": "q_2_3_d4",
               "question": "What term was popularized by Stokely Carmichael to describe systemic discrimination embedded in social institutions?",
               "answer": "Institutional racism",
-              "explanation": "Carmichael argued that racism was not just individual prejudice but built into housing, education, and employment.",
+              "explanation": "Carmichael argued that racism was not just individual prejudice but built into housing, education, and employment. His definition of this term helped shift the civil rights debate to address hidden, systemic bias in Northern institutions.",
               "year": 1967,
               "distractors": [
                 "Systemic prejudice",
@@ -1536,7 +1545,7 @@
               "id": "q_2_3_d5",
               "question": "Which voting rights campaign did Malcolm X visit and support in early 1965 shortly before his death?",
               "answer": "Selma campaign",
-              "explanation": "Malcolm spoke in Selma in February 1965 to support the campaign, offering a militant warning to white authorities.",
+              "explanation": "Malcolm spoke in Selma in February 1965 to support the campaign, offering a militant warning to white authorities. His visit demonstrated his willingness to support mainstream campaigns while warning of more militant alternatives.",
               "year": 1965,
               "distractors": [
                 "Freedom Summer campaign",
@@ -1592,7 +1601,7 @@
               "id": "q_2_4_s2",
               "question": "What was the name of the federal commission appointed by Johnson that blamed white racism for the 1960s riots?",
               "answer": "Kerner Commission",
-              "explanation": "The 1968 report warned that America was moving toward two separate and unequal societies: one Black, one white.",
+              "explanation": "The 1968 report warned that America was moving toward two separate and unequal societies: one Black, one white. The report warned that unless massive federal aid was directed to urban ghettos, the racial division would become permanent.",
               "year": 1968,
               "distractors": [
                 "Warren Commission",
@@ -1616,7 +1625,7 @@
               "id": "q_2_4_s4",
               "question": "In which Southern city was Martin Luther King Jr. assassinated in 1968?",
               "answer": "Memphis, Tennessee",
-              "explanation": "King had travelled to Memphis to support a strike of municipal Black sanitation workers.",
+              "explanation": "King had travelled to Memphis to support a strike of municipal Black sanitation workers. His assassination here triggered nationwide urban riots and marked the end of the non-violent civil rights era.",
               "year": 1968,
               "distractors": [
                 "Atlanta, Georgia",
@@ -1628,7 +1637,7 @@
               "id": "q_2_4_s5",
               "question": "What was the name of the 1966 campaign where MLK moved into a slum to highlight poor housing in the North?",
               "answer": "Chicago Freedom Movement",
-              "explanation": "It was MLK's first major campaign in a Northern city, encountering violent white opposition during marches.",
+              "explanation": "It was MLK's first major campaign in a Northern city, encountering violent white opposition during marches. This campaign exposed the depth of Northern racism and showed that non-violent tactics faced different obstacles outside the South.",
               "year": 1966,
               "distractors": [
                 "Poor People's Campaign",
@@ -1640,7 +1649,7 @@
               "id": "q_2_4_s6",
               "question": "Who was convicted of the assassination of Martin Luther King Jr.?",
               "answer": "James Earl Ray",
-              "explanation": "Ray pleaded guilty in 1969 to avoid the death penalty, though he later spent years retracting his confession.",
+              "explanation": "Ray pleaded guilty in 1969 to avoid the death penalty, though he later spent years retracting his confession. His capture and conviction closed a major chapter of the investigation, though conspiracy theories persisted.",
               "year": 1968,
               "distractors": [
                 "Lee Harvey Oswald",
@@ -1652,7 +1661,7 @@
               "id": "q_2_4_s7",
               "question": "Which federal law passed in April 1968 banned racial discrimination in the sale or rental of housing?",
               "answer": "Civil Rights Act of 1968 (Fair Housing Act)",
-              "explanation": "The act was passed quickly during the national mourning period following MLK's assassination.",
+              "explanation": "The act was passed quickly during the national mourning period following MLK's assassination. This act outlawed housing discrimination, representing the final major legislative victory of the civil rights era.",
               "year": 1968,
               "distractors": [
                 "Voting Rights Act of 1965",
@@ -1664,7 +1673,7 @@
               "id": "q_2_4_s8",
               "question": "What SCLC campaign launched in 1968 aimed to bring thousands of poor Americans to camp out in Washington?",
               "answer": "Poor People's Campaign",
-              "explanation": "Planned by MLK before his death, the campaign went ahead under Ralph Abernathy, setting up 'Resurrection City'.",
+              "explanation": "Planned by MLK before his death, the campaign went ahead under Ralph Abernathy, setting up 'Resurrection City'. Its eventual failure to achieve policy reforms highlighted the fragmentation of the civil rights coalition after King's death.",
               "year": 1968,
               "distractors": [
                 "March on Washington for Jobs and Freedom",
@@ -1688,7 +1697,7 @@
               "id": "q_2_4_s10",
               "question": "In how many US cities did major race riots break out in the week following Martin Luther King Jr.'s assassination?",
               "answer": "Over 100 cities",
-              "explanation": "The riots led to 46 deaths, 20,000 arrests, and required the deployment of 50,000 national guard and federal troops.",
+              "explanation": "The riots led to 46 deaths, 20,000 arrests, and required the deployment of 50,000 national guard and federal troops. This explosive reaction highlighted the deep anger and despair of Black communities following King's assassination.",
               "year": 1968,
               "distractors": [
                 "Over 20 cities",
@@ -1700,7 +1709,7 @@
               "id": "q_2_4_s11",
               "question": "Which economic campaign was launched by the SCLC in Chicago in 1966 to boycott businesses that refused to hire Black workers?",
               "answer": "Operation Breadbasket",
-              "explanation": "Operation Breadbasket, run by activists like Jesse Jackson, used consumer boycotts to pressure Northern businesses to employ Black workers.",
+              "explanation": "Operation Breadbasket, run by activists like Jesse Jackson, used consumer boycotts to pressure Northern businesses to employ Black workers. This program successfully secured jobs and economic opportunities for Black workers in Northern retail chains.",
               "year": 1966,
               "distractors": [
                 "Operation Chicago Slums",
@@ -1738,7 +1747,7 @@
               "id": "q_2_4_d2",
               "question": "What famous conclusion did the Kerner Commission draw about the future division of American society?",
               "answer": "Moving toward two societies, one Black, one white - separate and unequal",
-              "explanation": "The report warned that unless massive federal aid was directed to urban ghettos, the division would become permanent.",
+              "explanation": "The report warned that unless massive federal aid was directed to urban ghettos, the division would become permanent. This warning challenged the US government to address systemic poverty and de facto segregation in Northern cities.",
               "year": 1968,
               "distractors": [
                 "Leading toward a classless society, unified in economic progress - equal and free",
@@ -1750,7 +1759,7 @@
               "id": "q_2_4_d3",
               "question": "Which Chicago suburb saw MLK's housing march met by thousands of white residents throwing bricks and bottles?",
               "answer": "Cicero",
-              "explanation": "King remarked that he had never seen mobs as hostile or hateful as those in Chicago, even in Mississippi or Alabama.",
+              "explanation": "King remarked that he had never seen mobs as hostile or hateful as those in Chicago, even in Mississippi or Alabama. This comment highlighted the extreme and violent white resistance to housing integration in Chicago.",
               "year": 1966,
               "distractors": [
                 "Evanston",
@@ -1762,7 +1771,7 @@
               "id": "q_2_4_d4",
               "question": "What municipal labor strike was Martin Luther King Jr. supporting when he was shot in Memphis?",
               "answer": "Sanitation workers' strike",
-              "explanation": "King marched with the workers who were striking for safety, union recognition, and equal wages.",
+              "explanation": "King marched with the workers who were striking for safety, union recognition, and equal wages. His support for this strike demonstrated his commitment to linking civil rights to labor and economic justice.",
               "year": 1968,
               "distractors": [
                 "Transit workers' strike",
@@ -1774,7 +1783,7 @@
               "id": "q_2_4_d5",
               "question": "In what year did the destructive Watts Riots occur in Los Angeles?",
               "answer": "1965",
-              "explanation": "The riots occurred in August 1965, just days after the Voting Rights Act was signed, showing the limits of legislative civil rights.",
+              "explanation": "The riots occurred in August 1965, just days after the Voting Rights Act was signed, showing the limits of legislative civil rights. This violence proved that legislative victories in the South had failed to resolve the economic grievances of Northern ghettos.",
               "year": 1965,
               "distractors": [
                 "1964",
@@ -1786,7 +1795,7 @@
               "id": "q_2_4_d6",
               "question": "What was a major reason why MLK's 1966 Chicago Freedom Movement failed to achieve its housing integration goals?",
               "answer": "Northern white politicians and residents put up fierce resistance, and promises were ignored",
-              "explanation": "King faced violent white mobs and political obstruction from Chicago Mayor Richard Daley, who reneged on agreements once King left.",
+              "explanation": "King faced violent white mobs and political obstruction from Chicago Mayor Richard Daley, who reneged on agreements once King left. This failure proved that Daley's machine politics and Northern de facto segregation were highly resistant to Southern-style protests.",
               "year": 1966,
               "distractors": [
                 "The federal government cut off all funding for the campaign",
@@ -1798,7 +1807,7 @@
               "id": "q_2_4_d7",
               "question": "What policies were introduced to give preference to minority groups in employment and education to correct past injustices?",
               "answer": "Affirmative action",
-              "explanation": "Affirmative action policies were implemented in the late 1960s and 1970s to improve education and job opportunities for historically excluded minorities.",
+              "explanation": "Affirmative action policies were implemented in the late 1960s and 1970s to improve education and job opportunities for historically excluded minorities. These policies aimed to bridge the economic gap by actively integrating workplaces and higher education.",
               "year": 1969,
               "distractors": [
                 "Equalisation initiatives",
@@ -1848,7 +1857,7 @@
               "id": "q_3_1_s1",
               "question": "Who was the leader of the communist forces and President of North Vietnam?",
               "answer": "Ho Chi Minh",
-              "explanation": "Ho Chi Minh led the Vietminh against the French and later directed the struggle to unify Vietnam under communism.",
+              "explanation": "Ho Chi Minh led the Vietminh against the French and later directed the struggle to unify Vietnam under communism. His leadership successfully unified the nationalist and communist forces to defeat French and American intervention.",
               "year": 1954,
               "distractors": [
                 "Ngo Dinh Diem",
@@ -1872,7 +1881,7 @@
               "id": "q_3_1_s3",
               "question": "Which parallel divided Vietnam into North and South according to the 1954 Geneva Accords?",
               "answer": "17th Parallel",
-              "explanation": "The division was intended to be temporary until national elections could be held in 1956.",
+              "explanation": "The division was intended to be temporary until national elections could be held in 1956. This boundary became a major Cold War fault line, separating the communist North from the capitalist South.",
               "year": 1954,
               "distractors": [
                 "38th Parallel",
@@ -1884,7 +1893,7 @@
               "id": "q_3_1_s4",
               "question": "What theory did President Eisenhower use in 1954 to justify U.S. intervention in Southeast Asia?",
               "answer": "The Domino Theory",
-              "explanation": "The theory argued that if one nation fell to communism, neighboring nations would collapse like dominoes.",
+              "explanation": "The theory argued that if one nation fell to communism, neighboring nations would collapse like dominoes. This containment doctrine drove successive US presidents to steadily escalate military involvement in Vietnam.",
               "year": 1954,
               "distractors": [
                 "The Containment Doctrine",
@@ -1896,7 +1905,7 @@
               "id": "q_3_1_s5",
               "question": "Who was the first US president to send military advisors to South Vietnam?",
               "answer": "Dwight D. Eisenhower",
-              "explanation": "Eisenhower backed the South Vietnamese regime with money and hundreds of military advisors starting in 1954.",
+              "explanation": "Eisenhower backed the South Vietnamese regime with money and hundreds of military advisors starting in 1954. His support committed the United States to maintaining a separate, anti-communist South Vietnamese state.",
               "year": 1954,
               "distractors": [
                 "Harry S. Truman",
@@ -1908,7 +1917,7 @@
               "id": "q_3_1_s6",
               "question": "Which US president increased the number of military advisors in Vietnam to over 16,000 by late 1963?",
               "answer": "John F. Kennedy",
-              "explanation": "Kennedy resisted sending combat troops but heavily expanded advisors and Green Beret special forces.",
+              "explanation": "Kennedy resisted sending combat troops but heavily expanded advisors and Green Beret special forces. His escalation set the stage for direct combat involvement, increasing the US military presence in the region.",
               "year": 1961,
               "distractors": [
                 "Dwight D. Eisenhower",
@@ -1920,7 +1929,7 @@
               "id": "q_3_1_s7",
               "question": "What was the capital city of South Vietnam?",
               "answer": "Saigon",
-              "explanation": "Saigon was the seat of the anti-communist South Vietnamese government backed by the United States.",
+              "explanation": "Saigon was the seat of the anti-communist South Vietnamese government backed by the United States. The defense of this city became the central focus of the US campaign to prevent a communist takeover of the South.",
               "year": 1954,
               "distractors": [
                 "Hanoi",
@@ -1932,7 +1941,7 @@
               "id": "q_3_1_s8",
               "question": "What was the capital city of North Vietnam?",
               "answer": "Hanoi",
-              "explanation": "Hanoi was the capital of the communist Democratic Republic of Vietnam led by Ho Chi Minh.",
+              "explanation": "Hanoi was the capital of the communist Democratic Republic of Vietnam led by Ho Chi Minh. This city directed the infiltration of troops and supplies along the Ho Chi Minh Trail to support the southern insurgency.",
               "year": 1954,
               "distractors": [
                 "Saigon",
@@ -1944,7 +1953,7 @@
               "id": "q_3_1_s9",
               "question": "Which South Vietnamese president was overthrown and assassinated in a coup in November 1963?",
               "answer": "Ngo Dinh Diem",
-              "explanation": "Diem's Catholic-centered discrimination and corruption led the US to tacitly support his overthrow by his generals.",
+              "explanation": "Diem's Catholic-centered discrimination and corruption led the US to tacitly support his overthrow by his generals. His assassination left South Vietnam in severe political instability, forcing the US to intervene directly.",
               "year": 1963,
               "distractors": [
                 "Nguyen Van Thieu",
@@ -1968,7 +1977,7 @@
               "id": "q_3_1_s11",
               "question": "By 1954, approximately what percentage of the French war effort in Indochina was funded by the United States?",
               "answer": "80%",
-              "explanation": "Fearing the spread of communism in Asia, the US heavily backed the French militarily, paying for 80% of their war costs.",
+              "explanation": "Fearing the spread of communism in Asia, the US heavily backed the French militarily, paying for 80% of their war costs. This massive financial aid showed how early US involvement was driven by Cold War containment of communism.",
               "year": 1954,
               "distractors": [
                 "20%",
@@ -1980,7 +1989,7 @@
               "id": "q_3_1_s12",
               "question": "What was the name of the elite US Special Forces deployed by President Kennedy to train South Vietnamese troops in counter-insurgency?",
               "answer": "Green Berets",
-              "explanation": "President Kennedy expanded US involvement by sending the elite Green Berets to train the South Vietnamese army (ARVN).",
+              "explanation": "President Kennedy expanded US involvement by sending the elite Green Berets to train the South Vietnamese army (ARVN). Their deployment marked a significant step in the militarization of US support for the Saigon regime.",
               "year": 1961,
               "distractors": [
                 "Navy SEALs",
@@ -1994,7 +2003,7 @@
               "id": "q_3_1_d1",
               "question": "What was the name of the communist-led nationalist coalition that fought the French for independence?",
               "answer": "Vietminh",
-              "explanation": "Founded by Ho Chi Minh in 1941, the Vietminh fought Japanese occupiers and then French colonial forces.",
+              "explanation": "Founded by Ho Chi Minh in 1941, the Vietminh fought Japanese occupiers and then French colonial forces. Their victory at Dien Bien Phu permanently ended French colonial rule in Indochina.",
               "year": 1941,
               "distractors": [
                 "Vietcong",
@@ -2006,7 +2015,7 @@
               "id": "q_3_1_d2",
               "question": "Which major religious group faced severe discrimination under Ngo Dinh Diem's Catholic-dominated government?",
               "answer": "Buddhists",
-              "explanation": "Diem's ban on Buddhist flags led to mass protests, self-immolations by monks, and a major political crisis in 1963.",
+              "explanation": "Diem's ban on Buddhist flags led to mass protests, self-immolations by monks, and a major political crisis in 1963. This persecution destroyed Diem's popular legitimacy and prompted the US to support a military coup against him.",
               "year": 1963,
               "distractors": [
                 "Hindus",
@@ -2018,7 +2027,7 @@
               "id": "q_3_1_d3",
               "question": "Why did the Strategic Hamlet Program (1962) fail and actually increase support for the Vietcong?",
               "answer": "It forcibly relocated peasants from their ancestral lands and villages",
-              "explanation": "The program alienated South Vietnam's rural population by uprooting them from their land and farming fields to move them into fortified hamlets, building resentment and VC recruits.",
+              "explanation": "The program alienated South Vietnam's rural population by uprooting them from their land and farming fields to move them into fortified hamlets, building resentment and VC recruits. This forced relocation alienated the peasantry, actively driving many to join the Vietcong insurgency.",
               "year": 1962,
               "distractors": [
                 "It failed to provide adequate medical care and schooling for children in the hamlets",
@@ -2042,7 +2051,7 @@
               "id": "q_3_1_d5",
               "question": "What was the official name of the political and military organization commonly known as the Vietcong?",
               "answer": "National Liberation Front (NLF)",
-              "explanation": "The NLF was established in December 1960 to unite all opponents of Diem's US-backed regime in the South.",
+              "explanation": "The NLF was established in December 1960 to unite all opponents of Diem's US-backed regime in the South. This broad coalition organized the political and military opposition that fought to overthrow the Saigon regime.",
               "year": 1960,
               "distractors": [
                 "People's Army of Vietnam (PAVN)",
@@ -2098,7 +2107,7 @@
               "id": "q_3_2_s1",
               "question": "Which US destroyer was reportedly attacked by North Vietnamese torpedo boats in August 1964?",
               "answer": "USS Maddox",
-              "explanation": "The clash in the Gulf of Tonkin provided the justification Johnson needed to seek congressional war powers.",
+              "explanation": "The clash in the Gulf of Tonkin provided the justification Johnson needed to seek congressional war powers. The incident served as the immediate catalyst for Congress to grant the president broad war-making powers.",
               "year": 1964,
               "distractors": [
                 "USS Turner Joy",
@@ -2110,7 +2119,7 @@
               "id": "q_3_2_s2",
               "question": "Which congressional resolution in August 1964 gave President Johnson war powers to defend South Vietnam?",
               "answer": "Gulf of Tonkin Resolution",
-              "explanation": "The resolution allowed Johnson to take 'all necessary measures' to repel attacks, acting as a blank check.",
+              "explanation": "The resolution allowed Johnson to take 'all necessary measures' to repel attacks, acting as a blank check. This resolution gave President Johnson authority to conduct combat operations without a formal declaration of war.",
               "year": 1964,
               "distractors": [
                 "Gulf of Tonkin Declaration",
@@ -2122,7 +2131,7 @@
               "id": "q_3_2_s3",
               "question": "In what year did Congress pass the Gulf of Tonkin Resolution?",
               "answer": "1964",
-              "explanation": "It was passed nearly unanimously in August 1964, following reported clashes off the coast of North Vietnam.",
+              "explanation": "It was passed nearly unanimously in August 1964, following reported clashes off the coast of North Vietnam. This year marked the critical turning point where the US shifted from an advisory role to direct military action.",
               "year": 1964,
               "distractors": [
                 "1963",
@@ -2134,7 +2143,7 @@
               "id": "q_3_2_s4",
               "question": "What was the code name of the sustained US bombing campaign of North Vietnam started in early 1965?",
               "answer": "Operation Rolling Thunder",
-              "explanation": "The campaign aimed to destroy North Vietnamese infrastructure and disrupt supply lines to the South.",
+              "explanation": "The campaign aimed to destroy North Vietnamese infrastructure and disrupt supply lines to the South. This bombing campaign failed to break North Vietnam's resolve or stop the flow of supplies to the South.",
               "year": 1965,
               "distractors": [
                 "Operation Linebacker",
@@ -2146,7 +2155,7 @@
               "id": "q_3_2_s5",
               "question": "In what year did Operation Rolling Thunder begin?",
               "answer": "1965",
-              "explanation": "It began in March 1965 and ran almost continuously until November 1968, dropping over 600,000 tons of bombs.",
+              "explanation": "It began in March 1965 and ran almost continuously until November 1968, dropping over 600,000 tons of bombs. This escalation marked the beginning of a massive, multi-year air campaign against North Vietnam.",
               "year": 1965,
               "distractors": [
                 "1964",
@@ -2158,7 +2167,7 @@
               "id": "q_3_2_s6",
               "question": "Who was the commander of US forces in Vietnam during the period of escalation (1964-68)?",
               "answer": "General William Westmoreland",
-              "explanation": "Westmoreland advocated a strategy of attrition, aiming to kill communist forces faster than they could be replaced.",
+              "explanation": "Westmoreland advocated a strategy of attrition, aiming to kill communist forces faster than they could be replaced. His attrition strategy failed to account for North Vietnam's high population and willingness to absorb massive casualties.",
               "year": 1964,
               "distractors": [
                 "General Creighton Abrams",
@@ -2170,7 +2179,7 @@
               "id": "q_3_2_s7",
               "question": "In what year were the first US combat troops officially deployed to South Vietnam?",
               "answer": "1965",
-              "explanation": "The first ground combat troops (3,500 Marines) landed at Da Nang in March 1965 to protect the US air base.",
+              "explanation": "The first ground combat troops (3,500 Marines) landed at Da Nang in March 1965 to protect the US air base. This landing marked the formal transition of the United States into a direct ground combat role in Vietnam.",
               "year": 1965,
               "distractors": [
                 "1963",
@@ -2194,7 +2203,7 @@
               "id": "q_3_2_s9",
               "question": "What was the peak troop level of US servicemen in Vietnam under President Johnson's administration?",
               "answer": "Over 500,000",
-              "explanation": "By late 1968, US forces in Vietnam exceeded 536,000, representing a massive escalation from advisors.",
+              "explanation": "By late 1968, US forces in Vietnam exceeded 536,000, representing a massive escalation from advisors. This massive troop commitment illustrated how the US had taken over the primary burden of the ground war.",
               "year": 1968,
               "distractors": [
                 "Over 100,000",
@@ -2218,7 +2227,7 @@
               "id": "q_3_2_s11",
               "question": "Approximately what percentage of the South Vietnamese countryside was under Vietcong control by early 1965?",
               "answer": "35%",
-              "explanation": "The Vietcong made rapid gains in the rural areas, controlling 35% of the countryside and prompting US fears of an imminent collapse of South Vietnam.",
+              "explanation": "The Vietcong made rapid gains in the rural areas, controlling 35% of the countryside and prompting US fears of an imminent collapse of South Vietnam. This widespread VC influence proved that the South Vietnamese government was losing control of its rural population.",
               "year": 1965,
               "distractors": [
                 "10%",
@@ -2244,7 +2253,7 @@
               "id": "q_3_2_d2",
               "question": "Which South Vietnamese air base was the landing site for the first official US ground combat troops in March 1965?",
               "answer": "Da Nang",
-              "explanation": "The landing of the 9th Marine Expeditionary Brigade marked the formal commitment of US ground combat forces.",
+              "explanation": "The landing of the 9th Marine Expeditionary Brigade marked the formal commitment of US ground combat forces. This arrival began the massive build-up of US combat forces on the Asian mainland.",
               "year": 1965,
               "distractors": [
                 "Cam Ranh Bay",
@@ -2268,7 +2277,7 @@
               "id": "q_3_2_d4",
               "question": "How many members of Congress voted against the Gulf of Tonkin Resolution in August 1964?",
               "answer": "Two",
-              "explanation": "The resolution passed 416-0 in the House and 88-2 in the Senate, with only Senators Morse and Gruening voting against.",
+              "explanation": "The resolution passed 416-0 in the House and 88-2 in the Senate, with only Senators Morse and Gruening voting against. Their opposition represented a rare early warning against granting the executive branch unchecked military power.",
               "year": 1964,
               "distractors": [
                 "Zero",
@@ -2280,7 +2289,7 @@
               "id": "q_3_2_d5",
               "question": "Who was the military commander of the North Vietnamese Army (NVA) who planned the strategy against the French and Americans?",
               "answer": "Vo Nguyen Giap",
-              "explanation": "Giap was the Minister of Defense who planned the victories at Dien Bien Phu and directed the Tet Offensive.",
+              "explanation": "Giap was the Minister of Defense who planned the victories at Dien Bien Phu and directed the Tet Offensive. His military strategies successfully countered US technological superiority and wore down American political will.",
               "year": 1965,
               "distractors": [
                 "Le Duan",
@@ -2336,7 +2345,7 @@
               "id": "q_3_3_s1",
               "question": "What Vietcong military tactic involved hit-and-run ambushes, traps, and avoiding conventional pitched battles?",
               "answer": "Guerrilla warfare",
-              "explanation": "Guerrilla warfare aimed to wear down US troop morale and resources without offering a fixed target for airpower.",
+              "explanation": "Guerrilla warfare aimed to wear down US troop morale and resources without offering a fixed target for airpower. These tactics neutralized US technological superiority and severely wore down American soldier morale.",
               "year": 1965,
               "distractors": [
                 "Conventional warfare",
@@ -2384,7 +2393,7 @@
               "id": "q_3_3_s5",
               "question": "What was the name of the complex supply route running from North to South Vietnam through Laos and Cambodia?",
               "answer": "Ho Chi Minh Trail",
-              "explanation": "The trail kept communist forces in the South supplied with weapons and reinforcements despite constant US bombing.",
+              "explanation": "The trail kept communist forces in the South supplied with weapons and reinforcements despite constant US bombing. This supply line funneled troops and materials, ensuring the VC could replace their losses indefinitely.",
               "year": 1965,
               "distractors": [
                 "Vietcong Supply Highway",
@@ -2396,7 +2405,7 @@
               "id": "q_3_3_s6",
               "question": "What underground structures did the Vietcong construct to hide, store supplies, and launch surprise attacks?",
               "answer": "Tunnel systems",
-              "explanation": "Tunnels (like those at Cu Chi) contained barracks, hospitals, and command centers, protecting fighters from bombing.",
+              "explanation": "Tunnels (like those at Cu Chi) contained barracks, hospitals, and command centers, protecting fighters from bombing. These tunnels allowed fighters to survive heavy US artillery and air strikes, launch surprise attacks, and retreat safely.",
               "year": 1965,
               "distractors": [
                 "Fortified bunkers",
@@ -2408,7 +2417,7 @@
               "id": "q_3_3_s7",
               "question": "What simple Vietcong traps used sharpened bamboo stakes hidden in pits and smeared with excrement?",
               "answer": "Punji traps",
-              "explanation": "Punji traps were designed to wound rather than kill, slowing down patrols and causing severe infections.",
+              "explanation": "Punji traps were designed to wound rather than kill, slowing down patrols and causing severe infections. These booby traps created constant anxiety among US soldiers and slowed down search-and-destroy patrols.",
               "year": 1965,
               "distractors": [
                 "Tripwire bombs",
@@ -2432,7 +2441,7 @@
               "id": "q_3_3_s9",
               "question": "What helicopter model was widely used by the US for troop transport, medical evacuation, and gunship support?",
               "answer": "UH-1 Huey",
-              "explanation": "The Huey became the symbol of the Vietnam War, defining the airmobile tactics of the conflict.",
+              "explanation": "The Huey became the symbol of the Vietnam War, defining the airmobile tactics of the conflict. This helicopter allowed US forces to deploy quickly to remote areas, overcoming the dense jungle terrain.",
               "year": 1965,
               "distractors": [
                 "CH-47 Chinook",
@@ -2444,7 +2453,7 @@
               "id": "q_3_3_s10",
               "question": "Which major North Vietnamese and Vietcong offensive in January 1968 marked the turning point of the war?",
               "answer": "Tet Offensive",
-              "explanation": "Although a military failure for the communists, Tet shattered the US public's belief that victory was near.",
+              "explanation": "Although a military failure for the communists, Tet shattered the US public's belief that victory was near. This offensive shattered the US public's trust in claims that the war was near a successful end.",
               "year": 1968,
               "distractors": [
                 "Easter Offensive",
@@ -2456,7 +2465,7 @@
               "id": "q_3_3_s11",
               "question": "What Vietcong tactic involved fighting in extremely close quarters to prevent U.S. troops from calling in air and artillery support?",
               "answer": "Hanging onto the belts",
-              "explanation": "By staying physically close to US units ('hanging onto their belts'), the Vietcong ensured that any US air strikes or artillery would also kill American soldiers.",
+              "explanation": "By staying physically close to US units ('hanging onto their belts'), the Vietcong ensured that any US air strikes or artillery would also kill American soldiers. This tactic made US artillery and air strikes highly risky, as they would also kill American troops.",
               "year": 1965,
               "distractors": [
                 "Clinch and clear",
@@ -2468,7 +2477,7 @@
               "id": "q_3_3_s12",
               "question": "Approximately what percentage of all US soldier deaths in the Vietnam War was caused by Vietcong booby traps?",
               "answer": "11%",
-              "explanation": "Booby traps like punji pits, tripwires, and mines caused approximately 11% of all US military fatalities, creating constant paranoia.",
+              "explanation": "Booby traps like punji pits, tripwires, and mines caused approximately 11% of all US military fatalities, creating constant paranoia. This high casualty rate created deep paranoia and caution among US soldiers on patrol.",
               "year": 1965,
               "distractors": [
                 "5%",
@@ -2482,7 +2491,7 @@
               "id": "q_3_3_d1",
               "question": "Why was the 1968 Tet Offensive considered a major political turning point for the US homefront?",
               "answer": "It shattered the public belief that the US was winning the war",
-              "explanation": "Despite military claims of progress, the size and coordination of the communist offensive, broadcast on TV, created a massive credibility gap for the US government.",
+              "explanation": "Despite military claims of progress, the size and coordination of the communist offensive, broadcast on TV, created a massive credibility gap for the US government. This psychological shock forced President Johnson to halt escalation and begin the path to US withdrawal.",
               "year": 1968,
               "distractors": [
                 "It forced President Johnson to resign from office immediately",
@@ -2518,7 +2527,7 @@
               "id": "q_3_3_d4",
               "question": "Which high-profile building in Saigon was attacked by a Vietcong commando squad during the Tet Offensive?",
               "answer": "US Embassy",
-              "explanation": "Although the attackers were killed, images of combat inside the embassy compound shocked the US public.",
+              "explanation": "Although the attackers were killed, images of combat inside the embassy compound shocked the US public. This dramatic attack proved that communist forces could penetrate the most secure US installations in South Vietnam.",
               "year": 1968,
               "distractors": [
                 "Presidential Palace",
@@ -2530,7 +2539,7 @@
               "id": "q_3_3_d5",
               "question": "What slang term was used by US soldiers for search-and-destroy missions that ended in burning down peasant huts?",
               "answer": "Zippo missions",
-              "explanation": "Named after the popular Zippo lighter, soldiers used them to burn thatched roofs of suspected Vietcong villages.",
+              "explanation": "Named after the popular Zippo lighter, soldiers used them to burn thatched roofs of suspected Vietcong villages. These operations alienated the rural peasantry, pushing them to support the Vietcong.",
               "year": 1965,
               "distractors": [
                 "Search-and-destroy sweeps",
@@ -2586,7 +2595,7 @@
               "id": "q_3_4_s1",
               "question": "What policy under President Nixon aimed to withdraw US troops and hand over combat duties to the South Vietnamese army?",
               "answer": "Vietnamisation",
-              "explanation": "Vietnamisation aimed to reduce US ground casualties and shift the military burden to the ARVN forces.",
+              "explanation": "Vietnamisation aimed to reduce US ground casualties and shift the military burden to the ARVN forces. This policy aimed to quiet anti-war protests at home, but left South Vietnam highly vulnerable to North Vietnamese forces.",
               "year": 1969,
               "distractors": [
                 "De-escalation policy",
@@ -2598,7 +2607,7 @@
               "id": "q_3_4_s2",
               "question": "What was the name of the foreign policy doctrine declaring that US allies must provide their own ground troops?",
               "answer": "Nixon Doctrine",
-              "explanation": "The doctrine stated that while the US would offer economic and air support, it would not fight ground wars for allies.",
+              "explanation": "The doctrine stated that while the US would offer economic and air support, it would not fight ground wars for allies. This doctrine marked a major shift in US foreign policy, limiting direct ground troop commitments to allies.",
               "year": 1969,
               "distractors": [
                 "Truman Doctrine",
@@ -2610,7 +2619,7 @@
               "id": "q_3_4_s3",
               "question": "What slogan did Richard Nixon use to describe his goal of achieving a negotiated exit from the war?",
               "answer": "Peace with Honor",
-              "explanation": "Nixon sought an exit that did not look like a defeat, preserving US credibility and South Vietnam's independence.",
+              "explanation": "Nixon sought an exit that did not look like a defeat, preserving US credibility and South Vietnam's independence. This phrase represented Nixon's attempt to negotiate an exit that preserved South Vietnam's independence and US prestige.",
               "year": 1969,
               "distractors": [
                 "Victory with Dignity",
@@ -2634,7 +2643,7 @@
               "id": "q_3_4_s5",
               "question": "Which country neighboring Vietnam was invaded by ARVN forces with US air support in 1971?",
               "answer": "Laos",
-              "explanation": "The invasion (Lam Son 719) aimed to cut the Ho Chi Minh Trail but ended in a disastrous ARVN retreat.",
+              "explanation": "The invasion (Lam Son 719) aimed to cut the Ho Chi Minh Trail but ended in a disastrous ARVN retreat. The invasion here resulted in a disastrous ARVN retreat, proving that Vietnamization was failing.",
               "year": 1971,
               "distractors": [
                 "Cambodia",
@@ -2646,7 +2655,7 @@
               "id": "q_3_4_s6",
               "question": "Which North Vietnamese capital city was hit by heavy U.S. B-52 bomber raids during the 1972 Christmas Bombings?",
               "answer": "Hanoi",
-              "explanation": "The bombings aimed to force North Vietnam back to the negotiating table to finalize the peace treaty.",
+              "explanation": "The bombings aimed to force North Vietnam back to the negotiating table to finalize the peace treaty. The heavy bombing of this capital forced North Vietnamese negotiators to finalize the ceasefire terms.",
               "year": 1972,
               "distractors": [
                 "Haiphong",
@@ -2658,7 +2667,7 @@
               "id": "q_3_4_s7",
               "question": "What was the official code name of the December 1972 Christmas Bombing campaign?",
               "answer": "Operation Linebacker II",
-              "explanation": "It was the largest campaign of heavy bomber attacks launched by the US Air Force since World War II.",
+              "explanation": "It was the largest campaign of heavy bomber attacks launched by the US Air Force since World War II. This intensive bombing campaign forced North Vietnam to return to negotiations and sign the Paris Peace Accords.",
               "year": 1972,
               "distractors": [
                 "Operation Rolling Thunder",
@@ -2682,7 +2691,7 @@
               "id": "q_3_4_s9",
               "question": "Who was Nixon's National Security Advisor and lead negotiator at the Paris peace talks?",
               "answer": "Henry Kissinger",
-              "explanation": "Kissinger conducted years of secret negotiations with North Vietnam, earning the Nobel Peace Prize in 1973.",
+              "explanation": "Kissinger conducted years of secret negotiations with North Vietnam, earning the Nobel Peace Prize in 1973. His diplomatic efforts led to the signing of the Paris Peace Accords, ending direct US combat involvement.",
               "year": 1972,
               "distractors": [
                 "William P. Rogers",
@@ -2694,7 +2703,7 @@
               "id": "q_3_4_s10",
               "question": "Who was the chief negotiator for North Vietnam who negotiated the peace accords with Henry Kissinger?",
               "answer": "Le Duc Tho",
-              "explanation": "Le Duc Tho declined the Nobel Peace Prize, stating that true peace had not yet been achieved in Vietnam.",
+              "explanation": "Le Duc Tho declined the Nobel Peace Prize, stating that true peace had not yet been achieved in Vietnam. His refusal to accept the award highlighted the incomplete nature of the peace agreement as fighting continued.",
               "year": 1973,
               "distractors": [
                 "Le Duan",
@@ -2706,7 +2715,7 @@
               "id": "q_3_4_s11",
               "question": "What term describes the collapse of US military discipline where soldiers murdered their own commanding officers to avoid combat?",
               "answer": "Fragging",
-              "explanation": "Fragging, often using fragmentation grenades, became a symptom of plummeting troop morale and opposition to the war among draftees.",
+              "explanation": "Fragging, often using fragmentation grenades, became a symptom of plummeting troop morale and opposition to the war among draftees. This extreme violence reflected the severe breakdown in military discipline and morale during the withdrawal phase.",
               "year": 1970,
               "distractors": [
                 "Mutiny bombing",
@@ -2718,7 +2727,7 @@
               "id": "q_3_4_s12",
               "question": "What was the code name of the secret bombing campaign of Cambodia ordered by President Nixon in 1969?",
               "answer": "Operation Menu",
-              "explanation": "Operation Menu was a series of secret bombings targeting North Vietnamese sanctuaries in neutral Cambodia, hidden from the US public and Congress.",
+              "explanation": "Operation Menu was a series of secret bombings targeting North Vietnamese sanctuaries in neutral Cambodia, hidden from the US public and Congress. The secrecy of these bombings created deep controversy and accelerated public distrust when they were exposed.",
               "year": 1969,
               "distractors": [
                 "Operation Breakfast",
@@ -2756,7 +2765,7 @@
               "id": "q_3_4_d3",
               "question": "Why did President Nixon order the military invasion of Cambodia in 1970?",
               "answer": "To destroy Vietcong supply sanctuaries and disrupt the Ho Chi Minh Trail",
-              "explanation": "Nixon wanted to weaken communist forces using neutral Cambodian territory as safe havens, hoping to buy time for South Vietnam's army to build strength.",
+              "explanation": "Nixon wanted to weaken communist forces using neutral Cambodian territory as safe havens, hoping to buy time for South Vietnam's army to build strength. This military escalation triggered massive anti-war protests in the United States, including the Kent State shootings.",
               "year": 1970,
               "distractors": [
                 "To retaliate against North Vietnamese artillery shelling of South Vietnamese cities",
@@ -2768,7 +2777,7 @@
               "id": "q_3_4_d4",
               "question": "What was the code name of the disastrous 1971 ARVN invasion of Laos that ended in panic and retreat?",
               "answer": "Operation Lam Son 719",
-              "explanation": "The operation showed that without US ground commanders, the ARVN was unable to defeat NVA forces.",
+              "explanation": "The operation showed that without US ground commanders, the ARVN was unable to defeat NVA forces. The disastrous retreat of ARVN troops proved their severe weakness without US ground commanders.",
               "year": 1971,
               "distractors": [
                 "Operation Lam Son 720",
@@ -2854,7 +2863,7 @@
               "id": "q_4_1_s1",
               "question": "What was the name of the system used to select young men for compulsory military service in Vietnam?",
               "answer": "The Draft",
-              "explanation": "The draft was highly controversial, particularly because college students could obtain deferments, favoring wealthier whites.",
+              "explanation": "The draft was highly controversial, particularly because college students could obtain deferments, favoring wealthier whites. This conscription system created deep resentment and sparked widespread draft resistance and campus protests.",
               "year": 1965,
               "distractors": [
                 "Conscription Act",
@@ -2878,7 +2887,7 @@
               "id": "q_4_1_s3",
               "question": "Which student organization was at the forefront of the early anti-war protest movement?",
               "answer": "Students for a Democratic Society (SDS)",
-              "explanation": "SDS organized the first major national anti-war march in Washington in April 1965, drawing 20,000.",
+              "explanation": "SDS organized the first major national anti-war march in Washington in April 1965, drawing 20,000. This organization became the primary vehicle for coordinating the early student-led anti-war movement.",
               "year": 1965,
               "distractors": [
                 "Student Mobilization Committee (SMC)",
@@ -2902,7 +2911,7 @@
               "id": "q_4_1_s5",
               "question": "Which heavyweight boxing champion famously refused to be drafted in 1967, citing religious beliefs?",
               "answer": "Muhammad Ali",
-              "explanation": "Ali was stripped of his title and banned from boxing, declaring: 'I ain't got no quarrel with them Viet Cong.'",
+              "explanation": "Ali was stripped of his title and banned from boxing, declaring: 'I ain't got no quarrel with them Viet Cong.' He was stripped of his heavyweight title, becoming a global icon of anti-war opposition and Black pride.",
               "year": 1967,
               "distractors": [
                 "Joe Frazier",
@@ -2914,7 +2923,7 @@
               "id": "q_4_1_s6",
               "question": "What term describes the difference between what the government reported about the war and what journalists showed on TV?",
               "answer": "Credibility gap",
-              "explanation": "The credibility gap eroded public trust in the presidency, especially after the Tet Offensive showed the war was not won.",
+              "explanation": "The credibility gap eroded public trust in the presidency, especially after the Tet Offensive showed the war was not won. This gap eroded public trust in the presidency, peaking after the Tet Offensive and driving anti-war sentiment.",
               "year": 1968,
               "distractors": [
                 "Information mismatch",
@@ -2926,7 +2935,7 @@
               "id": "q_4_1_s7",
               "question": "In which South Vietnamese village did US troops massacre over 500 unarmed civilians in March 1968?",
               "answer": "My Lai",
-              "explanation": "The massacre of women, children, and old men was covered up by the military until journalist Seymour Hersh broke the story.",
+              "explanation": "The massacre of women, children, and old men was covered up by the military until journalist Seymour Hersh broke the story. The exposure of this massacre shocked the nation, severely damaging the moral legitimacy of the war.",
               "year": 1968,
               "distractors": [
                 "Song My",
@@ -2950,7 +2959,7 @@
               "id": "q_4_1_s9",
               "question": "What was the name of the top-secret government history of the war leaked to the press in 1971?",
               "answer": "The Pentagon Papers",
-              "explanation": "The papers revealed that the government had systematically lied to Congress and the public about the scope of the war.",
+              "explanation": "The papers revealed that the government had systematically lied to Congress and the public about the scope of the war. The papers proved that successive administrations had systematically deceived Congress and the public about the war.",
               "year": 1971,
               "distractors": [
                 "The McNamara Report",
@@ -2974,7 +2983,7 @@
               "id": "q_4_1_s11",
               "question": "How many unarmed students were shot and killed by National Guardsmen at Kent State University in May 1970?",
               "answer": "Four",
-              "explanation": "The killing of four students at Kent State during protests against the Cambodian invasion shocked the nation and triggered massive strikes.",
+              "explanation": "The killing of four students at Kent State during protests against the Cambodian invasion shocked the nation and triggered massive strikes. These deaths triggered a massive nationwide student strike of over 4 million students, closing campuses.",
               "year": 1970,
               "distractors": [
                 "Two",
@@ -2988,7 +2997,7 @@
               "id": "q_4_1_d1",
               "question": "What justification did Muhammad Ali give for refusing to fight in the Vietnam War?",
               "answer": "His religious beliefs and opposition to fighting other people of color",
-              "explanation": "Ali cited his faith as a Muslim and argued that Black Americans should not fight for a country that denied them civil rights at home.",
+              "explanation": "Ali cited his faith as a Muslim and argued that Black Americans should not fight for a country that denied them civil rights at home. His refusal linked the anti-war movement to the domestic struggle for civil rights, inspiring other activists.",
               "year": 1967,
               "distractors": [
                 "His alignment with anti-war student movements and the Students for a Democratic Society",
@@ -3000,7 +3009,7 @@
               "id": "q_4_1_d2",
               "question": "What was the exact date of the Kent State shootings in Ohio?",
               "answer": "4 May 1970",
-              "explanation": "Guardsmen fired 67 rounds into the crowd, killing 4 students and wounding 9 others, including one who was paralyzed.",
+              "explanation": "Guardsmen fired 67 rounds into the crowd, killing 4 students and wounding 9 others, including one who was paralyzed. This tragedy shocked the nation, polarizing public opinion and deepening divisions over the war.",
               "year": 1970,
               "distractors": [
                 "1 May 1970",
@@ -3012,7 +3021,7 @@
               "id": "q_4_1_d3",
               "question": "Why did the My Lai Massacre (1968) have such a devastating impact on the US homefront when it was revealed in 1969?",
               "answer": "It exposed the moral cost of the war and shocked the public's conscience",
-              "explanation": "The brutal killing of over 500 unarmed Vietnamese civilians by US soldiers undermined the government's claim that the war was a moral defense of democracy.",
+              "explanation": "The brutal killing of over 500 unarmed Vietnamese civilians by US soldiers undermined the government's claim that the war was a moral defense of democracy. The exposure of this atrocity undermined the moral justification for US involvement in Southeast Asia.",
               "year": 1968,
               "distractors": [
                 "It resulted in the immediate cut-off of congressional funds for military operations",
@@ -3024,7 +3033,7 @@
               "id": "q_4_1_d4",
               "question": "Who was the independent investigative journalist who broke the My Lai massacre story in November 1969?",
               "answer": "Seymour Hersh",
-              "explanation": "Hersh traced Calley's court-martial charges, interviewed soldiers, and won the Pulitzer Prize for his reporting.",
+              "explanation": "Hersh traced Calley's court-martial charges, interviewed soldiers, and won the Pulitzer Prize for his reporting. His reporting broke the military's cover-up of the massacre, exposing the war's horrors to the public.",
               "year": 1969,
               "distractors": [
                 "Ronald Ridenhour",
@@ -3036,7 +3045,7 @@
               "id": "q_4_1_d5",
               "question": "Who was the military analyst who leaked the Pentagon Papers to newspapers in 1971?",
               "answer": "Daniel Ellsberg",
-              "explanation": "Ellsberg was a former defense analyst who copied the documents to expose the deception of the war.",
+              "explanation": "Ellsberg was a former defense analyst who copied the documents to expose the deception of the war. His leak of the Pentagon Papers was a major victory for press freedom and severely damaged Nixon's administration.",
               "year": 1971,
               "distractors": [
                 "Neil Sheehan",
@@ -3092,7 +3101,7 @@
               "id": "q_4_2_s1",
               "question": "What term did Nixon use in November 1969 to describe the patriotic Americans who supported his war policy?",
               "answer": "The Silent Majority",
-              "explanation": "Nixon argued that the loud anti-war protesters were a minority, and most Americans supported his efforts.",
+              "explanation": "Nixon argued that the loud anti-war protesters were a minority, and most Americans supported his efforts. Nixon successfully mobilized this group to counter anti-war demonstrations and secure a landslide re-election in 1972.",
               "year": 1969,
               "distractors": [
                 "The Great Majority",
@@ -3104,7 +3113,7 @@
               "id": "q_4_2_s2",
               "question": "What was the primary political motivation for pro-war supporters in the US, fearing the global spread of communism?",
               "answer": "Anti-communism",
-              "explanation": "Supporters believed that stopping communism in Vietnam was essential to protect American security and democracy.",
+              "explanation": "Supporters believed that stopping communism in Vietnam was essential to protect American security and democracy. This Cold War containment mindset led many Americans to view the war as a vital defense of democratic values.",
               "year": 1965,
               "distractors": [
                 "Democratic capitalism",
@@ -3128,7 +3137,7 @@
               "id": "q_4_2_s4",
               "question": "What informal term was used to describe politicians and citizens who supported the escalation of the war?",
               "answer": "Hawks",
-              "explanation": "Hawks favored military pressure, believing that the US should use all necessary force to win in Vietnam.",
+              "explanation": "Hawks favored military pressure, believing that the US should use all necessary force to win in Vietnam. Their political influence put pressure on the administration to escalate the war to achieve a military victory.",
               "year": 1965,
               "distractors": [
                 "Eagles",
@@ -3140,7 +3149,7 @@
               "id": "q_4_2_s5",
               "question": "What informal term was used to describe politicians and citizens who favored a peaceful exit from the war?",
               "answer": "Doves",
-              "explanation": "Doves argued that the war was a civil conflict that could not be won militarily and urged immediate negotiations.",
+              "explanation": "Doves argued that the war was a civil conflict that could not be won militarily and urged immediate negotiations. Their advocacy shifted public opinion and put pressure on Nixon to accelerate the withdrawal of US troops.",
               "year": 1965,
               "distractors": [
                 "Pigeons",
@@ -3152,7 +3161,7 @@
               "id": "q_4_2_s6",
               "question": "What popular pro-war slogan expressed the view that citizens who criticized the war should emigrate?",
               "answer": "America: Love It or Leave It",
-              "explanation": "The slogan reflected the intense patriotism and hostility toward anti-war protesters among supporters.",
+              "explanation": "The slogan reflected the intense patriotism and hostility toward anti-war protesters among supporters. This slogan highlighted the deep polarization of American society, equating protest with treason.",
               "year": 1969,
               "distractors": [
                 "My Country: Right or Wrong",
@@ -3164,7 +3173,7 @@
               "id": "q_4_2_s7",
               "question": "Which US president made the famous 'Silent Majority' speech on television in November 1969?",
               "answer": "Richard Nixon",
-              "explanation": "The speech was highly successful, rallying conservative and working-class support to his administration.",
+              "explanation": "The speech was highly successful, rallying conservative and working-class support to his administration. His appeal successfully divided public opinion, isolating radical anti-war protesters from mainstream voters.",
               "year": 1969,
               "distractors": [
                 "Lyndon B. Johnson",
@@ -3176,7 +3185,7 @@
               "id": "q_4_2_s8",
               "question": "Which major national labor union coalition supported Nixon's war policy and helped organize the Hard Hat Riots?",
               "answer": "AFL-CIO",
-              "explanation": "Led by George Meany, the union leadership was strongly anti-communist and patriotic, aligning with Nixon.",
+              "explanation": "Led by George Meany, the union leadership was strongly anti-communist and patriotic, aligning with Nixon. Their stance showed that a significant portion of the working-class rejected the anti-war movement.",
               "year": 1970,
               "distractors": [
                 "Teamsters",
@@ -3188,7 +3197,7 @@
               "id": "q_4_2_s9",
               "question": "In what month and year did President Nixon deliver his famous 'Silent Majority' address?",
               "answer": "November 1969",
-              "explanation": "Delivered on 3 November 1969, the speech sought to buy time for his Vietnamisation policy.",
+              "explanation": "Delivered on 3 November 1969, the speech sought to buy time for his Vietnamisation policy. This speech bought Nixon valuable political time to implement his Vietnamisation policy.",
               "year": 1969,
               "distractors": [
                 "May 1970",
@@ -3200,7 +3209,7 @@
               "id": "q_4_2_s10",
               "question": "What pro-war student organization was formed to counter the radical anti-war Student Mobilization Committee?",
               "answer": "Young Americans for Freedom (YAF)",
-              "explanation": "YAF was a conservative youth organization that organized pro-war rallies and supported the draft.",
+              "explanation": "YAF was a conservative youth organization that organized pro-war rallies and supported the draft. Their activism showed that the youth of the 1960s were not unified, with many supporting conservative Cold War policies.",
               "year": 1969,
               "distractors": [
                 "Students for America (SFA)",
@@ -3214,7 +3223,7 @@
               "id": "q_4_2_d1",
               "question": "How many construction workers marched in support of Nixon in New York City in the days following the Hard Hat Riots?",
               "answer": "Over 20,000",
-              "explanation": "The workers marched to City Hall carrying American flags, showing the depth of working-class support for the troops.",
+              "explanation": "The workers marched to City Hall carrying American flags, showing the depth of working-class support for the troops. This counter-protest demonstrated the deep division between working-class patriots and anti-war student radicals.",
               "year": 1970,
               "distractors": [
                 "Over 5,000",
@@ -3226,7 +3235,7 @@
               "id": "q_4_2_d2",
               "question": "What concept of national duty and pride did working-class supporters frequently cite when criticizing student protesters?",
               "answer": "Patriotism",
-              "explanation": "Supporters felt that refusing the draft and burning flags was a betrayal of those who had served in previous wars.",
+              "explanation": "Supporters felt that refusing the draft and burning flags was a betrayal of those who had served in previous wars. This belief drove working-class families to support the war effort, seeing protests as a betrayal of their sons in combat.",
               "year": 1969,
               "distractors": [
                 "Constitutional duty",
@@ -3250,7 +3259,7 @@
               "id": "q_4_2_d4",
               "question": "What demographic groups formed the primary social base for Nixon's Silent Majority?",
               "answer": "Working-class, suburban, and older conservative Americans",
-              "explanation": "Often called 'Middle America', they were alienated by the counterculture, student riots, and radical civil rights.",
+              "explanation": "Often called 'Middle America', they were alienated by the counterculture, student riots, and radical civil rights. This base was alienated by the counterculture and student protests, forming the core of Nixon's political coalition.",
               "year": 1969,
               "distractors": [
                 "Academic intellectuals, university students, and liberal media columnists",
@@ -3262,7 +3271,7 @@
               "id": "q_4_2_d5",
               "question": "What did pro-war advocates fear would happen to US allies if the United States withdrew from Vietnam in defeat?",
               "answer": "Loss of US global credibility and containment failure",
-              "explanation": "They feared a communist takeover of the region and that allies would no longer trust US security commitments.",
+              "explanation": "They feared a communist takeover of the region and that allies would no longer trust US security commitments. This fear drove hawks to demand a military victory, believing that withdrawal would embolden communist expansion.",
               "year": 1965,
               "distractors": [
                 "Immediate economic recession on the homefront due to loss of trade routes",
@@ -3354,7 +3363,7 @@
               "id": "q_4_3_s4",
               "question": "Who was the South Vietnamese President who surrendered Saigon to North Vietnamese forces?",
               "answer": "Duong Van Minh",
-              "explanation": "Minh surrendered on 30 April, telling the NVA: 'I am waiting to hand over the power to you to avoid bloodshed.'",
+              "explanation": "Minh surrendered on 30 April, telling the NVA: 'I am waiting to hand over the power to you to avoid bloodshed.' His surrender officially ended the Vietnam War, marking the transition of Saigon to communist control.",
               "year": 1975,
               "distractors": [
                 "Nguyen Van Thieu",
@@ -3378,7 +3387,7 @@
               "id": "q_4_3_s6",
               "question": "How many days did the US have to withdraw all troops under the 1973 Accords?",
               "answer": "60 days",
-              "explanation": "The accords mandated the complete withdrawal of all US military personnel and the release of all POWs within 60 days.",
+              "explanation": "The accords mandated the complete withdrawal of all US military personnel and the release of all POWs within 60 days. The complete US exit marked the official end of direct American military involvement in Vietnam.",
               "year": 1973,
               "distractors": [
                 "30 days",
@@ -3390,7 +3399,7 @@
               "id": "q_4_3_s7",
               "question": "Why did South Vietnamese President Thieu initially refuse to sign the accords?",
               "answer": "North Vietnamese troops stayed in the South",
-              "explanation": "Thieu knew that leaving North Vietnamese troops inside South Vietnam would make a communist takeover inevitable once US forces left.",
+              "explanation": "Thieu knew that leaving North Vietnamese troops inside South Vietnam would make a communist takeover inevitable once US forces left. This concession allowed the NVA to launch a final offensive to overrun the South once US forces left.",
               "year": 1972,
               "distractors": [
                 "The US refused to provide any further economic aid to the South",
@@ -3402,7 +3411,7 @@
               "id": "q_4_3_s8",
               "question": "What bombing campaign was ordered to force the signing of the accords in late 1972?",
               "answer": "Operation Linebacker II (Christmas Bombings)",
-              "explanation": "Nixon launched intense B-52 raids against Hanoi and Haiphong in December 1972 to force North Vietnam back to the negotiating table.",
+              "explanation": "Nixon launched intense B-52 raids against Hanoi and Haiphong in December 1972 to force North Vietnam back to the negotiating table. These heavy B-52 raids forced North Vietnam to return to the negotiations and finalize the peace accords.",
               "year": 1972,
               "distractors": [
                 "Operation Rolling Thunder",
@@ -3414,7 +3423,7 @@
               "id": "q_4_3_s9",
               "question": "Which 1973 Act of Congress limited the president's power to commit troops to foreign conflicts without approval?",
               "answer": "War Powers Act",
-              "explanation": "Passed over Nixon's veto, the act required congressional approval within 60 days of deploying troops.",
+              "explanation": "Passed over Nixon's veto, the act required congressional approval within 60 days of deploying troops. This act reasserted congressional control over war-making powers, severely limiting the president's military authority.",
               "year": 1973,
               "distractors": [
                 "National Security Act",
@@ -3426,7 +3435,7 @@
               "id": "q_4_3_s10",
               "question": "Which constitutional amendment lowered the US voting age to 18 in 1971, prompted by the draft?",
               "answer": "26th Amendment",
-              "explanation": "The slogan 'old enough to fight, old enough to vote' led to the rapid ratification of the amendment.",
+              "explanation": "The slogan 'old enough to fight, old enough to vote' led to the rapid ratification of the amendment. This extension of the vote represented a lasting political consequence of the youth-driven draft resistance.",
               "year": 1971,
               "distractors": [
                 "24th Amendment",
@@ -3438,7 +3447,7 @@
               "id": "q_4_3_s11",
               "question": "Approximately how many American military personnel lost their lives in the Vietnam War?",
               "answer": "58,000",
-              "explanation": "The human cost for the United States was high, with over 58,000 American soldiers killed during the conflict.",
+              "explanation": "The human cost for the United States was high, with over 58,000 American soldiers killed during the conflict. This high death toll had a profound impact, creating a long-term public reluctance to commit ground troops in foreign conflicts.",
               "year": 1973,
               "distractors": [
                 "25,000",
@@ -3464,7 +3473,7 @@
               "id": "q_4_3_d1",
               "question": "What was the exact date of the Fall of Saigon, marking the official end of South Vietnam?",
               "answer": "30 April 1975",
-              "explanation": "Tanks entered the city, raised the Vietcong flag on the palace, and South Vietnam surrendered unconditionally.",
+              "explanation": "Tanks entered the city, raised the Vietcong flag on the palace, and South Vietnam surrendered unconditionally. This capture marked the formal reunification of Vietnam under communism and the definitive failure of US containment.",
               "year": 1975,
               "distractors": [
                 "27 January 1973",
@@ -3488,7 +3497,7 @@
               "id": "q_4_3_d3",
               "question": "Under the War Powers Act of 1973, within how many hours must a president notify Congress of troop deployment?",
               "answer": "48 hours",
-              "explanation": "The president must explain the reasons for the deployment and withdraw forces within 60 days unless Congress approves.",
+              "explanation": "The president must explain the reasons for the deployment and withdraw forces within 60 days unless Congress approves. This requirement aimed to prevent presidents from escalating conflicts secretly without consulting Congress.",
               "year": 1973,
               "distractors": [
                 "24 hours",
@@ -3500,7 +3509,7 @@
               "id": "q_4_3_d4",
               "question": "Why did the US Congress pass the War Powers Act in 1973?",
               "answer": "To limit the president's ability to wage undeclared war without congressional approval",
-              "explanation": "After Nixon escalated the war in Cambodia and Laos without consulting Congress, politicians wanted to reassert their constitutional control over military commitments.",
+              "explanation": "After Nixon escalated the war in Cambodia and Laos without consulting Congress, politicians wanted to reassert their constitutional control over military commitments. This law represented a major constitutional shift, clawing back war powers from the executive branch after the imperial presidency era.",
               "year": 1973,
               "distractors": [
                 "To cut off all presidential funding for international diplomatic treaties",
@@ -3524,7 +3533,7 @@
               "id": "q_4_3_d6",
               "question": "Which June 1973 congressional amendment prohibited all further US military action in Indochina after 15 August 1973?",
               "answer": "Case-Church Amendment",
-              "explanation": "The Case-Church Amendment legally prevented the US president from ordering air support or military intervention to protect South Vietnam during the final 1975 Spring Offensive.",
+              "explanation": "The Case-Church Amendment legally prevented the US president from ordering air support or military intervention to protect South Vietnam during the final 1975 Spring Offensive. This legislation legally blocked any possibility of US air intervention, sealing South Vietnam's defeat.",
               "year": 1973,
               "distractors": [
                 "War Powers Amendment",
@@ -3568,7 +3577,7 @@
               "id": "q_4_4_s1",
               "question": "What was the name of the highly resilient supply route running through Laos and Cambodia that the US failed to block?",
               "answer": "Ho Chi Minh Trail",
-              "explanation": "The trail funneled troops and supplies from North Vietnam into the South, rebuilt constantly by volunteers despite intense bombing.",
+              "explanation": "The trail funneled troops and supplies from North Vietnam into the South, rebuilt constantly by volunteers despite intense bombing. This trail successfully funneled reinforcements and weapons, rendering US containment efforts ineffective.",
               "year": 1965,
               "distractors": [
                 "Hanoi Bypass Route",
@@ -3580,7 +3589,7 @@
               "id": "q_4_4_s2",
               "question": "Which two communist superpowers provided essential military hardware, air defenses, and financial aid to North Vietnam?",
               "answer": "Soviet Union and China",
-              "explanation": "Soviet surface-to-air missiles and Chinese military hardware/labor provided North Vietnam the material support to match US firepower.",
+              "explanation": "Soviet surface-to-air missiles and Chinese military hardware/labor provided North Vietnam the material support to match US firepower. This support enabled North Vietnam to sustain its military campaign against the full weight of US technology.",
               "year": 1965,
               "distractors": [
                 "Soviet Union and North Korea",
@@ -3592,7 +3601,7 @@
               "id": "q_4_4_s3",
               "question": "What term was used to describe the collapse of morale behavior where US soldiers intentionally killed their own officers with grenades?",
               "answer": "Fragging",
-              "explanation": "Usually involving fragmentation grenades, fragging reflected severe drug abuse, frustration, and rebellion among conscripted soldiers.",
+              "explanation": "Usually involving fragmentation grenades, fragging reflected severe drug abuse, frustration, and rebellion among conscripted soldiers. This internal violence highlighted the collapse of military authority and morale among draftees.",
               "year": 1970,
               "distractors": [
                 "Mutiny",
@@ -3628,7 +3637,7 @@
               "id": "q_4_4_s6",
               "question": "What chemical weapons and defoliants dropped by the US ruined its global reputation and alienated South Vietnamese peasants?",
               "answer": "Agent Orange and Napalm",
-              "explanation": "The drop of toxic herbicides and incendiary weapons destroyed crops and villages, pushing rural populations to support the Vietcong.",
+              "explanation": "The drop of toxic herbicides and incendiary weapons destroyed crops and villages, pushing rural populations to support the Vietcong. These chemicals devastated crops and villages, alienating the peasantry and pushing them to support the Vietcong.",
               "year": 1965,
               "distractors": [
                 "Thermite and White Phosphorus",
@@ -3640,7 +3649,7 @@
               "id": "q_4_4_s7",
               "question": "Which 1968 offensive, though a military defeat for the Vietcong, was a political victory that shattered US support?",
               "answer": "Tet Offensive",
-              "explanation": "Tet proved to the American public that the government's optimistic claims about winning the war were false, fueling opposition.",
+              "explanation": "Tet proved to the American public that the government's optimistic claims about winning the war were false, fueling opposition. Tet destroyed public confidence in the US government, forcing a policy shift toward military de-escalation.",
               "year": 1968,
               "distractors": [
                 "Easter Offensive",
@@ -3664,7 +3673,7 @@
               "id": "q_4_4_s9",
               "question": "What term describes the psychological reluctance of the US public and politicians to intervene militarily abroad after Vietnam?",
               "answer": "Vietnam Syndrome",
-              "explanation": "The national trauma of the defeat made subsequent US administrations highly hesitant to commit ground troops in foreign conflicts.",
+              "explanation": "The national trauma of the defeat made subsequent US administrations highly hesitant to commit ground troops in foreign conflicts. This trauma made subsequent administrations highly hesitant to commit US ground forces in foreign conflicts.",
               "year": 1975,
               "distractors": [
                 "Vietnam Reluctance",
@@ -3676,7 +3685,7 @@
               "id": "q_4_4_s10",
               "question": "What was the primary economic consequence of the war's high military expenditure on the US homefront?",
               "answer": "High inflation and deficits",
-              "explanation": "President Johnson's attempt to fund both the war and Great Society programs without raising taxes triggered severe inflation and economic stagflation.",
+              "explanation": "President Johnson's attempt to fund both the war and Great Society programs without raising taxes triggered severe inflation and economic stagflation. This spending triggered severe economic stagflation that plagued the United States throughout the 1970s.",
               "year": 1970,
               "distractors": [
                 "High unemployment rates",
@@ -3688,7 +3697,7 @@
               "id": "q_4_4_s11",
               "question": "Approximately how much financial and military aid did the Soviet Union and China provide to North Vietnam annually?",
               "answer": "Over $3 billion",
-              "explanation": "Communist superpowers provided North Vietnam with over $3 billion in aid, enabling them to resist US military pressure and supply their forces.",
+              "explanation": "Communist superpowers provided North Vietnam with over $3 billion in aid, enabling them to resist US military pressure and supply their forces. This military hardware and financial aid allowed Hanoi to match the logistical capacity of US forces.",
               "year": 1970,
               "distractors": [
                 "$100 million",
@@ -3726,7 +3735,7 @@
               "id": "q_4_4_d3",
               "question": "How did the one-year tour of duty system affect the combat effectiveness and morale of the US military?",
               "answer": "Prevented experience build-up and lowered unit cohesion",
-              "explanation": "As soon as soldiers became experienced and street-smart, they were sent home, meaning the US army was constantly filled with raw, un-cohesive recruits.",
+              "explanation": "As soon as soldiers became experienced and street-smart, they were sent home, meaning the US army was constantly filled with raw, un-cohesive recruits. This system prevented experience build-up and lowered unit cohesion, severely undermining combat effectiveness.",
               "year": 1968,
               "distractors": [
                 "Increased training expenses and created administrative delays in recruiting",
@@ -3750,7 +3759,7 @@
               "id": "q_4_4_d5",
               "question": "Why was the South Vietnamese (Saigon) government unable to win the 'hearts and minds' of its own people?",
               "answer": "Extreme political corruption, religious bias, and reliance on US force",
-              "explanation": "The ruling elites in Saigon were viewed as Western puppets, highly corrupt, and biased against the Buddhist majority, denying them popular legitimacy.",
+              "explanation": "The ruling elites in Saigon were viewed as Western puppets, highly corrupt, and biased against the Buddhist majority, denying them popular legitimacy. This lack of popular support meant South Vietnam could not survive as an independent state without permanent US military aid.",
               "year": 1963,
               "distractors": [
                 "Its refusal to accept any economic or military aid from western allies",
@@ -3762,7 +3771,7 @@
               "id": "q_4_4_d6",
               "question": "What was the average age of a US combat soldier in Vietnam, which contributed to low morale and inexperience?",
               "answer": "19 years old",
-              "explanation": "Unlike World War II (where the average age was 26), the average US soldier in Vietnam was just 19 years old, young, and often draft-conscripted.",
+              "explanation": "Unlike World War II (where the average age was 26), the average US soldier in Vietnam was just 19 years old, young, and often draft-conscripted. The youth of the troops contributed to high levels of combat stress, drug abuse, and disillusionment in the field.",
               "year": 1968,
               "distractors": [
                 "21 years old",
@@ -6337,6 +6346,30 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
             osc.start(now + idx * 0.06);
             osc.stop(now + idx * 0.06 + 0.3);
           });
+        } else if (type === "ping_usa") {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(523.25, now);
+          osc.frequency.linearRampToValueAtTime(783.99, now + 0.15);
+          gain.gain.setValueAtTime(0.08 * vol, now);
+          gain.gain.exponentialRampToValueAtTime(1e-3 * vol, now + 0.4);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.4);
+        } else if (type === "ping_vietnam") {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "triangle";
+          osc.frequency.setValueAtTime(220, now);
+          osc.frequency.linearRampToValueAtTime(110, now + 0.25);
+          gain.gain.setValueAtTime(0.12 * vol, now);
+          gain.gain.exponentialRampToValueAtTime(1e-3 * vol, now + 0.6);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.6);
         }
       } catch (e) {
         console.warn("Audio Context synth error:", e);
@@ -10487,6 +10520,469 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
     }
   };
 
+  // src/flashcard_upgrades.js
+  var NARRATIVE_FRAMINGS = {
+    "subtopic_1_1": [
+      "**Legal Baseline:** The 1896 *Plessy v. Ferguson* Supreme Court ruling legalized segregation under the 'separate but equal' doctrine.",
+      "**Systemic Barriers:** Southern states enforced Jim Crow segregation in all public facilities and systematically denied voting rights through literacy tests and poll taxes.",
+      "**Active Challenge:** In response to this oppression, early organizations emerged: the NAACP focused on legal litigation, while CORE pioneered non-violent direct action."
+    ],
+    "subtopic_1_2": [
+      "**Legal Victory:** In 1954, the NAACP won the landmark *Brown v. Board of Education* case, declaring segregated public education unconstitutional.",
+      "**Massive Resistance:** Southern white politicians pledged 'Massive Resistance' and Governor Faubus deployed troops to block Black students at Little Rock (1957).",
+      "**Federal Enforcement:** The crisis forced President Eisenhower to deploy the 101st Airborne Division, demonstrating that federal military power was necessary to enforce civil rights."
+    ],
+    "subtopic_1_3": [
+      "**Grassroots Spark:** Following Rosa Parks' arrest on December 1, 1955, the Black community of Montgomery organized a unified boycott of city buses.",
+      "**MLK's Rise:** Under the leadership of Martin Luther King Jr., the Montgomery Improvement Association sustained the boycott for 381 days despite bombings and threats.",
+      "**Legal Success:** In 1956, the Supreme Court ruled transit segregation unconstitutional in *Browder v. Gayle*, proving the effectiveness of organized economic boycotts."
+    ],
+    "subtopic_1_4": [
+      "**White Backlash:** Early integration victories provoked a fierce white backlash, leading to the signing of the 'Southern Manifesto' by over 100 politicians.",
+      "**Vigilante Action:** White Citizens' Councils weaponized economic retaliation, while the KKK launched violent bombings to intimidate civil rights activists.",
+      "**Federal Response:** Despite a record 24-hour filibuster by Senator Strom Thurmond, Congress passed the Civil Rights Acts of 1957 and 1960 to protect voting rights."
+    ],
+    "subtopic_2_1": [
+      "**Young Activism:** The Greensboro sit-ins (1960) launched a wave of student-led lunch counter protests, leading to the formation of the SNCC.",
+      "**Freedom Rides:** In 1961, CORE and SNCC activists rode interstate buses into the Deep South to test desegregation, facing brutal mob beatings and firebombings.",
+      "**Ole Miss Integration:** In 1962, James Meredith became the first Black student at the University of Mississippi, requiring federal troop protection during violent riots."
+    ],
+    "subtopic_2_2": [
+      "**Connor's Brutality:** The SCLC's 1963 Birmingham campaign provoked international outrage when police chief Bull Connor used fire hoses and attack dogs on child protesters.",
+      "**The Dream:** Over 250,000 people attended the 1963 March on Washington, where Martin Luther King Jr. delivered his iconic 'I Have a Dream' speech.",
+      "**Legislative Triumph:** State violence on 'Bloody Sunday' during the 1965 Selma march forced President Johnson to secure the Voting Rights Act, ending literacy tests."
+    ],
+    "subtopic_2_3": [
+      "**Ideological Shift:** Frustrated by slow economic progress and persistent police brutality, some Black activists began to reject non-violent integration.",
+      "**Malcolm X's Voice:** Malcolm X championed Black nationalism, self-reliance, and the right to self-defense 'by any means necessary' before his 1965 assassination.",
+      "**Black Panthers:** Founded in 1966, the Black Panther Party institutionalized the 'Black Power' slogan, organizing armed neighborhood patrols and community programs."
+    ],
+    "subtopic_2_4": [
+      "**Urban Explosions:** Between 1965 and 1967, deep socio-economic grievances sparked massive urban riots in cities like Watts and Detroit.",
+      "**Kerner Report:** In 1968, the Kerner Commission concluded that white racism was driving America toward 'two societies, separate and unequal.'",
+      "**End of an Era:** The assassination of Martin Luther King Jr. in April 1968 triggered nationwide riots and spurred the passage of the 1968 Fair Housing Act."
+    ],
+    "subtopic_3_1": [
+      "**Cold War Containment:** Following the 1954 Geneva Accords partitioning Vietnam, the US committed to blocking communist expansion in Southeast Asia.",
+      "**Domino Theory:** President Eisenhower warned that if Vietnam fell to communism, neighboring nations would collapse like dominos.",
+      "**Diem's Failures:** The US backed Ngo Dinh Diem's corrupt anti-communist regime, but his persecution of Buddhists fueled support for the Vietcong, leading to his 1963 coup."
+    ],
+    "subtopic_3_2": [
+      "**Military Vacuum:** The coup against Diem left South Vietnam politically unstable, allowing the communist Vietcong insurgency to gain rapid ground.",
+      "**Tonkin Incident:** In August 1964, reports of clashes in the Gulf of Tonkin led Congress to pass the Tonkin Resolution, giving Johnson a war-making 'blank check.'",
+      "**Direct Escalation:** Johnson launched Operation Rolling Thunder and sent the first combat Marines to Da Nang in March 1965, committing the US to direct ground combat."
+    ],
+    "subtopic_3_3": [
+      "**Attrition Doctrine:** General Westmoreland pursued a war of attrition, deploying 'Search and Destroy' missions to kill enemy forces and count bodies.",
+      "**Guerrilla Tactics:** The Vietcong neutralized US tech superiority by avoiding large-scale battles, blending with civilians, and using tunnel networks and booby traps.",
+      "**Chemical Warfare:** US forces sprayed Agent Orange defoliant and dropped Napalm, which alienated Vietnamese peasants and fueled anti-US propaganda."
+    ],
+    "subtopic_3_4": [
+      "**Nixon's Promise:** Elected in 1968, President Nixon promised 'Peace with Honor' and introduced 'Vietnamization' to train the ARVN to fight alone.",
+      "**Expanding the War:** To disrupt communist supply lines along the Ho Chi Minh Trail, Nixon ordered the secret bombing and invasion of Cambodia (1970) and Laos (1971).",
+      "**ARVN Weakness:** The failure of ARVN operations without US ground forces demonstrated that Vietnamization was failing to secure South Vietnam."
+    ],
+    "subtopic_4_1": [
+      "**Credibility Gap:** The surprise 1968 Tet Offensive shattered US claims of imminent victory, creating a deep public distrust in government announcements.",
+      "**Moral Backlash:** The exposure of the My Lai Massacre (where US troops executed 500 civilians) and the draft lottery destroyed moral backing for the war.",
+      "**Kent State Tragedy:** Anti-war protests peaked in May 1970 when National Guardsmen shot and killed four student protesters at Kent State University."
+    ],
+    "subtopic_4_2": [
+      "**Conservative Silent Majority:** In November 1969, Nixon appealed to the 'Silent Majority'\u2014ordinary patriotic Americans fatigued by radical protests.",
+      "**Deep Divisions:** Pro-war support was driven by anti-communism, respect for law and order, and the belief that anti-war protests were unpatriotic.",
+      "**Electoral Mandate:** Despite intense media criticism, Nixon's appeals to the Silent Majority succeeded, securing him a landslide re-election victory in 1972."
+    ],
+    "subtopic_4_3": [
+      "**Paris Peace Accords:** Signed in January 1973, the accords mandated the complete withdrawal of US combat troops but allowed North Vietnamese troops to remain in the South.",
+      "**US Exit:** As US forces withdrew, Congress cut financial aid to South Vietnam, leaving the ARVN starved of fuel, ammunition, and air support.",
+      "**Fall of Saigon:** In April 1975, North Vietnamese forces launched a final Spring Offensive, easily capturing Saigon and reunifying the nation under communist rule."
+    ],
+    "subtopic_4_4": [
+      "**Guerrilla Advantage:** The Vietcong's local knowledge, jungle survival skills, and absolute commitment to victory defeated US high-tech attrition.",
+      "**Political Instability:** The South Vietnamese state was corrupt and lacked popular support, making it militarily unviable without constant US aid.",
+      "**Home Front Crumbles:** Mass draft resistance and anti-war protests destroyed the domestic political support necessary to sustain a prolonged conflict."
+    ]
+  };
+  var SYNTHESIS_CHALLENGES = {
+    "subtopic_1_1": {
+      "front": "Synthesis Challenge: Based on the facts reviewed in this deck, which factor was the greatest obstacle to Black Americans achieving civil rights in the early 1950s: legal Jim Crow laws or voter disenfranchisement?",
+      "back": "### Model Synthesis Guide\n\n* **Jim Crow Laws:** Legally segregated public spaces, transit, and schools, creating constant physical and psychological barriers that institutionalized Black Americans as second-class citizens.\n* **Voter Disenfranchisement:** The use of poll taxes, literacy tests, and violent intimidation. This was the *primary* obstacle because it denied Black citizens the democratic power to elect sympathetic judges, sheriffs, and officials, locking the political system under white supremacist control.\n* **Synthesis Conclusion:** While Jim Crow was the visible face of oppression, **voter disenfranchisement was the structural foundation** that made it impossible to challenge segregation locally, forcing the NAACP to bypass local politics and sue in federal courts."
+    },
+    "subtopic_1_2": {
+      "front": "Synthesis Challenge: Looking back at this deck, to what extent did the Little Rock crisis prove that the *Brown v. Board* ruling was a success or a failure for the civil rights movement?",
+      "back": "### Model Synthesis Guide\n\n* **Evidence of Success:** *Brown* established the vital legal precedent that segregation was unconstitutional, giving the federal government the legal authority and duty to intervene when local states rebelled.\n* **Evidence of Failure/Limits:** *Brown* lacked enforcement teeth ('with all deliberate speed'), enabling Southern Governors like Faubus to directly defy court orders. The crisis also led to the 'Lost Year' when schools were closed rather than integrated.\n* **Synthesis Conclusion:** *Brown* was a **legal triumph but a practical failure** until federal executive power (the 101st Airborne) was deployed. Little Rock proved that court victories were meaningless in the South without active federal enforcement."
+    },
+    "subtopic_1_3": {
+      "front": "Synthesis Challenge: Which was more critical to the success of the Montgomery Bus Boycott: the internal community organization (carpools/solidarity) or external legal intervention (*Browder v. Gayle*)?",
+      "back": "### Model Synthesis Guide\n\n* **Community Organization:** The MIA coordinated 300+ carpools and sustained 90%+ community solidarity for 381 days. This applied intense economic pressure by depriving the bus company of 70% of its passengers.\n* **Legal Intervention:** The Supreme Court's ruling in *Browder v. Gayle* was the formal mechanism that declared bus segregation unconstitutional, legally forcing the city of Montgomery to capitulate.\n* **Synthesis Conclusion:** Both were essential, but **community organization was the true engine of success**. Without the sustained, disciplined economic pressure of the boycott, the NAACP would have had no case to argue, and Montgomery would have ignored the legal ruling."
+    },
+    "subtopic_1_4": {
+      "front": "Synthesis Challenge: Based on the opposition tactics in this deck, was political obstruction (filibusters/Manifesto) or grassroots white terror (KKK/WCC) a more effective barrier to civil rights progress?",
+      "back": "### Model Synthesis Guide\n\n* **Political Obstruction:** Southern congressmen used the filibuster (e.g., Thurmond's 24-hour speech) and the Southern Manifesto to dilute and delay civil rights laws, weaponizing state power.\n* **Grassroots Terror:** The KKK used bombs and violence to physically threaten lives, while White Citizens' Councils fired Black activists and foreclosed their mortgages, applying economic terror.\n* **Synthesis Conclusion:** **Grassroots white terror was more immediately destructive** on the ground, but **political obstruction was more structurally effective** because it allowed a minority of Southern segregationists to delay federal civil rights legislation for years."
+    },
+    "subtopic_2_1": {
+      "front": "Synthesis Challenge: Reflecting on the Greensboro sit-ins and Freedom Rides, did young student activists or established organizations like the NAACP drive civil rights progress more effectively in the early 1960s?",
+      "back": "### Model Synthesis Guide\n\n* **Student Activists (SNCC/CORE):** Pioneered high-risk non-violent direct action (lunch counters, interstate buses) to expose Southern brutality on national television, forcing immediate crises.\n* **Established Groups (NAACP):** Provided vital legal defense, funding, and coordination, bailing out arrested students and arguing their constitutional cases in federal courts.\n* **Synthesis Conclusion:** **Young student activists were the primary drivers** of progress because their direct-action methods forced federal intervention, while the NAACP played a crucial supporting role by securing their legal protection."
+    },
+    "subtopic_2_2": {
+      "front": "Synthesis Challenge: Looking back at this deck, was Martin Luther King Jr.'s non-violent direct action strategy or the federal legislation (1964 and 1965 Acts) the true turning point of the civil rights movement?",
+      "back": "### Model Synthesis Guide\n\n* **Non-Violent Direct Action:** Campaigns in Birmingham and Selma provoked public violence (hoses, dogs, state troopers) that shocked the national conscience and created a moral crisis.\n* **Federal Legislation:** The Civil Rights Act of 1964 and Voting Rights Act of 1965 permanently outlawed Jim Crow public segregation and banned discriminatory voting tests.\n* **Synthesis Conclusion:** Non-violent protest was the **indispensable catalyst**, but the **federal legislation was the true turning point** because it translated moral outrage into enforceable, permanent constitutional protections."
+    },
+    "subtopic_2_3": {
+      "front": "Synthesis Challenge: Based on the facts in this deck, did the rise of the Black Power movement strengthen or weaken the broader struggle for civil rights in the United States?",
+      "back": "### Model Synthesis Guide\n\n* **Strengthened:** It fostered racial pride, established local self-defense, and addressed northern urban economic inequalities (housing, jobs, police abuse) ignored by Southern integration campaigns.\n* **Weakened:** It fractured the civil rights coalition, alienated moderate white liberals, and gave the FBI and police a pretext to deploy surveillance and dismantle activist groups.\n* **Synthesis Conclusion:** It **strengthened the movement's socio-economic and cultural depth** but **weakened its political lobbying power** by dividing leaders and creating a public backlash against militant rhetoric."
+    },
+    "subtopic_2_4": {
+      "front": "Synthesis Challenge: Reflecting on the urban riots and the Kerner Commission, did the civil rights movement fail to solve the most fundamental problems facing Black Americans by 1968?",
+      "back": "### Model Synthesis Guide\n\n* **Evidence of Failure:** The riots in Watts and Detroit proved that ending legal segregation (Jim Crow) did not solve deep-seated northern problems like redlining, ghetto poverty, and systemic police brutality.\n* **Evidence of Success:** The movement destroyed legal segregation and secured federal housing protections (1968 Fair Housing Act) immediately after MLK's death, establishing a baseline for legal recourse.\n* **Synthesis Conclusion:** The movement **succeeded in destroying de jure (legal) segregation** but **failed to resolve de facto (economic) segregation** and structural racism, which the Kerner Commission warned was dividing America."
+    },
+    "subtopic_3_1": {
+      "front": "Synthesis Challenge: Based on the events in this deck, was Ngo Dinh Diem's unpopularity or the US obsession with the Domino Theory more responsible for sucking the US into the Vietnam conflict?",
+      "back": "### Model Synthesis Guide\n\n* **Diem's Unpopularity:** His corruption, nepotism, persecution of Buddhists, and land policies alienated the peasantry, actively driving them to support the Vietcong guerrilla insurgency.\n* **Domino Theory:** This Cold War containment doctrine blinded US presidents (Eisenhower, JFK), forcing them to view a local civil war/nationalist struggle as a global communist conspiracy.\n* **Synthesis Conclusion:** The **Domino Theory was the primary cause**. It created the ideological framework that led the US to support a corrupt dictator like Diem and consistently ignore his regime's failures."
+    },
+    "subtopic_3_2": {
+      "front": "Synthesis Challenge: Looking back at the escalation events, did the Gulf of Tonkin Resolution represent a legitimate defense of US forces or a manufactured excuse for President Johnson to launch a war?",
+      "back": "### Model Synthesis Guide\n\n* **Legitimate Defense:** The US destroyers (USS Maddox) were operating in international waters and were attacked by North Vietnamese patrol boats, demanding a congressional response.\n* **Manufactured Excuse:** Johnson had already drafted the resolution weeks prior and used the highly disputed second incident (which radar logs show likely never occurred) to secure a 'blank check' for war.\n* **Synthesis Conclusion:** It was a **manufactured excuse**. The administration manipulated a confused military report to bypass the constitutional requirement for a congressional declaration of war."
+    },
+    "subtopic_3_3": {
+      "front": "Synthesis Challenge: Looking back at the tactics reviewed in this deck, which one was the most damaging to the US policy of 'winning hearts and minds'?",
+      "back": "### Model Synthesis Guide\n\n* **Search and Destroy:** Burning peasant villages, creating refugee camps, and counting bodies alienated civilians and drove them to support Vietcong fighters.\n* **Chemical Defoliants (Agent Orange/Napalm):** Destroyed crops, caused horrific civilian burns, and poisoned local land, which exposed the brutality of US military technology.\n* **Synthesis Conclusion:** **Search and Destroy was more damaging** because it made US ground forces the daily face of destruction for Vietnamese peasants, destroying any possibility of political legitimacy for the Saigon regime."
+    },
+    "subtopic_3_4": {
+      "front": "Synthesis Challenge: Based on the facts in this deck, was Nixon's policy of 'Vietnamization' a genuine military strategy to secure South Vietnam or a political cover to withdraw US troops?",
+      "back": "### Model Synthesis Guide\n\n* **Genuine Military Strategy:** It heavily equipped the ARVN, expanded training, and invaded Cambodia/Laos to destroy communist sanctuaries, aiming to build a self-sustaining South Vietnamese state.\n* **Political Cover:** It was designed to satisfy the US anti-war movement and draft resistance by bringing American soldiers home, securing Nixon's re-election while delaying a South Vietnamese defeat.\n* **Synthesis Conclusion:** It was primarily a **political cover ('Peace with Honor')**. Nixon and Kissinger knew the ARVN was too weak and corrupt to survive without US troops, simply creating a 'decent interval' before collapse."
+    },
+    "subtopic_4_1": {
+      "front": "Synthesis Challenge: Based on the events in this deck, did the Tet Offensive or the home front revelations (My Lai/draft) do more to make the Vietnam War unwinnable for the United States?",
+      "back": "### Model Synthesis Guide\n\n* **Tet Offensive (1968):** A massive military failure for the communists but a psychological victory. It shattered US government claims of imminent victory and created the 'credibility gap.'\n* **Home Front Revelations:** My Lai exposed moral decay in the US military, while the draft lottery forced ordinary middle-class youths to risk their lives, fueling massive campus protests.\n* **Synthesis Conclusion:** The **Tet Offensive was the decisive turning point**. It proved that military containment was failing, forcing Johnson to halt escalation and set the US on the path to withdrawal."
+    },
+    "subtopic_4_2": {
+      "front": "Synthesis Challenge: Reflecting on the Silent Majority, did domestic division at home play a greater role in ending US involvement in Vietnam than military failure in the field?",
+      "back": "### Model Synthesis Guide\n\n* **Domestic Division:** Protests, draft resistance, and the Pentagon Papers divided the country, leading Congress to restrict funding and pass the War Powers Act (1973).\n* **Military Failure:** The failure of Rolling Thunder and Search & Destroy to break communist resolve meant the US military could never secure a decisive victory.\n* **Synthesis Conclusion:** **Military failure drove the domestic division**. The draft and high casualty rates occurred because the military could not win the war quickly, which in turn shattered the home front consensus."
+    },
+    "subtopic_4_3": {
+      "front": "Synthesis Challenge: Looking back at this deck, was the Fall of Saigon in 1975 the inevitable result of the 1973 Paris Peace Accords or a failure of US political will?",
+      "back": "### Model Synthesis Guide\n\n* **Paris Peace Accords (Inevitable):** Allowed North Vietnamese forces to remain in positions inside South Vietnam, leaving the South surrounded and militarily compromised from day one.\n* **Failure of Will:** Congress cut financial aid to South Vietnam in 1974 and banned US air support, leaving the ARVN short of fuel, ammunition, and heavy weapon support.\n* **Synthesis Conclusion:** The **Fall of Saigon was guaranteed by the Accords**. By allowing North Vietnamese troops to remain in the South, the US signed a peace treaty that ensured South Vietnam's eventual collapse."
+    },
+    "subtopic_4_4": {
+      "front": "Synthesis Challenge: Reflecting on the final factors in this deck, was the US failure in Vietnam primarily due to military tactical errors or the political illegitimacy of the South Vietnamese state?",
+      "back": "### Model Synthesis Guide\n\n* **Military Tactical Errors:** Relying on attrition, body counts, and heavy bombing was completely unsuited to fighting a counter-insurgency against a highly committed guerrilla enemy.\n* **Political Illegitimacy:** The Saigon regime was corrupt, dominated by former French collaborators, and failed to win the hearts or loyalty of the peasant majority.\n* **Synthesis Conclusion:** **Political illegitimacy was the primary cause**. Without a popular, stable South Vietnamese state to defend, no amount of US military power or tactical adjustment could prevent eventual defeat."
+    }
+  };
+  var EXPLANATION_SPLITS = {
+    // Key Topic 1
+    "q_1_1_s1": {
+      "context": "Jim Crow laws legalised segregation in public transport, schools, restaurants, and public facilities across the Southern United States.",
+      "significance": "This institutionalised racial discrimination, forcing Black Americans to endure daily public humiliation and reinforcing their status as second-class citizens."
+    },
+    "q_1_1_s2": {
+      "context": "Founded in 1909, the National Association for the Advancement of Colored People (NAACP) focused on challenging segregation through the federal court system.",
+      "significance": "This strategy aimed to secure legally binding constitutional precedents, like desegregation, that local Southern governments could not legally ignore."
+    },
+    "q_1_1_s3": {
+      "context": "The Congress of Racial Equality (CORE) was founded in Chicago in 1942 to pioneer non-violent direct action tactics against racial discrimination.",
+      "significance": "CORE introduced non-violent sit-ins and boycotts influenced by Gandhi, laying the tactical foundation for the mass direct-action campaigns of the 1960s."
+    },
+    "q_1_2_s1": {
+      "context": "The 1954 Brown v. Board of Education ruling declared segregation in public schools unconstitutional, overturning Plessy v. Ferguson.",
+      "significance": "This destroyed the legal backing of 'separate but equal', establishing that segregated educational facilities are inherently unequal and violating the 14th Amendment."
+    },
+    "q_1_2_s2": {
+      "context": "The Little Rock Nine were a group of nine Black students who integrated Central High School in Little Rock, Arkansas in September 1957.",
+      "significance": "Their attempt triggered a constitutional crisis that forced President Eisenhower to deploy the 101st Airborne, proving that federal military force was required to enforce integration."
+    },
+    "q_1_2_s3": {
+      "context": "Appointed by Eisenhower, Chief Justice Earl Warren worked to secure a unanimous 9-0 decision in Brown v. Board of Education.",
+      "significance": "This unanimity was crucial as it presented a united judicial front, sending a clear message that school desegregation was constitutional law, not a split political opinion."
+    },
+    "q_1_2_s4": {
+      "context": "Governor Orval Faubus deployed the Arkansas National Guard to block the students from entering Central High School to appease white segregationist voters before his re-election campaign.",
+      "significance": "His actions directly defied a federal court order, precipitating a major constitutional crisis over state rights versus federal authority."
+    },
+    "q_1_2_s5": {
+      "context": "President Eisenhower federalized the Arkansas National Guard and deployed 1,200 soldiers from the elite 101st Airborne Division to patrol the school.",
+      "significance": "This intervention proved that the federal government was prepared to use military force to uphold civil rights laws and desegregation orders against local state resistance."
+    },
+    "q_1_3_s1": {
+      "context": "Rosa Parks was arrested on 1 December 1955 for refusing to yield her seat to a white passenger on a Montgomery bus.",
+      "significance": "Her arrest served as the perfect catalyst for the Montgomery Improvement Association (MIA) to launch the historic 381-day economic bus boycott."
+    },
+    "q_1_3_s2": {
+      "context": "Martin Luther King Jr. was a young Montgomery minister chosen to lead the Montgomery Improvement Association (MIA) during the bus boycott.",
+      "significance": "His leadership during the boycott elevated him to national prominence, establishing him as the primary voice of the non-violent civil rights movement."
+    },
+    "q_1_4_s1": {
+      "context": "The Southern Manifesto was a document signed by over 100 Southern politicians in 1956 urging defiance of school integration.",
+      "significance": "This united Southern political resistance under the banner of 'states' rights', encouraging local school boards to delay desegregation indefinitely."
+    },
+    "q_1_4_s2": {
+      "context": "White Citizens' Councils were segregationist groups formed in 1954 that applied economic intimidation against civil rights activists.",
+      "significance": "Councils used non-violent terror\u2014firing workers, evicting sharecroppers, and foreclosing mortgages\u2014to suppress grassroots civil rights activism."
+    },
+    // Key Topic 2
+    "q_2_1_s1": {
+      "context": "In February 1960, four Black students staged a sit-in at a Woolworth's lunch counter in Greensboro, North Carolina.",
+      "significance": "This launched a massive wave of student-led sit-ins across the South, demonstrating the power of youth-driven non-violent direct action."
+    },
+    "q_2_1_s3": {
+      "context": "The Freedom Rides were bus trips organized by CORE in 1961 to test the desegregation of interstate buses and terminals in the Deep South.",
+      "significance": "The riders faced extreme violence and firebombings, which forced the federal government to intervene and actively ban transit terminal segregation."
+    },
+    "q_2_2_s1": {
+      "context": "The Birmingham Campaign of April 1963 was an SCLC initiative protesting segregation in Alabama's most segregated city.",
+      "significance": "Televised images of police chief Bull Connor using fire hoses and attack dogs on children shocked the world, forcing President Kennedy to draft a federal civil rights bill."
+    },
+    "q_2_2_s7": {
+      "context": "The Civil Rights Act of 1964 was a landmark federal law that banned segregation in public accommodations and outlawed employment discrimination.",
+      "significance": "This dismantled the legal infrastructure of Jim Crow segregation, marking the greatest legislative victory of the civil rights movement."
+    },
+    "q_2_3_s1": {
+      "context": "Malcolm X was a minister for the Nation of Islam who advocated for Black nationalism and self-defense 'by any means necessary.'",
+      "significance": "His critique of non-violence and integration laid the intellectual foundation for the Black Power movement and urban radicalism."
+    },
+    "q_2_3_s3": {
+      "context": "The Black Panther Party was founded in Oakland in 1966 by Huey P. Newton and Bobby Seale to combat police brutality.",
+      "significance": "They advocated armed self-defense and Marxist revolution, reflecting a shift in focus to Northern urban economic grievances and Black self-reliance."
+    },
+    // Key Topic 3
+    "q_3_1_s3": {
+      "context": "The 1954 Geneva Accords temporarily divided Vietnam at the 17th Parallel and called for unifying elections in 1956.",
+      "significance": "Fearful of a landslide communist victory by Ho Chi Minh, the US supported Ngo Dinh Diem's refusal to hold the elections, dividing the nation."
+    },
+    "q_3_1_s4": {
+      "context": "The Domino Theory was the Cold War belief that if one Southeast Asian nation fell to communism, neighboring nations would follow.",
+      "significance": "This containment doctrine blinded US presidents, leading them to support corrupt dictators and steadily increase military involvement in Vietnam."
+    },
+    "q_3_2_s2": {
+      "context": "The Gulf of Tonkin Resolution was passed by Congress in August 1964 following reports of attacks on the USS Maddox.",
+      "significance": "This resolution gave President Johnson authority to launch combat operations without a formal declaration of war, serving as a military 'blank check.'"
+    },
+    "q_3_3_s2": {
+      "context": "Search and Destroy was a US military strategy involving sweeps of the countryside to locate and execute Vietcong forces.",
+      "significance": "These sweeps relied on body counts as a metric of success and frequently destroyed peasant villages, alienating the rural population."
+    },
+    "q_3_3_s1": {
+      "context": "Vietcong guerrilla tactics included avoiding pitched battles, hiding in tunnel networks, and deploying deadly booby traps.",
+      "significance": "These tactics neutralized US technological superiority, created constant psychological terror, and severely wore down US soldier morale."
+    },
+    "q_3_3_s10": {
+      "context": "The Tet Offensive was a massive coordinated surprise attack launched by communist forces on 100+ cities in January 1968.",
+      "significance": "While a US military victory, it shattered public trust in claims that the war was near an end, creating a massive 'credibility gap' at home."
+    },
+    "q_3_4_s1": {
+      "context": "Vietnamization was President Nixon's policy to gradually withdraw US combat troops while training and equipping South Vietnamese (ARVN) forces.",
+      "significance": "This policy was a political necessity to quiet anti-war protests at home, but left South Vietnam highly vulnerable to North Vietnamese forces."
+    },
+    // Key Topic 4
+    "q_4_1_s1": {
+      "context": "The conscription draft system forced millions of young men, disproportionately from working-class backgrounds, to serve in combat.",
+      "significance": "This created deep resentment, sparking massive resistance, draft card burning, and emigration of draft evaders to Canada."
+    },
+    "q_4_1_s2": {
+      "context": "Ohio National Guardsmen opened fire on unarmed students protesting Nixon's invasion of Cambodia, killing four and wounding nine.",
+      "significance": "The tragedy shocked the nation, polarizing public opinion and triggering a nationwide student strike of over 4 million students."
+    },
+    "q_4_1_s4": {
+      "context": "Protesters publicly destroyed draft cards at major campus rallies, often coordinated by the Students for a Democratic Society (SDS).",
+      "significance": "Driven by intense anti-draft resistance, it led thousands of young men to escape conscription by fleeing to Canada or choosing federal prison."
+    },
+    "q_4_1_s5": {
+      "context": "Heavyweight champion Muhammad Ali refused conscription in 1967 as a conscientious objector, citing his Nation of Islam faith and opposition to the war.",
+      "significance": "Ali was stripped of his heavyweight title and banned from boxing, becoming a global icon of the anti-war movement and Black pride."
+    },
+    "q_4_1_s6": {
+      "context": "The credibility gap arose from the stark contrast between optimistic government reports and graphic television coverage showing the harsh reality of combat.",
+      "significance": "This gap deeply eroded public trust in the presidency, peaking after the Tet Offensive and driving widespread anti-war sentiment."
+    },
+    "q_4_1_s7": {
+      "context": "In March 1968, US soldiers executed over 500 unarmed Vietnamese civilians in My Lai, which was subsequently covered up by military commanders.",
+      "significance": "The exposure of the massacre in late 1969 by journalist Seymour Hersh shocked the nation, severely damaging the moral legitimacy of the war."
+    },
+    "q_4_2_s1": {
+      "context": "The Silent Majority was President Nixon's term for moderate, conservative Americans who supported the government and opposed anti-war protests.",
+      "significance": "Nixon successfully mobilized this group to counter anti-war demonstrations, securing a landslide political re-election in 1972."
+    },
+    "q_4_3_s5": {
+      "context": "The Paris Peace Accords were signed in January 1973, establishing a ceasefire and withdrawing all remaining US combat forces.",
+      "significance": "The accords allowed North Vietnamese troops to remain in the South, guaranteeing the collapse of South Vietnam once US aid was cut."
+    },
+    "q_4_3_s1": {
+      "context": "The Fall of Saigon occurred on 30 April 1975 when North Vietnamese tanks captured the South Vietnamese capital.",
+      "significance": "This completed the reunification of Vietnam under communism, marking the definitive failure of the US containment policy in Indochina."
+    },
+    "q_4_3_s2": {
+      "context": "The Ho Chi Minh Campaign was the final North Vietnamese conventional military offensive launched in March 1975.",
+      "significance": "It rapidly overran South Vietnamese defense lines after the US cut off aid, leading to the capture of Saigon in under two months."
+    },
+    "q_4_3_s3": {
+      "context": "Over 1,000 Americans and 5,000 South Vietnamese were evacuated via helicopters under intense pressure as NVA forces surrounded Saigon.",
+      "significance": "It marked the final US military exit from Vietnam, highlighting the rapid, chaotic collapse of South Vietnamese resistance."
+    },
+    "q_4_3_d2": {
+      "context": "The US Embassy roof in Saigon became the final evacuation point where helicopters landed to rescue staff while desperate crowds scaled the walls.",
+      "significance": "Photographs of these rooftop evacuations became global symbols of US military failure and the chaotic collapse of the containment policy in Southeast Asia."
+    }
+  };
+  function getFactSplit(q) {
+    if (EXPLANATION_SPLITS[q.id]) {
+      return EXPLANATION_SPLITS[q.id];
+    }
+    const exp = q.explanation || "";
+    let sentences = exp.split(/(?<=[.!?]['"]?)\s+/).filter(Boolean);
+    let context = "";
+    let significance = "";
+    if (sentences.length >= 2) {
+      context = sentences[0];
+      significance = sentences.slice(1).join(" ");
+    } else {
+      const splitTriggers = [
+        ", but ",
+        ", although ",
+        ", which ",
+        ", forcing ",
+        ", leading to ",
+        ", resulting in ",
+        ", prompting ",
+        ", establishing ",
+        ", declaring ",
+        ", asserting ",
+        ", demonstrating ",
+        ", proving ",
+        ", sparking ",
+        ", triggering ",
+        ", allowing ",
+        ", preventing ",
+        ", helping ",
+        ", causing ",
+        ", highlighting ",
+        ", leaving ",
+        ", making ",
+        ", thereby ",
+        " which ",
+        " leading to ",
+        " resulting in ",
+        " forcing ",
+        " proving ",
+        " demonstrating ",
+        " that eventually ",
+        ", paving the way "
+      ];
+      let splitFound = false;
+      for (let trigger of splitTriggers) {
+        let idx = exp.indexOf(trigger);
+        if (idx > -1) {
+          context = exp.substring(0, idx).trim();
+          let rest = exp.substring(idx + (trigger.startsWith(",") ? 1 : 0)).trim();
+          significance = rest;
+          significance = significance.charAt(0).toUpperCase() + significance.slice(1);
+          splitFound = true;
+          break;
+        }
+      }
+      if (!splitFound) {
+        context = exp;
+        const topicName = q.topicTitle && q.topicTitle.toLowerCase().includes("vietnam") ? "US policy in Vietnam" : "the Civil Rights movement";
+        significance = `This represents a key developmental milestone in the history of ${topicName}.`;
+      }
+    }
+    if (significance) {
+      if (significance.startsWith("Which ")) {
+        const words = significance.split(" ");
+        const nextWord = words[1] || "";
+        const commonVerbs = ["led", "forced", "proved", "demonstrated", "showed", "became", "caused", "sparked", "triggered", "was", "were", "created", "resulted", "prompted", "enabled", "allowed", "prevented", "helped", "made", "had", "gave", "secured", "ended", "began", "marked"];
+        if (commonVerbs.includes(nextWord.toLowerCase()) || nextWord.endsWith("ed") || nextWord.endsWith("s")) {
+          significance = "This " + significance.substring(6);
+        } else {
+          significance = "This was what " + significance.substring(6);
+        }
+      }
+      if (significance.startsWith("But ")) {
+        const words = significance.split(" ");
+        const secondWord = words[1] || "";
+        const thirdWord = words[2] || "";
+        const commonVerbs = ["was", "were", "caused", "led", "forced", "proved", "demonstrated", "showed", "became", "sparked", "triggered", "resulted", "prompted", "enabled", "allowed", "prevented", "helped", "made", "had", "grew"];
+        if (secondWord === "a" || secondWord === "an") {
+          significance = "However, it was " + significance.substring(4);
+        } else if (commonVerbs.includes(secondWord.toLowerCase()) || secondWord.endsWith("ed")) {
+          significance = "However, it " + significance.substring(4);
+        } else if (secondWord.toLowerCase() === "later" && (commonVerbs.includes(thirdWord.toLowerCase()) || thirdWord.endsWith("ed"))) {
+          const isPerson = q.answer && (q.answer.includes("McNamara") || q.answer.includes("Abernathy") || q.answer.includes("King") || q.answer.includes("Faubus") || q.answer.includes("Warren") || q.answer.includes("Parks"));
+          const pronoun = isPerson ? "he" : "it";
+          significance = `However, ${pronoun} later ` + significance.substring(10);
+        }
+      }
+      if (significance.startsWith("That ")) {
+        significance = "This " + significance.substring(5);
+      }
+      const gerundToPast = {
+        "Forcing": "This forced",
+        "Leading": "This led",
+        "Resulting": "This resulted",
+        "Prompting": "This prompted",
+        "Establishing": "This established",
+        "Declaring": "This declared",
+        "Asserting": "This asserted",
+        "Demonstrating": "This demonstrated",
+        "Proving": "This proved",
+        "Sparking": "This sparked",
+        "Triggering": "This triggered",
+        "Allowing": "This allowed",
+        "Preventing": "This prevented",
+        "Helping": "This helped",
+        "Causing": "This caused",
+        "Highlighting": "This highlighted",
+        "Leaving": "This left",
+        "Making": "This made",
+        "Paving the way": "This paved the way"
+      };
+      for (const gerund of Object.keys(gerundToPast)) {
+        if (significance.startsWith(gerund + " ")) {
+          significance = gerundToPast[gerund] + " " + significance.substring(gerund.length + 1);
+          break;
+        }
+      }
+    }
+    if (context && !context.endsWith(".")) context += ".";
+    if (significance && !significance.endsWith(".")) significance += ".";
+    return { context, significance };
+  }
+  function getCardRubrics(q) {
+    const splits = getFactSplit(q);
+    const rubrics = [];
+    if (q.year && q.year > 0) {
+      rubrics.push({
+        label: "Date/Year",
+        text: String(q.year)
+      });
+    } else {
+      const yearMatch = (q.question + " " + q.explanation).match(/\b(19\d{2})\b/);
+      if (yearMatch) {
+        rubrics.push({
+          label: "Date/Year",
+          text: yearMatch[1]
+        });
+      } else {
+        rubrics.push({
+          label: "Core Concept",
+          text: q.answer
+        });
+      }
+    }
+    let contextText = splits.context || "";
+    contextText = contextText.replace(/[\*_]/g, "");
+    rubrics.push({
+      label: "Context",
+      text: contextText
+    });
+    let significanceText = splits.significance || "";
+    significanceText = significanceText.replace(/[\*_]/g, "");
+    rubrics.push({
+      label: "Significance",
+      text: significanceText
+    });
+    return rubrics;
+  }
+
   // src/mastery_data.js
   var MASTERY_DATA = {
     "subtopic_1_1": {
@@ -14148,9 +14644,14 @@ ${cleanBrackets(paper.q3d.model)}
           Outstanding work! You successfully ordered all 4 milestones in their correct chronological sequence.
         </p>
         <div id="chrono-narrative-container" style="margin-bottom: 20px;"></div>
-        <button class="btn-primary" id="btn-chrono-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
-          <i class="fa-solid fa-rotate-right"></i> Play Again (New Events)
-        </button>
+        <div style="display: flex; gap: 12px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
+          <button class="btn-primary" id="btn-chrono-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+            <i class="fa-solid fa-rotate-right"></i> Play Again (New Events)
+          </button>
+          <button class="btn-secondary" id="btn-chrono-go-dashboard" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+            <i class="fa-solid fa-house"></i> Return to Dashboard
+          </button>
+        </div>
       </div>
 
       <div id="chrono-play-controls-area">
@@ -14389,6 +14890,13 @@ ${cleanBrackets(paper.q3d.model)}
         initChronologyGame();
       });
     }
+    const goDashboardBtn = document.getElementById("btn-chrono-go-dashboard");
+    if (goDashboardBtn) {
+      goDashboardBtn.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("dashboard");
+      });
+    }
   }
   function verifyChronologySequence() {
     const container = document.getElementById("chronology-game-play-area");
@@ -14561,7 +15069,7 @@ ${cleanBrackets(paper.q3d.model)}
         const shortName = numCode ? numCode[1] : sub.title;
         const subDescText = sub.title.split(":").slice(1).join(":").trim() || "";
         const subQuestions = state.allQuestions.filter((q) => q.subtopicId === sub.id);
-        const mastered = subQuestions.filter((q) => state.mastery[q.id]);
+        const mastered = subQuestions.filter((q) => getMasteryStatus(q.id));
         const pct = subQuestions.length > 0 ? Math.round(mastered.length / subQuestions.length * 100) : 0;
         a.innerHTML = `
         <span class="nav-item-content" style="flex-shrink: 0;">
@@ -14590,14 +15098,23 @@ ${cleanBrackets(paper.q3d.model)}
   }
   function updateGlobalStats() {
     const total = state.allQuestions.length;
-    const totalMastered = state.allQuestions.filter((q) => state.mastery[q.id]).length;
-    const overallPct = total > 0 ? Math.round(totalMastered / total * 100) : 0;
+    const totalMastered = state.allQuestions.filter((q) => getMasteryStatus(q.id) === "mastered").length;
+    const totalSecured = state.allQuestions.filter((q) => getMasteryStatus(q.id) === "secured").length;
+    const totalAnyMastered = totalMastered + totalSecured;
+    const overallPct = total > 0 ? Math.round(totalAnyMastered / total * 100) : 0;
     const overallPctEl = document.getElementById("stat-overall-progress");
     if (overallPctEl) overallPctEl.textContent = `${overallPct}%`;
     const overallBarEl = document.getElementById("stat-overall-progress-bar");
-    if (overallBarEl) overallBarEl.style.width = `${overallPct}%`;
+    if (overallBarEl) {
+      const goldPct = total > 0 ? Math.round(totalMastered / total * 100) : 0;
+      const silverPct = total > 0 ? Math.round(totalSecured / total * 100) : 0;
+      overallBarEl.style.width = "100%";
+      overallBarEl.style.background = `linear-gradient(to right, #eab308 0%, #eab308 ${goldPct}%, #06b6d4 ${goldPct}%, #06b6d4 ${goldPct + silverPct}%, rgba(255,255,255,0.05) ${goldPct + silverPct}%)`;
+    }
     const overallFractionEl = document.getElementById("stat-overall-fraction");
-    if (overallFractionEl) overallFractionEl.textContent = `${totalMastered} / ${total} Mastered`;
+    if (overallFractionEl) {
+      overallFractionEl.textContent = `${totalMastered} Mastered \u2022 ${totalSecured} Secured`;
+    }
     const radialFill = document.getElementById("radial-progress-fill");
     if (radialFill) {
       const circumference = 213.63;
@@ -14607,16 +15124,26 @@ ${cleanBrackets(paper.q3d.model)}
     const radialPct = document.getElementById("radial-progress-percent");
     if (radialPct) radialPct.textContent = `${overallPct}%`;
     const radialFraction = document.getElementById("radial-fraction-text");
-    if (radialFraction) radialFraction.textContent = `${totalMastered} / ${total} Mastered`;
+    if (radialFraction) radialFraction.textContent = `${totalMastered} Mastered \u2022 ${totalSecured} Secured`;
     const radialBadgeMastered = document.getElementById("radial-badge-mastered");
-    if (radialBadgeMastered) radialBadgeMastered.textContent = `${totalMastered} Mastered`;
+    if (radialBadgeMastered) {
+      radialBadgeMastered.textContent = `${totalMastered} Mastered`;
+      radialBadgeMastered.style.background = "rgba(234, 179, 8, 0.1)";
+      radialBadgeMastered.style.color = "#eab308";
+      radialBadgeMastered.style.borderColor = "rgba(234, 179, 8, 0.2)";
+    }
     const radialBadgeBookmarks = document.getElementById("radial-badge-bookmarks");
     if (radialBadgeBookmarks) radialBadgeBookmarks.textContent = `${state.bookmarks.length} Saved`;
+    const heroStreakCount = document.getElementById("hero-streak-count");
+    if (heroStreakCount && state.userStats) {
+      heroStreakCount.textContent = `${state.userStats.streak} Day${state.userStats.streak === 1 ? "" : "s"}`;
+    }
     QUIZ_DATA.forEach((topic) => {
       topic.subtopics.forEach((sub) => {
         const subQuestions = state.allQuestions.filter((q) => q.subtopicId === sub.id);
-        const mastered = subQuestions.filter((q) => state.mastery[q.id]);
-        const pct = subQuestions.length > 0 ? Math.round(mastered.length / subQuestions.length * 100) : 0;
+        const subMastered = subQuestions.filter((q) => getMasteryStatus(q.id) === "mastered").length;
+        const subSecured = subQuestions.filter((q) => getMasteryStatus(q.id) === "secured").length;
+        const pct = subQuestions.length > 0 ? Math.round((subMastered + subSecured) / subQuestions.length * 100) : 0;
         const badge = document.getElementById(`nav-pct-${sub.id}`);
         if (badge) badge.textContent = `${pct}%`;
       });
@@ -14627,16 +15154,232 @@ ${cleanBrackets(paper.q3d.model)}
       if (topicData) {
         const subtopicIds = topicData.subtopics.map((s) => s.id);
         const topicQuestions = state.allQuestions.filter((q) => subtopicIds.includes(q.subtopicId));
-        const mastered = topicQuestions.filter((q) => state.mastery[q.id]).length;
-        const pct = topicQuestions.length > 0 ? Math.round(mastered / topicQuestions.length * 100) : 0;
+        const topicMastered = topicQuestions.filter((q) => getMasteryStatus(q.id) === "mastered").length;
+        const topicSecured = topicQuestions.filter((q) => getMasteryStatus(q.id) === "secured").length;
+        const pct = topicQuestions.length > 0 ? Math.round((topicMastered + topicSecured) / topicQuestions.length * 100) : 0;
         const pctEl = document.getElementById(`sidebar-kt${i}-progress`);
         if (pctEl) pctEl.textContent = `${pct}%`;
         const barEl = document.getElementById(`sidebar-kt${i}-bar`);
-        if (barEl) barEl.style.width = `${pct}%`;
+        if (barEl) {
+          const goldPct = topicQuestions.length > 0 ? Math.round(topicMastered / topicQuestions.length * 100) : 0;
+          const silverPct = topicQuestions.length > 0 ? Math.round(topicSecured / topicQuestions.length * 100) : 0;
+          barEl.style.width = "100%";
+          barEl.style.background = `linear-gradient(to right, #eab308 0%, #eab308 ${goldPct}%, #06b6d4 ${goldPct}%, #06b6d4 ${goldPct + silverPct}%, rgba(255,255,255,0.05) ${goldPct + silverPct}%)`;
+        }
       }
     }
   }
+  var CAUSAL_VECTORS = {
+    "q_1_2_s1": { targetId: "q_1_2_s2", relation: "Governor Faubus' state defiance blocks integration" },
+    "q_1_2_s2": { targetId: "q_1_2_s5", relation: "Forces President Eisenhower to deploy federal 101st Airborne troops" },
+    "q_3_3_s2": { targetId: "q_3_3_s3", relation: "Gulf of Tonkin incident prompts immediate escalation request" },
+    "q_3_3_s3": { targetId: "q_3_3_s4", relation: "Congress passes resolution authorizing Operation Rolling Thunder bombings" },
+    "q_4_1_s2": { targetId: "q_4_1_s3", relation: "Tet Offensive shatters public confidence in victory" },
+    "q_4_1_s3": { targetId: "q_4_1_s4", relation: "Credibility Gap fuels major domestic anti-war protests" }
+  };
+  function getLevelTitle(level) {
+    const titles = {
+      1: "Novice Historian",
+      2: "Grassroots Activist",
+      3: "Campaign Strategist",
+      4: "Battlefield Commander",
+      5: "Chief Negotiator"
+    };
+    return titles[level] || "Veteran Scholar";
+  }
+  function getXpForNextLevel(level) {
+    const levels = {
+      1: 100,
+      2: 300,
+      3: 600,
+      4: 1e3,
+      5: 2e3
+    };
+    return levels[level] || 999999;
+  }
+  function showToast(message, type = "info", actionText = null, actionCallback = null) {
+    let container = document.getElementById("app-toast-container");
+    if (!container) {
+      container = document.createElement("div");
+      container.id = "app-toast-container";
+      container.style.position = "fixed";
+      container.style.bottom = "24px";
+      container.style.right = "24px";
+      container.style.zIndex = "9999";
+      container.style.display = "flex";
+      container.style.flexDirection = "column";
+      container.style.gap = "10px";
+      container.style.maxWidth = "360px";
+      document.body.appendChild(container);
+    }
+    const toast = document.createElement("div");
+    toast.className = `app-toast toast-${type}`;
+    toast.style.background = "var(--bg-card)";
+    toast.style.border = "1px solid var(--border-glass)";
+    toast.style.borderRadius = "var(--border-radius-sm)";
+    toast.style.padding = "14px 18px";
+    toast.style.boxShadow = "var(--shadow-lg)";
+    toast.style.display = "flex";
+    toast.style.flexDirection = "column";
+    toast.style.gap = "8px";
+    toast.style.color = "var(--text-main)";
+    toast.style.fontSize = "0.88rem";
+    toast.style.lineHeight = "1.4";
+    toast.style.transform = "translateY(100px)";
+    toast.style.opacity = "0";
+    toast.style.transition = "all var(--transition-normal)";
+    let leftBorderColor = "var(--primary)";
+    if (type === "success") leftBorderColor = "var(--success)";
+    if (type === "warning") leftBorderColor = "var(--accent)";
+    toast.style.borderLeft = `4px solid ${leftBorderColor}`;
+    let actionHtml = "";
+    if (actionText && actionCallback) {
+      actionHtml = `<button class="toast-action-btn" style="background: var(--primary); border: none; color: #fff; padding: 6px 12px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; cursor: pointer; align-self: flex-start; margin-top: 4px;">${actionText}</button>`;
+    }
+    toast.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+      <div style="flex: 1;">${message}</div>
+      <button class="toast-close-btn" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 0; font-size: 0.9rem; line-height: 1;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    ${actionHtml}
+  `;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.style.transform = "translateY(0)";
+      toast.style.opacity = "1";
+    }, 10);
+    const closeBtn = toast.querySelector(".toast-close-btn");
+    closeBtn.addEventListener("click", () => {
+      toast.style.transform = "translateY(100px)";
+      toast.style.opacity = "0";
+      setTimeout(() => toast.remove(), 300);
+    });
+    if (actionText && actionCallback) {
+      const actionBtn = toast.querySelector(".toast-action-btn");
+      actionBtn.addEventListener("click", () => {
+        actionCallback();
+        toast.remove();
+      });
+    }
+    if (!actionText) {
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.style.transform = "translateY(100px)";
+          toast.style.opacity = "0";
+          setTimeout(() => toast.remove(), 300);
+        }
+      }, 5e3);
+    }
+  }
+  function showLevelUpNotification(level) {
+    const title = getLevelTitle(level);
+    showToast(`\u{1F389} <strong>Level Up!</strong> You are now a <strong>Level ${level}: ${title}</strong>!`, "success");
+  }
+  function addXp(amount) {
+    state.userStats.xp += amount;
+    let currentLevel = state.userStats.level;
+    let nextXpThreshold = getXpForNextLevel(currentLevel);
+    while (state.userStats.xp >= nextXpThreshold && currentLevel < 5) {
+      currentLevel++;
+      nextXpThreshold = getXpForNextLevel(currentLevel);
+    }
+    if (currentLevel > state.userStats.level) {
+      state.userStats.level = currentLevel;
+      setTimeout(() => {
+        AudioEngine.play("cheer");
+        if (typeof Confetti !== "undefined" && typeof Confetti.spawn === "function") {
+          Confetti.spawn(100);
+        }
+        showLevelUpNotification(currentLevel);
+      }, 500);
+    }
+    localStorage.setItem("edexcel_prefs_user_stats", JSON.stringify(state.userStats));
+    if (state.currentView === "dashboard") {
+      renderPlayerProfileWidget();
+    }
+  }
+  function renderPlayerProfileWidget() {
+    const container = document.getElementById("dashboard-player-profile-container");
+    if (!container) return;
+    const stats = state.userStats;
+    const levelTitle = getLevelTitle(stats.level);
+    const nextXp = getXpForNextLevel(stats.level);
+    const prevXp = stats.level === 1 ? 0 : getXpForNextLevel(stats.level - 1);
+    const levelProgressPct = stats.level === 5 ? 100 : Math.round((stats.xp - prevXp) / (nextXp - prevXp) * 100);
+    container.innerHTML = `
+    <div class="gamification-widget" style="padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--border-glass); background: rgba(0, 0, 0, 0.15); border-radius: var(--border-radius-sm); height: 72px; box-sizing: border-box;">
+      <div style="display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary-glow); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--primary); font-weight: bold; flex-shrink: 0;" title="Level ${stats.level}">
+          ${stats.level}
+        </div>
+        <div style="flex: 1; text-align: left; min-width: 0;">
+          <div style="font-size: 0.55rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; line-height: 1;">Level ${stats.level} Profile</div>
+          <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 800; color: var(--text-main); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${levelTitle}">${levelTitle}</div>
+          
+          <!-- XP Progress Bar -->
+          <div style="margin-top: 3px;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.6rem; color: var(--text-muted); margin-bottom: 2px; line-height: 1;">
+              <span>XP: ${stats.xp}/${stats.level === 5 ? "Max" : nextXp}</span>
+              <span>${levelProgressPct}%</span>
+            </div>
+            <div style="height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; border: 1px solid var(--border-glass);">
+              <div style="height: 100%; background: var(--gradient-main); width: ${levelProgressPct}%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Streak Inside Profile -->
+      <div class="streak-widget-panel" style="display: flex; align-items: center; gap: 6px; background: rgba(239, 68, 68, 0.08); padding: 6px 10px; border: 1px solid rgba(239, 68, 68, 0.25); border-radius: var(--border-radius-sm); flex-shrink: 0;" title="Study Streak">
+        <i class="fa-solid fa-fire" style="color: var(--accent); font-size: 1.1rem;"></i>
+        <div style="text-align: left;">
+          <span style="font-size: 0.55rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; line-height: 1;">Streak</span>
+          <strong style="font-size: 0.85rem; color: var(--text-main); line-height: 1.1; white-space: nowrap;">${stats.streak} Days</strong>
+        </div>
+      </div>
+    </div>
+  `;
+    const widget = container.querySelector(".gamification-widget");
+    if (widget) {
+      widget.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("leaderboard");
+      });
+    }
+  }
+  function jumpToTimelineEvent(qid) {
+    let targetItem = document.querySelector(`.timeline-item[data-qid="${qid}"]`);
+    if (!targetItem) {
+      const eraSelect = document.getElementById("timeline-era-select");
+      if (eraSelect) eraSelect.value = "all";
+      const searchInput = document.getElementById("timeline-search-input");
+      if (searchInput) searchInput.value = "";
+      const peopleToggle = document.getElementById("timeline-people-toggle");
+      if (peopleToggle) peopleToggle.classList.remove("active");
+      const causalToggle = document.getElementById("timeline-causal-toggle");
+      if (causalToggle) causalToggle.classList.remove("active");
+      renderTimelineView();
+      targetItem = document.querySelector(`.timeline-item[data-qid="${qid}"]`);
+    }
+    if (!targetItem) {
+      showToast("Linked consequence is not currently visible.", "warning");
+      return;
+    }
+    const card = targetItem.querySelector(".timeline-content-card");
+    if (card) {
+      if (!card.classList.contains("revealed")) {
+        card.classList.add("revealed");
+      }
+      targetItem.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.classList.add("causal-highlight-flash");
+      AudioEngine.play("click");
+      setTimeout(() => {
+        card.classList.remove("causal-highlight-flash");
+      }, 2e3);
+    }
+  }
   function renderDashboard2() {
+    renderPlayerProfileWidget();
     const quickActionsContainer = document.getElementById("dashboard-quick-actions-container");
     if (quickActionsContainer) {
       const lastSubtopicId = localStorage.getItem("edexcel_last_subtopic");
@@ -14745,13 +15488,27 @@ ${cleanBrackets(paper.q3d.model)}
       card.style.padding = "20px";
       card.style.boxShadow = "var(--shadow-sm)";
       const topicQuestions = state.allQuestions.filter((q) => q.topicId === topic.id);
-      const mastered = topicQuestions.filter((q) => state.mastery[q.id]);
-      const pct = topicQuestions.length > 0 ? Math.round(mastered.length / topicQuestions.length * 100) : 0;
+      const topicMastered = topicQuestions.filter((q) => getMasteryStatus(q.id) === "mastered").length;
+      const topicSecured = topicQuestions.filter((q) => getMasteryStatus(q.id) === "secured").length;
+      const pct = topicQuestions.length > 0 ? Math.round((topicMastered + topicSecured) / topicQuestions.length * 100) : 0;
+      const goldPct = topicQuestions.length > 0 ? Math.round(topicMastered / topicQuestions.length * 100) : 0;
+      const silverPct = topicQuestions.length > 0 ? Math.round(topicSecured / topicQuestions.length * 100) : 0;
       let subtopicsHTML = "";
       topic.subtopics.forEach((sub) => {
         const subQs = state.allQuestions.filter((q) => q.subtopicId === sub.id);
-        const subMastered = subQs.filter((q) => state.mastery[q.id]).length;
-        const subPct = subQs.length > 0 ? Math.round(subMastered / subQs.length * 100) : 0;
+        const subMastered = subQs.filter((q) => getMasteryStatus(q.id) === "mastered").length;
+        const subSecured = subQs.filter((q) => getMasteryStatus(q.id) === "secured").length;
+        const subPct = subQs.length > 0 ? Math.round((subMastered + subSecured) / subQs.length * 100) : 0;
+        const subGoldPct = subQs.length > 0 ? Math.round(subMastered / subQs.length * 100) : 0;
+        const subSilverPct = subQs.length > 0 ? Math.round(subSecured / subQs.length * 100) : 0;
+        let progressLabel = "";
+        if (subMastered > 0 && subSecured > 0) {
+          progressLabel = `${subMastered} Mastered \u2022 ${subSecured} Secured`;
+        } else if (subMastered > 0) {
+          progressLabel = `${subMastered}/${subQs.length} Mastered`;
+        } else {
+          progressLabel = `${subSecured}/${subQs.length} Secured`;
+        }
         let subInquiryText = "";
         const lesson = LESSONS_DATA[sub.id];
         if (lesson && lesson.headerTitle) {
@@ -14766,15 +15523,15 @@ ${cleanBrackets(paper.q3d.model)}
         <div class="dashboard-subtopic-row" data-subtopic-id="${sub.id}">
           <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; align-items: center; margin-bottom: 2px;">
             <span style="color: var(--text-main); font-family: var(--font-heading);">${sub.title.replace(/^Topic \d\.\d:\s*/, "")}</span>
-            <span style="color: var(--primary); font-weight: 700; font-size: 0.74rem;">${subMastered}/${subQs.length} Secured</span>
+            <span style="color: var(--primary); font-weight: 700; font-size: 0.74rem;">${progressLabel}</span>
           </div>
           ${subInquiryText ? `
           <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.35; font-weight: 400; margin: 2px 0 6px 0;">
             ${subInquiryText}
           </div>
           ` : ""}
-          <div class="topic-list-progress-bar" style="height: 3px; margin: 0;">
-            <div class="topic-list-progress-fill" style="width: ${subPct}%;"></div>
+          <div class="topic-list-progress-bar" style="height: 3px; margin: 0; background: rgba(255,255,255,0.05);">
+            <div class="topic-list-progress-fill" style="width: 100%; height: 100%; background: linear-gradient(to right, #eab308 0%, #eab308 ${subGoldPct}%, #06b6d4 ${subGoldPct}%, #06b6d4 ${subGoldPct + subSilverPct}%, transparent ${subGoldPct + subSilverPct}%);"></div>
           </div>
         </div>
       `;
@@ -14793,8 +15550,8 @@ ${cleanBrackets(paper.q3d.model)}
           <span>${inquiryText}</span>
         </div>
       </div>
-      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 10px;">
-        <div class="topic-list-progress-fill" style="width: ${pct}%;"></div>
+      <div class="topic-list-progress-bar" style="height: 4px; margin-bottom: 10px; background: rgba(255,255,255,0.05);">
+        <div class="topic-list-progress-fill" style="width: 100%; height: 100%; background: linear-gradient(to right, #eab308 0%, #eab308 ${goldPct}%, #06b6d4 ${goldPct}%, #06b6d4 ${goldPct + silverPct}%, transparent ${goldPct + silverPct}%);"></div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         ${subtopicsHTML}
@@ -15048,7 +15805,11 @@ ${cleanBrackets(paper.q3d.model)}
         <h4 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: #34d399; margin: 0 0 8px 0; display: flex; align-items: center; justify-content: center; gap: 8px;">
           <i class="fa-solid fa-trophy"></i> Causation Mastered!
         </h4>
-        <p style="font-size: 0.92rem; line-height: 1.5; color: #a7f3d0; margin: 0;">${causalLinks.successText}</p>
+        <p style="font-size: 0.92rem; line-height: 1.5; color: #a7f3d0; margin: 0 0 16px 0;">${causalLinks.successText}</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button class="btn-primary" id="btn-causal-play-again" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 4px; cursor: pointer;">Play Again</button>
+          <button class="btn-secondary" id="btn-causal-go-dashboard" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 4px; cursor: pointer;">Return to Dashboard</button>
+        </div>
       </div>
     </div>
   `;
@@ -15075,8 +15836,23 @@ ${cleanBrackets(paper.q3d.model)}
             if (linkedFactors.size === totalFactors) {
               AudioEngine.play("cheer");
               Confetti.spawn();
+              addXp(15);
               const panel = document.getElementById("causal-game-success-panel");
               if (panel) panel.style.display = "block";
+              const btnAgain = document.getElementById("btn-causal-play-again");
+              if (btnAgain) {
+                btnAgain.addEventListener("click", () => {
+                  AudioEngine.play("click");
+                  playCausalGame(subtopicId);
+                });
+              }
+              const btnDash = document.getElementById("btn-causal-go-dashboard");
+              if (btnDash) {
+                btnDash.addEventListener("click", () => {
+                  AudioEngine.play("click");
+                  switchView("dashboard");
+                });
+              }
             }
           } else {
             AudioEngine.play("fail");
@@ -15537,7 +16313,7 @@ ${cleanBrackets(paper.q3d.model)}
     } else if (activeClassicFilter === "depth") {
       questions = questions.filter((q) => q.type === "depth");
     } else if (activeClassicFilter === "unmastered") {
-      questions = questions.filter((q) => !state.mastery[q.id]);
+      questions = questions.filter((q) => !getMasteryStatus(q.id));
     }
     document.getElementById("subtopic-count-display").textContent = `${questions.length} question${questions.length === 1 ? "" : "s"} displayed`;
     if (questions.length === 0) {
@@ -15551,8 +16327,12 @@ ${cleanBrackets(paper.q3d.model)}
       return;
     }
     questions.forEach((q, idx) => {
-      const isMastered = !!state.mastery[q.id];
+      const status = getMasteryStatus(q.id);
       const isBookmarked = state.bookmarks.includes(q.id);
+      const splits = getFactSplit(q);
+      let checkboxClass = "mastery-checkbox-container";
+      if (status === "mastered") checkboxClass += " mastered-gold";
+      else if (status === "secured") checkboxClass += " mastered-secured";
       const details = document.createElement("details");
       details.className = "quiz-card-details";
       details.id = `accordion-${q.id}`;
@@ -15565,30 +16345,39 @@ ${cleanBrackets(paper.q3d.model)}
         <div class="summary-badges">
           <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
           <span class="badge badge-year">${q.year}</span>
-          <div class="mastery-checkbox-container ${isMastered ? "mastered" : ""}" data-qid="${q.id}" title="Mark as Mastered">
+          <div class="${checkboxClass}" data-qid="${q.id}" title="Mark as Mastered">
             <i class="fa-solid fa-check"></i>
           </div>
           <i class="fa-solid fa-chevron-down summary-arrow"></i>
         </div>
       </summary>
-      <div class="details-content">
-        <div class="answer-header">
-          <i class="fa-solid fa-circle-check"></i> Correct Key Term / Answer
+      <div class="details-content" style="padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--border-glass);">
+        <div class="answer-header" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 6px; text-transform: uppercase;">
+          <i class="fa-solid fa-circle-check" style="color: var(--success);"></i> Correct Answer: <strong style="color: var(--text-main); font-size: 0.9rem; margin-left: 4px;">${q.answer}</strong>
         </div>
-        <div class="answer-value">${q.answer}</div>
-        <div class="explanation-value">${q.explanation}</div>
+        <div class="card-back-bullet-blocks" style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="context-block" style="background: rgba(255, 255, 255, 0.015); border-left: 3px solid var(--primary); padding: 8px 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;">
+            <strong style="font-size: 0.68rem; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 2px;">Context (What it was)</strong>
+            <p style="font-size: 0.76rem; line-height: 1.4; color: var(--text-main); margin: 0;">${splits.context}</p>
+          </div>
+          <div class="significance-block" style="background: rgba(255, 255, 255, 0.015); border-left: 3px solid var(--success); padding: 8px 12px; border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;">
+            <strong style="font-size: 0.68rem; color: var(--success); text-transform: uppercase; display: block; margin-bottom: 2px;">Exam Significance (Why it matters)</strong>
+            <p style="font-size: 0.76rem; line-height: 1.4; color: var(--text-main); margin: 0;">${splits.significance}</p>
+          </div>
+        </div>
       </div>
     `;
       const checkBtn = details.querySelector(".mastery-checkbox-container");
       checkBtn.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const nextState = !checkBtn.classList.contains("mastered");
+        const nextState = !checkBtn.classList.contains("mastered-gold") && !checkBtn.classList.contains("mastered-secured");
         setMastered(q.id, nextState);
-        checkBtn.classList.toggle("mastered", nextState);
         if (nextState) {
+          checkBtn.className = "mastery-checkbox-container mastered-secured";
           AudioEngine.play("success");
         } else {
+          checkBtn.className = "mastery-checkbox-container";
           AudioEngine.play("click");
         }
       });
@@ -15605,62 +16394,329 @@ ${cleanBrackets(paper.q3d.model)}
     const match = subtopicId.match(/subtopic_(\d+)_(\d+)/);
     return match ? `KT ${match[1]}.${match[2]}` : "";
   }
-  function startFlashcardSession(subtopicId) {
+  function formatMarkdown(str) {
+    return str.replace(/\*\*(.*?)\*\?/g, "<strong>$1</strong>").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  }
+  function formatSynthesisMarkdown(md) {
+    if (!md) return "";
+    let html = md;
+    html = html.replace(/### (.*?)(\n|$)/g, "<h3>$1</h3>");
+    const lines = html.split("\n");
+    let inList = false;
+    for (let i = 0; i < lines.length; i++) {
+      let line = lines[i].trim();
+      if (line.startsWith("* ")) {
+        if (!inList) {
+          lines[i] = "<ul><li>" + line.slice(2) + "</li>";
+          inList = true;
+        } else {
+          lines[i] = "<li>" + line.slice(2) + "</li>";
+        }
+      } else {
+        if (inList) {
+          lines[i] = "</ul>" + lines[i];
+          inList = false;
+        }
+      }
+    }
+    if (inList) {
+      lines.push("</ul>");
+    }
+    html = lines.join("\n");
+    html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+    return html;
+  }
+  function getMasteryBadgeHtml(status) {
+    if (status === "secured") {
+      return `<span class="badge badge-secured-mastery"><i class="fa-solid fa-shield-halved"></i> Secured</span>`;
+    }
+    if (status === "mastered") {
+      return `<span class="badge badge-gold-mastery"><i class="fa-solid fa-crown"></i> Mastered</span>`;
+    }
+    return "";
+  }
+  function showNarrativeFramingScreen(subtopicId) {
+    const container = document.getElementById("view-flashcards");
+    if (!container) return;
+    const sampleQ = state.allQuestions.find((q) => q.subtopicId === subtopicId);
+    const subtopicTitle = sampleQ ? sampleQ.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "") : "Historical Lesson Overview";
+    const ktLabel = formatSubtopicIdToKT(subtopicId);
+    const bullets = NARRATIVE_FRAMINGS[subtopicId] || [];
+    container.innerHTML = `
+    <div class="pre-deck-framing-screen" style="max-width: 600px; margin: 40px auto; padding: 30px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); text-align: center;">
+      <div class="pre-deck-header" style="margin-bottom: 24px;">
+        <span class="pre-deck-subtitle" style="font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-transform: uppercase;">Chronological Prime</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--text-main); margin: 8px 0 12px 0;">${ktLabel}: ${subtopicTitle}</h2>
+        <p class="pre-deck-meta" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          Read the historical narrative below to establish the context of cause and consequence before you begin active recall.
+        </p>
+      </div>
+      
+      <div class="pre-deck-timeline" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px; text-align: left;">
+        <div class="pre-deck-card" style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--primary); padding: 14px 18px; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; display: flex; gap: 12px; align-items: flex-start;">
+          <div class="pre-deck-step" style="background: var(--primary); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">1</div>
+          <div class="pre-deck-content" style="font-size: 0.9rem; line-height: 1.45; color: var(--text-normal);">${formatMarkdown(bullets[0] || "")}</div>
+        </div>
+        <div class="pre-deck-card" style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--primary); padding: 14px 18px; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; display: flex; gap: 12px; align-items: flex-start;">
+          <div class="pre-deck-step" style="background: var(--primary); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">2</div>
+          <div class="pre-deck-content" style="font-size: 0.9rem; line-height: 1.45; color: var(--text-normal);">${formatMarkdown(bullets[1] || "")}</div>
+        </div>
+        <div class="pre-deck-card" style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--primary); padding: 14px 18px; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; display: flex; gap: 12px; align-items: flex-start;">
+          <div class="pre-deck-step" style="background: var(--primary); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">3</div>
+          <div class="pre-deck-content" style="font-size: 0.9rem; line-height: 1.45; color: var(--text-normal);">${formatMarkdown(bullets[2] || "")}</div>
+        </div>
+      </div>
+      
+      <button class="btn-primary start-active-retrieval-btn" id="btn-start-active-retrieval" style="width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 700; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <i class="fa-solid fa-play"></i> Start Active Retrieval Loop
+      </button>
+    </div>
+  `;
+    document.getElementById("btn-start-active-retrieval").addEventListener("click", () => {
+      AudioEngine.play("click");
+      startFlashcardSessionDirect(subtopicId);
+    });
+  }
+  function startFlashcardSessionDirect(subtopicId) {
+    restoreFlashcardSkeleton();
     let questions;
     if (subtopicId === "bookmarks") {
       questions = state.allQuestions.filter((q) => state.bookmarks.includes(q.id));
+      state.flashcardSession.deck = [...questions].sort(() => Math.random() - 0.5);
     } else {
       questions = state.allQuestions.filter((q) => q.subtopicId === subtopicId);
+      let deck = [...questions].sort(() => Math.random() - 0.5);
+      deck = deck.slice(0, 14);
+      const challenge = SYNTHESIS_CHALLENGES[subtopicId];
+      if (challenge) {
+        deck.push({
+          id: `${subtopicId}_synthesis`,
+          type: "synthesis",
+          question: challenge.front,
+          answer: "Model Synthesis Guide",
+          explanation: challenge.back,
+          subtopicId
+        });
+      }
+      state.flashcardSession.deck = deck;
     }
-    state.flashcardSession.deck = [...questions].sort(() => Math.random() - 0.5);
     state.flashcardSession.activeIndex = 0;
-    state.flashcardSession.originalLength = questions.length;
+    state.flashcardSession.originalLength = state.flashcardSession.deck.length;
     state.flashcardSession.masteredCount = 0;
+    state.flashcardSession.failedCardIds = [];
     renderFlashcard();
+    const speedStudyToggle = document.getElementById("flashcard-speed-study-toggle");
+    if (speedStudyToggle) {
+      speedStudyToggle.checked = state.flashcardSession.speedStudyMode;
+      speedStudyToggle.onchange = (e) => {
+        state.flashcardSession.speedStudyMode = e.target.checked;
+        localStorage.setItem("edexcel_prefs_speed_study", JSON.stringify(state.flashcardSession.speedStudyMode));
+        AudioEngine.play("click");
+        updateGotItButtonState();
+        const rubContainer = document.querySelector(".rubric-checklist-container");
+        if (rubContainer) {
+          const checkboxes = rubContainer.querySelectorAll(".rubric-checkbox");
+          if (state.flashcardSession.speedStudyMode) {
+            rubContainer.style.opacity = "0.5";
+            rubContainer.style.pointerEvents = "none";
+            checkboxes.forEach((cb) => cb.checked = true);
+          } else {
+            rubContainer.style.opacity = "1";
+            rubContainer.style.pointerEvents = "auto";
+            checkboxes.forEach((cb) => cb.checked = false);
+          }
+        }
+      };
+    }
+  }
+  function startFlashcardSession(subtopicId) {
+    state.selectedSubtopicId = subtopicId;
+    if (subtopicId !== "bookmarks" && NARRATIVE_FRAMINGS[subtopicId]) {
+      showNarrativeFramingScreen(subtopicId);
+    } else {
+      startFlashcardSessionDirect(subtopicId);
+    }
+  }
+  function generateFadedHint(str) {
+    if (!str) return "";
+    if (/^\d+$/.test(str)) {
+      if (str.length <= 2) return str[0] + " " + "_ ".repeat(str.length - 1).trim();
+      return str.slice(0, 2) + " " + "_ ".repeat(str.length - 2).trim();
+    }
+    return str.split(/(\s+|-|v\.)/).map((part) => {
+      if (/^(\s+|-|v\.)$/.test(part)) return part;
+      const low = part.toLowerCase();
+      if (low === "of" || low === "the" || low === "and" || low === "in" || low === "to" || low === "for" || low === "by") {
+        return part;
+      }
+      if (part.length <= 1) return part;
+      return part[0] + " " + "_ ".repeat(part.length - 1).trim();
+    }).join("");
+  }
+  function updateGotItButtonState() {
+    const correctBtn = document.getElementById("btn-flashcard-correct");
+    if (!correctBtn) return;
+    if (state.flashcardSession.speedStudyMode) {
+      correctBtn.disabled = false;
+      correctBtn.style.opacity = "1";
+      correctBtn.style.pointerEvents = "auto";
+      correctBtn.style.cursor = "pointer";
+      return;
+    }
+    const checkboxes = document.querySelectorAll(".rubric-checkbox");
+    const checkedCount = Array.from(checkboxes).filter((cb) => cb.checked).length;
+    if (checkedCount >= 2) {
+      correctBtn.disabled = false;
+      correctBtn.style.opacity = "1";
+      correctBtn.style.pointerEvents = "auto";
+      correctBtn.style.cursor = "pointer";
+    } else {
+      correctBtn.disabled = true;
+      correctBtn.style.opacity = "0.4";
+      correctBtn.style.pointerEvents = "none";
+      correctBtn.style.cursor = "not-allowed";
+    }
   }
   function renderFlashcard() {
     AudioEngine.stopSpeaking();
     state.flashcardSession.wasDragged = false;
     const deck = state.flashcardSession.deck;
     const idx = state.flashcardSession.activeIndex;
-    document.getElementById("flashcard-counter-text").textContent = `Card ${idx + 1} of ${deck.length}`;
-    const masteryPct = deck.length > 0 ? Math.round(state.flashcardSession.masteredCount / state.flashcardSession.originalLength * 100) : 0;
-    document.getElementById("flashcard-mastery-text").textContent = `${masteryPct}% resolved this session`;
-    document.getElementById("flashcard-progress-bar-fill").style.width = `${Math.min(100, Math.round(idx / deck.length * 100))}%`;
     if (idx >= deck.length) {
       showFlashcardCompletion();
       return;
     }
+    document.getElementById("flashcard-counter-text").textContent = `Card ${idx + 1} of ${deck.length}`;
+    const masteryPct = deck.length > 0 ? Math.round(state.flashcardSession.masteredCount / state.flashcardSession.originalLength * 100) : 0;
+    document.getElementById("flashcard-mastery-text").textContent = `${masteryPct}% resolved this session`;
+    document.getElementById("flashcard-progress-bar-fill").style.width = `${Math.min(100, Math.round(idx / deck.length * 100))}%`;
     state.flashcardSession.reinforcing = false;
     state.flashcardSession.reinforceQuestion = null;
     document.getElementById("flashcard-back-standard-body").style.display = "flex";
     document.getElementById("flashcard-back-reinforce-body").style.display = "none";
     const q = deck[idx];
     const isBookmarked = state.bookmarks.includes(q.id);
-    const frontBadge = document.getElementById("card-front-badge");
-    frontBadge.textContent = q.type === "standard" ? "Core" : "Level 7-9 Detail";
-    frontBadge.className = `badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}`;
-    const backBadge = document.getElementById("card-back-badge");
-    backBadge.textContent = q.type === "standard" ? "Core" : "Level 7-9 Detail";
-    backBadge.className = `badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}`;
-    document.getElementById("card-front-question").textContent = q.question;
-    document.getElementById("card-back-answer").textContent = q.answer;
-    document.getElementById("card-back-explanation").textContent = q.explanation;
     const ktLabel = formatSubtopicIdToKT(q.subtopicId);
+    const frontBadge = document.getElementById("card-front-badge");
+    const backBadge = document.getElementById("card-back-badge");
+    const backBody = document.getElementById("flashcard-back-standard-body");
+    const status = getMasteryStatus(q.id);
+    const statusBadgeHtml = getMasteryBadgeHtml(status);
+    document.getElementById("card-front-status-badge").innerHTML = statusBadgeHtml;
+    document.getElementById("card-back-status-badge").innerHTML = statusBadgeHtml;
+    const oldHint = document.getElementById("card-front-hint-box");
+    if (oldHint) oldHint.remove();
+    if (q.type === "synthesis") {
+      frontBadge.textContent = "Synoptic Synthesis";
+      frontBadge.className = "badge badge-synthesis";
+      backBadge.textContent = "Synoptic Synthesis";
+      backBadge.className = "badge badge-synthesis";
+      document.getElementById("card-front-question").textContent = q.question;
+      backBody.innerHTML = `
+      <span class="card-answer-label">Synthesis Guidance</span>
+      <h2 class="card-answer-text" style="font-size: 1.25rem;">Macro-Argument Analysis</h2>
+      <div class="synthesis-guide-container" style="text-align: left; margin-top: 15px; max-height: 250px; overflow-y: auto; padding-right: 5px;">
+        ${formatSynthesisMarkdown(q.explanation)}
+      </div>
+      <div class="rubric-checklist-container" style="margin-top: 12px; padding: 10px 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); text-align: left; width: 100%; box-sizing: border-box;">
+        <span style="font-size: 0.68rem; font-weight: 700; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
+          <i class="fa-solid fa-brain"></i> Synthesis Rubric
+        </span>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
+            <input type="checkbox" class="rubric-checkbox" data-idx="0" style="accent-color: var(--accent); cursor: pointer;">
+            <span>Compared both historical factors?</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
+            <input type="checkbox" class="rubric-checkbox" data-idx="1" style="accent-color: var(--accent); cursor: pointer;">
+            <span>Identified a primary factor with evidence?</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
+            <input type="checkbox" class="rubric-checkbox" data-idx="2" style="accent-color: var(--accent); cursor: pointer;">
+            <span>Formulated a clear synthesis conclusion?</span>
+          </label>
+        </div>
+      </div>
+    `;
+    } else {
+      frontBadge.textContent = q.type === "standard" ? "Core" : "Level 7-9 Detail";
+      frontBadge.className = `badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}`;
+      backBadge.textContent = q.type === "standard" ? "Core" : "Level 7-9 Detail";
+      backBadge.className = `badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}`;
+      document.getElementById("card-front-question").textContent = q.question;
+      if (state.flashcardSession.failedCardIds && state.flashcardSession.failedCardIds.includes(q.id)) {
+        const hintText = generateFadedHint(q.answer);
+        const hintHtml = `
+        <div id="card-front-hint-box" class="faded-hint-container" style="margin-top: 15px; padding: 10px; background: rgba(6, 182, 212, 0.05); border: 1px dashed var(--primary); border-radius: var(--border-radius-sm); font-size: 0.85rem; text-align: center;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: var(--primary); text-transform: uppercase; display: block; margin-bottom: 4px;">Scaffolded Retrieval Hint</span>
+          <code style="font-family: monospace; font-size: 1.02rem; letter-spacing: 2px; color: var(--text-main); font-weight: 700;">${hintText}</code>
+        </div>
+      `;
+        const frontBody = document.querySelector(".flashcard-front .card-body");
+        if (frontBody) {
+          frontBody.insertAdjacentHTML("beforeend", hintHtml);
+        }
+      }
+      const split = getFactSplit(q);
+      const rubrics = getCardRubrics(q);
+      const rubricItemsHtml = rubrics.map((rub, index) => `
+      <label style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0; line-height: 1.3;">
+        <input type="checkbox" class="rubric-checkbox" data-idx="${index}" style="accent-color: var(--primary); cursor: pointer; margin-top: 2px; flex-shrink: 0;">
+        <span><strong>${rub.label}:</strong> ${rub.text}</span>
+      </label>
+    `).join("");
+      backBody.innerHTML = `
+      <h2 class="card-answer-text" id="card-back-answer" style="margin-top: 0; margin-bottom: 10px;">${q.answer}</h2>
+      <div class="rubric-checklist-container" style="margin-top: 8px; padding: 12px 14px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); text-align: left; width: 100%; box-sizing: border-box;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          ${rubricItemsHtml}
+        </div>
+      </div>
+    `;
+    }
     document.getElementById("card-front-topic-indicator").textContent = ktLabel;
     document.getElementById("card-back-topic-indicator").textContent = ktLabel;
     const frontBkmk = document.getElementById("card-front-bookmark");
     const backBkmk = document.getElementById("card-back-bookmark");
     [frontBkmk, backBkmk].forEach((b) => {
-      b.setAttribute("data-qid", q.id);
-      b.className = `bookmark-icon-container ${isBookmarked ? "bookmarked" : ""}`;
-      b.querySelector("i").className = isBookmarked ? "fa-solid fa-star" : "fa-regular fa-star";
+      if (b) {
+        b.setAttribute("data-qid", q.id);
+        b.className = `bookmark-icon-container ${isBookmarked ? "bookmarked" : ""}`;
+        b.querySelector("i").className = isBookmarked ? "fa-solid fa-star" : "fa-regular fa-star";
+      }
     });
     const cardEl = document.getElementById("flashcard-card");
     cardEl.classList.remove("flipped");
     cardEl.className = "flashcard-card";
     document.getElementById("btn-flashcard-reveal").style.display = "flex";
     document.getElementById("flashcard-self-grade-actions").style.display = "none";
+    const checkboxes = document.querySelectorAll(".rubric-checkbox");
+    checkboxes.forEach((cb) => {
+      cb.addEventListener("change", () => {
+        AudioEngine.play("click");
+        updateGotItButtonState();
+      });
+    });
+    const rubContainer = document.querySelector(".rubric-checklist-container");
+    if (rubContainer) {
+      rubContainer.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+      if (state.flashcardSession.speedStudyMode) {
+        rubContainer.style.opacity = "0.5";
+        rubContainer.style.pointerEvents = "none";
+        const checkboxes2 = rubContainer.querySelectorAll(".rubric-checkbox");
+        checkboxes2.forEach((cb) => cb.checked = true);
+      } else {
+        rubContainer.style.opacity = "1";
+        rubContainer.style.pointerEvents = "auto";
+      }
+    }
+    const speedStudyToggle = document.getElementById("flashcard-speed-study-toggle");
+    if (speedStudyToggle) {
+      speedStudyToggle.checked = state.flashcardSession.speedStudyMode;
+    }
+    updateGotItButtonState();
   }
   function handleFlashcardGrade(correct) {
     if (state.flashcardSession.activeIndex >= state.flashcardSession.deck.length) return;
@@ -15670,8 +16726,22 @@ ${cleanBrackets(paper.q3d.model)}
     const idx = state.flashcardSession.activeIndex;
     const q = deck[idx];
     if (correct) {
+      if (!state.flashcardSession.speedStudyMode) {
+        const checkboxes = document.querySelectorAll(".rubric-checkbox");
+        const checkedCount = Array.from(checkboxes).filter((cb) => cb.checked).length;
+        if (checkedCount < 2) {
+          AudioEngine.play("click");
+          const correctBtn = document.getElementById("btn-flashcard-correct");
+          if (correctBtn) {
+            correctBtn.classList.add("shake");
+            setTimeout(() => correctBtn.classList.remove("shake"), 400);
+          }
+          return;
+        }
+      }
       AudioEngine.play("success");
       setMastered(q.id, true);
+      addXp(10);
       state.flashcardSession.masteredCount++;
       cardEl.classList.add("swipe-right");
       setTimeout(() => {
@@ -15679,6 +16749,9 @@ ${cleanBrackets(paper.q3d.model)}
         renderFlashcard();
       }, 300);
     } else {
+      if (state.flashcardSession.failedCardIds && !state.flashcardSession.failedCardIds.includes(q.id)) {
+        state.flashcardSession.failedCardIds.push(q.id);
+      }
       setMastered(q.id, false);
       AudioEngine.play("fail");
       cardEl.classList.add("swipe-left");
@@ -15721,9 +16794,20 @@ ${cleanBrackets(paper.q3d.model)}
     const container = document.getElementById("view-flashcards");
     container.innerHTML = `
     <div class="flashcard-view-container">
-      <div class="flashcard-progress-header">
-        <span id="flashcard-counter-text">Card 1 of 15</span>
-        <span id="flashcard-mastery-text">0% resolved this session</span>
+      <div class="flashcard-progress-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span id="flashcard-counter-text">Card 1 of 15</span>
+          <span id="flashcard-mastery-text" style="font-size: 0.7rem; color: var(--text-muted);">0% resolved this session</span>
+        </div>
+        <div class="speed-study-toggle-container" style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border-glass);">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 4px;" id="speed-study-label">
+            <i class="fa-solid fa-bolt" style="color: var(--accent);"></i> Whiz Mode
+          </span>
+          <label class="switch-control" style="margin: 0;">
+            <input type="checkbox" id="flashcard-speed-study-toggle">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
       </div>
       <div class="flashcard-progress-bar">
         <div class="flashcard-progress-fill" id="flashcard-progress-bar-fill"></div>
@@ -15732,7 +16816,10 @@ ${cleanBrackets(paper.q3d.model)}
         <div class="flashcard-card" id="flashcard-card">
           <div class="flashcard-face flashcard-front">
             <div class="card-top">
-              <span class="badge" id="card-front-badge">Standard</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span class="badge" id="card-front-badge">Standard</span>
+                <span id="card-front-status-badge"></span>
+              </div>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <button class="tts-speak-btn" id="btn-front-tts" title="Read Question Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                 <span class="card-topic-indicator" id="card-front-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
@@ -15744,19 +16831,27 @@ ${cleanBrackets(paper.q3d.model)}
           </div>
           <div class="flashcard-face flashcard-back">
             <div class="card-top">
-              <span class="badge badge-standard" id="card-back-badge">Standard</span>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span class="badge badge-standard" id="card-back-badge">Standard</span>
+                <span id="card-back-status-badge"></span>
+              </div>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <button class="tts-speak-btn" id="btn-back-tts" title="Read Answer & Explanation Aloud" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; transition: color var(--transition-fast);"><i class="fa-solid fa-volume-high"></i></button>
                 <span class="card-topic-indicator" id="card-back-topic-indicator" style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"></span>
                 <span class="bookmark-icon-container" id="card-back-bookmark"><i class="fa-regular fa-star"></i></span>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="flashcard-back-standard-body" style="width: 100%;">
               <span class="card-answer-label">Correct Answer</span>
               <h2 class="card-answer-text" id="card-back-answer"></h2>
               <p class="card-explanation-text" id="card-back-explanation"></p>
             </div>
-            <div class="card-bottom"><i class="fa-solid fa-rotate"></i> Click card to flip back</div>
+            <div class="card-body" id="flashcard-back-reinforce-body" style="display: none; width: 100%; text-align: left; align-items: stretch; height: 100%; justify-content: flex-start; padding-top: 10px; overflow-y: auto;">
+              <span class="card-answer-label" style="text-align: center; display: block; margin-bottom: 6px;">\u{1F9E0} Double-Check Understanding</span>
+              <h4 id="flashcard-reinforce-question" style="font-size: 0.8rem; font-weight: 600; line-height: 1.3; margin: 0 0 10px 0; color: var(--text-normal); text-align: center;">...</h4>
+              <div id="flashcard-reinforce-options" style="display: flex; flex-direction: column; gap: 8px; width: 100%;"></div>
+            </div>
+            <div class="card-bottom" id="flashcard-back-footer"><i class="fa-solid fa-rotate"></i> Click card to flip back</div>
           </div>
         </div>
       </div>
@@ -15775,18 +16870,26 @@ ${cleanBrackets(paper.q3d.model)}
     document.getElementById("btn-flashcard-correct").addEventListener("click", () => handleFlashcardGrade(true));
     const bkmks = [document.getElementById("card-front-bookmark"), document.getElementById("card-back-bookmark")];
     bkmks.forEach((b) => {
-      b.addEventListener("click", (e) => {
-        e.stopPropagation();
-        toggleBookmark(b.getAttribute("data-qid"));
-      });
+      if (b) {
+        b.addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggleBookmark(b.getAttribute("data-qid"));
+        });
+      }
     });
   }
-  function flipFlashcard() {
+  function flipFlashcard(e) {
     if (state.flashcardSession.wasDragged) {
       state.flashcardSession.wasDragged = false;
       return;
     }
+    if (e && e.target) {
+      if (e.target.closest(".rubric-checklist-container") || e.target.closest(".tts-speak-btn") || e.target.closest(".bookmark-icon-container") || e.target.closest("#flashcard-self-grade-actions") || e.target.closest("#flashcard-reinforce-options")) {
+        return;
+      }
+    }
     const card = document.getElementById("flashcard-card");
+    if (!card) return;
     card.classList.toggle("flipped");
     AudioEngine.play("flip");
     const isFlipped = card.classList.contains("flipped");
@@ -15795,6 +16898,7 @@ ${cleanBrackets(paper.q3d.model)}
     if (isFlipped) {
       revealBtn.style.display = "none";
       actionBtns.style.display = "flex";
+      updateGotItButtonState();
     } else {
       revealBtn.style.display = "flex";
       actionBtns.style.display = "none";
@@ -16448,6 +17552,11 @@ ${cleanBrackets(paper.q3d.model)}
         return figureKeys.some((key) => textToSearch.includes(key));
       });
     }
+    const causalToggle = document.getElementById("timeline-causal-toggle");
+    const causalOnly = causalToggle && causalToggle.classList.contains("active");
+    if (causalOnly) {
+      questions = questions.filter((q) => !!CAUSAL_VECTORS[q.id]);
+    }
     questions.sort((a, b) => a.year - b.year);
     TIMELINE_IMAGES.forEach((ti) => ti.used = false);
     document.getElementById("timeline-count-display").textContent = `${questions.length} chronological milestones mapped`;
@@ -16463,6 +17572,7 @@ ${cleanBrackets(paper.q3d.model)}
     questions.forEach((q) => {
       const item = document.createElement("div");
       item.className = "timeline-item";
+      item.setAttribute("data-qid", q.id);
       let topicName = "Key Topic 1";
       if (q.topicId === "topic_2") topicName = "Key Topic 2";
       if (q.topicId === "topic_3") topicName = "Key Topic 3";
@@ -16478,6 +17588,21 @@ ${cleanBrackets(paper.q3d.model)}
         </div>
         <div class="timeline-image-provenance" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 10px; border-radius: 4px; margin-bottom: 10px; line-height: 1.4; box-sizing: border-box;">
           <strong style="color: inherit;">Source Provenance:</strong> ${matchedImg.provenance}
+        </div>
+      `;
+      }
+      let causalHtml = "";
+      if (CAUSAL_VECTORS[q.id]) {
+        const vector = CAUSAL_VECTORS[q.id];
+        causalHtml = `
+        <div class="causal-vector-box" style="margin-top: 12px; padding: 12px 14px; background: var(--gradient-hero); border: 1px solid var(--border-glass); border-left: 4px solid var(--primary); border-radius: var(--border-radius-sm); font-size: 0.85rem; line-height: 1.5; text-align: left; box-shadow: var(--shadow-sm);">
+          <strong style="color: var(--primary); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.6px; display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+            <i class="fa-solid fa-circle-nodes"></i> Chronological Causal Vector
+          </strong>
+          <span style="color: var(--text-main); font-weight: 600; display: block; margin-bottom: 8px;">${vector.relation}</span>
+          <button class="causal-jump-btn" data-target="${vector.targetId}" style="display: inline-flex; align-items: center; gap: 6px; background: var(--primary); border: none; color: #fff; padding: 6px 12px; font-size: 0.75rem; font-weight: bold; border-radius: var(--border-radius-sm); cursor: pointer; transition: all var(--transition-fast); box-shadow: var(--shadow-sm);">
+            Jump to Consequence <i class="fa-solid fa-arrow-down-long"></i>
+          </button>
         </div>
       `;
       }
@@ -16500,6 +17625,7 @@ ${cleanBrackets(paper.q3d.model)}
       }
       const lessonButton = `<button class="timeline-lesson-btn" data-subtopic="${q.subtopicId}" style="margin-right: 6px; margin-top: 6px; padding: 4px 10px; font-size: 0.72rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); color: var(--primary); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-solid fa-book-open"></i> Go to Lesson</button>`;
       const combinedButtonsHtml = `<div class="timeline-buttons-row" style="margin-top: 8px; display: flex; flex-wrap: wrap;">${lessonButton}${buttons}</div>`;
+      const causalVectorBadge = CAUSAL_VECTORS[q.id] ? `<span class="badge badge-causal" style="background: rgba(230, 92, 0, 0.12); border: 1px solid var(--primary); color: var(--primary); font-size: 0.65rem; padding: 2px 8px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; box-sizing: border-box;" title="Causal Link Available"><i class="fa-solid fa-bolt"></i> Causal Link</span>` : "";
       item.innerHTML = `
       <div class="timeline-marker"></div>
       <div class="timeline-year">${q.year}</div>
@@ -16509,7 +17635,10 @@ ${cleanBrackets(paper.q3d.model)}
             <span>${topicName}</span>
             ${keyFigureIndicator}
           </span>
-          <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
+          <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
+            ${causalVectorBadge}
+            <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
+          </div>
         </div>
         <div class="timeline-q-title" style="font-weight: bold; line-height: 1.4;">${q.question}</div>
         
@@ -16519,16 +17648,25 @@ ${cleanBrackets(paper.q3d.model)}
             <div class="timeline-a-text" style="color: var(--primary); font-weight: bold;">${q.answer}</div>
             <p class="timeline-exp" style="margin-top: 4px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">${q.explanation}</p>
           </div>
+          ${causalHtml}
         </div>
         ${combinedButtonsHtml}
       </div>
     `;
       const card = item.querySelector(".timeline-content-card");
       card.addEventListener("click", (e) => {
-        if (e.target.closest(".timeline-bio-btn") || e.target.closest(".timeline-lesson-btn")) return;
+        if (e.target.closest(".timeline-bio-btn") || e.target.closest(".timeline-lesson-btn") || e.target.closest(".causal-jump-btn")) return;
         AudioEngine.play("click");
         card.classList.toggle("revealed");
       });
+      const jumpBtn = item.querySelector(".causal-jump-btn");
+      if (jumpBtn) {
+        jumpBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const targetQid = jumpBtn.getAttribute("data-target");
+          jumpToTimelineEvent(targetQid);
+        });
+      }
       const bioBtns = item.querySelectorAll(".timeline-bio-btn");
       bioBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
@@ -16678,7 +17816,7 @@ ${cleanBrackets(paper.q3d.model)}
       return;
     }
     bookmarkedQs.forEach((q, idx) => {
-      const isMastered = !!state.mastery[q.id];
+      const isMastered = !!getMasteryStatus(q.id);
       const details = document.createElement("details");
       details.className = "quiz-card-details";
       details.innerHTML = `
@@ -16784,6 +17922,113 @@ ${cleanBrackets(paper.q3d.model)}
       scores = JSON.parse(scores);
     }
     return scores.sort((a, b) => b.score - a.score).slice(0, 5);
+  }
+  function showWarningToast(message) {
+    let existing = document.getElementById("warning-toast");
+    if (existing) existing.remove();
+    const toast = document.createElement("div");
+    toast.id = "warning-toast";
+    toast.style.position = "fixed";
+    toast.style.bottom = "24px";
+    toast.style.right = "24px";
+    toast.style.background = "#7f1d1d";
+    toast.style.color = "#fecaca";
+    toast.style.border = "1.5px solid #dc2626";
+    toast.style.padding = "14px 20px";
+    toast.style.borderRadius = "8px";
+    toast.style.boxShadow = "0 10px 25px rgba(0,0,0,0.4)";
+    toast.style.zIndex = "999999";
+    toast.style.fontFamily = "var(--font-heading)";
+    toast.style.fontWeight = "700";
+    toast.style.fontSize = "0.9rem";
+    toast.style.display = "flex";
+    toast.style.alignItems = "center";
+    toast.style.gap = "10px";
+    toast.style.transition = "all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)";
+    toast.style.transform = "translateY(80px)";
+    toast.style.opacity = "0";
+    toast.innerHTML = `
+    <i class="fa-solid fa-triangle-exclamation" style="color: #fbbf24; font-size: 1.1rem;"></i>
+    <span>${message}</span>
+  `;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.style.transform = "translateY(0)";
+      toast.style.opacity = "1";
+    }, 50);
+    setTimeout(() => {
+      toast.style.transform = "translateY(80px)";
+      toast.style.opacity = "0";
+      setTimeout(() => {
+        toast.remove();
+      }, 300);
+    }, 4e3);
+  }
+  function triggerChimneyAnger() {
+    const logo = document.getElementById("header-brand-logo");
+    if (logo) {
+      logo.classList.add("angry");
+      AudioEngine.play("fail");
+      setTimeout(() => {
+        logo.classList.remove("angry");
+      }, 4e3);
+    }
+  }
+  function validateScoreBoardInitials(initials) {
+    if (!/^[A-Z]{3}$/.test(initials)) {
+      return { valid: false, message: "Please enter exactly 3 letters for your initials." };
+    }
+    const profane = /* @__PURE__ */ new Set([
+      "ASS",
+      "WTF",
+      "FUC",
+      "SHI",
+      "CNT",
+      "CUM",
+      "FAG",
+      "DIK",
+      "KYS",
+      "KKK",
+      "SEX",
+      "NIG",
+      "TIT",
+      "FAP",
+      "WOP",
+      "PIS",
+      "HEL",
+      "DAM",
+      "SOB",
+      "PEE",
+      "POO",
+      "DIE",
+      "GAY",
+      "PNS",
+      "VAG",
+      "KOK",
+      "FUK",
+      "FCK",
+      "BCH",
+      "MLF",
+      "DCK",
+      "BUM",
+      "FUG",
+      "SHT",
+      "XXX",
+      "SUK",
+      "HOE",
+      "SLT",
+      "WHR",
+      "NOB",
+      "KNO",
+      "COK",
+      "TAD",
+      "PUB"
+    ]);
+    if (profane.has(initials)) {
+      triggerChimneyAnger();
+      return { valid: false, message: "The Fareham chimney master will not allow that." };
+    }
+    return { valid: true };
   }
   function saveHighScoreLocal(unitId, name, yearGroup, score) {
     const scores = getHighScores(unitId);
@@ -17097,12 +18342,15 @@ ${cleanBrackets(paper.q3d.model)}
         </p>
       </div>
 
-      <div style="display: flex; gap: 12px; justify-content: center; border-top: 1px solid var(--border-glass); padding-top: 18px;">
+      <div style="display: flex; gap: 12px; justify-content: center; border-top: 1px solid var(--border-glass); padding-top: 18px; flex-wrap: wrap;">
         <button class="btn-secondary" id="btn-dec-menu" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-left"></i> Scenario Menu
         </button>
         <button class="btn-primary" id="btn-dec-retry" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-right"></i> Try Alternative Path
+        </button>
+        <button class="btn-secondary" id="btn-dec-go-dashboard" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+          <i class="fa-solid fa-house"></i> Return to Dashboard
         </button>
       </div>
     </div>
@@ -17114,6 +18362,10 @@ ${cleanBrackets(paper.q3d.model)}
     document.getElementById("btn-dec-retry").addEventListener("click", () => {
       AudioEngine.play("click");
       playDecisionsScenario(gameId);
+    });
+    document.getElementById("btn-dec-go-dashboard").addEventListener("click", () => {
+      AudioEngine.play("click");
+      switchView("dashboard");
     });
   }
   function initMasteryMatchGame() {
@@ -17391,6 +18643,7 @@ ${cleanBrackets(paper.q3d.model)}
     if (success) {
       AudioEngine.play("cheer");
       Confetti.spawn(100);
+      addXp(15);
     } else {
       AudioEngine.play("fail");
     }
@@ -17446,12 +18699,15 @@ ${cleanBrackets(paper.q3d.model)}
       <!-- Results Leaderboard Rankings -->
       <div id="mastery-results-leaderboard" style="max-width: 360px; margin: 0 auto 24px;"></div>
 
-      <div style="display: flex; gap: 12px; justify-content: center;">
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <button class="btn-secondary" id="btn-mastery-return" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-left"></i> Setup Screen
         </button>
         <button class="btn-primary" id="btn-mastery-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-right"></i> Play Again (Same Topic)
+        </button>
+        <button class="btn-secondary" id="btn-mastery-go-dashboard" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+          <i class="fa-solid fa-house"></i> Return to Dashboard
         </button>
       </div>
     </div>
@@ -17464,12 +18720,13 @@ ${cleanBrackets(paper.q3d.model)}
         const yearInput = document.getElementById("mastery-highscore-year");
         let initials = initialsInput ? initialsInput.value.trim().toUpperCase() : "";
         let yearGroup = yearInput ? yearInput.value : "";
-        if (initials.length !== 3 || !/^[A-Z]{3}$/.test(initials)) {
-          alert("Please enter exactly 3 letters for your initials (e.g. ABC).");
+        const val = validateScoreBoardInitials(initials);
+        if (!val.valid) {
+          showWarningToast(val.message);
           return;
         }
         if (!yearGroup) {
-          alert("Please select your Year Group.");
+          showWarningToast("Please select your Year Group.");
           return;
         }
         const name = initials;
@@ -17506,6 +18763,10 @@ ${cleanBrackets(paper.q3d.model)}
     document.getElementById("btn-mastery-play-again").addEventListener("click", () => {
       AudioEngine.play("click");
       startMasteryMatch(masteryState.unitId, masteryState.isSpeedRun);
+    });
+    document.getElementById("btn-mastery-go-dashboard").addEventListener("click", () => {
+      AudioEngine.play("click");
+      switchView("dashboard");
     });
   }
   var mindmapState = {
@@ -17831,6 +19092,7 @@ ${cleanBrackets(paper.q3d.model)}
     if (success) {
       AudioEngine.play("cheer");
       Confetti.spawn(100);
+      addXp(15);
     } else {
       AudioEngine.play("fail");
     }
@@ -17886,12 +19148,15 @@ ${cleanBrackets(paper.q3d.model)}
       <!-- Results Leaderboard Rankings -->
       <div id="mindmap-results-leaderboard" style="max-width: 360px; margin: 0 auto 24px;"></div>
 
-      <div style="display: flex; gap: 12px; justify-content: center;">
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <button class="btn-secondary" id="btn-mindmap-return" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-left"></i> Setup Screen
         </button>
         <button class="btn-primary" id="btn-mindmap-play-again" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
           <i class="fa-solid fa-rotate-right"></i> Play Again (Same Topic)
+        </button>
+        <button class="btn-secondary" id="btn-mindmap-go-dashboard" style="padding: 10px 20px; font-weight: 600; font-size: 0.9rem; border-radius: 4px; cursor: pointer;">
+          <i class="fa-solid fa-house"></i> Return to Dashboard
         </button>
       </div>
     </div>
@@ -17904,12 +19169,13 @@ ${cleanBrackets(paper.q3d.model)}
         const yearInput = document.getElementById("mindmap-highscore-year");
         let initials = initialsInput ? initialsInput.value.trim().toUpperCase() : "";
         let yearGroup = yearInput ? yearInput.value : "";
-        if (initials.length !== 3 || !/^[A-Z]{3}$/.test(initials)) {
-          alert("Please enter exactly 3 letters for your initials (e.g. ABC).");
+        const val = validateScoreBoardInitials(initials);
+        if (!val.valid) {
+          showWarningToast(val.message);
           return;
         }
         if (!yearGroup) {
-          alert("Please select your Year Group.");
+          showWarningToast("Please select your Year Group.");
           return;
         }
         const name = initials;
@@ -17945,6 +19211,10 @@ ${cleanBrackets(paper.q3d.model)}
     document.getElementById("btn-mindmap-play-again").addEventListener("click", () => {
       AudioEngine.play("click");
       startMindMapGame(mindmapState.subtopicId, mindmapState.isSpeedRun);
+    });
+    document.getElementById("btn-mindmap-go-dashboard").addEventListener("click", () => {
+      AudioEngine.play("click");
+      switchView("dashboard");
     });
   }
   function getExamHighScores(scope) {
@@ -18026,12 +19296,13 @@ ${cleanBrackets(paper.q3d.model)}
       newSubmitBtn.addEventListener("click", () => {
         const initials = (initialsInput.value || "").trim().toUpperCase();
         const yearGroup = yearInput.value;
-        if (!/^[A-Z]{3}$/.test(initials)) {
-          alert("Please enter exactly 3 uppercase letters for your initials.");
+        const val = validateScoreBoardInitials(initials);
+        if (!val.valid) {
+          showWarningToast(val.message);
           return;
         }
         if (!yearGroup) {
-          alert("Please select your Year Group.");
+          showWarningToast("Please select your Year Group.");
           return;
         }
         saveExamHighScoreLocal(scope, initials, yearGroup, points);
@@ -18056,6 +19327,200 @@ ${cleanBrackets(paper.q3d.model)}
         }
         if (inputBox) inputBox.style.display = "none";
         renderExamResultsLeaderboard(scope);
+      });
+    }
+  }
+  function getStreakHighScores() {
+    const key = "streak_highscores";
+    let scores = localStorage.getItem(key);
+    if (!scores) {
+      const defaults = [
+        { name: "BLB", yearGroup: "Year 10", streak: 12, level: 4, date: "2026-06-01" },
+        { name: "JHS", yearGroup: "Year 11", streak: 8, level: 3, date: "2026-06-03" },
+        { name: "MCR", yearGroup: "Year 9", streak: 5, level: 2, date: "2026-06-05" },
+        { name: "HND", yearGroup: "Year 8", streak: 3, level: 2, date: "2026-06-05" },
+        { name: "KPT", yearGroup: "Year 7", streak: 2, level: 1, date: "2026-06-06" }
+      ];
+      localStorage.setItem(key, JSON.stringify(defaults));
+      return defaults;
+    }
+    try {
+      return JSON.parse(scores);
+    } catch (e) {
+      return [];
+    }
+  }
+  function saveStreakHighScoreLocal(name, yearGroup, streak, level) {
+    const scores = getStreakHighScores();
+    const existingIndex = scores.findIndex((s) => s.name === name && s.yearGroup === yearGroup);
+    if (existingIndex !== -1) {
+      const existing = scores[existingIndex];
+      if (streak > existing.streak || streak === existing.streak && level > existing.level) {
+        scores[existingIndex] = {
+          name,
+          yearGroup,
+          streak,
+          level,
+          date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0]
+        };
+      }
+    } else {
+      scores.push({
+        name,
+        yearGroup,
+        streak,
+        level,
+        date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0]
+      });
+    }
+    scores.sort((a, b) => b.streak - a.streak || b.level - a.level || b.date.localeCompare(a.date));
+    localStorage.setItem("streak_highscores", JSON.stringify(scores.slice(0, 7)));
+  }
+  function renderStreakLeaderboardList() {
+    const container = document.getElementById("streak-leaderboard-list");
+    if (!container) return;
+    const localScores = getStreakHighScores();
+    renderResults(localScores);
+    if (GOOGLE_SHEET_WEBAPP_URL) {
+      fetch(`${GOOGLE_SHEET_WEBAPP_URL}?type=streak`).then((res) => res.json()).then((scores) => {
+        if (Array.isArray(scores)) {
+          renderResults(scores);
+        }
+      }).catch((err) => console.error("Error loading remote streak leaderboard:", err));
+    }
+    function renderResults(scoresList) {
+      scoresList.sort((a, b) => b.streak - a.streak || b.level - a.level || (b.date || "").localeCompare(a.date || ""));
+      let rowsHtml = scoresList.slice(0, 7).map((s, idx) => {
+        let medal = "";
+        let rankClass = "";
+        if (idx === 0) {
+          medal = "\u{1F947}";
+          rankClass = "rank-gold";
+        } else if (idx === 1) {
+          medal = "\u{1F948}";
+          rankClass = "rank-silver";
+        } else if (idx === 2) {
+          medal = "\u{1F949}";
+          rankClass = "rank-bronze";
+        }
+        let achievementTitle = "\u{1F4DA} STUDY ACTIVE";
+        if (s.level === 5) achievementTitle = "\u{1F451} ELITE HISTORIAN";
+        else if (s.streak >= 10) achievementTitle = "\u{1F525} STREAK LEGEND";
+        else if (s.level >= 4) achievementTitle = "\u{1F6E1}\uFE0F COMMANDER";
+        else if (s.streak >= 5) achievementTitle = "\u26A1 SUPER SCHOLAR";
+        else if (s.level >= 3) achievementTitle = "\u{1F4E3} STRATEGIST";
+        const isCurrentUser = state.userStats && s.name === localStorage.getItem("last_streak_initials") && s.yearGroup === localStorage.getItem("last_streak_year");
+        const highlightStyle = isCurrentUser ? "box-shadow: 0 0 16px rgba(239, 68, 68, 0.22) !important; border-color: rgba(239, 68, 68, 0.5) !important; background: rgba(239, 68, 68, 0.06) !important;" : "";
+        const dateText = s.date ? s.date.split("-").reverse().slice(0, 2).reverse().join("/") : "";
+        return `
+        <div class="highscore-card-row ${rankClass}" style="animation-delay: ${idx * 0.07}s; ${highlightStyle}">
+          <!-- Rank Column -->
+          <div class="highscore-rank">
+            ${medal || `<span style="font-size: 1.05rem; opacity: 0.7;">#${idx + 1}</span>`}
+          </div>
+          
+          <!-- Initials & Year Column -->
+          <div class="highscore-info">
+            <span class="highscore-name">${s.name}</span>
+            <span class="highscore-year">${s.yearGroup || "Year Group"}</span>
+          </div>
+          
+          <!-- Stats Column -->
+          <div class="highscore-stats">
+            <!-- Streak Badge -->
+            <span class="highscore-badge-streak">
+              <i class="fa-solid fa-fire ${idx === 0 ? "fire-flicker-animation" : ""}"></i> ${s.streak} Day${s.streak === 1 ? "" : "s"}
+            </span>
+            <!-- Level Badge -->
+            <span class="highscore-badge-level">
+              Lv ${s.level}
+            </span>
+          </div>
+          
+          <!-- Achievement Title Column -->
+          <div class="highscore-achievement">
+            <span class="highscore-achievement-title">
+              ${achievementTitle}
+            </span>
+          </div>
+          
+          <!-- Date Column -->
+          <div class="highscore-date">
+            ${dateText}
+          </div>
+        </div>
+      `;
+      }).join("");
+      container.innerHTML = `
+      <div style="display: flex; flex-direction: column; padding: 10px 0; margin-top: 10px;">
+        ${rowsHtml || '<div style="font-size: 0.9rem; color: var(--text-muted); text-align: center; padding: 24px 0; background: rgba(0,0,0,0.1); border: 1px dashed var(--border-glass); border-radius: var(--border-radius-sm);">No high scores. Be the first to submit!</div>'}
+      </div>
+    `;
+    }
+  }
+  function openStreakLeaderboard() {
+    const lastInitials = localStorage.getItem("last_streak_initials") || "";
+    const lastYear = localStorage.getItem("last_streak_year") || "";
+    const initialsInput = document.getElementById("streak-highscore-initials");
+    const yearInput = document.getElementById("streak-highscore-year");
+    const inputBox = document.getElementById("streak-highscore-input-box");
+    if (initialsInput) {
+      initialsInput.value = lastInitials;
+    }
+    if (yearInput) {
+      yearInput.value = lastYear;
+    }
+    if (inputBox) {
+      inputBox.style.display = "block";
+    }
+    renderStreakLeaderboardList();
+  }
+  function initStreakLeaderboardListeners() {
+    const submitBtn = document.getElementById("btn-submit-streak-highscore");
+    if (submitBtn) {
+      submitBtn.addEventListener("click", () => {
+        const initialsInput = document.getElementById("streak-highscore-initials");
+        const yearInput = document.getElementById("streak-highscore-year");
+        const initials = (initialsInput ? initialsInput.value : "").trim().toUpperCase();
+        const yearGroup = yearInput ? yearInput.value : "";
+        const val = validateScoreBoardInitials(initials);
+        if (!val.valid) {
+          showWarningToast(val.message);
+          return;
+        }
+        if (!yearGroup) {
+          showWarningToast("Please select your Year Group.");
+          return;
+        }
+        const streak = state.userStats ? state.userStats.streak : 1;
+        const level = state.userStats ? state.userStats.level : 1;
+        saveStreakHighScoreLocal(initials, yearGroup, streak, level);
+        localStorage.setItem("last_streak_initials", initials);
+        localStorage.setItem("last_streak_year", yearGroup);
+        AudioEngine.play("success");
+        if (GOOGLE_SHEET_WEBAPP_URL) {
+          const payload = {
+            type: "streak",
+            name: initials,
+            yearGroup,
+            streak,
+            level,
+            date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0]
+          };
+          fetch(GOOGLE_SHEET_WEBAPP_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          }).catch((err) => console.error("Error saving remote streak score:", err));
+        }
+        const inputBox = document.getElementById("streak-highscore-input-box");
+        if (inputBox) {
+          inputBox.style.display = "none";
+        }
+        renderStreakLeaderboardList();
       });
     }
   }
@@ -18477,6 +19942,7 @@ ${cleanBrackets(paper.q3d.model)}
     const container = document.getElementById("taboo-game-play-area");
     if (!container) return;
     AudioEngine.play("cheer");
+    addXp(15);
     Confetti.trigger();
     let maxScore = -1;
     tabooState.teams.forEach((t) => {
@@ -18527,15 +19993,24 @@ ${cleanBrackets(paper.q3d.model)}
           </table>
         </div>
 
-        <button id="btn-taboo-reset" class="btn-primary" style="width: 100%; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-          <i class="fa-solid fa-rotate-left"></i> Play Again
-        </button>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
+          <button id="btn-taboo-reset" class="btn-primary" style="flex: 1; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
+            <i class="fa-solid fa-rotate-left"></i> Play Again
+          </button>
+          <button id="btn-taboo-go-dashboard" class="btn-secondary" style="flex: 1; padding: 14px; font-weight: 700; font-size: 1.05rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
+            <i class="fa-solid fa-house"></i> Return to Dashboard
+          </button>
+        </div>
       </div>
     </div>
   `;
     document.getElementById("btn-taboo-reset").addEventListener("click", () => {
       AudioEngine.play("click");
       initTabooGame();
+    });
+    document.getElementById("btn-taboo-go-dashboard").addEventListener("click", () => {
+      AudioEngine.play("click");
+      switchView("dashboard");
     });
   }
   function renderKeyTopicOverview(topicId) {
@@ -18554,17 +20029,29 @@ ${cleanBrackets(paper.q3d.model)}
     const subtopics = quizTopic ? quizTopic.subtopics : [];
     let totalQs = 0;
     let totalMastered = 0;
+    let totalSecured = 0;
     subtopics.forEach((sub) => {
       const subQs = state.allQuestions.filter((q) => q.subtopicId === sub.id);
       totalQs += subQs.length;
-      totalMastered += subQs.filter((q) => state.mastery[q.id]).length;
+      totalMastered += subQs.filter((q) => getMasteryStatus(q.id) === "mastered").length;
+      totalSecured += subQs.filter((q) => getMasteryStatus(q.id) === "secured").length;
     });
-    const overallPct = totalQs > 0 ? Math.round(totalMastered / totalQs * 100) : 0;
+    const overallPct = totalQs > 0 ? Math.round((totalMastered + totalSecured) / totalQs * 100) : 0;
+    const goldPct = totalQs > 0 ? Math.round(totalMastered / totalQs * 100) : 0;
+    const silverPct = totalQs > 0 ? Math.round(totalSecured / totalQs * 100) : 0;
     let subtopicsHtml = "";
     subtopics.forEach((sub) => {
       const subQs = state.allQuestions.filter((q) => q.subtopicId === sub.id);
-      const subMastered = subQs.filter((q) => state.mastery[q.id]).length;
-      const pct = subQs.length > 0 ? Math.round(subMastered / subQs.length * 100) : 0;
+      const subMastered = subQs.filter((q) => getMasteryStatus(q.id) === "mastered").length;
+      const subSecured = subQs.filter((q) => getMasteryStatus(q.id) === "secured").length;
+      let progressLabel = "";
+      if (subMastered > 0 && subSecured > 0) {
+        progressLabel = `${subMastered} Mastered \u2022 ${subSecured} Secured`;
+      } else if (subMastered > 0) {
+        progressLabel = `${subMastered}/${subQs.length} Mastered`;
+      } else {
+        progressLabel = `${subSecured}/${subQs.length} Secured`;
+      }
       const cleanTitle = sub.title.replace(/^Topic \d\.\d:\s*/, "");
       const subNum = sub.title.match(/Topic\s(\d\.\d)/)?.[1] || "";
       subtopicsHtml += `
@@ -18572,7 +20059,7 @@ ${cleanBrackets(paper.q3d.model)}
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
             <span style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: 0.5px;">LESSON ${subNum}</span>
-            <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${pct}% Mastered</span>
+            <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${progressLabel}</span>
           </div>
           <h3 style="font-size: 0.95rem; font-weight: 600; margin: 0; line-height: 1.3; color: var(--text-main);">${cleanTitle}</h3>
         </div>
@@ -18719,6 +20206,8 @@ ${cleanBrackets(paper.q3d.model)}
         const q = currentQuestion;
         const isBookmarked = state.bookmarks.includes(q.id);
         const ktLabel = formatSubtopicIdToKT(q.subtopicId);
+        const status = getMasteryStatus(q.id);
+        const statusBadgeHtml = getMasteryBadgeHtml(status);
         let mcqOptionsHtml = "";
         if (reinforcing && reinforceMcq) {
           reinforceMcq.options.forEach((opt, idx) => {
@@ -18731,11 +20220,14 @@ ${cleanBrackets(paper.q3d.model)}
         }
         stageContainer.innerHTML = `
         <div class="overview-flashcard-stage" style="perspective: 1000px; position: relative; width: 100%; height: 380px; margin-bottom: 16px;">
-          <div class="flashcard-card" id="overview-flashcard-card" style="cursor: pointer; position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+          <div class="flashcard-card ${reinforcing ? "flipped" : ""}" id="overview-flashcard-card" style="cursor: pointer; position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
             <!-- Front Face -->
             <div class="flashcard-face flashcard-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-glass); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card); background-image: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);">
               <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                  <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
+                  ${statusBadgeHtml}
+                </div>
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
                   <span class="bookmark-icon-container ${isBookmarked ? "bookmarked" : ""}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? "fa-solid" : "fa-regular"} fa-star" style="color: var(--primary);"></i></span>
@@ -18749,7 +20241,10 @@ ${cleanBrackets(paper.q3d.model)}
             <!-- Back Face -->
             <div class="flashcard-face flashcard-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-lg); border: 1px solid var(--border-active); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; background-color: var(--bg-card-hover); background-image: radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%); transform: rotateY(180deg);">
               <div class="card-top" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                  <span class="badge ${q.type === "standard" ? "badge-standard" : "badge-depth"}">${q.type === "standard" ? "Core" : "Level 7-9 Detail"}</span>
+                  ${statusBadgeHtml}
+                </div>
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">${ktLabel}</span>
                   <span class="bookmark-icon-container ${isBookmarked ? "bookmarked" : ""}" data-qid="${q.id}" style="cursor: pointer;"><i class="${isBookmarked ? "fa-solid" : "fa-regular"} fa-star" style="color: var(--primary);"></i></span>
@@ -18758,9 +20253,13 @@ ${cleanBrackets(paper.q3d.model)}
               
               <!-- Standard back body (Question detail) -->
               <div id="overview-flashcard-back-standard-body" style="display: ${reinforcing ? "none" : "flex"}; flex-direction: column; flex: 1; padding: 10px 0; overflow-y: auto; text-align: center; justify-content: center; gap: 4px;">
-                <span class="card-answer-label" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; margin-bottom: 2px;">Correct Answer</span>
-                <h2 class="card-answer-text" style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0 0 6px 0; line-height: 1.2;">${q.answer}</h2>
-                <p class="card-explanation-text" style="font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); margin: 0; max-height: 160px; overflow-y: auto;">${q.explanation}</p>
+                <h2 class="card-answer-text" style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0 0 10px 0; line-height: 1.2;">${q.answer}</h2>
+                <div class="card-back-split-container" style="text-align: left; display: flex; flex-direction: column; gap: 8px; margin-top: 0;">
+                  <div class="context-block" style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--primary); padding: 8px; border-radius: 4px;">
+                    <div class="block-header" style="font-size: 0.75rem; font-weight: 700; color: var(--primary); margin-bottom: 3px;"><i class="fa-solid fa-circle-info"></i> Explanation</div>
+                    <p style="font-size: 0.76rem; line-height: 1.35; color: var(--text-normal); margin: 0;">${EXPLANATION_SPLITS[q.id] ? `${getFactSplit(q).context} ${getFactSplit(q).significance}` : q.explanation}</p>
+                  </div>
+                </div>
               </div>
 
               <!-- MCQ reinforce back body -->
@@ -18844,6 +20343,15 @@ ${cleanBrackets(paper.q3d.model)}
             renderCard();
           }, 300);
         });
+        if (reinforcing && reinforceMcq) {
+          const optionBtns = stageContainer.querySelectorAll(".overview-mcq-option");
+          optionBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const idx = parseInt(btn.getAttribute("data-index"));
+              handleOverviewMcqSelection(idx, btn, document.getElementById("overview-flashcard-back-reinforce-body"), cardEl, q);
+            });
+          });
+        }
         const bkmkBtns = stageContainer.querySelectorAll(".bookmark-icon-container");
         bkmkBtns.forEach((btn) => {
           btn.addEventListener("click", (e) => {
@@ -18900,9 +20408,9 @@ ${cleanBrackets(paper.q3d.model)}
           <span>Inquiry: ${inquiryText}</span>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
-          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${overallPct}% Complete</span>
-          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden;">
-            <div style="background: var(--gradient-main); height: 100%; width: ${overallPct}%;"></div>
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Key Topic Progress: ${totalMastered} Mastered \u2022 ${totalSecured} Secured</span>
+          <div style="background: rgba(255,255,255,0.05); border-radius: 12px; height: 10px; width: 150px; overflow: hidden; display: flex;">
+            <div style="width: 100%; height: 100%; background: linear-gradient(to right, #eab308 0%, #eab308 ${goldPct}%, #06b6d4 ${goldPct}%, #06b6d4 ${goldPct + silverPct}%, transparent ${goldPct + silverPct}%);"></div>
           </div>
         </div>
       </div>
@@ -19702,6 +21210,7 @@ ${cleanBrackets(paper.q3d.model)}
       breakdownList.appendChild(item);
     });
     initExamLeaderboard(state.examSession.scope || "all", pct);
+    addXp(25);
     document.getElementById("exam-runner-panel").style.display = "none";
     document.getElementById("exam-results-panel").style.display = "flex";
   }
@@ -21498,6 +23007,7 @@ ${cleanBrackets(paper.q3d.model)}
   };
 
   // src/lessons.js
+  var viewedSlides = /* @__PURE__ */ new Set();
   var GLOSSARY_DB = {
     "segregation": "The legally or socially enforced separation of different racial groups in public spaces, housing, or education.",
     "desegregation": "The process of ending the separation of racial groups, particularly in schools, transport, and public spaces.",
@@ -21884,6 +23394,7 @@ ${cleanBrackets(paper.q3d.model)}
   }
   function renderMasteryView(subtopicId) {
     highlightedKeywords.clear();
+    viewedSlides.clear();
     const container = document.getElementById("mastery-content-container");
     if (!container) return;
     const data = LESSONS_DATA[subtopicId];
@@ -21945,11 +23456,10 @@ ${cleanBrackets(paper.q3d.model)}
         scholarlyHtml = `
         <details class="scholarly-extension" style="margin-top: 16px;">
           <summary class="scholarly-summary">
-            <i class="fa-solid fa-graduation-cap"></i> Scholarly Perspective - Expand for depth
+            <i class="fa-solid fa-graduation-cap"></i> ${step.scholarlyDepth.title} (Click to expand)
           </summary>
           <div class="scholarly-content" style="margin-top: 12px; font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
             ${scholarlyImgHtml}
-            <strong style="display: block; margin-bottom: 6px; color: var(--primary); font-size: 0.95rem;">${step.scholarlyDepth.title}</strong>
             <p style="margin: 0 0 12px 0; font-style: italic;">${applyGlossaryTooltips(step.scholarlyDepth.body)}</p>
             ${scholarlySourceHtml}
           </div>
@@ -23522,6 +25032,7 @@ ${cleanBrackets(paper.q3d.model)}
               linkedFactors.add(f.id);
               if (linkedFactors.size === totalFactors) {
                 AudioEngine.play("cheer");
+                addXp(15);
                 const successPanel = document.getElementById("causal-success-panel");
                 if (successPanel) {
                   successPanel.style.display = "block";
@@ -23616,6 +25127,11 @@ ${cleanBrackets(paper.q3d.model)}
       let updateStepUI = function(index) {
         currentStep = index;
         AudioEngine.play("click");
+        const slideKey = `${state.selectedSubtopicId || "unknown"}_${index}`;
+        if (!viewedSlides.has(slideKey)) {
+          viewedSlides.add(slideKey);
+          addXp(5);
+        }
         stepNodes.forEach((node, idx) => {
           node.classList.remove("active");
           node.style.borderColor = "var(--border-glass)";
@@ -24807,7 +26323,7 @@ ${cleanBrackets(paper.q3d.model)}
       }, 5e3);
     };
     if (!bannerListenerInitialized) {
-      container.addEventListener("click", () => {
+      const cycleQuote = () => {
         AudioEngine.play("click");
         const config2 = BRAND_CONFIG.units["conflict_middle_east"];
         if (config2) {
@@ -24819,7 +26335,12 @@ ${cleanBrackets(paper.q3d.model)}
           container.style.opacity = "1";
           startDismissTimer();
         }
-      });
+      };
+      container.addEventListener("click", cycleQuote);
+      const logoEl = document.getElementById("header-brand-logo");
+      if (logoEl) {
+        logoEl.addEventListener("click", cycleQuote);
+      }
       bannerListenerInitialized = true;
     }
     const config = BRAND_CONFIG.units["conflict_middle_east"];
@@ -24860,6 +26381,14 @@ ${cleanBrackets(paper.q3d.model)}
       if (viewTitle) viewTitle.textContent = "Study Dashboard";
       state.selectedSubtopicId = null;
       renderDashboard2();
+    } else if (viewName === "leaderboard") {
+      const leaderboardNav = document.getElementById("nav-leaderboard");
+      if (leaderboardNav) leaderboardNav.classList.add("active");
+      if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
+      const viewTitle = document.getElementById("current-view-title");
+      if (viewTitle) viewTitle.textContent = "Streak & Level Leaderboard";
+      state.selectedSubtopicId = null;
+      openStreakLeaderboard();
     } else if (viewName === "bookmarks") {
       const bookmarksNav = document.getElementById("nav-bookmarks");
       if (bookmarksNav) bookmarksNav.classList.add("active");
@@ -24911,6 +26440,14 @@ ${cleanBrackets(paper.q3d.model)}
       if (viewTitle) viewTitle.textContent = "2-Minute AI Video Overview";
       state.selectedSubtopicId = null;
       renderAiVideosView();
+    } else if (viewName === "map") {
+      const mapNav = document.getElementById("nav-map");
+      if (mapNav) mapNav.classList.add("active");
+      if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
+      const viewTitle = document.getElementById("current-view-title");
+      if (viewTitle) viewTitle.textContent = "Geographic Map Explorer";
+      state.selectedSubtopicId = null;
+      window.dispatchEvent(new CustomEvent("mapViewActivated"));
     } else if (viewName === "flashcards") {
       state.selectedSubtopicId = subtopicId;
       if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
@@ -24964,6 +26501,7 @@ ${cleanBrackets(paper.q3d.model)}
       "dashboard": "view-dashboard",
       "bookmarks": "view-bookmarks",
       "timeline": "view-timeline",
+      "map": "view-map",
       "exam": "view-exam",
       "classic": "view-classic",
       "flashcards": "view-flashcards",
@@ -24971,7 +26509,8 @@ ${cleanBrackets(paper.q3d.model)}
       "games": "view-games",
       "exam-hub": "view-exam-hub",
       "key-topic": "view-key-topic",
-      "ai-videos": "view-ai-videos"
+      "ai-videos": "view-ai-videos",
+      "leaderboard": "view-leaderboard"
     };
     const targetViewId = viewName === "subtopic" ? viewIdMap[state.currentMode] : viewIdMap[viewName];
     document.querySelectorAll(".content-view").forEach((view) => {
@@ -25268,6 +26807,10 @@ ${cleanBrackets(paper.q3d.model)}
       AudioEngine.play("click");
       switchView("timeline");
     });
+    document.getElementById("nav-map").addEventListener("click", () => {
+      AudioEngine.play("click");
+      switchView("map");
+    });
     document.getElementById("nav-exam-sim").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("exam");
@@ -25280,10 +26823,24 @@ ${cleanBrackets(paper.q3d.model)}
       AudioEngine.play("click");
       switchView("ai-videos");
     });
+    const navLeaderboard = document.getElementById("nav-leaderboard");
+    if (navLeaderboard) {
+      navLeaderboard.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("leaderboard");
+      });
+    }
     document.getElementById("shortcut-timeline").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("timeline");
     });
+    const shortcutMap = document.getElementById("shortcut-map");
+    if (shortcutMap) {
+      shortcutMap.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("map");
+      });
+    }
     document.getElementById("shortcut-exam-sim").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("exam");
@@ -25304,11 +26861,24 @@ ${cleanBrackets(paper.q3d.model)}
       AudioEngine.play("click");
       switchView("ai-videos");
     });
-    document.getElementById("menu-toggle").addEventListener("click", toggleMobileSidebar);
-    document.getElementById("sidebar-overlay").addEventListener("click", closeMobileSidebar);
+    const menuToggle = document.getElementById("menu-toggle");
+    if (menuToggle) {
+      menuToggle.addEventListener("click", toggleMobileSidebar);
+    }
+    const sidebarOverlay = document.getElementById("sidebar-overlay");
+    if (sidebarOverlay) {
+      sidebarOverlay.addEventListener("click", closeMobileSidebar);
+    }
     const backBtn = document.getElementById("header-back-btn");
     if (backBtn) {
       backBtn.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("dashboard");
+      });
+    }
+    const leaderboardBackBtn = document.getElementById("btn-leaderboard-back");
+    if (leaderboardBackBtn) {
+      leaderboardBackBtn.addEventListener("click", () => {
         AudioEngine.play("click");
         switchView("dashboard");
       });
@@ -25391,6 +26961,30 @@ ${cleanBrackets(paper.q3d.model)}
         AudioEngine.play("click");
         peopleToggle.classList.toggle("active");
         renderTimelineView();
+      });
+    }
+    const causalToggle = document.getElementById("timeline-causal-toggle");
+    if (causalToggle) {
+      causalToggle.addEventListener("click", () => {
+        AudioEngine.play("click");
+        causalToggle.classList.toggle("active");
+        renderTimelineView();
+      });
+    }
+    const timelineView = document.getElementById("view-timeline");
+    const backToTopBtn = document.getElementById("btn-timeline-back-to-top");
+    if (timelineView && backToTopBtn) {
+      timelineView.addEventListener("scroll", () => {
+        if (timelineView.scrollTop > 300) {
+          backToTopBtn.style.display = "flex";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      });
+      backToTopBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        AudioEngine.play("click");
+        timelineView.scrollTo({ top: 0, behavior: "smooth" });
       });
     }
     const bindStarter = (btnId, textareaId, template) => {
@@ -26266,7 +27860,7 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         if (state.flashcardSession.reinforcing) return;
         if (cardEl.classList.contains("swipe-right") || cardEl.classList.contains("swipe-left")) return;
         const target = e.target;
-        if (target.closest("button") || target.closest(".bookmark-icon-container") || target.closest("#flashcard-reinforce-options")) {
+        if (target.closest("button") || target.closest(".bookmark-icon-container") || target.closest("#flashcard-reinforce-options") || target.closest(".rubric-checklist-container")) {
           return;
         }
         if (!cardEl.contains(target)) return;
@@ -26789,25 +28383,129 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         }
       });
     });
+    const getStoredItem = (edexcelKey, fireflyKey) => {
+      return localStorage.getItem(edexcelKey) || localStorage.getItem(fireflyKey);
+    };
     try {
-      const storedMastery = localStorage.getItem("edexcel_mastery") || localStorage.getItem("firefly_mastery");
-      const storedBookmarks = localStorage.getItem("edexcel_bookmarks") || localStorage.getItem("firefly_bookmarks");
-      const storedSound = localStorage.getItem("edexcel_sound") || localStorage.getItem("firefly_sound");
-      let storedTheme = localStorage.getItem("edexcel_theme") || localStorage.getItem("firefly_theme");
-      const storedPastAnswers = localStorage.getItem("edexcel_past_answers");
-      const storedPastCompleted = localStorage.getItem("edexcel_past_completed");
-      if (storedMastery) state.mastery = JSON.parse(storedMastery);
-      if (storedBookmarks) state.bookmarks = JSON.parse(storedBookmarks);
-      if (storedSound) state.soundEnabled = JSON.parse(storedSound);
-      if (storedTheme) state.theme = storedTheme;
-      if (storedPastAnswers) state.pastPaperSession.answers = JSON.parse(storedPastAnswers);
-      if (storedPastCompleted) state.pastPaperSession.completedQuestions = JSON.parse(storedPastCompleted);
-      const storedDeepThinking = localStorage.getItem("edexcel_deep_thinking");
-      if (storedDeepThinking) state.deepThinkingAnswers = JSON.parse(storedDeepThinking);
-      const storedHowUseful = localStorage.getItem("edexcel_how_useful");
-      if (storedHowUseful) state.howUsefulAnswers = JSON.parse(storedHowUseful);
-      const storedObjectives = localStorage.getItem("edexcel_spec_objectives");
-      if (storedObjectives) state.specObjectives = JSON.parse(storedObjectives);
+      const storedMasteryVal = getStoredItem("edexcel_mastery", "firefly_mastery");
+      if (storedMasteryVal) {
+        try {
+          const parsed = JSON.parse(storedMasteryVal);
+          if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+            state.mastery = parsed;
+          }
+        } catch (e) {
+          console.error("Error parsing stored mastery:", e);
+        }
+      }
+      const storedBookmarksVal = getStoredItem("edexcel_bookmarks", "firefly_bookmarks");
+      if (storedBookmarksVal) {
+        try {
+          const parsed = JSON.parse(storedBookmarksVal);
+          if (Array.isArray(parsed)) {
+            state.bookmarks = parsed;
+          }
+        } catch (e) {
+          console.error("Error parsing stored bookmarks:", e);
+        }
+      }
+      const storedSoundVal = getStoredItem("edexcel_sound", "firefly_sound");
+      if (storedSoundVal) {
+        try {
+          const parsed = JSON.parse(storedSoundVal);
+          state.soundEnabled = !!parsed;
+        } catch (e) {
+        }
+      }
+      const storedThemeVal = getStoredItem("edexcel_theme", "firefly_theme");
+      if (storedThemeVal) {
+        state.theme = storedThemeVal;
+      }
+      const storedPastAnswersVal = localStorage.getItem("edexcel_past_answers");
+      if (storedPastAnswersVal) {
+        try {
+          const parsed = JSON.parse(storedPastAnswersVal);
+          if (parsed && typeof parsed === "object") {
+            state.pastPaperSession.answers = parsed;
+          }
+        } catch (e) {
+        }
+      }
+      const storedPastCompletedVal = localStorage.getItem("edexcel_past_completed");
+      if (storedPastCompletedVal) {
+        try {
+          const parsed = JSON.parse(storedPastCompletedVal);
+          if (Array.isArray(parsed)) {
+            state.pastPaperSession.completedQuestions = parsed;
+          }
+        } catch (e) {
+        }
+      }
+      const storedDeepThinkingVal = localStorage.getItem("edexcel_deep_thinking");
+      if (storedDeepThinkingVal) {
+        try {
+          const parsed = JSON.parse(storedDeepThinkingVal);
+          if (parsed && typeof parsed === "object") {
+            state.deepThinkingAnswers = parsed;
+          }
+        } catch (e) {
+        }
+      }
+      const storedHowUsefulVal = localStorage.getItem("edexcel_how_useful");
+      if (storedHowUsefulVal) {
+        try {
+          const parsed = JSON.parse(storedHowUsefulVal);
+          if (parsed && typeof parsed === "object") {
+            state.howUsefulAnswers = parsed;
+          }
+        } catch (e) {
+        }
+      }
+      const storedObjectivesVal = localStorage.getItem("edexcel_spec_objectives");
+      if (storedObjectivesVal) {
+        try {
+          const parsed = JSON.parse(storedObjectivesVal);
+          if (parsed && typeof parsed === "object") {
+            state.specObjectives = parsed;
+          }
+        } catch (e) {
+        }
+      }
+      const storedSpeedStudy = localStorage.getItem("edexcel_prefs_speed_study");
+      if (storedSpeedStudy) {
+        try {
+          state.flashcardSession.speedStudyMode = JSON.parse(storedSpeedStudy) === true;
+        } catch (e) {
+        }
+      }
+      const storedStats = localStorage.getItem("edexcel_prefs_user_stats");
+      if (storedStats) {
+        try {
+          const parsed = JSON.parse(storedStats);
+          if (parsed && typeof parsed === "object") {
+            state.userStats = { ...state.userStats, ...parsed };
+          }
+        } catch (e) {
+        }
+      }
+      const todayStr = (/* @__PURE__ */ new Date()).toDateString();
+      if (state.userStats.lastLoginDate) {
+        const lastLogin = new Date(state.userStats.lastLoginDate);
+        const today = new Date(todayStr);
+        const diffTime = today - lastLogin;
+        const diffDays = Math.floor(diffTime / (1e3 * 60 * 60 * 24));
+        if (diffDays === 1) {
+          state.userStats.streak += 1;
+          state.userStats.lastLoginDate = todayStr;
+        } else if (diffDays > 1) {
+          state.userStats.streak = 1;
+          state.userStats.lastLoginDate = todayStr;
+        }
+      } else {
+        state.userStats.streak = 1;
+        state.userStats.lastLoginDate = todayStr;
+      }
+      localStorage.setItem("edexcel_prefs_user_stats", JSON.stringify(state.userStats));
     } catch (e) {
       console.error("LocalStorage load error:", e);
     }
@@ -26853,22 +28551,62 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       localStorage.setItem("edexcel_deep_thinking", JSON.stringify(state.deepThinkingAnswers || {}));
       localStorage.setItem("edexcel_how_useful", JSON.stringify(state.howUsefulAnswers || {}));
       localStorage.setItem("edexcel_spec_objectives", JSON.stringify(state.specObjectives || {}));
+      localStorage.setItem("edexcel_prefs_speed_study", JSON.stringify(state.flashcardSession.speedStudyMode));
+      localStorage.setItem("edexcel_prefs_user_stats", JSON.stringify(state.userStats));
     } catch (e) {
       console.error("LocalStorage save error:", e);
     }
     updateGlobalStats();
   }
+  function getMasteryStatus(questionId) {
+    if (!state.mastery) return null;
+    const entry = state.mastery[questionId];
+    if (!entry) return null;
+    if (entry === true) return "secured";
+    if (typeof entry === "string") return entry;
+    return entry.status || "secured";
+  }
   function setMastered(questionId, isMastered) {
-    const previousStatus = !!state.mastery[questionId];
-    if (previousStatus === isMastered) return;
-    state.mastery[questionId] = isMastered;
+    if (!isMastered) {
+      if (state.mastery[questionId]) {
+        delete state.mastery[questionId];
+        saveProgress();
+      }
+      return;
+    }
+    const entry = state.mastery[questionId];
+    let newStatus = "secured";
+    const now = Date.now();
+    if (entry) {
+      if (entry === true) {
+        newStatus = "secured";
+      } else if (typeof entry === "object") {
+        if (entry.status === "secured") {
+          const hoursElapsed = (now - (entry.timestamp || 0)) / (1e3 * 60 * 60);
+          if (hoursElapsed >= 24) {
+            newStatus = "mastered";
+          } else {
+            newStatus = "secured";
+          }
+        } else if (entry.status === "mastered") {
+          newStatus = "mastered";
+        }
+      }
+    }
+    state.mastery[questionId] = {
+      status: newStatus,
+      timestamp: now
+    };
     saveProgress();
-    if (isMastered) {
+    if (newStatus === "mastered") {
       const question = state.allQuestions.find((q) => q.id === questionId);
       if (question) {
         const subtopicQuestions = state.allQuestions.filter((q) => q.subtopicId === question.subtopicId);
-        const masteredInSubtopic = subtopicQuestions.filter((q) => state.mastery[q.id]);
-        if (masteredInSubtopic.length === subtopicQuestions.length) {
+        const fullyMastered = subtopicQuestions.every((q) => {
+          const status = getMasteryStatus(q.id);
+          return status === "mastered";
+        });
+        if (fullyMastered) {
           AudioEngine.play("cheer");
           Confetti.spawn(100);
         }
@@ -28519,6 +30257,771 @@ Here are some questions you can ask me about this lesson:`;
     }
   }
 
+  // src/essay_planner.js
+  var PLANNER_PROMPTS = {
+    prompt_boycott: {
+      title: "Explain why the Montgomery Bus Boycott was successful (1955-56)",
+      sentences: [
+        { type: "P", text: "One major reason for the boycott's success was the highly organized coordination of the community, led by the Montgomery Improvement Association (MIA)." },
+        { type: "E", text: "Under the leadership of Martin Luther King Jr., the MIA established an intricate carpool network of over 300 vehicles, transporting boycotters daily and keeping bus revenue down by 65% for 381 days." },
+        { type: "EL", text: "This extensive organization sustained the boycott over a long duration, forcing the bus company into financial crisis and drawing national media attention that pressurized the city." },
+        { type: "L", text: "Consequently, the community's disciplined organization and economic pressure directly resulted in the boycott successfully achieving desegregation on buses." }
+      ],
+      vocab: [
+        { word: "Montgomery Improvement Association (MIA)", synonyms: ["mia", "montgomery improvement association"] },
+        { word: "Martin Luther King Jr.", synonyms: ["martin luther king", "mlk", "king jr"] },
+        { word: "381 days", synonyms: ["381 days", "381-day"] },
+        { word: "Browder v. Gayle", synonyms: ["browder v. gayle", "browder v gayle", "browder"] }
+      ]
+    },
+    prompt_little_rock: {
+      title: "Explain why the integration of Little Rock High School was significant (1957)",
+      sentences: [
+        { type: "P", text: "The integration of Little Rock Central High School was significant because it forced direct federal intervention to enforce desegregation in the face of local state resistance." },
+        { type: "E", text: "Governor Orval Faubus used the Arkansas National Guard to block the Little Rock Nine, which compelled President Eisenhower to send 1,200 soldiers of the 101st Airborne Division to escort the students." },
+        { type: "EL", text: "This demonstrated that the federal government was prepared to deploy armed forces to support civil rights, establishing federal supremacy over states' rights in constitutional matters." },
+        { type: "L", text: "Thus, the events at Little Rock were a landmark because they proved federal law would be actively enforced against segregationist state governments." }
+      ],
+      vocab: [
+        { word: "Little Rock Nine", synonyms: ["little rock nine", "nine black students"] },
+        { word: "Orval Faubus", synonyms: ["faubus", "orval faubus"] },
+        { word: "101st Airborne Division", synonyms: ["101st airborne", "airborne division", "101st"] },
+        { word: "Dwight Eisenhower", synonyms: ["eisenhower", "president eisenhower", "dwight"] }
+      ]
+    },
+    prompt_vietnam_involvement: {
+      title: "Explain why the US became increasingly involved in Vietnam under President Johnson (1964-65)",
+      sentences: [
+        { type: "P", text: "A primary cause of increased US involvement in Vietnam was the Gulf of Tonkin incident, which President Johnson used to gain congressional authorization for direct military operations." },
+        { type: "E", text: "In August 1964, following alleged attacks on the USS Maddox, Congress passed the Gulf of Tonkin Resolution, giving Johnson power to take 'all necessary measures,' leading to Operation Rolling Thunder in 1965." },
+        { type: "EL", text: "This resolution bypassed formal declarations of war, allowing the rapid deployment of combat troops to protect South Vietnam from a communist takeover, escalating commitment." },
+        { type: "L", text: "Ultimately, the Gulf of Tonkin incident was the key turning point that justified and enabled the massive escalation of US military involvement." }
+      ],
+      vocab: [
+        { word: "Gulf of Tonkin Resolution", synonyms: ["gulf of tonkin resolution", "tonkin resolution"] },
+        { word: "USS Maddox", synonyms: ["maddox", "uss maddox"] },
+        { word: "Operation Rolling Thunder", synonyms: ["rolling thunder", "operation rolling thunder"] },
+        { word: "Lyndon B. Johnson", synonyms: ["johnson", "lbj", "president johnson"] }
+      ]
+    },
+    prompt_vietnam_protest: {
+      title: "Explain why the anti-war movement grew so rapidly in the USA in the late 1960s",
+      sentences: [
+        { type: "P", text: "One key cause of the rapid growth of the anti-war movement was the introduction of the draft system, which forced young Americans to fight in an increasingly unpopular conflict." },
+        { type: "E", text: "Between 1965 and 1969, over 2 million young men were conscripted through the draft, leading to widespread draft-card burning and protests at universities like Kent State." },
+        { type: "EL", text: "Because the draft disproportionately affected working-class and minority students who had no voting rights, it energized the youth movement and generated deep resentment." },
+        { type: "L", text: "Therefore, the direct personal threat of the military draft was a major catalyst that mobilized public opposition and expanded the anti-war protests." }
+      ],
+      vocab: [
+        { word: "Kent State", synonyms: ["kent state", "kent state university"] },
+        { word: "Draft system / Conscription", synonyms: ["draft", "conscription", "draft-card"] },
+        { word: "Draft-card burning", synonyms: ["draft-card burning", "burning draft cards", "burn their draft"] },
+        { word: "Working-class / Minorities", synonyms: ["working class", "working-class", "minorities", "african americans"] }
+      ]
+    }
+  };
+  var activePrompt = null;
+  var activePromptId = "";
+  var selectedSentenceText = "";
+  var selectedSentenceType = "";
+  var selectedSentenceEl = null;
+  var bucketAnswers = { P: false, E: false, EL: false, L: false };
+  function initEssayPlanner() {
+    const promptSelect = document.getElementById("planner-prompt-select");
+    if (!promptSelect) return;
+    promptSelect.addEventListener("change", (e) => {
+      loadEssayPrompt(e.target.value);
+    });
+    const buckets = ["p", "e", "el", "l"];
+    buckets.forEach((bId) => {
+      const bucket = document.getElementById(`bucket-${bId}`);
+      if (bucket) {
+        bucket.addEventListener("click", () => {
+          handleBucketPlacement(bucket);
+        });
+      }
+    });
+    const draftArea = document.getElementById("planner-essay-draft");
+    if (draftArea) {
+      draftArea.addEventListener("input", () => {
+        updateVocabChecklist(draftArea.value);
+      });
+    }
+    const evaluateBtn = document.getElementById("btn-planner-evaluate");
+    if (evaluateBtn) {
+      evaluateBtn.addEventListener("click", () => {
+        evaluateEssayDraft();
+      });
+    }
+  }
+  function loadEssayPrompt(promptId) {
+    const prompt = PLANNER_PROMPTS[promptId];
+    if (!prompt) return;
+    activePrompt = prompt;
+    activePromptId = promptId;
+    selectedSentenceText = "";
+    selectedSentenceType = "";
+    selectedSentenceEl = null;
+    bucketAnswers = { P: false, E: false, EL: false, L: false };
+    document.getElementById("planner-workspace").style.display = "block";
+    document.getElementById("planner-draft-section").style.display = "none";
+    document.getElementById("planner-evaluation-results").style.display = "none";
+    const draftArea = document.getElementById("planner-essay-draft");
+    if (draftArea) draftArea.value = "";
+    const buckets = ["p", "e", "el", "l"];
+    buckets.forEach((bId) => {
+      const bucket = document.getElementById(`bucket-${bId}`);
+      const status = bucket.querySelector(".peel-bucket-status");
+      const content = bucket.querySelector(".peel-bucket-content");
+      bucket.style.borderColor = "var(--border-glass)";
+      bucket.style.background = "rgba(0,0,0,0.05)";
+      bucket.style.pointerEvents = "auto";
+      status.textContent = "UNRESOLVED";
+      status.style.color = "var(--text-muted)";
+      if (bId === "p") content.textContent = "Click a sentence above, then click here to place it...";
+      if (bId === "e") content.textContent = "Click a sentence above, then click here to place it...";
+      if (bId === "el") content.textContent = "Click a sentence above, then click here to place it...";
+      if (bId === "l") content.textContent = "Click a sentence above, then click here to place it...";
+    });
+    const scrambledList = document.getElementById("planner-scrambled-list");
+    scrambledList.innerHTML = "";
+    const shuffled = [...prompt.sentences].sort(() => Math.random() - 0.5);
+    shuffled.forEach((s, idx) => {
+      const card = document.createElement("div");
+      card.className = "topic-list-card";
+      card.style.margin = "0";
+      card.style.padding = "12px 16px";
+      card.style.fontSize = "0.88rem";
+      card.style.lineHeight = "1.4";
+      card.style.textAlign = "left";
+      card.textContent = s.text;
+      card.setAttribute("data-type", s.type);
+      card.addEventListener("click", () => {
+        const activeCard = scrambledList.querySelector(".topic-list-card.active-card");
+        if (activeCard) {
+          activeCard.classList.remove("active-card");
+          activeCard.style.borderColor = "var(--border-glass)";
+          activeCard.style.background = "var(--bg-card)";
+        }
+        card.classList.add("active-card");
+        card.style.borderColor = "var(--primary)";
+        card.style.background = "var(--primary-glow)";
+        selectedSentenceText = s.text;
+        selectedSentenceType = s.type;
+        selectedSentenceEl = card;
+        AudioEngine.play("click");
+      });
+      scrambledList.appendChild(card);
+    });
+  }
+  function handleBucketPlacement(bucket) {
+    if (!selectedSentenceText || !selectedSentenceEl) {
+      AudioEngine.play("click");
+      alert("Please select a sentence card above first, then click on the target PEEL bucket!");
+      return;
+    }
+    const expectedType = bucket.getAttribute("data-type");
+    if (selectedSentenceType === expectedType) {
+      AudioEngine.play("success");
+      const content = bucket.querySelector(".peel-bucket-content");
+      const status = bucket.querySelector(".peel-bucket-status");
+      content.textContent = selectedSentenceText;
+      bucket.style.borderColor = "var(--success)";
+      bucket.style.background = "rgba(34, 197, 94, 0.05)";
+      bucket.style.pointerEvents = "none";
+      status.textContent = "CORRECT!";
+      status.style.color = "var(--success)";
+      bucketAnswers[expectedType] = true;
+      selectedSentenceEl.remove();
+      selectedSentenceText = "";
+      selectedSentenceType = "";
+      selectedSentenceEl = null;
+      checkStep1Completion();
+    } else {
+      AudioEngine.play("fail");
+      bucket.classList.add("shake");
+      setTimeout(() => {
+        bucket.classList.remove("shake");
+      }, 450);
+      const friendlyName = expectedType === "P" ? "Point" : expectedType === "E" ? "Evidence" : expectedType === "EL" ? "Explanation" : "Link";
+      alert(`Historically or structurally incorrect! This sentence is not the [${friendlyName}]. Look at structural connectives or specific evidence indicators.`);
+    }
+  }
+  function checkStep1Completion() {
+    const allSorted = Object.values(bucketAnswers).every((v) => v === true);
+    if (allSorted) {
+      AudioEngine.play("cheer");
+      Confetti.spawn(80);
+      addXp(10);
+      const sortedSentences = ["P", "E", "EL", "L"].map((type) => {
+        return activePrompt.sentences.find((s) => s.type === type).text;
+      });
+      const draftArea = document.getElementById("planner-essay-draft");
+      if (draftArea) {
+        draftArea.value = sortedSentences.join("\n\n");
+      }
+      const checklist = document.getElementById("planner-vocab-checklist");
+      checklist.innerHTML = activePrompt.vocab.map((v, idx) => `
+      <div class="vocab-checklist-item" id="vocab-item-${idx}" style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); font-size: 0.82rem; color: var(--text-normal); transition: all 0.2s;">
+        <i class="fa-regular fa-square" style="font-size: 1.1rem; color: var(--text-muted);"></i>
+        <strong>${v.word}</strong>
+      </div>
+    `).join("");
+      document.getElementById("planner-draft-section").style.display = "block";
+      updateVocabChecklist(draftArea ? draftArea.value : "");
+      setTimeout(() => {
+        document.getElementById("planner-draft-section").scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 200);
+    }
+  }
+  function updateVocabChecklist(text) {
+    if (!activePrompt) return;
+    const textLower = text.toLowerCase();
+    activePrompt.vocab.forEach((v, idx) => {
+      const el = document.getElementById(`vocab-item-${idx}`);
+      if (!el) return;
+      const matched = v.synonyms.some((syn) => textLower.includes(syn));
+      const checkbox = el.querySelector("i");
+      if (matched) {
+        el.style.background = "rgba(34, 197, 94, 0.05)";
+        el.style.borderColor = "var(--success)";
+        el.style.color = "var(--success)";
+        checkbox.className = "fa-solid fa-square-check";
+        checkbox.style.color = "var(--success)";
+      } else {
+        el.style.background = "rgba(255,255,255,0.02)";
+        el.style.borderColor = "var(--border-glass)";
+        el.style.color = "var(--text-normal)";
+        checkbox.className = "fa-regular fa-square";
+        checkbox.style.color = "var(--text-muted)";
+      }
+    });
+  }
+  function evaluateEssayDraft() {
+    const draftArea = document.getElementById("planner-essay-draft");
+    if (!draftArea || !activePrompt) return;
+    const text = draftArea.value.trim();
+    const textLower = text.toLowerCase();
+    if (text.split(/\s+/).filter((w) => w.length > 0).length < 40) {
+      AudioEngine.play("click");
+      alert("Your paragraph draft seems too short! A strong GCSE analytical PEEL paragraph should contain at least 40 words to elaborate on evidence and explanation.");
+      return;
+    }
+    let matchedCount = 0;
+    activePrompt.vocab.forEach((v) => {
+      if (v.synonyms.some((syn) => textLower.includes(syn))) {
+        matchedCount++;
+      }
+    });
+    let grade = "Apprentice";
+    let gradeTitle = "Scholar (Grade 4/5 Equivalent)";
+    let gradeColor = "var(--text-muted)";
+    let feedback = "";
+    if (matchedCount === 4) {
+      grade = "Master";
+      gradeTitle = "Master (Grade 9 Equivalent)";
+      gradeColor = "var(--success)";
+      feedback = `\u{1F389} <strong>Exceptional analytical draft!</strong> You successfully integrated all four essential historical terms and maintained the strict PEEL structure. Your response shows deep conceptual knowledge and is fully aligned with Grade 9 Edexcel requirements. Keep up this standard of high-impact historical writing!`;
+      AudioEngine.play("cheer");
+      Confetti.spawn(100);
+      addXp(15);
+    } else if (matchedCount === 3) {
+      grade = "Expert";
+      gradeTitle = "Expert (Grade 7/8 Equivalent)";
+      gradeColor = "var(--primary)";
+      feedback = `\u{1F44D} <strong>Excellent PEEL paragraph!</strong> You integrated three key vocabulary terms, providing solid historical detail. To push this to a Grade 9 (Master), ensure you reference the final keyword in your explanation or link phase to maximize credit for specialized factual knowledge.`;
+      AudioEngine.play("success");
+      addXp(5);
+    } else if (matchedCount === 2) {
+      grade = "Scholar";
+      gradeTitle = "Scholar (Grade 5/6 Equivalent)";
+      gradeColor = "var(--secondary)";
+      feedback = `\u{1F4C8} <strong>Good start, but needs more historical detail.</strong> Your paragraph structure is clear, but integrating only two key terms limits your evidence marks. Try to expand your evidence section with specific facts, such as names or statistics shown in the checklist.`;
+      AudioEngine.play("success");
+    } else {
+      grade = "Apprentice";
+      gradeTitle = "Apprentice (Below Grade 4)";
+      gradeColor = "var(--accent)";
+      feedback = `\u26A0\uFE0F <strong>Needs revision and more factual depth.</strong> Make sure your paragraph follows the PEEL structure. Point, Evidence, Explanation, and Link are all required. Make sure to check the checklist and write about the specific details listed there to support your causation argument.`;
+      AudioEngine.play("fail");
+    }
+    const resultsEl = document.getElementById("planner-evaluation-results");
+    const gradeCircle = document.getElementById("planner-results-grade-circle");
+    const gradeTitleEl = document.getElementById("planner-results-grade-title");
+    const feedbackEl = document.getElementById("planner-results-feedback");
+    gradeCircle.textContent = grade;
+    gradeCircle.style.borderColor = gradeColor;
+    gradeCircle.style.color = gradeColor;
+    gradeTitleEl.textContent = gradeTitle;
+    feedbackEl.innerHTML = feedback;
+    resultsEl.style.display = "block";
+    setTimeout(() => {
+      resultsEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 200);
+  }
+
+  // src/map_explorer.js
+  var MAP_LOCATIONS_USA = [
+    {
+      lat: 39.0473,
+      lng: -95.6752,
+      title: "Topeka: Brown v. Board of Education National Historical Park (Monroe Elementary School)",
+      body: "Monroe Elementary School served as a key school in the challenged Topeka segregation system. The 1954 Supreme Court ruling unanimously declared public school segregation unconstitutional.",
+      imageUrl: "assets/sources/warren-court-1954.jpg",
+      scholarlyContext: "Topeka, Kansas represented a central midwestern state, deliberately chosen by the NAACP legal team to show that school segregation was not just a Southern problem but a nationwide issue. Monroe Elementary School was located in a mixed working-class neighborhood. The geographic dispersal of segregation laws across different states (some mandatory, some optional, like Kansas) made Topeka a prime battleground to challenge the nationwide constitutionality of Plessy v. Ferguson.",
+      researchLinks: [
+        { label: "Monroe School National Historic Site", url: "https://www.nps.gov/brvb/index.htm" },
+        { label: "NAACP Legal Defense Fund Case Archives", url: "https://www.naacpldf.org/case-record/brown-v-board-of-education/" }
+      ],
+      subtopicId: "subtopic_1_1"
+    },
+    {
+      lat: 32.3734,
+      lng: -86.3154,
+      title: "Montgomery: The Legacy Museum & National Memorial for Peace and Justice",
+      body: "Built on the site of a former slave pen, this memorial and museum commemorate victims of racial terror and Jim Crow segregation in the American South.",
+      imageUrl: "assets/sources/rosa-parks-bus-1956.jpg",
+      scholarlyContext: "Montgomery, Alabama was a major domestic slave-trading hub before the Civil War. The Legacy Museum is built on a site where enslaved people were warehoused and forced to work. The nearby National Memorial for Peace and Justice uses hanging steel monuments to represent the counties where over 4,400 documented racial terror lynchings occurred. The geographic placement of these monuments reflects the spatial realities of Jim Crow racial violence and terror designed to enforce white supremacy.",
+      researchLinks: [
+        { label: "EJI Legacy Museum & National Memorial", url: "https://museumandmemorial.eji.org/" },
+        { label: "The King Institute - Montgomery Bus Boycott", url: "https://kinginstitute.stanford.edu/encyclopedia/montgomery-bus-boycott" }
+      ],
+      subtopicId: "subtopic_1_2"
+    },
+    {
+      lat: 34.7368,
+      lng: -92.2996,
+      title: "Little Rock: Central High School National Historic Site",
+      body: "An active school and National Park site commemorating the 1957 integration crisis, where federal troops enforced desegregation against state resistance.",
+      imageUrl: "assets/sources/airborne-little-rock-patrol.jpg",
+      scholarlyContext: "Little Rock, Arkansas became the flashpoint of federal vs. state authority. The school district's integration plan was localized, but governor defiance led to a militarized zone at Central High. The spatial encirclement of the school by the Arkansas National Guard was bypassed when President Eisenhower placed the Guard under federal control and deployed the 101st Airborne, establishing military patrols around the school's physical perimeter to enforce desegregation.",
+      researchLinks: [
+        { label: "Little Rock Central High National Historic Site", url: "https://www.nps.gov/chsc/index.htm" },
+        { label: "National Archives - Little Rock Integration Documents", url: "https://www.archives.gov/education/lessons/federall-troops-little-rock" }
+      ],
+      subtopicId: "subtopic_1_2"
+    },
+    {
+      lat: 36.0726,
+      lng: -79.792,
+      title: "Greensboro: International Civil Rights Center & Museum (Woolworth Building)",
+      body: "Preserves the original lunch counter where four A&T students began the sit-in movement in 1960, challenging segregated commercial spaces.",
+      imageUrl: "assets/sources/greensboro-sit-in-counter.jpg",
+      scholarlyContext: "Greensboro, North Carolina was a college town with a significant population of young Black scholars. The F.W. Woolworth store was a commercial hub. The sit-in targeted the physical counter\u2014a highly visible, segregated retail space. The spatial spreading of the sit-in tactic across the South followed major transit lines and college networks, illustrating the geography of nonviolent contagion and economic pressure.",
+      researchLinks: [
+        { label: "International Civil Rights Center & Museum", url: "https://www.sitinmovement.org/" },
+        { label: "Civil Rights Greensboro Archive", url: "https://library.uncg.edu/dp/crg/" }
+      ],
+      subtopicId: "subtopic_2_1"
+    },
+    {
+      lat: 33.5161,
+      lng: -86.8143,
+      title: "Birmingham: Birmingham Civil Rights Institute & Kelly Ingram Park",
+      body: "Situated in the historic civil rights district, commemorating Project C marches and the 16th Street Baptist Church bombing of 1963.",
+      imageUrl: "assets/sources/birmingham-protests-dogs-1963.jpg",
+      scholarlyContext: "Birmingham, Alabama ('Bombingham') was highly segregated industrially and residentially. Project C targeted commercial districts to disrupt retail revenue. Kelly Ingram Park, adjacent to the 16th Street Baptist Church, became the spatial arena where Bull Connor deployed fire hoses and dogs. The containment of protests in this park created iconic news images that forced federal intervention and led to the Civil Rights Act.",
+      researchLinks: [
+        { label: "Birmingham Civil Rights Institute", url: "https://www.bcri.org/" },
+        { label: "King Institute - Birmingham Campaign", url: "https://kinginstitute.stanford.edu/encyclopedia/birmingham-campaign" }
+      ],
+      subtopicId: "subtopic_2_2"
+    },
+    {
+      lat: 38.8893,
+      lng: -77.0502,
+      title: "Washington D.C.: Lincoln Memorial & Martin Luther King, Jr. Memorial",
+      body: "The symbolic national stage of the 1963 March on Washington, utilizing the National Mall's layout to demand civil rights legislation.",
+      imageUrl: "assets/sources/mlk-waving-washington-1963.jpg",
+      scholarlyContext: "Washington D.C.'s National Mall served as the premier symbolic site of national protest. The spatial positioning of demonstrators stretching from the Lincoln Memorial to the Washington Monument capitalized on political visibility to lobby Congress. The federal district's unique administrative status and layout allowed for massive, peaceful assembly, projecting civil rights demands globally.",
+      researchLinks: [
+        { label: "National Mall and Memorial Parks", url: "https://www.nps.gov/nama/index.htm" },
+        { label: "National Archives - March on Washington Record", url: "https://www.archives.gov/milestone-documents/march-on-washington" }
+      ],
+      subtopicId: "subtopic_2_2"
+    },
+    {
+      lat: 32.4056,
+      lng: -87.0186,
+      title: "Selma: National Voting Rights Museum & Edmund Pettus Bridge",
+      body: "Commemorates the voting rights campaign and the historic Selma-to-Montgomery marches that crossed the Alabama River choke point.",
+      imageUrl: "assets/sources/selma-troopers-bridge.jpg",
+      scholarlyContext: "Selma, Alabama's Edmund Pettus Bridge spanned the Alabama River, separating the city from the rural county. This bridge served as a critical geographic choke point. Crossing the bridge was a symbolic crossing of the racial divide. The assault by state troopers on 'Bloody Sunday' occurred immediately after the marchers crossed the bridge, capturing the violence of rural segregation and leading to the Voting Rights Act of 1965.",
+      researchLinks: [
+        { label: "Selma to Montgomery National Historic Trail", url: "https://www.nps.gov/semo/index.htm" },
+        { label: "Civil Rights Movement Archive", url: "https://www.crmvet.org/" }
+      ],
+      subtopicId: "subtopic_2_3"
+    },
+    {
+      lat: 33.7554,
+      lng: -84.3725,
+      title: "Atlanta: Martin Luther King, Jr. National Historical Park & Ebenezer Baptist Church",
+      body: "Preserves Dr. King's birthplace and Ebenezer Baptist Church, the spiritual command center for the SCLC organizational network in Georgia.",
+      imageUrl: "assets/sources/mlk-boycott-speech-1955.jpg",
+      scholarlyContext: "The Martin Luther King, Jr. National Historical Park in Atlanta preserves the childhood home and the Ebenezer Baptist Church where King co-pastored. Geographically, Atlanta's Sweet Auburn district served as a critical spatial sanctuary and economic engine for the Southern Civil Rights movement. The concentration of Black-owned businesses, educational institutions, and churches in this neighborhood fostered the organizational leadership, resources, and tactical strategy that launched the Southern Christian Leadership Conference (SCLC) and coordinated nationwide protest campaigns.",
+      researchLinks: [
+        { label: "NPS - Martin Luther King Jr. Historical Site", url: "https://www.nps.gov/malu/index.htm" },
+        { label: "The King Center Archives", url: "https://thekingcenter.org/" }
+      ],
+      subtopicId: "subtopic_1_2"
+    },
+    {
+      lat: 35.1344,
+      lng: -90.0575,
+      title: "Memphis: National Civil Rights Museum at the Lorraine Motel",
+      body: "Located at the site of Dr. King's 1968 assassination, mapping the local Sanitation Strike and the broader struggle for economic justice.",
+      imageUrl: "assets/sources/mourners-mlk-assassination.jpg",
+      scholarlyContext: "The National Civil Rights Museum is located at the former Lorraine Motel in Memphis, Tennessee, where Dr. Martin Luther King Jr. was assassinated on April 4, 1968. The motel was a historic haven for Black travelers under segregation laws, listed in the Green Book. King's presence in Memphis was to support the Sanitation Workers' Strike, highlighting the shift of the civil rights movement toward economic justice. The preservation of the motel's physical structure as a museum serves as a spatial memorial to King's martyrdom and the systemic segregation of the urban South.",
+      researchLinks: [
+        { label: "National Civil Rights Museum", url: "https://www.civilrightsmuseum.org/" },
+        { label: "Stanford King Institute - Memphis Strike", url: "https://kinginstitute.stanford.edu/encyclopedia/memphis-sanitation-workers-strike" }
+      ],
+      subtopicId: "subtopic_2_3"
+    },
+    {
+      lat: 32.3028,
+      lng: -90.1802,
+      title: "Jackson: Mississippi Civil Rights Museum",
+      body: "Commemorates the grassroots campaigns of the local NAACP field director Medgar Evers and the logistics of the 1964 Freedom Summer.",
+      imageUrl: "assets/sources/james-meredith-walking.jpg",
+      scholarlyContext: "The Mississippi Civil Rights Museum in Jackson, Mississippi, offers a granular look at the civil rights struggle within the nation's most resistance-heavy state. Unlike national narratives, Jackson and the Mississippi delta represented a geography of extreme white supremacist violence and voter suppression. The museum details the local leadership of Medgar Evers, the Mississippi Freedom Democratic Party (MFDP), and the spatial logistics of the 1964 Freedom Summer, which set up community freedom schools and voter registration centers in remote, dangerous rural towns.",
+      researchLinks: [
+        { label: "Mississippi Civil Rights Museum", url: "https://mcrm.mdah.ms.gov/" },
+        { label: "Medgar Evers Home National Monument", url: "https://www.nps.gov/meev/index.htm" }
+      ],
+      subtopicId: "subtopic_2_3"
+    }
+  ];
+  var MAP_LOCATIONS_VIETNAM = [
+    {
+      lat: 21.386,
+      lng: 103.018,
+      title: "Dien Bien Phu: Dien Bien Phu Victory Museum & A1 Hill Memorial",
+      body: "Preserves the bunkers, trenches, and command center of General Giap's forces that defeated the French garrison in 1954.",
+      imageUrl: "assets/sources/portraits/general_giap.jpg",
+      scholarlyContext: "Dien Bien Phu is situated in a remote valley in northwestern Vietnam, surrounded by high hills. French commander Navarre chose this basin to draw the Viet Minh into a set-piece battle, assuming Viet Minh artillery could not be dragged onto the high slopes. Viet Minh forces under General Giap dismantled these hills manually, dragging heavy artillery up the sheer cliffs and encircling the French garrison, demonstrating the tactical dominance of surrounding high ground.",
+      researchLinks: [
+        { label: "Geneva Accords & Indochina War History", url: "https://www.history.com/topics/vietnam-war/dien-bien-phu" },
+        { label: "General Vo Nguyen Giap Military Biography", url: "https://www.britannica.com/biography/Vo-Nguyen-Giap" }
+      ],
+      subtopicId: "subtopic_3_1"
+    },
+    {
+      lat: 21.0368,
+      lng: 105.8347,
+      title: "Hanoi: Vietnam Military History Museum & Hanoi Flag Tower",
+      body: "Exhibits military defense gear, captured wreckage, and military accounts of the DRV's political-strategic command center.",
+      imageUrl: "assets/sources/portraits/ho_chi_minh.jpg",
+      scholarlyContext: "Hanoi, situated on the Red River Delta in northern Vietnam, had fertile land and dense population. As the capital of the DRV, it was the logistical and political command center. The Red River's dyke system was a critical geographic asset; US planners debated bombing the dykes to flood agricultural lands, but held back due to international law. Hanoi was heavily protected by Soviet-supplied air defense networks.",
+      researchLinks: [
+        { label: "National Security Archive - Bombing of Hanoi", url: "https://nsarchive.gwu.edu/" },
+        { label: "Red River Delta Geography & Tactics", url: "https://www.loc.gov/" }
+      ],
+      subtopicId: "subtopic_3_1"
+    },
+    {
+      lat: 10.7795,
+      lng: 106.6923,
+      title: "Ho Chi Minh City: War Remnants Museum & Independence Palace",
+      body: "Commemorates the end of the conflict in Saigon, exhibiting heavy armor, artillery, and records of chemical weapon impacts.",
+      imageUrl: "assets/sources/saigon-embassy-evacuation.jpg",
+      scholarlyContext: "Saigon, located in southern Vietnam near the Mekong Delta, was the capital of the Republic of Vietnam. Its delta geography made it vulnerable to insurgent infiltration through swamps and waterways. In April 1975, the North Vietnamese Army cut off all major highways into the city, surrounding it. The fall of Saigon culminated in a chaotic helicopter evacuation from the rooftop of the US Embassy, ending the war.",
+      researchLinks: [
+        { label: "Fall of Saigon Archives - Gerald R. Ford Library", url: "https://www.geraldrfordlibrary.gov/" },
+        { label: "Mekong Delta Military History", url: "https://www.vietnamwar50th.com/" }
+      ],
+      subtopicId: "subtopic_3_1"
+    },
+    {
+      lat: 16.6231,
+      lng: 106.7289,
+      title: "Khe Sanh: Khe Sanh Combat Base Museum & Memorial",
+      body: "A former marine airstrip and base near the DMZ, now displaying military vehicles, bunkers, and shell casings from the 77-day siege of 1968.",
+      imageUrl: "assets/sources/us-soldier-patrolling-swamp.jpg",
+      scholarlyContext: "Khe Sanh was a combat base in a mountainous region of western Quang Tri province, near the Laotian border and the DMZ. Its proximity to the Ho Chi Minh Trail made it a strategic surveillance outpost. Surrounded by dense jungle and steep hills (Hills 881, 861), the garrison was besieged by NVA forces in 1968. The US relied heavily on air superiority, launching Operation Niagara to drop massive ordnance on the surrounding hills to break the siege.",
+      researchLinks: [
+        { label: "The Khe Sanh Campaign - Marine Corps History", url: "https://www.mcupress.marines.mil/" },
+        { label: "Battle of Khe Sanh Historical Analysis", url: "https://www.history.com/topics/vietnam-war/battle-of-khe-sanh" }
+      ],
+      subtopicId: "subtopic_4_1"
+    },
+    {
+      lat: 15.1764,
+      lng: 108.8789,
+      title: "Son My: Son My Memorial Park & Museum (My Lai Massacre Site)",
+      body: "Commemorates the victims of the My Lai Massacre, preserving foundations, bullet-scarred trees, and historical photographic archives.",
+      imageUrl: "assets/sources/us-troops-bogged-down.jpg",
+      scholarlyContext: "My Lai was a hamlet in Son My village, located in the coastal lowlands of Quang Ngai province. This region was a stronghold of the National Liberation Front (Viet Cong). The geography of rural hamlets\u2014characterized by dense foliage, rice paddies, and underground tunnel networks\u2014created high paranoia among US soldiers who struggled to distinguish civilians from combatants.",
+      researchLinks: [
+        { label: "My Lai Courts Martial Documents - UMKC", url: "https://famous-trials.com/mylai" },
+        { label: "Quang Ngai Province Combat Operations", url: "https://www.history.com/" }
+      ],
+      subtopicId: "subtopic_4_1"
+    },
+    {
+      lat: 16.7424,
+      lng: 107.1864,
+      title: "Quang Tri: Quang Tri Ancient Citadel & Memorial Monument",
+      body: "Commemorates the thousands of combatants who died during the intense 81-day artillery bombardment and siege of the citadel in 1972.",
+      imageUrl: "assets/sources/arvn-troops-combat.jpg",
+      scholarlyContext: "The Quang Tri Citadel, built in 1824, was the site of the brutal Second Battle of Quang Tri in 1972. During the Easter Offensive, the citadel was shelled with over 320,000 tons of bombs and artillery by US and South Vietnamese forces trying to recapture it from the NVA. The intense bombardment reduced the citadel to rubble, and the site is now a peaceful memorial park honoring the young soldiers from both sides who perished in the mud and debris.",
+      researchLinks: [
+        { label: "Quang Tri Citadel Memorial Site Info", url: "http://vietnamtourism.gov.vn/" },
+        { label: "1972 Easter Offensive Operations", url: "https://www.history.com/topics/vietnam-war/easter-offensive" }
+      ],
+      subtopicId: "subtopic_4_2"
+    },
+    {
+      lat: 11.1432,
+      lng: 106.463,
+      title: "Cu Chi: Cu Chi Tunnels Memorial & Underground Network",
+      body: "A massive preserved network of subterranean tunnels used by the Viet Cong for troop movements, supply lines, and combat shelters.",
+      imageUrl: "assets/sources/huey-helicopter-vietnam.jpg",
+      scholarlyContext: "The Cu Chi Tunnels represent a masterpiece of defensive military geography. Spanning over 250 kilometers, this multi-level underground network near Saigon contained living areas, kitchens, hospitals, and command posts. The hard clay soil allowed the Viet Cong to dig tunnels that could withstand heavy artillery and aerial bombing. The tunnels allowed fighters to vanish into the terrain, launch surprise counter-attacks, and neutralize the air and firepower superiority of US and ARVN forces.",
+      researchLinks: [
+        { label: "Cu Chi Tunnels Historical Site", url: "http://en.cuchitunnel.vn/" },
+        { label: "Military Geography and Insurgency", url: "https://www.armyupress.army.mil/" }
+      ],
+      subtopicId: "subtopic_3_2"
+    },
+    {
+      lat: 16.469,
+      lng: 107.5781,
+      title: "Hue: Hue Citadel War Monuments & 1968 Mass Grave Memorial",
+      body: "Commemorates the heavy urban fighting for the imperial citadel during the Tet Offensive and the civilian lives lost in the subsequent purge.",
+      imageUrl: "assets/sources/us-troops-bogged-down.jpg",
+      scholarlyContext: "The Battle of Hue in 1968 was the longest and bloodiest urban fight of the Vietnam War. NVA and Viet Cong forces seized the historic imperial citadel, resulting in weeks of house-to-house combat with US Marines. The tight streets and stone ramparts of the citadel negated typical US air support advantages, leading to massive destruction. The site honors the military casualties and the thousands of civilians executed and buried in mass graves around the city.",
+      researchLinks: [
+        { label: "Battle of Hue - Marine Corps History", url: "https://www.usmcu.edu/" },
+        { label: "The Tet Offensive & Hue Massacre Research", url: "https://www.history.com/topics/vietnam-war/tet-offensive" }
+      ],
+      subtopicId: "subtopic_4_1"
+    },
+    {
+      lat: 16.9583,
+      lng: 106.9458,
+      title: "Quang Tri: Truong Son National Military Cemetery",
+      body: "The largest national war cemetery in Vietnam, honoring over 10,000 soldiers who fell while keeping open the Ho Chi Minh supply trail.",
+      imageUrl: "assets/sources/ho-chi-minh-trail-bicycles.jpg",
+      scholarlyContext: "Truong Son National Cemetery is the final resting place of North Vietnamese soldiers and logistics personnel who died along the Ho Chi Minh Trail. Located on a hill in Quang Tri province, its geographic location represents the central junction where paths of the trail crossed. The trail was a network of forest roads, rivers, and paths through Laos and Cambodia, serving as the main artery for northern supplies. The cemetery is a memorial to the heavy human cost of maintaining this vital logistic line.",
+      researchLinks: [
+        { label: "Truong Son National Cemetery History", url: "http://vietnamtourism.gov.vn/" },
+        { label: "Ho Chi Minh Trail Logistics Studies", url: "https://www.loc.gov/" }
+      ],
+      subtopicId: "subtopic_3_3"
+    },
+    {
+      lat: 41.1496,
+      lng: -81.3411,
+      title: "Kent State (USA): Kent State May 4 Memorial & Visitor Center",
+      body: "A national historic landmark on the Ohio campus, memorializing the students fired upon by the National Guard during 1970 anti-war protests.",
+      imageUrl: "assets/sources/kent-state-protests-1970.jpg",
+      scholarlyContext: "Kent State University is located in Kent, Ohio. The campus commons and pagoda area became a violent arena when the Ohio National Guard was deployed following the burning of the ROTC building. The spatial layout of the campus\u2014including hills and parking lots\u2014led to tactical confusion and tragedy when guardsmen fired into crowds of unarmed student protestors on the commons.",
+      researchLinks: [
+        { label: "Kent State May 4 Collection & Archives", url: "https://www.kent.edu/library/special-collections/may-4-collection" },
+        { label: "President's Commission on Campus Unrest", url: "https://www.history.com/" }
+      ],
+      subtopicId: "subtopic_4_1"
+    }
+  ];
+  var mapUsa = null;
+  var mapVietnam = null;
+  function initMapExplorer() {
+    const btnUsa = document.getElementById("btn-map-tab-usa");
+    const btnVietnam = document.getElementById("btn-map-tab-vietnam");
+    const wrapperUsa = document.getElementById("map-usa-container");
+    const wrapperVietnam = document.getElementById("map-vietnam-container");
+    if (!btnUsa || !btnVietnam) return;
+    btnUsa.addEventListener("click", () => {
+      AudioEngine.play("click");
+      btnUsa.classList.add("active");
+      btnVietnam.classList.remove("active");
+      wrapperUsa.style.display = "block";
+      wrapperVietnam.style.display = "none";
+      if (mapUsa) {
+        setTimeout(() => mapUsa.invalidateSize(), 50);
+      }
+    });
+    btnVietnam.addEventListener("click", () => {
+      AudioEngine.play("click");
+      btnVietnam.classList.add("active");
+      btnUsa.classList.remove("active");
+      wrapperVietnam.style.display = "block";
+      wrapperUsa.style.display = "none";
+      if (mapVietnam) {
+        setTimeout(() => mapVietnam.invalidateSize(), 50);
+      }
+    });
+    window.addEventListener("mapViewActivated", () => {
+      btnUsa.classList.add("active");
+      btnVietnam.classList.remove("active");
+      wrapperUsa.style.display = "block";
+      wrapperVietnam.style.display = "none";
+      if (!mapUsa) {
+        setupMaps();
+      } else {
+        setTimeout(() => {
+          if (mapUsa) mapUsa.invalidateSize();
+          if (mapVietnam) mapVietnam.invalidateSize();
+        }, 100);
+      }
+    });
+  }
+  function setupMaps() {
+    const wrapperUsa = document.getElementById("map-usa-container");
+    const wrapperVietnam = document.getElementById("map-vietnam-container");
+    if (!wrapperUsa || !wrapperVietnam) return;
+    mapUsa = L.map("map-usa-container").setView([37.8, -96], 4);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(mapUsa);
+    mapVietnam = L.map("map-vietnam-container").setView([16, 107], 6);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(mapVietnam);
+    MAP_LOCATIONS_USA.forEach((loc) => {
+      const marker = L.marker([loc.lat, loc.lng]).addTo(mapUsa);
+      marker.bindPopup(`<strong>${loc.title}</strong>`);
+      marker.on("click", () => {
+        AudioEngine.play("ping_usa");
+        showLocationDetails(loc);
+      });
+    });
+    MAP_LOCATIONS_VIETNAM.forEach((loc) => {
+      const marker = L.marker([loc.lat, loc.lng]).addTo(mapVietnam);
+      marker.bindPopup(`<strong>${loc.title}</strong>`);
+      marker.on("click", () => {
+        AudioEngine.play("ping_vietnam");
+        showLocationDetails(loc);
+      });
+    });
+    const routeSelmaMontgomery = [
+      [32.4074, -87.0203],
+      // Selma
+      [32.3792, -86.3077]
+      // Montgomery
+    ];
+    L.polyline(routeSelmaMontgomery, {
+      color: "var(--primary)",
+      weight: 4,
+      dashArray: "8, 8",
+      opacity: 0.8
+    }).addTo(mapUsa).bindTooltip("Selma to Montgomery March Route (1965)", { sticky: true });
+    const routeHoChiMinh = [
+      [21.0285, 105.8542],
+      // Hanoi
+      [18.6734, 105.6813],
+      // Vinh
+      [17.7, 105.7],
+      // Laos border
+      [16.7, 106.2],
+      // Tchepone
+      [14.1, 106.4],
+      // Siem Pang
+      [11.6667, 106.6],
+      // Loc Ninh
+      [10.8231, 106.6297]
+      // Saigon
+    ];
+    L.polyline(routeHoChiMinh, {
+      color: "var(--accent)",
+      weight: 4,
+      dashArray: "8, 8",
+      opacity: 0.8
+    }).addTo(mapVietnam).bindTooltip("Ho Chi Minh Supply Trail Route", { sticky: true });
+    setTimeout(() => {
+      mapUsa.invalidateSize();
+      mapVietnam.invalidateSize();
+    }, 100);
+  }
+  function showLocationDetails(loc) {
+    const box = document.getElementById("map-context-box");
+    const title = document.getElementById("map-context-title");
+    const body = document.getElementById("map-context-body");
+    const actionContainer = document.getElementById("map-context-action-container");
+    if (!box || !title || !body || !actionContainer) return;
+    AudioEngine.stopSpeaking();
+    title.innerHTML = `
+    <span style="flex: 1; display: flex; align-items: center; gap: 8px;">
+      <i class="fa-solid fa-location-crosshairs" style="color: var(--primary);"></i> ${loc.title}
+    </span>
+    <button id="btn-map-speak" class="header-icon-btn" style="padding: 6px; font-size: 0.9rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: 50%; color: var(--text-main); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; transition: all var(--transition-fast);" title="Speak Description">
+      <i class="fa-solid fa-volume-high"></i>
+    </button>
+  `;
+    let linksHtml = "";
+    if (loc.researchLinks && loc.researchLinks.length > 0) {
+      const linkItems = loc.researchLinks.map((lnk) => `
+      <a href="${lnk.url}" target="_blank" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; font-size: 0.8rem; text-decoration: none; border-radius: 4px; border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--primary); transition: all 0.2s;">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> ${lnk.label}
+      </a>
+    `).join("");
+      linksHtml = `
+      <div style="margin-top: 18px; border-top: 1px solid var(--border-glass); padding-top: 14px;">
+        <h5 style="margin: 0 0 10px 0; font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">
+          <i class="fa-solid fa-graduation-cap"></i> Further Research & Classroom Resources
+        </h5>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          ${linkItems}
+        </div>
+      </div>
+    `;
+    }
+    let imgHtml = "";
+    if (loc.imageUrl) {
+      imgHtml = `
+      <div style="margin-bottom: 16px; border-radius: var(--border-radius-sm); overflow: hidden; border: 1px solid var(--border-glass); max-width: 600px;">
+        <img src="${loc.imageUrl}" alt="${loc.title}" style="width: 100%; height: auto; max-height: 320px; object-fit: cover; display: block;" />
+      </div>
+    `;
+    }
+    body.innerHTML = `
+    ${imgHtml}
+    <div style="font-size: 0.95rem; line-height: 1.6; color: var(--text-main); margin-bottom: 12px; font-style: italic;">
+      <strong>Summary:</strong> ${loc.body}
+    </div>
+    <div style="font-size: 0.92rem; line-height: 1.65; color: var(--text-normal); margin-top: 10px;">
+      <strong style="color: var(--primary); display: block; margin-bottom: 6px; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.5px;">Geographical & Historical Case Study:</strong>
+      ${loc.scholarlyContext || ""}
+    </div>
+    ${linksHtml}
+  `;
+    actionContainer.innerHTML = "";
+    let isSpeaking = false;
+    const speakBtn = document.getElementById("btn-map-speak");
+    speakBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (isSpeaking) {
+        AudioEngine.stopSpeaking();
+        speakBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        isSpeaking = false;
+      } else {
+        speakBtn.innerHTML = '<i class="fa-solid fa-stop"></i>';
+        isSpeaking = true;
+        AudioEngine.speak(
+          loc.scholarlyContext || loc.body,
+          () => {
+          },
+          () => {
+            speakBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+            isSpeaking = false;
+          },
+          () => {
+            speakBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+            isSpeaking = false;
+          }
+        );
+      }
+    });
+    box.style.display = "block";
+    setTimeout(() => {
+      box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 100);
+  }
+
   // src/main.js
   window.addEventListener("DOMContentLoaded", () => {
     window.switchView = switchView;
@@ -28527,6 +31030,9 @@ Here are some questions you can ask me about this lesson:`;
     updateGlobalStats();
     bindEvents();
     initChatbot();
+    initEssayPlanner();
+    initMapExplorer();
+    initStreakLeaderboardListeners();
     const closeBtn = document.getElementById("video-modal-close-btn");
     if (closeBtn) {
       const handleClose = (e) => {
@@ -28561,4 +31067,33 @@ Here are some questions you can ask me about this lesson:`;
     });
     switchView("dashboard");
   });
+  if ("serviceWorker" in navigator && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").then((reg) => {
+        reg.addEventListener("updatefound", () => {
+          const newWorker = reg.installing;
+          if (!newWorker) return;
+          newWorker.addEventListener("statechange", () => {
+            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+              showToast(
+                "A new version of the app is available!",
+                "info",
+                "Reload Now",
+                () => {
+                  newWorker.postMessage({ action: "skipWaiting" });
+                }
+              );
+            }
+          });
+        });
+      });
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (!refreshing) {
+          window.location.reload();
+          refreshing = true;
+        }
+      });
+    });
+  }
 })();
