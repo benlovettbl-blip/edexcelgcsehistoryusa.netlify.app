@@ -2,7 +2,7 @@
 <html lang="en" data-theme="desert">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Edexcel GCSE History Paper 3: The USA, 1954-75: Conflict at Home and Abroad</title>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -220,7 +220,7 @@
           <div class="header-title-wrapper" style="display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1;">
             <span class="main-app-brand-title" style="font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.2;">Edexcel GCSE History Paper 3: The USA</span>
             <div class="header-title-row" style="display: flex; align-items: center; gap: 8px; min-width: 0;">
-              <h1 class="current-view-title" id="current-view-title" style="margin: 0; font-size: 1.2rem; font-weight: 700; line-height: 1.2; flex-shrink: 0;">Dashboard</h1>
+              <h1 class="current-view-title" id="current-view-title" style="margin: 0; font-size: 1.2rem; font-weight: 700; line-height: 1.2; flex-shrink: 1; min-width: 0;">Dashboard</h1>
               <div class="header-brand-quote-container" id="header-brand-quote-container" style="display: none; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-muted); cursor: pointer; transition: opacity 0.5s ease; opacity: 1; min-width: 0; flex: 1;" title="Click to cycle quote">
                 <span style="color: var(--border-glass); font-size: 1.1rem; font-weight: 300; pointer-events: none; margin-right: 4px; align-self: center;">|</span>
                 <span id="header-brand-quote-text" style="font-style: italic; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; white-space: normal; line-height: 1.3;">Loading...</span>
@@ -845,12 +845,16 @@
           </div>
 
           <!-- Map Selector Tabs -->
-          <div style="display: flex; gap: 12px; margin-bottom: 24px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+          <div class="map-selector-tabs" style="display: flex; gap: 12px; margin-bottom: 24px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
             <button class="tab-btn active" id="btn-map-tab-usa" style="flex: 1; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
-              <i class="fa-solid fa-flag-usa"></i> US Civil Rights Movement Map
+              <i class="fa-solid fa-flag-usa"></i>
+              <span class="tab-text-desktop">US Civil Rights Movement Map</span>
+              <span class="tab-text-mobile">US Civil Rights</span>
             </button>
             <button class="tab-btn" id="btn-map-tab-vietnam" style="flex: 1; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
-              <i class="fa-solid fa-leaf"></i> Vietnam War Campaign Map
+              <i class="fa-solid fa-leaf"></i>
+              <span class="tab-text-desktop">Vietnam War Campaign Map</span>
+              <span class="tab-text-mobile">Vietnam War</span>
             </button>
           </div>
 

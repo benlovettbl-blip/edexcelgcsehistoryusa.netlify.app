@@ -3397,13 +3397,7 @@ function getHighScores(unitId) {
   const key = `mastery_highscores_${unitId}`;
   let scores = localStorage.getItem(key);
   if (!scores) {
-    scores = [
-      { name: "Alex", yearGroup: "Year 9", score: 45, date: "2026-05-28" },
-      { name: "Sarah", yearGroup: "Year 10", score: 40, date: "2026-05-29" },
-      { name: "James", yearGroup: "Year 8", score: 35, date: "2026-05-27" },
-      { name: "Emily", yearGroup: "Year 11", score: 25, date: "2026-05-29" },
-      { name: "Thomas", yearGroup: "Year 7", score: 15, date: "2026-05-26" }
-    ];
+    scores = [];
     localStorage.setItem(key, JSON.stringify(scores));
   } else {
     scores = JSON.parse(scores);
@@ -4378,13 +4372,7 @@ function getMindMapHighScores(subtopicId) {
   const key = `mindmap_highscores_${subtopicId}`;
   let scores = localStorage.getItem(key);
   if (!scores) {
-    scores = [
-      { name: "Alex", yearGroup: "Year 9", score: 45, date: "2026-05-28" },
-      { name: "Sarah", yearGroup: "Year 10", score: 40, date: "2026-05-29" },
-      { name: "James", yearGroup: "Year 8", score: 35, date: "2026-05-27" },
-      { name: "Emily", yearGroup: "Year 11", score: 25, date: "2026-05-29" },
-      { name: "Thomas", yearGroup: "Year 7", score: 15, date: "2026-05-26" }
-    ];
+    scores = [];
     localStorage.setItem(key, JSON.stringify(scores));
   } else {
     scores = JSON.parse(scores);
@@ -5026,13 +5014,7 @@ export function getStreakHighScores() {
   const key = 'streak_highscores';
   let scores = localStorage.getItem(key);
   if (!scores) {
-    const defaults = [
-      { name: "BLB", yearGroup: "Year 10", streak: 12, level: 4, date: "2026-06-01" },
-      { name: "JHS", yearGroup: "Year 11", streak: 8, level: 3, date: "2026-06-03" },
-      { name: "MCR", yearGroup: "Year 9", streak: 5, level: 2, date: "2026-06-05" },
-      { name: "HND", yearGroup: "Year 8", streak: 3, level: 2, date: "2026-06-05" },
-      { name: "KPT", yearGroup: "Year 7", streak: 2, level: 1, date: "2026-06-06" }
-    ];
+    const defaults = [];
     localStorage.setItem(key, JSON.stringify(defaults));
     return defaults;
   }

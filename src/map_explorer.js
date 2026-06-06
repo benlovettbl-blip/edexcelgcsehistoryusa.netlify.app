@@ -39,7 +39,7 @@ const MAP_LOCATIONS_USA = [
     scholarlyContext: "Little Rock, Arkansas became the flashpoint of federal vs. state authority. The school district's integration plan was localized, but governor defiance led to a militarized zone at Central High. The spatial encirclement of the school by the Arkansas National Guard was bypassed when President Eisenhower placed the Guard under federal control and deployed the 101st Airborne, establishing military patrols around the school's physical perimeter to enforce desegregation.",
     researchLinks: [
       { label: "Little Rock Central High National Historic Site", url: "https://www.nps.gov/chsc/index.htm" },
-      { label: "National Archives - Little Rock Integration Documents", url: "https://www.archives.gov/education/lessons/federall-troops-little-rock" }
+      { label: "National Archives - Little Rock Integration Documents", url: "https://www.archives.gov/education/lessons/federal-troops-little-rock" }
     ],
     subtopicId: "subtopic_1_2"
   },
@@ -158,8 +158,8 @@ const MAP_LOCATIONS_VIETNAM = [
     imageUrl: "assets/sources/portraits/ho_chi_minh.jpg",
     scholarlyContext: "Hanoi, situated on the Red River Delta in northern Vietnam, had fertile land and dense population. As the capital of the DRV, it was the logistical and political command center. The Red River's dyke system was a critical geographic asset; US planners debated bombing the dykes to flood agricultural lands, but held back due to international law. Hanoi was heavily protected by Soviet-supplied air defense networks.",
     researchLinks: [
-      { label: "National Security Archive - Bombing of Hanoi", url: "https://nsarchive.gwu.edu/" },
-      { label: "Red River Delta Geography & Tactics", url: "https://www.loc.gov/" }
+      { label: "National Security Archive - Bombing of Hanoi", url: "https://nsarchive.gwu.edu/briefing-book/vietnam/2018-12-18/christmas-bombings-december-1972" },
+      { label: "Red River Delta Geography & Tactics", url: "https://www.loc.gov/item/88600482/" }
     ],
     subtopicId: "subtopic_3_1"
   },
@@ -171,8 +171,8 @@ const MAP_LOCATIONS_VIETNAM = [
     imageUrl: "assets/sources/saigon-embassy-evacuation.jpg",
     scholarlyContext: "Saigon, located in southern Vietnam near the Mekong Delta, was the capital of the Republic of Vietnam. Its delta geography made it vulnerable to insurgent infiltration through swamps and waterways. In April 1975, the North Vietnamese Army cut off all major highways into the city, surrounding it. The fall of Saigon culminated in a chaotic helicopter evacuation from the rooftop of the US Embassy, ending the war.",
     researchLinks: [
-      { label: "Fall of Saigon Archives - Gerald R. Ford Library", url: "https://www.geraldrfordlibrary.gov/" },
-      { label: "Mekong Delta Military History", url: "https://www.vietnamwar50th.com/" }
+      { label: "Fall of Saigon Archives - Gerald R. Ford Library", url: "https://www.fordlibrarymuseum.gov/library/guides.asp" },
+      { label: "Mekong Delta Military History", url: "https://www.history.com/topics/vietnam-war/fall-of-saigon" }
     ],
     subtopicId: "subtopic_3_1"
   },
@@ -184,7 +184,7 @@ const MAP_LOCATIONS_VIETNAM = [
     imageUrl: "assets/sources/us-soldier-patrolling-swamp.jpg",
     scholarlyContext: "Khe Sanh was a combat base in a mountainous region of western Quang Tri province, near the Laotian border and the DMZ. Its proximity to the Ho Chi Minh Trail made it a strategic surveillance outpost. Surrounded by dense jungle and steep hills (Hills 881, 861), the garrison was besieged by NVA forces in 1968. The US relied heavily on air superiority, launching Operation Niagara to drop massive ordnance on the surrounding hills to break the siege.",
     researchLinks: [
-      { label: "The Khe Sanh Campaign - Marine Corps History", url: "https://www.mcupress.marines.mil/" },
+      { label: "The Khe Sanh Campaign - Marine Corps History", url: "https://www.usmcu.edu/mcupress/" },
       { label: "Battle of Khe Sanh Historical Analysis", url: "https://www.history.com/topics/vietnam-war/battle-of-khe-sanh" }
     ],
     subtopicId: "subtopic_4_1"
@@ -198,7 +198,7 @@ const MAP_LOCATIONS_VIETNAM = [
     scholarlyContext: "My Lai was a hamlet in Son My village, located in the coastal lowlands of Quang Ngai province. This region was a stronghold of the National Liberation Front (Viet Cong). The geography of rural hamlets—characterized by dense foliage, rice paddies, and underground tunnel networks—created high paranoia among US soldiers who struggled to distinguish civilians from combatants.",
     researchLinks: [
       { label: "My Lai Courts Martial Documents - UMKC", url: "https://famous-trials.com/mylai" },
-      { label: "Quang Ngai Province Combat Operations", url: "https://www.history.com/" }
+      { label: "Quang Ngai Province Combat Operations", url: "https://www.history.com/topics/vietnam-war/my-lai-massacre" }
     ],
     subtopicId: "subtopic_4_1"
   },
@@ -210,7 +210,7 @@ const MAP_LOCATIONS_VIETNAM = [
     imageUrl: "assets/sources/arvn-troops-combat.jpg",
     scholarlyContext: "The Quang Tri Citadel, built in 1824, was the site of the brutal Second Battle of Quang Tri in 1972. During the Easter Offensive, the citadel was shelled with over 320,000 tons of bombs and artillery by US and South Vietnamese forces trying to recapture it from the NVA. The intense bombardment reduced the citadel to rubble, and the site is now a peaceful memorial park honoring the young soldiers from both sides who perished in the mud and debris.",
     researchLinks: [
-      { label: "Quang Tri Citadel Memorial Site Info", url: "http://vietnamtourism.gov.vn/" },
+      { label: "Quang Tri Citadel Memorial Site Info", url: "https://vietnamtourism.gov.vn/en/post/10044" },
       { label: "1972 Easter Offensive Operations", url: "https://www.history.com/topics/vietnam-war/easter-offensive" }
     ],
     subtopicId: "subtopic_4_2"
@@ -223,8 +223,8 @@ const MAP_LOCATIONS_VIETNAM = [
     imageUrl: "assets/sources/huey-helicopter-vietnam.jpg",
     scholarlyContext: "The Cu Chi Tunnels represent a masterpiece of defensive military geography. Spanning over 250 kilometers, this multi-level underground network near Saigon contained living areas, kitchens, hospitals, and command posts. The hard clay soil allowed the Viet Cong to dig tunnels that could withstand heavy artillery and aerial bombing. The tunnels allowed fighters to vanish into the terrain, launch surprise counter-attacks, and neutralize the air and firepower superiority of US and ARVN forces.",
     researchLinks: [
-      { label: "Cu Chi Tunnels Historical Site", url: "http://en.cuchitunnel.vn/" },
-      { label: "Military Geography and Insurgency", url: "https://www.armyupress.army.mil/" }
+      { label: "Cu Chi Tunnels Historical Site", url: "https://www.history.com/topics/vietnam-war/cu-chi-tunnels" },
+      { label: "Military Geography and Insurgency", url: "https://www.armyupress.army.mil/Journals/Military-Review/English-Edition-Archives/November-December-2019/Patterson-Viet-Cong-Tunnels/" }
     ],
     subtopicId: "subtopic_3_2"
   },
@@ -236,7 +236,7 @@ const MAP_LOCATIONS_VIETNAM = [
     imageUrl: "assets/sources/us-troops-bogged-down.jpg",
     scholarlyContext: "The Battle of Hue in 1968 was the longest and bloodiest urban fight of the Vietnam War. NVA and Viet Cong forces seized the historic imperial citadel, resulting in weeks of house-to-house combat with US Marines. The tight streets and stone ramparts of the citadel negated typical US air support advantages, leading to massive destruction. The site honors the military casualties and the thousands of civilians executed and buried in mass graves around the city.",
     researchLinks: [
-      { label: "Battle of Hue - Marine Corps History", url: "https://www.usmcu.edu/" },
+      { label: "Battle of Hue - Marine Corps History", url: "https://www.usmcu.edu/mcupress/" },
       { label: "The Tet Offensive & Hue Massacre Research", url: "https://www.history.com/topics/vietnam-war/tet-offensive" }
     ],
     subtopicId: "subtopic_4_1"
@@ -249,8 +249,8 @@ const MAP_LOCATIONS_VIETNAM = [
     imageUrl: "assets/sources/ho-chi-minh-trail-bicycles.jpg",
     scholarlyContext: "Truong Son National Cemetery is the final resting place of North Vietnamese soldiers and logistics personnel who died along the Ho Chi Minh Trail. Located on a hill in Quang Tri province, its geographic location represents the central junction where paths of the trail crossed. The trail was a network of forest roads, rivers, and paths through Laos and Cambodia, serving as the main artery for northern supplies. The cemetery is a memorial to the heavy human cost of maintaining this vital logistic line.",
     researchLinks: [
-      { label: "Truong Son National Cemetery History", url: "http://vietnamtourism.gov.vn/" },
-      { label: "Ho Chi Minh Trail Logistics Studies", url: "https://www.loc.gov/" }
+      { label: "Truong Son National Cemetery History", url: "https://vietnamtourism.gov.vn/en/" },
+      { label: "Ho Chi Minh Trail Logistics Studies", url: "https://www.history.com/topics/vietnam-war/ho-chi-minh-trail" }
     ],
     subtopicId: "subtopic_3_3"
   },
@@ -263,7 +263,7 @@ const MAP_LOCATIONS_VIETNAM = [
     scholarlyContext: "Kent State University is located in Kent, Ohio. The campus commons and pagoda area became a violent arena when the Ohio National Guard was deployed following the burning of the ROTC building. The spatial layout of the campus—including hills and parking lots—led to tactical confusion and tragedy when guardsmen fired into crowds of unarmed student protestors on the commons.",
     researchLinks: [
       { label: "Kent State May 4 Collection & Archives", url: "https://www.kent.edu/library/special-collections/may-4-collection" },
-      { label: "President's Commission on Campus Unrest", url: "https://www.history.com/" }
+      { label: "President's Commission on Campus Unrest", url: "https://www.history.com/topics/vietnam-war/kent-state-shooting" }
     ],
     subtopicId: "subtopic_4_1"
   }
@@ -335,14 +335,14 @@ function setupMaps() {
   if (!wrapperUsa || !wrapperVietnam) return;
 
   // 1. Setup USA Map
-  mapUsa = L.map('map-usa-container').setView([37.8, -96.0], 4);
+  mapUsa = L.map('map-usa-container', { scrollWheelZoom: false }).setView([37.8, -96.0], 4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 19
   }).addTo(mapUsa);
 
   // 2. Setup Vietnam Map
-  mapVietnam = L.map('map-vietnam-container').setView([16.0, 107.0], 6);
+  mapVietnam = L.map('map-vietnam-container', { scrollWheelZoom: false }).setView([16.0, 107.0], 6);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 19

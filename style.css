@@ -251,6 +251,11 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
+  /* Safe area padding for mobile notches / home indicators */
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
 }
 
 /* Sidebar Navigation */
@@ -8865,8 +8870,40 @@ input:checked + .switch-slider:before {
   transform: translateX(3px);
 }
 
+/* --- Geographic Map Explorer Mobile and Touch Optimizations --- */
+.tab-text-mobile {
+  display: none;
+}
 
+@media (max-width: 640px) {
+  .tab-text-desktop {
+    display: none !important;
+  }
+  .tab-text-mobile {
+    display: inline !important;
+  }
+}
 
-
-
-
+@media (max-width: 768px) {
+  .map-pane-wrapper {
+    height: 350px !important;
+  }
+  
+  .leaflet-bar a {
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    font-size: 18px !important;
+  }
+  
+  #btn-map-speak {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .map-selector-tabs .tab-btn {
+    padding: 10px 8px !important;
+    font-size: 0.85rem !important;
+  }
+}
