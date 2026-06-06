@@ -8811,6 +8811,61 @@ input:checked + .switch-slider:before {
   background: #232931;
 }
 
+/* --- North Vietnamese Adventure Game Styles --- */
+#game-north-vietnam-adventure-container .adventure-terminal {
+  background-color: #110909;
+  border: 2px solid #3c1e1e;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+#game-north-vietnam-adventure-container .evidence-sidebar {
+  background-color: #1c1111;
+  border: 2px solid #3c1e1e;
+  max-height: 700px;
+}
+
+#game-north-vietnam-adventure-container .evidence-sidebar h3 {
+  color: #e63946;
+  border-bottom: 2px solid #3c1e1e;
+}
+
+#game-north-vietnam-adventure-container .evidence-item {
+  background: rgba(230, 57, 70, 0.08);
+  border-left: 4px solid #e63946;
+  animation: nFadeIn 0.4s ease-out;
+}
+
+@keyframes nFadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#game-north-vietnam-adventure-container .terminal-header {
+  background-color: #1c1111;
+  border-bottom: 2px solid #3c1e1e;
+}
+
+#game-north-vietnam-adventure-container .terminal-screen {
+  background-color: #0a0404;
+}
+
+#game-north-vietnam-adventure-container .options-stack {
+  background-color: #1c1111;
+  border-top: 2px solid #3c1e1e;
+}
+
+#game-north-vietnam-adventure-container .btn-option {
+  background: #2a1818;
+  border: 1px solid #4a2c2c;
+}
+
+#game-north-vietnam-adventure-container .btn-option:hover {
+  background: #4a2c2c;
+  color: #fff;
+  transform: translateX(3px);
+}
+
+
 
 
 

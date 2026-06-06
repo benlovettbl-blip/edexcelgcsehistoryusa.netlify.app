@@ -15906,6 +15906,320 @@ ${cleanBrackets(paper.q3d.model)}
     li.innerText = text;
     list.appendChild(li);
   }
+  var nStoryNodes = {
+    start: {
+      year: "Pre-1945",
+      topic: "Context: French Indochina",
+      text: "You grow up in a rural village in northern Tonkin under French colonial rule. Your community experiences severe exploitation: the French government holds complete monopolies on salt, alcohol, and opium, while taxing your family heavily. Local dissent is crushed brutally by the French Foreign Legion, and many of your neighbors are forced into unpaid labor on rubber plantations or inside coal mines.\n\nWhat structural reality of French rule fueled the early growth of anti-colonial resistance groups like Ho Chi Minh's Viet Minh?",
+      options: [
+        {
+          text: "The absolute lack of political rights for the Vietnamese majority, combined with widespread economic exploitation that left the peasantry impoverished.",
+          nextNode: "french_colonial_success",
+          isCorrect: true
+        },
+        {
+          text: "The French policy of forcing all Vietnamese citizens to move to industrial cities in France to work in car factories.",
+          nextNode: "french_colonial_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    french_colonial_fail: {
+      year: "Pre-1945",
+      topic: "\u26A0\uFE0F Colonial Context Misconception",
+      text: "Incorrect. The French did not move the population to Europe; they exploited Vietnam's natural resources (rubber, rice, coal) right on the spot, using the local population as cheap, heavily controlled labor. This exploitation directly fueled nationalist resistance.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your understanding of French Indochina", nextNode: "start" }
+      ]
+    },
+    french_colonial_success: {
+      year: "1945-1954",
+      topic: "Context: First Indochina War",
+      text: "Correct! The deep inequalities of French colonialism turned the rural population into a solid base for nationalist resistance.\n\nSeptember 1945. Following the defeat of Japanese occupation forces, Ho Chi Minh steps up to a microphone in Hanoi and declares the independence of the Democratic Republic of Vietnam, quoting the US Declaration of Independence. \n\nHowever, the French return with military force to reclaim their empire, starting the First Indochina War. After nine long years of brutal guerrilla warfare, your forces trap the French army in a remote valley fortress in 1954. What was the name of this decisive battle that broke the French empire?",
+      evidenceKey: "anti_colonial_roots",
+      evidenceText: "\u270A Anti-Colonial Motivation: Decades of oppressive French economic exploitation unified the Vietnamese population, viewing the conflict as a long-term fight for national survival.",
+      options: [
+        {
+          text: "The Battle of Dien Bien Phu",
+          nextNode: "dien_bien_phu_success",
+          isCorrect: true
+        },
+        {
+          text: "The Battle of Inchon",
+          nextNode: "dien_bien_phu_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    dien_bien_phu_fail: {
+      year: "1954",
+      topic: "\u26A0\uFE0F Battle Identification Error",
+      text: "Incorrect. The Battle of Inchon was an amphibious landing during the Korean War. The siege that defeated the French in Vietnam was the Battle of Dien Bien Phu (1954), which led directly to the Geneva Conference.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your battle data points", nextNode: "french_colonial_success" }
+      ]
+    },
+    dien_bien_phu_success: {
+      year: "1955",
+      topic: "3.1: Consolidation of the North",
+      text: "Correct! General Vo Nguyen Giap's victory at Dien Bien Phu shattered French colonial rule, leading to the partition of Vietnam at the 17th Parallel.\n\nNow secure in Hanoi, Ho Chi Minh\u2019s government launches a sweeping land reform campaign. Party cadres arrive in your village to dismantle the old colonial landlord system, redistributing land to poor peasants, though the process involves harsh ideological trials.\n\nWhat was the primary political value of this program for the upcoming war against the US-backed South?",
+      evidenceKey: "dien_bien_phu_54",
+      evidenceText: "\u{1F4A5} Dien Bien Phu (1954): The decisive military victory over France that proved Vietnamese guerrilla strategies could defeat a Western superpower.",
+      options: [
+        {
+          text: "It secured the absolute loyalty of the rural peasantry to the communist party, creating a highly unified home front.",
+          nextNode: "land_reform_success",
+          isCorrect: true
+        },
+        {
+          text: "It converted the entire population to industrial manufacturing, ending agricultural rice production completely.",
+          nextNode: "land_reform_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    land_reform_fail: {
+      year: "1955",
+      topic: "\u26A0\uFE0F Strategy Misconception",
+      text: "Incorrect. The land reforms targeted rural farming land, keeping agricultural production central to the economy. By giving land to the poorest families, the party gained deep ideological loyalty from the peasantry.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your land reform analysis", nextNode: "dien_bien_phu_success" }
+      ]
+    },
+    land_reform_success: {
+      year: "1965",
+      topic: "3.2 / 3.3: Rolling Thunder",
+      text: "Correct! The land reforms secured solid peasant backing, giving the regime a highly resilient home front.\n\nIn 1965, the US launches 'Operation Rolling Thunder'\u2014a massive strategic bombing campaign targeting North Vietnam. Air raid sirens sound daily. To survive this onslaught and keep society functioning, how does the civilian population adapt?",
+      evidenceKey: "north_land_loyalty",
+      evidenceText: "\u{1F33E} Peasant Support Base: Land reforms gave millions of poor peasants an economic stake in the regime's survival, ensuring strong support during future US air wars.",
+      options: [
+        {
+          text: "The government evacuates factories and schools to remote jungle caves, while citizens dig millions of small, concrete 'manhole' shelters along city streets.",
+          nextNode: "rolling_thunder_success",
+          isCorrect: true
+        },
+        {
+          text: "Civilians riot against the government in Hanoi, demanding an immediate surrender to stop the American bombings.",
+          nextNode: "rolling_thunder_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    rolling_thunder_fail: {
+      year: "1965",
+      topic: "\u26A0\uFE0F Morale Misconception",
+      text: "Incorrect. US planners thought the bombing campaigns would break civilian morale, but it had the exact opposite effect. It unified the population against the foreign threat and strengthened their determination to resist.",
+      options: [
+        { text: "\u21A9\uFE0F Re-evaluate civilian resilience data", nextNode: "land_reform_success" }
+      ]
+    },
+    rolling_thunder_success: {
+      year: "1967",
+      topic: "3.3: The Ho Chi Minh Trail Logistics",
+      text: "Correct! Decentralizing society into caves and street shelters neutralized the strategic goals of the US air war.\n\nIn 1967, you join the military logistics corps and are sent south down the Ho Chi Minh Trail. This is a grueling journey through the jungle. You march for months on foot through neutral Laos and Cambodia, carrying 40kg of supplies on your back. B-52 strikes rain down unexploded ordnance, and your unit is devastated by severe bouts of malaria.\n\nHow did this trail network survive such constant, intense US military pressure?",
+      evidenceKey: "civilian_adaptation",
+      evidenceText: "\u{1F6E1}\uFE0F Air Raid Defense (1965): Millions of street-level manhole shelters and the relocation of infrastructure into caves protected the workforce and kept the war effort going.",
+      options: [
+        {
+          text: "It was a constantly changing, 12,000-mile web of hidden dirt tracks and footpaths hidden under thick jungle cover, repaired overnight by over 500,000 civilian workers.",
+          nextNode: "trail_success",
+          isCorrect: true
+        },
+        {
+          text: "It was a wide, concrete highway network defended by a fleet of advanced jet fighter aircraft.",
+          nextNode: "trail_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    trail_fail: {
+      year: "1967",
+      topic: "\u26A0\uFE0F Logistical Structure Error",
+      text: "Incorrect. The trail survived precisely because it was low-tech, flexible, and heavily camouflaged. Symmetrical concrete highways would have been easily destroyed by American bombers. It was kept open through sheer, continuous human effort.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your understanding of guerrilla logistics", nextNode: "rolling_thunder_success" }
+      ]
+    },
+    trail_success: {
+      year: "1968",
+      topic: "3.4 / 4.1: The Tet Offensive Realities",
+      text: "Correct! The trail's flexible, decentralized design made it practically impossible for US air power to cut off supply lines.\n\nJanuary 1968. Your unit participates in the massive, synchronized surprise attack of the Tet Offensive, striking over 100 cities in South Vietnam. However, the expected urban uprising fails to happen. Superior US firepower and air support pin your units down. Your forces suffer a military catastrophe, losing over 45,000 fighters and nearly wiping out the underground Vietcong infrastructure.\n\nDespite this severe military defeat in the field, why was the Tet Offensive considered the ultimate political success for your side?",
+      evidenceKey: "trail_hardships",
+      evidenceText: "\u{1F69A} Ho Chi Minh Trail: A flexible, 12,000-mile logistical network that relied on half a million workers to manually transport supplies despite disease and heavy bombing.",
+      options: [
+        {
+          text: "The sheer scale of the attacks was broadcast on US television, destroying public trust in the US government and opening a severe 'Credibility Gap' that turned the American public against the war.",
+          nextNode: "tet_success",
+          isCorrect: true
+        },
+        {
+          text: "It forced the South Vietnamese army to immediately surrender and hand over Saigon.",
+          nextNode: "tet_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    tet_fail: {
+      year: "1968",
+      topic: "\u26A0\uFE0F Outcome Analysis Error",
+      text: "Incorrect. Militarily, the US and ARVN won the battle and held all the cities. The true impact of Tet was psychological\u2014it shattered the US government's claims that the war was almost won, accelerating the anti-war movement in America.",
+      options: [
+        { text: "\u21A9\uFE0F Align your military vs. political outcomes", nextNode: "trail_success" }
+      ]
+    },
+    tet_success: {
+      year: "1972",
+      topic: "4.3: Operation Linebacker II",
+      text: "Correct! Tet was a military defeat but a massive political triumph, shifting US policy toward withdrawal and 'Vietnamization'.\n\nDecember 1972. President Nixon launches 'Operation Linebacker II'\u2014the intense 'Christmas Bombings' targeting Hanoi to force concessions at the peace talks. Massive B-52 formations drop heavy payloads over your neighborhoods. \n\nTo defend your capital, your military forces deploy advanced technology supplied by your superpower allies. What systems helped counter the American air superiority?",
+      evidenceKey: "tet_credibility_gap",
+      evidenceText: "\u{1F4FA} Tet Outcomes (1968): A severe military loss for communist forces, but a decisive political victory that created a 'Credibility Gap' and turned US public opinion against the war.",
+      options: [
+        {
+          text: "Soviet-supplied radar networks and Surface-to-Air Missiles (SAMs) that shot down dozens of B-52 bombers over the city.",
+          nextNode: "linebacker_success",
+          isCorrect: true
+        },
+        {
+          text: "Anti-aircraft laser arrays built locally in underground factories.",
+          nextNode: "linebacker_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    linebacker_fail: {
+      year: "1972",
+      topic: "\u26A0\uFE0F Technology Mapping Error",
+      text: "Incorrect. North Vietnam depended heavily on advanced military equipment supplied by the Soviet Union (USSR) and China. Soviet SAM systems were the primary weapons used to counter US heavy bombers over Hanoi.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your superpower alliance tracking", nextNode: "tet_success" }
+      ]
+    },
+    linebacker_success: {
+      year: "1975",
+      topic: "4.4: Fall of Saigon & Unification",
+      text: "Correct! Soviet SAM systems inflicted unsustainable aircraft losses on the US Air Force, helping secure the signing of the Paris Peace Accords and the final withdrawal of US forces.\n\nApril 30, 1975. You stand in the streets as news arrives that communist tanks have crashed through the gates of the Presidential Palace in Saigon. The war is won, and the country is unified under a single socialist flag. \n\nLooking back on the decades of conflict since the days of French colonial rule, you reflect on the absolute commitment required to defeat a superpower. What was the estimated scale of total Vietnamese casualties?",
+      evidenceKey: "soviet_aid_network",
+      evidenceText: "\u{1F680} Superpower Aid: Material assistance and SAM technology transfers from the Soviet Union were critical in limiting the effectiveness of US strategic bombing campaigns.",
+      options: [
+        {
+          text: "Between 2 to 3 million Vietnamese soldiers and civilians dead, showing a level of total war sacrifice that conventional military strategies could not break.",
+          nextNode: "extended_complete",
+          isCorrect: true
+        },
+        {
+          text: "Fewer than 10,000 casualties due to the rural nature of the guerrilla fighting.",
+          nextNode: "extended_cost_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    extended_cost_fail: {
+      year: "1975",
+      topic: "\u26A0\uFE0F Casualty Misconception",
+      text: "Incorrect. The human toll was massive, with between 2 to 3 million Vietnamese losing their lives across both sides. This immense sacrifice highlights a determination for national independence that conventional US military containment strategies completely underestimated.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your casualty data values", nextNode: "linebacker_success" }
+      ]
+    },
+    extended_complete: {
+      year: "Completed",
+      topic: "\u{1F3C6} Full Syllabus Perspective Unlocked!",
+      text: "You have completed the full chronological journey from the perspective of the North Vietnamese forces.\n\nYou have traced the entire conflict: from the early roots of anti-colonial resistance against France, through the land reforms that unified the peasantry, the survival strategies against Operation Rolling Thunder, the grueling hardships of the Ho Chi Minh Trail, the military devastation yet political triumph of Tet, and the final unification of 1975. You now possess a comprehensive, top-tier analytical framework for your Edexcel history exam.",
+      evidenceKey: "total_war_commitment",
+      evidenceText: "\u{1F1FB}\u{1F1F3} Total War Dedication: The sacrifice of 2-3 million lives underscores a determination for independence that conventional US military strategies could not break.",
+      options: [
+        { text: "\u{1F504} Restart Simulator (Lock in Complete Historical Knowledge Security)", nextNode: "start", isReset: true },
+        { text: "\u{1F3E0} Return to Dashboard", nextNode: "start", isReset: true, goDashboard: true }
+      ]
+    }
+  };
+  var nExtendedCurrentNode = "start";
+  var nExtendedTrackingScore = 0;
+  var nExtendedUnlockedEvidence = /* @__PURE__ */ new Set();
+  function initNorthVietnamAdventureGame() {
+    nExtendedCurrentNode = "start";
+    nExtendedTrackingScore = 0;
+    nExtendedUnlockedEvidence.clear();
+    const list = document.getElementById("n-evidence-list");
+    if (list) list.innerHTML = "";
+    renderNorthVietnamEngine();
+  }
+  function renderNorthVietnamEngine() {
+    const data = nStoryNodes[nExtendedCurrentNode];
+    if (!data) return;
+    if (data.options[0] && data.options[0].isReset && nExtendedCurrentNode === "start") {
+      nExtendedTrackingScore = 0;
+      nExtendedUnlockedEvidence.clear();
+      const list = document.getElementById("n-evidence-list");
+      if (list) list.innerHTML = "";
+    }
+    const domYear = document.getElementById("n-year");
+    const domTopic = document.getElementById("n-topic");
+    const domText = document.getElementById("n-story-text");
+    const domScore = document.getElementById("n-score");
+    if (domYear) domYear.innerText = data.year;
+    if (domTopic) domTopic.innerText = data.topic;
+    if (domText) domText.innerText = data.text;
+    if (domScore) domScore.innerText = nExtendedTrackingScore;
+    const insightBox = document.getElementById("n-historical-insight");
+    if (insightBox) {
+      if (data.evidenceKey) {
+        if (!nExtendedUnlockedEvidence.has(data.evidenceKey)) {
+          nExtendedUnlockedEvidence.add(data.evidenceKey);
+          appendNorthVietnamEvidenceDOM(data.evidenceText);
+        }
+        insightBox.className = "insight-box correct-node";
+        insightBox.innerHTML = `<strong>\u2713 High-Value Case Study Unlocked:</strong> Context metric logged into your active essay bank profile on the right panel.`;
+      } else if (data.topic.includes("Misconception") || data.topic.includes("Error") || data.topic.includes("Reality")) {
+        insightBox.className = "insight-box";
+        insightBox.innerHTML = `<strong>\u26A0\uFE0F Syllabus Distractor Blocked:</strong> Note this correction carefully to safeguard your marks against common exam mistakes.`;
+      } else {
+        insightBox.className = "insight-box hidden";
+      }
+    }
+    const controlsBox = document.getElementById("n-options-container");
+    if (controlsBox) {
+      controlsBox.innerHTML = "";
+      data.options.forEach((opt) => {
+        const btn = document.createElement("button");
+        btn.className = "btn-option";
+        btn.innerText = opt.text;
+        btn.addEventListener("click", () => {
+          if (opt.goDashboard) {
+            AudioEngine.play("click");
+            switchView("dashboard");
+            return;
+          }
+          if (opt.isCorrect) {
+            nExtendedTrackingScore += 15;
+            AudioEngine.play("success");
+            addXp(10);
+          } else {
+            if (opt.nextNode.includes("fail")) {
+              AudioEngine.play("fail");
+            } else {
+              AudioEngine.play("click");
+            }
+            addXp(3);
+          }
+          if (opt.nextNode === "extended_complete") {
+            addXp(25);
+          }
+          nExtendedCurrentNode = opt.nextNode;
+          renderNorthVietnamEngine();
+        });
+        controlsBox.appendChild(btn);
+      });
+    }
+  }
+  function appendNorthVietnamEvidenceDOM(text) {
+    const list = document.getElementById("n-evidence-list");
+    if (!list) return;
+    const li = document.createElement("li");
+    li.className = "evidence-item";
+    li.innerText = text;
+    list.appendChild(li);
+  }
 
   // src/views.js
   var GOOGLE_SHEET_WEBAPP_URL = "";
@@ -16521,6 +16835,7 @@ ${cleanBrackets(paper.q3d.model)}
     const tabAdventure = document.getElementById("btn-tab-game-adventure");
     const tabVietnamAdventure = document.getElementById("btn-tab-game-vietnam-adventure");
     const tabCivilianAdventure = document.getElementById("btn-tab-game-civilian-adventure");
+    const tabNorthVietnamAdventure = document.getElementById("btn-tab-game-north-vietnam-adventure");
     const paneCausal = document.getElementById("game-causal-container");
     const paneChronology = document.getElementById("game-chronology-container");
     const paneMastery = document.getElementById("game-mastery-container");
@@ -16530,203 +16845,88 @@ ${cleanBrackets(paper.q3d.model)}
     const paneAdventure = document.getElementById("game-adventure-container");
     const paneVietnamAdventure = document.getElementById("game-vietnam-adventure-container");
     const paneCivilianAdventure = document.getElementById("game-civilian-adventure-container");
-    if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure && tabCivilianAdventure && paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure && paneCivilianAdventure) {
-      const showCausal = () => {
-        tabCausal.classList.add("active");
-        tabCausal.style.borderColor = "var(--primary)";
-        tabCausal.style.color = "var(--primary)";
-        tabCausal.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
+    const paneNorthVietnamAdventure = document.getElementById("game-north-vietnam-adventure-container");
+    if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure && tabCivilianAdventure && tabNorthVietnamAdventure && paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure && paneCivilianAdventure && paneNorthVietnamAdventure) {
+      const ALL_GAME_TABS = [
+        tabCausal,
+        tabChronology,
+        tabMastery,
+        tabDecisions,
+        tabMindMap,
+        tabTaboo,
+        tabAdventure,
+        tabVietnamAdventure,
+        tabCivilianAdventure,
+        tabNorthVietnamAdventure
+      ];
+      const ALL_GAME_PANES = [
+        paneCausal,
+        paneChronology,
+        paneMastery,
+        paneDecisions,
+        paneMindMap,
+        paneTaboo,
+        paneAdventure,
+        paneVietnamAdventure,
+        paneCivilianAdventure,
+        paneNorthVietnamAdventure
+      ];
+      const showTabPane = (activeTab, activePane) => {
+        ALL_GAME_TABS.forEach((t) => {
+          if (t === activeTab) {
+            t.classList.add("active");
+            t.style.borderColor = "var(--primary)";
+            t.style.color = "var(--primary)";
+            t.style.background = "rgba(59, 130, 246, 0.1)";
+          } else {
+            t.classList.remove("active");
+            t.style.borderColor = "var(--border-glass)";
+            t.style.color = "var(--text-muted)";
+            t.style.background = "rgba(255,255,255,0.03)";
+          }
         });
-        paneCausal.style.display = "block";
-        paneChronology.style.display = "none";
-        paneMastery.style.display = "none";
-        paneDecisions.style.display = "none";
-        paneMindMap.style.display = "none";
-        paneTaboo.style.display = "none";
-        paneAdventure.style.display = "none";
-        paneVietnamAdventure.style.display = "none";
-        paneCivilianAdventure.style.display = "none";
+        ALL_GAME_PANES.forEach((p) => {
+          p.style.display = p === activePane ? "block" : "none";
+        });
+      };
+      const showCausal = () => {
+        showTabPane(tabCausal, paneCausal);
       };
       const showChronology = () => {
-        tabChronology.classList.add("active");
-        tabChronology.style.borderColor = "var(--primary)";
-        tabChronology.style.color = "var(--primary)";
-        tabChronology.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
-        });
-        paneCausal.style.display = "none";
-        paneChronology.style.display = "block";
-        paneMastery.style.display = "none";
-        paneDecisions.style.display = "none";
-        paneMindMap.style.display = "none";
-        paneTaboo.style.display = "none";
-        paneAdventure.style.display = "none";
-        paneVietnamAdventure.style.display = "none";
-        paneCivilianAdventure.style.display = "none";
+        showTabPane(tabChronology, paneChronology);
         initChronologyGame();
       };
       const showMastery = () => {
-        tabMastery.classList.add("active");
-        tabMastery.style.borderColor = "var(--primary)";
-        tabMastery.style.color = "var(--primary)";
-        tabMastery.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
-        });
-        paneCausal.style.display = "none";
-        paneChronology.style.display = "none";
-        paneMastery.style.display = "block";
-        paneDecisions.style.display = "none";
-        paneMindMap.style.display = "none";
-        paneTaboo.style.display = "none";
-        paneAdventure.style.display = "none";
-        paneVietnamAdventure.style.display = "none";
-        paneCivilianAdventure.style.display = "none";
+        showTabPane(tabMastery, paneMastery);
         initMasteryMatchGame();
       };
       const showDecisions = () => {
-        tabDecisions.classList.add("active");
-        tabDecisions.style.borderColor = "var(--primary)";
-        tabDecisions.style.color = "var(--primary)";
-        tabDecisions.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
-        });
-        paneCausal.style.display = "none";
-        paneChronology.style.display = "none";
-        paneMastery.style.display = "none";
-        paneDecisions.style.display = "block";
-        paneMindMap.style.display = "none";
-        paneTaboo.style.display = "none";
-        paneAdventure.style.display = "none";
-        paneVietnamAdventure.style.display = "none";
-        paneCivilianAdventure.style.display = "none";
+        showTabPane(tabDecisions, paneDecisions);
         initDecisionsGame();
       };
       const showMindMap = () => {
-        tabMindMap.classList.add("active");
-        tabMindMap.style.borderColor = "var(--primary)";
-        tabMindMap.style.color = "var(--primary)";
-        tabMindMap.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
-        });
-        paneCausal.style.display = "none";
-        paneChronology.style.display = "none";
-        paneMastery.style.display = "none";
-        paneDecisions.style.display = "none";
-        paneMindMap.style.display = "block";
-        paneTaboo.style.display = "none";
-        paneAdventure.style.display = "none";
-        paneVietnamAdventure.style.display = "none";
-        paneCivilianAdventure.style.display = "none";
+        showTabPane(tabMindMap, paneMindMap);
         initMindMapGame();
       };
       const showTaboo = () => {
-        tabTaboo.classList.add("active");
-        tabTaboo.style.borderColor = "var(--primary)";
-        tabTaboo.style.color = "var(--primary)";
-        tabTaboo.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
-        });
-        paneCausal.style.display = "none";
-        paneChronology.style.display = "none";
-        paneMastery.style.display = "none";
-        paneDecisions.style.display = "none";
-        paneMindMap.style.display = "none";
-        paneTaboo.style.display = "block";
-        paneAdventure.style.display = "none";
-        paneVietnamAdventure.style.display = "none";
-        paneCivilianAdventure.style.display = "none";
+        showTabPane(tabTaboo, paneTaboo);
         initTabooGame();
       };
       const showAdventure = () => {
-        tabAdventure.classList.add("active");
-        tabAdventure.style.borderColor = "var(--primary)";
-        tabAdventure.style.color = "var(--primary)";
-        tabAdventure.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
-        });
-        paneCausal.style.display = "none";
-        paneChronology.style.display = "none";
-        paneMastery.style.display = "none";
-        paneDecisions.style.display = "none";
-        paneMindMap.style.display = "none";
-        paneTaboo.style.display = "none";
-        paneAdventure.style.display = "block";
-        paneVietnamAdventure.style.display = "none";
-        paneCivilianAdventure.style.display = "none";
+        showTabPane(tabAdventure, paneAdventure);
         initAdventureGame();
       };
       const showVietnamAdventure = () => {
-        tabVietnamAdventure.classList.add("active");
-        tabVietnamAdventure.style.borderColor = "var(--primary)";
-        tabVietnamAdventure.style.color = "var(--primary)";
-        tabVietnamAdventure.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabCivilianAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
-        });
-        paneCausal.style.display = "none";
-        paneChronology.style.display = "none";
-        paneMastery.style.display = "none";
-        paneDecisions.style.display = "none";
-        paneMindMap.style.display = "none";
-        paneTaboo.style.display = "none";
-        paneAdventure.style.display = "none";
-        paneVietnamAdventure.style.display = "block";
-        paneCivilianAdventure.style.display = "none";
+        showTabPane(tabVietnamAdventure, paneVietnamAdventure);
         initVietnamAdventureGame();
       };
       const showCivilianAdventure = () => {
-        tabCivilianAdventure.classList.add("active");
-        tabCivilianAdventure.style.borderColor = "var(--primary)";
-        tabCivilianAdventure.style.color = "var(--primary)";
-        tabCivilianAdventure.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach((t) => {
-          t.classList.remove("active");
-          t.style.borderColor = "var(--border-glass)";
-          t.style.color = "var(--text-muted)";
-          t.style.background = "rgba(255,255,255,0.03)";
-        });
-        paneCausal.style.display = "none";
-        paneChronology.style.display = "none";
-        paneMastery.style.display = "none";
-        paneDecisions.style.display = "none";
-        paneMindMap.style.display = "none";
-        paneTaboo.style.display = "none";
-        paneAdventure.style.display = "none";
-        paneVietnamAdventure.style.display = "none";
-        paneCivilianAdventure.style.display = "block";
+        showTabPane(tabCivilianAdventure, paneCivilianAdventure);
         initCivilianAdventureGame();
+      };
+      const showNorthVietnamAdventure = () => {
+        showTabPane(tabNorthVietnamAdventure, paneNorthVietnamAdventure);
+        initNorthVietnamAdventureGame();
       };
       tabCausal.addEventListener("click", () => {
         AudioEngine.play("click");
@@ -16763,6 +16963,10 @@ ${cleanBrackets(paper.q3d.model)}
       tabCivilianAdventure.addEventListener("click", () => {
         AudioEngine.play("click");
         showCivilianAdventure();
+      });
+      tabNorthVietnamAdventure.addEventListener("click", () => {
+        AudioEngine.play("click");
+        showNorthVietnamAdventure();
       });
     }
   }

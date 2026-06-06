@@ -1828,6 +1828,9 @@
             <button class="tab-btn" id="btn-tab-game-civilian-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
               <i class="fa-solid fa-compass"></i> Vietnam Civilian Adventure
             </button>
+            <button class="tab-btn" id="btn-tab-game-north-vietnam-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
+              <i class="fa-solid fa-compass"></i> North Vietnamese Adventure
+            </button>
           </div>
 
           <!-- Container for Causal Link Builder Game -->
@@ -2012,6 +2015,39 @@
                   <h3>🎒 Social & Civilian Evidence Bank</h3>
                   <p class="sidebar-meta">Unlock these crucial socio-political and civilian impacts to score high on 'reasons for failure' and 'nature of conflict' essays:</p>
                   <ul id="c-evidence-list" class="evidence-tracker">
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Container for North Vietnamese Adventure Game -->
+          <div id="game-north-vietnam-adventure-container" class="game-view-pane" style="display: none;">
+            <div class="adventure-game-wrapper">
+              <div class="adventure-layout">
+                
+                <div class="adventure-terminal">
+                  <div class="terminal-header">
+                    <span class="status-item">📅 Year: <strong id="n-year">1945</strong></span>
+                    <span class="status-item">📋 Phase: <strong id="n-topic">Pre-1954 Context</strong></span>
+                    <span class="status-item">🛡️ Revision Score: <strong id="n-score">0</strong></span>
+                  </div>
+
+                  <div class="terminal-screen">
+                    <p id="n-story-text" class="story-passage"></p>
+                    <div id="n-historical-insight" class="insight-box hidden"></div>
+                  </div>
+
+                  <div class="terminal-input">
+                    <div id="n-options-container" class="options-stack"></div>
+                  </div>
+                </div>
+
+                <div class="evidence-sidebar">
+                  <h3>🎒 North Vietnamese Strategic Context</h3>
+                  <p class="sidebar-meta">Unlock these deep historical, logistical, and tactical realities to explain the reasons for US military failure in your 12 and 16-mark essays:</p>
+                  <ul id="n-evidence-list" class="evidence-tracker">
                   </ul>
                 </div>
 
