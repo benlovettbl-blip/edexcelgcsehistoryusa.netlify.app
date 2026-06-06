@@ -15646,6 +15646,266 @@ ${cleanBrackets(paper.q3d.model)}
     li.innerText = text;
     list.appendChild(li);
   }
+  var cStoryNodes = {
+    start: {
+      year: "1955",
+      topic: "3.1: NGO Dinh Diem's Domestic Rules",
+      text: "You are a member of a rice-farming family in the Mekong Delta of South Vietnam. Following the division of the country at the Geneva Conference, the new capitalist leader in Saigon, Ngo Dinh Diem, takes control. \n\nDuring the previous independence war, communist fighters redistributed farming land to your family for free. Now, Diem's officials arrive in your village backed by armed guards. They announce a new agricultural property directive.\n\nWhat structural change does Diem force upon your community?",
+      options: [
+        {
+          text: "He cancels the communist land redistribution, forcing your family to buy buy-back your own land or pay heavy rents to wealthy Catholic landlords.",
+          nextNode: "diem_land_success",
+          isCorrect: true
+        },
+        {
+          text: "He introduces free westernized industrial farming equipment, fully subsidizing all peasant rice crop yields.",
+          nextNode: "diem_land_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    diem_land_fail: {
+      year: "1955",
+      topic: "\u26A0\uFE0F Historical Reality Error",
+      text: "Incorrect. Diem did not support the peasant classes. His policies directly favored wealthy, urban, Catholic elites and landlords. This systemic economic bias quickly alienated the rural Buddhist majority.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your understanding of land policies", nextNode: "start" }
+      ]
+    },
+    diem_land_success: {
+      year: "1962",
+      topic: "3.1: Forced Displacement",
+      text: "Correct! Diem's land policies created deep resentment, making rural areas fertile recruiting grounds for the Vietcong (VC).\n\nIt is now 1962. To disrupt the growing Vietcong influence, the South Vietnamese army (ARVN) and US military advisors launch the Strategic Hamlet Program. Government forces march into your village, set fire to your thatched homes, and force your community at gunpoint to move into a new, fortified village surrounded by barbed wire and bamboo spikes.\n\nWhy did your family and community find this relocation culturally and socially devastating?",
+      evidenceKey: "diem_alienation",
+      evidenceText: "\u{1F33E} Peasant Alienation (1955-59): Diem reversed land reforms to benefit wealthy landlords, pushing the rural Buddhist majority toward the Vietcong.",
+      options: [
+        {
+          text: "It severed your sacred connection to ancestral burial lands and forced you to build your own fortified containment walls without pay.",
+          nextNode: "hamlet_civ_success",
+          isCorrect: true
+        },
+        {
+          text: "It required your family to convert away from Buddhism to Western Christianity to enter the complex.",
+          nextNode: "hamlet_civ_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    hamlet_civ_fail: {
+      year: "1962",
+      topic: "\u26A0\uFE0F Policy Detail Error",
+      text: "Incorrect. While Diem deeply discriminated against Buddhists (sparking the 1963 Buddhist Crisis), the Strategic Hamlet Program did not include a mandatory religious conversion clause. The anger stemmed from forced relocation, unpaid labor, and being torn away from ancestral lands.",
+      options: [
+        { text: "\u21A9\uFE0F Re-evaluate the social impact", nextNode: "diem_land_success" }
+      ]
+    },
+    hamlet_civ_success: {
+      year: "1966",
+      topic: "3.3: US Firepower & Destruction",
+      text: "Correct! The Strategic Hamlet Program severely backfired. It felt like imprisonment, increasing rural support for the Vietcong insurgency.\n\nBy 1966, your region is classified as a 'Free Fire Zone'. US helicopters patrol overhead, while Vietcong guerrillas slip through the shadows of your village demanding shelter and food. One morning, US aircraft drop a heavy chemical defoliant to clear the thick jungle canopy where the Vietcong hide. The chemical settles over your community's rice fields.\n\nWhich specific US chemical weapon did you experience, which destroyed food supplies and caused horrific, long-term health crises?",
+      evidenceKey: "civilian_hamlets",
+      evidenceText: "\u{1F3E1} Strategic Hamlets (1962): Forced relocations uprooted peasants from ancestral graves, transforming containment zones into breeding grounds for VC support.",
+      options: [
+        {
+          text: "Agent Orange, a toxic herbicide designed to strip crop fields and jungle foliage.",
+          nextNode: "chemical_success",
+          isCorrect: true
+        },
+        {
+          text: "Cyclon-B, a dense gas variant designed to clear underground tunnel networks.",
+          nextNode: "chemical_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    chemical_fail: {
+      year: "1966",
+      topic: "\u26A0\uFE0F Weapon Identification Error",
+      text: "Incorrect. The US military weaponized Agent Orange (for defoliation) and Napalm (jellied petroleum for burning structures and cover). Cyclon-B is historically connected to WWII European theaters, not Vietnam.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your military history terms", nextNode: "hamlet_civ_success" }
+      ]
+    },
+    chemical_success: {
+      year: "1968",
+      topic: "3.3: Vietcong Guerrilla Pressure",
+      text: "Correct! Agent Orange destroyed millions of acres of farmland, destroying food production and poisoning civilians.\n\nIt is early 1968, ahead of the Tet Offensive. Vietcong cadres enter your household at midnight. They speak of liberation and national pride, but they also demand a steep 'revolution tax' in the form of your remaining rice storage, and conscript your older sibling into service as a tunnel digger. \n\nWhich dual strategy describes how the Vietcong managed control over rural South Vietnamese populations?",
+      evidenceKey: "agent_orange_impact",
+      evidenceText: "\u2623\uFE0F Agent Orange Impact: Destroyed rural food infrastructures and livelihoods, undermining the US mission to 'win hearts and minds'.",
+      options: [
+        {
+          text: "A calculated mix of local propaganda promising land reform, alongside brutal intimidation and violence against anyone cooperating with Saigon.",
+          nextNode: "vc_tactics_success",
+          isCorrect: true
+        },
+        {
+          text: "Providing complete financial rewards in US Dollars to any peasant family that joined their ranks.",
+          nextNode: "vc_tactics_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    vc_tactics_fail: {
+      year: "1968",
+      topic: "\u26A0\uFE0F Insurgency Mechanics Error",
+      text: "Incorrect. The Vietcong did not possess or distribute US cash reserves. They relied heavily on local integration, ideological appeals, and severe violence against village leaders who cooperated with the South Vietnamese government.",
+      options: [
+        { text: "\u21A9\uFE0F Re-analyze insurgent methodologies", nextNode: "chemical_success" }
+      ]
+    },
+    vc_tactics_success: {
+      year: "1975",
+      topic: "4.4: Fall of Saigon Consequences",
+      text: "Correct! The Vietcong combined political persuasion with severe enforcement networks, trapping civilians between two opposing sides.\n\nApril 1975. The US military has withdrawn, and North Vietnamese tanks crash through the gates of Saigon. The war is over, but peace brings deep insecurity. Because your father once worked a low-level administrative job for the old South Vietnamese government, your family is targeted by the new communist authorities.\n\nWhat immediate system did the new regime set up to deal with citizens linked to the old capitalist system?",
+      evidenceKey: "vc_coercion",
+      evidenceText: "\u{1F465} Vietcong Village Control: Blended grassroots promises with targeted violence against local officials to secure rural cooperation.",
+      options: [
+        {
+          text: "Forced relocation to harsh 'Re-education Camps' involving intense manual labor and political indoctrination.",
+          nextNode: "refugee_boat_transition",
+          isCorrect: true
+        },
+        {
+          text: "Offering free emigration documentation to relocate safely to Western Europe.",
+          nextNode: "camp_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    camp_fail: {
+      year: "1975",
+      topic: "\u26A0\uFE0F Regime Outcome Error",
+      text: "Incorrect. The victorious communist government did not help citizens leave. They sealed the borders and sent over 1 million South Vietnamese citizens to re-education camps, where thousands died from exhaustion and malnutrition.",
+      options: [
+        { text: "\u21A9\uFE0F Correct your understanding of the war's aftermath", nextNode: "vc_tactics_success" }
+      ]
+    },
+    refugee_boat_transition: {
+      year: "1977",
+      topic: "4.4: The 'Boat People' Refugee Crisis",
+      text: "Correct! Re-education camps and political repression turned millions of South Vietnamese into refugees.\n\nIt is 1977. Desperate to escape the economic hardship and political crackdowns of the new regime, your family pools your remaining hidden jewelry to buy passage on a cramped, wooden fishing boat. You and 200 others slip out into the South China Sea at midnight.\n\nThe boat is unseaworthy, water supplies are running out, and you face the constant threat of Thai pirates and deadly tropical storms. \n\nWhat historical name was given to this massive humanitarian migration crisis?",
+      evidenceKey: "reeducation_camps",
+      evidenceText: "\u26D3\uFE0F Post-War Repression (1975+): Over 1 million South Vietnamese were sent to re-education camps, crushing any local support for the unified state.",
+      options: [
+        {
+          text: "The 'Boat People' crisis, which eventually forced the international community to resettle over a million refugees worldwide.",
+          nextNode: "civilian_complete",
+          isCorrect: true
+        },
+        {
+          text: "The Ho Chi Minh Trail Exodus, which funneled refugees overland into Thailand.",
+          nextNode: "boat_fail",
+          isCorrect: false
+        }
+      ]
+    },
+    boat_fail: {
+      year: "1977",
+      topic: "\u26A0\uFE0F Terminology Error",
+      text: "Incorrect. The Ho Chi Minh Trail was a wartime military supply network running through Laos and Cambodia. The maritime escape route across the sea was universally known as the 'Boat People' crisis.",
+      options: [
+        { text: "\u21A9\uFE0F Use correct historical terminology", nextNode: "refugee_boat_transition" }
+      ]
+    },
+    civilian_complete: {
+      year: "Completed",
+      topic: "\u{1F3C6} Perspective Module Secure!",
+      text: "You survive the ocean crossing and arrive at a United Nations refugee camp in Malaysia before eventually resettling in the West. \n\nYou have successfully navigated the Vietnam War from the perspective of a South Vietnamese civilian. You have experienced how early political corruption, forced relocations, massive bombing campaigns, and post-war retaliation completely disrupted the civilian population\u2014providing the deepest explanations for why the US failed to secure the country.",
+      evidenceKey: "boat_people_crisis",
+      evidenceText: "\u{1F30A} The Boat People (1975-90s): Hundreds of thousands fled South Vietnam by sea to escape political repression, creating a massive global humanitarian crisis.",
+      options: [
+        { text: "\u{1F504} Restart Simulator (Lock in Civilian Analysis Foundations)", nextNode: "start", isReset: true },
+        { text: "\u{1F3E0} Return to Dashboard", nextNode: "start", isReset: true, goDashboard: true }
+      ]
+    }
+  };
+  var cCurrentNode = "start";
+  var cTrackingScore = 0;
+  var cUnlockedEvidence = /* @__PURE__ */ new Set();
+  function initCivilianAdventureGame() {
+    cCurrentNode = "start";
+    cTrackingScore = 0;
+    cUnlockedEvidence.clear();
+    const list = document.getElementById("c-evidence-list");
+    if (list) list.innerHTML = "";
+    renderCivilianEngine();
+  }
+  function renderCivilianEngine() {
+    const data = cStoryNodes[cCurrentNode];
+    if (!data) return;
+    if (data.options[0] && data.options[0].isReset && cCurrentNode === "start") {
+      cTrackingScore = 0;
+      cUnlockedEvidence.clear();
+      const list = document.getElementById("c-evidence-list");
+      if (list) list.innerHTML = "";
+    }
+    const domYear = document.getElementById("c-year");
+    const domTopic = document.getElementById("c-topic");
+    const domText = document.getElementById("c-story-text");
+    const domScore = document.getElementById("c-score");
+    if (domYear) domYear.innerText = data.year;
+    if (domTopic) domTopic.innerText = data.topic;
+    if (domText) domText.innerText = data.text;
+    if (domScore) domScore.innerText = cTrackingScore;
+    const insightBox = document.getElementById("c-historical-insight");
+    if (insightBox) {
+      if (data.evidenceKey) {
+        if (!cUnlockedEvidence.has(data.evidenceKey)) {
+          cUnlockedEvidence.add(data.evidenceKey);
+          appendCivilianEvidenceDOM(data.evidenceText);
+        }
+        insightBox.className = "insight-box correct-node";
+        insightBox.innerHTML = `<strong>\u2713 Socio-Cultural Fact Unlocked:</strong> Context metric logged into your active revision bank layout.`;
+      } else if (data.topic.includes("Misconception") || data.topic.includes("Error") || data.topic.includes("Reality")) {
+        insightBox.className = "insight-box";
+        insightBox.innerHTML = `<strong>\u26A0\uFE0F Syllabus Distractor Blocked:</strong> Carefully read this misconception to avoid losing marks in essay answers.`;
+      } else {
+        insightBox.className = "insight-box hidden";
+      }
+    }
+    const controlsBox = document.getElementById("c-options-container");
+    if (controlsBox) {
+      controlsBox.innerHTML = "";
+      data.options.forEach((opt) => {
+        const btn = document.createElement("button");
+        btn.className = "btn-option";
+        btn.innerText = opt.text;
+        btn.addEventListener("click", () => {
+          if (opt.goDashboard) {
+            AudioEngine.play("click");
+            switchView("dashboard");
+            return;
+          }
+          if (opt.isCorrect) {
+            cTrackingScore += 15;
+            AudioEngine.play("success");
+            addXp(10);
+          } else {
+            if (opt.nextNode.includes("fail")) {
+              AudioEngine.play("fail");
+            } else {
+              AudioEngine.play("click");
+            }
+            addXp(3);
+          }
+          if (opt.nextNode === "civilian_complete") {
+            addXp(25);
+          }
+          cCurrentNode = opt.nextNode;
+          renderCivilianEngine();
+        });
+        controlsBox.appendChild(btn);
+      });
+    }
+  }
+  function appendCivilianEvidenceDOM(text) {
+    const list = document.getElementById("c-evidence-list");
+    if (!list) return;
+    const li = document.createElement("li");
+    li.className = "evidence-item";
+    li.innerText = text;
+    list.appendChild(li);
+  }
 
   // src/views.js
   var GOOGLE_SHEET_WEBAPP_URL = "";
@@ -16260,6 +16520,7 @@ ${cleanBrackets(paper.q3d.model)}
     const tabTaboo = document.getElementById("btn-tab-game-taboo");
     const tabAdventure = document.getElementById("btn-tab-game-adventure");
     const tabVietnamAdventure = document.getElementById("btn-tab-game-vietnam-adventure");
+    const tabCivilianAdventure = document.getElementById("btn-tab-game-civilian-adventure");
     const paneCausal = document.getElementById("game-causal-container");
     const paneChronology = document.getElementById("game-chronology-container");
     const paneMastery = document.getElementById("game-mastery-container");
@@ -16268,13 +16529,14 @@ ${cleanBrackets(paper.q3d.model)}
     const paneTaboo = document.getElementById("game-taboo-container");
     const paneAdventure = document.getElementById("game-adventure-container");
     const paneVietnamAdventure = document.getElementById("game-vietnam-adventure-container");
-    if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure && paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure) {
+    const paneCivilianAdventure = document.getElementById("game-civilian-adventure-container");
+    if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure && tabCivilianAdventure && paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure && paneCivilianAdventure) {
       const showCausal = () => {
         tabCausal.classList.add("active");
         tabCausal.style.borderColor = "var(--primary)";
         tabCausal.style.color = "var(--primary)";
         tabCausal.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach((t) => {
+        [tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -16288,13 +16550,14 @@ ${cleanBrackets(paper.q3d.model)}
         paneTaboo.style.display = "none";
         paneAdventure.style.display = "none";
         paneVietnamAdventure.style.display = "none";
+        paneCivilianAdventure.style.display = "none";
       };
       const showChronology = () => {
         tabChronology.classList.add("active");
         tabChronology.style.borderColor = "var(--primary)";
         tabChronology.style.color = "var(--primary)";
         tabChronology.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach((t) => {
+        [tabCausal, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -16308,6 +16571,7 @@ ${cleanBrackets(paper.q3d.model)}
         paneTaboo.style.display = "none";
         paneAdventure.style.display = "none";
         paneVietnamAdventure.style.display = "none";
+        paneCivilianAdventure.style.display = "none";
         initChronologyGame();
       };
       const showMastery = () => {
@@ -16315,7 +16579,7 @@ ${cleanBrackets(paper.q3d.model)}
         tabMastery.style.borderColor = "var(--primary)";
         tabMastery.style.color = "var(--primary)";
         tabMastery.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach((t) => {
+        [tabCausal, tabChronology, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -16329,6 +16593,7 @@ ${cleanBrackets(paper.q3d.model)}
         paneTaboo.style.display = "none";
         paneAdventure.style.display = "none";
         paneVietnamAdventure.style.display = "none";
+        paneCivilianAdventure.style.display = "none";
         initMasteryMatchGame();
       };
       const showDecisions = () => {
@@ -16336,7 +16601,7 @@ ${cleanBrackets(paper.q3d.model)}
         tabDecisions.style.borderColor = "var(--primary)";
         tabDecisions.style.color = "var(--primary)";
         tabDecisions.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach((t) => {
+        [tabCausal, tabChronology, tabMastery, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -16350,6 +16615,7 @@ ${cleanBrackets(paper.q3d.model)}
         paneTaboo.style.display = "none";
         paneAdventure.style.display = "none";
         paneVietnamAdventure.style.display = "none";
+        paneCivilianAdventure.style.display = "none";
         initDecisionsGame();
       };
       const showMindMap = () => {
@@ -16357,7 +16623,7 @@ ${cleanBrackets(paper.q3d.model)}
         tabMindMap.style.borderColor = "var(--primary)";
         tabMindMap.style.color = "var(--primary)";
         tabMindMap.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo, tabAdventure, tabVietnamAdventure].forEach((t) => {
+        [tabCausal, tabChronology, tabMastery, tabDecisions, tabTaboo, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -16371,6 +16637,7 @@ ${cleanBrackets(paper.q3d.model)}
         paneTaboo.style.display = "none";
         paneAdventure.style.display = "none";
         paneVietnamAdventure.style.display = "none";
+        paneCivilianAdventure.style.display = "none";
         initMindMapGame();
       };
       const showTaboo = () => {
@@ -16378,7 +16645,7 @@ ${cleanBrackets(paper.q3d.model)}
         tabTaboo.style.borderColor = "var(--primary)";
         tabTaboo.style.color = "var(--primary)";
         tabTaboo.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabAdventure, tabVietnamAdventure].forEach((t) => {
+        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabAdventure, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -16392,6 +16659,7 @@ ${cleanBrackets(paper.q3d.model)}
         paneTaboo.style.display = "block";
         paneAdventure.style.display = "none";
         paneVietnamAdventure.style.display = "none";
+        paneCivilianAdventure.style.display = "none";
         initTabooGame();
       };
       const showAdventure = () => {
@@ -16399,7 +16667,7 @@ ${cleanBrackets(paper.q3d.model)}
         tabAdventure.style.borderColor = "var(--primary)";
         tabAdventure.style.color = "var(--primary)";
         tabAdventure.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabVietnamAdventure].forEach((t) => {
+        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabVietnamAdventure, tabCivilianAdventure].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -16413,6 +16681,7 @@ ${cleanBrackets(paper.q3d.model)}
         paneTaboo.style.display = "none";
         paneAdventure.style.display = "block";
         paneVietnamAdventure.style.display = "none";
+        paneCivilianAdventure.style.display = "none";
         initAdventureGame();
       };
       const showVietnamAdventure = () => {
@@ -16420,7 +16689,7 @@ ${cleanBrackets(paper.q3d.model)}
         tabVietnamAdventure.style.borderColor = "var(--primary)";
         tabVietnamAdventure.style.color = "var(--primary)";
         tabVietnamAdventure.style.background = "rgba(59, 130, 246, 0.1)";
-        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure].forEach((t) => {
+        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabCivilianAdventure].forEach((t) => {
           t.classList.remove("active");
           t.style.borderColor = "var(--border-glass)";
           t.style.color = "var(--text-muted)";
@@ -16434,7 +16703,30 @@ ${cleanBrackets(paper.q3d.model)}
         paneTaboo.style.display = "none";
         paneAdventure.style.display = "none";
         paneVietnamAdventure.style.display = "block";
+        paneCivilianAdventure.style.display = "none";
         initVietnamAdventureGame();
+      };
+      const showCivilianAdventure = () => {
+        tabCivilianAdventure.classList.add("active");
+        tabCivilianAdventure.style.borderColor = "var(--primary)";
+        tabCivilianAdventure.style.color = "var(--primary)";
+        tabCivilianAdventure.style.background = "rgba(59, 130, 246, 0.1)";
+        [tabCausal, tabChronology, tabMastery, tabDecisions, tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure].forEach((t) => {
+          t.classList.remove("active");
+          t.style.borderColor = "var(--border-glass)";
+          t.style.color = "var(--text-muted)";
+          t.style.background = "rgba(255,255,255,0.03)";
+        });
+        paneCausal.style.display = "none";
+        paneChronology.style.display = "none";
+        paneMastery.style.display = "none";
+        paneDecisions.style.display = "none";
+        paneMindMap.style.display = "none";
+        paneTaboo.style.display = "none";
+        paneAdventure.style.display = "none";
+        paneVietnamAdventure.style.display = "none";
+        paneCivilianAdventure.style.display = "block";
+        initCivilianAdventureGame();
       };
       tabCausal.addEventListener("click", () => {
         AudioEngine.play("click");
@@ -16467,6 +16759,10 @@ ${cleanBrackets(paper.q3d.model)}
       tabVietnamAdventure.addEventListener("click", () => {
         AudioEngine.play("click");
         showVietnamAdventure();
+      });
+      tabCivilianAdventure.addEventListener("click", () => {
+        AudioEngine.play("click");
+        showCivilianAdventure();
       });
     }
   }

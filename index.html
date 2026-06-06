@@ -1825,6 +1825,9 @@
             <button class="tab-btn" id="btn-tab-game-vietnam-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
               <i class="fa-solid fa-compass"></i> Vietnam Campaign Adventure
             </button>
+            <button class="tab-btn" id="btn-tab-game-civilian-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
+              <i class="fa-solid fa-compass"></i> Vietnam Civilian Adventure
+            </button>
           </div>
 
           <!-- Container for Causal Link Builder Game -->
@@ -1976,6 +1979,39 @@
                   <h3>🎒 Vietnam Essay Evidence Bank</h3>
                   <p class="sidebar-meta">Secure these vital exam case studies for your 12 and 16-mark causal explanations:</p>
                   <ul id="v-evidence-list" class="evidence-tracker">
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Container for Vietnam Civilian Adventure Game -->
+          <div id="game-civilian-adventure-container" class="game-view-pane" style="display: none;">
+            <div class="adventure-game-wrapper">
+              <div class="adventure-layout">
+                
+                <div class="adventure-terminal">
+                  <div class="terminal-header">
+                    <span class="status-item">📅 Year: <strong id="c-year">1954</strong></span>
+                    <span class="status-item">📋 Perspective: <strong id="c-topic">KT3: Civilian</strong></span>
+                    <span class="status-item">🛡️ Historical Accuracy: <strong id="c-score">0</strong></span>
+                  </div>
+
+                  <div class="terminal-screen">
+                    <p id="c-story-text" class="story-passage"></p>
+                    <div id="c-historical-insight" class="insight-box hidden"></div>
+                  </div>
+
+                  <div class="terminal-input">
+                    <div id="c-options-container" class="options-stack"></div>
+                  </div>
+                </div>
+
+                <div class="evidence-sidebar">
+                  <h3>🎒 Social & Civilian Evidence Bank</h3>
+                  <p class="sidebar-meta">Unlock these crucial socio-political and civilian impacts to score high on 'reasons for failure' and 'nature of conflict' essays:</p>
+                  <ul id="c-evidence-list" class="evidence-tracker">
                   </ul>
                 </div>
 
