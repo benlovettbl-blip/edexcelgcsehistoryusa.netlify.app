@@ -126,6 +126,12 @@ function updateBookmarksUI() {
 
 // 2. Global statistics calculation
 function updateGlobalStats() {
+  // Update Live XP Counter Badge
+  const headerXpEl = document.getElementById('header-xp-value');
+  if (headerXpEl && state.userStats) {
+    headerXpEl.textContent = state.userStats.xp;
+  }
+
   const total = state.allQuestions.length;
   const totalMastered = state.allQuestions.filter(q => getMasteryStatus(q.id) === 'mastered').length;
   const totalSecured = state.allQuestions.filter(q => getMasteryStatus(q.id) === 'secured').length;
@@ -339,6 +345,24 @@ export function showLevelUpNotification(level) {
 
 export function addXp(amount) {
   state.userStats.xp += amount;
+  
+  // Update Live XP Counter Badge with subtle scale pop animation
+  const headerXpEl = document.getElementById('header-xp-value');
+  if (headerXpEl) {
+    headerXpEl.textContent = state.userStats.xp;
+  }
+  const badge = document.getElementById('live-xp-counter-badge');
+  if (badge) {
+    badge.style.transform = 'scale(1.15)';
+    badge.style.borderColor = 'var(--primary)';
+    badge.style.background = 'rgba(59, 130, 246, 0.18)';
+    setTimeout(() => {
+      badge.style.transform = '';
+      badge.style.borderColor = '';
+      badge.style.background = '';
+    }, 250);
+  }
+
   let currentLevel = state.userStats.level;
   let nextXpThreshold = getXpForNextLevel(currentLevel);
   
@@ -1062,6 +1086,7 @@ function playCausalGame(subtopicId) {
           AudioEngine.play('success');
           card.style.borderColor = 'rgba(16, 185, 129, 0.4)';
           card.style.background = 'rgba(16, 185, 129, 0.03)';
+          addXp(3);
           status.textContent = "LINKED!";
           status.style.background = 'rgba(16, 185, 129, 0.15)';
           status.style.color = '#34d399';
@@ -1093,6 +1118,7 @@ function playCausalGame(subtopicId) {
           }
         } else {
           AudioEngine.play('fail');
+          addXp(1);
           card.style.transform = 'translateX(-6px)';
           setTimeout(() => card.style.transform = 'translateX(6px)', 60);
           setTimeout(() => card.style.transform = 'translateX(-4px)', 120);
@@ -1643,6 +1669,7 @@ function renderClassicView() {
       if (nextState) {
         checkBtn.className = 'mastery-checkbox-container mastered-secured';
         AudioEngine.play('success');
+        addXp(10);
       } else {
         checkBtn.className = 'mastery-checkbox-container';
         AudioEngine.play('click');
@@ -1652,6 +1679,10 @@ function renderClassicView() {
     details.addEventListener('toggle', () => {
       if (details.open) {
         AudioEngine.play('flip');
+        if (!details.classList.contains('details-opened-once')) {
+          details.classList.add('details-opened-once');
+          addXp(2);
+        }
       }
     });
     
@@ -1902,6 +1933,7 @@ function handleReinforceAnswer(selectedIndex, clickedBtn) {
     
     setMastered(q.id, true);
     session.masteredCount++;
+    addXp(10);
     
     setTimeout(() => {
       cardEl.classList.add('swipe-right');
@@ -1913,6 +1945,7 @@ function handleReinforceAnswer(selectedIndex, clickedBtn) {
   } else {
     AudioEngine.play('fail');
     clickedBtn.classList.add('incorrect');
+    addXp(2);
     
     // Highlight the correct one in green
     optionBtns.forEach((btn, idx) => {
@@ -4238,6 +4271,7 @@ function triggerDefendTwist(item, termCard, defCard) {
         btn.classList.add('correct');
         masteryState.score += 10;
         document.getElementById('mastery-score-display').textContent = `Score: ${masteryState.score}`;
+        addXp(5);
         
         // Remove from missed list
         resolveMissedTerm(item.term);
@@ -4249,6 +4283,7 @@ function triggerDefendTwist(item, termCard, defCard) {
       } else {
         AudioEngine.play('fail');
         btn.classList.add('incorrect');
+        addXp(1);
         
         // Highlight correct option
         overlay.querySelectorAll('.defend-option-btn').forEach(b => {
@@ -4758,6 +4793,7 @@ function handleMindMapCardClick(card) {
 
   if (text === expectedText) {
     AudioEngine.play('success');
+    addXp(5);
     
     mindmapState.score += 10;
     const scoreDisplay = document.getElementById('mindmap-score-display');
@@ -4791,6 +4827,7 @@ function handleMindMapCardClick(card) {
     }
   } else {
     AudioEngine.play('fail');
+    addXp(1);
     
     mindmapState.score = Math.max(0, mindmapState.score - 5);
     const scoreDisplay = document.getElementById('mindmap-score-display');
@@ -5686,6 +5723,9 @@ function recordCardResult(isCorrect) {
   if (isCorrect) {
     tabooState.turnScore++;
     document.getElementById('taboo-turn-score').textContent = tabooState.turnScore;
+    addXp(5);
+  } else {
+    addXp(1);
   }
 
   tabooState.turnLogs.push({
@@ -6540,6 +6580,7 @@ function openVideoModal(src, title) {
   
   if (!modal || !iframe || !modalTitle) return;
   
+  addXp(5);
   modalTitle.textContent = title;
   
   let embedUrl = src;

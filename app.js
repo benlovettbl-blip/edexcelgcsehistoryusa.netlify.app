@@ -14923,6 +14923,7 @@ ${cleanBrackets(paper.q3d.model)}
         Confetti.spawn(100);
       }
       chronoState.score += 20;
+      addXp(15);
       const scoreDisplay = document.getElementById("chrono-score-display");
       if (scoreDisplay) scoreDisplay.textContent = `Score: ${chronoState.score}`;
       chronoState.placedEvents.forEach((event, idx) => {
@@ -14953,6 +14954,7 @@ ${cleanBrackets(paper.q3d.model)}
       }
     } else {
       AudioEngine.play("fail");
+      addXp(3);
       if (feedbackMsg) {
         feedbackMsg.style.color = "var(--accent)";
         feedbackMsg.style.background = "rgba(244, 63, 94, 0.08)";
@@ -15533,12 +15535,17 @@ ${cleanBrackets(paper.q3d.model)}
           if (opt.isCorrect) {
             trackingScore += 15;
             AudioEngine.play("success");
+            addXp(10);
           } else {
             if (opt.nextNode.includes("fail")) {
               AudioEngine.play("fail");
             } else {
               AudioEngine.play("click");
             }
+            addXp(3);
+          }
+          if (opt.nextNode === "game_complete") {
+            addXp(25);
           }
           currentNode = opt.nextNode;
           renderGameEngine();
@@ -15612,12 +15619,17 @@ ${cleanBrackets(paper.q3d.model)}
           if (opt.isCorrect) {
             vTrackingScore += 15;
             AudioEngine.play("success");
+            addXp(10);
           } else {
             if (opt.nextNode.includes("fail")) {
               AudioEngine.play("fail");
             } else {
               AudioEngine.play("click");
             }
+            addXp(3);
+          }
+          if (opt.nextNode === "saigon_final") {
+            addXp(25);
           }
           vCurrentNode = opt.nextNode;
           renderVietnamEngine();
@@ -15717,6 +15729,10 @@ ${cleanBrackets(paper.q3d.model)}
     if (sideCount) sideCount.textContent = `${state.bookmarks.length} card${state.bookmarks.length === 1 ? "" : "s"} bookmarked`;
   }
   function updateGlobalStats() {
+    const headerXpEl = document.getElementById("header-xp-value");
+    if (headerXpEl && state.userStats) {
+      headerXpEl.textContent = state.userStats.xp;
+    }
     const total = state.allQuestions.length;
     const totalMastered = state.allQuestions.filter((q) => getMasteryStatus(q.id) === "mastered").length;
     const totalSecured = state.allQuestions.filter((q) => getMasteryStatus(q.id) === "secured").length;
@@ -15897,6 +15913,21 @@ ${cleanBrackets(paper.q3d.model)}
   }
   function addXp(amount) {
     state.userStats.xp += amount;
+    const headerXpEl = document.getElementById("header-xp-value");
+    if (headerXpEl) {
+      headerXpEl.textContent = state.userStats.xp;
+    }
+    const badge = document.getElementById("live-xp-counter-badge");
+    if (badge) {
+      badge.style.transform = "scale(1.15)";
+      badge.style.borderColor = "var(--primary)";
+      badge.style.background = "rgba(59, 130, 246, 0.18)";
+      setTimeout(() => {
+        badge.style.transform = "";
+        badge.style.borderColor = "";
+        badge.style.background = "";
+      }, 250);
+    }
     let currentLevel = state.userStats.level;
     let nextXpThreshold = getXpForNextLevel(currentLevel);
     while (state.userStats.xp >= nextXpThreshold && currentLevel < 5) {
@@ -16513,6 +16544,7 @@ ${cleanBrackets(paper.q3d.model)}
             AudioEngine.play("success");
             card.style.borderColor = "rgba(16, 185, 129, 0.4)";
             card.style.background = "rgba(16, 185, 129, 0.03)";
+            addXp(3);
             status.textContent = "LINKED!";
             status.style.background = "rgba(16, 185, 129, 0.15)";
             status.style.color = "#34d399";
@@ -16542,6 +16574,7 @@ ${cleanBrackets(paper.q3d.model)}
             }
           } else {
             AudioEngine.play("fail");
+            addXp(1);
             card.style.transform = "translateX(-6px)";
             setTimeout(() => card.style.transform = "translateX(6px)", 60);
             setTimeout(() => card.style.transform = "translateX(-4px)", 120);
@@ -17062,6 +17095,7 @@ ${cleanBrackets(paper.q3d.model)}
         if (nextState) {
           checkBtn.className = "mastery-checkbox-container mastered-secured";
           AudioEngine.play("success");
+          addXp(10);
         } else {
           checkBtn.className = "mastery-checkbox-container";
           AudioEngine.play("click");
@@ -17070,6 +17104,10 @@ ${cleanBrackets(paper.q3d.model)}
       details.addEventListener("toggle", () => {
         if (details.open) {
           AudioEngine.play("flip");
+          if (!details.classList.contains("details-opened-once")) {
+            details.classList.add("details-opened-once");
+            addXp(2);
+          }
         }
       });
       container.appendChild(details);
@@ -19292,6 +19330,7 @@ ${cleanBrackets(paper.q3d.model)}
           btn.classList.add("correct");
           masteryState.score += 10;
           document.getElementById("mastery-score-display").textContent = `Score: ${masteryState.score}`;
+          addXp(5);
           resolveMissedTerm(item.term);
           setTimeout(() => {
             overlay.style.display = "none";
@@ -19300,6 +19339,7 @@ ${cleanBrackets(paper.q3d.model)}
         } else {
           AudioEngine.play("fail");
           btn.classList.add("incorrect");
+          addXp(1);
           overlay.querySelectorAll(".defend-option-btn").forEach((b) => {
             if (b.getAttribute("data-value") === correctVal) {
               b.classList.add("correct");
@@ -19736,6 +19776,7 @@ ${cleanBrackets(paper.q3d.model)}
     const expectedText = mindmapState.nodes[nextExpectedIndex];
     if (text === expectedText) {
       AudioEngine.play("success");
+      addXp(5);
       mindmapState.score += 10;
       const scoreDisplay = document.getElementById("mindmap-score-display");
       if (scoreDisplay) scoreDisplay.textContent = `Score: ${mindmapState.score}`;
@@ -19763,6 +19804,7 @@ ${cleanBrackets(paper.q3d.model)}
       }
     } else {
       AudioEngine.play("fail");
+      addXp(1);
       mindmapState.score = Math.max(0, mindmapState.score - 5);
       const scoreDisplay = document.getElementById("mindmap-score-display");
       if (scoreDisplay) scoreDisplay.textContent = `Score: ${mindmapState.score}`;
@@ -20527,6 +20569,9 @@ ${cleanBrackets(paper.q3d.model)}
     if (isCorrect) {
       tabooState.turnScore++;
       document.getElementById("taboo-turn-score").textContent = tabooState.turnScore;
+      addXp(5);
+    } else {
+      addXp(1);
     }
     tabooState.turnLogs.push({
       target: tabooState.currentCard.target,
@@ -21239,6 +21284,7 @@ ${cleanBrackets(paper.q3d.model)}
     const modalTitle = document.getElementById("video-modal-title");
     const externalLink = document.getElementById("video-modal-external-link");
     if (!modal || !iframe || !modalTitle) return;
+    addXp(5);
     modalTitle.textContent = title;
     let embedUrl = src;
     let watchUrl = src;
@@ -21793,6 +21839,11 @@ ${cleanBrackets(paper.q3d.model)}
     state.examSession.answers[q.id] = optionText;
     state.examSession.grades[q.id] = isCorrect;
     AudioEngine.play(isCorrect ? "success" : "fail");
+    if (isCorrect) {
+      addXp(5);
+    } else {
+      addXp(1);
+    }
     document.getElementById("exam-correct-term").textContent = q.answer;
     document.getElementById("exam-correct-exp").textContent = q.explanation;
     const reviewAnswer = document.getElementById("exam-review-user-answer");
@@ -25620,6 +25671,7 @@ ${cleanBrackets(paper.q3d.model)}
           const correctWord = wordSpan.getAttribute("data-correct");
           wordSpan.textContent = correctWord;
           wordSpan.classList.add("corrected");
+          addXp(2);
           const allCorrected = Array.from(wrongWords).every((span) => span.classList.contains("corrected"));
           if (allCorrected) {
             AudioEngine.play("cheer");
@@ -25765,6 +25817,10 @@ ${cleanBrackets(paper.q3d.model)}
         if (newPerspective !== currentPerspective) {
           AudioEngine.play("click");
           currentPerspective = newPerspective;
+          if (!card.classList.contains("perspective-explored")) {
+            card.classList.add("perspective-explored");
+            addXp(3);
+          }
           const narrativeBox = card.querySelector(".dual-perspective-narrative-box");
           if (narrativeBox) {
             narrativeBox.classList.remove("perspective-fade");
@@ -25806,6 +25862,10 @@ ${cleanBrackets(paper.q3d.model)}
       flipCard.addEventListener("click", () => {
         AudioEngine.play("flip");
         flipCard.classList.toggle("flipped");
+        if (!flipCard.classList.contains("card-flipped-once")) {
+          flipCard.classList.add("card-flipped-once");
+          addXp(3);
+        }
       });
     }
     const stepsContainer = container.querySelector(".homework-questions-card");
@@ -26076,6 +26136,10 @@ ${cleanBrackets(paper.q3d.model)}
               modelContent.style.display = "block";
               revealBtn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Examiner Model Answer`;
               modelContent.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              if (!revealBtn.classList.contains("answer-revealed-once")) {
+                revealBtn.classList.add("answer-revealed-once");
+                addXp(5);
+              }
             } else {
               modelContent.style.display = "none";
               revealBtn.innerHTML = `<i class="fa-solid fa-eye"></i> Compare with Examiner Model Answer`;
@@ -26099,6 +26163,10 @@ ${cleanBrackets(paper.q3d.model)}
               saveProgress();
               if (saveStatus) {
                 saveStatus.innerHTML = `<i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved`;
+              }
+              if (textarea.value.length > 20 && !textarea.classList.contains("draft-xp-awarded")) {
+                textarea.classList.add("draft-xp-awarded");
+                addXp(10);
               }
             }, 800);
           });
@@ -26205,6 +26273,10 @@ ${cleanBrackets(paper.q3d.model)}
             if (isHidden) {
               drawer.style.display = "block";
               revealAnswersBtn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Do Now Answers`;
+              if (!revealAnswersBtn.classList.contains("revealed-once")) {
+                revealAnswersBtn.classList.add("revealed-once");
+                addXp(3);
+              }
             } else {
               drawer.style.display = "none";
               revealAnswersBtn.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> Reveal Do Now Guide Answers`;
@@ -26222,6 +26294,7 @@ ${cleanBrackets(paper.q3d.model)}
           const parentContainer = cb.closest(".do-now-checkboxes").parentElement;
           if (allChecked) {
             AudioEngine.play("success");
+            addXp(5);
             if (parentContainer) {
               parentContainer.style.borderColor = "#10b981";
               parentContainer.style.background = "rgba(16, 185, 129, 0.08)";
@@ -26511,6 +26584,7 @@ ${cleanBrackets(paper.q3d.model)}
           item.classList.remove("checked");
         } else {
           item.classList.add("checked");
+          addXp(3);
         }
         try {
           let checkedStates = {};
@@ -26575,6 +26649,7 @@ ${cleanBrackets(paper.q3d.model)}
       });
       if (allCorrect && Object.keys(placements).length === challenge.facts.length) {
         AudioEngine.play("cheer");
+        addXp(15);
         if (successDrawer) {
           successDrawer.style.display = "block";
           if (explanationsList) {
@@ -27044,9 +27119,15 @@ ${cleanBrackets(paper.q3d.model)}
   }
 
   // src/navigation.js
+  var lastViewSwitchTime = 0;
   function switchView(viewName, subtopicId = null) {
     AudioEngine.stopSpeaking();
     state.currentView = viewName;
+    const now = Date.now();
+    if (now - lastViewSwitchTime > 3e3) {
+      lastViewSwitchTime = now;
+      addXp(1);
+    }
     const backBtn = document.getElementById("header-back-btn");
     if (backBtn) {
       if (viewName === "dashboard") {
@@ -30436,6 +30517,7 @@ You scored **${quizState.score} out of ${quizState.questions.length}** (${percen
           else feedback += "Keep studying! Try searching for terms like 'Little Rock' or 'Montgomery' to build your knowledge. \u{1F4DA}";
           appendBubble("assistant", feedback);
           quizState.isActive = false;
+          addXp(15);
         }
         return;
       }
@@ -30485,6 +30567,7 @@ Select a topic checklist to view:
         await handleGradingInput(text);
         return;
       }
+      addXp(5);
       const lowerText = text.toLowerCase();
       if (/\b(quiz|trivia|test me|start quiz|play quiz)\b/.test(lowerText)) {
         startChatbotQuiz();
@@ -30630,6 +30713,9 @@ ${q.question}
     const isCorrect = selectedText === correctText;
     if (isCorrect) {
       quizState.score++;
+      addXp(5);
+    } else {
+      addXp(2);
     }
     const messagesContainer = document.getElementById("chatbot-messages");
     const allOptionBtns = messagesContainer.querySelectorAll(".chatbot-quiz-option-btn");
@@ -30667,10 +30753,12 @@ ${q.question}
       const responseText = await fetchGeminiResponse(apiKey, text, null, examinerSystemInstruction);
       removeThinkingBubble();
       appendBubble("assistant", responseText);
+      addXp(10);
     } catch (err) {
       removeThinkingBubble();
       const fallbackText = gradeParagraphLocally(text);
       appendBubble("assistant", fallbackText);
+      addXp(10);
     }
   }
   function gradeParagraphLocally(text) {
@@ -31624,6 +31712,7 @@ Here are some questions you can ask me about this lesson:`;
     }, 100);
   }
   function showLocationDetails(loc) {
+    addXp(5);
     const box = document.getElementById("map-context-box");
     const title = document.getElementById("map-context-title");
     const body = document.getElementById("map-context-body");

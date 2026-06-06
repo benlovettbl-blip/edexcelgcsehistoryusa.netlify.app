@@ -1,5 +1,6 @@
 import { AudioEngine } from './audio.js';
 import { switchView } from './navigation.js';
+import { addXp } from './views.js';
 
 // =============================================================
 // 1. US CIVIL RIGHTS ADVENTURE DATABASE
@@ -552,6 +553,7 @@ function renderGameEngine() {
         if (opt.isCorrect) {
           trackingScore += 15;
           AudioEngine.play('success');
+          addXp(10);
         } else {
           // Play click for regular flow, or fail sound on misconception nodes
           if (opt.nextNode.includes('fail')) {
@@ -559,6 +561,10 @@ function renderGameEngine() {
           } else {
             AudioEngine.play('click');
           }
+          addXp(3);
+        }
+        if (opt.nextNode === 'game_complete') {
+          addXp(25);
         }
         currentNode = opt.nextNode;
         renderGameEngine();
@@ -652,6 +658,7 @@ function renderVietnamEngine() {
         if (opt.isCorrect) {
           vTrackingScore += 15;
           AudioEngine.play('success');
+          addXp(10);
         } else {
           // Play click for regular flow, or fail sound on misconception nodes
           if (opt.nextNode.includes('fail')) {
@@ -659,6 +666,10 @@ function renderVietnamEngine() {
           } else {
             AudioEngine.play('click');
           }
+          addXp(3);
+        }
+        if (opt.nextNode === 'saigon_final') {
+          addXp(25);
         }
         vCurrentNode = opt.nextNode;
         renderVietnamEngine();

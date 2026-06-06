@@ -1,4 +1,4 @@
-import { CHRONOLOGY_EVENTS } from './views.js';
+import { CHRONOLOGY_EVENTS, addXp } from './views.js';
 import { state } from './state.js';
 import { AudioEngine } from './audio.js';
 import { Confetti } from './confetti.js';
@@ -431,6 +431,7 @@ function verifyChronologySequence() {
     }
     
     chronoState.score += 20;
+    addXp(15);
     const scoreDisplay = document.getElementById('chrono-score-display');
     if (scoreDisplay) scoreDisplay.textContent = `Score: ${chronoState.score}`;
 
@@ -468,6 +469,7 @@ function verifyChronologySequence() {
     }
   } else {
     AudioEngine.play('fail');
+    addXp(3);
     if (feedbackMsg) {
       feedbackMsg.style.color = 'var(--accent)';
       feedbackMsg.style.background = 'rgba(244, 63, 94, 0.08)';

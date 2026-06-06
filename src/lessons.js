@@ -2112,6 +2112,7 @@ export function renderMasteryView(subtopicId) {
         const correctWord = wordSpan.getAttribute('data-correct');
         wordSpan.textContent = correctWord;
         wordSpan.classList.add('corrected');
+        addXp(2);
 
         // Check if all are corrected
         const allCorrected = Array.from(wrongWords).every(span => span.classList.contains('corrected'));
@@ -2289,6 +2290,10 @@ export function renderMasteryView(subtopicId) {
       if (newPerspective !== currentPerspective) {
         AudioEngine.play('click');
         currentPerspective = newPerspective;
+        if (!card.classList.contains('perspective-explored')) {
+          card.classList.add('perspective-explored');
+          addXp(3);
+        }
 
         const narrativeBox = card.querySelector('.dual-perspective-narrative-box');
         if (narrativeBox) {
@@ -2336,6 +2341,10 @@ export function renderMasteryView(subtopicId) {
     flipCard.addEventListener('click', () => {
       AudioEngine.play('flip');
       flipCard.classList.toggle('flipped');
+      if (!flipCard.classList.contains('card-flipped-once')) {
+        flipCard.classList.add('card-flipped-once');
+        addXp(3);
+      }
     });
   }
 
@@ -2665,6 +2674,10 @@ export function renderMasteryView(subtopicId) {
             modelContent.style.display = 'block';
             revealBtn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Examiner Model Answer`;
             modelContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (!revealBtn.classList.contains('answer-revealed-once')) {
+              revealBtn.classList.add('answer-revealed-once');
+              addXp(5);
+            }
           } else {
             modelContent.style.display = 'none';
             revealBtn.innerHTML = `<i class="fa-solid fa-eye"></i> Compare with Examiner Model Answer`;
@@ -2693,6 +2706,10 @@ export function renderMasteryView(subtopicId) {
             
             if (saveStatus) {
               saveStatus.innerHTML = `<i class="fa-solid fa-cloud-arrow-up"></i> Draft Saved`;
+            }
+            if (textarea.value.length > 20 && !textarea.classList.contains('draft-xp-awarded')) {
+              textarea.classList.add('draft-xp-awarded');
+              addXp(10);
             }
           }, 800);
         });
@@ -2827,6 +2844,10 @@ export function renderMasteryView(subtopicId) {
           if (isHidden) {
             drawer.style.display = 'block';
             revealAnswersBtn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide Do Now Answers`;
+            if (!revealAnswersBtn.classList.contains('revealed-once')) {
+              revealAnswersBtn.classList.add('revealed-once');
+              addXp(3);
+            }
           } else {
             drawer.style.display = 'none';
             revealAnswersBtn.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> Reveal Do Now Guide Answers`;
@@ -2847,6 +2868,7 @@ export function renderMasteryView(subtopicId) {
         const parentContainer = cb.closest('.do-now-checkboxes').parentElement;
         if (allChecked) {
           AudioEngine.play('success');
+          addXp(5);
           if (parentContainer) {
             parentContainer.style.borderColor = '#10b981';
             parentContainer.style.background = 'rgba(16, 185, 129, 0.08)';
@@ -3169,6 +3191,7 @@ export function renderMasteryView(subtopicId) {
         item.classList.remove('checked');
       } else {
         item.classList.add('checked');
+        addXp(3);
       }
 
       // Save to localStorage
@@ -3250,6 +3273,7 @@ function setupWrapUpChallenge(container, subtopicId) {
 
     if (allCorrect && Object.keys(placements).length === challenge.facts.length) {
       AudioEngine.play('cheer');
+      addXp(15);
       if (successDrawer) {
         successDrawer.style.display = 'block';
         if (explanationsList) {

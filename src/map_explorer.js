@@ -1,5 +1,6 @@
 import { switchView, switchSubtopicMode } from './navigation.js';
 import { AudioEngine } from './audio.js';
+import { addXp } from './views.js';
 
 // --- Map Data Configurations ---
 const MAP_LOCATIONS_USA = [
@@ -405,6 +406,7 @@ function setupMaps() {
 }
 
 function showLocationDetails(loc) {
+  addXp(5);
   const box = document.getElementById('map-context-box');
   const title = document.getElementById('map-context-title');
   const body = document.getElementById('map-context-body');

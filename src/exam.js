@@ -477,8 +477,13 @@ function selectMCQOption(optionText) {
   state.examSession.answers[q.id] = optionText;
   state.examSession.grades[q.id] = isCorrect;
   
-  // Play sound
+  // Play sound and award XP
   AudioEngine.play(isCorrect ? 'success' : 'fail');
+  if (isCorrect) {
+    addXp(5);
+  } else {
+    addXp(1);
+  }
   
   // Set review contents
   document.getElementById('exam-correct-term').textContent = q.answer;

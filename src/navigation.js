@@ -10,7 +10,8 @@ import {
   renderKeyTopicOverview,
   activateExamHubPanel,
   renderAiVideosView,
-  openStreakLeaderboard
+  openStreakLeaderboard,
+  addXp
 } from './views.js';
 import { showExamSetup } from './exam.js';
 import { renderPastPapersView } from './past_papers.js';
@@ -19,10 +20,18 @@ import { updateBrandBanner } from './brand_config.js';
 import { closeMobileSidebar } from './layout.js';
 import { AudioEngine } from './audio.js';
 
+let lastViewSwitchTime = 0;
+
 // --- Navigation Controller ---
 export function switchView(viewName, subtopicId = null) {
   AudioEngine.stopSpeaking();
   state.currentView = viewName;
+
+  const now = Date.now();
+  if (now - lastViewSwitchTime > 3000) {
+    lastViewSwitchTime = now;
+    addXp(1);
+  }
 
   const backBtn = document.getElementById('header-back-btn');
   if (backBtn) {

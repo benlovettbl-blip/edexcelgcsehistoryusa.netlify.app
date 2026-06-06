@@ -3,6 +3,7 @@ import { QUIZ_DATA } from '../questions.js';
 import { switchView } from './navigation.js';
 import { state } from './state.js';
 import { SPEC_CHECKLIST_DATA } from './spec_checklist_data.js';
+import { addXp } from './views.js';
 
 let searchDatabase = [];
 let chatHistory = [];
@@ -1223,6 +1224,7 @@ export function initChatbot() {
         
         appendBubble('assistant', feedback);
         quizState.isActive = false;
+        addXp(15);
       }
       return;
     }
@@ -1283,6 +1285,9 @@ export function initChatbot() {
       await handleGradingInput(text);
       return;
     }
+
+    // Regular question or query
+    addXp(5);
 
     // Check for interactive feature triggers
     const lowerText = text.toLowerCase();
@@ -1459,6 +1464,9 @@ function evaluateQuizChoice(selectedIndex, clickedBtn = null) {
 
   if (isCorrect) {
     quizState.score++;
+    addXp(5);
+  } else {
+    addXp(2);
   }
 
   const messagesContainer = document.getElementById('chatbot-messages');
@@ -1502,10 +1510,12 @@ async function handleGradingInput(text) {
     const responseText = await fetchGeminiResponse(apiKey, text, null, examinerSystemInstruction);
     removeThinkingBubble();
     appendBubble('assistant', responseText);
+    addXp(10);
   } catch (err) {
     removeThinkingBubble();
     const fallbackText = gradeParagraphLocally(text);
     appendBubble('assistant', fallbackText);
+    addXp(10);
   }
 }
 

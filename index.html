@@ -230,6 +230,13 @@
         </div>
 
         <div class="header-actions">
+          <!-- Global Live XP Counter Badge -->
+          <div id="live-xp-counter-badge" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(59, 130, 246, 0.08); color: var(--primary); font-family: var(--font-heading); font-size: 0.85rem; font-weight: 800; cursor: pointer; transition: all var(--transition-fast) ease;" title="Your Factual Mastery XP (Click to view Leaderboard)" onclick="switchView('leaderboard')">
+            <i class="fa-solid fa-star" style="color: #facc15;"></i>
+            <span id="header-xp-value">0</span>
+            <span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 500; margin-left: 2px;">XP</span>
+          </div>
+
           <!-- Sound Toggle Button -->
           <button class="header-icon-btn desktop-only" id="sound-toggle-btn" title="Toggle Sound Effects">
             <i class="fa-solid fa-volume-high"></i>
