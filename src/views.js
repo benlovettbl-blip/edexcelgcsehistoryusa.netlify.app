@@ -16,6 +16,7 @@ import { renderPastPapersView } from './past_papers.js';
 import { VIDEOS_DATA } from './videos_data.js';
 import { initChronologyGame } from './chronology.js';
 import { initAdventureGame, initVietnamAdventureGame, initCivilianAdventureGame, initNorthVietnamAdventureGame } from './adventure.js';
+import { initEchoesAdventureGame } from './echoes_adventure.js';
 
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
@@ -756,6 +757,7 @@ function renderGamesView() {
   const tabVietnamAdventure = document.getElementById('btn-tab-game-vietnam-adventure');
   const tabCivilianAdventure = document.getElementById('btn-tab-game-civilian-adventure');
   const tabNorthVietnamAdventure = document.getElementById('btn-tab-game-north-vietnam-adventure');
+  const tabEchoesAdventure = document.getElementById('btn-tab-game-echoes-adventure');
   const paneCausal = document.getElementById('game-causal-container');
   const paneChronology = document.getElementById('game-chronology-container');
   const paneMastery = document.getElementById('game-mastery-container');
@@ -766,19 +768,20 @@ function renderGamesView() {
   const paneVietnamAdventure = document.getElementById('game-vietnam-adventure-container');
   const paneCivilianAdventure = document.getElementById('game-civilian-adventure-container');
   const paneNorthVietnamAdventure = document.getElementById('game-north-vietnam-adventure-container');
+  const paneEchoesAdventure = document.getElementById('game-echoes-adventure-container');
 
-  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure && tabCivilianAdventure && tabNorthVietnamAdventure &&
-      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure && paneCivilianAdventure && paneNorthVietnamAdventure) {
+  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure && tabCivilianAdventure && tabNorthVietnamAdventure && tabEchoesAdventure &&
+      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure && paneCivilianAdventure && paneNorthVietnamAdventure && paneEchoesAdventure) {
     const ALL_GAME_TABS = [
       tabCausal, tabChronology, tabMastery, tabDecisions, 
       tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, 
-      tabCivilianAdventure, tabNorthVietnamAdventure
+      tabCivilianAdventure, tabNorthVietnamAdventure, tabEchoesAdventure
     ];
     
     const ALL_GAME_PANES = [
       paneCausal, paneChronology, paneMastery, paneDecisions, 
       paneMindMap, paneTaboo, paneAdventure, paneVietnamAdventure, 
-      paneCivilianAdventure, paneNorthVietnamAdventure
+      paneCivilianAdventure, paneNorthVietnamAdventure, paneEchoesAdventure
     ];
 
     const showTabPane = (activeTab, activePane) => {
@@ -850,6 +853,11 @@ function renderGamesView() {
       initNorthVietnamAdventureGame();
     };
 
+    const showEchoesAdventure = () => {
+      showTabPane(tabEchoesAdventure, paneEchoesAdventure);
+      initEchoesAdventureGame();
+    };
+
     tabCausal.addEventListener('click', () => {
       AudioEngine.play('click');
       showCausal();
@@ -898,6 +906,11 @@ function renderGamesView() {
     tabNorthVietnamAdventure.addEventListener('click', () => {
       AudioEngine.play('click');
       showNorthVietnamAdventure();
+    });
+
+    tabEchoesAdventure.addEventListener('click', () => {
+      AudioEngine.play('click');
+      showEchoesAdventure();
     });
   }
 }

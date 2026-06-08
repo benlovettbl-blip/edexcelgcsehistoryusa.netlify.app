@@ -1835,6 +1835,9 @@
             <button class="tab-btn" id="btn-tab-game-north-vietnam-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
               <i class="fa-solid fa-compass"></i> North Vietnam
             </button>
+            <button class="tab-btn" id="btn-tab-game-echoes-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
+              <i class="fa-solid fa-gamepad"></i> Echoes of Conflict
+            </button>
           </div>
 
           <!-- Container for Causal Link Builder Game -->
@@ -2056,6 +2059,55 @@
                 </div>
 
               </div>
+            </div>
+          </div>
+
+          <!-- Container for Echoes of Conflict Adventure Game -->
+          <div id="game-echoes-adventure-container" class="game-view-pane" style="display: none; padding: 10px 4px;">
+            <div id="adv-game-container" style="background-color: var(--bg-dark); border: 2px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 15px; box-shadow: var(--shadow-lg);">
+              
+              <div class="adv-hud" style="display: flex; flex-direction: column; gap: 8px; background-color: rgba(0, 0, 0, 0.25); padding: 10px 14px; border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 12px; font-family: monospace; font-size: 0.82rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+                  <div class="hud-stat" style="color: var(--text-muted);">STAGE: <span id="hud-act-title" style="color: var(--accent-orange); font-weight: bold;">ACT 1: MONUMENTS</span></div>
+                  <div class="hud-stat" style="color: var(--text-muted);">CHARACTER: <span id="hud-char-display" style="color: var(--accent-orange); font-weight: bold;">CORE ACTIVIST</span></div>
+                  <div class="hud-stat" style="color: var(--text-muted);">INVENTORY: <span id="hud-inv-display" style="color: var(--accent-orange); font-weight: bold;">EMPTY</span></div>
+                  <div class="hud-stat" style="color: var(--text-muted);">XP: <span id="hud-xp-display" style="color: var(--accent-orange); font-weight: bold;">0</span></div>
+                  <div style="display: flex; gap: 8px; align-items: center;">
+                    <button class="audio-btn" id="audio-toggle" onclick="toggleMute()" style="background-color: #064E3B; border: 1px solid var(--terminal-text); color: #FFF; padding: 4px 8px; cursor: pointer; border-radius: 4px; font-size: 0.75rem;">🔊 VOICE: ON</button>
+                    <button class="hint-btn" id="hint-btn" onclick="window.showActHint()" style="background-color: #78350F; border: 1px solid #F59E0B; color: #FFF; padding: 4px 8px; cursor: pointer; border-radius: 4px; font-size: 0.75rem; font-family: monospace; font-weight: bold;">💡 HINT</button>
+                  </div>
+                </div>
+                <div style="border-top: 1px dashed var(--border-glass); padding-top: 6px; color: var(--text-muted); font-size: 0.8rem; text-align: left; width: 100%;">
+                  🎯 OBJECTIVE: <span id="hud-objective-text" style="color: #38bdf8; font-weight: bold;">Retrieve the Speech Notes from the Speaker Podium and the Megaphone from the Stone Bench.</span>
+                </div>
+              </div>
+
+              <div class="adv-viewport-wrapper" style="position: relative; width: 100%; height: 400px; background-color: #000; border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); overflow: hidden;">
+                <canvas id="adv-canvas" width="850" height="400" style="width: 100%; height: 100%; display: block;"></canvas>
+                <div class="mechanic-overlay" id="ui-overlay"></div>
+              </div>
+
+              <div class="adv-action-bar" style="display: flex; gap: 10px; background-color: rgba(0, 0, 0, 0.2); padding: 10px; margin-top: 10px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass);">
+                <button class="action-btn active" id="mode-look" onclick="setMode('LOOK')" style="flex: 1; padding: 10px; font-family: inherit; font-size: 0.85rem; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase;">👁️ Look</button>
+                <button class="action-btn" id="mode-interact" onclick="setMode('INTERACT')" style="flex: 1; padding: 10px; font-family: inherit; font-size: 0.85rem; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase;">🖐️ Interact</button>
+                <button class="action-btn" id="mode-combine" onclick="setMode('COMBINE')" style="flex: 1; padding: 10px; font-family: inherit; font-size: 0.85rem; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase;">🧪 Combine</button>
+                
+                <button class="action-btn" id="opt-a-btn" style="display:none; flex: 2; padding: 10px 14px; font-family: inherit; font-size: 0.82rem; font-weight: bold; cursor: pointer; border-radius: 4px; background-color: #065F46; border: 1px solid #34D399; color: #FFF; text-align: left; line-height: 1.3;" onclick="window.handleOptionSelect('A')">🟢 A: Option A</button>
+                <button class="action-btn" id="opt-b-btn" style="display:none; flex: 2; padding: 10px 14px; font-family: inherit; font-size: 0.82rem; font-weight: bold; cursor: pointer; border-radius: 4px; background-color: #1E3A8A; border: 1px solid #60A5FA; color: #FFF; text-align: left; line-height: 1.3;" onclick="window.handleOptionSelect('B')">🔵 B: Option B</button>
+                
+                <button class="action-btn" id="swap-btn" style="display:none; flex: 1; padding: 10px; font-family: inherit; font-size: 0.85rem; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; border-color: #3b82f6; color: #60a5fa;" onclick="triggerCharacterSwap()">👥 Swap Hero</button>
+              </div>
+
+              <div class="adv-terminal" style="background-color: #030712; border: 1px solid #064E3B; border-radius: var(--border-radius-sm); padding: 12px; margin-top: 10px; height: 180px; display: flex; flex-direction: column; justify-content: space-between; font-family: monospace;">
+                <div class="terminal-log" id="log-stream" style="overflow-y: auto; flex-grow: 1; font-size: 0.82rem; line-height: 1.5; padding-right: 10px; color: #E5E7EB; text-align: left;">
+                  <p class="sys-text">[CRITICAL SYSTEM READY: ADVENTURE ENGINE ACTIVE]</p>
+                </div>
+                <div class="terminal-input-line" style="display: flex; align-items: center; border-top: 1px solid #064E3B; padding-top: 6px; margin-top: 4px;">
+                  <span class="prompt-symbol" style="color: #10B981; font-weight: bold; margin-right: 10px;">&gt;</span>
+                  <input type="text" class="terminal-field" id="parse-input" placeholder="Type structural exam command string..." onkeydown="handleParseSubmit(event)" style="background: transparent; border: none; color: #10B981; font-family: inherit; font-size: 0.85rem; width: 100%; outline: none;">
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
