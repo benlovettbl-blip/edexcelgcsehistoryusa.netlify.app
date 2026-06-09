@@ -601,35 +601,11 @@ export function renderExamSheet() {
     btnPrintSheet.addEventListener('click', () => {
       AudioEngine.play('click');
       const mode = document.getElementById('print-exam-mode').value;
-      
-      let html = generatePastPaperHtml(paper, mode);
-      
-      // Extract generated style tags so formatting and typography are preserved
-      const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
-      const stylesHtml = styleMatches ? styleMatches.join('\n') : '';
-      
-      const bodyStart = html.indexOf('<body>');
-      const bodyEnd = html.lastIndexOf('</body>');
-      let cleanHtml = html;
-      if (bodyStart !== -1 && bodyEnd !== -1) {
-        cleanHtml = html.substring(bodyStart + 6, bodyEnd);
-      }
-      
+      const html = generatePastPaperHtml(paper, mode);
       const printArea = document.getElementById('print-area');
       if (printArea) {
-        printArea.innerHTML = stylesHtml + cleanHtml;
-        
-        // Clean up print area content after printing finishes or is cancelled
-        const handleAfterPrint = () => {
-          printArea.innerHTML = '';
-          window.removeEventListener('afterprint', handleAfterPrint);
-        };
-        window.addEventListener('afterprint', handleAfterPrint);
-        
-        // Defer printing to let the browser process the DOM updates and compute layout styles
-        setTimeout(() => {
-          window.print();
-        }, 50);
+        printArea.innerHTML = html;
+        window.print();
       } else {
         alert("Print error: #print-area element not found in DOM.");
       }
@@ -1640,36 +1616,14 @@ export function initBulkWorkbookCreator() {
       
       AudioEngine.play('click');
       
-      let html = await window.generateBulkWorkbookHtml(style, density, answers === 'yes');
+      const html = await window.generateBulkWorkbookHtml(style, density, answers === 'yes');
       
-      // Extract generated style tags so formatting and typography are preserved
-      const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
-      const stylesHtml = styleMatches ? styleMatches.join('\n') : '';
-      
-      const bodyStart = html.indexOf('<body>');
-      const bodyEnd = html.lastIndexOf('</body>');
-      let cleanHtml = html;
-      if (bodyStart !== -1 && bodyEnd !== -1) {
-        cleanHtml = html.substring(bodyStart + 6, bodyEnd);
-      }
-      
-      const printArea = document.getElementById('print-area');
-      if (printArea) {
-        printArea.innerHTML = stylesHtml + cleanHtml;
-        
-        // Clean up print area content after printing finishes or is cancelled
-        const handleAfterPrint = () => {
-          printArea.innerHTML = '';
-          window.removeEventListener('afterprint', handleAfterPrint);
-        };
-        window.addEventListener('afterprint', handleAfterPrint);
-        
-        // Defer printing to let the browser process the DOM updates and compute layout styles
-        setTimeout(() => {
-          window.print();
-        }, 50);
+      const newWin = window.open();
+      if (newWin) {
+        newWin.document.write(html);
+        newWin.document.close();
       } else {
-        alert("Print error: #print-area element not found in DOM.");
+        alert("Pop-up blocker prevented opening the bulk worksheets. Please allow popups for this site.");
       }
     });
   }
