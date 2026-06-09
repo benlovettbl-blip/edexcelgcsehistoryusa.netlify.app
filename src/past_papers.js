@@ -1668,9 +1668,21 @@ export function initBulkWorkbookCreator() {
       try {
         const html = await window.generateBulkWorkbookHtml(style, density, answers === 'yes');
         
+        // Append an auto-print script to the HTML document
+        const autoPrintScript = `
+          <script>
+            window.addEventListener('load', () => {
+              setTimeout(() => {
+                window.print();
+              }, 300);
+            });
+          <\/script>
+        `;
+        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
+        
         // Write the compiled HTML workbook to the pre-opened tab
         newWin.document.open();
-        newWin.document.write(html);
+        newWin.document.write(htmlWithPrint);
         newWin.document.close();
       } catch (err) {
         console.error("Failed to generate bulk workbook:", err);

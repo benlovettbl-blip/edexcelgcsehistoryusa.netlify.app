@@ -15702,8 +15702,18 @@ ${cleanBrackets(paper.q3d.model)}
         newWin.document.close();
         try {
           const html = await window.generateBulkWorkbookHtml(style, density, answers === "yes");
+          const autoPrintScript = `
+          <script>
+            window.addEventListener('load', () => {
+              setTimeout(() => {
+                window.print();
+              }, 300);
+            });
+          <\/script>
+        `;
+          const htmlWithPrint = html.replace("</body>", `${autoPrintScript}</body>`);
           newWin.document.open();
-          newWin.document.write(html);
+          newWin.document.write(htmlWithPrint);
           newWin.document.close();
         } catch (err) {
           console.error("Failed to generate bulk workbook:", err);
@@ -29991,8 +30001,18 @@ ${cleanBrackets(paper.q3d.model)}
         newWin.document.close();
         try {
           const html = await generateWorkbookHtml(subtopic, "booklet", "standard", false);
+          const autoPrintScript = `
+          <script>
+            window.addEventListener('load', () => {
+              setTimeout(() => {
+                window.print();
+              }, 300);
+            });
+          <\/script>
+        `;
+          const htmlWithPrint = html.replace("</body>", `${autoPrintScript}</body>`);
           newWin.document.open();
-          newWin.document.write(html);
+          newWin.document.write(htmlWithPrint);
           newWin.document.close();
         } catch (err) {
           console.error("Failed to generate workbook page:", err);

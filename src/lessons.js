@@ -3617,9 +3617,21 @@ function setupWrapUpChallenge(container, subtopicId) {
       try {
         const html = await generateWorkbookHtml(subtopic, 'booklet', 'standard', false);
         
+        // Append an auto-print script to the HTML document
+        const autoPrintScript = `
+          <script>
+            window.addEventListener('load', () => {
+              setTimeout(() => {
+                window.print();
+              }, 300);
+            });
+          <\/script>
+        `;
+        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
+        
         // Write the compiled HTML workbook to the pre-opened tab
         newWin.document.open();
-        newWin.document.write(html);
+        newWin.document.write(htmlWithPrint);
         newWin.document.close();
       } catch (err) {
         console.error("Failed to generate workbook page:", err);
