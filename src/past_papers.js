@@ -1609,98 +1609,33 @@ export function initBulkWorkbookCreator() {
   const btnWord = document.getElementById('btn-bulk-workbook-word');
 
   if (btnPrint) {
-    btnPrint.addEventListener('click', async () => {
+    btnPrint.addEventListener('click', () => {
       const style = document.getElementById('bulk-workbook-style').value;
       const density = document.getElementById('bulk-workbook-density').value;
       const answers = document.getElementById('bulk-workbook-answers').value;
       
       AudioEngine.play('click');
       
-      // Open the window synchronously to bypass pop-up blocker detection
-      const newWin = window.open('', '_blank');
-      if (!newWin) {
-        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-        return;
-      }
-      
-      // Display a professional loading status inside the newly opened tab
-      newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <title>Generating Worksheet Pack...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              border-left-color: #10b981;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3>Generating Course-Wide Worksheet Pack...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem;">Compiling topics Topic 1.1 to 4.4, please wait a few seconds.</p>
-        </body>
-        </html>
-      `);
-      newWin.document.close();
-      
-      try {
-        const html = await window.generateBulkWorkbookHtml(style, density, answers === 'yes');
-        
-        // Append an auto-print script to the HTML document
-        const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 300);
-            });
-          <\/script>
-        `;
-        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
-        
-        // Write the compiled HTML workbook to the pre-opened tab
-        newWin.document.open();
-        newWin.document.write(htmlWithPrint);
-        newWin.document.close();
-      } catch (err) {
-        console.error("Failed to generate bulk workbook:", err);
-        newWin.close();
-        alert("An error occurred while compiling the worksheets.");
+      const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
+      const printArea = document.getElementById('print-area');
+      if (printArea) {
+        printArea.innerHTML = html;
+        window.print();
+      } else {
+        alert("Print error: #print-area element not found in DOM.");
       }
     });
   }
 
   if (btnWord) {
-    btnWord.addEventListener('click', async () => {
+    btnWord.addEventListener('click', () => {
       const style = document.getElementById('bulk-workbook-style').value;
       const density = document.getElementById('bulk-workbook-density').value;
       const answers = document.getElementById('bulk-workbook-answers').value;
       
       AudioEngine.play('click');
       
-      const html = await window.generateBulkWorkbookHtml(style, density, answers === 'yes');
+      const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
       const styleLabel = style.charAt(0).toUpperCase() + style.slice(1);
       
       downloadHtmlAsWord(`Course_Worksheet_Pack_All_Lessons_${styleLabel}.doc`, html);

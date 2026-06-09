@@ -4,6 +4,7 @@ import { switchView } from './navigation.js';
 import { renderSidebarNav, updateGlobalStats, openVideoModal, addXp } from './views.js';
 import { saveProgress } from './storage.js';
 import { downloadHtmlAsWord } from './past_papers.js';
+import { WORKBOOK_DATA } from './workbook_data.js';
 
 const viewedSlides = new Set();
 let activeWorkbookSubtopicId = null;
@@ -533,10 +534,7 @@ export async function renderMasteryView(subtopicId) {
     let vocabListHtml = '';
     let timelineListHtml = '';
     try {
-      if (!workbookDataModule) {
-        workbookDataModule = await import('./workbook_data.js');
-      }
-      const wbData = workbookDataModule.WORKBOOK_DATA[subtopicId];
+      const wbData = WORKBOOK_DATA[subtopicId];
       if (wbData) {
         if (wbData.vocabulary && wbData.vocabulary.length > 0) {
           const vocabItems = wbData.vocabulary.map(v => `
@@ -3561,82 +3559,16 @@ function setupWrapUpChallenge(container, subtopicId) {
   // View Worksheet Page button click listener
   const viewWorksheetPageBtn = container.querySelector('.view-worksheet-page-btn');
   if (viewWorksheetPageBtn) {
-    viewWorksheetPageBtn.addEventListener('click', async () => {
+    viewWorksheetPageBtn.addEventListener('click', () => {
       AudioEngine.play('click');
       const subtopic = viewWorksheetPageBtn.getAttribute('data-subtopic');
-      
-      // Open the window synchronously to bypass pop-up blockers
-      const newWin = window.open('', '_blank');
-      if (!newWin) {
-        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-        return;
-      }
-      
-      // Show loading screen in the pre-opened tab
-      newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <title>Generating Worksheet...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 30px;
-              height: 30px;
-              border-radius: 50%;
-              border-left-color: #3b82f6;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3>Generating Lesson Workbook...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem;">Compiling resource details, please wait.</p>
-        </body>
-        </html>
-      `);
-      newWin.document.close();
-      
-      try {
-        const html = await generateWorkbookHtml(subtopic, 'booklet', 'standard', false);
-        
-        // Append an auto-print script to the HTML document
-        const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 300);
-            });
-          <\/script>
-        `;
-        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
-        
-        // Write the compiled HTML workbook to the pre-opened tab
-        newWin.document.open();
-        newWin.document.write(htmlWithPrint);
-        newWin.document.close();
-      } catch (err) {
-        console.error("Failed to generate workbook page:", err);
-        newWin.close();
-        alert("An error occurred while compiling the worksheet.");
+      const html = generateWorkbookHtml(subtopic, 'booklet', 'standard', false);
+      const printArea = document.getElementById('print-area');
+      if (printArea) {
+        printArea.innerHTML = html;
+        window.print();
+      } else {
+        alert("Print error: #print-area element not found in DOM.");
       }
     });
   }
@@ -4023,7 +3955,7 @@ export function initWorkbookCreator() {
   }
 
   if (btnPrint) {
-    btnPrint.addEventListener('click', async () => {
+    btnPrint.addEventListener('click', () => {
       const style = document.getElementById('workbook-creator-style').value;
       const density = document.getElementById('workbook-creator-density').value;
       const answers = document.getElementById('workbook-creator-answers').value;
@@ -4040,7 +3972,7 @@ export function initWorkbookCreator() {
 
       AudioEngine.play('click');
 
-      const html = await generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
+      const html = generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
       
       const printArea = document.getElementById('print-area');
       if (printArea) {
@@ -4053,7 +3985,7 @@ export function initWorkbookCreator() {
   }
 
   if (btnWord) {
-    btnWord.addEventListener('click', async () => {
+    btnWord.addEventListener('click', () => {
       const style = document.getElementById('workbook-creator-style').value;
       const density = document.getElementById('workbook-creator-density').value;
       const answers = document.getElementById('workbook-creator-answers').value;
@@ -4068,7 +4000,7 @@ export function initWorkbookCreator() {
         }
       }
 
-      const html = await generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
+      const html = generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
       const styleLabel = style.charAt(0).toUpperCase() + style.slice(1);
       downloadHtmlAsWord(`Lesson_Workbook_${activeWorkbookSubtopicId.replace('subtopic_', '')}_${styleLabel}.doc`, html);
       AudioEngine.play('success');
@@ -4076,11 +4008,8 @@ export function initWorkbookCreator() {
   }
 }
 
-async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, selectedIndices = []) {
-  if (!workbookDataModule) {
-    workbookDataModule = await import('./workbook_data.js');
-  }
-  const data = workbookDataModule.WORKBOOK_DATA[subtopicId];
+function generateWorkbookHtml(subtopicId, style, density, includeAnswers, selectedIndices = []) {
+  const data = WORKBOOK_DATA[subtopicId];
   if (!data) {
     return `<html><body><h3>Workbook pack not available for subtopic: ${subtopicId}</h3></body></html>`;
   }
@@ -5307,7 +5236,7 @@ async function generateWorkbookHtml(subtopicId, style, density, includeAnswers, 
   return html;
 }
 
-export async function generateBulkWorkbookHtml(style, density, includeAnswers) {
+export function generateBulkWorkbookHtml(style, density, includeAnswers) {
   const subtopicIds = [
     'subtopic_1_1', 'subtopic_1_2', 'subtopic_1_3', 'subtopic_1_4',
     'subtopic_2_1', 'subtopic_2_2', 'subtopic_2_3', 'subtopic_2_4',
@@ -5326,7 +5255,7 @@ export async function generateBulkWorkbookHtml(style, density, includeAnswers) {
       selectedIndices = questionsData.map((_, idx) => idx);
     }
 
-    const html = await generateWorkbookHtml(subId, style, density, includeAnswers, selectedIndices);
+    const html = generateWorkbookHtml(subId, style, density, includeAnswers, selectedIndices);
     
     const bodyStartIdx = html.indexOf('<body>');
     const bodyEndIdx = html.lastIndexOf('</body>');
