@@ -1812,6 +1812,16 @@ function getKeywordsForQuestion(type, questionId, questionObj) {
     qObj = type;
   }
   if (!qObj) return [];
+
+  // If we can resolve the question in EXAM_SKILLS_DATA.q2, prefer its knowledgeWords
+  if (qObj.id && typeof EXAM_SKILLS_DATA !== 'undefined' && EXAM_SKILLS_DATA.q2 && EXAM_SKILLS_DATA.q2[qObj.id]) {
+    const dbQ = EXAM_SKILLS_DATA.q2[qObj.id];
+    if (dbQ.knowledgeWords) return dbQ.knowledgeWords;
+  }
+
+  if (qObj.knowledgeWords && Array.isArray(qObj.knowledgeWords)) {
+    return qObj.knowledgeWords;
+  }
   if (type === 'q2' && qObj.knowledgeWords) {
     return qObj.knowledgeWords;
   }

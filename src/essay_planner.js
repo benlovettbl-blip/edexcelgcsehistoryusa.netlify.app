@@ -6,7 +6,7 @@ import { addXp } from './views.js';
 // --- Essay Prompts & PEEL Paragraph Database ---
 export const PLANNER_PROMPTS = {
   prompt_boycott: {
-    title: "Explain why the Montgomery Bus Boycott was successful (1955-56)",
+    title: "1.3: Explain why the Montgomery Bus Boycott was successful (1955-56)",
     sentences: [
       { type: "P", text: "One major reason for the boycott's success was the highly organized coordination of the community, led by the Montgomery Improvement Association (MIA)." },
       { type: "E", text: "Under the leadership of Martin Luther King Jr., the MIA established an intricate carpool network of over 300 vehicles, transporting boycotters daily and keeping bus revenue down by 65% for 381 days." },
@@ -21,7 +21,7 @@ export const PLANNER_PROMPTS = {
     ]
   },
   prompt_little_rock: {
-    title: "Explain why the integration of Little Rock High School was significant (1957)",
+    title: "1.2: Explain why the integration of Little Rock High School was significant (1957)",
     sentences: [
       { type: "P", text: "The integration of Little Rock Central High School was significant because it forced direct federal intervention to enforce desegregation in the face of local state resistance." },
       { type: "E", text: "Governor Orval Faubus used the Arkansas National Guard to block the Little Rock Nine, which compelled President Eisenhower to send 1,200 soldiers of the 101st Airborne Division to escort the students." },
@@ -36,7 +36,7 @@ export const PLANNER_PROMPTS = {
     ]
   },
   prompt_vietnam_involvement: {
-    title: "Explain why the US became increasingly involved in Vietnam under President Johnson (1964-65)",
+    title: "3.2: Explain why the US became increasingly involved in Vietnam under President Johnson (1964-65)",
     sentences: [
       { type: "P", text: "A primary cause of increased US involvement in Vietnam was the Gulf of Tonkin incident, which President Johnson used to gain congressional authorization for direct military operations." },
       { type: "E", text: "In August 1964, following alleged attacks on the USS Maddox, Congress passed the Gulf of Tonkin Resolution, giving Johnson power to take 'all necessary measures,' leading to Operation Rolling Thunder in 1965." },
@@ -51,7 +51,7 @@ export const PLANNER_PROMPTS = {
     ]
   },
   prompt_vietnam_protest: {
-    title: "Explain why the anti-war movement grew so rapidly in the USA in the late 1960s",
+    title: "4.1: Explain why the anti-war movement grew so rapidly in the USA in the late 1960s",
     sentences: [
       { type: "P", text: "One key cause of the rapid growth of the anti-war movement was the introduction of the draft system, which forced young Americans to fight in an increasingly unpopular conflict." },
       { type: "E", text: "Between 1965 and 1969, over 2 million young men were conscripted through the draft, leading to widespread draft-card burning and protests at universities like Kent State." },

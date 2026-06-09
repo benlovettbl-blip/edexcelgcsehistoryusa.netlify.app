@@ -59,8 +59,8 @@
   --color-quote-bg: rgba(249, 115, 22, 0.15);
   --color-quote-i1-text: #93c5fd;    /* Pastel Blue */
   --color-quote-i1-bg: rgba(59, 130, 246, 0.15);
-  --color-quote-i2-text: #86efac;    /* Pastel Green */
-  --color-quote-i2-bg: rgba(16, 185, 129, 0.15);
+  --color-quote-i2-text: #93c5fd;    /* Pastel Blue, matched to i1 */
+  --color-quote-i2-bg: rgba(59, 130, 246, 0.15);
   --color-knowledge-text: #86efac;   /* Pastel Green */
   --color-knowledge-bg: rgba(16, 185, 129, 0.12);
   --color-provenance-text: #d8b4fe;  /* Pastel Purple */
@@ -123,8 +123,8 @@
   --color-quote-bg: rgba(194, 65, 12, 0.08);
   --color-quote-i1-text: #1e3a8a;    /* Rich Navy Blue */
   --color-quote-i1-bg: rgba(59, 130, 246, 0.08);
-  --color-quote-i2-text: #166534;    /* Rich Forest Green */
-  --color-quote-i2-bg: rgba(22, 101, 52, 0.08);
+  --color-quote-i2-text: #1e3a8a;    /* Rich Navy Blue, matched to i1 */
+  --color-quote-i2-bg: rgba(59, 130, 246, 0.08);
   --color-knowledge-text: #166534;   /* Rich Forest Green */
   --color-knowledge-bg: rgba(22, 101, 52, 0.06);
   --color-provenance-text: #581c87;  /* Rich Royal Purple */
@@ -187,8 +187,8 @@
   --color-quote-bg: rgba(249, 115, 22, 0.18);
   --color-quote-i1-text: #93c5fd;    /* Pastel Blue */
   --color-quote-i1-bg: rgba(59, 130, 246, 0.18);
-  --color-quote-i2-text: #86efac;    /* Pastel Green */
-  --color-quote-i2-bg: rgba(16, 185, 129, 0.18);
+  --color-quote-i2-text: #93c5fd;    /* Pastel Blue, matched to i1 */
+  --color-quote-i2-bg: rgba(59, 130, 246, 0.18);
   --color-knowledge-text: #86efac;   /* Pastel Green */
   --color-knowledge-bg: rgba(16, 185, 129, 0.15);
   --color-provenance-text: #d8b4fe;  /* Pastel Purple */
@@ -7706,8 +7706,8 @@ details > summary::marker {
   --color-quote-bg: #ffedd5 !important;
   --color-quote-i1-text: #1e3a8a !important;
   --color-quote-i1-bg: #dbeafe !important;
-  --color-quote-i2-text: #064e3b !important;
-  --color-quote-i2-bg: #d1fae5 !important;
+  --color-quote-i2-text: #1e3a8a !important;
+  --color-quote-i2-bg: #dbeafe !important;
   --color-knowledge-text: #064e3b !important;
   --color-knowledge-bg: #d1fae5 !important;
   --color-provenance-text: #581c87 !important;
@@ -7730,8 +7730,8 @@ details > summary::marker {
   --color-quote-bg: #431407 !important;
   --color-quote-i1-text: #93c5fd !important;
   --color-quote-i1-bg: #1e3a8a !important;
-  --color-quote-i2-text: #86efac !important;
-  --color-quote-i2-bg: #064e3b !important;
+  --color-quote-i2-text: #93c5fd !important;
+  --color-quote-i2-bg: #1e3a8a !important;
   --color-knowledge-text: #86efac !important;
   --color-knowledge-bg: #064e3b !important;
   --color-provenance-text: #d8b4fe !important;

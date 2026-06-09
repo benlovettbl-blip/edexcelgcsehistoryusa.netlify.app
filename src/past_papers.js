@@ -689,8 +689,7 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
     legendHTML = `
       <div class="model-answer-key">
         <span class="model-key-title">Key:</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation 1 Quotes</span>
-        <span class="model-key-item"><span class="model-key-dot" style="background-color: #10b981;"></span> Interpretation 2 Quotes</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
       </div>
     `;
   } else if (isQ3c) {
@@ -707,6 +706,7 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
         <span class="model-key-title">Key:</span>
         <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
         <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+        <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Judgment</span>
       </div>
     `;
   } else if (isQ2) {
@@ -756,7 +756,7 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
             <div class="feedback-tags" id="connective-tags-${qId}"></div>
           </div>
           <div class="feedback-item" id="keyword-feedback-row-${qId}">
-            <strong>Key Terms:</strong>
+            <strong>${isQ2 ? 'Historical Knowledge Words' : 'Key Terms'}:</strong>
             <div class="feedback-tags" id="keyword-tags-${qId}"></div>
           </div>
         </div>

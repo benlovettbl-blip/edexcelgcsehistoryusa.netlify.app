@@ -20,6 +20,18 @@ export const WRAPUP_DATA = {
         "text": "The Supreme Court's secondary ruling, 'Brown II' (1955), ordered school integration to proceed 'with all deliberate speed'—a vague phrase that allowed Southern states a legal loophole to delay.",
         "correctCategory": "Top-Down / Legalist Perspective",
         "feedback": "This legal compromise highlights how court-led reforms could be undermined by their own terminology, frustrating grassroots activists."
+      },
+      {
+        "id": "1_1_4",
+        "text": "Sixteen-year-old Barbara Johns organized a student strike of 450 classmates in Farmville, Virginia (1951) to protest unequal school facilities, which became a core case consolidated into Brown.",
+        "correctCategory": "Bottom-Up / Grassroots Perspective",
+        "feedback": "This highlights the role of courageous local student leadership in initiating the legal cases that eventually integrated public schools."
+      },
+      {
+        "id": "1_1_5",
+        "text": "Chief Justice Earl Warren spent months drafting a unanimous 9-0 opinion specifically to present a unified federal front and prevent Southern judges from using dissents as leverage.",
+        "correctCategory": "Top-Down / Legalist Perspective",
+        "feedback": "This judicial strategy shows how top-down legal reform relies on political consensus-building within the court itself."
       }
     ]
   },
@@ -44,6 +56,18 @@ export const WRAPUP_DATA = {
         "text": "White allies, including local resident Grace Lorch, stepped forward to shield Elizabeth Eckford from the hostile mob when she was separated from the group on the first day.",
         "correctCategory": "Local Resistance & Grassroots Activism",
         "feedback": "This highlight focuses on immediate, local human solidarity and community courage during structural confrontations."
+      },
+      {
+        "id": "1_2_4",
+        "text": "Arkansas NAACP advisor Daisy Bates organized daily transportation, psychological support, and academic tutoring for the nine students to prepare them for the hostile environment.",
+        "correctCategory": "Local Resistance & Grassroots Activism",
+        "feedback": "This demonstrates how local civil rights organizations provided the structural support needed for activists to survive daily abuse."
+      },
+      {
+        "id": "1_2_5",
+        "text": "The Supreme Court ruled unanimously in Cooper v. Aaron (1958) that local public hostility or violence could not justify delaying school integration.",
+        "correctCategory": "Federal / Presidential Intervention",
+        "feedback": "The federal judiciary reasserted that constitutional rights could not be vetoed by local state resistance or mob violence."
       }
     ]
   },
@@ -68,6 +92,18 @@ export const WRAPUP_DATA = {
         "text": "The NAACP initially bypassed 15-year-old Claudette Colvin's arrest, nine months before Rosa Parks, because they feared her pregnancy would make her a target for hostile Southern press.",
         "correctCategory": "Legal & Leadership Actions",
         "feedback": "NAACP leaders carefully selected litigants to present the most respectable, strategic image to federal courts."
+      },
+      {
+        "id": "1_3_4",
+        "text": "Jo Ann Robinson and the Women's Political Council mimeographed and distributed 35,000 leaflets overnight to initiate the boycott immediately after Rosa Parks' arrest.",
+        "correctCategory": "Local Mobilization & Logistics",
+        "feedback": "Local grassroots networks were already organized and ready to handle major mobilization before MLK's leadership role began."
+      },
+      {
+        "id": "1_3_5",
+        "text": "Martin Luther King Jr. delivered a powerful speech at Holt Street Baptist Church, framing the boycott as a Christian struggle for democratic rights.",
+        "correctCategory": "Legal & Leadership Actions",
+        "feedback": "Strategic leadership was essential to frame the movement's message and sustain morale through religious and moral rhetoric."
       }
     ]
   },
@@ -92,6 +128,18 @@ export const WRAPUP_DATA = {
         "text": "Southern states created 'Pupil Placement Boards' using complex psychological and moral tests to redirect Black transfers without mentioning race.",
         "correctCategory": "Legalistic / 'Massive Resistance'",
         "feedback": "This clever legal sidestepping avoided explicit racial references while maintaining segregation."
+      },
+      {
+        "id": "1_4_4",
+        "text": "Senator Strom Thurmond drafted the 'Southern Manifesto' in 1956, signed by 101 congressmen, to encourage legal resistance to school desegregation.",
+        "correctCategory": "Legalistic / 'Massive Resistance'",
+        "feedback": "Political leaders used national legislative manifestos to organize and legitimize segregationist policy."
+      },
+      {
+        "id": "1_4_5",
+        "text": "The Ku Klux Klan and armed white vigilantes bombed the homes of civil rights leaders like Martin Luther King Jr. and Fred Shuttlesworth.",
+        "correctCategory": "Extralegal Coercion & Vigilantism",
+        "feedback": "Opponents resorted to direct, terroristic violence to physically intimidate and eliminate civil rights organizers."
       }
     ]
   },
@@ -116,6 +164,18 @@ export const WRAPUP_DATA = {
         "text": "Freedom Riders adopted a 'Jail, No Bail' strategy, deliberately filling Mississippi's notorious Parchman Penitentiary to overburden state budgets.",
         "correctCategory": "Youth Radicalism & Activist Strategy",
         "feedback": "Activists turned their own arrests into economic leverage against hostile local governments."
+      },
+      {
+        "id": "2_1_4",
+        "text": "The Greensboro Four initiated the lunch counter sit-ins in February 1960, acting entirely on their own initiative and bypassing adult civil rights advisors.",
+        "correctCategory": "Youth Radicalism & Activist Strategy",
+        "feedback": "The youth movement was sparked by independent, spontaneous local initiatives rather than national plans."
+      },
+      {
+        "id": "2_1_5",
+        "text": "President John F. Kennedy deployed federal marshals and national guardsmen to protect Freedom Riders at the Montgomery First Baptist Church siege.",
+        "correctCategory": "Federal Intervention & Policy",
+        "feedback": "Federal forces intervened primarily to maintain public order and protect lives from mob attacks."
       }
     ]
   },
@@ -140,6 +200,18 @@ export const WRAPUP_DATA = {
         "text": "King's SCLC and local SNCC workers clashed in Selma, with SNCC accusing SCLC of swooping in for media coverage and leaving local organizers to face long-term retaliation.",
         "correctCategory": "Direct Confrontation Tactics",
         "feedback": "This reveals strategic divisions between media-focused organizations and grassroots community organizers."
+      },
+      {
+        "id": "2_2_4",
+        "text": "President Lyndon B. Johnson used the public shock of the televised 'Bloody Sunday' violence to build support and override Southern Senate filibusters to pass the Voting Rights Act.",
+        "correctCategory": "Geopolitical & Legislative Leverage",
+        "feedback": "Televised civil rights violence served as a powerful tool to push federal legislation through Congress."
+      },
+      {
+        "id": "2_2_5",
+        "text": "Activists in Selma marched across the Edmund Pettus Bridge, named after a Confederate general and Ku Klux Klan leader, directly confronting Sheriff Jim Clark's armed troopers.",
+        "correctCategory": "Direct Confrontation Tactics",
+        "feedback": "Protesters deliberately chose highly symbolic segregationist sites to stage direct, nonviolent confrontations."
       }
     ]
   },
@@ -164,6 +236,18 @@ export const WRAPUP_DATA = {
         "text": "The Black Panthers demanded exemption from military service for all Black men, arguing they should not fight for a racist nation in the Vietnam War.",
         "correctCategory": "Global Anti-Colonial Strategy",
         "feedback": "This stance linked domestic racial oppression to U.S. military imperialism in Southeast Asia."
+      },
+      {
+        "id": "2_3_4",
+        "text": "The Black Panthers established free medical clinics, dentist services, and volunteer community ambulance programs in major inner cities.",
+        "correctCategory": "Community Self-Reliance Programs",
+        "feedback": "Grassroots social welfare programs addressed municipal neglect and proved Panther governance capability."
+      },
+      {
+        "id": "2_3_5",
+        "text": "SNCC leader Stokely Carmichael toured revolutionary nations like Cuba, North Vietnam, and Algeria, linking Black Power to anti-imperialist struggles worldwide.",
+        "correctCategory": "Global Anti-Colonial Strategy",
+        "feedback": "Stokely Carmichael aligned the American civil rights struggle with global anti-colonial movements."
       }
     ]
   },
@@ -188,6 +272,18 @@ export const WRAPUP_DATA = {
         "text": "King planned the 'Poor People's Campaign' to build a multiracial coalition of impoverished Americans to occupy Washington D.C. and demand economic reform.",
         "correctCategory": "Economic Rights Campaigns",
         "feedback": "King's late career shifted from racial legal rights to structural economic redistribution."
+      },
+      {
+        "id": "2_4_4",
+        "text": "President Johnson appointed the National Advisory Commission on Civil Disorders (Kerner Commission) to determine the social and economic causes of the urban outbreaks.",
+        "correctCategory": "Institutional Analysis & Inquiries",
+        "feedback": "The federal government sought to analyze urban violence through institutional research rather than purely police tactics."
+      },
+      {
+        "id": "2_4_5",
+        "text": "Operation Breadbasket in Chicago used economic boycotts to force white-owned supermarket chains to hire Black employees and stock Black-produced goods.",
+        "correctCategory": "Economic Rights Campaigns",
+        "feedback": "Activists utilized consumer purchasing power to combat employment discrimination and build Black commercial wealth."
       }
     ]
   },
@@ -212,6 +308,18 @@ export const WRAPUP_DATA = {
         "text": "Diem's regime banned the display of Buddhist flags, sparking self-immolations by Buddhist monks that undermined Diem's international legitimacy.",
         "correctCategory": "South Vietnamese Domestic Realities",
         "feedback": "Internal religious discrimination fractured the regime and forced the U.S. to consider a change in leadership."
+      },
+      {
+        "id": "3_1_4",
+        "text": "President Eisenhower sent military advisers and committed millions of dollars in aid, funding 80% of the French military effort in Indochina before their 1954 defeat.",
+        "correctCategory": "Cold War Containment Policy",
+        "feedback": "U.S. financial and tactical commitments in Vietnam began well before direct combat troop deployments."
+      },
+      {
+        "id": "3_1_5",
+        "text": "Diem appointed his Catholic family members and loyalists to key political and military posts, despite 80% of the Vietnamese population being Buddhist.",
+        "correctCategory": "South Vietnamese Domestic Realities",
+        "feedback": "Sectarian discrimination and nepotism alienated the majority population and weakened domestic support for the Saigon state."
       }
     ]
   },
@@ -236,6 +344,18 @@ export const WRAPUP_DATA = {
         "text": "Declassified NSA archives reveal that the second reported North Vietnamese patrol boat attack on August 4, 1964, was a false alarm caused by radar errors and anxious sonar operators.",
         "correctCategory": "Operational & Espionage Factors",
         "feedback": "The primary trigger for direct U.S. combat entry was based on non-existent radar returns."
+      },
+      {
+        "id": "3_2_4",
+        "text": "President Johnson ordered retaliatory air strikes (Operation Pierce Arrow) immediately after receiving reports, before double-checking intelligence reports.",
+        "correctCategory": "Executive & Political Strategy",
+        "feedback": "The White House prioritized decisive military response and political signaling over intelligence confirmation."
+      },
+      {
+        "id": "3_2_5",
+        "text": "South Vietnamese commando teams used U.S.-supplied swift boats to launch amphibious raids on North Vietnamese radar stations on Hon Me island.",
+        "correctCategory": "Operational & Espionage Factors",
+        "feedback": "Coordinating South Vietnamese raids with U.S. naval intelligence patrols directly provoked the North Vietnamese responses."
       }
     ]
   },
@@ -260,6 +380,18 @@ export const WRAPUP_DATA = {
         "text": "Operation Ranch Hand sprayed over 20 million gallons of herbicides, including Agent Orange, to clear jungle canopy and destroy peasant crops suspected of feeding guerrillas.",
         "correctCategory": "U.S. Industrial / Attrition Strategy",
         "feedback": "Chemical defoliation aimed to strip the enemy of physical hiding spaces and food sources."
+      },
+      {
+        "id": "3_3_4",
+        "text": "General William Westmoreland deployed large helicopter-borne sweeps to locate and destroy NVA units in remote jungle zones, seeking a military 'crossover point'.",
+        "correctCategory": "U.S. Industrial / Attrition Strategy",
+        "feedback": "The attrition strategy relied on massive firepower and technological mobility to exhaust the enemy's manpower resources."
+      },
+      {
+        "id": "3_3_5",
+        "text": "Vietcong fighters dressed in peasant clothing and blended with local farm populations in villages, preventing U.S. troops from identifying combatants.",
+        "correctCategory": "NLF / PAVN Guerilla Adaptation",
+        "feedback": "Blending with civilian populations neutralized conventional U.S. search-and-destroy tactics and surveillance."
       }
     ]
   },
@@ -284,6 +416,18 @@ export const WRAPUP_DATA = {
         "text": "Nixon utilized the 'Madman Theory,' instructing diplomats to tell the North Vietnamese he was unstable and prepared to use nuclear weapons to force concessions.",
         "correctCategory": "Diplomatic Maneuver & 'Decent Interval'",
         "feedback": "This psychological tactic was intended to force Hanoi to negotiate out of fear of unpredictable escalation."
+      },
+      {
+        "id": "3_4_4",
+        "text": "Nixon ordered a joint U.S.-ARVN invasion of Cambodia in 1970 to destroy the communist military command center (COSVN) and disrupt supply routes.",
+        "correctCategory": "Secret Military Escalations",
+        "feedback": "Invading Cambodia aimed to buy time for Vietnamization but ignited massive anti-war protests at Kent State and nationwide."
+      },
+      {
+        "id": "3_4_5",
+        "text": "Kissinger engaged in 'triangular diplomacy,' visiting Beijing and Moscow to persuade China and the USSR to pressure Hanoi into signing peace accords.",
+        "correctCategory": "Diplomatic Maneuver & 'Decent Interval'",
+        "feedback": "Exploiting divisions between communist superpowers helped the U.S. isolate North Vietnam diplomatically."
       }
     ]
   },
@@ -308,6 +452,18 @@ export const WRAPUP_DATA = {
         "text": "During their short occupation of Hue, communist forces rounded up and executed approximately 3,000 government officials, teachers, and intellectuals.",
         "correctCategory": "Battlefield & Military Outcomes",
         "feedback": "This purge illustrated the brutal political nature of North Vietnamese revolutionary warfare."
+      },
+      {
+        "id": "4_1_4",
+        "text": "General Westmoreland's request for an additional 206,000 combat troops was leaked to the New York Times, sparking public outrage and proving the war was not near its end.",
+        "correctCategory": "Domestic Political & Public Repercussions",
+        "feedback": "Demanding more troops shattered government credibility and intensified anti-war sentiment."
+      },
+      {
+        "id": "4_1_5",
+        "text": "General Giap launched coordinated attacks by 80,000 communist troops on over 100 cities, towns, and military bases across South Vietnam during the lunar new year holiday.",
+        "correctCategory": "Battlefield & Military Outcomes",
+        "feedback": "The scale of the offensive shocked U.S. command, proving the communists retained immense coordination and offensive capacity."
       }
     ]
   },
@@ -329,9 +485,21 @@ export const WRAPUP_DATA = {
       },
       {
         "id": "4_2_3",
-        "text": "In 1969, Nixon introduced a draft lottery based on birth dates to defuse student protests by making the induction process transparent.",
+        "text": "Members of the Vietnam Veterans Against the War (VVAW) threw their purple hearts, bronze stars, and combat medals over the Capitol fence in protest in 1971.",
         "correctCategory": "Grassroots Dissent & Leaks",
-        "feedback": "Alleviating draft uncertainty reduced middle-class student outrage and undermined protest mobilization."
+        "feedback": "Protesting combat veterans severely damaged the government's moral justification for continuing the war."
+      },
+      {
+        "id": "4_2_4",
+        "text": "The White House created the Special Investigations Unit ('the Plumbers') to burglarize Daniel Ellsberg's psychiatrist's office in an attempt to find dirt to discredit him.",
+        "correctCategory": "Covert State Responses",
+        "feedback": "The executive branch resorted to illegal domestic covert operations to attack and discredit political whistleblowers."
+      },
+      {
+        "id": "4_2_5",
+        "text": "Nixon ordered the CIA to execute Operation CHAOS, a domestic surveillance program designed to find foreign communist support links behind anti-war student groups.",
+        "correctCategory": "Covert State Responses",
+        "feedback": "This program violated the CIA's charter, which strictly prohibits intelligence gathering inside the United States."
       }
     ]
   },
@@ -356,6 +524,18 @@ export const WRAPUP_DATA = {
         "text": "Saigon's final collapse was triggered by a mass panic ('Flight of the Accordions') when ARVN troops abandoned their posts during withdrawals from the Central Highlands.",
         "correctCategory": "Domestic & Economic Collapse of the South",
         "feedback": "Saigon collapsed due to structural panic and leadership errors before North Vietnam's main army arrived."
+      },
+      {
+        "id": "4_3_4",
+        "text": "Congress passed the Case-Church Amendment in June 1973, legally prohibiting all U.S. military operations in Indochina after 15 August 1973.",
+        "correctCategory": "Geopolitics & Diplomatic Pressures",
+        "feedback": "This amendment legally blocked the Nixon and Ford administrations from using air strikes to defend South Vietnam."
+      },
+      {
+        "id": "4_3_5",
+        "text": "Congress passed the War Powers Act of 1973 over President Nixon's veto, forcing the president to notify Congress within 48 hours of deploying combat troops.",
+        "correctCategory": "Geopolitics & Diplomatic Pressures",
+        "feedback": "This legislative limit checked the executive branch's capacity to engage in long-term undeclared wars."
       }
     ]
   },
@@ -380,6 +560,18 @@ export const WRAPUP_DATA = {
         "text": "The U.S. underestimated the tenacity of North Vietnamese nationalism, treating the war as a simple chess move in global anti-communist containment.",
         "correctCategory": "Political & Diplomatic Constraints",
         "feedback": "Failing to see the conflict as a anti-colonial nationalist struggle led to severe strategic misjudgments."
+      },
+      {
+        "id": "4_4_4",
+        "text": "The U.S. military's one-year tour of duty system prevented units from building combat experience and destroyed internal troop cohesion.",
+        "correctCategory": "Strategic & Tactical Failures",
+        "feedback": "Constant rotation meant experienced soldiers were replaced by raw, uncoordinated conscripts."
+      },
+      {
+        "id": "4_4_5",
+        "text": "The South Vietnamese government in Saigon suffered from deep corruption, religious sectarian bias, and a lack of democratic legitimacy.",
+        "correctCategory": "Political & Diplomatic Constraints",
+        "feedback": "The political weakness of the Saigon ally made it impossible to construct a viable, self-sustaining state."
       }
     ]
   }

@@ -1405,7 +1405,8 @@ export function renderMasteryView(subtopicId) {
   if (wuChallenge) {
     const factCardsHtml = wuChallenge.facts.map(f => `
       <div class="wrapup-fact-card" draggable="true" data-fact-id="${f.id}">
-        ${f.text}
+        <i class="fa-solid fa-grip-vertical" style="color: var(--text-muted); cursor: grab; margin-top: 2px; flex-shrink: 0;"></i>
+        <span class="wrapup-fact-text">${f.text}</span>
       </div>
     `).join('');
 
@@ -1420,59 +1421,83 @@ export function renderMasteryView(subtopicId) {
 
     lessonWrapUpHtml = `
       <style>
+        .wrapup-cards-pool {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+          gap: 12px;
+          margin-bottom: 20px;
+        }
         .wrapup-fact-card {
-          padding: 12px;
+          padding: 12px 14px;
           background: rgba(255, 255, 255, 0.03);
           border: 1px solid var(--border-glass);
-          border-radius: 6px;
-          font-size: 0.82rem;
+          border-radius: 8px;
+          font-size: 0.8rem;
           line-height: 1.45;
           color: var(--text-base);
           cursor: grab;
           user-select: none;
-          transition: all 0.2s;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+          box-shadow: var(--shadow-sm);
+          box-sizing: border-box;
+          min-height: 90px;
         }
         .wrapup-fact-card:hover {
-          background: rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.07);
           border-color: var(--primary);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-md);
         }
         .wrapup-fact-card.selected {
           border-color: var(--accent);
           background: rgba(245, 158, 11, 0.08);
+          box-shadow: 0 0 0 2px var(--accent);
         }
         .wrapup-fact-card.dragging {
           opacity: 0.4;
+          transform: scale(0.95);
         }
         .wrapup-bucket {
           flex: 1;
-          min-width: 260px;
+          min-width: 280px;
           background: rgba(0, 0, 0, 0.15);
           border: 1px solid var(--border-glass);
-          border-radius: 6px;
-          padding: 14px;
+          border-radius: 8px;
+          padding: 16px;
           transition: all 0.2s;
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 10px;
+          box-shadow: var(--shadow-sm);
         }
         .wrapup-bucket.drag-over {
           border-color: var(--accent);
-          background: rgba(255, 255, 255, 0.02);
+          background: rgba(245, 158, 11, 0.03);
+          box-shadow: var(--shadow-md);
         }
         .wrapup-bucket-slots {
-          min-height: 100px;
-          border: 2px dashed rgba(255, 255, 255, 0.05);
-          border-radius: 4px;
-          padding: 8px;
+          min-height: 120px;
+          border: 2px dashed rgba(255, 255, 255, 0.06);
+          border-radius: 6px;
+          padding: 10px;
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 10px;
           background: rgba(0, 0, 0, 0.08);
           transition: background 0.2s;
         }
         .wrapup-bucket.drag-over .wrapup-bucket-slots {
           background: rgba(245, 158, 11, 0.02);
           border-color: rgba(245, 158, 11, 0.3);
+        }
+        .wrapup-bucket-slots .wrapup-fact-card {
+          min-height: auto;
+          box-shadow: none;
+          background: rgba(255, 255, 255, 0.01);
+          transform: none;
         }
       </style>
       <div class="mastery-card lesson-wrap-up-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--accent); background: rgba(249, 115, 22, 0.02);">
@@ -1485,7 +1510,7 @@ export function renderMasteryView(subtopicId) {
           </p>
           
           <!-- Draggable Fact Cards -->
-          <div class="wrapup-cards-pool" style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+          <div class="wrapup-cards-pool">
             ${factCardsHtml}
           </div>
           
@@ -1850,8 +1875,7 @@ export function renderMasteryView(subtopicId) {
                 <div class="past-model-answer-content" style="white-space: pre-line; line-height: 1.5; font-size: 0.9rem;">${highlightModelQuotes(paper.q3b.model)}</div>
                 <div class="model-answer-key" style="margin-top: 8px;">
                   <span class="model-key-title">Key:</span>
-                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation 1 Quotes</span>
-                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #10b981;"></span> Interpretation 2 Quotes</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
                 </div>
               </div>
 
@@ -1872,6 +1896,7 @@ export function renderMasteryView(subtopicId) {
                   <span class="model-key-title">Key:</span>
                   <span class="model-key-item"><span class="model-key-dot" style="background-color: #3b82f6;"></span> Interpretation Quotes</span>
                   <span class="model-key-item"><span class="model-key-dot" style="border-bottom: 2px dotted #10b981; border-radius: 0; width: 12px; height: 4px; margin-top: -4px; background: transparent;"></span> Contextual Knowledge</span>
+                  <span class="model-key-item"><span class="model-key-dot" style="background-color: #a855f7;"></span> Judgment</span>
                 </div>
               </div>
             </div>
