@@ -14697,9 +14697,6 @@ ${cleanBrackets(paper.q3d.model)}
         if (printArea) {
           printArea.innerHTML = cleanHtml;
           window.print();
-          setTimeout(() => {
-            printArea.innerHTML = "";
-          }, 1e3);
         } else {
           alert("Print error: #print-area element not found in DOM.");
         }
@@ -15675,9 +15672,6 @@ ${cleanBrackets(paper.q3d.model)}
         if (printArea) {
           printArea.innerHTML = cleanHtml;
           window.print();
-          setTimeout(() => {
-            printArea.innerHTML = "";
-          }, 1e3);
         } else {
           alert("Print error: #print-area element not found in DOM.");
         }
@@ -30286,9 +30280,6 @@ ${cleanBrackets(paper.q3d.model)}
         if (printArea) {
           printArea.innerHTML = cleanHtml;
           window.print();
-          setTimeout(() => {
-            printArea.innerHTML = "";
-          }, 1e3);
         } else {
           alert("Print error: #print-area element not found in DOM.");
         }

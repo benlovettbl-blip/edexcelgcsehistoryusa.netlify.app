@@ -615,9 +615,6 @@ export function renderExamSheet() {
       if (printArea) {
         printArea.innerHTML = cleanHtml;
         window.print();
-        setTimeout(() => {
-          printArea.innerHTML = '';
-        }, 1000);
       } else {
         alert("Print error: #print-area element not found in DOM.");
       }
@@ -1641,9 +1638,6 @@ export function initBulkWorkbookCreator() {
       if (printArea) {
         printArea.innerHTML = cleanHtml;
         window.print();
-        setTimeout(() => {
-          printArea.innerHTML = '';
-        }, 1000);
       } else {
         alert("Print error: #print-area element not found in DOM.");
       }
