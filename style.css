@@ -9342,3 +9342,41 @@ input:checked + .switch-slider:before {
     font-family: Arial, sans-serif;
   }
 }
+
+/* --- SPA Print Helper Classes --- */
+body.printing-active {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: block !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  position: static !important;
+}
+
+body.printing-active .app-container,
+body.printing-active .video-modal-overlay,
+body.printing-active .settings-drawer-overlay,
+body.printing-active #sidebar-overlay,
+body.printing-active #confetti-canvas,
+body.printing-active aside,
+body.printing-active header,
+body.printing-active main,
+body.printing-active section,
+body.printing-active nav,
+body.printing-active button,
+body.printing-active select,
+body.printing-active iframe {
+  display: none !important;
+}
+
+body.printing-active #print-area {
+  display: block !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  width: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
