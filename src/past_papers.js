@@ -602,12 +602,19 @@ export function renderExamSheet() {
       AudioEngine.play('click');
       const mode = document.getElementById('print-exam-mode').value;
       const html = generatePastPaperHtml(paper, mode);
-      const printArea = document.getElementById('print-area');
-      if (printArea) {
-        printArea.innerHTML = html;
-        window.print();
+      const autoPrintScript = `
+        <script>
+          window.print();
+        <\/script>
+      `;
+      const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
+      const newWin = window.open('', '_blank');
+      if (newWin) {
+        newWin.document.open();
+        newWin.document.write(htmlWithPrint);
+        newWin.document.close();
       } else {
-        alert("Print error: #print-area element not found in DOM.");
+        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
       }
     });
   }
@@ -1617,12 +1624,19 @@ export function initBulkWorkbookCreator() {
       AudioEngine.play('click');
       
       const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
-      const printArea = document.getElementById('print-area');
-      if (printArea) {
-        printArea.innerHTML = html;
-        window.print();
+      const autoPrintScript = `
+        <script>
+          window.print();
+        <\/script>
+      `;
+      const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
+      const newWin = window.open('', '_blank');
+      if (newWin) {
+        newWin.document.open();
+        newWin.document.write(htmlWithPrint);
+        newWin.document.close();
       } else {
-        alert("Print error: #print-area element not found in DOM.");
+        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
       }
     });
   }

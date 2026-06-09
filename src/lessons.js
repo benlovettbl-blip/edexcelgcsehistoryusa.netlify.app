@@ -3563,12 +3563,19 @@ function setupWrapUpChallenge(container, subtopicId) {
       AudioEngine.play('click');
       const subtopic = viewWorksheetPageBtn.getAttribute('data-subtopic');
       const html = generateWorkbookHtml(subtopic, 'booklet', 'standard', false);
-      const printArea = document.getElementById('print-area');
-      if (printArea) {
-        printArea.innerHTML = html;
-        window.print();
+      const autoPrintScript = `
+        <script>
+          window.print();
+        <\/script>
+      `;
+      const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
+      const newWin = window.open('', '_blank');
+      if (newWin) {
+        newWin.document.open();
+        newWin.document.write(htmlWithPrint);
+        newWin.document.close();
       } else {
-        alert("Print error: #print-area element not found in DOM.");
+        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
       }
     });
   }
@@ -3973,13 +3980,19 @@ export function initWorkbookCreator() {
       AudioEngine.play('click');
 
       const html = generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
-      
-      const printArea = document.getElementById('print-area');
-      if (printArea) {
-        printArea.innerHTML = html;
-        window.print();
+      const autoPrintScript = `
+        <script>
+          window.print();
+        <\/script>
+      `;
+      const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
+      const newWin = window.open('', '_blank');
+      if (newWin) {
+        newWin.document.open();
+        newWin.document.write(htmlWithPrint);
+        newWin.document.close();
       } else {
-        alert("Print error: #print-area element not found in DOM.");
+        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
       }
     });
   }
