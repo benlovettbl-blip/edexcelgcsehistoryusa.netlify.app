@@ -3564,13 +3564,67 @@ function setupWrapUpChallenge(container, subtopicId) {
     viewWorksheetPageBtn.addEventListener('click', async () => {
       AudioEngine.play('click');
       const subtopic = viewWorksheetPageBtn.getAttribute('data-subtopic');
-      const html = await generateWorkbookHtml(subtopic, 'booklet', 'standard', false);
-      const newWin = window.open();
-      if (newWin) {
+      
+      // Open the window synchronously to bypass pop-up blockers
+      const newWin = window.open('', '_blank');
+      if (!newWin) {
+        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
+        return;
+      }
+      
+      // Show loading screen in the pre-opened tab
+      newWin.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Generating Worksheet...</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #111827;
+              color: #f9fafb;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+            }
+            .spinner {
+              border: 4px solid rgba(255, 255, 255, 0.1);
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              border-left-color: #3b82f6;
+              animation: spin 1s linear infinite;
+              margin-bottom: 20px;
+            }
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="spinner"></div>
+          <h3>Generating Lesson Workbook...</h3>
+          <p style="color: #9ca3af; font-size: 0.9rem;">Compiling resource details, please wait.</p>
+        </body>
+        </html>
+      `);
+      newWin.document.close();
+      
+      try {
+        const html = await generateWorkbookHtml(subtopic, 'booklet', 'standard', false);
+        
+        // Write the compiled HTML workbook to the pre-opened tab
+        newWin.document.open();
         newWin.document.write(html);
         newWin.document.close();
-      } else {
-        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
+      } catch (err) {
+        console.error("Failed to generate workbook page:", err);
+        newWin.close();
+        alert("An error occurred while compiling the worksheet.");
       }
     });
   }

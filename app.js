@@ -15655,13 +15655,60 @@ ${cleanBrackets(paper.q3d.model)}
         const density = document.getElementById("bulk-workbook-density").value;
         const answers = document.getElementById("bulk-workbook-answers").value;
         AudioEngine.play("click");
-        const html = await window.generateBulkWorkbookHtml(style, density, answers === "yes");
-        const newWin = window.open();
-        if (newWin) {
+        const newWin = window.open("", "_blank");
+        if (!newWin) {
+          alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
+          return;
+        }
+        newWin.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Generating Worksheet Pack...</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #111827;
+              color: #f9fafb;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+            }
+            .spinner {
+              border: 4px solid rgba(255, 255, 255, 0.1);
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              border-left-color: #10b981;
+              animation: spin 1s linear infinite;
+              margin-bottom: 20px;
+            }
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="spinner"></div>
+          <h3>Generating Course-Wide Worksheet Pack...</h3>
+          <p style="color: #9ca3af; font-size: 0.9rem;">Compiling topics Topic 1.1 to 4.4, please wait a few seconds.</p>
+        </body>
+        </html>
+      `);
+        newWin.document.close();
+        try {
+          const html = await window.generateBulkWorkbookHtml(style, density, answers === "yes");
+          newWin.document.open();
           newWin.document.write(html);
           newWin.document.close();
-        } else {
-          alert("Pop-up blocker prevented opening the bulk worksheets. Please allow popups for this site.");
+        } catch (err) {
+          console.error("Failed to generate bulk workbook:", err);
+          newWin.close();
+          alert("An error occurred while compiling the worksheets.");
         }
       });
     }
@@ -29897,13 +29944,60 @@ ${cleanBrackets(paper.q3d.model)}
       viewWorksheetPageBtn.addEventListener("click", async () => {
         AudioEngine.play("click");
         const subtopic = viewWorksheetPageBtn.getAttribute("data-subtopic");
-        const html = await generateWorkbookHtml(subtopic, "booklet", "standard", false);
-        const newWin = window.open();
-        if (newWin) {
+        const newWin = window.open("", "_blank");
+        if (!newWin) {
+          alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
+          return;
+        }
+        newWin.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Generating Worksheet...</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #111827;
+              color: #f9fafb;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+            }
+            .spinner {
+              border: 4px solid rgba(255, 255, 255, 0.1);
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              border-left-color: #3b82f6;
+              animation: spin 1s linear infinite;
+              margin-bottom: 20px;
+            }
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="spinner"></div>
+          <h3>Generating Lesson Workbook...</h3>
+          <p style="color: #9ca3af; font-size: 0.9rem;">Compiling resource details, please wait.</p>
+        </body>
+        </html>
+      `);
+        newWin.document.close();
+        try {
+          const html = await generateWorkbookHtml(subtopic, "booklet", "standard", false);
+          newWin.document.open();
           newWin.document.write(html);
           newWin.document.close();
-        } else {
-          alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
+        } catch (err) {
+          console.error("Failed to generate workbook page:", err);
+          newWin.close();
+          alert("An error occurred while compiling the worksheet.");
         }
       });
     }
