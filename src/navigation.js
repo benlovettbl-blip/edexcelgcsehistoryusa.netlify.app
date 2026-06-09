@@ -96,10 +96,10 @@ export function switchView(viewName, subtopicId = null) {
     if (hubNav) hubNav.classList.add('active');
     if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
     const viewTitle = document.getElementById('current-view-title');
-    if (viewTitle) viewTitle.textContent = "Exam Hub (Technique, Practice & Mocks)";
+    if (viewTitle) viewTitle.textContent = "Resource & Exam Hub";
     state.selectedSubtopicId = null;
     
-    const targetPanel = subtopicId || 'technique';
+    const targetPanel = subtopicId || 'educator-hub';
     activateExamHubPanel(targetPanel);
   } else if (viewName === 'games') {
     const gamesNav = document.getElementById('nav-games');

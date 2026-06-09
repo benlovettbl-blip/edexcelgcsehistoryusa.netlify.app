@@ -448,11 +448,11 @@ function updateActionBar() {
     // Show Option buttons with question options
     if (btnOptA) {
       btnOptA.style.display = 'block';
-      btnOptA.innerText = `🟢 A: ${currentQuestion.optionA}`;
+      btnOptA.textContent = `🟢 A: ${currentQuestion.optionA}`;
     }
     if (btnOptB) {
       btnOptB.style.display = 'block';
-      btnOptB.innerText = `🔵 B: ${currentQuestion.optionB}`;
+      btnOptB.textContent = `🔵 B: ${currentQuestion.optionB}`;
     }
   } else {
     // Show standard buttons
@@ -745,6 +745,14 @@ function handleParseSubmit(event) {
     if (h) {
       logText(`👁️ ${h.name}: "${h.look}"`);
       if (voiceEnabled) AudioEngine.speak(h.look);
+      
+      if (h.id === 'clipboard') {
+        triggerFactualQuestion('domino');
+      } else if (h.id === 'television') {
+        triggerFactualQuestion('saigon');
+      } else if (h.id === 'kissinger') {
+        triggerFactualQuestion('paris');
+      }
     } else {
       logText(`You look around, but you don't see any "${target}".`);
     }
@@ -891,13 +899,13 @@ function syncHUD() {
   const xpDisplay = document.getElementById('hud-xp-display');
   const objectiveText = document.getElementById('hud-objective-text');
 
-  if (actTitle) actTitle.innerText = `ACT ${currentAct}: ${currentAct === 1 ? 'MONUMENTS' : (currentAct === 2 ? 'DUAL CAMPAIGNS' : 'FINALE')}`;
-  if (charDisplay) charDisplay.innerText = activeChar;
-  if (invDisplay) invDisplay.innerText = inventory.length > 0 ? inventory.join(', ') : 'EMPTY';
-  if (xpDisplay) xpDisplay.innerText = gameXp;
+  if (actTitle) actTitle.textContent = `ACT ${currentAct}: ${currentAct === 1 ? 'MONUMENTS' : (currentAct === 2 ? 'DUAL CAMPAIGNS' : 'FINALE')}`;
+  if (charDisplay) charDisplay.textContent = activeChar;
+  if (invDisplay) invDisplay.textContent = inventory.length > 0 ? inventory.join(', ') : 'EMPTY';
+  if (xpDisplay) xpDisplay.textContent = gameXp;
   
   if (objectiveText) {
-    objectiveText.innerText = getObjectiveText();
+    objectiveText.textContent = getObjectiveText();
   }
 
   const swapBtn = document.getElementById('swap-btn');
@@ -910,7 +918,7 @@ function toggleMute() {
   voiceEnabled = !voiceEnabled;
   const btn = document.getElementById('audio-toggle');
   if (btn) {
-    btn.innerText = voiceEnabled ? '🔊 VOICE: ON' : '🔇 VOICE: OFF';
+    btn.textContent = voiceEnabled ? '🔊 VOICE: ON' : '🔇 VOICE: OFF';
     btn.className = voiceEnabled ? 'audio-btn' : 'audio-btn muted';
   }
   AudioEngine.play('click');

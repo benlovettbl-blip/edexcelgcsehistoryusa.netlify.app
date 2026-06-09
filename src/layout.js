@@ -13,9 +13,10 @@ import {
   setActiveClassicFilter,
   closeVideoModal
 } from './views.js';
-import { startExam, nextExamQuestion, displayExamQuestion, finishExam } from './exam.js';
+import { startExam, nextExamQuestion, displayExamQuestion, finishExam, showExamSetup } from './exam.js';
 import { saveProgress } from './storage.js';
-import { startPastPaper, generateMockExam, renderPastPapersView } from './past_papers.js';
+import { startPastPaper, generateMockExam, renderPastPapersView, initBulkWorkbookCreator } from './past_papers.js';
+import { initWorkbookCreator } from './lessons.js';
 import { EXAM_SKILLS_DATA } from '../questions.js';
 
 // --- Sidebar Overlay Drawer (Mobile & Desktop UI Toggle) ---
@@ -558,7 +559,7 @@ function bindEvents() {
   if (navExamHub) {
     navExamHub.addEventListener('click', () => {
       AudioEngine.play('click');
-      switchView('exam-hub', 'technique');
+      switchView('exam-hub', 'educator-hub');
     });
   }
 
@@ -1966,6 +1967,10 @@ function updateRealTimeFeedback(type, value, questionObj, questionId) {
       }
     });
   }
+
+  // Initialize Workbook and Bulk Workbook Creator
+  initWorkbookCreator();
+  initBulkWorkbookCreator();
 }
 
 export function highlightModelQuotes(text) {

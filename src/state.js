@@ -10,6 +10,7 @@ export const state = {
   selectedSubtopicId: null,         // Active sub-topic ID (e.g. 'subtopic_1_1')
   selectedKeyTopicId: null,          // Active Key Topic ID (e.g. 'topic_1')
   currentMode: 'lessons',           // 'lessons' | 'classic' | 'flashcards' (sub-topic study modes)
+  studyLevel: 'mastery',            // 'mastery' | 'core' (pedagogy split levels)
   mastery: {},                      // { questionId: boolean }
   bookmarks: [],                     // Array of questionIds
   soundEnabled: true,

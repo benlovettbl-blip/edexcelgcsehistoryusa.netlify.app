@@ -18,6 +18,12 @@ import { initChronologyGame } from './chronology.js';
 import { initAdventureGame, initVietnamAdventureGame, initCivilianAdventureGame, initNorthVietnamAdventureGame } from './adventure.js';
 import { initEchoesAdventureGame } from './echoes_adventure.js';
 
+window.initAdventureGame = initAdventureGame;
+window.initVietnamAdventureGame = initVietnamAdventureGame;
+window.initCivilianAdventureGame = initCivilianAdventureGame;
+window.initNorthVietnamAdventureGame = initNorthVietnamAdventureGame;
+window.initEchoesAdventureGame = initEchoesAdventureGame;
+
 // --- Google Sheets Leaderboard Configuration ---
 // If empty, the leaderboard will automatically fall back to browser localStorage.
 // To share scores class-wide, paste your deployed Google Apps Script Web App URL below:
@@ -3465,26 +3471,66 @@ export function showWarningToast(message) {
   }, 4000);
 }
 
-function triggerChimneyAnger() {
-  const logo = document.getElementById('header-brand-logo');
-  if (logo) {
+function triggerAngrySweepAnimation() {
+  const logos = document.querySelectorAll('.bouncy-chimney, .brand-icon, .brand-subheader-logo');
+  logos.forEach(logo => {
     logo.classList.add('angry');
-    AudioEngine.play('fail');
+    for (let i = 0; i < 15; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'soot-particle';
+      particle.style.background = '#1a1a1a';
+      particle.style.width = `${Math.random() * 8 + 4}px`;
+      particle.style.height = particle.style.width;
+      particle.style.borderRadius = '50%';
+      particle.style.position = 'fixed';
+      particle.style.zIndex = '99999';
+      const rect = logo.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      particle.style.left = `${x}px`;
+      particle.style.top = `${y}px`;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 80 + 40;
+      const vx = Math.cos(angle) * speed;
+      const vy = Math.sin(angle) * speed - 60;
+      document.body.appendChild(particle);
+      let start = null;
+      function animate(timestamp) {
+        if (!start) start = timestamp;
+        const progress = (timestamp - start) / 1000;
+        particle.style.transform = `translate(${vx * progress}px, ${vy * progress}px) scale(${1 - progress})`;
+        particle.style.opacity = `${1 - progress}`;
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          particle.remove();
+        }
+      }
+      requestAnimationFrame(animate);
+    }
     setTimeout(() => {
       logo.classList.remove('angry');
-    }, 4000);
-  }
+    }, 1200);
+  });
+}
+
+export function triggerChimneyAnger() {
+  AudioEngine.play('fail');
+  triggerAngrySweepAnimation();
 }
 
 export function validateScoreBoardInitials(initials) {
   if (!/^[A-Z]{3}$/.test(initials)) {
+    AudioEngine.play('fail');
+    triggerAngrySweepAnimation();
     return { valid: false, message: "Please enter exactly 3 letters for your initials." };
   }
   const profane = new Set([
     'ASS', 'WTF', 'FUC', 'SHI', 'CNT', 'CUM', 'FAG', 'DIK', 'KYS', 'KKK', 'SEX', 
     'NIG', 'TIT', 'FAP', 'WOP', 'PIS', 'HEL', 'DAM', 'SOB', 'PEE', 'POO', 'DIE', 
     'GAY', 'PNS', 'VAG', 'KOK', 'FUK', 'FCK', 'BCH', 'MLF', 'DCK', 'BUM', 'FUG',
-    'SHT', 'XXX', 'SUK', 'HOE', 'SLT', 'WHR', 'NOB', 'KNO', 'COK', 'TAD', 'PUB'
+    'SHT', 'XXX', 'SUK', 'HOE', 'SLT', 'WHR', 'NOB', 'KNO', 'COK', 'TAD', 'PUB',
+    'NGR', 'BXT'
   ]);
   if (profane.has(initials)) {
     triggerChimneyAnger();

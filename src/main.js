@@ -5,10 +5,12 @@ import { switchView } from './navigation.js';
 import { initChatbot } from './chatbot.js';
 import { initEssayPlanner } from './essay_planner.js';
 import { initMapExplorer } from './map_explorer.js';
+import { state } from './state.js';
 
 // --- Application Entry Point ---
 window.addEventListener('DOMContentLoaded', () => {
   window.switchView = switchView;
+  window.state = state;
   
   initData();
   renderSidebarNav();

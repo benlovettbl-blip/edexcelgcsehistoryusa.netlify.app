@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCSE History Study Centre: Falling Blocks Arcade</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --bg-card: #0f131f;
+      --bg-card-hover: #161c2e;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      
+      --primary: #f97316; /* Sunset Orange */
+      --primary-glow: rgba(249, 115, 22, 0.25);
+      
+      --neon-cyan: #06b6d4;
+      --neon-cyan-glow: rgba(6, 182, 212, 0.3);
+      
+      --neon-green: #10b981;
+      --neon-green-glow: rgba(16, 185, 129, 0.3);
+      
+      --neon-red: #ef4444;
+      --neon-red-glow: rgba(239, 68, 68, 0.35);
+      
+      --neon-magenta: #d946ef;
+      --neon-magenta-glow: rgba(217, 70, 239, 0.3);
+      
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --border-radius-lg: 16px;
+      --border-radius-md: 12px;
+      --border-radius-sm: 8px;
+      
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: 0.15s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      padding: 15px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      /* Custom background grid */
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.05) 0px, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    .game-container {
+      width: 100%;
+      max-width: 850px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    /* Header Styling */
+    header {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-logo {
+      background: var(--primary-glow);
+      color: var(--primary);
+      width: 44px;
+      height: 44px;
+      border-radius: var(--border-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .header-info h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #f97316 0%, #d946ef 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-info p {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .action-btn {
+      background: var(--bg-card-hover);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 8px 14px;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .action-btn:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 0 8px var(--primary-glow);
+    }
+
+    .action-btn.active {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-glow);
+    }
+
+    /* Main Board Layout */
+    .game-layout {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 15px;
+      align-items: start;
+    }
+
+    @media (max-width: 800px) {
+      .game-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Arcade Cabinet Container */
+    .arcade-cabinet {
+      background: var(--bg-card);
+      border: 2px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 15px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+
+    /* TOP HUD */
+    .arcade-hud {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      border-radius: var(--border-radius-md);
+      border: 1px solid var(--border-glass);
+    }
+
+    .hud-metric {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hud-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .hud-value {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .hud-value.highlight-cyan { color: var(--neon-cyan); text-shadow: 0 0 5px var(--neon-cyan-glow); }
+    .hud-value.highlight-green { color: var(--neon-green); text-shadow: 0 0 5px var(--neon-green-glow); }
+    .hud-value.highlight-magenta { color: var(--neon-magenta); text-shadow: 0 0 5px var(--neon-magenta-glow); }
+    .hud-value.highlight-primary { color: var(--primary); text-shadow: 0 0 5px var(--primary-glow); }
+    .hud-value.highlight-red { color: var(--neon-red); text-shadow: 0 0 5px var(--neon-red-glow); }
+
+    /* Canvas Stage */
+    .canvas-stage {
+      position: relative;
+      width: 100%;
+      background: #04060b;
+      border-radius: var(--border-radius-md);
+      border: 1.5px solid var(--border-glass);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.9);
+    }
+
+    .canvas-stage::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+      background-size: 100% 4px;
+      pointer-events: none;
+    }
+
+    #game-canvas {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      aspect-ratio: 450 / 600;
+      display: block;
+      background: transparent;
+    }
+
+    /* Target Zone (GCSE Question Panel) */
+    .target-zone {
+      background: rgba(16, 185, 129, 0.04);
+      border: 1.5px solid var(--neon-green);
+      border-radius: var(--border-radius-md);
+      padding: 14px 18px;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.1), inset 0 0 10px rgba(16, 185, 129, 0.05);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-height: 90px;
+      justify-content: center;
+    }
+
+    .target-zone::before {
+      content: 'EXAM OBJECTIVE TARGET ZONE';
+      position: absolute;
+      top: -9px;
+      left: 15px;
+      background: #0d2218;
+      border: 1px solid var(--neon-green);
+      border-radius: 4px;
+      color: var(--neon-green);
+      font-size: 0.6rem;
+      font-weight: 800;
+      padding: 1px 6px;
+      letter-spacing: 0.08em;
+    }
+
+    .target-question {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Touch Controls */
+    .arcade-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .control-btn {
+      background: linear-gradient(180deg, var(--bg-card-hover) 0%, var(--bg-card) 100%);
+      border: 1.5px solid var(--border-glass);
+      border-radius: var(--border-radius-md);
+      color: #fff;
+      padding: 15px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all var(--transition-fast);
+      user-select: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .control-btn:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--neon-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px var(--neon-cyan-glow);
+    }
+
+    .control-btn:active {
+      transform: translateY(1px);
+      background: var(--bg-card);
+    }
+
+    /* Side Panel Styling */
+    .side-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .panel-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .panel-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 6px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .panel-card h3 i {
+      color: var(--primary);
+    }
+
+    /* Instructions details */
+    .guide-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .guide-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .guide-list li i {
+      color: var(--neon-cyan);
+      margin-top: 3px;
+      font-size: 0.85rem;
+    }
+
+    .keyboard-guide {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .key-cap {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid var(--border-glass);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      font-weight: bold;
+      color: #fff;
+      display: inline-block;
+      text-align: center;
+      box-shadow: 0 2px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    /* Leaderboard list */
+    .highscore-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .highscore-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: var(--border-radius-sm);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.82rem;
+    }
+
+    .highscore-item.rank-0 {
+      background: rgba(255, 183, 3, 0.05);
+      border-color: rgba(255, 183, 3, 0.2);
+    }
+    
+    .highscore-item.rank-0 .rank-num { color: #ffb703; font-weight: bold; }
+    
+    .highscore-item.rank-1 {
+      background: rgba(200, 200, 200, 0.04);
+      border-color: rgba(200, 200, 200, 0.15);
+    }
+    .highscore-item.rank-1 .rank-num { color: #cccccc; }
+
+    .highscore-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .rank-num {
+      font-weight: 700;
+      color: var(--text-muted);
+      width: 18px;
+    }
+
+    .player-name {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .player-year {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .player-score {
+      font-weight: bold;
+      color: var(--neon-cyan);
+    }
+
+    /* Screen Overlays (Modals inside canvas container or body) */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(7, 9, 14, 0.95);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      animation: overlayFadeIn 0.3s ease-out forwards;
+    }
+
+    @keyframes overlayFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .overlay-card {
+      width: 100%;
+      max-width: 380px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      animation: cardSlideUp 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    }
+
+    @keyframes cardSlideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .overlay-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      margin: 0 auto 5px;
+    }
+
+    .overlay-icon.primary {
+      background: var(--primary-glow);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .overlay-icon.error {
+      background: var(--neon-red-glow);
+      color: var(--neon-red);
+      border: 1px solid var(--neon-red);
+      box-shadow: 0 0 15px var(--neon-red-glow);
+    }
+
+    .overlay-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .overlay-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .overlay-button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: var(--border-radius-sm);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.25);
+    }
+
+    .overlay-button:hover {
+      background: #ea580c;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(249, 115, 22, 0.35);
+    }
+
+    .performance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: var(--border-radius-md);
+      margin: 5px 0;
+      border: 1px solid var(--border-glass);
+    }
+
+    .perf-metric {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .perf-val {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .perf-lbl {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Highscore Form */
+    .highscore-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 12px;
+      border-radius: var(--border-radius-md);
+      border: 1px solid var(--border-glass);
+    }
+
+    .form-inputs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .form-input {
+      background: rgba(7, 9, 14, 0.6);
+      border: 1px solid var(--border-glass);
+      color: #fff;
+      padding: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+
+    .form-input:focus {
+      border-color: var(--neon-cyan);
+    }
+
+    input.form-input {
+      width: 70px;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Fira Code', monospace;
+      font-weight: bold;
+    }
+
+    select.form-input {
+      flex-grow: 1;
+      cursor: pointer;
+    }
+
+    .submit-form-btn {
+      background: var(--neon-cyan);
+      color: #07090e;
+      border: none;
+      padding: 8px;
+      border-radius: 4px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .submit-form-btn:hover {
+      background: #22d3ee;
+      box-shadow: 0 0 10px var(--neon-cyan-glow);
+    }
+
+    .revision-recap {
+      background: rgba(239, 68, 68, 0.03);
+      border: 1px solid rgba(239, 68, 68, 0.15);
+      border-radius: var(--border-radius-md);
+      padding: 10px;
+      text-align: left;
+      max-height: 110px;
+      overflow-y: auto;
+    }
+
+    .revision-title {
+      font-size: 0.72rem;
+      color: var(--neon-red);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .revision-item {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      padding: 4px 0;
+      display: flex;
+      gap: 6px;
+    }
+
+    .revision-item:last-child {
+      border-bottom: none;
+    }
+
+    .revision-item i {
+      color: var(--neon-red);
+      margin-top: 2px;
+    }
+
+    /* Scrollbars */
+    .revision-recap::-webkit-scrollbar {
+      width: 4px;
+    }
+    .revision-recap::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .revision-recap::-webkit-scrollbar-thumb {
+      background: rgba(239, 68, 68, 0.2);
+      border-radius: 2px;
+    }
+
+    .empty-highscores {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-style: italic;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    /* Keyword Bank Styling */
+    #keyword-search:focus {
+      outline: none;
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 8px var(--neon-cyan-glow);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    #keyword-list-container::-webkit-scrollbar {
+      width: 5px;
+    }
+    #keyword-list-container::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    #keyword-list-container::-webkit-scrollbar-thumb {
+      background: var(--border-glass);
+      border-radius: 3px;
+    }
+    #keyword-list-container::-webkit-scrollbar-thumb:hover {
+      background: var(--neon-cyan);
+    }
+    .keyword-item {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+    .keyword-item:hover {
+      background: rgba(6, 182, 212, 0.05);
+      border-color: rgba(6, 182, 212, 0.2);
+      border-left-color: var(--neon-cyan) !important;
+    }
+    .keyword-item.expanded {
+      background: rgba(6, 182, 212, 0.08);
+      border-color: rgba(6, 182, 212, 0.3);
+      border-left-color: var(--neon-cyan) !important;
+    }
+
+    /* Bouncy Chimney Sweeper Logo Animations */
+    @keyframes chimneyBounce {
+      0%, 100% { transform: translateY(0) scale(1); }
+      30% { transform: translateY(-5px) scale(0.96) rotate(-2deg); }
+      50% { transform: translateY(-8px) scale(1.05) rotate(2deg); }
+      70% { transform: translateY(-3px) scale(0.98) rotate(-1deg); }
+      85% { transform: translateY(-1px) scale(1.01) rotate(0.5deg); }
+    }
+
+    .bouncy-chimney {
+      animation: chimneyBounce 2.5s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: filter var(--transition-fast), transform var(--transition-fast);
+      position: relative;
+    }
+
+    .bouncy-chimney:hover {
+      filter: drop-shadow(0 0 12px var(--primary-glow)) drop-shadow(0 0 4px var(--primary));
+      animation-play-state: paused;
+      transform: scale(1.15) rotate(3deg);
+    }
+
+    .bouncy-chimney:active {
+      transform: scale(0.95);
+    }
+
+    /* Smoke Particles */
+    .smoke-particle {
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(28, 25, 23, 0.85);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-50%) scale(1);
+      filter: blur(1.5px);
+    }
+
+    @keyframes smokeRise1 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.65; }
+      100% { transform: translate(-14px, -26px) scale(3.5); opacity: 0; filter: blur(4px); }
+    }
+
+    @keyframes smokeRise2 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.65; }
+      100% { transform: translate(10px, -32px) scale(4); opacity: 0; filter: blur(5px); }
+    }
+
+    @keyframes smokeRise3 {
+      0% { transform: translate(-50%, 0) scale(1); opacity: 0; }
+      25% { opacity: 0.7; }
+      100% { transform: translate(-2px, -38px) scale(4.5); opacity: 0; filter: blur(6px); }
+    }
+
+    .bouncy-chimney:hover .smoke-1 {
+      animation: smokeRise1 1.6s infinite linear;
+    }
+
+    .bouncy-chimney:hover .smoke-2 {
+      animation: smokeRise2 1.8s infinite linear;
+      animation-delay: 0.5s;
+    }
+
+    .bouncy-chimney:hover .smoke-3 {
+      animation: smokeRise3 2.0s infinite linear;
+      animation-delay: 1.0s;
+    }
+
+    /* Angry Chimney Shake & Heavy Red Smoke State */
+    @keyframes chimneyAngryShake {
+      0%, 100% { transform: scale(1.15) translate(0, 0) rotate(0deg); }
+      10% { transform: scale(1.15) translate(-2px, -1px) rotate(-1deg); }
+      20% { transform: scale(1.15) translate(1px, 2px) rotate(1deg); }
+      30% { transform: scale(1.15) translate(-1px, -2px) rotate(-1deg); }
+      40% { transform: scale(1.15) translate(2px, 1px) rotate(1deg); }
+      50% { transform: scale(1.15) translate(-2px, 2px) rotate(0deg); }
+      60% { transform: scale(1.15) translate(1px, -1px) rotate(1deg); }
+      70% { transform: scale(1.15) translate(-1px, 1px) rotate(-1deg); }
+      80% { transform: scale(1.15) translate(2px, -2px) rotate(1deg); }
+      90% { transform: scale(1.15) translate(-1px, 2px) rotate(0deg); }
+    }
+
+    .header-logo.angry {
+      animation: chimneyAngryShake 0.12s infinite linear !important;
+      background: rgba(239, 68, 68, 0.25) !important;
+      color: var(--neon-red) !important;
+      border-color: rgba(239, 68, 68, 0.6) !important;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.8) !important;
+    }
+
+    .header-logo.angry svg polygon {
+      fill: #dc2626 !important;
+      transition: fill 0.25s ease;
+    }
+    .header-logo.angry svg rect {
+      fill: #7f1d1d !important;
+      transition: fill 0.25s ease;
+    }
+    .header-logo.angry svg rect[fill="#ffffff"] {
+      fill: #f59e0b !important;
+      transition: fill 0.25s ease;
+    }
+
+    .header-logo.angry .smoke-1 {
+      animation: smokeRise1 0.6s infinite linear !important;
+      background: rgba(239, 68, 68, 0.95) !important;
+      width: 7px;
+      height: 7px;
+    }
+    .header-logo.angry .smoke-2 {
+      animation: smokeRise2 0.7s infinite linear !important;
+      animation-delay: 0.15s !important;
+      background: rgba(185, 28, 28, 0.95) !important;
+      width: 8px;
+      height: 8px;
+    }
+    .header-logo.angry .smoke-3 {
+      animation: smokeRise3 0.8s infinite linear !important;
+      animation-delay: 0.3s !important;
+      background: rgba(28, 25, 23, 0.95) !important;
+      width: 9px;
+      height: 9px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-container">
+    <!-- Header -->
+    <header>
+      <div class="header-left">
+        <div class="header-logo bouncy-chimney brand-icon" id="header-brand-logo" title="Fareham Chimney Sweep">
+          <div class="smoke-particle smoke-1"></div>
+          <div class="smoke-particle smoke-2"></div>
+          <div class="smoke-particle smoke-3"></div>
+          <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="24" width="14" height="2" rx="0.5" fill="#a03018" />
+            <polygon points="6,24 8,4 16,4 18,24" fill="#e65c00" />
+            <rect x="7" y="2" width="10" height="2" rx="0.5" fill="#b34700" />
+            <rect x="7.8" y="6" width="8.4" height="1.5" fill="#ffffff" />
+            <rect x="8.0" y="9.5" width="8.0" height="1.5" fill="#ffffff" />
+            <rect x="8.2" y="13" width="7.6" height="1.5" fill="#ffffff" />
+          </svg>
+        </div>
+        <div class="header-info">
+          <h1>Falling Blocks Arcade</h1>
+          <p>GCSE History Study Centre</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="action-btn">
+          <i class="fa-solid fa-arrow-left"></i> Dashboard
+        </a>
+        <button class="action-btn" id="sound-toggle-btn" title="Toggle Sound">
+          <i class="fa-solid fa-volume-high"></i> Sound: On
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Game Section -->
+    <div class="game-layout">
+      <!-- Arcade Cabinet -->
+      <div class="arcade-cabinet">
+        <!-- Overlay for Instructions / Game Over -->
+        <div id="game-overlay" class="overlay">
+          <!-- Instructions Modal by default -->
+          <div class="overlay-card" id="modal-content">
+            <div class="overlay-icon primary">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h2 class="overlay-title">Arcade Match Play</h2>
+            <p class="overlay-desc">
+              Steer keywords into columns to match the exam prompt at the bottom!
+            </p>
+            <div class="performance-grid">
+              <div class="perf-metric">
+                <span class="perf-val">3</span>
+                <span class="perf-lbl">Columns</span>
+              </div>
+              <div class="perf-metric">
+                <span class="perf-val">100%</span>
+                <span class="perf-lbl">Recall</span>
+              </div>
+              <div class="perf-metric">
+                <span class="perf-val">+15%</span>
+                <span class="perf-lbl">Speed Up</span>
+              </div>
+            </div>
+            <ul class="guide-list" style="text-align: left; padding: 0 5px;">
+              <li><i class="fa-solid fa-circle-check"></i> Steering the CORRECT term into the green TARGET zone earns 100 XP.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Steering DISTRACTORS into red DISCARD columns removes them safely.</li>
+              <li><i class="fa-solid fa-triangle-exclamation"></i> Incorrect placements freeze and stack up. Pile up to the top and you lose!</li>
+            </ul>
+
+            <!-- Lesson Selector Dropdown -->
+            <div class="lesson-select-container" style="margin: 15px 0; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+              <label for="lesson-select" style="font-size: 0.8rem; font-weight: 700; color: var(--neon-cyan); text-transform: uppercase;">Select Study Unit:</label>
+              <select id="lesson-select" style="width: 100%; max-width: 320px; padding: 10px 14px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.85rem; outline: none; cursor: pointer; text-align: left;">
+                <option value="all">All Lessons (Entire Syllabus)</option>
+              </select>
+            </div>
+
+            <button class="overlay-button" id="start-game-btn">
+              <i class="fa-solid fa-play"></i> Start Challenge
+            </button>
+          </div>
+        </div>
+
+        <!-- HUD -->
+        <div class="arcade-hud">
+          <div class="hud-metric">
+            <span class="hud-label">Score</span>
+            <span class="hud-value highlight-cyan" id="hud-score">00000</span>
+          </div>
+          <div class="hud-metric">
+            <span class="hud-label">Matches</span>
+            <span class="hud-value highlight-green" id="hud-matches">0</span>
+          </div>
+          <div class="hud-metric">
+            <span class="hud-label">Lives</span>
+            <span class="hud-value highlight-red" id="hud-lives" style="font-size: 0.9rem; letter-spacing: 1px;">❤️❤️❤️</span>
+          </div>
+          <div class="hud-metric">
+            <span class="hud-label">Intensity</span>
+            <span class="hud-value highlight-magenta" id="hud-intensity">1.00x</span>
+          </div>
+          <div class="hud-metric">
+            <span class="hud-label">High Score</span>
+            <span class="hud-value highlight-primary" id="hud-highscore">00000</span>
+          </div>
+        </div>
+
+        <!-- Canvas -->
+        <div class="canvas-stage">
+          <canvas id="game-canvas" width="450" height="600"></canvas>
+        </div>
+
+        <!-- Exam Objective Target Zone -->
+        <div class="target-zone">
+          <div id="target-question" class="target-question">
+            Loading objective prompt...
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="arcade-controls">
+          <button class="control-btn" id="btn-move-left">
+            <i class="fa-solid fa-arrow-left"></i> MOVE LEFT
+          </button>
+          <button class="control-btn" id="btn-move-right">
+            MOVE RIGHT <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Side Panels -->
+      <div class="side-panel">
+        <!-- Interactive Guide -->
+        <div class="panel-card">
+          <h3><i class="fa-solid fa-keyboard"></i> Controls & Strategy</h3>
+          <ul class="guide-list">
+            <li>
+              <div>
+                <span class="key-cap">←</span> or <span class="key-cap">A</span> : Move block Left
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="key-cap">→</span> or <span class="key-cap">D</span> : Move block Right
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="key-cap">↓</span> or <span class="key-cap">S</span> : Fast fall block
+              </div>
+            </li>
+            <li style="margin-top: 5px; border-top: 1px solid var(--border-glass); padding-top: 10px;">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div>
+                <strong>Pro-Tip:</strong> Succeeding a correct match clears the top block from the column stack, keeping your board clean!
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Local Highscores -->
+        <div class="panel-card">
+          <h3><i class="fa-solid fa-trophy"></i> Local Leaderboard</h3>
+          <ul class="highscore-list" id="highscore-board">
+            <!-- Populated via Javascript -->
+          </ul>
+        </div>
+
+        <!-- Syllabus Keyword Bank -->
+        <div class="panel-card" style="display: flex; flex-direction: column;">
+          <h3><i class="fa-solid fa-book"></i> Syllabus Keyword Bank</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.3;">
+            Study all terms in this unit. Click a keyword to expand its question definition/clue.
+          </p>
+          <div style="position: relative; margin-bottom: 10px;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem;"></i>
+            <input type="text" id="keyword-search" placeholder="Search keywords..." style="width: 100%; padding: 8px 10px 8px 30px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: #fff; font-size: 0.85rem; font-family: 'Outfit', sans-serif; transition: all var(--transition-fast);" />
+          </div>
+          <div style="margin-bottom: 8px; font-size: 0.75rem; color: var(--neon-cyan); display: flex; justify-content: space-between; font-weight: 700;">
+            <span>TOTAL TERMS: <span id="keyword-total-count">0</span></span>
+            <span id="keyword-match-count" style="display: none;">FOUND: 0</span>
+          </div>
+          <div id="keyword-list-container" style="max-height: 250px; overflow-y: auto; border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 5px; background: rgba(0,0,0,0.2); display: flex; flex-direction: column; gap: 4px;">
+            <div style="color: var(--text-muted); text-align: center; padding: 15px; font-size: 0.8rem;">Loading terms...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="module">
+    import { QUIZ_DATA } from './questions.js';
+    window.QUIZ_DATA = QUIZ_DATA;
+    window.dispatchEvent(new CustomEvent('quizDataLoaded'));
+  </script>
+  <script>
+    // =========================================================================
+    // 1. REVISION DATA ENGINE
+    // =========================================================================
+    const baseQuestionsPool = [
+      {
+        target: "1947: British Mandate blockade targeted this unauthorized refugee ship.",
+        correct: "EXODUS",
+        distractors: ["SUEZ", "BLITZ"]
+      },
+      {
+        target: "1939: British policy limiting Jewish immigration to 75,000 over five years.",
+        correct: "WHITE PAPER",
+        distractors: ["BALFOUR", "OSLO"]
+      },
+      {
+        target: "1948: Critical arms shipment agreement that supplied Israel with heavy weapons.",
+        correct: "CZECH DEALS",
+        distractors: ["US AIRLIFT", "FRENCH ALLIANCE"]
+      },
+      {
+        target: "1956: Secret collusion protocol signed between France, Britain, and Israel.",
+        correct: "SEVRES",
+        distractors: ["CAMP DAVID", "VERSAILLES"]
+      },
+      {
+        target: "1967: The strategic southern waterways closed by Nasser, sparking crisis.",
+        correct: "STRAITS OF TIRAN",
+        distractors: ["SUEZ CANAL", "GIBRALTAR"]
+      },
+      {
+        target: "1973: High-stakes American military resupply operation to Israel.",
+        correct: "NICKEL GRASS",
+        distractors: ["BAR LEV", "OPERATION FOCUS"]
+      }
+    ];
+
+    let allParsedQuestions = [];
+
+    function parseQuizQuestions() {
+      allParsedQuestions = [];
+      // Dynamically load all short questions from global QUIZ_DATA if available
+    if (typeof QUIZ_DATA !== 'undefined') {
+      QUIZ_DATA.forEach(topic => {
+        if (!topic.subtopics) return;
+        topic.subtopics.forEach(subtopic => {
+          ['standard', 'depth', 'analytical'].forEach(diff => {
+            if (subtopic[diff]) {
+              subtopic[diff].forEach(q => {
+                // Ensure answers and distractors are clean, short keywords (<= 25 chars) to fit the falling columns
+                if (q.question && q.answer && q.answer.length <= 25 && q.distractors && q.distractors.length >= 2) {
+                  const shortDistractors = q.distractors.filter(d => d.length <= 25);
+                  if (shortDistractors.length >= 2) {
+                    allParsedQuestions.push({
+                      target: q.question,
+                      correct: q.answer.toUpperCase(),
+                      distractors: shortDistractors.slice(0, 2).map(d => d.toUpperCase()),
+                      subtopicId: subtopic.id
+                    });
+                  }
+                }
+              });
+            }
+          });
+        });
+      });
+      console.log(`Successfully parsed ${allParsedQuestions.length} terms from global QUIZ_DATA!`);
+    }
+      questionsPool = allParsedQuestions.length > 0 ? [...allParsedQuestions] : [...baseQuestionsPool];
+    }
+
+    let questionsPool = allParsedQuestions.length > 0 ? [...allParsedQuestions] : [...baseQuestionsPool];
+
+    function initLessonSelect() {
+      const select = document.getElementById('lesson-select');
+      if (!select || typeof QUIZ_DATA === 'undefined') return;
+
+      select.innerHTML = '<option value="all">All Lessons (Entire Syllabus)</option>';
+
+      QUIZ_DATA.forEach(topic => {
+        if (!topic.subtopics) return;
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = topic.title.replace(/^Key Topic \d:\s*/, "");
+        
+        topic.subtopics.forEach(subtopic => {
+          const option = document.createElement('option');
+          option.value = subtopic.id;
+          option.textContent = subtopic.title.replace(/^Topic \d\.\d:\s*/, "");
+          optgroup.appendChild(option);
+        });
+        select.appendChild(optgroup);
+      });
+    }
+
+    function updateActivePool(lessonId) {
+      if (!lessonId || lessonId === 'all') {
+        questionsPool = allParsedQuestions.length > 0 ? [...allParsedQuestions] : [...baseQuestionsPool];
+      } else {
+        questionsPool = allParsedQuestions.filter(q => q.subtopicId === lessonId);
+        if (questionsPool.length === 0) {
+          questionsPool = [...baseQuestionsPool];
+        }
+      }
+      initKeywordBank();
+    }
+
+    window.updateActivePool = updateActivePool;
+    Object.defineProperty(window, 'questionsPool', {
+      get: () => questionsPool,
+      set: (val) => { questionsPool = val; }
+    });
+
+    // =========================================================================
+    // 2. AUDIO SYNTHESIZER ENGINE (Web Audio API)
+    // =========================================================================
+    class SynthAudio {
+      constructor() {
+        this.ctx = null;
+        this.enabled = localStorage.getItem('fb_sound_on') !== 'false';
+      }
+
+      init() {
+        if (!this.ctx) {
+          this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+      }
+
+      toggle() {
+        this.enabled = !this.enabled;
+        localStorage.setItem('fb_sound_on', this.enabled);
+        return this.enabled;
+      }
+
+      playTone(freqStart, freqEnd, duration, type = 'sine', volume = 0.1) {
+        if (!this.enabled) return;
+        this.init();
+        
+        try {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          
+          osc.type = type;
+          osc.frequency.setValueAtTime(freqStart, this.ctx.currentTime);
+          
+          if (freqEnd && freqEnd !== freqStart) {
+            osc.frequency.exponentialRampToValueAtTime(freqEnd, this.ctx.currentTime + duration);
+          }
+          
+          gain.gain.setValueAtTime(volume, this.ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+          
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          
+          osc.start();
+          osc.stop(this.ctx.currentTime + duration);
+        } catch (e) {
+          console.warn("Audio synthesis error:", e);
+        }
+      }
+
+      playMove() {
+        this.playTone(400, 600, 0.05, 'sine', 0.05);
+      }
+
+      playSuccessMatch() {
+        // High-pitched retro positive chime
+        const now = this.ctx ? this.ctx.currentTime : 0;
+        this.playTone(523.25, 523.25, 0.1, 'triangle', 0.15); // C5
+        setTimeout(() => this.playTone(659.25, 659.25, 0.1, 'triangle', 0.15), 80); // E5
+        setTimeout(() => this.playTone(783.99, 783.99, 0.1, 'triangle', 0.15), 160); // G5
+        setTimeout(() => this.playTone(1046.50, 1046.50, 0.2, 'triangle', 0.15), 240); // C6
+      }
+
+      playSuccessDiscard() {
+        // Simple minor success chime
+        this.playTone(659.25, 783.99, 0.12, 'sine', 0.1);
+      }
+
+      playMistake() {
+        // Low buzzing error sound
+        this.playTone(180, 90, 0.35, 'sawtooth', 0.18);
+      }
+
+      playLevelUp() {
+        // Upbeat fanfare
+        this.playTone(587.33, 587.33, 0.1, 'square', 0.1); // D5
+        setTimeout(() => this.playTone(739.99, 739.99, 0.1, 'square', 0.1), 100); // F#5
+        setTimeout(() => this.playTone(880.00, 880.00, 0.1, 'square', 0.1), 200); // A5
+        setTimeout(() => this.playTone(1174.66, 1174.66, 0.3, 'square', 0.15), 300); // D6
+      }
+
+      playGameOver() {
+        // Sad descending synth tones
+        this.playTone(392.00, 293.66, 0.3, 'square', 0.12); // G4 -> D4
+        setTimeout(() => this.playTone(349.23, 261.63, 0.3, 'square', 0.12), 250); // F4 -> C4
+        setTimeout(() => this.playTone(311.13, 220.00, 0.5, 'square', 0.15), 500); // Eb4 -> A3
+      }
+    }
+
+    const sound = new SynthAudio();
+
+    // =========================================================================
+    // 3. PARTICLE EFFECTS SYSTEM
+    // =========================================================================
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.vx = (Math.random() - 0.5) * 8;
+        this.vy = (Math.random() - 0.5) * 8 - 3;
+        this.color = color;
+        this.alpha = 1;
+        this.decay = 0.02 + Math.random() * 0.02;
+        this.size = 2 + Math.random() * 4;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vy += 0.15; // Gravity
+        this.alpha -= this.decay;
+      }
+
+      draw(ctx) {
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, this.alpha);
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = this.color;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // =========================================================================
+    // 4. MAIN GAME LOOP AND LOGIC
+    // =========================================================================
+    class FallingBlocksGame {
+      constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas.getContext('2d');
+        
+        // Polyfill fallback for roundRect on older browsers/school systems
+        if (typeof this.ctx.roundRect !== 'function') {
+          this.ctx.roundRect = function(x, y, width, height, radius) {
+            if (typeof radius === 'undefined') radius = 5;
+            if (typeof radius === 'number') {
+              radius = {tl: radius, tr: radius, br: radius, bl: radius};
+            } else {
+              const defaultRadius = {tl: 0, tr: 0, br: 0, bl: 0};
+              for (const side in defaultRadius) {
+                radius[side] = radius[side] || defaultRadius[side];
+              }
+            }
+            this.beginPath();
+            this.moveTo(x + radius.tl, y);
+            this.lineTo(x + width - radius.tr, y);
+            this.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
+            this.lineTo(x + width, y + height - radius.br);
+            this.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+            this.lineTo(x + radius.bl, y + height);
+            this.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
+            this.lineTo(x, y + radius.tl);
+            this.quadraticCurveTo(x, y, x + radius.tl, y);
+            this.closePath();
+            return this;
+          };
+        }
+        
+        // Settings
+        this.colWidth = 150;
+        this.blockHeight = 45;
+        this.gridBottom = 540; // Where the blocks lock
+        this.ceiling = 60; // Lose height threshold
+        
+        // Game state
+        this.score = 0;
+        this.matches = 0;
+        this.speedMultiplier = 1.0;
+        this.baseSpeed = 1.5; // Pixels per frame
+        
+        // Board stacks (arrays of locked blocks per column)
+        // stack[col] = Array of { text, color }
+        this.stacks = [[], [], []];
+        
+        // Active Question state
+        this.currentQuestion = null;
+        this.questionsQueue = [];
+        this.targetColumn = 0; // The designated green target column index
+        this.questionBlocks = []; // Ordered sequence of falling blocks for this question
+        this.currentBlockIndex = 0;
+        
+        // Active Falling Block
+        this.activeBlock = null;
+        this.activeLerpX = 0; // For smooth horizontal sliding
+        
+        // Systems
+        this.particles = [];
+        
+        // Running state
+        this.state = 'INIT'; // INIT, PLAYING, GAMEOVER
+        
+        // Stats tracker
+        this.stats = {
+          correctMatches: 0,
+          incorrectPlacements: 0,
+          correctDiscards: 0,
+          questionsAttempted: [],
+          mistakesDetails: [] // List of missed terms
+        };
+        
+        this.initDOM();
+        this.loadHighscores();
+        this.selectedLessonId = 'all';
+        initLessonSelect();
+      }
+
+      initDOM() {
+        // Sound toggle setup
+        const soundBtn = document.getElementById('sound-toggle-btn');
+        soundBtn.innerHTML = sound.enabled ? '<i class="fa-solid fa-volume-high"></i> Sound: On' : '<i class="fa-solid fa-volume-xmark"></i> Sound: Off';
+        if (!sound.enabled) soundBtn.classList.remove('active');
+        else soundBtn.classList.add('active');
+        
+        soundBtn.addEventListener('click', () => {
+          const isEnabled = sound.toggle();
+          soundBtn.innerHTML = isEnabled ? '<i class="fa-solid fa-volume-high"></i> Sound: On' : '<i class="fa-solid fa-volume-xmark"></i> Sound: Off';
+          if (isEnabled) {
+            soundBtn.classList.add('active');
+            sound.init();
+            sound.playMove();
+          } else {
+            soundBtn.classList.remove('active');
+          }
+        });
+
+        // Touch controls
+        document.getElementById('btn-move-left').addEventListener('click', () => this.moveActiveBlock(-1));
+        document.getElementById('btn-move-right').addEventListener('click', () => this.moveActiveBlock(1));
+        
+        // Start game button
+        document.getElementById('start-game-btn').addEventListener('click', () => {
+          const select = document.getElementById('lesson-select');
+          this.selectedLessonId = select ? select.value : 'all';
+          updateActivePool(this.selectedLessonId);
+          this.startGame();
+        });
+
+        // Keyboard listeners
+        window.addEventListener('keydown', (e) => {
+          if (this.state !== 'PLAYING') return;
+          
+          if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+            this.moveActiveBlock(-1);
+            e.preventDefault();
+          } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+            this.moveActiveBlock(1);
+            e.preventDefault();
+          } else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
+            // Speed drop
+            if (this.activeBlock) {
+              this.activeBlock.y += 12; // Fast fall
+            }
+            e.preventDefault();
+          }
+        });
+      }
+
+      startGame() {
+        sound.init();
+        sound.playMove();
+        
+        // Reset state
+        this.score = 0;
+        this.matches = 0;
+        this.lives = 3;
+        this.speedMultiplier = 1.0;
+        this.stacks = [[], [], []];
+        this.particles = [];
+        this.questionsQueue = [];
+        
+        this.stats = {
+          correctMatches: 0,
+          incorrectPlacements: 0,
+          correctDiscards: 0,
+          questionsAttempted: [],
+          mistakesDetails: []
+        };
+        
+        this.state = 'PLAYING';
+        document.getElementById('game-overlay').style.display = 'none';
+        
+        this.updateHUD();
+        this.nextQuestion();
+        
+        // Start animation loop
+        requestAnimationFrame(() => this.loop());
+      }
+
+      nextQuestion() {
+        // Shuffle-deck queue system to prevent repetition until the whole pool is exhausted
+        if (!this.questionsQueue || this.questionsQueue.length === 0) {
+          this.questionsQueue = [...questionsPool].sort(() => Math.random() - 0.5);
+        }
+        
+        const nextQ = this.questionsQueue.pop();
+        this.currentQuestion = nextQ;
+        
+        // Choose target column index (0, 1, or 2)
+        this.targetColumn = Math.floor(Math.random() * 3);
+        
+        // Update Objective DOM
+        document.getElementById('target-question').textContent = this.currentQuestion.target;
+        
+        // Create 3 falling blocks: 1 Correct, 2 Distractors
+        const correctBlock = { text: nextQ.correct, type: 'CORRECT' };
+        const distractor1 = { text: nextQ.distractors[0], type: 'DISTRACTOR' };
+        const distractor2 = { text: nextQ.distractors[1], type: 'DISTRACTOR' };
+        
+        // Shuffle blocks sequence so Correct isn't always in the same order
+        this.questionBlocks = [correctBlock, distractor1, distractor2].sort(() => Math.random() - 0.5);
+        this.currentBlockIndex = 0;
+        
+        this.spawnBlock();
+      }
+
+      spawnBlock() {
+        if (this.currentBlockIndex >= this.questionBlocks.length) {
+          // Question completed, advance to next
+          this.nextQuestion();
+          return;
+        }
+
+        const blockData = this.questionBlocks[this.currentBlockIndex];
+        
+        // Spawn block centered in column 1 (middle)
+        this.activeBlock = {
+          text: blockData.text,
+          type: blockData.type,
+          col: 1, // Start middle column
+          y: -this.blockHeight,
+          width: this.colWidth - 10,
+          height: this.blockHeight
+        };
+        
+        this.activeLerpX = 1 * this.colWidth + 5; // Direct mapping
+      }
+
+      moveActiveBlock(direction) {
+        if (!this.activeBlock || this.state !== 'PLAYING') return;
+        
+        const oldCol = this.activeBlock.col;
+        this.activeBlock.col = Math.max(0, Math.min(2, this.activeBlock.col + direction));
+        
+        if (oldCol !== this.activeBlock.col) {
+          sound.playMove();
+        }
+      }
+
+      loop() {
+        if (this.state !== 'PLAYING') return;
+        
+        this.update();
+        this.draw();
+        
+        requestAnimationFrame(() => this.loop());
+      }
+
+      update() {
+        // 1. Update active block position
+        if (this.activeBlock) {
+          // Fall speed scaling
+          const speed = this.baseSpeed * this.speedMultiplier;
+          this.activeBlock.y += speed;
+          
+          // Smooth horizontal translation lerp
+          const targetX = this.activeBlock.col * this.colWidth + 5;
+          this.activeLerpX += (targetX - this.activeLerpX) * 0.25;
+          
+          // Collision check with stack or bottom boundary
+          const col = this.activeBlock.col;
+          const stackHeight = this.stacks[col].length * this.blockHeight;
+          const landingY = this.gridBottom - stackHeight;
+          
+          if (this.activeBlock.y + this.activeBlock.height >= landingY) {
+            // Snap to exact stacking position
+            this.activeBlock.y = landingY - this.activeBlock.height;
+            this.handleBlockLanding();
+          }
+        }
+        
+        // 2. Update particles
+        for (let i = this.particles.length - 1; i >= 0; i--) {
+          this.particles[i].update();
+          if (this.particles[i].alpha <= 0) {
+            this.particles.splice(i, 1);
+          }
+        }
+      }
+
+      handleBlockLanding() {
+        const col = this.activeBlock.col;
+        const isTargetCol = (col === this.targetColumn);
+        const block = this.activeBlock;
+        let gotCorrectMatch = false;
+        
+        if (block.type === 'CORRECT') {
+          if (isTargetCol) {
+            // SUCCESSFUL MATCH
+            this.score += 100;
+            this.matches++;
+            this.stats.correctMatches++;
+            gotCorrectMatch = true;
+            
+            // Speed up on EVERY correct match (e.g. +5% speed multiplier)
+            this.speedMultiplier *= 1.05;
+            
+            // Special milestone celebration every 5 matches
+            if (this.matches > 0 && this.matches % 5 === 0) {
+              sound.playLevelUp();
+              this.spawnTextFloat("SPEED UP! +5% | MATCH +100", block.col * this.colWidth + 75, block.y, '#d946ef');
+            } else {
+              sound.playSuccessMatch();
+              this.spawnTextFloat("CORRECT MATCH +100 (SPEED +5%)", block.col * this.colWidth + 75, block.y, '#10b981');
+            }
+            
+            this.spawnExplosion(block.col * this.colWidth + 75, block.y + 22, '#10b981');
+            
+            // Rewarding Mechanic: Clear top stacked block from target column
+            if (this.stacks[col].length > 0) {
+              const clearedBlock = this.stacks[col].pop();
+              this.spawnExplosion(block.col * this.colWidth + 75, this.gridBottom - (this.stacks[col].length * this.blockHeight) - 22, '#9ca3af');
+            }
+          } else {
+            // FAILED PLACEMENT (Correct block placed in Discard column)
+            this.stats.incorrectPlacements++;
+            this.lives--;
+            sound.playMistake();
+            this.spawnTextFloat("MISSED OBJECTIVE", block.col * this.colWidth + 75, block.y, '#ef4444');
+            
+            // Log revision mistake
+            this.stats.mistakesDetails.push({
+              target: this.currentQuestion.target,
+              term: block.text,
+              reason: "Placed correct answer in Discard Zone."
+            });
+            
+            // Lock block onto stack
+            this.stacks[col].push({
+              text: block.text,
+              color: '#4b5563', // Greyed mistake
+              border: '#ef4444' // Neon red alert border
+            });
+          }
+        } else {
+          // Block is DISTRACTOR
+          if (!isTargetCol) {
+            // SUCCESSFUL DISCARD (Distractor steered to Discard column)
+            this.score += 50;
+            this.stats.correctDiscards++;
+            sound.playSuccessDiscard();
+            
+            this.spawnTextFloat("DISCARDED +50", block.col * this.colWidth + 75, block.y, '#38bdf8');
+            this.spawnExplosion(block.col * this.colWidth + 75, block.y + 22, '#06b6d4');
+          } else {
+            // FAILED PLACEMENT (Distractor steered to Target Column)
+            this.stats.incorrectPlacements++;
+            this.lives--;
+            sound.playMistake();
+            this.spawnTextFloat("DISTRACTOR DETECTED!", block.col * this.colWidth + 75, block.y, '#ef4444');
+            
+            // Log revision mistake
+            this.stats.mistakesDetails.push({
+              target: this.currentQuestion.target,
+              term: block.text,
+              reason: "Placed incorrect distractor into Target Zone."
+            });
+            
+            // Lock block onto stack
+            this.stacks[col].push({
+              text: block.text,
+              color: '#4b5563', // Greyed mistake
+              border: '#ef4444'
+            });
+          }
+        }
+        
+        this.updateHUD();
+        this.activeBlock = null;
+
+        // Check lose condition (if stack reaches top boundary)
+        if (this.checkGameOver()) {
+          this.endGame();
+        } else {
+          if (gotCorrectMatch) {
+            // Question completed (correct matched), immediately advance to next question
+            this.nextQuestion();
+          } else {
+            // Spawn next block in sequence
+            this.currentBlockIndex++;
+            this.spawnBlock();
+          }
+        }
+      }
+
+      checkGameOver() {
+        if (this.lives <= 0) {
+          return true;
+        }
+        for (let col = 0; col < 3; col++) {
+          const stackY = this.gridBottom - (this.stacks[col].length * this.blockHeight);
+          if (stackY <= this.ceiling) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      endGame() {
+        this.state = 'GAMEOVER';
+        sound.playGameOver();
+        
+        // Show Game Over panel with stats
+        const overlay = document.getElementById('game-overlay');
+        overlay.style.display = 'flex';
+        
+        const totalAttempts = this.stats.correctMatches + this.stats.incorrectPlacements + this.stats.correctDiscards;
+        const accuracy = totalAttempts > 0 ? Math.round(((this.stats.correctMatches + this.stats.correctDiscards) / totalAttempts) * 100) : 0;
+        
+        // Build revision checklist markup
+        let mistakesHTML = '';
+        if (this.stats.mistakesDetails.length > 0) {
+          mistakesHTML = `<div class="revision-title"><i class="fa-solid fa-graduation-cap"></i> Revision Checklist:</div>
+            <div class="revision-recap">`;
+          this.stats.mistakesDetails.forEach(item => {
+            mistakesHTML += `<div class="revision-item">
+              <i class="fa-solid fa-circle-xmark"></i>
+              <div>
+                <strong>${item.term}</strong>: ${item.target} <em>(${item.reason})</em>
+              </div>
+            </div>`;
+          });
+          mistakesHTML += `</div>`;
+        } else {
+          mistakesHTML = `<div style="color: var(--neon-green); font-size: 0.8rem; font-weight: 600; padding: 10px;">
+            <i class="fa-solid fa-circle-check"></i> Perfect accuracy! Master Class performance.
+          </div>`;
+        }
+
+        // Check if high score
+        const localHigh = parseInt(localStorage.getItem('fb_highscore_v3') || '0');
+        let formHTML = '';
+        if (this.score > localHigh || localHigh === 0) {
+          localStorage.setItem('fb_highscore_v3', this.score);
+          document.getElementById('hud-highscore').textContent = String(this.score).padStart(5, '0');
+        }
+        
+        // High score submission form always available for leaderboard
+        formHTML = `
+          <div class="highscore-form">
+            <span style="font-size:0.75rem; color:var(--neon-cyan); font-weight:700;">SAVE TO LOCAL LEADERBOARD</span>
+            <div class="form-inputs">
+              <input type="text" id="hs-initials" class="form-input" placeholder="AAA" maxlength="3" required style="text-transform: uppercase;">
+              <select id="hs-year" class="form-input" required>
+                <option value="" disabled selected>Year</option>
+                <option value="Year 7">Year 7</option>
+                <option value="Year 8">Year 8</option>
+                <option value="Year 9">Year 9</option>
+                <option value="Year 10">Year 10</option>
+                <option value="Year 11">Year 11</option>
+              </select>
+              <button class="submit-form-btn" id="submit-score-btn">SAVE</button>
+            </div>
+            <div id="hs-error-msg" style="color: var(--neon-red); font-size: 0.75rem; font-weight: 700; margin-top: 5px; display: none; text-shadow: 0 0 5px var(--neon-red-glow);"></div>
+          </div>
+        `;
+
+        document.getElementById('modal-content').innerHTML = `
+          <div class="overlay-icon error">
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </div>
+          <h2 class="overlay-title" style="color: var(--neon-red);">GAME OVER</h2>
+          <p class="overlay-desc">You stacked blocks into the ceiling objective boundary!</p>
+          
+          <div class="performance-grid">
+            <div class="perf-metric">
+              <span class="perf-val highlight-cyan">${this.score}</span>
+              <span class="perf-lbl">Score</span>
+            </div>
+            <div class="perf-metric">
+              <span class="perf-val highlight-green">${this.stats.correctMatches}</span>
+              <span class="perf-lbl">Matches</span>
+            </div>
+            <div class="perf-metric">
+              <span class="perf-val highlight-magenta">${accuracy}%</span>
+              <span class="perf-lbl">Accuracy</span>
+            </div>
+          </div>
+          
+          ${mistakesHTML}
+          ${formHTML}
+
+          <button class="overlay-button" id="restart-game-btn" style="margin-top: 5px;">
+            <i class="fa-solid fa-rotate-left"></i> Play Again
+          </button>
+          <button class="overlay-button" id="change-lesson-btn" style="margin-top: 5px; background: rgba(6, 182, 212, 0.15); border-color: var(--neon-cyan); color: var(--neon-cyan);">
+            <i class="fa-solid fa-sliders"></i> Change Lesson
+          </button>
+        `;
+        
+        // Register button listeners on dynamic nodes
+        document.getElementById('restart-game-btn').addEventListener('click', () => {
+          updateActivePool(this.selectedLessonId);
+          this.startGame();
+        });
+        document.getElementById('change-lesson-btn').addEventListener('click', () => this.showInstructions());
+        
+        const submitBtn = document.getElementById('submit-score-btn');
+        if (submitBtn) {
+          submitBtn.addEventListener('click', () => this.submitScore());
+        }
+      }
+
+      submitScore() {
+        const initialsInput = document.getElementById('hs-initials');
+        const yearSelect = document.getElementById('hs-year');
+        const submitBtn = document.getElementById('submit-score-btn');
+        
+        const initials = initialsInput.value.trim().toUpperCase();
+        const year = yearSelect.value;
+        
+        if (!year) {
+          const errorDisplay = document.getElementById('hs-error-msg');
+          if (errorDisplay) {
+            errorDisplay.textContent = "Please select your Year Group.";
+            errorDisplay.style.display = 'block';
+          }
+          return;
+        }
+
+        const val = this.validateInitials(initials);
+        if (!val.valid) return;
+
+        // Load existing scores
+        let scores = JSON.parse(localStorage.getItem('fb_leaderboard_v3') || '[]');
+        scores.push({
+          name: initials,
+          year: year,
+          score: this.score,
+          date: new Date().toLocaleDateString()
+        });
+        
+        // Sort and slice top 5
+        scores.sort((a, b) => b.score - a.score);
+        scores = scores.slice(0, 5);
+        
+        localStorage.setItem('fb_leaderboard_v3', JSON.stringify(scores));
+        this.loadHighscores();
+        
+        // Disable form on successful save
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "SAVED";
+          initialsInput.disabled = true;
+          yearSelect.disabled = true;
+        }
+      }
+
+      showInstructions() {
+        this.state = 'INIT';
+        const overlay = document.getElementById('game-overlay');
+        overlay.style.display = 'flex';
+        
+        document.getElementById('modal-content').innerHTML = `
+          <div class="overlay-icon primary">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h2 class="overlay-title">Arcade Match Play</h2>
+          <p class="overlay-desc">
+            Steer keywords into columns to match the exam prompt at the bottom!
+          </p>
+          <div class="performance-grid">
+            <div class="perf-metric">
+              <span class="perf-val">3</span>
+              <span class="perf-lbl">Columns</span>
+            </div>
+            <div class="perf-metric">
+              <span class="perf-val">100%</span>
+              <span class="perf-lbl">Recall</span>
+            </div>
+            <div class="perf-metric">
+              <span class="perf-val">+15%</span>
+              <span class="perf-lbl">Speed Up</span>
+            </div>
+          </div>
+          <ul class="guide-list" style="text-align: left; padding: 0 5px;">
+            <li><i class="fa-solid fa-circle-check"></i> Steering the CORRECT term into the green TARGET zone earns 100 XP.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Steering DISTRACTORS into red DISCARD columns removes them safely.</li>
+            <li><i class="fa-solid fa-triangle-exclamation"></i> Incorrect placements freeze and stack up. Pile up to the top and you lose!</li>
+          </ul>
+          
+          <div class="lesson-select-container" style="margin: 15px 0; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <label for="lesson-select" style="font-size: 0.8rem; font-weight: 700; color: var(--neon-cyan); text-transform: uppercase;">Select Study Unit:</label>
+            <select id="lesson-select" style="width: 100%; max-width: 320px; padding: 10px 14px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.85rem; outline: none; cursor: pointer; text-align: left;">
+              <option value="all">All Lessons (Entire Syllabus)</option>
+            </select>
+          </div>
+
+          <button class="overlay-button" id="start-game-btn">
+            <i class="fa-solid fa-play"></i> Start Challenge
+          </button>
+        `;
+        
+        initLessonSelect();
+        
+        if (this.selectedLessonId) {
+          const select = document.getElementById('lesson-select');
+          if (select) select.value = this.selectedLessonId;
+        }
+
+        document.getElementById('start-game-btn').addEventListener('click', () => {
+          const select = document.getElementById('lesson-select');
+          this.selectedLessonId = select ? select.value : 'all';
+          updateActivePool(this.selectedLessonId);
+          this.startGame();
+        });
+      }
+
+      validateInitials(initials) {
+        const logo = document.querySelector('.header-logo');
+        const triggerValidationFailure = (message) => {
+          sound.playMistake();
+          
+          if (logo) {
+            logo.classList.add('bouncy-chimney', 'brand-icon', 'angry');
+            
+            // Spawn soot particles!
+            for (let i = 0; i < 15; i++) {
+              let startTime = null;
+              const particle = document.createElement('div');
+              particle.style.background = '#1a1a1a';
+              const size = Math.random() * 8 + 4;
+              particle.style.width = `${size}px`;
+              particle.style.height = `${size}px`;
+              particle.style.borderRadius = '50%';
+              particle.style.position = 'fixed';
+              particle.style.zIndex = '99999';
+              
+              const rect = logo.getBoundingClientRect();
+              const startX = rect.left + rect.width / 2;
+              const startY = rect.top + rect.height / 2;
+              particle.style.left = `${startX}px`;
+              particle.style.top = `${startY}px`;
+              
+              const angle = Math.random() * Math.PI * 2;
+              const force = Math.random() * 80 + 40;
+              const targetX = Math.cos(angle) * force;
+              const targetY = Math.sin(angle) * force - 60;
+              
+              document.body.appendChild(particle);
+              
+              const animate = (timestamp) => {
+                if (!startTime) startTime = timestamp;
+                const elapsed = (timestamp - startTime) / 1000;
+                
+                particle.style.transform = `translate(${targetX * elapsed}px, ${targetY * elapsed}px) scale(${1 - elapsed})`;
+                particle.style.opacity = `${1 - elapsed}`;
+                
+                if (elapsed < 1) {
+                  requestAnimationFrame(animate);
+                } else {
+                  particle.remove();
+                }
+              };
+              requestAnimationFrame(animate);
+            }
+            
+            setTimeout(() => {
+              logo.classList.remove('angry');
+            }, 1200);
+          }
+          
+          const errorDisplay = document.getElementById('hs-error-msg');
+          if (errorDisplay) {
+            errorDisplay.textContent = message;
+            errorDisplay.style.display = 'block';
+          }
+          return { valid: false, message };
+        };
+
+        const errorDisplay = document.getElementById('hs-error-msg');
+        if (errorDisplay) {
+          errorDisplay.style.display = 'none';
+        }
+
+        if (!/^[A-Z]{3}$/.test(initials)) {
+          return triggerValidationFailure("Please enter exactly 3 letters for your initials.");
+        }
+
+        const profanityList = new Set(["ASS","WTF","FUC","SHI","CNT","CUM","FAG","DIK","KYS","KKK","SEX","NIG","TIT","FAP","WOP","PIS","HEL","DAM","SOB","PEE","POO","DIE","GAY","PNS","VAG","KOK","FUK","FCK","BCH","MLF","DCK","BUM","FUG","SHT","XXX","SUK","HOE","SLT","WHR","NOB","KNO","COK","TAD","PUB","NGR","BXT"]);
+        if (profanityList.has(initials)) {
+          return triggerValidationFailure("The Fareham chimney master will not allow that.");
+        }
+
+        return { valid: true };
+      }
+
+      loadHighscores() {
+        const hsBoard = document.getElementById('highscore-board');
+        const scores = JSON.parse(localStorage.getItem('fb_leaderboard_v3') || '[]');
+        
+        // Update highscore HUD value
+        const localHigh = parseInt(localStorage.getItem('fb_highscore_v3') || '0');
+        document.getElementById('hud-highscore').textContent = String(localHigh).padStart(5, '0');
+        
+        if (scores.length === 0) {
+          hsBoard.innerHTML = `<li class="empty-highscores">No scores recorded yet. Be the first!</li>`;
+          return;
+        }
+
+        hsBoard.innerHTML = '';
+        scores.forEach((entry, idx) => {
+          const li = document.createElement('li');
+          li.className = `highscore-item rank-${idx}`;
+          li.innerHTML = `
+            <div class="highscore-meta">
+              <span class="rank-num">#${idx + 1}</span>
+              <span class="player-name">${entry.name}</span>
+              <span class="player-year">${entry.year}</span>
+            </div>
+            <span class="player-score">${entry.score} XP</span>
+          `;
+          hsBoard.appendChild(li);
+        });
+      }
+
+      updateHUD() {
+        document.getElementById('hud-score').textContent = String(this.score).padStart(5, '0');
+        document.getElementById('hud-matches').textContent = this.matches;
+        document.getElementById('hud-intensity').textContent = this.speedMultiplier.toFixed(2) + 'x';
+        
+        const livesElement = document.getElementById('hud-lives');
+        if (livesElement) {
+          livesElement.innerHTML = '❤️'.repeat(Math.max(0, this.lives)) + '💔'.repeat(Math.max(0, 3 - this.lives));
+        }
+      }
+
+      spawnExplosion(x, y, color) {
+        for (let i = 0; i < 25; i++) {
+          this.particles.push(new Particle(x, y, color));
+        }
+      }
+
+      // Floating text alerts
+      spawnTextFloat(text, x, y, color) {
+        this.floatingText = { text, x, y, color, timer: 60, alpha: 1 };
+      }
+
+      // Drawing Helpers
+      draw() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        // 1. Draw grid lanes and vertical neon dividers
+        this.ctx.save();
+        this.ctx.strokeStyle = 'rgba(6, 182, 212, 0.08)';
+        this.ctx.lineWidth = 1;
+        for (let col = 1; col < 3; col++) {
+          this.ctx.beginPath();
+          this.ctx.moveTo(col * this.colWidth, 0);
+          this.ctx.lineTo(col * this.colWidth, this.canvas.height);
+          this.ctx.stroke();
+        }
+        this.ctx.restore();
+
+        // 2. Draw Column Gates at the Bottom (Target Gate vs Discard Gates)
+        for (let col = 0; col < 3; col++) {
+          const isTarget = (col === this.targetColumn);
+          const x = col * this.colWidth;
+          
+          this.ctx.save();
+          if (isTarget) {
+            // Pulsing target neon gate
+            const pulse = 0.15 + Math.sin(Date.now() * 0.006) * 0.05;
+            this.ctx.strokeStyle = `rgba(16, 185, 129, ${0.4 + pulse})`;
+            this.ctx.lineWidth = 3;
+            this.ctx.fillStyle = 'rgba(16, 185, 129, 0.06)';
+            this.ctx.shadowBlur = 10;
+            this.ctx.shadowColor = '#10b981';
+            
+            // Draw neon target gate block
+            this.ctx.beginPath();
+            this.ctx.roundRect(x + 4, this.gridBottom, this.colWidth - 8, this.canvas.height - this.gridBottom - 4, 8);
+            this.ctx.stroke();
+            this.ctx.fill();
+            
+            // Label target
+            this.ctx.shadowBlur = 0;
+            this.ctx.fillStyle = '#10b981';
+            this.ctx.font = '800 11px Outfit';
+            this.ctx.textAlign = 'center';
+            this.ctx.fillText("TARGET ZONE", x + this.colWidth / 2, this.gridBottom + 26);
+            this.ctx.font = '600 8.5px Inter';
+            this.ctx.fillStyle = 'rgba(16, 185, 129, 0.8)';
+            this.ctx.fillText("DROP CORRECT TERM", x + this.colWidth / 2, this.gridBottom + 42);
+          } else {
+            // Discard Gates
+            this.ctx.strokeStyle = 'rgba(239, 68, 68, 0.15)';
+            this.ctx.lineWidth = 1.5;
+            this.ctx.fillStyle = 'rgba(239, 68, 68, 0.02)';
+            
+            this.ctx.beginPath();
+            this.ctx.roundRect(x + 4, this.gridBottom, this.colWidth - 8, this.canvas.height - this.gridBottom - 4, 8);
+            this.ctx.stroke();
+            this.ctx.fill();
+            
+            // Label discard
+            this.ctx.fillStyle = 'rgba(239, 68, 68, 0.6)';
+            this.ctx.font = '800 10px Outfit';
+            this.ctx.textAlign = 'center';
+            this.ctx.fillText("DISCARD GATE", x + this.colWidth / 2, this.gridBottom + 26);
+            this.ctx.font = '600 8.5px Inter';
+            this.ctx.fillStyle = 'rgba(239, 68, 68, 0.4)';
+            this.ctx.fillText("DROP DISTRACTORS", x + this.colWidth / 2, this.gridBottom + 42);
+          }
+          this.ctx.restore();
+        }
+
+        // 3. Draw Ceiling line limit
+        this.ctx.save();
+        this.ctx.strokeStyle = 'rgba(239, 68, 68, 0.35)';
+        this.ctx.setLineDash([4, 4]);
+        this.ctx.lineWidth = 1.5;
+        this.ctx.beginPath();
+        this.ctx.moveTo(0, this.ceiling);
+        this.ctx.lineTo(this.canvas.width, this.ceiling);
+        this.ctx.stroke();
+        
+        // Ceiling Text Warning
+        this.ctx.fillStyle = 'rgba(239, 68, 68, 0.5)';
+        this.ctx.font = 'bold 9px Fira Code';
+        this.ctx.fillText("OBJECTIVE BOUNDARY CEILING", 15, this.ceiling - 8);
+        this.ctx.restore();
+
+        // 4. Draw Stacks of frozen incorrect blocks
+        for (let col = 0; col < 3; col++) {
+          const colStack = this.stacks[col];
+          colStack.forEach((block, idx) => {
+            const bx = col * this.colWidth + 5;
+            const by = this.gridBottom - (idx + 1) * this.blockHeight;
+            this.drawBlockNode(bx, by, block.text, block.color, block.border);
+          });
+        }
+
+        // 5. Draw Active Falling Block
+        if (this.activeBlock) {
+          const block = this.activeBlock;
+          // Render active block using smooth lerped horizontal coordinate (uniform cyan styling to prevent cheating)
+          const borderStyle = '#06b6d4';
+          const fillStyle = 'rgba(6, 182, 212, 0.12)';
+          
+          this.drawBlockNode(this.activeLerpX, block.y, block.text, fillStyle, borderStyle, true);
+        }
+
+        // 6. Draw Particles
+        this.particles.forEach(p => p.draw(this.ctx));
+
+        // 7. Draw Floating Alert Text
+        if (this.floatingText && this.floatingText.timer > 0) {
+          const ft = this.floatingText;
+          this.ctx.save();
+          this.ctx.fillStyle = ft.color;
+          this.ctx.font = '800 13px Outfit';
+          this.ctx.textAlign = 'center';
+          this.ctx.globalAlpha = ft.alpha;
+          this.ctx.shadowBlur = 6;
+          this.ctx.shadowColor = ft.color;
+          this.ctx.fillText(ft.text, ft.x, ft.y);
+          this.ctx.restore();
+          
+          ft.y -= 1.0;
+          ft.timer--;
+          ft.alpha = Math.max(0, ft.timer / 60);
+        }
+      }
+
+      drawBlockNode(x, y, text, fillStyle, borderStyle, isActive = false) {
+        if (y + this.blockHeight < 0) return; // Off-screen top optimization
+        
+        const width = this.colWidth - 10;
+        const height = this.blockHeight;
+
+        this.ctx.save();
+        
+        // Neon Glow for Active Block
+        if (isActive) {
+          this.ctx.shadowBlur = 8;
+          this.ctx.shadowColor = borderStyle;
+        }
+
+        // Draw card background
+        this.ctx.fillStyle = fillStyle || 'rgba(15, 19, 31, 0.95)';
+        this.ctx.strokeStyle = borderStyle || 'rgba(255,255,255,0.15)';
+        this.ctx.lineWidth = isActive ? 2 : 1.5;
+        this.ctx.beginPath();
+        this.ctx.roundRect(x, y, width, height, 8);
+        this.ctx.fill();
+        this.ctx.stroke();
+        this.ctx.shadowBlur = 0; // Reset shadow
+
+        // Render Centered bold text
+        this.ctx.fillStyle = '#ffffff';
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
+        
+        // Dynamically scale font size based on word length for maximum class visibility
+        let fontSize = 16;
+        if (text.length > 12) fontSize = 11;
+        else if (text.length > 8) fontSize = 13;
+        
+        this.ctx.font = `800 ${fontSize}px Outfit`;
+        
+        // Highlight active block text slightly
+        if (isActive) {
+          this.ctx.fillStyle = '#ffffff';
+        } else {
+          this.ctx.fillStyle = '#e5e7eb';
+        }
+        
+        this.ctx.fillText(text, x + width / 2, y + height / 2);
+        this.ctx.restore();
+      }
+    }
+
+    // Populate Keyword Bank
+    function initKeywordBank() {
+      const container = document.getElementById('keyword-list-container');
+      const searchInput = document.getElementById('keyword-search');
+      const totalCountSpan = document.getElementById('keyword-total-count');
+      const matchCountSpan = document.getElementById('keyword-match-count');
+
+      if (!container) return;
+
+      // Update total count
+      totalCountSpan.textContent = questionsPool.length;
+
+      function renderKeywords(filterText = '') {
+        container.innerHTML = '';
+        const query = filterText.toLowerCase().trim();
+        let matches = 0;
+
+        questionsPool.forEach((item) => {
+          const keyword = item.correct;
+          const question = item.target;
+          
+          if (query && !keyword.toLowerCase().includes(query) && !question.toLowerCase().includes(query)) {
+            return;
+          }
+          matches++;
+
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'keyword-item';
+          itemDiv.style.cssText = 'padding: 8px 10px; border-radius: var(--border-radius-sm); margin-bottom: 5px; cursor: pointer; transition: all 0.2s; border-left: 3px solid var(--border-glass); display: flex; flex-direction: column; gap: 4px;';
+          
+          const headerDiv = document.createElement('div');
+          headerDiv.style.cssText = 'display: flex; justify-content: space-between; align-items: center;';
+          
+          const titleSpan = document.createElement('span');
+          titleSpan.className = 'kw-title';
+          titleSpan.style.cssText = 'font-weight: 700; font-size: 0.85rem; color: #fff; letter-spacing: 0.03em;';
+          titleSpan.textContent = keyword;
+
+          const icon = document.createElement('i');
+          icon.className = 'fa-solid fa-chevron-down';
+          icon.style.cssText = 'font-size: 0.7rem; color: var(--text-muted); transition: transform 0.2s;';
+          
+          headerDiv.appendChild(titleSpan);
+          headerDiv.appendChild(icon);
+          
+          const descDiv = document.createElement('div');
+          descDiv.className = 'kw-desc';
+          descDiv.style.cssText = 'font-size: 0.75rem; color: var(--text-muted); line-height: 1.3; display: none; margin-top: 5px; border-top: 1px dashed var(--border-glass); padding-top: 5px;';
+          
+          const qText = document.createElement('span');
+          qText.textContent = question;
+          
+          descDiv.appendChild(qText);
+          itemDiv.appendChild(headerDiv);
+          itemDiv.appendChild(descDiv);
+
+          // Click toggles expanded state
+          itemDiv.addEventListener('click', () => {
+            const isExpanded = itemDiv.classList.contains('expanded');
+            
+            // Collapse all others
+            container.querySelectorAll('.keyword-item').forEach(el => {
+              el.classList.remove('expanded');
+              const itemIcon = el.querySelector('i');
+              if (itemIcon) itemIcon.style.transform = 'rotate(0deg)';
+              const itemDesc = el.querySelector('.kw-desc');
+              if (itemDesc) itemDesc.style.display = 'none';
+            });
+
+            if (!isExpanded) {
+              itemDiv.classList.add('expanded');
+              icon.style.transform = 'rotate(180deg)';
+              descDiv.style.display = 'block';
+            }
+          });
+
+          container.appendChild(itemDiv);
+        });
+
+        if (matches === 0) {
+          const emptyDiv = document.createElement('div');
+          emptyDiv.style.cssText = 'color: var(--text-muted); text-align: center; padding: 15px; font-size: 0.8rem;';
+          emptyDiv.textContent = 'No matching keywords found.';
+          container.appendChild(emptyDiv);
+        }
+
+        if (query) {
+          matchCountSpan.style.display = 'inline';
+          matchCountSpan.textContent = `FOUND: ${matches}`;
+        } else {
+          matchCountSpan.style.display = 'none';
+        }
+      }
+
+      // Search event listener
+      searchInput.addEventListener('input', (e) => {
+        renderKeywords(e.target.value);
+      });
+
+      // Initial render
+      renderKeywords();
+    }
+
+    // Initialize Game
+    function runGameInit() {
+      parseQuizQuestions();
+      window.gameInstance = new FallingBlocksGame('game-canvas');
+      initKeywordBank();
+    }
+    window.addEventListener('load', () => {
+      if (window.QUIZ_DATA) {
+        runGameInit();
+      } else {
+        window.addEventListener('quizDataLoaded', runGameInit);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -144,10 +144,10 @@
               <span class="nav-text">Quiz Generator</span>
             </span>
           </a>
-          <a class="nav-item" id="nav-exam-hub" title="Exam Hub">
+          <a class="nav-item" id="nav-exam-hub" title="Resource Hub">
             <span class="nav-item-content">
-              <i class="fa-solid fa-pen-fancy"></i>
-              <span class="nav-text">Exam Hub</span>
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="nav-text">Resource Hub</span>
             </span>
           </a>
           <a class="nav-item" id="nav-bookmarks" title="Bookmarks">
@@ -360,12 +360,12 @@
           </div>
 
           <div class="shortcut-card" id="shortcut-exam-hub" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--border-active)';" onmouseout="this.style.transform='none'; this.style.borderColor='var(--border-glass)';">
-            <div class="shortcut-icon" style="background: var(--accent-glow); color: var(--accent);">
-              <i class="fa-solid fa-pen-fancy"></i>
+            <div class="shortcut-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+              <i class="fa-solid fa-chalkboard-user"></i>
             </div>
             <div class="shortcut-info">
-              <h3>Exam Hub</h3>
-              <p>Practice techniques, official past papers & mock exams</p>
+              <h3>Resource Hub</h3>
+              <p>Worksheet generators, techniques & exam practice papers</p>
             </div>
           </div>
 
@@ -896,23 +896,26 @@
         <div class="exam-skills-container" style="max-width: 800px; margin: 0 auto; padding: 12px 4px;">
           <!-- Tab Navigation Bar for Paper 3 -->
           <div class="exam-tabs-header" style="display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px; flex-wrap: wrap;">
-            <button class="exam-tab-btn active" data-panel="technique" style="padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-graduation-cap" style="color: var(--primary); margin-right: 6px;"></i> 1. Technique Guide
+            <button class="exam-tab-btn active" data-panel="educator-hub" style="padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
+              <i class="fa-solid fa-chalkboard-user" style="color: #10b981; margin-right: 6px;"></i> 1. Educator Worksheets
+            </button>
+            <button class="exam-tab-btn" data-panel="technique" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
+              <i class="fa-solid fa-graduation-cap" style="color: var(--primary); margin-right: 6px;"></i> 2. Technique Guide
             </button>
             <button class="exam-tab-btn" data-panel="q1" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-search" style="color: var(--primary); margin-right: 6px;"></i> 2. Q1 Inference
+              <i class="fa-solid fa-search" style="color: var(--primary); margin-right: 6px;"></i> 3. Q1 Inference
             </button>
             <button class="exam-tab-btn" data-panel="q2" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-pen-nib" style="color: var(--primary); margin-right: 6px;"></i> 3. Q2 Causation
+              <i class="fa-solid fa-pen-nib" style="color: var(--primary); margin-right: 6px;"></i> 4. Q2 Causation
             </button>
             <button class="exam-tab-btn" data-panel="q3" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-scale-balanced" style="color: var(--primary); margin-right: 6px;"></i> 4. Question 3 (a-d)
+              <i class="fa-solid fa-scale-balanced" style="color: var(--primary); margin-right: 6px;"></i> 5. Question 3 (a-d)
             </button>
             <button class="exam-tab-btn" data-panel="papers" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-file-invoice" style="color: var(--primary); margin-right: 6px;"></i> 5. Papers & Mocks
+              <i class="fa-solid fa-file-invoice" style="color: var(--primary); margin-right: 6px;"></i> 6. Papers & Mocks
             </button>
             <button class="exam-tab-btn" data-panel="planner" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-folder-open" style="color: var(--primary); margin-right: 6px;"></i> 6. Essay Planner
+              <i class="fa-solid fa-folder-open" style="color: var(--primary); margin-right: 6px;"></i> 7. Essay Planner
             </button>
           </div>
 
@@ -1422,8 +1425,68 @@
             </div>
           </div>
 
+          <!-- PANEL 0: EDUCATOR RESOURCE HUB -->
+          <div class="exam-panel-content" id="panel-educator-hub" style="display: block;">
+            <div class="exam-skills-header-card" style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md);">
+              <h2 class="exam-skills-title" style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: var(--text-main);">
+                <i class="fa-solid fa-chalkboard-user" style="color: #10b981;"></i> Educator Resource Hub: Course-Wide Worksheets
+              </h2>
+              <p class="exam-skills-desc" style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin: 0;">
+                Generate and download combined worksheets for all 16 lessons (Topic 1.1 to 4.4) in a single document. Perfect for printing full student workbooks or teacher answer booklets.
+              </p>
+            </div>
+
+            <!-- Educator Resource Hub Card -->
+            <div class="dashboard-panel" style="padding: 24px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); box-shadow: var(--shadow-md); margin-bottom: 24px;">
+              <h3 style="margin-top: 0; margin-bottom: 8px; font-size: 1.15rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-chalkboard-user"></i> Educator Resource Hub: Course-Wide Worksheet Pack
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.4;">
+                Generate and download combined worksheets for all 16 lessons (Topic 1.1 to 4.4) in a single document. Perfect for printing full student workbooks or teacher answer booklets.
+              </p>
+              
+              <div style="display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; width: 100%;">
+                <div class="form-group" style="flex: 1; min-width: 150px; display: flex; flex-direction: column; gap: 8px;">
+                  <label class="form-label" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Worksheet Style</label>
+                  <select class="select-input" id="bulk-workbook-style" style="width: 100%; padding: 10px 12px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-body); font-size: 0.9rem; outline: none; cursor: pointer;">
+                    <option value="booklet">Booklet Layout (Sections 1-7)</option>
+                    <option value="cloze">Guided Cloze Review</option>
+                    <option value="cornell">Cornell Note-Taking</option>
+                    <option value="organizer">Graphic Organizer</option>
+                    <option value="exam">Exam Practice Packs</option>
+                  </select>
+                </div>
+
+                <div class="form-group" style="flex: 1; min-width: 150px; display: flex; flex-direction: column; gap: 8px;">
+                  <label class="form-label" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Layout Density</label>
+                  <select class="select-input" id="bulk-workbook-density" style="width: 100%; padding: 10px 12px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-body); font-size: 0.9rem; outline: none; cursor: pointer;">
+                    <option value="comfortable">Comfortable (Standard spacing)</option>
+                    <option value="compact">Compact (Fewer writing lines)</option>
+                  </select>
+                </div>
+
+                <div class="form-group" style="flex: 1; min-width: 150px; display: flex; flex-direction: column; gap: 8px;">
+                  <label class="form-label" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">Answer Guide</label>
+                  <select class="select-input" id="bulk-workbook-answers" style="width: 100%; padding: 10px 12px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-body); font-size: 0.9rem; outline: none; cursor: pointer;">
+                    <option value="no">No (Student copy only)</option>
+                    <option value="yes">Yes (Include teacher answers)</option>
+                  </select>
+                </div>
+                
+                <div style="flex: 1.5; min-width: 250px; display: flex; gap: 12px;">
+                  <button class="btn-primary" id="btn-bulk-workbook-print" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; padding: 10px; background: #10b981; border: none; color: #fff; cursor: pointer;">
+                    <i class="fa-solid fa-print"></i> Print Pack (Web)
+                  </button>
+                  <button class="btn-secondary" id="btn-bulk-workbook-word" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; padding: 10px; border-color: #f59e0b; color: #f59e0b; cursor: pointer; background: transparent;">
+                    <i class="fa-solid fa-file-word"></i> Export Pack (Word)
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- PANEL 4: EXAM TECHNIQUE GUIDE -->
-          <div class="exam-panel-content" id="panel-technique" style="display: block;">
+          <div class="exam-panel-content" id="panel-technique" style="display: none;">
             <div class="exam-skills-header-card" style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md);">
               <h2 class="exam-skills-title" style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: var(--text-main);">
                 <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Edexcel Paper 3: Exam Technique Guide
@@ -1653,6 +1716,8 @@
               </div>
             </div>
 
+
+
             <!-- Dynamic Exam Sheet Container (Hidden until paper is active) -->
             <div id="past-paper-sheet-container" style="display: none;">
               <!-- Sheet template rendered in app.js -->
@@ -1843,6 +1908,9 @@
             </button>
             <button class="tab-btn" id="btn-tab-game-echoes-adventure" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); background: rgba(255,255,255,0.03); color: var(--text-muted); cursor: pointer; transition: all 0.2s;">
               <i class="fa-solid fa-gamepad"></i> Echoes of Conflict
+            </button>
+            <button class="tab-btn" id="btn-tab-game-falling-blocks" onclick="window.open('falling_blocks.html', '_blank')" style="flex: 1; min-width: 140px; padding: 12px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: var(--border-radius-sm); border: 1px solid #d946ef; background: rgba(217, 70, 239, 0.05); color: var(--text-main); cursor: pointer; transition: all 0.2s;">
+              <i class="fa-solid fa-gamepad" style="color: #d946ef;"></i> Falling Blocks Arcade (High-Pressure Recall)
             </button>
           </div>
 
@@ -2346,5 +2414,69 @@
       </div>
     </div>
   </div>
+
+  <!-- Lesson Workbook Modal -->
+  <div class="video-modal-overlay" id="lesson-workbook-modal" style="display: none; z-index: 2000;">
+    <div class="video-modal-container" style="max-width: 600px; background: var(--bg-card); border: 1px solid var(--border-glass);">
+      <div class="video-modal-header" style="border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
+        <h3 style="font-family: var(--font-heading); color: var(--accent); display: flex; align-items: center; gap: 8px; margin: 0;">
+          <i class="fa-solid fa-print"></i> Lesson Workbook Pack Generator
+        </h3>
+      </div>
+      <div class="creator-modal-body">
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin: 0 0 8px 0;">
+          Select a workbook style structured for the active lesson. Export as an editable Word document or print directly to paper.
+        </p>
+
+        <!-- Style Selection -->
+        <div class="form-group">
+          <label class="form-label">Workbook Style</label>
+          <select class="select-input" id="workbook-creator-style">
+            <option value="booklet">Option 1: Complete 7-Section Lesson Work Booklet (AST Designed)</option>
+            <option value="cloze">Option 2: Guided Cloze (Fill-in-the-blanks fact review)</option>
+            <option value="cornell">Option 3: Cornell Notes Study Pack (Structured note taking)</option>
+            <option value="organizer">Option 4: Graphic Organizer & Concept Map (Visual mapping)</option>
+            <option value="exam">Option 5: Focused Exam Practice Pack (Vault questions & rubrics)</option>
+          </select>
+        </div>
+
+        <!-- Exam Questions Selector (Visible only when style is 'exam') -->
+        <div id="workbook-exam-questions-selector-wrapper" class="config-sub-box" style="display: none; gap: 8px;">
+          <label class="form-label" style="color: var(--accent);">Select Exam Questions to Include</label>
+          <div id="workbook-exam-questions-list" style="display: flex; flex-direction: column; gap: 8px; max-height: 200px; overflow-y: auto; padding-right: 4px;">
+            <!-- Will be populated dynamically based on subtopicId -->
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label class="form-label">Layout Density</label>
+            <select class="select-input" id="workbook-creator-density">
+              <option value="standard">Standard (Generous writing lines)</option>
+              <option value="compact">Eco-Compact (Condensed to save paper)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Include Answer Guide</label>
+            <select class="select-input" id="workbook-creator-answers">
+              <option value="no" selected>No (Student copy only)</option>
+              <option value="yes">Yes (Append teacher guide at end)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="video-modal-footer" style="display: flex; gap: 12px; margin-top: 12px; padding-top: 16px; border-top: 1px solid var(--border-glass);">
+        <button class="btn-secondary" id="btn-workbook-creator-close" style="flex: 1; padding: 10px; font-weight: 600; cursor: pointer;">Close</button>
+        <button class="btn-secondary" id="btn-workbook-export-word" style="flex: 1; padding: 10px; font-weight: 600; border-color: var(--primary); color: var(--primary); display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; background: transparent;">
+          <i class="fa-solid fa-file-word"></i> Export Word
+        </button>
+        <button class="btn-primary" id="btn-workbook-print" style="flex: 1; padding: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer;">
+          <i class="fa-solid fa-print"></i> Print / PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="print-area"></div>
 </body>
 </html>
