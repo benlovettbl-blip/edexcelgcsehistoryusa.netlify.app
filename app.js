@@ -14687,6 +14687,8 @@ ${cleanBrackets(paper.q3d.model)}
         AudioEngine.play("click");
         const mode = document.getElementById("print-exam-mode").value;
         let html2 = generatePastPaperHtml(paper, mode);
+        const styleMatches = html2.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
+        const stylesHtml = styleMatches ? styleMatches.join("\n") : "";
         const bodyStart = html2.indexOf("<body>");
         const bodyEnd = html2.lastIndexOf("</body>");
         let cleanHtml = html2;
@@ -14695,8 +14697,15 @@ ${cleanBrackets(paper.q3d.model)}
         }
         const printArea = document.getElementById("print-area");
         if (printArea) {
-          printArea.innerHTML = cleanHtml;
-          window.print();
+          printArea.innerHTML = stylesHtml + cleanHtml;
+          const handleAfterPrint = () => {
+            printArea.innerHTML = "";
+            window.removeEventListener("afterprint", handleAfterPrint);
+          };
+          window.addEventListener("afterprint", handleAfterPrint);
+          setTimeout(() => {
+            window.print();
+          }, 50);
         } else {
           alert("Print error: #print-area element not found in DOM.");
         }
@@ -15662,6 +15671,8 @@ ${cleanBrackets(paper.q3d.model)}
         const answers = document.getElementById("bulk-workbook-answers").value;
         AudioEngine.play("click");
         let html = await window.generateBulkWorkbookHtml(style, density, answers === "yes");
+        const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
+        const stylesHtml = styleMatches ? styleMatches.join("\n") : "";
         const bodyStart = html.indexOf("<body>");
         const bodyEnd = html.lastIndexOf("</body>");
         let cleanHtml = html;
@@ -15670,8 +15681,15 @@ ${cleanBrackets(paper.q3d.model)}
         }
         const printArea = document.getElementById("print-area");
         if (printArea) {
-          printArea.innerHTML = cleanHtml;
-          window.print();
+          printArea.innerHTML = stylesHtml + cleanHtml;
+          const handleAfterPrint = () => {
+            printArea.innerHTML = "";
+            window.removeEventListener("afterprint", handleAfterPrint);
+          };
+          window.addEventListener("afterprint", handleAfterPrint);
+          setTimeout(() => {
+            window.print();
+          }, 50);
         } else {
           alert("Print error: #print-area element not found in DOM.");
         }
@@ -30270,6 +30288,8 @@ ${cleanBrackets(paper.q3d.model)}
         }
         AudioEngine.play("click");
         let html = await generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === "yes", selectedIndices);
+        const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
+        const stylesHtml = styleMatches ? styleMatches.join("\n") : "";
         const bodyStart = html.indexOf("<body>");
         const bodyEnd = html.lastIndexOf("</body>");
         let cleanHtml = html;
@@ -30278,8 +30298,15 @@ ${cleanBrackets(paper.q3d.model)}
         }
         const printArea = document.getElementById("print-area");
         if (printArea) {
-          printArea.innerHTML = cleanHtml;
-          window.print();
+          printArea.innerHTML = stylesHtml + cleanHtml;
+          const handleAfterPrint = () => {
+            printArea.innerHTML = "";
+            window.removeEventListener("afterprint", handleAfterPrint);
+          };
+          window.addEventListener("afterprint", handleAfterPrint);
+          setTimeout(() => {
+            window.print();
+          }, 50);
         } else {
           alert("Print error: #print-area element not found in DOM.");
         }

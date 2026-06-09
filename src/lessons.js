@@ -3976,6 +3976,10 @@ export function initWorkbookCreator() {
 
       let html = await generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
       
+      // Extract generated style tags so formatting and typography are preserved
+      const styleMatches = html.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
+      const stylesHtml = styleMatches ? styleMatches.join('\n') : '';
+      
       const bodyStart = html.indexOf('<body>');
       const bodyEnd = html.lastIndexOf('</body>');
       let cleanHtml = html;
@@ -3985,8 +3989,19 @@ export function initWorkbookCreator() {
       
       const printArea = document.getElementById('print-area');
       if (printArea) {
-        printArea.innerHTML = cleanHtml;
-        window.print();
+        printArea.innerHTML = stylesHtml + cleanHtml;
+        
+        // Clean up print area content after printing finishes or is cancelled
+        const handleAfterPrint = () => {
+          printArea.innerHTML = '';
+          window.removeEventListener('afterprint', handleAfterPrint);
+        };
+        window.addEventListener('afterprint', handleAfterPrint);
+        
+        // Defer printing to let the browser process the DOM updates and compute layout styles
+        setTimeout(() => {
+          window.print();
+        }, 50);
       } else {
         alert("Print error: #print-area element not found in DOM.");
       }
