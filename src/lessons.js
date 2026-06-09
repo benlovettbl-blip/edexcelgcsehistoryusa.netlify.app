@@ -3974,38 +3974,25 @@ export function initWorkbookCreator() {
 
       AudioEngine.play('click');
 
-      // Open new window immediately to bypass pop-up blockers
-      const newWin = window.open('', '_blank');
-      if (!newWin) {
-        alert("Pop-up blocker prevented opening the print window. Please allow popups for this site.");
-        return;
-      }
-      newWin.document.open();
-      newWin.document.write("<html><head><title>Generating...</title></head><body><h3 style='font-family: Arial, sans-serif; text-align: center; margin-top: 100px;'>Generating worksheets... Please wait.</h3></body></html>");
-      newWin.document.close();
-
       let html = await generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
       
-      const printScript = `
-        <script>
-          (function() {
-            var runPrint = function() {
-              if (window.hasPrinted) return;
-              window.hasPrinted = true;
-              window.print();
-            };
-            setTimeout(runPrint, 500);
-            window.addEventListener('DOMContentLoaded', runPrint);
-            window.addEventListener('load', runPrint);
-          })();
-        </script>
-      `;
-      html = html.replace('</body>', printScript + '</body>');
-
-      newWin.document.open();
-      newWin.document.write(html);
-      newWin.document.close();
-      newWin.focus();
+      const bodyStart = html.indexOf('<body>');
+      const bodyEnd = html.lastIndexOf('</body>');
+      let cleanHtml = html;
+      if (bodyStart !== -1 && bodyEnd !== -1) {
+        cleanHtml = html.substring(bodyStart + 6, bodyEnd);
+      }
+      
+      const printArea = document.getElementById('print-area');
+      if (printArea) {
+        printArea.innerHTML = cleanHtml;
+        window.print();
+        setTimeout(() => {
+          printArea.innerHTML = '';
+        }, 1000);
+      } else {
+        alert("Print error: #print-area element not found in DOM.");
+      }
     });
   }
 

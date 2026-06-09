@@ -8920,3 +8920,425 @@ input:checked + .switch-slider:before {
     font-size: 0.85rem !important;
   }
 }
+
+/* --- Print Styles --- */
+#print-area {
+  display: none;
+}
+
+@media print {
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 11pt;
+    line-height: 1.4;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide all on-screen UI components */
+  .app-container,
+  .video-modal-overlay,
+  .settings-drawer-overlay,
+  #sidebar-overlay,
+  #confetti-canvas,
+  aside,
+  header,
+  main,
+  section,
+  nav,
+  button,
+  select,
+  .mastery-controls,
+  .mastery-btn,
+  .do-now-toggle-header,
+  .inline-bio-btn,
+  iframe,
+  #video-modal-overlay {
+    display: none !important;
+  }
+
+  #print-area {
+    display: block !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-page, .print-page-last {
+    position: relative;
+    box-sizing: border-box;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 20px;
+  }
+  
+  .print-page {
+    page-break-after: always;
+  }
+  
+  .print-page-last {
+    page-break-after: avoid;
+  }
+
+  /* Edexcel GCSE Exam Paper Layout Styles */
+  .edexcel-header-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .edexcel-header-table td {
+    border: 1.5px solid #000000;
+    padding: 8px 12px;
+    font-size: 9pt;
+    vertical-align: top;
+  }
+
+  .edexcel-candidate-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 7.5pt;
+    display: block;
+    margin-bottom: 4px;
+    color: #000000;
+  }
+
+  .edexcel-title-block {
+    text-align: center;
+    margin: 30px 0 20px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .edexcel-title-pearson {
+    font-size: 14pt;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .edexcel-title-main {
+    font-size: 18pt;
+    font-weight: 800;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .edexcel-paper-details {
+    font-size: 11pt;
+    font-weight: bold;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    padding: 10px 0;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .edexcel-meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .edexcel-instruction-box {
+    border: 2px solid #000000;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 9.5pt;
+    text-align: left;
+  }
+
+  .edexcel-instruction-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 2px;
+  }
+
+  .edexcel-instruction-box ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .edexcel-double-line {
+    border-top: 1px solid #000;
+    border-bottom: 3px double #000;
+    height: 4px;
+    margin: 30px 0 20px 0;
+    clear: both;
+  }
+
+  .edexcel-section-title {
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .edexcel-question-container {
+    margin-bottom: 30px;
+    page-break-inside: avoid;
+    text-align: left;
+  }
+
+  .edexcel-question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-weight: bold;
+    font-size: 11.5pt;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .edexcel-question-marks {
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 15px;
+    font-size: 11pt;
+  }
+
+  .edexcel-stimulus-box {
+    border: 1px solid #000000;
+    padding: 10px 15px;
+    margin: 10px 0 20px 0;
+    background: #ffffff;
+    font-size: 10.5pt;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .edexcel-stimulus-item {
+    font-weight: bold;
+    border: 1.5px solid #000000;
+    padding: 6px 20px;
+  }
+
+  /* Dash Lines for Candidate Writing */
+  .edexcel-writing-lines {
+    margin-top: 15px;
+  }
+
+  .edexcel-writing-line {
+    border-bottom: 1px dashed #777777 !important;
+    height: 32px;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+  .dotted-writing-line {
+    border-bottom: 1.2px dotted #000000 !important;
+    height: 28px !important;
+    line-height: 28px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 0px !important;
+  }
+
+  .source-text-serif {
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .margin-tips {
+    font-size: 7.5pt !important;
+    color: #4b5563 !important;
+    font-style: italic !important;
+    line-height: 1.3 !important;
+  }
+
+  .self-check-checklist {
+    font-size: 8pt !important;
+    border: 1px dashed #000000 !important;
+    padding: 6px !important;
+    background: #ffffff !important;
+    margin-top: 5px !important;
+  }
+
+  .active-reading-box {
+    border: 1px solid #000000 !important;
+    padding: 8px !important;
+    background: #f9fafb !important;
+    margin-bottom: 10px !important;
+    font-size: 8.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .categorization-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  .categorization-row {
+    display: table-row;
+  }
+
+  .categorization-cell {
+    display: table-cell;
+    width: 33.33%;
+    border: 1.5px solid #000000 !important;
+    padding: 10px !important;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+
+  .categorization-header {
+    font-weight: bold;
+    font-size: 8.5pt !important;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #f3f4f6 !important;
+    border-bottom: 1.5px solid #000000 !important;
+    padding: 8px !important;
+  }
+
+  /* Cornell Notes Print Layout */
+  .print-cornell-grid {
+    display: table;
+    width: 100%;
+    border: 1.5px solid #000000;
+    margin-top: 15px;
+    border-collapse: collapse;
+  }
+
+  .print-cornell-row {
+    display: table-row;
+  }
+
+  .print-cornell-cues {
+    display: table-cell;
+    width: 30%;
+    border-right: 1.5px solid #000000;
+    border-bottom: 1.5px solid #000000;
+    padding: 12px;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: 9.5pt;
+    background: #ffffff;
+    text-align: left;
+  }
+
+  .print-cornell-notes {
+    display: table-cell;
+    width: 70%;
+    border-bottom: 1.5px solid #000000;
+    padding: 12px;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .print-cornell-notes-line {
+    border-bottom: 1px dashed #cccccc;
+    height: 24px;
+    width: 100%;
+  }
+
+  .print-cornell-summary-row {
+    display: table-row;
+  }
+
+  .print-cornell-summary-cell {
+    display: table-cell;
+    colspan: 2;
+    border-top: 1.5px solid #000000;
+    padding: 12px;
+    background: #ffffff;
+    text-align: left;
+    font-size: 9.5pt;
+  }
+
+  /* Graphic Organizer Layouts */
+  .print-organizer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .print-organizer-box {
+    flex: 1;
+    min-width: 200px;
+    border: 1.5px solid #000000;
+    border-radius: 6px;
+    padding: 10px;
+    background: #ffffff;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .print-organizer-title {
+    font-weight: bold;
+    font-size: 9pt;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  /* Vocabulary Matching Styles */
+  .print-vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  .print-vocab-table th,
+  .print-vocab-table td {
+    border: 1px solid #000000;
+    padding: 8px 10px;
+    font-size: 9.5pt;
+    vertical-align: middle;
+  }
+
+  .print-vocab-table th {
+    background-color: #f3f4f6 !important;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .print-page-header {
+    font-size: 8.5pt;
+    color: #555555;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+  }
+
+  .print-page-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    font-size: 8pt;
+    color: #555555;
+    border-top: 1px solid #cccccc;
+    padding-top: 4px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+}
