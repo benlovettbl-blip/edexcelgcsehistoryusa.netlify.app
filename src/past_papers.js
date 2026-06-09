@@ -601,22 +601,77 @@ export function renderExamSheet() {
     btnPrintSheet.addEventListener('click', () => {
       AudioEngine.play('click');
       const mode = document.getElementById('print-exam-mode').value;
-      const html = generatePastPaperHtml(paper, mode);
-      const printArea = document.getElementById('print-area');
-      if (printArea) {
-        document.body.classList.add('printing-active');
-        printArea.innerHTML = html;
+      
+      // Open the window synchronously to bypass pop-up blocker detection
+      const newWin = window.open('', '_blank');
+      if (!newWin) {
+        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
+        return;
+      }
+      
+      // Show loading screen in the pre-opened tab
+      newWin.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <title>Generating Past Paper...</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #111827;
+              color: #f9fafb;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+            }
+            .spinner {
+              border: 4px solid rgba(255, 255, 255, 0.1);
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              border-left-color: #10b981;
+              animation: spin 1s linear infinite;
+              margin-bottom: 20px;
+            }
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="spinner"></div>
+          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Past Paper...</h3>
+          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling question layout, please wait.</p>
+        </body>
+        </html>
+      `);
+      newWin.document.close();
+
+      try {
+        const html = generatePastPaperHtml(paper, mode);
+        const autoPrintScript = `
+          <script>
+            window.addEventListener('load', () => {
+              setTimeout(() => {
+                window.print();
+              }, 500);
+            });
+          </script>
+        `;
+        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
         
-        const cleanup = () => {
-          document.body.classList.remove('printing-active');
-          printArea.innerHTML = '';
-        };
-        
-        window.addEventListener('afterprint', cleanup, { once: true });
-        window.print();
-        setTimeout(cleanup, 1000);
-      } else {
-        alert("Print error: #print-area element not found in DOM.");
+        newWin.document.open();
+        newWin.document.write(htmlWithPrint);
+        newWin.document.close();
+      } catch (err) {
+        console.error("Failed to generate past paper:", err);
+        newWin.close();
+        alert("An error occurred while compiling the past paper.");
       }
     });
   }
@@ -1625,22 +1680,76 @@ export function initBulkWorkbookCreator() {
       
       AudioEngine.play('click');
       
-      const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
-      const printArea = document.getElementById('print-area');
-      if (printArea) {
-        document.body.classList.add('printing-active');
-        printArea.innerHTML = html;
+      // Open the window synchronously to bypass pop-up blocker detection
+      const newWin = window.open('', '_blank');
+      if (!newWin) {
+        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
+        return;
+      }
+      
+      // Show loading screen in the pre-opened tab
+      newWin.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <title>Generating Worksheet Pack...</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #111827;
+              color: #f9fafb;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+            }
+            .spinner {
+              border: 4px solid rgba(255, 255, 255, 0.1);
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              border-left-color: #10b981;
+              animation: spin 1s linear infinite;
+              margin-bottom: 20px;
+            }
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="spinner"></div>
+          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Course-Wide Worksheet Pack...</h3>
+          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling Topic 1.1 to 4.4, please wait a few seconds.</p>
+        </body>
+        </html>
+      `);
+      newWin.document.close();
+
+      try {
+        const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
+        const autoPrintScript = `
+          <script>
+            window.addEventListener('load', () => {
+              setTimeout(() => {
+                window.print();
+              }, 500);
+            });
+          </script>
+        `;
+        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
         
-        const cleanup = () => {
-          document.body.classList.remove('printing-active');
-          printArea.innerHTML = '';
-        };
-        
-        window.addEventListener('afterprint', cleanup, { once: true });
-        window.print();
-        setTimeout(cleanup, 1000);
-      } else {
-        alert("Print error: #print-area element not found in DOM.");
+        newWin.document.open();
+        newWin.document.write(htmlWithPrint);
+        newWin.document.close();
+      } catch (err) {
+        console.error("Failed to generate bulk workbook:", err);
+        newWin.close();
+        alert("An error occurred while compiling the worksheets.");
       }
     });
   }
