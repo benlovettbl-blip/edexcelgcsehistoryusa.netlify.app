@@ -159,6 +159,89 @@ const defaultClues = {
   }
 };
 
+export const DO_NOW_CLUES = {
+  "subtopic_1_1": {
+    "C": "Focus on the sign reading 'COLORED WAITING ROOM' hanging prominently above the doorway.",
+    "NOP": "This is an official public segregation sign from a Southern transit terminal in the early 1950s. Highly reliable for showing segregation infrastructure, though it doesn't convey the lived experiences of those who had to obey it.",
+    "OK": "Recall that Jim Crow laws enforced strict separation in transit, and this system was legally challenged by the NAACP in court battles and CORE in early freedom rides."
+  },
+  "subtopic_1_2": {
+    "C": "Observe the formal black judicial robes worn by the nine Supreme Court justices in their unified, official group photograph.",
+    "NOP": "An official Supreme Court group portrait from 1954. Made to record the historic bench under Earl Warren, though it projects a unified front and hides private conflicts.",
+    "OK": "Chief Justice Earl Warren fought hard to ensure a unanimous 9-0 decision in Brown v. Board of Education to send a clear message that segregation was unconstitutional."
+  },
+  "subtopic_1_3": {
+    "C": "Focus on the lone Black student (Elizabeth Eckford) walking calmly while surrounded by a hostile, screaming white crowd.",
+    "NOP": "A press photograph from September 1957. Captures the extreme public resistance on the ground, though framed by a Northern media sympathetic to the integration campaign.",
+    "OK": "The state governor Orval Faubus deployed the National Guard to block the Little Rock Nine, forcing President Eisenhower to send the 101st Airborne Division to escort them."
+  },
+  "subtopic_1_4": {
+    "C": "Observe Rosa Parks sitting peacefully in the front seats of a city bus, with a white passenger sitting directly behind her.",
+    "NOP": "A publicity photograph taken in December 1956. Highly useful for celebrating the legal integration of buses, though staged by the press to mark the end of the boycott.",
+    "OK": "The Montgomery Bus Boycott lasted 381 days and was resolved after the Supreme Court's Browder v. Gayle ruling declared transit segregation unconstitutional."
+  },
+  "subtopic_2_1": {
+    "C": "Focus on Senator Strom Thurmond signing the document at his desk, surrounded by several other Southern politicians.",
+    "NOP": "A publicity/press photograph from 1956. Designed to showcase official political solidarity and 'massive resistance' to federal school desegregation.",
+    "OK": "The Southern Manifesto was signed by 101 Southern politicians who pledged to use all lawful means to reverse the Brown v. Board of Education decision."
+  },
+  "subtopic_2_2": {
+    "C": "Observe the high-pressure water hoses aimed directly at peaceful protesters, pinning them against a wall.",
+    "NOP": "A news photograph from May 1963 during Project C. Highly useful for showing the brutal tactics used by Birmingham authorities to crush peaceful demonstrations.",
+    "OK": "Police Chief Bull Connor used police dogs and fire hoses against child marchers, which was televised globally and forced President Kennedy to draft the Civil Rights Bill."
+  },
+  "subtopic_2_3": {
+    "C": "Focus on the row of state troopers in helmets and gas masks confronting the ranks of peaceful voting rights marchers.",
+    "NOP": "A news media photograph from Bloody Sunday (7 March 1965). Captures the state-level violence used to suppress voting rights, shifting national public opinion.",
+    "OK": "The marchers were attempting to walk from Selma to Montgomery. The televised violence on the Edmund Pettus Bridge forced President Johnson to introduce the Voting Rights Act of 1965."
+  },
+  "subtopic_2_4": {
+    "C": "Observe Malcolm X speaking passionately at a microphone, surrounded by banners and listening crowds.",
+    "NOP": "A photograph of a public rally in the early 1960s. Captures the charismatic appeal of Malcolm X and the Nation of Islam, though it represents a militant platform.",
+    "OK": "Malcolm X critiqued the non-violent mainstream movement, advocating black nationalism and self-defense ('by any means necessary') to address urban inequality."
+  },
+  "subtopic_3_1": {
+    "C": "Observe the formal delegates from major world powers seated around the large conference table in Geneva.",
+    "NOP": "An official press photograph of the 1954 Geneva Conference. Reliable record of the formal proceedings, but hides the intense Cold War rivalries underneath.",
+    "OK": "The Geneva Accords divided Vietnam at the 17th Parallel and called for national elections in 1956, which Diem and the US refused to hold, fearing a communist victory."
+  },
+  "subtopic_3_2": {
+    "C": "Focus on the US soldiers stepping out of a military helicopter into a jungle landing zone in South Vietnam.",
+    "NOP": "An official US Army photo from 1965. Shows the technological superiority and airmobility of US forces, though it presents a clean, controlled view of combat operations.",
+    "OK": "While helicopters provided mobility, US forces struggled with search-and-destroy tactics in the dense jungle against the Vietcong's guerrilla warfare and tunnels."
+  },
+  "subtopic_3_3": {
+    "C": "Observe the military planes flying low in formation, releasing thick white chemical defoliant sprays over the canopy.",
+    "NOP": "A US Air Force photograph from Operation Ranch Hand. Documents the military's deforestation strategy, though it masks the severe ecological and human health damage.",
+    "OK": "Agent Orange was sprayed to strip forest cover and destroy crops, but it failed to stop the Vietcong and alienated the South Vietnamese peasant population."
+  },
+  "subtopic_3_4": {
+    "C": "Observe news anchor Walter Cronkite wearing a military helmet and flak jacket while reporting from Hue during the Tet Offensive.",
+    "NOP": "A television broadcast still from February 1968. Highly influential in shaping middle-class opinion because Cronkite was trusted as the 'most trusted man in America'.",
+    "OK": "Cronkite declared that the US was mired in a stalemate. Following this broadcast, President Johnson famously said he had lost the support of Middle America."
+  },
+  "subtopic_4_1": {
+    "C": "Observe President Nixon standing and smiling among US troops in the field in South Vietnam.",
+    "NOP": "A White House press photograph from 1969. Designed to show high troop morale and public relations success for Nixon's policy of withdrawing US troops.",
+    "OK": "Nixon's Vietnamization policy aimed to train the ARVN to take over combat duties so US troops could withdraw, but it failed to secure South Vietnam's stability."
+  },
+  "subtopic_4_2": {
+    "C": "Focus on the student protesters confronting lines of armed National Guardsmen on the university campus.",
+    "NOP": "A news photograph from the Kent State protests in May 1970. Useful for documenting the intense domestic division and clash between students and state authority.",
+    "OK": "The protest was triggered by Nixon's invasion of Cambodia. The National Guard opened fire, killing four students and sparking nationwide student strikes."
+  },
+  "subtopic_4_3": {
+    "C": "Observe Henry Kissinger and Le Duc Tho signing the treaty documents at the conference table in Paris.",
+    "NOP": "An official press photograph of the 1973 signing. Projects a successful diplomatic resolution ('peace with honor'), though it left North Vietnamese troops inside the South.",
+    "OK": "The Paris Peace Accords led to the withdrawal of all US combat troops, but the ceasefire was temporary and civil war resumed almost immediately."
+  },
+  "subtopic_4_4": {
+    "C": "Focus on the long queue of evacuees climbing the ladder to a helicopter on the roof of a Saigon building during the final evacuation.",
+    "NOP": "A news photograph from April 1975 during the fall of Saigon. Captures the chaos and desperation of the final US evacuation, representing the failure of US policy.",
+    "OK": "When the North Vietnamese army launched its final offensive in 1975, South Vietnam's ARVN collapsed rapidly, leading to the capture of Saigon and reunification."
+  }
+};
+
 // --- Sidebar Overlay Drawer (Mobile & Desktop UI Toggle) ---
 function toggleMobileSidebar() {
   if (window.innerWidth <= 768) {
@@ -1969,9 +2052,9 @@ function bindEvents() {
     btn.style.borderColor = 'var(--primary)';
     btn.style.color = 'var(--text-inverse, #fff)';
 
-    const lookupKey = sourceLetter.split('-')[0];
-    const paperClues = SOURCE_CLUES[paperId] || {};
-    const sourceClues = paperClues[lookupKey] || defaultClues[lookupKey] || defaultClues['A'];
+    const isDoNow = (sourceLetter === 'doNow');
+    const paperClues = isDoNow ? (DO_NOW_CLUES[paperId] || {}) : (SOURCE_CLUES[paperId] || {});
+    const sourceClues = isDoNow ? paperClues : (paperClues[sourceLetter.split('-')[0]] || defaultClues[sourceLetter.split('-')[0]] || defaultClues['A']);
     const clueText = sourceClues[type] || "No clue available.";
 
     displayBox.innerHTML = `<strong>${type === 'C' ? 'Content (C)' : type === 'NOP' ? 'Nature, Origin, Purpose (NOP)' : 'Own Knowledge (OK)'} Clue:</strong> ${clueText}`;

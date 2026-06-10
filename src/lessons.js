@@ -1272,6 +1272,26 @@ export async function renderMasteryView(subtopicId) {
         }
       }
 
+      // Balance heights dynamically by moving any task boxes from the text column to the media column
+      try {
+        const parserDiv = document.createElement('div');
+        parserDiv.innerHTML = finalBodyHtml;
+        const textCol = parserDiv.querySelector('.mastery-text-column');
+        const mediaCol = parserDiv.querySelector('.mastery-media-column');
+        if (textCol && mediaCol) {
+          const taskBox = textCol.querySelector('.mind-map-task-box, .revision-task-box');
+          if (taskBox) {
+            mediaCol.appendChild(taskBox);
+            taskBox.style.marginTop = '20px';
+            taskBox.style.width = '100%';
+            taskBox.style.boxSizing = 'border-box';
+          }
+        }
+        finalBodyHtml = parserDiv.innerHTML;
+      } catch (err) {
+        console.warn("Could not dynamically balance split columns height:", err);
+      }
+
       stepsHtml += `
         <div class="mastery-card" style="max-width: 800px; margin: 0 auto 20px auto;">
           <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
@@ -1958,6 +1978,13 @@ export async function renderMasteryView(subtopicId) {
                   <div class="do-now-provenance-box" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500; font-style: normal; margin-top: 8px; text-align: left; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 8px 12px; border-radius: var(--border-radius-sm); line-height: 1.45;">
                     <strong style="color: var(--primary); text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Source Provenance</strong> ${dn.provenance}
                   </div>
+                  <div class="source-annotator-buttons" style="margin-top: 10px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 8px; justify-content: flex-start;">
+                    <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Source Clues:</span>
+                    <button class="annotator-btn btn-c" data-paper-id="${subtopicId}" data-source="doNow" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+                    <button class="annotator-btn btn-nop" data-paper-id="${subtopicId}" data-source="doNow" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+                    <button class="annotator-btn btn-ok" data-paper-id="${subtopicId}" data-source="doNow" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+                  </div>
+                  <div class="source-clue-display-box" id="clue-display-${subtopicId}-doNow" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted); text-align: left;"></div>
                 </div>
                 ${accessibilityHtml}
 
