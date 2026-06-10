@@ -363,8 +363,12 @@ function initializePracticeDropdowns() {
   populateSelectWithOptions(q3Select, EXAM_SKILLS_DATA.q3, getQ3FriendlyTitle, 'Enquiry');
 }
 
+let eventsBound = false;
+
 // --- Bind Event Listeners ---
 function bindEvents() {
+  if (eventsBound) return;
+  eventsBound = true;
   initializePracticeDropdowns();
 
   // Navigation Sidebar
@@ -2023,7 +2027,6 @@ function bindEvents() {
     const paperId = btn.getAttribute('data-paper-id');
     const sourceLetter = btn.getAttribute('data-source');
     const type = btn.getAttribute('data-type');
-    
     const displayBox = document.getElementById(`clue-display-${paperId}-${sourceLetter}`);
     if (!displayBox) return;
 

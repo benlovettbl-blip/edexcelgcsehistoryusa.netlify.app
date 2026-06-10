@@ -2938,16 +2938,7 @@ export async function renderMasteryView(subtopicId) {
     });
   }
 
-  // Pull revision/mind-map task boxes out of split layouts to span full-width
-  container.querySelectorAll('.mastery-split-layout').forEach(splitLayout => {
-    const taskBox = splitLayout.querySelector('.revision-task-box, .mind-map-task-box');
-    if (taskBox) {
-      splitLayout.parentNode.insertBefore(taskBox, splitLayout.nextSibling);
-      taskBox.style.width = '100%';
-      taskBox.style.boxSizing = 'border-box';
-      taskBox.style.marginTop = '20px';
-    }
-  });
+  // Note: Height-balancing keeps task boxes in the media column to use empty space
 
   // Bind Core Step Quiz Option Buttons
   container.querySelectorAll('.core-quiz-option-btn').forEach(btn => {

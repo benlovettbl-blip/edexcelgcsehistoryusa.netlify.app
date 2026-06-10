@@ -30577,15 +30577,6 @@ ${cleanBrackets(paper.q3d.model)}
         }
       });
     }
-    container.querySelectorAll(".mastery-split-layout").forEach((splitLayout) => {
-      const taskBox = splitLayout.querySelector(".revision-task-box, .mind-map-task-box");
-      if (taskBox) {
-        splitLayout.parentNode.insertBefore(taskBox, splitLayout.nextSibling);
-        taskBox.style.width = "100%";
-        taskBox.style.boxSizing = "border-box";
-        taskBox.style.marginTop = "20px";
-      }
-    });
     container.querySelectorAll(".core-quiz-option-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const questionBlock = btn.closest(".core-quiz-question-block");
@@ -34190,7 +34181,10 @@ ${cleanBrackets(paper.q3d.model)}
     populateSelectWithOptions(q2Select, EXAM_SKILLS_DATA.q2, getQ2FriendlyTitle, "Causation");
     populateSelectWithOptions(q3Select, EXAM_SKILLS_DATA.q3, getQ3FriendlyTitle, "Enquiry");
   }
+  var eventsBound = false;
   function bindEvents() {
+    if (eventsBound) return;
+    eventsBound = true;
     initializePracticeDropdowns();
     document.getElementById("nav-dashboard").addEventListener("click", () => {
       AudioEngine.play("click");
