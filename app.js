@@ -13633,50 +13633,55 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
 
   // src/past_papers.js
   function updateDraftFeedback(qId, value, questionObj) {
-    const badge = document.getElementById(`feedback-badge-${qId}`);
-    const fill = document.getElementById(`feedback-fill-${qId}`);
-    const connTags = document.getElementById(`connective-tags-${qId}`);
-    const keyTags = document.getElementById(`keyword-tags-${qId}`);
-    const keyRow = document.getElementById(`keyword-feedback-row-${qId}`);
-    if (!badge || !fill) return;
-    const text = (value || "").toLowerCase().trim();
-    const connectives = ["because", "as a result", "led to", "resulted in", "provoked", "consequently", "enabled", "intensified", "forced", "therefore", "agree", "disagree", "however", "on the other hand"];
-    const matchedConnectives = connectives.filter((c) => text.includes(c));
-    const keywords = getKeywordsForQuestion(questionObj);
-    const matchedKeywords = keywords.filter((k) => text.includes(k.toLowerCase()));
-    const connectivesScore = Math.min(50, matchedConnectives.length * 10);
-    const keywordsScore = keywords.length > 0 ? Math.min(50, matchedKeywords.length * (50 / keywords.length)) : 50;
-    const totalScore = Math.round(connectivesScore + keywordsScore);
-    fill.style.width = `${totalScore}%`;
-    badge.className = "feedback-badge";
-    if (totalScore <= 20) {
-      badge.textContent = "Structure: Drafting";
-    } else if (totalScore <= 50) {
-      badge.textContent = "Structure: Developing";
-      badge.classList.add("status-developing");
-    } else if (totalScore <= 80) {
-      badge.textContent = "Structure: Strong";
-      badge.classList.add("status-strong");
-    } else {
-      badge.textContent = "Structure: Exam-Ready";
-      badge.classList.add("status-outstanding");
-    }
-    if (connTags) {
-      connTags.innerHTML = connectives.map((c) => {
-        const matched = matchedConnectives.includes(c);
-        return `<span class="feedback-tag ${matched ? "matched" : ""}">${matched ? "\u2714 " : ""}${c}</span>`;
-      }).join("");
-    }
-    if (keywords.length > 0) {
-      if (keyRow) keyRow.style.display = "block";
-      if (keyTags) {
-        keyTags.innerHTML = keywords.map((k) => {
-          const matched = matchedKeywords.includes(k);
-          return `<span class="feedback-tag ${matched ? "matched" : ""}">${matched ? "\u2714 " : ""}${k}</span>`;
+    try {
+      const badge = document.getElementById(`feedback-badge-${qId}`);
+      const fill = document.getElementById(`feedback-fill-${qId}`);
+      const connTags = document.getElementById(`connective-tags-${qId}`);
+      const keyTags = document.getElementById(`keyword-tags-${qId}`);
+      const keyRow = document.getElementById(`keyword-feedback-row-${qId}`);
+      if (!badge || !fill) return;
+      const text = (value || "").toLowerCase().trim();
+      const connectives = ["because", "as a result", "led to", "resulted in", "provoked", "consequently", "enabled", "intensified", "forced", "therefore", "agree", "disagree", "however", "on the other hand"];
+      const matchedConnectives = connectives.filter((c) => text.includes(c));
+      const keywords = getKeywordsForQuestion(questionObj) || [];
+      const validKeywords = keywords.filter((k) => k && typeof k === "string");
+      const matchedKeywords = validKeywords.filter((k) => text.includes(k.toLowerCase()));
+      const connectivesScore = Math.min(50, matchedConnectives.length * 10);
+      const keywordsScore = validKeywords.length > 0 ? Math.min(50, matchedKeywords.length * (50 / validKeywords.length)) : 50;
+      const totalScore = Math.round(connectivesScore + keywordsScore);
+      fill.style.width = `${totalScore}%`;
+      badge.className = "feedback-badge";
+      if (totalScore <= 20) {
+        badge.textContent = "Structure: Drafting";
+      } else if (totalScore <= 50) {
+        badge.textContent = "Structure: Developing";
+        badge.classList.add("status-developing");
+      } else if (totalScore <= 80) {
+        badge.textContent = "Structure: Strong";
+        badge.classList.add("status-strong");
+      } else {
+        badge.textContent = "Structure: Exam-Ready";
+        badge.classList.add("status-outstanding");
+      }
+      if (connTags) {
+        connTags.innerHTML = connectives.map((c) => {
+          const matched = matchedConnectives.includes(c);
+          return `<span class="feedback-tag ${matched ? "matched" : ""}">${matched ? "\u2714 " : ""}${c}</span>`;
         }).join("");
       }
-    } else {
-      if (keyRow) keyRow.style.display = "none";
+      if (validKeywords.length > 0) {
+        if (keyRow) keyRow.style.display = "block";
+        if (keyTags) {
+          keyTags.innerHTML = validKeywords.map((k) => {
+            const matched = matchedKeywords.includes(k);
+            return `<span class="feedback-tag ${matched ? "matched" : ""}">${matched ? "\u2714 " : ""}${k}</span>`;
+          }).join("");
+        }
+      } else {
+        if (keyRow) keyRow.style.display = "none";
+      }
+    } catch (err) {
+      console.error("Exception in updateDraftFeedback:", err);
     }
   }
   function renderPastPapersView() {
@@ -13966,71 +13971,133 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
       else if (qId === paper.id + "_q3b") qObj = paper.q3b;
       else if (qId === paper.id + "_q3c") qObj = paper.q3c;
       else if (qId === paper.id + "_q3d") qObj = paper.q3d;
-      const textarea = document.getElementById(`past-textarea-${qId}`);
-      if (textarea && qObj) {
-        if (qId.endsWith("_q1") && !session.answers[paper.id][qId]) {
-          session.answers[paper.id][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
-        }
-        textarea.value = session.answers[paper.id][qId] || "";
-        updateDraftFeedback(qId, textarea.value, qObj);
-        textarea.addEventListener("input", (e) => {
-          session.answers[paper.id][qId] = e.target.value;
-          updateDraftFeedback(qId, e.target.value, qObj);
-          saveProgress();
-        });
-      }
-      const chk = document.getElementById(`past-chk-${qId}`);
-      if (chk) {
-        chk.checked = session.completedQuestions.includes(qId);
-        chk.addEventListener("change", (e) => {
-          togglePastQuestionComplete(qId, e.target.checked);
-          renderExamSheetStats();
-        });
-      }
-      const btnClue = document.getElementById(`past-btn-clue-${qId}`);
-      if (btnClue) {
-        btnClue.addEventListener("click", () => togglePastClue(qId));
-      }
-      const btnScaffold = document.getElementById(`past-btn-scaffold-${qId}`);
-      if (btnScaffold) {
-        btnScaffold.addEventListener("click", () => {
-          const box = document.getElementById(`past-scaffold-box-${qId}`);
-          if (box) {
-            const isHidden = box.style.display === "none";
-            box.style.display = isHidden ? "block" : "none";
-            AudioEngine.play(isHidden ? "flip" : "click");
+      try {
+        const textarea = document.getElementById(`past-textarea-${qId}`);
+        if (textarea && qObj) {
+          if (!session.answers) {
+            session.answers = {};
           }
-        });
-      }
-      const scaffoldBox = document.getElementById(`past-scaffold-box-${qId}`);
-      if (scaffoldBox) {
-        const starterBtns = scaffoldBox.querySelectorAll(".scaffold-starter-btn");
-        starterBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const starterText = btn.getAttribute("data-starter");
-            const textarea2 = document.getElementById(`past-textarea-${qId}`);
-            if (textarea2) {
-              AudioEngine.play("success");
-              const startPos = textarea2.selectionStart;
-              const endPos = textarea2.selectionEnd;
-              const originalVal = textarea2.value;
-              let insertStr = starterText;
-              if (startPos > 0 && originalVal[startPos - 1] !== " " && originalVal[startPos - 1] !== "\n") {
-                insertStr = " " + insertStr;
-              }
-              textarea2.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
-              textarea2.focus();
-              const newCursorPos = startPos + insertStr.length;
-              textarea2.setSelectionRange(newCursorPos, newCursorPos);
-              const event = new Event("input", { bubbles: true });
-              textarea2.dispatchEvent(event);
+          if (!session.answers[paper.id]) {
+            session.answers[paper.id] = {};
+          }
+          if (qId.endsWith("_q1") && !session.answers[paper.id][qId]) {
+            session.answers[paper.id][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
+          }
+          textarea.value = session.answers[paper.id][qId] || "";
+          try {
+            updateDraftFeedback(qId, textarea.value, qObj);
+          } catch (e) {
+            console.error("Error in updateDraftFeedback:", e);
+          }
+          textarea.addEventListener("input", (e) => {
+            try {
+              session.answers[paper.id][qId] = e.target.value;
+              updateDraftFeedback(qId, e.target.value, qObj);
+              saveProgress();
+            } catch (err) {
+              console.error("Error in input listener:", err);
             }
           });
-        });
+        }
+      } catch (e) {
+        console.error("Error binding textarea listener:", e);
       }
-      const btnCheck = document.getElementById(`past-btn-check-${qId}`);
-      if (btnCheck) {
-        btnCheck.addEventListener("click", () => togglePastAnswer(qId));
+      try {
+        const chk = document.getElementById(`past-chk-${qId}`);
+        if (chk) {
+          chk.checked = session.completedQuestions && session.completedQuestions.includes(qId);
+          chk.addEventListener("change", (e) => {
+            try {
+              togglePastQuestionComplete(qId, e.target.checked);
+              renderExamSheetStats();
+            } catch (err) {
+              console.error("Error in change listener:", err);
+            }
+          });
+        }
+      } catch (e) {
+        console.error("Error binding chk listener:", e);
+      }
+      try {
+        const btnClue = document.getElementById(`past-btn-clue-${qId}`);
+        if (btnClue) {
+          btnClue.addEventListener("click", () => {
+            try {
+              togglePastClue(qId);
+            } catch (err) {
+              console.error("Error in clue click listener:", err);
+            }
+          });
+        }
+      } catch (e) {
+        console.error("Error binding btnClue listener:", e);
+      }
+      try {
+        const btnScaffold = document.getElementById(`past-btn-scaffold-${qId}`);
+        if (btnScaffold) {
+          btnScaffold.addEventListener("click", () => {
+            try {
+              const box = document.getElementById(`past-scaffold-box-${qId}`);
+              if (box) {
+                const isHidden = box.style.display === "none";
+                box.style.display = isHidden ? "block" : "none";
+                AudioEngine.play(isHidden ? "flip" : "click");
+              }
+            } catch (err) {
+              console.error("Error in scaffold click listener:", err);
+            }
+          });
+        }
+      } catch (e) {
+        console.error("Error binding btnScaffold listener:", e);
+      }
+      try {
+        const scaffoldBox = document.getElementById(`past-scaffold-box-${qId}`);
+        if (scaffoldBox) {
+          const starterBtns = scaffoldBox.querySelectorAll(".scaffold-starter-btn");
+          starterBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              try {
+                const starterText = btn.getAttribute("data-starter");
+                const textarea = document.getElementById(`past-textarea-${qId}`);
+                if (textarea) {
+                  AudioEngine.play("success");
+                  const startPos = textarea.selectionStart;
+                  const endPos = textarea.selectionEnd;
+                  const originalVal = textarea.value;
+                  let insertStr = starterText;
+                  if (startPos > 0 && originalVal[startPos - 1] !== " " && originalVal[startPos - 1] !== "\n") {
+                    insertStr = " " + insertStr;
+                  }
+                  textarea.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
+                  textarea.focus();
+                  const newCursorPos = startPos + insertStr.length;
+                  textarea.setSelectionRange(newCursorPos, newCursorPos);
+                  const event = new Event("input", { bubbles: true });
+                  textarea.dispatchEvent(event);
+                }
+              } catch (err) {
+                console.error("Error in starter click listener:", err);
+              }
+            });
+          });
+        }
+      } catch (e) {
+        console.error("Error binding scaffoldBox listeners:", e);
+      }
+      try {
+        const btnCheck = document.getElementById(`past-btn-check-${qId}`);
+        if (btnCheck) {
+          btnCheck.addEventListener("click", () => {
+            try {
+              togglePastAnswer(qId);
+            } catch (err) {
+              console.error("Error in check click listener:", err);
+            }
+          });
+        }
+      } catch (e) {
+        console.error("Error binding btnCheck listener:", e);
       }
     });
     const closeBtn = document.getElementById("btn-close-exam-sheet");
@@ -27616,87 +27683,145 @@ ${cleanBrackets(paper.q3d.model)}
     return processed;
   }
   function bindEmbeddedExamQuestionListeners(container, qId, qObj, paperId) {
-    const textarea = container.querySelector(`#past-textarea-${qId}`);
-    if (textarea && qObj) {
-      if (!state.pastPaperSession.answers[paperId]) {
-        state.pastPaperSession.answers[paperId] = {};
-      }
-      if (qId.endsWith("_q1") && !state.pastPaperSession.answers[paperId][qId]) {
-        state.pastPaperSession.answers[paperId][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
-      }
-      textarea.value = state.pastPaperSession.answers[paperId][qId] || "";
-      updateDraftFeedback(qId, textarea.value, qObj);
-      textarea.addEventListener("input", (e) => {
-        state.pastPaperSession.answers[paperId][qId] = e.target.value;
-        updateDraftFeedback(qId, e.target.value, qObj);
-        saveProgress();
-      });
-    }
-    const chk = container.querySelector(`#past-chk-${qId}`);
-    if (chk) {
-      chk.checked = state.pastPaperSession.completedQuestions.includes(qId);
-      chk.addEventListener("change", (e) => {
-        togglePastQuestionComplete(qId, e.target.checked);
-      });
-    }
-    const btnClue = container.querySelector(`#past-btn-clue-${qId}`);
-    if (btnClue) {
-      btnClue.addEventListener("click", () => {
-        const box = container.querySelector(`#past-clue-box-${qId}`);
-        if (box) {
-          const isHidden = box.style.display === "none";
-          box.style.display = isHidden ? "block" : "none";
-          AudioEngine.play(isHidden ? "flip" : "click");
+    try {
+      const textarea = container.querySelector(`#past-textarea-${qId}`);
+      if (textarea && qObj) {
+        if (!state.pastPaperSession) {
+          state.pastPaperSession = { answers: {}, completedQuestions: [] };
         }
-      });
-    }
-    const btnScaffold = container.querySelector(`#past-btn-scaffold-${qId}`);
-    if (btnScaffold) {
-      btnScaffold.addEventListener("click", () => {
-        const box = container.querySelector(`#past-scaffold-box-${qId}`);
-        if (box) {
-          const isHidden = box.style.display === "none";
-          box.style.display = isHidden ? "block" : "none";
-          AudioEngine.play(isHidden ? "flip" : "click");
+        if (!state.pastPaperSession.answers) {
+          state.pastPaperSession.answers = {};
         }
-      });
-    }
-    const scaffoldBox = container.querySelector(`#past-scaffold-box-${qId}`);
-    if (scaffoldBox) {
-      const starterBtns = scaffoldBox.querySelectorAll(".scaffold-starter-btn");
-      starterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const starterText = btn.getAttribute("data-starter");
-          const textarea2 = container.querySelector(`#past-textarea-${qId}`);
-          if (textarea2) {
-            AudioEngine.play("success");
-            const startPos = textarea2.selectionStart;
-            const endPos = textarea2.selectionEnd;
-            const originalVal = textarea2.value;
-            let insertStr = starterText;
-            if (startPos > 0 && originalVal[startPos - 1] !== " " && originalVal[startPos - 1] !== "\n") {
-              insertStr = " " + insertStr;
-            }
-            textarea2.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
-            textarea2.focus();
-            const newCursorPos = startPos + insertStr.length;
-            textarea2.setSelectionRange(newCursorPos, newCursorPos);
-            const event = new Event("input", { bubbles: true });
-            textarea2.dispatchEvent(event);
+        if (!state.pastPaperSession.answers[paperId]) {
+          state.pastPaperSession.answers[paperId] = {};
+        }
+        if (qId.endsWith("_q1") && !state.pastPaperSession.answers[paperId][qId]) {
+          state.pastPaperSession.answers[paperId][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
+        }
+        textarea.value = state.pastPaperSession.answers[paperId][qId] || "";
+        try {
+          updateDraftFeedback(qId, textarea.value, qObj);
+        } catch (err) {
+          console.error("Error in updateDraftFeedback:", err);
+        }
+        textarea.addEventListener("input", (e) => {
+          try {
+            state.pastPaperSession.answers[paperId][qId] = e.target.value;
+            updateDraftFeedback(qId, e.target.value, qObj);
+            saveProgress();
+          } catch (err) {
+            console.error("Error in input listener:", err);
           }
         });
-      });
+      }
+    } catch (err) {
+      console.error("Error in textarea setup:", err);
     }
-    const btnCheck = container.querySelector(`#past-btn-check-${qId}`);
-    if (btnCheck) {
-      btnCheck.addEventListener("click", () => {
-        const box = container.querySelector(`#past-answer-box-${qId}`);
-        if (box) {
-          const isHidden = box.style.display === "none";
-          box.style.display = isHidden ? "block" : "none";
-          AudioEngine.play(isHidden ? "success" : "click");
-        }
-      });
+    try {
+      const chk = container.querySelector(`#past-chk-${qId}`);
+      if (chk) {
+        chk.checked = state.pastPaperSession && state.pastPaperSession.completedQuestions && state.pastPaperSession.completedQuestions.includes(qId);
+        chk.addEventListener("change", (e) => {
+          try {
+            togglePastQuestionComplete(qId, e.target.checked);
+          } catch (err) {
+            console.error("Error in checkbox change listener:", err);
+          }
+        });
+      }
+    } catch (err) {
+      console.error("Error in checkbox setup:", err);
+    }
+    try {
+      const btnClue = container.querySelector(`#past-btn-clue-${qId}`);
+      if (btnClue) {
+        btnClue.addEventListener("click", () => {
+          try {
+            const box = container.querySelector(`#past-clue-box-${qId}`);
+            if (box) {
+              const isHidden = box.style.display === "none";
+              box.style.display = isHidden ? "block" : "none";
+              AudioEngine.play(isHidden ? "flip" : "click");
+            }
+          } catch (err) {
+            console.error("Error in clue click listener:", err);
+          }
+        });
+      }
+    } catch (err) {
+      console.error("Error in clue button setup:", err);
+    }
+    try {
+      const btnScaffold = container.querySelector(`#past-btn-scaffold-${qId}`);
+      if (btnScaffold) {
+        btnScaffold.addEventListener("click", () => {
+          try {
+            const box = container.querySelector(`#past-scaffold-box-${qId}`);
+            if (box) {
+              const isHidden = box.style.display === "none";
+              box.style.display = isHidden ? "block" : "none";
+              AudioEngine.play(isHidden ? "flip" : "click");
+            }
+          } catch (err) {
+            console.error("Error in scaffold click listener:", err);
+          }
+        });
+      }
+    } catch (err) {
+      console.error("Error in scaffold button setup:", err);
+    }
+    try {
+      const scaffoldBox = container.querySelector(`#past-scaffold-box-${qId}`);
+      if (scaffoldBox) {
+        const starterBtns = scaffoldBox.querySelectorAll(".scaffold-starter-btn");
+        starterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            try {
+              const starterText = btn.getAttribute("data-starter");
+              const textarea = container.querySelector(`#past-textarea-${qId}`);
+              if (textarea) {
+                AudioEngine.play("success");
+                const startPos = textarea.selectionStart;
+                const endPos = textarea.selectionEnd;
+                const originalVal = textarea.value;
+                let insertStr = starterText;
+                if (startPos > 0 && originalVal[startPos - 1] !== " " && originalVal[startPos - 1] !== "\n") {
+                  insertStr = " " + insertStr;
+                }
+                textarea.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
+                textarea.focus();
+                const newCursorPos = startPos + insertStr.length;
+                textarea.setSelectionRange(newCursorPos, newCursorPos);
+                const event = new Event("input", { bubbles: true });
+                textarea.dispatchEvent(event);
+              }
+            } catch (err) {
+              console.error("Error in starter button click listener:", err);
+            }
+          });
+        });
+      }
+    } catch (err) {
+      console.error("Error in scaffold box setup:", err);
+    }
+    try {
+      const btnCheck = container.querySelector(`#past-btn-check-${qId}`);
+      if (btnCheck) {
+        btnCheck.addEventListener("click", () => {
+          try {
+            const box = container.querySelector(`#past-answer-box-${qId}`);
+            if (box) {
+              const isHidden = box.style.display === "none";
+              box.style.display = isHidden ? "block" : "none";
+              AudioEngine.play(isHidden ? "success" : "click");
+            }
+          } catch (err) {
+            console.error("Error in check button click listener:", err);
+          }
+        });
+      }
+    } catch (err) {
+      console.error("Error in check button setup:", err);
     }
   }
   function getStandardQuestionsForSubtopic(subtopicId) {

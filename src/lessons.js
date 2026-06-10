@@ -399,97 +399,155 @@ function groupMappedExams(mappedExams) {
 }
 
 function bindEmbeddedExamQuestionListeners(container, qId, qObj, paperId) {
-  const textarea = container.querySelector(`#past-textarea-${qId}`);
-  if (textarea && qObj) {
-    if (!state.pastPaperSession.answers[paperId]) {
-      state.pastPaperSession.answers[paperId] = {};
-    }
-    if (qId.endsWith('_q1') && !state.pastPaperSession.answers[paperId][qId]) {
-      state.pastPaperSession.answers[paperId][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
-    }
-    textarea.value = state.pastPaperSession.answers[paperId][qId] || '';
-    updateDraftFeedback(qId, textarea.value, qObj);
-    textarea.addEventListener('input', (e) => {
-      state.pastPaperSession.answers[paperId][qId] = e.target.value;
-      updateDraftFeedback(qId, e.target.value, qObj);
-      saveProgress();
-    });
-  }
-
-  const chk = container.querySelector(`#past-chk-${qId}`);
-  if (chk) {
-    chk.checked = state.pastPaperSession.completedQuestions.includes(qId);
-    chk.addEventListener('change', (e) => {
-      togglePastQuestionComplete(qId, e.target.checked);
-    });
-  }
-
-  const btnClue = container.querySelector(`#past-btn-clue-${qId}`);
-  if (btnClue) {
-    btnClue.addEventListener('click', () => {
-      const box = container.querySelector(`#past-clue-box-${qId}`);
-      if (box) {
-        const isHidden = box.style.display === 'none';
-        box.style.display = isHidden ? 'block' : 'none';
-        AudioEngine.play(isHidden ? 'flip' : 'click');
+  try {
+    const textarea = container.querySelector(`#past-textarea-${qId}`);
+    if (textarea && qObj) {
+      if (!state.pastPaperSession) {
+        state.pastPaperSession = { answers: {}, completedQuestions: [] };
       }
-    });
-  }
-
-  const btnScaffold = container.querySelector(`#past-btn-scaffold-${qId}`);
-  if (btnScaffold) {
-    btnScaffold.addEventListener('click', () => {
-      const box = container.querySelector(`#past-scaffold-box-${qId}`);
-      if (box) {
-        const isHidden = box.style.display === 'none';
-        box.style.display = isHidden ? 'block' : 'none';
-        AudioEngine.play(isHidden ? 'flip' : 'click');
+      if (!state.pastPaperSession.answers) {
+        state.pastPaperSession.answers = {};
       }
-    });
-  }
-
-  const scaffoldBox = container.querySelector(`#past-scaffold-box-${qId}`);
-  if (scaffoldBox) {
-    const starterBtns = scaffoldBox.querySelectorAll('.scaffold-starter-btn');
-    starterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const starterText = btn.getAttribute('data-starter');
-        const textarea = container.querySelector(`#past-textarea-${qId}`);
-        if (textarea) {
-          AudioEngine.play('success');
-          
-          const startPos = textarea.selectionStart;
-          const endPos = textarea.selectionEnd;
-          const originalVal = textarea.value;
-          
-          let insertStr = starterText;
-          if (startPos > 0 && originalVal[startPos - 1] !== ' ' && originalVal[startPos - 1] !== '\n') {
-            insertStr = ' ' + insertStr;
-          }
-          
-          textarea.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
-          textarea.focus();
-          
-          const newCursorPos = startPos + insertStr.length;
-          textarea.setSelectionRange(newCursorPos, newCursorPos);
-          
-          const event = new Event('input', { bubbles: true });
-          textarea.dispatchEvent(event);
+      if (!state.pastPaperSession.answers[paperId]) {
+        state.pastPaperSession.answers[paperId] = {};
+      }
+      if (qId.endsWith('_q1') && !state.pastPaperSession.answers[paperId][qId]) {
+        state.pastPaperSession.answers[paperId][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
+      }
+      textarea.value = state.pastPaperSession.answers[paperId][qId] || '';
+      try {
+        updateDraftFeedback(qId, textarea.value, qObj);
+      } catch (err) {
+        console.error("Error in updateDraftFeedback:", err);
+      }
+      textarea.addEventListener('input', (e) => {
+        try {
+          state.pastPaperSession.answers[paperId][qId] = e.target.value;
+          updateDraftFeedback(qId, e.target.value, qObj);
+          saveProgress();
+        } catch (err) {
+          console.error("Error in input listener:", err);
         }
       });
-    });
+    }
+  } catch (err) {
+    console.error("Error in textarea setup:", err);
   }
 
-  const btnCheck = container.querySelector(`#past-btn-check-${qId}`);
-  if (btnCheck) {
-    btnCheck.addEventListener('click', () => {
-      const box = container.querySelector(`#past-answer-box-${qId}`);
-      if (box) {
-        const isHidden = box.style.display === 'none';
-        box.style.display = isHidden ? 'block' : 'none';
-        AudioEngine.play(isHidden ? 'success' : 'click');
-      }
-    });
+  try {
+    const chk = container.querySelector(`#past-chk-${qId}`);
+    if (chk) {
+      chk.checked = state.pastPaperSession && state.pastPaperSession.completedQuestions && state.pastPaperSession.completedQuestions.includes(qId);
+      chk.addEventListener('change', (e) => {
+        try {
+          togglePastQuestionComplete(qId, e.target.checked);
+        } catch (err) {
+          console.error("Error in checkbox change listener:", err);
+        }
+      });
+    }
+  } catch (err) {
+    console.error("Error in checkbox setup:", err);
+  }
+
+  try {
+    const btnClue = container.querySelector(`#past-btn-clue-${qId}`);
+    if (btnClue) {
+      btnClue.addEventListener('click', () => {
+        try {
+          const box = container.querySelector(`#past-clue-box-${qId}`);
+          if (box) {
+            const isHidden = box.style.display === 'none';
+            box.style.display = isHidden ? 'block' : 'none';
+            AudioEngine.play(isHidden ? 'flip' : 'click');
+          }
+        } catch (err) {
+          console.error("Error in clue click listener:", err);
+        }
+      });
+    }
+  } catch (err) {
+    console.error("Error in clue button setup:", err);
+  }
+
+  try {
+    const btnScaffold = container.querySelector(`#past-btn-scaffold-${qId}`);
+    if (btnScaffold) {
+      btnScaffold.addEventListener('click', () => {
+        try {
+          const box = container.querySelector(`#past-scaffold-box-${qId}`);
+          if (box) {
+            const isHidden = box.style.display === 'none';
+            box.style.display = isHidden ? 'block' : 'none';
+            AudioEngine.play(isHidden ? 'flip' : 'click');
+          }
+        } catch (err) {
+          console.error("Error in scaffold click listener:", err);
+        }
+      });
+    }
+  } catch (err) {
+    console.error("Error in scaffold button setup:", err);
+  }
+
+  try {
+    const scaffoldBox = container.querySelector(`#past-scaffold-box-${qId}`);
+    if (scaffoldBox) {
+      const starterBtns = scaffoldBox.querySelectorAll('.scaffold-starter-btn');
+      starterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          try {
+            const starterText = btn.getAttribute('data-starter');
+            const textarea = container.querySelector(`#past-textarea-${qId}`);
+            if (textarea) {
+              AudioEngine.play('success');
+              
+              const startPos = textarea.selectionStart;
+              const endPos = textarea.selectionEnd;
+              const originalVal = textarea.value;
+              
+              let insertStr = starterText;
+              if (startPos > 0 && originalVal[startPos - 1] !== ' ' && originalVal[startPos - 1] !== '\n') {
+                insertStr = ' ' + insertStr;
+              }
+              
+              textarea.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
+              textarea.focus();
+              
+              const newCursorPos = startPos + insertStr.length;
+              textarea.setSelectionRange(newCursorPos, newCursorPos);
+              
+              const event = new Event('input', { bubbles: true });
+              textarea.dispatchEvent(event);
+            }
+          } catch (err) {
+            console.error("Error in starter button click listener:", err);
+          }
+        });
+      });
+    }
+  } catch (err) {
+    console.error("Error in scaffold box setup:", err);
+  }
+
+  try {
+    const btnCheck = container.querySelector(`#past-btn-check-${qId}`);
+    if (btnCheck) {
+      btnCheck.addEventListener('click', () => {
+        try {
+          const box = container.querySelector(`#past-answer-box-${qId}`);
+          if (box) {
+            const isHidden = box.style.display === 'none';
+            box.style.display = isHidden ? 'block' : 'none';
+            AudioEngine.play(isHidden ? 'success' : 'click');
+          }
+        } catch (err) {
+          console.error("Error in check button click listener:", err);
+        }
+      });
+    }
+  } catch (err) {
+    console.error("Error in check button setup:", err);
   }
 }
 

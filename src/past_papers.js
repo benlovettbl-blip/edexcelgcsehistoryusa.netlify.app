@@ -7,66 +7,71 @@ import { PAST_PAPERS_DATA, EXAM_SKILLS_DATA } from '../questions.js';
 // --- Past Exam Papers Engine ---
 
 export function updateDraftFeedback(qId, value, questionObj) {
-  const badge = document.getElementById(`feedback-badge-${qId}`);
-  const fill = document.getElementById(`feedback-fill-${qId}`);
-  const connTags = document.getElementById(`connective-tags-${qId}`);
-  const keyTags = document.getElementById(`keyword-tags-${qId}`);
-  const keyRow = document.getElementById(`keyword-feedback-row-${qId}`);
-  
-  if (!badge || !fill) return;
-  
-  const text = (value || '').toLowerCase().trim();
-  
-  // Causal/analytical connectives check
-  const connectives = ["because", "as a result", "led to", "resulted in", "provoked", "consequently", "enabled", "intensified", "forced", "therefore", "agree", "disagree", "however", "on the other hand"];
-  const matchedConnectives = connectives.filter(c => text.includes(c));
-  
-  // Keywords check using helper
-  const keywords = getKeywordsForQuestion(questionObj);
-  const matchedKeywords = keywords.filter(k => text.includes(k.toLowerCase()));
-  
-  // Scoring
-  const connectivesScore = Math.min(50, matchedConnectives.length * 10);
-  const keywordsScore = keywords.length > 0 ? Math.min(50, matchedKeywords.length * (50 / keywords.length)) : 50;
-  const totalScore = Math.round(connectivesScore + keywordsScore);
-  
-  // Update progress bar
-  fill.style.width = `${totalScore}%`;
-  
-  // Update status badge
-  badge.className = "feedback-badge";
-  if (totalScore <= 20) {
-    badge.textContent = "Structure: Drafting";
-  } else if (totalScore <= 50) {
-    badge.textContent = "Structure: Developing";
-    badge.classList.add('status-developing');
-  } else if (totalScore <= 80) {
-    badge.textContent = "Structure: Strong";
-    badge.classList.add('status-strong');
-  } else {
-    badge.textContent = "Structure: Exam-Ready";
-    badge.classList.add('status-outstanding');
-  }
-  
-  // Render connectives pills
-  if (connTags) {
-    connTags.innerHTML = connectives.map(c => {
-      const matched = matchedConnectives.includes(c);
-      return `<span class="feedback-tag ${matched ? 'matched' : ''}">${matched ? '✔ ' : ''}${c}</span>`;
-    }).join('');
-  }
-  
-  // Render keywords pills
-  if (keywords.length > 0) {
-    if (keyRow) keyRow.style.display = 'block';
-    if (keyTags) {
-      keyTags.innerHTML = keywords.map(k => {
-        const matched = matchedKeywords.includes(k);
-        return `<span class="feedback-tag ${matched ? 'matched' : ''}">${matched ? '✔ ' : ''}${k}</span>`;
+  try {
+    const badge = document.getElementById(`feedback-badge-${qId}`);
+    const fill = document.getElementById(`feedback-fill-${qId}`);
+    const connTags = document.getElementById(`connective-tags-${qId}`);
+    const keyTags = document.getElementById(`keyword-tags-${qId}`);
+    const keyRow = document.getElementById(`keyword-feedback-row-${qId}`);
+    
+    if (!badge || !fill) return;
+    
+    const text = (value || '').toLowerCase().trim();
+    
+    // Causal/analytical connectives check
+    const connectives = ["because", "as a result", "led to", "resulted in", "provoked", "consequently", "enabled", "intensified", "forced", "therefore", "agree", "disagree", "however", "on the other hand"];
+    const matchedConnectives = connectives.filter(c => text.includes(c));
+    
+    // Keywords check using helper
+    const keywords = getKeywordsForQuestion(questionObj) || [];
+    const validKeywords = keywords.filter(k => k && typeof k === 'string');
+    const matchedKeywords = validKeywords.filter(k => text.includes(k.toLowerCase()));
+    
+    // Scoring
+    const connectivesScore = Math.min(50, matchedConnectives.length * 10);
+    const keywordsScore = validKeywords.length > 0 ? Math.min(50, matchedKeywords.length * (50 / validKeywords.length)) : 50;
+    const totalScore = Math.round(connectivesScore + keywordsScore);
+    
+    // Update progress bar
+    fill.style.width = `${totalScore}%`;
+    
+    // Update status badge
+    badge.className = "feedback-badge";
+    if (totalScore <= 20) {
+      badge.textContent = "Structure: Drafting";
+    } else if (totalScore <= 50) {
+      badge.textContent = "Structure: Developing";
+      badge.classList.add('status-developing');
+    } else if (totalScore <= 80) {
+      badge.textContent = "Structure: Strong";
+      badge.classList.add('status-strong');
+    } else {
+      badge.textContent = "Structure: Exam-Ready";
+      badge.classList.add('status-outstanding');
+    }
+    
+    // Render connectives pills
+    if (connTags) {
+      connTags.innerHTML = connectives.map(c => {
+        const matched = matchedConnectives.includes(c);
+        return `<span class="feedback-tag ${matched ? 'matched' : ''}">${matched ? '✔ ' : ''}${c}</span>`;
       }).join('');
     }
-  } else {
-    if (keyRow) keyRow.style.display = 'none';
+    
+    // Render keywords pills
+    if (validKeywords.length > 0) {
+      if (keyRow) keyRow.style.display = 'block';
+      if (keyTags) {
+        keyTags.innerHTML = validKeywords.map(k => {
+          const matched = matchedKeywords.includes(k);
+          return `<span class="feedback-tag ${matched ? 'matched' : ''}">${matched ? '✔ ' : ''}${k}</span>`;
+        }).join('');
+      }
+    } else {
+      if (keyRow) keyRow.style.display = 'none';
+    }
+  } catch (err) {
+    console.error("Exception in updateDraftFeedback:", err);
   }
 }
 
@@ -388,83 +393,145 @@ export function renderExamSheet() {
     else if (qId === paper.id + '_q3c') qObj = paper.q3c;
     else if (qId === paper.id + '_q3d') qObj = paper.q3d;
 
-    const textarea = document.getElementById(`past-textarea-${qId}`);
-    if (textarea && qObj) {
-      if (qId.endsWith('_q1') && !session.answers[paper.id][qId]) {
-        session.answers[paper.id][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
-      }
-      textarea.value = session.answers[paper.id][qId] || '';
-      updateDraftFeedback(qId, textarea.value, qObj);
-      textarea.addEventListener('input', (e) => {
-        session.answers[paper.id][qId] = e.target.value;
-        updateDraftFeedback(qId, e.target.value, qObj);
-        saveProgress();
-      });
-    }
-
-    const chk = document.getElementById(`past-chk-${qId}`);
-    if (chk) {
-      chk.checked = session.completedQuestions.includes(qId);
-      chk.addEventListener('change', (e) => {
-        togglePastQuestionComplete(qId, e.target.checked);
-        renderExamSheetStats();
-      });
-    }
-
-    const btnClue = document.getElementById(`past-btn-clue-${qId}`);
-    if (btnClue) {
-      btnClue.addEventListener('click', () => togglePastClue(qId));
-    }
-
-    const btnScaffold = document.getElementById(`past-btn-scaffold-${qId}`);
-    if (btnScaffold) {
-      btnScaffold.addEventListener('click', () => {
-        const box = document.getElementById(`past-scaffold-box-${qId}`);
-        if (box) {
-          const isHidden = box.style.display === 'none';
-          box.style.display = isHidden ? 'block' : 'none';
-          AudioEngine.play(isHidden ? 'flip' : 'click');
+    try {
+      const textarea = document.getElementById(`past-textarea-${qId}`);
+      if (textarea && qObj) {
+        if (!session.answers) {
+          session.answers = {};
         }
-      });
-    }
-
-    const scaffoldBox = document.getElementById(`past-scaffold-box-${qId}`);
-    if (scaffoldBox) {
-      const starterBtns = scaffoldBox.querySelectorAll('.scaffold-starter-btn');
-      starterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const starterText = btn.getAttribute('data-starter');
-          const textarea = document.getElementById(`past-textarea-${qId}`);
-          if (textarea) {
-            AudioEngine.play('success');
-            
-            // Append or insert at cursor
-            const startPos = textarea.selectionStart;
-            const endPos = textarea.selectionEnd;
-            const originalVal = textarea.value;
-            
-            let insertStr = starterText;
-            if (startPos > 0 && originalVal[startPos - 1] !== ' ' && originalVal[startPos - 1] !== '\n') {
-              insertStr = ' ' + insertStr;
-            }
-            
-            textarea.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
-            textarea.focus();
-            
-            const newCursorPos = startPos + insertStr.length;
-            textarea.setSelectionRange(newCursorPos, newCursorPos);
-            
-            // Trigger input event to update feedback
-            const event = new Event('input', { bubbles: true });
-            textarea.dispatchEvent(event);
+        if (!session.answers[paper.id]) {
+          session.answers[paper.id] = {};
+        }
+        if (qId.endsWith('_q1') && !session.answers[paper.id][qId]) {
+          session.answers[paper.id][qId] = "Inference 1: \nQuote 1: \n\nInference 2: \nQuote 2: ";
+        }
+        textarea.value = session.answers[paper.id][qId] || '';
+        try {
+          updateDraftFeedback(qId, textarea.value, qObj);
+        } catch (e) {
+          console.error("Error in updateDraftFeedback:", e);
+        }
+        textarea.addEventListener('input', (e) => {
+          try {
+            session.answers[paper.id][qId] = e.target.value;
+            updateDraftFeedback(qId, e.target.value, qObj);
+            saveProgress();
+          } catch (err) {
+            console.error("Error in input listener:", err);
           }
         });
-      });
+      }
+    } catch (e) {
+      console.error("Error binding textarea listener:", e);
     }
 
-    const btnCheck = document.getElementById(`past-btn-check-${qId}`);
-    if (btnCheck) {
-      btnCheck.addEventListener('click', () => togglePastAnswer(qId));
+    try {
+      const chk = document.getElementById(`past-chk-${qId}`);
+      if (chk) {
+        chk.checked = session.completedQuestions && session.completedQuestions.includes(qId);
+        chk.addEventListener('change', (e) => {
+          try {
+            togglePastQuestionComplete(qId, e.target.checked);
+            renderExamSheetStats();
+          } catch (err) {
+            console.error("Error in change listener:", err);
+          }
+        });
+      }
+    } catch (e) {
+      console.error("Error binding chk listener:", e);
+    }
+
+    try {
+      const btnClue = document.getElementById(`past-btn-clue-${qId}`);
+      if (btnClue) {
+        btnClue.addEventListener('click', () => {
+          try {
+            togglePastClue(qId);
+          } catch (err) {
+            console.error("Error in clue click listener:", err);
+          }
+        });
+      }
+    } catch (e) {
+      console.error("Error binding btnClue listener:", e);
+    }
+
+    try {
+      const btnScaffold = document.getElementById(`past-btn-scaffold-${qId}`);
+      if (btnScaffold) {
+        btnScaffold.addEventListener('click', () => {
+          try {
+            const box = document.getElementById(`past-scaffold-box-${qId}`);
+            if (box) {
+              const isHidden = box.style.display === 'none';
+              box.style.display = isHidden ? 'block' : 'none';
+              AudioEngine.play(isHidden ? 'flip' : 'click');
+            }
+          } catch (err) {
+            console.error("Error in scaffold click listener:", err);
+          }
+        });
+      }
+    } catch (e) {
+      console.error("Error binding btnScaffold listener:", e);
+    }
+
+    try {
+      const scaffoldBox = document.getElementById(`past-scaffold-box-${qId}`);
+      if (scaffoldBox) {
+        const starterBtns = scaffoldBox.querySelectorAll('.scaffold-starter-btn');
+        starterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            try {
+              const starterText = btn.getAttribute('data-starter');
+              const textarea = document.getElementById(`past-textarea-${qId}`);
+              if (textarea) {
+                AudioEngine.play('success');
+                
+                // Append or insert at cursor
+                const startPos = textarea.selectionStart;
+                const endPos = textarea.selectionEnd;
+                const originalVal = textarea.value;
+                
+                let insertStr = starterText;
+                if (startPos > 0 && originalVal[startPos - 1] !== ' ' && originalVal[startPos - 1] !== '\n') {
+                  insertStr = ' ' + insertStr;
+                }
+                
+                textarea.value = originalVal.substring(0, startPos) + insertStr + originalVal.substring(endPos);
+                textarea.focus();
+                
+                const newCursorPos = startPos + insertStr.length;
+                textarea.setSelectionRange(newCursorPos, newCursorPos);
+                
+                // Trigger input event to update feedback
+                const event = new Event('input', { bubbles: true });
+                textarea.dispatchEvent(event);
+              }
+            } catch (err) {
+              console.error("Error in starter click listener:", err);
+            }
+          });
+        });
+      }
+    } catch (e) {
+      console.error("Error binding scaffoldBox listeners:", e);
+    }
+
+    try {
+      const btnCheck = document.getElementById(`past-btn-check-${qId}`);
+      if (btnCheck) {
+        btnCheck.addEventListener('click', () => {
+          try {
+            togglePastAnswer(qId);
+          } catch (err) {
+            console.error("Error in check click listener:", err);
+          }
+        });
+      }
+    } catch (e) {
+      console.error("Error binding btnCheck listener:", e);
     }
   });
 
