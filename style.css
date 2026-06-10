@@ -9380,3 +9380,37 @@ body.printing-active #print-area {
   padding: 0 !important;
 }
 
+/* --- Core Mode (Grade 4 Pass) Styling Overrides --- */
+.core-mode-active .do-now-collapsible-wrapper,
+.core-mode-active .mastery-header-card .mastery-header-intro,
+.core-mode-active .mastery-header-card .spec-checklist-card,
+.core-mode-active .mastery-header-card .lesson-video-wrapper,
+.core-mode-active .lesson-map-card,
+.core-mode-active .mastery-controls,
+.core-mode-active .lived-experience-card,
+.core-mode-active .dual-perspective-card,
+.core-mode-active .lesson-wrap-up-card,
+.core-mode-active #summary-correction-card,
+.core-mode-active .homework-questions-card,
+.core-mode-active .causal-connector-container,
+.core-mode-active .importance-analyser-wrapper-card,
+.core-mode-active .mastered-button-wrapper,
+.core-mode-active .lesson-embedded-exams-container,
+.core-mode-active .lesson-keyboard-help {
+  display: none !important;
+}
+
+/* Core Mode step typography improvements for 14-year-olds */
+.core-mode-active .mastery-card-body ul {
+  padding-left: 20px;
+  margin: 12px 0;
+}
+.core-mode-active .mastery-card-body li {
+  margin-bottom: 12px;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+.core-mode-active .mastery-card-body p {
+  line-height: 1.75;
+  font-size: 1.08rem;
+}

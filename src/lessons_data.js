@@ -716,10 +716,10 @@ export const LESSONS_DATA = {
         "content": "\"While politicians spoke of constitutional law, the real defense of segregation lay in raw, unchecked violence. The KKK and local vigilante mobs terrorized Black communities. It was the threat of the bomb, the rope, and the economic boycott that truly kept desegregation from happening.\""
       },
       "questions": {
-        "q3a": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the 1950s? (8 marks)",
-        "q3b": "Study Interpretations 1 and 2. They give different views about the opposition to the civil rights movement. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
-        "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
-        "q3d": "How far do you agree with Interpretation 2 about the opposition to the civil rights movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+        "q3a": "How useful are Sources B and C for an enquiry into the opposition to the civil rights movement in the 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
+        "q3b": "Study Interpretations 1 and 2. They give different views about the opposition to the civil rights movement in the 1950s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+        "q3c": "Suggest one reason why Interpretations 1 and 2 give different views about the opposition to the civil rights movement in the 1950s. You can use Sources B and C to help explain your answer. (4 marks)",
+        "q3d": "How far do you agree with Interpretation 2 about the opposition to the civil rights movement in the 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
       },
       "sentenceStarters": [
         { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into opposition to civil rights because it shows..." },
@@ -1610,10 +1610,10 @@ export const LESSONS_DATA = {
         "content": "\"The urban riots were not political protests but class-based looting sprees. They were carried out by young, low-income males who took advantage of police hesitation to vandalize property and steal consumer goods. Framing these destructive acts as political rebellion is an academic myth.\""
       },
       "questions": {
-        "q3a": "How useful are Sources B and C for an enquiry into the causes of the 1960s urban riots? (8 marks)",
+        "q3a": "How useful are Sources B and C for an enquiry into the causes of the 1960s urban riots? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "q3b": "Study Interpretations 1 and 2. They give different views about the causes of the 1960s urban riots. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
-        "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
-        "q3d": "How far do you agree with Interpretation 1 about the causes of the 1960s urban riots? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+        "q3c": "Suggest one reason why Interpretations 1 and 2 give different views about the causes of the 1960s urban riots. You can use Sources B and C to help explain your answer. (4 marks)",
+        "q3d": "How far do you agree with Interpretation 1 about the causes of the 1960s urban riots? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
       },
       "sentenceStarters": [
         { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the causes of the riots because it shows..." },
@@ -3353,10 +3353,10 @@ export const LESSONS_DATA = {
         "content": "\"The US failure was inevitable because they were fighting a nationalist movement that was willing to accept any human cost to win. General Westmoreland's strategy of attrition was a failure because the communists replaced their losses faster than the US could kill them, and the corrupt Saigon regime never had the loyalty of the people.\""
       },
       "questions": {
-        "q3a": "How useful are Sources B and C for an enquiry into the reasons for US failure in the Vietnam War? (8 marks)",
-        "q3b": "Study Interpretations 1 and 2. They give different views about the reasons for US failure in Vietnam. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
-        "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
-        "q3d": "How far do you agree with Interpretation 2 about the reasons for US failure in the Vietnam War? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+        "q3a": "How useful are Sources B and C for an enquiry into the reasons for US failure in the Vietnam War? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
+        "q3b": "Study Interpretations 1 and 2. They give different views about the reasons for US failure in the Vietnam War. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+        "q3c": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for US failure in the Vietnam War. You can use Sources B and C to help explain your answer. (4 marks)",
+        "q3d": "How far do you agree with Interpretation 2 about the reasons for US failure in the Vietnam War? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
       },
       "sentenceStarters": [
         { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the reasons for US failure in Vietnam because it shows..." },

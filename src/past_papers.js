@@ -115,7 +115,7 @@ export function generateMockExam() {
     id: "mock_random_" + Date.now(),
     title: "Random Mock Exam (Paper 3)",
     year: "Mock",
-    enquiryTopic: selectedQ3.questiona.replace("How useful are Sources B and C for an enquiry into ", "").replace("?", ""),
+    enquiryTopic: selectedQ3.enquiryTopic || selectedQ3.questiona.replace("How useful are Sources B and C for an enquiry into ", "").split("?")[0].trim(),
     sourceA: selectedQ1.sourceA,
     sourceB: selectedQ3.sourceB,
     sourceC: selectedQ3.sourceC,
@@ -601,78 +601,15 @@ export function renderExamSheet() {
     btnPrintSheet.addEventListener('click', () => {
       AudioEngine.play('click');
       const mode = document.getElementById('print-exam-mode').value;
+      const html = generatePastPaperHtml(paper, mode);
       
-      // Open the window synchronously to bypass pop-up blocker detection
-      const newWin = window.open('', '_blank');
-      if (!newWin) {
-        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-        return;
+      const printArea = document.getElementById('print-area');
+      if (printArea) {
+        printArea.innerHTML = html;
       }
       
-      // Show loading screen in the pre-opened tab
-      newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Generating Past Paper...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              border-left-color: #10b981;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Past Paper...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling question layout, please wait.</p>
-        </body>
-        </html>
-      `);
-      newWin.document.close();
-
-      try {
-        const html = generatePastPaperHtml(paper, mode);
-        const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 500);
-            });
-          </script>
-        `;
-        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
-        
-        newWin.document.open();
-        newWin.document.write(htmlWithPrint);
-        newWin.document.close();
-      } catch (err) {
-        console.error("Failed to generate past paper:", err);
-        newWin.close();
-        alert("An error occurred while compiling the past paper.");
-      }
+      AudioEngine.play('success');
+      window.print();
     });
   }
 
@@ -701,34 +638,63 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
   }
 
   // Clean trailing marks suffix e.g. (16 marks) from question title
-  const cleanQuestionText = questionText.replace(/\(\d+\s*marks?\)/gi, '').trim();
+  let cleanQuestionText = questionText.replace(/\(\d+\s*marks?\)/gi, '').trim();
+
+  // Strip instructions from the main question text to prevent duplication in past_papers rendering
+  const instructionsToStrip = [
+    "Explain your answer, using Sources B and C and your own knowledge of the historical context.",
+    "Explain your answer, using details from both interpretations.",
+    "Explain your answer, using both interpretations and written sources.",
+    "Explain your answer, using both interpretations and your own knowledge of the historical context.",
+    "Explain your answer, using both interpretations and your own knowledge of the historical context",
+    "You can use Sources B and C to help explain your answer.",
+    "You can use Sources B and C to help explain your answer",
+    "You can use Sources B and C to help you."
+  ];
+
+  let detectedInstruction = '';
+  for (const inst of instructionsToStrip) {
+    if (cleanQuestionText.includes(inst)) {
+      cleanQuestionText = cleanQuestionText.replace(inst, '').replace(/\s+/g, ' ').trim();
+      detectedInstruction = inst;
+      break;
+    }
+  }
 
   // Appending the official instruction line for Q3 questions
   let instructionHTML = '';
-  if (qId.endsWith('_q3a')) {
+  if (detectedInstruction) {
     instructionHTML = `
       <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using Sources B and C and your own knowledge of the historical context.
+        ${detectedInstruction}
       </p>
     `;
-  } else if (qId.endsWith('_q3b')) {
-    instructionHTML = `
-      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using details from both interpretations.
-      </p>
-    `;
-  } else if (qId.endsWith('_q3c')) {
-    instructionHTML = `
-      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using both interpretations and written sources.
-      </p>
-    `;
-  } else if (qId.endsWith('_q3d')) {
-    instructionHTML = `
-      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using both interpretations and your own knowledge of the historical context.
-      </p>
-    `;
+  } else {
+    if (qId.endsWith('_q3a')) {
+      instructionHTML = `
+        <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+          Explain your answer, using Sources B and C and your own knowledge of the historical context.
+        </p>
+      `;
+    } else if (qId.endsWith('_q3b')) {
+      instructionHTML = `
+        <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+          Explain your answer, using details from both interpretations.
+        </p>
+      `;
+    } else if (qId.endsWith('_q3c')) {
+      instructionHTML = `
+        <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+          Explain your answer, using both interpretations and written sources.
+        </p>
+      `;
+    } else if (qId.endsWith('_q3d')) {
+      instructionHTML = `
+        <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+          Explain your answer, using both interpretations and your own knowledge of the historical context.
+        </p>
+      `;
+    }
   }
 
   // Determine if this is a Q3b, c, or d question to render the scaffold button and panel
@@ -1680,76 +1646,14 @@ export function initBulkWorkbookCreator() {
       
       AudioEngine.play('click');
       
-      // Open the window synchronously to bypass pop-up blocker detection
-      const newWin = window.open('', '_blank');
-      if (!newWin) {
-        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-        return;
-      }
+      const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
       
-      // Show loading screen in the pre-opened tab
-      newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Generating Worksheet Pack...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              border-left-color: #10b981;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Course-Wide Worksheet Pack...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling Topic 1.1 to 4.4, please wait a few seconds.</p>
-        </body>
-        </html>
-      `);
-      newWin.document.close();
-
-      try {
-        const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
-        const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 500);
-            });
-          </script>
-        `;
-        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
-        
-        newWin.document.open();
-        newWin.document.write(htmlWithPrint);
+      const newWin = window.open();
+      if (newWin) {
+        newWin.document.write(html);
         newWin.document.close();
-      } catch (err) {
-        console.error("Failed to generate bulk workbook:", err);
-        newWin.close();
-        alert("An error occurred while compiling the worksheets.");
+      } else {
+        alert("Pop-up blocker prevented opening the bulk worksheets. Please allow popups for this site.");
       }
     });
   }

@@ -54,6 +54,30 @@ const GLOSSARY_DB = {
 
 let highlightedKeywords = new Set();
 
+function injectScaffoldingIntoMindMap(bodyHtml, subtopicId) {
+  if (!bodyHtml || !bodyHtml.includes('mind-map-task-box')) return bodyHtml;
+  
+  const data = WORKBOOK_DATA[subtopicId];
+  if (!data) return bodyHtml;
+  
+  const bankWords = (data.vocabulary || []).slice(0, 4).map(v => v.term).concat((data.timeline || []).slice(0, 2).map(t => t.date));
+  if (bankWords.length === 0) return bodyHtml;
+  
+  const wordBankBox = `
+    <div class="mind-map-learning-check" style="margin-top: 12px; padding: 10px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 6px; font-size: 0.82rem; line-height: 1.45; color: var(--text-main); font-family: inherit; box-sizing: border-box;">
+      <strong style="color: #10b981; display: flex; align-items: center; gap: 4px; font-size: 0.9em; margin-bottom: 4px;">🧠 Learning Check: Mind Map Word Bank</strong>
+      Use these key concepts, names, and dates to connect and build your branches:
+      <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px;">
+        ${bankWords.map(word => `<span style="padding: 2px 6px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 4px; font-size: 0.75rem; font-weight: 500;">${word}</span>`).join('')}
+      </div>
+    </div>
+  `;
+  
+  return bodyHtml.replace(/(<div class="mind-map-task-box"[^>]*>[\s\S]*?<\/div>\s*)(<\/div>)/i, (m, p1, p2) => {
+    return p1 + wordBankBox + p2;
+  });
+}
+
 function applyGlossaryTooltips(text) {
   if (!text) return '';
   let parsedText = text;
@@ -664,7 +688,7 @@ export async function renderMasteryView(subtopicId) {
             ${audioBtnHtml}
           </h3>
           <div class="mastery-split-layout">
-            ${applyGlossaryTooltips(step.bodyHtml)}
+            ${applyGlossaryTooltips(injectScaffoldingIntoMindMap(step.bodyHtml, subtopicId))}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -678,7 +702,7 @@ export async function renderMasteryView(subtopicId) {
             ${audioBtnHtml}
           </h3>
           <div class="mastery-card-body card-content">
-            ${applyGlossaryTooltips(step.bodyHtml)}
+            ${applyGlossaryTooltips(injectScaffoldingIntoMindMap(step.bodyHtml, subtopicId))}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -830,7 +854,7 @@ export async function renderMasteryView(subtopicId) {
   let impHtml = '';
   if (data.importanceAnalyser) {
     impHtml = `
-      <div class="mastery-card" style="max-width: 800px; margin: 0 auto 24px auto;">
+      <div class="mastery-card importance-analyser-wrapper-card" style="max-width: 800px; margin: 0 auto 24px auto;">
         <h3 class="mastery-card-title">🔍 8-Mark Skill: The Importance Analyser</h3>
         <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted);">
           Click the card below to flip it and view the examiner's model analysis.
@@ -2163,7 +2187,7 @@ export async function renderMasteryView(subtopicId) {
     ${deepThinkingHtml}
 
     <!-- Mastery Progress Button -->
-    <div style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
+    <div class="mastered-button-wrapper" style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
       <button class="mastery-btn mastery-btn-success" id="btn-mark-mastery-mastered">
         ✓ Mark Topic ${subtopicId.replace('subtopic_', '').replace('_', '.')} as Mastered
       </button>
@@ -3562,77 +3586,13 @@ function setupWrapUpChallenge(container, subtopicId) {
     viewWorksheetPageBtn.addEventListener('click', () => {
       AudioEngine.play('click');
       const subtopic = viewWorksheetPageBtn.getAttribute('data-subtopic');
-      
-      // Open the window synchronously to bypass pop-up blocker detection
-      const newWin = window.open('', '_blank');
-      if (!newWin) {
-        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-        return;
-      }
-      
-      // Show loading screen in the pre-opened tab
-      newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Generating Worksheet...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              border-left-color: #f97316;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Lesson Workbook...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling resource details, please wait.</p>
-        </body>
-        </html>
-      `);
-      newWin.document.close();
-
-      try {
-        const html = generateWorkbookHtml(subtopic, 'booklet', 'standard', false);
-        const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 500);
-            });
-          </script>
-        `;
-        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
-        
-        newWin.document.open();
-        newWin.document.write(htmlWithPrint);
+      const html = generateWorkbookHtml(subtopic, 'booklet', 'standard', false);
+      const newWin = window.open();
+      if (newWin) {
+        newWin.document.write(html);
         newWin.document.close();
-      } catch (err) {
-        console.error("Failed to generate workbook page:", err);
-        newWin.close();
-        alert("An error occurred while compiling the worksheet.");
+      } else {
+        alert("Pop-up blocker prevented opening the worksheet page. Please allow popups for this site.");
       }
     });
   }
@@ -4036,77 +3996,15 @@ export function initWorkbookCreator() {
 
       AudioEngine.play('click');
 
-      // Open the window synchronously to bypass pop-up blocker detection
-      const newWin = window.open('', '_blank');
-      if (!newWin) {
-        alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-        return;
+      const html = generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
+      
+      const printArea = document.getElementById('print-area');
+      if (printArea) {
+        printArea.innerHTML = html;
       }
       
-      // Show loading screen in the pre-opened tab
-      newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Generating Workbook...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              border-left-color: #f97316;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Lesson Workbook...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling resource details, please wait.</p>
-        </body>
-        </html>
-      `);
-      newWin.document.close();
-
-      try {
-        const html = generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === 'yes', selectedIndices);
-        const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 500);
-            });
-          </script>
-        `;
-        const htmlWithPrint = html.replace('</body>', `${autoPrintScript}</body>`);
-        
-        newWin.document.open();
-        newWin.document.write(htmlWithPrint);
-        newWin.document.close();
-      } catch (err) {
-        console.error("Failed to generate workbook:", err);
-        newWin.close();
-        alert("An error occurred while compiling the workbook.");
-      }
+      AudioEngine.play('success');
+      window.print();
     });
   }
 
@@ -4146,8 +4044,13 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
   const specBoxHtml = specList.length > 0 ? `
     <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 7.5pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
       <strong style="text-transform: uppercase; font-size: 8pt; color: #111827; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (Pearson Edexcel)</strong>
-      <ul style="margin: 0; padding-left: 14px;">
-        ${specList.map(item => `<li style="margin: 0 0 2px 0; padding: 0;">${item.point}</li>`).join('')}
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        ${specList.map(item => `
+          <li style="margin: 0 0 3px 0; padding: 0; display: flex; align-items: flex-start; gap: 6px;">
+            <span style="display: inline-block; min-width: 10px; width: 10px; height: 10px; border: 1px solid #4b5563; border-radius: 2px; margin-top: 1.5px; box-sizing: border-box;"></span>
+            <span>${item.point}</span>
+          </li>
+        `).join('')}
       </ul>
     </div>
   ` : '';
@@ -4176,20 +4079,27 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       </div>
     `).join('');
 
-    const matrixHeaders = data.causationMatrix.columns.map(col => `
-      <th class="matrix-header" style="width: ${100 / data.causationMatrix.columns.length}%;">${col}</th>
+    const matrixHeaders = data.causationMatrix.columns.map((col, idx) => `
+      <th class="matrix-header" style="width: ${idx === 0 ? '70%' : '30%'};">${col}</th>
     `).join('');
     
-    const numRows = (data.causationMatrix && data.causationMatrix.factBank) ? Math.max(1, Math.floor(data.causationMatrix.factBank.length / 2)) : 3;
     let matrixRowsHtml = '';
-    for (let r = 0; r < numRows; r++) {
+    (data.causationMatrix.factors || []).forEach(factor => {
       matrixRowsHtml += `
         <tr>
-          ${data.causationMatrix.columns.map(() => `<td class="matrix-cell" style="height: 35px;"></td>`).join('')}
+          <td class="matrix-cell" style="padding: 4px 6px; font-size: 7.5pt; text-align: left; font-weight: bold; height: 26px; box-sizing: border-box;">${factor}</td>
+          <td class="matrix-cell" style="height: 26px; box-sizing: border-box;"></td>
         </tr>
       `;
+    });
+    
+    // Shuffling consequences for matching activity
+    const consequences = [...(data.causationMatrix.factBank || [])];
+    if (consequences.length > 1) {
+      const last = consequences.pop();
+      consequences.unshift(last);
     }
-    const factBankText = data.causationMatrix.factBank.map((fact, idx) => `(${idx + 1}) ${fact}`).join(' • ');
+    const factBankText = consequences.map((fact, idx) => `(${idx + 1}) ${fact}`).join(' • ');
 
     const matrixHtml = `
       <table class="matrix-table">
@@ -4258,7 +4168,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       `;
     }
 
-    const whyStimulus = data.causationMatrix.factBank.filter((_, i) => i % 2 === 0).slice(0, 2);
+    const whyStimulus = (data.causationMatrix.factors || []).slice(0, 2);
     const whyHtml = `
       <div style="margin-bottom: 2px; border: 1px solid #e5e7eb; padding: 4px; border-radius: 4px; background: #ffffff; box-sizing: border-box;">
         <span style="font-weight: bold; font-size: 8pt; color: #111827; display: block;">Question 2 [12 Marks]:</span>
@@ -4288,6 +4198,14 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
         <div class="keyword-pill-box" style="margin-top: 0.5px; font-size: 6.5pt;">🔑 ${br.keywords.join(' • ')}</div>
       </div>
     `).join('');
+
+    const mindMapIdeas = (data.vocabulary || []).map(v => v.term).concat((data.timeline || []).slice(0, 2).map(t => t.date)).slice(0, 6);
+    const mindMapScaffoldingHtml = `
+      <div class="mind-map-wordbank" style="margin-top: 4px; padding: 3px 5px; background: #f0fdf4; border: 1px dashed #bbf7d0; border-radius: 4px; font-size: 6.2pt; line-height: 1.25; text-align: left; box-sizing: border-box;">
+        <strong>💡 Mind Map Word Bank:</strong> Use these ideas to connect your branches: 
+        <span style="color: #4b5563;">${mindMapIdeas.join(' • ')}</span>
+      </div>
+    `;
 
     // Generate Page 3 Teacher Answer Key if includeAnswers is checked
     let teacherAnswersHtml = '';
@@ -4758,13 +4676,12 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
   <!-- PAGE 2: ANALYTICAL TASKS & ASSESSMENT PREP -->
   <div class="${includeAnswers ? 'print-page' : 'print-page-last'}">
     <div class="section-title" style="margin-top: 0; margin-bottom: 3px;">Section 3: Comprehension Check (AO1)</div>
-    <p style="font-size: 7.5pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic;">Provide structured analytical answers in your exercise book using the prompts below.</p>
 
     ${comprehensionHtml}
 
     <div class="section-title" style="margin-top: 6px; margin-bottom: 3px;">Section 4: Causation Matrix (Analytical Essay Prep)</div>
     <p style="font-size: 7.5pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic;">
-      <strong>Task:</strong> In your exercise book, recreate and populate this matrix. Categorize by writing the fact numbers (1-6) from the Fact Bank in the corresponding columns, then write a short sentence explaining which factor was the most important.
+      <strong>Task:</strong> In your exercise book, match each Historical Cause / Factor to its correct Result / Consequence from the Fact Bank below (write the numbers 1-3). Then, write a short explanation of which cause you think was the most important.
     </p>
     
     <div style="border: 1px dashed #9ca3af; padding: 3px 6px; font-size: 7pt; background: #f9fafb; line-height: 1.25; border-radius: 4px; margin-bottom: 3px;">
@@ -4821,6 +4738,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
               <p style="margin: 0 0 4px 0; font-style: italic; color: #4b5563;">In your book, construct a central node titled <strong>"${data.mindMap.centralNode}"</strong> and link these three core analytical branches using the keywords:</p>
               
               ${mindMapBranchesHtml}
+              ${mindMapScaffoldingHtml}
             </div>
           </td>
         </tr>

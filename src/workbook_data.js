@@ -39,100 +39,131 @@ const MASTER_GLOSSARY = {
 const CURATED_TIMELINES = {
   "subtopic_1_1": [
     { "date": "1896", "desc": "Plessy v. Ferguson Supreme Court ruling establishes 'separate but equal' doctrine." },
+    { "date": "1909", "desc": "NAACP is founded to fight for legal rights and challenge segregation in courts." },
     { "date": "1942", "desc": "CORE (Congress of Racial Equality) is founded, pioneering non-violent direct action." },
+    { "date": "1947", "desc": "CORE organizes the 'Journey of Reconciliation' to challenge segregation on interstate buses." },
     { "date": "1950", "desc": "Sweatt v. Painter Supreme Court ruling successfully challenges segregation in law schools." },
     { "date": "1953", "desc": "Earl Warren is appointed Chief Justice of the United States Supreme Court." }
   ],
   "subtopic_1_2": [
     { "date": "May 1954", "desc": "Supreme Court rules unanimously in Brown v. Board of Education that school segregation is unconstitutional." },
     { "date": "May 1955", "desc": "Brown II ruling orders school desegregation to proceed 'with all deliberate speed'." },
+    { "date": "1956", "desc": "Autherine Lucy becomes the first Black student at the University of Alabama (later expelled after riots)." },
     { "date": "Sept 1957", "desc": "Orval Faubus deploys Arkansas National Guard to block Little Rock Nine." },
-    { "date": "Sept 1957", "desc": "President Eisenhower sends 101st Airborne Division to escort Little Rock Nine." }
+    { "date": "Sept 1957", "desc": "President Eisenhower sends 101st Airborne Division to escort Little Rock Nine." },
+    { "date": "Sept 1958", "desc": "Governor Faubus closes all three Little Rock public high schools (the 'Lost Year') to block integration." }
   ],
   "subtopic_1_3": [
+    { "date": "Aug 1955", "desc": "Emmett Till is brutally murdered in Mississippi, galvanizing national civil rights activism." },
     { "date": "1 Dec 1955", "desc": "Rosa Parks is arrested in Montgomery for refusing to give up her seat on a segregated bus." },
-    { "date": "5 Dec 1955", "desc": "Montgomery Bus Boycott begins, led by the newly formed Montgomery Improvement Association (MIA) under Martin Luther King Jr." },
+    { "date": "5 Dec 1955", "desc": "Montgomery Bus Boycott begins, led by the newly formed MIA under Martin Luther King Jr." },
     { "date": "Nov 1956", "desc": "Browder v. Gayle Supreme Court ruling declares segregated buses unconstitutional." },
-    { "date": "21 Dec 1956", "desc": "Montgomery buses are integrated, ending the 381-day boycott." }
+    { "date": "21 Dec 1956", "desc": "Montgomery buses are integrated, ending the 381-day boycott." },
+    { "date": "Jan 1957", "desc": "Southern Christian Leadership Conference (SCLC) is founded by MLK to coordinate protests." }
   ],
   "subtopic_1_4": [
     { "date": "1954", "desc": "White Citizens' Councils are formed across the South to resist school integration." },
     { "date": "1956", "desc": "Southern Manifesto is signed by 101 Southern congressmen, pledging to resist school desegregation." },
+    { "date": "1957", "desc": "Strom Thurmond conducts a record-breaking 24-hour filibuster to delay the Civil Rights Act." },
     { "date": "Sept 1957", "desc": "Civil Rights Act of 1957 is passed to protect voter registration (though largely symbolic)." },
     { "date": "1958", "desc": "Governor Faubus closes all Little Rock public schools for the academic year to block integration." }
   ],
   "subtopic_2_1": [
     { "date": "Feb 1960", "desc": "Greensboro Sit-ins begin when four Black students sit at a segregated Woolworth's lunch counter." },
+    { "date": "April 1960", "desc": "Student Nonviolent Coordinating Committee (SNCC) is founded to organize youth-led direct action." },
     { "date": "May 1961", "desc": "Freedom Riders set off from Washington D.C. to test integration on interstate buses." },
     { "date": "May 1961", "desc": "Freedom Rider bus is firebombed in Anniston, Alabama, sparking national outrage." },
+    { "date": "Nov 1961", "desc": "Interstate Commerce Commission (ICC) issues a ruling banning segregation on interstate terminals." },
     { "date": "Sept 1962", "desc": "James Meredith is escorted by federal marshals to register as the first Black student at Ole Miss." }
   ],
   "subtopic_2_2": [
     { "date": "April 1963", "desc": "Birmingham Campaign is launched; MLK writes 'Letter from Birmingham Jail' after arrest." },
     { "date": "May 1963", "desc": "Children's Crusade in Birmingham is met with police dogs and high-pressure fire hoses." },
     { "date": "Aug 1963", "desc": "March on Washington draws 250,000 demonstrators; MLK delivers his 'I Have a Dream' speech." },
+    { "date": "Sept 1963", "desc": "Sixteenth Street Baptist Church is bombed in Birmingham, killing four young Black girls." },
     { "date": "July 1964", "desc": "President Johnson signs Civil Rights Act of 1964, outlawing segregation in public spaces." },
-    { "date": "March 1965", "desc": "Selma to Montgomery marches culminate in 'Bloody Sunday' at Edmund Pettus Bridge." }
+    { "date": "March 1965", "desc": "Selma to Montgomery marches culminate in 'Bloody Sunday' at Edmund Pettus Bridge." },
+    { "date": "Aug 1965", "desc": "Voting Rights Act of 1965 is signed into law, outlawing discriminatory literacy tests." }
   ],
   "subtopic_2_3": [
+    { "date": "Feb 1965", "desc": "Malcolm X, the prominent Black nationalist leader, is assassinated in New York." },
     { "date": "June 1966", "desc": "Stokely Carmichael popularises the term 'Black Power' during the March Against Fear." },
     { "date": "Oct 1966", "desc": "Huey P. Newton and Bobby Seale found the Black Panther Party in Oakland, California." },
+    { "date": "1967", "desc": "Black Panther Party publishes its Ten-Point Program demanding employment, housing, and education." },
     { "date": "Oct 1968", "desc": "Tommie Smith and John Carlos give the Black Power salute at the Mexico City Olympics." },
     { "date": "Dec 1969", "desc": "Black Panther leader Fred Hampton is killed in a police raid in Chicago." }
   ],
   "subtopic_2_4": [
+    { "date": "June 1964", "desc": "Three Freedom Summer civil rights workers are abducted and murdered by the KKK in Mississippi." },
     { "date": "Aug 1965", "desc": "Watts Riots in Los Angeles erupt after a police stop, leaving 34 dead." },
     { "date": "July 1967", "desc": "Detroit and Newark riots break out, leading to military intervention and massive damage." },
     { "date": "Feb 1968", "desc": "Kerner Commission report warns that America is dividing into 'two societies, separate and unequal'." },
-    { "date": "April 1968", "desc": "MLK is assassinated in Memphis, triggering riots in over 100 US cities; Fair Housing Act is passed." }
+    { "date": "April 1968", "desc": "MLK is assassinated in Memphis, triggering riots in over 100 US cities; Fair Housing Act is passed." },
+    { "date": "June 1968", "desc": "Robert F. Kennedy, a strong supporter of civil rights, is assassinated in Los Angeles." }
   ],
   "subtopic_3_1": [
     { "date": "1954", "desc": "Dien Bien Phu falls to Vietminh; Geneva Accords temporarily divide Vietnam at the 17th parallel." },
     { "date": "1955", "desc": "Ngo Dinh Diem declares himself President of the newly formed Republic of Vietnam (South)." },
+    { "date": "1959", "desc": "Ho Chi Minh Trail construction begins to transport supplies from North to South Vietnam." },
     { "date": "1962", "desc": "Strategic Hamlet Program is launched to isolate peasants from communist influence." },
+    { "date": "June 1963", "desc": "Buddhist monk Thich Quang Duc self-immolates in Saigon to protest Diem's regime." },
     { "date": "Nov 1963", "desc": "President Diem is assassinated in a US-backed military coup following the Buddhist Crisis." }
   ],
   "subtopic_3_2": [
     { "date": "Aug 1964", "desc": "Gulf of Tonkin Incident: US reports attacks on USS Maddox; Congress passes Gulf of Tonkin Resolution." },
+    { "date": "Nov 1964", "desc": "Lyndon B. Johnson wins the US presidential election, defeating Barry Goldwater." },
     { "date": "Feb 1965", "desc": "Vietcong attack US base at Pleiku; President Johnson orders retaliatory airstrikes." },
     { "date": "March 1965", "desc": "First US combat troops (3,500 marines) land at Da Nang." },
+    { "date": "Nov 1965", "desc": "Battle of Ia Drang: The first major conventional battle between US and North Vietnamese troops." },
     { "date": "Dec 1965", "desc": "US troop levels in Vietnam reach nearly 200,000." }
   ],
   "subtopic_3_3": [
     { "date": "March 1965", "desc": "Operation Rolling Thunder begins, a massive, long-term US bombing campaign against North Vietnam." },
     { "date": "1966", "desc": "US military intensifies 'Search and Destroy' operations using helicopters to locate Vietcong." },
     { "date": "1967", "desc": "US forces drop massive amounts of defoliants (Agent Orange) and Napalm to clear jungle cover." },
-    { "date": "Jan 1968", "desc": "Battle of Khe Sanh begins, drawing US military focus to the demilitarized zone." }
+    { "date": "Jan 1968", "desc": "Battle of Khe Sanh begins, drawing US military focus to the demilitarized zone." },
+    { "date": "Jan 1968", "desc": "Tet Offensive: Communist forces launch coordinated surprise attacks on cities across South Vietnam." },
+    { "date": "March 1968", "desc": "My Lai Massacre: US soldiers kill hundreds of unarmed Vietnamese civilians (kept secret for a year)." }
   ],
   "subtopic_3_4": [
     { "date": "Jan 1969", "desc": "President Nixon takes office, promising 'Peace with Honour' and introducing Vietnamization." },
+    { "date": "June 1969", "desc": "Nixon announces the first withdrawal of 25,000 US combat troops from Vietnam." },
     { "date": "April 1970", "desc": "Nixon orders joint US-ARVN invasion of Cambodia to destroy communist sanctuaries." },
+    { "date": "Dec 1970", "desc": "US Congress repeals the Gulf of Tonkin Resolution to limit Presidential war-making authority." },
     { "date": "Feb 1971", "desc": "Operation Lam Son 719: ARVN forces invade Laos with US air support but face severe defeat." },
     { "date": "March 1972", "desc": "Easter Offensive: North Vietnam launches major conventional invasion; US responds with massive airstrikes." }
   ],
   "subtopic_4_1": [
+    { "date": "Oct 1969", "desc": "Moratorium to End the War in Vietnam draws millions of demonstrators across the USA." },
     { "date": "Nov 1969", "desc": "News of the March 1968 My Lai Massacre is published, shocking the American public." },
     { "date": "May 1970", "desc": "Kent State Shootings: National Guardsmen kill four students during anti-war protests in Ohio." },
+    { "date": "April 1971", "desc": "Vietnam Veterans Against the War hold major protests, throwing medals on Capitol steps." },
     { "date": "June 1971", "desc": "Pentagon Papers are leaked to the press, exposing years of government deception regarding Vietnam." },
     { "date": "Dec 1972", "desc": "Nixon orders 'Christmas Bombings' (Operation Linebacker II) of Hanoi and Haiphong." }
   ],
   "subtopic_4_2": [
     { "date": "Nov 1969", "desc": "Nixon appeals to the 'Silent Majority' to support his Vietnam policies in a televised address." },
     { "date": "May 1970", "desc": "Hard Hat Riots: Construction workers attack anti-war protesters in New York City." },
+    { "date": "June 1972", "desc": "Watergate break-in occurs, initiating the scandal that would eventually force Nixon's resignation." },
     { "date": "Nov 1972", "desc": "Nixon wins a landslide re-election victory, defeating anti-war candidate George McGovern." },
-    { "date": "1973", "desc": "War Powers Act is passed over Nixon's veto, limiting the President's power to wage war without Congress." }
+    { "date": "1973", "desc": "War Powers Act is passed over Nixon's veto, limiting the President's power to wage war without Congress." },
+    { "date": "Aug 1974", "desc": "Richard Nixon resigns as President; Vice President Gerald Ford takes office." }
   ],
   "subtopic_4_3": [
     { "date": "Jan 1973", "desc": "Paris Peace Accords are signed, establishing a ceasefire and outlining US troop withdrawal." },
     { "date": "March 1973", "desc": "The last US combat troops leave Vietnam; North Vietnamese troops remain in the South." },
+    { "date": "Aug 1974", "desc": "US Congress passes the Foreign Assistance Act, cutting military aid to South Vietnam by over 50%." },
     { "date": "Dec 1974", "desc": "North Vietnam launches a major conventional offensive, testing US resolve." },
+    { "date": "April 1975", "desc": "Operation Frequent Wind: The massive helicopter evacuation of US citizens and ARVN allies from Saigon." },
     { "date": "30 Apr 1975", "desc": "Saigon falls to North Vietnamese forces, ending the war and reunifying Vietnam." }
   ],
   "subtopic_4_4": [
+    { "date": "1964-73", "desc": "The Ho Chi Minh Trail's resilience prevents the US from cutting off communist supply lines." },
     { "date": "1965-68", "desc": "Guerilla tactics and local civilian support protect the Vietcong from superior US firepower." },
     { "date": "1968", "desc": "Tet Offensive destroys US domestic confidence in victory and increases anti-war sentiment." },
     { "date": "1969-73", "desc": "Low morale, drug abuse, and draft resistance weaken the combat effectiveness of US forces." },
-    { "date": "1973-75", "desc": "US Congress cuts funding and assistance to South Vietnam, leaving the ARVN vulnerable." }
+    { "date": "1973-75", "desc": "US Congress cuts funding and assistance to South Vietnam, leaving the ARVN vulnerable." },
+    { "date": "1975", "desc": "The complete military and political collapse of the South Vietnamese ARVN forces." }
   ]
 };
 
@@ -162,9 +193,29 @@ export function getCleanStepText(bodyHtml) {
   }
 }
 
+const CUSTOM_ACTIVE_READING_FOCUS = {
+  "subtopic_1_1": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the legal strategies and rulings used to challenge Plessy v. Ferguson in the courts.",
+  "subtopic_1_2": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the immediate and long-term reactions of both the federal government and segregationist governors to school desegregation.",
+  "subtopic_1_3": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the political, economic, and social reasons for the success of the bus boycott.",
+  "subtopic_1_4": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the local, legislative, and political methods used by Southern opponents to resist civil rights reforms.",
+  "subtopic_2_1": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the ways in which non-violent direct action exposed Southern racism to the national media.",
+  "subtopic_2_2": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the political pressure generated by protests that led to the passage of the Civil Rights Act of 1964 and Voting Rights Act of 1965.",
+  "subtopic_2_3": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the differing goals, strategies, and criticisms that separated the Black Power movement from mainstream non-violence.",
+  "subtopic_2_4": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the underlying social and economic frustrations that triggered the race riots in Northern and Western cities.",
+  "subtopic_3_1": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the political and religious failures of the Diem regime that weakened South Vietnam.",
+  "subtopic_3_2": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the political controversies surrounding the Gulf of Tonkin Incident and subsequent military escalation.",
+  "subtopic_3_3": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the military and geographical advantages of the Vietcong's guerrilla tactics compared to US firepower.",
+  "subtopic_3_4": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the military and political consequences of Nixon's invasions of Cambodia and Laos.",
+  "subtopic_4_1": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the reasons why events like My Lai and the Pentagon Papers widened the credibility gap and fueled the anti-war movement.",
+  "subtopic_4_2": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the ways Nixon successfully appealed to the Silent Majority to maintain support for his policies.",
+  "subtopic_4_3": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the military and diplomatic factors that led to the complete collapse of South Vietnam after US withdrawal.",
+  "subtopic_4_4": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the strategic, economic, and moral reasons why the USA failed to achieve its goals in Vietnam."
+};
+
 export const WORKBOOK_DATA = {};
 
 for (const subtopicId in LESSONS_DATA) {
+
   const data = LESSONS_DATA[subtopicId];
   if (!data) continue;
 
@@ -218,7 +269,7 @@ for (const subtopicId in LESSONS_DATA) {
     data.deepThinkingQuestions.slice(0, 3).forEach((item, idx) => {
       comprehensionCheck.push({
         title: `${idx + 1}. Analysis: ${item.question}`,
-        scaffold: `Write a detailed explanation in your notebook. Hint: ${item.hint || ""}`,
+        scaffold: `Hint: ${item.hint || ""}`,
         stretch: `Teacher Guidance: ${item.teacherGuide || ""}`,
         answer: item.teacherGuide || ""
       });
@@ -229,7 +280,7 @@ for (const subtopicId in LESSONS_DATA) {
       const aText = item.a || item.answer || "";
       comprehensionCheck.push({
         title: `${idx + 1}. Comprehension: ${qText}`,
-        scaffold: `Write a detailed explanation in your notebook. Consider: ${aText.slice(0, 50)}...`,
+        scaffold: `Consider: ${aText.slice(0, 50)}...`,
         stretch: `Stretch: Evaluate how this event influenced subsequent developments.`,
         answer: aText
       });
@@ -246,21 +297,27 @@ for (const subtopicId in LESSONS_DATA) {
     });
   }
   
-  // Causation Matrix
+  // Causation Matrix (Simplified for 14-year-olds)
   const causationMatrix = {
-    columns: ["Historical Driver / Factor", "Impact / Linkage", "Evidence details to check"],
+    columns: ["Historical Cause / Factor", "Result / Consequence (Write matching number)"],
+    factors: [],
     factBank: []
   };
   if (data.causalLinks && data.causalLinks.factors) {
     data.causalLinks.factors.forEach(f => {
-      causationMatrix.factBank.push(f.title);
+      causationMatrix.factors.push(f.title);
       causationMatrix.factBank.push(f.linkageText || f.options[0]);
     });
   } else {
-    causationMatrix.factBank = [
+    causationMatrix.factors = [
       "Federal intervention in desegregation",
       "Grassroots organizing and direct action",
       "Southern political opposition"
+    ];
+    causationMatrix.factBank = [
+      "Forced local authorities to integrate facilities and protected activists.",
+      "Mobilised thousands through non-violent protests to gain national attention.",
+      "Organised Citizens' Councils and signed the Southern Manifesto to block school integration."
     ];
   }
   
@@ -473,7 +530,7 @@ for (const subtopicId in LESSONS_DATA) {
   
   WORKBOOK_DATA[subtopicId] = {
     title: data.headerTitle ? data.headerTitle.split(':').slice(1).join(':').trim() : "GCSE USA History Lesson",
-    activeReadingFocus: `Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the legal, social, or military factors guiding this period of history.`,
+    activeReadingFocus: CUSTOM_ACTIVE_READING_FOCUS[subtopicId] || `Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the legal, social, or military factors guiding this period of history.`,
     narrative: narrative,
     vocabulary: vocabulary,
     timeline: timeline,

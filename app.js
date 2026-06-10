@@ -4692,16 +4692,16 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'The Civil Rights Breakthrough' by historian J. Miller, published in 2012.",
           "content": "Although Southern opposition was loud and politically unified on paper, it ultimately failed to halt civil rights progress. The extreme nature of the opposition's resistance and local violence actually backfired. It shocked Northern public opinion and forced a reluctant federal government to intervene, culminating in the passage of the Civil Rights Acts of 1957 and 1960. These laws established the vital precedent of federal voting rights protection."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s?",
+        "questiona": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess Source B (political resistance of Southern congressmen, constitutional arguments) and Source C (economic warfare of White Citizens Councils, grassroots white resistance) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for demonstrating the politically organized, constitutional nature of Southern resistance. Southern congressmen assert that the Supreme Court's desegregation rulings are a \\"clear abuse of judicial power\\" and pledge to use \\"all lawful means to bring about a reversal\\". </span> <span style="color: green;"> This is supported by my knowledge that 101 Southern politicians signed the Southern Manifesto in 1956, which encouraged states to resist desegregation (known as 'Massive Resistance'), showing how opposition was led by the political elite. </span> <span style="color: purple;"> The provenance of the Southern Manifesto increases its usefulness because it is an official, public declaration signed by nearly all Southern members of Congress. While it is a piece of political propaganda designed to rally Southern voters and pressure the courts, it is highly useful for showing how desegregation was legally and politically challenged at the highest levels of government. </span>\\n\\n<span style="color: blue;"> Source C is highly useful for showing the local, economic methods of opposition used by segregationists. The speaker boasts that \\"we hold the economic power\\" and threatens Black citizens with being \\"without jobs, without credit... and without homes\\" if they demand integration. </span> <span style="color: green;"> This content's utility is supported by my knowledge that White Citizens Councils were formed throughout the South in the mid-1950s, using economic coercion, firings, and mortgage foreclosures to ruin civil rights activists financially, which verifies the speaker's threats. </span> <span style="color: purple;"> The provenance of a speech at a public segregationist rally in 1956 makes it useful for revealing the public rhetoric, intimidation tactics, and confidence of local segregationist organizations. While it is a highly partisan and aggressive speech designed to mobilize opposition and terrorize Black activists, it is very useful for capturing the grassroots economic warfare used to defend segregation. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the nature of opposition to the civil rights movement in the late 1950s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's view of opposition as highly effective in delaying integration with Interpretation 2's view that it backfired, leading to federal intervention and the Civil Rights Acts.",
         "modelb": "The main difference is that Interpretation 1 argues that the opposition to civil rights was highly successful, stating that it [1[effectively delayed integration for years]1] through a combination of political resistance and economic terror. In contrast, Interpretation 2 argues that the opposition ultimately failed to halt progress, stating that its extreme resistance [1[actually backfired]1] and forced the federal government to pass the Civil Rights Acts of 1957 and 1960.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the nature of opposition to the civil rights movement in the late 1950s. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain how they focus on different aspects of resistance (the effectiveness of economic terror and political fronts vs the passage of federal laws) or rely on different sources (Source C's economic threats vs Source B's constitutional manifesto).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which details how White Citizens Councils threatened to leave Black citizens \\"without jobs\\" and \\"without homes\\", leading to the view that opposition was highly [1[politically entrenched, successfully stalling desegregation]1]. Conversely, Interpretation 2 is supported by Source B, which show that despite the Southern politicians promising to resist \\"judicial power\\", the Federal government was forced to intervene, leading to the view that the opposition [1[ultimately failed to halt civil rights progress]1].',
-        "questiond": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s?",
+        "questiond": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 1 (White Citizens Councils growth, KKK violence, very low integration percentage in South) and evaluate against Interpretation 2 (Civil Rights Acts of 1957 and 1960 passed, Eisenhower sending troops to Little Rock).",
         "modeld": "I agree to a large extent with Interpretation 1 that the opposition was highly effective in stalling progress. White Citizens Councils grew to over [[250,000]] members, unleashing economic terror that devastated Black activists' livelihoods. The [[KKK]] was revived, committing bombings and lynchings. Southern states implemented 'Massive Resistance', passing laws to close integrated schools. As a result, by 1960, less than [[1%]] of Southern Black students attended desegregated schools. This supports Interpretation 1's view that local opposition was [1[highly organized and politically entrenched]1] and [1[effectively delayed integration for years]1].\\n\\nHowever, Interpretation 2 is also valid in noting that opposition backfired politically. The extreme obstruction by Southern leaders forced a reluctant President [[Eisenhower]] to introduce the [[1957]] [[Civil Rights Act]], the first federal civil rights legislation since Reconstruction, followed by the [[1960]] Act. While these acts were politically weak and only raised Southern Black voter registration by [[3%]], they established the crucial precedent of federal intervention. Defiance at Little Rock forced Eisenhower to deploy the [[101st Airborne Division]], proving that local resistance could trigger federal military force, confirming Interpretation 2's view that opposition [1[actually backfired]1] and prompted [1[federal voting rights protection]1].\\n\\n{{Overall, while the political backlash (Interpretation 2) laid the legal groundwork for future intervention, Interpretation 1 is more convincing for the late 1950s. On the ground, the combination of state resistance, economic terror, and white violence successfully nullified federal rulings, ensuring that segregation remained the daily reality for the vast majority of Southern Black Americans.}}"
       },
@@ -4725,18 +4725,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'A People's History of the United States' by historian Howard Zinn, published in 1980.",
           "content": "Despite the noble efforts of civil rights groups in the early 1950s, the reality for Black Americans remained bleak and unchanged. Legal victories in the courts were largely meaningless because local authorities simply ignored them. The true power remained in the hands of white mobs and corrupt police forces who used relentless violence and economic terror to crush any attempts at equality on the ground."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the work of civil rights organisations in the early 1950s?",
+        "questiona": "How useful are Sources B and C for an enquiry into the work of civil rights organisations in the early 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Address both sources. Assess content utility, verify with own knowledge (cases, sit-ins), and evaluate provenance reliability and limitations.",
         "modela": `<span style="color: blue;"> Source B is highly useful for demonstrating the legal litigation strategy of the NAACP. The content highlights how their legal campaigns are "finally bearing fruit" by targeting segregated institutions, allowing them to successfully challenge segregation in courts. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the NAACP won the Brown v. Board of Education case in 1954, declaring segregated schools unconstitutional, and had previously won Sweatt v. Painter in 1950, which confirms that their legal strategy successfully dismantled segregation's constitutional basis. </span> <span style="color: purple;"> The provenance makes the source more useful because it is an internal, private report written by lead lawyer Thurgood Marshall in 1953. Since it was not intended for public propaganda, it represents a highly reliable, realistic assessment of NAACP strategy and confidence just before their major legal victories. </span>
 
 <span style="color: blue;"> Source C is highly useful for showing the direct action methods of CORE and the severe grassroots opposition they faced. The activist describes staging a "peaceful sit-in at the downtown lunch counter" but being met with a white mob that "spat on, kicked, and dragged" them while police stood by. </span> <span style="color: green;"> This content's utility is supported by my knowledge that CORE pioneered non-violent direct action, including lunch counter sit-ins, in Northern and Midwestern cities in the 1940s and 1950s, though they faced intense local resistance, which verifies that changing federal laws did not automatically protect activists from local hostility. </span> <span style="color: purple;"> The provenance increases its usefulness because it is a first-hand account by a CORE activist published in a contemporary newsletter in 1952. While the newsletter was designed to motivate members, which might emphasize the drama, it is extremely useful for revealing the immediate physical dangers, emotional frustrations, and reliance on alternative media to publicize their struggle. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the work of civil rights organisations in the early 1950s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's focus on legal breakthroughs with Interpretation 2's emphasis on local realities and violence.",
         "modelb": "The main difference is that Interpretation 1 argues the work of civil rights organisations was highly successful, stating they made [1[monumental and highly effective breakthroughs]1] by destroying the legal foundations of segregation. In contrast, Interpretation 2 argues their work made very little practical difference, stating that the reality for Black Americans [1[remained bleak and unchanged]1] because legal victories in court were ultimately ignored by violent white opposition.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the work of civil rights organisations in the early 1950s. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Match Interpretation 1 to Source B (Marshall's legal wins) and Interpretation 2 to Source C (CORE direct action mob violence).",
         "modelc": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that they have "successfully struck down the 'white primary' in Texas", leading to the view that civil rights organisations made [1[monumental and highly effective breakthroughs]1] in the courts. Conversely, Interpretation 2 is supported by Source C, which states that "changing a law in Washington does nothing to change the hatred and violence", leading to the view that [1[the reality for Black Americans remained bleak and unchanged]1] on the ground.`,
-        "questiond": "How far do you agree with Interpretation 2 about the work of civil rights organisations in the early 1950s?",
+        "questiond": "How far do you agree with Interpretation 2 about the work of civil rights organisations in the early 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (Southern voter rates, KKK terror, lack of enforcement) and evaluate against Interpretation 1 (legal foundations set, Plessy overturned).",
         "modeld": "I agree with Interpretation 2 that practical progress was extremely limited. My own knowledge confirms that despite [[NAACP]] legal efforts, only roughly [[20%]] of Southern Black Americans could register to vote due to the [[KKK]]'s terror tactics and the complicity of local law enforcement. Furthermore, Source C reveals activists were [[spat on, kicked, and dragged into the street]] while the local [[police stood by and laughed]], showing the extreme resistance. This confirms Interpretation 2's claim that the reality [1[remained bleak and unchanged]1] and that [1[true power remained in the hands of white mobs]1].\n\nHowever, Interpretation 1 is also valid in stating that the legal foundations were successfully challenged. The [[NAACP]]'s strategy of litigation culminated in the monumental [[1954]] [[Brown v. Topeka]] ruling, which officially overturned the [[1896]] [[Plessy]] doctrine of separate but equal. Furthermore, Source B highlights that litigation was successfully [[dismantling the legal basis of segregated universities]] and the [[white primary in Texas]]. This matches Interpretation 1's view that they made [1[monumental and highly effective breakthroughs]1] that provided [1[the vital framework for all the progress]1] that followed.\n\n{{Overall, while Interpretation 1 correctly identifies that the [[NAACP]] laid the crucial legal groundwork, Interpretation 2 is ultimately stronger for this early period. Until the mass grassroots movements of the [[1960s]] forced the federal government to physically enforce these new laws, the daily reality of Black Americans [1[remained bleak]1].}}"
       },
@@ -4760,18 +4760,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From a history book about race in America, published in 2005.",
           "content": "Despite the passing of civil rights laws, the movement had failed to achieve true equality by 1975. The new laws did very little to help the millions of black Americans trapped in the poverty-stricken ghettos of the North and West. Deep frustration over terrible housing, high unemployment, and police brutality boiled over into the devastating urban riots of 1965 to 1967. Even a decade later, the economic gap between black and white Americans remained huge."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the extent of progress in civil rights by 1975? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the extent of progress in civil rights by 1975? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Address both sources. Assess content utility, verify with own knowledge (ghetto conditions, Watts riots vs Voting Rights Act, affirmative action), and evaluate provenance reliability and limitations.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the persistent racial inequalities and lack of economic progress by the late 1960s. The report warns that the nation is "moving toward two societies, one black, one white\u2014separate and unequal" due to the maintaining of segregated ghettos. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that despite civil rights legislation, deep-seated economic inequality and police brutality led to major race riots in Watts (1965), Newark, and Detroit (1967), showing the limits of legal progress, which confirms that the report is an accurate and typical representation of the deep social divide. </span> <span style="color: purple;"> The provenance strengthens its usefulness because it is an official government-commissioned report from the Kerner Commission in 1968. Since it was compiled by moderate white politicians who concluded that white institutional racism was responsible, it provides a highly reliable, objective official admission of the limits of legal progress. </span>
 
 <span style="color: blue;"> Source C is highly useful for demonstrating the significant political and social achievements of the civil rights movement by the mid-1970s. The politician asserts that the changes are "monumental" because the "Whites Only" signs are gone and Black citizens are electing "black mayors in major American cities". </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Voting Rights Act of 1965 led to a dramatic increase in Black political representation and the election of Black mayors, while Nixon's affirmative action policies opened corporate hiring, which confirms that the politician's optimism is based on tangible structural progress. </span> <span style="color: purple;"> The provenance increases its usefulness because it is a contemporary interview from 1974 with a politician active in the movement. While he may have a bias toward highlighting political success to justify his career, it is highly useful for showing the perspective of Black leaders who successfully transitioned from street activism to institutional political power. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the extent of progress in civil rights by 1975. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's focus on legal and political successes with Interpretation 2's emphasis on economic failures and Northern ghetto poverty.",
         "modelb": "The main difference is that Interpretation 1 argues that the civil rights movement was highly successful by 1975, highlighting that it had achieved [1[remarkable success]1] in dismantling Jim Crow and securing voting rights. In contrast, Interpretation 2 argues that the movement was unsuccessful, emphasizing that it had [1[failed to achieve true equality]1] for the millions of Black Americans trapped in Northern ghettos.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of progress in civil rights by 1975. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Match Interpretation 1 to Source C (monumental changes, electing mayors) and Interpretation 2 to Source B (ghetto conditions, unequal societies).",
         "modelc": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which states that "the changes are monumental. The 'Whites Only' signs are gone forever", leading to the view that the movement had achieved [1[remarkable success]1]. Conversely, Interpretation 2 is supported by Source B, which states that the nation is moving toward "separate and unequal" societies, leading to the view that the movement had [1[failed to achieve true equality]1] by 1975.`,
-        "questiond": "How far do you agree with Interpretation 2 about the extent of progress in civil rights by 1975? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 2 about the extent of progress in civil rights by 1975? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (de facto segregation in the North, failure of Chicago campaign, urban riots) and evaluate against Interpretation 1 (1964 Civil Rights Act, 1965 Voting Rights Act, emergence of Black middle class).",
         "modeld": "I agree with Interpretation 2 that practical economic progress was highly limited. My own knowledge confirms that the [[1964 Civil Rights Act]] did not address 'de facto' segregation in the North, where Black Americans faced high rents, poor schools, and police harassment. Furthermore, Source B describes the ghetto as a [[destructive environment]] maintained by white society. This frustration over the lack of economic progress directly caused the [[Watts Riot]] of 1965 and over 300 urban riots across America between [[1965 and 1967]], prompting many activists to reject non-violence. This strongly supports Interpretation 2's view that the movement had [1[failed to achieve true equality]1] for the millions [1[trapped in the poverty-stricken ghettos]1].\n\nHowever, Interpretation 1 is also valid in highlighting the immense legal and political successes. The [[Civil Rights Act of 1964]] legally dismantled the Southern Jim Crow system. This was reinforced by the [[Voting Rights Act of 1965]], which outlawed state [[literacy tests]]. Furthermore, Source C highlights that millions of Black Americans became [[registered to vote]] and were [[electing black mayors]] in major cities, helped by policies like [[affirmative action]]. This supports Interpretation 1's claim that the movement achieved [1[remarkable success]1] in dismantling segregation and revolutionising politics.\n\n{{Overall, while Interpretation 1 correctly identifies the monumental legal and political breakthroughs of the era, Interpretation 2 is ultimately more accurate regarding the lived experience of the majority of Northern urban Black Americans. Legally ending Southern segregation was a crucial achievement, but it did not solve the deep economic inequality and ghetto poverty that persisted by [[1975]].}}"
       },
@@ -4796,18 +4796,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From Better Day Coming by A Fairclough, published in 2001.",
           "content": "Five months after the Selma protests in 1965, the Voting Rights Act became law. The Act banned the literacy tests which had been used to keep the number of registered voters low in several states in the South. The Voting Rights Act gave the vote back to black Southerners and made the South democratic. The Voting Rights Act was the greatest achievement of the Civil Rights Movement. It ended the era of Jim Crow."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the achievements of the civil rights movement in the years 1964\u201365? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the achievements of the civil rights movement in the years 1964\u201365? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Address both sources. Assess content utility, verify with own knowledge (1964 Civil Rights Act, Selma, 1965 Voting Rights Act), and evaluate provenance reliability and limitations.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
 
 <span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the achievements of the civil rights movement in the years 1964\u201365. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's view of the 1964 Civil Rights Act as the most important law with Interpretation 2's view of the 1965 Voting Rights Act as the greatest achievement.",
         "modelb": "The main difference is that Interpretation 1 argues that the Civil Rights Act of 1964 was the primary achievement of the movement, describing it as [1[the most important law passed by Congress in the 20th century]1] because it banned segregation. In contrast, Interpretation 2 argues that the Voting Rights Act of 1965 was the [1[greatest achievement]1] because it ended the Jim Crow era by banning literacy tests.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the achievements of the civil rights movement in the years 1964\u201365. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Match Interpretation 1 to Source B (signing the Civil Rights Act) and Interpretation 2 to Source C (the Selma march forcing the Voting Rights Act).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which shows "President Johnson presenting Martin Luther King with one of the pens" to sign the 1964 Act, leading to the view that it was [1[the most important law passed by Congress]1]. Conversely, Interpretation 2 is supported by Source C, which states that "that march led Congress to pass the Voting Rights Act", leading to the view that the 1965 Act was [1[the greatest achievement of the Civil Rights Movement]1].',
-        "questiond": "How far do you agree with Interpretation 2 about the achievements of the civil rights movement in the years 1964\u201365? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 2 about the achievements of the civil rights movement in the years 1964\u201365? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (Selma, Voting Rights Act, banning literacy tests, political representation) and evaluate against Interpretation 1 (Civil Rights Act of 1964, desegregation of public places, workplace discrimination).",
         "modeld": "I agree with Interpretation 2 that the Voting Rights Act of 1965 was the greatest achievement of the era. My own knowledge confirms that the Act banned the state-level [[literacy tests]] that had kept Black registration rates as low as [[2%]] in Alabama. By authorizing federal registrars to register voters, the Act completely transformed Southern politics, leading to the election of Black mayors across the South and dismantling the political system of Jim Crow. As John Lewis recalls in Source C, the Selma marches forced President Johnson to introduce the bill, proving that [1[the Voting Rights Act was the greatest achievement]1] that [1[ended the era of Jim Crow]1].\n\nHowever, Interpretation 1 is also valid in emphasizing the monumental impact of the Civil Rights Act of 1964. The [[Civil Rights Act of 1964]] legally ended segregation in hotels, restaurants, and public places, which had been the core target of the student sit-ins and Freedom Rides. As shown in Source B, President Johnson officially presented Martin Luther King with one of the [[pens used to sign the Civil Rights Act]], illustrating its immense symbolic and political weight. This supports Interpretation 1's claim that the 1964 Act was [1[the most important law passed by Congress in the 20th century]1] because it [1[banned segregation in hotels]1] and workplace discrimination.\n\n{{Overall, while the 1964 Act was a massive victory for social desegregation, the 1965 Voting Rights Act was the ultimate achievement because it gave Black Americans the political power to defend their rights. Without the vote, the social gains of 1964 could not be legally enforced or protected at the local level.}}"
       },
@@ -4831,18 +4831,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From Vietnam 1939\u201375 by N DeMarco, published in 1998.",
           "content": "At the start of the Vietnam War, American morale appeared to be good because most of the troops were professional soldiers and had volunteered. However, as the war went on, more and more American soldiers were drafted than volunteered. Many drafted soldiers did not want to be in Vietnam. Low morale was shown by the fact that American troops used drugs and sometimes even murdered their own officers. Desertions increased as American troops began to lose belief in the cause for which they were fighting."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the reasons for the failure of the USA in Vietnam? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the reasons for the failure of the USA in Vietnam? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Address both sources. Assess content utility, verify with own knowledge (Rolling Thunder, Ho Chi Minh Trail, conscription, drug use, fragging), and evaluate provenance reliability and limitations.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the SCLC's strategic methods of non-violent mobilization and church-based organization. The author reports that King spoke to "several thousand people" in a church, asking them to "remain non-violent" and to ride the buses again under a new spirit of dignity. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the Montgomery Improvement Association, led by MLK, organized regular mass meetings in Black churches to sustain community morale and enforce non-violent discipline during the 381-day bus boycott, which confirms that the newsletter provides an accurate representation of the movement's religious foundation. </span> <span style="color: purple;"> The provenance increases the source's utility because it is an internal newsletter published in early 1956. While it was intended as a motivational piece that downplays internal divisions or exhaustion, it is highly useful for showing the official rhetoric used to keep the community united during a prolonged crisis. </span>
 
 <span style="color: blue;"> Source C is highly useful for demonstrating the legal opposition and hostile reactions of local white authorities to the boycott. </span> <span style="color: green;"> Mayor Gayle declares that the boycott is "an illegal economic conspiracy" and that they have "no intention of negotiating with lawbreakers." This content's usefulness is supported by my knowledge that Montgomery city officials used local laws to indict MLK and 80 other boycott leaders for disrupting lawful business, attempting to crush the protest through legal intimidation, which confirms that the Mayor's public resistance was typical of Southern political elites. </span> <span style="color: purple;"> The provenance of a statement by the Montgomery Mayor in January 1956 makes the source extremely useful because it captures the official segregationist position at the height of the boycott, showing their determination to defend the Jim Crow system. However, it is less useful because it frames the dispute purely as a legal matter, hiding the extra-legal violence and KKK intimidation that authorities tolerated on the ground. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the reasons for the failure of the USA in Vietnam. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's focus on the strategic failure of US bombing with Interpretation 2's emphasis on the collapse of US troop morale.",
         "modelb": "The main difference is that Interpretation 1 focuses on the failure of US military tactics, arguing that Operation Rolling Thunder was [1[failing to defeat the enemy]1] because the communists repaired routes. In contrast, Interpretation 2 focuses on the collapse of morale from within, arguing that drafted soldiers began to [1[lose belief in the cause]1] which led to drug use and desertions.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for the failure of the USA in Vietnam. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Match Interpretation 1 to Source B (bombing reports showing supplies moving) and Interpretation 2 to Source C (soldier interview showing drug use, fragging).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that "bombing raids cannot slow down the movement of supplies", leading to the view that [1[bombing was failing to defeat the enemy]1]. Conversely, Interpretation 2 is supported by Source C, which states that "morale got worse over time" and soldiers used drugs, leading to the view that [1[low morale was shown by the fact that American troops used drugs]1].',
-        "questiond": "How far do you agree with Interpretation 2 about the reasons for the failure of the USA in Vietnam? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 2 about the reasons for the failure of the USA in Vietnam? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (morale, conscription, drug use, fragging, My Lai) and evaluate against Interpretation 1 (resilience of North Vietnam, failure of bombing, Soviet/Chinese aid, guerrilla tactics).",
         "modeld": "I agree with Interpretation 2 that the internal collapse of discipline and low morale was a critical factor in the US failure. My own knowledge confirms that after the [[1968]] Tet Offensive, troop morale plummeted. Roughly one-third of US soldiers were [[conscripts]] who only served one-year tours, leading to a lack of cohesion and widespread drug use, with over [[20%]] of troops using heroin. As shown in Source C, disaffection led to over 800 incidents of 'fragging' (murdering officers, such as the soldier who [[killed him by throwing a grenade into his hut]]) and high desertion rates. This supports Interpretation 2's view that many drafted soldiers did not want to be in Vietnam and began to [1[lose belief in the cause]1] for which they were fighting.\n\nHowever, Interpretation 1 is also valid in emphasizing the strategic failure of the US air war. Operation [[Rolling Thunder]] was completely ineffective at stopping supply flows down the [[Ho Chi Minh Trail]]. As detailed in Source B's reports, the US was unable to prevent North Vietnam from sending supplies, and the [[bombing raids cannot slow down the movement]] of supplies or weaken the determination of the North Vietnamese. This resilience, combined with Vietcong [[guerrilla]] tactics, meant US high-tech firepower was successfully neutralized, matching Interpretation 1's argument that [1[American bombing was failing to defeat the enemy]1] because the communists [1[repaired them or found other routes]1].\n\n{{Overall, while the collapse of American troop morale (Interpretation 2) made it politically and militarily impossible to sustain the war, the underlying cause of failure was the strategic mismatch of US tactics against a resilient enemy (Interpretation 1). The Vietcong's guerrilla warfare and North Vietnam's ability to survive Operation Rolling Thunder created the very stalemate that destroyed US troop morale.}}"
       },
@@ -4866,18 +4866,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From On the Ground: The Black Panther Party in Communities across America by J L Jeffries, published in 2010.",
           "content": "The Black Panther Party aimed to improve black people\u2019s lives. Many members of the movement worked to meet the basic needs of black communities across the country. They did this by helping the elderly, setting up health clinics and giving out free clothing. In cities where they had offices, the Black Panther Party ran far-reaching and wide-ranging community support programmes. At the same time, they taught children about black history and black pride."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the methods used by the Black Panther movement? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the methods used by the Black Panther movement? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess Source B (Bobby Seale interview, first-hand details of armed patrols to observe police and stop brutality, potential hindsight bias in 1988) and Source C (BPP newspaper article, free breakfast community program, potential propaganda purpose) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing that armed patrols and direct observation of the police were key methods used by the Black Panthers to protect their community. The content highlights that members carried guns on "armed patrols" to "observe these police in the community" and prevent "police brutality". </span> <span style="color: green;"> This accurately aligns with my contextual knowledge that the Black Panther Party, founded in Oakland in 1966, rejected SCLC's non-violence and exercised their constitutional right to carry loaded weapons openly, patrolling neighborhoods to monitor police actions and protect Black citizens. </span> <span style="color: purple;"> Regarding its provenance, as a television interview with co-founder Bobby Seale in 1988, its nature as a retrospective account means it may contain hindsight bias, as Seale might want to emphasize their defensive and protective role. However, this actually enhances its utility because it provides a first-hand, insider perspective from one of the party's founders explaining the exact ideological motives and tactical reasoning behind their controversial armed patrols. </span>
 
 <span style="color: blue;"> Source C is highly useful for revealing that the Black Panthers used community social welfare programs as a key method to support Black communities. The content outlines their creation of the "Free Breakfast for School Children" scheme to ensure children receive a "healthy breakfast every morning to help them learn". </span> <span style="color: green;"> My contextual knowledge confirms that the Panthers established dozens of 'survival programs'\u2014including free health clinics, clothing distribution, and breakfast programs that successfully fed up to 10,000 children daily\u2014which built massive grassroots popularity and demonstrated that Black Power was about community care, not just armed militancy. </span> <span style="color: purple;"> Regarding its provenance, the nature of the source as the official party newspaper, published in 1969, means its purpose was to promote the party's image and mobilize support. While it has a highly partisan, promotional tone that downplays their armed confrontations and highlights their "love for the people", it is extremely useful as direct evidence of the official propaganda and community-focused messaging the Black Panthers used to build solidarity and challenge hostile media representations. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the methods used by the Black Panther movement. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Identify the core disagreement: Interpretation 1 focuses on confrontational methods, armed patrols, and conflict with police. Interpretation 2 focuses on community support, social programs, and education.",
         "modelb": "The main difference is that Interpretation 1 argues the Panthers' methods focused on [1[confrontation and armed self-defence]1] to stop police brutality. In contrast, Interpretation 2 argues their methods were designed to [1[improve black people\u2019s lives]1] through community support programs.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help explain your answer. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the methods used by the Black Panther movement. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain how they rely on different sources (Interpretation 1 on Source B's armed patrols; Interpretation 2 on Source C's breakfast program) or focus on different aspects of BPP methods.",
         "modelc": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that the Panthers carried guns "to defend ourselves and to observe you", leading to the view that they encouraged [1[confrontation and armed self-defence]1]. Conversely, Interpretation 2 is supported by Source C, which states they created the "'Free Breakfast for School Children' scheme", leading to the view that they ran [1[community support programmes]1] to improve Black people's lives.`,
-        "questiond": "How far do you agree with Interpretation 2 about the methods used by the Black Panther movement? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 2 about the methods used by the Black Panther movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (Free Breakfast program feeding 10,000 daily, free clinics, sickle cell screening, Ten Point Program) and evaluate against Interpretation 1 (armed patrols, shootouts with police, FBI J. Edgar Hoover declaring them a threat, confrontational rhetoric).",
         "modeld": "I agree to a moderate extent with Interpretation 2 that community support programs were a major method of the Black Panther Party. The BPP's [[Ten-Point Program]] demanded decent housing and education, and they implemented this through practical 'survival programs'. As Source C details, they established the [[Free Breakfast for School Children]] scheme to feed hungry children, and also set up free health clinics, offered sickle cell anemia testing, and distributed free clothing. This supports Interpretation 2's view that they ran [1[community support programmes]1] to meet the basic needs of Black communities and taught children about [1[black pride]1].\n\nHowever, Interpretation 1 is also valid in emphasizing that armed confrontation was a defining method. The Panthers carried loaded weapons in public and conducted armed patrols to follow police cars, asserting their constitutional right to bear arms. As Bobby Seale recalls in Source B, their [[armed patrols]] carrying guns observed the police to stop [[police brutality]]. This confrontational method led to frequent shootouts with the police, such as the [[1967 shootout]] that resulted in the death of an officer and the imprisonment of [[Huey Newton]]. This confirms Interpretation 1's view that BPP members [1[encouraged confrontation and armed self-defence]1] and carried out [1[armed patrols]1].\n\n{{Overall, while the community welfare programs (Interpretation 2) were extensive and highly successful at the local level, the confrontational, armed methods (Interpretation 1) cannot be dismissed. It was the combination of revolutionary militancy and community care that defined the Black Panthers, but their armed stance ultimately drew the federal suppression that destroyed the movement.}}"
       },
@@ -4901,18 +4901,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From Causes and Consequences of the African-American Civil Rights Movement by M Weber, published in 2005.",
           "content": "The Freedom Summer was a bitter experience for civil rights workers in Mississippi. Fifteen were killed. Many were beaten and hundreds arrested. Only about 1 600 black Americans were actually successfully registered to vote. The campaign caused deep divisions between black activists and white volunteers. The project had brought hundreds of white student volunteers from the North. Many black civil rights workers resented the white volunteers. They felt that the whites took over the leadership of the campaign."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the Freedom Summer (1964)? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the Freedom Summer (1964)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Evaluate Source B (first-hand recollections of a Black student, highlights empowerment and inspiration, potential recall bias in 2015) and Source C (contemporary log of 67 incidents of violence and intimidation, lists specific towns, reveals scale of hostility) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing how US military tactics alienated the civilian population in South Vietnam. The report states that heavy reliance on "search-and-destroy operations and chemical defoliants has created hundreds of thousands of refugees" and is driving peasants "directly into the arms of the enemy". </span> <span style="color: green;"> This content's utility is supported by my knowledge that tactics like search-and-destroy and the chemical spraying of Agent Orange under Operation Ranch Hand alienated the rural population, making it impossible to win the hearts and minds campaign, which confirms that US tactics actively fueled the communist insurgency. </span> <span style="color: purple;"> The provenance strengthens its usefulness because it is an official report by a US Senate Subcommittee in 1968. Since it is a self-critical government investigation, it provides a highly reliable, objective contemporary record of the counterproductive nature of US military operations. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the Vietcong perspective on US military actions and their effect on peasant recruitment. The veteran recalls that because US troops "did not know who the enemy was", they treated everyone as Vietcong and "burned our huts and killed our livestock. This made even the quietest peasants want to fight". </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the Vietcong guerrilla strategy relied on hiding among civilians, which led frustrated US soldiers to treat all villagers as hostile, driving many peasants to support the communists, which explains how US high-firepower tactics actively drove recruits to the VC. </span> <span style="color: purple;"> The provenance of a 1985 interview with a Vietcong veteran makes it useful for providing an insider's recollection of the conflict. While it may contain retrospective communist propaganda, it is highly useful for explaining how US tactical errors strengthened the insurgency. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the Freedom Summer (1964). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's positive view of achievements (schools, leadership skills, applications to vote) with Interpretation 2's focus on failure and bitter experiences (violence, low registration numbers, internal racial divisions).",
         "modelb": "The main difference is that Interpretation 1 argues that the Freedom Summer [1[achieved a number of things]1], such as setting up Freedom Schools and developing leadership. In contrast, Interpretation 2 argues the campaign was a [1[bitter experience]1] due to violence, low voter registration, and racial division.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help explain your answer. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the Freedom Summer (1964). You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Show how they depend on different evidence: Interpretation 1 aligns with Source B's focus on Freedom Schools and local inspiration; Interpretation 2 aligns with Source C's evidence of bombings, arrests, and intimidation.",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that "the white volunteers who came to us started something great", leading to the view that the campaign [1[achieved a number of things]1] such as Freedom Schools. Conversely, Interpretation 2 is supported by Source C, which lists how "homes of two civil rights workers bombed" and churches were firebombed, leading to the view that the campaign was a [1[bitter experience]1].',
-        "questiond": "How far do you agree with Interpretation 2 about the Freedom Summer (1964)? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 2 about the Freedom Summer (1964)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (15 deaths, Mississippi burning murders of Chaney, Goodman, Schwerner, only 1,600 registered out of 17,000, white northern volunteers leaving, SNCC/CORE disillusionment with non-violence and white liberals) and evaluate against Interpretation 1 (41 Freedom Schools, 3,000 kids, Voting Rights Act 1965, coalition COFO cooperation).",
         "modeld": "I agree to a large extent with Interpretation 2 that the Freedom Summer was a bitter and divisive experience. Over [[1,000]] northern volunteers, mostly white, came to Mississippi, which provoked extreme white supremacist violence. As logged in Source C, civil rights workers faced constant terror: [[15 people]] were killed, dozens of churches were bombed, and hundreds were arrested, including the [[bombing of homes]] and the disappearance of activists in Philadelphia. Furthermore, of the 17,000 Black Americans who tried to register, only about [[1,600]] were successful due to local registrar obstruction. This supports Interpretation 2's argument that the campaign was a [1[bitter experience]1] that [1[caused deep divisions]1] between Black activists and white volunteers.\n\nHowever, Interpretation 1 is also valid in identifying key achievements. The campaign established [[41 Freedom Schools]] which taught reading, math, and Black history to over [[3,000]] children. As Lenray Gandy recalls in Source B, the campaign was a [[turning point]] that inspired local residents to stage boycotts and protests. The national pressure also directly contributed to the passing of the [[Voting Rights Act of 1965]], which outlawed literacy tests and transformed southern politics. This supports Interpretation 1's view that the campaign [1[achieved a number of things]1] and developed [1[leadership skills]1] so that campaigning could continue.\n\n{{Overall, Interpretation 2 is highly accurate in describing the internal trauma of the campaign. The resentment among Black activists over white northern volunteers taking leadership roles did lead to a split, accelerating the rise of [[Black Power]] and the expulsion of whites from SNCC in 1966. Yet, while the summer was a 'bitter experience', it was a crucial catalyst that forced federal intervention, meaning its long-term achievements (Interpretation 1) ultimately outweighed its immediate failures.}}"
       },
@@ -4937,18 +4937,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From Civil Rights in America, 1945\u201389 by T Lancaster, published in 1990.",
           "content": "By 1965, the progress made by the civil rights movement had raised the hopes of Black Americans enormously, yet the lives of many remained unchanged. There were also problems as the movement became more active in northern cities. In 1966, Martin Luther King started the Chicago Freedom Movement, which aimed to highlight the discrimination in housing. The city authorities agreed to try to prevent Black Americans being excluded from certain areas, but little was actually achieved. Segregation still existed all too clearly in many areas of northern life and \u2018Black Power\u2019 became an attractive idea."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the achievements of Martin Luther King in the civil rights movement? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the achievements of Martin Luther King in the civil rights movement? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Evaluate Source B (photograph of March on Washington, shows King's massive popularity, support from federal government, potential staging bias) and Source C (Bob Lucas interview, shows failure of Chicago Freedom Movement in 1966, divisions between Black and white activists, first-hand witness perspective) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers, which explains the intense exhaustion and fear expressed in his diary. </span> <span style="color: purple;"> The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal, which confirms the accuracy of the commander's strategic recollections. </span> <span style="color: purple;"> The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a natural interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the achievements of Martin Luther King in the civil rights movement. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Identify the core disagreement: Interpretation 1 argues King achieved major successes (federal backing, Civil Rights Act 1964, Voting Rights Act 1965, Nobel Prize). Interpretation 2 argues King's achievements were limited and failed to change daily lives, particularly in northern cities like Chicago.",
         "modelb": "The main difference is that Interpretation 1 highlights King's [1[commitment to non-violent direct action]1] which won federal support and new laws. In contrast, Interpretation 2 argues that despite the progress, the [1[lives of many remained unchanged]1], particularly in northern cities where segregation persisted.",
-        "questionc": "Suggest one reason why Interpretations 1 and Interpretation 2 give different views. You can use Sources B and C to help explain your answer. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the achievements of Martin Luther King in the civil rights movement. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Reconcile the interpretations with the sources: Interpretation 1 is supported by Source B (the massive success and popularity of the March on Washington); Interpretation 2 is supported by Source C (the failure of the Chicago campaign and the rise of racial divisions).",
         "modelc": `The interpretations differ because the historians have relied on different sources. Interpretation 1 is supported by Source B, which shows King "waving to crowds" at the March on Washington, leading to the view that King's [1[commitment to non-violent direct action]1] won support and new laws. Conversely, Interpretation 2 is supported by Source C, which focuses on how King "failed to get improved living conditions" in Chicago, leading to the view that the [1[lives of many remained unchanged]1] in the North.`,
-        "questiond": "How far do you agree with Interpretation 2 about the achievements of Martin Luther King in the civil rights movement? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 2 about the achievements of Martin Luther King in the civil rights movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (Chicago housing agreement ignored by Mayor Daley, northern slums remained, legal changes didn't solve northern poverty, rise of Black Power) and evaluate against Interpretation 1 (landmark Civil Rights Act 1964, Voting Rights Act 1965, ending legal Jim Crow, mobilizing white house support).",
         "modeld": "I agree to a moderate extent with Interpretation 2 that King's achievements failed to change the daily lives of many Black Americans, particularly in the North. In [[1966]], King launched the [[Chicago Freedom Movement]] to combat housing discrimination. Although Mayor Daley signed an agreement to end segregation, the city authorities ignored it once King left, and housing conditions in the slums remained unchanged. As Bob Lucas notes in Source C, King [[failed to get improved living conditions]] in Chicago, and his departure exposed a wide split where Black activists asked whites to leave. This supports Interpretation 2's view that [1[little was actually achieved]1] in the North and [1[the lives of many remained unchanged]1].\n\nHowever, Interpretation 1 is also valid in emphasizing the monumental impact of King's Southern campaigns. King's commitment to non-violent direct action, as shown in the massive crowd at the March on Washington in Source B, attracted international support and led to the [[Civil Rights Act of 1964]] and the [[Voting Rights Act of 1965]]. This supports Interpretation 1's claim that King's [1[commitment to non-violent direct action]1] put pressure on the government to [1[end discrimination against Black Americans]1] and secured landmark laws.\n\n{{Overall, while the 1964 Act was a massive victory for social desegregation, the 1965 Voting Rights Act was the ultimate achievement because it gave Black Americans the political power to defend their rights. Without the vote, the social gains of 1964 could not be legally enforced or protected at the local level.}}"
       },
@@ -4972,18 +4972,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From A Short History of the Vietnam War by G Kerr, published in 2015.",
           "content": "The President who was most responsible for escalating US involvement in Vietnam was President Johnson. It became an all-out fighting war. Immediately after the Gulf of Tonkin incident, Johnson decided on American retaliation, ordering bombing raids against the Vietcong in South Vietnam. A few months later, Johnson approved a secret plan that widened the conflict as it suggested bombing North Vietnam. The plan also mentioned that American soldiers would soon be fighting on Vietnamese territory. Johnson decided to send two US army divisions to South Vietnam, but this was only the beginning."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the escalation of US involvement in the conflict in Vietnam in the 1960s? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the escalation of US involvement in the conflict in Vietnam in the 1960s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Evaluate Source B (top-secret document 1961, shows Kennedy's early escalation via advisers, helicopters, and aid, highly reliable private source) and Source C (LBJ speech 1965, shows transition to ground combat forces up to 125,000 and draft increase, public speech justifying war) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. </span> <span style="color: green;"> The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression, which confirms that the eyewitness account captures the authentic feeling of shock and alienation. </span> <span style="color: purple;"> The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... </span> <span style="color: green;"> tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions, which confirms that the speech is typical of Nixon's political strategy. </span> <span style="color: purple;"> The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the escalation of US involvement in the conflict in Vietnam in the 1960s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Identify the core disagreement: Interpretation 1 argues that President Kennedy's 1961 decisions were the key turning point in expanding the US role. Interpretation 2 argues that President Johnson was most responsible for escalating the war into an all-out fighting combat war.",
         "modelb": "The main difference is that Interpretation 1 argues that Kennedy's decisions in 1961 were a [1[key turning point]1] in expanding US involvement. In contrast, Interpretation 2 argues that President Johnson was [1[most responsible for escalating]1] the conflict into an all-out fighting war.",
-        "questionc": "Suggest one reason why Interpretations 1 and Interpretation 2 give different views. You can use Sources B and C to help explain your answer. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the escalation of US involvement in the conflict in Vietnam in the 1960s. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Link the interpretations to the sources: Interpretation 1 relies on Source B (the early commitments of advisers and aid under Kennedy); Interpretation 2 relies on Source C (Johnson's direct combat troop increases and draft escalation).",
         "modelc": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which lists early aid and "advisers for the South Vietnamese government", leading to the view that Kennedy's 1961 decisions were a [1[key turning point]1]. Conversely, Interpretation 2 is supported by Source C, which ordered troop deployments raising "fighting strength from 74,000 to 125,000 men", leading to the view that Johnson was [1[most responsible for escalating]1] the war into an all-out combat war.`,
-        "questiond": "How far do you agree with Interpretation 2 about the escalation of US involvement in the conflict in Vietnam in the 1960s? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 2 about the escalation of US involvement in the conflict in Vietnam in the 1960s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (Gulf of Tonkin Resolution 1964, Operation Rolling Thunder 1965, sending combat troops, draft system, Westmoreland strategy) and evaluate against Interpretation 1 (Kennedy's Green Berets, 16,000 advisers by 1963, Strategic Hamlets, chemical defoliants, Diem coup involvement).",
         "modeld": "I agree to a large extent with Interpretation 2 that President Johnson was the president most responsible for the combat escalation of the war. After the [[1964]] [[Gulf of Tonkin incident]], Johnson secured the Gulf of Tonkin Resolution, which gave him a blank check to wage war. As broadcast in Source C, Johnson ordered an additional Air Division to Vietnam, raising fighting strength from 74,000 to [[125,000]] men, and increased the number of men called up by the [[draft system]]. This transformed Vietnam from an advisory mission into an all-out combat war, supporting Interpretation 2's view that Johnson was [1[most responsible for escalating]1] the conflict into an [1[all-out fighting war]1].\n\nHowever, Interpretation 1 is also valid in identifying Kennedy's administration as the initial, critical turning point. As detailed in the top-secret 1961 document in Source B, Kennedy authorized [[increased air support]], helicopters, and military [[advisers for the South Vietnamese government]]. Under Kennedy, advisers rose from under 1,000 to over [[16,000]] by 1963, and he approved the use of chemical defoliants like [[Agent Orange]]. This supports Interpretation 1's argument that Kennedy's 1961 decisions were a [1[key turning point]1] that [1[dramatically expanded]1] the US role.\n\n{{Overall, while Kennedy made the crucial decisions that committed the US militarily (Interpretation 1), it was Johnson who took the decisive step of initiating a direct, large-scale American ground war (Interpretation 2). Until Johnson deployed combat troops and began bombing North Vietnam, the US role was theoretically advisory. Therefore, Interpretation 2 is the stronger explanation because Johnson's policies fundamentally changed the nature of the conflict into an American war.}}"
       },
@@ -5007,18 +5007,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'A History of the African-American Struggle' by historian S. Lawson, published in 1998.",
           "content": "Despite the lack of immediate legislation, the Chicago campaign was a crucial foundational success. By willingly facing violence in the North, King successfully forced the nation to confront the hidden institutional racism present in Northern housing markets. This campaign laid the vital political groundwork that directly led to the passing of the 1968 Fair Housing Act."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into King\u2019s campaign in the North (Chicago, 1966)?",
+        "questiona": "How useful are Sources B and C for an enquiry into King\u2019s campaign in the North (Chicago, 1966)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess both sources' content and provenance. Explain how Source B shows local white working-class opposition and blame, while Source C shows SCLC's view of Northern violence and housing discrimination.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the hostile reaction of northern white working-class residents to King's campaign. The resident complains that King "stirred up trouble where there was none" and that the marches "just made people angry" and caused riots. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that King's Chicago campaign in 1966 targeted housing segregation, which faced fierce opposition from white working-class neighborhoods who feared falling property values and integration, which confirms that the source is an accurate representation of the defensive white backlash in Chicago. </span> <span style="color: purple;"> The provenance makes this source useful because it is an interview published in a local newspaper shortly after the marches in 1966. While it reflects a narrow, defensive viewpoint that downplays systemic northern racism, it is highly useful for showing the immediate resentment and racial defensiveness of Chicago's white residents who refused to see their city as segregated. </span>
 
 <span style="color: blue;"> Source C is highly useful for demonstrating the extreme violence that civil rights protestors faced in the North. The activist describes marching through Cicero and being met with "bricks and bottles from a white mob", noting that the hatred was "worse than anything he had faced in Mississippi". </span> <span style="color: green;"> This content's utility is supported by my knowledge that during the SCLC marches in Chicago suburbs like Cicero and Marquette Park, protestors were met by thousands of violent white residents throwing bricks, showing that Northern housing segregation was maintained with the same brutality as Southern Jim Crow, which verifies that northern segregation was actively defended by grassroots violence. </span> <span style="color: purple;"> The provenance strengthens the source's usefulness because it is a first-hand account by an SCLC activist who participated in the march. While he has an interest in emphasizing the violence to expose Northern racism to the world, it is highly useful for capturing the physical danger and disillusionment of the campaigners. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about King\u2019s campaign in the North (Chicago, 1966). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Identify the core disagreement regarding the outcome of the Chicago campaign: failure vs foundational success.",
         "modelb": "The main difference is that Interpretation 1 views King's Chicago campaign as a [1[disastrous miscalculation]1] that failed to achieve housing improvements. In contrast, Interpretation 2 views the campaign as a [1[crucial foundational success]1] that laid the groundwork for the Fair Housing Act.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about King\u2019s campaign in the North (Chicago, 1966). You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain that they focus on different aspects or rely on different sources (e.g. Patterson relies on immediate lack of legislation/white backlash, while Lawson relies on the long-term impact/Fair Housing Act).",
         "modelc": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that King's marches "just made people angry" and caused property damage, leading to the view that the campaign was a [1[disastrous miscalculation]1]. Conversely, Interpretation 2 is supported by Source C, which states that they "showed the world that segregation in Northern housing... was just as brutal", leading to the view that the campaign was a [1[crucial foundational success]1].`,
-        "questiond": "How far do you agree with Interpretation 2 about King's campaign in the North (Chicago, 1966)?",
+        "questiond": "How far do you agree with Interpretation 2 about King\u2019s campaign in the North (Chicago, 1966)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (exposed northern housing racism, led to 1968 Fair Housing Act) and evaluate against Interpretation 1 (failure of immediate housing agreements, Mayor Daley's delaying tactics, Cicero white backlash).",
         "modeld": "I agree to a large extent with Interpretation 2 that the Chicago campaign was a crucial foundational success. Before [[1966]], the civil rights struggle was widely seen as a Southern problem. By marching in Chicago, King successfully forced the nation to confront the hidden institutional racism in Northern housing markets, where Black families were locked into rundown ghettos through redlining. As shown in Source C, activists faced violent mobs throwing [[bricks and bottles]] in Cicero, proving that Northern housing racism was just as brutal as Southern racism. Although Mayor Daley's promises were hollow, the national shock at the violence against peaceful marchers created the political momentum that directly led to the passing of the [[1968]] Fair Housing Act just two years later. This supports Interpretation 2's view that the campaign was a [1[crucial foundational success]1] that laid the [1[vital political groundwork]1] for future reform.\n\nHowever, Interpretation 1 is also valid in pointing out that the Chicago Freedom Movement was a disastrous miscalculation. The campaign failed to achieve its immediate goal of desegregating housing. As Source B highlights, white residents resented King's presence, claiming he [[stirred up trouble]] and that his marches caused riots. Mayor [[Daley]] outmanoeuvred King by signing a vague agreement and then delaying its implementation once King left Chicago, meaning there were no tangible improvements in ghetto housing. Furthermore, marching through Cicero provoked massive white backlash, showing King's tactics of non-violent marches were less effective against Northern economic inequalities. This matches Interpretation 1's view that the campaign was a [1[disastrous miscalculation]1] that proved King's tactics were [1[entirely ineffective]1] against complex economic inequalities.\n\n{{Overall, I agree to a large extent with Interpretation 2. While the Chicago campaign was a short-term failure due to Mayor Daley's political skill and the lack of immediate local housing reforms (Interpretation 1), it was a long-term strategic success. The campaign was not a disaster, but rather a necessary transition that exposed northern segregation and ultimately secured the landmark federal legislation of the 1968 Fair Housing Act (Interpretation 2).}}"
       },
@@ -5042,18 +5042,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'Nixon and Vietnam' by historian K. Hughes, published in 2012.",
           "content": "While Kent State deeply shocked the student movement, it actually hardened the resolve of conservative America to support the war. National polls taken the following week showed a majority of the public blamed the students, not the National Guard, for the violence. Rather than uniting the country against the war, Kent State simply exposed the deep class and cultural divide of the era."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the significance of the Kent State University shootings (1970)?",
+        "questiona": "How useful are Sources B and C for an enquiry into the significance of the Kent State University shootings (1970)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess the usefulness of Source B (student eyewitness, feelings of government brutality, student magazine) and Source C (Nixon's television speech, blaming radical students, silent majority perspective) for this enquiry.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the student perspective and moral outrage surrounding the Kent State shootings. </span> <span style="color: green;"> The student describes the rally as a "peaceful rally against the President's illegal invasion of Cambodia" and accuses the National Guard of firing "live ammunition directly into the crowd of unarmed students." This content is highly useful because it is supported by my contextual knowledge that the Kent State shootings in May 1970, where National Guardsmen fired 67 rounds into a crowd, killing four and wounding nine students, became a symbol of extreme government suppression, which confirms that the eyewitness account captures the authentic feeling of shock and alienation. </span> <span style="color: purple;"> The provenance of a student magazine published in May 1970 increases its usefulness because it provides an immediate, unedited record of student anger. However, it is limited because it represents a highly partisan student viewpoint that ignores the pre-existing tensions, arson of the ROTC building, and rock-throwing that preceded the guard's reaction. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the Nixon administration's perspective and their framing of anti-war protesters to maintain conservative support. Nixon asserts that "when students resort to throwing rocks... </span> <span style="color: green;"> tragedy is inevitable" and labels them "violent, anti-American radicals." This content's usefulness is supported by my knowledge that Nixon actively appealed to the 'Silent Majority' of patriotic, law-abiding Americans who resented radical student protesters, using a law-and-order stance to justify the war and police actions, which confirms that the speech is typical of Nixon's political strategy. </span> <span style="color: purple;"> The provenance of a televised presidential speech in May 1970 is highly useful because it shows how the government officially sought to manage the crisis and turn public opinion against the student demonstrators. However, it is less useful because it is a political speech designed to deflect blame from the National Guard and maintain support for Nixon's Cambodia policy. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the significance of the Kent State University shootings (1970). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Identify the core disagreement: Interpretation 1 argues Kent State shattered Nixon's war strategy and forced troop withdrawals, while Interpretation 2 argues it hardened conservative support and exposed class/cultural divides.",
         "modelb": "The main difference is that Interpretation 1 argues Kent State was a [1[fatal, decisive blow]1] to Nixon's war strategy. In contrast, Interpretation 2 argues it [1[hardened the resolve of conservative America]1] to support the war, exposing deep cultural divides.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the significance of the Kent State University shootings (1970). You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain that they focus on different aspects or rely on different sources (e.g. Wells focuses on the student strike and protests, while Hughes focuses on public opinion polls showing support for the Guard).",
         "modelc": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that guards fired "directly into the crowd of unarmed students", leading to the view that the tragedy was a [1[fatal, decisive blow]1] to Nixon's war strategy. Conversely, Interpretation 2 is supported by Source C, which states that "students resort to throwing rocks at soldiers", leading to the view that it [1[hardened the resolve of conservative America]1].`,
-        "questiond": "How far do you agree with Interpretation 2 about the significance of the Kent State shootings?",
+        "questiond": "How far do you agree with Interpretation 2 about the significance of the Kent State University shootings (1970)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (exposed deep class/cultural divides, conservative silent majority blamed students) and evaluate against Interpretation 1 (unprecedented student strike of 2 million, loss of moral authority, pressure on Nixon to withdraw from Cambodia).",
         "modeld": "I agree to a large extent with Interpretation 2 that the Kent State shootings exposed deep class and cultural divides in America. The reaction to the incident hardened the resolve of conservative Americans who supported Nixon's '[[silent majority]]' rhetoric. As shown in Source C, Nixon blamed the students, calling them [[violent, anti-American radicals]] and appealing to the silent majority. Polls taken the week after the shootings showed that 58% of the public blamed the students themselves for the tragedy, not the [[National Guard]]. Many working-class Americans, such as the New York construction workers wearing [[hard hats]], actively protested against the student anti-war movement. This confirms Interpretation 2's view that Kent State [1[hardened the resolve of conservative America]1] and exposed the deep [1[class and cultural divide of the era]1], rather than uniting the country.\n\nHowever, Interpretation 1 is also valid in highlighting that the Kent State massacre was a fatal blow to Nixon's war strategy. The deaths of four unarmed students, as described in the student eyewitness account in Source B where the Guard fired [[live ammunition directly into the crowd]], triggered an unprecedented reaction. It led to a national student strike involving [[two million]] students across 400 campuses. This massive opposition shattered the government's moral authority and created a serious domestic crisis, making it politically difficult to sustain the invasion of [[Cambodia]] and forcing the administration to accelerate the withdrawal of US troops from Vietnam. This supports Interpretation 1's view that the massacre was the [1[fatal, decisive blow]1] to Nixon's strategy.\n\n{{Overall, I agree to a large extent with Interpretation 2. While Kent State was a massive crisis for the government that limited Nixon's military options (Interpretation 1), it did not cause a revolution. Its primary significance was that it laid bare the bitter cultural civil war in America, where a large portion of the public continued to back Nixon's policies despite the tragic deaths on campus (Interpretation 2).}}"
       },
@@ -5077,18 +5077,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'Rethinking the Civil Rights Movement' by historian J. Jones, published in 2002.",
           "content": "While the Montgomery Boycott was a symbolic victory, its actual impact has been exaggerated. The boycott itself did not desegregate the buses; it was the legal victory in the Supreme Court case Browder v. Gayle that forced the change. In the years immediately following, white backlash intensified, buses were sniped at, and Montgomery remained deeply segregated in housing, employment, and schools."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the significance of the Montgomery Bus Boycott?",
+        "questiona": "How useful are Sources B and C for an enquiry into the significance of the Montgomery Bus Boycott? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess the usefulness of Source B (civil rights activist, positive view, confidence in non-violence) and Source C (local segregationist newspaper, negative view, racial bitterness and economic impact) for this enquiry.",
         "modela": `<span style="color: blue;"> Source B is highly useful for understanding how the Montgomery Bus Boycott empowered the Black community and validated non-violent direct action. The activist states that the boycott showed the \u201Cpower of our community\u201D by refusing to be intimidated for 381 days, proving that \u201Cnon-violent direct action could break the back of segregation\u201D. </span> <span style="color: green;"> This is supported by my knowledge that the Montgomery Bus Boycott of 1955-56 successfully challenged segregation after Rosa Parks' arrest, leading to the Supreme Court ruling [[Browder v. Gayle]] that declared bus segregation unconstitutional. </span> <span style="color: purple;"> The provenance makes it useful because it is a contemporary interview with an activist in 1956. While it reflects the natural optimism and pride of a participant celebrating a major victory, it is highly useful for capturing the newfound confidence and tactical resolve that the boycott instilled in civil rights campaigners. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the resentment and resistance of white segregationists to the boycott's success. The editorial asserts that the boycott achieved nothing but \u201Cracial bitterness\u201D and that Black maids still face \u201Clow wages and hostility from white citizens who resent being forced to mix\u201D. </span> <span style="color: green;"> This is supported by my knowledge that [[despite the legal victory on the buses, white backlash in Montgomery was severe, and Black domestic workers continued to suffer from economic inequality and white violence]]. </span> <span style="color: purple;"> The provenance increases its usefulness because it is an editorial in a local Montgomery newspaper published in December 1956. Although it has a clear segregationist bias designed to minimize the civil rights victory, it is highly useful for demonstrating that legal desegregation did not change deep-seated racial prejudice and instead provoked a hostile white backlash. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the significance of the Montgomery Bus Boycott. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Identify the disagreement: Interpretation 1 views the boycott as a watershed moment that launched the movement, while Interpretation 2 views it as a symbolic victory whose impact is exaggerated.",
         "modelb": "The main difference is that Interpretation 1 views the boycott as a [1[watershed moment]1] that launched the modern civil rights movement. In contrast, Interpretation 2 argues that [1[its actual impact has been exaggerated]1] because segregation was ended by a legal case and white backlash intensified.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the significance of the Montgomery Bus Boycott. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain that they focus on different aspects or rely on different sources (e.g. Sitkoff focuses on the growth of non-violent direct action and SCLC, while Jones focuses on the legal ruling and subsequent white backlash).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that they "proved that non-violent direct action could break the back of segregation", leading to the view that the boycott was a [1[watershed moment]1]. Conversely, Interpretation 2 is supported by Source C, which states that the "boycott has achieved nothing but racial bitterness", leading to the view that its [1[actual impact has been exaggerated]1].',
-        "questiond": "How far do you agree with Interpretation 1 about the significance of the leadership of Martin Luther King? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 1 about the significance of the Montgomery Bus Boycott? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 1 (MLK's charismatic speeches, mass church meetings, strict non-violence commitment) and evaluate against alternative factors (Jo Ann Robinson's grassroots leafletting, Rosa Parks' arrest, and Browder v Gayle legal ruling by the NAACP).",
         "modeld": "I agree to a significant extent with Interpretation 1 that the success of the Montgomery Bus Boycott was due to the inspirational leadership of Martin Luther King. The interpretation highlights that King's [1[inspirational leadership]1] and [1[charismatic speeches]1] gave the community strength and won [1[moral support]1] nationwide. From my own knowledge, as the newly elected president of the [[MIA]], King was a brilliant orator. His soaring rhetoric at mass church meetings directly motivated the Black community to keep walking and carpooling for [[381 days]] despite white intimidation. Furthermore, his strict insistence on non-violent direct action, urging his followers not to retaliate even after white supremacists [[firebombed his own home]], ensured the movement maintained the moral high ground and won crucial national media sympathy. This supports Interpretation 1's claim that his [1[strict commitment to non-violence]1] was central to success.\n\nHowever, I disagree that the success was [1[almost entirely due]1] to King, as this severely underestimates the grassroots organisation of local women and the NAACP. Interpretation 1 focuses solely on King, but from my own knowledge, the boycott was actually initiated and organised by local activists like [[Jo Ann Robinson]] of the [[Women's Political Council]], who printed and distributed 35,000 leaflets before King was even selected as leader. Furthermore, the boycott was fundamentally triggered by the immense respect the community had for the bravery of [[Rosa Parks]], whose arrest was the catalyst for the entire action. Additionally, while King provided the motivation, the actual end of segregation was achieved through the legal work of civil rights lawyers in the Supreme Court. It was the court ruling in [[Browder v. Gayle]] in 1956 that legally forced the buses to integrate, meaning that without the [[NAACP]]'s legal challenge, King's speeches alone could not have rewritten the law.\n\n{{In conclusion, while I agree with Interpretation 1 that King's charismatic leadership was the public face that kept morale high and defined the non-violent strategy, I disagree that it was the sole reason for success. King was the inspirational figurehead, but the foundation of the movement's success lay in the meticulous grassroots organisation by local women and the definitive legal victories secured in the Supreme Court.}}"
       },
@@ -5112,18 +5112,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'Race Relations in the American South' by historian R. Davis, published in 1999.",
           "content": "The events at Little Rock showed the severe limitations of federal intervention. Central High School was only integrated because soldiers with bayonets protected the Black students daily. The following year, Governor Faubus closed all Little Rock high schools to prevent further integration. The crisis actually slowed down the pace of integration across the Deep South as white resistance hardened."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the Little Rock High School crisis (1957)?",
+        "questiona": "How useful are Sources B and C for an enquiry into the Little Rock High School crisis (1957)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess Source B (first-hand terror of Elizabeth Eckford, mob hostility, personal experience) and Source C (President Eisenhower's radio address, reason for sending federal troops, duty to enforce federal law) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the extreme racial hostility and physical danger faced by the Little Rock Nine. Elizabeth Eckford describes the state guards raising their "bayonet" to block her, and a hostile white mob following her screaming "Lynch her! Lynch her!". </span> <span style="color: green;"> This content's utility is supported by my knowledge that on 4 September 1957, Governor Orval Faubus deployed the Arkansas National Guard to block the nine Black students from entering Central High School, exposing them to angry white segregationist mobs, which confirms the source's accurate representation of the terror faced by the students. </span> <span style="color: purple;"> The provenance makes it highly useful because it is a first-hand account by Elizabeth Eckford, one of the Little Rock Nine, recalling her direct experience. While it represents a highly personal and emotional memory of a terrifying event, which naturally focuses on her individual fear, it provides an invaluable and authentic record of the grassroots white resistance to school integration. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the federal government's response and the reasons for direct presidential intervention in the Little Rock crisis. President Eisenhower states that "mob rule... cannot be allowed to override the decisions of our courts" and explains that he has sent the "101st Airborne Division" to guarantee the safety of the nine students. </span> <span style="color: green;"> This is supported by my knowledge that Governor Faubus's open defiance of federal court desegregation orders forced a reluctant President Eisenhower to take the unprecedented step of sending 1,000 elite federal troops to protect the Black students, which confirms that the speech shows the official rationale for federal intervention. </span> <span style="color: purple;"> The provenance of a national radio address on 24 September 1957 increases its usefulness because it shows how the President officially justified the use of military force against a state governor to the American public. However, it is limited as a public political address designed to present Eisenhower as a decisive defender of the law, downplaying his initial reluctance to support the Brown decision. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the Little Rock High School crisis (1957). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's view of Little Rock as a huge victory showing federal willingness to enforce desegregation with Interpretation 2's focus on the limitations of federal power and hardening white resistance.",
         "modelb": "The main difference is that Interpretation 1 views the crisis as a [1[huge victory for the civil rights movement]1] that proved the federal government's willingness to enforce desegregation. In contrast, Interpretation 2 argues that the events showed the [1[severe limitations of federal intervention]1] because integration relied on military protection and prompted Faubus to close the schools.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the Little Rock High School crisis (1957). You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain how they focus on different aspects (Eisenhower's deployment of the 101st Airborne vs Faubus closing the schools) or rely on different sources (Source C's federal deployment vs Source B's mob hostility).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which states that Eisenhower "sent units of the 101st Airborne Division" to enforce desegregation, leading to the view that the crisis was a [1[huge victory for the civil rights movement]1]. Conversely, Interpretation 2 is supported by Source B, which states that when she tried to pass, the guard "raised his bayonet", leading to the view that the events showed the [1[severe limitations of federal intervention]1].',
-        "questiond": "How far do you agree with Interpretation 2 about the Little Rock High School crisis (1957)?",
+        "questiond": "How far do you agree with Interpretation 2 about the Little Rock High School crisis (1957)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (Governor Faubus closing schools in 1958, slow integration in South, need for constant military guards) and evaluate against Interpretation 1 (101st Airborne sent, federal authority asserted, media coverage showing southern racism).",
         "modeld": "I agree to a moderate extent with Interpretation 2 that the Little Rock crisis showed the limitations of federal power. Although the [[Little Rock Nine]] entered the school, they required daily protection from armed soldiers of the [[101st Airborne Division]] due to constant harassment. As Source B details, when Elizabeth Eckford tried to enter, the guards [[raised his bayonet]] and a hostile mob followed her. Furthermore, in 1958, Governor [[Faubus]] closed all public high schools in Little Rock for a year to prevent integration. Across the Deep South, integration remained extremely slow, with less than [[1%]] of Black students attending integrated schools by 1960. This supports Interpretation 2's view that the events showed the [1[severe limitations of federal intervention]1] and that [1[white resistance hardened]1].\n\nHowever, Interpretation 1 is also valid in arguing that Little Rock was a monumental victory. As broadcast in Source C, President [[Eisenhower]] declared that [[mob rule in Little Rock cannot be allowed]] to override the courts, and federalised the National Guard. By deploying elite troops, Eisenhower successfully asserted federal authority over state defiance. The crisis was broadcast on television, showing the world the dignity of the Black students compared to the hatred of the white mob. This media coverage shocked the nation and won widespread sympathy, confirming Interpretation 1's view that it was a [1[huge victory for the civil rights movement]1] that proved the government's willingness to use [1[military force to enforce desegregation]1].\n\n{{Overall, while the immediate local aftermath of Little Rock demonstrated the stubbornness of white resistance and the limits of enforcement (Interpretation 2), the crisis was a crucial turning point. It established the precedent that the federal government would use military force to defend civil rights, making it a vital political victory that paved the way for future federal intervention (Interpretation 1).}}"
       },
@@ -5147,18 +5147,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'A Better War' by historian L. Sorley, published in 1999.",
           "content": "US tactics were militarily necessary to counter Vietcong guerrilla warfare. Search-and-destroy missions successfully killed large numbers of enemy fighters and disrupted their supply bases in the jungle. Without these aggressive operations, the Vietcong would have easily overrun South Vietnam. The tactics prevented a communist victory and gave the South Vietnamese government time to build its own forces."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the impact of US military tactics in Vietnam?",
+        "questiona": "How useful are Sources B and C for an enquiry into the impact of US military tactics in Vietnam? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess Source B (Senate Subcommittee report, impact on refugees, alienation of peasants) and Source C (Vietcong veteran interview, peasant anger, US soldiers' fear and firepower) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the critical perspective within the US government regarding the counterproductive nature of US military tactics in Vietnam. The report highlights that "search-and-destroy operations and chemical defoliants" have created "hundreds of thousands of refugees" and are driving peasants "directly into the arms of the enemy." </span> <span style="color: green;"> This content's utility is supported by my knowledge that US search-and-destroy missions and chemical spraying under Operation Ranch Hand devastated the South Vietnamese countryside, displacing millions of peasants and destroying the 'hearts and minds' campaign, which confirms that the report accurately identifies how US tactics actively fueled the Vietcong insurgency. </span> <span style="color: purple;"> The provenance of a US Senate Subcommittee report in 1968 increases its usefulness because it is an official, self-critical government investigation. This provides a highly reliable, objective contemporary record of the strategic failures of US military operations from the perspective of US policymakers. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the perspective of communist fighters and the impact of US military actions on the Vietnamese peasantry. The veteran states that US troops "treated everyone as Vietcong", burned huts, and killed livestock, which made "even the quietest peasants want to fight them." </span> <span style="color: green;"> This is supported by my knowledge that US soldiers, frustrated by invisible booby traps and snipers, often retaliated against rural villages, which alienated the local population and made it impossible to isolate the Vietcong from the civilian support base, verifying the veteran's account of peasant recruitment. </span> <span style="color: purple;"> The provenance of a post-war interview with a Vietcong veteran in 1985 is useful for showing how communist forces perceived and exploited the mistakes of US military tactics. However, it is limited by hindsight bias and represents a highly partisan viewpoint of a victorious combatant, which may exaggerate the extent of peasant support for the Vietcong and downplay their own acts of terror. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the impact of US military tactics in Vietnam. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's view that US tactics were self-defeating and drove peasants to support the Vietcong with Interpretation 2's view that they were militarily necessary to prevent a communist victory.",
         "modelb": "The main difference is that Interpretation 1 argues that US military tactics were [1[self-defeating]1] because they devastated the countryside and alienated the peasants. In contrast, Interpretation 2 argues that these tactics were [1[militarily necessary]1] to disrupt the Vietcong and prevent a communist takeover of South Vietnam.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the impact of US military tactics in Vietnam. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain that they focus on different aspects (political/hearts and minds vs military casualties) or rely on different sources (Source B/C's peasant anger vs military combat records).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that burning villages and spraying crops "alienated the civilian population", leading to the view that US tactics were [1[self-defeating]1]. Conversely, Interpretation 2 is supported by Source C, which states that the "soldiers were terrified of our booby traps", leading to the view that these operations were [1[militarily necessary]1] to counter guerrilla warfare.',
-        "questiond": "How far do you agree with Interpretation 2 about the impact of US military tactics in Vietnam?",
+        "questiond": "How far do you agree with Interpretation 2 about the impact of US military tactics in Vietnam? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (high Vietcong casualties, body count metric, protecting towns from conventional attack) and evaluate against Interpretation 1 (search and destroy alienating peasants, Agent Orange/Napalm destroying crops, My Lai Massacre, credibility gap).",
         "modeld": "I agree to a moderate extent with Interpretation 2 that US tactics were militarily necessary to prevent an immediate communist victory. Search-and-destroy operations utilized mobility and firepower to inflict heavy losses, using the [[body count]] as a measure of success. In conventional engagements like the Battle of [[Ia Drang]], US forces successfully repelled North Vietnamese troops. As Source C recalls, the US military used [[helicopters and napalm]] and massive firepower. Without these aggressive operations, the Vietcong would have easily overrun South Vietnam, supporting Interpretation 2's claim that the tactics were [1[militarily necessary to counter Vietcong guerrilla warfare]1] and successfully disrupted their [1[supply bases in the jungle]1].\n\nHowever, Interpretation 1 is more convincing in showing that these tactics were ultimately self-defeating. Search-and-destroy missions frequently led to civilian deaths and atrocities like the [[My Lai Massacre]] of 1968. Furthermore, as detailed in Source B, the spraying of crops with [[Agent Orange]] and burning villages created hundreds of thousands of refugees. Rather than winning hearts and minds, these brutal tactics created widespread anger, driving the peasantry to aid the Vietcong by hiding fighters. This confirms Interpretation 1's view that these tactics were [1[self-defeating]1] and [1[alienated the civilian population]1], making victory impossible.\n\n{{Overall, while search-and-destroy (Interpretation 2) achieved short-term military containment, it was a strategic failure. The excessive use of firepower and chemical defoliants alienated the local population, ensuring that the US could never secure the political stability of South Vietnam, which was the only way to win the war (Interpretation 1).}}"
       },
@@ -5182,18 +5182,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'The Vietnam War' by historian G. Herring, published in 1986.",
           "content": "Vietnamization was a political cover for American withdrawal, not a viable military strategy. The policy was designed to appease the anti-war movement at home rather than win the war. The ARVN remained plagued by corruption, low morale, and dependence on US support. Once American ground troops and air support were fully removed, it was only a matter of time before the South Vietnamese state collapsed."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into Vietnamization and Nixon's peace policy?",
+        "questiona": "How useful are Sources B and C for an enquiry into Vietnamization and Nixon's peace policy? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess Source B (military adviser's report, ARVN dependency, panic in Laos, corruption, high desertion) and Source C (Nixon's peace speech, peace with honor, ARVN capability, public relations focus) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the military weakness and dependence of the South Vietnamese forces under Vietnamization. The adviser reports that the ARVN is "heavily dependent on US air support" and panics when facing enemy tanks, suffering heavy casualties in Laos due to incompetent and corrupt officers. </span> <span style="color: green;"> This content's utility is supported by my knowledge of Operation Lam Son 719 in 1971, where the ARVN attempted to invade Laos to cut off the Ho Chi Minh Trail but suffered a disastrous defeat and high casualties despite US air support, which confirms the adviser's claims about their military instability. </span> <span style="color: purple;"> The provenance of an internal report by a US military adviser sent to the Department of Defense in 1971 makes it extremely useful. Since it was a confidential report intended to inform military planning rather than a public relations piece, it represents a highly reliable, realistic assessment of ARVN capabilities. </span>
 
 <span style="color: blue;"> Source C is highly useful for showing how President Nixon publicly presented the success of his Vietnamization policy. Nixon claims they have achieved "peace with honor", that ARVN is now "strong" and capable of defending South Vietnam, and that their self-determination is guaranteed. </span> <span style="color: green;"> This content is supported by my knowledge that Nixon negotiated the Paris Peace Accords in January 1973 to secure US withdrawal, but the claim of ARVN's strength was exaggerated for political purposes, as the ARVN collapsed rapidly once US aid was cut. </span> <span style="color: purple;"> The provenance of a televised public speech in January 1973 increases its usefulness for studying the political rhetoric and justifications used by Nixon to appease the anti-war movement. However, it is limited because it is a public address designed to salvage US pride and frame a military exit as a victory, concealing the known weaknesses of the South Vietnamese state. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about Vietnamization and Nixon's peace policy. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's view that Vietnamization successfully built a strong ARVN and secured peace with honor with Interpretation 2's view that it was a political cover for withdrawal that left a corrupt ARVN doomed to collapse.",
         "modelb": "The main difference is that Interpretation 1 argues that Vietnamization was a [1[highly successful policy]1] that built a strong ARVN and secured independence. In contrast, Interpretation 2 argues that the policy was merely a [1[political cover for American withdrawal]1] that left the ARVN weak, corrupt, and doomed to collapse.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about Vietnamization and Nixon's peace policy. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain that they focus on different timeframes (success in repelling the 1972 Easter Offensive vs the collapse of Saigon in 1975) or rely on different sources (Nixon's political speeches vs military intelligence reports like Source B).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which states that they "trained and equipped a strong South Vietnamese army", leading to the view that it was a [1[highly successful policy]1]. Conversely, Interpretation 2 is supported by Source B, which states that the ARVN is "heavily dependent on US air support" and panicked in Laos, leading to the view that it was a [1[political cover for American withdrawal]1].',
-        "questiond": "How far do you agree with Interpretation 2 about Vietnamization and Nixon's peace policy?",
+        "questiond": "How far do you agree with Interpretation 2 about Vietnamization and Nixon's peace policy? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (collapse of Saigon in 1975, ARVN corruption, high desertions, failed Laos invasion Operation Lam Son 719) and evaluate against Interpretation 1 (success of 1972 Easter Offensive, US troop numbers dropping from 540,000 to zero, Paris Peace Accords).",
         "modeld": "I agree to a large extent with Interpretation 2 that Vietnamization was primarily a political cover for US withdrawal. The policy was driven by domestic anti-war protests, and the ARVN was never truly capable of defending South Vietnam alone. As Source B reports, the ARVN remained [[heavily dependent on US air support]] and panicked during operations in Laos, while its officers were corrupt. Once the US signed the Paris Peace Accords in [[1973]] and stopped air support, the ARVN was quickly overwhelmed, leading to the rapid [[fall of Saigon]] in April 1975. This supports Interpretation 2's view that the policy was a [1[political cover for American withdrawal, not a viable military strategy]1] and that the ARVN was doomed to [1[collapse]1].\n\nHowever, Interpretation 1 is also valid in pointing out the short-term successes of the policy. By providing modern equipment, the US built the ARVN into a large army. During the [[1972 Easter Offensive]], the ARVN, supported by US bombing, successfully repelled a massive North Vietnamese attack. Furthermore, as Nixon announced in Source C, Vietnamization enabled the US to withdraw all forces and bring [[prisoners of war]] home with honor, guaranteeing South Vietnam's right to self-determination. This supports Interpretation 1's claim that Vietnamization was a [1[highly successful policy]1] that built a [1[formidable force]1] and brought troops home with honor.\n\n{{Overall, while Vietnamization achieved the political goal of extracting US forces from a stalemated war (Interpretation 1), it was a failure as a military strategy for South Vietnam's survival. The ARVN was too corrupt and dependent on US support to survive, meaning that the policy simply delayed the inevitable communist victory (Interpretation 2).}}"
       },
@@ -5217,18 +5217,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'A History of the American War in Vietnam' by historian J. Harrison, published in 2005.",
           "content": "The US defeat was caused by the collapse of support for the war back home in America. The anti-war movement, fueled by graphic television coverage and the draft, made it politically impossible for the US government to sustain the war. The constant protests, congressional opposition, and the growing domestic crisis forced Nixon to withdraw US troops from a war that could have been won militarily."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the reasons for the US defeat in Vietnam?",
+        "questiona": "How useful are Sources B and C for an enquiry into the reasons for the US defeat in Vietnam? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess Source B (soldier's diary, Mekong Delta, invisible enemy, peasant support for VC, psychological toll) and Source C (North Vietnamese commander interview, national determination, neutralizing technology, wearing down public opinion) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for showing the psychological strain and tactical difficulties faced by US ground forces in Vietnam. The soldier writes about patrolling in circles through a swamp where they "cannot see the enemy, but we know they are there" and are losing men to mines, noting that they are "fighting a shadow, and we are losing our minds". </span> <span style="color: green;"> This content's utility is supported by my knowledge that the Vietcong used guerrilla warfare, tunnels, and booby traps in the Mekong Delta, which neutralised US conventional firepower and caused severe psychological stress for soldiers, which explains the intense exhaustion and fear expressed in his diary. </span> <span style="color: purple;"> The provenance, a personal diary entry from 1967, makes the source extremely useful. Because it was written privately for himself and not for military censors or the public, it represents a highly reliable, authentic record of the daily physical and psychological toll of guerrilla warfare. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the military strategy and resilience of the communist forces. The commander explains that they "used the jungle and our tunnels to neutralise their air power" and aimed to "keep fighting until the American public grew tired of the war". </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the communists waged a war of attrition, utilizing the Cu Chi tunnels and jungle cover to survive US bombing, counting on growing anti-war sentiment in the US to force a withdrawal, which confirms the accuracy of the commander's strategic recollections. </span> <span style="color: purple;"> The provenance of a post-war interview with a North Vietnamese commander in 1982 makes it useful because it offers an official retrospective explanation of their victory. While he has a interest in emphasizing their ideological determination and heroic sacrifice, it is highly useful for showing the strategic patience that allowed them to defeat a technologically superior superpower. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the reasons for the US defeat in Vietnam. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's view that the defeat was caused by communist motivation and superior guerrilla tactics with Interpretation 2's focus on the domestic collapse of support and the anti-war movement in the US.",
         "modelb": "The main difference is that Interpretation 1 argues the defeat was caused by the [1[superior motivation and guerrilla tactics]1] of the communist forces which neutralized US technology. In contrast, Interpretation 2 argues that the defeat was caused by the [1[collapse of support for the war back home]1] in America due to protests and media coverage.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for the US defeat in Vietnam. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain that they focus on different areas (military/tactical struggle in the jungle vs political/public opinion struggle in the US) or rely on different sources (Source B's tactical combat realities vs Source C's focus on wearing down the US public).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that they "cannot see the enemy" and face constant mines, leading to the view that the defeat was due to the [1[superior motivation and guerrilla tactics]1] of the communists. Conversely, Interpretation 2 is supported by Source C, which states that they aimed to fight "until the American public grew tired", leading to the view that the defeat was caused by the [1[collapse of support for the war back home]1].',
-        "questiond": "How far do you agree with Interpretation 2 about the reasons for the US defeat in Vietnam?",
+        "questiond": "How far do you agree with Interpretation 2 about the reasons for the US defeat in Vietnam? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 2 (anti-war movement, media coverage, Tet Offensive credibility gap, Kent State, economic cost of $167 billion) and evaluate against Interpretation 1 (guerrilla tactics, hanging onto US belts, Ho Chi Minh Trail, nationalist motivation).",
         "modeld": "I agree to a moderate extent with Interpretation 2 that the collapse of domestic support was a decisive reason for the US defeat. The Vietnam War was the first television war, and graphic footage of combat and atrocities like the My Lai Massacre created a massive [[credibility gap]]. Following the [[1968]] Tet Offensive, public opinion turned sharply, and the anti-war movement grew rapidly, culminating in events like the Kent State shootings. Furthermore, the war cost the US over [[$167 billion]], causing inflation. As Source C notes, the communist strategy was to keep fighting until the [[American public grew tired of the war]] and forced withdrawal. This domestic pressure made it politically impossible for the government to sustain the conflict, confirming Interpretation 2's view that the defeat was caused by the [1[collapse of support for the war back home in America]1] which made it [1[politically impossible]1] to continue.\n\nHowever, Interpretation 1 is more convincing in highlighting that the military defeat was caused by communist guerrilla tactics. As described in the soldier's diary in Source B, US troops faced constant danger from an invisible enemy and [[booby traps]] in the swamp, while local villagers secretly supported the VC. The Vietcong used the jungle, booby traps, and a massive network of [[tunnels]] to neutralize US technological superiority and avoid conventional battles, keeping the [[Ho Chi Minh Trail]] open. This supports Interpretation 1's view that the primary reason for defeat was the [1[superior motivation and guerrilla tactics]1] of the communist forces which [1[neutralised US technological superiority]1].\n\n{{Overall, while the anti-war movement (Interpretation 2) determined the timing of the US withdrawal, it was the military success of communist guerrilla tactics (Interpretation 1) that created the stalemate. The Vietcong's resilience and tactical adaptability are what broke the morale of US troops and convinced the American public that the war could not be won, meaning the failure on the battlefield caused the collapse of support at home.}}"
       },
@@ -5252,18 +5252,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'The Civil Rights Movement' by historian Glenn T. Eskew, published in 1997.",
           "content": "While Birmingham was a public relations success, its immediate achievements on the ground were highly limited. The local agreement signed to end the marches did very little to desegregate the city or improve the lives of poor Black residents, who still faced poverty and discrimination. Indeed, the campaign triggered a violent white backlash, including the bombing of the Sixteenth Street Baptist Church, which showed that segregationists remained undefeated."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the significance of the Birmingham Campaign (1963)? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the significance of the Birmingham Campaign (1963)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Evaluate Source B (MLK Letter from Birmingham Jail, explains philosophy of creative tension and direct action to force negotiations, reliable insider view) and Source C (Mayor Boutwell statement, claims protests are ill-timed outside agitation causing chaos, represents moderate white resistance) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for explaining the strategic philosophy of non-violent direct action during the Birmingham campaign. King explains that they did not create the tension, but rather brought it to the surface, and that direct action was necessary to create a "creative tension" that forces a community to negotiate. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that King and the SCLC deliberately chose Birmingham in 1963 to force integration after local merchants broke previous promises, showing that the letter accurately outlines their tactical intent. </span> <span style="color: purple;"> The provenance of a letter written by MLK while imprisoned in Birmingham Jail in April 1963 makes it extremely useful. As a key leader of the movement writing in the midst of the campaign, it represents an authentic, high-stakes defense of their methods against critics, although it naturally downplays any tactical divisions within the civil rights leadership. </span>
 
 <span style="color: blue;"> Source C is highly useful for demonstrating the opposition and arguments used by local white authorities against the marches. Mayor Boutwell claims that "outside agitators" have caused "unnecessary chaos" and that integration cannot be forced overnight by "street mobs," advocating for calm local discussion instead. </span> <span style="color: green;"> This content's utility is supported by my knowledge that white moderates in Birmingham, including local clergy, criticized King's timing and methods, arguing that the protests disrupted progress and polarized the city, which verifies that the Mayor's complaints were representative of local white political opinion. </span> <span style="color: purple;"> The provenance of a public statement by the newly elected moderate Mayor in May 1963 makes the source very useful because it captures the official segregationist and moderate white resistance at the height of the crisis. However, it is limited because it minimizes the systemic violence and bombings that Black residents faced, framing the conflict purely as a disturbance of the peace. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the significance of the Birmingham Campaign (1963). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Identify the disagreement: Interpretation 1 argues Birmingham was a brilliant tactical victory that led directly to the Civil Rights Act of 1964, while Interpretation 2 argues its immediate successes on the ground were limited and provoked violent backlash.",
         "modelb": "The main difference is that Interpretation 1 views the Birmingham campaign as a [1[brilliant tactical victory]1] that successfully forced the federal government to draft the Civil Rights Act of 1964. In contrast, Interpretation 2 argues that its [1[immediate achievements on the ground were highly limited]1] and triggered a violent white backlash.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the significance of the Birmingham Campaign (1963). You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Link the interpretations to the sources: Interpretation 1 is supported by Source B (focusing on the national success of forcing negotiation/tension); Interpretation 2 is supported by Source C (focusing on local disruption, white resentment, and backlash).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that direct action seeks to force a community that has refused to negotiate to "confront the issue", leading to the view that the campaign was a [1[brilliant tactical victory]1]. Conversely, Interpretation 2 is supported by Source C, which states that the marches caused "unnecessary chaos, hurting our local merchants", leading to the view that its [1[immediate achievements on the ground were highly limited]1].',
-        "questiond": "How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 1 (provoked Bull Connor, television coverage, shocked Kennedy, draft of 1964 Civil Rights Act) and evaluate against Interpretation 2 (bombings of homes, Sixteenth Street Church bombing, slow pace of school integration in Birmingham, local agreement had little impact on poverty).",
         "modeld": "I agree to a large extent with Interpretation 1 that the Birmingham campaign was a highly significant victory that transformed the civil rights struggle. By using children in the marches, the SCLC provoked [[Bull Connor]] into deploying fire hoses and police dogs, as described in Source A's shocking report of water [[knocking them off their feet]]. The resulting television footage shocked the nation and put immense pressure on the federal government. President Kennedy declared that Birmingham had forced the administration to act, leading directly to his June 1963 address and the drafting of the Civil Rights Bill. This supports Interpretation 1's claim that the campaign was a [1[brilliant tactical victory]1] that forced the drafting of the [[Civil Rights Act of 1964]].\n\nHowever, Interpretation 2 is also valid in highlighting that the immediate local impact was limited and met with violent resistance. The actual local desegregation agreement was minimal, and department store integration did not solve systemic housing and employment poverty. As Source C shows, white residents resented the marches, calling them [[ill-timed]] and causing [[unnecessary chaos]]. Furthermore, the campaign sparked a wave of segregationist violence, culminating in the KKK bombing of the [[Sixteenth Street]] Baptist Church in September 1963, which killed four young girls. This confirms Interpretation 2's view that local progress was [1[highly limited]1] and provoked [1[violent white backlash]1].\n\n{{Overall, while the local gains in Birmingham itself were slow and met with white terror (Interpretation 2), the campaign's national significance was monumental. It succeeded because it nationalized the crisis, turning civil rights into a moral issue that forced the federal government to pass the Civil Rights Act of 1964 (Interpretation 1).}}"
       },
@@ -5287,18 +5287,18 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
           "author": "From 'The Origins of the Civil Rights Movement' by historian Aldon Morris, published in 1984.",
           "content": "The landmark legislation of the 1960s was not a gift from the White House, but a prize won through the blood and courage of the grassroots movement. Presidents Kennedy and Johnson were highly cautious politicians who only acted when direct action campaigns in Birmingham and Selma created such severe domestic crises that federal inaction became impossible. The true source of change was the organized masses who made the status quo unsustainable."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the reasons for the introduction of the Voting Rights Act of 1965? (8 marks)",
+        "questiona": "How useful are Sources B and C for an enquiry into the reasons for the introduction of the Voting Rights Act of 1965? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess Source B (LBJ joint address, explains federal moral stance post-Selma, highlights historical significance, official public speech to persuade Congress) and Source C (John Lewis first-hand account of bridge assault, shows police brutality as the catalyst, personal memoir showing direct experience) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for explaining the political and moral pressure on the federal government to introduce the Voting Rights Act of 1965. President Johnson explicitly compares the crisis at Selma to historic turning points like "Lexington and Concord," declaring it "deadly wrong" to deny Black citizens the right to vote. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the violence in Selma shocked the nation, giving Johnson the political mandate to introduce the Voting Rights Act and deliver his famous "We Shall Overcome" speech to Congress in March 1965, which confirms that the address represents the official federal commitment to intervene. </span> <span style="color: purple;"> The provenance of an address to a joint session of Congress on 15 March 1965 makes the source extremely useful because it captures the direct legislative reaction of the presidency at the absolute peak of the Selma crisis. However, it is limited because it presents Johnson's actions as a purely moral decision, downplaying his administration's earlier political reluctance to introduce voting rights legislation until forced by grassroots pressure. </span>
 
 <span style="color: blue;"> Source C is highly useful for showing the immediate, violent catalyst that forced the federal government to act. John Lewis describes how state troopers attacked peaceful marchers on the "Edmund Pettus Bridge" with "tear gas" and "clubs," and notes that the televised brutality "shocked the conscience of the nation." </span> <span style="color: green;"> This content's utility is supported by my knowledge that the events of "Bloody Sunday" on 7 March 1965 were broadcast to millions of American homes, generating widespread moral outrage and prompting national protests, which directly forced President Johnson to federalise the National Guard and demand immediate voting rights legislation. </span> <span style="color: purple;"> The provenance of a first-hand autobiography by John Lewis, who led the march and was beaten on the bridge, makes the source highly useful by providing an authentic, inside perspective of the tactical discipline and physical sacrifices of the activists. However, because it was written decades later in 1998, it represents a polished, retrospective narrative of the event's historic significance rather than a raw, unfiltered record of the immediate tactical decisions of the marchers. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the reasons for the introduction of the Voting Rights Act of 1965. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's view that the landmark civil rights laws were a triumph of presidential leadership achieved through Johnson's political skill. In contrast, Interpretation 2 argues that the legislation was a prize won through the blood and courage of the grassroots movement which forced reluctant presidents to act.",
         "modelb": "The main difference is that Interpretation 1 argues that the landmark civil rights laws were a [1[triumph of presidential leadership]1] achieved through Johnson's political skill. In contrast, Interpretation 2 argues that the legislation was a [1[prize won through the blood and courage of the grassroots movement]1] which forced reluctant presidents to act.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for the introduction of the Voting Rights Act of 1965. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Link the interpretations to the sources: Interpretation 1 relies on Source B (focusing on Johnson's presidential leadership and congressional address); Interpretation 2 relies on Source C (focusing on Lewis's account of grassroots activists being beaten on the bridge to create a crisis).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which show President Johnson taking command in his speech and declaring that it is "deadly wrong" to deny the vote, leading to the view that the laws were a [1[triumph of presidential leadership]1]. Conversely, Interpretation 2 is supported by Source C, which details how the grassroots marchers faced police brutality on the bridge to "shock the conscience of the nation", leading to the view that the legislation was a [1[prize won through the blood and courage of the grassroots movement]1].',
-        "questiond": "How far do you agree with Interpretation 1 about the role of Presidents Kennedy and Johnson in passing the Civil Rights Act (1964) and Voting Rights Act (1965)? (16 marks)",
+        "questiond": "How far do you agree with Interpretation 1 about the reasons for the introduction of the Voting Rights Act of 1965? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 1 (LBJ's political skill, breaking Dixiecrat filibusters, Great Society vision, manipulating JFK's legacy) and evaluate against Interpretation 2 (grassroots pressure in Birmingham and Selma forcing presidential action, presidents' initial caution and reluctance).",
         "modeld": `I agree to a large extent with Interpretation 1 because President Johnson's political skill was essential to get the bills passed through a divided Congress. The interpretation argues that the laws were a "triumph of presidential leadership" due to "President Johnson's masterful political skills". From my own knowledge, I know this to be accurate; Johnson was a veteran Southern politician from Texas who knew exactly how to bully and persuade opposing politicians. When Dixiecrat politicians attempted to block the 1964 Civil Rights Act using a filibuster, it was LBJ's political mastery that gathered enough Republican support to break it. Furthermore, LBJ brilliantly manipulated "Kennedy's tragic legacy" by explicitly telling Congress that passing the 1964 Act was the only way to truly honour the assassinated president's memory, as shown in Source B's focus on the moral authority of the presidency. This supports Interpretation 1's view that these acts were a [1[triumph of presidential leadership]1] due to Johnson's [1[masterful political skills]1].
 
@@ -5326,16 +5326,16 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
           "author": "From 'The Civil Rights Triumph' by historian P. Roberts, published in 2011.",
           "content": "The decade after 1965 witnessed a profound transformation in Black political and social status. Under the pressure of federal legislation, Black registration and voting surged, leading to the election of thousands of Black mayors, congressmen, and officials. Furthermore, affirmative action policies opened up higher education and white-collar employment. While economic inequality was not eliminated, the progress made by 1975 was substantial and irreversible."
         },
-        "questiona": "How useful are Sources B and C for an enquiry into the limitations of civil rights progress in the years 1968\u201375?",
+        "questiona": "How useful are Sources B and C for an enquiry into the limitations of civil rights progress in the years 1968\u201375? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "cluea": "Assess Source B (activist's perspective on the limits of the Fair Housing Act, redlining, bank lending, suburban segregation) and Source C (Justice Department data on achievements in voting vs difficulties in housing enforcement and school busing) for usefulness.",
         "modela": `<span style="color: blue;"> Source B is highly useful for demonstrating the local, grassroots reality and limitations of the Fair Housing Act of 1968. The activist explains that despite the law, real estate agents used "redlining", banks denied mortgages, and school boards gerrymandered zones, leaving suburbs white and Black families trapped in underfunded ghettos by 1975. </span> <span style="color: green;"> This utility is supported by my knowledge that the Fair Housing Act was difficult to enforce because it relied on individuals filing lawsuits to prove discrimination, allowing practices like redlining and de facto housing segregation to persist, which confirms the source's claims about the limits of legislation. </span> <span style="color: purple;"> The provenance of a memoir by a civil rights activist published in 1980 increases its usefulness because it provides a reflective, first-hand account of the disappointment felt by activists who saw legal victories fail to translate into social and economic equality. Although it represents a personal and disappointed viewpoint, it accurately reflects the structural barriers that remained in Northern cities. </span>\\n\\n<span style="color: blue;"> Source C is highly useful for understanding the official government perspective on the progress and difficulties in enforcing civil rights laws. The report highlights legal and political achievements, such as a "fivefold increase in Black elected officials in the South", but admits to "severe challenges in enforcing the Fair Housing Act" and local resistance to "busing for school integration", showing that de facto segregation was resistant to legal action. </span> <span style="color: green;"> This is supported by my knowledge that school busing programs\u2014such as those in Boston in 1974\u2014provoked violent protests by white residents who opposed federal court integration orders, demonstrating the intense local resistance to integration. </span> <span style="color: purple;"> The provenance of an official Department of Justice report in 1974 makes it highly useful as a reliable source of statistical progress and legal enforcement records. While it is an official government document that may seek to present federal efforts in a positive light, its candid admission of failure to enforce housing laws and integration makes it a very credible record of the limits of federal power. </span>`,
-        "questionb": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "questionb": "Study Interpretations 1 and 2. They give different views about the limitations of civil rights progress in the years 1968\u201375. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clueb": "Contrast Interpretation 1's view that the civil rights movement failed to solve economic divisions and urban poverty with Interpretation 2's focus on substantial gains in political representation and employment through affirmative action.",
         "modelb": "The main difference is that Interpretation 1 argues that by 1975, the civil rights movement had [1[failed to conquer the economic division of the nation]1] and did little to improve the lives of the urban poor. In contrast, Interpretation 2 argues that the progress made by 1975 was [1[substantial and irreversible]1], emphasizing significant achievements in political representation, voting rights, and affirmative action.",
-        "questionc": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "questionc": "Suggest one reason why Interpretations 1 and 2 give different views about the limitations of civil rights progress in the years 1968\u201375. You can use Sources B and C to help explain your answer. (4 marks)",
         "cluec": "Explain how they focus on different aspects of civil rights progress (economic and housing segregation in Northern ghettos vs political representation and voting registration in the South) or rely on different sources (Source B's focus on redlining and ghetto schools vs Source C's statistics on elected officials).",
         "modelc": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which details how "suburbs remained almost entirely white", leading to the view that the movement [1[did little to improve the lives of the urban poor]1]. Conversely, Interpretation 2 is supported by Source C, which highlights how the Voting Rights Act resulted in a "fivefold increase in Black elected officials", leading to the view that the progress made was [1[substantial and irreversible]1].',
-        "questiond": "How far do you agree with Interpretation 1 about the limitations of civil rights progress by 1975?",
+        "questiond": "How far do you agree with Interpretation 1 about the limitations of civil rights progress in the years 1968\u201375? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clued": "A balanced essay. Support Interpretation 1 (persistence of de facto school segregation, redlining, rejection of the Kerner Report recommendations, MLK's failure in Chicago) and evaluate against Interpretation 2 (Voting Rights Act success, surge in Black elected officials, affirmative action, Fair Housing Act legal precedent).",
         "modeld": "I agree to a large extent with Interpretation 1 that the civil rights movement faced severe limitations and failed to bridge the economic divide by 1975. Despite the passage of the Fair Housing Act, de facto segregation remained the norm in Northern cities. As Source B details, real estate agents used [[redlining]] and banks refused mortgages to keep the suburbs white. MLK's [[Chicago Freedom Movement]] of 1966 failed to achieve its housing integration goals due to intense white backlash in suburbs like [[Cicero]] and political obstruction by Mayor Daley. Furthermore, the [[Kerner Commission]]'s 1968 warning that America was splitting into [[two societies, separate and unequal]] was ignored, as President Johnson refused to fund its recommended urban welfare programs due to the costs of the [[Vietnam War]]. Consequently, by 1975, Black youth unemployment remained extremely high, proving Interpretation 1's view that legal gains [1[did little to improve the lives of the urban poor]1] and failed to resolve [1[economic division]1].\\n\\nHowever, Interpretation 2 is also valid in emphasizing that the political and social status of Black Americans was permanently transformed. The Voting Rights Act of 1965 enabled millions of Black citizens to vote, leading to a massive increase in Black political representation. By 1974, as shown in Source C, there was a [[fivefold increase in Black elected officials]], including the election of Black mayors in major cities like Detroit and Atlanta. Furthermore, [[affirmative action]] policies introduced under Johnson and Nixon opened up opportunities in higher education and white-collar employment, helping to grow a Black middle class. Thus, while economic equality was not fully realized, the gains in democratic rights and representation were, as Interpretation 2 states, [1[substantial and irreversible]1] and ended the era of [1[legal segregation]1].\\n\\n{{Overall, Interpretation 1 is more convincing. While the civil rights movement successfully dismantled de jure segregation in the South and created a new class of Black political leaders (Interpretation 2), the structural economic inequalities of the ghettos remained entrenched. The persistence of housing redlining, de facto school segregation, and high poverty rates meant that by 1975, the daily reality for the majority of working-class Black Americans was still one of segregation and economic neglect.}}"
       }
@@ -5388,7 +5388,7 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3a": {
         "id": "q3a_1",
-        "question": "How useful are Sources B and C for an enquiry into the work of civil rights organisations in the early 1950s? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the work of civil rights organisations in the early 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Address both sources. Assess content utility, verify with own knowledge (cases, sit-ins), and evaluate provenance reliability and limitations.",
         "model": `<span style="color: blue;"> Source B is highly useful for demonstrating the legal litigation strategy of the NAACP. The content highlights how their legal campaigns are "finally bearing fruit" by targeting segregated institutions, allowing them to successfully challenge segregation in courts. </span> <span style="color: green;"> This content is highly useful because it is supported by my contextual knowledge that the NAACP won the Brown v. Board of Education case in 1954, declaring segregated schools unconstitutional, and had previously won Sweatt v. Painter in 1950, which confirms that their legal strategy successfully dismantled segregation's constitutional basis. </span> <span style="color: purple;"> The provenance makes the source more useful because it is an internal, private report written by lead lawyer Thurgood Marshall in 1953. Since it was not intended for public propaganda, it represents a highly reliable, realistic assessment of NAACP strategy and confidence just before their major legal victories. </span>
 
@@ -5396,19 +5396,19 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3b": {
         "id": "q3b_1",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the work of civil rights organisations in the early 1950s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Contrast Interpretation 1's focus on legal breakthroughs with Interpretation 2's emphasis on local realities and violence.",
         "model": "The main difference is that Interpretation 1 argues the work of civil rights organisations was highly successful, stating they made [1[monumental and highly effective breakthroughs]1] by destroying the legal foundations of segregation. In contrast, Interpretation 2 argues their work made very little practical difference, stating that the reality for Black Americans [1[remained bleak and unchanged]1] because legal victories in court were ultimately ignored by violent white opposition."
       },
       "q3c": {
         "id": "q3c_1",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the work of civil rights organisations in the early 1950s. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Match Interpretation 1 to Source B (Marshall's legal wins) and Interpretation 2 to Source C (CORE direct action mob violence).",
         "model": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that they have "successfully struck down the 'white primary' in Texas", leading to the view that civil rights organisations made [1[monumental and highly effective breakthroughs]1] in the courts. Conversely, Interpretation 2 is supported by Source C, which states that "changing a law in Washington does nothing to change the hatred and violence", leading to the view that [1[the reality for Black Americans remained bleak and unchanged]1] on the ground.`
       },
       "q3d": {
         "id": "q3d_1",
-        "question": "How far do you agree with Interpretation 2 about the work of civil rights organisations in the early 1950s?",
+        "question": "How far do you agree with Interpretation 2 about the work of civil rights organisations in the early 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (Southern voter rates, KKK terror, lack of enforcement) and evaluate against Interpretation 1 (legal foundations set, Plessy overturned).",
         "model": "I agree with Interpretation 2 that practical progress was extremely limited. My own knowledge confirms that despite [[NAACP]] legal efforts, only roughly [[20%]] of Southern Black Americans could register to vote due to the [[KKK]]'s terror tactics and the complicity of local law enforcement. Furthermore, Source C reveals activists were [[spat on, kicked, and dragged into the street]] while the local [[police stood by and laughed]], showing the extreme resistance. This confirms Interpretation 2's claim that the reality [1[remained bleak and unchanged]1] and that [1[true power remained in the hands of white mobs]1].\n\nHowever, Interpretation 1 is also valid in stating that the legal foundations were successfully challenged. The [[NAACP]]'s strategy of litigation culminated in the monumental [[1954]] [[Brown v. Topeka]] ruling, which officially overturned the [[1896]] [[Plessy]] doctrine of separate but equal. Furthermore, Source B highlights that litigation was successfully [[dismantling the legal basis of segregated universities]] and the [[white primary in Texas]]. This matches Interpretation 1's view that they made [1[monumental and highly effective breakthroughs]1] that provided [1[the vital framework for all the progress]1] that followed.\n\n{{Overall, while Interpretation 1 correctly identifies that the [[NAACP]] laid the crucial legal groundwork, Interpretation 2 is ultimately stronger for this early period. Until the mass grassroots movements of the [[1960s]] forced the federal government to physically enforce these new laws, the daily reality of Black Americans [1[remained bleak]1].}}"
       }
@@ -5457,7 +5457,7 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3a": {
         "id": "p_2019_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the achievements of the civil rights movement in the years 1964\u201365? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the achievements of the civil rights movement in the years 1964\u201365? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Address both sources. Assess content utility, verify with own knowledge (1964 Civil Rights Act, Selma, 1965 Voting Rights Act), and evaluate provenance reliability and limitations.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing the achievement of the Civil Rights Act (1964) as a collaborative success between the federal government and civil rights leaders. The photograph captures President Johnson shaking hands with Martin Luther King Jr. and presenting him with the pen used to sign the bill into law, surrounded by other activists. </span> <span style="color: green;"> This utility is supported by my knowledge that the NAACP and SCLC lobbied intensely for the bill, and King's national campaign, including the March on Washington, was instrumental in creating the public pressure that enabled Johnson to push the act through Congress. </span> <span style="color: purple;"> The provenance of a photograph published on the front pages of national newspapers in July 1964 makes the source highly useful for demonstrating how this historic milestone was presented to the public, symbolizing a unified, official victory for racial justice. However, it is limited because it is a staged publicity event that conceals the deep political resistance from Southern Democrats and the fact that the Act did not immediately resolve voting disenfranchisement. </span>
 
@@ -5465,19 +5465,19 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3b": {
         "id": "p_2019_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the achievements of the civil rights movement in the years 1964\u201365. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Contrast Interpretation 1's view of the 1964 Civil Rights Act as the most important law with Interpretation 2's view of the 1965 Voting Rights Act as the greatest achievement.",
         "model": "The main difference is that Interpretation 1 argues that the Civil Rights Act of 1964 was the primary achievement of the movement, describing it as [1[the most important law passed by Congress in the 20th century]1] because it banned segregation. In contrast, Interpretation 2 argues that the Voting Rights Act of 1965 was the [1[greatest achievement]1] because it ended the Jim Crow era by banning literacy tests."
       },
       "q3c": {
         "id": "p_2019_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the achievements of the civil rights movement in the years 1964\u201365. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Match Interpretation 1 to Source B (signing the Civil Rights Act) and Interpretation 2 to Source C (the Selma march forcing the Voting Rights Act).",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which shows "President Johnson presenting Martin Luther King with one of the pens" to sign the 1964 Act, leading to the view that it was [1[the most important law passed by Congress]1]. Conversely, Interpretation 2 is supported by Source C, which states that "that march led Congress to pass the Voting Rights Act", leading to the view that the 1965 Act was [1[the greatest achievement of the Civil Rights Movement]1].'
       },
       "q3d": {
         "id": "p_2019_q3d",
-        "question": "How far do you agree with Interpretation 2 about the achievements of the civil rights movement in the years 1964\u201365?",
+        "question": "How far do you agree with Interpretation 2 about the achievements of the civil rights movement in the years 1964\u201365? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (Selma, Voting Rights Act, banning literacy tests, political representation) and evaluate against Interpretation 1 (Civil Rights Act of 1964, desegregation of public places, workplace discrimination).",
         "model": "I agree with Interpretation 2 that the Voting Rights Act of 1965 was the greatest achievement of the era. My own knowledge confirms that the Act banned the state-level [[literacy tests]] that had kept Black registration rates as low as [[2%]] in Alabama. By authorizing federal registrars to register voters, the Act completely transformed Southern politics, leading to the election of Black mayors across the South and dismantling the political system of Jim Crow. As John Lewis recalls in Source C, the Selma marches forced President Johnson to introduce the bill, proving that [1[the Voting Rights Act was the greatest achievement]1] that [1[ended the era of Jim Crow]1].\n\nHowever, Interpretation 1 is also valid in emphasizing the monumental impact of the Civil Rights Act of 1964. The [[Civil Rights Act of 1964]] legally ended segregation in hotels, restaurants, and public places, which had been the core target of the student sit-ins and Freedom Rides. As shown in Source B, President Johnson officially presented Martin Luther King with one of the [[pens used to sign the Civil Rights Act]], illustrating its immense symbolic and political weight. This supports Interpretation 1's claim that the 1964 Act was [1[the most important law passed by Congress in the 20th century]1] because it [1[banned segregation in hotels]1] and workplace discrimination.\n\n{{Overall, while the 1964 Act was a massive victory for social desegregation, the 1965 Voting Rights Act was the ultimate achievement because it gave Black Americans the political power to defend their rights. Without the vote, the social gains of 1964 could not be legally enforced or protected at the local level.}}"
       }
@@ -5526,7 +5526,7 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3a": {
         "id": "p_2020_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the reasons for the failure of the USA in Vietnam? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the reasons for the failure of the USA in Vietnam? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Address both sources. Assess content utility, verify with own knowledge (Rolling Thunder, Ho Chi Minh Trail, conscription, drug use, fragging), and evaluate provenance reliability and limitations.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing that the strategic failure of the US air campaign contributed to the failure in Vietnam. The content details that despite bombing transport routes, there was "no evidence of serious disruption" to communist supply flows and that bombing did not weaken the enemy's determination. </span> <span style="color: green;"> This utility is supported by my knowledge that the Ho Chi Minh Trail was continually rebuilt by thousands of volunteers, meaning Operation Rolling Thunder failed to stop the flow of troops or supplies, which validates the report's assessment. </span> <span style="color: purple;"> The provenance of a secret US government report from 1966 makes it highly useful as it represents an honest, internal military assessment of their own failing strategy, free from public relations spin. </span>
 
@@ -5534,19 +5534,19 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3b": {
         "id": "p_2020_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the reasons for the failure of the USA in Vietnam. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Contrast Interpretation 1's focus on the strategic failure of US bombing with Interpretation 2's emphasis on the collapse of US troop morale.",
         "model": "The main difference is that Interpretation 1 focuses on the failure of US military tactics, arguing that Operation Rolling Thunder was [1[failing to defeat the enemy]1] because the communists repaired routes. In contrast, Interpretation 2 focuses on the collapse of morale from within, arguing that drafted soldiers began to [1[lose belief in the cause]1] which led to drug use and desertions."
       },
       "q3c": {
         "id": "p_2020_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for the failure of the USA in Vietnam. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Match Interpretation 1 to Source B (bombing reports showing supplies moving) and Interpretation 2 to Source C (soldier interview showing drug use, fragging).",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that "bombing raids cannot slow down the movement of supplies", leading to the view that [1[bombing was failing to defeat the enemy]1]. Conversely, Interpretation 2 is supported by Source C, which states that "morale got worse over time" and soldiers used drugs, leading to the view that [1[low morale was shown by the fact that American troops used drugs]1].'
       },
       "q3d": {
         "id": "p_2020_q3d",
-        "question": "How far do you agree with Interpretation 2 about the reasons for the failure of the USA in Vietnam?",
+        "question": "How far do you agree with Interpretation 2 about the reasons for the failure of the USA in Vietnam? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (morale, conscription, drug use, fragging, My Lai) and evaluate against Interpretation 1 (resilience of North Vietnam, failure of bombing, Soviet/Chinese aid, guerrilla tactics).",
         "model": "I agree with Interpretation 2 that the internal collapse of discipline and low morale was a critical factor in the US failure. My own knowledge confirms that after the [[1968]] Tet Offensive, troop morale plummeted. Roughly one-third of US soldiers were [[conscripts]] who only served one-year tours, leading to a lack of cohesion and widespread drug use, with over [[20%]] of troops using heroin. As shown in Source C, disaffection led to over 800 incidents of 'fragging' (murdering officers, such as the soldier who [[killed him by throwing a grenade into his hut]]) and high desertion rates. This supports Interpretation 2's view that many drafted soldiers did not want to be in Vietnam and began to [1[lose belief in the cause]1] for which they were fighting.\n\nHowever, Interpretation 1 is also valid in emphasizing the strategic failure of the US air war. Operation [[Rolling Thunder]] was completely ineffective at stopping supply flows down the [[Ho Chi Minh Trail]]. As detailed in Source B's reports, the US was unable to prevent North Vietnam from sending supplies, and the [[bombing raids cannot slow down the movement]] of supplies or weaken the determination of the North Vietnamese. This resilience, combined with Vietcong [[guerrilla]] tactics, meant US high-tech firepower was successfully neutralized, matching Interpretation 1's argument that [1[American bombing was failing to defeat the enemy]1] because the communists [1[repaired them or found other routes]1].\n\n{{Overall, while the collapse of American troop morale (Interpretation 2) made it politically and militarily impossible to sustain the war, the underlying cause of failure was the strategic mismatch of US tactics against a resilient enemy (Interpretation 1). The Vietcong's guerrilla warfare and North Vietnam's ability to survive Operation Rolling Thunder created the very stalemate that destroyed US troop morale.}}"
       }
@@ -5594,7 +5594,7 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3a": {
         "id": "mock_1_q3a",
-        "question": "How useful are Sources B and C for an enquiry into King\u2019s campaign in the North (Chicago, 1966)?",
+        "question": "How useful are Sources B and C for an enquiry into King\u2019s campaign in the North (Chicago, 1966)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Assess both sources' content and provenance. Explain how Source B shows local white working-class opposition and blame, while Source C shows SCLC's view of Northern violence and housing discrimination.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing the hostile reaction of northern white working-class residents to King's campaign. The resident complains that King \u201Cstirred up trouble where there was none\u201D and that the marches \u201Cjust made people angry\u201D and caused riots. </span> <span style="color: green;">  </span> <span style="color: purple;"> This is supported by my knowledge that [[King's Chicago campaign in 1966 targeted housing segregation, which faced fierce opposition from white working-class neighborhoods who feared falling property values and integration]]. {{The provenance makes this source useful because it is an interview published in a local newspaper shortly after the marches in 1966. While it reflects a narrow, defensive viewpoint that downplays systemic northern racism, it is highly useful for showing the immediate resentment and racial defensiveness of Chicago's white residents who refused to see their city as segregated. </span>
 
@@ -5602,19 +5602,19 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3b": {
         "id": "mock_1_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "question": "Study Interpretations 1 and 2. They give different views about King\u2019s campaign in the North (Chicago, 1966). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the core disagreement regarding the outcome of the Chicago campaign: failure vs foundational success.",
         "model": "The main difference is that Interpretation 1 views King's Chicago campaign as a [1[disastrous miscalculation]1] that failed to achieve housing improvements. In contrast, Interpretation 2 views the campaign as a [1[crucial foundational success]1] that laid the groundwork for the Fair Housing Act."
       },
       "q3c": {
         "id": "mock_1_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about King\u2019s campaign in the North (Chicago, 1966). You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Explain that they focus on different aspects or rely on different sources (e.g. Patterson relies on immediate lack of legislation/white backlash, while Lawson relies on the long-term impact/Fair Housing Act).",
         "model": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that King's marches "just made people angry" and caused property damage, leading to the view that the campaign was a [1[disastrous miscalculation]1]. Conversely, Interpretation 2 is supported by Source C, which states that they "showed the world that segregation in Northern housing... was just as brutal", leading to the view that the campaign was a [1[crucial foundational success]1].`
       },
       "q3d": {
         "id": "mock_1_q3d",
-        "question": "How far do you agree with Interpretation 2 about King's campaign in the North (Chicago, 1966)?",
+        "question": "How far do you agree with Interpretation 2 about King\u2019s campaign in the North (Chicago, 1966)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (exposed northern housing racism, led to 1968 Fair Housing Act) and evaluate against Interpretation 1 (failure of immediate housing agreements, Mayor Daley's delaying tactics, Cicero white backlash).",
         "model": "I agree to a large extent with Interpretation 2 that the Chicago campaign was a crucial foundational success. Before [[1966]], the civil rights struggle was widely seen as a Southern problem. By marching in Chicago, King successfully forced the nation to confront the hidden institutional racism in Northern housing markets, where Black families were locked into rundown ghettos through redlining. As shown in Source C, activists faced violent mobs throwing [[bricks and bottles]] in Cicero, proving that Northern housing racism was just as brutal as Southern racism. Although Mayor Daley's promises were hollow, the national shock at the violence against peaceful marchers created the political momentum that directly led to the passing of the [[1968]] Fair Housing Act just two years later. This supports Interpretation 2's view that the campaign was a [1[crucial foundational success]1] that laid the [1[vital political groundwork]1] for future reform.\n\nHowever, Interpretation 1 is also valid in pointing out that the Chicago Freedom Movement was a disastrous miscalculation. The campaign failed to achieve its immediate goal of desegregating housing. As Source B highlights, white residents resented King's presence, claiming he [[stirred up trouble]] and that his marches caused riots. Mayor [[Daley]] outmanoeuvred King by signing a vague agreement and then delaying its implementation once King left Chicago, meaning there were no tangible improvements in ghetto housing. Furthermore, marching through Cicero provoked massive white backlash, showing King's tactics of non-violent marches were less effective against Northern economic inequalities. This matches Interpretation 1's view that the campaign was a [1[disastrous miscalculation]1] that proved King's tactics were [1[entirely ineffective]1] against complex economic inequalities.\n\n{{Overall, I agree to a large extent with Interpretation 2. While the Chicago campaign was a short-term failure due to Mayor Daley's political skill and the lack of immediate local housing reforms (Interpretation 1), it was a long-term strategic success. The campaign was not a disaster, but rather a necessary transition that exposed northern segregation and ultimately secured the landmark federal legislation of the 1968 Fair Housing Act (Interpretation 2).}}"
       }
@@ -5662,7 +5662,7 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3a": {
         "id": "mock_2_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the significance of the Kent State University shootings (1970)?",
+        "question": "How useful are Sources B and C for an enquiry into the significance of the Kent State University shootings (1970)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Assess the usefulness of Source B (student eyewitness, feelings of government brutality, student magazine) and Source C (Nixon's television speech, blaming radical students, silent majority perspective) for this enquiry.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing the shock and anger felt by students at Kent State and their view of government repression. The student describes holding a \u201Cpeaceful rally against the President's illegal invasion of Cambodia\u201D when the National Guard fired, showing that \u201Cthe government was willing to murder its own youth\u201D. </span> <span style="color: green;">  </span> <span style="color: purple;"> This is supported by my knowledge that [[the Kent State shooting in May 1970 occurred during protests against Nixon's expansion of the war into Cambodia, triggering a nationwide student strike of over 4 million students]]. {{The provenance makes it useful because it is a contemporary, eyewitness account published in a student magazine in May 1970. While it is highly emotional and presents the protest as entirely peaceful, it is highly useful for capturing the immediate sense of betrayal and the radicalization of the anti-war movement. </span>
 
@@ -5670,19 +5670,19 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3b": {
         "id": "mock_2_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "question": "Study Interpretations 1 and 2. They give different views about the significance of the Kent State University shootings (1970). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the core disagreement: Interpretation 1 argues Kent State shattered Nixon's war strategy and forced troop withdrawals, while Interpretation 2 argues it hardened conservative support and exposed class/cultural divides.",
         "model": "The main difference is that Interpretation 1 argues Kent State was a [1[fatal, decisive blow]1] to Nixon's war strategy. In contrast, Interpretation 2 argues it [1[hardened the resolve of conservative America]1] to support the war, exposing deep cultural divides."
       },
       "q3c": {
         "id": "mock_2_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the significance of the Kent State University shootings (1970). You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Explain that they focus on different aspects or rely on different sources (e.g. Wells focuses on the student strike and protests, while Hughes focuses on public opinion polls showing support for the Guard).",
         "model": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that guards fired "directly into the crowd of unarmed students", leading to the view that the tragedy was a [1[fatal, decisive blow]1] to Nixon's war strategy. Conversely, Interpretation 2 is supported by Source C, which states that "students resort to throwing rocks at soldiers", leading to the view that it [1[hardened the resolve of conservative America]1].`
       },
       "q3d": {
         "id": "mock_2_q3d",
-        "question": "How far do you agree with Interpretation 2 about the significance of the Kent State shootings?",
+        "question": "How far do you agree with Interpretation 2 about the significance of the Kent State University shootings (1970)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (exposed deep class/cultural divides, conservative silent majority blamed students) and evaluate against Interpretation 1 (unprecedented student strike of 2 million, loss of moral authority, pressure on Nixon to withdraw from Cambodia).",
         "model": "I agree to a large extent with Interpretation 2 that the Kent State shootings exposed deep class and cultural divides in America. The reaction to the incident hardened the resolve of conservative Americans who supported Nixon's '[[silent majority]]' rhetoric. As shown in Source C, Nixon blamed the students, calling them [[violent, anti-American radicals]] and appealing to the silent majority. Polls taken the week after the shootings showed that 58% of the public blamed the students themselves for the tragedy, not the [[National Guard]]. Many working-class Americans, such as the New York construction workers wearing [[hard hats]], actively protested against the student anti-war movement. This confirms Interpretation 2's view that Kent State [1[hardened the resolve of conservative America]1] and exposed the deep [1[class and cultural divide of the era]1], rather than uniting the country.\n\nHowever, Interpretation 1 is also valid in highlighting that the Kent State massacre was a fatal blow to Nixon's war strategy. The deaths of four unarmed students, as described in the student eyewitness account in Source B where the Guard fired [[live ammunition directly into the crowd]], triggered an unprecedented reaction. It led to a national student strike involving [[two million]] students across 400 campuses. This massive opposition shattered the government's moral authority and created a serious domestic crisis, making it politically difficult to sustain the invasion of [[Cambodia]] and forcing the administration to accelerate the withdrawal of US troops from Vietnam. This supports Interpretation 1's view that the massacre was the [1[fatal, decisive blow]1] to Nixon's strategy.\n\n{{Overall, I agree to a large extent with Interpretation 2. While Kent State was a massive crisis for the government that limited Nixon's military options (Interpretation 1), it did not cause a revolution. Its primary significance was that it laid bare the bitter cultural civil war in America, where a large portion of the public continued to back Nixon's policies despite the tragic deaths on campus (Interpretation 2).}}"
       }
@@ -5730,7 +5730,7 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3a": {
         "id": "mock_3_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the significance of the Montgomery Bus Boycott?",
+        "question": "How useful are Sources B and C for an enquiry into the significance of the Montgomery Bus Boycott? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Assess the usefulness of Source B (civil rights activist, positive view, confidence in non-violence) and Source C (local segregationist newspaper, negative view, racial bitterness and economic impact) for this enquiry.",
         "model": `<span style="color: blue;"> Source B is highly useful for understanding how the Montgomery Bus Boycott empowered the Black community and validated non-violent direct action. The activist states that the boycott showed the \u201Cpower of our community\u201D by refusing to be intimidated for 381 days, proving that \u201Cnon-violent direct action could break the back of segregation\u201D. </span> <span style="color: green;"> This is supported by my knowledge that the Montgomery Bus Boycott of 1955-56 successfully challenged segregation after Rosa Parks' arrest, leading to the Supreme Court ruling [[Browder v. Gayle]] that declared bus segregation unconstitutional. </span> <span style="color: purple;"> The provenance makes it useful because it is a contemporary interview with an activist in 1956. While it reflects the natural optimism and pride of a participant celebrating a major victory, it is highly useful for capturing the newfound confidence and tactical resolve that the boycott instilled in civil rights campaigners. </span>
 
@@ -5738,19 +5738,19 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3b": {
         "id": "mock_3_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "question": "Study Interpretations 1 and 2. They give different views about the significance of the Montgomery Bus Boycott. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the disagreement: Interpretation 1 views the boycott as a watershed moment that launched the movement, while Interpretation 2 views it as a symbolic victory whose impact is exaggerated.",
         "model": "The main difference is that Interpretation 1 views the boycott as a [1[watershed moment]1] that launched the modern civil rights movement. In contrast, Interpretation 2 argues that [1[its actual impact has been exaggerated]1] because segregation was ended by a legal case and white backlash intensified."
       },
       "q3c": {
         "id": "mock_3_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the significance of the Montgomery Bus Boycott. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Explain that they focus on different aspects or rely on different sources (e.g. Sitkoff focuses on the growth of non-violent direct action and SCLC, while Jones focuses on the legal ruling and subsequent white backlash).",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that they "proved that non-violent direct action could break the back of segregation", leading to the view that the boycott was a [1[watershed moment]1]. Conversely, Interpretation 2 is supported by Source C, which states that the "boycott has achieved nothing but racial bitterness", leading to the view that its [1[actual impact has been exaggerated]1].'
       },
       "q3d": {
         "id": "mock_3_q3d",
-        "question": "How far do you agree with Interpretation 1 about the significance of the leadership of Martin Luther King? (16 marks)",
+        "question": "How far do you agree with Interpretation 1 about the significance of the Montgomery Bus Boycott? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 1 (MLK's charismatic speeches, mass church meetings, strict non-violence commitment) and evaluate against alternative factors (Jo Ann Robinson's grassroots leafletting, Rosa Parks' arrest, and Browder v Gayle legal ruling by the NAACP).",
         "model": "I agree to a significant extent with Interpretation 1 that the success of the Montgomery Bus Boycott was due to the inspirational leadership of Martin Luther King. The interpretation highlights that King's [1[inspirational leadership]1] and [1[charismatic speeches]1] gave the community strength and won [1[moral support]1] nationwide. From my own knowledge, as the newly elected president of the [[MIA]], King was a brilliant orator. His soaring rhetoric at mass church meetings directly motivated the Black community to keep walking and carpooling for [[381 days]] despite white intimidation. Furthermore, his strict insistence on non-violent direct action, urging his followers not to retaliate even after white supremacists [[firebombed his own home]], ensured the movement maintained the moral high ground and won crucial national media sympathy. This supports Interpretation 1's claim that his [1[strict commitment to non-violence]1] was central to success.\n\nHowever, I disagree that the success was [1[almost entirely due]1] to King, as this severely underestimates the grassroots organisation of local women and the NAACP. Interpretation 1 focuses solely on King, but from my own knowledge, the boycott was actually initiated and organised by local activists like [[Jo Ann Robinson]] of the [[Women's Political Council]], who printed and distributed 35,000 leaflets before King was even selected as leader. Furthermore, the boycott was fundamentally triggered by the immense respect the community had for the bravery of [[Rosa Parks]], whose arrest was the catalyst for the entire action. Additionally, while King provided the motivation, the actual end of segregation was achieved through the legal work of civil rights lawyers in the Supreme Court. It was the court ruling in [[Browder v. Gayle]] in 1956 that legally forced the buses to integrate, meaning that without the [[NAACP]]'s legal challenge, King's speeches alone could not have rewritten the law.\n\n{{In conclusion, while I agree with Interpretation 1 that King's charismatic leadership was the public face that kept morale high and defined the non-violent strategy, I disagree that it was the sole reason for success. King was the inspirational figurehead, but the foundation of the movement's success lay in the meticulous grassroots organisation by local women and the definitive legal victories secured in the Supreme Court.}}"
       }
@@ -5798,7 +5798,7 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3a": {
         "id": "p_2022_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the methods used by the Black Panther movement? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the methods used by the Black Panther movement? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Assess Source B (Bobby Seale interview, first-hand details of armed patrols to observe police and stop brutality, potential hindsight bias in 1988) and Source C (BPP newspaper article, free breakfast community program, potential propaganda purpose) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing that armed patrols and direct observation of the police were key methods used by the Black Panthers to protect their community. The content highlights that members carried guns on "armed patrols" to "observe these police in the community" and prevent "police brutality". </span> <span style="color: green;"> This accurately aligns with my contextual knowledge that the Black Panther Party, founded in Oakland in 1966, rejected SCLC's non-violence and exercised their constitutional right to carry loaded weapons openly, patrolling neighborhoods to monitor police actions and protect Black citizens. </span> <span style="color: purple;"> Regarding its provenance, as a television interview with co-founder Bobby Seale in 1988, its nature as a retrospective account means it may contain hindsight bias, as Seale might want to emphasize their defensive and protective role. However, this actually enhances its utility because it provides a first-hand, insider perspective from one of the party's founders explaining the exact ideological motives and tactical reasoning behind their controversial armed patrols. </span>
 
@@ -5806,19 +5806,19 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3b": {
         "id": "p_2022_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the methods used by the Black Panther movement. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the core disagreement: Interpretation 1 focuses on confrontational methods, armed patrols, and conflict with police. Interpretation 2 focuses on community support, social programs, and education.",
         "model": "The main difference is that Interpretation 1 argues the Panthers' methods focused on [1[confrontation and armed self-defence]1] to stop police brutality. In contrast, Interpretation 2 argues their methods were designed to [1[improve black people\u2019s lives]1] through community support programs."
       },
       "q3c": {
         "id": "p_2022_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the methods used by the Black Panther movement. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Explain how they rely on different sources (Interpretation 1 on Source B's armed patrols; Interpretation 2 on Source C's breakfast program) or focus on different aspects of BPP methods.",
         "model": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that the Panthers carried guns "to defend ourselves and to observe you", leading to the view that they encouraged [1[confrontation and armed self-defence]1]. Conversely, Interpretation 2 is supported by Source C, which states they created the "'Free Breakfast for School Children' scheme", leading to the view that they ran [1[community support programmes]1] to improve Black people's lives.`
       },
       "q3d": {
         "id": "p_2022_q3d",
-        "question": "How far do you agree with Interpretation 2 about the methods used by the Black Panther movement? (16 marks)",
+        "question": "How far do you agree with Interpretation 2 about the methods used by the Black Panther movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (Free Breakfast program feeding 10,000 daily, free clinics, sickle cell screening, Ten Point Program) and evaluate against Interpretation 1 (armed patrols, shootouts with police, FBI J. Edgar Hoover declaring them a threat, confrontational rhetoric).",
         "model": "I agree to a moderate extent with Interpretation 2 that community support programs were a major method of the Black Panther Party. The BPP's [[Ten-Point Program]] demanded decent housing and education, and they implemented this through practical 'survival programs'. As Source C details, they established the [[Free Breakfast for School Children]] scheme to feed hungry children, and also set up free health clinics, offered sickle cell anemia testing, and distributed free clothing. This supports Interpretation 2's view that they ran [1[community support programmes]1] to meet the basic needs of Black communities and taught children about [1[black pride]1].\n\nHowever, Interpretation 1 is also valid in emphasizing that armed confrontation was a defining method. The Panthers carried loaded weapons in public and conducted armed patrols to follow police cars, asserting their constitutional right to bear arms. As Bobby Seale recalls in Source B, their [[armed patrols]] carrying guns observed the police to stop [[police brutality]]. This confrontational method led to frequent shootouts with the police, such as the [[1967 shootout]] that resulted in the death of an officer and the imprisonment of [[Huey Newton]]. This confirms Interpretation 1's view that BPP members [1[encouraged confrontation and armed self-defence]1] and carried out [1[armed patrols]1].\n\n{{Overall, while the community welfare programs (Interpretation 2) were extensive and highly successful at the local level, the confrontational, armed methods (Interpretation 1) cannot be dismissed. It was the combination of revolutionary militancy and community care that defined the Black Panthers, but their armed stance ultimately drew the federal suppression that destroyed the movement.}}"
       }
@@ -5866,7 +5866,7 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3a": {
         "id": "p_2023_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the Freedom Summer (1964)? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the Freedom Summer (1964)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Evaluate Source B (first-hand recollections of a Black student, highlights empowerment and inspiration, potential recall bias in 2015) and Source C (contemporary log of 67 incidents of violence and intimidation, lists specific towns, reveals scale of hostility) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for demonstrating the positive, empowering impact of the Freedom Summer on local Black communities in Mississippi. Gandy recalls that the campaign was a "turning point" that made local residents realize they "had a right to do things" and inspired them to stage their own boycotts and protests. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the SNCC and CORE volunteers established 30 Freedom Schools throughout Mississippi, which educated over 3,000 Black children and adults, fostering grassroots political awareness and self-determination. </span> <span style="color: purple;"> The provenance of a recollection from a local Black resident who attended a Freedom School as a child in 1964 increases its usefulness because it provides a first-hand perspective of the psychological empowerment experienced by the local population. However, it was recorded in 2015, meaning it may be influenced by decades of hindsight and the heroic narrative of the civil rights movement, which could gloss over the immediate fear and divisions at the time. </span>
 
@@ -5874,19 +5874,19 @@ Details: 'Even if a Black man somehow passes the test, his employer will likely 
       },
       "q3b": {
         "id": "p_2023_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the Freedom Summer (1964). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Contrast Interpretation 1's positive view of achievements (schools, leadership skills, applications to vote) with Interpretation 2's focus on failure and bitter experiences (violence, low registration numbers, internal racial divisions).",
         "model": "The main difference is that Interpretation 1 argues that the Freedom Summer [1[achieved a number of things]1], such as setting up Freedom Schools and developing leadership. In contrast, Interpretation 2 argues the campaign was a [1[bitter experience]1] due to violence, low voter registration, and racial division."
       },
       "q3c": {
         "id": "p_2023_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the Freedom Summer (1964). You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Show how they depend on different evidence: Interpretation 1 aligns with Source B's focus on Freedom Schools and local inspiration; Interpretation 2 aligns with Source C's evidence of bombings, arrests, and intimidation.",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that "the white volunteers who came to us started something great", leading to the view that the campaign [1[achieved a number of things]1] such as Freedom Schools. Conversely, Interpretation 2 is supported by Source C, which lists how "homes of two civil rights workers bombed" and churches were firebombed, leading to the view that the campaign was a [1[bitter experience]1].'
       },
       "q3d": {
         "id": "p_2023_q3d",
-        "question": "How far do you agree with Interpretation 2 about the Freedom Summer (1964)? (16 marks)",
+        "question": "How far do you agree with Interpretation 2 about the Freedom Summer (1964)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (15 deaths, Mississippi burning murders of Chaney, Goodman, Schwerner, only 1,600 registered out of 17,000, white northern volunteers leaving, SNCC/CORE disillusionment with non-violence and white liberals) and evaluate against Interpretation 1 (41 Freedom Schools, 3,000 kids, Voting Rights Act 1965, coalition COFO cooperation).",
         "model": "I agree to a large extent with Interpretation 2 that the Freedom Summer was a bitter and divisive experience. Over [[1,000]] northern volunteers, mostly white, came to Mississippi, which provoked extreme white supremacist violence. As logged in Source C, civil rights workers faced constant terror: [[15 people]] were killed, dozens of churches were bombed, and hundreds were arrested, including the [[bombing of homes]] and the disappearance of activists in Philadelphia. Furthermore, of the 17,000 Black Americans who tried to register, only about [[1,600]] were successful due to local registrar obstruction. This supports Interpretation 2's argument that the campaign was a [1[bitter experience]1] that [1[caused deep divisions]1] between Black activists and white volunteers.\n\nHowever, Interpretation 1 is also valid in identifying key achievements. The campaign established [[41 Freedom Schools]] which taught reading, math, and Black history to over [[3,000]] children. As Lenray Gandy recalls in Source B, the campaign was a [[turning point]] that inspired local residents to stage boycotts and protests. The national pressure also directly contributed to the passing of the [[Voting Rights Act of 1965]], which outlawed literacy tests and transformed southern politics. This supports Interpretation 1's view that the campaign [1[achieved a number of things]1] and developed [1[leadership skills]1] so that campaigning could continue.\n\n{{Overall, Interpretation 2 is highly accurate in describing the internal trauma of the campaign. The resentment among Black activists over white northern volunteers taking leadership roles did lead to a split, accelerating the rise of [[Black Power]] and the expulsion of whites from SNCC in 1966. Yet, while the summer was a 'bitter experience', it was a crucial catalyst that forced federal intervention, meaning its long-term achievements (Interpretation 1) ultimately outweighed its immediate failures.}}"
       }
@@ -5938,7 +5938,7 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3a": {
         "id": "p_2024_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the achievements of Martin Luther King in the civil rights movement? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the achievements of Martin Luther King in the civil rights movement? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Evaluate Source B (photograph of March on Washington, shows King's massive popularity, support from federal government, potential staging bias) and Source C (Bob Lucas interview, shows failure of Chicago Freedom Movement in 1966, divisions between Black and white activists, first-hand witness perspective) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing Martin Luther King's ability to mobilize massive, diverse public support and project national leadership during the civil rights movement. The photograph depicts King waving to a huge, peaceful crowd along the Lincoln Memorial reflecting pool, representing the scale and racial diversity of the March on Washington. </span> <span style="color: green;"> This utility is supported by my knowledge that the March on Washington in August 1963 attracted over 250,000 demonstrators and culminated in King's famous 'I Have a Dream' speech, which successfully pressured President Kennedy to support civil rights legislation and gained positive national publicity. </span> <span style="color: purple;"> The provenance of a photograph taken on the day of the march makes it highly useful as a primary visual record of the event's scale and optimistic mood. However, as a photograph, it is limited because it only captures a single moment of triumph and public harmony, omitting the behind-the-scenes political compromises and the ongoing segregationist hostility in the Deep South. </span>
 
@@ -5946,19 +5946,19 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3b": {
         "id": "p_2024_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the achievements of Martin Luther King in the civil rights movement. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the core disagreement: Interpretation 1 argues King achieved major successes (federal backing, Civil Rights Act 1964, Voting Rights Act 1965, Nobel Prize). Interpretation 2 argues King's achievements were limited and failed to change daily lives, particularly in northern cities like Chicago.",
         "model": "The main difference is that Interpretation 1 highlights King's [1[commitment to non-violent direct action]1] which won federal support and new laws. In contrast, Interpretation 2 argues that despite the progress, the [1[lives of many remained unchanged]1], particularly in northern cities where segregation persisted."
       },
       "q3c": {
         "id": "p_2024_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the achievements of Martin Luther King in the civil rights movement. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Reconcile the interpretations with the sources: Interpretation 1 is supported by Source B (the massive success and popularity of the March on Washington); Interpretation 2 is supported by Source C (the failure of the Chicago campaign and the rise of racial divisions).",
         "model": `The interpretations differ because the historians have relied on different sources. Interpretation 1 is supported by Source B, which shows King "waving to crowds" at the March on Washington, leading to the view that King's [1[commitment to non-violent direct action]1] won support and new laws. Conversely, Interpretation 2 is supported by Source C, which focuses on how King "failed to get improved living conditions" in Chicago, leading to the view that the [1[lives of many remained unchanged]1] in the North.`
       },
       "q3d": {
         "id": "p_2024_q3d",
-        "question": "How far do you agree with Interpretation 2 about the achievements of Martin Luther King in the civil rights movement? (16 marks)",
+        "question": "How far do you agree with Interpretation 2 about the achievements of Martin Luther King in the civil rights movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (Chicago housing agreement ignored by Mayor Daley, northern slums remained, legal changes didn't solve northern poverty, rise of Black Power) and evaluate against Interpretation 1 (landmark Civil Rights Act 1964, Voting Rights Act 1965, ending legal Jim Crow, mobilizing white house support).",
         "model": "I agree to a moderate extent with Interpretation 2 that King's achievements failed to change the daily lives of many Black Americans, particularly in the North. In [[1966]], King launched the [[Chicago Freedom Movement]] to combat housing discrimination. Although Mayor Daley signed an agreement to end segregation, the city authorities ignored it once King left, and housing conditions in the slums remained unchanged. As Bob Lucas notes in Source C, King [[failed to get improved living conditions]] in Chicago, and his departure exposed a wide split where Black activists asked whites to leave. This supports Interpretation 2's view that [1[little was actually achieved]1] in the North and [1[the lives of many remained unchanged]1].\n\nHowever, Interpretation 1 is also valid in emphasizing the monumental impact of King's Southern campaigns. King's commitment to non-violent direct action, as shown in the massive crowd at the March on Washington in Source B, attracted international support and led to the [[Civil Rights Act of 1964]] and the [[Voting Rights Act of 1965]]. This supports Interpretation 1's claim that King's [1[commitment to non-violent direct action]1] put pressure on the government to [1[end discrimination against Black Americans]1] and secured landmark laws.\n\n{{Overall, while the 1964 Act was a massive victory for social desegregation, the 1965 Voting Rights Act was the ultimate achievement because it gave Black Americans the political power to defend their rights. Without the vote, the social gains of 1964 could not be legally enforced or protected at the local level.}}"
       }
@@ -6007,7 +6007,7 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3a": {
         "id": "p_2025_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the escalation of US involvement in the conflict in Vietnam in the 1960s? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the escalation of US involvement in the conflict in Vietnam in the 1960s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Evaluate Source B (top-secret document 1961, shows Kennedy's early escalation via advisers, helicopters, and aid, highly reliable private source) and Source C (LBJ speech 1965, shows transition to ground combat forces up to 125,000 and draft increase, public speech justifying war) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing the early stages of US escalation in Vietnam under President Kennedy through military and economic advising. The document details that the USA authorized increased air support (helicopters), economic aid, training, and individual administrators/advisers to Diem's government. </span> <span style="color: green;"> This content is highly useful because it aligns with my knowledge that Kennedy increased the number of US military advisers from around 800 in 1961 to over 16,000 by 1963, and supplied helicopters to transport South Vietnamese troops, demonstrating a clear step towards direct involvement. </span> <span style="color: purple;"> The provenance of a top-secret government document from 1961 makes it extremely useful because it represents the actual, confidential policy decisions of the Kennedy administration at the beginning of the decade, revealing their hidden plans to shore up South Vietnam without the filter of public diplomacy. </span>
 
@@ -6015,19 +6015,19 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3b": {
         "id": "p_2025_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the escalation of US involvement in the conflict in Vietnam in the 1960s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the core disagreement: Interpretation 1 argues that President Kennedy's 1961 decisions were the key turning point in expanding the US role. Interpretation 2 argues that President Johnson was most responsible for escalating the war into an all-out fighting combat war.",
         "model": "The main difference is that Interpretation 1 argues that Kennedy's decisions in 1961 were a [1[key turning point]1] in expanding US involvement. In contrast, Interpretation 2 argues that President Johnson was [1[most responsible for escalating]1] the conflict into an all-out fighting war."
       },
       "q3c": {
         "id": "p_2025_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the escalation of US involvement in the conflict in Vietnam in the 1960s. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Link the interpretations to the sources: Interpretation 1 relies on Source B (the early commitments of advisers and aid under Kennedy); Interpretation 2 relies on Source C (Johnson's direct combat troop increases and draft escalation).",
         "model": `The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which lists early aid and "advisers for the South Vietnamese government", leading to the view that Kennedy's 1961 decisions were a [1[key turning point]1]. Conversely, Interpretation 2 is supported by Source C, which ordered troop deployments raising "fighting strength from 74,000 to 125,000 men", leading to the view that Johnson was [1[most responsible for escalating]1] the war into an all-out combat war.`
       },
       "q3d": {
         "id": "p_2025_q3d",
-        "question": "How far do you agree with Interpretation 2 about the escalation of US involvement in the conflict in Vietnam in the 1960s? (16 marks)",
+        "question": "How far do you agree with Interpretation 2 about the escalation of US involvement in the conflict in Vietnam in the 1960s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (Gulf of Tonkin Resolution 1964, Operation Rolling Thunder 1965, sending combat troops, draft system, Westmoreland strategy) and evaluate against Interpretation 1 (Kennedy's Green Berets, 16,000 advisers by 1963, Strategic Hamlets, chemical defoliants, Diem coup involvement).",
         "model": "I agree to a large extent with Interpretation 2 that President Johnson was the president most responsible for the combat escalation of the war. After the [[1964]] [[Gulf of Tonkin incident]], Johnson secured the Gulf of Tonkin Resolution, which gave him a blank check to wage war. As broadcast in Source C, Johnson ordered an additional Air Division to Vietnam, raising fighting strength from 74,000 to [[125,000]] men, and increased the number of men called up by the [[draft system]]. This transformed Vietnam from an advisory mission into an all-out combat war, supporting Interpretation 2's view that Johnson was [1[most responsible for escalating]1] the conflict into an [1[all-out fighting war]1].\n\nHowever, Interpretation 1 is also valid in identifying Kennedy's administration as the initial, critical turning point. As detailed in the top-secret 1961 document in Source B, Kennedy authorized [[increased air support]], helicopters, and military [[advisers for the South Vietnamese government]]. Under Kennedy, advisers rose from under 1,000 to over [[16,000]] by 1963, and he approved the use of chemical defoliants like [[Agent Orange]]. This supports Interpretation 1's argument that Kennedy's 1961 decisions were a [1[key turning point]1] that [1[dramatically expanded]1] the US role.\n\n{{Overall, while Kennedy made the crucial decisions that committed the US militarily (Interpretation 1), it was Johnson who took the decisive step of initiating a direct, large-scale American ground war (Interpretation 2). Until Johnson deployed combat troops and began bombing North Vietnam, the US role was theoretically advisory. Therefore, Interpretation 2 is the stronger explanation because Johnson's policies fundamentally changed the nature of the conflict into an American war.}}"
       }
@@ -6075,7 +6075,7 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3a": {
         "id": "mock_5_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the effectiveness of US search and destroy tactics versus Vietcong guerrilla tactics? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the effectiveness of US search and destroy tactics versus Vietcong guerrilla tactics? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Evaluate Source B (Senate Subcommittee report, impact on refugees, alienation of peasants) and Source C (Vietcong veteran interview, peasant anger, US soldiers' fear and firepower) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing the critical perspective within the US government regarding the counterproductive nature of US military tactics in Vietnam. The report highlights that "search-and-destroy operations and chemical defoliants" have created "hundreds of thousands of refugees" and are driving peasants "directly into the arms of the enemy." </span> <span style="color: green;"> This content's utility is supported by my knowledge that US search-and-destroy missions and chemical spraying under Operation Ranch Hand devastated the South Vietnamese countryside, displacing millions of peasants and destroying the 'hearts and minds' campaign, which confirms that the report accurately identifies how US tactics actively fueled the Vietcong insurgency. </span> <span style="color: purple;"> The provenance of a US Senate Subcommittee report in 1968 increases its usefulness because it is an official, self-critical government investigation. This provides a highly reliable, objective contemporary record of the strategic failures of US military operations from the perspective of US policymakers. </span>
 
@@ -6083,19 +6083,19 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3b": {
         "id": "mock_5_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the effectiveness of US search and destroy tactics versus Vietcong guerrilla tactics. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the disagreement: Interpretation 1 argues that US tactics like Search and Destroy were flawed and counterproductive because they alienated the South Vietnamese peasantry. In contrast, Interpretation 2 argues that Vietcong guerrilla tactics were the decisive factor in defeating the US by neutralizing their air superiority and wearing down morale.",
         "model": "The main difference is that Interpretation 1 argues that US tactics like Search and Destroy failed because they were counterproductive and [1[alienated the South Vietnamese peasantry]1]. In contrast, Interpretation 2 argues that the [1[Vietcong's guerrilla tactics were the decisive factor]1] because they neutralized American air superiority and wore down US morale."
       },
       "q3c": {
         "id": "mock_5_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the effectiveness of US search and destroy tactics versus Vietcong guerrilla tactics. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Link the interpretations to the sources: Interpretation 1 is supported by Source A/C (focusing on the destructive US tactics and peasant alienation); Interpretation 2 is supported by Source B (focusing on Vietcong tunnel and jungle cover strategies).",
         "model": "The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source A, which describes US troops burning down thatched huts out of frustration, leading to the view that US tactics [1[alienated the South Vietnamese peasantry]1]. Conversely, Interpretation 2 is supported by Source B, which outlines Vietcong tactics like using tunnels and jungle cover to neutralise US air power, leading to the view that [1[Vietcong's guerrilla tactics were the decisive factor]1]."
       },
       "q3d": {
         "id": "mock_5_q3d",
-        "question": "How far do you agree with Interpretation 2 about the reasons for the US failure to defeat the Vietcong? (16 marks)",
+        "question": "How far do you agree with Interpretation 2 about the effectiveness of US search and destroy tactics versus Vietcong guerrilla tactics? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (Vietcong booby traps, Cu Chi tunnels, ambush tactics, Ho Chi Minh Trail supply lines) and evaluate against Interpretation 1 (US Search and Destroy raids, Agent Orange chemical warfare, burning villages, failing to win hearts and minds, alienating peasants).",
         "model": "I agree to a large extent with Interpretation 2 that Vietcong guerrilla tactics were the primary reason for the US failure. The Vietcong successfully neutralized US air and technological superiority by fighting in close quarters\u2014what Source B calls [[cling to the enemy's belt]]\u2014and hiding in dense jungle canopy. They constructed over 250 miles of underground [[tunnels]] (e.g. Cu Chi) that protected them from heavy bombing, and deployed cheap but deadly booby traps that caused massive US casualties. As described in Source A, these tactics created constant paranoia, making soldiers feel they were [[fighting a shadow]]. This supports Interpretation 2's view that guerrilla tactics were the [1[decisive factor]1] that [1[neutralized American technological and air superiority]1] and wore down American morale.\n\nHowever, Interpretation 1 is also valid in arguing that flawed US tactics actively caused their own failure. The strategy of attrition relied on [[Search and Destroy]] missions which measured success in body counts rather than holding territory. These raids, along with the spraying of [[Agent Orange]] and Napalm, devastated the countryside and destroyed peasant crops. As Source A reports, US troops burned down villages out of frustration. This chemical warfare and destruction of villages alienated the South Vietnamese peasantry, driving them to support the Vietcong. This confirms Interpretation 1's view that US tactics were [1[fundamentally flawed]1] because they [1[alienated the South Vietnamese peasantry]1], making political victory impossible.\n\n{{Overall, while the brutality of US tactics (Interpretation 1) lost the political battle for hearts and minds, it was the military effectiveness of Vietcong guerrilla warfare (Interpretation 2) that created the stalemate in the first place. The Vietcong's ability to survive US firepower using tunnels and the Ho Chi Minh Trail forced the US into the destructive search-and-destroy tactics that ultimately destroyed their own political credibility.}}"
       }
@@ -6143,7 +6143,7 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3a": {
         "id": "mock_8_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the significance of the Birmingham Campaign (1963)? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the significance of the Birmingham Campaign (1963)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Evaluate Source B (MLK Letter from Birmingham Jail, explains philosophy of creative tension and direct action to force negotiations, reliable insider view) and Source C (Mayor Boutwell statement, claims protests are ill-timed outside agitation causing chaos, represents moderate white resistance) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for explaining the strategic philosophy of non-violent direct action during the Birmingham campaign. King explains that they did not create the tension, but rather brought it to the surface, and that direct action was necessary to create a "creative tension" that forces a community to negotiate. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that King and the SCLC deliberately chose Birmingham in 1963 to force integration after local merchants broke previous promises, showing that the letter accurately outlines their tactical intent. </span> <span style="color: purple;"> The provenance of a letter written by MLK while imprisoned in Birmingham Jail in April 1963 makes it extremely useful. As a key leader of the movement writing in the midst of the campaign, it represents an authentic, high-stakes defense of their methods against critics, although it naturally downplays any tactical divisions within the civil rights leadership. </span>
 
@@ -6151,19 +6151,19 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3b": {
         "id": "mock_8_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the significance of the Birmingham Campaign (1963). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the disagreement: Interpretation 1 argues Birmingham was a brilliant tactical victory that led directly to the Civil Rights Act of 1964, while Interpretation 2 argues its immediate successes on the ground were limited and provoked violent backlash.",
         "model": "The main difference is that Interpretation 1 views the Birmingham campaign as a [1[brilliant tactical victory]1] that successfully forced the federal government to draft the Civil Rights Act of 1964. In contrast, Interpretation 2 argues that its [1[immediate achievements on the ground were highly limited]1] and triggered a violent white backlash."
       },
       "q3c": {
         "id": "mock_8_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the significance of the Birmingham Campaign (1963). You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Link the interpretations to the sources: Interpretation 1 is supported by Source B (focusing on the national success of forcing negotiation/tension); Interpretation 2 is supported by Source C (focusing on local disruption, white resentment, and backlash).",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which states that direct action seeks to force a community that has refused to negotiate to "confront the issue", leading to the view that the campaign was a [1[brilliant tactical victory]1]. Conversely, Interpretation 2 is supported by Source C, which states that the marches caused "unnecessary chaos, hurting our local merchants", leading to the view that its [1[immediate achievements on the ground were highly limited]1].'
       },
       "q3d": {
         "id": "mock_8_q3d",
-        "question": "How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? (16 marks)",
+        "question": "How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 1 (provoked Bull Connor, television coverage, shocked Kennedy, draft of 1964 Civil Rights Act) and evaluate against Interpretation 2 (bombings of homes, Sixteenth Street Church bombing, slow pace of school integration in Birmingham, local agreement had little impact on poverty).",
         "model": "I agree to a large extent with Interpretation 1 that the Birmingham campaign was a highly significant victory that transformed the civil rights struggle. By using children in the marches, the SCLC provoked [[Bull Connor]] into deploying fire hoses and police dogs, as described in Source A's shocking report of water [[knocking them off their feet]]. The resulting television footage shocked the nation and put immense pressure on the federal government. President Kennedy declared that Birmingham had forced the administration to act, leading directly to his June 1963 address and the drafting of the Civil Rights Bill. This supports Interpretation 1's claim that the campaign was a [1[brilliant tactical victory]1] that forced the drafting of the [[Civil Rights Act of 1964]].\n\nHowever, Interpretation 2 is also valid in highlighting that the immediate local impact was limited and met with violent resistance. The actual local desegregation agreement was minimal, and department store integration did not solve systemic housing and employment poverty. As Source C shows, white residents resented the marches, calling them [[ill-timed]] and causing [[unnecessary chaos]]. Furthermore, the campaign sparked a wave of segregationist violence, culminating in the KKK bombing of the [[Sixteenth Street]] Baptist Church in September 1963, which killed four young girls. This confirms Interpretation 2's view that local progress was [1[highly limited]1] and provoked [1[violent white backlash]1].\n\n{{Overall, while the local gains in Birmingham itself were slow and met with white terror (Interpretation 2), the campaign's national significance was monumental. It succeeded because it nationalized the crisis, turning civil rights into a moral issue that forced the federal government to pass the Civil Rights Act of 1964 (Interpretation 1).}}"
       }
@@ -6211,7 +6211,7 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3a": {
         "id": "mock_9_q3a",
-        "question": "How useful are Sources B and C for an enquiry into the reasons for the introduction of the Voting Rights Act of 1965? (8 marks)",
+        "question": "How useful are Sources B and C for an enquiry into the reasons for the introduction of the Voting Rights Act of 1965? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Assess Source B (LBJ joint address, explains federal moral stance post-Selma, highlights historical significance, official public speech to persuade Congress) and Source C (John Lewis first-hand account of bridge assault, shows police brutality as the catalyst, personal memoir showing direct experience) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for explaining the political and moral pressure on the federal government to introduce the Voting Rights Act of 1965. President Johnson explicitly compares the crisis at Selma to historic turning points like "Lexington and Concord," declaring it "deadly wrong" to deny Black citizens the right to vote. </span> <span style="color: green;"> This content is highly useful because it is supported by my knowledge that the violence in Selma shocked the nation, giving Johnson the political mandate to introduce the Voting Rights Act and deliver his famous "We Shall Overcome" speech to Congress in March 1965, which confirms that the address represents the official federal commitment to intervene. </span> <span style="color: purple;"> The provenance of an address to a joint session of Congress on 15 March 1965 makes the source extremely useful because it captures the direct legislative reaction of the presidency at the absolute peak of the Selma crisis. However, it is limited because it presents Johnson's actions as a purely moral decision, downplaying his administration's earlier political reluctance to introduce voting rights legislation until forced by grassroots pressure. </span>
 
@@ -6219,19 +6219,19 @@ Details: 'If we forgot these rules, the sheriff or a white mob would teach us a 
       },
       "q3b": {
         "id": "mock_9_q3b",
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2? (4 marks)",
+        "question": "Study Interpretations 1 and 2. They give different views about the reasons for the introduction of the Voting Rights Act of 1965. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Identify the core disagreement: Interpretation 1 argues that the landmark civil rights laws were a triumph of presidential leadership achieved through Johnson's political skill. In contrast, Interpretation 2 argues that the legislation was a prize won through the blood and courage of the grassroots movement which forced reluctant presidents to act.",
         "model": "The main difference is that Interpretation 1 argues that the landmark civil rights laws were a [1[triumph of presidential leadership]1] achieved through Johnson's political skill. In contrast, Interpretation 2 argues that the legislation was a [1[prize won through the blood and courage of the grassroots movement]1] which forced reluctant presidents to act."
       },
       "q3c": {
         "id": "mock_9_q3c",
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you. (4 marks)",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for the introduction of the Voting Rights Act of 1965. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Link the interpretations to the sources: Interpretation 1 relies on Source B (focusing on Johnson's presidential leadership and congressional address); Interpretation 2 relies on Source C (focusing on Lewis's account of grassroots activists being beaten on the bridge to create a crisis).",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which show President Johnson taking command in his speech and declaring that it is "deadly wrong" to deny the vote, leading to the view that the laws were a [1[triumph of presidential leadership]1]. Conversely, Interpretation 2 is supported by Source C, which details how the grassroots marchers faced police brutality on the bridge to "shock the conscience of the nation", leading to the view that the legislation was a [1[prize won through the blood and courage of the grassroots movement]1].'
       },
       "q3d": {
         "id": "mock_9_q3d",
-        "question": "How far do you agree with Interpretation 1 about the role of Presidents Kennedy and Johnson in passing the Civil Rights Act (1964) and Voting Rights Act (1965)? (16 marks)",
+        "question": "How far do you agree with Interpretation 1 about the reasons for the introduction of the Voting Rights Act of 1965? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 1 (LBJ's political skill, breaking Dixiecrat filibusters, Great Society vision, manipulating JFK's legacy) and evaluate against Interpretation 2 (grassroots pressure in Birmingham and Selma forcing presidential action, presidents' initial caution and reluctance).",
         "model": `I agree to a large extent with Interpretation 1 because President Johnson's political skill was essential to get the bills passed through a divided Congress. The interpretation argues that the laws were a "triumph of presidential leadership" due to "President Johnson's masterful political skills". From my own knowledge, I know this to be accurate; Johnson was a veteran Southern politician from Texas who knew exactly how to bully and persuade opposing politicians. When Dixiecrat politicians attempted to block the 1964 Civil Rights Act using a filibuster, it was LBJ's political mastery that gathered enough Republican support to break it. Furthermore, LBJ brilliantly manipulated "Kennedy's tragic legacy" by explicitly telling Congress that passing the 1964 Act was the only way to truly honour the assassinated president's memory, as shown in Source B's focus on the moral authority of the presidency. This supports Interpretation 1's view that these acts were a [1[triumph of presidential leadership]1] due to Johnson's [1[masterful political skills]1].
 
@@ -6280,24 +6280,24 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
         "model": "\u201COne reason why school desegregation met with significant opposition in the years 1954\u201357 was the deep-seated resistance to federal intervention in Southern states.\u201D The 1954 [[Brown v. Topeka]] Supreme Court ruling overturned [[Plessy]]'s separate but equal doctrine, which angered segregationists who believed education was a state matter. {{Therefore, this anger led to the creation of White Citizens Councils and a unified political resistance, slowing desegregation efforts.}}\n\n\u201CA second reason why school desegregation met with significant opposition was the active resistance of Southern political leaders.\u201D In 1957, Governor [[Faubus]] of Arkansas deployed the National Guard to block the [[Little Rock Nine]] from entering Central High School, choosing to defy federal law to appeal to white voters. {{Therefore, state-level opposition made integration impossible without federal military escort, hardening public defiance.}}\n\n\u201CA third reason why school desegregation met with significant opposition was the threat of mob violence and grassroots terror organized by white segregationists.\u201D Following the Brown ruling, the [[KKK]] experienced a resurgence, burning crosses and holding rallies, while [[White Citizens' Councils]] mobilized local communities. In September 1957, when the [[Little Rock Nine]] attempted to enter Central High School, an angry white mob of over 1,000 people surrounded the school, shouting abuse and threatening to lynch [[Elizabeth Eckford]] and the other children. {{Therefore, this extreme grassroots hostility met desegregation with opposition because it made school integration physically dangerous, deterring local school boards from integrating without armed protection.}}"
       },
       "q3a": {
-        "question": "How useful are Sources B and C for an enquiry into the Little Rock High School crisis (1957)?",
+        "question": "How useful are Sources B and C for an enquiry into the Little Rock High School crisis (1957)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Assess Source B (first-hand terror of Elizabeth Eckford, mob hostility, personal experience) and Source C (President Eisenhower's radio address, reason for sending federal troops, duty to enforce federal law) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for showing the extreme racial hostility and physical danger faced by the Little Rock Nine. Elizabeth Eckford describes the state guards raising their "bayonet" to block her, and a hostile white mob following her screaming "Lynch her! Lynch her!". </span> <span style="color: green;"> This content's utility is supported by my knowledge that on 4 September 1957, Governor Orval Faubus deployed the Arkansas National Guard to block the nine Black students from entering Central High School, exposing them to angry white segregationist mobs, which confirms the source's accurate representation of the terror faced by the students. </span> <span style="color: purple;"> The provenance makes it highly useful because it is a first-hand account by Elizabeth Eckford, one of the Little Rock Nine, recalling her direct experience. While it represents a highly personal and emotional memory of a terrifying event, which naturally focuses on her individual fear, it provides an invaluable and authentic record of the grassroots white resistance to school integration. </span>
 
 <span style="color: blue;"> Source C is highly useful for understanding the federal government's response and the reasons for direct presidential intervention in the Little Rock crisis. President Eisenhower states that "mob rule... cannot be allowed to override the decisions of our courts" and explains that he has sent the "101st Airborne Division" to guarantee the safety of the nine students. </span> <span style="color: green;"> This is supported by my knowledge that Governor Faubus's open defiance of federal court desegregation orders forced a reluctant President Eisenhower to take the unprecedented step of sending 1,000 elite federal troops to protect the Black students, which confirms that the speech shows the official rationale for federal intervention. </span> <span style="color: purple;"> The provenance of a national radio address on 24 September 1957 increases its usefulness because it shows how the President officially justified the use of military force against a state governor to the American public. However, it is limited as a public political address designed to present Eisenhower as a decisive defender of the law, downplaying his initial reluctance to support the Brown decision. </span>`
       },
       "q3b": {
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "question": "Study Interpretations 1 and 2. They give different views about the Little Rock High School crisis (1957). What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Contrast Interpretation 1's view of Little Rock as a huge victory showing federal willingness to enforce desegregation with Interpretation 2's focus on the limitations of federal power and hardening white resistance.",
         "model": "The main difference is that Interpretation 1 views the crisis as a [1[huge victory for the civil rights movement]1] that proved the federal government's willingness to enforce desegregation. In contrast, Interpretation 2 argues that the events showed the [1[severe limitations of federal intervention]1] because integration relied on military protection and prompted Faubus to close the schools."
       },
       "q3c": {
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the Little Rock High School crisis (1957). You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Explain how they focus on different aspects (Eisenhower's deployment of the 101st Airborne vs Faubus closing the schools) or rely on different sources (Source C's federal deployment vs Source B's mob hostility).",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which states that Eisenhower "sent units of the 101st Airborne Division" to enforce desegregation, leading to the view that the crisis was a [1[huge victory for the civil rights movement]1]. Conversely, Interpretation 2 is supported by Source B, which states that when she tried to pass, the guard "raised his bayonet", leading to the view that the events showed the [1[severe limitations of federal intervention]1].'
       },
       "q3d": {
-        "question": "How far do you agree with Interpretation 2 about the Little Rock High School crisis (1957)?",
+        "question": "How far do you agree with Interpretation 2 about the Little Rock High School crisis (1957)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 2 (Governor Faubus closing schools in 1958, slow integration in South, need for constant military guards) and evaluate against Interpretation 1 (101st Airborne sent, federal authority asserted, media coverage showing southern racism).",
         "model": "I agree to a moderate extent with Interpretation 2 that the Little Rock crisis showed the limitations of federal power. Although the [[Little Rock Nine]] entered the school, they required daily protection from armed soldiers of the [[101st Airborne Division]] due to constant harassment. As Source B details, when Elizabeth Eckford tried to enter, the guards [[raised his bayonet]] and a hostile mob followed her. Furthermore, in 1958, Governor [[Faubus]] closed all public high schools in Little Rock for a year to prevent integration. Across the Deep South, integration remained extremely slow, with less than [[1%]] of Black students attending integrated schools by 1960. This supports Interpretation 2's view that the events showed the [1[severe limitations of federal intervention]1] and that [1[white resistance hardened]1].\n\nHowever, Interpretation 1 is also valid in arguing that Little Rock was a monumental victory. As broadcast in Source C, President [[Eisenhower]] declared that [[mob rule in Little Rock cannot be allowed]] to override the courts, and federalised the National Guard. By deploying elite troops, Eisenhower successfully asserted federal authority over state defiance. The crisis was broadcast on television, showing the world the dignity of the Black students compared to the hatred of the white mob. This media coverage shocked the nation and won widespread sympathy, confirming Interpretation 1's view that it was a [1[huge victory for the civil rights movement]1] that proved the government's willingness to use [1[military force to enforce desegregation]1].\n\n{{Overall, while the immediate local aftermath of Little Rock demonstrated the stubbornness of white resistance and the limits of enforcement (Interpretation 2), the crisis was a crucial turning point. It established the precedent that the federal government would use military force to defend civil rights, making it a vital political victory that paved the way for future federal intervention (Interpretation 1).}}"
       }
@@ -6342,22 +6342,22 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
         "model": "\u201COne reason why opposition to the civil rights movement was successful in delaying progress in the years 1954\u201360 was the unified political defiance of Southern leaders.\u201D In 1956, 101 Southern members of Congress signed the [[Southern Manifesto]], which accused the Supreme Court of abusing its power in the Brown ruling and urged states to resist desegregation. {{Therefore, this political defiance legitimized state-level resistance, encouraging Southern governors to pass laws closing public schools rather than desegregating them.}}\n\n\u201CA second reason why opposition to the civil rights movement was successful in delaying progress was the use of violence and physical intimidation.\u201D The [[KKK]] experienced a revival, using bombings, beatings, and threats of violence against civil rights activists. For example, during the Montgomery Bus Boycott, the homes of leaders were bombed, and local registrars used poll taxes and literacy tests backed by economic threats to keep Black voter registration extremely low. {{Therefore, this climate of terror and systemic disenfranchisement intimidated many Black citizens, successfully slowing the growth of grassroots campaigns.}}\n\n\u201CA third reason why opposition to the civil rights movement was successful in delaying progress was the systemic economic intimidation enforced by the [[White Citizens' Councils]].\u201D Formed in 1954 in response to the Brown ruling, these councils consisted of prominent white local businessmen, bankers, and politicians. They targeted civil rights supporters by evicting Black tenants, denying bank loans and mortgages to Black buyers, and firing Black workers who signed school integration petitions. {{Therefore, this economic warfare delayed progress because it threatened the direct livelihood of Black families, making the cost of participation in civil rights activism financially ruinous for many ordinary citizens.}}"
       },
       "q3a": {
-        "question": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s?",
+        "question": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the late 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Assess Source B (political resistance of Southern congressmen, constitutional arguments) and Source C (economic warfare of White Citizens Councils, grassroots white resistance) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for demonstrating the politically organized, constitutional nature of Southern resistance. Southern congressmen assert that the Supreme Court's desegregation rulings are a \\"clear abuse of judicial power\\" and pledge to use \\"all lawful means to bring about a reversal\\". </span> <span style="color: green;"> This is supported by my knowledge that 101 Southern politicians signed the Southern Manifesto in 1956, which encouraged states to resist desegregation (known as 'Massive Resistance'), showing how opposition was led by the political elite. </span> <span style="color: purple;"> The provenance of the Southern Manifesto increases its usefulness because it is an official, public declaration signed by nearly all Southern members of Congress. While it is a piece of political propaganda designed to rally Southern voters and pressure the courts, it is highly useful for showing how desegregation was legally and politically challenged at the highest levels of government. </span>\\n\\n<span style="color: blue;"> Source C is highly useful for showing the local, economic methods of opposition used by segregationists. The speaker boasts that \\"we hold the economic power\\" and threatens Black citizens with being \\"without jobs, without credit... and without homes\\" if they demand integration. </span> <span style="color: green;"> This content's utility is supported by my knowledge that White Citizens Councils were formed throughout the South in the mid-1950s, using economic coercion, firings, and mortgage foreclosures to ruin civil rights activists financially, which verifies the speaker's threats. </span> <span style="color: purple;"> The provenance of a speech at a public segregationist rally in 1956 makes it useful for revealing the public rhetoric, intimidation tactics, and confidence of local segregationist organizations. While it is a highly partisan and aggressive speech designed to mobilize opposition and terrorize Black activists, it is very useful for capturing the grassroots economic warfare used to defend segregation. </span>`
       },
       "q3b": {
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "question": "Study Interpretations 1 and 2. They give different views about the nature of opposition to the civil rights movement in the late 1950s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Contrast Interpretation 1's view of opposition as highly effective in delaying integration with Interpretation 2's view that it backfired, leading to federal intervention and the Civil Rights Acts.",
         "model": "The main difference is that Interpretation 1 argues that the opposition to civil rights was highly successful, stating that it [1[effectively delayed integration for years]1] through a combination of political resistance and economic terror. In contrast, Interpretation 2 argues that the opposition ultimately failed to halt progress, stating that its extreme resistance [1[actually backfired]1] and forced the federal government to pass the Civil Rights Acts of 1957 and 1960."
       },
       "q3c": {
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the nature of opposition to the civil rights movement in the late 1950s. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Explain how they focus on different aspects of resistance (the effectiveness of economic terror and political fronts vs the passage of federal laws) or rely on different sources (Source C's economic threats vs Source B's constitutional manifesto).",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source C, which details how White Citizens Councils threatened to leave Black citizens \\"without jobs\\" and \\"without homes\\", leading to the view that opposition was highly [1[politically entrenched, successfully stalling desegregation]1]. Conversely, Interpretation 2 is supported by Source B, which show that despite the Southern politicians promising to resist \\"judicial power\\", the Federal government was forced to intervene, leading to the view that the opposition [1[ultimately failed to halt civil rights progress]1].'
       },
       "q3d": {
-        "question": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s?",
+        "question": "How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 1 (White Citizens Councils growth, KKK violence, very low integration percentage in South) and evaluate against Interpretation 2 (Civil Rights Acts of 1957 and 1960 passed, Eisenhower sending troops to Little Rock).",
         "model": "I agree to a large extent with Interpretation 1 that the opposition was highly effective in stalling progress. White Citizens Councils grew to over [[250,000]] members, unleashing economic terror that devastated Black activists' livelihoods. The [[KKK]] was revived, committing bombings and lynchings. Southern states implemented 'Massive Resistance', passing laws to close integrated schools. As a result, by 1960, less than [[1%]] of Southern Black students attended desegregated schools. This supports Interpretation 1's view that local opposition was [1[highly organized and politically entrenched]1] and [1[effectively delayed integration for years]1].\\n\\nHowever, Interpretation 2 is also valid in noting that opposition backfired politically. The extreme obstruction by Southern leaders forced a reluctant President [[Eisenhower]] to introduce the [[1957]] [[Civil Rights Act]], the first federal civil rights legislation since Reconstruction, followed by the [[1960]] Act. While these acts were politically weak and only raised Southern Black voter registration by [[3%]], they established the crucial precedent of federal intervention. Defiance at Little Rock forced Eisenhower to deploy the [[101st Airborne Division]], proving that local resistance could trigger federal military force, confirming Interpretation 2's view that opposition [1[actually backfired]1] and prompted [1[federal voting rights protection]1].\\n\\n{{Overall, while the political backlash (Interpretation 2) laid the legal groundwork for future intervention, Interpretation 1 is more convincing for the late 1950s. On the ground, the combination of state resistance, economic terror, and white violence successfully nullified federal rulings, ensuring that segregation remained the daily reality for the vast majority of Southern Black Americans.}}"
       }
@@ -6402,22 +6402,22 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
         "model": "\u201COne reason why the civil rights movement faced growing limitations in the years 1965\u201375 was the shift in focus to deep-seated economic and housing inequalities in Northern cities, which faced intense white resistance.\u201D In 1966, Martin Luther King Jr. launched the [[Chicago Freedom Movement]] to challenge discrimination in housing, education, and employment. However, when activists marched through white neighborhoods like Cicero, they were met by violent white mobs throwing bricks and bottles, and Mayor Richard Daley reneged on agreements once King left the city. {{Therefore, this Northern backlash delayed progress because it proved that informal, de facto segregation and entrenched white racism in the North were much harder to dismantle than Southern de jure segregation, leaving ghetto conditions unchanged.}}\\n\\n\u201CA second reason why the civil rights movement struggled to achieve progress was the findings and subsequent neglect of the [[Kerner Commission]] in 1968.\u201D Appointed by President Johnson to investigate the causes of urban riots, the commission concluded that the primary cause of violence was systemic white racism, warning that America was split into \u201Ctwo societies, one Black, one white - separate and unequal.\u201D Although the report recommended massive federal investment in housing, jobs, and education to rebuild inner-city communities, Johnson largely rejected the findings due to the soaring cost of the Vietnam War and political backlash. {{Therefore, the government's failure to act on these findings delayed progress because it left the root economic causes of Black frustration unresolved, leading to persistent poverty and inequality in urban areas.}}\\n\\n\u201CA third reason why progress became limited after 1965 was the fragmentation of the civil rights coalition following the assassination of Martin Luther King Jr.\u201D The assassination of King in Memphis in [[1968]] triggered riots in over 100 cities, demonstrating the deep anger of Black Americans but also alienating white moderates who feared urban violence. SCLC's subsequent initiatives, such as the [[Poor People's Campaign]], failed to secure federal reforms due to leadership struggles under Ralph Abernathy and the rise of radical groups like the Black Panthers. {{Therefore, the loss of unified, non-violent leadership and the splintering of the movement delayed progress because it destroyed the broad political coalition needed to pass further major federal civil rights legislation.}}"
       },
       "q3a": {
-        "question": "How useful are Sources B and C for an enquiry into the limitations of civil rights progress in the years 1968\u201375?",
+        "question": "How useful are Sources B and C for an enquiry into the limitations of civil rights progress in the years 1968\u201375? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
         "clue": "Assess Source B (activist's perspective on the limits of the Fair Housing Act, redlining, bank lending, suburban segregation) and Source C (Justice Department data on achievements in voting vs difficulties in housing enforcement and school busing) for usefulness.",
         "model": `<span style="color: blue;"> Source B is highly useful for demonstrating the local, grassroots reality and limitations of the Fair Housing Act of 1968. The activist explains that despite the law, real estate agents used "redlining", banks denied mortgages, and school boards gerrymandered zones, leaving suburbs white and Black families trapped in underfunded ghettos by 1975. </span> <span style="color: green;"> This utility is supported by my knowledge that the Fair Housing Act was difficult to enforce because it relied on individuals filing lawsuits to prove discrimination, allowing practices like redlining and de facto housing segregation to persist, which confirms the source's claims about the limits of legislation. </span> <span style="color: purple;"> The provenance of a memoir by a civil rights activist published in 1980 increases its usefulness because it provides a reflective, first-hand account of the disappointment felt by activists who saw legal victories fail to translate into social and economic equality. Although it represents a personal and disappointed viewpoint, it accurately reflects the structural barriers that remained in Northern cities. </span>\\n\\n<span style="color: blue;"> Source C is highly useful for understanding the official government perspective on the progress and difficulties in enforcing civil rights laws. The report highlights legal and political achievements, such as a "fivefold increase in Black elected officials in the South", but admits to "severe challenges in enforcing the Fair Housing Act" and local resistance to "busing for school integration", showing that de facto segregation was resistant to legal action. </span> <span style="color: green;"> This is supported by my knowledge that school busing programs\u2014such as those in Boston in 1974\u2014provoked violent protests by white residents who opposed federal court integration orders, demonstrating the intense local resistance to integration. </span> <span style="color: purple;"> The provenance of an official Department of Justice report in 1974 makes it highly useful as a reliable source of statistical progress and legal enforcement records. While it is an official government document that may seek to present federal efforts in a positive light, its candid admission of failure to enforce housing laws and integration makes it a very credible record of the limits of federal power. </span>`
       },
       "q3b": {
-        "question": "What is the main difference between Interpretation 1 and Interpretation 2?",
+        "question": "Study Interpretations 1 and 2. They give different views about the limitations of civil rights progress in the years 1968\u201375. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
         "clue": "Contrast Interpretation 1's view that the civil rights movement failed to solve economic divisions and urban poverty with Interpretation 2's focus on substantial gains in political representation and employment through affirmative action.",
         "model": "The main difference is that Interpretation 1 argues that by 1975, the civil rights movement had [1[failed to conquer the economic division of the nation]1] and did little to improve the lives of the urban poor. In contrast, Interpretation 2 argues that the progress made by 1975 was [1[substantial and irreversible]1], emphasizing significant achievements in political representation, voting rights, and affirmative action."
       },
       "q3c": {
-        "question": "Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You can use Sources B and C to help you.",
+        "question": "Suggest one reason why Interpretations 1 and 2 give different views about the limitations of civil rights progress in the years 1968\u201375. You can use Sources B and C to help explain your answer. (4 marks)",
         "clue": "Explain how they focus on different aspects of civil rights progress (economic and housing segregation in Northern ghettos vs political representation and voting registration in the South) or rely on different sources (Source B's focus on redlining and ghetto schools vs Source C's statistics on elected officials).",
         "model": 'The interpretations differ because the historians have given weight to different sources. Interpretation 1 is supported by Source B, which details how "suburbs remained almost entirely white", leading to the view that the movement [1[did little to improve the lives of the urban poor]1]. Conversely, Interpretation 2 is supported by Source C, which highlights how the Voting Rights Act resulted in a "fivefold increase in Black elected officials", leading to the view that the progress made was [1[substantial and irreversible]1].'
       },
       "q3d": {
-        "question": "How far do you agree with Interpretation 1 about the limitations of civil rights progress by 1975?",
+        "question": "How far do you agree with Interpretation 1 about the limitations of civil rights progress in the years 1968\u201375? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)",
         "clue": "A balanced essay. Support Interpretation 1 (persistence of de facto school segregation, redlining, rejection of the Kerner Report recommendations, MLK's failure in Chicago) and evaluate against Interpretation 2 (Voting Rights Act success, surge in Black elected officials, affirmative action, Fair Housing Act legal precedent).",
         "model": "I agree to a large extent with Interpretation 1 that the civil rights movement faced severe limitations and failed to bridge the economic divide by 1975. Despite the passage of the Fair Housing Act, de facto segregation remained the norm in Northern cities. As Source B details, real estate agents used [[redlining]] and banks refused mortgages to keep the suburbs white. MLK's [[Chicago Freedom Movement]] of 1966 failed to achieve its housing integration goals due to intense white backlash in suburbs like [[Cicero]] and political obstruction by Mayor Daley. Furthermore, the [[Kerner Commission]]'s 1968 warning that America was splitting into [[two societies, separate and unequal]] was ignored, as President Johnson refused to fund its recommended urban welfare programs due to the costs of the [[Vietnam War]]. Consequently, by 1975, Black youth unemployment remained extremely high, proving Interpretation 1's view that legal gains [1[did little to improve the lives of the urban poor]1] and failed to resolve [1[economic division]1].\\n\\nHowever, Interpretation 2 is also valid in emphasizing that the political and social status of Black Americans was permanently transformed. The Voting Rights Act of 1965 enabled millions of Black citizens to vote, leading to a massive increase in Black political representation. By 1974, as shown in Source C, there was a [[fivefold increase in Black elected officials]], including the election of Black mayors in major cities like Detroit and Atlanta. Furthermore, [[affirmative action]] policies introduced under Johnson and Nixon opened up opportunities in higher education and white-collar employment, helping to grow a Black middle class. Thus, while economic equality was not fully realized, the gains in democratic rights and representation were, as Interpretation 2 states, [1[substantial and irreversible]1] and ended the era of [1[legal segregation]1].\\n\\n{{Overall, Interpretation 1 is more convincing. While the civil rights movement successfully dismantled de jure segregation in the South and created a new class of Black political leaders (Interpretation 2), the structural economic inequalities of the ghettos remained entrenched. The persistence of housing redlining, de facto school segregation, and high poverty rates meant that by 1975, the daily reality for the majority of working-class Black Americans was still one of segregation and economic neglect.}}"
       }
@@ -7550,10 +7550,10 @@ Source E is highly useful for showing the direct police criminalization of peace
           "content": '"While politicians spoke of constitutional law, the real defense of segregation lay in raw, unchecked violence. The KKK and local vigilante mobs terrorized Black communities. It was the threat of the bomb, the rope, and the economic boycott that truly kept desegregation from happening."'
         },
         "questions": {
-          "q3a": "How useful are Sources B and C for an enquiry into the nature of opposition to the civil rights movement in the 1950s? (8 marks)",
-          "q3b": "Study Interpretations 1 and 2. They give different views about the opposition to the civil rights movement. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
-          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
-          "q3d": "How far do you agree with Interpretation 2 about the opposition to the civil rights movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+          "q3a": "How useful are Sources B and C for an enquiry into the opposition to the civil rights movement in the 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
+          "q3b": "Study Interpretations 1 and 2. They give different views about the opposition to the civil rights movement in the 1950s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views about the opposition to the civil rights movement in the 1950s. You can use Sources B and C to help explain your answer. (4 marks)",
+          "q3d": "How far do you agree with Interpretation 2 about the opposition to the civil rights movement in the 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
         },
         "sentenceStarters": [
           { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into opposition to civil rights because it shows..." },
@@ -8607,10 +8607,10 @@ Source E is highly useful for showing how Black Power and militancy were institu
           "content": '"The urban riots were not political protests but class-based looting sprees. They were carried out by young, low-income males who took advantage of police hesitation to vandalize property and steal consumer goods. Framing these destructive acts as political rebellion is an academic myth."'
         },
         "questions": {
-          "q3a": "How useful are Sources B and C for an enquiry into the causes of the 1960s urban riots? (8 marks)",
+          "q3a": "How useful are Sources B and C for an enquiry into the causes of the 1960s urban riots? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
           "q3b": "Study Interpretations 1 and 2. They give different views about the causes of the 1960s urban riots. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
-          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
-          "q3d": "How far do you agree with Interpretation 1 about the causes of the 1960s urban riots? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views about the causes of the 1960s urban riots. You can use Sources B and C to help explain your answer. (4 marks)",
+          "q3d": "How far do you agree with Interpretation 1 about the causes of the 1960s urban riots? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
         },
         "sentenceStarters": [
           { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the causes of the riots because it shows..." },
@@ -10602,10 +10602,10 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
           "content": `"The US failure was inevitable because they were fighting a nationalist movement that was willing to accept any human cost to win. General Westmoreland's strategy of attrition was a failure because the communists replaced their losses faster than the US could kill them, and the corrupt Saigon regime never had the loyalty of the people."`
         },
         "questions": {
-          "q3a": "How useful are Sources B and C for an enquiry into the reasons for US failure in the Vietnam War? (8 marks)",
-          "q3b": "Study Interpretations 1 and 2. They give different views about the reasons for US failure in Vietnam. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
-          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)",
-          "q3d": "How far do you agree with Interpretation 2 about the reasons for US failure in the Vietnam War? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 SPaG)"
+          "q3a": "How useful are Sources B and C for an enquiry into the reasons for US failure in the Vietnam War? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
+          "q3b": "Study Interpretations 1 and 2. They give different views about the reasons for US failure in the Vietnam War. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for US failure in the Vietnam War. You can use Sources B and C to help explain your answer. (4 marks)",
+          "q3d": "How far do you agree with Interpretation 2 about the reasons for US failure in the Vietnam War? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
         },
         "sentenceStarters": [
           { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the reasons for US failure in Vietnam because it shows..." },
@@ -13714,7 +13714,7 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
       id: "mock_random_" + Date.now(),
       title: "Random Mock Exam (Paper 3)",
       year: "Mock",
-      enquiryTopic: selectedQ3.questiona.replace("How useful are Sources B and C for an enquiry into ", "").replace("?", ""),
+      enquiryTopic: selectedQ3.enquiryTopic || selectedQ3.questiona.replace("How useful are Sources B and C for an enquiry into ", "").split("?")[0].trim(),
       sourceA: selectedQ1.sourceA,
       sourceB: selectedQ3.sourceB,
       sourceC: selectedQ3.sourceC,
@@ -14210,72 +14210,13 @@ ${cleanBrackets(paper.q3d.model)}
       btnPrintSheet.addEventListener("click", () => {
         AudioEngine.play("click");
         const mode = document.getElementById("print-exam-mode").value;
-        const newWin = window.open("", "_blank");
-        if (!newWin) {
-          alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-          return;
+        const html2 = generatePastPaperHtml(paper, mode);
+        const printArea = document.getElementById("print-area");
+        if (printArea) {
+          printArea.innerHTML = html2;
         }
-        newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Generating Past Paper...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              border-left-color: #10b981;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Past Paper...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling question layout, please wait.</p>
-        </body>
-        </html>
-      `);
-        newWin.document.close();
-        try {
-          const html2 = generatePastPaperHtml(paper, mode);
-          const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 500);
-            });
-          <\/script>
-        `;
-          const htmlWithPrint = html2.replace("</body>", `${autoPrintScript}</body>`);
-          newWin.document.open();
-          newWin.document.write(htmlWithPrint);
-          newWin.document.close();
-        } catch (err) {
-          console.error("Failed to generate past paper:", err);
-          newWin.close();
-          alert("An error occurred while compiling the past paper.");
-        }
+        AudioEngine.play("success");
+        window.print();
       });
     }
     const btnWordSheet = document.getElementById("btn-word-exam-sheet");
@@ -14300,32 +14241,58 @@ ${cleanBrackets(paper.q3d.model)}
       </div>
     `;
     }
-    const cleanQuestionText = questionText.replace(/\(\d+\s*marks?\)/gi, "").trim();
+    let cleanQuestionText = questionText.replace(/\(\d+\s*marks?\)/gi, "").trim();
+    const instructionsToStrip = [
+      "Explain your answer, using Sources B and C and your own knowledge of the historical context.",
+      "Explain your answer, using details from both interpretations.",
+      "Explain your answer, using both interpretations and written sources.",
+      "Explain your answer, using both interpretations and your own knowledge of the historical context.",
+      "Explain your answer, using both interpretations and your own knowledge of the historical context",
+      "You can use Sources B and C to help explain your answer.",
+      "You can use Sources B and C to help explain your answer",
+      "You can use Sources B and C to help you."
+    ];
+    let detectedInstruction = "";
+    for (const inst of instructionsToStrip) {
+      if (cleanQuestionText.includes(inst)) {
+        cleanQuestionText = cleanQuestionText.replace(inst, "").replace(/\s+/g, " ").trim();
+        detectedInstruction = inst;
+        break;
+      }
+    }
     let instructionHTML = "";
-    if (qId.endsWith("_q3a")) {
+    if (detectedInstruction) {
       instructionHTML = `
       <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using Sources B and C and your own knowledge of the historical context.
+        ${detectedInstruction}
       </p>
     `;
-    } else if (qId.endsWith("_q3b")) {
-      instructionHTML = `
-      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using details from both interpretations.
-      </p>
-    `;
-    } else if (qId.endsWith("_q3c")) {
-      instructionHTML = `
-      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using both interpretations and written sources.
-      </p>
-    `;
-    } else if (qId.endsWith("_q3d")) {
-      instructionHTML = `
-      <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
-        Explain your answer, using both interpretations and your own knowledge of the historical context.
-      </p>
-    `;
+    } else {
+      if (qId.endsWith("_q3a")) {
+        instructionHTML = `
+        <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+          Explain your answer, using Sources B and C and your own knowledge of the historical context.
+        </p>
+      `;
+      } else if (qId.endsWith("_q3b")) {
+        instructionHTML = `
+        <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+          Explain your answer, using details from both interpretations.
+        </p>
+      `;
+      } else if (qId.endsWith("_q3c")) {
+        instructionHTML = `
+        <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+          Explain your answer, using both interpretations and written sources.
+        </p>
+      `;
+      } else if (qId.endsWith("_q3d")) {
+        instructionHTML = `
+        <p class="exam-question-instructions" style="font-style: italic; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0; line-height: 1.4;">
+          Explain your answer, using both interpretations and your own knowledge of the historical context.
+        </p>
+      `;
+      }
     }
     let scaffoldBtn = "";
     let scaffoldBoxHTML = "";
@@ -15237,71 +15204,13 @@ ${cleanBrackets(paper.q3d.model)}
         const density = document.getElementById("bulk-workbook-density").value;
         const answers = document.getElementById("bulk-workbook-answers").value;
         AudioEngine.play("click");
-        const newWin = window.open("", "_blank");
-        if (!newWin) {
-          alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-          return;
-        }
-        newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Generating Worksheet Pack...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              border-left-color: #10b981;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Course-Wide Worksheet Pack...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling Topic 1.1 to 4.4, please wait a few seconds.</p>
-        </body>
-        </html>
-      `);
-        newWin.document.close();
-        try {
-          const html = window.generateBulkWorkbookHtml(style, density, answers === "yes");
-          const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 500);
-            });
-          <\/script>
-        `;
-          const htmlWithPrint = html.replace("</body>", `${autoPrintScript}</body>`);
-          newWin.document.open();
-          newWin.document.write(htmlWithPrint);
+        const html = window.generateBulkWorkbookHtml(style, density, answers === "yes");
+        const newWin = window.open();
+        if (newWin) {
+          newWin.document.write(html);
           newWin.document.close();
-        } catch (err) {
-          console.error("Failed to generate bulk workbook:", err);
-          newWin.close();
-          alert("An error occurred while compiling the worksheets.");
+        } else {
+          alert("Pop-up blocker prevented opening the bulk worksheets. Please allow popups for this site.");
         }
       });
     }
@@ -20000,6 +19909,7 @@ ${cleanBrackets(paper.q3d.model)}
     });
   }
   function flipFlashcard(e) {
+    if (e) e.stopPropagation();
     if (state.flashcardSession.wasDragged) {
       state.flashcardSession.wasDragged = false;
       return;
@@ -24424,100 +24334,131 @@ ${cleanBrackets(paper.q3d.model)}
   var CURATED_TIMELINES = {
     "subtopic_1_1": [
       { "date": "1896", "desc": "Plessy v. Ferguson Supreme Court ruling establishes 'separate but equal' doctrine." },
+      { "date": "1909", "desc": "NAACP is founded to fight for legal rights and challenge segregation in courts." },
       { "date": "1942", "desc": "CORE (Congress of Racial Equality) is founded, pioneering non-violent direct action." },
+      { "date": "1947", "desc": "CORE organizes the 'Journey of Reconciliation' to challenge segregation on interstate buses." },
       { "date": "1950", "desc": "Sweatt v. Painter Supreme Court ruling successfully challenges segregation in law schools." },
       { "date": "1953", "desc": "Earl Warren is appointed Chief Justice of the United States Supreme Court." }
     ],
     "subtopic_1_2": [
       { "date": "May 1954", "desc": "Supreme Court rules unanimously in Brown v. Board of Education that school segregation is unconstitutional." },
       { "date": "May 1955", "desc": "Brown II ruling orders school desegregation to proceed 'with all deliberate speed'." },
+      { "date": "1956", "desc": "Autherine Lucy becomes the first Black student at the University of Alabama (later expelled after riots)." },
       { "date": "Sept 1957", "desc": "Orval Faubus deploys Arkansas National Guard to block Little Rock Nine." },
-      { "date": "Sept 1957", "desc": "President Eisenhower sends 101st Airborne Division to escort Little Rock Nine." }
+      { "date": "Sept 1957", "desc": "President Eisenhower sends 101st Airborne Division to escort Little Rock Nine." },
+      { "date": "Sept 1958", "desc": "Governor Faubus closes all three Little Rock public high schools (the 'Lost Year') to block integration." }
     ],
     "subtopic_1_3": [
+      { "date": "Aug 1955", "desc": "Emmett Till is brutally murdered in Mississippi, galvanizing national civil rights activism." },
       { "date": "1 Dec 1955", "desc": "Rosa Parks is arrested in Montgomery for refusing to give up her seat on a segregated bus." },
-      { "date": "5 Dec 1955", "desc": "Montgomery Bus Boycott begins, led by the newly formed Montgomery Improvement Association (MIA) under Martin Luther King Jr." },
+      { "date": "5 Dec 1955", "desc": "Montgomery Bus Boycott begins, led by the newly formed MIA under Martin Luther King Jr." },
       { "date": "Nov 1956", "desc": "Browder v. Gayle Supreme Court ruling declares segregated buses unconstitutional." },
-      { "date": "21 Dec 1956", "desc": "Montgomery buses are integrated, ending the 381-day boycott." }
+      { "date": "21 Dec 1956", "desc": "Montgomery buses are integrated, ending the 381-day boycott." },
+      { "date": "Jan 1957", "desc": "Southern Christian Leadership Conference (SCLC) is founded by MLK to coordinate protests." }
     ],
     "subtopic_1_4": [
       { "date": "1954", "desc": "White Citizens' Councils are formed across the South to resist school integration." },
       { "date": "1956", "desc": "Southern Manifesto is signed by 101 Southern congressmen, pledging to resist school desegregation." },
+      { "date": "1957", "desc": "Strom Thurmond conducts a record-breaking 24-hour filibuster to delay the Civil Rights Act." },
       { "date": "Sept 1957", "desc": "Civil Rights Act of 1957 is passed to protect voter registration (though largely symbolic)." },
       { "date": "1958", "desc": "Governor Faubus closes all Little Rock public schools for the academic year to block integration." }
     ],
     "subtopic_2_1": [
       { "date": "Feb 1960", "desc": "Greensboro Sit-ins begin when four Black students sit at a segregated Woolworth's lunch counter." },
+      { "date": "April 1960", "desc": "Student Nonviolent Coordinating Committee (SNCC) is founded to organize youth-led direct action." },
       { "date": "May 1961", "desc": "Freedom Riders set off from Washington D.C. to test integration on interstate buses." },
       { "date": "May 1961", "desc": "Freedom Rider bus is firebombed in Anniston, Alabama, sparking national outrage." },
+      { "date": "Nov 1961", "desc": "Interstate Commerce Commission (ICC) issues a ruling banning segregation on interstate terminals." },
       { "date": "Sept 1962", "desc": "James Meredith is escorted by federal marshals to register as the first Black student at Ole Miss." }
     ],
     "subtopic_2_2": [
       { "date": "April 1963", "desc": "Birmingham Campaign is launched; MLK writes 'Letter from Birmingham Jail' after arrest." },
       { "date": "May 1963", "desc": "Children's Crusade in Birmingham is met with police dogs and high-pressure fire hoses." },
       { "date": "Aug 1963", "desc": "March on Washington draws 250,000 demonstrators; MLK delivers his 'I Have a Dream' speech." },
+      { "date": "Sept 1963", "desc": "Sixteenth Street Baptist Church is bombed in Birmingham, killing four young Black girls." },
       { "date": "July 1964", "desc": "President Johnson signs Civil Rights Act of 1964, outlawing segregation in public spaces." },
-      { "date": "March 1965", "desc": "Selma to Montgomery marches culminate in 'Bloody Sunday' at Edmund Pettus Bridge." }
+      { "date": "March 1965", "desc": "Selma to Montgomery marches culminate in 'Bloody Sunday' at Edmund Pettus Bridge." },
+      { "date": "Aug 1965", "desc": "Voting Rights Act of 1965 is signed into law, outlawing discriminatory literacy tests." }
     ],
     "subtopic_2_3": [
+      { "date": "Feb 1965", "desc": "Malcolm X, the prominent Black nationalist leader, is assassinated in New York." },
       { "date": "June 1966", "desc": "Stokely Carmichael popularises the term 'Black Power' during the March Against Fear." },
       { "date": "Oct 1966", "desc": "Huey P. Newton and Bobby Seale found the Black Panther Party in Oakland, California." },
+      { "date": "1967", "desc": "Black Panther Party publishes its Ten-Point Program demanding employment, housing, and education." },
       { "date": "Oct 1968", "desc": "Tommie Smith and John Carlos give the Black Power salute at the Mexico City Olympics." },
       { "date": "Dec 1969", "desc": "Black Panther leader Fred Hampton is killed in a police raid in Chicago." }
     ],
     "subtopic_2_4": [
+      { "date": "June 1964", "desc": "Three Freedom Summer civil rights workers are abducted and murdered by the KKK in Mississippi." },
       { "date": "Aug 1965", "desc": "Watts Riots in Los Angeles erupt after a police stop, leaving 34 dead." },
       { "date": "July 1967", "desc": "Detroit and Newark riots break out, leading to military intervention and massive damage." },
       { "date": "Feb 1968", "desc": "Kerner Commission report warns that America is dividing into 'two societies, separate and unequal'." },
-      { "date": "April 1968", "desc": "MLK is assassinated in Memphis, triggering riots in over 100 US cities; Fair Housing Act is passed." }
+      { "date": "April 1968", "desc": "MLK is assassinated in Memphis, triggering riots in over 100 US cities; Fair Housing Act is passed." },
+      { "date": "June 1968", "desc": "Robert F. Kennedy, a strong supporter of civil rights, is assassinated in Los Angeles." }
     ],
     "subtopic_3_1": [
       { "date": "1954", "desc": "Dien Bien Phu falls to Vietminh; Geneva Accords temporarily divide Vietnam at the 17th parallel." },
       { "date": "1955", "desc": "Ngo Dinh Diem declares himself President of the newly formed Republic of Vietnam (South)." },
+      { "date": "1959", "desc": "Ho Chi Minh Trail construction begins to transport supplies from North to South Vietnam." },
       { "date": "1962", "desc": "Strategic Hamlet Program is launched to isolate peasants from communist influence." },
+      { "date": "June 1963", "desc": "Buddhist monk Thich Quang Duc self-immolates in Saigon to protest Diem's regime." },
       { "date": "Nov 1963", "desc": "President Diem is assassinated in a US-backed military coup following the Buddhist Crisis." }
     ],
     "subtopic_3_2": [
       { "date": "Aug 1964", "desc": "Gulf of Tonkin Incident: US reports attacks on USS Maddox; Congress passes Gulf of Tonkin Resolution." },
+      { "date": "Nov 1964", "desc": "Lyndon B. Johnson wins the US presidential election, defeating Barry Goldwater." },
       { "date": "Feb 1965", "desc": "Vietcong attack US base at Pleiku; President Johnson orders retaliatory airstrikes." },
       { "date": "March 1965", "desc": "First US combat troops (3,500 marines) land at Da Nang." },
+      { "date": "Nov 1965", "desc": "Battle of Ia Drang: The first major conventional battle between US and North Vietnamese troops." },
       { "date": "Dec 1965", "desc": "US troop levels in Vietnam reach nearly 200,000." }
     ],
     "subtopic_3_3": [
       { "date": "March 1965", "desc": "Operation Rolling Thunder begins, a massive, long-term US bombing campaign against North Vietnam." },
       { "date": "1966", "desc": "US military intensifies 'Search and Destroy' operations using helicopters to locate Vietcong." },
       { "date": "1967", "desc": "US forces drop massive amounts of defoliants (Agent Orange) and Napalm to clear jungle cover." },
-      { "date": "Jan 1968", "desc": "Battle of Khe Sanh begins, drawing US military focus to the demilitarized zone." }
+      { "date": "Jan 1968", "desc": "Battle of Khe Sanh begins, drawing US military focus to the demilitarized zone." },
+      { "date": "Jan 1968", "desc": "Tet Offensive: Communist forces launch coordinated surprise attacks on cities across South Vietnam." },
+      { "date": "March 1968", "desc": "My Lai Massacre: US soldiers kill hundreds of unarmed Vietnamese civilians (kept secret for a year)." }
     ],
     "subtopic_3_4": [
       { "date": "Jan 1969", "desc": "President Nixon takes office, promising 'Peace with Honour' and introducing Vietnamization." },
+      { "date": "June 1969", "desc": "Nixon announces the first withdrawal of 25,000 US combat troops from Vietnam." },
       { "date": "April 1970", "desc": "Nixon orders joint US-ARVN invasion of Cambodia to destroy communist sanctuaries." },
+      { "date": "Dec 1970", "desc": "US Congress repeals the Gulf of Tonkin Resolution to limit Presidential war-making authority." },
       { "date": "Feb 1971", "desc": "Operation Lam Son 719: ARVN forces invade Laos with US air support but face severe defeat." },
       { "date": "March 1972", "desc": "Easter Offensive: North Vietnam launches major conventional invasion; US responds with massive airstrikes." }
     ],
     "subtopic_4_1": [
+      { "date": "Oct 1969", "desc": "Moratorium to End the War in Vietnam draws millions of demonstrators across the USA." },
       { "date": "Nov 1969", "desc": "News of the March 1968 My Lai Massacre is published, shocking the American public." },
       { "date": "May 1970", "desc": "Kent State Shootings: National Guardsmen kill four students during anti-war protests in Ohio." },
+      { "date": "April 1971", "desc": "Vietnam Veterans Against the War hold major protests, throwing medals on Capitol steps." },
       { "date": "June 1971", "desc": "Pentagon Papers are leaked to the press, exposing years of government deception regarding Vietnam." },
       { "date": "Dec 1972", "desc": "Nixon orders 'Christmas Bombings' (Operation Linebacker II) of Hanoi and Haiphong." }
     ],
     "subtopic_4_2": [
       { "date": "Nov 1969", "desc": "Nixon appeals to the 'Silent Majority' to support his Vietnam policies in a televised address." },
       { "date": "May 1970", "desc": "Hard Hat Riots: Construction workers attack anti-war protesters in New York City." },
+      { "date": "June 1972", "desc": "Watergate break-in occurs, initiating the scandal that would eventually force Nixon's resignation." },
       { "date": "Nov 1972", "desc": "Nixon wins a landslide re-election victory, defeating anti-war candidate George McGovern." },
-      { "date": "1973", "desc": "War Powers Act is passed over Nixon's veto, limiting the President's power to wage war without Congress." }
+      { "date": "1973", "desc": "War Powers Act is passed over Nixon's veto, limiting the President's power to wage war without Congress." },
+      { "date": "Aug 1974", "desc": "Richard Nixon resigns as President; Vice President Gerald Ford takes office." }
     ],
     "subtopic_4_3": [
       { "date": "Jan 1973", "desc": "Paris Peace Accords are signed, establishing a ceasefire and outlining US troop withdrawal." },
       { "date": "March 1973", "desc": "The last US combat troops leave Vietnam; North Vietnamese troops remain in the South." },
+      { "date": "Aug 1974", "desc": "US Congress passes the Foreign Assistance Act, cutting military aid to South Vietnam by over 50%." },
       { "date": "Dec 1974", "desc": "North Vietnam launches a major conventional offensive, testing US resolve." },
+      { "date": "April 1975", "desc": "Operation Frequent Wind: The massive helicopter evacuation of US citizens and ARVN allies from Saigon." },
       { "date": "30 Apr 1975", "desc": "Saigon falls to North Vietnamese forces, ending the war and reunifying Vietnam." }
     ],
     "subtopic_4_4": [
+      { "date": "1964-73", "desc": "The Ho Chi Minh Trail's resilience prevents the US from cutting off communist supply lines." },
       { "date": "1965-68", "desc": "Guerilla tactics and local civilian support protect the Vietcong from superior US firepower." },
       { "date": "1968", "desc": "Tet Offensive destroys US domestic confidence in victory and increases anti-war sentiment." },
       { "date": "1969-73", "desc": "Low morale, drug abuse, and draft resistance weaken the combat effectiveness of US forces." },
-      { "date": "1973-75", "desc": "US Congress cuts funding and assistance to South Vietnam, leaving the ARVN vulnerable." }
+      { "date": "1973-75", "desc": "US Congress cuts funding and assistance to South Vietnam, leaving the ARVN vulnerable." },
+      { "date": "1975", "desc": "The complete military and political collapse of the South Vietnamese ARVN forces." }
     ]
   };
   function getCleanStepText(bodyHtml) {
@@ -24543,6 +24484,24 @@ ${cleanBrackets(paper.q3d.model)}
       return cleanText.replace(/\s+/g, " ").trim();
     }
   }
+  var CUSTOM_ACTIVE_READING_FOCUS = {
+    "subtopic_1_1": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the legal strategies and rulings used to challenge Plessy v. Ferguson in the courts.",
+    "subtopic_1_2": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the immediate and long-term reactions of both the federal government and segregationist governors to school desegregation.",
+    "subtopic_1_3": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the political, economic, and social reasons for the success of the bus boycott.",
+    "subtopic_1_4": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the local, legislative, and political methods used by Southern opponents to resist civil rights reforms.",
+    "subtopic_2_1": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the ways in which non-violent direct action exposed Southern racism to the national media.",
+    "subtopic_2_2": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the political pressure generated by protests that led to the passage of the Civil Rights Act of 1964 and Voting Rights Act of 1965.",
+    "subtopic_2_3": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the differing goals, strategies, and criticisms that separated the Black Power movement from mainstream non-violence.",
+    "subtopic_2_4": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the underlying social and economic frustrations that triggered the race riots in Northern and Western cities.",
+    "subtopic_3_1": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the political and religious failures of the Diem regime that weakened South Vietnam.",
+    "subtopic_3_2": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the political controversies surrounding the Gulf of Tonkin Incident and subsequent military escalation.",
+    "subtopic_3_3": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the military and geographical advantages of the Vietcong's guerrilla tactics compared to US firepower.",
+    "subtopic_3_4": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the military and political consequences of Nixon's invasions of Cambodia and Laos.",
+    "subtopic_4_1": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the reasons why events like My Lai and the Pentagon Papers widened the credibility gap and fueled the anti-war movement.",
+    "subtopic_4_2": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the ways Nixon successfully appealed to the Silent Majority to maintain support for his policies.",
+    "subtopic_4_3": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the military and diplomatic factors that led to the complete collapse of South Vietnam after US withdrawal.",
+    "subtopic_4_4": "Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the strategic, economic, and moral reasons why the USA failed to achieve its goals in Vietnam."
+  };
   var WORKBOOK_DATA = {};
   for (const subtopicId in LESSONS_DATA) {
     const data = LESSONS_DATA[subtopicId];
@@ -24585,7 +24544,7 @@ ${cleanBrackets(paper.q3d.model)}
       data.deepThinkingQuestions.slice(0, 3).forEach((item, idx) => {
         comprehensionCheck.push({
           title: `${idx + 1}. Analysis: ${item.question}`,
-          scaffold: `Write a detailed explanation in your notebook. Hint: ${item.hint || ""}`,
+          scaffold: `Hint: ${item.hint || ""}`,
           stretch: `Teacher Guidance: ${item.teacherGuide || ""}`,
           answer: item.teacherGuide || ""
         });
@@ -24596,7 +24555,7 @@ ${cleanBrackets(paper.q3d.model)}
         const aText = item.a || item.answer || "";
         comprehensionCheck.push({
           title: `${idx + 1}. Comprehension: ${qText}`,
-          scaffold: `Write a detailed explanation in your notebook. Consider: ${aText.slice(0, 50)}...`,
+          scaffold: `Consider: ${aText.slice(0, 50)}...`,
           stretch: `Stretch: Evaluate how this event influenced subsequent developments.`,
           answer: aText
         });
@@ -24611,19 +24570,25 @@ ${cleanBrackets(paper.q3d.model)}
       });
     }
     const causationMatrix = {
-      columns: ["Historical Driver / Factor", "Impact / Linkage", "Evidence details to check"],
+      columns: ["Historical Cause / Factor", "Result / Consequence (Write matching number)"],
+      factors: [],
       factBank: []
     };
     if (data.causalLinks && data.causalLinks.factors) {
       data.causalLinks.factors.forEach((f) => {
-        causationMatrix.factBank.push(f.title);
+        causationMatrix.factors.push(f.title);
         causationMatrix.factBank.push(f.linkageText || f.options[0]);
       });
     } else {
-      causationMatrix.factBank = [
+      causationMatrix.factors = [
         "Federal intervention in desegregation",
         "Grassroots organizing and direct action",
         "Southern political opposition"
+      ];
+      causationMatrix.factBank = [
+        "Forced local authorities to integrate facilities and protected activists.",
+        "Mobilised thousands through non-violent protests to gain national attention.",
+        "Organised Citizens' Councils and signed the Southern Manifesto to block school integration."
       ];
     }
     const sources = [];
@@ -24813,7 +24778,7 @@ ${cleanBrackets(paper.q3d.model)}
     };
     WORKBOOK_DATA[subtopicId] = {
       title: data.headerTitle ? data.headerTitle.split(":").slice(1).join(":").trim() : "GCSE USA History Lesson",
-      activeReadingFocus: `Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the legal, social, or military factors guiding this period of history.`,
+      activeReadingFocus: CUSTOM_ACTIVE_READING_FOCUS[subtopicId] || `Prior to answering tasks in your exercise book, review the text to locate (1) essential dates, (2) key figures and organisations, and (3) the legal, social, or military factors guiding this period of history.`,
       narrative,
       vocabulary,
       timeline,
@@ -26838,6 +26803,25 @@ ${cleanBrackets(paper.q3d.model)}
     "credibility": "The quality of being trusted and believed in as a source of historical evidence."
   };
   var highlightedKeywords = /* @__PURE__ */ new Set();
+  function injectScaffoldingIntoMindMap(bodyHtml, subtopicId) {
+    if (!bodyHtml || !bodyHtml.includes("mind-map-task-box")) return bodyHtml;
+    const data = WORKBOOK_DATA[subtopicId];
+    if (!data) return bodyHtml;
+    const bankWords = (data.vocabulary || []).slice(0, 4).map((v) => v.term).concat((data.timeline || []).slice(0, 2).map((t) => t.date));
+    if (bankWords.length === 0) return bodyHtml;
+    const wordBankBox = `
+    <div class="mind-map-learning-check" style="margin-top: 12px; padding: 10px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 6px; font-size: 0.82rem; line-height: 1.45; color: var(--text-main); font-family: inherit; box-sizing: border-box;">
+      <strong style="color: #10b981; display: flex; align-items: center; gap: 4px; font-size: 0.9em; margin-bottom: 4px;">\u{1F9E0} Learning Check: Mind Map Word Bank</strong>
+      Use these key concepts, names, and dates to connect and build your branches:
+      <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px;">
+        ${bankWords.map((word) => `<span style="padding: 2px 6px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 4px; font-size: 0.75rem; font-weight: 500;">${word}</span>`).join("")}
+      </div>
+    </div>
+  `;
+    return bodyHtml.replace(/(<div class="mind-map-task-box"[^>]*>[\s\S]*?<\/div>\s*)(<\/div>)/i, (m, p1, p2) => {
+      return p1 + wordBankBox + p2;
+    });
+  }
   function applyGlossaryTooltips(text) {
     if (!text) return "";
     let parsedText = text;
@@ -27361,7 +27345,7 @@ ${cleanBrackets(paper.q3d.model)}
             ${audioBtnHtml}
           </h3>
           <div class="mastery-split-layout">
-            ${applyGlossaryTooltips(step.bodyHtml)}
+            ${applyGlossaryTooltips(injectScaffoldingIntoMindMap(step.bodyHtml, subtopicId))}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -27375,7 +27359,7 @@ ${cleanBrackets(paper.q3d.model)}
             ${audioBtnHtml}
           </h3>
           <div class="mastery-card-body card-content">
-            ${applyGlossaryTooltips(step.bodyHtml)}
+            ${applyGlossaryTooltips(injectScaffoldingIntoMindMap(step.bodyHtml, subtopicId))}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -27511,7 +27495,7 @@ ${cleanBrackets(paper.q3d.model)}
     let impHtml = "";
     if (data.importanceAnalyser) {
       impHtml = `
-      <div class="mastery-card" style="max-width: 800px; margin: 0 auto 24px auto;">
+      <div class="mastery-card importance-analyser-wrapper-card" style="max-width: 800px; margin: 0 auto 24px auto;">
         <h3 class="mastery-card-title">\u{1F50D} 8-Mark Skill: The Importance Analyser</h3>
         <p style="font-style: italic; margin-top: 0; margin-bottom: 20px; color: var(--text-muted);">
           Click the card below to flip it and view the examiner's model analysis.
@@ -28799,7 +28783,7 @@ ${cleanBrackets(paper.q3d.model)}
     ${deepThinkingHtml}
 
     <!-- Mastery Progress Button -->
-    <div style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
+    <div class="mastered-button-wrapper" style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
       <button class="mastery-btn mastery-btn-success" id="btn-mark-mastery-mastered">
         \u2713 Mark Topic ${subtopicId.replace("subtopic_", "").replace("_", ".")} as Mastered
       </button>
@@ -29977,71 +29961,13 @@ ${cleanBrackets(paper.q3d.model)}
       viewWorksheetPageBtn.addEventListener("click", () => {
         AudioEngine.play("click");
         const subtopic = viewWorksheetPageBtn.getAttribute("data-subtopic");
-        const newWin = window.open("", "_blank");
-        if (!newWin) {
-          alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-          return;
-        }
-        newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Generating Worksheet...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              border-left-color: #f97316;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Lesson Workbook...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling resource details, please wait.</p>
-        </body>
-        </html>
-      `);
-        newWin.document.close();
-        try {
-          const html = generateWorkbookHtml(subtopic, "booklet", "standard", false);
-          const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 500);
-            });
-          <\/script>
-        `;
-          const htmlWithPrint = html.replace("</body>", `${autoPrintScript}</body>`);
-          newWin.document.open();
-          newWin.document.write(htmlWithPrint);
+        const html = generateWorkbookHtml(subtopic, "booklet", "standard", false);
+        const newWin = window.open();
+        if (newWin) {
+          newWin.document.write(html);
           newWin.document.close();
-        } catch (err) {
-          console.error("Failed to generate workbook page:", err);
-          newWin.close();
-          alert("An error occurred while compiling the worksheet.");
+        } else {
+          alert("Pop-up blocker prevented opening the worksheet page. Please allow popups for this site.");
         }
       });
     }
@@ -30395,72 +30321,13 @@ ${cleanBrackets(paper.q3d.model)}
           }
         }
         AudioEngine.play("click");
-        const newWin = window.open("", "_blank");
-        if (!newWin) {
-          alert("Pop-up blocker prevented opening the worksheets. Please allow popups for this site.");
-          return;
+        const html = generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === "yes", selectedIndices);
+        const printArea = document.getElementById("print-area");
+        if (printArea) {
+          printArea.innerHTML = html;
         }
-        newWin.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Generating Workbook...</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              background-color: #111827;
-              color: #f9fafb;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-              margin: 0;
-            }
-            .spinner {
-              border: 4px solid rgba(255, 255, 255, 0.1);
-              width: 36px;
-              height: 36px;
-              border-radius: 50%;
-              border-left-color: #f97316;
-              animation: spin 1s linear infinite;
-              margin-bottom: 20px;
-            }
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-        </head>
-        <body>
-          <div class="spinner"></div>
-          <h3 style="margin: 0 0 8px 0; font-weight: 600;">Generating Lesson Workbook...</h3>
-          <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">Compiling resource details, please wait.</p>
-        </body>
-        </html>
-      `);
-        newWin.document.close();
-        try {
-          const html = generateWorkbookHtml(activeWorkbookSubtopicId, style, density, answers === "yes", selectedIndices);
-          const autoPrintScript = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                window.print();
-              }, 500);
-            });
-          <\/script>
-        `;
-          const htmlWithPrint = html.replace("</body>", `${autoPrintScript}</body>`);
-          newWin.document.open();
-          newWin.document.write(htmlWithPrint);
-          newWin.document.close();
-        } catch (err) {
-          console.error("Failed to generate workbook:", err);
-          newWin.close();
-          alert("An error occurred while compiling the workbook.");
-        }
+        AudioEngine.play("success");
+        window.print();
       });
     }
     if (btnWord) {
@@ -30494,8 +30361,13 @@ ${cleanBrackets(paper.q3d.model)}
     const specBoxHtml = specList.length > 0 ? `
     <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 7.5pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
       <strong style="text-transform: uppercase; font-size: 8pt; color: #111827; display: block; margin-bottom: 3px;">\u{1F4CB} Curriculum Specification Checklist (Pearson Edexcel)</strong>
-      <ul style="margin: 0; padding-left: 14px;">
-        ${specList.map((item) => `<li style="margin: 0 0 2px 0; padding: 0;">${item.point}</li>`).join("")}
+      <ul style="margin: 0; padding-left: 0; list-style: none;">
+        ${specList.map((item) => `
+          <li style="margin: 0 0 3px 0; padding: 0; display: flex; align-items: flex-start; gap: 6px;">
+            <span style="display: inline-block; min-width: 10px; width: 10px; height: 10px; border: 1px solid #4b5563; border-radius: 2px; margin-top: 1.5px; box-sizing: border-box;"></span>
+            <span>${item.point}</span>
+          </li>
+        `).join("")}
       </ul>
     </div>
   ` : "";
@@ -30519,19 +30391,24 @@ ${cleanBrackets(paper.q3d.model)}
         <span class="scaffold-tip" style="font-size: 6.8pt; color: #4b5563; margin-top: 1px;">${q.scaffold}</span>
       </div>
     `).join("");
-      const matrixHeaders = data.causationMatrix.columns.map((col) => `
-      <th class="matrix-header" style="width: ${100 / data.causationMatrix.columns.length}%;">${col}</th>
+      const matrixHeaders = data.causationMatrix.columns.map((col, idx) => `
+      <th class="matrix-header" style="width: ${idx === 0 ? "70%" : "30%"};">${col}</th>
     `).join("");
-      const numRows = data.causationMatrix && data.causationMatrix.factBank ? Math.max(1, Math.floor(data.causationMatrix.factBank.length / 2)) : 3;
       let matrixRowsHtml = "";
-      for (let r = 0; r < numRows; r++) {
+      (data.causationMatrix.factors || []).forEach((factor) => {
         matrixRowsHtml += `
         <tr>
-          ${data.causationMatrix.columns.map(() => `<td class="matrix-cell" style="height: 35px;"></td>`).join("")}
+          <td class="matrix-cell" style="padding: 4px 6px; font-size: 7.5pt; text-align: left; font-weight: bold; height: 26px; box-sizing: border-box;">${factor}</td>
+          <td class="matrix-cell" style="height: 26px; box-sizing: border-box;"></td>
         </tr>
       `;
+      });
+      const consequences = [...data.causationMatrix.factBank || []];
+      if (consequences.length > 1) {
+        const last = consequences.pop();
+        consequences.unshift(last);
       }
-      const factBankText = data.causationMatrix.factBank.map((fact, idx) => `(${idx + 1}) ${fact}`).join(" \u2022 ");
+      const factBankText = consequences.map((fact, idx) => `(${idx + 1}) ${fact}`).join(" \u2022 ");
       const matrixHtml = `
       <table class="matrix-table">
         <tr>${matrixHeaders}</tr>
@@ -30593,7 +30470,7 @@ ${cleanBrackets(paper.q3d.model)}
         </div>
       `;
       }
-      const whyStimulus = data.causationMatrix.factBank.filter((_, i) => i % 2 === 0).slice(0, 2);
+      const whyStimulus = (data.causationMatrix.factors || []).slice(0, 2);
       const whyHtml = `
       <div style="margin-bottom: 2px; border: 1px solid #e5e7eb; padding: 4px; border-radius: 4px; background: #ffffff; box-sizing: border-box;">
         <span style="font-weight: bold; font-size: 8pt; color: #111827; display: block;">Question 2 [12 Marks]:</span>
@@ -30618,6 +30495,13 @@ ${cleanBrackets(paper.q3d.model)}
         <div class="keyword-pill-box" style="margin-top: 0.5px; font-size: 6.5pt;">\u{1F511} ${br.keywords.join(" \u2022 ")}</div>
       </div>
     `).join("");
+      const mindMapIdeas = (data.vocabulary || []).map((v) => v.term).concat((data.timeline || []).slice(0, 2).map((t) => t.date)).slice(0, 6);
+      const mindMapScaffoldingHtml = `
+      <div class="mind-map-wordbank" style="margin-top: 4px; padding: 3px 5px; background: #f0fdf4; border: 1px dashed #bbf7d0; border-radius: 4px; font-size: 6.2pt; line-height: 1.25; text-align: left; box-sizing: border-box;">
+        <strong>\u{1F4A1} Mind Map Word Bank:</strong> Use these ideas to connect your branches: 
+        <span style="color: #4b5563;">${mindMapIdeas.join(" \u2022 ")}</span>
+      </div>
+    `;
       let teacherAnswersHtml = "";
       if (includeAnswers) {
         const comprehensionAnswersHtml = data.comprehensionCheck.map((q) => `
@@ -31081,13 +30965,12 @@ ${cleanBrackets(paper.q3d.model)}
   <!-- PAGE 2: ANALYTICAL TASKS & ASSESSMENT PREP -->
   <div class="${includeAnswers ? "print-page" : "print-page-last"}">
     <div class="section-title" style="margin-top: 0; margin-bottom: 3px;">Section 3: Comprehension Check (AO1)</div>
-    <p style="font-size: 7.5pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic;">Provide structured analytical answers in your exercise book using the prompts below.</p>
 
     ${comprehensionHtml}
 
     <div class="section-title" style="margin-top: 6px; margin-bottom: 3px;">Section 4: Causation Matrix (Analytical Essay Prep)</div>
     <p style="font-size: 7.5pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic;">
-      <strong>Task:</strong> In your exercise book, recreate and populate this matrix. Categorize by writing the fact numbers (1-6) from the Fact Bank in the corresponding columns, then write a short sentence explaining which factor was the most important.
+      <strong>Task:</strong> In your exercise book, match each Historical Cause / Factor to its correct Result / Consequence from the Fact Bank below (write the numbers 1-3). Then, write a short explanation of which cause you think was the most important.
     </p>
     
     <div style="border: 1px dashed #9ca3af; padding: 3px 6px; font-size: 7pt; background: #f9fafb; line-height: 1.25; border-radius: 4px; margin-bottom: 3px;">
@@ -31144,6 +31027,7 @@ ${cleanBrackets(paper.q3d.model)}
               <p style="margin: 0 0 4px 0; font-style: italic; color: #4b5563;">In your book, construct a central node titled <strong>"${data.mindMap.centralNode}"</strong> and link these three core analytical branches using the keywords:</p>
               
               ${mindMapBranchesHtml}
+              ${mindMapScaffoldingHtml}
             </div>
           </td>
         </tr>
@@ -32383,19 +32267,6 @@ ${cleanBrackets(paper.q3d.model)}
         renderClassicView();
       });
     });
-    document.getElementById("flashcard-stage").addEventListener("click", flipFlashcard);
-    document.getElementById("btn-flashcard-reveal").addEventListener("click", (e) => {
-      e.stopPropagation();
-      flipFlashcard();
-    });
-    document.getElementById("btn-flashcard-incorrect").addEventListener("click", (e) => {
-      e.stopPropagation();
-      handleFlashcardGrade(false);
-    });
-    document.getElementById("btn-flashcard-correct").addEventListener("click", (e) => {
-      e.stopPropagation();
-      handleFlashcardGrade(true);
-    });
     document.getElementById("timeline-era-select").addEventListener("change", () => {
       AudioEngine.play("click");
       renderTimelineView();
@@ -33588,6 +33459,8 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
       }
     }
     applyLoadedSettings();
+    initWorkbookCreator();
+    initBulkWorkbookCreator();
   }
   function extractKeywordsFromAnswer(htmlAnswer) {
     if (!htmlAnswer) return [];
@@ -33748,8 +33621,6 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
         }
       });
     }
-    initWorkbookCreator();
-    initBulkWorkbookCreator();
   }
   function highlightModelQuotes(text) {
     if (!text) return "";

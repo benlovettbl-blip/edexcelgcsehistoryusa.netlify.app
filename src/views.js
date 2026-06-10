@@ -2285,6 +2285,7 @@ function restoreFlashcardSkeleton() {
 }
 
 function flipFlashcard(e) {
+  if (e) e.stopPropagation();
   if (state.flashcardSession.wasDragged) {
     state.flashcardSession.wasDragged = false;
     return;

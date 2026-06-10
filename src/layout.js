@@ -315,22 +315,7 @@ function bindEvents() {
     });
   });
 
-  // Flashcards study actions
-  document.getElementById('flashcard-stage').addEventListener('click', flipFlashcard);
-  document.getElementById('btn-flashcard-reveal').addEventListener('click', (e) => {
-    e.stopPropagation();
-    flipFlashcard();
-  });
-  
-  document.getElementById('btn-flashcard-incorrect').addEventListener('click', (e) => {
-    e.stopPropagation();
-    handleFlashcardGrade(false);
-  });
-  
-  document.getElementById('btn-flashcard-correct').addEventListener('click', (e) => {
-    e.stopPropagation();
-    handleFlashcardGrade(true);
-  });
+  // Flashcards study actions are managed dynamically in views.js when rendering subtopic views.
 
   // Timeline Filter Action
   document.getElementById('timeline-era-select').addEventListener('change', () => {
@@ -1768,6 +1753,10 @@ function bindEvents() {
   }
   
   applyLoadedSettings();
+
+  // Initialize Workbook and Bulk Workbook Creator
+  initWorkbookCreator();
+  initBulkWorkbookCreator();
 }
 
 // --- Real-time Fact / Connective Verification Checklist for Essay Writing ---
@@ -1967,11 +1956,8 @@ function updateRealTimeFeedback(type, value, questionObj, questionId) {
       }
     });
   }
-
-  // Initialize Workbook and Bulk Workbook Creator
-  initWorkbookCreator();
-  initBulkWorkbookCreator();
 }
+
 
 export function highlightModelQuotes(text) {
   if (!text) return '';

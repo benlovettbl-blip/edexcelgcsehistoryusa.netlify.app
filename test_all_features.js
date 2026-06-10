@@ -368,14 +368,14 @@ try {
   console.log("  - Testing Flashcard Study Session:");
   const btnFC = modeSwitcher.querySelector('[data-mode="flashcards"]');
   fireClick(btnFC);
-  await new Promise(resolve => setTimeout(resolve, 50));
+  await new Promise(resolve => setTimeout(resolve, 150));
 
   // Handle Narrative Framing Screen if present
   const startRetrievalBtn = document.getElementById('btn-start-active-retrieval');
   if (startRetrievalBtn) {
     console.log("    * Narrative framing screen detected. Clicking 'Start Active Retrieval Loop'...");
     fireClick(startRetrievalBtn);
-    await new Promise(resolve => setTimeout(resolve, 50));
+    await new Promise(resolve => setTimeout(resolve, 150));
   }
   
   // Enable Whiz mode (speed study mode) to bypass rubric requirements
@@ -400,7 +400,7 @@ try {
   const flipBtn = document.getElementById('btn-flashcard-reveal');
   fireClick(flipBtn);
   const cardEl = document.getElementById('flashcard-card');
-  if (!cardEl.classList.contains('flipped')) {
+  if (!cardEl || !cardEl.classList.contains('flipped')) {
     throw new Error("Flashcard did not flip after clicking Reveal!");
   }
   console.log("    * Flipped card face to reveal answer.");
