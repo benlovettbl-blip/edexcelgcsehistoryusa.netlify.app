@@ -11,6 +11,7 @@ import {
   activateExamHubPanel,
   renderAiVideosView,
   openStreakLeaderboard,
+  renderGuideView,
   addXp
 } from './views.js';
 import { showExamSetup } from './exam.js';
@@ -65,6 +66,14 @@ export function switchView(viewName, subtopicId = null) {
     if (viewTitle) viewTitle.textContent = "Streak & Level Leaderboard";
     state.selectedSubtopicId = null;
     openStreakLeaderboard();
+  } else if (viewName === 'guide') {
+    const guideNav = document.getElementById('nav-guide');
+    if (guideNav) guideNav.classList.add('active');
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) viewTitle.textContent = "User & Parent Guide";
+    state.selectedSubtopicId = null;
+    renderGuideView();
   } else if (viewName === 'bookmarks') {
     const bookmarksNav = document.getElementById('nav-bookmarks');
     if (bookmarksNav) bookmarksNav.classList.add('active');
@@ -201,7 +210,8 @@ export function switchView(viewName, subtopicId = null) {
     'exam-hub': 'view-exam-hub',
     'key-topic': 'view-key-topic',
     'ai-videos': 'view-ai-videos',
-    'leaderboard': 'view-leaderboard'
+    'leaderboard': 'view-leaderboard',
+    'guide': 'view-guide'
   };
 
   const targetViewId = viewName === 'subtopic' ? viewIdMap[state.currentMode] : viewIdMap[viewName];

@@ -7,7 +7,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "How does John Lewis's childhood experience illustrate the difference between the physical enforcement of segregation and its psychological impact on young Black Americans?"
 },
 
-  "headerTitle": "KT 1.1 - GCSE CORE MASTERY: What was the position of Black Americans in the early 1950s?",
+  "headerTitle": "KT 1.1: What was the position of Black Americans in the early 1950s?",
   "headerIntro": "In the early 1950s, Black Americans in the Southern states lived under the oppressive system of Jim Crow. Racial segregation was legally enforced by state laws, and voting rights were systematically denied through arbitrary tests and economic terror. To fight this institutionalised inequality, civil rights organisations deployed different strategies: the NAACP used legal litigation in federal courts, while CORE pioneered non-violent direct action protests.",
   "steps": [
     {
@@ -209,7 +209,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "Elizabeth Eckford was just 15 years old. Why do you think school desegregation provoked such intense personal anger from ordinary white citizens?"
 },
 
-  "headerTitle": "KT 1.2 - GCSE CORE MASTERY: How did developments in education challenge segregation (1954–57)?",
+  "headerTitle": "KT 1.2: How did developments in education challenge segregation (1954–57)?",
   "headerIntro": "The desegregation of public schools became the first major battleground of the civil rights movement. In 1954, the NAACP won the landmark Brown v. Board of Education case, with the Supreme Court declaring school segregation unconstitutional. However, this sparked 'Massive Resistance' across the South, culminating in the Little Rock High School crisis in 1957. Here, Arkansas Governor Orval Faubus defied federal law, forcing President Eisenhower to deploy federal troops to protect Black students.",
   "steps": [
     {
@@ -402,7 +402,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "Rosa Parks's arrest is famous, but Jo Ann Robinson's account shows the massive organization behind the scenes. How does this source challenge the idea that the boycott was just a spontaneous event?"
 },
 
-    "headerTitle": "KT 1.3 - GCSE CORE MASTERY: How did the Montgomery Bus Boycott happen, and why did it succeed?",
+    "headerTitle": "KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?",
     "headerIntro": "The Montgomery Bus Boycott (1955–1956) was the first major grassroots test of non-violent resistance. Beginning immediately after Rosa Parks' arrest on 1 December 1955, the local Black community organized the Montgomery Improvement Association (MIA), electing Martin Luther King Jr. as president. Black citizens, who made up 70% of bus riders, walked, carpooled, and organized private cabs for 381 days. Despite bombings, arrests, and intimidation, the boycott devastated bus revenues until November 1956, when the Supreme Court ruled segregated transport unconstitutional, proving the power of mass direct action.",
     "steps": [
       {
@@ -598,7 +598,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "Why was Mose Wright's action in court—openly accusing and pointing at white men in Mississippi—considered a revolutionary act of bravery in 1955?"
 },
 
-    "headerTitle": "KT 1.4 - GCSE CORE MASTERY: Why did white people in the South resist integration, and how did they do it?",
+    "headerTitle": "KT 1.4: Why did white people in the South resist integration, and how did they do it?",
     "headerIntro": "In the wake of the 1954 Brown decision and the 1956 Montgomery victory, Southern white resistance hardened. Southern politicians signed the 'Southern Manifesto' in 1956, pledging to defeat integration by all legal means. Segregationists formed White Citizens' Councils, using economic retaliation, firings, and mortgage foreclosures against Black activists. Concurrently, KKK violence erupted, targeting leaders with bombings. Governors like Orval Faubus (1957) and later Ross Barnett (1962) used state forces to defy federal mandates, creating a constitutional crisis over states' rights.",
     "steps": [
       {
@@ -807,7 +807,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "How can sitting quietly at a lunch counter be a powerful form of protest? Why was the police officer unable to stop them?"
 },
 
-    "headerTitle": "KT 2.1 - GCSE CORE MASTERY: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?",
+    "headerTitle": "KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?",
     "headerIntro": "By 1960, a new generation of student activists accelerated the movement. In February 1960, four Black students staged a sit-in at a Woolworth's lunch counter in Greensboro, North Carolina, launching a wave of sit-ins that integrated over 100 lunch counters. In May 1961, the Congress of Racial Equality (CORE) launched the Freedom Rides to test desegregation on interstate buses, facing brutal mob violence and bombings in Alabama. In September 1962, James Meredith became the first Black student at the University of Mississippi, requiring federal marshals and troops to suppress a segregationist riot that left two dead.",
     "steps": [
       {
@@ -1043,7 +1043,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "Given the extreme danger, why do you think civil rights leaders allowed children to march? How did the public reaction to this violence change federal policy?"
 },
 
-    "headerTitle": "KT 2.2 - GCSE CORE MASTERY: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?",
+    "headerTitle": "KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?",
     "headerIntro": "In 1963 and 1965, the Southern Christian Leadership Conference (SCLC) targeted the most segregated cities. The Birmingham Campaign (April 1963) saw police chief Bull Connor use fire hoses and attack dogs on child protesters, sparking international outrage and forcing President Kennedy to draft civil rights legislation. Following the Civil Rights Act of 1964, attention shifted to voting. In March 1965, the Selma-to-Montgomery marches faced state trooper violence on 'Bloody Sunday', forcing President Johnson to pass the Voting Rights Act of 1965, which outlawed literacy tests.",
     "steps": [
       {
@@ -1263,7 +1263,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "How did the Black Power philosophy shift the goal of the movement from 'integration' to 'self-determination'? What were the potential benefits and risks of this new approach?"
 },
 
-    "headerTitle": "KT 2.3 - GCSE CORE MASTERY: What was the Black Power movement, and how did it differ from non-violent protests?",
+    "headerTitle": "KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?",
     "headerIntro": "By the mid-1960s, frustration with slow progress and continued white violence led to a major ideological split. Malcolm X, representing the Nation of Islam, criticized MLK's integrationist non-violence and championed Black nationalism and self-defense 'by any means necessary'. Following Malcolm's 1965 assassination, Stokely Carmichael popularised the term 'Black Power' at a 1966 march. This philosophy was institutionalized by the Black Panther Party (founded 1966), which organized armed neighborhood patrols and community programs, reflecting a shift toward racial pride and economic independence.",
     "steps": [
       {
@@ -1474,7 +1474,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "According to this resident, why did federal laws like the Civil Rights Act fail to prevent urban riots? What does this tell us about the limits of legal rights when economic misery remains?"
 },
 
-    "headerTitle": "KT 2.4 - GCSE CORE MASTERY: Why did riots break out in American cities between 1965 and 1968?",
+    "headerTitle": "KT 2.4: Why did riots break out in American cities between 1965 and 1968?",
     "headerIntro": "Between 1965 and 1967, deep-seated grievances over poverty, housing, and police brutality triggered massive urban riots in Northern and Western cities, including Watts (1965) and Detroit (1967). In response, President Johnson established the Kerner Commission, which reported in 1968 that America was moving toward 'two societies, one Black, one white—separate and unequal', blaming systemic white racism. Following Martin Luther King Jr.'s assassination in April 1968, Congress passed the Civil Rights Act of 1968 (Fair Housing Act), prohibiting racial discrimination in housing.",
     "steps": [
       {
@@ -1714,7 +1714,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "What does this extreme act of protest reveal about the intensity of Buddhist opposition to Diem? How did this impact US support for Diem?"
 },
 
-    "headerTitle": "KT 3.1 - GCSE CORE MASTERY: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?",
+    "headerTitle": "KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?",
     "headerIntro": "Following the 1954 Geneva Accords, which temporarily divided Vietnam at the 17th parallel, the United States committed to containing communism in Southeast Asia. Guided by President Eisenhower's 'Domino Theory'—the belief that if Vietnam fell to communism, neighboring nations would follow—the USA backed Ngo Dinh Diem's anti-communist government in South Vietnam. However, Diem's corrupt regime, Buddhist persecutions, and refusal to hold elections alienated the populace, leading to the 1960 formation of the Vietcong and Diem's ultimate assassination in November 1963.",
     "steps": [
       {
@@ -1940,7 +1940,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "If the second Gulf of Tonkin attack was a 'ghost' event, how does this affect the moral and political justification for the US escalation of the war?"
 },
 
-    "headerTitle": "KT 3.2 - GCSE CORE MASTERY: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?",
+    "headerTitle": "KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?",
     "headerIntro": "Following President Kennedy's assassination in 1963, President Johnson inherited a rapidly deteriorating situation in South Vietnam. In August 1964, reports of US destroyers being attacked by North Vietnamese patrol boats in the Gulf of Tonkin provided the pretext Johnson needed. Congress passed the Gulf of Tonkin Resolution, granting the president power to take 'all necessary measures' to repel attacks. In early 1965, Johnson launched Operation Rolling Thunder, a massive bombing campaign, and deployed the first US combat troops to Da Nang in March, escalating the conflict dramatically.",
     "steps": [
       {
@@ -2163,7 +2163,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "How did the Vietcong use the tunnels and hit-and-run tactics to render the US military's technological superiority ineffective?"
 },
 
-    "headerTitle": "KT 3.3 - GCSE CORE MASTERY: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?",
+    "headerTitle": "KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?",
     "headerIntro": "Between 1965 and 1968, the Vietnam War became a brutal conflict of contrasting strategies. The US military, led by General Westmoreland, relied on high-tech attrition tactics, including 'Search and Destroy' missions, massive carpet bombing, and chemical agents like Agent Orange and Napalm to clear jungles and crop cover. In contrast, the Vietcong fought a guerrilla war, avoiding pitched battles, hiding in complex underground tunnel networks, and deploying deadly booby traps, which neutralized US technological superiority and severely damaged US soldier morale.",
     "steps": [
       {
@@ -2383,7 +2383,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "What does this soldier's account of the Laos invasion tell us about the practical weaknesses and failures of Nixon's 'Vietnamization' policy?"
 },
 
-    "headerTitle": "KT 3.4 - GCSE CORE MASTERY: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?",
+    "headerTitle": "KT 3.4: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?",
     "headerIntro": "Elected in 1968 on a promise of 'Peace with Honor', President Nixon sought to reduce US involvement without appearing to surrender. In 1969, he introduced 'Vietnamization'—a policy to train and equip the South Vietnamese army (ARVN) to take over combat operations, allowing the gradual withdrawal of US troops. However, to disrupt communist supply lines along the Ho Chi Minh Trail, Nixon secretly ordered the bombing and invasion of neighboring Cambodia (1970) and Laos (1971), expanding the war geographic scale and triggering massive protests at home.",
     "steps": [
       {
@@ -2607,7 +2607,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "Why did testimonies from returning veterans like Ron Kovic have such a powerful emotional and political impact on the American public compared to student protests?"
 },
 
-    "headerTitle": "KT 4.1 - GCSE CORE MASTERY: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?",
+    "headerTitle": "KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?",
     "headerIntro": "As the war dragged on, domestic opposition erupted into a powerful movement. The introduction of the draft in 1965 and the first televised war brought graphic footage of civilian casualties directly into American living rooms, creating a 'credibility gap' between government claims and reality. The shock of the 1968 Tet Offensive and the 1969 exposure of the My Lai Massacre—where US troops murdered over 500 civilians—further fueled protests. Tension peaked in May 1970 at Kent State University, where National Guardsmen shot and killed four student protesters, polarizing the nation.",
     "steps": [
       {
@@ -2821,7 +2821,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "How did the anti-war movement create deep social and class divisions in American society? How did Nixon capitalize on these divisions?"
 },
 
-    "headerTitle": "KT 4.2 - GCSE CORE MASTERY: Why did some Americans support the Vietnam War and the 'Silent Majority'?",
+    "headerTitle": "KT 4.2: Why did some Americans support the Vietnam War and the 'Silent Majority'?",
     "headerIntro": "Despite the high profile of the anti-war movement, millions of Americans supported the war or opposed the protests. In November 1969, President Nixon appealed to the 'Silent Majority'—conservative, patriotic, working-class citizens who felt alienated by radical counterculture and anti-war demonstrations. Pro-war support was fueled by deep-seated anti-communism, respect for law and order, and the belief that protesting troops during wartime was unpatriotic. Nixon's strategy was highly successful, enabling him to secure a landslide re-election in 1972.",
     "steps": [
       {
@@ -3025,7 +3025,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "How does this eyewitness account challenge the idea that the US exit from Vietnam was an orderly, honorable retreat? What was the human cost of the sudden withdrawal?"
 },
 
-    "headerTitle": "KT 4.3 - GCSE CORE MASTERY: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?",
+    "headerTitle": "KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?",
     "headerIntro": "Peace negotiations began in Paris in 1968 but remained deadlocked for years. In late 1972, Nixon ordered the devastating 'Christmas Bombings' of Hanoi to pressure North Vietnam. In January 1973, the Paris Peace Accords were signed, leading to the complete withdrawal of all US combat forces. However, fighting resumed between Vietnamese forces, and without US air support, the ARVN crumbled. In April 1975, communist forces launched the Spring Offensive, capturing the capital and renaming it Ho Chi Minh City, completing the reunification of Vietnam under communist rule.",
     "steps": [
       {
@@ -3229,7 +3229,7 @@ export const LESSONS_DATA = {
       "discussionQuestion": "Why is it possible to win every military battle but still lose a war? How does this sum up the core failure of the US intervention in Vietnam?"
 },
 
-    "headerTitle": "KT 4.4 - GCSE CORE MASTERY: What were the main reasons why the US failed to win the war in Vietnam?",
+    "headerTitle": "KT 4.4: What were the main reasons why the US failed to win the war in Vietnam?",
     "headerIntro": "The failure of the USA to defeat communist forces in Vietnam was the result of interconnected military, political, and social factors. Militarily, the Vietcong's guerrilla tactics, local knowledge, and supplies from China and the USSR defeated US attrition strategies. Politically, the South Vietnamese government remained corrupt and unpopular, whereas the North Vietnamese exhibited absolute determination (the 'commitment bug'). Socially, the growing anti-war movement and draft resistance destroyed the domestic political support necessary to sustain a prolonged war, forcing US withdrawal.",
     "steps": [
       {

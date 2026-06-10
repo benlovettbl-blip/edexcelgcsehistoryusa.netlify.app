@@ -228,7 +228,8 @@ try {
     { navId: 'nav-bookmarks', viewId: 'view-bookmarks', name: 'Bookmarks' },
     { navId: 'nav-games', viewId: 'view-games', name: 'Games Hub' },
     { navId: 'nav-ai-videos', viewId: 'view-ai-videos', name: '2-Min AI Videos' },
-    { navId: 'nav-leaderboard', viewId: 'view-leaderboard', name: 'Leaderboard' }
+    { navId: 'nav-leaderboard', viewId: 'view-leaderboard', name: 'Leaderboard' },
+    { navId: 'nav-guide', viewId: 'view-guide', name: 'User & Parent Guide' }
   ];
 
   views.forEach(v => {
@@ -280,10 +281,23 @@ try {
         throw new Error("studyLevel state did not update to 'core' when clicking core toggle!");
       }
       console.log("    * Switch to Core Lesson mode verified.");
+      
+      // Verify 5 Key Comprehension Questions layout (in Core mode)
+      const scaffoldCard = document.querySelector('.core-scaffold-questions-card');
+      if (scaffoldCard) {
+        const textareas = scaffoldCard.querySelectorAll('textarea');
+        const saveBtn = scaffoldCard.querySelector('.btn-core-save-scaffold-answers');
+        if (textareas.length > 0 || saveBtn) {
+          throw new Error("Comprehension questions should be condensed without textareas or save button!");
+        }
+        console.log("    * Condensed Comprehension Questions verified (no textareas/save buttons).");
+      }
     }
     
     // Toggling mastery mode
-    const masteryBtn = Array.from(levelBtns).find(btn => btn.getAttribute('data-level') === 'mastery');
+    // Query live document to find the new mastery button
+    const liveBtns = document.querySelectorAll('.level-toggle-btn');
+    const masteryBtn = Array.from(liveBtns).find(btn => btn.getAttribute('data-level') === 'mastery');
     if (masteryBtn) {
       fireClick(masteryBtn);
       if (dom.window.state.studyLevel !== 'mastery') {
@@ -291,6 +305,20 @@ try {
       }
       console.log("    * Switch back to Mastery mode verified.");
     }
+  }
+
+  // Collapsible Map Verification
+  const mapHeader = document.querySelector('.lesson-map-toggle-header');
+  if (mapHeader) {
+    const mapBody = document.querySelector('.lesson-map-body');
+    if (!mapBody || mapBody.style.display !== 'none') {
+      throw new Error("Lesson map body should be hidden/collapsed by default!");
+    }
+    fireClick(mapHeader);
+    if (mapBody.style.display !== 'block') {
+      throw new Error("Lesson map body did not expand when toggle header clicked!");
+    }
+    console.log("    * Collapsible Lesson Map verified.");
   }
 
   // 3b. Collapsible Do Now Task Header
@@ -766,6 +794,34 @@ try {
   console.log("    * Profane initials ASS correctly rejected.");
 
   console.log("✓ Standalone Falling Blocks page verification passed.");
+
+  // --- TEST 11: User & Parent Guide Page & Toolkit ---
+  console.log("\n--- TEST 11: User & Parent Guide Page & Toolkit ---");
+  // Navigate back to dashboard first to start from main screen
+  window.switchView('dashboard');
+
+  // Verify dashboard shortcut button click triggers guide view
+  const shortcutGuideBtn = document.getElementById('shortcut-guide');
+  if (!shortcutGuideBtn) throw new Error("Dashboard shortcut-guide button not found!");
+  fireClick(shortcutGuideBtn);
+  
+  const guideView = document.getElementById('view-guide');
+  if (!guideView || !guideView.classList.contains('active')) {
+    throw new Error("User & Parent Guide view was not activated after clicking dashboard shortcut!");
+  }
+  console.log("    * Dashboard shortcut card click navigation verified.");
+
+  // Navigate back to dashboard and verify hero guide button click triggers guide view
+  window.switchView('dashboard');
+  const heroGuideBtn = document.getElementById('hero-guide-btn');
+  if (!heroGuideBtn) throw new Error("Dashboard hero-guide-btn not found!");
+  fireClick(heroGuideBtn);
+  if (!guideView.classList.contains('active')) {
+    throw new Error("User & Parent Guide view was not activated after clicking dashboard hero button!");
+  }
+  console.log("    * Dashboard hero button click navigation verified.");
+  
+  console.log("✓ User & Parent Guide view verification passed.");
 
   console.log("\n=================================================");
   console.log("ALL FEATURES VERIFIED AND CONFIRMED FUNCTIONAL!");

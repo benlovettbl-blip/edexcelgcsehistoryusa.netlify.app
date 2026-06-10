@@ -641,7 +641,7 @@ function renderDashboard() {
       let subInquiryText = '';
       const lesson = LESSONS_DATA[sub.id];
       if (lesson && lesson.headerTitle) {
-        const match = lesson.headerTitle.match(/KT\s+(\d+\.\d+)\s+-\s+GCSE\s+CORE\s+MASTERY:\s+(.*)/i);
+        const match = lesson.headerTitle.match(/KT\s+(\d+\.\d+)(?:\s+-\s+GCSE\s+CORE\s+MASTERY)?:\s+(.*)/i);
         if (match) {
           subInquiryText = `KT ${match[1]}. ${match[2]}`;
         } else {
@@ -954,7 +954,7 @@ function playCausalGame(subtopicId) {
           </select>
         </div>
         <div class="causal-link-result" id="causal-game-result-${f.id}" style="display: none; margin-top: 10px; padding: 10px; background: rgba(16, 185, 129, 0.1); border-left: 3px solid #10b981; border-radius: 0 4px 4px 0; font-size: 0.88rem; color: #a7f3d0; line-height: 1.4;">
-          <strong>✓ Consequence Link:</strong> ${f.linkageText}
+          <strong><i class="fa-solid fa-check"></i> Consequence Link:</strong> ${f.linkageText}
         </div>
       </div>
     `;
@@ -5739,8 +5739,8 @@ function handleTabooTimerEnd() {
   let logsHtml = tabooState.turnLogs.map(log => `
     <div style="display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.88rem;">
       <span style="color: var(--text-main); font-weight: 500;">${log.target}</span>
-      <span style="font-weight: 700; color: ${log.status === 'correct' ? 'var(--success)' : 'var(--accent)'}; font-size: 0.75rem; text-transform: uppercase;">
-        ${log.status === 'correct' ? '✓ Correct' : '✗ Skipped'}
+      <span style="font-weight: 700; color: ${log.status === 'correct' ? 'var(--success)' : 'var(--accent)'}; font-size: 0.75rem; text-transform: uppercase; display: flex; align-items: center; gap: 4px;">
+        ${log.status === 'correct' ? '<i class="fa-solid fa-check"></i> Correct' : '<i class="fa-solid fa-xmark"></i> Skipped'}
       </span>
     </div>
   `).join('');
@@ -6476,11 +6476,76 @@ function renderKeyTopicOverview(topicId) {
       // Initial update
       updateFn(50);
 
-      input.addEventListener('input', (e) => {
-        updateFn(e.target.value);
-      });
     });
   }
+}
+
+function renderGuideView() {
+  const container = document.getElementById('guide-content-container');
+  if (!container) return;
+
+  container.innerHTML = `
+    <div class="mastery-header-card" style="background: var(--gradient-hero); padding: 24px; border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 24px; box-shadow: var(--shadow-md);">
+      <h2 class="mastery-header-title" style="margin: 0 0 8px 0; display: flex; align-items: center; gap: 12px; color: var(--text-main); font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700;">
+        <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> User & Parent App Guide
+      </h2>
+      <p class="mastery-header-intro" style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-muted);">
+        Learn about the dynamic features of the USA History Revision App.
+      </p>
+    </div>
+
+    <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px;">
+      
+      <!-- App Features Column -->
+      <div style="flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 20px;">
+        <div class="dashboard-panel" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); box-shadow: var(--shadow-sm);">
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--primary); margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-laptop-code"></i> Main App Features
+          </h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            
+            <div style="padding: 12px 14px; background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--primary); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); border-left-width: 4px;">
+              <strong style="color: var(--primary); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-graduation-cap"></i> Core Lessons (Grade 4 Pass)</strong>
+              <p style="margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
+                Designed for students aiming to secure a solid pass. Features targeted vocabulary lists, chronological ordering, and interactive PEEL Paragraph Builders (Point, Evidence, Explanation, Link) to establish core historical arguments.
+              </p>
+            </div>
+
+            <div style="padding: 12px 14px; background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--secondary); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); border-left-width: 4px;">
+              <strong style="color: var(--secondary); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-trophy"></i> Mastery Mode (Grade 7-9 Detail)</strong>
+              <p style="margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
+                Targeted at high-achievers. Includes scholarly debate extensions (e.g. orthodox vs revisionist), interactive historiographical dual-perspective sliders (Top-down legalistic vs Bottom-up grassroots), and examiner tip checklists for essay planning.
+              </p>
+            </div>
+
+            <div style="padding: 12px 14px; background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--accent); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); border-left-width: 4px;">
+              <strong style="color: var(--accent); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-map-location-dot"></i> Map Explorer & Timeline</strong>
+              <p style="margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
+                Interactive tools that show students the geographic and chronological relationships between events. Markers highlight hotspots like Little Rock, Oxford, and Hue, while the timeline bridges events directly to their respective lessons.
+              </p>
+            </div>
+
+            <div style="padding: 12px 14px; background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); border-left-width: 4px;">
+              <strong style="color: var(--success); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-calculator"></i> Quiz Generator</strong>
+              <p style="margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
+                Allows custom retrieval sessions drawn from a pool of 200+ specification questions. Filterable by difficulty and topic area to test and reinforce memory retention before exams.
+              </p>
+            </div>
+
+            <div style="padding: 12px 14px; background: rgba(255, 255, 255, 0.02); border-left: 4px solid #0ea5e9; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); border-left-width: 4px;">
+              <strong style="color: #0ea5e9; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-gamepad"></i> Revision Games Hub</strong>
+              <p style="margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
+                Includes 11 mini-games including "Causal Link Builder", "Mastery Match", and narrative-driven historical adventures (e.g. Echoes of Conflict) to make revision active and engaging.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  `;
 }
 
 export {
@@ -6511,7 +6576,8 @@ export {
   activateExamHubPanel,
   renderAiVideosView,
   openVideoModal,
-  closeVideoModal
+  closeVideoModal,
+  renderGuideView
 };
 
 function activateExamHubPanel(targetPanel) {

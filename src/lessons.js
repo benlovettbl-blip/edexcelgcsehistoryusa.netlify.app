@@ -5,6 +5,8 @@ import { renderSidebarNav, updateGlobalStats, openVideoModal, addXp } from './vi
 import { saveProgress } from './storage.js';
 import { downloadHtmlAsWord } from './past_papers.js';
 import { WORKBOOK_DATA } from './workbook_data.js';
+import { PEEL_DATA } from './peel_data.js';
+import { CORE_QUESTIONS_DATA } from './core_questions_data.js';
 
 const viewedSlides = new Set();
 let activeWorkbookSubtopicId = null;
@@ -55,27 +57,7 @@ const GLOSSARY_DB = {
 let highlightedKeywords = new Set();
 
 function injectScaffoldingIntoMindMap(bodyHtml, subtopicId) {
-  if (!bodyHtml || !bodyHtml.includes('mind-map-task-box')) return bodyHtml;
-  
-  const data = WORKBOOK_DATA[subtopicId];
-  if (!data) return bodyHtml;
-  
-  const bankWords = (data.vocabulary || []).slice(0, 4).map(v => v.term).concat((data.timeline || []).slice(0, 2).map(t => t.date));
-  if (bankWords.length === 0) return bodyHtml;
-  
-  const wordBankBox = `
-    <div class="mind-map-learning-check" style="margin-top: 12px; padding: 10px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 6px; font-size: 0.82rem; line-height: 1.45; color: var(--text-main); font-family: inherit; box-sizing: border-box;">
-      <strong style="color: #10b981; display: flex; align-items: center; gap: 4px; font-size: 0.9em; margin-bottom: 4px;">🧠 Learning Check: Mind Map Word Bank</strong>
-      Use these key concepts, names, and dates to connect and build your branches:
-      <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px;">
-        ${bankWords.map(word => `<span style="padding: 2px 6px; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 4px; font-size: 0.75rem; font-weight: 500;">${word}</span>`).join('')}
-      </div>
-    </div>
-  `;
-  
-  return bodyHtml.replace(/(<div class="mind-map-task-box"[^>]*>[\s\S]*?<\/div>\s*)(<\/div>)/i, (m, p1, p2) => {
-    return p1 + wordBankBox + p2;
-  });
+  return bodyHtml;
 }
 
 function applyGlossaryTooltips(text) {
@@ -511,6 +493,511 @@ function bindEmbeddedExamQuestionListeners(container, qId, qObj, paperId) {
   }
 }
 
+function getStandardQuestionsForSubtopic(subtopicId) {
+  for (const topic of QUIZ_DATA) {
+    const sub = topic.subtopics.find(s => s.id === subtopicId);
+    if (sub) {
+      return sub.standard || [];
+    }
+  }
+  return [];
+}
+
+function deterministicShuffle(array, seedString) {
+  let hash = 0;
+  for (let i = 0; i < seedString.length; i++) {
+    hash = seedString.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.abs((hash + i) % (i + 1));
+    const temp = shuffled[i];
+    shuffled[i] = shuffled[j];
+    shuffled[j] = temp;
+  }
+  return shuffled;
+}
+
+function renderStepKnowledgeCheck(stepIndex, subtopicId) {
+  // --- Task Variation 2: Linking/Matching Boxes (Step 2 / Index 1) ---
+  const causalLinks = LESSONS_DATA[subtopicId]?.causalLinks;
+  if (stepIndex === 1 && causalLinks && causalLinks.factors && causalLinks.factors.length > 0) {
+    const factors = causalLinks.factors;
+    const effects = factors.map((f, idx) => ({ id: f.id, text: f.linkageText || f.options[0], originalIndex: idx }));
+    const shuffledEffects = deterministicShuffle(effects, subtopicId + "_linking");
+
+    let factorsHtml = factors.map((f, idx) => `
+      <button class="linking-box-item cause-box" data-factor-id="${f.id}" data-correct-idx="${idx}" style="width: 100%; text-align: left; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+        <strong style="color: var(--secondary); flex-shrink: 0;"><i class="fa-solid fa-circle-question"></i></strong>
+        <span style="flex-grow: 1;">${f.title}</span>
+      </button>
+    `).join('');
+
+    let effectsHtml = shuffledEffects.map((e) => `
+      <button class="linking-box-item effect-box" data-effect-id="${e.id}" data-original-idx="${e.originalIndex}" style="width: 100%; text-align: left; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+        <strong style="color: var(--text-muted); flex-shrink: 0;"><i class="fa-solid fa-circle-question"></i></strong>
+        <span style="flex-grow: 1;">${e.text}</span>
+      </button>
+    `).join('');
+
+    return `
+      <div class="core-step-quiz core-step-linking" id="step-linking-${subtopicId}" style="margin-top: 20px; padding: 16px; background: rgba(6, 182, 212, 0.05); border: 1px solid var(--border-glass); border-left: 4px solid var(--secondary); border-radius: var(--border-radius-sm); box-sizing: border-box; text-align: left;">
+        <h4 style="margin: 0 0 8px 0; color: var(--secondary); font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-link"></i> Check Your Understanding: Link Cause to Consequence
+        </h4>
+        <p style="margin: 0 0 16px 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+          Click a <strong>Cause</strong> on the left, then click its matching <strong>Consequence</strong> on the right.
+        </p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 250px;">
+            ${factorsHtml}
+          </div>
+          <div style="flex: 1; min-width: 250px;">
+            ${effectsHtml}
+          </div>
+        </div>
+        <div class="linking-success-feedback" style="display: none; margin-top: 14px; padding: 10px 12px; background: rgba(16, 185, 129, 0.05); border-left: 3px solid var(--success); border-radius: 4px; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+          <strong style="color: var(--success); display: block; margin-bottom: 2px;">Causal Connections Complete! +5 XP</strong>
+          ${causalLinks.successText || "Fantastic job linking causes to their historical effects!"}
+        </div>
+      </div>
+    `;
+  }
+
+  // --- Task Variation 3: Chronological Ordering (Step 3 / Index 2) ---
+  const timeline = (WORKBOOK_DATA[subtopicId] && WORKBOOK_DATA[subtopicId].timeline) || [];
+  if (stepIndex === 2 && timeline.length >= 3) {
+    const originalEvents = timeline.slice(0, 3).map((t, idx) => ({ ...t, originalIndex: idx }));
+    const shuffledEvents = deterministicShuffle(originalEvents, subtopicId + "_ordering");
+
+    let eventsHtml = shuffledEvents.map((ev) => `
+      <button class="ordering-item" data-original-idx="${ev.originalIndex}" style="width: 100%; text-align: left; margin-bottom: 8px; display: flex; align-items: center; gap: 12px;">
+        <span class="ordering-badge">?</span>
+        <span style="flex-grow: 1; display: inline-flex; flex-wrap: wrap; align-items: center;">
+          <span class="reveal-date" style="display: none; color: var(--accent); font-weight: 700; margin-right: 6px; font-size: 0.85rem;">[${ev.date}]</span>
+          <span class="event-desc" style="line-height: 1.35;">${ev.desc}</span>
+        </span>
+      </button>
+    `).join('');
+
+    return `
+      <div class="core-step-quiz core-step-ordering" id="step-ordering-${subtopicId}" style="margin-top: 20px; padding: 16px; background: rgba(244, 63, 94, 0.05); border: 1px solid var(--border-glass); border-left: 4px solid var(--accent); border-radius: var(--border-radius-sm); box-sizing: border-box; text-align: left;">
+        <h4 style="margin: 0 0 8px 0; color: var(--accent); font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-clock-rotate-left"></i> Check Your Understanding: Chronological Ordering
+        </h4>
+        <p style="margin: 0 0 16px 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+          Click the historical events below in their correct chronological order (from earliest to latest).
+        </p>
+        <div class="ordering-container">
+          ${eventsHtml}
+        </div>
+        <div class="ordering-success-feedback" style="display: none; margin-top: 14px; padding: 10px 12px; background: rgba(16, 185, 129, 0.05); border-left: 3px solid var(--success); border-radius: 4px; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+          <strong style="color: var(--success); display: block; margin-bottom: 2px;">Chronological Sequence Correct! +5 XP</strong>
+          Excellent! You have placed all key subtopic events in their correct historical sequence.
+        </div>
+      </div>
+    `;
+  }
+
+  // --- Task Variation 1: Standard Multiple Choice Questions (Step 1 / Index 0 or fallback) ---
+  const standardQuestions = getStandardQuestionsForSubtopic(subtopicId);
+  if (standardQuestions.length === 0) return '';
+  
+  const totalSteps = LESSONS_DATA[subtopicId].steps.length;
+  const numQ = Math.min(3, Math.ceil(standardQuestions.length / totalSteps));
+  const startIdx = stepIndex * numQ;
+  const stepQuestions = standardQuestions.slice(startIdx, Math.min(startIdx + numQ, standardQuestions.length));
+  
+  if (stepQuestions.length === 0) return '';
+  
+  let html = `
+    <div class="core-step-quiz" style="margin-top: 20px; padding: 16px; background: rgba(205, 127, 50, 0.05); border: 1px solid var(--border-glass); border-left: 4px solid var(--primary); border-radius: var(--border-radius-sm); box-sizing: border-box; text-align: left;">
+      <h4 style="margin: 0 0 12px 0; color: var(--primary); font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-circle-question"></i> Check Your Understanding
+      </h4>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+  `;
+  
+  stepQuestions.forEach((q, qIdx) => {
+    const options = [q.answer, ...(q.distractors || [])];
+    
+    // Deterministic shuffle
+    let hash = 0;
+    for (let i = 0; i < q.id.length; i++) {
+      hash = q.id.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const shuffledOptions = [...options];
+    for (let i = shuffledOptions.length - 1; i > 0; i--) {
+      const j = Math.abs((hash + i) % (i + 1));
+      const temp = shuffledOptions[i];
+      shuffledOptions[i] = shuffledOptions[j];
+      shuffledOptions[j] = temp;
+    }
+    
+    const optionsHtml = shuffledOptions.map(opt => {
+      const isCorrect = (opt === q.answer);
+      return `
+        <button class="core-quiz-option-btn" 
+                data-question-id="${q.id}" 
+                data-is-correct="${isCorrect}" 
+                style="width: 100%; text-align: left; padding: 10px 14px; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all var(--transition-fast); display: flex; align-items: center; gap: 10px; outline: none; margin: 0; box-sizing: border-box;">
+          <span class="option-icon" style="min-width: 16px; height: 16px; border: 2px solid var(--text-muted); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.65rem; color: transparent; font-weight: 800; box-sizing: border-box;"></span>
+          <span style="flex-grow: 1; line-height: 1.3;">${opt}</span>
+        </button>
+      `;
+    }).join('');
+    
+    html += `
+      <div class="core-quiz-question-block" data-q-id="${q.id}" style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 0.88rem; font-weight: 600; color: var(--text-main); line-height: 1.4;">
+          ${qIdx + 1}. ${q.question}
+        </div>
+        <div class="core-quiz-options" style="display: flex; flex-direction: column; gap: 8px;">
+          ${optionsHtml}
+        </div>
+        <div class="core-quiz-feedback" style="display: none; padding: 10px 12px; background: rgba(16, 185, 129, 0.05); border-left: 3px solid var(--success); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted); box-sizing: border-box; margin-top: 4px;">
+          <strong style="color: var(--success); display: block; margin-bottom: 2px;">Correct! Explanation:</strong>
+          ${q.explanation}
+        </div>
+      </div>
+    `;
+  });
+  
+  html += `
+      </div>
+    </div>
+  `;
+  return html;
+}
+
+function renderCorePeelBuilder(subtopicId) {
+  const peel = PEEL_DATA[subtopicId];
+  if (!peel) return '';
+
+  const cards = [
+    { type: 'point', text: peel.point },
+    { type: 'evidence', text: peel.evidence },
+    { type: 'explanation', text: peel.explanation },
+    { type: 'link', text: peel.link }
+  ];
+
+  const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
+
+  const cardsHtml = shuffledCards.map(c => `
+    <button class="peel-card-item" data-type="${c.type}" style="width: 100%; text-align: left; display: flex; align-items: flex-start; gap: 10px;">
+      <i class="fa-solid fa-hand-pointer" style="color: var(--text-muted); margin-top: 3px; flex-shrink: 0;"></i>
+      <span class="peel-card-text" style="flex-grow: 1;">${c.text}</span>
+    </button>
+  `).join('');
+
+  return `
+    <div class="mastery-card core-peel-builder-card" style="max-width: 800px; margin: 0 auto 24px auto;">
+      <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; font-size: 1rem; color: var(--primary); margin: 0 0 12px 0;">
+        <span><i class="fa-solid fa-pen-fancy"></i> End of Lesson: PEEL Paragraph Builder</span>
+      </h3>
+      <div class="mastery-card-body" style="padding-top: 4px; text-align: left;">
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0; margin-bottom: 16px; line-height: 1.45;">
+          Paper 3 questions require writing structured PEEL paragraphs (Point, Evidence, Explanation, Link). Click the sentences below in the correct logical order to construct your explanation paragraph!
+        </p>
+        
+        <div style="background: rgba(var(--primary-rgb), 0.05); padding: 12px 14px; border-left: 3px solid var(--primary); border-radius: 4px; margin-bottom: 20px; font-size: 0.95rem; font-weight: bold; line-height: 1.4;">
+          Question: ${peel.question}
+        </div>
+
+        <h4 style="margin: 0 0 10px 0; font-size: 0.82rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Sentence Bank (Click in PEEL order)</h4>
+        <div class="peel-cards-pool" style="margin-bottom: 20px;">
+          ${cardsHtml}
+        </div>
+
+        <h4 style="margin: 20px 0 10px 0; font-size: 0.82rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Your Paragraph Assembly</h4>
+        <div class="peel-assembly-area">
+          <div class="peel-slot peel-slot-placeholder" data-index="0">[ 1. Make your Point (P) ]</div>
+          <div class="peel-slot peel-slot-placeholder" data-index="1">[ 2. Provide your Evidence (E) ]</div>
+          <div class="peel-slot peel-slot-placeholder" data-index="2">[ 3. Explain your Evidence (E) ]</div>
+          <div class="peel-slot peel-slot-placeholder" data-index="3">[ 4. Link back to the Question (L) ]</div>
+        </div>
+
+        <div class="peel-hint-box" style="display: none; padding: 10px 12px; background: rgba(244, 63, 94, 0.05); border-left: 3px solid var(--accent); border-radius: 4px; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.45;"></div>
+
+        <!-- Success Panel -->
+        <div class="peel-success-drawer" style="display: none; padding: 16px; background: rgba(16, 185, 129, 0.04); border-left: 4px solid var(--success); border-radius: var(--border-radius-sm); margin-top: 16px;">
+          <h4 style="margin: 0 0 8px 0; color: var(--success); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-circle-check"></i> Paragraph Completed! +10 XP
+          </h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0; margin-bottom: 12px; line-height: 1.45;">
+            Excellent work! You have successfully built a full PEEL paragraph. Notice how each sentence serves a specific purpose in building a high-scoring analytical response:
+          </p>
+          <div style="font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); border-top: 1px dashed var(--border-glass); padding-top: 10px; display: flex; flex-direction: column; gap: 6px;">
+            <p style="margin: 0;"><strong>Point:</strong> Starts your paragraph by directly answering the question with a clear factor.</p>
+            <p style="margin: 0;"><strong>Evidence:</strong> Adds specific dates, details, or statistics to back up your point.</p>
+            <p style="margin: 0;"><strong>Explanation:</strong> Explains exactly how/why your evidence answers the question (focus on consequence).</p>
+            <p style="margin: 0;"><strong>Link:</strong> Ties the explanation back to the question to show structural coherence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function bindCoreStepInteractiveTasks(container, subtopicId) {
+  // 1. Linking Boxes Binding
+  const linkingContainer = container.querySelector(`#step-linking-${subtopicId}`);
+  if (linkingContainer) {
+    let selectedCause = null;
+    const causeButtons = linkingContainer.querySelectorAll('.cause-box');
+    const effectButtons = linkingContainer.querySelectorAll('.effect-box');
+    const successFeedback = linkingContainer.querySelector('.linking-success-feedback');
+    let linkedCount = 0;
+
+    causeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.classList.contains('linked')) return;
+        AudioEngine.play('click');
+
+        causeButtons.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedCause = btn;
+      });
+    });
+
+    effectButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.classList.contains('linked') || !selectedCause) return;
+
+        const causeId = selectedCause.getAttribute('data-factor-id');
+        const effectId = btn.getAttribute('data-effect-id');
+
+        if (causeId === effectId) {
+          // Correct match!
+          AudioEngine.play('success');
+          btn.classList.add('linked');
+          selectedCause.classList.add('linked');
+          btn.style.cursor = 'default';
+          selectedCause.style.cursor = 'default';
+          
+          const causeCheckIcon = selectedCause.querySelector('strong');
+          if (causeCheckIcon) causeCheckIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
+          const effectCheckIcon = btn.querySelector('strong');
+          if (effectCheckIcon) effectCheckIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+          causeButtons.forEach(b => b.classList.remove('selected'));
+          selectedCause = null;
+          linkedCount++;
+          addXp(2);
+
+          if (linkedCount === causeButtons.length) {
+            AudioEngine.play('cheer');
+            if (successFeedback) successFeedback.style.display = 'block';
+            addXp(5);
+            if (typeof Confetti !== 'undefined' && typeof Confetti.spawn === 'function') {
+              Confetti.spawn(30);
+            }
+          }
+        } else {
+          // Mismatch!
+          AudioEngine.play('error');
+          btn.style.borderColor = 'var(--accent)';
+          btn.style.background = 'rgba(244, 63, 94, 0.1)';
+          selectedCause.style.borderColor = 'var(--accent)';
+          selectedCause.style.background = 'rgba(244, 63, 94, 0.1)';
+
+          const prevBtn = btn;
+          const prevCause = selectedCause;
+          causeButtons.forEach(b => b.classList.remove('selected'));
+          selectedCause = null;
+
+          setTimeout(() => {
+            if (!prevBtn.classList.contains('linked')) {
+              prevBtn.style.borderColor = 'var(--border-glass)';
+              prevBtn.style.background = 'rgba(255, 255, 255, 0.02)';
+            }
+            if (!prevCause.classList.contains('linked')) {
+              prevCause.style.borderColor = 'var(--border-glass)';
+              prevCause.style.background = 'rgba(255, 255, 255, 0.02)';
+            }
+          }, 600);
+        }
+      });
+    });
+  }
+
+  // 2. Chronological Ordering Binding
+  const orderingContainer = container.querySelector(`#step-ordering-${subtopicId}`);
+  if (orderingContainer) {
+    const items = Array.from(orderingContainer.querySelectorAll('.ordering-item'));
+    const successFeedback = orderingContainer.querySelector('.ordering-success-feedback');
+    let currentStep = 0;
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('ordered')) return;
+
+        const originalIdx = parseInt(item.getAttribute('data-original-idx'));
+
+        if (originalIdx === currentStep) {
+          // Correct!
+          AudioEngine.play('success');
+          item.classList.add('ordered');
+          item.querySelector('.ordering-badge').textContent = currentStep + 1;
+          
+          // Reveal the date
+          const dateEl = item.querySelector('.reveal-date');
+          if (dateEl) {
+            dateEl.style.display = 'inline-block';
+          }
+
+          currentStep++;
+          addXp(2);
+
+          if (currentStep === items.length) {
+            AudioEngine.play('cheer');
+            if (successFeedback) successFeedback.style.display = 'block';
+            addXp(5);
+            if (typeof Confetti !== 'undefined' && typeof Confetti.spawn === 'function') {
+              Confetti.spawn(30);
+            }
+          }
+        } else {
+          // Wrong selection!
+          AudioEngine.play('error');
+          item.classList.add('incorrect');
+          setTimeout(() => {
+            item.classList.remove('incorrect');
+          }, 500);
+
+          // Reset progress
+          currentStep = 0;
+          items.forEach(el => {
+            el.classList.remove('ordered');
+            el.querySelector('.ordering-badge').textContent = '?';
+            
+            // Hide the date again
+            const dateEl = el.querySelector('.reveal-date');
+            if (dateEl) {
+              dateEl.style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+  }
+}
+
+function bindCorePeelBuilder(container, subtopicId) {
+  const peelCard = container.querySelector(`.core-peel-builder-card`);
+  if (!peelCard) return;
+
+  const cardItems = peelCard.querySelectorAll('.peel-card-item');
+  const slots = peelCard.querySelectorAll('.peel-slot');
+  const hintBox = peelCard.querySelector('.peel-hint-box');
+  const successDrawer = peelCard.querySelector('.peel-success-drawer');
+
+  const expectedTypes = ['point', 'evidence', 'explanation', 'link'];
+  let placedCount = 0;
+
+  const hints = {
+    'point': 'Start by choosing the sentence that directly introduces the main answer to the question (P).',
+    'evidence': 'Look for a sentence containing specific dates, figures, or historical events to support the point (E).',
+    'explanation': 'Choose the sentence that explains the consequence of the evidence. It often starts with "As a result" or "This meant that" (E).',
+    'link': 'Choose the final sentence that sums up the paragraph and links back to the main essay question (L).'
+  };
+
+  cardItems.forEach(card => {
+    card.addEventListener('click', () => {
+      if (card.classList.contains('placed')) return;
+
+      const cardType = card.getAttribute('data-type');
+      const expectedType = expectedTypes[placedCount];
+
+      if (cardType === expectedType) {
+        // Correct next sentence in PEEL sequence!
+        AudioEngine.play('success');
+        card.classList.add('placed');
+        
+        const slot = slots[placedCount];
+        slot.innerHTML = `
+          <span class="peel-tag ${cardType}">${cardType}</span>
+          <span style="font-weight: 500; font-size: 0.9rem;">${card.querySelector('.peel-card-text').textContent}</span>
+        `;
+        slot.className = `peel-slot peel-slot-filled`;
+        
+        placedCount++;
+        addXp(2);
+        
+        if (hintBox) {
+          hintBox.style.display = 'none';
+          hintBox.textContent = '';
+        }
+
+        if (placedCount === 4) {
+          // Completed the paragraph!
+          AudioEngine.play('cheer');
+          addXp(10);
+          if (successDrawer) {
+            successDrawer.style.display = 'block';
+            successDrawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          if (typeof Confetti !== 'undefined' && typeof Confetti.spawn === 'function') {
+            Confetti.spawn(50);
+          }
+        }
+      } else {
+        // Incorrect sentence click!
+        AudioEngine.play('error');
+        card.classList.add('incorrect');
+        setTimeout(() => {
+          card.classList.remove('incorrect');
+        }, 500);
+
+        if (hintBox) {
+          hintBox.style.display = 'block';
+          hintBox.innerHTML = `
+            <i class="fa-solid fa-lightbulb" style="color: var(--accent); margin-right: 6px;"></i>
+            <strong>Not quite!</strong> ${hints[expectedType]}
+          `;
+        }
+      }
+    });
+  });
+}
+
+function renderCoreScaffoldQuestions(subtopicId) {
+  const qList = CORE_QUESTIONS_DATA[subtopicId];
+  if (!qList || qList.length === 0) return '';
+
+  let qBlocksHtml = qList.map((item, qIdx) => {
+    return `
+      <div class="core-scaffold-q-block" style="margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border-glass); display: flex; flex-direction: column; gap: 4px;">
+        <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main); line-height: 1.4;">
+          Q${qIdx + 1}: ${item.q}
+        </div>
+        <div style="font-size: 0.82rem; color: var(--text-muted); font-style: italic; display: flex; align-items: baseline; gap: 6px;">
+          <span style="color: var(--primary); font-weight: bold; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3px; flex-shrink: 0;">Sentence starter:</span>
+          <span>"${item.starter}"</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="mastery-card core-scaffold-questions-card" style="max-width: 800px; margin: 24px auto 20px auto; padding: 20px; background: rgba(59, 130, 246, 0.02); border: 1px solid var(--border-glass); border-left: 5px solid var(--primary); border-radius: var(--border-radius-sm); text-align: left; box-sizing: border-box;">
+      <h4 style="margin: 0 0 10px 0; color: var(--primary); font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-graduation-cap"></i> Lesson Study Support: 5 Key Comprehension Questions
+      </h4>
+      <p style="margin: 0 0 16px 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">
+        Write the answers to these comprehension questions in your study notebook, using the sentence starters to help structure your response.
+      </p>
+      <div class="core-scaffold-questions-list" style="display: flex; flex-direction: column;">
+        ${qBlocksHtml}
+      </div>
+    </div>
+  `;
+}
+
+function bindCoreScaffoldQuestions(container, subtopicId) {
+  // No-op as textareas and save buttons have been removed
+}
+
 export async function renderMasteryView(subtopicId) {
   highlightedKeywords.clear();
   viewedSlides.clear();
@@ -680,7 +1167,17 @@ export async function renderMasteryView(subtopicId) {
       </button>
     `;
 
+    const stepQuizHtml = isCoreMode ? renderStepKnowledgeCheck(index, subtopicId) : '';
+
     if (step.isSplit) {
+      let finalBodyHtml = applyGlossaryTooltips(injectScaffoldingIntoMindMap(step.bodyHtml, subtopicId));
+      if (isCoreMode && stepQuizHtml) {
+        const lastDivIdx = finalBodyHtml.lastIndexOf('</div>');
+        if (lastDivIdx !== -1) {
+          finalBodyHtml = finalBodyHtml.substring(0, lastDivIdx) + stepQuizHtml + finalBodyHtml.substring(lastDivIdx);
+        }
+      }
+
       stepsHtml += `
         <div class="mastery-card" style="max-width: 800px; margin: 0 auto 20px auto;">
           <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
@@ -688,7 +1185,7 @@ export async function renderMasteryView(subtopicId) {
             ${audioBtnHtml}
           </h3>
           <div class="mastery-split-layout">
-            ${applyGlossaryTooltips(injectScaffoldingIntoMindMap(step.bodyHtml, subtopicId))}
+            ${finalBodyHtml}
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
@@ -706,6 +1203,7 @@ export async function renderMasteryView(subtopicId) {
           </div>
           ${bridgeHtml}
           ${scholarlyHtml}
+          ${stepQuizHtml}
         </div>
       `;
     }
@@ -713,6 +1211,22 @@ export async function renderMasteryView(subtopicId) {
     // Insert Lived Experience discussion card half-way through the lesson
     if (index + 1 === halfPoint && data.livedExperience) {
       const le = data.livedExperience;
+      const discussionPromptText = isCoreMode && le.coreDiscussionQuestion 
+        ? le.coreDiscussionQuestion 
+        : (isCoreMode 
+            ? `Read ${le.witness || 'the witness'}'s account. Find one detail that shows the impact of this historical situation, and explain why it was significant or how it made people feel.` 
+            : le.discussionQuestion);
+
+      let hasSourceA = false;
+      if (data.steps) {
+        data.steps.forEach(step => {
+          if (step.bodyHtml && /source\s+a\b/i.test(step.bodyHtml)) {
+            hasSourceA = true;
+          }
+        });
+      }
+      const sourceLabel = hasSourceA ? 'Source B' : 'Source A';
+
       stepsHtml += `
         <div class="mastery-card lived-experience-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--accent);">
           <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
@@ -723,7 +1237,7 @@ export async function renderMasteryView(subtopicId) {
           </h3>
           <div class="mastery-card-body card-content">
             <div class="source-provenance" style="font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">
-              <strong>Source Context:</strong> ${le.context}
+              <strong>${sourceLabel}:</strong> ${le.witness} - ${le.context}
             </div>
             <blockquote class="source-quote" style="font-size: 1.05rem; font-style: italic; border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 20px 0; color: var(--text-main); line-height: 1.55; font-family: Georgia, 'Times New Roman', serif;">
               "${le.quote}"
@@ -733,7 +1247,7 @@ export async function renderMasteryView(subtopicId) {
                 <i class="fa-solid fa-circle-question"></i> Class Discussion Prompt
               </h4>
               <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-weight: 500;">
-                ${le.discussionQuestion}
+                ${discussionPromptText}
               </p>
             </div>
           </div>
@@ -741,6 +1255,10 @@ export async function renderMasteryView(subtopicId) {
       `;
     }
   });
+
+  if (isCoreMode) {
+    stepsHtml += renderCoreScaffoldQuestions(subtopicId);
+  }
 
   // Generate Dual Perspective slider HTML
   let dualHtml = '';
@@ -808,7 +1326,7 @@ export async function renderMasteryView(subtopicId) {
             </select>
           </div>
           <div class="causal-link-result" id="causal-result-${f.id}">
-            <strong>✓ Consequence Link:</strong> ${f.linkageText}
+            <strong><i class="fa-solid fa-check" style="color: var(--success);"></i> Consequence Link:</strong> ${f.linkageText}
           </div>
         </div>
       `;
@@ -1503,8 +2021,11 @@ export async function renderMasteryView(subtopicId) {
   }
 
   let lessonWrapUpHtml = '';
-  const wuChallenge = WRAPUP_DATA[subtopicId];
-  if (wuChallenge) {
+  if (isCoreMode) {
+    lessonWrapUpHtml = renderCorePeelBuilder(subtopicId);
+  } else {
+    const wuChallenge = WRAPUP_DATA[subtopicId];
+    if (wuChallenge) {
     const factCardsHtml = wuChallenge.facts.map(f => `
       <div class="wrapup-fact-card" draggable="true" data-fact-id="${f.id}">
         <i class="fa-solid fa-grip-vertical" style="color: var(--text-muted); cursor: grab; margin-top: 2px; flex-shrink: 0;"></i>
@@ -1633,6 +2154,7 @@ export async function renderMasteryView(subtopicId) {
         </div>
       </div>
     `;
+    }
   }
 
   let hwHtml = '';
@@ -1716,11 +2238,12 @@ export async function renderMasteryView(subtopicId) {
   let mapHtml = '';
   if (data.mapConfig) {
     mapHtml = `
-      <div class="mastery-card lesson-map-card" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
-        <h3 class="mastery-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 1rem; color: var(--primary); margin: 0 0 12px 0; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">
-          <span><i class="fa-solid fa-map-location-dot"></i> Interactive Lesson Map: ${data.mapConfig.title}</span>
+      <div class="mastery-card lesson-map-card collapsed" style="max-width: 800px; margin: 0 auto 24px auto; border-left: 4px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
+        <h3 class="mastery-card-title lesson-map-toggle-header" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 1rem; color: var(--primary); margin: 0; padding: 12px 16px; cursor: pointer; user-select: none; transition: background 0.2s;">
+          <span style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-map-location-dot"></i> Interactive Lesson Map: ${data.mapConfig.title}</span>
+          <span class="map-toggle-icon" style="transition: transform 0.3s; display: inline-block;"><i class="fa-solid fa-chevron-down"></i></span>
         </h3>
-        <div class="mastery-card-body" style="padding-top: 4px;">
+        <div class="mastery-card-body lesson-map-body" style="padding: 16px; padding-top: 4px; display: none;">
           <p style="margin-top: 0; margin-bottom: 16px; font-style: italic; color: var(--text-muted); font-size: 0.85rem;">
             Click on the pulsing markers to explore the locations where these historic events unfolded. Use the controls to zoom.
           </p>
@@ -2041,11 +2564,20 @@ export async function renderMasteryView(subtopicId) {
             <div class="skills-source-card" style="padding: 20px; background: rgba(0, 0, 0, 0.15); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); margin-bottom: 24px; position: relative;">
               <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary);"></div>
               <span class="badge" style="background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 8px;">SOURCE A</span>
-              <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
               ${paper.sourceA.image ? `
-                <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 250px; object-fit: contain; margin-bottom: 12px; border-radius: 4px;" />
-              ` : ''}
-              <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
+                <div class="source-split-container">
+                  <div class="source-image-column">
+                    <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 4px;" />
+                  </div>
+                  <div class="source-text-column">
+                    <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin: 0 0 10px 0; line-height: 1.4;"><strong>Provenance:</strong> ${paper.sourceA.provenance}</p>
+                    <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px;">${paper.sourceA.content}</div>
+                  </div>
+                </div>
+              ` : `
+                <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
+                <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
+              `}
             </div>
           `;
         }
@@ -2113,6 +2645,10 @@ export async function renderMasteryView(subtopicId) {
       </div>
     `;
   }
+
+  const masteredBtnLabel = isCoreMode 
+    ? `<i class="fa-solid fa-check"></i> Mark Topic ${subtopicId.replace('subtopic_', '').replace('_', '.')} as Completed` 
+    : `<i class="fa-solid fa-check"></i> Mark Topic ${subtopicId.replace('subtopic_', '').replace('_', '.')} as Mastered`;
 
   // Set the container innerHTML
   container.innerHTML = `
@@ -2189,14 +2725,122 @@ export async function renderMasteryView(subtopicId) {
     <!-- Mastery Progress Button -->
     <div class="mastered-button-wrapper" style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
       <button class="mastery-btn mastery-btn-success" id="btn-mark-mastery-mastered">
-        ✓ Mark Topic ${subtopicId.replace('subtopic_', '').replace('_', '.')} as Mastered
+        ${masteredBtnLabel}
       </button>
     </div>
 
     ${embeddedExamsHtml}
   `;
 
+  // Level Switcher Toggle (bound early to prevent any subsequent errors from blocking mode switches)
+  container.querySelectorAll('.level-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const level = btn.getAttribute('data-level');
+      AudioEngine.play('click');
+      state.studyLevel = level;
+      renderMasteryView(subtopicId);
+    });
+  });
 
+  // Collapsible Lesson Map
+  const mapToggleHeader = container.querySelector('.lesson-map-toggle-header');
+  const mapBody = container.querySelector('.lesson-map-body');
+  const mapToggleIcon = container.querySelector('.map-toggle-icon');
+  if (mapToggleHeader && mapBody) {
+    mapToggleHeader.addEventListener('click', () => {
+      AudioEngine.play('click');
+      const isCollapsed = mapBody.style.display === 'none' || mapBody.style.display === '';
+      if (isCollapsed) {
+        mapBody.style.display = 'block';
+        if (mapToggleIcon) {
+          mapToggleIcon.style.transform = 'rotate(180deg)';
+        }
+        // Recalculate map container sizes
+        setTimeout(() => {
+          if (window.activeLeafletMaps && window.activeLeafletMaps[subtopicId]) {
+            window.activeLeafletMaps[subtopicId].invalidateSize();
+          }
+          window.dispatchEvent(new Event('resize'));
+        }, 150);
+      } else {
+        mapBody.style.display = 'none';
+        if (mapToggleIcon) {
+          mapToggleIcon.style.transform = 'rotate(0deg)';
+        }
+      }
+    });
+  }
+
+  // Pull revision/mind-map task boxes out of split layouts to span full-width
+  container.querySelectorAll('.mastery-split-layout').forEach(splitLayout => {
+    const taskBox = splitLayout.querySelector('.revision-task-box, .mind-map-task-box');
+    if (taskBox) {
+      splitLayout.parentNode.insertBefore(taskBox, splitLayout.nextSibling);
+      taskBox.style.width = '100%';
+      taskBox.style.boxSizing = 'border-box';
+      taskBox.style.marginTop = '20px';
+    }
+  });
+
+  // Bind Core Step Quiz Option Buttons
+  container.querySelectorAll('.core-quiz-option-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const questionBlock = btn.closest('.core-quiz-question-block');
+      if (!questionBlock) return;
+      
+      const isCorrect = btn.getAttribute('data-is-correct') === 'true';
+      const allButtons = questionBlock.querySelectorAll('.core-quiz-option-btn');
+      
+      if (isCorrect) {
+        AudioEngine.play('success');
+        
+        btn.style.borderColor = 'var(--success)';
+        btn.style.background = 'rgba(16, 185, 129, 0.1)';
+        const icon = btn.querySelector('.option-icon');
+        if (icon) {
+          icon.style.borderColor = 'var(--success)';
+          icon.style.background = 'var(--success)';
+          icon.style.color = '#fff';
+          icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+        }
+        
+        allButtons.forEach(b => {
+          b.disabled = true;
+          b.style.cursor = 'not-allowed';
+          b.style.opacity = '0.6';
+        });
+        btn.style.opacity = '1';
+        
+        const feedback = questionBlock.querySelector('.core-quiz-feedback');
+        if (feedback) {
+          feedback.style.display = 'block';
+        }
+        
+        addXp(2);
+      } else {
+        AudioEngine.play('error');
+        
+        btn.style.borderColor = 'var(--accent)';
+        btn.style.background = 'rgba(244, 63, 94, 0.1)';
+        const icon = btn.querySelector('.option-icon');
+        if (icon) {
+          icon.style.borderColor = 'var(--accent)';
+          icon.style.background = 'var(--accent)';
+          icon.style.color = '#000';
+          icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        }
+        
+        btn.disabled = true;
+        btn.style.cursor = 'not-allowed';
+        btn.style.opacity = '0.6';
+      }
+    });
+  });
+
+  // Bind Core Mode Interactive Tasks & PEEL Builder
+  bindCoreStepInteractiveTasks(container, subtopicId);
+  bindCorePeelBuilder(container, subtopicId);
+  bindCoreScaffoldQuestions(container, subtopicId);
 
   // Bind Audio Assist TTS buttons
   const audioButtons = container.querySelectorAll('.btn-audio-read');
@@ -2958,7 +3602,7 @@ export async function renderMasteryView(subtopicId) {
       AudioEngine.play('cheer');
       btnMark.classList.add('clicked');
       btnMark.disabled = true;
-      btnMark.innerText = "Mastered! Returning to Menu...";
+      btnMark.innerText = isCoreMode ? "Completed! Returning to Menu..." : "Mastered! Returning to Menu...";
       
       // Update local storage / state mastery records
       QUIZ_DATA.forEach(topic => {
@@ -3438,7 +4082,7 @@ function setupWrapUpChallenge(container, subtopicId) {
         if (explanationsList) {
           explanationsList.innerHTML = challenge.facts.map(f => `
             <div style="padding: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 4px; margin-bottom: 8px; text-align: left;">
-              <strong style="color: var(--success); display: block; margin-bottom: 2px; font-size: 0.82rem;">✓ ${f.correctCategory}:</strong>
+              <strong style="color: var(--success); display: block; margin-bottom: 2px; font-size: 0.82rem;"><i class="fa-solid fa-check"></i> ${f.correctCategory}:</strong>
               <span style="color: var(--text-base); font-size: 0.82rem; line-height: 1.45;">${f.text}</span>
               <p style="margin: 6px 0 0 0; font-style: italic; color: var(--text-muted); font-size: 0.78rem; border-top: 1px dashed var(--border-glass); padding-top: 4px;">${f.feedback}</p>
             </div>
@@ -3559,16 +4203,6 @@ function setupWrapUpChallenge(container, subtopicId) {
       }
     });
   }
-
-  // Level Switcher Toggle
-  container.querySelectorAll('.level-toggle-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const level = btn.getAttribute('data-level');
-      AudioEngine.play('click');
-      state.studyLevel = level;
-      renderMasteryView(subtopicId);
-    });
-  });
 
   // Print Workbook modal trigger
   const printWorkbookBtn = container.querySelector('.print-workbook-btn');
@@ -3826,6 +4460,9 @@ function initializeLeafletMap(subtopicId, mapConfig) {
     zoomControl: true,
     attributionControl: false
   });
+  
+  window.activeLeafletMaps = window.activeLeafletMaps || {};
+  window.activeLeafletMaps[subtopicId] = map;
   
   window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',

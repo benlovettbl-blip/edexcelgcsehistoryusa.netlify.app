@@ -192,6 +192,14 @@ function bindEvents() {
     });
   }
 
+  const navGuide = document.getElementById('nav-guide');
+  if (navGuide) {
+    navGuide.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('guide');
+    });
+  }
+
   // Dashboard Shortcuts
   document.getElementById('shortcut-timeline').addEventListener('click', () => {
     AudioEngine.play('click');
@@ -231,6 +239,22 @@ function bindEvents() {
     switchView('ai-videos');
   });
 
+  const shortcutGuide = document.getElementById('shortcut-guide');
+  if (shortcutGuide) {
+    shortcutGuide.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('guide');
+    });
+  }
+
+  const heroGuideBtn = document.getElementById('hero-guide-btn');
+  if (heroGuideBtn) {
+    heroGuideBtn.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('guide');
+    });
+  }
+
   // Mobile Menu Toggle
   const menuToggle = document.getElementById('menu-toggle');
   if (menuToggle) {
@@ -253,6 +277,14 @@ function bindEvents() {
   const leaderboardBackBtn = document.getElementById('btn-leaderboard-back');
   if (leaderboardBackBtn) {
     leaderboardBackBtn.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('dashboard');
+    });
+  }
+
+  const guideBackBtn = document.getElementById('btn-guide-back');
+  if (guideBackBtn) {
+    guideBackBtn.addEventListener('click', () => {
       AudioEngine.play('click');
       switchView('dashboard');
     });
@@ -593,13 +625,16 @@ function bindEvents() {
       document.getElementById('q1-source-provenance').textContent = data.sourceA.provenance;
       
       const q1Img = document.getElementById('q1-source-img');
+      const q1ImgCol = document.getElementById('q1-source-image-col');
       if (q1Img) {
         if (data.sourceA.image) {
           q1Img.src = data.sourceA.image;
           q1Img.style.display = 'block';
+          if (q1ImgCol) q1ImgCol.style.display = 'flex';
         } else {
           q1Img.style.display = 'none';
           q1Img.src = '';
+          if (q1ImgCol) q1ImgCol.style.display = 'none';
         }
       }
       
