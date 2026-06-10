@@ -9686,3 +9686,85 @@ body.printing-active #print-area {
   cursor: pointer !important;
 }
 
+/* --- Breadcrumb Trail Navigation --- */
+.breadcrumb-trail {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.breadcrumb-item {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  cursor: pointer;
+}
+.breadcrumb-item:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+.breadcrumb-separator {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.breadcrumb-current {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* --- High Contrast Global Reset Overrides --- */
+[data-contrast="high"] * {
+  border-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* --- Typographical Rhythm Adjustments --- */
+.card-content p, 
+.mastery-card-body p, 
+.source-quote, 
+.discussion-prompt p, 
+.journey-answer-text, 
+.past-model-answer-content, 
+.model-answer-box p {
+  line-height: 1.6 !important;
+  margin-bottom: 1.2rem !important;
+}
+.card-content p:last-child, 
+.mastery-card-body p:last-child, 
+.discussion-prompt p:last-child, 
+.model-answer-box p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* --- Dynamic Source Annotator Buttons Styling --- */
+.annotator-btn {
+  outline: none;
+}
+.annotator-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: var(--primary) !important;
+}
+.annotator-btn.active {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--text-inverse, #ffffff) !important;
+}
+[data-contrast="high"] .annotator-btn {
+  border: 1px solid var(--border-glass) !important;
+}
+[data-contrast="high"] .annotator-btn.active {
+  border: 2px solid var(--border-glass) !important;
+}
+
+

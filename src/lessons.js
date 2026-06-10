@@ -1,6 +1,7 @@
 import { LESSONS_DATA } from './lessons_data.js';
 import { state } from './state.js';
 import { switchView } from './navigation.js';
+import { MAP_LOCATIONS_USA, MAP_LOCATIONS_VIETNAM } from './map_explorer.js';
 import { renderSidebarNav, updateGlobalStats, openVideoModal, addXp } from './views.js';
 import { saveProgress } from './storage.js';
 import { downloadHtmlAsWord } from './past_papers.js';
@@ -1056,11 +1057,46 @@ function bindCoreScaffoldQuestions(container, subtopicId) {
   // No-op as textareas and save buttons have been removed
 }
 
+export function getBreadcrumbsHtml(subtopicId) {
+  const parts = subtopicId.split('_');
+  const topicNum = parts[1];
+  const lessonNum = parts.slice(1).join('.');
+  const topicId = `topic_${topicNum}`;
+  const topicTitles = {
+    'topic_1': 'Key Topic 1 Overview',
+    'topic_2': 'Key Topic 2 Overview',
+    'topic_3': 'Key Topic 3 Overview',
+    'topic_4': 'Key Topic 4 Overview'
+  };
+  const topicTitleShort = topicTitles[topicId] || `Key Topic ${topicNum} Overview`;
+
+  return `
+    <nav class="breadcrumb-trail">
+      <a href="#" class="breadcrumb-item" onclick="window.switchView('dashboard'); return false;">Dashboard</a>
+      <span class="breadcrumb-separator">&gt;</span>
+      <a href="#" class="breadcrumb-item" onclick="window.switchView('key-topic', '${topicId}'); return false;">${topicTitleShort}</a>
+      <span class="breadcrumb-separator">&gt;</span>
+      <span class="breadcrumb-current">Lesson ${lessonNum}</span>
+    </nav>
+  `;
+}
+
 export async function renderMasteryView(subtopicId) {
   highlightedKeywords.clear();
   viewedSlides.clear();
   const container = document.getElementById('mastery-content-container');
   if (!container) return;
+
+  const matchingLocations = [];
+  const usaLocations = MAP_LOCATIONS_USA || [];
+  const vietnamLocations = MAP_LOCATIONS_VIETNAM || [];
+  
+  usaLocations.forEach(loc => {
+    if (loc.subtopicId === subtopicId) matchingLocations.push(loc);
+  });
+  vietnamLocations.forEach(loc => {
+    if (loc.subtopicId === subtopicId) matchingLocations.push(loc);
+  });
 
   const data = LESSONS_DATA[subtopicId];
 
@@ -2339,6 +2375,13 @@ export async function renderMasteryView(subtopicId) {
                   <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
                 ` : ''}
                 <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+                <div class="source-annotator-buttons" style="margin-top: 12px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+                  <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Clues:</span>
+                  <button class="annotator-btn btn-c" data-paper-id="${paper.id}" data-source="B" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+                  <button class="annotator-btn btn-nop" data-paper-id="${paper.id}" data-source="B" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+                  <button class="annotator-btn btn-ok" data-paper-id="${paper.id}" data-source="B" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+                </div>
+                <div class="source-clue-display-box" id="clue-display-${paper.id}-B" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted);"></div>
               </div>
               <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
                 <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
@@ -2348,6 +2391,13 @@ export async function renderMasteryView(subtopicId) {
                   <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" style="max-width: 100%; max-height: 150px; object-fit: contain; margin-bottom: 8px; border-radius: 4px;" />
                 ` : ''}
                 <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+                <div class="source-annotator-buttons" style="margin-top: 12px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+                  <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Clues:</span>
+                  <button class="annotator-btn btn-c" data-paper-id="${paper.id}" data-source="C" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+                  <button class="annotator-btn btn-nop" data-paper-id="${paper.id}" data-source="C" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+                  <button class="annotator-btn btn-ok" data-paper-id="${paper.id}" data-source="C" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+                </div>
+                <div class="source-clue-display-box" id="clue-display-${paper.id}-C" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted);"></div>
               </div>
             </div>
             <strong style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px;">Interpretations 1 & 2:</strong>
@@ -2634,6 +2684,13 @@ export async function renderMasteryView(subtopicId) {
                 <p style="font-size: 0.82rem; font-weight: bold; color: var(--text-main); margin-bottom: 10px; line-height: 1.4;">${paper.sourceA.provenance}</p>
                 <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
               `}
+              <div class="source-annotator-buttons" style="margin-top: 12px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+                <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Clues:</span>
+                <button class="annotator-btn btn-c" data-paper-id="${paper.id}" data-source="A" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+                <button class="annotator-btn btn-nop" data-paper-id="${paper.id}" data-source="A" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+                <button class="annotator-btn btn-ok" data-paper-id="${paper.id}" data-source="A" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+              </div>
+              <div class="source-clue-display-box" id="clue-display-${paper.id}-A" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted);"></div>
             </div>
           `;
         }
@@ -2706,8 +2763,33 @@ export async function renderMasteryView(subtopicId) {
     ? `<i class="fa-solid fa-check"></i> Mark Topic ${subtopicId.replace('subtopic_', '').replace('_', '.')} as Completed` 
     : `<i class="fa-solid fa-check"></i> Mark Topic ${subtopicId.replace('subtopic_', '').replace('_', '.')} as Mastered`;
 
+  const breadcrumbsHtml = getBreadcrumbsHtml(subtopicId);
+
+  let mapWidgetsHtml = '';
+  matchingLocations.forEach(loc => {
+    mapWidgetsHtml += `
+      <div class="mastery-card contextual-map-widget" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--primary); background: rgba(0, 0, 0, 0.15);">
+        <h3 class="mastery-card-title" style="margin: 0; padding: 12px 16px; font-size: 1rem; color: var(--primary); display: flex; align-items: center; gap: 8px; border: none;">
+          <i class="fa-solid fa-map-location-dot"></i> Geographic Connection: ${loc.title.split(':')[0]}
+        </h3>
+        <div class="mastery-card-body card-content" style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; padding: 16px;">
+          <div style="flex: 1; min-width: 250px;">
+            <p style="margin: 0 0 12px 0; font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">${loc.body}</p>
+            <button class="mastery-btn" onclick="window.focusMapOnLocation(\`${loc.title.replace(/`/g, "\\`").replace(/'/g, "\\'")}\`); return false;" style="background: var(--primary); color: var(--text-inverse); border: none; font-size: 0.8rem; font-weight: bold; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all var(--transition-fast);">
+              <i class="fa-solid fa-compass"></i> View on Geographic Map Explorer
+            </button>
+          </div>
+          ${loc.imageUrl ? `
+            <img src="${loc.imageUrl}" alt="${loc.title}" style="width: 120px; height: 90px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border-glass);" />
+          ` : ''}
+        </div>
+      </div>
+    `;
+  });
+
   // Set the container innerHTML
   container.innerHTML = `
+    ${breadcrumbsHtml}
     ${wrappedDoNowHtml}
     ${levelSelectorHtml}
     
@@ -2784,6 +2866,8 @@ export async function renderMasteryView(subtopicId) {
         ${masteredBtnLabel}
       </button>
     </div>
+
+    ${mapWidgetsHtml}
 
     ${embeddedExamsHtml}
   `;

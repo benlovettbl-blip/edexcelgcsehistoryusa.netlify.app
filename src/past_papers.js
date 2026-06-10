@@ -274,6 +274,13 @@ export function renderExamSheet() {
             <img src="${paper.sourceA.image}" alt="${paper.sourceA.provenance}" class="exam-source-img" />
           ` : ''}
           <div style="font-size: 0.95rem; font-style: italic; line-height: 1.6; color: var(--text-muted); border-left: 2px solid var(--border-glass); padding-left: 12px; margin-top: 10px;">${paper.sourceA.content}</div>
+          <div class="source-annotator-buttons" style="margin-top: 12px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+            <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Clues:</span>
+            <button class="annotator-btn btn-c" data-paper-id="${paper.id}" data-source="A" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+            <button class="annotator-btn btn-nop" data-paper-id="${paper.id}" data-source="A" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+            <button class="annotator-btn btn-ok" data-paper-id="${paper.id}" data-source="A" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+          </div>
+          <div class="source-clue-display-box" id="clue-display-${paper.id}-A" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted);"></div>
         </div>
       ` : ''}
       ${renderPastQuestionMarkup(paper.id + '_q1', paper.q1.question, paper.q1.clue, paper.q1.model, 4)}
@@ -302,6 +309,13 @@ export function renderExamSheet() {
               <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" />
             ` : ''}
             <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+            <div class="source-annotator-buttons" style="margin-top: 12px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+              <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Clues:</span>
+              <button class="annotator-btn btn-c" data-paper-id="${paper.id}" data-source="B" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+              <button class="annotator-btn btn-nop" data-paper-id="${paper.id}" data-source="B" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+              <button class="annotator-btn btn-ok" data-paper-id="${paper.id}" data-source="B" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+            </div>
+            <div class="source-clue-display-box" id="clue-display-${paper.id}-B" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted);"></div>
           </div>
           <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
             <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
@@ -311,6 +325,13 @@ export function renderExamSheet() {
               <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" />
             ` : ''}
             <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+            <div class="source-annotator-buttons" style="margin-top: 12px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+              <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Clues:</span>
+              <button class="annotator-btn btn-c" data-paper-id="${paper.id}" data-source="C" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+              <button class="annotator-btn btn-nop" data-paper-id="${paper.id}" data-source="C" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+              <button class="annotator-btn btn-ok" data-paper-id="${paper.id}" data-source="C" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+            </div>
+            <div class="source-clue-display-box" id="clue-display-${paper.id}-C" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted);"></div>
           </div>
         </div>
       ` : ''}
@@ -334,6 +355,13 @@ export function renderExamSheet() {
               <img src="${paper.sourceB.image}" alt="${paper.sourceB.provenance}" class="exam-source-img" />
             ` : ''}
             <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceB.content}</p>
+            <div class="source-annotator-buttons" style="margin-top: 12px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+              <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Clues:</span>
+              <button class="annotator-btn btn-c" data-paper-id="${paper.id}" data-source="B-secD" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+              <button class="annotator-btn btn-nop" data-paper-id="${paper.id}" data-source="B-secD" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+              <button class="annotator-btn btn-ok" data-paper-id="${paper.id}" data-source="B-secD" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+            </div>
+            <div class="source-clue-display-box" id="clue-display-${paper.id}-B-secD" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted);"></div>
           </div>
           <div class="skills-source-card" style="padding: 16px; background: rgba(0, 0, 0, 0.12); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); position: relative;">
             <div style="position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary);"></div>
@@ -343,6 +371,13 @@ export function renderExamSheet() {
               <img src="${paper.sourceC.image}" alt="${paper.sourceC.provenance}" class="exam-source-img" />
             ` : ''}
             <p style="font-size: 0.88rem; font-style: italic; line-height: 1.5; color: var(--text-muted); margin: 0;">${paper.sourceC.content}</p>
+            <div class="source-annotator-buttons" style="margin-top: 12px; display: flex; gap: 8px; align-items: center; border-top: 1px dashed var(--border-glass); padding-top: 10px;">
+              <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Clues:</span>
+              <button class="annotator-btn btn-c" data-paper-id="${paper.id}" data-source="C-secD" data-type="C" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">C</button>
+              <button class="annotator-btn btn-nop" data-paper-id="${paper.id}" data-source="C-secD" data-type="NOP" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">NOP</button>
+              <button class="annotator-btn btn-ok" data-paper-id="${paper.id}" data-source="C-secD" data-type="OK" style="border: 1px solid var(--border-glass); background: rgba(0,0,0,0.2); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: all var(--transition-fast);">OK</button>
+            </div>
+            <div class="source-clue-display-box" id="clue-display-${paper.id}-C-secD" style="display: none; margin-top: 8px; padding: 8px 12px; background: rgba(59, 130, 246, 0.05); border-left: 3px solid var(--primary); border-radius: 4px; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted);"></div>
           </div>
         </div>
       ` : ''}

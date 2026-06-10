@@ -3,7 +3,7 @@ import { AudioEngine } from './audio.js';
 import { addXp } from './views.js';
 
 // --- Map Data Configurations ---
-const MAP_LOCATIONS_USA = [
+export const MAP_LOCATIONS_USA = [
   {
     lat: 39.0473,
     lng: -95.6752,
@@ -136,7 +136,7 @@ const MAP_LOCATIONS_USA = [
   }
 ];
 
-const MAP_LOCATIONS_VIETNAM = [
+export const MAP_LOCATIONS_VIETNAM = [
   {
     lat: 21.3860,
     lng: 103.0180,
@@ -500,3 +500,55 @@ function showLocationDetails(loc) {
     box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, 100);
 }
+
+export function focusMapOnLocation(titleText) {
+  let loc = MAP_LOCATIONS_USA.find(l => l.title === titleText || l.title.includes(titleText));
+  let isUsa = true;
+  if (!loc) {
+    loc = MAP_LOCATIONS_VIETNAM.find(l => l.title === titleText || l.title.includes(titleText));
+    isUsa = false;
+  }
+  
+  if (!loc) {
+    console.warn("Location not found in MAP_LOCATIONS:", titleText);
+    return;
+  }
+
+  switchView('map');
+
+  const btnUsa = document.getElementById('btn-map-tab-usa');
+  const btnVietnam = document.getElementById('btn-map-tab-vietnam');
+  const wrapperUsa = document.getElementById('map-usa-container');
+  const wrapperVietnam = document.getElementById('map-vietnam-container');
+
+  if (isUsa && btnUsa && wrapperUsa) {
+    btnUsa.classList.add('active');
+    if (btnVietnam) btnVietnam.classList.remove('active');
+    wrapperUsa.style.display = 'block';
+    if (wrapperVietnam) wrapperVietnam.style.display = 'none';
+    if (mapUsa) {
+      setTimeout(() => {
+        mapUsa.invalidateSize();
+        mapUsa.setView([loc.lat, loc.lng], 10);
+      }, 50);
+    }
+  } else if (!isUsa && btnVietnam && wrapperVietnam) {
+    btnVietnam.classList.add('active');
+    if (btnUsa) btnUsa.classList.remove('active');
+    wrapperVietnam.style.display = 'block';
+    if (wrapperUsa) wrapperUsa.style.display = 'none';
+    if (mapVietnam) {
+      setTimeout(() => {
+        mapVietnam.invalidateSize();
+        mapVietnam.setView([loc.lat, loc.lng], 10);
+      }, 50);
+    }
+  }
+
+  showLocationDetails(loc);
+}
+
+window.focusMapOnLocation = focusMapOnLocation;
+window.MAP_LOCATIONS_USA = MAP_LOCATIONS_USA;
+window.MAP_LOCATIONS_VIETNAM = MAP_LOCATIONS_VIETNAM;
+

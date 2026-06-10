@@ -19,6 +19,146 @@ import { startPastPaper, generateMockExam, renderPastPapersView, initBulkWorkboo
 import { initWorkbookCreator } from './lessons.js';
 import { EXAM_SKILLS_DATA } from '../questions.js';
 
+export const SOURCE_CLUES = {
+  "2018_summer_usa": {
+    "A": {
+      "C": "Focus on the difficulty of registering to vote described here (e.g. the unfair 'literacy tests' compared to white voters).",
+      "NOP": "This is from a Northern newspaper in 1954. Northern reports were often critical of Southern segregation, but it is an external report rather than an internal state document.",
+      "OK": "Recall that in Mississippi, only 5% of eligible Black adults were registered due to literacy tests, poll taxes, and intimidation."
+    },
+    "B": {
+      "C": "Focus on the legal litigation strategy targeting the Supreme Court and dismantling the legal basis of segregation.",
+      "NOP": "An internal, private report by lead NAACP lawyer Thurgood Marshall in 1953. Highly reliable and realistic, as it wasn't meant for public propaganda.",
+      "OK": "Connect this to NAACP's landmark court wins like Sweatt v. Painter (1950) and the upcoming Brown v. Board of Education decision (1954)."
+    },
+    "C": {
+      "C": "Highlight the peaceful sit-in at the lunch counter being met with severe white mob violence and police indifference.",
+      "NOP": "A first-hand account by a CORE activist published in a 1952 newsletter. Extremely useful for immediate dangers, though designed to motivate members.",
+      "OK": "CORE pioneered non-violent direct action (like sit-ins and boycotts) starting in Chicago in 1942, demonstrating the limits of federal law on the ground."
+    }
+  },
+  "2019_summer_usa": {
+    "A": {
+      "C": "Identify what the source says about the white backlash and resistance (e.g., KKK and White Citizens' Councils).",
+      "NOP": "Look at who wrote it and when - a report by a civil rights worker during the peak of Southern resistance.",
+      "OK": "Remember the formation of White Citizens' Councils after the 1954 Brown decision to coordinate economic and social opposition."
+    },
+    "B": {
+      "C": "Analyze the description of the Montgomery Bus Boycott's community organization and resolution.",
+      "NOP": "An account by a boycott participant. Excellent for first-hand emotion and community spirit, though it represents a committed activist perspective.",
+      "OK": "Recall that the Montgomery Bus Boycott lasted 381 days and was triggered by Rosa Parks' arrest on December 1, 1955."
+    },
+    "C": {
+      "C": "Examine the reaction of federal authorities and the deployment of federal force or legislative action.",
+      "NOP": "A speech by a federal politician. Useful for official federal positions and legislative intents, but may downplay grassroots pressure.",
+      "OK": "Connect this to Eisenhower sending the 101st Airborne to Little Rock in 1957 to enforce desegregation."
+    }
+  },
+  "2020_summer_usa": {
+    "A": {
+      "C": "Look at the description of the Freedom Rides and the violent response they encountered in transit terminals.",
+      "NOP": "A telegram from a Freedom Rider to the Department of Justice. Urgent first-hand evidence requesting federal protection.",
+      "OK": "The Freedom Rides (1961) tested the Supreme Court ruling banning segregation on interstate buses, forcing the ICC to issue a strict ban."
+    },
+    "B": {
+      "C": "Analyze the text on the goals of the March on Washington, specifically economic and civil demands.",
+      "NOP": "An official brochure for the March on Washington (1963). Designed to show a unified, peaceful front to the nation.",
+      "OK": "The march attracted over 250,000 people and featured Martin Luther King Jr.'s iconic 'I Have a Dream' speech at the Lincoln Memorial."
+    },
+    "C": {
+      "C": "Examine the details about the Voting Rights Act of 1965 and its immediate impact on voter registration.",
+      "NOP": "Official Department of Justice registration statistics from 1966. Highly reliable numerical data showing dramatic registration spikes.",
+      "OK": "The Voting Rights Act of 1965 banned literacy tests and sent federal registrars to the South, ending legal disenfranchisement."
+    }
+  },
+  "2022_summer_usa": {
+    "A": {
+      "C": "Focus on the description of the Black Power movement and its calls for self-defense and economic control.",
+      "NOP": "An article in a Black Power newspaper in 1967. Designed to rally urban youth, reflecting high frustration with slow economic progress.",
+      "OK": "Stokely Carmichael coined the phrase 'Black Power' in 1966, reflecting a shift away from non-violence toward self-reliance."
+    },
+    "B": {
+      "C": "Analyze the reasons for the urban riots of the mid-1960s (e.g., housing, employment, and police brutality).",
+      "NOP": "From the official Kerner Commission Report of 1968. An authoritative government study concluding that white racism was the primary cause.",
+      "OK": "The Kerner Commission warned that the nation was dividing into 'two societies, one black, one white—separate and unequal'."
+    },
+    "C": {
+      "C": "Examine the description of the Black Panther Party's social programs in local communities.",
+      "NOP": "A memoir by a former Black Panther member. Offers unique inside details of community work (e.g. free breakfast), though naturally sympathetic.",
+      "OK": "Founded in Oakland in 1966 by Huey Newton and Bobby Seale, the Panthers combined armed patrols with community welfare programs."
+    }
+  },
+  "2023_summer_usa": {
+    "A": {
+      "C": "Look at the reasons for US support of Ngo Dinh Diem's regime despite his unpopular authoritarian policies.",
+      "NOP": "A secret CIA report from 1961. Highly reliable and frank assessment of Diem's political weakness, free from public relations spin.",
+      "OK": "The US supported Diem to contain communism (Domino Theory), but his persecution of Buddhists led to his overthrow in 1963."
+    },
+    "B": {
+      "C": "Analyze the description of Vietcong guerrilla warfare tactics and their impact on US troop morale.",
+      "NOP": "An interview with a US soldier. Captures the intense daily fear and difficulty of fighting an unseen enemy using traps and tunnels.",
+      "OK": "Guerrillas used the Ho Chi Minh Trail and extensive tunnel networks (like Cu Chi) to survive search-and-destroy missions."
+    },
+    "C": {
+      "C": "Examine the visual or textual details showing the devastation of chemical defoliants like Agent Orange.",
+      "NOP": "A report by a international team of doctors in 1968. Highly reliable medical observations, though focused on documenting war damage.",
+      "OK": "Operation Ranch Hand sprayed over 20 million gallons of herbicides to strip jungle cover and destroy Vietcong food crops."
+    }
+  },
+  "2024_summer_usa": {
+    "A": {
+      "C": "Focus on the details describing the public reaction to the Gulf of Tonkin incident in 1964.",
+      "NOP": "A public opinion poll from late 1964. Reflects broad initial public support for military action before the draft expanded.",
+      "OK": "The Gulf of Tonkin Resolution passed almost unanimously, giving President Johnson a 'blank check' to escalate the war."
+    },
+    "B": {
+      "C": "Analyze the description of the 1968 Tet Offensive as a psychological turning point of the war.",
+      "NOP": "A CBS news broadcast by Walter Cronkite in February 1968. Highly influential in shaping middle-class opinion toward seeking a stalemate.",
+      "OK": "The Tet Offensive proved that despite 500,000 US troops, the VC could launch massive, coordinated attacks nationwide."
+    },
+    "C": {
+      "C": "Examine the description of anti-war protests on university campuses and the response of authorities.",
+      "NOP": "A student newspaper article from Kent State in May 1970. Captures the immediate anger and shock of the student shootings.",
+      "OK": "The Kent State shootings (1970) saw the National Guard kill four students, triggering a strike of over 4 million students."
+    }
+  },
+  "2025_summer_usa": {
+    "A": {
+      "C": "Look at the description of Nixon's 'Vietnamization' policy and the withdrawal of US ground combat forces.",
+      "NOP": "A televised address by President Nixon. Designed to reassure the public ('peace with honor') and justify military policy shifts.",
+      "OK": "Vietnamization aimed to train ARVN forces to fight alone, allowing US withdrawal, but ARVN remained heavily dependent on US aid."
+    },
+    "B": {
+      "C": "Analyze the description of the final North Vietnamese offensive in early 1975 and the collapse of the ARVN.",
+      "NOP": "A dispatch from a foreign war correspondent in Saigon, April 1975. Captures the chaos of the final hours before the fall.",
+      "OK": "In 1974, Congress slashed aid to South Vietnam, severely damaging ARVN supplies and morale before the final offensive."
+    },
+    "C": {
+      "C": "Examine the details of the Paris Peace Accords and the terms of the US military exit in 1973.",
+      "NOP": "A joint press statement by the US and North Vietnamese negotiators. Projects diplomatic success, though it left North Vietnamese troops in the South.",
+      "OK": "The Paris Peace Accords (1973) led to complete US troop withdrawal and POW release, but only created a temporary ceasefire."
+    }
+  }
+};
+
+const defaultClues = {
+  "A": {
+    "C": "Content: Look closely at the specific quotes or details mentioned. What do they directly tell us about the event?",
+    "NOP": "Nature, Origin, Purpose: Consider who wrote this, their viewpoint, and why they wrote it. Is it a public speech, a private diary, or an official report?",
+    "OK": "Own Knowledge: Bring in outside facts from this specific subtopic or year to verify or challenge the claims in the source."
+  },
+  "B": {
+    "C": "Content: Identify the main argument or key quote. What does the author say is the most important factor?",
+    "NOP": "Nature, Origin, Purpose: Look at the author and date. How does their role in the civil rights movement or war effort affect their perspective?",
+    "OK": "Own Knowledge: Connect this source to specific historical figures, campaigns, or legal acts that you studied in the lessons."
+  },
+  "C": {
+    "C": "Content: Analyze the visual details or text. What is the emotional tone or physical setting described?",
+    "NOP": "Nature, Origin, Purpose: Think about the audience and purpose. Was it meant to motivate supporters, report neutral facts, or criticize opponents?",
+    "OK": "Own Knowledge: Use your knowledge of the opposition, federal reactions, or local resistance to explain why this situation occurred."
+  }
+};
+
 // --- Sidebar Overlay Drawer (Mobile & Desktop UI Toggle) ---
 function toggleMobileSidebar() {
   if (window.innerWidth <= 768) {
@@ -1788,6 +1928,55 @@ function bindEvents() {
   }
   
   applyLoadedSettings();
+
+  // Delegated listener for C, NOP, OK source annotator clues
+  document.body.addEventListener('click', (e) => {
+    const btn = e.target.closest('.annotator-btn');
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const paperId = btn.getAttribute('data-paper-id');
+    const sourceLetter = btn.getAttribute('data-source');
+    const type = btn.getAttribute('data-type');
+    
+    const displayBox = document.getElementById(`clue-display-${paperId}-${sourceLetter}`);
+    if (!displayBox) return;
+
+    const parentContainer = btn.closest('.source-annotator-buttons');
+    const allBtns = parentContainer.querySelectorAll('.annotator-btn');
+
+    if (btn.classList.contains('active')) {
+      btn.classList.remove('active');
+      btn.style.background = 'rgba(0,0,0,0.2)';
+      btn.style.borderColor = 'var(--border-glass)';
+      btn.style.color = 'var(--text-main)';
+      displayBox.style.display = 'none';
+      displayBox.innerHTML = '';
+      return;
+    }
+
+    allBtns.forEach(b => {
+      b.classList.remove('active');
+      b.style.background = 'rgba(0,0,0,0.2)';
+      b.style.borderColor = 'var(--border-glass)';
+      b.style.color = 'var(--text-main)';
+    });
+
+    btn.classList.add('active');
+    btn.style.background = 'var(--primary)';
+    btn.style.borderColor = 'var(--primary)';
+    btn.style.color = 'var(--text-inverse, #fff)';
+
+    const lookupKey = sourceLetter.split('-')[0];
+    const paperClues = SOURCE_CLUES[paperId] || {};
+    const sourceClues = paperClues[lookupKey] || defaultClues[lookupKey] || defaultClues['A'];
+    const clueText = sourceClues[type] || "No clue available.";
+
+    displayBox.innerHTML = `<strong>${type === 'C' ? 'Content (C)' : type === 'NOP' ? 'Nature, Origin, Purpose (NOP)' : 'Own Knowledge (OK)'} Clue:</strong> ${clueText}`;
+    displayBox.style.display = 'block';
+  });
 
   // Initialize Workbook and Bulk Workbook Creator
   initWorkbookCreator();
