@@ -1872,18 +1872,16 @@ export async function renderMasteryView(subtopicId) {
     `).join('');
 
     doNowHtml = `
-      <details class="mastery-card do-now-card" style="max-width: 800px; margin: 24px auto 32px auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-left: 5px solid var(--accent); border-radius: var(--border-radius-lg); position: relative; padding: 16px 24px; box-shadow: var(--shadow-md); overflow: visible !important;">
-        <summary style="cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; user-select: none; font-family: var(--font-heading); outline: none;">
+      <div class="mastery-card do-now-card" style="max-width: 800px; margin: 12px auto 24px auto; background: var(--bg-card); border: 1px solid var(--border-glass); border-left: 5px solid var(--accent); border-radius: var(--border-radius-lg); position: relative; padding: 16px 24px; box-shadow: var(--shadow-md); overflow: visible !important;">
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-heading); outline: none; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border-glass);">
           <div style="display: flex; align-items: center; gap: 10px;">
             <span style="background: var(--accent); color: #000; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 12px; letter-spacing: 0.8px; box-shadow: var(--shadow-sm); display: inline-flex; align-items: center; gap: 4px;">
               ⚡ DO NOW starter <span style="font-size: 0.65rem; opacity: 0.75; font-weight: 700;">(5-10 MINS)</span>
             </span>
-            <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">(Click to view activity)</span>
           </div>
-          <i class="fa-solid fa-chevron-down do-now-arrow" style="color: var(--text-muted); transition: transform var(--transition-fast);"></i>
-        </summary>
+        </div>
         
-        <div class="mastery-card-body" style="padding-top: 16px; margin: 0; border-top: 1px solid var(--border-glass); margin-top: 12px;">
+        <div class="mastery-card-body" style="padding-top: 0; margin: 0;">
           ${prevLessonLinkHtml}
           ${howUsefulBoxHtml}
           ${doNowPrototypesHtml}
@@ -2018,7 +2016,7 @@ export async function renderMasteryView(subtopicId) {
           </div>
           
         </div>
-      </details>
+      </div>
     `;
   }
 
