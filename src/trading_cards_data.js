@@ -1,4 +1,4 @@
-﻿export const TRADING_CARDS_DATA = [
+export const TRADING_CARDS_DATA = [
   // ----------------------------------------------------
   // TOPIC 1: Civil Rights Movement (1954-60)
   // ----------------------------------------------------
@@ -72,8 +72,8 @@
   // ----------------------------------------------------
   {
     id: "card_meredith",
-    name: "Meredith the Fearless",
-    frontPhrase: "The Campus Crusader",
+    name: "James Meredith",
+    frontPhrase: "The Ole Miss Pioneer",
     subtopicId: "subtopic_2_1",
     image: "assets/card_meredith.png",
     description: "Confidently striding into a university building, carrying a briefcase glowing with magical progress energy.",

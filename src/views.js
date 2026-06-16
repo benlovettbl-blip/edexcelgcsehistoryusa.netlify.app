@@ -7199,7 +7199,7 @@ export function renderTradingCardsView() {
   
     const forceUnlock = window.localStorage.getItem('unlock_all_cards') === 'true';
   
-    const totalXP = (window.state && window.state.userStats && window.state.userStats.totalXP) || 0;
+    const totalXP = (window.state && window.state.userStats && window.state.userStats.xp) || 0;
 
     TRADING_CARDS_DATA.forEach((card, index) => {
       const requiredXP = (index + 1) * 200;

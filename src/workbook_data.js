@@ -221,7 +221,7 @@ for (const subtopicId in LESSONS_DATA) {
 
   // Extract narrative paragraphs from steps
   const narrative = (data.steps || []).map((step, idx) => {
-    const cleanText = getCleanStepText(step.bodyHtml);
+    const cleanText = step.bodyHtml;
     
     const paragraphs = [cleanText];
     if (step.scholarlyDepth && step.scholarlyDepth.body) {
@@ -268,7 +268,7 @@ for (const subtopicId in LESSONS_DATA) {
   if (data.deepThinkingQuestions && data.deepThinkingQuestions.length > 0) {
     data.deepThinkingQuestions.slice(0, 3).forEach((item, idx) => {
       comprehensionCheck.push({
-        title: `${idx + 1}. Analysis: ${item.question}`,
+        title: item.question,
         scaffold: `Hint: ${item.hint || ""}`,
         stretch: `Teacher Guidance: ${item.teacherGuide || ""}`,
         answer: item.teacherGuide || ""
@@ -279,7 +279,7 @@ for (const subtopicId in LESSONS_DATA) {
       const qText = item.q || item.question || "";
       const aText = item.a || item.answer || "";
       comprehensionCheck.push({
-        title: `${idx + 1}. Comprehension: ${qText}`,
+        title: qText,
         scaffold: `Consider: ${aText.slice(0, 50)}...`,
         stretch: `Stretch: Evaluate how this event influenced subsequent developments.`,
         answer: aText
@@ -287,15 +287,6 @@ for (const subtopicId in LESSONS_DATA) {
     });
   }
 
-  // Ensure we have at least 3 tasks by appending a synoptic summary
-  if (comprehensionCheck.length < 3) {
-    comprehensionCheck.push({
-      title: `${comprehensionCheck.length + 1}. Synoptic Summary: Map out the causes and consequences of this lesson in a short paragraph.`,
-      scaffold: `Review the lesson steps above to identify the legal, military, or social actions that led to the primary outcome of this period.`,
-      stretch: `Stretch: Evaluate how this topic shifted public opinion or federal policy.`,
-      answer: `The causes (including legal precedents, direct action, or military escalation) directly resulted in the major consequences (such as federal civil rights legislation or shifts in public support for foreign policy).`
-    });
-  }
   
   // Causation Matrix (Simplified for 14-year-olds)
   const causationMatrix = {

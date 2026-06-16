@@ -6594,6 +6594,278 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
     }
   };
 
+  // src/trading_cards_data.js
+  var TRADING_CARDS_DATA = [
+    // ----------------------------------------------------
+    // TOPIC 1: Civil Rights Movement (1954-60)
+    // ----------------------------------------------------
+    {
+      id: "card_marshall",
+      name: "Thurgood the Good",
+      frontPhrase: "The Segregation Smasher",
+      subtopicId: "subtopic_1_1",
+      image: "assets/card_marshall.png",
+      description: "Looking heroic in a courtroom, slamming a massive legal gavel down on a 'Segregation' sign.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 1.1",
+      bio: "Thurgood Marshall was the legendary NAACP chief counsel who led the legal fight against segregation, famously winning the Brown v. Board of Education case.",
+      stats: {
+        audacity: 85,
+        diplomaticSneakiness: 95,
+        rhetoricalPower: 90,
+        legacyScore: 98
+      }
+    },
+    {
+      id: "card_eckford",
+      name: "Eckford the Record",
+      frontPhrase: "The Brave Pioneer",
+      subtopicId: "subtopic_1_2",
+      image: "assets/card_eckford.png",
+      description: "A brave student wearing sunglasses, calmly holding her schoolbooks while an angry mob yells.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 1.2",
+      bio: "Elizabeth Eckford was one of the Little Rock Nine, exhibiting immense courage when she faced down a violent segregationist mob to attend a white high school in 1957.",
+      stats: {
+        audacity: 98,
+        diplomaticSneakiness: 10,
+        rhetoricalPower: 50,
+        legacyScore: 95
+      }
+    },
+    {
+      id: "card_rosa",
+      name: "Parked Rosa",
+      frontPhrase: "The Seat Keeper",
+      subtopicId: "subtopic_1_3",
+      image: "assets/card_rosa.png",
+      description: "Sitting calmly on a bus seat that is stubbornly anchored to the ground with deep roots.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 1.3",
+      bio: "Rosa Parks' quiet refusal to give up her bus seat to a white passenger sparked the 381-day Montgomery Bus Boycott.",
+      stats: {
+        audacity: 95,
+        diplomaticSneakiness: 40,
+        rhetoricalPower: 80,
+        legacyScore: 97
+      }
+    },
+    {
+      id: "card_faubus",
+      name: "Orval the Horrible",
+      frontPhrase: "The Door Blocker",
+      subtopicId: "subtopic_1_4",
+      image: "assets/card_faubus.png",
+      description: "Standing stubbornly in front of a school door, nervously commanding a group of National Guardsmen.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 1.4",
+      bio: "Governor Orval Faubus infamously deployed the Arkansas National Guard to physically block Black students from integrating Little Rock Central High.",
+      stats: {
+        audacity: 80,
+        diplomaticSneakiness: 70,
+        rhetoricalPower: 65,
+        legacyScore: 20
+      }
+    },
+    // ----------------------------------------------------
+    // TOPIC 2: Protest, Progress and Radicalism (1960-75)
+    // ----------------------------------------------------
+    {
+      id: "card_meredith",
+      name: "James Meredith",
+      frontPhrase: "The Ole Miss Pioneer",
+      subtopicId: "subtopic_2_1",
+      image: "assets/card_meredith.png",
+      description: "Confidently striding into a university building, carrying a briefcase glowing with magical progress energy.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 2.1",
+      bio: "James Meredith became the first African American student admitted to the segregated University of Mississippi, sparking a deadly riot.",
+      stats: {
+        audacity: 96,
+        diplomaticSneakiness: 20,
+        rhetoricalPower: 60,
+        legacyScore: 88
+      }
+    },
+    {
+      id: "card_mlk",
+      name: "Martin Startin'",
+      frontPhrase: "The Dream Deliverer",
+      subtopicId: "subtopic_2_2",
+      image: "assets/card_mlk.png",
+      description: "Standing at a podium that is floating on a cloud of powerful rhetoric.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 2.2",
+      bio: "Martin Luther King Jr. was the moral compass of the movement, utilizing non-violent protest to dismantle segregation.",
+      stats: {
+        audacity: 90,
+        diplomaticSneakiness: 60,
+        rhetoricalPower: 100,
+        legacyScore: 99
+      }
+    },
+    {
+      id: "card_malcolmx",
+      name: "Malcolm Hex",
+      frontPhrase: "The Radical Defender",
+      subtopicId: "subtopic_2_3",
+      image: "assets/card_malcolmx.png",
+      description: "Looking out the window with a rifle in one hand and a powerful speech in the other.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 2.3",
+      bio: "Malcolm X was a fierce advocate for Black empowerment and self-defense who fundamentally challenged the mainstream civil rights approach.",
+      stats: {
+        audacity: 98,
+        diplomaticSneakiness: 50,
+        rhetoricalPower: 96,
+        legacyScore: 92
+      }
+    },
+    {
+      id: "card_carmichael",
+      name: "Stokely Pokey",
+      frontPhrase: "The Power Pumper",
+      subtopicId: "subtopic_2_4",
+      image: "assets/card_carmichael.png",
+      description: "Standing passionately with a raised fist that is glowing with electrical energy.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 2.4",
+      bio: "Stokely Carmichael revolutionized the SNCC and brought the phrase 'Black Power' to the national stage, shifting the movement's tone.",
+      stats: {
+        audacity: 94,
+        diplomaticSneakiness: 30,
+        rhetoricalPower: 92,
+        legacyScore: 85
+      }
+    },
+    // ----------------------------------------------------
+    // TOPIC 3: US Involvement in Vietnam (1954-75)
+    // ----------------------------------------------------
+    {
+      id: "card_jfk",
+      name: "Ken the Pen",
+      frontPhrase: "The Cold War Cruiser",
+      subtopicId: "subtopic_3_1",
+      image: "assets/card_jfk.png",
+      description: "Cruising in an open-top Cadillac, juggling peace treaties and missiles.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 3.1",
+      bio: "President John F. Kennedy increased US 'military advisers' in Vietnam to 16,000 and supported the Strategic Hamlet program.",
+      stats: {
+        audacity: 85,
+        diplomaticSneakiness: 90,
+        rhetoricalPower: 98,
+        legacyScore: 95
+      }
+    },
+    {
+      id: "card_lbj",
+      name: "Lyndon the Bindin'",
+      frontPhrase: "The Aggressive Escalator",
+      subtopicId: "subtopic_3_2",
+      image: "assets/card_lbj.png",
+      description: "Leaning aggressively over a tiny politician, giving them 'The Treatment'.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 3.2",
+      bio: "Lyndon B. Johnson rapidly escalated the Vietnam War via the Gulf of Tonkin Resolution, deploying hundreds of thousands of combat troops.",
+      stats: {
+        audacity: 95,
+        diplomaticSneakiness: 99,
+        rhetoricalPower: 75,
+        legacyScore: 88
+      }
+    },
+    {
+      id: "card_westmoreland",
+      name: "Westy the Pesty",
+      frontPhrase: "The Jungle Tallyman",
+      subtopicId: "subtopic_3_3",
+      image: "assets/card_westmoreland.png",
+      description: "Obsessively tallying VC casualties on a giant glowing clipboard while standing in a cartoon jungle.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 3.3",
+      bio: "General William Westmoreland commanded US forces in Vietnam, heavily relying on controversial 'Search and Destroy' missions.",
+      stats: {
+        audacity: 85,
+        diplomaticSneakiness: 40,
+        rhetoricalPower: 70,
+        legacyScore: 60
+      }
+    },
+    {
+      id: "card_nixon",
+      name: "Tricky Dicky",
+      frontPhrase: "The Secret Bomber",
+      subtopicId: "subtopic_3_4",
+      image: "assets/card_nixon.png",
+      description: "Flashing the 'V for Victory' sign while furiously shredding documents with his feet.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 3.4",
+      bio: "Richard Nixon promised 'Peace with Honor', instituting Vietnamization while secretly expanding the bombing campaigns into Cambodia.",
+      stats: {
+        audacity: 92,
+        diplomaticSneakiness: 100,
+        rhetoricalPower: 70,
+        legacyScore: 65
+      }
+    },
+    // ----------------------------------------------------
+    // TOPIC 4: Reactions to, and the end of, US involvement
+    // ----------------------------------------------------
+    {
+      id: "card_giap",
+      name: "Giap the Trap",
+      frontPhrase: "The Tet Tactician",
+      subtopicId: "subtopic_4_1",
+      image: "assets/card_giap.png",
+      description: "A brilliant military tactician pointing at a massive, complicated glowing map of the jungle.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 4.1",
+      bio: "General Vo Nguyen Giap was the military mastermind behind the devastating Tet Offensive and the defeat of the French at Dien Bien Phu.",
+      stats: {
+        audacity: 90,
+        diplomaticSneakiness: 95,
+        rhetoricalPower: 75,
+        legacyScore: 95
+      }
+    },
+    {
+      id: "card_hardhat",
+      name: "Hard Hat Pat",
+      frontPhrase: "The Flag-Waving Fighter",
+      subtopicId: "subtopic_4_2",
+      image: "assets/card_hardhat.png",
+      description: "A 1970s construction worker wearing a hard hat, waving a giant American flag proudly.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 4.2",
+      bio: "The 'Hard Hat' workers fiercely supported Nixon's war efforts, culminating in the 1970 Hard Hat Riot where they clashed with anti-war protesters.",
+      stats: {
+        audacity: 85,
+        diplomaticSneakiness: 20,
+        rhetoricalPower: 60,
+        legacyScore: 70
+      }
+    },
+    {
+      id: "card_kissinger",
+      name: "Kissinger the Messenger",
+      frontPhrase: "The Secret Negotiator",
+      subtopicId: "subtopic_4_3",
+      image: "assets/card_kissinger.png",
+      description: "Scheming in the shadows of Paris, holding a peace prize in one hand and a secret map in the other.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 4.3",
+      bio: "Henry Kissinger, National Security Advisor, conducted the secret back-channel negotiations that ultimately led to the Paris Peace Accords.",
+      stats: {
+        audacity: 80,
+        diplomaticSneakiness: 100,
+        rhetoricalPower: 85,
+        legacyScore: 80
+      }
+    },
+    {
+      id: "card_ho_chi_minh",
+      name: "Ho Chi Win",
+      frontPhrase: "The Unyielding Spirit",
+      subtopicId: "subtopic_4_4",
+      image: "assets/card_ho_chi_minh.png",
+      description: "The enduring spiritual leader of North Vietnam, calmly sipping tea while the Ho Chi Minh trail hums in the background.",
+      unlockMessage: "Unlock by achieving 100% Mastery in Topic 4.4",
+      bio: "Ho Chi Minh was the revolutionary founder of the Viet Minh. His unyielding determination inspired the North Vietnamese to outlast the USA.",
+      stats: {
+        audacity: 100,
+        diplomaticSneakiness: 100,
+        rhetoricalPower: 100,
+        legacyScore: 100
+      }
+    }
+  ];
+
   // src/confetti.js
   var Confetti = {
     canvas: null,
@@ -6764,12 +7036,12 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
         </div>`
       },
       "causalLinks": {
-        "question": "Explain why Black Americans faced segregation and discrimination in the Southern states in the early 1950s.",
+        "question": "Explain why there was opposition to the civil rights movement in the years 1954\u201360 [2019]",
         "successText": "Excellent causal analysis! You have successfully linked early Southern segregation to its historical causes, including Plessy v. Ferguson's separate but equal doctrine, political disenfranchisement, and white supremacist terror.",
         "factors": [
           {
             "id": "s11_f1",
-            "title": "The Supreme Court's Plessy v. Ferguson (1896) ruling.",
+            "title": "The formation and early protests of CORE",
             "options": [
               "This established the 'separate but equal' doctrine, providing legal and constitutional backing for state-level segregation.",
               "This immediately ordered all Southern states to end Jim Crow segregation."
@@ -6779,7 +7051,7 @@ In conclusion, while I agree with Interpretation 1 that the actual passage of th
           },
           {
             "id": "s11_f2",
-            "title": "Systematic disenfranchisement of Black voters in the South.",
+            "title": "The impact of the Second World War on Black Americans",
             "options": [
               "Which meant Black citizens could not vote for sympathetic politicians or sit on juries to challenge racist local laws.",
               "Which allowed civil rights groups to take control of Southern state legislatures."
@@ -6997,12 +7269,12 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
         "rightLabel": "Southern Segregationists"
       },
       "causalLinks": {
-        "question": "Explain why the integration of Little Rock Central High School in 1957 became a major civil rights crisis.",
+        "question": "Explain why Brown v. Topeka was not immediately successful [2018]",
         "successText": "Excellent logic! The crisis arose because Governor Faubus defied federal courts to win segregationist votes, forcing Eisenhower to send federal troops to assert federal supremacy and protect the Black students.",
         "factors": [
           {
             "id": "s12_f1",
-            "title": "Governor Orval Faubus defied federal court integration orders.",
+            "title": "The ambiguous 'all deliberate speed' ruling (Brown II)",
             "options": [
               "This motivated him to align with segregationist voters by deploying the state's National Guard to block the Little Rock Nine.",
               "This led him to immediately protect the students from the white mob."
@@ -7012,7 +7284,7 @@ Source E is highly useful for demonstrating the systemic, official nature of seg
           },
           {
             "id": "s12_f2",
-            "title": "Televised images of white mobs screaming at Elizabeth Eckford.",
+            "title": "Massive Resistance organized by Southern politicians",
             "options": [
               "Which built national sympathy for the students and damaged America's international reputation during the Cold War.",
               "Which caused the Supreme Court to declare school desegregation unconstitutional."
@@ -7228,12 +7500,12 @@ Source E is highly useful for showing the scale of the state and military confli
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why the Montgomery Bus Boycott succeeded in desegregating transit by 1956.",
+        "question": "Explain why the Montgomery Bus Boycott was successful [2020]",
         "successText": "Excellent logic! The boycott's success relied on community carpools to sustain the boycott logistically and the Supreme Court's ruling in Browder v. Gayle to override city opposition.",
         "factors": [
           {
             "id": "s13_f1",
-            "title": "MIA coordinated carpool systems and reduced taxi fares.",
+            "title": "Highly effective organization by the MIA and MLK",
             "options": [
               "This allowed Black workers to continue commuting, sustaining the boycott for over a year.",
               "This caused massive public transport strikes in Northern cities."
@@ -7243,7 +7515,7 @@ Source E is highly useful for showing the scale of the state and military confli
           },
           {
             "id": "s13_f2",
-            "title": "The Supreme Court ruled on Browder v. Gayle in November 1956.",
+            "title": "The economic impact on the bus company",
             "options": [
               "Which gave the local Montgomery city council legal grounds to arrest all boycotters.",
               "Which declared transport segregation illegal, forcing the city of Montgomery to desegregate the buses."
@@ -7468,12 +7740,12 @@ Source E is highly useful for showing the direct police criminalization of peace
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why Southern white opposition to civil rights grew rapidly in the years 1954\u201356.",
+        "question": "Explain why there was progress in the civil rights movement in the years 1961\u201365 [2021]",
         "successText": "Great match! The Brown ruling threatened the legal basis of segregation, causing politicians to sign the Southern Manifesto and locals to form White Citizens' Councils to protect the status quo.",
         "factors": [
           {
             "id": "s14_f1",
-            "title": "The Supreme Court outlawed segregated schools in 1954.",
+            "title": "Fears generated by the Brown v. Topeka ruling (1954)",
             "options": [
               "This caused Southern whites to fear complete social integration, leading to the creation of White Citizens' Councils.",
               "This led Southern state governors to immediately comply and integrate all public spaces."
@@ -7483,7 +7755,7 @@ Source E is highly useful for showing the direct police criminalization of peace
           },
           {
             "id": "s14_f2",
-            "title": "Southern politicians signed the Southern Manifesto in 1956.",
+            "title": "The rapid growth of the Ku Klux Klan",
             "options": [
               "Which outlawed the Ku Klux Klan and arrested racist activists.",
               "Which legitimized resistance, encouraging local school boards and police forces to defy federal court orders."
@@ -7535,19 +7807,19 @@ Source E is highly useful for showing the direct police criminalization of peace
         "enquiry": "the opposition to the civil rights movement in the 1950s",
         "sourceB": {
           "provenance": "From a speech by Southern Senator Strom Thurmond to Congress, 1956.",
-          "content": `"The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment. The Supreme Court's ruling is an abuse of power that tears up our laws and customs. We will resist integration using every legal means at our disposal."`
+          "content": `"The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment. The Supreme Court's ruling is an abuse of power that tears up our laws and customs. We will resist integration using every legal means at our disposal. It is our duty to protect the sovereignty of our states from this unwarranted judicial overreach. The traditions that have governed our society for generations are now under attack, and we must stand united in the Senate to block any further legislation that seeks to force an unnatural mixing of the races in our schools and public facilities. If we yield now, the federal government will soon dictate every aspect of local life, stripping communities of their right to self-determination. This is not merely about schools; it is about the fundamental preservation of the Constitution and the rights of the states against an activist judiciary determined to socially engineer our nation."`
         },
         "sourceC": {
           "provenance": "From an NAACP report on violent incidents in Alabama, 1957.",
-          "content": `"The KKK is acting with complete impunity. Black churches have been bombed, and civil rights workers are dragged from their homes and beaten. The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members."`
+          "content": `"The KKK is acting with complete impunity. Black churches have been bombed, and civil rights workers are dragged from their homes and beaten. The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members. Our organizers are receiving daily death threats simply for encouraging citizens to register to vote. Despite appealing directly to the Justice Department, federal intervention remains practically non-existent in these rural counties. We are essentially fighting a war on the home front where the very officers sworn to protect us are leading the lynch mobs. In places like Montgomery and Birmingham, economic reprisals by the White Citizens' Councils have left hundreds of families destitute, fired from their jobs merely for signing desegregation petitions. It is clear that without federal marshals or troops to enforce the law, local authorities will continue to use both economic starvation and physical terror to maintain white supremacy."`
         },
         "interpretation1": {
           "provenance": "From 'The Dixiecrats and Southern Politics' by historian Keith M. Finley, published in 2008.",
-          "content": `"Southern political leaders were highly organized and used federal parliamentary rules, such as the filibuster, to block civil rights bills for years. By framing their fight around 'states' rights' rather than overt racism, they successfully delayed integration and maintained white control."`
+          "content": `"Southern political leaders were highly organized and used federal parliamentary rules, such as the filibuster, to block civil rights bills for years. By framing their fight around 'states' rights' rather than overt racism, they successfully delayed integration and maintained white control. By mastering the intricate rules of the Senate committee system, figures like Richard Russell ensured that meaningful civil rights bills were either watered down into insignificance or strangled before they could even reach the floor for a vote. This sophisticated legal obstructionism proved to be a far more durable barrier to racial equality than the crude violence of the Klan. The sheer bureaucratic endurance of these Southern Democrats allowed them to manipulate legislative schedules, effectively holding the national government hostage and forcing compromises that kept the Jim Crow system legally defensible for much of the decade following the Brown decision."`
         },
         "interpretation2": {
           "provenance": "From 'Race and Terror in the South' by historian Adam Fairclough, published in 1995.",
-          "content": '"While politicians spoke of constitutional law, the real defense of segregation lay in raw, unchecked violence. The KKK and local vigilante mobs terrorized Black communities. It was the threat of the bomb, the rope, and the economic boycott that truly kept desegregation from happening."'
+          "content": `"While politicians spoke of constitutional law, the real defense of segregation lay in raw, unchecked violence. The KKK and local vigilante mobs terrorized Black communities. It was the threat of the bomb, the rope, and the economic boycott that truly kept desegregation from happening. The Citizens' Councils effectively weaponized the local economy, firing any Black teacher or denying credit to any Black farmer who dared to sign an integration petition. This systemic, grassroots reign of terror created an atmosphere of profound fear that paralyzed many communities, proving that the real battleground was not in Washington, but in the streets and fields of the Deep South. The political maneuvers in Congress were merely a smokescreen; it was the visceral, everyday violence perpetrated by ordinary citizens and overlooked by local law enforcement that served as the primary mechanism for enforcing racial submission."`
         },
         "questions": {
           "q3a": "How useful are Sources B and C for an enquiry into the opposition to the civil rights movement in the 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
@@ -7556,13 +7828,34 @@ Source E is highly useful for showing the direct police criminalization of peace
           "q3d": "How far do you agree with Interpretation 2 about the opposition to the civil rights movement in the 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
         },
         "sentenceStarters": [
-          { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into opposition to civil rights because it shows..." },
-          { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
-          { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into opposition to civil rights because..." },
-          { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
-          { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
-          { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
-          { "label": "Q3d: I agree with Interpretation 2 to a...", "value": "I agree with Interpretation 2 to a [high/moderate] extent because while political obstruction was key, on the ground..." }
+          {
+            "label": "Q3a: Source B is useful because...",
+            "value": "Source B is useful for an enquiry into opposition to civil rights because it shows..."
+          },
+          {
+            "label": "Q3a: However, Source B is limited because...",
+            "value": "However, the usefulness of Source B is limited because..."
+          },
+          {
+            "label": "Q3a: Source C is useful because...",
+            "value": "Source C is useful for an enquiry into opposition to civil rights because..."
+          },
+          {
+            "label": "Q3a: However, Source C is limited because...",
+            "value": "However, the usefulness of Source C is limited because..."
+          },
+          {
+            "label": "Q3b: The main difference is...",
+            "value": "The main difference between the views in Interpretations 1 and 2 is..."
+          },
+          {
+            "label": "Q3c: The reason they differ is...",
+            "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..."
+          },
+          {
+            "label": "Q3d: I agree with Interpretation 2 to a...",
+            "value": "I agree with Interpretation 2 to a [high/moderate] extent because while political obstruction was key, on the ground..."
+          }
         ],
         "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the official, political opposition to civil rights. The content defends the Southern Manifesto as a constitutional right against 'federal encroachment' and claims the Supreme Court's ruling is an 'abuse of power.' This is useful because it is supported by my knowledge that Southern politicians organized massive legal resistance (signing the Southern Manifesto in 1956) to delay integration. The provenance, a speech by Southern Senator Strom Thurmond to Congress, makes it a reliable primary record of the legalistic, states' rights arguments used by Southern elites. However, it is limited because it conceals the violent, illegal methods of opposition occurring on the ground.\n\nSource C is highly useful for demonstrating the violent, vigilante opposition to civil rights. The content details KKK terror, church bombings, beatings, and police collusion ('local sheriff... refuse to make any arrests'). This is useful because it is supported by my knowledge that the KKK experienced a massive revival in the 1950s, using raw violence to terrorize activists. The provenance, an NAACP report, provides highly valuable evidence of the ground-level terror that civil rights workers had to overcome. However, it is limited because it represents the perspective of civil rights victims, and may not fully document the political and legislative delaying tactics occurring in Washington.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the opposition to civil rights was primarily political and legal, led by Southern politicians who used congressional rules (such as filibusters) and constitutional arguments (like states' rights) to delay integration. In contrast, Interpretation 2 argues that the true defense of segregation was raw, physical terror, violence, and economic intimidation carried out by the KKK and vigilante mobs to prevent desegregation on the ground.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the opposition to the civil rights movement. Interpretation 1 focuses on the political and legislative obstruction of Southern congressmen in Washington, whereas Interpretation 2 focuses on the physical terror and economic coercion used by vigilantes on the ground in the Deep South. Additionally, they gave weight to different primary sources: Interpretation 1 is supported by official speeches like Source B, while Interpretation 2 is supported by reports of ground-level violence like Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 2 to a high extent. While political delays in Washington (Interpretation 1) were highly organized and successfully blocked legislation, the true force keeping segregation in place in daily Southern life was raw terror. As Source C details, the KKK acted with complete impunity, using bombings and beatings to intimidate civil rights workers, often with the collusion of local law enforcement. Without this constant threat of violence and economic ruin on the ground, legalistic arguments like Strom Thurmond's defense of states' rights in Source B would have had little practical effect. Therefore, while both forms of opposition were important, vigilante violence was the primary mechanism that maintained segregation in the South."
       },
@@ -7656,47 +7949,72 @@ Source E is highly useful for showing the direct police criminalization of peace
           }
         },
         {
-          "title": "Step 2: Freedom Rides & James Meredith (1961-62)",
+          "title": "Step 2: The Freedom Rides (1961)",
           "isSplit": true,
-          "bodyHtml": `<div class="mastery-text-column">\r
-          <div class="mastery-card-body card-content">\r
-            <p>Activists tested federal rulings on interstate travel and university integration:</p>\r
-            <ul>\r
-              <li><strong>Reasons for the Freedom Rides:</strong> In December 1960, the Supreme Court ruled that all interstate bus stations and terminals must be integrated. In May 1961, the civil rights organisation CORE (led by James Farmer) organised the 'Freedom Rides' to test if this desegregation was actually happening in the Deep South. They aimed to purposefully provoke a crisis that would force the federal government to step in and enforce the law.</li>\r
-              <li><strong>Key Features, KKK Violence and the Anniston Bomb:</strong> Black and white volunteers travelled together on buses from Washington D.C., planning to go to New Orleans, using 'whites-only' facilities at every stop. The Anniston Bomb (14 May 1961): When one bus reached Anniston, Alabama, it was surrounded by a white mob and members of the Ku Klux Klan (KKK). The bus was firebombed, and the riders were viciously beaten with iron pipes and clubs as they tried to escape the flames. When the riders reached Birmingham, Police Chief Bull Connor deliberately gave his police force the day off, allowing the KKK to freely attack the protesters again. Hundreds of riders were also arrested and jailed in Mississippi.</li>\r
-              <li><strong>Significance of the Freedom Rides:</strong> The shocking images of the burning bus in Anniston made world headlines and proved the lethal danger protesters faced. Instead of being intimidated, a surge of new volunteers joined the rides, resulting in over 60 Freedom Rides that summer. The violence successfully forced President John F. Kennedy to intervene. His administration pressured the Interstate Commerce Commission (ICC) to issue a strict ban on terminal segregation, successfully ending the segregation of interstate travel.</li>\r
-              <li><strong>The James Meredith Case (1962) - The Event:</strong> In 1962, the Supreme Court ordered the segregated University of Mississippi ('Ole Miss') to accept its first black student, a man named James Meredith. The State Governor and university officials directly defied the Supreme Court and physically stopped Meredith from registering.</li>\r
-              <li><strong>The Significance & Federal Response:</strong> To enforce the law, President Kennedy sent 320 federal marshals to escort Meredith onto the campus. Their arrival sparked a massive, violent riot by a white mob of over 3,000 people. Two people were killed and hundreds were wounded. President Kennedy was forced to escalate his response, sending in thousands of federal troops to restore order. Meredith successfully registered and had to be guarded by troops for his entire degree. This event was highly significant because it proved the federal government would use the military to force Southern state governors to obey civil rights laws.</li>\r
-            </ul>\r
-            <div class="revision-task-box" style="margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.08); border-left: 4px solid var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);">\r
-              <h4 style="margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;">\u{1F4DD} Revision Task: Direct Action & Federal Response</h4>\r
-              <p style="margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;">To check your understanding of this missed lesson, write down a short summary explaining the roles of the following groups/people during the period 1960\u20131962 in your study notes:</p>\r
-              <ul style="margin: 0; padding-left: 18px; font-size: 0.9em; line-height: 1.5;">\r
-                <li><strong>SNCC:</strong> Coordinated student-led sit-ins and direct action campaigns.</li>\r
-                <li><strong>CORE:</strong> Organised the Freedom Rides to test desegregation and provoke federal enforcement.</li>\r
-                <li><strong>Bull Connor:</strong> Birmingham Police Chief who colluded with the KKK and let them beat the riders.</li>\r
-                <li><strong>James Meredith:</strong> Courageously integrated the University of Mississippi (Ole Miss) in the face of violent riots.</li>\r
-                <li><strong>President John F. Kennedy:</strong> Forced to deploy federal marshals and US troops to uphold desegregation laws.</li>\r
-              </ul>\r
-            </div>\r
-          </div>\r
-        </div>\r
-        <div class="mastery-media-column">\r
-          <div class="lesson-image-wrapper">\r
-            <img src="assets/sources/freedom-riders-bus-1961.jpg" alt="Freedom Riders bus firebombed and burning in Anniston, Alabama" class="lesson-source-img" />\r
-            <div class="lesson-image-caption">The Freedom Riders' bus firebombed and burning on a highway near Anniston, Alabama, 14 May 1961.</div>\r
-          </div>\r
-          <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;">\r
-            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Source A: CORE Diary (May 1961)</strong>\r
-            <p style="font-style: italic; line-height: 1.4; color: var(--text-muted); margin: 0;">\r
-              "When our bus arrived in Anniston, a mob surrounded us and slashed the tires. Out on the highway, they threw a firebomb through the window. We crawled out, gasping for air, only to be beaten with iron bars."\r
-            </p>\r
-          </div>\r
+          "bodyHtml": `<div class="mastery-text-column">
+          <div class="mastery-card-body card-content">
+            <p>Activists tested federal rulings on interstate travel:</p>
+            <ul>
+              <li><strong>Reasons for the Freedom Rides:</strong> In December 1960, the Supreme Court ruled that all interstate bus stations and terminals must be integrated. In May 1961, CORE (led by James Farmer) organised the 'Freedom Rides' to test if this desegregation was happening in the Deep South. They aimed to provoke a crisis that would force the federal government to enforce the law.</li>
+              <li><strong>KKK Violence and the Anniston Bomb:</strong> Black and white volunteers travelled together on buses. On 14 May 1961, when one bus reached Anniston, Alabama, it was surrounded by a white mob and the KKK. The bus was firebombed, and riders were beaten with iron pipes as they tried to escape the flames. In Birmingham, Police Chief Bull Connor gave his police force the day off, allowing the KKK to freely attack the protesters again.</li>
+              <li><strong>Significance of the Freedom Rides:</strong> The shocking images of the burning bus in Anniston made world headlines. The violence successfully forced President John F. Kennedy to intervene. His administration pressured the Interstate Commerce Commission (ICC) to issue a strict ban on terminal segregation.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mastery-media-column">
+          <div class="lesson-image-wrapper">
+            <img src="assets/sources/freedom-riders-bus-1961.jpg" alt="Freedom Riders bus firebombed" class="lesson-source-img" />
+            <div class="lesson-image-caption">The Freedom Riders' bus firebombed near Anniston, Alabama, 14 May 1961.</div>
+          </div>
         </div>`,
           "scholarlyDepth": {
             "title": "Scholarly Perspective: The Siege of the First Baptist Church",
             "body": "During the 1961 Freedom Rides, a mob of over 3,000 white segregationists besieged the First Baptist Church in Montgomery, where MLK and 1,500 activists were gathered inside. With local police refusing to act, President Kennedy was forced to declare martial law and send US Marshals to protect the building. This crisis forced Attorney General Robert F. Kennedy to finally enforce the desegregation of interstate travel."
           }
+        },
+        {
+          "title": "Step 3: James Meredith and Ole Miss (1962)",
+          "isSplit": true,
+          "bodyHtml": `<div class="mastery-text-column">
+          <div class="mastery-card-body card-content">
+            <p>Following the Freedom Rides, civil rights activists targeted segregated universities:</p>
+            <ul>
+              <li><strong>The James Meredith Case (1962):</strong> The Supreme Court ordered the segregated University of Mississippi ('Ole Miss') to accept its first black student, James Meredith. The State Governor and university officials defied the Supreme Court and physically stopped Meredith from registering.</li>
+              <li><strong>The Federal Response:</strong> President Kennedy sent 320 federal marshals to escort Meredith onto the campus. Their arrival sparked a massive, violent riot by a white mob of over 3,000 people. Two people were killed and hundreds were wounded.</li>
+              <li><strong>Significance:</strong> President Kennedy was forced to escalate his response, sending in thousands of federal troops to restore order. Meredith successfully registered and had to be guarded by troops for his entire degree. This event proved the federal government would use the military to force Southern state governors to obey civil rights laws.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mastery-media-column">
+          <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;">
+            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Context Focus</strong>
+            <p style="color: var(--text-muted); margin: 0;">
+              President Kennedy's deployment of troops to 'Ole Miss' mirrored President Eisenhower's actions at Little Rock in 1957, confirming that the federal government would uphold Supreme Court decisions with military force.
+            </p>
+          </div>
+        </div>`
+        },
+        {
+          "title": "Step 3: James Meredith and Ole Miss (1962)",
+          "isSplit": true,
+          "bodyHtml": `<div class="mastery-text-column">
+          <div class="mastery-card-body card-content">
+            <p>Following the Freedom Rides, civil rights activists targeted segregated universities:</p>
+            <ul>
+              <li><strong>The James Meredith Case (1962):</strong> The Supreme Court ordered the segregated University of Mississippi ('Ole Miss') to accept its first black student, James Meredith. The State Governor and university officials defied the Supreme Court and physically stopped Meredith from registering.</li>
+              <li><strong>The Federal Response:</strong> President Kennedy sent 320 federal marshals to escort Meredith onto the campus. Their arrival sparked a massive, violent riot by a white mob of over 3,000 people. Two people were killed and hundreds were wounded.</li>
+              <li><strong>Significance:</strong> President Kennedy was forced to escalate his response, sending in thousands of federal troops to restore order. Meredith successfully registered and had to be guarded by troops for his entire degree. This event proved the federal government would use the military to force Southern state governors to obey civil rights laws.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mastery-media-column">
+          <div class="examiner-tip-box" style="margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;">
+            <strong style="display: block; margin-bottom: 6px; color: var(--primary);">\u{1F4DD} Context Focus</strong>
+            <p style="color: var(--text-muted); margin: 0;">
+              President Kennedy's deployment of troops to 'Ole Miss' mirrored President Eisenhower's actions at Little Rock in 1957, confirming that the federal government would uphold Supreme Court decisions with military force.
+            </p>
+          </div>
+        </div>`
         }
       ],
       "dualPerspective": {
@@ -7710,12 +8028,12 @@ Source E is highly useful for showing the direct police criminalization of peace
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why the Freedom Rides were launched in 1961.",
+        "question": "Explain why there was progress in the civil rights movement in the years 1961\u201365 [2021]",
         "successText": "Superb linkage! The rides were launched to test federal compliance, and the resulting violence forced the federal government to intervene and enforce desegregation in transit.",
         "factors": [
           {
             "id": "s21_f1",
-            "title": "Supreme Court ruled that interstate bus terminals must be integrated.",
+            "title": "The impact of the Freedom Rides (1961)",
             "options": [
               "This prompted CORE to test whether Southern states were complying with the federal ruling on the ground.",
               "This caused all Southern bus companies to immediately desegregate their facilities."
@@ -7725,7 +8043,7 @@ Source E is highly useful for showing the direct police criminalization of peace
           },
           {
             "id": "s21_f2",
-            "title": "Severe KKK violence and firebombing of buses in Alabama.",
+            "title": "The Birmingham Campaign exposing racism to the media (1963)",
             "options": [
               "Which caused the activists to call off the campaign and flee back North.",
               "Which generated international media outrage, forcing Robert Kennedy to send federal marshals to enforce the desegregation order."
@@ -7997,12 +8315,12 @@ Source E is highly useful for showing the extreme level of state resistance to u
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why the Voting Rights Act of 1965 was passed.",
+        "question": "Explain why the 1964 Civil Rights Act was passed [2018]",
         "successText": "Correct connection! The televised brutality of Bloody Sunday at Selma shocked the nation, giving President Johnson the political leverage to pass the Voting Rights Act.",
         "factors": [
           {
             "id": "s22_f1",
-            "title": "Televised violence against marchers during 'Bloody Sunday' in Selma.",
+            "title": "The success of the March on Washington (1963)",
             "options": [
               "This caused public outrage across America and pressured President Johnson and Congress to draft federal voting legislation.",
               "This resulted in the immediate arrest and lifetime imprisonment of Martin Luther King Jr."
@@ -8012,7 +8330,7 @@ Source E is highly useful for showing the extreme level of state resistance to u
           },
           {
             "id": "s22_f2",
-            "title": "Sustained voter registration campaigns led by SNCC in the Deep South.",
+            "title": "President Johnson's political skill following Kennedy's assassination",
             "options": [
               "Which proved local registrar systems were fair and didn't need reform.",
               "Which highlighted that local racist officials would never register Black voters without federal laws banning literacy tests."
@@ -8065,7 +8383,7 @@ Source E is highly useful for showing the extreme level of state resistance to u
         }
       ],
       "summaryCorrection": {
-        "text": "The peak of legislative success occurred in 1964\u201365. SCLC launched the Birmingham Campaign in [[1961 -> 1963]], provoking Police Commissioner Bull Connor to use fire hoses against children. This was followed by the March on Washington, where King gave his famous speech. Orthodox historians argue that these bills were passed primarily due to [[John F. Kennedy's -> Lyndon B. Johnson's]] legislative skill. In contrast, grassroots historians argue that the SCLC's strategy of [[conciliatory negotiations -> deliberate provocation]] of white violence was the true driver. By forcing televised brutality, such as the police attacks at the [[1968 -> 1965]] Selma march, activists shocked the nation's conscience, making it politically impossible for Congress to block the Civil Rights Act of 1964 and the [[Fair Housing -> Voting Rights]] Act of 1965."
+        "text": "The peak of legislative success occurred in 1964\u201365. SCLC launched the Birmingham Campaign in [[1961 -> 1963]], provoking Police Commissioner Bull Connor to use fire hoses against children. This was followed by the March on Washington, where King gave his famous speech. Traditional historians argue that these bills were passed primarily due to [[John F. Kennedy's -> Lyndon B. Johnson's]] legislative skill. In contrast, grassroots historians argue that the SCLC's strategy of [[conciliatory negotiations -> deliberate provocation]] of white violence was the true driver. By forcing televised brutality, such as the police attacks at the [[1968 -> 1965]] Selma march, activists shocked the nation's conscience, making it politically impossible for Congress to block the Civil Rights Act of 1964 and the [[Fair Housing -> Voting Rights]] Act of 1965."
       },
       "howUsefulAnalyser": {
         "question": "How useful are Sources D and E for an enquiry into the impact of non-violent campaigns on federal civil rights legislation in the 1960s? (8 marks)",
@@ -8268,12 +8586,12 @@ Source E is highly useful for showing the political and legislative outcomes of 
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why the Black Power movement grew in the mid-1960s.",
+        "question": "Explain why the 1965 Voting Rights Act was passed [2020]",
         "successText": "Excellent! Student frustration with slow legal integration and Malcolm X's powerful defense of racial pride led directly to stokely carmichael's call for Black Power.",
         "factors": [
           {
             "id": "s23_f1",
-            "title": "Frustration over slow economic progress and ghetto poverty in Northern cities.",
+            "title": "The shocking violence of 'Bloody Sunday' in Selma (1965)",
             "options": [
               "This caused young urban Black Americans to lose faith in MLK's integrationist, non-violent tactics.",
               "This immediately prompted all Black Americans to move to the Southern states."
@@ -8283,7 +8601,7 @@ Source E is highly useful for showing the political and legislative outcomes of 
           },
           {
             "id": "s23_f2",
-            "title": "Malcolm X's speeches advocating self-defense and Black pride.",
+            "title": "President Johnson's commitment to federal intervention",
             "options": [
               "Which convinced SNCC and CORE to merge with segregationist white councils.",
               "Which inspired SNCC activists to shift toward a more militant stance under Stokely Carmichael."
@@ -8353,7 +8671,7 @@ Source C is highly useful for revealing how the federal government viewed and ta
           "image": "assets/sources/black-panthers-marching.jpg",
           "caption": "The Black Panthers marching in Oakland, symbolizing disciplined militancy and Black Power."
         },
-        "modelAnswer": `Source D is highly useful for understanding the intellectual shift toward self-defense and militancy. The photograph shows Malcolm X pointing to a newspaper headline that reads "Blacks Must Defend Themselves Against Klan Terror!". This content is highly useful because it is supported by my knowledge that [[Malcolm X rejected SCLC's non-violent integration, advocating Black nationalism, economic self-reliance, and self-defense 'by any means necessary' to appeal to Northern urban Black communities]], which confirms that the source is an accurate representation of his teachings and his rejection of MLK's non-violent approach. {{The provenance of 1964 makes the source highly useful because it documents how Malcolm X used print media to directly challenge MLK's non-violent orthodoxy. However, it is less useful because it is a posed, strategic media photograph designed to project militancy, rather than showing Malcolm's complex intellectual evolution.}}
+        "modelAnswer": `Source D is highly useful for understanding the intellectual shift toward self-defense and militancy. The photograph shows Malcolm X pointing to a newspaper headline that reads "Blacks Must Defend Themselves Against Klan Terror!". This content is highly useful because it is supported by my knowledge that [[Malcolm X rejected SCLC's non-violent integration, advocating Black nationalism, economic self-reliance, and self-defense 'by any means necessary' to appeal to Northern urban Black communities]], which confirms that the source is an accurate representation of his teachings and his rejection of MLK's non-violent approach. {{The provenance of 1964 makes the source highly useful because it documents how Malcolm X used print media to directly challenge MLK's traditional non-violent approach. However, it is less useful because it is a posed, strategic media photograph designed to project militancy, rather than showing Malcolm's complex intellectual evolution.}}
 
 Source E is highly useful for showing how Black Power and militancy were institutionalized by student groups in the late 1960s. The photograph depicts a "column of Black Panther members wearing black leather jackets, black berets" marching in formation. This content's usefulness is supported by my knowledge that [[the Black Panther Party, founded in 1966 in Oakland, California, rejected integration and police brutality, calling for armed patrols and community self-reliance]], which validates the source as a visual representation of their militant discipline and rejection of pacifism. {{The provenance of 1968 makes the source extremely useful because it visually captures the disciplined, militaristic style of Black Power. However, it is less useful because it focuses on their armed, militant appearance, ignoring their extensive community welfare programs, such as free breakfasts for children.}}`
       },
@@ -8525,12 +8843,12 @@ Source E is highly useful for showing how Black Power and militancy were institu
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why urban riots broke out in Northern cities in the years 1965\u201368.",
+        "question": "Explain why a Black Power movement emerged in the USA [2022]",
         "successText": "Excellent! White racism and economic deprivation created ghetto slums, and local police clashes triggered explosive riots that devastated Northern cities.",
         "factors": [
           {
             "id": "s24_f1",
-            "title": "Entrenched segregation, poor housing, and high unemployment in Northern ghettos.",
+            "title": "Frustration with the slow pace of economic and social change",
             "options": [
               "This generated intense frustration, making local communities highly combustible and prone to civil unrest.",
               "This caused Black families to refuse to work and declare independence."
@@ -8540,7 +8858,7 @@ Source E is highly useful for showing how Black Power and militancy were institu
           },
           {
             "id": "s24_f2",
-            "title": "Frequent incidents of aggressive policing and police brutality.",
+            "title": "The inspiring rhetoric of figures like Malcolm X",
             "options": [
               "Which served as the immediate trigger sparks, transforming local anger into city-wide riots.",
               "Which successfully calmed urban areas and prevented any civil protests."
@@ -8592,19 +8910,19 @@ Source E is highly useful for showing how Black Power and militancy were institu
         "enquiry": "the causes of the 1960s urban riots",
         "sourceB": {
           "provenance": "From a statement by a Detroit resident participating in the 1967 riot.",
-          "content": `"This isn't a race riot. We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt. We have no jobs, no future. We are just telling the white man we've had enough."`
+          "content": `"This isn't a race riot. We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt. We have no jobs, no future. We are just telling the white man we've had enough. You push people into a corner where they can't even afford bread for their children, and you expect them to stay quiet? The politicians in Washington pass civil rights laws, but nothing changes here in the ghetto. The only way anyone pays attention to our suffering is when the sky turns black with smoke. The police have been harassing our young men for years, stopping them for no reason and beating them in the alleys. When the sirens started wailing that night, it wasn't fear we felt, it was relief. The community finally snapped because the daily indignity of living in this squalor, while the rest of the country prospered, became too much to bear."`
         },
         "sourceC": {
           "provenance": "From a speech by California Governor Ronald Reagan, 1967.",
-          "content": '"A rioter is not a civil rights protestor. He is a criminal who steals and burns. We will not tolerate lawlessness. We must restore law and order, support our police, and show that crime does not pay. The streets of our cities must be kept safe."'
+          "content": '"A rioter is not a civil rights protestor. He is a criminal who steals and burns. We will not tolerate lawlessness. We must restore law and order, support our police, and show that crime does not pay. The streets of our cities must be kept safe. Those who throw firebombs at innocent businesses are destroying the very fabric of our society, and they must be met with the full force of the National Guard if necessary. There can be no compromise with anarchy, and we cannot excuse this violence by pointing to social problems when the rule of law is at stake. The fundamental responsibility of government is to protect its citizens and their property from mob rule. If we begin to rationalize arson and looting as legitimate forms of political expression, we invite the destruction of the republic. We must stand firm against these agitators and restore the peace immediately."'
         },
         "interpretation1": {
           "provenance": "From 'The Fire This Time' by historian Gerald Horne, published in 1995.",
-          "content": '"The riots were the direct outcome of economic despair. The political gains of the Civil Rights Acts of 1964 and 1965 meant nothing in Northern cities where Black unemployment was double that of whites and housing segregation was absolute. The riots were a political rebellion against economic ghettoization."'
+          "content": `"The riots were the direct outcome of economic despair. The political gains of the Civil Rights Acts of 1964 and 1965 meant nothing in Northern cities where Black unemployment was double that of whites and housing segregation was absolute. The riots were a political rebellion against economic ghettoization. The systemic failure of city governments to provide adequate sanitation, schooling, or healthcare created a tinderbox of frustration. When routine police brutality provided the spark, the resulting explosions were not mindless riots, but desperate, articulate protests against an invisible system of economic apartheid that trapped millions in poverty. These urban rebellions were an inevitable response to the hypocritical promises of the Great Society programs, which offered soaring rhetoric but failed to deliver meaningful material improvements to the deeply marginalized residents of America's deteriorating inner cities."`
         },
         "interpretation2": {
           "provenance": "From 'The Unheavenly City' by political scientist Edward Banfield, published in 1970.",
-          "content": '"The urban riots were not political protests but class-based looting sprees. They were carried out by young, low-income males who took advantage of police hesitation to vandalize property and steal consumer goods. Framing these destructive acts as political rebellion is an academic myth."'
+          "content": `"The urban riots were not political protests but class-based looting sprees. They were carried out by young, low-income males who took advantage of police hesitation to vandalize property and steal consumer goods. Framing these destructive acts as political rebellion is an academic myth. The majority of the damage was inflicted upon the community's own local grocery stores and appliance shops, driven by opportunistic greed rather than any coherent ideological agenda. Elevating this criminality to the status of a civil rights uprising ignores the devastating toll it took on the law-abiding majority of inner-city residents who just wanted safe neighborhoods. The participants were largely disenfranchised youths seeking immediate gratification through theft, capitalizing on a temporary breakdown of municipal authority to enrich themselves at the expense of their own communities."`
         },
         "questions": {
           "q3a": "How useful are Sources B and C for an enquiry into the causes of the 1960s urban riots? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
@@ -8613,13 +8931,34 @@ Source E is highly useful for showing how Black Power and militancy were institu
           "q3d": "How far do you agree with Interpretation 1 about the causes of the 1960s urban riots? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
         },
         "sentenceStarters": [
-          { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the causes of the riots because it shows..." },
-          { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
-          { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into the causes of the riots because..." },
-          { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
-          { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
-          { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
-          { "label": "Q3d: I agree with Interpretation 1 to a...", "value": "I agree with Interpretation 1 to a [high/moderate] extent because while opportunistic looting occurred, the Kerner Commission..." }
+          {
+            "label": "Q3a: Source B is useful because...",
+            "value": "Source B is useful for an enquiry into the causes of the riots because it shows..."
+          },
+          {
+            "label": "Q3a: However, Source B is limited because...",
+            "value": "However, the usefulness of Source B is limited because..."
+          },
+          {
+            "label": "Q3a: Source C is useful because...",
+            "value": "Source C is useful for an enquiry into the causes of the riots because..."
+          },
+          {
+            "label": "Q3a: However, Source C is limited because...",
+            "value": "However, the usefulness of Source C is limited because..."
+          },
+          {
+            "label": "Q3b: The main difference is...",
+            "value": "The main difference between the views in Interpretations 1 and 2 is..."
+          },
+          {
+            "label": "Q3c: The reason they differ is...",
+            "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..."
+          },
+          {
+            "label": "Q3d: I agree with Interpretation 1 to a...",
+            "value": "I agree with Interpretation 1 to a [high/moderate] extent because while opportunistic looting occurred, the Kerner Commission..."
+          }
         ],
         "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the socioeconomic causes of the urban riots from the perspective of an active participant. The content highlights intense grievances over exploitation by local stores, sub-standard rat-infested housing, lack of employment and future prospects, and police mistreatment. This is useful because it is supported by my knowledge that the riots in Watts (1965) and Detroit (1967) were driven by deep-seated anger over de facto segregation, ghetto conditions, and police clashes. The provenance, being a direct statement from a Detroit resident during the 1967 riot, gives it high utility as a contemporary record of grassroots feelings. However, it is limited because it represents a single, highly subjective participant's view and does not capture the broader political or national perspective.\n\nSource C is highly useful for showing the political, conservative response to the urban riots. The content condemns the rioters as criminals who burn and steal rather than civil rights protestors, and argues that law and order must be restored. This utility is supported by my knowledge that conservative politicians like Ronald Reagan campaigned heavily on a 'law and order' platform, blaming individual lawlessness rather than systemic social issues to appeal to anxious white voters. The provenance, a speech by California Governor Ronald Reagan in 1967, makes it a reliable primary record of the official state narrative that justified military intervention. However, it is limited because it is a political speech that ignores the real, documented socio-economic grievances behind the unrest.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the urban riots were political rebellions caused by economic despair, unemployment, and housing segregation in Northern cities, rendering the political gains of the Civil Rights Acts meaningless on the ground. In contrast, Interpretation 2 argues that the riots were not political protests at all, but rather opportunistic, class-based looting sprees carried out by young, low-income males taking advantage of police hesitation.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the urban riots. Interpretation 1 focuses on the underlying socioeconomic causes of the riots, such as high unemployment and absolute housing segregation, whereas Interpretation 2 focuses on the immediate behavior of the rioters, characterizing them as opportunistic looters. Furthermore, they gave weight to different primary sources: Interpretation 1 is supported by the resident testimony in Source B, while Interpretation 2 is supported by the official condemnations in Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 1 to a high extent. While there was undoubtedly opportunistic looting during the chaos (as Interpretation 2 emphasizes), characterizing the riots solely as looting sprees is an oversimplification that ignores the structural roots of the violence. As Source B details, the rioters were driven by clear grievances: exploitation, rat-infested rooms, a lack of jobs, and police hostility. This is strongly supported by the 1968 Kerner Commission Report, which officially concluded that the riots were political and social protests against systemic white racism and economic inequality. Without these severe, de facto ghetto conditions, police incidents would not have sparked such massive city-wide rebellions. Therefore, the riots were fundamentally political protests against economic ghettoization rather than simple criminal lawlessness."
       },
@@ -8787,12 +9126,12 @@ Source E is highly useful for showing how Black Power and militancy were institu
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why the Strategic Hamlet Program failed in Vietnam in the years 1962\u201363.",
+        "question": "Explain why the US became involved in the conflict in Vietnam 1954\u20131963 [2018]",
         "successText": "Correct! Relocating peasants away from ancestral graves angered them, and the Vietcong easily infiltrated the hamlets because peasants refused to cooperate with Diem's government.",
         "factors": [
           {
             "id": "s31_f1",
-            "title": "Forcible relocation of South Vietnamese peasants from ancestral lands.",
+            "title": "The Domino Theory and fear of communist expansion",
             "options": [
               "This caused deep resentment and hostility toward Diem's government, encouraging peasants to aid the Vietcong.",
               "This resulted in immediate economic prosperity and agricultural wealth for the peasants."
@@ -8802,7 +9141,7 @@ Source E is highly useful for showing how Black Power and militancy were institu
           },
           {
             "id": "s31_f2",
-            "title": "Poor security and infiltration by Vietcong guerrilla agents.",
+            "title": "The collapse of French colonial rule at Dien Bien Phu",
             "options": [
               "Which successfully secured the hamlets and isolated communist forces.",
               "Which meant the hamlets became recruitment hubs for the Vietcong, who easily weaponized local peasant grievances."
@@ -9041,12 +9380,12 @@ Source E is highly useful for showing the scale of religious opposition that und
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why US military involvement escalated in Vietnam in 1964\u201365.",
+        "question": "Explain why the USA was not able to win the war against the Vietcong in the years 1964\u201373 [2019]",
         "successText": "Excellent! The Gulf of Tonkin Incident gave Johnson the legal power to escalate, and the need to protect Da Nang air base led directly to ground combat troop deployment.",
         "factors": [
           {
             "id": "s32_f1",
-            "title": "Passage of the Gulf of Tonkin Resolution in August 1964.",
+            "title": "The Gulf of Tonkin Incident (1964)",
             "options": [
               "This gave President Johnson a political 'blank check' to commit US combat forces without a Congressional war declaration.",
               "This forced the immediate withdrawal of all US military advisors from South Vietnam."
@@ -9056,7 +9395,7 @@ Source E is highly useful for showing the scale of religious opposition that und
           },
           {
             "id": "s32_f2",
-            "title": "The launch of Operation Rolling Thunder in February 1965.",
+            "title": "The perceived weakness of the South Vietnamese ARVN",
             "options": [
               "Which required ground forces to protect the US air bases in Da Nang, triggering the first combat deployment of Marines.",
               "Which successfully bombed North Vietnam into a peaceful surrender within weeks."
@@ -9223,7 +9562,7 @@ Source E is highly useful for showing the transition to full combat operations a
           "bodyHtml": "<p>The US military strategy relied heavily on their massive superiority in firepower, mobility (helicopters), and technology, aiming to force the communists into battles where a high 'body count' would ensure victory:</p>\n        <ul>\n          <li><strong>Operation Rolling Thunder (1965\u20131968):</strong> In March 1965, the US launched a massive, sustained strategic bombing campaign against North Vietnam to destroy its industrial base and cut off the Ho Chi Minh Trail. It was largely a failure because North Vietnam was a pre-industrial nation with few factories, crucial war supplies came from China and the USSR (which the US could not bomb for fear of starting WW3), and the VC constantly repaired the trail.</li>\n          <li><strong>Search and Destroy:</strong> Using helicopters to fly platoons into hostile areas to search out and destroy VC camps. If a village was suspected of supporting the VC, troops would destroy it, often burning thatched homes to the ground (known as **'Zippo raids'**). This tactic failed to win 'hearts and minds', resulted in high civilian casualties, and allowed the VC to simply move back in once US helicopters left.</li>\n          <li><strong>Chemical Weapons (Agent Orange & Napalm):</strong> To strip jungle cover and destroy crops, the US sprayed over <strong>20 million gallons</strong> of <strong>Agent Orange</strong> (highly toxic weedkiller), causing long-term health issues and birth defects. They also dropped bombs containing <strong>napalm</strong>, a highly flammable petroleum jelly that stuck to skin and burned at <strong>800\xB0C</strong> to the bone, causing massive international outrage and fueling the anti-war movement.</li>\n        </ul>",
           "scholarlyDepth": {
             "title": "Scholarly Perspective: Failure of Firepower",
-            "body": "Orthodox historians argue that US military tactics were fundamentally flawed because they relied on heavy conventional firepower. This was counterproductive in a counterinsurgency war, as civilian casualties and crop destruction alienated the rural populace, driving them to support the Vietcong."
+            "body": "Traditional historians argue that US military tactics were fundamentally flawed because they relied on heavy conventional firepower. This was counterproductive in a counterinsurgency war, as civilian casualties and crop destruction alienated the rural populace, driving them to support the Vietcong."
           }
         },
         {
@@ -9311,12 +9650,12 @@ Source E is highly useful for showing the transition to full combat operations a
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why US military tactics failed to defeat the Vietcong.",
+        "question": "Explain why the USA was not able to win the war against the Vietcong in the years 1964\u201373 [2019]",
         "successText": "Excellent! Indiscriminate search-and-destroy tactics alienated the peasants, while the Vietcong's hit-and-run guerrilla methods and tunnel systems neutralized US firepower.",
         "factors": [
           {
             "id": "s33_f1",
-            "title": "US reliance on search-and-destroy raids, Napalm, and Agent Orange.",
+            "title": "The effectiveness of Vietcong guerrilla tactics",
             "options": [
               "This devastated the South Vietnamese countryside and alienated peasants, driving them to assist the Vietcong.",
               "This quickly won the 'hearts and minds' of the local Vietnamese population."
@@ -9326,7 +9665,7 @@ Source E is highly useful for showing the transition to full combat operations a
           },
           {
             "id": "s33_f2",
-            "title": "Vietcong guerrilla tactics, booby traps, and underground tunnels.",
+            "title": "The failure of US 'Search and Destroy' missions to win hearts and minds",
             "options": [
               "Which forced the Vietcong to fight in open, conventional battlefield situations.",
               "Which neutralized US technological advantages and inflicted constant, demoralizing casualties on US patrols."
@@ -9380,7 +9719,7 @@ Source E is highly useful for showing the transition to full combat operations a
         }
       ],
       "summaryCorrection": {
-        "text": "The US military relied on high-tech firepower, using Search and Destroy missions and chemical defoliants like [[Agent Orange]]. The Vietcong countered with guerrilla tactics, booby traps, and the Ho Chi Minh Trail. Orthodox historians argue that US military tactics were [[flawless -> fundamentally flawed]] because heavy firepower alienated the peasantry, driving them to support the communists. Conversely, revisionist military historians argue that the tactics [[failed because they were too aggressive -> were militarily sound but undermined by political restrictions]] in Washington. The debate intensified after the [[1965 -> 1968]] Tet Offensive; while it was a military [[defeat -> victory]] for the US/ARVN on the ground, it proved to the American public that the government's claims of imminent victory were [[entirely accurate -> false]]."
+        "text": "The US military relied on high-tech firepower, using Search and Destroy missions and chemical defoliants like [[Agent Orange]]. The Vietcong countered with guerrilla tactics, booby traps, and the Ho Chi Minh Trail. Traditional historians argue that US military tactics were [[flawless -> fundamentally flawed]] because heavy firepower alienated the peasantry, driving them to support the communists. Conversely, alternative military historians argue that the tactics [[failed because they were too aggressive -> were militarily sound but undermined by political restrictions]] in Washington. The debate intensified after the [[1965 -> 1968]] Tet Offensive; while it was a military [[defeat -> victory]] for the US/ARVN on the ground, it proved to the American public that the government's claims of imminent victory were [[entirely accurate -> false]]."
       },
       "howUsefulAnalyser": {
         "question": "How useful are Sources D and E for an enquiry into the tactics used by the US military in the Vietnam War? (8 marks)",
@@ -9566,12 +9905,12 @@ Source E is highly useful for showing the chemical warfare tactics used by the U
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why President Nixon introduced the policy of Vietnamization in 1969.",
+        "question": "Explain why the USA was involved in the peace negotiations (1972\u201373) about the war in Vietnam [2021]",
         "successText": "Great logic! Intense domestic anti-war protests pressured Nixon to bring troops home, while the Nixon Doctrine justified shifting the ground combat burden to ARVN.",
         "factors": [
           {
             "id": "s34_f1",
-            "title": "Growing domestic anti-war protests and political pressure in the US.",
+            "title": "The massive domestic pressure from the anti-war movement",
             "options": [
               "This forced Nixon to begin withdrawing US ground troops to pacify public anger and fulfill campaign promises.",
               "This caused Nixon to declare a formal war against China."
@@ -9581,7 +9920,7 @@ Source E is highly useful for showing the chemical warfare tactics used by the U
           },
           {
             "id": "s34_f2",
-            "title": "The formulation of the Nixon Doctrine in 1969.",
+            "title": "The desire to achieve 'Peace with Honour' while withdrawing US troops",
             "options": [
               "Which argued that the US must directly govern all Southeast Asian countries.",
               "Which declared that Asian allies must take responsibility for their own ground defense, justifying training and equipping ARVN."
@@ -9817,12 +10156,12 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why the anti-war movement grew rapidly in the years 1968\u201370.",
+        "question": "Explain why the anti-war movement grew rapidly in the years 1968\u201370 [Sample]",
         "successText": "Excellent linkage! The moral shock of the My Lai Massacre and the expansion of the war into Cambodia triggered mass student protests that culminated in the Kent State tragedy.",
         "factors": [
           {
             "id": "s41_f1",
-            "title": "Media exposure of the My Lai Massacre in late 1969.",
+            "title": "The shocking revelations of the My Lai Massacre",
             "options": [
               "This shattered US claims of moral superiority, alienating moderate middle-class citizens from supporting the war.",
               "This resulted in immediate public support for the draft lottery."
@@ -9832,7 +10171,7 @@ Source E is highly useful for showing that Vietnamization actually expanded the 
           },
           {
             "id": "s41_f2",
-            "title": "Nixon's announcement of the invasion of Cambodia in 1970.",
+            "title": "The outrage over the US invasion of Cambodia (1970)",
             "options": [
               "Which ended all student protests and pacified college campuses.",
               "Which was seen as expanding the war, triggering massive campus protests that led to the Kent State shootings."
@@ -9963,6 +10302,63 @@ Source E is highly useful for showing the lethal escalation of state suppression
         "interpretation": "Social historians argue that the anti-war movement was highly diverse, consisting of middle-class students, civil rights groups, and working-class draft-resisters, though it also generated a massive conservative backlash.",
         "discussionQuestion": "How did televised media coverage of the Vietnam War influence the relationship between the US government and the public?"
       },
+      "paper3Suite": {
+        "title": "Exam Practice: Paper 3 Section B (Unified Source & Interpretation Set)",
+        "enquiry": "the reasons for the growth of the anti-war movement in the USA",
+        "sourceB": {
+          "provenance": "From a statement by the Students for a Democratic Society (SDS) at an anti-war rally in Washington D.C., 1965.",
+          "content": `"The war in Vietnam is an immoral and unjustifiable intervention in a civil conflict. We are drafting young men from poor communities to fight and die for a corrupt regime in Saigon, while defense contractors in America rake in billions. We demand an immediate withdrawal of all US troops and an end to this senseless slaughter. It is our democratic duty to resist the draft and protest until the war machine is stopped. The government lies to us daily about casualty figures and phantom victories, covering up a brutal campaign that destroys peasant villages to 'save' them. We will march on the Pentagon, we will burn our draft cards, and we will shut down the universities if we must. The youth of this country refuse to be complicit in an imperialist war that violates every principle of self-determination and human rights."`
+        },
+        "sourceC": {
+          "provenance": "From a broadcast by CBS Evening News anchor Walter Cronkite, following his visit to Vietnam during the Tet Offensive, February 1968.",
+          "content": `"To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past. To suggest we are on the edge of defeat is to yield to unreasonable pessimism. To say that we are mired in stalemate seems the only realistic, yet unsatisfactory, conclusion. It is increasingly clear to this reporter that the only rational way out then will be to negotiate, not as victors, but as an honorable people who lived up to their pledge to defend democracy, and did the best they could. The recent offensive has demonstrated that the enemy's resolve remains unbroken despite years of our relentless bombing. We have been repeatedly assured by the military brass that the light at the end of the tunnel is visible, but the reality on the ground contradicts these rosy assessments entirely."`
+        },
+        "interpretation1": {
+          "provenance": "From 'The Anti-War Movement and the Vietnam Era' by historian Charles DeBenedetti, published in 1990.",
+          "content": `"The anti-war movement was fundamentally a moral and political awakening among American youth, driven by the stark realities of the draft and the glaring injustices of the conflict. College students and civil rights activists recognized that the war was diverting crucial funds away from Johnson's Great Society programs and disproportionately sacrificing working-class and minority lives. The movement succeeded because it channeled this righteous indignation into massive, highly visible protests that forced politicians to pay attention. By creating a broad coalition that included returning veterans, religious leaders, and disillusioned middle-class professionals, the movement effectively shattered the bipartisan consensus that had previously supported the Cold War containment doctrine. This grassroots mobilization made it politically impossible for successive administrations to continuously escalate troop levels without facing paralyzing domestic unrest."`
+        },
+        "interpretation2": {
+          "provenance": "From 'The Uncensored War' by media historian Daniel Hallin, published in 1986.",
+          "content": `"While campus protests were loud, the true turning point in public opinion was the role of the mass media. Television brought the horrors of combat directly into American living rooms every night. Unprecedented, uncensored coverage of events like the Tet Offensive and the My Lai massacre shattered the government's optimistic narrative. It was the continuous visual evidence of a brutal, unwinnable stalemate that ultimately eroded middle-class support for the war, far more than radical student demonstrations. The daily broadcasting of body bags and crying refugees systematically dismantled the Pentagon's credibility. When respected journalists began openly questioning the military's strategy, the broader American public\u2014who generally found the student radicals alienating and unpatriotic\u2014quietly shifted their stance from loyal support to weary opposition, ultimately demanding a negotiated exit."`
+        },
+        "questions": {
+          "q3a": "How useful are Sources B and C for an enquiry into the reasons for the growth of the anti-war movement in the USA? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
+          "q3b": "Study Interpretations 1 and 2. They give different views about the reasons for the growth of the anti-war movement in the USA. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+          "q3c": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for the growth of the anti-war movement. You can use Sources B and C to help explain your answer. (4 marks)",
+          "q3d": "How far do you agree with Interpretation 2 about the reasons for the growth of the anti-war movement in the USA? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
+        },
+        "sentenceStarters": [
+          {
+            "label": "Q3a: Source B is useful because...",
+            "value": "Source B is useful for an enquiry into the anti-war movement because it shows..."
+          },
+          {
+            "label": "Q3a: However, Source B is limited because...",
+            "value": "However, the usefulness of Source B is limited because..."
+          },
+          {
+            "label": "Q3a: Source C is useful because...",
+            "value": "Source C is useful for an enquiry into the anti-war movement because..."
+          },
+          {
+            "label": "Q3a: However, Source C is limited because...",
+            "value": "However, the usefulness of Source C is limited because..."
+          },
+          {
+            "label": "Q3b: The main difference is...",
+            "value": "The main difference between the views in Interpretations 1 and 2 is..."
+          },
+          {
+            "label": "Q3c: The reason they differ is...",
+            "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..."
+          },
+          {
+            "label": "Q3d: I agree with Interpretation 2 to a...",
+            "value": "I agree with Interpretation 2 to a [high/moderate] extent because while student protests raised awareness, it was the television coverage that..."
+          }
+        ],
+        "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the moral and political arguments of the radical student protest movement. The content criticizes the draft for targeting poor communities to fight for a corrupt regime, while demanding immediate withdrawal. This is useful because it is supported by my knowledge that groups like the SDS organized massive teach-ins and rallies (such as the 1965 Washington rally) protesting the unequal draft system. The provenance, an SDS statement at a rally, makes it an authentic record of the ideological fervor of the New Left. However, it is limited because it represents the radical, left-wing perspective of college students and does not reflect the views of mainstream Middle America.\n\nSource C is highly useful for showing how mainstream media coverage shifted public perception toward the war. The content openly calls the war a 'stalemate' and suggests the only rational outcome is to negotiate a withdrawal rather than expect a military victory. This utility is supported by my knowledge that Walter Cronkite was considered the 'most trusted man in America,' and his broadcast following the shock of the Tet Offensive in 1968 severely damaged President Johnson's credibility. The provenance, a national television broadcast by a respected anchor, provides invaluable evidence of how the media turned mainstream opinion. However, it is limited because it focuses solely on the military reality of the stalemate and does not mention the domestic draft grievances driving the younger protestors.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the anti-war movement was driven primarily by moral outrage and political activism among college students and civil rights groups, who protested the unfair draft and the diversion of funds from the Great Society. In contrast, Interpretation 2 argues that the growth of anti-war sentiment was fundamentally caused by the mass media, specifically uncensored television coverage of brutal combat that brought the reality of the war into middle-class living rooms and destroyed the government's narrative of success.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the opposition to the war. Interpretation 1 focuses on the grassroots ideological activism of the youth and student protest movements on college campuses, whereas Interpretation 2 focuses on the broader societal impact of mass media and television journalism on middle-class public opinion. Additionally, they gave weight to different primary sources: Interpretation 1 is supported by the radical SDS manifestos like Source B, while Interpretation 2 is supported by mainstream media broadcasts like Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 2 to a high extent. While student activism (Interpretation 1) was highly vocal and generated significant early resistance to the draft, the majority of the American public initially found radical groups like the SDS alienating. As Interpretation 2 suggests, the true catalyst that turned mainstream middle-class America against the conflict was the unprecedented television coverage. As Source C demonstrates, when respected figures like Walter Cronkite declared the war a stalemate following the televised shock of the Tet Offensive, the 'credibility gap' became too large for the government to overcome. The continuous visual evidence of American casualties and atrocities like My Lai eroded the foundational support for the war in a way that student protests alone could not. Therefore, the mass media was the primary factor in broadening the anti-war movement from a campus phenomenon into a national consensus."
+      },
       "mapConfig": {
         "type": "usa",
         "title": "Student Protests & Kent State Shooting (1970)",
@@ -10061,12 +10457,12 @@ Source E is highly useful for showing the lethal escalation of state suppression
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why many working-class Americans supported the Vietnam War in 1969\u201370.",
+        "question": "Explain why the anti-war movement grew rapidly in the years 1968\u201370 [Sample]",
         "successText": "Excellent! working-class patriotism feared communism, and resentment toward draft-exempt college students fueled support for Nixon's pro-war platform.",
         "factors": [
           {
             "id": "s42_f1",
-            "title": "Deep-seated patriotism and fear of communist expansion.",
+            "title": "Strong patriotic belief in containing Communism",
             "options": [
               "This led working-class families to support Nixon's goal of achieving 'Peace with Honor' rather than immediate surrender.",
               "This caused working-class Americans to join the student strike movement."
@@ -10076,7 +10472,7 @@ Source E is highly useful for showing the lethal escalation of state suppression
           },
           {
             "id": "s42_f2",
-            "title": "Resentment toward middle-class student protesters who had college draft deferments.",
+            "title": "Resentment toward radical student protesters",
             "options": [
               "Which caused working-class voters to align with Nixon against what they saw as privileged, unpatriotic radicals.",
               "Which led to massive worker-student coalitions in public factories."
@@ -10300,12 +10696,12 @@ Source E is highly useful for showing the working-class basis of this pro-war su
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why South Vietnam collapsed so rapidly in early 1975.",
+        "question": "Explain why the USA was involved in the peace negotiations (1972\u201373) about the war in Vietnam [2021]",
         "successText": "Excellent causal linking! The combination of US troop withdrawal and Congress cutting military aid left ARVN underfunded and unable to resist the final North Vietnamese offensive.",
         "factors": [
           {
             "id": "s43_f1",
-            "title": "Complete withdrawal of US combat troops in 1973.",
+            "title": "The enormous financial and human cost of continuing the war",
             "options": [
               "This left South Vietnam without the vital US air support and ground forces that had previously blocked communist offensives.",
               "This caused immediate peace and stability between North and South Vietnam."
@@ -10315,7 +10711,7 @@ Source E is highly useful for showing the working-class basis of this pro-war su
           },
           {
             "id": "s43_f2",
-            "title": "US Congress voting to slash military funding for ARVN in 1974.",
+            "title": "Nixon's desire to secure re-election in 1972",
             "options": [
               "Which resulted in ARVN forces running out of fuel, ammunition, and parts, shattering their military capacity and morale.",
               "Which allowed ARVN to build a high-tech modern air force to defeat the North."
@@ -10520,12 +10916,12 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
         "tipHtml": ""
       },
       "causalLinks": {
-        "question": "Explain why the USA failed to achieve its aims in the Vietnam War.",
+        "question": "Explain why the USA failed to achieve its aims in the Vietnam War [2023]",
         "successText": "Outstanding analysis! The combination of Vietcong guerrilla resilience and the collapse of support on the American homefront forced the US to withdraw without achieving victory.",
         "factors": [
           {
             "id": "s44_f1",
-            "title": "Vietcong guerrilla tactics and deep support among the peasantry.",
+            "title": "The corruption and unpopularity of the South Vietnamese government",
             "options": [
               "This prevented the US military from securing rural areas, wearing down US troop morale and resources over a decade.",
               "This forced the North Vietnamese to adopt conventional Western military tactics."
@@ -10535,7 +10931,7 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
           },
           {
             "id": "s44_f2",
-            "title": "The collapse of public support and growth of the anti-war movement in the US.",
+            "title": "The lack of support for the war from the American public",
             "options": [
               "Which gave the President unlimited authority to deploy troops indefinitely.",
               "Which destroyed the political consensus for the war, forcing Nixon to withdraw ground forces and accept a negotiated exit."
@@ -10587,19 +10983,19 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
         "enquiry": "the reasons for US failure in the Vietnam War",
         "sourceB": {
           "provenance": "From a speech by US General William Westmoreland, 1976.",
-          "content": '"On the battlefield, our soldiers were outstanding. We won every major battle. The defeat was not military. The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause."'
+          "content": '"On the battlefield, our soldiers were outstanding. We won every major battle. The defeat was not military. The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause. I was forbidden from invading North Vietnam or striking their sanctuaries in Cambodia early in the conflict, forcing us to fight a defensive war. Meanwhile, television reporters broadcasted misleading images of American casualties right into the living rooms of our citizens, sapping their will to fight long before our forces were ever defeated in the field. Had we been permitted to deploy our full military might without the constant meddling of Washington bureaucrats terrified of provoking the Soviets, we could have decisively broken the North Vietnamese army. We fought with one hand tied behind our backs, betrayed by a collapse of resolve at home."'
         },
         "sourceC": {
           "provenance": "From a North Vietnamese volunteer worker on the Ho Chi Minh Trail, 1974.",
-          "content": `"They bombed us day and night, but we rebuilt the road immediately. We were fighting for our country's independence. We were willing to die for our land. The Americans were fighting for a government in Saigon that nobody respected. Firepower cannot defeat national spirit."`
+          "content": `"They bombed us day and night, but we rebuilt the road immediately. We were fighting for our country's independence. We were willing to die for our land. The Americans were fighting for a government in Saigon that nobody respected. Firepower cannot defeat national spirit. Sometimes B-52 bombers would wipe out entire sections of the jungle, leaving craters fifty feet deep. But within hours, hundreds of volunteers\u2014men, women, and teenagers\u2014would emerge from the caves to fill the craters by hand. We knew that as long as supplies kept moving south, the Americans would eventually grow tired and leave. Their soldiers counted the days until their tours of duty ended, but we had nowhere else to go. This was our home, and we were prepared to fight for ten, twenty, or even fifty years to drive out the foreign invaders and reunite our people."`
         },
         "interpretation1": {
           "provenance": "From 'A Better War' by historian Lewis Sorley, published in 1999.",
-          "content": `"The US military successfully adapted to guerrilla warfare and had secured South Vietnam's rural areas by 1971. The ultimate failure was political: the US Congress cut military funding and forbade air support, leaving ARVN defenseless against a massive NVA conventional invasion."`
+          "content": `"The US military successfully adapted to guerrilla warfare and had secured South Vietnam's rural areas by 1971. The ultimate failure was political: the US Congress cut military funding and forbade air support, leaving ARVN defenseless against a massive NVA conventional invasion. Under General Creighton Abrams, the pacification program had genuinely weakened the Vietcong infrastructure, restoring relative peace to the villages. But just as this strategy began to work, anti-war sentiment in Washington reached a fever pitch. By severely restricting financial aid and refusing to authorize B-52 strikes during the 1975 Spring Offensive, politicians snatched defeat from the jaws of a hard-won military stalemate. The South Vietnamese forces fought bravely when properly equipped, but the sudden withdrawal of American logistical and aerial support doomed them to collapse against a heavily resupplied Northern adversary."`
         },
         "interpretation2": {
           "provenance": "From 'Vietnam: A History' by historian Stanley Karnow, published in 1983.",
-          "content": `"The US failure was inevitable because they were fighting a nationalist movement that was willing to accept any human cost to win. General Westmoreland's strategy of attrition was a failure because the communists replaced their losses faster than the US could kill them, and the corrupt Saigon regime never had the loyalty of the people."`
+          "content": `"The US failure was inevitable because they were fighting a nationalist movement that was willing to accept any human cost to win. General Westmoreland's strategy of attrition was a failure because the communists replaced their losses faster than the US could kill them, and the corrupt Saigon regime never had the loyalty of the people. By relying heavily on search-and-destroy missions and massive bombing campaigns, the US military alienated the rural peasantry they were supposed to be protecting. No amount of American technology could compensate for the fact that the Vietcong represented a deeply rooted anti-colonial struggle, while the South Vietnamese government was widely seen as an illegitimate puppet regime. The basic political dynamics of the conflict meant that the longer the Americans stayed and fought, the more they validated the communist claim that they were merely the latest imperialist occupiers."`
         },
         "questions": {
           "q3a": "How useful are Sources B and C for an enquiry into the reasons for US failure in the Vietnam War? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
@@ -10608,13 +11004,34 @@ Source E is highly useful for showing the chaotic, real-world failure of the pea
           "q3d": "How far do you agree with Interpretation 2 about the reasons for US failure in the Vietnam War? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
         },
         "sentenceStarters": [
-          { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the reasons for US failure in Vietnam because it shows..." },
-          { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
-          { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into the reasons for US failure in Vietnam because..." },
-          { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
-          { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
-          { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
-          { "label": "Q3d: I agree with Interpretation 2 to a...", "value": "I agree with Interpretation 2 to a [high/moderate] extent because while US political divisions were important, the communist commitment and..." }
+          {
+            "label": "Q3a: Source B is useful because...",
+            "value": "Source B is useful for an enquiry into the reasons for US failure in Vietnam because it shows..."
+          },
+          {
+            "label": "Q3a: However, Source B is limited because...",
+            "value": "However, the usefulness of Source B is limited because..."
+          },
+          {
+            "label": "Q3a: Source C is useful because...",
+            "value": "Source C is useful for an enquiry into the reasons for US failure in Vietnam because..."
+          },
+          {
+            "label": "Q3a: However, Source C is limited because...",
+            "value": "However, the usefulness of Source C is limited because..."
+          },
+          {
+            "label": "Q3b: The main difference is...",
+            "value": "The main difference between the views in Interpretations 1 and 2 is..."
+          },
+          {
+            "label": "Q3c: The reason they differ is...",
+            "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..."
+          },
+          {
+            "label": "Q3d: I agree with Interpretation 2 to a...",
+            "value": "I agree with Interpretation 2 to a [high/moderate] extent because while US political divisions were important, the communist commitment and..."
+          }
         ],
         "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the perspective of the US military command regarding the reasons for US failure. The content claims that US soldiers were outstanding and won every battle, blaming the defeat entirely on political target restrictions and a media that turned the public against the war. This is useful because it is supported by my knowledge that US command faced severe restrictions (such as not invading North Vietnam directly to avoid Chinese intervention) and that media coverage of the Tet Offensive created a massive 'credibility gap' at home. The provenance, a speech by General Westmoreland in 1976 (the commander of US forces in Vietnam), makes it an authentic record of how top US commanders rationalized the defeat. However, it is limited because Westmoreland was personally responsible for the controversial strategy of attrition, meaning the source is highly self-defensive and seeks to deflect personal blame.\n\nSource C is highly useful for showing the motivations and tactics of the communist forces. The content emphasizes North Vietnamese determination to rebuild bombed supply routes, their willing commitment to die for independence, and their view that the Saigon regime lacked legitimacy. This utility is supported by my knowledge that the communists fought a total war of national liberation, using over 50,000 volunteers to keep the Ho Chi Minh Trail open despite constant US bombing. The provenance, being a North Vietnamese volunteer worker in 1974, provides an invaluable contemporary perspective on the high morale and nationalist commitment of the communist forces. However, it is limited because it is a highly patriotic statement that may downplay the severe physical hardships, fear, and high casualties suffered by trail workers.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the US failure in Vietnam was primarily political and occurred late in the conflict, claiming the military had actually secured the countryside by 1971 but were abandoned when Congress cut military funding and air support to South Vietnam. In contrast, Interpretation 2 argues that US defeat was militarily inevitable from the start because the US was fighting a highly resilient nationalist movement willing to accept any human cost, whose losses were replaced faster than the US could inflict them, combined with an unpopular and corrupt Saigon regime.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the US failure. Interpretation 1 focuses on the domestic legislative and political decisions in Washington (such as Congress cutting military funds), whereas Interpretation 2 focuses on the structural military weaknesses of the US strategy of attrition and the high nationalist resolve of the North Vietnamese. Additionally, they gave weight to different primary sources: Interpretation 1 is supported by General Westmoreland's claims of battlefield success in Source B, while Interpretation 2 is supported by the volunteer's testimony of unbreakable resolve in Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 2 to a high extent. While political decisions in Washington and funding cuts (Interpretation 1) certainly hastened the final collapse of South Vietnam in 1975, the fundamental reason for US failure was the unwinnable nature of the conflict itself. As Source C shows, the North Vietnamese and Vietcong possessed an unbreakable nationalist commitment to secure their country's independence, which allowed them to withstand relentless US bombing and rebuild crucial networks like the Ho Chi Minh Trail. General Westmoreland's conventional strategy of attrition (highlighted in Source B) was structurally flawed because the communists replaced their casualties faster than the US could inflict them. Furthermore, the corrupt and unstable Saigon government (ARVN) never won the loyalty of the rural peasantry. Therefore, US military tactics could not overcome these political and social realities, making defeat inevitable."
       },
@@ -23742,7 +24159,7 @@ ${cleanBrackets(paper.q3d.model)}
             <div style="padding: 12px 14px; background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--secondary); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); border-left-width: 4px;">
               <strong style="color: var(--secondary); font-size: 0.95rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-trophy"></i> Mastery Mode (Grade 7-9 Detail)</strong>
               <p style="margin: 6px 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
-                Targeted at high-achievers. Includes scholarly debate extensions (e.g. orthodox vs revisionist), interactive historiographical dual-perspective sliders (Top-down legalistic vs Bottom-up grassroots), and examiner tip checklists for essay planning.
+                Targeted at high-achievers. Includes scholarly debate extensions (e.g. traditional vs alternative interpretations), interactive historiographical dual-perspective sliders (Top-down legalistic vs Bottom-up grassroots), and examiner tip checklists for essay planning.
               </p>
             </div>
 
@@ -23954,6 +24371,497 @@ ${cleanBrackets(paper.q3d.model)}
       container.appendChild(card);
     });
   }
+  var activeFigures = [
+    // --- Civil Rights ---
+    {
+      key: "rosa parks",
+      quote: "The only tired I was, was tired of giving in.",
+      question: "What 1956 Supreme Court case ruled segregated public bus transport unconstitutional, ending the boycott?",
+      answer: "Browder v. Gayle (1956)"
+    },
+    {
+      key: "malcolm x",
+      quote: "Be peaceful, be courteous, obey the law... but if someone puts his hand on you, send him to the cemetery.",
+      question: "Which organization did Malcolm X belong to until his break in 1964?",
+      answer: "The Nation of Islam (NOI)"
+    },
+    {
+      key: "martin luther king",
+      quote: "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.",
+      question: "Which civil rights organization did Martin Luther King Jr. co-found and lead starting in 1957?",
+      answer: "Southern Christian Leadership Conference (SCLC)"
+    },
+    {
+      key: "stokely carmichael",
+      quote: "In order for nonviolence to work, your opponent must have a conscience. The United States has none.",
+      question: "Which civil rights group did Stokely Carmichael lead as chairman, steering it toward Black Power?",
+      answer: "Student Nonviolent Coordinating Committee (SNCC)"
+    },
+    {
+      key: "thurgood marshall",
+      quote: "None of us got where we are solely by pulling ourselves up by our bootstraps.",
+      question: "Which historic desegregation case did Thurgood Marshall argue successfully before the Supreme Court in 1954?",
+      answer: "Brown v. Board of Education"
+    },
+    {
+      key: "elizabeth eckford",
+      quote: "I tried to look at a friendly face... but they all looked angry.",
+      question: "In which city did Elizabeth Eckford and eight other students face angry mobs while trying to integrate Central High School?",
+      answer: "Little Rock, Arkansas"
+    },
+    {
+      key: "james meredith",
+      quote: "My objective was to force the federal government to use its power to protect my civil rights.",
+      question: "Which university did James Meredith integrate in 1962, requiring protection from US Marshals?",
+      answer: "University of Mississippi (Ole Miss)"
+    },
+    {
+      key: "bull connor",
+      quote: "You can't integrate these public places without having riots.",
+      question: "Which city's public safety department did Bull Connor command during the police dog and water hose attacks of 1963?",
+      answer: "Birmingham, Alabama"
+    },
+    {
+      key: "huey p. newton",
+      quote: "The first lesson a revolutionary must learn is that he is a doomed man.",
+      question: "Along with Bobby Seale, in which city did Huey Newton co-found the Black Panther Party in 1966?",
+      answer: "Oakland, California"
+    },
+    {
+      key: "bobby seale",
+      quote: "You don't fight racism with racism, the best way to fight racism is with solidarity.",
+      question: "What was the name of the 10-Point Program document created by Bobby Seale and Huey Newton in 1966?",
+      answer: "The Black Panther Party Platform"
+    },
+    {
+      key: "linda brown",
+      quote: "I didn't understand why I couldn't go to the school that was just a few blocks away.",
+      question: "Which local board of education did Linda Brown's father sue in the landmark 1954 Supreme Court case?",
+      answer: "Topeka Board of Education (Kansas)"
+    },
+    {
+      key: "jo ann robinson",
+      quote: "We printed and distributed 35,000 leaflets within 24 hours of Rosa's arrest.",
+      question: "Which organization did Jo Ann Robinson lead, which coordinated the initial leaflets for the Montgomery boycott?",
+      answer: "Women's Political Council (WPC)"
+    },
+    {
+      key: "emmett till",
+      quote: "I want the world to see what they did to my baby.",
+      question: "In which Southern state was 14-year-old Emmett Till murdered in 1955, sparking national outrage?",
+      answer: "Mississippi"
+    },
+    {
+      key: "james farmer",
+      quote: "If we didn't do it, segregation would go on forever.",
+      question: "Which civil rights organization did James Farmer lead, organizing the historic 1961 Freedom Rides?",
+      answer: "Congress of Racial Equality (CORE)"
+    },
+    {
+      key: "orval faubus",
+      quote: "It is not possible to integrate our schools without violence.",
+      question: "Which state was Orval Faubus governor of during the 1957 Little Rock Nine school crisis?",
+      answer: "Arkansas"
+    },
+    {
+      key: "tommie smith",
+      quote: "We were not protesting the flag; we were protesting the treatment of our people.",
+      question: "At which Olympic Games did Tommie Smith and John Carlos perform their famous Black Power salute?",
+      answer: "1968 Mexico City Olympics"
+    },
+    {
+      key: "earl warren",
+      quote: "In the field of public education, the doctrine of 'separate but equal' has no place.",
+      question: "Which 1954 landmark Supreme Court decision did Chief Justice Earl Warren write the unanimous opinion for?",
+      answer: "Brown v. Board of Education of Topeka"
+    },
+    {
+      key: "freedom summer workers",
+      quote: "We want the right to vote, and we want it now.",
+      question: "In which year did the Freedom Summer voter registration campaign take place in Mississippi?",
+      answer: "1964"
+    },
+    {
+      key: "john carlos",
+      quote: "A lot of people thought we were protesting. We were actually stating a fact: we are human beings.",
+      question: "What symbolic action did John Carlos and Tommie Smith take on the podium at the 1968 Olympics?",
+      answer: "Raised black-gloved fists in a Black Power salute"
+    },
+    {
+      key: "eldridge cleaver",
+      quote: "You're either part of the solution or you're part of the problem.",
+      question: "What role did Eldridge Cleaver hold in the Black Panther Party, editing their official newspaper?",
+      answer: "Minister of Information"
+    },
+    {
+      key: "jesse jackson",
+      quote: "I am somebody. I may be poor, but I am somebody.",
+      question: "Which economic development program of the SCLC did Jesse Jackson lead starting in 1966?",
+      answer: "Operation Breadbasket"
+    },
+    // --- Vietnam & US ---
+    {
+      key: "ho chi minh",
+      quote: "You will kill ten of our men, and we will kill one of yours, and in the end it will be you who tire.",
+      question: "Which communist independence organization did Ho Chi Minh lead against the French and later the US?",
+      answer: "The Vietminh (later North Vietnam)"
+    },
+    {
+      key: "general giap",
+      quote: "Guerrilla warfare is the war of the broad masses of an economically backward country against a powerfully equipped army.",
+      question: "At which battle did General Vo Nguyen Giap decisively defeat the French forces in 1954?",
+      answer: "Battle of Dien Bien Phu"
+    },
+    {
+      key: "le duan",
+      quote: "We must choose the path of revolutionary violence to overthrow the imperialist regime.",
+      question: "What role did Le Duan hold in North Vietnam, making him the chief strategic architect of the war in the South?",
+      answer: "General Secretary of the Communist Party"
+    },
+    {
+      key: "ngo dinh diem",
+      quote: "We must defeat communism to secure our freedom and protect our traditional values.",
+      question: "Which religious majority did South Vietnamese President Ngo Dinh Diem heavily discriminate against, sparking his overthrow?",
+      answer: "Buddhists"
+    },
+    {
+      key: "madame nhu",
+      quote: "If the Buddhists want to have another barbecue, I will be glad to supply the gasoline.",
+      question: "What was Madame Nhu's official relationship to South Vietnamese President Ngo Dinh Diem?",
+      answer: "Sister-in-law (and First Lady)"
+    },
+    {
+      key: "nguyen van thieu",
+      quote: "If the United States does not keep its promises, it will lose its honor.",
+      question: "In which year did Nguyen Van Thieu resign as President of South Vietnam, shortly before the Fall of Saigon?",
+      answer: "1975"
+    },
+    {
+      key: "bao dai",
+      quote: "I prefer to be a simple citizen of a free country rather than the king of an enslaved nation.",
+      question: "Which European colonial power backed Emperor Bao Dai as Chief of State before his defeat by Diem?",
+      answer: "France"
+    },
+    {
+      key: "dwight d. eisenhower",
+      quote: "You do not lead by hitting people over the head - that's assault, not leadership.",
+      question: "What foreign policy concept did President Eisenhower popularize to justify US advisory involvement in Indochina?",
+      answer: "The Domino Theory"
+    },
+    {
+      key: "john f. kennedy",
+      quote: "Ask not what your country can do for you - ask what you can do for your country.",
+      question: "Which counter-insurgency plan did JFK authorize in 1962 to move Vietnamese peasants into fortified villages?",
+      answer: "The Strategic Hamlet Program"
+    },
+    {
+      key: "lyndon b. johnson",
+      quote: "We are not about to send American boys nine or ten thousand miles from home to do what Asian boys ought to be doing for themselves.",
+      question: "Which 1964 congressional resolution gave President Johnson authority to wage war in Vietnam without a formal declaration?",
+      answer: "The Gulf of Tonkin Resolution"
+    },
+    {
+      key: "richard nixon",
+      quote: "Let us understand: North Vietnam cannot defeat or humiliate the United States. Only Americans can do that.",
+      question: "What was the term for Nixon's secret plan to expand the war into neighboring Cambodia to destroy communist supply lines?",
+      answer: "The Cambodia Incursion (or bombing of Cambodia)"
+    },
+    {
+      key: "william westmoreland",
+      quote: "We are winning the war. We can see the light at the end of the tunnel.",
+      question: "What was the primary combat tactic General Westmoreland used to flush out the Vietcong in rural areas?",
+      answer: "Search and Destroy"
+    },
+    {
+      key: "henry kissinger",
+      quote: "Peace is at hand.",
+      question: "Who was Henry Kissinger's North Vietnamese counterpart in the secret peace negotiations that led to the Paris Peace Accords?",
+      answer: "Le Duc Tho"
+    },
+    {
+      key: "le duc tho",
+      quote: "We negotiated in good faith to restore peace and sovereignty to the Vietnamese people.",
+      question: "What prestigious international award did Le Duc Tho refuse in 1973 alongside Henry Kissinger?",
+      answer: "The Nobel Peace Prize"
+    },
+    {
+      key: "thich quang duc",
+      quote: "Before closing my eyes, I respectfully plead to President Diem to show charity and compassion to all.",
+      question: "In which city did Buddhist monk Thich Quang Duc self-immolate in 1963, triggering global outrage?",
+      answer: "Saigon"
+    },
+    {
+      key: "gerald ford",
+      quote: "Our long national nightmare is over.",
+      question: "Which major city fell in April 1975 under President Ford's administration, marking the end of the Vietnam War?",
+      answer: "Saigon (Fall of Saigon)"
+    },
+    {
+      key: "harry s. truman",
+      quote: "The responsibility of great states is to serve and not to dominate the world.",
+      question: "Which Cold War doctrine did President Truman announce in 1947, initiating the policy of containment?",
+      answer: "The Truman Doctrine"
+    },
+    {
+      key: "william calley",
+      quote: "I was ordered to go in there and destroy the enemy. That was my job.",
+      question: "Lieutenant William Calley was court-martialed for his role in which notorious 1968 massacre of Vietnamese civilians?",
+      answer: "The My Lai Massacre"
+    },
+    {
+      key: "creighton abrams",
+      quote: "There is no separate war in the villages and another in the main force. It is all one war.",
+      question: "Which general succeeded William Westmoreland as commander of US military forces in Vietnam in 1968?",
+      answer: "General Creighton Abrams"
+    },
+    {
+      key: "norodom sihanouk",
+      quote: "Cambodia is like an ant between two fighting elephants. We must remain neutral.",
+      question: "Who was the neutralist ruler of Cambodia overthrown in a pro-US military coup in 1970?",
+      answer: "Prince Norodom Sihanouk"
+    },
+    {
+      key: "lon nol",
+      quote: "We must defend our territory and resist the communist aggression.",
+      question: "Which general led the 1970 military coup that overthrew Prince Sihanouk and established the pro-US Khmer Republic?",
+      answer: "General Lon Nol"
+    },
+    {
+      key: "pol pot",
+      quote: "To keep you is no benefit. To destroy you is no loss.",
+      question: "Which radical communist faction did Pol Pot lead, taking power in Cambodia in 1975?",
+      answer: "The Khmer Rouge"
+    },
+    {
+      key: "kim phuc",
+      quote: "Forgiveness made me free from hatred.",
+      question: "Who took the famous 1972 'Napalm Girl' photograph that captured Kim Phuc running from the attack?",
+      answer: "Nick Ut (AP Photographer)"
+    }
+  ];
+  function renderKeyIndividualsView() {
+    const container = document.getElementById("key-individuals-grid");
+    if (!container) return;
+    container.innerHTML = "";
+    console.log("activeFigures length:", activeFigures.length);
+    activeFigures.forEach((item) => {
+      const figure = KEY_FIGURES_BIO[item.key];
+      if (!figure) return;
+      const cleanName = figure.name.replace(/Jr\.|Chief Justice|General|Dr\./gi, "").trim();
+      const nameParts = cleanName.split(/\s+/).filter((p) => p.length > 0);
+      let initials = "";
+      if (nameParts.length >= 3) {
+        initials = (nameParts[0][0] + nameParts[1][0] + nameParts[2][0]).toUpperCase();
+      } else if (nameParts.length === 2) {
+        initials = (nameParts[0][0] + nameParts[1][0]).toUpperCase();
+      } else if (nameParts.length === 1) {
+        initials = nameParts[0].substring(0, 2).toUpperCase();
+      }
+      initials = initials.substring(0, 3);
+      const cardContainer = document.createElement("div");
+      cardContainer.className = "individual-card-container";
+      cardContainer.style.cssText = "perspective: 1000px; height: 380px;";
+      const quoteHtml = item.quote ? `
+      <blockquote style="margin: 8px 0 12px 0; font-style: italic; font-size: 0.85rem; color: var(--text-main); line-height: 1.4; font-family: Georgia, serif; margin: 0 0 10px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; border-left: 3px solid var(--accent); padding-left: 8px; text-align: left;">
+        "${item.quote}"
+      </blockquote>
+    ` : '<p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">GCSE Key Individual</p>';
+      cardContainer.innerHTML = `
+      <div class="individual-card" style="position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;">
+        <!-- FRONT OF CARD -->
+        <div class="individual-card-face front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-md); border: 2px solid var(--border-glass); background: var(--bg-card); display: flex; flex-direction: column; overflow: hidden; padding: 20px; box-sizing: border-box; justify-content: space-between;">
+          <!-- Top header -->
+          <div style="display: flex; flex-direction: column; gap: 4px; text-align: left;">
+            <span style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: var(--accent); letter-spacing: 0.5px;">${figure.role}</span>
+            <h3 style="margin: 4px 0 0 0; font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--text-main);">${figure.name}</h3>
+          </div>
+          
+          <!-- Portrait Image -->
+          <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; margin: 10px 0;">
+            <div style="width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent); overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--gradient-primary); box-shadow: var(--shadow-sm); position: relative; transition: transform 0.3s ease;">
+              ${figure.image ? `
+                <img src="${figure.image}" alt="${figure.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span style="display: none; font-size: 2.2rem; font-weight: 800; color: #fff; font-family: var(--font-heading); text-shadow: 0 1px 3px rgba(0,0,0,0.3);">${initials}</span>
+              ` : `
+                <span style="font-size: 2.2rem; font-weight: 800; color: #fff; font-family: var(--font-heading); text-shadow: 0 1px 3px rgba(0,0,0,0.3);">${initials}</span>
+              `}
+            </div>
+          </div>
+          
+          <!-- Bottom info -->
+          <div style="text-align: center;">
+            ${quoteHtml}
+            <span style="font-size: 0.72rem; color: var(--primary); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 4px;">
+              <i class="fa-solid fa-rotate"></i> Click Card to Flip
+            </span>
+          </div>
+        </div>
+        
+        <!-- BACK OF CARD -->
+        <div class="individual-card-face back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: var(--border-radius-md); border: 2px solid var(--accent); background: var(--bg-sidebar); display: flex; flex-direction: column; padding: 20px; box-sizing: border-box; justify-content: space-between; transform: rotateY(180deg);">
+          <div style="text-align: left; display: flex; flex-direction: column; gap: 10px; height: 100%; overflow-y: auto; padding-right: 4px;">
+            <!-- Header -->
+            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-glass); padding-bottom: 6px;">
+              <h4 style="margin: 0; font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--text-main);">${figure.name}</h4>
+              <span style="font-size: 0.65rem; text-transform: uppercase; color: var(--accent); font-weight: 700; letter-spacing: 0.5px;">GCSE Bio</span>
+            </div>
+            
+            <!-- Biography -->
+            <p style="font-size: 0.82rem; line-height: 1.45; color: var(--text-muted); margin: 0;">
+              ${figure.bio}
+            </p>
+            
+            <!-- GCSE Practice Challenge -->
+            <div style="background: rgba(37, 99, 235, 0.05); border: 1px dashed var(--primary); border-radius: var(--border-radius-sm); padding: 10px 12px; margin-top: auto; box-sizing: border-box;">
+              <strong style="font-size: 0.72rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">
+                \u{1F4A1} Quick Recall Question:
+              </strong>
+              <p style="font-size: 0.8rem; line-height: 1.35; color: var(--text-main); font-weight: 600; margin: 0 0 8px 0;">
+                ${item.question}
+              </p>
+              <div class="answer-box-container">
+                <button class="btn-reveal-answer" style="background: var(--primary); border: none; color: #fff; padding: 5px 10px; font-size: 0.7rem; font-weight: 700; border-radius: var(--border-radius-sm); cursor: pointer; transition: background 0.2s;">
+                  Reveal Answer
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Flip back helper -->
+          <div style="text-align: center; margin-top: 6px; border-top: 1px dashed var(--border-glass); padding-top: 6px;">
+            <span style="font-size: 0.72rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 4px;">
+              <i class="fa-solid fa-rotate"></i> Click to Flip Back
+            </span>
+          </div>
+        </div>
+      </div>
+    `;
+      const cardInner = cardContainer.querySelector(".individual-card");
+      cardInner.addEventListener("click", (e) => {
+        if (e.target.closest(".btn-reveal-answer") || e.target.closest(".reveal-answer-text")) return;
+        cardInner.classList.toggle("flipped");
+        AudioEngine.play("flip");
+      });
+      const revealBtn = cardContainer.querySelector(".btn-reveal-answer");
+      revealBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        AudioEngine.play("success");
+        const containerBox = revealBtn.parentElement;
+        containerBox.innerHTML = `
+        <div class="reveal-answer-text" style="font-size: 0.8rem; font-weight: 700; color: var(--success); padding: 4px 0; animation: fadeIn 0.3s ease;">
+          <i class="fa-solid fa-circle-check"></i> Answer: ${item.answer}
+        </div>
+      `;
+      });
+      container.appendChild(cardContainer);
+    });
+  }
+  window.renderKeyIndividualsView = renderKeyIndividualsView;
+  function renderTradingCardsView() {
+    const container = document.getElementById("view-trading");
+    const grid = document.getElementById("trading-cards-grid");
+    if (!container || !grid) return;
+    grid.innerHTML = "";
+    const forceUnlock = window.localStorage.getItem("unlock_all_cards") === "true";
+    const totalXP = window.state && window.state.userStats && window.state.userStats.xp || 0;
+    TRADING_CARDS_DATA.forEach((card, index) => {
+      const requiredXP = (index + 1) * 200;
+      const isUnlocked = forceUnlock || totalXP >= requiredXP;
+      const wrapperEl = document.createElement("div");
+      wrapperEl.className = "scumbag-card-container scumbag-flippable";
+      wrapperEl.style.height = "350px";
+      const innerEl = document.createElement("div");
+      innerEl.className = "scumbag-flip-card-inner";
+      const frontEl = document.createElement("div");
+      frontEl.className = "scumbag-flip-card-front";
+      if (isUnlocked) {
+        frontEl.className += " scumbag-card-unlocked";
+        frontEl.style.backgroundImage = `url('${card.image}')`;
+        frontEl.style.backgroundSize = "cover";
+        frontEl.style.backgroundPosition = "center 15%";
+        frontEl.innerHTML = `
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, 
+rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, transparent 100%); padding: 20px 5px 10px; text-align: center;">
+            <h3 style="color: #facc15; font-family: 'Kalam', cursive; font-size: 1.2rem; margin: 0; text-shadow: 2px 
+2px 4px rgba(0,0,0,0.8); line-height: 1.1;">
+              "${card.frontPhrase || card.name}"
+            </h3>
+          </div>
+          <div class="hologram"></div>
+        `;
+      } else {
+        frontEl.className += " scumbag-card-locked";
+        frontEl.innerHTML = `
+          <div class="foil-pack-body" style="position: absolute; inset: 0; background-image: linear-gradient(rgba(10, 10, 15, 0.85), rgba(10, 10, 15, 0.85)), url('assets/mr_lovett_wrapper.png?v=2'); background-size: cover; 
+background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; 
+padding: 20px; color: white; text-align: center;">
+            <div style="background: rgba(0,0,0,0.8); padding: 15px; border-radius: 8px; width: 100%; border: 1px solid 
+rgba(255,255,255,0.2);">
+              <i class="fa-solid fa-lock" style="font-size: 2rem; margin-bottom: 10px; color: #facc15;"></i>
+              <h3 style="margin-bottom: 5px;">Locked Pack</h3>
+              <p style="font-size: 0.85rem;">Reach ${requiredXP} XP to unlock</p>
+            </div>
+          </div>
+        `;
+      }
+      const backEl = document.createElement("div");
+      backEl.className = "scumbag-flip-card-back";
+      if (isUnlocked && card.stats) {
+        backEl.innerHTML = `
+          <div class="scumbag-back-content">
+            <div class="scumbag-back-header">
+              <h4>${card.name}</h4>
+            </div>
+            <div class="scumbag-bio">${card.bio}</div>
+            <div class="scumbag-stats-box">
+              <div class="scumbag-stat-row">
+                <span class="stat-label">Audacity</span>
+                <span class="scumbag-stat-value">
+                  <div class="scumbag-stat-bar" style="width: ${card.stats.audacity}%"></div>
+                  ${card.stats.audacity}
+                </span>
+              </div>
+              <div class="scumbag-stat-row">
+                <span class="stat-label">Sneakiness</span>
+                <span class="scumbag-stat-value">
+                  <div class="scumbag-stat-bar" style="width: ${card.stats.diplomaticSneakiness}%"></div>
+                  ${card.stats.diplomaticSneakiness}
+                </span>
+              </div>
+              <div class="scumbag-stat-row">
+                <span class="stat-label">Military</span>
+                <span class="scumbag-stat-value">
+                  <div class="scumbag-stat-bar" style="width: ${card.stats.militaryMight}%"></div>
+                  ${card.stats.militaryMight}
+                </span>
+              </div>
+              <div class="scumbag-stat-row">
+                <span class="stat-label">Legacy</span>
+                <span class="scumbag-stat-value">
+                  <div class="scumbag-stat-bar" style="width: ${card.stats.legacyScore}%"></div>
+                  ${card.stats.legacyScore}
+                </span>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        backEl.innerHTML = `<div class="scumbag-back-content"><i class="fa-solid fa-question" style="font-size: 3rem; 
+opacity: 0.1;"></i></div>`;
+      }
+      innerEl.appendChild(frontEl);
+      innerEl.appendChild(backEl);
+      wrapperEl.appendChild(innerEl);
+      if (isUnlocked) {
+        wrapperEl.onclick = () => {
+          if (window.AudioEngine) window.AudioEngine.play("cardFlip");
+          innerEl.classList.toggle("flipped");
+        };
+      }
+      grid.appendChild(wrapperEl);
+    });
+  }
+  window.renderTradingCardsView = renderTradingCardsView;
 
   // src/exam.js
   function showExamSetup() {
@@ -25179,7 +26087,7 @@ ${cleanBrackets(paper.q3d.model)}
     const data = LESSONS_DATA[subtopicId];
     if (!data) continue;
     const narrative = (data.steps || []).map((step, idx) => {
-      const cleanText = getCleanStepText(step.bodyHtml);
+      const cleanText = step.bodyHtml;
       const paragraphs = [cleanText];
       if (step.scholarlyDepth && step.scholarlyDepth.body) {
         paragraphs.push(step.scholarlyDepth.body);
@@ -25215,7 +26123,7 @@ ${cleanBrackets(paper.q3d.model)}
     if (data.deepThinkingQuestions && data.deepThinkingQuestions.length > 0) {
       data.deepThinkingQuestions.slice(0, 3).forEach((item, idx) => {
         comprehensionCheck.push({
-          title: `${idx + 1}. Analysis: ${item.question}`,
+          title: item.question,
           scaffold: `Hint: ${item.hint || ""}`,
           stretch: `Teacher Guidance: ${item.teacherGuide || ""}`,
           answer: item.teacherGuide || ""
@@ -25226,19 +26134,11 @@ ${cleanBrackets(paper.q3d.model)}
         const qText = item.q || item.question || "";
         const aText = item.a || item.answer || "";
         comprehensionCheck.push({
-          title: `${idx + 1}. Comprehension: ${qText}`,
+          title: qText,
           scaffold: `Consider: ${aText.slice(0, 50)}...`,
           stretch: `Stretch: Evaluate how this event influenced subsequent developments.`,
           answer: aText
         });
-      });
-    }
-    if (comprehensionCheck.length < 3) {
-      comprehensionCheck.push({
-        title: `${comprehensionCheck.length + 1}. Synoptic Summary: Map out the causes and consequences of this lesson in a short paragraph.`,
-        scaffold: `Review the lesson steps above to identify the legal, military, or social actions that led to the primary outcome of this period.`,
-        stretch: `Stretch: Evaluate how this topic shifted public opinion or federal policy.`,
-        answer: `The causes (including legal precedents, direct action, or military escalation) directly resulted in the major consequences (such as federal civil rights legislation or shifts in public support for foreign policy).`
       });
     }
     const causationMatrix = {
@@ -27932,8 +28832,8 @@ ${cleanBrackets(paper.q3d.model)}
     "grassroots": "Local or community-level activism and organization, driven by ordinary citizens rather than political leaders.",
     "attrition": "A strategy of wearing down an opponent's strength and resources over time through continuous pressure.",
     "historiography": "The study of how history is written, focusing on different interpretations and perspectives of historians over time.",
-    "orthodox": "The traditional, widely accepted historical interpretation of an event.",
-    "revisionist": "A historical interpretation that challenges and revises traditional, orthodox views with new evidence or perspectives.",
+    "traditional": "The traditional, widely accepted historical interpretation of an event.",
+    "alternative": "A historical interpretation that challenges and revises traditional, traditional views with new evidence or perspectives.",
     "litigation": "The process of taking legal action through the courts to enforce rights or resolve disputes.",
     "disenfranchisement": "The revocation of the right of suffrage (the right to vote) of a person or group of people.",
     "disfranchisement": "The revocation of the right of suffrage (the right to vote) of a person or group of people.",
@@ -32200,200 +33100,143 @@ ${cleanBrackets(paper.q3d.model)}
     </div>
   ` : "";
     if (style === "booklet") {
-      const narrativeHtml = data.narrative.map((sec) => `
-      <div class="sub-title">${sec.title}</div>
-      ${sec.paragraphs.map((p) => `<p>${p}</p>`).join("")}
+      const isEndOfUnit = subtopicId.endsWith("_4");
+      const cleanHtml = (html2) => {
+        if (typeof document !== "undefined") {
+          const tempDiv = document.createElement("div");
+          tempDiv.innerHTML = html2;
+          const selectorsToRemove = [".mind-map-task-box", ".revision-task-box", ".examiner-tip-box", ".lesson-image-wrapper", ".mastery-media-column"];
+          selectorsToRemove.forEach((selector) => {
+            tempDiv.querySelectorAll(selector).forEach((el) => el.remove());
+          });
+          tempDiv.querySelectorAll("ul").forEach((ul) => {
+            ul.style.marginTop = "12px";
+            ul.style.marginBottom = "18px";
+            ul.style.paddingLeft = "25px";
+          });
+          tempDiv.querySelectorAll("li").forEach((li) => {
+            li.style.marginBottom = "12px";
+            li.style.lineHeight = "1.6";
+          });
+          return tempDiv.innerHTML;
+        }
+        return html2;
+      };
+      const narrativeHtml = (data.narrative || []).map((section, idx) => `
+      <div style="margin-bottom: 25px;">
+        <h3 style="font-size: 14pt; margin-bottom: 12px; font-weight: bold; border-bottom: 2px solid #000000; padding-bottom: 4px;">${idx + 1}. ${section.title}</h3>
+        ${section.paragraphs.map((p) => `<div style="font-size: 11.5pt; line-height: 1.6; margin-bottom: 12px;">${cleanHtml(p)}</div>`).join("")}
+      </div>
     `).join("");
       const vocabHtml = data.vocabulary.map((item) => `
-      <div class="vocab-item"><strong>${item.term}</strong>: ${item.definition}</div>
-    `).join("");
-      const timelineVerticalHtml = data.timeline.map((item) => `
-      <div class="timeline-vertical-card" style="padding: 2.5px 4px; background: #ffffff; border: 1px solid #e5e7eb; border-left: 2.5px solid #f43f5e; margin-bottom: 3.5px; box-sizing: border-box;">
-        <div style="font-weight: bold; font-size: 7pt; color: #f43f5e;">${item.date}</div>
-        <div style="font-size: 6.5pt; line-height: 1.15; color: #374151; margin-top: 1px;">${item.desc}</div>
+      <div class="vocab-item" style="margin-bottom: 8px;">
+        <strong style="font-size: 11pt;">${item.term}</strong>: ${item.definition}
       </div>
     `).join("");
-      const comprehensionHtml = data.comprehensionCheck.map((q, idx) => `
-      <div class="question-block" style="padding: 3px 5px; margin-bottom: 3px;">
-        <span class="question-title" style="font-size: 8pt; line-height: 1.2;">${q.title}</span>
-        <span class="scaffold-tip" style="font-size: 6.8pt; color: #4b5563; margin-top: 1px;">${q.scaffold}</span>
-      </div>
-    `).join("");
-      const matrixHeaders = data.causationMatrix.columns.map((col, idx) => `
-      <th class="matrix-header" style="width: ${idx === 0 ? "70%" : "30%"};">${col}</th>
-    `).join("");
-      let matrixRowsHtml = "";
-      (data.causationMatrix.factors || []).forEach((factor) => {
-        matrixRowsHtml += `
-        <tr>
-          <td class="matrix-cell" style="padding: 4px 6px; font-size: 7.5pt; text-align: left; font-weight: bold; height: 26px; box-sizing: border-box;">${factor}</td>
-          <td class="matrix-cell" style="height: 26px; box-sizing: border-box;"></td>
-        </tr>
-      `;
-      });
-      const consequences = [...data.causationMatrix.factBank || []];
-      if (consequences.length > 1) {
-        const last = consequences.pop();
-        consequences.unshift(last);
-      }
-      const factBankText = consequences.map((fact, idx) => `(${idx + 1}) ${fact}`).join(" \u2022 ");
-      const matrixHtml = `
-      <table class="matrix-table">
-        <tr>${matrixHeaders}</tr>
-        ${matrixRowsHtml}
+      const timelineAndQuestionsHtml = `
+      <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        ${data.timeline.map((item, idx) => {
+        const q = data.comprehensionCheck[idx];
+        return `
+            <tr>
+              <td style="width: 20%; padding: 15px 15px 15px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
+                <strong style="font-size: 12pt;">${item.date}</strong>
+              </td>
+              <td style="width: 40%; padding: 15px; vertical-align: top;">
+                <span style="font-size: 11pt;">${item.desc}</span>
+              </td>
+              <td style="width: 40%; padding: 15px; vertical-align: top;">
+                ${q ? `
+                  <div style="padding: 10px; border: 2px solid #000000; border-radius: 6px;">
+                    <span style="font-size: 11pt; font-weight: bold;">${q.title}</span><br>
+                    <span style="font-size: 10pt; font-style: italic; display: block; margin-top: 4px;">${q.scaffold}</span>
+                  </div>
+                ` : ""}
+              </td>
+            </tr>
+          `;
+      }).join("")}
       </table>
     `;
-      let sourcesTable = "";
-      if (data.sources && data.sources.length > 0) {
-        sourcesTable += `<table style="width: 100%; border-collapse: collapse; margin-bottom: 3px;">`;
-        for (let i = 0; i < data.sources.length; i += 2) {
-          sourcesTable += `<tr>`;
-          const s1 = data.sources[i];
-          sourcesTable += `
-          <td style="width: 50%; padding-right: 4px; padding-bottom: 4px; vertical-align: top;">
-            <div class="source-box">
-              <strong>${s1.id}: ${s1.title}</strong>
-              <p style="font-family: 'Times New Roman', Times, serif; font-size: 7.5pt; margin: 2px 0 0 0; line-height: 1.2;">
-                "${s1.text}"
-              </p>
-            </div>
-          </td>
-        `;
-          const s2 = data.sources[i + 1];
-          if (s2) {
-            sourcesTable += `
-            <td style="width: 50%; padding-left: 4px; padding-bottom: 4px; vertical-align: top;">
-              <div class="source-box">
-                <strong>${s2.id}: ${s2.title}</strong>
-                <p style="font-family: 'Times New Roman', Times, serif; font-size: 7.5pt; margin: 2px 0 0 0; line-height: 1.2;">
-                  "${s2.text}"
-                </p>
-              </div>
-            </td>
-          `;
-          } else {
-            sourcesTable += `<td style="width: 50%;"></td>`;
-          }
-          sourcesTable += `</tr>`;
-        }
-        sourcesTable += `</table>`;
+      let q2Title = data.causalQuestion || "Explain why this topic developed during this period.";
+      let q2Stimulus = (data.causationMatrix?.factors || []).slice(0, 2);
+      if (data.examPractice && data.examPractice.q2) {
+        q2Title = data.examPractice.q2.title;
+        q2Stimulus = data.examPractice.q2.stimulus || [];
       }
-      const inferenceQuestion = data.examPractice.questions.find((q) => q.title.toLowerCase().includes("infer") || q.title.toLowerCase().includes("inference"));
-      let inferenceHtml = "";
-      if (inferenceQuestion) {
-        inferenceHtml = `
-        <div style="margin-bottom: 4px; border: 1px solid #e5e7eb; padding: 4px; border-radius: 4px; background: #ffffff; box-sizing: border-box;">
-          <span style="font-weight: bold; font-size: 8pt; color: #111827; display: block;">Question 1 [4 Marks]:</span>
-          <span style="display: block; font-size: 7.5pt; font-weight: bold; margin-top: 1px; line-height: 1.25; color: #374151;">${inferenceQuestion.title}</span>
-          ${inferenceQuestion.sourceA ? `
-            <div style="font-family: 'Times New Roman', Times, serif; font-size: 7.2pt; border-left: 2px solid #6b7280; padding-left: 5px; margin: 2px 0; background: #f9fafb; font-style: italic; line-height: 1.15; color: #4b5563;">
-              "${inferenceQuestion.sourceA}"
-            </div>` : ""}
-          <div style="margin-top: 4px; font-size: 7pt; line-height: 1.45;">
-            <strong>Inference 1:</strong> <span style="border-bottom: 1px dotted #9ca3af; display: inline-block; width: 75%;">&nbsp;</span><br>
-            <strong>Details:</strong> <span style="border-bottom: 1px dotted #9ca3af; display: inline-block; width: 79%;">&nbsp;</span><br>
-            <strong>Inference 2:</strong> <span style="border-bottom: 1px dotted #9ca3af; display: inline-block; width: 75%;">&nbsp;</span><br>
-            <strong>Details:</strong> <span style="border-bottom: 1px dotted #9ca3af; display: inline-block; width: 79%;">&nbsp;</span>
-          </div>
-        </div>
-      `;
-      }
-      const whyStimulus = (data.causationMatrix.factors || []).slice(0, 2);
       const whyHtml = `
-      <div style="margin-bottom: 2px; border: 1px solid #e5e7eb; padding: 4px; border-radius: 4px; background: #ffffff; box-sizing: border-box;">
-        <span style="font-weight: bold; font-size: 8pt; color: #111827; display: block;">Question 2 [12 Marks]:</span>
-        <span style="display: block; font-size: 7.5pt; font-weight: bold; margin-top: 1px; line-height: 1.25; color: #374151;">
-          ${data.causalQuestion || "Explain why this topic developed during this period."}
+      <div style="margin-bottom: 20px; border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box;">
+        <span style="font-weight: bold; font-size: 12pt; color: #000000; display: block;">Question 2 [12 Marks]:</span>
+        <span style="display: block; font-size: 12pt; font-weight: bold; margin-top: 6px;">
+          ${q2Title}
         </span>
-        <div style="font-size: 6.5pt; color: #4b5563; line-height: 1.25; border-left: 2px solid #d1d5db; padding-left: 6px; margin-left: 2px; margin-top: 3px; background: #f9fafb; padding-top: 2px; padding-bottom: 2px; box-sizing: border-box;">
+        <div style="font-size: 11pt; border-left: 3px solid #000000; padding-left: 10px; margin-left: 2px; margin-top: 10px;">
           You may use the following in your answer:<br>
-          ${whyStimulus.map((s) => `\u2022 ${s}<br>`).join("")}
+          ${q2Stimulus.map((s) => `\u2022 ${s}<br>`).join("")}
           \u2022 You must also use information of your own.
         </div>
       </div>
     `;
-      const examQuestionsHtml = inferenceHtml + whyHtml;
-      const examWordBankText = data.vocabulary.map((v) => v.term).join(" \u2022 ");
-      const quizItemsHtml = data.peerQuiz.map((item) => `
-      <li style="margin: 0 0 1.5px 0; padding: 0;">${item.q}</li>
-    `).join("");
-      const mindMapBranchesHtml = data.mindMap.branches.map((br) => `
-      <div class="map-branch-item" style="padding: 1px 3px; margin-bottom: 1.5px; border-left-width: 2px;">
-        <strong style="font-size: 7.2pt;">${br.title}</strong>
-        <div class="keyword-pill-box" style="margin-top: 0.5px; font-size: 6.5pt;">\u{1F511} ${br.keywords.join(" \u2022 ")}</div>
-      </div>
-    `).join("");
-      const mindMapIdeas = (data.vocabulary || []).map((v) => v.term).concat((data.timeline || []).slice(0, 2).map((t) => t.date)).slice(0, 6);
-      const mindMapScaffoldingHtml = `
-      <div class="mind-map-wordbank" style="margin-top: 4px; padding: 3px 5px; background: #f0fdf4; border: 1px dashed #bbf7d0; border-radius: 4px; font-size: 6.2pt; line-height: 1.25; text-align: left; box-sizing: border-box;">
-        <strong>\u{1F4A1} Mind Map Word Bank:</strong> Use these ideas to connect your branches: 
-        <span style="color: #4b5563;">${mindMapIdeas.join(" \u2022 ")}</span>
-      </div>
-    `;
+      let q3Html = "";
+      if (isEndOfUnit && (data.paper3Suite || data.examPractice && data.examPractice.q3set)) {
+        const q3 = data.paper3Suite || data.examPractice.q3set;
+        const srcBHtml = q3.sourceB?.content ? `<strong>Source B:</strong> ${q3.sourceB.provenance}<br><em>${q3.sourceB.content}</em>` : q3.sourceB;
+        const srcCHtml = q3.sourceC?.content ? `<strong>Source C:</strong> ${q3.sourceC.provenance}<br><em>${q3.sourceC.content}</em>` : q3.sourceC;
+        const interp1Html = q3.interpretation1?.content ? `<strong>Interpretation 1:</strong> ${q3.interpretation1.provenance}<br><em>${q3.interpretation1.content}</em>` : q3.interpretation1;
+        const interp2Html = q3.interpretation2?.content ? `<strong>Interpretation 2:</strong> ${q3.interpretation2.provenance}<br><em>${q3.interpretation2.content}</em>` : q3.interpretation2;
+        const q3a = q3.questions?.q3a || q3.q3a;
+        const q3b = q3.questions?.q3b || q3.q3b;
+        const q3c = q3.questions?.q3c || q3.q3c;
+        const q3d = q3.questions?.q3d || q3.q3d;
+        q3Html = `
+        <div class="print-page" style="page-break-before: always; margin-top: 30px;">
+          <h2 class="main-title">End of Unit Exam Practice (3A-D)</h2>
+          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5;">
+            <span style="font-weight: bold; font-size: 11pt; color: #000000; display: block; margin-bottom: 12px;">Question 3 [32 Marks]:</span>
+            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
+              ${srcBHtml}<br><br>
+              ${srcCHtml}
+            </div>
+            <span style="display: block; font-size: 11pt; font-weight: bold; margin-bottom: 12px;">
+              <strong>3 (a)</strong> ${q3a}
+            </span>
+            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
+              ${interp1Html}<br><br>
+              ${interp2Html}
+            </div>
+            <span style="display: block; font-size: 11pt; font-weight: bold; margin-bottom: 8px;">
+              <strong>3 (b)</strong> ${q3b}
+            </span>
+            <span style="display: block; font-size: 11pt; font-weight: bold; margin-bottom: 8px;">
+              <strong>3 (c)</strong> ${q3c}
+            </span>
+            <span style="display: block; font-size: 11pt; font-weight: bold;">
+              <strong>3 (d)</strong> ${q3d}
+            </span>
+          </div>
+        </div>
+      `;
+      }
       let teacherAnswersHtml = "";
       if (includeAnswers) {
         const comprehensionAnswersHtml = data.comprehensionCheck.map((q) => `
-        <div style="margin-bottom: 4px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">
-          <span style="font-weight: bold; font-size: 7.5pt; display: block; color: #1f2937;">${q.title}</span>
-          <span style="font-size: 7pt; display: block; color: #16a34a; font-style: italic; margin-top: 1px;">
+        <div style="margin-bottom: 8px; border-bottom: 1px dashed #000000; padding-bottom: 4px;">
+          <span style="font-weight: bold; font-size: 11pt; display: block; color: #000000;">${q.title}</span>
+          <span style="font-size: 11pt; display: block; font-style: italic; margin-top: 2px;">
             <strong>Answer Guide:</strong> ${q.answer || "Write detailed response using step facts."}
           </span>
         </div>
       `).join("");
-        let inferenceAnsHtml = "";
-        if (inferenceQuestion) {
-          inferenceAnsHtml = `
-          <div style="margin-bottom: 4px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">
-            <span style="font-weight: bold; font-size: 7.5pt; display: block; color: #1f2937;">${inferenceQuestion.title} [4 Marks]</span>
-            <span style="font-size: 7pt; display: block; color: #16a34a; font-style: italic; margin-top: 1px; line-height: 1.25;">
-              <strong>Model Answer:</strong><br>${inferenceQuestion.text}
-            </span>
-          </div>
-        `;
-        }
-        const causalAnsHtml = `
-        <div style="margin-bottom: 4px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">
-          <span style="font-weight: bold; font-size: 7.5pt; display: block; color: #1f2937;">${data.causalQuestion || "Explain why... (12 marks)"}</span>
-          <span style="font-size: 7pt; display: block; color: #16a34a; font-style: italic; margin-top: 1px; line-height: 1.25;">
-            <strong>Suggested Essay Content:</strong> Students should structure their response in three paragraphs using the stimulus factors. They must analyze cause-and-effect links using connection words (e.g. 'This led to', 'As a result') and bring in own knowledge (e.g. specific dates/figures from the steps).
-          </span>
-        </div>
-      `;
-        const quizAnswersHtml = data.peerQuiz.map((item, idx) => `
-        <li style="margin: 0 0 1.5px 0; padding: 0;">
-          <strong>Q:</strong> ${item.q}<br>
-          <strong style="color: #16a34a;">A:</strong> ${item.a}
-        </li>
-      `).join("");
         teacherAnswersHtml = `
-        <div class="print-page-last" style="page-break-before: always; margin-top: 15px; position: relative;">
+        <div class="print-page-last" style="page-break-before: always; margin-top: 20px; position: relative;">
           <h2 class="main-title">Teacher Answer Key &bull; Topic ${topicName}</h2>
           
-          <div class="section-title" style="margin-top: 5px; margin-bottom: 2px;">Section 3: Comprehension Check Answers</div>
-          <div style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 5px; border-radius: 4px; margin-bottom: 4px; box-sizing: border-box;">
+          <div class="section-title" style="margin-top: 10px; margin-bottom: 6px;">Comprehension Check Answers</div>
+          <div style="border: 2px solid #000000; padding: 10px; border-radius: 6px; margin-bottom: 10px; box-sizing: border-box;">
             ${comprehensionAnswersHtml}
           </div>
           
-          <div class="section-title" style="margin-top: 5px; margin-bottom: 2px;">Section 6: Exam Practice Model Answers</div>
-          <div style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 5px; border-radius: 4px; margin-bottom: 4px; box-sizing: border-box;">
-            ${inferenceAnsHtml}
-            ${causalAnsHtml}
-            <div style="margin-top: 4px; border-top: 1px dashed #e5e7eb; padding-top: 4px;">
-              <strong style="font-size: 7.5pt; display: block; color: #1f2937;">Synthesis Model (Causation Essay):</strong>
-              <span style="font-size: 7pt; display: block; color: #16a34a; font-style: italic; margin-top: 1px; line-height: 1.25;">
-                ${data.examPractice.synthesisModel}
-              </span>
-            </div>
-          </div>
-          
-          <div class="section-title" style="margin-top: 5px; margin-bottom: 2px;">Section 7: Quick-Fire Quiz Answer Key</div>
-          <div style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 5px; border-radius: 4px; box-sizing: border-box;">
-            <ol class="quiz-list" style="margin: 0; padding-left: 14px; font-size: 7pt; line-height: 1.2;">
-              ${quizAnswersHtml}
-            </ol>
-          </div>
-          
-          <div class="footer-note">Teacher Answer Key &bull; Page 3</div>
+          <div class="footer-note">Teacher Answer Key</div>
         </div>
       `;
       }
@@ -32405,14 +33248,14 @@ ${cleanBrackets(paper.q3d.model)}
   <style>
     @page {
       size: 21cm 29.7cm; /* A4 */
-      margin: 0.8cm 1.0cm 0.8cm 1.0cm;
+      margin: 1.2cm 1.5cm;
       mso-page-orientation: portrait;
     }
     body {
-      font-family: 'Arial', sans-serif;
-      font-size: 9.5pt;
-      color: #1f2937;
-      line-height: 1.3;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 11pt;
+      color: #000000;
+      line-height: 1.4;
       background: #ffffff;
       margin: 0;
       padding: 0;
@@ -32438,8 +33281,8 @@ ${cleanBrackets(paper.q3d.model)}
         width: 21cm;
         min-height: 29.7cm;
         margin: 0 auto 20px auto;
-        padding: 0.8cm 1.0cm;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        padding: 1.2cm 1.5cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         border: 1px solid #e5e7eb;
         border-radius: 4px;
       }
@@ -32447,9 +33290,9 @@ ${cleanBrackets(paper.q3d.model)}
     @media print {
       body {
         background: #ffffff !important;
-        color: #1f2937 !important;
-        font-size: 9.5pt !important;
-        line-height: 1.3 !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
       }
       .print-page, .print-page-last {
         width: 100% !important;
@@ -32458,285 +33301,90 @@ ${cleanBrackets(paper.q3d.model)}
         margin: 0 !important;
         box-shadow: none !important;
         border: none !important;
-        border-radius: 0 !important;
       }
     }
     
     .main-title {
-      font-size: 13pt;
-      font-weight: 800;
-      border-bottom: 2px solid #111827;
-      padding-bottom: 3px;
+      font-size: 16pt;
+      font-weight: bold;
+      border-bottom: 3px solid #000000;
+      padding-bottom: 6px;
       margin-top: 0;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #111827;
+      color: #000000;
     }
     .section-title {
-      font-size: 9.2pt;
+      font-size: 13pt;
       font-weight: bold;
       text-transform: uppercase;
-      color: #111827;
-      border-bottom: 1.5px solid #4b5563;
-      padding-bottom: 1px;
-      margin-top: 5px;
-      margin-bottom: 2px;
+      color: #000000;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      margin-top: 15px;
+      margin-bottom: 8px;
     }
     .sub-title {
-      font-size: 8.2pt;
+      font-size: 12pt;
       font-weight: bold;
-      color: #111827;
-      margin-top: 4px;
-      margin-bottom: 1px;
-    }
-    
-    .narrative-layout {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-    }
-    .narrative-text {
-      width: 70%;
-      padding-right: 10px;
-      vertical-align: top;
-      text-align: justify;
-      font-size: 8pt;
-      line-height: 1.25;
-    }
-    .narrative-text p {
-      margin: 0 0 2px 0;
-    }
-    .side-panel {
-      width: 30%;
-      padding-left: 8px;
-      border-left: 1px solid #d1d5db;
-      vertical-align: top;
+      color: #000000;
+      margin-top: 10px;
+      margin-bottom: 4px;
     }
     
     .spec-box {
-      border: 1px solid #d1d5db;
-      padding: 4px 6px;
-      margin-bottom: 4px;
-      background: #f9fafb;
-      font-size: 7.5pt;
-      line-height: 1.15;
+      border: 2px solid #000000;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      background: #ffffff;
+      font-size: 11pt;
+      line-height: 1.4;
     }
     .spec-box ul {
-      margin: 1px 0 0 0;
-      padding-left: 12px;
+      margin: 4px 0 0 0;
+      padding-left: 20px;
     }
     .active-reading-box {
-      border: 1px solid #d1d5db;
-      padding: 4px 6px;
-      background: #f3f4f6;
-      margin-bottom: 4px;
-      font-size: 7.5pt;
-      line-height: 1.15;
+      border: 2px solid #000000;
+      padding: 10px 15px;
+      background: #ffffff;
+      margin-bottom: 15px;
+      font-size: 11pt;
+      line-height: 1.4;
     }
     .vocab-box {
-      background: #f9fafb;
-      padding: 4px;
-      border: 1px solid #e5e7eb;
-      border-radius: 4px;
+      background: #ffffff;
+      padding: 15px;
+      border: 2px solid #000000;
+      border-radius: 6px;
+      margin-top: 20px;
     }
     .vocab-box h4 {
-      font-size: 7.2pt;
+      font-size: 12pt;
       font-weight: bold;
       text-transform: uppercase;
       margin-top: 0;
-      margin-bottom: 2px;
-      border-bottom: 1px solid #9ca3af;
-      padding-bottom: 1px;
-    }
-    .vocab-item {
-      font-size: 6.8pt;
-      line-height: 1.15;
-      margin-bottom: 2px;
-    }
-    .source-box {
-      border-left: 3px solid #4b5563;
-      background: #f9fafb;
-      padding: 4px 6px;
-      font-size: 7.2pt;
-      margin-bottom: 3px;
-      box-sizing: border-box;
-      height: 100%;
-    }
-    
-    .timeline-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-    }
-    .timeline-card {
-      border: 1px solid #d1d5db;
-      padding: 3px 4px;
-      width: 22%;
-      vertical-align: top;
-      background: #f9fafb;
-    }
-    .timeline-date {
-      font-weight: bold;
-      font-size: 7.2pt;
-      text-transform: uppercase;
-      border-bottom: 1px solid #e5e7eb;
-      margin-bottom: 2px;
-      padding-bottom: 1px;
-    }
-    .timeline-desc {
-      font-size: 6.8pt;
-      line-height: 1.15;
-    }
-    
-    .question-block {
-      margin-bottom: 3px;
-      padding: 4px 6px;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 4px;
-    }
-    .question-title {
-      font-size: 8.2pt;
-      font-weight: bold;
-      display: block;
-      margin-bottom: 1px;
-    }
-    .scaffold-tip {
-      font-size: 6.8pt;
-      color: #4b5563;
-      font-style: italic;
-      display: block;
-      margin-bottom: 1px;
-    }
-    .stretch-challenge {
-      font-size: 6.8pt;
-      color: #b45309;
-      font-weight: bold;
-      display: block;
-      margin-top: 1px;
-    }
-    
-    .matrix-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-    }
-    .matrix-header {
-      font-weight: bold;
-      font-size: 7.2pt;
-      text-transform: uppercase;
-      text-align: center;
-      background-color: #f3f4f6;
-      border: 1px solid #9ca3af;
-      padding: 2px;
-    }
-    .matrix-cell {
-      border: 1px solid #9ca3af;
-      padding: 3px;
-      min-height: 30px;
-      vertical-align: top;
-      font-size: 6.8pt;
-      color: #9ca3af;
-      font-style: italic;
-    }
-    
-    .framework-container {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 3px;
-      font-size: 6.8pt;
-      background: #f9fafb;
-      border: 1px solid #d1d5db;
-      border-radius: 4px;
-    }
-    .framework-column {
-      vertical-align: top;
-      padding: 4px;
-    }
-
-    .retention-box {
-      border: 1.5px solid #111827;
-      background: #ffffff;
-      border-radius: 4px;
-      margin-top: 3px;
-      padding: 3px 6px;
-    }
-    .retention-header {
-      font-weight: bold;
-      font-size: 8.2pt;
-      color: #111827;
-      text-transform: uppercase;
-      border-bottom: 1.5px solid #111827;
-      padding-bottom: 1px;
-      margin-bottom: 2px;
-    }
-    .split-layout {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .split-col-left {
-      width: 50%;
-      border-right: 1px dashed #d1d5db;
-      padding-right: 8px;
-      vertical-align: top;
-    }
-    .split-col-right {
-      width: 50%;
-      padding-left: 8px;
-      vertical-align: top;
-    }
-    .quiz-title-box {
-      font-weight: bold;
-      font-size: 7.2pt;
-      text-transform: uppercase;
-      color: #4b5563;
-      margin-bottom: 2px;
-    }
-    .quiz-list {
-      margin: 0;
-      padding-left: 14px;
-      font-size: 7.2pt;
-      line-height: 1.15;
-    }
-    .quiz-list li {
-      margin-bottom: 1px;
-    }
-    .map-blueprint {
-      font-size: 7pt;
-      line-height: 1.15;
-    }
-    .map-branch-item {
-      margin-bottom: 2px;
-      background: #f9fafb;
-      padding: 2px 4px;
-      border-left: 2px solid #b45309;
-    }
-    .map-branch-item strong {
-      color: #111827;
-      display: block;
-    }
-    .keyword-pill-box {
-      margin-top: 2px;
-      font-style: italic;
-      color: #4b5563;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
     }
     
     .footer-note {
-      font-size: 7pt;
-      color: #6b7280;
-      text-align: center;
-      border-top: 1px solid #e5e7eb;
-      padding-top: 2px;
-      margin-top: 5px;
+      font-size: 10pt;
+      color: #000000;
+      text-align: left;
+      border-top: 2px solid #000000;
+      padding-top: 6px;
+      margin-top: 20px;
       clear: both;
     }
     @media screen {
       .footer-note {
         position: absolute;
-        bottom: 0.8cm;
-        left: 1.0cm;
-        right: 1.0cm;
+        bottom: 1.2cm;
+        left: 1.5cm;
+        right: 1.5cm;
         margin-top: 0;
       }
     }
@@ -32753,117 +33401,42 @@ ${cleanBrackets(paper.q3d.model)}
 </head>
 <body>
 
-  <!-- PAGE 1: NARRATIVE & TIMELINE -->
+  <!-- PAGE 1: NARRATIVE & VOCAB -->
   <div class="print-page">
     <h2 class="main-title">Topic ${topicName}: ${data.title}</h2>
     ${specBoxHtml}
 
-    <div class="active-reading-box">
-      <strong>\u270D\uFE0F Active Reading Focus:</strong> ${data.activeReadingFocus}
+
+    
+    <div style="font-size: 11pt; text-align: left; line-height: 1.4;">
+      ${narrativeHtml}
     </div>
 
-    <div class="section-title" style="margin-top: 5px; margin-bottom: 3px;">Section 1: Historical Narrative & Core Knowledge</div>
-    
-    <table class="narrative-layout">
-      <tr>
-        <td class="narrative-text">
-          ${narrativeHtml}
-        </td>
-        <td class="side-panel">
-          <div class="vocab-box">
-            <h4>Vocabulary Focus</h4>
-            ${vocabHtml}
-          </div>
-          <div class="timeline-box" style="margin-top: 6px; background: #f9fafb; padding: 4px; border: 1px solid #e5e7eb; border-radius: 4px;">
-            <h4 style="font-size: 7.2pt; font-weight: bold; text-transform: uppercase; margin-top: 0; margin-bottom: 2px; border-bottom: 1px solid #9ca3af; padding-bottom: 1px;">Section 2: Timeline</h4>
-            <p style="font-size: 6.2pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic; line-height: 1.1;">
-              In your book, choose any two events below and write a cause-and-effect link.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 2px;">
-              ${timelineVerticalHtml}
-            </div>
-          </div>
-        </td>
-      </tr>
-    </table>
+    <div class="vocab-box">
+      <h4>Vocabulary Focus</h4>
+      ${vocabHtml}
+    </div>
 
     <div class="footer-note">Page 1</div>
   </div>
 
-  <!-- PAGE 2: ANALYTICAL TASKS & ASSESSMENT PREP -->
-  <div class="${includeAnswers ? "print-page" : "print-page-last"}">
-    <div class="section-title" style="margin-top: 0; margin-bottom: 3px;">Section 3: Comprehension Check (AO1)</div>
+  <!-- PAGE 2: ANALYTICAL TASKS & TIMELINE -->
+  <div class="${isEndOfUnit && data.examPractice && data.examPractice.q3set ? "print-page" : includeAnswers ? "print-page" : "print-page-last"}">
+    <div class="section-title" style="margin-top: 0;">Exam Practice</div>
+    
+    ${whyHtml}
 
-    ${comprehensionHtml}
-
-    <div class="section-title" style="margin-top: 6px; margin-bottom: 3px;">Section 4: Causation Matrix (Analytical Essay Prep)</div>
-    <p style="font-size: 7.5pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic;">
-      <strong>Task:</strong> In your exercise book, match each Historical Cause / Factor to its correct Result / Consequence from the Fact Bank below (write the numbers 1-3). Then, write a short explanation of which cause you think was the most important.
+    <div class="section-title">Timeline & Comprehension Questions</div>
+    <p style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">
+      <strong>Task:</strong> Review the chronology below. Answer the targeted questions on the right in your exercise book.
     </p>
-    
-    <div style="border: 1px dashed #9ca3af; padding: 3px 6px; font-size: 7pt; background: #f9fafb; line-height: 1.25; border-radius: 4px; margin-bottom: 3px;">
-      <strong>Fact Bank:</strong> ${factBankText}
-    </div>
 
-    ${matrixHtml}
-
-    <div class="section-title" style="margin-top: 6px; margin-bottom: 3px;">Section 5: Historical Sources & Evidence (AO3)</div>
-    <p style="font-size: 7.5pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic;">Analyze the conflicting viewpoints surrounding the topic using the evidence below.</p>
-    
-    ${sourcesTable}
-
-    <div class="question-block" style="margin-bottom: 4px; padding: 4px 6px; border-left: 3px solid #10b981; box-sizing: border-box;">
-      <span class="question-title" style="font-size: 8pt; color: #0f766e;">Source Utility Question (Answer in your exercise book):</span>
-      <span style="font-size: 7.5pt; line-height: 1.35; display: block; font-weight: bold; margin-top: 2px;">
-        ${data.sourcesQuestion || "How useful are Sources D and E for an enquiry into this period? (8 marks)"}
-      </span>
-    </div>
-
-    <div class="section-title" style="margin-top: 6px; margin-bottom: 3px;">Section 6: Exam Practice & Higher Tier Synthesis</div>
-    
-    <table class="framework-container" style="margin-bottom: 0;">
-      <tr>
-        <td class="framework-column" style="width: 52%; padding-right: 6px; border-right: 1px solid #e5e7eb;">
-          <strong>\u{1F4DD} Exam Practice Questions (Answer in your exercise book):</strong>
-          <div style="margin-top: 3px;">
-            ${examQuestionsHtml}
-          </div>
-        </td>
-        <td class="framework-column" style="width: 48%; padding-left: 6px;">
-          <strong>\u{1F3C6} Exam Word Bank &amp; Writing Support:</strong>
-          <div style="margin-top: 2px; font-size: 7pt; line-height: 1.25;">
-            <strong>Word Bank:</strong> ${examWordBankText}
-          </div>
-        </td>
-      </tr>
-    </table>
-
-    <div class="retention-box">
-      <div class="retention-header">\u{1F9E0} Section 7: Knowledge Retention &amp; Synoptic Revision Guide</div>
-      <table class="split-layout">
-        <tr>
-          <td class="split-col-left">
-            <div class="quiz-title-box">\u26A1 Quick-Fire Peer-To-Peer Quiz</div>
-            <ol class="quiz-list" style="margin: 0; padding-left: 14px;">
-              ${quizItemsHtml}
-            </ol>
-          </td>
-          
-          <td class="split-col-right">
-            <div class="quiz-title-box">\u{1F5FA}\uFE0F Mind Map</div>
-            <div class="map-blueprint">
-              <p style="margin: 0 0 4px 0; font-style: italic; color: #4b5563;">In your book, construct a central node titled <strong>"${data.mindMap.centralNode}"</strong> and link these three core analytical branches using the keywords:</p>
-              
-              ${mindMapBranchesHtml}
-              ${mindMapScaffoldingHtml}
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
+    ${timelineAndQuestionsHtml}
 
     <div class="footer-note">Page 2</div>
   </div>
+
+  ${q3Html}
   ${teacherAnswersHtml}
 </body>
 </html>`;
@@ -33611,6 +34184,19 @@ ${cleanBrackets(paper.q3d.model)}
       if (viewTitle) viewTitle.textContent = "2-Minute AI Video Overview";
       state.selectedSubtopicId = null;
       renderAiVideosView();
+    } else if (viewName === "individuals") {
+      const individualsNav = document.getElementById("nav-individuals");
+      if (individualsNav) individualsNav.classList.add("active");
+      if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
+      const viewTitle = document.getElementById("current-view-title");
+      if (viewTitle) viewTitle.textContent = "Key Individuals";
+      state.selectedSubtopicId = null;
+      if (window.renderKeyIndividualsView) window.renderKeyIndividualsView();
+    } else if (viewName === "trading") {
+      const viewTitle = document.getElementById("current-view-title");
+      if (viewTitle) viewTitle.textContent = "Trading Cards";
+      state.selectedSubtopicId = null;
+      if (window.renderTradingCardsView) window.renderTradingCardsView();
     } else if (viewName === "map") {
       const mapNav = document.getElementById("nav-map");
       if (mapNav) mapNav.classList.add("active");
@@ -33673,6 +34259,8 @@ ${cleanBrackets(paper.q3d.model)}
       "bookmarks": "view-bookmarks",
       "timeline": "view-timeline",
       "map": "view-map",
+      "trading": "view-trading",
+      "individuals": "view-individuals",
       "exam": "view-exam",
       "classic": "view-classic",
       "flashcards": "view-flashcards",
@@ -34194,10 +34782,6 @@ ${cleanBrackets(paper.q3d.model)}
         container.classList.remove("collapsed-sidebar");
       }
     });
-    document.getElementById("nav-bookmarks").addEventListener("click", () => {
-      AudioEngine.play("click");
-      switchView("bookmarks");
-    });
     document.getElementById("nav-timeline").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("timeline");
@@ -34250,10 +34834,6 @@ ${cleanBrackets(paper.q3d.model)}
     document.getElementById("shortcut-exam-hub").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("exam-hub", "technique");
-    });
-    document.getElementById("shortcut-bookmarks").addEventListener("click", () => {
-      AudioEngine.play("click");
-      switchView("bookmarks");
     });
     document.getElementById("shortcut-games").addEventListener("click", () => {
       AudioEngine.play("click");
@@ -36085,1645 +36665,6 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
     AudioEngine.play("click");
   }
 
-  // src/chatbot.js
-  var searchDatabase = [];
-  var chatHistory = [];
-  var quizState = {
-    isActive: false,
-    questions: [],
-    currentIndex: 0,
-    score: 0,
-    answersShuffled: []
-  };
-  var gradingState = {
-    isActive: false
-  };
-  var examinerSystemInstruction = `You are a strict, professional GCSE History Examiner for Edexcel Paper 3 USA. 
-Your task is to grade the student's PEEL paragraph contribution to a 12-mark or 16-mark essay.
-Grade the paragraph out of 4 marks:
-- 1 mark for a clear Point.
-- 1 mark for precise historical Evidence (specific years, names, numbers, events).
-- 1 mark for clear Explanation of HOW/WHY the evidence supports the point.
-- 1 mark for a Link sentence connecting back to the essay topic/question.
-
-Structure your response strictly as follows:
-**GCSE Examiner Grade:** [Score]/4
-
-- **Point (P):** [Evaluation of whether they have a clear point/topic sentence]
-- **Evidence (E):** [Evaluation of their facts/dates/specific details]
-- **Explanation (E):** [Evaluation of their explanation connecting facts to the point]
-- **Link (L):** [Evaluation of their concluding sentence connecting to the question]
-
-**WWW (What Went Well):** [Encouraging feedback highlighting a strong area]
-**EBI (Even Better If):** [One specific actionable improvement]
-
-Keep feedback concise, professional, encouraging, and under 150 words.`;
-  var SEARCH_ALIASES = {
-    "mlk": "martin luther king jr leader civil rights non violence",
-    "sclc": "southern christian leadership conference mlk church pastors",
-    "sncc": "student nonviolent coordinating committee sit ins students john lewis",
-    "core": "congress of racial equality freedom rides sit ins jim crow",
-    "naacp": "national association for the advancement of colored people thurgood marshall litigation",
-    "little rock 9": "little rock nine central high school integration faubus eisenhower 1957",
-    "little rock": "little rock nine central high school integration faubus eisenhower 1957",
-    "vietnam war": "vietnam escalation gulf of tonkin saigon tet offensive draft my lai",
-    "vietnam": "vietnam escalation gulf of tonkin saigon tet offensive draft my lai",
-    "bus boycott": "montgomery bus boycott rosa parks mlk 1955 browder v gayle",
-    "emmett till": "murder lynching of emmett till milam bryant 1955 open casket",
-    "brown case": "brown board of education topeka 1954 separate but equal unconstitutional",
-    "brown v topeka": "brown board of education topeka 1954 separate but equal unconstitutional",
-    "black panthers": "black panther party bobby seale huey newton ten point program",
-    "malcolm x": "nation of islam malcolm x self defense",
-    "selma": "selma march voting rights act 1965 bloody sunday sheriff clark",
-    "voting rights": "voting rights act 1965 literacy tests poll taxes",
-    "civil rights act": "civil rights act 1964 1957 1960",
-    "freedom rides": "freedom riders 1961 core sncc james farmer",
-    "sit ins": "greensboro lunch counter sit ins 1960 woolworths counter",
-    "tet offensive": "tet offensive 1968 north vietnamese surprise attack media impact",
-    "my lai": "my lai massacre 1968 calley search and destroy atrocities",
-    "watergate": "watergate scandal nixon bugging cover up resignation 1974",
-    "hard hat": "hard hat riots 1970 construction workers anti war protest",
-    "exam technique": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "question technique": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "essay writing": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "12 marker": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "16 marker": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "peel": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "source utility": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "q1": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "q2": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "q3": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "q3a": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "q3b": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "q3c": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "q3d": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "technique": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "writing frame": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3",
-    "writing frames": "exam technique guide marks timings writing frame structure peel source utility comparison interpretation essay paper 3 Q1 Q2 Q3"
-  };
-  var WELCOME_HTML = `
-  Hi! I am your AI history tutor. Ask me any question about the <strong>Edexcel GCSE USA (1954\u201375)</strong> course.
-  <div class="chatbot-chips-container">
-    <button class="chatbot-chip-btn" data-query="Why was Brown v. Topeka a turning point for desegregation?">
-      \u{1F4A1} Why was Brown v. Topeka a turning point?
-    </button>
-    <button class="chatbot-chip-btn" data-query="Explain the 1957 integration crisis at Little Rock.">
-      \u{1F4A1} Explain the 1957 Little Rock crisis
-    </button>
-    <button class="chatbot-chip-btn" data-query="What was the impact of the Gulf of Tonkin incident?">
-      \u{1F4A1} What was the Gulf of Tonkin incident?
-    </button>
-  </div>
-`;
-  function expandQuerySynonyms(query) {
-    let expanded = query.toLowerCase();
-    Object.keys(SEARCH_ALIASES).forEach((key) => {
-      const regex = new RegExp(`\\b${key}\\b`, "g");
-      if (regex.test(expanded)) {
-        expanded += " " + SEARCH_ALIASES[key];
-      }
-    });
-    return expanded;
-  }
-  function buildSearchDatabase() {
-    if (searchDatabase.length > 0) return;
-    const subtopicMap = /* @__PURE__ */ new Map();
-    QUIZ_DATA.forEach((topic) => {
-      if (topic.subtopics) {
-        topic.subtopics.forEach((sub) => {
-          subtopicMap.set(sub.id, {
-            id: sub.id,
-            title: sub.title,
-            quizQuestions: [...sub.standard || [], ...sub.depth || []]
-          });
-        });
-      }
-    });
-    Object.keys(LESSONS_DATA).forEach((subtopicId) => {
-      const lesson = LESSONS_DATA[subtopicId];
-      const quizSub = subtopicMap.get(subtopicId);
-      const title = quizSub ? quizSub.title : lesson.headerTitle || subtopicId;
-      let contentParts = [];
-      if (lesson.headerTitle) contentParts.push(lesson.headerTitle);
-      if (lesson.headerIntro) contentParts.push(lesson.headerIntro);
-      if (lesson.steps) {
-        lesson.steps.forEach((step) => {
-          if (step.title) contentParts.push(step.title);
-          if (step.bodyHtml) {
-            const plainText = step.bodyHtml.replace(/<[^>]*>/g, " ");
-            contentParts.push(plainText);
-          }
-          if (step.scholarlyDepth) {
-            if (step.scholarlyDepth.title) contentParts.push(step.scholarlyDepth.title);
-            if (step.scholarlyDepth.body) contentParts.push(step.scholarlyDepth.body);
-          }
-        });
-      }
-      if (lesson.dualPerspective) {
-        const dp = lesson.dualPerspective;
-        if (dp.neutralTitle) contentParts.push(dp.neutralTitle);
-        if (dp.leftHeadline) contentParts.push(dp.leftHeadline);
-        if (dp.leftText) contentParts.push(dp.leftText);
-        if (dp.rightHeadline) contentParts.push(dp.rightHeadline);
-        if (dp.rightText) contentParts.push(dp.rightText);
-      }
-      if (lesson.causalLinks) {
-        const cl = lesson.causalLinks;
-        if (cl.question) contentParts.push(cl.question);
-        if (cl.successText) contentParts.push(cl.successText);
-        if (cl.factors) {
-          cl.factors.forEach((f) => {
-            if (f.title) contentParts.push(f.title);
-            if (f.linkageText) contentParts.push(f.linkageText);
-            if (f.options) contentParts.push(f.options.join(" "));
-          });
-        }
-      }
-      if (lesson.knowledgeCheck) {
-        lesson.knowledgeCheck.forEach((kc) => {
-          if (kc.question) contentParts.push(kc.question);
-          if (kc.answer) contentParts.push(kc.answer);
-        });
-      }
-      if (lesson.questionVault) {
-        lesson.questionVault.forEach((qv) => {
-          if (qv.question) contentParts.push(qv.question);
-          if (qv.sourceA) contentParts.push(qv.sourceA);
-          if (qv.answer) contentParts.push(qv.answer);
-        });
-      }
-      if (lesson.summaryCorrection && lesson.summaryCorrection.text) {
-        contentParts.push(lesson.summaryCorrection.text.replace(/\[\[(.*?)\]\]/g, "$1"));
-      }
-      if (lesson.howUsefulAnalyser) {
-        const hua = lesson.howUsefulAnalyser;
-        if (hua.question) contentParts.push(hua.question);
-        if (hua.modelAnswer) contentParts.push(hua.modelAnswer);
-      }
-      if (lesson.deepThinkingQuestions) {
-        lesson.deepThinkingQuestions.forEach((dt) => {
-          if (dt.question) contentParts.push(dt.question);
-          if (dt.hint) contentParts.push(dt.hint);
-          if (dt.teacherGuide) contentParts.push(dt.teacherGuide);
-        });
-      }
-      if (quizSub && quizSub.quizQuestions) {
-        quizSub.quizQuestions.forEach((q) => {
-          if (q.question) contentParts.push(q.question);
-          if (q.answer) contentParts.push(q.answer);
-          if (q.explanation) contentParts.push(q.explanation);
-          if (q.distractors) contentParts.push(q.distractors.join(" "));
-        });
-      }
-      searchDatabase.push({
-        id: subtopicId,
-        title,
-        cleanTitle: title.replace(/^Topic \d\.\d:\s*/, ""),
-        fullText: contentParts.join("\n\n")
-      });
-    });
-    searchDatabase.push({
-      id: "exam_technique",
-      title: "Exam Technique Guide",
-      cleanTitle: "Exam Technique Guide",
-      fullText: `
-      Edexcel GCSE History Paper 3 Exam Question Technique Guide
-      Questions: Q1 Source Inference, Q2 Causation Essay, Q3a Source Utility, Q3b Interpretation Difference, Q3c Interpretation Disagreement Reason, Q3d Interpretation Evaluation
-      Marks: Q1 4 marks, Q2 12 marks, Q3a 8 marks, Q3b 4 marks, Q3c 4 marks, Q3d 16 marks + 4 SPaG marks.
-      Timings: Q1 5 minutes, Q2 20 minutes, Q3a 15 minutes, Q3b 5 minutes, Q3c 5 minutes, Q3d 35 minutes.
-      Structure, templates, writing frames, PEEL paragraphs, sources utility content nature origin purpose NOP, interpretations difference reason.
-    `
-    });
-  }
-  function getSearchScore(queryText, textBlob) {
-    const query = queryText.toLowerCase().trim();
-    if (!query) return 0;
-    const stopWords = /* @__PURE__ */ new Set([
-      "the",
-      "and",
-      "a",
-      "in",
-      "of",
-      "to",
-      "for",
-      "is",
-      "on",
-      "that",
-      "by",
-      "this",
-      "with",
-      "from",
-      "at",
-      "an",
-      "was",
-      "were",
-      "who",
-      "what",
-      "why",
-      "how",
-      "when",
-      "about",
-      "are",
-      "but",
-      "not",
-      "you",
-      "your",
-      "can",
-      "have",
-      "has",
-      "had",
-      "it",
-      "he",
-      "we",
-      "me",
-      "my",
-      "so",
-      "if",
-      "or",
-      "no",
-      "do",
-      "up",
-      "go",
-      "as",
-      "am",
-      "be",
-      "do",
-      "did",
-      "does",
-      "get"
-    ]);
-    const terms = query.split(/\s+/).map((t) => t.replace(/[^a-z0-9]/g, "")).filter((t) => t.length >= 2 && !stopWords.has(t));
-    if (terms.length === 0) {
-      return 0;
-    }
-    let score = 0;
-    const lowerBlob = textBlob.toLowerCase();
-    if (lowerBlob.includes(query)) {
-      score += 50;
-    }
-    terms.forEach((term) => {
-      const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
-      const regex = new RegExp(`\\b${escapedTerm}\\b`, "g");
-      const matches = lowerBlob.match(regex);
-      if (matches) {
-        score += matches.length * 6;
-      }
-    });
-    return score;
-  }
-  function searchLocalApp(query) {
-    buildSearchDatabase();
-    const expandedQuery = expandQuerySynonyms(query);
-    const results = [];
-    searchDatabase.forEach((item) => {
-      const score = getSearchScore(expandedQuery, item.fullText);
-      if (score > 12) {
-        results.push({
-          id: item.id,
-          title: item.title,
-          cleanTitle: item.cleanTitle,
-          score,
-          fullText: item.fullText
-        });
-      }
-    });
-    results.sort((a, b) => b.score - a.score);
-    return results;
-  }
-  function getLocalStaticResponse(bestMatch, query) {
-    if (bestMatch.id === "exam_technique") {
-      return `Here is the **Edexcel Paper 3 Exam Technique Guide**! It covers all question types in this specification (Q1, Q2, and Q3 a-d), with exact marks, suggested timings, writing frames, and examiner secrets. Click the button below to open the guide!`;
-    }
-    const expandedQuery = expandQuerySynonyms(query);
-    const queryTerms = expandedQuery.toLowerCase().split(/\s+/).map((t) => t.replace(/[^a-z0-9]/g, "")).filter((t) => t.length > 2);
-    const lesson = LESSONS_DATA[bestMatch.id];
-    let bestFact = "";
-    let bestFactScore = 0;
-    const checkFact = (text) => {
-      if (!text) return;
-      let score = 0;
-      const lowerText = text.toLowerCase();
-      queryTerms.forEach((term) => {
-        if (lowerText.includes(term)) score += 2;
-      });
-      if (score > bestFactScore) {
-        bestFactScore = score;
-        bestFact = text;
-      }
-    };
-    if (lesson && lesson.steps) {
-      lesson.steps.forEach((step) => {
-        if (step.bodyHtml) {
-          const tempDiv = document.createElement("div");
-          tempDiv.innerHTML = step.bodyHtml;
-          const paragraphs = Array.from(tempDiv.querySelectorAll("p, li")).map((el) => el.textContent.trim());
-          paragraphs.forEach((p) => checkFact(p));
-        }
-        if (step.scholarlyDepth && step.scholarlyDepth.body) {
-          checkFact(step.scholarlyDepth.body);
-        }
-      });
-    }
-    const quizSub = QUIZ_DATA.flatMap((t) => t.subtopics || []).find((sub) => sub.id === bestMatch.id);
-    if (quizSub) {
-      const qList = [...quizSub.standard || [], ...quizSub.depth || []];
-      qList.forEach((q) => {
-        let score = 0;
-        const combined = `${q.question} ${q.answer} ${q.explanation}`.toLowerCase();
-        queryTerms.forEach((term) => {
-          if (combined.includes(term)) score += 2;
-        });
-        if (score > bestFactScore) {
-          bestFactScore = score;
-          bestFact = `**Question:** ${q.question}
-**Answer:** ${q.answer}
-*Explanation:* ${q.explanation}`;
-        }
-      });
-    }
-    if (bestFactScore >= 2 && bestFact) {
-      return `I found this matching fact in the lesson **${bestMatch.cleanTitle}**:
-
-${bestFact}`;
-    }
-    return `I found matching lesson content for **${bestMatch.cleanTitle}** in the course materials. Click below to jump directly to this lesson!`;
-  }
-  function formatMessageText(text) {
-    if (!text) return "";
-    let html = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    const lines = html.split("\n");
-    let inTable = false;
-    let tableHtml = "";
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.startsWith("|") && line.endsWith("|")) {
-        if (!inTable) {
-          inTable = true;
-          tableHtml = '<table class="chatbot-table">';
-        }
-        if (line.includes("---") || line.includes(":---")) {
-          continue;
-        }
-        const cells = line.split("|").slice(1, -1).map((c) => c.trim());
-        tableHtml += "<tr>";
-        cells.forEach((cell) => {
-          const isHeader = !tableHtml.includes("<td>") && !tableHtml.includes("</th>");
-          const tag = isHeader ? "th" : "td";
-          tableHtml += `<${tag}>${cell}</${tag}>`;
-        });
-        tableHtml += "</tr>";
-        lines[i] = "";
-      } else {
-        if (inTable) {
-          inTable = false;
-          tableHtml += "</table>";
-          lines[i] = tableHtml + "\n" + lines[i];
-        }
-      }
-    }
-    if (inTable) {
-      tableHtml += "</table>";
-      lines.push(tableHtml);
-    }
-    html = lines.filter((l) => l !== "").join("\n");
-    html = html.replace(/^(?:\*|-)\s+(.+)$/gm, "<li>$1</li>");
-    html = html.replace(/(<li>.*?<\/li>)+/gs, "<ul>$&</ul>");
-    html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/\*(.*?)\*/g, "<em>$1</em>").replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\n/g, "<br>");
-    return html;
-  }
-  async function fetchGeminiResponse(localApiKey, userInput, localContext, customSystemInstruction = null) {
-    const systemInstruction = customSystemInstruction || `You are a strict, helpful AI history tutor for Edexcel GCSE History, Paper 3: Modern Depth Study - USA (1954-75).
-Your task is to answer the student's question accurately, concisely, and at a GCSE level (appropriate for 14-16 year olds).
-Rules:
-- Keep the response short (strictly under 100 words).
-- Focus strictly on historical facts relevant to the Edexcel GCSE USA specification.
-- If the question is outside the scope of the Edexcel USA (1954-75) specification, do NOT simply refuse to answer or say it's off-topic. Instead, creatively find a historical bridge or connection back to the course material (e.g., connecting WWI/WWII to the Double V Campaign or cold war origins, sports to Muhammad Ali's draft resistance or 1968 Olympics Black Power salute, or music to 1960s anti-war protest culture) and guide them back to this USA Paper 3 syllabus.
-- State precise years, names, acts, and numbers (e.g. 1954 Brown v. Topeka, 1957 Little Rock Nine, 1964 Civil Rights Act, 1965 Voting Rights Act, etc.).
-- If local app context is provided, prioritize using it to answer the question.`;
-    let userText = userInput;
-    if (localContext) {
-      userText = `[App Course Content Context: Use this info if helpful]
-${localContext.fullText.substring(0, 3e3)}
-
-User Question: ${userInput}`;
-    }
-    chatHistory.push({
-      role: "user",
-      parts: [{ text: userText }]
-    });
-    if (chatHistory.length > 8) {
-      chatHistory = chatHistory.slice(-8);
-    }
-    const requestBody = {
-      contents: chatHistory,
-      systemInstruction: {
-        parts: [{ text: systemInstruction }]
-      },
-      generationConfig: {
-        temperature: 0.3,
-        maxOutputTokens: 250
-      }
-    };
-    try {
-      const response = await fetch(`/.netlify/functions/chat`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(requestBody)
-      });
-      const data = await response.json().catch(() => ({}));
-      if (response.ok && data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
-        const aiText = data.candidates[0].content.parts[0].text.trim();
-        chatHistory.push({
-          role: "model",
-          parts: [{ text: aiText }]
-        });
-        return aiText;
-      } else {
-        const isUnconfigured = !response.ok && (data.error && data.error.message && data.error.message.includes("GEMINI_API_KEY") || response.status === 500);
-        if (isUnconfigured && localApiKey) {
-          return await fetchDirectGemini(localApiKey, requestBody);
-        }
-        throw new Error(data.error?.message || `Proxy error ${response.status}`);
-      }
-    } catch (proxyError) {
-      if (localApiKey) {
-        try {
-          return await fetchDirectGemini(localApiKey, requestBody);
-        } catch (directError) {
-          throw new Error(`Proxy error (${proxyError.message}) and fallback failed: ${directError.message}`);
-        }
-      }
-      throw proxyError;
-    }
-  }
-  async function fetchDirectGemini(apiKey, requestBody) {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(requestBody)
-    });
-    const data = await response.json();
-    if (response.ok && data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
-      const aiText = data.candidates[0].content.parts[0].text.trim();
-      chatHistory.push({
-        role: "model",
-        parts: [{ text: aiText }]
-      });
-      return aiText;
-    } else {
-      throw new Error(data.error?.message || `Direct API error ${response.status}`);
-    }
-  }
-  function appendBubble(sender, contentText, subtopicLink = null, isHtml = false) {
-    const container = document.getElementById("chatbot-messages");
-    if (!container) return;
-    const bubble = document.createElement("div");
-    bubble.className = `chatbot-bubble ${sender}`;
-    bubble.innerHTML = isHtml ? contentText : formatMessageText(contentText);
-    if (subtopicLink) {
-      const linkBtn = document.createElement("button");
-      linkBtn.className = "chatbot-jump-link";
-      linkBtn.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> Study: ${subtopicLink.cleanTitle}`;
-      linkBtn.setAttribute("data-subtopic-id", subtopicLink.id);
-      bubble.appendChild(linkBtn);
-    }
-    if (sender === "assistant" || sender === "system") {
-      const ttsBtn = document.createElement("button");
-      ttsBtn.className = "chatbot-tts-btn";
-      ttsBtn.title = "Listen to response";
-      ttsBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-      bubble.appendChild(ttsBtn);
-    }
-    container.appendChild(bubble);
-    container.scrollTop = container.scrollHeight;
-    if (sender === "user" || sender === "assistant") {
-      const isAlreadyInHistory = chatHistory.some((h) => h.parts?.[0]?.text === contentText);
-      if (!isAlreadyInHistory) {
-        chatHistory.push({
-          role: sender === "user" ? "user" : "model",
-          parts: [{ text: contentText }]
-        });
-        saveHistoryToLocalStorage();
-      }
-    }
-  }
-  function appendThinkingBubble() {
-    const container = document.getElementById("chatbot-messages");
-    if (!container) return;
-    const bubble = document.createElement("div");
-    bubble.className = "chatbot-bubble assistant";
-    bubble.id = "chatbot-thinking";
-    bubble.innerHTML = `Thinking<span class="chatbot-loading-dots"><span>.</span><span>.</span><span>.</span></span>`;
-    container.appendChild(bubble);
-    container.scrollTop = container.scrollHeight;
-  }
-  function removeThinkingBubble() {
-    const el = document.getElementById("chatbot-thinking");
-    if (el) el.remove();
-  }
-  function initChatbot() {
-    const style = document.createElement("style");
-    style.textContent = `
-    @keyframes chatbotPulse {
-      0% { opacity: 0.2; }
-      50% { opacity: 1; }
-      100% { opacity: 0.2; }
-    }
-    .chatbot-loading-dots span {
-      animation: chatbotPulse 1.4s infinite both;
-      font-weight: bold;
-      display: inline-block;
-      width: 4px;
-      text-align: center;
-    }
-    .chatbot-loading-dots span:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-    .chatbot-loading-dots span:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    /* CSS Overrides for Solid theme-matching readability */
-    .chatbot-window {
-      background: var(--bg-sidebar) !important;
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      border: 1px solid var(--border-active) !important;
-    }
-    .chatbot-bubble.assistant {
-      background: rgba(255, 255, 255, 0.05) !important;
-      color: var(--text-main) !important;
-      border: 1px solid var(--border-glass) !important;
-    }
-    [data-theme="desert"] .chatbot-bubble.assistant {
-      background: rgba(0, 0, 0, 0.04) !important;
-      color: var(--text-main) !important;
-      border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    }
-    .chatbot-bubble.user {
-      color: #ffffff !important;
-    }
-
-    /* Suggested Chips styling */
-    .chatbot-chips-container {
-      margin-top: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .chatbot-chip-btn {
-      background: rgba(59, 130, 246, 0.08);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      border-radius: 8px;
-      color: #60a5fa;
-      padding: 8px 12px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      text-align: left;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      outline: none;
-      font-family: inherit;
-    }
-    .chatbot-chip-btn:hover {
-      background: rgba(59, 130, 246, 0.16);
-      border-color: #3b82f6;
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-    [data-theme="desert"] .chatbot-chip-btn {
-      background: rgba(194, 65, 12, 0.06);
-      border-color: rgba(194, 65, 12, 0.15);
-      color: #c2410c;
-    }
-    [data-theme="desert"] .chatbot-chip-btn:hover {
-      background: rgba(194, 65, 12, 0.12);
-      border-color: #c2410c;
-      color: #c2410c;
-    }
-
-    /* Quiz styling */
-    .chatbot-quiz-options {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 8px;
-    }
-    .chatbot-quiz-option-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-glass);
-      border-radius: 6px;
-      color: var(--text-main);
-      padding: 8px 10px;
-      font-size: 0.78rem;
-      text-align: left;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      outline: none;
-      font-family: inherit;
-    }
-    .chatbot-quiz-option-btn:hover:not(:disabled) {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--primary);
-    }
-    .chatbot-quiz-option-btn.correct {
-      background: rgba(16, 185, 129, 0.25) !important;
-      border-color: #10b981 !important;
-      color: #34d399 !important;
-      font-weight: 600;
-    }
-    .chatbot-quiz-option-btn.incorrect {
-      background: rgba(239, 68, 68, 0.25) !important;
-      border-color: #ef4444 !important;
-      color: #f87171 !important;
-    }
-    .chatbot-quiz-next-btn {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 8px 12px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background var(--transition-fast);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 8px;
-    }
-    .chatbot-quiz-next-btn:hover {
-      background: var(--primary-light);
-    }
-
-    /* Unit & Subtopic Selection Chips */
-    .chatbot-unit-chip-btn, .chatbot-subtopic-chip-btn {
-      background: rgba(139, 92, 246, 0.08);
-      border: 1px solid rgba(139, 92, 246, 0.2);
-      border-radius: 8px;
-      color: #a78bfa;
-      padding: 8px 12px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      text-align: left;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      outline: none;
-      font-family: inherit;
-    }
-    .chatbot-unit-chip-btn:hover, .chatbot-subtopic-chip-btn:hover {
-      background: rgba(139, 92, 246, 0.16);
-      border-color: #8b5cf6;
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    /* Checklist Styling */
-    .chatbot-checklist-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-      text-align: left;
-    }
-    .chatbot-checklist-item {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-glass);
-      border-radius: 8px;
-      padding: 10px;
-    }
-    .chatbot-checklist-label {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.8rem;
-    }
-    .chatbot-spec-checkbox {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-    }
-    .chatbot-checkbox-custom {
-      height: 16px;
-      width: 16px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid var(--border-glass);
-      border-radius: 4px;
-      display: inline-block;
-      position: relative;
-      flex-shrink: 0;
-      margin-top: 2px;
-      transition: all var(--transition-fast);
-    }
-    .chatbot-spec-checkbox:checked ~ .chatbot-checkbox-custom {
-      background-color: var(--primary);
-      border-color: var(--primary);
-    }
-    .chatbot-checkbox-custom:after {
-      content: "";
-      position: absolute;
-      display: none;
-      left: 5px;
-      top: 2px;
-      width: 4px;
-      height: 8px;
-      border: solid white;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-    }
-    .chatbot-spec-checkbox:checked ~ .chatbot-checkbox-custom:after {
-      display: block;
-    }
-    .chatbot-checklist-point-text {
-      color: var(--text-main);
-    }
-    .chatbot-spec-checkbox:checked ~ .chatbot-checklist-point-text {
-      text-decoration: line-through;
-      color: var(--text-muted);
-    }
-    .chatbot-checklist-facts {
-      margin-top: 6px;
-      margin-left: 24px;
-      padding-left: 0;
-      list-style-type: none;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .chatbot-checklist-facts li {
-      position: relative;
-      padding-left: 10px;
-    }
-    .chatbot-checklist-facts li::before {
-      content: "\u2022";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-    }
-
-    /* TTS Button styling */
-    .chatbot-tts-btn {
-      position: absolute;
-      bottom: -6px;
-      right: -6px;
-      background: var(--bg-sidebar);
-      border: 1px solid var(--border-glass);
-      color: var(--text-muted);
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      transition: all var(--transition-fast);
-          }
-    .chatbot-tts-btn:hover {
-      color: var(--text-main);
-      border-color: var(--primary);
-      transform: scale(1.1);
-    }
-    .chatbot-tts-btn.speaking {
-      color: var(--accent);
-      border-color: var(--accent);
-      animation: chatbotPulse 1s infinite alternate;
-    }
-    .chatbot-bubble.assistant, .chatbot-bubble.system {
-      position: relative;
-    }
-
-    /* Voice mic styling */
-    .chatbot-mic-btn {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-muted);
-      border: 1px solid var(--border-glass);
-      border-radius: 4px;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      flex-shrink: 0;
-    }
-    .chatbot-mic-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-main);
-      border-color: var(--primary);
-    }
-    .chatbot-mic-btn.recording {
-      background: rgba(239, 68, 68, 0.25) !important;
-      color: #f87171 !important;
-      border-color: #ef4444 !important;
-      animation: chatbotPulse 1s infinite alternate;
-    }
-
-    /* Command Toolbar styling */
-    .chatbot-command-row {
-      padding: 8px 16px;
-      display: flex;
-      gap: 8px;
-      border-top: 1px solid var(--border-glass);
-      background: rgba(0, 0, 0, 0.15);
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .chatbot-command-row::-webkit-scrollbar {
-      display: none;
-    }
-    .chatbot-cmd-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-glass);
-      border-radius: 20px;
-      color: var(--text-muted);
-      padding: 4px 10px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      white-space: nowrap;
-      font-family: inherit;
-    }
-    .chatbot-cmd-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-main);
-      border-color: var(--primary);
-    }
-
-    /* Table styling */
-    .chatbot-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      font-size: 0.76rem;
-    }
-    .chatbot-table th, .chatbot-table td {
-      border: 1px solid var(--border-glass);
-      padding: 6px 8px;
-      text-align: left;
-    }
-    .chatbot-table th {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-main);
-      font-weight: 700;
-    }
-    .chatbot-table tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.02);
-    }
-  `;
-    document.head.appendChild(style);
-    let apiKey = localStorage.getItem("gemini_api_key") || "";
-    const fab = document.createElement("div");
-    fab.className = "chatbot-fab";
-    fab.id = "chatbot-fab";
-    fab.title = "Ask GCSE History AI Tutor";
-    fab.innerHTML = '<i class="fa-solid fa-comment-dots"></i>';
-    const windowEl = document.createElement("div");
-    windowEl.className = "chatbot-window";
-    windowEl.id = "chatbot-window";
-    windowEl.innerHTML = `
-    <div class="chatbot-header">
-      <div class="chatbot-title">
-        <i class="fa-solid fa-robot"></i> GCSE History AI Tutor
-      </div>
-      <div class="chatbot-actions">
-        <button class="chatbot-action-btn" id="chatbot-clear-btn" title="Clear Chat Thread">
-          <i class="fa-solid fa-trash-can"></i>
-        </button>
-        <button class="chatbot-action-btn" id="chatbot-close-btn" title="Close Chat">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Messages Container -->
-    <div class="chatbot-messages" id="chatbot-messages">
-      <div class="chatbot-bubble assistant">
-        ${WELCOME_HTML}
-      </div>
-    </div>
-
-    <!-- Command Toolbar -->
-    <div class="chatbot-command-row">
-      <button class="chatbot-cmd-btn" data-cmd="quiz"><i class="fa-solid fa-gamepad"></i> Quiz</button>
-      <button class="chatbot-cmd-btn" data-cmd="grade"><i class="fa-solid fa-marker"></i> Grade PEEL</button>
-      <button class="chatbot-cmd-btn" data-cmd="checklist"><i class="fa-solid fa-list-check"></i> Checklist</button>
-      <button class="chatbot-cmd-btn" data-cmd="clear"><i class="fa-solid fa-trash-can"></i> Clear</button>
-    </div>
-
-    <!-- Footer Input Area -->
-    <div class="chatbot-input-row">
-      <input type="text" class="chatbot-input" id="chatbot-user-input" placeholder="Ask a question..." autocomplete="off" />
-      <button class="chatbot-mic-btn" id="chatbot-mic-btn" title="Voice Input (Speech-to-Text)" style="display: none;">
-        <i class="fa-solid fa-microphone"></i>
-      </button>
-      <button class="chatbot-send-btn" id="chatbot-send-btn" title="Send Message">
-        <i class="fa-solid fa-paper-plane"></i>
-      </button>
-    </div>
-  `;
-    document.body.appendChild(fab);
-    document.body.appendChild(windowEl);
-    const toggleSettingsBtn = document.getElementById("chatbot-settings-toggle");
-    const clearBtn = document.getElementById("chatbot-clear-btn");
-    const settingsPanel = document.getElementById("chatbot-settings-panel");
-    const apiKeyInput = document.getElementById("chatbot-api-key-input");
-    const saveKeyBtn = document.getElementById("chatbot-save-key-btn");
-    const closeBtn = document.getElementById("chatbot-close-btn");
-    const userInput = document.getElementById("chatbot-user-input");
-    const sendBtn = document.getElementById("chatbot-send-btn");
-    const messagesContainer = document.getElementById("chatbot-messages");
-    const micBtn = document.getElementById("chatbot-mic-btn");
-    const commandRow = document.querySelector(".chatbot-command-row");
-    loadAndRenderHistory();
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    let recognition = null;
-    let isListening = false;
-    if (SpeechRecognition) {
-      recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.lang = "en-US";
-    }
-    if (recognition && micBtn) {
-      micBtn.style.display = "flex";
-      micBtn.addEventListener("click", () => {
-        if (isListening) {
-          recognition.stop();
-        } else {
-          recognition.start();
-        }
-      });
-      recognition.onstart = () => {
-        isListening = true;
-        micBtn.classList.add("recording");
-        userInput.placeholder = "Listening...";
-      };
-      recognition.onresult = (e) => {
-        const transcript = e.results[0][0].transcript;
-        userInput.value = transcript;
-      };
-      recognition.onend = () => {
-        isListening = false;
-        micBtn.classList.remove("recording");
-        userInput.placeholder = "Ask a question...";
-      };
-      recognition.onerror = () => {
-        isListening = false;
-        micBtn.classList.remove("recording");
-        userInput.placeholder = "Ask a question...";
-      };
-    }
-    if (commandRow) {
-      commandRow.addEventListener("click", (e) => {
-        const btn = e.target.closest(".chatbot-cmd-btn");
-        if (!btn) return;
-        const cmd = btn.getAttribute("data-cmd");
-        if (cmd === "quiz") {
-          startChatbotQuiz();
-        } else if (cmd === "grade") {
-          gradingState.isActive = true;
-          appendBubble("assistant", "I am ready to grade your paragraph! Please paste your essay paragraph or outline below, and I will critique it against GCSE PEEL criteria.");
-        } else if (cmd === "checklist") {
-          handleSpecChecklistQuery("");
-        } else if (cmd === "clear") {
-          chatHistory = [];
-          localStorage.removeItem("chatbot_history");
-          messagesContainer.innerHTML = `<div class="chatbot-bubble assistant">${WELCOME_HTML}</div>`;
-          appendBubble("system", "Chat history cleared.");
-        }
-      });
-    }
-    window.addEventListener("appViewChanged", (e) => {
-      const detail = e.detail;
-      if (detail.view === "subtopic" && detail.subtopicId) {
-        updateChatbotSuggestionsForSubtopic(detail.subtopicId);
-      }
-    });
-    if (apiKey && apiKeyInput) {
-      apiKeyInput.value = apiKey;
-    }
-    fab.addEventListener("click", () => {
-      fab.classList.toggle("active");
-      windowEl.classList.toggle("active");
-      if (windowEl.classList.contains("active")) {
-        userInput.focus();
-      }
-    });
-    if (toggleSettingsBtn && settingsPanel) {
-      toggleSettingsBtn.addEventListener("click", () => {
-        settingsPanel.classList.toggle("active");
-      });
-    }
-    if (saveKeyBtn && apiKeyInput && settingsPanel) {
-      saveKeyBtn.addEventListener("click", () => {
-        const value = apiKeyInput.value.trim();
-        if (value) {
-          apiKey = value;
-          localStorage.setItem("gemini_api_key", apiKey);
-          settingsPanel.classList.remove("active");
-          appendBubble("system", "API Key saved successfully! AI mode is active.");
-        } else {
-          apiKey = "";
-          localStorage.removeItem("gemini_api_key");
-          appendBubble("system", "API Key cleared. Switched back to app-only local database mode.");
-        }
-      });
-    }
-    closeBtn.addEventListener("click", () => {
-      fab.classList.remove("active");
-      windowEl.classList.remove("active");
-    });
-    clearBtn.addEventListener("click", () => {
-      chatHistory = [];
-      localStorage.removeItem("chatbot_history");
-      messagesContainer.innerHTML = `<div class="chatbot-bubble assistant">${WELCOME_HTML}</div>`;
-      appendBubble("system", "Chat history cleared.");
-    });
-    messagesContainer.addEventListener("click", (e) => {
-      const jumpLink = e.target.closest(".chatbot-jump-link");
-      if (jumpLink) {
-        const subtopicId = jumpLink.getAttribute("data-subtopic-id");
-        if (subtopicId) {
-          if (subtopicId === "exam_technique") {
-            switchView("exam-hub", "technique");
-          } else {
-            state.currentMode = "lessons";
-            switchView("subtopic", subtopicId);
-          }
-          if (window.innerWidth <= 480) {
-            fab.classList.remove("active");
-            windowEl.classList.remove("active");
-          }
-        }
-        return;
-      }
-      const chipBtn = e.target.closest(".chatbot-chip-btn");
-      if (chipBtn) {
-        const query = chipBtn.getAttribute("data-query");
-        if (query) {
-          userInput.value = query;
-          handleSend();
-        }
-        return;
-      }
-      const optionBtn = e.target.closest(".chatbot-quiz-option-btn");
-      if (optionBtn) {
-        if (!quizState.isActive) return;
-        const index = parseInt(optionBtn.getAttribute("data-choice-index"), 10);
-        evaluateQuizChoice(index, optionBtn);
-        return;
-      }
-      const nextBtn = e.target.closest(".chatbot-quiz-next-btn");
-      if (nextBtn) {
-        if (!quizState.isActive) return;
-        quizState.currentIndex++;
-        if (quizState.currentIndex < quizState.questions.length) {
-          presentQuizQuestion();
-        } else {
-          const percent = Math.round(quizState.score / quizState.questions.length * 100);
-          let feedback = `\u{1F3C6} **Quiz Complete!**
-
-You scored **${quizState.score} out of ${quizState.questions.length}** (${percent}%).
-
-`;
-          if (percent === 100) feedback += "Sensational! You are an expert examiner. \u{1F31F}";
-          else if (percent >= 80) feedback += "Excellent job! You have a strong grasp of Paper 3 details. \u{1F393}";
-          else if (percent >= 50) feedback += "Good effort. Review the study materials and try again to master it! \u{1F4D6}";
-          else feedback += "Keep studying! Try searching for terms like 'Little Rock' or 'Montgomery' to build your knowledge. \u{1F4DA}";
-          appendBubble("assistant", feedback);
-          quizState.isActive = false;
-          addXp(15);
-        }
-        return;
-      }
-      const unitChip = e.target.closest(".chatbot-unit-chip-btn");
-      if (unitChip) {
-        const unit = unitChip.getAttribute("data-unit");
-        let subtopicsHtml = `**Unit ${unit} Topics:**
-Select a topic checklist to view:
-
-`;
-        subtopicsHtml += `<div class="chatbot-chips-container">`;
-        for (let t = 1; t <= 4; t++) {
-          const subtopicId = `subtopic_${unit}_${t}`;
-          const lesson = LESSONS_DATA[subtopicId];
-          const title = lesson ? lesson.headerTitle.replace(/^Topic \d\.\d:\s*/, "") : `Topic ${unit}.${t}`;
-          subtopicsHtml += `<button class="chatbot-subtopic-chip-btn" data-subtopic-id="${subtopicId}">Topic ${unit}.${t}: ${title}</button>`;
-        }
-        subtopicsHtml += `</div>`;
-        appendBubble("assistant", subtopicsHtml, null, true);
-        return;
-      }
-      const subtopicChip = e.target.closest(".chatbot-subtopic-chip-btn");
-      if (subtopicChip) {
-        const subtopicId = subtopicChip.getAttribute("data-subtopic-id");
-        if (SPEC_CHECKLIST_DATA[subtopicId]) {
-          const checklistHtml = getChecklistHTML(subtopicId);
-          appendBubble("assistant", checklistHtml, null, true);
-        }
-        return;
-      }
-      const ttsBtn = e.target.closest(".chatbot-tts-btn");
-      if (ttsBtn) {
-        handleTTS(ttsBtn);
-        return;
-      }
-    });
-    async function handleSend() {
-      const text = userInput.value.trim();
-      if (!text) return;
-      appendBubble("user", text);
-      userInput.value = "";
-      if (quizState.isActive) {
-        handleQuizAnswerInput(text);
-        return;
-      }
-      if (gradingState.isActive) {
-        await handleGradingInput(text);
-        return;
-      }
-      addXp(5);
-      const lowerText = text.toLowerCase();
-      if (/\b(quiz|trivia|test me|start quiz|play quiz)\b/.test(lowerText)) {
-        startChatbotQuiz();
-        return;
-      }
-      if (/\b(grade my paragraph|grade my essay|critique my paragraph|peel grade|grade essay|mark my essay)\b/.test(lowerText)) {
-        const matchText = text.replace(/^(grade my paragraph|grade my essay|critique my paragraph|peel grade|grade essay|mark my essay)\s*:?\s*/i, "").trim();
-        if (matchText.length > 5) {
-          await handleGradingInput(matchText);
-        } else {
-          gradingState.isActive = true;
-          appendBubble("assistant", "I am ready to grade your paragraph! Please paste your essay paragraph or outline below, and I will critique it against GCSE PEEL criteria.");
-        }
-        return;
-      }
-      if (/\b(spec|specification|checklist|syllabus|what is on the test|requirements|what is on the exam)\b/.test(lowerText)) {
-        handleSpecChecklistQuery(text);
-        return;
-      }
-      const localMatches = searchLocalApp(text);
-      const bestMatch = localMatches[0];
-      const isStrongMatch = bestMatch && bestMatch.score >= 35;
-      const isMediumMatch = bestMatch && bestMatch.score >= 20;
-      if (bestMatch && bestMatch.id === "exam_technique" && bestMatch.score >= 25) {
-        appendBubble("assistant", "Opening the **Exam Technique Guide** for you now...");
-        setTimeout(() => {
-          switchView("exam-hub", "technique");
-          if (window.innerWidth <= 480) {
-            fab.classList.remove("active");
-            windowEl.classList.remove("active");
-          }
-        }, 700);
-        return;
-      }
-      appendThinkingBubble();
-      try {
-        const aiContext = isMediumMatch ? bestMatch : null;
-        const responseText = await fetchGeminiResponse(apiKey, text, aiContext);
-        removeThinkingBubble();
-        const bubbleLink = isStrongMatch ? bestMatch : null;
-        appendBubble("assistant", responseText, bubbleLink);
-      } catch (err) {
-        removeThinkingBubble();
-        if (isMediumMatch) {
-          const fallbackText = getLocalStaticResponse(bestMatch, text);
-          appendBubble("assistant", `*Offline Mode (AI unavailable: ${err.message})*
-
-${fallbackText}`, isStrongMatch ? bestMatch : null);
-        } else {
-          appendBubble("assistant", `I couldn't contact the AI tutor (${err.message}).
-
-Please ask a history question about the Edexcel USA (1954\u201375) course.`);
-        }
-      }
-    }
-    sendBtn.addEventListener("click", handleSend);
-    userInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        handleSend();
-      }
-    });
-  }
-  function startChatbotQuiz() {
-    const allQuestions = [];
-    QUIZ_DATA.forEach((topic) => {
-      if (topic.subtopics) {
-        topic.subtopics.forEach((sub) => {
-          const subQuestions = [...sub.standard || [], ...sub.depth || []];
-          subQuestions.forEach((q) => {
-            allQuestions.push({
-              id: q.id,
-              question: q.question,
-              answer: q.answer,
-              explanation: q.explanation || "",
-              distractors: q.distractors || [],
-              subtopicTitle: sub.title,
-              subtopicId: sub.id
-            });
-          });
-        });
-      }
-    });
-    if (allQuestions.length === 0) {
-      appendBubble("assistant", "Sorry, I could not load any quiz questions at the moment.");
-      return;
-    }
-    const shuffled = allQuestions.sort(() => Math.random() - 0.5);
-    quizState.isActive = true;
-    quizState.questions = shuffled.slice(0, 5);
-    quizState.currentIndex = 0;
-    quizState.score = 0;
-    appendBubble("assistant", "\u{1F393} **GCSE History Recall Trivia Quiz!**\n\nLet's test your knowledge on Paper 3 USA History. I have prepared 5 questions for you. Good luck! Let's start with Question 1.");
-    presentQuizQuestion();
-  }
-  function presentQuizQuestion() {
-    const q = quizState.questions[quizState.currentIndex];
-    const choices = [q.answer, ...q.distractors];
-    choices.sort(() => Math.random() - 0.5);
-    quizState.answersShuffled = choices;
-    let bubbleContent = `**Question ${quizState.currentIndex + 1} of 5:**
-${q.question}
-
-`;
-    bubbleContent += `<div class="chatbot-quiz-options">`;
-    choices.forEach((choice, index) => {
-      const optionLetter = String.fromCharCode(65 + index);
-      bubbleContent += `
-      <button class="chatbot-quiz-option-btn" data-choice-text="${choice.replace(/"/g, "&quot;")}" data-choice-index="${index}">
-        <strong>${optionLetter}:</strong> ${choice}
-      </button>
-    `;
-    });
-    bubbleContent += `</div>`;
-    appendBubble("assistant", bubbleContent, null, true);
-  }
-  function handleQuizAnswerInput(text) {
-    const lowerText = text.toLowerCase().trim();
-    if (lowerText === "exit" || lowerText === "stop" || lowerText === "quit") {
-      quizState.isActive = false;
-      appendBubble("assistant", "Quiz stopped. Let me know if you want to play again!");
-      return;
-    }
-    const choices = quizState.answersShuffled;
-    let selectedIndex = -1;
-    if (lowerText === "a" || lowerText === "1") selectedIndex = 0;
-    else if (lowerText === "b" || lowerText === "2") selectedIndex = 1;
-    else if (lowerText === "c" || lowerText === "3") selectedIndex = 2;
-    else if (lowerText === "d" || lowerText === "4") selectedIndex = 3;
-    else {
-      selectedIndex = choices.findIndex((c) => c.toLowerCase().trim() === lowerText);
-    }
-    if (selectedIndex === -1) {
-      appendBubble("assistant", 'Please select one of the options by clicking a button, or typing A, B, C, or D. (Type "exit" to quit).');
-      return;
-    }
-    evaluateQuizChoice(selectedIndex);
-  }
-  function evaluateQuizChoice(selectedIndex, clickedBtn = null) {
-    const q = quizState.questions[quizState.currentIndex];
-    const choices = quizState.answersShuffled;
-    const selectedText = choices[selectedIndex];
-    const correctText = q.answer;
-    const isCorrect = selectedText === correctText;
-    if (isCorrect) {
-      quizState.score++;
-      addXp(5);
-    } else {
-      addXp(2);
-    }
-    const messagesContainer = document.getElementById("chatbot-messages");
-    const allOptionBtns = messagesContainer.querySelectorAll(".chatbot-quiz-option-btn");
-    const currentOptionsContainer = clickedBtn ? clickedBtn.parentElement : null;
-    const btnsToUpdate = currentOptionsContainer ? currentOptionsContainer.querySelectorAll(".chatbot-quiz-option-btn") : Array.from(allOptionBtns).slice(-4);
-    btnsToUpdate.forEach((btn, idx) => {
-      btn.disabled = true;
-      const btnText = choices[idx];
-      if (btnText === correctText) {
-        btn.classList.add("correct");
-      } else if (btnText === selectedText && !isCorrect) {
-        btn.classList.add("incorrect");
-      }
-    });
-    let feedback = isCorrect ? `\u2705 **Correct!**
-
-` : `\u274C **Incorrect.** The correct answer was: **${correctText}**.
-
-`;
-    if (q.explanation) {
-      feedback += `*Explanation:* ${q.explanation}`;
-    }
-    const isLast = quizState.currentIndex === quizState.questions.length - 1;
-    const nextBtnText = isLast ? "Finish Quiz" : "Next Question";
-    feedback += `
-
-<button class="chatbot-quiz-next-btn">${nextBtnText} <i class="fa-solid fa-arrow-right"></i></button>`;
-    appendBubble("assistant", feedback, null, true);
-  }
-  async function handleGradingInput(text) {
-    gradingState.isActive = false;
-    const apiKey = localStorage.getItem("gemini_api_key") || "";
-    appendThinkingBubble();
-    try {
-      const responseText = await fetchGeminiResponse(apiKey, text, null, examinerSystemInstruction);
-      removeThinkingBubble();
-      appendBubble("assistant", responseText);
-      addXp(10);
-    } catch (err) {
-      removeThinkingBubble();
-      const fallbackText = gradeParagraphLocally(text);
-      appendBubble("assistant", fallbackText);
-      addXp(10);
-    }
-  }
-  function gradeParagraphLocally(text) {
-    const lowerText = text.toLowerCase();
-    const pointConnectives = ["firstly", "the main reason", "one factor", "initially", "primarily", "to begin", "one key cause"];
-    const hasPoint = pointConnectives.some((c) => lowerText.includes(c)) || text.split(".").length > 1;
-    const evidenceKeywords = [
-      "195",
-      "196",
-      "197",
-      "little rock",
-      "boycott",
-      "rosa parks",
-      "mlk",
-      "king",
-      "till",
-      "faubus",
-      "eisenhower",
-      "kennedy",
-      "johnson",
-      "nixon",
-      "vietnam",
-      "tonkin",
-      "tet",
-      "my lai",
-      "brown v",
-      "segregation",
-      "sit-in",
-      "birmingham",
-      "selma",
-      "vietcong"
-    ];
-    const foundEvidence = evidenceKeywords.filter((k) => lowerText.includes(k));
-    const hasEvidence = foundEvidence.length >= 1;
-    const explanationConnectives = ["because", "this meant that", "consequently", "therefore", "as a result", "due to", "led to", "this showed"];
-    const hasExplanation = explanationConnectives.some((c) => lowerText.includes(c));
-    const linkKeywords = ["therefore", "consequently", "link", "shows that", "shows why", "resulted in", "thus"];
-    const hasLink = linkKeywords.some((c) => lowerText.includes(c)) && text.trim().endsWith(".");
-    let score = 0;
-    if (hasPoint) score++;
-    if (hasEvidence) score++;
-    if (hasExplanation) score++;
-    if (hasLink) score++;
-    let feedback = `\u{1F4CA} **GCSE Examiner Grade (Offline Heuristic Check):** **${score}/4**
-
-`;
-    feedback += `* **Point (P):** ${hasPoint ? "\u2705 Detected a topic sentence or structured starting sentence." : "\u274C Try to start with a clear point connective like 'First, one main cause was...'."}
-`;
-    feedback += `* **Evidence (E):** ${hasEvidence ? `\u2705 Detected historical evidence. (Matched terms: ${foundEvidence.join(", ")})` : "\u274C No specific dates, years (e.g. 1954, 1957) or key figures detected."}
-`;
-    feedback += `* **Explanation (E):** ${hasExplanation ? "\u2705 Explanatory connectives detected." : "\u274C Try to explain *why* this matters using words like 'consequently', 'this meant that' or 'as a result'."}
-`;
-    feedback += `* **Link (L):** ${hasLink ? "\u2705 Clear link words found connecting back." : "\u274C End your paragraph with a linking sentence returning to the question topic."}
-
-`;
-    feedback += `**WWW (What Went Well):** `;
-    if (score === 4) {
-      feedback += "Excellent! Your paragraph follows the PEEL structure perfectly with specific history facts.";
-    } else if (hasEvidence && hasExplanation) {
-      feedback += "You support your argument with good factual evidence and explain the consequence clearly.";
-    } else if (hasEvidence) {
-      feedback += "You included good factual evidence (names or years) in your response.";
-    } else if (hasExplanation) {
-      feedback += "You used strong explanatory connectives to explain your reasoning.";
-    } else {
-      feedback += "You have attempted to write a structured paragraph.";
-    }
-    feedback += `
-**EBI (Even Better If):** `;
-    if (score === 4) {
-      feedback += "Try to practice writing under timed conditions (about 5 minutes per PEEL paragraph in the exam).";
-    } else if (!hasEvidence) {
-      feedback += "Include specific facts, dates (e.g., 1954 Brown case, 1964 Civil Rights Act) to secure knowledge marks.";
-    } else if (!hasExplanation) {
-      feedback += "Expand on your evidence by explaining *how* it answers the question using words like 'this meant that'.";
-    } else if (!hasLink) {
-      feedback += "Add a final sentence linking directly back to the question using 'Therefore, this shows that...'.";
-    } else {
-      feedback += "Ensure you have all four PEEL elements: Point, Evidence, Explanation, and Link.";
-    }
-    return feedback;
-  }
-  function getChecklistHTML(subtopicId) {
-    const data = SPEC_CHECKLIST_DATA[subtopicId];
-    if (!data) return "Checklist data not found.";
-    const lesson = LESSONS_DATA[subtopicId];
-    const title = lesson ? lesson.headerTitle : subtopicId;
-    let html = `\u{1F4CB} **Edexcel Specification Checklist:**
-**${title}**
-
-`;
-    html += `<div class="chatbot-checklist-container">`;
-    data.forEach((item, index) => {
-      const uniqueId = `cb-${subtopicId}-${index}`;
-      html += `
-      <div class="chatbot-checklist-item">
-        <label class="chatbot-checklist-label">
-          <input type="checkbox" id="${uniqueId}" class="chatbot-spec-checkbox" />
-          <span class="chatbot-checkbox-custom"></span>
-          <span class="chatbot-checklist-point-text">${item.point}</span>
-        </label>
-        <ul class="chatbot-checklist-facts">
-    `;
-      item.keyFacts.forEach((fact) => {
-        html += `<li>${fact}</li>`;
-      });
-      html += `
-        </ul>
-      </div>
-    `;
-    });
-    html += `</div>`;
-    return html;
-  }
-  function handleSpecChecklistQuery(queryText) {
-    const match = queryText.match(/\b([1-4])\.([1-4])\b/);
-    if (match) {
-      const unit = match[1];
-      const topic = match[2];
-      const subtopicId = `subtopic_${unit}_${topic}`;
-      if (SPEC_CHECKLIST_DATA[subtopicId]) {
-        const checklistHtml = getChecklistHTML(subtopicId);
-        appendBubble("assistant", checklistHtml, null, true);
-        return;
-      }
-    }
-    const activeSubtopicId = state.selectedSubtopicId;
-    if (activeSubtopicId && SPEC_CHECKLIST_DATA[activeSubtopicId]) {
-      const checklistHtml = getChecklistHTML(activeSubtopicId);
-      appendBubble("assistant", `Showing specification checklist for your active topic:
-
-${checklistHtml}`, null, true);
-      return;
-    }
-    let menuHtml = `\u{1F4CB} **Edexcel GCSE History Specification Checklist**
-
-Select a Unit to view its topics and syllabus requirements:`;
-    menuHtml += `<div class="chatbot-chips-container">
-    <button class="chatbot-unit-chip-btn" data-unit="1">Unit 1: Civil Rights, 1954\u201360</button>
-    <button class="chatbot-unit-chip-btn" data-unit="2">Unit 2: Civil Rights, 1960\u201375</button>
-    <button class="chatbot-unit-chip-btn" data-unit="3">Unit 3: US Involvement in Vietnam, 1954\u201369</button>
-    <button class="chatbot-unit-chip-btn" data-unit="4">Unit 4: US Decline in Vietnam, 1969\u201375</button>
-  </div>`;
-    appendBubble("assistant", menuHtml, null, true);
-  }
-  var currentTTSBtn = null;
-  function handleTTS(btn) {
-    const bubble = btn.closest(".chatbot-bubble");
-    if (!bubble) return;
-    const clone = bubble.cloneNode(true);
-    const tts = clone.querySelector(".chatbot-tts-btn");
-    if (tts) tts.remove();
-    const jump = clone.querySelector(".chatbot-jump-link");
-    if (jump) jump.remove();
-    const nextBtn = clone.querySelector(".chatbot-quiz-next-btn");
-    if (nextBtn) nextBtn.remove();
-    const optionBtns = clone.querySelectorAll(".chatbot-quiz-option-btn");
-    optionBtns.forEach((el) => el.remove());
-    const chips = clone.querySelector(".chatbot-chips-container");
-    if (chips) chips.remove();
-    const checkboxes = clone.querySelectorAll(".chatbot-spec-checkbox");
-    checkboxes.forEach((el) => el.remove());
-    const rawText = clone.innerText.trim();
-    if (window.speechSynthesis.speaking) {
-      window.speechSynthesis.cancel();
-      if (currentTTSBtn === btn) {
-        btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-        btn.classList.remove("speaking");
-        currentTTSBtn = null;
-        return;
-      }
-    }
-    if (currentTTSBtn) {
-      currentTTSBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-      currentTTSBtn.classList.remove("speaking");
-    }
-    currentTTSBtn = btn;
-    btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
-    btn.classList.add("speaking");
-    const utterance = new SpeechSynthesisUtterance(rawText);
-    const voices = window.speechSynthesis.getVoices();
-    const customVoice = voices.find((v) => {
-      const name = v.name.toLowerCase();
-      return name.includes("personal") || name.includes("custom") || name.includes("cloned") || name.includes("user") || name.includes("self");
-    });
-    const englishVoice = customVoice || voices.find((v) => v.lang.startsWith("en") && (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Microsoft")));
-    if (englishVoice) {
-      utterance.voice = englishVoice;
-    }
-    utterance.rate = 1.05;
-    utterance.onend = () => {
-      btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-      btn.classList.remove("speaking");
-      if (currentTTSBtn === btn) {
-        currentTTSBtn = null;
-      }
-    };
-    utterance.onerror = () => {
-      btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-      btn.classList.remove("speaking");
-      if (currentTTSBtn === btn) {
-        currentTTSBtn = null;
-      }
-    };
-    window.speechSynthesis.speak(utterance);
-  }
-  function saveHistoryToLocalStorage() {
-    if (chatHistory.length > 15) {
-      chatHistory = chatHistory.slice(-15);
-    }
-    localStorage.setItem("chatbot_history", JSON.stringify(chatHistory));
-  }
-  function loadAndRenderHistory() {
-    const savedHistory = localStorage.getItem("chatbot_history");
-    if (savedHistory) {
-      try {
-        chatHistory = JSON.parse(savedHistory);
-      } catch (e) {
-        chatHistory = [];
-      }
-    }
-    const messagesContainer = document.getElementById("chatbot-messages");
-    if (!messagesContainer) return;
-    if (chatHistory.length > 0) {
-      messagesContainer.innerHTML = "";
-      chatHistory.forEach((msg) => {
-        const sender = msg.role === "user" ? "user" : "assistant";
-        const text = msg.parts?.[0]?.text || "";
-        if (text.startsWith("[App Course Content Context:")) {
-          const parts = text.split("\n\nUser Question: ");
-          const userQuestion = parts.length > 1 ? parts[1] : "Factual inquiry";
-          appendBubble("user", userQuestion);
-        } else {
-          const isHtml = text.includes("<div") || text.includes("<button") || text.includes("<table") || text.includes("<ul>");
-          appendBubble(sender, text, null, isHtml);
-        }
-      });
-    }
-  }
-  function updateChatbotSuggestionsForSubtopic(subtopicId) {
-    let subtopicObj = null;
-    QUIZ_DATA.forEach((topic) => {
-      if (topic.subtopics) {
-        const found = topic.subtopics.find((s) => s.id === subtopicId);
-        if (found) subtopicObj = found;
-      }
-    });
-    const lesson = LESSONS_DATA[subtopicId];
-    const title = subtopicObj ? subtopicObj.title : lesson ? lesson.headerTitle : "this topic";
-    const cleanTitle = title.replace(/^Topic \d\.\d:\s*/, "");
-    const questions = subtopicObj ? [...subtopicObj.standard || [], ...subtopicObj.depth || []] : [];
-    if (questions.length === 0) return;
-    const shuffled = questions.sort(() => Math.random() - 0.5);
-    const selectedQ = shuffled.slice(0, 2);
-    let hintHtml = `\u{1F4DA} **Active Study Topic:** *${cleanTitle}*
-Here are some questions you can ask me about this lesson:`;
-    hintHtml += `<div class="chatbot-chips-container">`;
-    selectedQ.forEach((q) => {
-      hintHtml += `
-      <button class="chatbot-chip-btn" data-query="${q.question.replace(/"/g, "&quot;")}">
-        \u{1F4A1} ${q.question}
-      </button>
-    `;
-    });
-    hintHtml += `</div>`;
-    const lastHistoryMsg = chatHistory[chatHistory.length - 1];
-    const isSameSubtopic = lastHistoryMsg && lastHistoryMsg.parts?.[0]?.text.includes(cleanTitle);
-    if (!isSameSubtopic) {
-      appendBubble("assistant", hintHtml, null, true);
-    }
-  }
-
   // src/essay_planner.js
   var PLANNER_PROMPTS = {
     prompt_boycott: {
@@ -38035,7 +36976,6 @@ Here are some questions you can ask me about this lesson:`;
     renderSidebarNav();
     updateGlobalStats();
     bindEvents();
-    initChatbot();
     initEssayPlanner();
     initMapExplorer();
     initStreakLeaderboardListeners();

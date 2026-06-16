@@ -5,403 +5,400 @@ export const LESSONS_DATA = {
       "context": "Civil rights activist and later Congressman, writing in his memoir *Walking with the Wind: A Memoir of the Movement* (1998) about growing up in rural Troy, Alabama.",
       "quote": "I remember going into town and seeing the clean, beautiful water fountain for white people, and the dirty, rusted fountain for us. I remember the signs: WHITE and COLORED. It was a physical and psychological barrier that told us every day that we were less than human. When I asked my parents why, they said, 'That's the way it is. Don't get in the way.'",
       "discussionQuestion": "How does John Lewis's childhood experience illustrate the difference between the physical enforcement of segregation and its psychological impact on young Black Americans?"
-},
-
-  "headerTitle": "KT 1.1: What was the position of Black Americans in the early 1950s?",
-  "headerIntro": "In the early 1950s, Black Americans in the Southern states lived under the oppressive system of Jim Crow. Racial segregation was legally enforced by state laws, and voting rights were systematically denied through arbitrary tests and economic terror. To fight this institutionalised inequality, civil rights organisations deployed different strategies: the NAACP used legal litigation in federal courts, while CORE pioneered non-violent direct action protests.",
-  "steps": [
-    {
-      "title": "Step 1: Southern Segregation, Discrimination & Voting Rights",
-      "isSplit": true,
-      "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In the early 1950s, Black Americans in the Southern states faced a rigid, legally enforced system of white supremacy:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Southern states enforced <em>de jure</em> segregation in all public facilities (schools, transit, parks). Under the 1896 <em>Plessy v. Ferguson</em> ruling, segregation was legal if facilities were 'separate but equal' (though Black facilities were always vastly inferior).</li>\n              <li><strong>Voter Disenfranchisement:</strong> Southern registrars prevented Black citizens from voting using poll taxes, arbitrary literacy tests (e.g. asking Black applicants to explain complex constitutional clauses or answer impossible questions like <em>\"How many bubbles are in a bar of soap?\"</em>), and threats of violence. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Daily Discrimination:</strong> Segregated bus layouts forced Black passengers to pay at the front, exit, and re-enter via the back door. Black workers faced the 'last hired, first fired' policy, keeping them in low-wage menial labor.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus: Jim Crow Seating</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              Be prepared to explain how legal segregation was physically enforced in daily transit—such as Black passengers standing so white riders could sit—which created a climate of constant humiliation.\n            </p>\n          </div>\n        </div>",
-      "scholarlyDepth": {
-        "title": "Scholarly Perspective: De Jure vs. De Facto",
-        "body": "While de jure (legal) segregation defined the South, historians note that Black Americans in the North faced de facto segregation. Although Northern Black citizens had the right to vote, they were restricted to overcrowded ghettos by informal housing discrimination (redlining) and faced severe employment bias, showing that discrimination was a national, rather than solely Southern, issue."
-      }
     },
-    {
-      "title": "Step 2: NAACP Litigation vs. CORE Direct Action",
-      "isSplit": true,
-      "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>Civil rights organisations utilized contrasting strategies to attack white supremacy:</p>\n            <ul>\n              <li><strong>NAACP (Legal Litigation):</strong> Founded in 1909, the NAACP focused on challenging segregation in federal courts. Led by Thurgood Marshall, they targeted legal precedents, winning landmark cases like <em>Smith v. Allwright</em> (1944), which declared white primaries unconstitutional, and <em>Sweatt v. Painter</em> (1950), desegregating law schools.</li>\n              <li><strong>CORE (Direct Action):</strong> Founded in Chicago in 1942, the Congress of Racial Equality was committed to non-violent direct action. Influenced by Gandhi's teachings, CORE activists used sit-ins, boycotts, and early interstate bus rides (the 1947 Journey of Reconciliation) to expose segregation.</li>\n              <li><strong>Competing Philosophies:</strong> NAACP believed that legal change must precede social change, while CORE argued that grassroots direct action was needed to force authorities to enforce federal rulings.</li>\n            </ul>\n            <div class=\"mind-map-task-box\" style=\"margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.05); border: 1px dashed var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);\">\n              <h4 style=\"margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;\">🗺️ Mind Map Task</h4>\n              <p style=\"margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;\">Draw a mind map in your study notes connecting the main themes and events from the specification bullet points. Make sure to use these key terms:</p>\n              <div style=\"display: flex; flex-wrap: wrap; gap: 6px;\">\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">Jim Crow</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">disenfranchisement</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">NAACP</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">CORE</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">litigation</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">de jure</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">grassroots</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">non-violent direct action</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">segregation</span>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Examiner Tip: Contrasting Strategies</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              GCSE questions often ask you to compare the methods of the NAACP and CORE. Remember to distinguish between top-down legal litigation (NAACP) and bottom-up non-violent direct action (CORE).\n            </p>\n          </div>\n        </div>",
-      "scholarlyDepth": {
-        "title": "Scholarly Perspective: Legalism vs. Direct Action",
-        "body": "Historians debate whether top-down litigation or bottom-up direct action was the true engine of progress. Legal historians argue that the NAACP's court battles established the constitutional basis for civil rights, while grassroots scholars emphasize that without CORE's direct action exposing white resistance, court decisions would have remained unenforced symbols."
-      }
-    }
-  ],
-  "dualPerspective": {
-    "leftHeadline": "The Power of Constitutional Law",
-    "leftText": "The only way to dismantle segregation permanently is through federal court rulings that establish binding constitutional precedents. Grassroots actions are easily crushed by local police without federal legal protection.",
-    "rightHeadline": "Direct Action on the Streets",
-    "rightText": "Court rulings are empty promises without mass direct action. By peacefully disobeying segregation laws, we expose the violence of white supremacy to the public and force federal intervention.",
-    "neutralTitle": "⚖️ Dual Interpretation: Challenging Segregation",
-    "leftLabel": "NAACP Leadership",
-    "rightLabel": "CORE Activists",
-    "tipHtml": "<div class=\"examiner-tip-box\" style=\"margin-top: 18px; margin-bottom: 0;\">\n        <span class=\"tip-icon\">💡</span>\n        <div>\n          <strong>Paper 3 Interpretation Skill:</strong> In your 16-mark essay, you must analyze why historians arrive at different interpretations of the Civil Rights movement's successes.\n        </div>"
-  },
-  "causalLinks": {
-    "question": "Explain why Black Americans faced segregation and discrimination in the Southern states in the early 1950s.",
-    "successText": "Excellent causal analysis! You have successfully linked early Southern segregation to its historical causes, including Plessy v. Ferguson's separate but equal doctrine, political disenfranchisement, and white supremacist terror.",
-    "factors": [
+    "headerTitle": "KT 1.1: What was the position of Black Americans in the early 1950s?",
+    "headerIntro": "In the early 1950s, Black Americans in the Southern states lived under the oppressive system of Jim Crow. Racial segregation was legally enforced by state laws, and voting rights were systematically denied through arbitrary tests and economic terror. To fight this institutionalised inequality, civil rights organisations deployed different strategies: the NAACP used legal litigation in federal courts, while CORE pioneered non-violent direct action protests.",
+    "steps": [
       {
-        "id": "s11_f1",
-        "title": "The Supreme Court's Plessy v. Ferguson (1896) ruling.",
-        "options": [
-          "This established the 'separate but equal' doctrine, providing legal and constitutional backing for state-level segregation.",
-          "This immediately ordered all Southern states to end Jim Crow segregation."
-        ],
-        "correctIndex": 0,
-        "linkageText": "This established the 'separate but equal' doctrine, providing legal and constitutional backing for state-level segregation."
+        "title": "Step 1: Southern Segregation, Discrimination & Voting Rights",
+        "isSplit": true,
+        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In the early 1950s, Black Americans in the Southern states faced a rigid, legally enforced system of white supremacy:</p>\n            <ul>\n              <li><strong>Jim Crow Laws:</strong> Southern states enforced <em>de jure</em> segregation in all public facilities (schools, transit, parks). Under the 1896 <em>Plessy v. Ferguson</em> ruling, segregation was legal if facilities were 'separate but equal' (though Black facilities were always vastly inferior).</li>\n              <li><strong>Voter Disenfranchisement:</strong> Southern registrars prevented Black citizens from voting using poll taxes, arbitrary literacy tests (e.g. asking Black applicants to explain complex constitutional clauses or answer impossible questions like <em>\"How many bubbles are in a bar of soap?\"</em>), and threats of violence. In Mississippi, only about <strong>5%</strong> of eligible Black adults were registered to vote.</li>\n              <li><strong>Daily Discrimination:</strong> Segregated bus layouts forced Black passengers to pay at the front, exit, and re-enter via the back door. Black workers faced the 'last hired, first fired' policy, keeping them in low-wage menial labor.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus: Jim Crow Seating</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              Be prepared to explain how legal segregation was physically enforced in daily transit—such as Black passengers standing so white riders could sit—which created a climate of constant humiliation.\n            </p>\n          </div>\n        </div>",
+        "scholarlyDepth": {
+          "title": "Scholarly Perspective: De Jure vs. De Facto",
+          "body": "While de jure (legal) segregation defined the South, historians note that Black Americans in the North faced de facto segregation. Although Northern Black citizens had the right to vote, they were restricted to overcrowded ghettos by informal housing discrimination (redlining) and faced severe employment bias, showing that discrimination was a national, rather than solely Southern, issue."
+        }
       },
       {
-        "id": "s11_f2",
-        "title": "Systematic disenfranchisement of Black voters in the South.",
-        "options": [
-          "Which meant Black citizens could not vote for sympathetic politicians or sit on juries to challenge racist local laws.",
-          "Which allowed civil rights groups to take control of Southern state legislatures."
-        ],
-        "correctIndex": 0,
-        "linkageText": "Which meant Black citizens could not vote for sympathetic politicians or sit on juries to challenge racist local laws."
-      },
-      {
-        "id": "s11_f3",
-        "title": "Resurgence of the Ku Klux Klan and grassroots white terror.",
-        "options": [
-          "This created a climate of fear, using bombings and lynchings to suppress Black political and social activism.",
-          "This forced the federal government to immediately deploy troops to desegregate the South."
-        ],
-        "correctIndex": 0,
-        "linkageText": "This created a climate of fear, using bombings and lynchings to suppress Black political and social activism."
+        "title": "Step 2: NAACP Litigation vs. CORE Direct Action",
+        "isSplit": true,
+        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>Civil rights organisations utilized contrasting strategies to attack white supremacy:</p>\n            <ul>\n              <li><strong>NAACP (Legal Litigation):</strong> Founded in 1909, the NAACP focused on challenging segregation in federal courts. Led by Thurgood Marshall, they targeted legal precedents, winning landmark cases like <em>Smith v. Allwright</em> (1944), which declared white primaries unconstitutional, and <em>Sweatt v. Painter</em> (1950), desegregating law schools.</li>\n              <li><strong>CORE (Direct Action):</strong> Founded in Chicago in 1942, the Congress of Racial Equality was committed to non-violent direct action. Influenced by Gandhi's teachings, CORE activists used sit-ins, boycotts, and early interstate bus rides (the 1947 Journey of Reconciliation) to expose segregation.</li>\n              <li><strong>Competing Philosophies:</strong> NAACP believed that legal change must precede social change, while CORE argued that grassroots direct action was needed to force authorities to enforce federal rulings.</li>\n            </ul>\n            <div class=\"mind-map-task-box\" style=\"margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.05); border: 1px dashed var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);\">\n              <h4 style=\"margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;\">🗺️ Mind Map Task</h4>\n              <p style=\"margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;\">Draw a mind map in your study notes connecting the main themes and events from the specification bullet points. Make sure to use these key terms:</p>\n              <div style=\"display: flex; flex-wrap: wrap; gap: 6px;\">\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">Jim Crow</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">disenfranchisement</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">NAACP</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">CORE</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">litigation</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">de jure</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">grassroots</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">non-violent direct action</span>\n                <span style=\"padding: 3px 8px; background: var(--bg-app); border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.8em; font-family: monospace; color: var(--text-color);\">segregation</span>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Examiner Tip: Contrasting Strategies</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              GCSE questions often ask you to compare the methods of the NAACP and CORE. Remember to distinguish between top-down legal litigation (NAACP) and bottom-up non-violent direct action (CORE).\n            </p>\n          </div>\n        </div>",
+        "scholarlyDepth": {
+          "title": "Scholarly Perspective: Legalism vs. Direct Action",
+          "body": "Historians debate whether top-down litigation or bottom-up direct action was the true engine of progress. Legal historians argue that the NAACP's court battles established the constitutional basis for civil rights, while grassroots scholars emphasize that without CORE's direct action exposing white resistance, court decisions would have remained unenforced symbols."
+        }
       }
-    ]
-  },
-  "knowledgeCheck": [
-    {
-      "question": "What 1896 Supreme Court ruling legalized segregation under the 'separate but equal' doctrine?",
-      "answer": "Plessy v. Ferguson"
+    ],
+    "dualPerspective": {
+      "leftHeadline": "The Power of Constitutional Law",
+      "leftText": "The only way to dismantle segregation permanently is through federal court rulings that establish binding constitutional precedents. Grassroots actions are easily crushed by local police without federal legal protection.",
+      "rightHeadline": "Direct Action on the Streets",
+      "rightText": "Court rulings are empty promises without mass direct action. By peacefully disobeying segregation laws, we expose the violence of white supremacy to the public and force federal intervention.",
+      "neutralTitle": "⚖️ Dual Interpretation: Challenging Segregation",
+      "leftLabel": "NAACP Leadership",
+      "rightLabel": "CORE Activists",
+      "tipHtml": "<div class=\"examiner-tip-box\" style=\"margin-top: 18px; margin-bottom: 0;\">\n        <span class=\"tip-icon\">💡</span>\n        <div>\n          <strong>Paper 3 Interpretation Skill:</strong> In your 16-mark essay, you must analyze why historians arrive at different interpretations of the Civil Rights movement's successes.\n        </div>"
     },
-    {
-      "question": "What term refers to Southern state laws that legally enforced racial segregation?",
-      "answer": "Jim Crow"
-    },
-    {
-      "question": "Which civil rights organization, founded in 1909, focused on legal challenges to segregation?",
-      "answer": "NAACP"
-    },
-    {
-      "question": "Which civil rights organization, founded in 1942, pioneered non-violent direct action tactics?",
-      "answer": "CORE"
-    },
-    {
-      "question": "What percentage of eligible Black adults were registered to vote in Mississippi in the early 1950s?",
-      "answer": "5%"
-    }
-  ],
-  "importanceAnalyser": null,
-  "questionVault": [
-    {
-      "question": "Give two things you can infer from Source A about voting rights in the Southern states. (4 marks)",
-      "sourceA": "From a report published in a Northern newspaper in 1954, investigating the situation for Black Americans in the South.\n\n\"In states like Mississippi and Alabama, registering to vote is practically impossible for a Black citizen. They are forced to take 'literacy tests' where they must explain obscure, highly complex constitutional legal terms, while white citizens are simply asked to write their own names. Even if a Black man somehow passes the test, his employer will likely fire him the very next day. The fear is constant.\"",
-      "answer": "Inference 1: I can infer that the voter registration system was deliberately corrupt and rigged in favour of white citizens.\nDetails: \"They are forced to take 'literacy tests' where they must explain obscure, highly complex constitutional legal terms, while white citizens are simply asked to write their own names.\"\nInference 2: I can infer that economic intimidation was used as a weapon to stop Black Americans from trying to vote.\nDetails: \"Even if a Black man somehow passes the test, his employer will likely fire him the very next day.\"",
-      "options": [
-        "Voter registration was rigged to be practically impossible, as Black citizens were 'forced to take literacy tests' on complex legal terms.",
-        "Economic intimidation was used to deter voters, as shown by the warning that a Black voter's 'employer will likely fire him the very next day'.",
-        "Federal troops successfully protected registration offices, meaning 'registering to vote' was easy for everyone.",
-        "Literacy tests were simple writing exercises where white citizens had to 'explain obscure constitutional terms'."
-      ],
-      "correctIndices": [
-        0,
-        1
+    "causalLinks": {
+      "question": "Explain why there was opposition to the civil rights movement in the years 1954–60 [2019]",
+      "successText": "Excellent causal analysis! You have successfully linked early Southern segregation to its historical causes, including Plessy v. Ferguson's separate but equal doctrine, political disenfranchisement, and white supremacist terror.",
+      "factors": [
+        {
+          "id": "s11_f1",
+          "title": "The formation and early protests of CORE",
+          "options": [
+            "This established the 'separate but equal' doctrine, providing legal and constitutional backing for state-level segregation.",
+            "This immediately ordered all Southern states to end Jim Crow segregation."
+          ],
+          "correctIndex": 0,
+          "linkageText": "This established the 'separate but equal' doctrine, providing legal and constitutional backing for state-level segregation."
+        },
+        {
+          "id": "s11_f2",
+          "title": "The impact of the Second World War on Black Americans",
+          "options": [
+            "Which meant Black citizens could not vote for sympathetic politicians or sit on juries to challenge racist local laws.",
+            "Which allowed civil rights groups to take control of Southern state legislatures."
+          ],
+          "correctIndex": 0,
+          "linkageText": "Which meant Black citizens could not vote for sympathetic politicians or sit on juries to challenge racist local laws."
+        },
+        {
+          "id": "s11_f3",
+          "title": "Resurgence of the Ku Klux Klan and grassroots white terror.",
+          "options": [
+            "This created a climate of fear, using bombings and lynchings to suppress Black political and social activism.",
+            "This forced the federal government to immediately deploy troops to desegregate the South."
+          ],
+          "correctIndex": 0,
+          "linkageText": "This created a climate of fear, using bombings and lynchings to suppress Black political and social activism."
+        }
       ]
-    }
-  ],
-  "summaryCorrection": {
-    "text": "By the early 1950s, segregation in the Southern states was protected by the [[1918 -> 1896]] Plessy v. Ferguson Supreme Court decision, which established the 'separate and equal' doctrine. State laws, commonly known as [[Black Codes -> Jim Crow]] laws, enforced segregation in all public facilities. To challenge this, civil rights groups used different methods. The NAACP, founded in [[1942 -> 1909]], focused on [[armed self-defense -> legal litigation]] led by Thurgood Marshall. Meanwhile, CORE, founded in [[1909 -> 1942]], pioneered [[courtroom battles -> non-violent direct action]] like sit-ins. While critics argued legal battles did little on the ground, integrationist historians view early legal wins as the vital catalyst for dismantling segregation."
-  },
-  "howUsefulAnalyser": {
-    "question": "How useful are Sources D and E for an enquiry into the position of Black Americans in the Southern states in the early 1950s? (8 marks)",
-    "sourceD": {
-      "provenance": "From an NAACP legal report written by Thurgood Marshall in 1953, detailing court actions against segregated public facilities.",
-      "content": "\"We are taking our cases directly to the federal courts, challenging the legal base of Jim Crow. Southern registrars and school boards claim state sovereignty shields them, but the Constitution guarantees equal protection. Through litigation, we are showing that separate facilities are never equal.\"",
-      "image": "assets/sources/warren-court-1954.jpg",
-      "caption": "The NAACP Legal Defense Fund, led by Thurgood Marshall, challenged segregation laws in the federal courts."
     },
-    "sourceE": {
-      "provenance": "A photograph of a segregation sign over a terminal entrance, taken in the Southern United States in the early 1950s.",
-      "content": "[A photograph of a wooden sign reading 'COLORED WAITING ROOM' hanging above an entranceway of a public bus terminal.]",
-      "image": "assets/sources/colored-waiting-room-sign.jpg",
-      "caption": "A typical segregation sign directing Black passengers to separate facilities at a Southern bus station."
-    },
-    "modelAnswer": "Source D is highly useful for demonstrating the legal litigation strategy of the NAACP. The content outlines Marshall's defense of the Constitution's equal protection clause to challenge the legal basis of Jim Crow. This content is highly useful because it is supported by my knowledge that [[the NAACP Legal Defense Fund, led by Thurgood Marshall, spent the early 1950s systematically challenging segregation in courts, winning key rulings like Sweatt v. Painter in 1950]], which confirms that their legal strategy successfully targeted segregation's constitutional framework. {{The provenance makes the source extremely useful because it is an internal report written in 1953 by Thurgood Marshall himself, providing a reliable, direct account of NAACP legal tactics and their legal confidence just before their major victories. However, it is limited because it represents a top-down legal perspective, failing to show the daily experiences of ordinary Black citizens on the ground.}}\n\nSource E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading \"COLORED WAITING ROOM\" hanging above a public entrance. This content's utility is supported by my knowledge that [[Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions]], which confirms that the sign is an accurate representation of how segregation was physically and legally enforced in Southern public spaces. {{The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of state-sanctioned segregation infrastructure. However, it is less useful because it only shows the sign itself, failing to document the personal experiences of the Black passengers who suffered under segregation or the active resistance against it.}}"
-  },
-  "deepThinkingQuestions": [
-    {
-      "id": "dt_1_1_1",
-      "question": "Why did the NAACP focus on legal litigation in federal courts rather than mass direct action in the early 1950s?",
-      "hint": "Consider the lack of federal protection and the power of binding precedents.",
-      "teacherGuide": "The NAACP believed that federal court victories could establish binding, national constitutional precedents that local Southern governments could not legally ignore, providing a top-down dismantling of Jim Crow under federal protection."
-    },
-    {
-      "id": "dt_1_1_2",
-      "question": "How did voting disenfranchisement (like literacy tests and poll taxes) prevent Black Americans from challenging segregation locally?",
-      "hint": "Think about who elects judges, sheriffs, and school board members.",
-      "teacherGuide": "Without the vote, Black Americans had no political power to elect local school boards, sheriffs, or judges who enforced segregation laws. This ensured that the legal and political systems remained entirely under white control."
-    }
-  ],
-  "doNowStarter": {
-    "prevSubtopicId": null,
-    "prevSubtopicTitle": null,
-    "image": "assets/sources/colored-waiting-room-sign.jpg",
-    "provenance": "A Jim Crow sign designating a segregated 'Colored Waiting Room' in a bus terminal in the Southern United States, circa 1950s.",
-    "seeThinkWonder": {
-      "see": "Observe the bold letters and the physical placement of the sign near public entrances.",
-      "think": "Why did Southern states legislate separation down to waiting rooms, water fountains, and ticket windows?",
-      "wonder": "What would be the emotional and economic cost of defying this sign as a Black traveler in the 1950s?"
-    },
-    "bronze": "Define 'segregation' and name the landmark 1896 Supreme Court ruling that legalized it under the 'separate but equal' doctrine.",
-    "silver": "Explain how the work of the NAACP in the early 1950s challenged the legal system represented by this sign.",
-    "gold": "Explain how this visual source demonstrates the limitations of civil liberties and constitutional rights for Black Americans in the South in the early 1950s.",
-    "keywords": [
-      "Jim Crow",
-      "Plessy v. Ferguson",
-      "Segregation",
-      "14th Amendment"
-    ],
-    "bronzeAnswer": "Segregation is the enforced separation of different racial groups in a country, community, or establishment. The 1896 ruling that legalized this was Plessy v. Ferguson.",
-    "silverAnswer": "The NAACP challenged this legal framework in court, arguing that segregation violated the Equal Protection Clause of the 14th Amendment, aiming to make signs like this unconstitutional.",
-    "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment.",
-    "enquiry": "segregation and discrimination in the Southern states in the 1950s"
-  },
-  "specPoints": [
-    "Segregation, discrimination and voting rights in the Southern states.",
-    "The work of civil rights organisations, including the NAACP and CORE."
-  ],
-  "lessonWrapUp": {
-    "summary": "In the early 1950s, Southern Black Americans faced legal segregation under Jim Crow and systemic disenfranchisement. The NAACP challenged this legally through court battles (litigation), while CORE pioneered non-violent direct action protests to challenge local segregation rules.",
-    "interpretation": "Top-down legal historians argue that litigation was the vital prerequisite that destroyed segregation's legal basis. Bottom-up social historians argue that grassroots direct action was the true engine of progress because laws were ignored without active street protests.",
-    "discussionQuestion": "To what extent was the legal strategy of the NAACP more effective than the non-violent direct action tactics pioneered by CORE in the early 1950s?"
-  },
-  "mapConfig": {
-    "type": "usa",
-    "title": "Civil Rights Battles in the early 1950s",
-    "highlightedPoints": [
-      "washington",
-      "money"
-    ],
-    "description": "Early civil rights actions occurred across the South, from legal actions in Washington D.C. to grassroots activism in Midwestern and Southern cities, combating Jim Crow and voting barriers.",
-    "points": {
-      "washington": {
-        "title": "Washington D.C.",
-        "text": "Where the NAACP argued landmark constitutional cases before the Supreme Court."
+    "knowledgeCheck": [
+      {
+        "question": "What 1896 Supreme Court ruling legalized segregation under the 'separate but equal' doctrine?",
+        "answer": "Plessy v. Ferguson"
       },
-      "money": {
-        "title": "Money, Mississippi",
-        "text": "A symbol of the extreme voter disenfranchisement and violence that Black citizens faced in the Deep South."
+      {
+        "question": "What term refers to Southern state laws that legally enforced racial segregation?",
+        "answer": "Jim Crow"
+      },
+      {
+        "question": "Which civil rights organization, founded in 1909, focused on legal challenges to segregation?",
+        "answer": "NAACP"
+      },
+      {
+        "question": "Which civil rights organization, founded in 1942, pioneered non-violent direct action tactics?",
+        "answer": "CORE"
+      },
+      {
+        "question": "What percentage of eligible Black adults were registered to vote in Mississippi in the early 1950s?",
+        "answer": "5%"
+      }
+    ],
+    "importanceAnalyser": null,
+    "questionVault": [
+      {
+        "question": "Give two things you can infer from Source A about voting rights in the Southern states. (4 marks)",
+        "sourceA": "From a report published in a Northern newspaper in 1954, investigating the situation for Black Americans in the South.\n\n\"In states like Mississippi and Alabama, registering to vote is practically impossible for a Black citizen. They are forced to take 'literacy tests' where they must explain obscure, highly complex constitutional legal terms, while white citizens are simply asked to write their own names. Even if a Black man somehow passes the test, his employer will likely fire him the very next day. The fear is constant.\"",
+        "answer": "Inference 1: I can infer that the voter registration system was deliberately corrupt and rigged in favour of white citizens.\nDetails: \"They are forced to take 'literacy tests' where they must explain obscure, highly complex constitutional legal terms, while white citizens are simply asked to write their own names.\"\nInference 2: I can infer that economic intimidation was used as a weapon to stop Black Americans from trying to vote.\nDetails: \"Even if a Black man somehow passes the test, his employer will likely fire him the very next day.\"",
+        "options": [
+          "Voter registration was rigged to be practically impossible, as Black citizens were 'forced to take literacy tests' on complex legal terms.",
+          "Economic intimidation was used to deter voters, as shown by the warning that a Black voter's 'employer will likely fire him the very next day'.",
+          "Federal troops successfully protected registration offices, meaning 'registering to vote' was easy for everyone.",
+          "Literacy tests were simple writing exercises where white citizens had to 'explain obscure constitutional terms'."
+        ],
+        "correctIndices": [
+          0,
+          1
+        ]
+      }
+    ],
+    "summaryCorrection": {
+      "text": "By the early 1950s, segregation in the Southern states was protected by the [[1918 -> 1896]] Plessy v. Ferguson Supreme Court decision, which established the 'separate and equal' doctrine. State laws, commonly known as [[Black Codes -> Jim Crow]] laws, enforced segregation in all public facilities. To challenge this, civil rights groups used different methods. The NAACP, founded in [[1942 -> 1909]], focused on [[armed self-defense -> legal litigation]] led by Thurgood Marshall. Meanwhile, CORE, founded in [[1909 -> 1942]], pioneered [[courtroom battles -> non-violent direct action]] like sit-ins. While critics argued legal battles did little on the ground, integrationist historians view early legal wins as the vital catalyst for dismantling segregation."
+    },
+    "howUsefulAnalyser": {
+      "question": "How useful are Sources D and E for an enquiry into the position of Black Americans in the Southern states in the early 1950s? (8 marks)",
+      "sourceD": {
+        "provenance": "From an NAACP legal report written by Thurgood Marshall in 1953, detailing court actions against segregated public facilities.",
+        "content": "\"We are taking our cases directly to the federal courts, challenging the legal base of Jim Crow. Southern registrars and school boards claim state sovereignty shields them, but the Constitution guarantees equal protection. Through litigation, we are showing that separate facilities are never equal.\"",
+        "image": "assets/sources/warren-court-1954.jpg",
+        "caption": "The NAACP Legal Defense Fund, led by Thurgood Marshall, challenged segregation laws in the federal courts."
+      },
+      "sourceE": {
+        "provenance": "A photograph of a segregation sign over a terminal entrance, taken in the Southern United States in the early 1950s.",
+        "content": "[A photograph of a wooden sign reading 'COLORED WAITING ROOM' hanging above an entranceway of a public bus terminal.]",
+        "image": "assets/sources/colored-waiting-room-sign.jpg",
+        "caption": "A typical segregation sign directing Black passengers to separate facilities at a Southern bus station."
+      },
+      "modelAnswer": "Source D is highly useful for demonstrating the legal litigation strategy of the NAACP. The content outlines Marshall's defense of the Constitution's equal protection clause to challenge the legal basis of Jim Crow. This content is highly useful because it is supported by my knowledge that [[the NAACP Legal Defense Fund, led by Thurgood Marshall, spent the early 1950s systematically challenging segregation in courts, winning key rulings like Sweatt v. Painter in 1950]], which confirms that their legal strategy successfully targeted segregation's constitutional framework. {{The provenance makes the source extremely useful because it is an internal report written in 1953 by Thurgood Marshall himself, providing a reliable, direct account of NAACP legal tactics and their legal confidence just before their major victories. However, it is limited because it represents a top-down legal perspective, failing to show the daily experiences of ordinary Black citizens on the ground.}}\n\nSource E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading \"COLORED WAITING ROOM\" hanging above a public entrance. This content's utility is supported by my knowledge that [[Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions]], which confirms that the sign is an accurate representation of how segregation was physically and legally enforced in Southern public spaces. {{The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of state-sanctioned segregation infrastructure. However, it is less useful because it only shows the sign itself, failing to document the personal experiences of the Black passengers who suffered under segregation or the active resistance against it.}}"
+    },
+    "deepThinkingQuestions": [
+      {
+        "id": "dt_1_1_1",
+        "question": "Why did the NAACP focus on legal litigation in federal courts rather than mass direct action in the early 1950s?",
+        "hint": "Consider the lack of federal protection and the power of binding precedents.",
+        "teacherGuide": "The NAACP believed that federal court victories could establish binding, national constitutional precedents that local Southern governments could not legally ignore, providing a top-down dismantling of Jim Crow under federal protection."
+      },
+      {
+        "id": "dt_1_1_2",
+        "question": "How did voting disenfranchisement (like literacy tests and poll taxes) prevent Black Americans from challenging segregation locally?",
+        "hint": "Think about who elects judges, sheriffs, and school board members.",
+        "teacherGuide": "Without the vote, Black Americans had no political power to elect local school boards, sheriffs, or judges who enforced segregation laws. This ensured that the legal and political systems remained entirely under white control."
+      }
+    ],
+    "doNowStarter": {
+      "prevSubtopicId": null,
+      "prevSubtopicTitle": null,
+      "image": "assets/sources/colored-waiting-room-sign.jpg",
+      "provenance": "A Jim Crow sign designating a segregated 'Colored Waiting Room' in a bus terminal in the Southern United States, circa 1950s.",
+      "seeThinkWonder": {
+        "see": "Observe the bold letters and the physical placement of the sign near public entrances.",
+        "think": "Why did Southern states legislate separation down to waiting rooms, water fountains, and ticket windows?",
+        "wonder": "What would be the emotional and economic cost of defying this sign as a Black traveler in the 1950s?"
+      },
+      "bronze": "Define 'segregation' and name the landmark 1896 Supreme Court ruling that legalized it under the 'separate but equal' doctrine.",
+      "silver": "Explain how the work of the NAACP in the early 1950s challenged the legal system represented by this sign.",
+      "gold": "Explain how this visual source demonstrates the limitations of civil liberties and constitutional rights for Black Americans in the South in the early 1950s.",
+      "keywords": [
+        "Jim Crow",
+        "Plessy v. Ferguson",
+        "Segregation",
+        "14th Amendment"
+      ],
+      "bronzeAnswer": "Segregation is the enforced separation of different racial groups in a country, community, or establishment. The 1896 ruling that legalized this was Plessy v. Ferguson.",
+      "silverAnswer": "The NAACP challenged this legal framework in court, arguing that segregation violated the Equal Protection Clause of the 14th Amendment, aiming to make signs like this unconstitutional.",
+      "goldAnswer": "This source demonstrates that civil liberties were severely limited because the state actively legalized discrimination. Black Americans were denied equal access to public accommodations and treated as second-class citizens, violating the equal protection clause of the 14th Amendment.",
+      "enquiry": "segregation and discrimination in the Southern states in the 1950s"
+    },
+    "specPoints": [
+      "Segregation, discrimination and voting rights in the Southern states.",
+      "The work of civil rights organisations, including the NAACP and CORE."
+    ],
+    "lessonWrapUp": {
+      "summary": "In the early 1950s, Southern Black Americans faced legal segregation under Jim Crow and systemic disenfranchisement. The NAACP challenged this legally through court battles (litigation), while CORE pioneered non-violent direct action protests to challenge local segregation rules.",
+      "interpretation": "Top-down legal historians argue that litigation was the vital prerequisite that destroyed segregation's legal basis. Bottom-up social historians argue that grassroots direct action was the true engine of progress because laws were ignored without active street protests.",
+      "discussionQuestion": "To what extent was the legal strategy of the NAACP more effective than the non-violent direct action tactics pioneered by CORE in the early 1950s?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Civil Rights Battles in the early 1950s",
+      "highlightedPoints": [
+        "washington",
+        "money"
+      ],
+      "description": "Early civil rights actions occurred across the South, from legal actions in Washington D.C. to grassroots activism in Midwestern and Southern cities, combating Jim Crow and voting barriers.",
+      "points": {
+        "washington": {
+          "title": "Washington D.C.",
+          "text": "Where the NAACP argued landmark constitutional cases before the Supreme Court."
+        },
+        "money": {
+          "title": "Money, Mississippi",
+          "text": "A symbol of the extreme voter disenfranchisement and violence that Black citizens faced in the Deep South."
+        }
       }
     }
-  }
-},
+  },
   "subtopic_1_2": {
     "livedExperience": {
       "witness": "Elizabeth Eckford",
       "context": "One of the 'Little Rock Nine' students, recalling her attempt to enter Central High School in Arkansas on September 4, 1957.",
       "quote": "I looked for a friendly face in the crowd... I saw an elderly lady and she seemed to have a kind face, but when I looked at her again she spat on me. They surged closer, shouting, 'Lynch her! Lynch her!' I went to the bus stop and sat down on the bench. I couldn't keep from crying. I just wanted to go home.",
       "discussionQuestion": "Elizabeth Eckford was just 15 years old. Why do you think school desegregation provoked such intense personal anger from ordinary white citizens?"
-},
-
-  "headerTitle": "KT 1.2: How did developments in education challenge segregation (1954–57)?",
-  "headerIntro": "The desegregation of public schools became the first major battleground of the civil rights movement. In 1954, the NAACP won the landmark Brown v. Board of Education case, with the Supreme Court declaring school segregation unconstitutional. However, this sparked 'Massive Resistance' across the South, culminating in the Little Rock High School crisis in 1957. Here, Arkansas Governor Orval Faubus defied federal law, forcing President Eisenhower to deploy federal troops to protect Black students.",
-  "steps": [
-    {
-      "title": "Step 1: The Brown v. Board of Education Ruling (1954)",
-      "isSplit": false,
-      "bodyHtml": "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\n    <ul>\n      <li><strong>The Case:</strong> Young Linda Brown was forced to walk a dangerous journey across busy roads and a railway line to a segregated Black school several miles away, despite living near an all-white school. Supported by the NAACP, her father sued the Topeka school board.</li>\n      <li><strong>The Ruling:</strong> Led by Chief Justice Earl Warren, the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>. Warren wrote that separate educational facilities are <em>'inherently unequal'</em>.</li>\n      <li><strong>Precedents & Clark Doll Experiments:</strong> NAACP lawyers, led by Thurgood Marshall, used psychological studies showing that segregation gave Black children a sense of inferiority (the Clark doll experiments), successfully overturning the 1896 <em>Plessy v. Ferguson</em> separate but equal doctrine.</li>\n      <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist integration. In 1955, the Court issued <em>Brown II</em>, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\n    </ul>",
-      "scholarlyDepth": {
-        "title": "Scholarly Perspective: Warren's Unanimity Strategy",
-        "body": "Chief Justice Earl Warren spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public."
-      }
     },
-    {
-      "title": "Step 2: The Little Rock High School Crisis (1957)",
-      "isSplit": true,
-      "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In September 1957, school desegregation was put to a major test at Central High School in Little Rock, Arkansas:</p>\n            <ul>\n              <li><strong>The Little Rock Nine:</strong> Nine Black students, mentored by Arkansas NAACP leader <strong>Daisy Bates</strong>, attempted to enroll at the previously all-white school.</li>\n              <li><strong>State Defiance:</strong> Governor Orval Faubus defied federal courts by deploying the state's National Guard to block the students. An angry white mob gathered, and 15-year-old **Elizabeth Eckford** had to face the screaming crowd alone.</li>\n              <li><strong>Federal Troops:</strong> To uphold federal law and combat Soviet Cold War propaganda pointing out American racial violence, President Eisenhower federalized the Arkansas National Guard and deployed 1,000 soldiers of the elite <strong>101st Airborne Division</strong> to protect and escort the students daily.</li>\n              <li><strong>The 'Lost Year' (1958-59):</strong> Rather than integrate, Governor Faubus closed all Little Rock public high schools the following year, leaving 4,000 students without education.</li>\n            </ul>\n            <div class=\"revision-task-box\" style=\"margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.08); border-left: 4px solid var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);\">\n              <h4 style=\"margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;\">📝 Revision Task: Key Figures</h4>\n              <p style=\"margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;\">To check your understanding of this lesson, write down a short summary explaining the roles of these key figures in the fight for equal education:</p>\n              <ul style=\"margin: 0; padding-left: 18px; font-size: 0.9em; line-height: 1.5;\">\n                <li><strong>Linda Brown:</strong> The Topeka student whose dangerous commute inspired the landmark desegregation lawsuit.</li>\n                <li><strong>Thurgood Marshall:</strong> The chief NAACP lawyer who used psychological doll experiments to overturn <em>separate but equal</em>.</li>\n                <li><strong>Orval Faubus:</strong> The segregationist Governor of Arkansas who deployed the National Guard to defy federal law.</li>\n                <li><strong>President Eisenhower:</strong> The US President who sent the 101st Airborne to enforce integration and defend federal supremacy.</li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"lesson-image-wrapper\">\n            <img src=\"assets/sources/little-rock-nine-1957.jpg\" alt=\"The Little Rock Nine entering Central High School under soldier escort\" class=\"lesson-source-img\" />\n            <div class=\"lesson-image-caption\">The Little Rock Nine entering Central High School in September 1957, protected by soldiers of the 101st Airborne Division.</div>\n          </div>\n        </div>",
-      "scholarlyDepth": {
-        "title": "Scholarly Perspective: Cold War Pressures on Eisenhower",
-        "body": "President Eisenhower's decision to send the 101st Airborne was heavily influenced by international relations. During the Cold War, the Soviet Union used images of racial violence in Little Rock as propaganda in Asia and Africa to argue that American democracy was a sham. To maintain US moral authority globally, Eisenhower felt compelled to show that the federal government would enforce constitutional rights by military force."
-      }
-    }
-  ],
-  "dualPerspective": {
-    "leftHeadline": "Defending Constitutional Law",
-    "leftText": "Desegregation is a federal constitutional mandate. Governor Faubus' rebellion against federal court decisions was an act of defiance that required immediate presidential military suppression to assert federal supremacy.",
-    "rightHeadline": "Preventing Federal Tyranny",
-    "rightText": "Eisenhower's troop deployment was an military invasion that violated Arkansas sovereignty and states' rights, forcing social integration against the wishes of the local white community.",
-    "neutralTitle": "⚖️ Dual Interpretation: Federal Intervention at Little Rock",
-    "leftLabel": "NAACP Leadership",
-    "rightLabel": "Southern Segregationists"
-  },
-  "causalLinks": {
-    "question": "Explain why the integration of Little Rock Central High School in 1957 became a major civil rights crisis.",
-    "successText": "Excellent logic! The crisis arose because Governor Faubus defied federal courts to win segregationist votes, forcing Eisenhower to send federal troops to assert federal supremacy and protect the Black students.",
-    "factors": [
+    "headerTitle": "KT 1.2: How did developments in education challenge segregation (1954–57)?",
+    "headerIntro": "The desegregation of public schools became the first major battleground of the civil rights movement. In 1954, the NAACP won the landmark Brown v. Board of Education case, with the Supreme Court declaring school segregation unconstitutional. However, this sparked 'Massive Resistance' across the South, culminating in the Little Rock High School crisis in 1957. Here, Arkansas Governor Orval Faubus defied federal law, forcing President Eisenhower to deploy federal troops to protect Black students.",
+    "steps": [
       {
-        "id": "s12_f1",
-        "title": "Governor Orval Faubus defied federal court integration orders.",
-        "options": [
-          "This motivated him to align with segregationist voters by deploying the state's National Guard to block the Little Rock Nine.",
-          "This led him to immediately protect the students from the white mob."
-        ],
-        "correctIndex": 0,
-        "linkageText": "This motivated him to align with segregationist voters by deploying the state's National Guard to block the Little Rock Nine."
+        "title": "Step 1: The Brown v. Board of Education Ruling (1954)",
+        "isSplit": false,
+        "bodyHtml": "<p>In May 1954, the US Supreme Court delivered a landmark ruling in the case of Brown v. Board of Education of Topeka. This legal battle fundamentally altered the course of civil rights:</p>\n    <ul>\n      <li><strong>The Case:</strong> Young Linda Brown was forced to walk a dangerous journey across busy roads and a railway line to a segregated Black school several miles away, despite living near an all-white school. Supported by the NAACP, her father sued the Topeka school board.</li>\n      <li><strong>The Ruling:</strong> Led by Chief Justice Earl Warren, the Supreme Court ruled unanimously (9-0) that school segregation violated the Equal Protection Clause of the <strong>14th Amendment</strong>. Warren wrote that separate educational facilities are <em>'inherently unequal'</em>.</li>\n      <li><strong>Precedents & Clark Doll Experiments:</strong> NAACP lawyers, led by Thurgood Marshall, used psychological studies showing that segregation gave Black children a sense of inferiority (the Clark doll experiments), successfully overturning the 1896 <em>Plessy v. Ferguson</em> separate but equal doctrine.</li>\n      <li><strong>Southern Resistance & Brown II:</strong> Southern congressmen signed the 'Southern Manifesto' in 1956, pledging to resist integration. In 1955, the Court issued <em>Brown II</em>, ordering integration 'with all deliberate speed,' which Southern school boards exploited to delay compliance.</li>\n    </ul>",
+        "scholarlyDepth": {
+          "title": "Scholarly Perspective: Warren's Unanimity Strategy",
+          "body": "Chief Justice Earl Warren spent months lobbying his fellow justices to ensure a unanimous 9-0 decision in Brown. He believed that any dissent would be weaponized by Southern segregationists to justify resistance. The final ruling was deliberately short and written in simple, non-legalistic language so it could be printed in newspapers across the country, making its moral clarity undeniable to the general public."
+        }
       },
       {
-        "id": "s12_f2",
-        "title": "Televised images of white mobs screaming at Elizabeth Eckford.",
-        "options": [
-          "Which built national sympathy for the students and damaged America's international reputation during the Cold War.",
-          "Which caused the Supreme Court to declare school desegregation unconstitutional."
-        ],
-        "correctIndex": 0,
-        "linkageText": "Which built national sympathy for the students and damaged America's international reputation during the Cold War."
-      },
-      {
-        "id": "s12_f3",
-        "title": "President Eisenhower's deployment of the 101st Airborne Division.",
-        "options": [
-          "Which demonstrated that the federal government would use military force to enforce Supreme Court rulings over state resistance.",
-          "Which allowed the state governor to close the school permanently without federal objection."
-        ],
-        "correctIndex": 0,
-        "linkageText": "Which demonstrated that the federal government would use military force to enforce Supreme Court rulings over state resistance."
+        "title": "Step 2: The Little Rock High School Crisis (1957)",
+        "isSplit": true,
+        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>In September 1957, school desegregation was put to a major test at Central High School in Little Rock, Arkansas:</p>\n            <ul>\n              <li><strong>The Little Rock Nine:</strong> Nine Black students, mentored by Arkansas NAACP leader <strong>Daisy Bates</strong>, attempted to enroll at the previously all-white school.</li>\n              <li><strong>State Defiance:</strong> Governor Orval Faubus defied federal courts by deploying the state's National Guard to block the students. An angry white mob gathered, and 15-year-old **Elizabeth Eckford** had to face the screaming crowd alone.</li>\n              <li><strong>Federal Troops:</strong> To uphold federal law and combat Soviet Cold War propaganda pointing out American racial violence, President Eisenhower federalized the Arkansas National Guard and deployed 1,000 soldiers of the elite <strong>101st Airborne Division</strong> to protect and escort the students daily.</li>\n              <li><strong>The 'Lost Year' (1958-59):</strong> Rather than integrate, Governor Faubus closed all Little Rock public high schools the following year, leaving 4,000 students without education.</li>\n            </ul>\n            <div class=\"revision-task-box\" style=\"margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.08); border-left: 4px solid var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);\">\n              <h4 style=\"margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;\">📝 Revision Task: Key Figures</h4>\n              <p style=\"margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;\">To check your understanding of this lesson, write down a short summary explaining the roles of these key figures in the fight for equal education:</p>\n              <ul style=\"margin: 0; padding-left: 18px; font-size: 0.9em; line-height: 1.5;\">\n                <li><strong>Linda Brown:</strong> The Topeka student whose dangerous commute inspired the landmark desegregation lawsuit.</li>\n                <li><strong>Thurgood Marshall:</strong> The chief NAACP lawyer who used psychological doll experiments to overturn <em>separate but equal</em>.</li>\n                <li><strong>Orval Faubus:</strong> The segregationist Governor of Arkansas who deployed the National Guard to defy federal law.</li>\n                <li><strong>President Eisenhower:</strong> The US President who sent the 101st Airborne to enforce integration and defend federal supremacy.</li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"lesson-image-wrapper\">\n            <img src=\"assets/sources/little-rock-nine-1957.jpg\" alt=\"The Little Rock Nine entering Central High School under soldier escort\" class=\"lesson-source-img\" />\n            <div class=\"lesson-image-caption\">The Little Rock Nine entering Central High School in September 1957, protected by soldiers of the 101st Airborne Division.</div>\n          </div>\n        </div>",
+        "scholarlyDepth": {
+          "title": "Scholarly Perspective: Cold War Pressures on Eisenhower",
+          "body": "President Eisenhower's decision to send the 101st Airborne was heavily influenced by international relations. During the Cold War, the Soviet Union used images of racial violence in Little Rock as propaganda in Asia and Africa to argue that American democracy was a sham. To maintain US moral authority globally, Eisenhower felt compelled to show that the federal government would enforce constitutional rights by military force."
+        }
       }
-    ]
-  },
-  "knowledgeCheck": [
-    {
-      "question": "In what year did the Supreme Court deliver the Brown v. Board of Education decision?",
-      "answer": "1954"
-    },
-    {
-      "question": "Who was the chief justice of the Supreme Court during the Brown ruling?",
-      "answer": "Earl Warren"
-    },
-    {
-      "question": "Which Governor of Arkansas deployed the National Guard to block the Little Rock Nine?",
-      "answer": "Orval Faubus"
-    },
-    {
-      "question": "Which military division did President Eisenhower deploy to protect the students at Little Rock?",
-      "answer": "101st Airborne Division"
-    },
-    {
-      "question": "What name is given to the school year 1958-59 when Governor Faubus closed Little Rock high schools?",
-      "answer": "The Lost Year"
-    }
-  ],
-  "importanceAnalyser": null,
-  "questionVault": [
-    {
-      "question": "Explain why desegregation in education faced severe resistance in the years 1954–57. (12 marks)",
-      "stimulus1": "Supreme Court rulings (Brown v. Board)",
-      "stimulus2": "Governor Orval Faubus",
-      "clue": "Focus on the political opposition from Southern state governors, the social backlash from White Citizens' Councils and the KKK, and how these groups physically blocked integration in places like Little Rock.",
-      "answer": "“One reason why desegregation in education faced severe resistance in the years 1954–57 was that Southern politicians organized systematic legal and political blockades.” Southern senators signed the [[Southern Manifesto]] in 1956, pledging to resist integration. State governors like [[Orval Faubus]] of Arkansas used state forces like the [[National Guard]] at Little Rock to directly defy federal court orders. {{Therefore, political obstruction by Southern leaders was a major reason why desegregation in education faced severe resistance in the years 1954–57 because it validated local white opposition and delayed federal enforcement.}}\n\n“A second reason why desegregation in education faced severe resistance in the years 1954–57 was the aggressive social backlash and vigilante terror from grassroots segregationist groups.” [[White Citizens' Councils]] were formed to apply economic pressure, firing Black workers who supported integration. The [[Ku Klux Klan]] revived, using bombings, threats, and mob violence at school gates to intimidate the [[Little Rock Nine]]. {{Therefore, grassroots white resistance and vigilante terror were key reasons why desegregation in education faced severe resistance in the years 1954–57 because they made attending integrated schools physically dangerous for Black students.}}\n\n“A third reason why desegregation in education faced severe resistance in the years 1954–57 was the reluctance of the federal government to enforce Supreme Court rulings, which emboldened segregationists.” President Eisenhower initially refused to publicly endorse the [[Brown v. Board of Education]] decision, and only sent the [[101st Airborne Division]] to Little Rock when the governor openly defied federal law. The school board then closed Little Rock high schools in 1958 to avoid integration. {{Therefore, weak federal enforcement and local school board closures were critical reasons why desegregation in education faced severe resistance in the years 1954–57 because they allowed Southern states to evade integration orders for years.}}"
-    }
-  ],
-  "summaryCorrection": {
-    "text": "In May [[1956 -> 1954]], the Supreme Court ruled in Brown v. Board of Education that school segregation was [[constitutional -> unconstitutional]], overturning Plessy v. Ferguson. However, school integration met severe resistance. In September [[1959 -> 1957]], Central High School in Little Rock, Arkansas, became a major crisis. Governor Orval Faubus [[supported -> defied]] federal orders, using the state's National Guard to [[protect -> block]] the nine Black students. As white mobs harassed them, President [[Truman -> Eisenhower]] reluctantly sent in the [[US Navy -> 101st Airborne]] to escort the students. The crisis exposed the depth of Southern resistance, leading Faubus to [[fully integrate -> close]] all Little Rock high schools the following year."
-  },
-  "howUsefulAnalyser": {
-    "question": "How useful are Sources D and E for an enquiry into the levels of opposition to integration at Little Rock Central High School in 1957? (8 marks)",
-    "sourceD": {
-      "provenance": "From a photograph of white protestors gathered outside Central High School in September 1957.",
-      "content": "[A photograph showing an angry white crowd of students and adults protesting. Some are holding signs reading 'Keep Central High Clean' and yelling as Black students arrive.]",
-      "image": "assets/sources/little-rock-protest-1957.jpg",
-      "caption": "Segregationist demonstrators protesting against school integration in Little Rock."
-    },
-    "sourceE": {
-      "provenance": "From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.",
-      "content": "[A photograph showing soldiers of the 101st Airborne Division in a military jeep guarding a station wagon as Black students get inside the vehicle, with another soldier walking on patrol.]",
-      "image": "assets/sources/airborne-little-rock-patrol.jpg",
-      "caption": "Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students."
-    },
-    "modelAnswer": "Source D is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an \"angry white crowd\" of students and adults protesting, with some carrying signs reading \"Keep Central High Clean\". This content is highly useful because it is supported by my contextual knowledge that [[when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school]], which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. {{The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.}}\n\nSource E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows \"soldiers of the 101st Airborne Division in a military jeep guarding a station wagon\" as Black students enter it. This content's usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.}}"
-  },
-  "deepThinkingQuestions": [
-    {
-      "id": "dt_1_2_1",
-      "question": "Why did Governor Faubus choose to defy federal law at Little Rock, and what does this show about Southern state politics?",
-      "hint": "Think about white voter support and upcoming elections.",
-      "teacherGuide": "Faubus needed segregationist votes for re-election. It shows that state governors were willing to trigger constitutional crises and defy federal authority for local political survival."
-    },
-    {
-      "id": "dt_1_2_2",
-      "question": "How did the deployment of the 101st Airborne shift the balance of power between state and federal authorities?",
-      "hint": "Think about executive power and the enforcement of the US Constitution.",
-      "teacherGuide": "It was the first time since Reconstruction that federal forces intervened to protect Black rights. It asserted federal supremacy over state defiance, proving the executive branch would enforce desegregation by military force if necessary."
-    }
-  ],
-  "doNowStarter": {
-    "prevSubtopicId": "subtopic_1_1",
-    "prevSubtopicTitle": "Topic 1.1: Segregation & Civil Rights Organisations",
-    "image": "assets/sources/warren-court-1954.jpg",
-    "provenance": "A formal group portrait of the members of the Warren Court, the Supreme Court of the United States, taken in Washington D.C., 1954.",
-    "seeThinkWonder": {
-      "see": "Observe the formal attire and serious expressions of the Supreme Court justices in the portrait.",
-      "think": "Why did Chief Justice Earl Warren strive for a unanimous (9-0) decision in the Brown v. Board case?",
-      "wonder": "How did Southern states weaponize legal delays and massive resistance against a ruling issued by this court?"
-    },
-    "bronze": "State the date and outcome of the landmark Brown v. Board of Education decision.",
-    "silver": "Study the source image. Explain how the Supreme Court's decision in Brown v. Board of Education (1954) challenged the 1896 'separate but equal' doctrine.",
-    "gold": "How did the Warren Court's unanimity in the Brown ruling attempt to address Southern resistance to desegregation?",
-    "keywords": [
-      "Earl Warren",
-      "Plessy v. Ferguson",
-      "14th Amendment",
-      "Unanimous Ruling"
     ],
-    "bronzeAnswer": "In May 1954, the Supreme Court ruled unanimously (9-0) that racial segregation in public schools was unconstitutional.",
-    "silverAnswer": "The decision ruled that separate educational facilities are inherently unequal, directly overturning the 1896 Plessy v. Ferguson ruling and violating the 14th Amendment's Equal Protection Clause.",
-    "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow.",
-    "enquiry": "the role of the Supreme Court in challenging school segregation"
-  },
-  "specPoints": [
-    "Reasons for, key features and significance of the Brown v. Topeka case (1954).",
-    "Reasons for, key features and significance of the events at Little Rock High School (1957)."
-  ],
-  "lessonWrapUp": {
-    "summary": "The desegregation of public schools (1954-57) was a critical battle. The NAACP won the landmark Brown v. Topeka case, declaring segregated schools unconstitutional. This sparked Southern white 'Massive Resistance', which culminated in the Little Rock High School integration crisis (1957) where President Eisenhower deployed the 101st Airborne to escort Black students in the face of state governor Orval Faubus' defiance.",
-    "interpretation": "Traditionalist historians interpret Brown and Little Rock as monumental victories for federal law and civil rights. Revisionist historians highlight the severe limitations of these victories, pointing out that local resistance remained intense and the school board successfully shut down schools (the Lost Year) to avoid integration.",
-    "discussionQuestion": "Did the Little Rock crisis prove that federal military force was essential to achieve school integration in the South?"
-  },
-  "mapConfig": {
-    "type": "usa",
-    "title": "Topeka (Kansas) & Little Rock (Arkansas)",
-    "highlightedPoints": [
-      "topeka",
-      "littlerock"
-    ],
-    "description": "School desegregation challenges started in Topeka, Kansas, with the Brown case (1954), before moving to a direct federal confrontation in Little Rock, Arkansas, at Central High School (1957).",
-    "points": {
-      "topeka": {
-        "title": "Topeka, Kansas",
-        "text": "Linda Brown challenged segregation here, leading to the 1954 Brown v. Board ruling."
+    "dualPerspective": {
+      "leftHeadline": "Defending Constitutional Law",
+      "leftText": "Desegregation is a federal constitutional mandate. Governor Faubus' rebellion against federal court decisions was an act of defiance that required immediate presidential military suppression to assert federal supremacy.",
+      "rightHeadline": "Preventing Federal Tyranny",
+      "rightText": "Eisenhower's troop deployment was an military invasion that violated Arkansas sovereignty and states' rights, forcing social integration against the wishes of the local white community.",
+      "neutralTitle": "⚖️ Dual Interpretation: Federal Intervention at Little Rock",
+      "leftLabel": "NAACP Leadership",
+      "rightLabel": "Southern Segregationists"
+    },
+    "causalLinks": {
+      "question": "Explain why Brown v. Topeka was not immediately successful [2018]",
+      "successText": "Excellent logic! The crisis arose because Governor Faubus defied federal courts to win segregationist votes, forcing Eisenhower to send federal troops to assert federal supremacy and protect the Black students.",
+      "factors": [
+        {
+          "id": "s12_f1",
+          "title": "The ambiguous 'all deliberate speed' ruling (Brown II)",
+          "options": [
+            "This motivated him to align with segregationist voters by deploying the state's National Guard to block the Little Rock Nine.",
+            "This led him to immediately protect the students from the white mob."
+          ],
+          "correctIndex": 0,
+          "linkageText": "This motivated him to align with segregationist voters by deploying the state's National Guard to block the Little Rock Nine."
+        },
+        {
+          "id": "s12_f2",
+          "title": "Massive Resistance organized by Southern politicians",
+          "options": [
+            "Which built national sympathy for the students and damaged America's international reputation during the Cold War.",
+            "Which caused the Supreme Court to declare school desegregation unconstitutional."
+          ],
+          "correctIndex": 0,
+          "linkageText": "Which built national sympathy for the students and damaged America's international reputation during the Cold War."
+        },
+        {
+          "id": "s12_f3",
+          "title": "President Eisenhower's deployment of the 101st Airborne Division.",
+          "options": [
+            "Which demonstrated that the federal government would use military force to enforce Supreme Court rulings over state resistance.",
+            "Which allowed the state governor to close the school permanently without federal objection."
+          ],
+          "correctIndex": 0,
+          "linkageText": "Which demonstrated that the federal government would use military force to enforce Supreme Court rulings over state resistance."
+        }
+      ]
+    },
+    "knowledgeCheck": [
+      {
+        "question": "In what year did the Supreme Court deliver the Brown v. Board of Education decision?",
+        "answer": "1954"
       },
-      "littlerock": {
-        "title": "Little Rock, Arkansas",
-        "text": "Where federal soldiers escorted the Little Rock Nine to class daily in September 1957."
+      {
+        "question": "Who was the chief justice of the Supreme Court during the Brown ruling?",
+        "answer": "Earl Warren"
+      },
+      {
+        "question": "Which Governor of Arkansas deployed the National Guard to block the Little Rock Nine?",
+        "answer": "Orval Faubus"
+      },
+      {
+        "question": "Which military division did President Eisenhower deploy to protect the students at Little Rock?",
+        "answer": "101st Airborne Division"
+      },
+      {
+        "question": "What name is given to the school year 1958-59 when Governor Faubus closed Little Rock high schools?",
+        "answer": "The Lost Year"
+      }
+    ],
+    "importanceAnalyser": null,
+    "questionVault": [
+      {
+        "question": "Explain why desegregation in education faced severe resistance in the years 1954–57. (12 marks)",
+        "stimulus1": "Supreme Court rulings (Brown v. Board)",
+        "stimulus2": "Governor Orval Faubus",
+        "clue": "Focus on the political opposition from Southern state governors, the social backlash from White Citizens' Councils and the KKK, and how these groups physically blocked integration in places like Little Rock.",
+        "answer": "“One reason why desegregation in education faced severe resistance in the years 1954–57 was that Southern politicians organized systematic legal and political blockades.” Southern senators signed the [[Southern Manifesto]] in 1956, pledging to resist integration. State governors like [[Orval Faubus]] of Arkansas used state forces like the [[National Guard]] at Little Rock to directly defy federal court orders. {{Therefore, political obstruction by Southern leaders was a major reason why desegregation in education faced severe resistance in the years 1954–57 because it validated local white opposition and delayed federal enforcement.}}\n\n“A second reason why desegregation in education faced severe resistance in the years 1954–57 was the aggressive social backlash and vigilante terror from grassroots segregationist groups.” [[White Citizens' Councils]] were formed to apply economic pressure, firing Black workers who supported integration. The [[Ku Klux Klan]] revived, using bombings, threats, and mob violence at school gates to intimidate the [[Little Rock Nine]]. {{Therefore, grassroots white resistance and vigilante terror were key reasons why desegregation in education faced severe resistance in the years 1954–57 because they made attending integrated schools physically dangerous for Black students.}}\n\n“A third reason why desegregation in education faced severe resistance in the years 1954–57 was the reluctance of the federal government to enforce Supreme Court rulings, which emboldened segregationists.” President Eisenhower initially refused to publicly endorse the [[Brown v. Board of Education]] decision, and only sent the [[101st Airborne Division]] to Little Rock when the governor openly defied federal law. The school board then closed Little Rock high schools in 1958 to avoid integration. {{Therefore, weak federal enforcement and local school board closures were critical reasons why desegregation in education faced severe resistance in the years 1954–57 because they allowed Southern states to evade integration orders for years.}}"
+      }
+    ],
+    "summaryCorrection": {
+      "text": "In May [[1956 -> 1954]], the Supreme Court ruled in Brown v. Board of Education that school segregation was [[constitutional -> unconstitutional]], overturning Plessy v. Ferguson. However, school integration met severe resistance. In September [[1959 -> 1957]], Central High School in Little Rock, Arkansas, became a major crisis. Governor Orval Faubus [[supported -> defied]] federal orders, using the state's National Guard to [[protect -> block]] the nine Black students. As white mobs harassed them, President [[Truman -> Eisenhower]] reluctantly sent in the [[US Navy -> 101st Airborne]] to escort the students. The crisis exposed the depth of Southern resistance, leading Faubus to [[fully integrate -> close]] all Little Rock high schools the following year."
+    },
+    "howUsefulAnalyser": {
+      "question": "How useful are Sources D and E for an enquiry into the levels of opposition to integration at Little Rock Central High School in 1957? (8 marks)",
+      "sourceD": {
+        "provenance": "From a photograph of white protestors gathered outside Central High School in September 1957.",
+        "content": "[A photograph showing an angry white crowd of students and adults protesting. Some are holding signs reading 'Keep Central High Clean' and yelling as Black students arrive.]",
+        "image": "assets/sources/little-rock-protest-1957.jpg",
+        "caption": "Segregationist demonstrators protesting against school integration in Little Rock."
+      },
+      "sourceE": {
+        "provenance": "From a photograph showing soldiers of the 101st Airborne Division guarding a station wagon escorting Black students at Central High School, Little Rock, September 1957.",
+        "content": "[A photograph showing soldiers of the 101st Airborne Division in a military jeep guarding a station wagon as Black students get inside the vehicle, with another soldier walking on patrol.]",
+        "image": "assets/sources/airborne-little-rock-patrol.jpg",
+        "caption": "Soldiers of the 101st Airborne Division guarding a station wagon escorting Black students."
+      },
+      "modelAnswer": "Source D is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an \"angry white crowd\" of students and adults protesting, with some carrying signs reading \"Keep Central High Clean\". This content is highly useful because it is supported by my contextual knowledge that [[when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school]], which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. {{The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.}}\n\nSource E is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows \"soldiers of the 101st Airborne Division in a military jeep guarding a station wagon\" as Black students enter it. This content's usefulness is supported by my knowledge that [[Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration]], which explains why such heavy military presence was necessary to protect the students. {{The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.}}"
+    },
+    "deepThinkingQuestions": [
+      {
+        "id": "dt_1_2_1",
+        "question": "Why did Governor Faubus choose to defy federal law at Little Rock, and what does this show about Southern state politics?",
+        "hint": "Think about white voter support and upcoming elections.",
+        "teacherGuide": "Faubus needed segregationist votes for re-election. It shows that state governors were willing to trigger constitutional crises and defy federal authority for local political survival."
+      },
+      {
+        "id": "dt_1_2_2",
+        "question": "How did the deployment of the 101st Airborne shift the balance of power between state and federal authorities?",
+        "hint": "Think about executive power and the enforcement of the US Constitution.",
+        "teacherGuide": "It was the first time since Reconstruction that federal forces intervened to protect Black rights. It asserted federal supremacy over state defiance, proving the executive branch would enforce desegregation by military force if necessary."
+      }
+    ],
+    "doNowStarter": {
+      "prevSubtopicId": "subtopic_1_1",
+      "prevSubtopicTitle": "Topic 1.1: Segregation & Civil Rights Organisations",
+      "image": "assets/sources/warren-court-1954.jpg",
+      "provenance": "A formal group portrait of the members of the Warren Court, the Supreme Court of the United States, taken in Washington D.C., 1954.",
+      "seeThinkWonder": {
+        "see": "Observe the formal attire and serious expressions of the Supreme Court justices in the portrait.",
+        "think": "Why did Chief Justice Earl Warren strive for a unanimous (9-0) decision in the Brown v. Board case?",
+        "wonder": "How did Southern states weaponize legal delays and massive resistance against a ruling issued by this court?"
+      },
+      "bronze": "State the date and outcome of the landmark Brown v. Board of Education decision.",
+      "silver": "Study the source image. Explain how the Supreme Court's decision in Brown v. Board of Education (1954) challenged the 1896 'separate but equal' doctrine.",
+      "gold": "How did the Warren Court's unanimity in the Brown ruling attempt to address Southern resistance to desegregation?",
+      "keywords": [
+        "Earl Warren",
+        "Plessy v. Ferguson",
+        "14th Amendment",
+        "Unanimous Ruling"
+      ],
+      "bronzeAnswer": "In May 1954, the Supreme Court ruled unanimously (9-0) that racial segregation in public schools was unconstitutional.",
+      "silverAnswer": "The decision ruled that separate educational facilities are inherently unequal, directly overturning the 1896 Plessy v. Ferguson ruling and violating the 14th Amendment's Equal Protection Clause.",
+      "goldAnswer": "Chief Justice Warren spent months securing a 9-0 unanimous ruling because he believed any dissent would be weaponized by Southern segregationists to justify resistance. The unanimity presented a united federal front against Jim Crow.",
+      "enquiry": "the role of the Supreme Court in challenging school segregation"
+    },
+    "specPoints": [
+      "Reasons for, key features and significance of the Brown v. Topeka case (1954).",
+      "Reasons for, key features and significance of the events at Little Rock High School (1957)."
+    ],
+    "lessonWrapUp": {
+      "summary": "The desegregation of public schools (1954-57) was a critical battle. The NAACP won the landmark Brown v. Topeka case, declaring segregated schools unconstitutional. This sparked Southern white 'Massive Resistance', which culminated in the Little Rock High School integration crisis (1957) where President Eisenhower deployed the 101st Airborne to escort Black students in the face of state governor Orval Faubus' defiance.",
+      "interpretation": "Traditionalist historians interpret Brown and Little Rock as monumental victories for federal law and civil rights. Revisionist historians highlight the severe limitations of these victories, pointing out that local resistance remained intense and the school board successfully shut down schools (the Lost Year) to avoid integration.",
+      "discussionQuestion": "Did the Little Rock crisis prove that federal military force was essential to achieve school integration in the South?"
+    },
+    "mapConfig": {
+      "type": "usa",
+      "title": "Topeka (Kansas) & Little Rock (Arkansas)",
+      "highlightedPoints": [
+        "topeka",
+        "littlerock"
+      ],
+      "description": "School desegregation challenges started in Topeka, Kansas, with the Brown case (1954), before moving to a direct federal confrontation in Little Rock, Arkansas, at Central High School (1957).",
+      "points": {
+        "topeka": {
+          "title": "Topeka, Kansas",
+          "text": "Linda Brown challenged segregation here, leading to the 1954 Brown v. Board ruling."
+        },
+        "littlerock": {
+          "title": "Little Rock, Arkansas",
+          "text": "Where federal soldiers escorted the Little Rock Nine to class daily in September 1957."
+        }
       }
     }
-  }
-},
+  },
   "subtopic_1_3": {
     "livedExperience": {
       "witness": "Jo Ann Robinson",
       "context": "President of the Women's Political Council (WPC), recalling the night of Rosa Parks's arrest in December 1955.",
       "quote": "I did not go to bed that night. I went to the college and called two of my students. We stayed up all night, typing the stencils and running off 35,000 leaflets. By 6:00 a.m. we had them divided into neat piles for distribution. The leaflets said: 'Don't ride the buses on Monday.' We were tired, but we knew this was the moment we had waited for.",
       "discussionQuestion": "Rosa Parks's arrest is famous, but Jo Ann Robinson's account shows the massive organization behind the scenes. How does this source challenge the idea that the boycott was just a spontaneous event?"
-},
-
+    },
     "headerTitle": "KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?",
     "headerIntro": "The Montgomery Bus Boycott (1955–1956) was the first major grassroots test of non-violent resistance. Beginning immediately after Rosa Parks' arrest on 1 December 1955, the local Black community organized the Montgomery Improvement Association (MIA), electing Martin Luther King Jr. as president. Black citizens, who made up 70% of bus riders, walked, carpooled, and organized private cabs for 381 days. Despite bombings, arrests, and intimidation, the boycott devastated bus revenues until November 1956, when the Supreme Court ruled segregated transport unconstitutional, proving the power of mass direct action.",
     "steps": [
@@ -438,12 +435,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why the Montgomery Bus Boycott succeeded in desegregating transit by 1956.",
+      "question": "Explain why the Montgomery Bus Boycott was successful [2020]",
       "successText": "Excellent logic! The boycott's success relied on community carpools to sustain the boycott logistically and the Supreme Court's ruling in Browder v. Gayle to override city opposition.",
       "factors": [
         {
           "id": "s13_f1",
-          "title": "MIA coordinated carpool systems and reduced taxi fares.",
+          "title": "Highly effective organization by the MIA and MLK",
           "options": [
             "This allowed Black workers to continue commuting, sustaining the boycott for over a year.",
             "This caused massive public transport strikes in Northern cities."
@@ -453,7 +450,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s13_f2",
-          "title": "The Supreme Court ruled on Browder v. Gayle in November 1956.",
+          "title": "The economic impact on the bus company",
           "options": [
             "Which gave the local Montgomery city council legal grounds to arrest all boycotters.",
             "Which declared transport segregation illegal, forcing the city of Montgomery to desegregate the buses."
@@ -596,8 +593,7 @@ export const LESSONS_DATA = {
       "context": "Emmett Till's great-uncle, testifying at the trial of the killers in Mississippi (September 1955).",
       "quote": "They came to my house at 2:00 in the morning. Bryant had a pistol in one hand and a flashlight in the other. He asked me if I had two boys from Chicago. I said yes. He told Emmett to get his clothes on. Emmett's aunt offered them money to leave him, but they told her to shut up. In court, I had to stand up, look at those white men, and point my finger at them. I said: 'There he is.' I knew the danger of pointing my finger at a white man in Mississippi, but I had to do it.",
       "discussionQuestion": "Why was Mose Wright's action in court—openly accusing and pointing at white men in Mississippi—considered a revolutionary act of bravery in 1955?"
-},
-
+    },
     "headerTitle": "KT 1.4: Why did white people in the South resist integration, and how did they do it?",
     "headerIntro": "In the wake of the 1954 Brown decision and the 1956 Montgomery victory, Southern white resistance hardened. Southern politicians signed the 'Southern Manifesto' in 1956, pledging to defeat integration by all legal means. Segregationists formed White Citizens' Councils, using economic retaliation, firings, and mortgage foreclosures against Black activists. Concurrently, KKK violence erupted, targeting leaders with bombings. Governors like Orval Faubus (1957) and later Ross Barnett (1962) used state forces to defy federal mandates, creating a constitutional crisis over states' rights.",
     "steps": [
@@ -634,12 +630,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why Southern white opposition to civil rights grew rapidly in the years 1954–56.",
+      "question": "Explain why there was progress in the civil rights movement in the years 1961–65 [2021]",
       "successText": "Great match! The Brown ruling threatened the legal basis of segregation, causing politicians to sign the Southern Manifesto and locals to form White Citizens' Councils to protect the status quo.",
       "factors": [
         {
           "id": "s14_f1",
-          "title": "The Supreme Court outlawed segregated schools in 1954.",
+          "title": "Fears generated by the Brown v. Topeka ruling (1954)",
           "options": [
             "This caused Southern whites to fear complete social integration, leading to the creation of White Citizens' Councils.",
             "This led Southern state governors to immediately comply and integrate all public spaces."
@@ -649,7 +645,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s14_f2",
-          "title": "Southern politicians signed the Southern Manifesto in 1956.",
+          "title": "The rapid growth of the Ku Klux Klan",
           "options": [
             "Which outlawed the Ku Klux Klan and arrested racist activists.",
             "Which legitimized resistance, encouraging local school boards and police forces to defy federal court orders."
@@ -701,19 +697,19 @@ export const LESSONS_DATA = {
       "enquiry": "the opposition to the civil rights movement in the 1950s",
       "sourceB": {
         "provenance": "From a speech by Southern Senator Strom Thurmond to Congress, 1956.",
-        "content": "\"The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment. The Supreme Court's ruling is an abuse of power that tears up our laws and customs. We will resist integration using every legal means at our disposal.\""
+        "content": "\"The Southern Manifesto is a declaration of our constitutional right to defend our communities against federal encroachment. The Supreme Court's ruling is an abuse of power that tears up our laws and customs. We will resist integration using every legal means at our disposal. It is our duty to protect the sovereignty of our states from this unwarranted judicial overreach. The traditions that have governed our society for generations are now under attack, and we must stand united in the Senate to block any further legislation that seeks to force an unnatural mixing of the races in our schools and public facilities. If we yield now, the federal government will soon dictate every aspect of local life, stripping communities of their right to self-determination. This is not merely about schools; it is about the fundamental preservation of the Constitution and the rights of the states against an activist judiciary determined to socially engineer our nation.\""
       },
       "sourceC": {
         "provenance": "From an NAACP report on violent incidents in Alabama, 1957.",
-        "content": "\"The KKK is acting with complete impunity. Black churches have been bombed, and civil rights workers are dragged from their homes and beaten. The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members.\""
+        "content": "\"The KKK is acting with complete impunity. Black churches have been bombed, and civil rights workers are dragged from their homes and beaten. The local sheriff's department refuse to make any arrests and actively assist the Klan in identifying NAACP members. Our organizers are receiving daily death threats simply for encouraging citizens to register to vote. Despite appealing directly to the Justice Department, federal intervention remains practically non-existent in these rural counties. We are essentially fighting a war on the home front where the very officers sworn to protect us are leading the lynch mobs. In places like Montgomery and Birmingham, economic reprisals by the White Citizens' Councils have left hundreds of families destitute, fired from their jobs merely for signing desegregation petitions. It is clear that without federal marshals or troops to enforce the law, local authorities will continue to use both economic starvation and physical terror to maintain white supremacy.\""
       },
       "interpretation1": {
         "provenance": "From 'The Dixiecrats and Southern Politics' by historian Keith M. Finley, published in 2008.",
-        "content": "\"Southern political leaders were highly organized and used federal parliamentary rules, such as the filibuster, to block civil rights bills for years. By framing their fight around 'states' rights' rather than overt racism, they successfully delayed integration and maintained white control.\""
+        "content": "\"Southern political leaders were highly organized and used federal parliamentary rules, such as the filibuster, to block civil rights bills for years. By framing their fight around 'states' rights' rather than overt racism, they successfully delayed integration and maintained white control. By mastering the intricate rules of the Senate committee system, figures like Richard Russell ensured that meaningful civil rights bills were either watered down into insignificance or strangled before they could even reach the floor for a vote. This sophisticated legal obstructionism proved to be a far more durable barrier to racial equality than the crude violence of the Klan. The sheer bureaucratic endurance of these Southern Democrats allowed them to manipulate legislative schedules, effectively holding the national government hostage and forcing compromises that kept the Jim Crow system legally defensible for much of the decade following the Brown decision.\""
       },
       "interpretation2": {
         "provenance": "From 'Race and Terror in the South' by historian Adam Fairclough, published in 1995.",
-        "content": "\"While politicians spoke of constitutional law, the real defense of segregation lay in raw, unchecked violence. The KKK and local vigilante mobs terrorized Black communities. It was the threat of the bomb, the rope, and the economic boycott that truly kept desegregation from happening.\""
+        "content": "\"While politicians spoke of constitutional law, the real defense of segregation lay in raw, unchecked violence. The KKK and local vigilante mobs terrorized Black communities. It was the threat of the bomb, the rope, and the economic boycott that truly kept desegregation from happening. The Citizens' Councils effectively weaponized the local economy, firing any Black teacher or denying credit to any Black farmer who dared to sign an integration petition. This systemic, grassroots reign of terror created an atmosphere of profound fear that paralyzed many communities, proving that the real battleground was not in Washington, but in the streets and fields of the Deep South. The political maneuvers in Congress were merely a smokescreen; it was the visceral, everyday violence perpetrated by ordinary citizens and overlooked by local law enforcement that served as the primary mechanism for enforcing racial submission.\""
       },
       "questions": {
         "q3a": "How useful are Sources B and C for an enquiry into the opposition to the civil rights movement in the 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
@@ -722,13 +718,34 @@ export const LESSONS_DATA = {
         "q3d": "How far do you agree with Interpretation 2 about the opposition to the civil rights movement in the 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
       },
       "sentenceStarters": [
-        { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into opposition to civil rights because it shows..." },
-        { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
-        { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into opposition to civil rights because..." },
-        { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
-        { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
-        { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
-        { "label": "Q3d: I agree with Interpretation 2 to a...", "value": "I agree with Interpretation 2 to a [high/moderate] extent because while political obstruction was key, on the ground..." }
+        {
+          "label": "Q3a: Source B is useful because...",
+          "value": "Source B is useful for an enquiry into opposition to civil rights because it shows..."
+        },
+        {
+          "label": "Q3a: However, Source B is limited because...",
+          "value": "However, the usefulness of Source B is limited because..."
+        },
+        {
+          "label": "Q3a: Source C is useful because...",
+          "value": "Source C is useful for an enquiry into opposition to civil rights because..."
+        },
+        {
+          "label": "Q3a: However, Source C is limited because...",
+          "value": "However, the usefulness of Source C is limited because..."
+        },
+        {
+          "label": "Q3b: The main difference is...",
+          "value": "The main difference between the views in Interpretations 1 and 2 is..."
+        },
+        {
+          "label": "Q3c: The reason they differ is...",
+          "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..."
+        },
+        {
+          "label": "Q3d: I agree with Interpretation 2 to a...",
+          "value": "I agree with Interpretation 2 to a [high/moderate] extent because while political obstruction was key, on the ground..."
+        }
       ],
       "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the official, political opposition to civil rights. The content defends the Southern Manifesto as a constitutional right against 'federal encroachment' and claims the Supreme Court's ruling is an 'abuse of power.' This is useful because it is supported by my knowledge that Southern politicians organized massive legal resistance (signing the Southern Manifesto in 1956) to delay integration. The provenance, a speech by Southern Senator Strom Thurmond to Congress, makes it a reliable primary record of the legalistic, states' rights arguments used by Southern elites. However, it is limited because it conceals the violent, illegal methods of opposition occurring on the ground.\n\nSource C is highly useful for demonstrating the violent, vigilante opposition to civil rights. The content details KKK terror, church bombings, beatings, and police collusion ('local sheriff... refuse to make any arrests'). This is useful because it is supported by my knowledge that the KKK experienced a massive revival in the 1950s, using raw violence to terrorize activists. The provenance, an NAACP report, provides highly valuable evidence of the ground-level terror that civil rights workers had to overcome. However, it is limited because it represents the perspective of civil rights victims, and may not fully document the political and legislative delaying tactics occurring in Washington.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the opposition to civil rights was primarily political and legal, led by Southern politicians who used congressional rules (such as filibusters) and constitutional arguments (like states' rights) to delay integration. In contrast, Interpretation 2 argues that the true defense of segregation was raw, physical terror, violence, and economic intimidation carried out by the KKK and vigilante mobs to prevent desegregation on the ground.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the opposition to the civil rights movement. Interpretation 1 focuses on the political and legislative obstruction of Southern congressmen in Washington, whereas Interpretation 2 focuses on the physical terror and economic coercion used by vigilantes on the ground in the Deep South. Additionally, they gave weight to different primary sources: Interpretation 1 is supported by official speeches like Source B, while Interpretation 2 is supported by reports of ground-level violence like Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 2 to a high extent. While political delays in Washington (Interpretation 1) were highly organized and successfully blocked legislation, the true force keeping segregation in place in daily Southern life was raw terror. As Source C details, the KKK acted with complete impunity, using bombings and beatings to intimidate civil rights workers, often with the collusion of local law enforcement. Without this constant threat of violence and economic ruin on the ground, legalistic arguments like Strom Thurmond's defense of states' rights in Source B would have had little practical effect. Therefore, while both forms of opposition were important, vigilante violence was the primary mechanism that maintained segregation in the South."
     },
@@ -805,8 +822,7 @@ export const LESSONS_DATA = {
       "context": "One of the 'Greensboro Four' student activists, recalling the sit-in on February 1, 1960.",
       "quote": "The waitress told us, 'We don't serve you here.' We said, 'We'd like to be served.' I had this feeling of absolute liberation. I felt like I had finally stood up and claimed my manhood. I had been afraid before, but sitting on that stool, I felt ten feet tall. A white police officer came in, paced behind us, and shook his nightstick, but he didn't know what to do because we were just sitting there quietly, asking for a cup of coffee. That's when I knew we had won a moral victory.",
       "discussionQuestion": "How can sitting quietly at a lunch counter be a powerful form of protest? Why was the police officer unable to stop them?"
-},
-
+    },
     "headerTitle": "KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?",
     "headerIntro": "By 1960, a new generation of student activists accelerated the movement. In February 1960, four Black students staged a sit-in at a Woolworth's lunch counter in Greensboro, North Carolina, launching a wave of sit-ins that integrated over 100 lunch counters. In May 1961, the Congress of Racial Equality (CORE) launched the Freedom Rides to test desegregation on interstate buses, facing brutal mob violence and bombings in Alabama. In September 1962, James Meredith became the first Black student at the University of Mississippi, requiring federal marshals and troops to suppress a segregationist riot that left two dead.",
     "steps": [
@@ -823,13 +839,23 @@ export const LESSONS_DATA = {
         }
       },
       {
-        "title": "Step 2: Freedom Rides & James Meredith (1961-62)",
+        "title": "Step 2: The Freedom Rides (1961)",
         "isSplit": true,
-        "bodyHtml": "<div class=\"mastery-text-column\">\r\n          <div class=\"mastery-card-body card-content\">\r\n            <p>Activists tested federal rulings on interstate travel and university integration:</p>\r\n            <ul>\r\n              <li><strong>Reasons for the Freedom Rides:</strong> In December 1960, the Supreme Court ruled that all interstate bus stations and terminals must be integrated. In May 1961, the civil rights organisation CORE (led by James Farmer) organised the 'Freedom Rides' to test if this desegregation was actually happening in the Deep South. They aimed to purposefully provoke a crisis that would force the federal government to step in and enforce the law.</li>\r\n              <li><strong>Key Features, KKK Violence and the Anniston Bomb:</strong> Black and white volunteers travelled together on buses from Washington D.C., planning to go to New Orleans, using 'whites-only' facilities at every stop. The Anniston Bomb (14 May 1961): When one bus reached Anniston, Alabama, it was surrounded by a white mob and members of the Ku Klux Klan (KKK). The bus was firebombed, and the riders were viciously beaten with iron pipes and clubs as they tried to escape the flames. When the riders reached Birmingham, Police Chief Bull Connor deliberately gave his police force the day off, allowing the KKK to freely attack the protesters again. Hundreds of riders were also arrested and jailed in Mississippi.</li>\r\n              <li><strong>Significance of the Freedom Rides:</strong> The shocking images of the burning bus in Anniston made world headlines and proved the lethal danger protesters faced. Instead of being intimidated, a surge of new volunteers joined the rides, resulting in over 60 Freedom Rides that summer. The violence successfully forced President John F. Kennedy to intervene. His administration pressured the Interstate Commerce Commission (ICC) to issue a strict ban on terminal segregation, successfully ending the segregation of interstate travel.</li>\r\n              <li><strong>The James Meredith Case (1962) - The Event:</strong> In 1962, the Supreme Court ordered the segregated University of Mississippi ('Ole Miss') to accept its first black student, a man named James Meredith. The State Governor and university officials directly defied the Supreme Court and physically stopped Meredith from registering.</li>\r\n              <li><strong>The Significance & Federal Response:</strong> To enforce the law, President Kennedy sent 320 federal marshals to escort Meredith onto the campus. Their arrival sparked a massive, violent riot by a white mob of over 3,000 people. Two people were killed and hundreds were wounded. President Kennedy was forced to escalate his response, sending in thousands of federal troops to restore order. Meredith successfully registered and had to be guarded by troops for his entire degree. This event was highly significant because it proved the federal government would use the military to force Southern state governors to obey civil rights laws.</li>\r\n            </ul>\r\n            <div class=\"revision-task-box\" style=\"margin-top: 20px; padding: 15px; background: rgba(var(--primary-rgb), 0.08); border-left: 4px solid var(--primary); border-radius: 6px; box-shadow: var(--shadow-sm);\">\r\n              <h4 style=\"margin: 0 0 8px 0; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.05em;\">📝 Revision Task: Direct Action & Federal Response</h4>\r\n              <p style=\"margin: 0 0 10px 0; font-size: 0.9em; line-height: 1.4;\">To check your understanding of this missed lesson, write down a short summary explaining the roles of the following groups/people during the period 1960–1962 in your study notes:</p>\r\n              <ul style=\"margin: 0; padding-left: 18px; font-size: 0.9em; line-height: 1.5;\">\r\n                <li><strong>SNCC:</strong> Coordinated student-led sit-ins and direct action campaigns.</li>\r\n                <li><strong>CORE:</strong> Organised the Freedom Rides to test desegregation and provoke federal enforcement.</li>\r\n                <li><strong>Bull Connor:</strong> Birmingham Police Chief who colluded with the KKK and let them beat the riders.</li>\r\n                <li><strong>James Meredith:</strong> Courageously integrated the University of Mississippi (Ole Miss) in the face of violent riots.</li>\r\n                <li><strong>President John F. Kennedy:</strong> Forced to deploy federal marshals and US troops to uphold desegregation laws.</li>\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"mastery-media-column\">\r\n          <div class=\"lesson-image-wrapper\">\r\n            <img src=\"assets/sources/freedom-riders-bus-1961.jpg\" alt=\"Freedom Riders bus firebombed and burning in Anniston, Alabama\" class=\"lesson-source-img\" />\r\n            <div class=\"lesson-image-caption\">The Freedom Riders' bus firebombed and burning on a highway near Anniston, Alabama, 14 May 1961.</div>\r\n          </div>\r\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px; width: 100%; box-sizing: border-box;\">\r\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Source A: CORE Diary (May 1961)</strong>\r\n            <p style=\"font-style: italic; line-height: 1.4; color: var(--text-muted); margin: 0;\">\r\n              \"When our bus arrived in Anniston, a mob surrounded us and slashed the tires. Out on the highway, they threw a firebomb through the window. We crawled out, gasping for air, only to be beaten with iron bars.\"\r\n            </p>\r\n          </div>\r\n        </div>",
+        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>Activists tested federal rulings on interstate travel:</p>\n            <ul>\n              <li><strong>Reasons for the Freedom Rides:</strong> In December 1960, the Supreme Court ruled that all interstate bus stations and terminals must be integrated. In May 1961, CORE (led by James Farmer) organised the 'Freedom Rides' to test if this desegregation was happening in the Deep South. They aimed to provoke a crisis that would force the federal government to enforce the law.</li>\n              <li><strong>KKK Violence and the Anniston Bomb:</strong> Black and white volunteers travelled together on buses. On 14 May 1961, when one bus reached Anniston, Alabama, it was surrounded by a white mob and the KKK. The bus was firebombed, and riders were beaten with iron pipes as they tried to escape the flames. In Birmingham, Police Chief Bull Connor gave his police force the day off, allowing the KKK to freely attack the protesters again.</li>\n              <li><strong>Significance of the Freedom Rides:</strong> The shocking images of the burning bus in Anniston made world headlines. The violence successfully forced President John F. Kennedy to intervene. His administration pressured the Interstate Commerce Commission (ICC) to issue a strict ban on terminal segregation.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"lesson-image-wrapper\">\n            <img src=\"assets/sources/freedom-riders-bus-1961.jpg\" alt=\"Freedom Riders bus firebombed\" class=\"lesson-source-img\" />\n            <div class=\"lesson-image-caption\">The Freedom Riders' bus firebombed near Anniston, Alabama, 14 May 1961.</div>\n          </div>\n        </div>",
         "scholarlyDepth": {
           "title": "Scholarly Perspective: The Siege of the First Baptist Church",
           "body": "During the 1961 Freedom Rides, a mob of over 3,000 white segregationists besieged the First Baptist Church in Montgomery, where MLK and 1,500 activists were gathered inside. With local police refusing to act, President Kennedy was forced to declare martial law and send US Marshals to protect the building. This crisis forced Attorney General Robert F. Kennedy to finally enforce the desegregation of interstate travel."
         }
+      },
+      {
+        "title": "Step 3: James Meredith and Ole Miss (1962)",
+        "isSplit": true,
+        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>Following the Freedom Rides, civil rights activists targeted segregated universities:</p>\n            <ul>\n              <li><strong>The James Meredith Case (1962):</strong> The Supreme Court ordered the segregated University of Mississippi ('Ole Miss') to accept its first black student, James Meredith. The State Governor and university officials defied the Supreme Court and physically stopped Meredith from registering.</li>\n              <li><strong>The Federal Response:</strong> President Kennedy sent 320 federal marshals to escort Meredith onto the campus. Their arrival sparked a massive, violent riot by a white mob of over 3,000 people. Two people were killed and hundreds were wounded.</li>\n              <li><strong>Significance:</strong> President Kennedy was forced to escalate his response, sending in thousands of federal troops to restore order. Meredith successfully registered and had to be guarded by troops for his entire degree. This event proved the federal government would use the military to force Southern state governors to obey civil rights laws.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              President Kennedy's deployment of troops to 'Ole Miss' mirrored President Eisenhower's actions at Little Rock in 1957, confirming that the federal government would uphold Supreme Court decisions with military force.\n            </p>\n          </div>\n        </div>"
+      },
+      {
+        "title": "Step 3: James Meredith and Ole Miss (1962)",
+        "isSplit": true,
+        "bodyHtml": "<div class=\"mastery-text-column\">\n          <div class=\"mastery-card-body card-content\">\n            <p>Following the Freedom Rides, civil rights activists targeted segregated universities:</p>\n            <ul>\n              <li><strong>The James Meredith Case (1962):</strong> The Supreme Court ordered the segregated University of Mississippi ('Ole Miss') to accept its first black student, James Meredith. The State Governor and university officials defied the Supreme Court and physically stopped Meredith from registering.</li>\n              <li><strong>The Federal Response:</strong> President Kennedy sent 320 federal marshals to escort Meredith onto the campus. Their arrival sparked a massive, violent riot by a white mob of over 3,000 people. Two people were killed and hundreds were wounded.</li>\n              <li><strong>Significance:</strong> President Kennedy was forced to escalate his response, sending in thousands of federal troops to restore order. Meredith successfully registered and had to be guarded by troops for his entire degree. This event proved the federal government would use the military to force Southern state governors to obey civil rights laws.</li>\n            </ul>\n          </div>\n        </div>\n        <div class=\"mastery-media-column\">\n          <div class=\"examiner-tip-box\" style=\"margin: 0; background: var(--bg-app); border-left: 4px solid var(--primary); font-size: 0.85rem; padding: 14px;\">\n            <strong style=\"display: block; margin-bottom: 6px; color: var(--primary);\">📝 Context Focus</strong>\n            <p style=\"color: var(--text-muted); margin: 0;\">\n              President Kennedy's deployment of troops to 'Ole Miss' mirrored President Eisenhower's actions at Little Rock in 1957, confirming that the federal government would uphold Supreme Court decisions with military force.\n            </p>\n          </div>\n        </div>"
       }
     ],
     "dualPerspective": {
@@ -843,12 +869,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why the Freedom Rides were launched in 1961.",
+      "question": "Explain why there was progress in the civil rights movement in the years 1961–65 [2021]",
       "successText": "Superb linkage! The rides were launched to test federal compliance, and the resulting violence forced the federal government to intervene and enforce desegregation in transit.",
       "factors": [
         {
           "id": "s21_f1",
-          "title": "Supreme Court ruled that interstate bus terminals must be integrated.",
+          "title": "The impact of the Freedom Rides (1961)",
           "options": [
             "This prompted CORE to test whether Southern states were complying with the federal ruling on the ground.",
             "This caused all Southern bus companies to immediately desegregate their facilities."
@@ -858,7 +884,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s21_f2",
-          "title": "Severe KKK violence and firebombing of buses in Alabama.",
+          "title": "The Birmingham Campaign exposing racism to the media (1963)",
           "options": [
             "Which caused the activists to call off the campaign and flee back North.",
             "Which generated international media outrage, forcing Robert Kennedy to send federal marshals to enforce the desegregation order."
@@ -1041,8 +1067,7 @@ export const LESSONS_DATA = {
       "context": "Recalling her experience as an 8-year-old participant in the 'Bloody Sunday' march in Selma, Alabama on March 7, 1965.",
       "quote": "All I could see was a sea of blue state troopers. Suddenly, they charged. I saw horses, and I heard people screaming. Tear gas filled the air, and it burned my eyes. People were being beaten with nightsticks, falling all around me. I turned and ran for my life. A young white minister, Hosea Williams, grabbed my hand and helped me run. I thought I was going to die. When I got home, I was shaking, but I told my mother, 'I'm still going to march until we get our freedom.'",
       "discussionQuestion": "Given the extreme danger, why do you think civil rights leaders allowed children to march? How did the public reaction to this violence change federal policy?"
-},
-
+    },
     "headerTitle": "KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?",
     "headerIntro": "In 1963 and 1965, the Southern Christian Leadership Conference (SCLC) targeted the most segregated cities. The Birmingham Campaign (April 1963) saw police chief Bull Connor use fire hoses and attack dogs on child protesters, sparking international outrage and forcing President Kennedy to draft civil rights legislation. Following the Civil Rights Act of 1964, attention shifted to voting. In March 1965, the Selma-to-Montgomery marches faced state trooper violence on 'Bloody Sunday', forcing President Johnson to pass the Voting Rights Act of 1965, which outlawed literacy tests.",
     "steps": [
@@ -1085,12 +1110,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why the Voting Rights Act of 1965 was passed.",
+      "question": "Explain why the 1964 Civil Rights Act was passed [2018]",
       "successText": "Correct connection! The televised brutality of Bloody Sunday at Selma shocked the nation, giving President Johnson the political leverage to pass the Voting Rights Act.",
       "factors": [
         {
           "id": "s22_f1",
-          "title": "Televised violence against marchers during 'Bloody Sunday' in Selma.",
+          "title": "The success of the March on Washington (1963)",
           "options": [
             "This caused public outrage across America and pressured President Johnson and Congress to draft federal voting legislation.",
             "This resulted in the immediate arrest and lifetime imprisonment of Martin Luther King Jr."
@@ -1100,7 +1125,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s22_f2",
-          "title": "Sustained voter registration campaigns led by SNCC in the Deep South.",
+          "title": "President Johnson's political skill following Kennedy's assassination",
           "options": [
             "Which proved local registrar systems were fair and didn't need reform.",
             "Which highlighted that local racist officials would never register Black voters without federal laws banning literacy tests."
@@ -1261,8 +1286,7 @@ export const LESSONS_DATA = {
       "context": "Communications Secretary for the Black Panther Party, interviewed in 1968 about the philosophy of Black Power and self-defense.",
       "quote": "For years, we were taught to hate ourselves. We were told our hair was too nappy, our skin too dark, our culture non-existent. Black Power means we define ourselves. We are proud of our African heritage. We wear our hair in Afros, and we do not beg white people for integration. We demand control of our own communities—our schools, our housing, our police. And if the police attack us, we have a constitutional right to defend ourselves. That is not hate; that is self-preservation.",
       "discussionQuestion": "How did the Black Power philosophy shift the goal of the movement from 'integration' to 'self-determination'? What were the potential benefits and risks of this new approach?"
-},
-
+    },
     "headerTitle": "KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?",
     "headerIntro": "By the mid-1960s, frustration with slow progress and continued white violence led to a major ideological split. Malcolm X, representing the Nation of Islam, criticized MLK's integrationist non-violence and championed Black nationalism and self-defense 'by any means necessary'. Following Malcolm's 1965 assassination, Stokely Carmichael popularised the term 'Black Power' at a 1966 march. This philosophy was institutionalized by the Black Panther Party (founded 1966), which organized armed neighborhood patrols and community programs, reflecting a shift toward racial pride and economic independence.",
     "steps": [
@@ -1305,12 +1329,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why the Black Power movement grew in the mid-1960s.",
+      "question": "Explain why the 1965 Voting Rights Act was passed [2020]",
       "successText": "Excellent! Student frustration with slow legal integration and Malcolm X's powerful defense of racial pride led directly to stokely carmichael's call for Black Power.",
       "factors": [
         {
           "id": "s23_f1",
-          "title": "Frustration over slow economic progress and ghetto poverty in Northern cities.",
+          "title": "The shocking violence of 'Bloody Sunday' in Selma (1965)",
           "options": [
             "This caused young urban Black Americans to lose faith in MLK's integrationist, non-violent tactics.",
             "This immediately prompted all Black Americans to move to the Southern states."
@@ -1320,7 +1344,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s23_f2",
-          "title": "Malcolm X's speeches advocating self-defense and Black pride.",
+          "title": "President Johnson's commitment to federal intervention",
           "options": [
             "Which convinced SNCC and CORE to merge with segregationist white councils.",
             "Which inspired SNCC activists to shift toward a more militant stance under Stokely Carmichael."
@@ -1472,8 +1496,7 @@ export const LESSONS_DATA = {
       "context": "An anonymous resident of Watts, Los Angeles, interviewed during the Watts Uprising in August 1965.",
       "quote": "People call this a riot. We call it an uprising. We aren't just destroying things; we are crying out. We've got no jobs, the police beat us up every day, and we live in rundown tenements where the rent is sky-high. The civil rights laws in Washington didn't change anything for us in Watts. We still can't feed our kids. If we have to burn down these white-owned stores that cheat us every day just to make the country look at us, then that's what we will do.",
       "discussionQuestion": "According to this resident, why did federal laws like the Civil Rights Act fail to prevent urban riots? What does this tell us about the limits of legal rights when economic misery remains?"
-},
-
+    },
     "headerTitle": "KT 2.4: Why did riots break out in American cities between 1965 and 1968?",
     "headerIntro": "Between 1965 and 1967, deep-seated grievances over poverty, housing, and police brutality triggered massive urban riots in Northern and Western cities, including Watts (1965) and Detroit (1967). In response, President Johnson established the Kerner Commission, which reported in 1968 that America was moving toward 'two societies, one Black, one white—separate and unequal', blaming systemic white racism. Following Martin Luther King Jr.'s assassination in April 1968, Congress passed the Civil Rights Act of 1968 (Fair Housing Act), prohibiting racial discrimination in housing.",
     "steps": [
@@ -1528,12 +1551,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why urban riots broke out in Northern cities in the years 1965–68.",
+      "question": "Explain why a Black Power movement emerged in the USA [2022]",
       "successText": "Excellent! White racism and economic deprivation created ghetto slums, and local police clashes triggered explosive riots that devastated Northern cities.",
       "factors": [
         {
           "id": "s24_f1",
-          "title": "Entrenched segregation, poor housing, and high unemployment in Northern ghettos.",
+          "title": "Frustration with the slow pace of economic and social change",
           "options": [
             "This generated intense frustration, making local communities highly combustible and prone to civil unrest.",
             "This caused Black families to refuse to work and declare independence."
@@ -1543,7 +1566,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s24_f2",
-          "title": "Frequent incidents of aggressive policing and police brutality.",
+          "title": "The inspiring rhetoric of figures like Malcolm X",
           "options": [
             "Which served as the immediate trigger sparks, transforming local anger into city-wide riots.",
             "Which successfully calmed urban areas and prevented any civil protests."
@@ -1595,19 +1618,19 @@ export const LESSONS_DATA = {
       "enquiry": "the causes of the 1960s urban riots",
       "sourceB": {
         "provenance": "From a statement by a Detroit resident participating in the 1967 riot.",
-        "content": "\"This isn't a race riot. We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt. We have no jobs, no future. We are just telling the white man we've had enough.\""
+        "content": "\"This isn't a race riot. We are hitting the stores that overcharge us, the landlords who lease us rat-infested rooms, and the police who treat us like dirt. We have no jobs, no future. We are just telling the white man we've had enough. You push people into a corner where they can't even afford bread for their children, and you expect them to stay quiet? The politicians in Washington pass civil rights laws, but nothing changes here in the ghetto. The only way anyone pays attention to our suffering is when the sky turns black with smoke. The police have been harassing our young men for years, stopping them for no reason and beating them in the alleys. When the sirens started wailing that night, it wasn't fear we felt, it was relief. The community finally snapped because the daily indignity of living in this squalor, while the rest of the country prospered, became too much to bear.\""
       },
       "sourceC": {
         "provenance": "From a speech by California Governor Ronald Reagan, 1967.",
-        "content": "\"A rioter is not a civil rights protestor. He is a criminal who steals and burns. We will not tolerate lawlessness. We must restore law and order, support our police, and show that crime does not pay. The streets of our cities must be kept safe.\""
+        "content": "\"A rioter is not a civil rights protestor. He is a criminal who steals and burns. We will not tolerate lawlessness. We must restore law and order, support our police, and show that crime does not pay. The streets of our cities must be kept safe. Those who throw firebombs at innocent businesses are destroying the very fabric of our society, and they must be met with the full force of the National Guard if necessary. There can be no compromise with anarchy, and we cannot excuse this violence by pointing to social problems when the rule of law is at stake. The fundamental responsibility of government is to protect its citizens and their property from mob rule. If we begin to rationalize arson and looting as legitimate forms of political expression, we invite the destruction of the republic. We must stand firm against these agitators and restore the peace immediately.\""
       },
       "interpretation1": {
         "provenance": "From 'The Fire This Time' by historian Gerald Horne, published in 1995.",
-        "content": "\"The riots were the direct outcome of economic despair. The political gains of the Civil Rights Acts of 1964 and 1965 meant nothing in Northern cities where Black unemployment was double that of whites and housing segregation was absolute. The riots were a political rebellion against economic ghettoization.\""
+        "content": "\"The riots were the direct outcome of economic despair. The political gains of the Civil Rights Acts of 1964 and 1965 meant nothing in Northern cities where Black unemployment was double that of whites and housing segregation was absolute. The riots were a political rebellion against economic ghettoization. The systemic failure of city governments to provide adequate sanitation, schooling, or healthcare created a tinderbox of frustration. When routine police brutality provided the spark, the resulting explosions were not mindless riots, but desperate, articulate protests against an invisible system of economic apartheid that trapped millions in poverty. These urban rebellions were an inevitable response to the hypocritical promises of the Great Society programs, which offered soaring rhetoric but failed to deliver meaningful material improvements to the deeply marginalized residents of America's deteriorating inner cities.\""
       },
       "interpretation2": {
         "provenance": "From 'The Unheavenly City' by political scientist Edward Banfield, published in 1970.",
-        "content": "\"The urban riots were not political protests but class-based looting sprees. They were carried out by young, low-income males who took advantage of police hesitation to vandalize property and steal consumer goods. Framing these destructive acts as political rebellion is an academic myth.\""
+        "content": "\"The urban riots were not political protests but class-based looting sprees. They were carried out by young, low-income males who took advantage of police hesitation to vandalize property and steal consumer goods. Framing these destructive acts as political rebellion is an academic myth. The majority of the damage was inflicted upon the community's own local grocery stores and appliance shops, driven by opportunistic greed rather than any coherent ideological agenda. Elevating this criminality to the status of a civil rights uprising ignores the devastating toll it took on the law-abiding majority of inner-city residents who just wanted safe neighborhoods. The participants were largely disenfranchised youths seeking immediate gratification through theft, capitalizing on a temporary breakdown of municipal authority to enrich themselves at the expense of their own communities.\""
       },
       "questions": {
         "q3a": "How useful are Sources B and C for an enquiry into the causes of the 1960s urban riots? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
@@ -1616,13 +1639,34 @@ export const LESSONS_DATA = {
         "q3d": "How far do you agree with Interpretation 1 about the causes of the 1960s urban riots? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
       },
       "sentenceStarters": [
-        { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the causes of the riots because it shows..." },
-        { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
-        { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into the causes of the riots because..." },
-        { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
-        { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
-        { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
-        { "label": "Q3d: I agree with Interpretation 1 to a...", "value": "I agree with Interpretation 1 to a [high/moderate] extent because while opportunistic looting occurred, the Kerner Commission..." }
+        {
+          "label": "Q3a: Source B is useful because...",
+          "value": "Source B is useful for an enquiry into the causes of the riots because it shows..."
+        },
+        {
+          "label": "Q3a: However, Source B is limited because...",
+          "value": "However, the usefulness of Source B is limited because..."
+        },
+        {
+          "label": "Q3a: Source C is useful because...",
+          "value": "Source C is useful for an enquiry into the causes of the riots because..."
+        },
+        {
+          "label": "Q3a: However, Source C is limited because...",
+          "value": "However, the usefulness of Source C is limited because..."
+        },
+        {
+          "label": "Q3b: The main difference is...",
+          "value": "The main difference between the views in Interpretations 1 and 2 is..."
+        },
+        {
+          "label": "Q3c: The reason they differ is...",
+          "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..."
+        },
+        {
+          "label": "Q3d: I agree with Interpretation 1 to a...",
+          "value": "I agree with Interpretation 1 to a [high/moderate] extent because while opportunistic looting occurred, the Kerner Commission..."
+        }
       ],
       "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the socioeconomic causes of the urban riots from the perspective of an active participant. The content highlights intense grievances over exploitation by local stores, sub-standard rat-infested housing, lack of employment and future prospects, and police mistreatment. This is useful because it is supported by my knowledge that the riots in Watts (1965) and Detroit (1967) were driven by deep-seated anger over de facto segregation, ghetto conditions, and police clashes. The provenance, being a direct statement from a Detroit resident during the 1967 riot, gives it high utility as a contemporary record of grassroots feelings. However, it is limited because it represents a single, highly subjective participant's view and does not capture the broader political or national perspective.\n\nSource C is highly useful for showing the political, conservative response to the urban riots. The content condemns the rioters as criminals who burn and steal rather than civil rights protestors, and argues that law and order must be restored. This utility is supported by my knowledge that conservative politicians like Ronald Reagan campaigned heavily on a 'law and order' platform, blaming individual lawlessness rather than systemic social issues to appeal to anxious white voters. The provenance, a speech by California Governor Ronald Reagan in 1967, makes it a reliable primary record of the official state narrative that justified military intervention. However, it is limited because it is a political speech that ignores the real, documented socio-economic grievances behind the unrest.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the urban riots were political rebellions caused by economic despair, unemployment, and housing segregation in Northern cities, rendering the political gains of the Civil Rights Acts meaningless on the ground. In contrast, Interpretation 2 argues that the riots were not political protests at all, but rather opportunistic, class-based looting sprees carried out by young, low-income males taking advantage of police hesitation.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the urban riots. Interpretation 1 focuses on the underlying socioeconomic causes of the riots, such as high unemployment and absolute housing segregation, whereas Interpretation 2 focuses on the immediate behavior of the rioters, characterizing them as opportunistic looters. Furthermore, they gave weight to different primary sources: Interpretation 1 is supported by the resident testimony in Source B, while Interpretation 2 is supported by the official condemnations in Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 1 to a high extent. While there was undoubtedly opportunistic looting during the chaos (as Interpretation 2 emphasizes), characterizing the riots solely as looting sprees is an oversimplification that ignores the structural roots of the violence. As Source B details, the rioters were driven by clear grievances: exploitation, rat-infested rooms, a lack of jobs, and police hostility. This is strongly supported by the 1968 Kerner Commission Report, which officially concluded that the riots were political and social protests against systemic white racism and economic inequality. Without these severe, de facto ghetto conditions, police incidents would not have sparked such massive city-wide rebellions. Therefore, the riots were fundamentally political protests against economic ghettoization rather than simple criminal lawlessness."
     },
@@ -1712,8 +1756,7 @@ export const LESSONS_DATA = {
       "context": "A Buddhist monk and eyewitness to the self-immolation of Thich Quang Duc in Saigon on June 11, 1963.",
       "quote": "I watched as brother Quang Duc sat in the lotus position in the middle of the street. Another monk poured gasoline over him. He struck a match and was instantly enveloped in flames. He did not cry out, nor did he move a muscle. The air was thick with the smell of burning flesh, and the crowd around him began to weep and bow down. He burned for ten minutes before falling. He did this so the world would see the unbearable oppression of the Diem regime against the Buddhist majority.",
       "discussionQuestion": "What does this extreme act of protest reveal about the intensity of Buddhist opposition to Diem? How did this impact US support for Diem?"
-},
-
+    },
     "headerTitle": "KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?",
     "headerIntro": "Following the 1954 Geneva Accords, which temporarily divided Vietnam at the 17th parallel, the United States committed to containing communism in Southeast Asia. Guided by President Eisenhower's 'Domino Theory'—the belief that if Vietnam fell to communism, neighboring nations would follow—the USA backed Ngo Dinh Diem's anti-communist government in South Vietnam. However, Diem's corrupt regime, Buddhist persecutions, and refusal to hold elections alienated the populace, leading to the 1960 formation of the Vietcong and Diem's ultimate assassination in November 1963.",
     "steps": [
@@ -1765,12 +1808,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why the Strategic Hamlet Program failed in Vietnam in the years 1962–63.",
+      "question": "Explain why the US became involved in the conflict in Vietnam 1954–1963 [2018]",
       "successText": "Correct! Relocating peasants away from ancestral graves angered them, and the Vietcong easily infiltrated the hamlets because peasants refused to cooperate with Diem's government.",
       "factors": [
         {
           "id": "s31_f1",
-          "title": "Forcible relocation of South Vietnamese peasants from ancestral lands.",
+          "title": "The Domino Theory and fear of communist expansion",
           "options": [
             "This caused deep resentment and hostility toward Diem's government, encouraging peasants to aid the Vietcong.",
             "This resulted in immediate economic prosperity and agricultural wealth for the peasants."
@@ -1780,7 +1823,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s31_f2",
-          "title": "Poor security and infiltration by Vietcong guerrilla agents.",
+          "title": "The collapse of French colonial rule at Dien Bien Phu",
           "options": [
             "Which successfully secured the hamlets and isolated communist forces.",
             "Which meant the hamlets became recruitment hubs for the Vietcong, who easily weaponized local peasant grievances."
@@ -1938,8 +1981,7 @@ export const LESSONS_DATA = {
       "context": "US Navy pilot flying over the Gulf of Tonkin on the night of August 4, 1964.",
       "quote": "I had the best seat in the house from my cockpit, flying low over the destroyers Maddox and Turner Joy in the pitch black. I was ordered to look for North Vietnamese PT boats attacking our ships. I fired my guns where the sonar men said the targets were, but there was nothing there. No boats, no wakes, no gunfire from the Vietnamese. It was just our own ships shooting at ghost targets on their radars. When I landed, I was told we were launching retaliatory airstrikes for an 'attack' that I knew had never happened.",
       "discussionQuestion": "If the second Gulf of Tonkin attack was a 'ghost' event, how does this affect the moral and political justification for the US escalation of the war?"
-},
-
+    },
     "headerTitle": "KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?",
     "headerIntro": "Following President Kennedy's assassination in 1963, President Johnson inherited a rapidly deteriorating situation in South Vietnam. In August 1964, reports of US destroyers being attacked by North Vietnamese patrol boats in the Gulf of Tonkin provided the pretext Johnson needed. Congress passed the Gulf of Tonkin Resolution, granting the president power to take 'all necessary measures' to repel attacks. In early 1965, Johnson launched Operation Rolling Thunder, a massive bombing campaign, and deployed the first US combat troops to Da Nang in March, escalating the conflict dramatically.",
     "steps": [
@@ -2000,12 +2042,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why US military involvement escalated in Vietnam in 1964–65.",
+      "question": "Explain why the USA was not able to win the war against the Vietcong in the years 1964–73 [2019]",
       "successText": "Excellent! The Gulf of Tonkin Incident gave Johnson the legal power to escalate, and the need to protect Da Nang air base led directly to ground combat troop deployment.",
       "factors": [
         {
           "id": "s32_f1",
-          "title": "Passage of the Gulf of Tonkin Resolution in August 1964.",
+          "title": "The Gulf of Tonkin Incident (1964)",
           "options": [
             "This gave President Johnson a political 'blank check' to commit US combat forces without a Congressional war declaration.",
             "This forced the immediate withdrawal of all US military advisors from South Vietnam."
@@ -2015,7 +2057,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s32_f2",
-          "title": "The launch of Operation Rolling Thunder in February 1965.",
+          "title": "The perceived weakness of the South Vietnamese ARVN",
           "options": [
             "Which required ground forces to protect the US air bases in Da Nang, triggering the first combat deployment of Marines.",
             "Which successfully bombed North Vietnam into a peaceful surrender within weeks."
@@ -2161,8 +2203,7 @@ export const LESSONS_DATA = {
       "context": "A female Vietcong guerrilla fighter, interviewed about surviving search-and-destroy missions in the Cu Chi tunnels.",
       "quote": "We lived like rats under the ground. The tunnels of Cu Chi were dark, damp, and crawled with centipedes and scorpions. When the Americans bombed, the earth shook and dirt fell in our eyes. But we stayed. We learned to cook without smoke and walk without leaving footprints. We waited until the American soldiers walked past, then we would pop up, fire, and disappear into the ground. They had tanks and helicopters, but they could not fight what they could not see.",
       "discussionQuestion": "How did the Vietcong use the tunnels and hit-and-run tactics to render the US military's technological superiority ineffective?"
-},
-
+    },
     "headerTitle": "KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?",
     "headerIntro": "Between 1965 and 1968, the Vietnam War became a brutal conflict of contrasting strategies. The US military, led by General Westmoreland, relied on high-tech attrition tactics, including 'Search and Destroy' missions, massive carpet bombing, and chemical agents like Agent Orange and Napalm to clear jungles and crop cover. In contrast, the Vietcong fought a guerrilla war, avoiding pitched battles, hiding in complex underground tunnel networks, and deploying deadly booby traps, which neutralized US technological superiority and severely damaged US soldier morale.",
     "steps": [
@@ -2214,12 +2255,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why US military tactics failed to defeat the Vietcong.",
+      "question": "Explain why the USA was not able to win the war against the Vietcong in the years 1964–73 [2019]",
       "successText": "Excellent! Indiscriminate search-and-destroy tactics alienated the peasants, while the Vietcong's hit-and-run guerrilla methods and tunnel systems neutralized US firepower.",
       "factors": [
         {
           "id": "s33_f1",
-          "title": "US reliance on search-and-destroy raids, Napalm, and Agent Orange.",
+          "title": "The effectiveness of Vietcong guerrilla tactics",
           "options": [
             "This devastated the South Vietnamese countryside and alienated peasants, driving them to assist the Vietcong.",
             "This quickly won the 'hearts and minds' of the local Vietnamese population."
@@ -2229,7 +2270,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s33_f2",
-          "title": "Vietcong guerrilla tactics, booby traps, and underground tunnels.",
+          "title": "The failure of US 'Search and Destroy' missions to win hearts and minds",
           "options": [
             "Which forced the Vietcong to fight in open, conventional battlefield situations.",
             "Which neutralized US technological advantages and inflicted constant, demoralizing casualties on US patrols."
@@ -2381,8 +2422,7 @@ export const LESSONS_DATA = {
       "context": "A soldier in the South Vietnamese army, recalling the disastrous invasion of Laos (Operation Lam Son 719) in 1971.",
       "quote": "The Americans told us we were ready to fight alone. They gave us their M16 rifles and their tanks, and then they told us to cross the border into Laos to cut the Ho Chi Minh trail. But once we crossed, we met massive North Vietnamese artillery and tanks. The Americans provided air support, but it wasn't enough. We were slaughtered. Our commanders panicked and fled. I saw soldiers clinging to the skids of departing American helicopters just to escape. We were not ready, and we knew it.",
       "discussionQuestion": "What does this soldier's account of the Laos invasion tell us about the practical weaknesses and failures of Nixon's 'Vietnamization' policy?"
-},
-
+    },
     "headerTitle": "KT 3.4: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?",
     "headerIntro": "Elected in 1968 on a promise of 'Peace with Honor', President Nixon sought to reduce US involvement without appearing to surrender. In 1969, he introduced 'Vietnamization'—a policy to train and equip the South Vietnamese army (ARVN) to take over combat operations, allowing the gradual withdrawal of US troops. However, to disrupt communist supply lines along the Ho Chi Minh Trail, Nixon secretly ordered the bombing and invasion of neighboring Cambodia (1970) and Laos (1971), expanding the war geographic scale and triggering massive protests at home.",
     "steps": [
@@ -2434,12 +2474,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why President Nixon introduced the policy of Vietnamization in 1969.",
+      "question": "Explain why the USA was involved in the peace negotiations (1972–73) about the war in Vietnam [2021]",
       "successText": "Great logic! Intense domestic anti-war protests pressured Nixon to bring troops home, while the Nixon Doctrine justified shifting the ground combat burden to ARVN.",
       "factors": [
         {
           "id": "s34_f1",
-          "title": "Growing domestic anti-war protests and political pressure in the US.",
+          "title": "The massive domestic pressure from the anti-war movement",
           "options": [
             "This forced Nixon to begin withdrawing US ground troops to pacify public anger and fulfill campaign promises.",
             "This caused Nixon to declare a formal war against China."
@@ -2449,7 +2489,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s34_f2",
-          "title": "The formulation of the Nixon Doctrine in 1969.",
+          "title": "The desire to achieve 'Peace with Honour' while withdrawing US troops",
           "options": [
             "Which argued that the US must directly govern all Southeast Asian countries.",
             "Which declared that Asian allies must take responsibility for their own ground defense, justifying training and equipping ARVN."
@@ -2605,8 +2645,7 @@ export const LESSONS_DATA = {
       "context": "Decorated US Marine veteran paralyzed in Vietnam and author of the memoir *Born on the Fourth of July* (1976).",
       "quote": "I went to Vietnam believing in the war, believing I was defending democracy. But I returned paralyzed from the chest down, sitting in a wheelchair in a rundown veterans' hospital full of rats and neglected men. I realized we had been lied to. We weren't heroes; we were sent to kill women and children in villages we didn't know, for a cause that was unjust. When I joined the protest outside the Republican National Convention, I threw my medals away. I wanted the country to know the truth of what they had done to us and to the Vietnamese.",
       "discussionQuestion": "Why did testimonies from returning veterans like Ron Kovic have such a powerful emotional and political impact on the American public compared to student protests?"
-},
-
+    },
     "headerTitle": "KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?",
     "headerIntro": "As the war dragged on, domestic opposition erupted into a powerful movement. The introduction of the draft in 1965 and the first televised war brought graphic footage of civilian casualties directly into American living rooms, creating a 'credibility gap' between government claims and reality. The shock of the 1968 Tet Offensive and the 1969 exposure of the My Lai Massacre—where US troops murdered over 500 civilians—further fueled protests. Tension peaked in May 1970 at Kent State University, where National Guardsmen shot and killed four student protesters, polarizing the nation.",
     "steps": [
@@ -2649,12 +2688,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why the anti-war movement grew rapidly in the years 1968–70.",
+      "question": "Explain why the anti-war movement grew rapidly in the years 1968–70 [Sample]",
       "successText": "Excellent linkage! The moral shock of the My Lai Massacre and the expansion of the war into Cambodia triggered mass student protests that culminated in the Kent State tragedy.",
       "factors": [
         {
           "id": "s41_f1",
-          "title": "Media exposure of the My Lai Massacre in late 1969.",
+          "title": "The shocking revelations of the My Lai Massacre",
           "options": [
             "This shattered US claims of moral superiority, alienating moderate middle-class citizens from supporting the war.",
             "This resulted in immediate public support for the draft lottery."
@@ -2664,7 +2703,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s41_f2",
-          "title": "Nixon's announcement of the invasion of Cambodia in 1970.",
+          "title": "The outrage over the US invasion of Cambodia (1970)",
           "options": [
             "Which ended all student protests and pacified college campuses.",
             "Which was seen as expanding the war, triggering massive campus protests that led to the Kent State shootings."
@@ -2793,6 +2832,63 @@ export const LESSONS_DATA = {
       "interpretation": "Social historians argue that the anti-war movement was highly diverse, consisting of middle-class students, civil rights groups, and working-class draft-resisters, though it also generated a massive conservative backlash.",
       "discussionQuestion": "How did televised media coverage of the Vietnam War influence the relationship between the US government and the public?"
     },
+    "paper3Suite": {
+      "title": "Exam Practice: Paper 3 Section B (Unified Source & Interpretation Set)",
+      "enquiry": "the reasons for the growth of the anti-war movement in the USA",
+      "sourceB": {
+        "provenance": "From a statement by the Students for a Democratic Society (SDS) at an anti-war rally in Washington D.C., 1965.",
+        "content": "\"The war in Vietnam is an immoral and unjustifiable intervention in a civil conflict. We are drafting young men from poor communities to fight and die for a corrupt regime in Saigon, while defense contractors in America rake in billions. We demand an immediate withdrawal of all US troops and an end to this senseless slaughter. It is our democratic duty to resist the draft and protest until the war machine is stopped. The government lies to us daily about casualty figures and phantom victories, covering up a brutal campaign that destroys peasant villages to 'save' them. We will march on the Pentagon, we will burn our draft cards, and we will shut down the universities if we must. The youth of this country refuse to be complicit in an imperialist war that violates every principle of self-determination and human rights.\""
+      },
+      "sourceC": {
+        "provenance": "From a broadcast by CBS Evening News anchor Walter Cronkite, following his visit to Vietnam during the Tet Offensive, February 1968.",
+        "content": "\"To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past. To suggest we are on the edge of defeat is to yield to unreasonable pessimism. To say that we are mired in stalemate seems the only realistic, yet unsatisfactory, conclusion. It is increasingly clear to this reporter that the only rational way out then will be to negotiate, not as victors, but as an honorable people who lived up to their pledge to defend democracy, and did the best they could. The recent offensive has demonstrated that the enemy's resolve remains unbroken despite years of our relentless bombing. We have been repeatedly assured by the military brass that the light at the end of the tunnel is visible, but the reality on the ground contradicts these rosy assessments entirely.\""
+      },
+      "interpretation1": {
+        "provenance": "From 'The Anti-War Movement and the Vietnam Era' by historian Charles DeBenedetti, published in 1990.",
+        "content": "\"The anti-war movement was fundamentally a moral and political awakening among American youth, driven by the stark realities of the draft and the glaring injustices of the conflict. College students and civil rights activists recognized that the war was diverting crucial funds away from Johnson's Great Society programs and disproportionately sacrificing working-class and minority lives. The movement succeeded because it channeled this righteous indignation into massive, highly visible protests that forced politicians to pay attention. By creating a broad coalition that included returning veterans, religious leaders, and disillusioned middle-class professionals, the movement effectively shattered the bipartisan consensus that had previously supported the Cold War containment doctrine. This grassroots mobilization made it politically impossible for successive administrations to continuously escalate troop levels without facing paralyzing domestic unrest.\""
+      },
+      "interpretation2": {
+        "provenance": "From 'The Uncensored War' by media historian Daniel Hallin, published in 1986.",
+        "content": "\"While campus protests were loud, the true turning point in public opinion was the role of the mass media. Television brought the horrors of combat directly into American living rooms every night. Unprecedented, uncensored coverage of events like the Tet Offensive and the My Lai massacre shattered the government's optimistic narrative. It was the continuous visual evidence of a brutal, unwinnable stalemate that ultimately eroded middle-class support for the war, far more than radical student demonstrations. The daily broadcasting of body bags and crying refugees systematically dismantled the Pentagon's credibility. When respected journalists began openly questioning the military's strategy, the broader American public—who generally found the student radicals alienating and unpatriotic—quietly shifted their stance from loyal support to weary opposition, ultimately demanding a negotiated exit.\""
+      },
+      "questions": {
+        "q3a": "How useful are Sources B and C for an enquiry into the reasons for the growth of the anti-war movement in the USA? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
+        "q3b": "Study Interpretations 1 and 2. They give different views about the reasons for the growth of the anti-war movement in the USA. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)",
+        "q3c": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons for the growth of the anti-war movement. You can use Sources B and C to help explain your answer. (4 marks)",
+        "q3d": "How far do you agree with Interpretation 2 about the reasons for the growth of the anti-war movement in the USA? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
+      },
+      "sentenceStarters": [
+        {
+          "label": "Q3a: Source B is useful because...",
+          "value": "Source B is useful for an enquiry into the anti-war movement because it shows..."
+        },
+        {
+          "label": "Q3a: However, Source B is limited because...",
+          "value": "However, the usefulness of Source B is limited because..."
+        },
+        {
+          "label": "Q3a: Source C is useful because...",
+          "value": "Source C is useful for an enquiry into the anti-war movement because..."
+        },
+        {
+          "label": "Q3a: However, Source C is limited because...",
+          "value": "However, the usefulness of Source C is limited because..."
+        },
+        {
+          "label": "Q3b: The main difference is...",
+          "value": "The main difference between the views in Interpretations 1 and 2 is..."
+        },
+        {
+          "label": "Q3c: The reason they differ is...",
+          "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..."
+        },
+        {
+          "label": "Q3d: I agree with Interpretation 2 to a...",
+          "value": "I agree with Interpretation 2 to a [high/moderate] extent because while student protests raised awareness, it was the television coverage that..."
+        }
+      ],
+      "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the moral and political arguments of the radical student protest movement. The content criticizes the draft for targeting poor communities to fight for a corrupt regime, while demanding immediate withdrawal. This is useful because it is supported by my knowledge that groups like the SDS organized massive teach-ins and rallies (such as the 1965 Washington rally) protesting the unequal draft system. The provenance, an SDS statement at a rally, makes it an authentic record of the ideological fervor of the New Left. However, it is limited because it represents the radical, left-wing perspective of college students and does not reflect the views of mainstream Middle America.\n\nSource C is highly useful for showing how mainstream media coverage shifted public perception toward the war. The content openly calls the war a 'stalemate' and suggests the only rational outcome is to negotiate a withdrawal rather than expect a military victory. This utility is supported by my knowledge that Walter Cronkite was considered the 'most trusted man in America,' and his broadcast following the shock of the Tet Offensive in 1968 severely damaged President Johnson's credibility. The provenance, a national television broadcast by a respected anchor, provides invaluable evidence of how the media turned mainstream opinion. However, it is limited because it focuses solely on the military reality of the stalemate and does not mention the domestic draft grievances driving the younger protestors.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the anti-war movement was driven primarily by moral outrage and political activism among college students and civil rights groups, who protested the unfair draft and the diversion of funds from the Great Society. In contrast, Interpretation 2 argues that the growth of anti-war sentiment was fundamentally caused by the mass media, specifically uncensored television coverage of brutal combat that brought the reality of the war into middle-class living rooms and destroyed the government's narrative of success.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the opposition to the war. Interpretation 1 focuses on the grassroots ideological activism of the youth and student protest movements on college campuses, whereas Interpretation 2 focuses on the broader societal impact of mass media and television journalism on middle-class public opinion. Additionally, they gave weight to different primary sources: Interpretation 1 is supported by the radical SDS manifestos like Source B, while Interpretation 2 is supported by mainstream media broadcasts like Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 2 to a high extent. While student activism (Interpretation 1) was highly vocal and generated significant early resistance to the draft, the majority of the American public initially found radical groups like the SDS alienating. As Interpretation 2 suggests, the true catalyst that turned mainstream middle-class America against the conflict was the unprecedented television coverage. As Source C demonstrates, when respected figures like Walter Cronkite declared the war a stalemate following the televised shock of the Tet Offensive, the 'credibility gap' became too large for the government to overcome. The continuous visual evidence of American casualties and atrocities like My Lai eroded the foundational support for the war in a way that student protests alone could not. Therefore, the mass media was the primary factor in broadening the anti-war movement from a campus phenomenon into a national consensus."
+    },
     "mapConfig": {
       "type": "usa",
       "title": "Student Protests & Kent State Shooting (1970)",
@@ -2819,8 +2915,7 @@ export const LESSONS_DATA = {
       "context": "A New York construction worker (hardhat) interviewed after the 'Hardhat Riots' of May 8, 1970.",
       "quote": "These students are coddled brats. They get deferments from the draft, they live in comfortable university dorms, and then they spit on the American flag and call our boys in Vietnam 'baby killers.' My brother is over there right now, risking his life in the jungle. We work hard every day to build this city, and we love our country. When we saw them protesting and lowering the flag, we couldn't take it anymore. We went down there to show them that working men support the President and support our troops. You don't insult America and get away with it.",
       "discussionQuestion": "How did the anti-war movement create deep social and class divisions in American society? How did Nixon capitalize on these divisions?"
-},
-
+    },
     "headerTitle": "KT 4.2: Why did some Americans support the Vietnam War and the 'Silent Majority'?",
     "headerIntro": "Despite the high profile of the anti-war movement, millions of Americans supported the war or opposed the protests. In November 1969, President Nixon appealed to the 'Silent Majority'—conservative, patriotic, working-class citizens who felt alienated by radical counterculture and anti-war demonstrations. Pro-war support was fueled by deep-seated anti-communism, respect for law and order, and the belief that protesting troops during wartime was unpatriotic. Nixon's strategy was highly successful, enabling him to secure a landslide re-election in 1972.",
     "steps": [
@@ -2863,12 +2958,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why many working-class Americans supported the Vietnam War in 1969–70.",
+      "question": "Explain why the anti-war movement grew rapidly in the years 1968–70 [Sample]",
       "successText": "Excellent! working-class patriotism feared communism, and resentment toward draft-exempt college students fueled support for Nixon's pro-war platform.",
       "factors": [
         {
           "id": "s42_f1",
-          "title": "Deep-seated patriotism and fear of communist expansion.",
+          "title": "Strong patriotic belief in containing Communism",
           "options": [
             "This led working-class families to support Nixon's goal of achieving 'Peace with Honor' rather than immediate surrender.",
             "This caused working-class Americans to join the student strike movement."
@@ -2878,7 +2973,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s42_f2",
-          "title": "Resentment toward middle-class student protesters who had college draft deferments.",
+          "title": "Resentment toward radical student protesters",
           "options": [
             "Which caused working-class voters to align with Nixon against what they saw as privileged, unpatriotic radicals.",
             "Which led to massive worker-student coalitions in public factories."
@@ -3023,8 +3118,7 @@ export const LESSONS_DATA = {
       "context": "A South Vietnamese employee at the US Embassy in Saigon, recalling the chaotic evacuation on April 29-30, 1975.",
       "quote": "The gates of the embassy were surrounded by thousands of desperate people screaming to get in. We had worked for the Americans for years; we knew that if the Communists captured us, we would be sent to re-education camps or shot. I managed to climb the wall with my wife and get inside the courtyard. We watched helicopters land on the roof, load people, and fly away. But many were left behind. The American marines suddenly shut the doors, went to the roof, and locked the gates. They abandoned us. The helicopters stopped coming, and we heard the tanks of the North Vietnamese entering the city.",
       "discussionQuestion": "How does this eyewitness account challenge the idea that the US exit from Vietnam was an orderly, honorable retreat? What was the human cost of the sudden withdrawal?"
-},
-
+    },
     "headerTitle": "KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?",
     "headerIntro": "Peace negotiations began in Paris in 1968 but remained deadlocked for years. In late 1972, Nixon ordered the devastating 'Christmas Bombings' of Hanoi to pressure North Vietnam. In January 1973, the Paris Peace Accords were signed, leading to the complete withdrawal of all US combat forces. However, fighting resumed between Vietnamese forces, and without US air support, the ARVN crumbled. In April 1975, communist forces launched the Spring Offensive, capturing the capital and renaming it Ho Chi Minh City, completing the reunification of Vietnam under communist rule.",
     "steps": [
@@ -3067,12 +3161,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why South Vietnam collapsed so rapidly in early 1975.",
+      "question": "Explain why the USA was involved in the peace negotiations (1972–73) about the war in Vietnam [2021]",
       "successText": "Excellent causal linking! The combination of US troop withdrawal and Congress cutting military aid left ARVN underfunded and unable to resist the final North Vietnamese offensive.",
       "factors": [
         {
           "id": "s43_f1",
-          "title": "Complete withdrawal of US combat troops in 1973.",
+          "title": "The enormous financial and human cost of continuing the war",
           "options": [
             "This left South Vietnam without the vital US air support and ground forces that had previously blocked communist offensives.",
             "This caused immediate peace and stability between North and South Vietnam."
@@ -3082,7 +3176,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s43_f2",
-          "title": "US Congress voting to slash military funding for ARVN in 1974.",
+          "title": "Nixon's desire to secure re-election in 1972",
           "options": [
             "Which resulted in ARVN forces running out of fuel, ammunition, and parts, shattering their military capacity and morale.",
             "Which allowed ARVN to build a high-tech modern air force to defeat the North."
@@ -3227,8 +3321,7 @@ export const LESSONS_DATA = {
       "context": "US Army historian and veteran, recounting an exchange in Hanoi in April 1975 with North Vietnamese Colonel Nguyen Don Tu.",
       "quote": "I told the North Vietnamese colonel: 'You know, you never defeated us on the battlefield.' He looked at me, thought for a moment, and replied: 'That may be so. But it is also irrelevant.' We had all the firepower, we won almost every major engagement, and we killed ten times as many of their men. But they won the war because they were willing to suffer and die indefinitely for their independence, while our public at home lost the will to fight. They understood that war is a political struggle, not just a military scorecard.",
       "discussionQuestion": "Why is it possible to win every military battle but still lose a war? How does this sum up the core failure of the US intervention in Vietnam?"
-},
-
+    },
     "headerTitle": "KT 4.4: What were the main reasons why the US failed to win the war in Vietnam?",
     "headerIntro": "The failure of the USA to defeat communist forces in Vietnam was the result of interconnected military, political, and social factors. Militarily, the Vietcong's guerrilla tactics, local knowledge, and supplies from China and the USSR defeated US attrition strategies. Politically, the South Vietnamese government remained corrupt and unpopular, whereas the North Vietnamese exhibited absolute determination (the 'commitment bug'). Socially, the growing anti-war movement and draft resistance destroyed the domestic political support necessary to sustain a prolonged war, forcing US withdrawal.",
     "steps": [
@@ -3271,12 +3364,12 @@ export const LESSONS_DATA = {
       "tipHtml": ""
     },
     "causalLinks": {
-      "question": "Explain why the USA failed to achieve its aims in the Vietnam War.",
+      "question": "Explain why the USA failed to achieve its aims in the Vietnam War [2023]",
       "successText": "Outstanding analysis! The combination of Vietcong guerrilla resilience and the collapse of support on the American homefront forced the US to withdraw without achieving victory.",
       "factors": [
         {
           "id": "s44_f1",
-          "title": "Vietcong guerrilla tactics and deep support among the peasantry.",
+          "title": "The corruption and unpopularity of the South Vietnamese government",
           "options": [
             "This prevented the US military from securing rural areas, wearing down US troop morale and resources over a decade.",
             "This forced the North Vietnamese to adopt conventional Western military tactics."
@@ -3286,7 +3379,7 @@ export const LESSONS_DATA = {
         },
         {
           "id": "s44_f2",
-          "title": "The collapse of public support and growth of the anti-war movement in the US.",
+          "title": "The lack of support for the war from the American public",
           "options": [
             "Which gave the President unlimited authority to deploy troops indefinitely.",
             "Which destroyed the political consensus for the war, forcing Nixon to withdraw ground forces and accept a negotiated exit."
@@ -3338,19 +3431,19 @@ export const LESSONS_DATA = {
       "enquiry": "the reasons for US failure in the Vietnam War",
       "sourceB": {
         "provenance": "From a speech by US General William Westmoreland, 1976.",
-        "content": "\"On the battlefield, our soldiers were outstanding. We won every major battle. The defeat was not military. The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause.\""
+        "content": "\"On the battlefield, our soldiers were outstanding. We won every major battle. The defeat was not military. The war was lost by politicians who restricted our targets and by a media that turned the American public against a noble cause. I was forbidden from invading North Vietnam or striking their sanctuaries in Cambodia early in the conflict, forcing us to fight a defensive war. Meanwhile, television reporters broadcasted misleading images of American casualties right into the living rooms of our citizens, sapping their will to fight long before our forces were ever defeated in the field. Had we been permitted to deploy our full military might without the constant meddling of Washington bureaucrats terrified of provoking the Soviets, we could have decisively broken the North Vietnamese army. We fought with one hand tied behind our backs, betrayed by a collapse of resolve at home.\""
       },
       "sourceC": {
         "provenance": "From a North Vietnamese volunteer worker on the Ho Chi Minh Trail, 1974.",
-        "content": "\"They bombed us day and night, but we rebuilt the road immediately. We were fighting for our country's independence. We were willing to die for our land. The Americans were fighting for a government in Saigon that nobody respected. Firepower cannot defeat national spirit.\""
+        "content": "\"They bombed us day and night, but we rebuilt the road immediately. We were fighting for our country's independence. We were willing to die for our land. The Americans were fighting for a government in Saigon that nobody respected. Firepower cannot defeat national spirit. Sometimes B-52 bombers would wipe out entire sections of the jungle, leaving craters fifty feet deep. But within hours, hundreds of volunteers—men, women, and teenagers—would emerge from the caves to fill the craters by hand. We knew that as long as supplies kept moving south, the Americans would eventually grow tired and leave. Their soldiers counted the days until their tours of duty ended, but we had nowhere else to go. This was our home, and we were prepared to fight for ten, twenty, or even fifty years to drive out the foreign invaders and reunite our people.\""
       },
       "interpretation1": {
         "provenance": "From 'A Better War' by historian Lewis Sorley, published in 1999.",
-        "content": "\"The US military successfully adapted to guerrilla warfare and had secured South Vietnam's rural areas by 1971. The ultimate failure was political: the US Congress cut military funding and forbade air support, leaving ARVN defenseless against a massive NVA conventional invasion.\""
+        "content": "\"The US military successfully adapted to guerrilla warfare and had secured South Vietnam's rural areas by 1971. The ultimate failure was political: the US Congress cut military funding and forbade air support, leaving ARVN defenseless against a massive NVA conventional invasion. Under General Creighton Abrams, the pacification program had genuinely weakened the Vietcong infrastructure, restoring relative peace to the villages. But just as this strategy began to work, anti-war sentiment in Washington reached a fever pitch. By severely restricting financial aid and refusing to authorize B-52 strikes during the 1975 Spring Offensive, politicians snatched defeat from the jaws of a hard-won military stalemate. The South Vietnamese forces fought bravely when properly equipped, but the sudden withdrawal of American logistical and aerial support doomed them to collapse against a heavily resupplied Northern adversary.\""
       },
       "interpretation2": {
         "provenance": "From 'Vietnam: A History' by historian Stanley Karnow, published in 1983.",
-        "content": "\"The US failure was inevitable because they were fighting a nationalist movement that was willing to accept any human cost to win. General Westmoreland's strategy of attrition was a failure because the communists replaced their losses faster than the US could kill them, and the corrupt Saigon regime never had the loyalty of the people.\""
+        "content": "\"The US failure was inevitable because they were fighting a nationalist movement that was willing to accept any human cost to win. General Westmoreland's strategy of attrition was a failure because the communists replaced their losses faster than the US could kill them, and the corrupt Saigon regime never had the loyalty of the people. By relying heavily on search-and-destroy missions and massive bombing campaigns, the US military alienated the rural peasantry they were supposed to be protecting. No amount of American technology could compensate for the fact that the Vietcong represented a deeply rooted anti-colonial struggle, while the South Vietnamese government was widely seen as an illegitimate puppet regime. The basic political dynamics of the conflict meant that the longer the Americans stayed and fought, the more they validated the communist claim that they were merely the latest imperialist occupiers.\""
       },
       "questions": {
         "q3a": "How useful are Sources B and C for an enquiry into the reasons for US failure in the Vietnam War? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)",
@@ -3359,13 +3452,34 @@ export const LESSONS_DATA = {
         "q3d": "How far do you agree with Interpretation 2 about the reasons for US failure in the Vietnam War? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)"
       },
       "sentenceStarters": [
-        { "label": "Q3a: Source B is useful because...", "value": "Source B is useful for an enquiry into the reasons for US failure in Vietnam because it shows..." },
-        { "label": "Q3a: However, Source B is limited because...", "value": "However, the usefulness of Source B is limited because..." },
-        { "label": "Q3a: Source C is useful because...", "value": "Source C is useful for an enquiry into the reasons for US failure in Vietnam because..." },
-        { "label": "Q3a: However, Source C is limited because...", "value": "However, the usefulness of Source C is limited because..." },
-        { "label": "Q3b: The main difference is...", "value": "The main difference between the views in Interpretations 1 and 2 is..." },
-        { "label": "Q3c: The reason they differ is...", "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..." },
-        { "label": "Q3d: I agree with Interpretation 2 to a...", "value": "I agree with Interpretation 2 to a [high/moderate] extent because while US political divisions were important, the communist commitment and..." }
+        {
+          "label": "Q3a: Source B is useful because...",
+          "value": "Source B is useful for an enquiry into the reasons for US failure in Vietnam because it shows..."
+        },
+        {
+          "label": "Q3a: However, Source B is limited because...",
+          "value": "However, the usefulness of Source B is limited because..."
+        },
+        {
+          "label": "Q3a: Source C is useful because...",
+          "value": "Source C is useful for an enquiry into the reasons for US failure in Vietnam because..."
+        },
+        {
+          "label": "Q3a: However, Source C is limited because...",
+          "value": "However, the usefulness of Source C is limited because..."
+        },
+        {
+          "label": "Q3b: The main difference is...",
+          "value": "The main difference between the views in Interpretations 1 and 2 is..."
+        },
+        {
+          "label": "Q3c: The reason they differ is...",
+          "value": "One reason why Interpretations 1 and 2 give different views is that the historians chose to focus on different aspects of..."
+        },
+        {
+          "label": "Q3d: I agree with Interpretation 2 to a...",
+          "value": "I agree with Interpretation 2 to a [high/moderate] extent because while US political divisions were important, the communist commitment and..."
+        }
       ],
       "modelAnswer": "<strong>Q3a (8 marks):</strong>\nSource B is highly useful for demonstrating the perspective of the US military command regarding the reasons for US failure. The content claims that US soldiers were outstanding and won every battle, blaming the defeat entirely on political target restrictions and a media that turned the public against the war. This is useful because it is supported by my knowledge that US command faced severe restrictions (such as not invading North Vietnam directly to avoid Chinese intervention) and that media coverage of the Tet Offensive created a massive 'credibility gap' at home. The provenance, a speech by General Westmoreland in 1976 (the commander of US forces in Vietnam), makes it an authentic record of how top US commanders rationalized the defeat. However, it is limited because Westmoreland was personally responsible for the controversial strategy of attrition, meaning the source is highly self-defensive and seeks to deflect personal blame.\n\nSource C is highly useful for showing the motivations and tactics of the communist forces. The content emphasizes North Vietnamese determination to rebuild bombed supply routes, their willing commitment to die for independence, and their view that the Saigon regime lacked legitimacy. This utility is supported by my knowledge that the communists fought a total war of national liberation, using over 50,000 volunteers to keep the Ho Chi Minh Trail open despite constant US bombing. The provenance, being a North Vietnamese volunteer worker in 1974, provides an invaluable contemporary perspective on the high morale and nationalist commitment of the communist forces. However, it is limited because it is a highly patriotic statement that may downplay the severe physical hardships, fear, and high casualties suffered by trail workers.\n\n<strong>Q3b (4 marks):</strong>\nInterpretation 1 argues that the US failure in Vietnam was primarily political and occurred late in the conflict, claiming the military had actually secured the countryside by 1971 but were abandoned when Congress cut military funding and air support to South Vietnam. In contrast, Interpretation 2 argues that US defeat was militarily inevitable from the start because the US was fighting a highly resilient nationalist movement willing to accept any human cost, whose losses were replaced faster than the US could inflict them, combined with an unpopular and corrupt Saigon regime.\n\n<strong>Q3c (4 marks):</strong>\nThe historians arrived at different interpretations because they focused on different aspects of the US failure. Interpretation 1 focuses on the domestic legislative and political decisions in Washington (such as Congress cutting military funds), whereas Interpretation 2 focuses on the structural military weaknesses of the US strategy of attrition and the high nationalist resolve of the North Vietnamese. Additionally, they gave weight to different primary sources: Interpretation 1 is supported by General Westmoreland's claims of battlefield success in Source B, while Interpretation 2 is supported by the volunteer's testimony of unbreakable resolve in Source C.\n\n<strong>Q3d (16 marks + 4 SPaG):</strong>\nI agree with Interpretation 2 to a high extent. While political decisions in Washington and funding cuts (Interpretation 1) certainly hastened the final collapse of South Vietnam in 1975, the fundamental reason for US failure was the unwinnable nature of the conflict itself. As Source C shows, the North Vietnamese and Vietcong possessed an unbreakable nationalist commitment to secure their country's independence, which allowed them to withstand relentless US bombing and rebuild crucial networks like the Ho Chi Minh Trail. General Westmoreland's conventional strategy of attrition (highlighted in Source B) was structurally flawed because the communists replaced their casualties faster than the US could inflict them. Furthermore, the corrupt and unstable Saigon government (ARVN) never won the loyalty of the rural peasantry. Therefore, US military tactics could not overcome these political and social realities, making defeat inevitable."
     },

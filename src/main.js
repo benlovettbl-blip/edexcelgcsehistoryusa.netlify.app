@@ -1,3 +1,4 @@
+
 import { initData } from './storage.js';
 import { renderSidebarNav, updateGlobalStats, closeVideoModal, showToast, initStreakLeaderboardListeners } from './views.js';
 import { bindEvents } from './layout.js';

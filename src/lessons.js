@@ -4851,226 +4851,159 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
   ` : '';
 
   if (style === 'booklet') {
-    const narrativeHtml = data.narrative.map(sec => `
-      <div class="sub-title">${sec.title}</div>
-      ${sec.paragraphs.map(p => `<p>${p}</p>`).join('')}
+    const isEndOfUnit = subtopicId.endsWith('_4');
+
+    const cleanHtml = (html) => {
+      if (typeof document !== 'undefined') {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        const selectorsToRemove = ['.mind-map-task-box', '.revision-task-box', '.examiner-tip-box', '.lesson-image-wrapper', '.mastery-media-column'];
+        selectorsToRemove.forEach(selector => {
+          tempDiv.querySelectorAll(selector).forEach(el => el.remove());
+        });
+        
+        tempDiv.querySelectorAll('ul').forEach(ul => {
+          ul.style.marginTop = '12px';
+          ul.style.marginBottom = '18px';
+          ul.style.paddingLeft = '25px';
+        });
+        tempDiv.querySelectorAll('li').forEach(li => {
+          li.style.marginBottom = '12px';
+          li.style.lineHeight = '1.6';
+        });
+        
+        return tempDiv.innerHTML;
+      }
+      return html;
+    };
+
+    const narrativeHtml = (data.narrative || []).map((section, idx) => `
+      <div style="margin-bottom: 25px;">
+        <h3 style="font-size: 14pt; margin-bottom: 12px; font-weight: bold; border-bottom: 2px solid #000000; padding-bottom: 4px;">${idx + 1}. ${section.title}</h3>
+        ${section.paragraphs.map(p => `<div style="font-size: 11.5pt; line-height: 1.6; margin-bottom: 12px;">${cleanHtml(p)}</div>`).join('')}
+      </div>
     `).join('');
 
     const vocabHtml = data.vocabulary.map(item => `
-      <div class="vocab-item"><strong>${item.term}</strong>: ${item.definition}</div>
-    `).join('');
-
-    const timelineVerticalHtml = data.timeline.map(item => `
-      <div class="timeline-vertical-card" style="padding: 2.5px 4px; background: #ffffff; border: 1px solid #e5e7eb; border-left: 2.5px solid #f43f5e; margin-bottom: 3.5px; box-sizing: border-box;">
-        <div style="font-weight: bold; font-size: 7pt; color: #f43f5e;">${item.date}</div>
-        <div style="font-size: 6.5pt; line-height: 1.15; color: #374151; margin-top: 1px;">${item.desc}</div>
+      <div class="vocab-item" style="margin-bottom: 8px;">
+        <strong style="font-size: 11pt;">${item.term}</strong>: ${item.definition}
       </div>
     `).join('');
 
-    const comprehensionHtml = data.comprehensionCheck.map((q, idx) => `
-      <div class="question-block" style="padding: 3px 5px; margin-bottom: 3px;">
-        <span class="question-title" style="font-size: 8pt; line-height: 1.2;">${q.title}</span>
-        <span class="scaffold-tip" style="font-size: 6.8pt; color: #4b5563; margin-top: 1px;">${q.scaffold}</span>
-      </div>
-    `).join('');
-
-    const matrixHeaders = data.causationMatrix.columns.map((col, idx) => `
-      <th class="matrix-header" style="width: ${idx === 0 ? '70%' : '30%'};">${col}</th>
-    `).join('');
-    
-    let matrixRowsHtml = '';
-    (data.causationMatrix.factors || []).forEach(factor => {
-      matrixRowsHtml += `
-        <tr>
-          <td class="matrix-cell" style="padding: 4px 6px; font-size: 7.5pt; text-align: left; font-weight: bold; height: 26px; box-sizing: border-box;">${factor}</td>
-          <td class="matrix-cell" style="height: 26px; box-sizing: border-box;"></td>
-        </tr>
-      `;
-    });
-    
-    // Shuffling consequences for matching activity
-    const consequences = [...(data.causationMatrix.factBank || [])];
-    if (consequences.length > 1) {
-      const last = consequences.pop();
-      consequences.unshift(last);
-    }
-    const factBankText = consequences.map((fact, idx) => `(${idx + 1}) ${fact}`).join(' • ');
-
-    const matrixHtml = `
-      <table class="matrix-table">
-        <tr>${matrixHeaders}</tr>
-        ${matrixRowsHtml}
+    const timelineAndQuestionsHtml = `
+      <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        ${data.timeline.map((item, idx) => {
+          const q = data.comprehensionCheck[idx];
+          return `
+            <tr>
+              <td style="width: 20%; padding: 15px 15px 15px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
+                <strong style="font-size: 12pt;">${item.date}</strong>
+              </td>
+              <td style="width: 40%; padding: 15px; vertical-align: top;">
+                <span style="font-size: 11pt;">${item.desc}</span>
+              </td>
+              <td style="width: 40%; padding: 15px; vertical-align: top;">
+                ${q ? `
+                  <div style="padding: 10px; border: 2px solid #000000; border-radius: 6px;">
+                    <span style="font-size: 11pt; font-weight: bold;">${q.title}</span><br>
+                    <span style="font-size: 10pt; font-style: italic; display: block; margin-top: 4px;">${q.scaffold}</span>
+                  </div>
+                ` : ''}
+              </td>
+            </tr>
+          `;
+        }).join('')}
       </table>
     `;
 
+    let q2Title = data.causalQuestion || "Explain why this topic developed during this period.";
+    let q2Stimulus = (data.causationMatrix?.factors || []).slice(0, 2);
 
-    let sourcesTable = '';
-    if (data.sources && data.sources.length > 0) {
-      sourcesTable += `<table style="width: 100%; border-collapse: collapse; margin-bottom: 3px;">`;
-      for (let i = 0; i < data.sources.length; i += 2) {
-        sourcesTable += `<tr>`;
-        const s1 = data.sources[i];
-        sourcesTable += `
-          <td style="width: 50%; padding-right: 4px; padding-bottom: 4px; vertical-align: top;">
-            <div class="source-box">
-              <strong>${s1.id}: ${s1.title}</strong>
-              <p style="font-family: 'Times New Roman', Times, serif; font-size: 7.5pt; margin: 2px 0 0 0; line-height: 1.2;">
-                "${s1.text}"
-              </p>
-            </div>
-          </td>
-        `;
-        const s2 = data.sources[i + 1];
-        if (s2) {
-          sourcesTable += `
-            <td style="width: 50%; padding-left: 4px; padding-bottom: 4px; vertical-align: top;">
-              <div class="source-box">
-                <strong>${s2.id}: ${s2.title}</strong>
-                <p style="font-family: 'Times New Roman', Times, serif; font-size: 7.5pt; margin: 2px 0 0 0; line-height: 1.2;">
-                  "${s2.text}"
-                </p>
-              </div>
-            </td>
-          `;
-        } else {
-          sourcesTable += `<td style="width: 50%;"></td>`;
-        }
-        sourcesTable += `</tr>`;
-      }
-      sourcesTable += `</table>`;
+    if (data.examPractice && data.examPractice.q2) {
+      q2Title = data.examPractice.q2.title;
+      q2Stimulus = data.examPractice.q2.stimulus || [];
     }
 
-    // Exam Questions rendering (inference question with empty templates + Causation Why question with stimulus points)
-    const inferenceQuestion = data.examPractice.questions.find(q => q.title.toLowerCase().includes("infer") || q.title.toLowerCase().includes("inference"));
-    
-    let inferenceHtml = '';
-    if (inferenceQuestion) {
-      inferenceHtml = `
-        <div style="margin-bottom: 4px; border: 1px solid #e5e7eb; padding: 4px; border-radius: 4px; background: #ffffff; box-sizing: border-box;">
-          <span style="font-weight: bold; font-size: 8pt; color: #111827; display: block;">Question 1 [4 Marks]:</span>
-          <span style="display: block; font-size: 7.5pt; font-weight: bold; margin-top: 1px; line-height: 1.25; color: #374151;">${inferenceQuestion.title}</span>
-          ${inferenceQuestion.sourceA ? `
-            <div style="font-family: 'Times New Roman', Times, serif; font-size: 7.2pt; border-left: 2px solid #6b7280; padding-left: 5px; margin: 2px 0; background: #f9fafb; font-style: italic; line-height: 1.15; color: #4b5563;">
-              "${inferenceQuestion.sourceA}"
-            </div>` : ''}
-          <div style="margin-top: 4px; font-size: 7pt; line-height: 1.45;">
-            <strong>Inference 1:</strong> <span style="border-bottom: 1px dotted #9ca3af; display: inline-block; width: 75%;">&nbsp;</span><br>
-            <strong>Details:</strong> <span style="border-bottom: 1px dotted #9ca3af; display: inline-block; width: 79%;">&nbsp;</span><br>
-            <strong>Inference 2:</strong> <span style="border-bottom: 1px dotted #9ca3af; display: inline-block; width: 75%;">&nbsp;</span><br>
-            <strong>Details:</strong> <span style="border-bottom: 1px dotted #9ca3af; display: inline-block; width: 79%;">&nbsp;</span>
+    const whyHtml = `
+      <div style="margin-bottom: 20px; border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box;">
+        <span style="font-weight: bold; font-size: 12pt; color: #000000; display: block;">Question 2 [12 Marks]:</span>
+        <span style="display: block; font-size: 12pt; font-weight: bold; margin-top: 6px;">
+          ${q2Title}
+        </span>
+        <div style="font-size: 11pt; border-left: 3px solid #000000; padding-left: 10px; margin-left: 2px; margin-top: 10px;">
+          You may use the following in your answer:<br>
+          ${q2Stimulus.map(s => `• ${s}<br>`).join('')}
+          • You must also use information of your own.
+        </div>
+      </div>
+    `;
+
+    let q3Html = '';
+    if (isEndOfUnit && (data.paper3Suite || (data.examPractice && data.examPractice.q3set))) {
+      const q3 = data.paper3Suite || data.examPractice.q3set;
+      
+      const srcBHtml = q3.sourceB?.content ? `<strong>Source B:</strong> ${q3.sourceB.provenance}<br><em>${q3.sourceB.content}</em>` : q3.sourceB;
+      const srcCHtml = q3.sourceC?.content ? `<strong>Source C:</strong> ${q3.sourceC.provenance}<br><em>${q3.sourceC.content}</em>` : q3.sourceC;
+      
+      const interp1Html = q3.interpretation1?.content ? `<strong>Interpretation 1:</strong> ${q3.interpretation1.provenance}<br><em>${q3.interpretation1.content}</em>` : q3.interpretation1;
+      const interp2Html = q3.interpretation2?.content ? `<strong>Interpretation 2:</strong> ${q3.interpretation2.provenance}<br><em>${q3.interpretation2.content}</em>` : q3.interpretation2;
+
+      const q3a = q3.questions?.q3a || q3.q3a;
+      const q3b = q3.questions?.q3b || q3.q3b;
+      const q3c = q3.questions?.q3c || q3.q3c;
+      const q3d = q3.questions?.q3d || q3.q3d;
+
+      q3Html = `
+        <div class="print-page" style="page-break-before: always; margin-top: 30px;">
+          <h2 class="main-title">End of Unit Exam Practice (3A-D)</h2>
+          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5;">
+            <span style="font-weight: bold; font-size: 11pt; color: #000000; display: block; margin-bottom: 12px;">Question 3 [32 Marks]:</span>
+            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
+              ${srcBHtml}<br><br>
+              ${srcCHtml}
+            </div>
+            <span style="display: block; font-size: 11pt; font-weight: bold; margin-bottom: 12px;">
+              <strong>3 (a)</strong> ${q3a}
+            </span>
+            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
+              ${interp1Html}<br><br>
+              ${interp2Html}
+            </div>
+            <span style="display: block; font-size: 11pt; font-weight: bold; margin-bottom: 8px;">
+              <strong>3 (b)</strong> ${q3b}
+            </span>
+            <span style="display: block; font-size: 11pt; font-weight: bold; margin-bottom: 8px;">
+              <strong>3 (c)</strong> ${q3c}
+            </span>
+            <span style="display: block; font-size: 11pt; font-weight: bold;">
+              <strong>3 (d)</strong> ${q3d}
+            </span>
           </div>
         </div>
       `;
     }
 
-    const whyStimulus = (data.causationMatrix.factors || []).slice(0, 2);
-    const whyHtml = `
-      <div style="margin-bottom: 2px; border: 1px solid #e5e7eb; padding: 4px; border-radius: 4px; background: #ffffff; box-sizing: border-box;">
-        <span style="font-weight: bold; font-size: 8pt; color: #111827; display: block;">Question 2 [12 Marks]:</span>
-        <span style="display: block; font-size: 7.5pt; font-weight: bold; margin-top: 1px; line-height: 1.25; color: #374151;">
-          ${data.causalQuestion || "Explain why this topic developed during this period."}
-        </span>
-        <div style="font-size: 6.5pt; color: #4b5563; line-height: 1.25; border-left: 2px solid #d1d5db; padding-left: 6px; margin-left: 2px; margin-top: 3px; background: #f9fafb; padding-top: 2px; padding-bottom: 2px; box-sizing: border-box;">
-          You may use the following in your answer:<br>
-          ${whyStimulus.map(s => `• ${s}<br>`).join('')}
-          • You must also use information of your own.
-        </div>
-      </div>
-    `;
-    
-    const examQuestionsHtml = inferenceHtml + whyHtml;
-
-    // Comprehensive word bank containing all glossary terms for the lesson
-    const examWordBankText = data.vocabulary.map(v => v.term).join(' • ');
-
-    const quizItemsHtml = data.peerQuiz.map(item => `
-      <li style="margin: 0 0 1.5px 0; padding: 0;">${item.q}</li>
-    `).join('');
-
-    const mindMapBranchesHtml = data.mindMap.branches.map(br => `
-      <div class="map-branch-item" style="padding: 1px 3px; margin-bottom: 1.5px; border-left-width: 2px;">
-        <strong style="font-size: 7.2pt;">${br.title}</strong>
-        <div class="keyword-pill-box" style="margin-top: 0.5px; font-size: 6.5pt;">🔑 ${br.keywords.join(' • ')}</div>
-      </div>
-    `).join('');
-
-    const mindMapIdeas = (data.vocabulary || []).map(v => v.term).concat((data.timeline || []).slice(0, 2).map(t => t.date)).slice(0, 6);
-    const mindMapScaffoldingHtml = `
-      <div class="mind-map-wordbank" style="margin-top: 4px; padding: 3px 5px; background: #f0fdf4; border: 1px dashed #bbf7d0; border-radius: 4px; font-size: 6.2pt; line-height: 1.25; text-align: left; box-sizing: border-box;">
-        <strong>💡 Mind Map Word Bank:</strong> Use these ideas to connect your branches: 
-        <span style="color: #4b5563;">${mindMapIdeas.join(' • ')}</span>
-      </div>
-    `;
-
-    // Generate Page 3 Teacher Answer Key if includeAnswers is checked
     let teacherAnswersHtml = '';
     if (includeAnswers) {
       const comprehensionAnswersHtml = data.comprehensionCheck.map(q => `
-        <div style="margin-bottom: 4px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">
-          <span style="font-weight: bold; font-size: 7.5pt; display: block; color: #1f2937;">${q.title}</span>
-          <span style="font-size: 7pt; display: block; color: #16a34a; font-style: italic; margin-top: 1px;">
+        <div style="margin-bottom: 8px; border-bottom: 1px dashed #000000; padding-bottom: 4px;">
+          <span style="font-weight: bold; font-size: 11pt; display: block; color: #000000;">${q.title}</span>
+          <span style="font-size: 11pt; display: block; font-style: italic; margin-top: 2px;">
             <strong>Answer Guide:</strong> ${q.answer || "Write detailed response using step facts."}
           </span>
         </div>
       `).join('');
 
-      let inferenceAnsHtml = '';
-      if (inferenceQuestion) {
-        inferenceAnsHtml = `
-          <div style="margin-bottom: 4px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">
-            <span style="font-weight: bold; font-size: 7.5pt; display: block; color: #1f2937;">${inferenceQuestion.title} [4 Marks]</span>
-            <span style="font-size: 7pt; display: block; color: #16a34a; font-style: italic; margin-top: 1px; line-height: 1.25;">
-              <strong>Model Answer:</strong><br>${inferenceQuestion.text}
-            </span>
-          </div>
-        `;
-      }
-      
-      const causalAnsHtml = `
-        <div style="margin-bottom: 4px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 2px;">
-          <span style="font-weight: bold; font-size: 7.5pt; display: block; color: #1f2937;">${data.causalQuestion || "Explain why... (12 marks)"}</span>
-          <span style="font-size: 7pt; display: block; color: #16a34a; font-style: italic; margin-top: 1px; line-height: 1.25;">
-            <strong>Suggested Essay Content:</strong> Students should structure their response in three paragraphs using the stimulus factors. They must analyze cause-and-effect links using connection words (e.g. 'This led to', 'As a result') and bring in own knowledge (e.g. specific dates/figures from the steps).
-          </span>
-        </div>
-      `;
-
-      const quizAnswersHtml = data.peerQuiz.map((item, idx) => `
-        <li style="margin: 0 0 1.5px 0; padding: 0;">
-          <strong>Q:</strong> ${item.q}<br>
-          <strong style="color: #16a34a;">A:</strong> ${item.a}
-        </li>
-      `).join('');
-
       teacherAnswersHtml = `
-        <div class="print-page-last" style="page-break-before: always; margin-top: 15px; position: relative;">
+        <div class="print-page-last" style="page-break-before: always; margin-top: 20px; position: relative;">
           <h2 class="main-title">Teacher Answer Key &bull; Topic ${topicName}</h2>
           
-          <div class="section-title" style="margin-top: 5px; margin-bottom: 2px;">Section 3: Comprehension Check Answers</div>
-          <div style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 5px; border-radius: 4px; margin-bottom: 4px; box-sizing: border-box;">
+          <div class="section-title" style="margin-top: 10px; margin-bottom: 6px;">Comprehension Check Answers</div>
+          <div style="border: 2px solid #000000; padding: 10px; border-radius: 6px; margin-bottom: 10px; box-sizing: border-box;">
             ${comprehensionAnswersHtml}
           </div>
           
-          <div class="section-title" style="margin-top: 5px; margin-bottom: 2px;">Section 6: Exam Practice Model Answers</div>
-          <div style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 5px; border-radius: 4px; margin-bottom: 4px; box-sizing: border-box;">
-            ${inferenceAnsHtml}
-            ${causalAnsHtml}
-            <div style="margin-top: 4px; border-top: 1px dashed #e5e7eb; padding-top: 4px;">
-              <strong style="font-size: 7.5pt; display: block; color: #1f2937;">Synthesis Model (Causation Essay):</strong>
-              <span style="font-size: 7pt; display: block; color: #16a34a; font-style: italic; margin-top: 1px; line-height: 1.25;">
-                ${data.examPractice.synthesisModel}
-              </span>
-            </div>
-          </div>
-          
-          <div class="section-title" style="margin-top: 5px; margin-bottom: 2px;">Section 7: Quick-Fire Quiz Answer Key</div>
-          <div style="background: #f0fdf4; border-left: 3px solid #16a34a; padding: 5px; border-radius: 4px; box-sizing: border-box;">
-            <ol class="quiz-list" style="margin: 0; padding-left: 14px; font-size: 7pt; line-height: 1.2;">
-              ${quizAnswersHtml}
-            </ol>
-          </div>
-          
-          <div class="footer-note">Teacher Answer Key &bull; Page 3</div>
+          <div class="footer-note">Teacher Answer Key</div>
         </div>
       `;
     }
@@ -5083,14 +5016,14 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
   <style>
     @page {
       size: 21cm 29.7cm; /* A4 */
-      margin: 0.8cm 1.0cm 0.8cm 1.0cm;
+      margin: 1.2cm 1.5cm;
       mso-page-orientation: portrait;
     }
     body {
-      font-family: 'Arial', sans-serif;
-      font-size: 9.5pt;
-      color: #1f2937;
-      line-height: 1.3;
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-size: 11pt;
+      color: #000000;
+      line-height: 1.4;
       background: #ffffff;
       margin: 0;
       padding: 0;
@@ -5116,8 +5049,8 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
         width: 21cm;
         min-height: 29.7cm;
         margin: 0 auto 20px auto;
-        padding: 0.8cm 1.0cm;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        padding: 1.2cm 1.5cm;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         border: 1px solid #e5e7eb;
         border-radius: 4px;
       }
@@ -5125,9 +5058,9 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     @media print {
       body {
         background: #ffffff !important;
-        color: #1f2937 !important;
-        font-size: 9.5pt !important;
-        line-height: 1.3 !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
       }
       .print-page, .print-page-last {
         width: 100% !important;
@@ -5136,285 +5069,90 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
         margin: 0 !important;
         box-shadow: none !important;
         border: none !important;
-        border-radius: 0 !important;
       }
     }
     
     .main-title {
-      font-size: 13pt;
-      font-weight: 800;
-      border-bottom: 2px solid #111827;
-      padding-bottom: 3px;
+      font-size: 16pt;
+      font-weight: bold;
+      border-bottom: 3px solid #000000;
+      padding-bottom: 6px;
       margin-top: 0;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #111827;
+      color: #000000;
     }
     .section-title {
-      font-size: 9.2pt;
+      font-size: 13pt;
       font-weight: bold;
       text-transform: uppercase;
-      color: #111827;
-      border-bottom: 1.5px solid #4b5563;
-      padding-bottom: 1px;
-      margin-top: 5px;
-      margin-bottom: 2px;
+      color: #000000;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      margin-top: 15px;
+      margin-bottom: 8px;
     }
     .sub-title {
-      font-size: 8.2pt;
+      font-size: 12pt;
       font-weight: bold;
-      color: #111827;
-      margin-top: 4px;
-      margin-bottom: 1px;
-    }
-    
-    .narrative-layout {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-    }
-    .narrative-text {
-      width: 70%;
-      padding-right: 10px;
-      vertical-align: top;
-      text-align: justify;
-      font-size: 8pt;
-      line-height: 1.25;
-    }
-    .narrative-text p {
-      margin: 0 0 2px 0;
-    }
-    .side-panel {
-      width: 30%;
-      padding-left: 8px;
-      border-left: 1px solid #d1d5db;
-      vertical-align: top;
+      color: #000000;
+      margin-top: 10px;
+      margin-bottom: 4px;
     }
     
     .spec-box {
-      border: 1px solid #d1d5db;
-      padding: 4px 6px;
-      margin-bottom: 4px;
-      background: #f9fafb;
-      font-size: 7.5pt;
-      line-height: 1.15;
+      border: 2px solid #000000;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      background: #ffffff;
+      font-size: 11pt;
+      line-height: 1.4;
     }
     .spec-box ul {
-      margin: 1px 0 0 0;
-      padding-left: 12px;
+      margin: 4px 0 0 0;
+      padding-left: 20px;
     }
     .active-reading-box {
-      border: 1px solid #d1d5db;
-      padding: 4px 6px;
-      background: #f3f4f6;
-      margin-bottom: 4px;
-      font-size: 7.5pt;
-      line-height: 1.15;
+      border: 2px solid #000000;
+      padding: 10px 15px;
+      background: #ffffff;
+      margin-bottom: 15px;
+      font-size: 11pt;
+      line-height: 1.4;
     }
     .vocab-box {
-      background: #f9fafb;
-      padding: 4px;
-      border: 1px solid #e5e7eb;
-      border-radius: 4px;
+      background: #ffffff;
+      padding: 15px;
+      border: 2px solid #000000;
+      border-radius: 6px;
+      margin-top: 20px;
     }
     .vocab-box h4 {
-      font-size: 7.2pt;
+      font-size: 12pt;
       font-weight: bold;
       text-transform: uppercase;
       margin-top: 0;
-      margin-bottom: 2px;
-      border-bottom: 1px solid #9ca3af;
-      padding-bottom: 1px;
-    }
-    .vocab-item {
-      font-size: 6.8pt;
-      line-height: 1.15;
-      margin-bottom: 2px;
-    }
-    .source-box {
-      border-left: 3px solid #4b5563;
-      background: #f9fafb;
-      padding: 4px 6px;
-      font-size: 7.2pt;
-      margin-bottom: 3px;
-      box-sizing: border-box;
-      height: 100%;
-    }
-    
-    .timeline-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-    }
-    .timeline-card {
-      border: 1px solid #d1d5db;
-      padding: 3px 4px;
-      width: 22%;
-      vertical-align: top;
-      background: #f9fafb;
-    }
-    .timeline-date {
-      font-weight: bold;
-      font-size: 7.2pt;
-      text-transform: uppercase;
-      border-bottom: 1px solid #e5e7eb;
-      margin-bottom: 2px;
-      padding-bottom: 1px;
-    }
-    .timeline-desc {
-      font-size: 6.8pt;
-      line-height: 1.15;
-    }
-    
-    .question-block {
-      margin-bottom: 3px;
-      padding: 4px 6px;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 4px;
-    }
-    .question-title {
-      font-size: 8.2pt;
-      font-weight: bold;
-      display: block;
-      margin-bottom: 1px;
-    }
-    .scaffold-tip {
-      font-size: 6.8pt;
-      color: #4b5563;
-      font-style: italic;
-      display: block;
-      margin-bottom: 1px;
-    }
-    .stretch-challenge {
-      font-size: 6.8pt;
-      color: #b45309;
-      font-weight: bold;
-      display: block;
-      margin-top: 1px;
-    }
-    
-    .matrix-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-    }
-    .matrix-header {
-      font-weight: bold;
-      font-size: 7.2pt;
-      text-transform: uppercase;
-      text-align: center;
-      background-color: #f3f4f6;
-      border: 1px solid #9ca3af;
-      padding: 2px;
-    }
-    .matrix-cell {
-      border: 1px solid #9ca3af;
-      padding: 3px;
-      min-height: 30px;
-      vertical-align: top;
-      font-size: 6.8pt;
-      color: #9ca3af;
-      font-style: italic;
-    }
-    
-    .framework-container {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 3px;
-      font-size: 6.8pt;
-      background: #f9fafb;
-      border: 1px solid #d1d5db;
-      border-radius: 4px;
-    }
-    .framework-column {
-      vertical-align: top;
-      padding: 4px;
-    }
-
-    .retention-box {
-      border: 1.5px solid #111827;
-      background: #ffffff;
-      border-radius: 4px;
-      margin-top: 3px;
-      padding: 3px 6px;
-    }
-    .retention-header {
-      font-weight: bold;
-      font-size: 8.2pt;
-      color: #111827;
-      text-transform: uppercase;
-      border-bottom: 1.5px solid #111827;
-      padding-bottom: 1px;
-      margin-bottom: 2px;
-    }
-    .split-layout {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .split-col-left {
-      width: 50%;
-      border-right: 1px dashed #d1d5db;
-      padding-right: 8px;
-      vertical-align: top;
-    }
-    .split-col-right {
-      width: 50%;
-      padding-left: 8px;
-      vertical-align: top;
-    }
-    .quiz-title-box {
-      font-weight: bold;
-      font-size: 7.2pt;
-      text-transform: uppercase;
-      color: #4b5563;
-      margin-bottom: 2px;
-    }
-    .quiz-list {
-      margin: 0;
-      padding-left: 14px;
-      font-size: 7.2pt;
-      line-height: 1.15;
-    }
-    .quiz-list li {
-      margin-bottom: 1px;
-    }
-    .map-blueprint {
-      font-size: 7pt;
-      line-height: 1.15;
-    }
-    .map-branch-item {
-      margin-bottom: 2px;
-      background: #f9fafb;
-      padding: 2px 4px;
-      border-left: 2px solid #b45309;
-    }
-    .map-branch-item strong {
-      color: #111827;
-      display: block;
-    }
-    .keyword-pill-box {
-      margin-top: 2px;
-      font-style: italic;
-      color: #4b5563;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
     }
     
     .footer-note {
-      font-size: 7pt;
-      color: #6b7280;
-      text-align: center;
-      border-top: 1px solid #e5e7eb;
-      padding-top: 2px;
-      margin-top: 5px;
+      font-size: 10pt;
+      color: #000000;
+      text-align: left;
+      border-top: 2px solid #000000;
+      padding-top: 6px;
+      margin-top: 20px;
       clear: both;
     }
     @media screen {
       .footer-note {
         position: absolute;
-        bottom: 0.8cm;
-        left: 1.0cm;
-        right: 1.0cm;
+        bottom: 1.2cm;
+        left: 1.5cm;
+        right: 1.5cm;
         margin-top: 0;
       }
     }
@@ -5431,117 +5169,42 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
 </head>
 <body>
 
-  <!-- PAGE 1: NARRATIVE & TIMELINE -->
+  <!-- PAGE 1: NARRATIVE & VOCAB -->
   <div class="print-page">
     <h2 class="main-title">Topic ${topicName}: ${data.title}</h2>
     ${specBoxHtml}
 
-    <div class="active-reading-box">
-      <strong>✍️ Active Reading Focus:</strong> ${data.activeReadingFocus}
+
+    
+    <div style="font-size: 11pt; text-align: left; line-height: 1.4;">
+      ${narrativeHtml}
     </div>
 
-    <div class="section-title" style="margin-top: 5px; margin-bottom: 3px;">Section 1: Historical Narrative & Core Knowledge</div>
-    
-    <table class="narrative-layout">
-      <tr>
-        <td class="narrative-text">
-          ${narrativeHtml}
-        </td>
-        <td class="side-panel">
-          <div class="vocab-box">
-            <h4>Vocabulary Focus</h4>
-            ${vocabHtml}
-          </div>
-          <div class="timeline-box" style="margin-top: 6px; background: #f9fafb; padding: 4px; border: 1px solid #e5e7eb; border-radius: 4px;">
-            <h4 style="font-size: 7.2pt; font-weight: bold; text-transform: uppercase; margin-top: 0; margin-bottom: 2px; border-bottom: 1px solid #9ca3af; padding-bottom: 1px;">Section 2: Timeline</h4>
-            <p style="font-size: 6.2pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic; line-height: 1.1;">
-              In your book, choose any two events below and write a cause-and-effect link.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 2px;">
-              ${timelineVerticalHtml}
-            </div>
-          </div>
-        </td>
-      </tr>
-    </table>
+    <div class="vocab-box">
+      <h4>Vocabulary Focus</h4>
+      ${vocabHtml}
+    </div>
 
     <div class="footer-note">Page 1</div>
   </div>
 
-  <!-- PAGE 2: ANALYTICAL TASKS & ASSESSMENT PREP -->
-  <div class="${includeAnswers ? 'print-page' : 'print-page-last'}">
-    <div class="section-title" style="margin-top: 0; margin-bottom: 3px;">Section 3: Comprehension Check (AO1)</div>
+  <!-- PAGE 2: ANALYTICAL TASKS & TIMELINE -->
+  <div class="${isEndOfUnit && data.examPractice && data.examPractice.q3set ? 'print-page' : (includeAnswers ? 'print-page' : 'print-page-last')}">
+    <div class="section-title" style="margin-top: 0;">Exam Practice</div>
+    
+    ${whyHtml}
 
-    ${comprehensionHtml}
-
-    <div class="section-title" style="margin-top: 6px; margin-bottom: 3px;">Section 4: Causation Matrix (Analytical Essay Prep)</div>
-    <p style="font-size: 7.5pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic;">
-      <strong>Task:</strong> In your exercise book, match each Historical Cause / Factor to its correct Result / Consequence from the Fact Bank below (write the numbers 1-3). Then, write a short explanation of which cause you think was the most important.
+    <div class="section-title">Timeline & Comprehension Questions</div>
+    <p style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">
+      <strong>Task:</strong> Review the chronology below. Answer the targeted questions on the right in your exercise book.
     </p>
-    
-    <div style="border: 1px dashed #9ca3af; padding: 3px 6px; font-size: 7pt; background: #f9fafb; line-height: 1.25; border-radius: 4px; margin-bottom: 3px;">
-      <strong>Fact Bank:</strong> ${factBankText}
-    </div>
 
-    ${matrixHtml}
-
-    <div class="section-title" style="margin-top: 6px; margin-bottom: 3px;">Section 5: Historical Sources & Evidence (AO3)</div>
-    <p style="font-size: 7.5pt; color: #4b5563; margin: 0 0 3px 0; font-style: italic;">Analyze the conflicting viewpoints surrounding the topic using the evidence below.</p>
-    
-    ${sourcesTable}
-
-    <div class="question-block" style="margin-bottom: 4px; padding: 4px 6px; border-left: 3px solid #10b981; box-sizing: border-box;">
-      <span class="question-title" style="font-size: 8pt; color: #0f766e;">Source Utility Question (Answer in your exercise book):</span>
-      <span style="font-size: 7.5pt; line-height: 1.35; display: block; font-weight: bold; margin-top: 2px;">
-        ${data.sourcesQuestion || "How useful are Sources D and E for an enquiry into this period? (8 marks)"}
-      </span>
-    </div>
-
-    <div class="section-title" style="margin-top: 6px; margin-bottom: 3px;">Section 6: Exam Practice & Higher Tier Synthesis</div>
-    
-    <table class="framework-container" style="margin-bottom: 0;">
-      <tr>
-        <td class="framework-column" style="width: 52%; padding-right: 6px; border-right: 1px solid #e5e7eb;">
-          <strong>📝 Exam Practice Questions (Answer in your exercise book):</strong>
-          <div style="margin-top: 3px;">
-            ${examQuestionsHtml}
-          </div>
-        </td>
-        <td class="framework-column" style="width: 48%; padding-left: 6px;">
-          <strong>🏆 Exam Word Bank &amp; Writing Support:</strong>
-          <div style="margin-top: 2px; font-size: 7pt; line-height: 1.25;">
-            <strong>Word Bank:</strong> ${examWordBankText}
-          </div>
-        </td>
-      </tr>
-    </table>
-
-    <div class="retention-box">
-      <div class="retention-header">🧠 Section 7: Knowledge Retention &amp; Synoptic Revision Guide</div>
-      <table class="split-layout">
-        <tr>
-          <td class="split-col-left">
-            <div class="quiz-title-box">⚡ Quick-Fire Peer-To-Peer Quiz</div>
-            <ol class="quiz-list" style="margin: 0; padding-left: 14px;">
-              ${quizItemsHtml}
-            </ol>
-          </td>
-          
-          <td class="split-col-right">
-            <div class="quiz-title-box">🗺️ Mind Map</div>
-            <div class="map-blueprint">
-              <p style="margin: 0 0 4px 0; font-style: italic; color: #4b5563;">In your book, construct a central node titled <strong>"${data.mindMap.centralNode}"</strong> and link these three core analytical branches using the keywords:</p>
-              
-              ${mindMapBranchesHtml}
-              ${mindMapScaffoldingHtml}
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
+    ${timelineAndQuestionsHtml}
 
     <div class="footer-note">Page 2</div>
   </div>
+
+  ${q3Html}
   ${teacherAnswersHtml}
 </body>
 </html>`;
