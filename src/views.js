@@ -7203,7 +7203,7 @@ export function renderTradingCardsView() {
 
     TRADING_CARDS_DATA.forEach((card, index) => {
       const requiredXP = (index + 1) * 200;
-      const isUnlocked = true; // forceUnlock || totalXP >= requiredXP;
+      const isUnlocked = forceUnlock || totalXP >= requiredXP;
   
       const wrapperEl = document.createElement("div");
       wrapperEl.className = "scumbag-card-container scumbag-flippable"; 
