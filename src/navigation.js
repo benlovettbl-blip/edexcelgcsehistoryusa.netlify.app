@@ -126,6 +126,19 @@ export function switchView(viewName, subtopicId = null) {
     if (viewTitle) viewTitle.textContent = "2-Minute AI Video Overview";
     state.selectedSubtopicId = null;
     renderAiVideosView();
+  } else if (viewName === 'individuals') {
+    const individualsNav = document.getElementById('nav-individuals');
+    if (individualsNav) individualsNav.classList.add('active');
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) viewTitle.textContent = "Key Individuals";
+    state.selectedSubtopicId = null;
+    if (window.renderKeyIndividualsView) window.renderKeyIndividualsView();
+  } else if (viewName === 'trading') {
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) viewTitle.textContent = "Trading Cards";
+    state.selectedSubtopicId = null;
+    if (window.renderTradingCardsView) window.renderTradingCardsView();
   } else if (viewName === 'map') {
     const mapNav = document.getElementById('nav-map');
     if (mapNav) mapNav.classList.add('active');
@@ -202,6 +215,8 @@ export function switchView(viewName, subtopicId = null) {
     'bookmarks': 'view-bookmarks',
     'timeline': 'view-timeline',
     'map': 'view-map',
+    'trading': 'view-trading',
+    'individuals': 'view-individuals',
     'exam': 'view-exam',
     'classic': 'view-classic',
     'flashcards': 'view-flashcards',

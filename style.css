@@ -6166,12 +6166,12 @@ details > summary::marker {
   color: #34d399;
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
-.historiographical-label.orthodox {
+.historiographical-label.traditional {
   background: rgba(245, 158, 11, 0.15);
   color: #fbbf24;
   border: 1px solid rgba(245, 158, 11, 0.3);
 }
-.historiographical-label.revisionist {
+.historiographical-label.alternative {
   background: rgba(236, 72, 153, 0.15);
   color: #f472b6;
   border: 1px solid rgba(236, 72, 153, 0.3);
@@ -7243,12 +7243,12 @@ details > summary::marker {
   color: #15803d;
   border-color: rgba(21, 128, 61, 0.25);
 }
-[data-theme="desert"] .historiographical-label.orthodox {
+[data-theme="desert"] .historiographical-label.traditional {
   background: rgba(180, 83, 9, 0.08);
   color: #b45309;
   border-color: rgba(180, 83, 9, 0.25);
 }
-[data-theme="desert"] .historiographical-label.revisionist {
+[data-theme="desert"] .historiographical-label.alternative {
   background: rgba(190, 24, 74, 0.08);
   color: #be185d;
   border-color: rgba(190, 24, 74, 0.25);
@@ -9768,3 +9768,59 @@ body.printing-active #print-area {
 }
 
 
+
+
+.individual-card.flipped {
+  transform: rotateY(180deg);
+}
+
+
+/* TRADING CARDS CSS */
+
+  .scumbag-binder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .scumbag-card-container {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 350px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    position: relative;
+  }
+  .scumbag-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .scumbag-card-container.flipped .scumbag-flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .scumbag-flip-card-front, .scumbag-flip-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-glass);
+  }
+  .scumbag-flip-card-back {
+    transform: rotateY(180deg);
+    background: var(--surface-light);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    overflow-y: auto;
+  }
+  .scumbag-card-locked .foil-pack-body {
+    border-radius: var(--border-radius-md);
+  }

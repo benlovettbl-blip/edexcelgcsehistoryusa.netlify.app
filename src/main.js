@@ -2,7 +2,6 @@ import { initData } from './storage.js';
 import { renderSidebarNav, updateGlobalStats, closeVideoModal, showToast, initStreakLeaderboardListeners } from './views.js';
 import { bindEvents } from './layout.js';
 import { switchView } from './navigation.js';
-import { initChatbot } from './chatbot.js';
 import { initEssayPlanner } from './essay_planner.js';
 import { initMapExplorer } from './map_explorer.js';
 import { state } from './state.js';
@@ -16,7 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
   renderSidebarNav();
   updateGlobalStats();
   bindEvents();
-  initChatbot();
   initEssayPlanner();
   initMapExplorer();
   initStreakLeaderboardListeners();

@@ -381,10 +381,7 @@ function bindEvents() {
     }
   });
   
-  document.getElementById('nav-bookmarks').addEventListener('click', () => {
-    AudioEngine.play('click');
-    switchView('bookmarks');
-  });
+  
   
   document.getElementById('nav-timeline').addEventListener('click', () => {
     AudioEngine.play('click');
@@ -451,10 +448,7 @@ function bindEvents() {
     switchView('exam-hub', 'technique');
   });
 
-  document.getElementById('shortcut-bookmarks').addEventListener('click', () => {
-    AudioEngine.play('click');
-    switchView('bookmarks');
-  });
+  
 
   document.getElementById('shortcut-games').addEventListener('click', () => {
     AudioEngine.play('click');
