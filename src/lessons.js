@@ -4874,22 +4874,22 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     `).join('');
 
     const timelineAndQuestionsHtml = `
-      <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+      <table style="width: 100%; border-collapse: collapse; margin-top: 10px; page-break-inside: avoid;">
         ${data.timeline.map((item, idx) => {
           const q = data.comprehensionCheck[idx];
           return `
-            <tr>
-              <td style="width: 20%; padding: 8px 8px 8px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
-                <strong style="font-size: 11.5pt;">${item.date}</strong>
+            <tr style="page-break-inside: avoid;">
+              <td style="width: 18%; padding: 6px 8px 6px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
+                <strong style="font-size: 10.5pt;">${item.date}</strong>
               </td>
-              <td style="width: 40%; padding: 8px 12px; vertical-align: top;">
-                <span style="font-size: 10.5pt; line-height: 1.3;">${item.desc}</span>
+              <td style="width: 42%; padding: 6px 10px; vertical-align: top;">
+                <span style="font-size: 9.5pt; line-height: 1.3;">${item.desc}</span>
               </td>
-              <td style="width: 40%; padding: 8px 0 8px 12px; vertical-align: top;">
+              <td style="width: 40%; padding: 6px 0 6px 10px; vertical-align: top;">
                 ${q ? `
-                  <div style="padding: 8px 10px; border: 2px solid #000000; border-radius: 6px;">
-                    <span style="font-size: 10.5pt; font-weight: bold;">${q.title}</span><br>
-                    <span style="font-size: 9.5pt; font-style: italic; display: block; margin-top: 2px; line-height: 1.25;">${q.scaffold}</span>
+                  <div style="padding: 6px 8px; border: 1px solid #111827; border-radius: 4px; background: #fdfdfd;">
+                    <span style="font-size: 9.5pt; font-weight: bold;">${q.title}</span><br>
+                    <span style="font-size: 8.5pt; font-style: italic; display: block; margin-top: 2px; line-height: 1.2;">${q.scaffold}</span>
                   </div>
                 ` : ''}
               </td>
@@ -4901,16 +4901,16 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
 
     const synthTask = SYNTHESIS_TASKS[subtopicId];
     const synthesisHtml = synthTask ? `
-      <div style="margin-top: 15px; border: 2px solid #111827; border-radius: 6px; padding: 10px; background: #fdfdfd; page-break-inside: avoid;">
-        <div style="font-size: 10.5pt; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; color: #111827; display: flex; justify-content: space-between;">
+      <div style="margin-top: 15px; border: 1px solid #111827; border-radius: 4px; padding: 10px; background: #fdfdfd; page-break-inside: avoid;">
+        <div style="font-size: 9.5pt; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; color: #111827; display: flex; justify-content: space-between;">
           <span>📝 Unit Synthesis Task</span>
-          <span style="font-size: 8.5pt; font-style: italic; font-weight: normal; color: #000000;">${synthTask.type}</span>
+          <span style="font-size: 8pt; font-style: italic; font-weight: normal; color: #000000;">${synthTask.type}</span>
         </div>
-        <div style="font-size: 9.5pt; line-height: 1.4; margin-bottom: 10px; color: #000000;">
+        <div style="font-size: 9pt; line-height: 1.3; margin-bottom: 10px; color: #000000;">
           ${synthTask.task}
         </div>
         <div>
-          ${Array(6).fill('<div style="border-bottom: 1px dashed #9ca3af; height: 22px; margin-bottom: 4px;"></div>').join('')}
+          ${Array(6).fill('<div style="border-bottom: 1px dashed #9ca3af; height: 20px; margin-bottom: 4px;"></div>').join('')}
         </div>
       </div>
     ` : '';
@@ -4924,12 +4924,12 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     }
 
     const whyHtml = `
-      <div style="margin-bottom: 12px; border: 2px solid #000000; padding: 10px 15px; border-radius: 6px; box-sizing: border-box;">
-        <span style="font-weight: bold; font-size: 11.5pt; color: #000000; display: block;">Question 2 [12 Marks]:</span>
-        <span style="display: block; font-size: 11.5pt; font-weight: bold; margin-top: 4px;">
+      <div style="margin-bottom: 15px; padding: 0 0 10px 0; box-sizing: border-box; page-break-inside: avoid;">
+        <span style="font-weight: bold; font-size: 11pt; color: #000000; display: block;">Question 2 [12 Marks]:</span>
+        <span style="display: block; font-size: 10.5pt; font-weight: bold; margin-top: 2px; margin-bottom: 6px;">
           ${q2Title}
         </span>
-        <div style="font-size: 10.5pt; border-left: 3px solid #000000; padding-left: 10px; margin-left: 2px; margin-top: 8px;">
+        <div style="font-size: 9.5pt; border-left: 3px solid #000000; padding-left: 10px; margin-left: 2px; line-height: 1.3;">
           You may use the following in your answer:<br>
           ${q2Stimulus.map(s => `• ${s}<br>`).join('')}
           • You must also use information of your own.
@@ -5021,7 +5021,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     }
     body {
       font-family: 'Arial', 'Helvetica', sans-serif;
-      font-size: 11pt;
+      font-size: 10pt;
       color: #000000;
       line-height: 1.4;
       background: #ffffff;
@@ -5059,7 +5059,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       body {
         background: #ffffff !important;
         color: #000000 !important;
-        font-size: 11pt !important;
+        font-size: 10pt !important;
         line-height: 1.4 !important;
       }
       .print-page, .print-page-last {
@@ -5084,7 +5084,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       color: #000000;
     }
     .section-title {
-      font-size: 13pt;
+      font-size: 11.5pt;
       font-weight: bold;
       text-transform: uppercase;
       color: #000000;
@@ -5220,7 +5220,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
   <style>
     @page {
       size: 21cm 29.7cm; /* A4 */
-      margin: 1.0cm;
+      margin: 1.5cm;
       mso-page-orientation: portrait;
     }
     body {
