@@ -416,9 +416,9 @@ function bindEvents() {
     });
   }
 
-  const navGuide = document.getElementById('nav-guide');
-  if (navGuide) {
-    navGuide.addEventListener('click', () => {
+  const navGuideHeader = document.getElementById('nav-guide-header');
+  if (navGuideHeader) {
+    navGuideHeader.addEventListener('click', () => {
       AudioEngine.play('click');
       switchView('guide');
     });
@@ -460,13 +460,6 @@ function bindEvents() {
     switchView('ai-videos');
   });
 
-  const shortcutGuide = document.getElementById('shortcut-guide');
-  if (shortcutGuide) {
-    shortcutGuide.addEventListener('click', () => {
-      AudioEngine.play('click');
-      switchView('guide');
-    });
-  }
 
   const heroGuideBtn = document.getElementById('hero-guide-btn');
   if (heroGuideBtn) {

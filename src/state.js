@@ -18,6 +18,8 @@ export const state = {
   deepThinkingAnswers: {},          // { questionId: string }
   howUsefulAnswers: {},             // { subtopicId: string }
   specObjectives: {},               // { objectiveId: boolean }
+  dailyXp: 0,
+  lastActiveDate: null,
   
   // Flashcard Session State
   flashcardSession: {

@@ -354,6 +354,15 @@ export function showLevelUpNotification(level) {
 export function addXp(amount) {
   state.userStats.xp += amount;
   
+  // Track Daily Goal
+  const today = new Date().toDateString();
+  if (state.lastActiveDate !== today) {
+    state.dailyXp = 0;
+    state.lastActiveDate = today;
+  }
+  state.dailyXp += amount;
+  updateDailyGoalUI();
+  
   // Update Live XP Counter Badge with subtle scale pop animation
   const headerXpEl = document.getElementById('header-xp-value');
   if (headerXpEl) {
@@ -494,105 +503,7 @@ export function jumpToTimelineEvent(qid) {
 // 3. Render Dashboard list
 function renderDashboard() {
   renderPlayerProfileWidget();
-  // --- Render Quick Actions (Resume / Bookmarks Review) ---
-  const quickActionsContainer = document.getElementById('dashboard-quick-actions-container');
-  if (quickActionsContainer) {
-    const lastSubtopicId = localStorage.getItem('edexcel_last_subtopic');
-    const bookmarkCount = state.bookmarks.length;
-    
-    if (lastSubtopicId || bookmarkCount > 0) {
-      quickActionsContainer.style.display = 'flex';
-      quickActionsContainer.innerHTML = '';
-      
-      // 1. Resume Last Lesson Card
-      if (lastSubtopicId) {
-        // Find friendly title of subtopic
-        const subtopicQuestion = state.allQuestions.find(q => q.subtopicId === lastSubtopicId);
-        const subTitle = subtopicQuestion ? subtopicQuestion.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "") : "Last Studied Lesson";
-        
-        const resumeCard = document.createElement('div');
-        resumeCard.className = 'shortcut-card';
-        resumeCard.style.flex = '1';
-        resumeCard.style.minWidth = '240px';
-        resumeCard.style.display = 'flex';
-        resumeCard.style.gap = '14px';
-        resumeCard.style.alignItems = 'center';
-        resumeCard.style.padding = '14px 18px';
-        resumeCard.style.cursor = 'pointer';
-        resumeCard.style.background = 'rgba(56, 189, 248, 0.04)';
-        resumeCard.style.border = '1px solid rgba(56, 189, 248, 0.2)';
-        resumeCard.style.borderRadius = 'var(--border-radius-sm)';
-        resumeCard.style.transition = 'all var(--transition-fast)';
-        resumeCard.innerHTML = `
-          <div class="shortcut-icon" style="background: rgba(56, 189, 248, 0.1); color: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
-            <i class="fa-solid fa-play"></i>
-          </div>
-          <div style="text-align: left;">
-            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; letter-spacing: 0.5px;">Quick Resume</span>
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 2px;">${subTitle}</div>
-          </div>
-        `;
-        resumeCard.addEventListener('click', () => {
-          AudioEngine.play('click');
-          switchView('subtopic', lastSubtopicId);
-        });
-        resumeCard.addEventListener('mouseover', () => {
-          resumeCard.style.transform = 'translateY(-2px)';
-          resumeCard.style.borderColor = 'var(--primary)';
-          resumeCard.style.background = 'rgba(56, 189, 248, 0.08)';
-        });
-        resumeCard.addEventListener('mouseout', () => {
-          resumeCard.style.transform = 'none';
-          resumeCard.style.borderColor = 'rgba(56, 189, 248, 0.2)';
-          resumeCard.style.background = 'rgba(56, 189, 248, 0.04)';
-        });
-        quickActionsContainer.appendChild(resumeCard);
-      }
-      
-      // 2. Smart Review Bookmarks Card
-      if (bookmarkCount > 0) {
-        const reviewCard = document.createElement('div');
-        reviewCard.className = 'shortcut-card';
-        reviewCard.style.flex = '1';
-        reviewCard.style.minWidth = '240px';
-        reviewCard.style.display = 'flex';
-        reviewCard.style.gap = '14px';
-        reviewCard.style.alignItems = 'center';
-        reviewCard.style.padding = '14px 18px';
-        reviewCard.style.cursor = 'pointer';
-        reviewCard.style.background = 'rgba(250, 204, 21, 0.04)';
-        reviewCard.style.border = '1px solid rgba(250, 204, 21, 0.2)';
-        reviewCard.style.borderRadius = 'var(--border-radius-sm)';
-        reviewCard.style.transition = 'all var(--transition-fast)';
-        reviewCard.innerHTML = `
-          <div class="shortcut-icon" style="background: rgba(250, 204, 21, 0.1); color: #facc15; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <div style="text-align: left;">
-            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; letter-spacing: 0.5px;">Smart Review</span>
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 2px;">Study Bookmarked Cards (${bookmarkCount})</div>
-          </div>
-        `;
-        reviewCard.addEventListener('click', () => {
-          AudioEngine.play('click');
-          switchView('flashcards', 'bookmarks');
-        });
-        reviewCard.addEventListener('mouseover', () => {
-          reviewCard.style.transform = 'translateY(-2px)';
-          reviewCard.style.borderColor = '#facc15';
-          reviewCard.style.background = 'rgba(250, 204, 21, 0.08)';
-        });
-        reviewCard.addEventListener('mouseout', () => {
-          reviewCard.style.transform = 'none';
-          reviewCard.style.borderColor = 'rgba(250, 204, 21, 0.2)';
-          reviewCard.style.background = 'rgba(250, 204, 21, 0.04)';
-        });
-        quickActionsContainer.appendChild(reviewCard);
-      }
-    } else {
-      quickActionsContainer.style.display = 'none';
-    }
-  }
+  updateDashboardActionCards();
 
   const container = document.getElementById('dashboard-topics-list');
   container.innerHTML = '';
@@ -6554,6 +6465,74 @@ export {
   updateBookmarksUI,
   updateGlobalStats,
   renderDashboard,
+  updateDashboardActionCards,
+  updateDailyGoalUI
+};
+
+function updateDailyGoalUI() {
+  const goalEl = document.getElementById('daily-goal-text');
+  const barEl = document.getElementById('daily-goal-bar');
+  if (goalEl && barEl) {
+    const goal = 100;
+    const current = state.dailyXp || 0;
+    goalEl.textContent = `${current} / ${goal} XP`;
+    const percent = Math.min(100, Math.round((current / goal) * 100));
+    barEl.style.width = `${percent}%`;
+    if (percent >= 100) {
+      barEl.style.background = '#10b981'; // Green for complete
+    } else {
+      barEl.style.background = 'var(--primary)';
+    }
+  }
+}
+
+function updateDashboardActionCards() {
+  updateDailyGoalUI();
+  
+  const upNextBtn = document.getElementById('btn-up-next');
+  const upNextTitle = document.getElementById('up-next-title');
+  const quickQuizBtn = document.getElementById('btn-quick-quiz');
+  
+  if (upNextBtn && upNextTitle) {
+    // Find the first unmastered question
+    let nextTopic = state.allQuestions.find(q => !state.mastery[q.id]);
+    
+    // If all questions are mastered, default to the first
+    if (!nextTopic) {
+      nextTopic = state.allQuestions[0];
+    }
+    
+    if (nextTopic) {
+      // Clean up the title "Topic 1.1: Position of Black Americans & Brown v. Board"
+      const cleanTitle = nextTopic.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "");
+      upNextTitle.textContent = cleanTitle;
+      
+      upNextBtn.onclick = () => {
+        if (window.switchView) {
+          window.switchView('lessons', nextTopic.subtopicId);
+        }
+      };
+    }
+  }
+  
+  if (quickQuizBtn) {
+    quickQuizBtn.onclick = () => {
+      // Launch a random 10-question flashcard session
+      state.flashcardSession.deck = [...state.allQuestions].sort(() => 0.5 - Math.random()).slice(0, 10);
+      state.flashcardSession.activeIndex = 0;
+      state.flashcardSession.originalLength = state.flashcardSession.deck.length;
+      state.flashcardSession.masteredCount = 0;
+      state.flashcardSession.failedCardIds = [];
+      state.flashcardSession.reinforcing = false;
+      
+      if (window.switchView) {
+        window.switchView('flashcards');
+      }
+    };
+  }
+}
+
+export {
   highlightCausalConnectives,
   renderGamesView,
   renderExamSkillsView,

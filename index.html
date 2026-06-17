@@ -169,12 +169,6 @@
               <span class="nav-text">Leaderboard</span>
             </span>
           </a>
-          <a class="nav-item" id="nav-guide" title="User & Parent Guide">
-            <span class="nav-item-content">
-              <i class="fa-solid fa-circle-info"></i>
-              <span class="nav-text">User & Parent Guide</span>
-            </span>
-          </a>
         </div>
       </nav>
 
@@ -275,6 +269,11 @@
             <i class="fa-solid fa-expand"></i>
           </button>
 
+          <!-- User & Parent Guide Button -->
+          <button class="header-icon-btn" id="nav-guide-header" title="User & Parent Guide">
+            <i class="fa-solid fa-circle-question"></i>
+          </button>
+
           <!-- Settings Panel Toggle Button -->
           <button class="header-icon-btn" id="btn-settings-toggle" title="Settings & Accessibility">
             <i class="fa-solid fa-gear"></i>
@@ -299,8 +298,47 @@
       <!-- 1. DASHBOARD VIEW -->
       <section class="content-view active" id="view-dashboard" style="padding-top: 10px;">
 
-        <!-- Quick Actions Panel -->
-        <div id="dashboard-quick-actions-container" style="display: none; margin-bottom: 24px; gap: 16px; flex-wrap: wrap;"></div>
+        <!-- Action Header -->
+        <div class="dashboard-action-header" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+          <!-- Daily Goal Widget -->
+          <div class="daily-goal-widget" style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 16px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; color: var(--text-main);"><i class="fa-solid fa-fire" style="color: #f97316;"></i> Daily Goal</span>
+              <span id="daily-goal-text" style="font-weight: 800; color: var(--primary);">0 / 100 XP</span>
+            </div>
+            <div style="height: 8px; background: rgba(0,0,0,0.2); border-radius: 4px; overflow: hidden;">
+              <div id="daily-goal-bar" style="height: 100%; width: 0%; background: var(--primary); transition: width 0.5s ease;"></div>
+            </div>
+          </div>
+
+          <!-- Action Cards Container -->
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;" id="dashboard-action-cards">
+            <!-- Up Next Card -->
+            <div class="shortcut-card primary-action-card" id="btn-up-next" style="flex: 2; min-width: 250px; display: flex; align-items: center; gap: 16px; padding: 20px; border: 1px solid var(--primary);">
+              <div class="shortcut-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--primary); width: 50px; height: 50px; font-size: 1.5rem;">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="shortcut-info">
+                <h3 style="margin-bottom: 4px; font-size: 1.2rem;">Up Next</h3>
+                <p style="font-size: 0.95rem; font-weight: 500;" id="up-next-title">Finding your next topic...</p>
+              </div>
+            </div>
+
+            <!-- Quick Quiz Card -->
+            <div class="shortcut-card" id="btn-quick-quiz" style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: 16px; padding: 20px;">
+              <div class="shortcut-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981; width: 50px; height: 50px; font-size: 1.5rem;">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="shortcut-info">
+                <h3 style="margin-bottom: 4px; font-size: 1.1rem;">Quick-Fire Quiz</h3>
+                <p>Got 5 mins? 10 random flashcards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Panel (Legacy) -->
+        <div id="dashboard-quick-actions-container" style="display: none;"></div>
 
         <div class="dashboard-sections">
           <!-- Topics Mastery List -->
@@ -394,15 +432,6 @@
             </div>
           </div>
 
-          <div class="shortcut-card" id="shortcut-guide" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--border-active)';" onmouseout="this.style.transform='none'; this.style.borderColor='var(--border-glass)';">
-            <div class="shortcut-icon" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">
-              <i class="fa-solid fa-circle-info"></i>
-            </div>
-            <div class="shortcut-info">
-              <h3>User & Parent Guide</h3>
-              <p>A detailed walkthrough of all student features</p>
-            </div>
-          </div>
         </div>
 
 
