@@ -7395,10 +7395,10 @@ rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, transparent 100%); padding: 20px 5px 10px
                   </span>
                 </div>
                 <div class="scumbag-stat-row">
-                  <span class="stat-label">Military</span>
+                  <span class="stat-label">Rhetoric</span>
                   <span class="scumbag-stat-value">
-                    <div class="scumbag-stat-bar" style="width: ${card.stats.militaryMight}%"></div>
-                    ${card.stats.militaryMight}
+                    <div class="scumbag-stat-bar" style="width: ${card.stats.rhetoricalPower}%"></div>
+                    ${card.stats.rhetoricalPower}
                   </span>
                 </div>
                 <div class="scumbag-stat-row">
@@ -7415,7 +7415,7 @@ rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, transparent 100%); padding: 20px 5px 10px
         
         wrapperEl.onclick = () => {
           if(window.AudioEngine) window.AudioEngine.play('flip');
-          innerEl.classList.toggle('flipped');
+          wrapperEl.classList.toggle('flipped');
         };
         
       } else if (hasEnoughXP && !isOpened) {
