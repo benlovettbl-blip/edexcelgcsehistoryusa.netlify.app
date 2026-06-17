@@ -1684,6 +1684,7 @@ function startFlashcardSessionDirect(subtopicId) {
 
 function startFlashcardSession(subtopicId) {
   state.selectedSubtopicId = subtopicId;
+  state.flashcardSession.speedStudyMode = true;
   if (subtopicId !== 'bookmarks' && subtopicId !== 'quick' && NARRATIVE_FRAMINGS[subtopicId]) {
     showNarrativeFramingScreen(subtopicId);
   } else {
@@ -1904,19 +1905,10 @@ function renderFlashcard() {
         <span style="font-size: 0.68rem; font-weight: 700; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
           <i class="fa-solid fa-brain"></i> Synthesis Rubric
         </span>
-        <div style="display: flex; flex-direction: column; gap: 6px;">
-          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
-            <input type="checkbox" class="rubric-checkbox" data-idx="0" style="accent-color: var(--accent); cursor: pointer;">
-            <span>Compared both historical factors?</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
-            <input type="checkbox" class="rubric-checkbox" data-idx="1" style="accent-color: var(--accent); cursor: pointer;">
-            <span>Identified a primary factor with evidence?</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
-            <input type="checkbox" class="rubric-checkbox" data-idx="2" style="accent-color: var(--accent); cursor: pointer;">
-            <span>Formulated a clear synthesis conclusion?</span>
-          </label>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-left: 10px;">
+          <span style="font-size: 0.75rem; color: var(--text-main); margin: 0;">• Compared both historical factors?</span>
+          <span style="font-size: 0.75rem; color: var(--text-main); margin: 0;">• Identified a primary factor with evidence?</span>
+          <span style="font-size: 0.75rem; color: var(--text-main); margin: 0;">• Formulated a clear synthesis conclusion?</span>
         </div>
       </div>
     `;
@@ -1948,10 +1940,10 @@ function renderFlashcard() {
     const split = getFactSplit(q);
     const rubrics = getCardRubrics(q);
     const rubricItemsHtml = rubrics.map((rub, index) => `
-      <label style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0; line-height: 1.3;">
-        <input type="checkbox" class="rubric-checkbox" data-idx="${index}" style="accent-color: var(--primary); cursor: pointer; margin-top: 2px; flex-shrink: 0;">
-        <span><strong>${rub.label}:</strong> ${rub.text}</span>
-      </label>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 8px; border-bottom: 1px solid var(--border-glass); margin-bottom: 8px;">
+        <span style="font-weight: 700; color: var(--accent); font-size: 0.85rem;">${rub.label}</span>
+        <span style="color: var(--text-main); font-size: 0.85rem; line-height: 1.4;">${rub.text}</span>
+      </div>
     `).join('');
     backBody.innerHTML = `
       <h2 class="card-answer-text" id="card-back-answer" style="margin-top: 0; margin-bottom: 10px;">${q.answer}</h2>
@@ -6513,7 +6505,8 @@ function updateDashboardActionCards() {
       
       upNextBtn.onclick = () => {
         if (window.switchView) {
-          window.switchView('lessons', nextTopic.subtopicId);
+          state.currentMode = 'lessons';
+          window.switchView('subtopic', nextTopic.subtopicId);
         }
       };
     }
