@@ -1733,6 +1733,11 @@ export function initBulkWorkbookCreator() {
       
       AudioEngine.play('click');
       
+      if (style === 'revision') {
+        window.open('revision_workbook_usa.html', '_blank');
+        return;
+      }
+      
       const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
       
       const newWin = window.open();
@@ -1752,6 +1757,11 @@ export function initBulkWorkbookCreator() {
       const answers = document.getElementById('bulk-workbook-answers').value;
       
       AudioEngine.play('click');
+      
+      if (style === 'revision') {
+        alert("The Active Revision Pack is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print Pack (Web)' instead.");
+        return;
+      }
       
       const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
       const styleLabel = style.charAt(0).toUpperCase() + style.slice(1);
