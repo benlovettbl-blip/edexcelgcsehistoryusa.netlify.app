@@ -5184,11 +5184,6 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       
       ${whyHtml}
 
-      <div class="section-title">Timeline & Comprehension Questions</div>
-      <p style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">
-        <strong>Task:</strong> Review the chronology below. Answer the targeted questions on the right in your exercise book.
-      </p>
-
       ${timelineAndQuestionsHtml}
       
       ${synthesisHtml}
