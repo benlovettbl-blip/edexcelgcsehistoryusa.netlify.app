@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpretations Practice</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --border: #cbd5e1;
+            --bg-light: #f8fafc;
+            --text: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            background: #e2e8f0;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            padding: 20mm;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cover-page {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40mm 20mm;
+        }
+
+        @media print {
+            body { background: none; }
+            .page { 
+                margin: 0; padding: 0; border: none; box-shadow: none; 
+                width: 100%; min-height: 100%;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<div class="page cover-page">
+    <div class="cover-title" style="font-size: 42px; font-weight: 800; color: var(--primary-dark); margin-bottom: 10px; line-height: 1.2;">Interpretations Practice</div>
+    <div class="cover-subtitle" style="font-size: 20px; color: #475569; margin-bottom: 40px;">The USA, 1954–75: conflict at home and abroad</div>
+    
+    <div class="cover-name-box" style="border: 2px dashed var(--border); padding: 25px; width: 85%; text-align: left; font-size: 16px; margin-bottom: 30px;">
+        <strong>Name:</strong> _________________________________________<br><br><br>
+        <strong>Class:</strong> _________________________________________
+    </div>
+
+    <div class="checklist" style="text-align: left; width: 85%; background: var(--bg-light); padding: 25px; border-radius: 8px; border: 1px solid var(--border);">
+        <h3 style="margin-top: 0; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px;">Key Topics Checklist</h3>
+        
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 1.1:</strong> To what extent did the position of Black Americans improve in the early 1950s?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 1.2:</strong> How far did education progress for Black Americans between 1954 and 1960?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 1.3:</strong> To what extent was the Montgomery bus boycott successful?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 1.4:</strong> How effective was the opposition to the civil rights movement in the 1950s?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 2.1:</strong> How significant were peaceful protests in achieving civil rights in the early 1960s?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 2.2:</strong> How far did federal legislation solve the problems faced by Black Americans?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 2.3:</strong> To what extent was Malcolm X the most important civil rights leader?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 2.4:</strong> How successful was the Black Power movement?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 3.1:</strong> To what extent was the Domino Theory the main reason for US involvement in Vietnam?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 3.2:</strong> How significant was the Gulf of Tonkin incident in the escalation of the Vietnam War?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 3.3:</strong> How effective were US military tactics in the Vietnam War?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 3.4:</strong> To what extent was the Tet Offensive a turning point in the Vietnam War?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 4.1:</strong> How successful was Nixon's policy of Vietnamisation?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 4.2:</strong> How significant was the anti-war movement in the USA?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 4.3:</strong> How successful were the Paris Peace Accords?</div>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 16px;">
+        <div class="check-box" style="width: 20px; height: 20px; border: 2px solid var(--text); border-radius: 4px; flex-shrink: 0;"></div>
+        <div><strong>Key Topic 4.4:</strong> To what extent were military failures the main reason for US defeat in Vietnam?</div>
+    </div>
+    
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 1.1: To what extent did the position of Black Americans improve in the early 1950s?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the work of civil rights organisations in the early 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Brown v. Topeka</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Emmett Till</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> White Citizens Councils</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> KKK revival</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Montgomery Bus Boycott</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Presidential action</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Civil Rights Movement' by historian Peter Levy, published in 1998.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"In the early 1950s, civil rights organisations made monumental and highly effective breakthroughs. The NAACP's brilliant legal strategy systematically bypassed racist local politicians by taking the fight to the federal courts. Their victories proved that the legal foundation of segregation could be destroyed, providing the vital framework for all the progress that was to follow."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'A People's History of the United States' by historian Howard Zinn, published in 1980.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"Despite the noble efforts of civil rights groups in the early 1950s, the reality for Black Americans remained bleak and unchanged. Legal victories in the courts were largely meaningless because local authorities simply ignored them. The true power remained in the hands of white mobs and corrupt police forces who used relentless violence and economic terror to crush any attempts at equality on the ground."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 1.2: How far did education progress for Black Americans between 1954 and 1960?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the Little Rock High School crisis (1957)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Little Rock Nine</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Orval Faubus</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> 101st Airborne</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> James Meredith</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Ole Miss riot</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Brown v. Topeka ruling</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Long Shadow of Little Rock' by historian L. Jones, published in 2003.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Little Rock crisis was a huge victory for the civil rights movement. By sending in the 101st Airborne Division, President Eisenhower showed that the federal government was willing to use military force to enforce desegregation. It proved to Southern governors that they could not simply ignore the Supreme Court's rulings, giving civil rights activists a massive boost."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Race Relations in the American South' by historian R. Davis, published in 1999.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The events at Little Rock showed the severe limitations of federal intervention. Central High School was only integrated because soldiers with bayonets protected the Black students daily. The following year, Governor Faubus closed all Little Rock high schools to prevent further integration. The crisis actually slowed down the pace of integration across the Deep South as white resistance hardened."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 1.3: To what extent was the Montgomery bus boycott successful?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 1 about the significance of the Montgomery Bus Boycott? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Rosa Parks</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> MIA</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Martin Luther King</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Browder v. Gayle</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Supreme Court ruling</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> SCLC formed</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Struggle for Equality' by historian H. Sitkoff, published in 1981.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Montgomery Bus Boycott was a watershed moment that launched the modern civil rights movement. It established Martin Luther King Jr. as a charismatic national leader and demonstrated the immense effectiveness of mass non-violent protest. The success of the boycott inspired similar actions across the South and led directly to the formation of the SCLC to coordinate the struggle."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Rethinking the Civil Rights Movement' by historian J. Jones, published in 2002.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"While the Montgomery Boycott was a symbolic victory, its actual impact has been exaggerated. The boycott itself did not desegregate the buses; it was the legal victory in the Supreme Court case Browder v. Gayle that forced the change. In the years immediately following, white backlash intensified, buses were sniped at, and Montgomery remained deeply segregated in housing, employment, and schools."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 1.4: How effective was the opposition to the civil rights movement in the 1950s?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 1 about the nature of opposition to the civil rights movement in the late 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Dixiecrats</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> White Citizens Councils</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> KKK lynchings</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Emmett Till murder</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Southern Manifesto</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Filibustering</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Entrenched South' by historian H. Lawson, published in 2005.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"Opposition to civil rights in the late 1950s was highly organized and politically entrenched, successfully stalling desegregation. By signing the Southern Manifesto, Southern congressmen created a unified political front that legitimized defiance. At the local level, White Citizens Councils waged economic warfare, firing Black workers and denying them loans. This combination of political resistance and economic terror effectively delayed integration for years."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Civil Rights Breakthrough' by historian J. Miller, published in 2012.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"Although Southern opposition was loud and politically unified on paper, it ultimately failed to halt civil rights progress. The extreme nature of the opposition's resistance and local violence actually backfired. It shocked Northern public opinion and forced a reluctant federal government to intervene, culminating in the passage of the Civil Rights Acts of 1957 and 1960. These laws established the vital precedent of federal voting rights protection."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 2.1: How significant were peaceful protests in achieving civil rights in the early 1960s?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 1 about the significance of the Birmingham Campaign (1963)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Sit-ins (Greensboro)</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Freedom Rides (CORE)</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Birmingham Campaign</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> March on Washington</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> SNCC formed</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Police violence</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Parting the Waters: America in the King Years' by historian Taylor Branch, published in 1988.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Birmingham campaign was a brilliant tactical victory that transformed the civil rights movement. By deliberately provoking Connor's brutal response, King created shocking television footage that horrified the global public. This media coverage put immense moral pressure on President Kennedy, forcing his administration to abandon its cautious approach and draft the landmark civil rights legislation that became the Civil Rights Act of 1964."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Civil Rights Movement' by historian Glenn T. Eskew, published in 1997.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"While Birmingham was a public relations success, its immediate achievements on the ground were highly limited. The local agreement signed to end the marches did very little to desegregate the city or improve the lives of poor Black residents, who still faced poverty and discrimination. Indeed, the campaign triggered a violent white backlash, including the bombing of the Sixteenth Street Baptist Church, which showed that segregationists remained undefeated."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 2.2: How far did federal legislation solve the problems faced by Black Americans?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the achievements of the civil rights movement in the years 1964–65? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Civil Rights Act (1964)</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Voting Rights Act (1965)</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Selma to Montgomery marches</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> LBJ's role</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> JFK's assassination</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Filibuster broken</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From The Bill of the Century: The Epic Battle for the Civil Rights Act by C Risen, published in 2014.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Civil Rights Act of 1964 was the most important law passed by Congress in the 20th century. The Act banned segregation in hotels and guest houses. It banned discrimination in the workplace. It stopped federal government money from being spent on state projects which were segregated. The Act had been proposed by President Kennedy in response to growing racial tension in the South, particularly the violent treatment of black protesters in Birmingham, Alabama. In Congress, support for the Act grew after events such as the March on Washington."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From Better Day Coming by A Fairclough, published in 2001.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"Five months after the Selma protests in 1965, the Voting Rights Act became law. The Act banned the literacy tests which had been used to keep the number of registered voters low in several states in the South. The Voting Rights Act gave the vote back to black Southerners and made the South democratic. The Voting Rights Act was the greatest achievement of the Civil Rights Movement. It ended the era of Jim Crow."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 2.3: To what extent was Malcolm X the most important civil rights leader?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the importance of Malcolm X to the civil rights movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Nation of Islam</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Black Pride</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> "By any means necessary"</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Malcolm X assassination</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> OAAU</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Impact on Black Power</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Autobiography of Malcolm X' (Analysis) by historian M. Marable, published in 2011.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"Malcolm X was arguably the most vital figure of the era because he instilled a fierce sense of Black pride and self-determination that King’s peaceful approach could not. By challenging the systemic economic inequalities of Northern ghettos, he broadened the civil rights movement beyond just Southern segregation and laid the necessary ideological foundation for the entire Black Power movement."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Civil Rights in the USA' by historian D. Sandbrook, published in 2008.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"While Malcolm X was a compelling speaker, his actual achievements were negligible compared to Martin Luther King. His aggressive rhetoric and refusal to work with white politicians actively hindered legislative progress. He alienated moderate white supporters and provided the government with an excuse to heavily police Black neighbourhoods, ultimately achieving very little practical change."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 2.4: How successful was the Black Power movement?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the methods used by the Black Panther movement? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Black Panther Party</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Ten-Point Program</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Huey Newton</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Bobby Seale</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Race riots (Watts)</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Stokely Carmichael</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From Rethinking the Black Freedom Movement by Y Williams, published in 2016.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Black Panther Party for Self Defence (BPP) gained national attention. It encouraged confrontation and armed self-defence. Members of the BPP were tough men from the cities who were not afraid to fight back against racism. One of their main aims was to stop police brutality. The BPP carried out armed patrols. These armed patrols followed and observed the police. There were several confrontations with police, including a shootout in 1967 when a policeman was killed."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From On the Ground: The Black Panther Party in Communities across America by J L Jeffries, published in 2010.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Black Panther Party aimed to improve black people’s lives. Many members of the movement worked to meet the basic needs of black communities across the country. They did this by helping the elderly, setting up health clinics and giving out free clothing. In cities where they had offices, the Black Panther Party ran far-reaching and wide-ranging community support programmes. At the same time, they taught children about black history and black pride."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 3.1: To what extent was the Domino Theory the main reason for US involvement in Vietnam?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the reasons for US involvement in Vietnam? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Domino Theory</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Truman Doctrine</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Containment</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Dien Bien Phu</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Geneva Accords</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Ho Chi Minh</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Cold War' by historian J. L. Gaddis, published in 2005.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"American intervention in Vietnam was driven by a genuine, defensive fear of global communist expansion. The Domino Theory was not just propaganda; policy-makers truly believed that if South Vietnam fell, all of Southeast Asia would swiftly follow. It was a tragic, but logically consistent application of the Truman Doctrine's commitment to containing Soviet influence."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'A People's History of the United States' by historian H. Zinn, published in 1980.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The US did not intervene in Vietnam to save democracy or stop communism, but to secure its own imperial and economic interests in Asia. The so-called 'Domino Theory' was merely an ideological smokescreen used to justify an aggressive, neo-colonial war aimed at suppressing a legitimate nationalist independence movement led by Ho Chi Minh."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 3.2: How significant was the Gulf of Tonkin incident in the escalation of the Vietnam War?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the escalation of US involvement in the conflict in Vietnam in the 1960s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Gulf of Tonkin Resolution</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Operation Rolling Thunder</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Agent Orange / Napalm</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Draft increases</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Battle of Ia Drang</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> LBJ's escalation</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From America’s Longest War by G C Herring, published in 1979.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"It was the decisions made by President Kennedy in 1961 that were a key turning point in American involvement in Vietnam. The United States dramatically expanded its role. The number of American ‘advisers’ was increased from 3,205 in December 1961, to more than 9,000 by the end of 1962. American military assistance more than doubled between 1961 and 1962. Kennedy also authorised the use of chemical weapons, such as Agent Orange."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From A Short History of the Vietnam War by G Kerr, published in 2015.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The President who was most responsible for escalating US involvement in Vietnam was President Johnson. It became an all-out fighting war. Immediately after the Gulf of Tonkin incident, Johnson decided on American retaliation, ordering bombing raids against the Vietcong in South Vietnam. A few months later, Johnson approved a secret plan that widened the conflict as it suggested bombing North Vietnam. The plan also mentioned that American soldiers would soon be fighting on Vietnamese territory. Johnson decided to send two US army divisions to South Vietnam, but this was only the beginning."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 3.3: How effective were US military tactics in the Vietnam War?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the effectiveness of US search and destroy tactics versus Vietcong guerrilla tactics? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Search and Destroy</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Zippo raids</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Vietcong tunnel systems</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Booby traps / Punji stakes</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Ho Chi Minh Trail</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Guerrilla warfare</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Irony of Vietnam' by historian L. Gelb, published in 1979.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"US tactics in Vietnam were self-defeating. The search-and-destroy missions and the widespread use of chemical defoliants like Agent Orange and napalm devastated the countryside. By destroying the homes and crops of the South Vietnamese peasants, these tactics alienated the civilian population and drove them to support the Vietcong, making a US victory impossible."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'A Better War' by historian L. Sorley, published in 1999.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"US tactics were militarily necessary to counter Vietcong guerrilla warfare. Search-and-destroy missions successfully killed large numbers of enemy fighters and disrupted their supply bases in the jungle. Without these aggressive operations, the Vietcong would have easily overrun South Vietnam. The tactics prevented a communist victory and gave the South Vietnamese government time to build its own forces."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 3.4: To what extent was the Tet Offensive a turning point in the Vietnam War?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the impact of the Tet Offensive? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Tet Offensive (1968)</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Attack on US Embassy</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Walter Cronkite broadcast</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Vietcong casualties</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> LBJ resigns</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Psychological impact</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Vietnam: A History' by historian S. Karnow, published in 1983.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Tet Offensive was a catastrophic military defeat for the Vietcong and North Vietnamese. They suffered tens of thousands of casualties and completely failed to spark the widespread civilian uprising they had planned. In purely conventional military terms, the United States and ARVN forces secured a decisive victory by crushing the communist assault."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Uncensored War' by historian D. Hallin, published in 1986.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"While militarily disastrous for the communists, Tet was the ultimate psychological turning point of the war. Television footage of the US Embassy under attack shattered the illusion that America was winning. The profound shock turned the American public and media irreversibly against the conflict, forcing President Johnson to de-escalate the war and end his political career."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 4.1: How successful was Nixon's policy of Vietnamisation?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the success of Vietnamisation? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Vietnamisation</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> ARVN training</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Nixon Doctrine</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Withdrawal of US troops</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Invasion of Cambodia</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Fall of Saigon</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Nixon and the World' by historian R. Dallek, published in 2007.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"Nixon's policy of Vietnamisation was highly successful in achieving its primary goal: extracting American troops from an unwinnable conflict without immediately losing South Vietnam. By drastically reducing US casualties, it neutralized the explosive anti-war movement at home while simultaneously equipping the ARVN to hold off communist forces for several more years."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Vietnam: A History' by historian S. Karnow, published in 1983.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"Vietnamisation was a transparent political fraud. It was simply a slow, painful retreat disguised as a strategy. The ARVN remained heavily reliant on American air support and suffered from catastrophic corruption and low morale. Nixon merely prolonged the war, causing thousands more unnecessary deaths before the inevitable collapse of Saigon."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 4.2: How significant was the anti-war movement in the USA?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the significance of the Kent State University shootings (1970)? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Kent State shootings</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Draft dodging</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Media coverage (My Lai)</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Fulbright hearings</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Moratorium marches</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Pentagon Papers</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Anti-War Movement' by historian T. Wells, published in 2005.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Kent State massacre was the fatal, decisive blow to Nixon's war strategy. The horrific images of dead students triggered an unprecedented national student strike involving two million youth across 400 campuses. It completely shattered any remaining moral authority the government had, forcing Nixon to accelerate troop withdrawals because the country was on the brink of revolution."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Nixon and Vietnam' by historian K. Hughes, published in 2012.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"While Kent State deeply shocked the student movement, it actually hardened the resolve of conservative America to support the war. National polls taken the following week showed a majority of the public blamed the students, not the National Guard, for the violence. Rather than uniting the country against the war, Kent State simply exposed the deep class and cultural divide of the era."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 4.3: How successful were the Paris Peace Accords?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the success of the Paris Peace Accords? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Paris Peace Accords</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Henry Kissinger</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Le Duc Tho</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Ceasefire</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Release of POWs</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Nobel Peace Prize</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'Ending the Vietnam War' by historian H. Kissinger, published in 2003.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Paris Peace Accords were a masterful diplomatic achievement that secured 'Peace with Honor'. The treaty successfully ended American military involvement, secured the safe return of all US prisoners of war, and forced North Vietnam to recognize the political legitimacy of the South Vietnamese government, preserving the chance for a free South."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From 'The Vietnam War' by historian G. Herring, published in 2013.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Accords were nothing more than a disguised American surrender. The treaty disastrously allowed thousands of North Vietnamese troops to remain inside South Vietnamese territory, making a future communist offensive practically guaranteed. It brought neither peace nor honor, merely a 'decent interval' before the final destruction of South Vietnam."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <header style="margin-bottom: 20px; text-align: center; padding-bottom: 15px;">
+        <h1 style="font-size: 22px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 4px;">Key Topic 4.4: To what extent were military failures the main reason for US defeat in Vietnam?</h1>
+    </header>
+
+    <div class="activity-section" style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div style="margin-bottom: 10px; text-align: center;">
+            <div style="font-size: 11px; font-weight: 600; font-style: italic;">How far do you agree with Interpretation 2 about the reasons for the failure of the USA in Vietnam? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)</div>
+        </div>
+        
+        <!-- Knowledge checkboxes, perfectly justified to spread across one single line -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #475569; margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Military failure (tactics)</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Failure of hearts & minds</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Media opposition</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Draft inequalities</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> South Vietnamese corruption</div><div style="display: flex; align-items: center; gap: 4px; white-space: nowrap;"><div style="width: 10px; height: 10px; border: 1px solid #64748b; border-radius: 2px; flex-shrink: 0;"></div> Tet Offensive impact</div>
+        </div>
+
+        <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
+            
+            <div class="interp-box" style="margin-bottom: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 1</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From Vietnam by C G Appy, published in 2003.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"The Americans thought that bombing would eventually convince the Vietnamese communists to give up. However, the Americans were never able to prevent North Vietnam from sending plenty of troops and supplies to the communists fighting in South Vietnam. No matter how many roads or bridges were destroyed by bombs the North Vietnamese repaired them or found other routes for their supplies. It was clear that American bombing was failing to defeat the enemy."</div>
+            </div>
+
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+
+            <div class="interp-box" style="margin-top: 10px; width: 65%; max-width: 65%; text-align: left;">
+                <div style="margin-bottom: 4px;">
+                    <span style="font-weight: bold; font-size: 10px; color: var(--primary);">INTERPRETATION 2</span>
+                    <span style="font-size: 9px; color: #64748b; font-style: italic; margin-left: 5px;">— From Vietnam 1939–75 by N DeMarco, published in 1998.</span>
+                </div>
+                <div class="interp-content" style="font-size: 12px; line-height: 1.5;">"At the start of the Vietnam War, American morale appeared to be good because most of the troops were professional soldiers and had volunteered. However, as the war went on, more and more American soldiers were drafted than volunteered. Many drafted soldiers did not want to be in Vietnam. Low morale was shown by the fact that American troops used drugs and sometimes even murdered their own officers. Desertions increased as American troops began to lose belief in the cause for which they were fighting."</div>
+            </div>
+            
+            <!-- Space for Annotation -->
+            <div style="flex-grow: 0.5; min-height: 150px; width: 100%;"></div>
+            
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

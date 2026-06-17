@@ -1737,6 +1737,10 @@ export function initBulkWorkbookCreator() {
         window.open('revision_workbook_usa.html', '_blank');
         return;
       }
+      if (style === 'interpretations') {
+        window.open('interpretations_practice.html', '_blank');
+        return;
+      }
       
       const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
       
@@ -1758,8 +1762,8 @@ export function initBulkWorkbookCreator() {
       
       AudioEngine.play('click');
       
-      if (style === 'revision') {
-        alert("The Active Revision Pack is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print Pack (Web)' instead.");
+      if (style === 'revision' || style === 'interpretations') {
+        alert(`The ${style === 'revision' ? 'Active Revision Pack' : 'Interpretations Practice Book'} is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print Pack (Web)' instead.`);
         return;
       }
       
