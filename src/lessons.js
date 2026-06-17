@@ -4901,16 +4901,16 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
 
     const synthTask = SYNTHESIS_TASKS[subtopicId];
     const synthesisHtml = synthTask ? `
-      <div style="margin-top: 30px; border: 2px solid #111827; border-radius: 6px; padding: 15px; background: #fdfdfd; page-break-inside: avoid;">
-        <div style="font-size: 11pt; font-weight: bold; text-transform: uppercase; margin-bottom: 8px; color: #111827; display: flex; justify-content: space-between;">
+      <div style="margin-top: 15px; border: 2px solid #111827; border-radius: 6px; padding: 10px; background: #fdfdfd; page-break-inside: avoid;">
+        <div style="font-size: 10.5pt; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; color: #111827; display: flex; justify-content: space-between;">
           <span>📝 Unit Synthesis Task</span>
-          <span style="font-size: 9pt; font-style: italic; font-weight: normal; color: #000000;">${synthTask.type}</span>
+          <span style="font-size: 8.5pt; font-style: italic; font-weight: normal; color: #000000;">${synthTask.type}</span>
         </div>
-        <div style="font-size: 10.5pt; line-height: 1.5; margin-bottom: 15px; color: #000000;">
+        <div style="font-size: 9.5pt; line-height: 1.4; margin-bottom: 10px; color: #000000;">
           ${synthTask.task}
         </div>
         <div>
-          ${Array(8).fill('<div style="border-bottom: 1px dashed #9ca3af; height: 28px; margin-bottom: 4px;"></div>').join('')}
+          ${Array(6).fill('<div style="border-bottom: 1px dashed #9ca3af; height: 22px; margin-bottom: 4px;"></div>').join('')}
         </div>
       </div>
     ` : '';
