@@ -4906,11 +4906,8 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
           <span>📝 Unit Synthesis Task</span>
           <span style="font-size: 8pt; font-style: italic; font-weight: normal; color: #000000;">${synthTask.type}</span>
         </div>
-        <div style="font-size: 9pt; line-height: 1.3; margin-bottom: 10px; color: #000000;">
+        <div style="font-size: 9.5pt; line-height: 1.3; color: #000000;">
           ${synthTask.task}
-        </div>
-        <div>
-          ${Array(6).fill('<div style="border-bottom: 1px dashed #9ca3af; height: 20px; margin-bottom: 4px;"></div>').join('')}
         </div>
       </div>
     ` : '';
@@ -4953,18 +4950,18 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       const q3d = q3.questions?.q3d || q3.q3d;
 
       q3Html = `
-        <div class="${includeAnswers ? 'print-page' : 'print-page-last'}" style="page-break-before: always;">
+        <div style="page-break-before: always;">
           <h2 class="main-title">End of Unit Exam Practice (3A-D)</h2>
-          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5; margin-bottom: 20px;">
+          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5; margin-bottom: 20px; page-break-inside: avoid;">
             <span style="font-weight: bold; font-size: 11pt; color: #000000; display: block; margin-bottom: 12px;">Question 3 [32 Marks]:</span>
-            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
+            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9.5pt; line-height: 1.35;">
               ${srcBHtml}<br><br>
               ${srcCHtml}
             </div>
             <span style="display: block; font-size: 11pt; font-weight: bold; margin-bottom: 12px;">
               <strong>3 (a)</strong> ${q3a}
             </span>
-            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
+            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9.5pt; line-height: 1.35;">
               ${interp1Html}<br><br>
               ${interp2Html}
             </div>
@@ -4978,7 +4975,6 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
               <strong>3 (d)</strong> ${q3d}
             </span>
           </div>
-          <div class="footer-note">Page 3</div>
         </div>
       `;
     }
@@ -4995,15 +4991,13 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       `).join('');
 
       teacherAnswersHtml = `
-        <div class="print-page-last" style="page-break-before: always; margin-top: 20px; position: relative;">
+        <div style="page-break-before: always; margin-top: 20px;">
           <h2 class="main-title">Teacher Answer Key &bull; Topic ${topicName}</h2>
           
           <div class="section-title" style="margin-top: 10px; margin-bottom: 6px;">Comprehension Check Answers</div>
           <div style="border: 2px solid #000000; padding: 10px; border-radius: 6px; margin-bottom: 10px; box-sizing: border-box;">
             ${comprehensionAnswersHtml}
           </div>
-          
-          <div class="footer-note">Teacher Answer Key</div>
         </div>
       `;
     }
@@ -5021,7 +5015,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     }
     body {
       font-family: 'Arial', 'Helvetica', sans-serif;
-      font-size: 10pt;
+      font-size: 10.5pt;
       color: #000000;
       line-height: 1.4;
       background: #ffffff;
@@ -5059,7 +5053,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       body {
         background: #ffffff !important;
         color: #000000 !important;
-        font-size: 10pt !important;
+        font-size: 10.5pt !important;
         line-height: 1.4 !important;
       }
       .print-page, .print-page-last {
@@ -5156,58 +5150,53 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
         margin-top: 0;
       }
     }
+    }
     @media print {
       .footer-note {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin-top: 0;
+        display: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- PAGE 1: NARRATIVE & VOCAB -->
-  <div class="print-page">
-    <h2 class="main-title">Topic ${topicName}: ${data.title}</h2>
-    ${specBoxHtml}
+  <!-- TOPIC CONTAINER -->
+  <div class="topic-container" style="page-break-after: always;">
+    <!-- PAGE 1: NARRATIVE & VOCAB -->
+    <div>
+      <h2 class="main-title">Topic ${topicName}: ${data.title}</h2>
+      ${specBoxHtml}
 
+      
+      <div style="font-size: 11pt; text-align: left; line-height: 1.4;">
+        ${narrativeHtml}
+      </div>
 
-    
-    <div style="font-size: 11pt; text-align: left; line-height: 1.4;">
-      ${narrativeHtml}
+      <div class="vocab-box">
+        <h4>Vocabulary Focus</h4>
+        ${vocabHtml}
+      </div>
     </div>
 
-    <div class="vocab-box">
-      <h4>Vocabulary Focus</h4>
-      ${vocabHtml}
+    <!-- WORKSHEET SECTION -->
+    <div style="margin-top: 20px;">
+      <div class="section-title" style="margin-top: 0;">Exam Practice</div>
+      
+      ${whyHtml}
+
+      <div class="section-title">Timeline & Comprehension Questions</div>
+      <p style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">
+        <strong>Task:</strong> Review the chronology below. Answer the targeted questions on the right in your exercise book.
+      </p>
+
+      ${timelineAndQuestionsHtml}
+      
+      ${synthesisHtml}
     </div>
 
-    <div class="footer-note">Page 1</div>
+    ${q3Html}
+    ${teacherAnswersHtml}
   </div>
-
-  <!-- PAGE 2: ANALYTICAL TASKS & TIMELINE -->
-  <div class="${(isEndOfUnit && (data.paper3Suite || (data.examPractice && data.examPractice.q3set))) || includeAnswers ? 'print-page' : 'print-page-last'}">
-    <div class="section-title" style="margin-top: 0;">Exam Practice</div>
-    
-    ${whyHtml}
-
-    <div class="section-title">Timeline & Comprehension Questions</div>
-    <p style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">
-      <strong>Task:</strong> Review the chronology below. Answer the targeted questions on the right in your exercise book.
-    </p>
-
-    ${timelineAndQuestionsHtml}
-    
-    ${synthesisHtml}
-
-    <div class="footer-note">Page 2</div>
-  </div>
-
-  ${q3Html}
-  ${teacherAnswersHtml}
 </body>
 </html>`;
   }
@@ -5906,10 +5895,7 @@ export function generateBulkWorkbookHtml(style, density, includeAnswers) {
     if (bodyStartIdx !== -1 && bodyEndIdx !== -1) {
       let bodyContent = html.substring(bodyStartIdx + 6, bodyEndIdx).trim();
       
-      // Convert all print-page-last to print-page to force page break, except for the last lesson
-      if (index < subtopicIds.length - 1) {
-        bodyContent = bodyContent.replace(/class="print-page-last"/g, 'class="print-page"');
-      }
+      // Natural flow wrapper automatically handles page breaks now.
       
       combinedBodyContent += `\n<!-- LESSON ${subId} -->\n` + bodyContent;
     }
