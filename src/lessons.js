@@ -5729,8 +5729,8 @@ function generateQuizPackHtml(includeAnswers) {
 <title>Quick-Fire Quiz Pack</title>
 <style>
   body { font-family: "Segoe UI", Arial, sans-serif; color: #000000; padding: 20px; line-height: 1.3; margin: 0; }
-  .print-page { page-break-after: always; padding: 10px 0; clear: both; height: 95vh; box-sizing: border-box; position: relative; }
-  .print-page-last { padding: 10px 0; clear: both; height: 95vh; box-sizing: border-box; position: relative; }
+  .print-page { page-break-after: always; padding: 10px 0; clear: both; box-sizing: border-box; position: relative; }
+  .print-page-last { padding: 10px 0; clear: both; box-sizing: border-box; position: relative; }
   .main-title { font-size: 15pt; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 5px; color: #000000; display: flex; justify-content: space-between; align-items: baseline; }
   .main-title-right { font-size: 9pt; font-weight: normal; text-transform: none; }
   .spec-box { border: 1px solid #c0c0c0; border-radius: 4px; padding: 12px; margin-bottom: 12px; font-size: 9pt; }
@@ -5746,11 +5746,11 @@ function generateQuizPackHtml(includeAnswers) {
   .answer-text { font-size: 9pt; line-height: 1.35; margin-top: 5px; }
   .answer-text strong { color: #16a34a; font-weight: 600; }
   .answer-text em { color: #4b5563; display: block; margin-top: 2px; }
-  .footer-row { display: flex; gap: 15px; margin-top: 20px; border-top: 1px solid #e5e7eb; padding-top: 20px; position: absolute; bottom: 10px; left: 0; right: 0; }
-  .footer-box { border: 1.5px solid #000000; padding: 12px; border-radius: 2px; }
+  .footer-row { display: flex; gap: 15px; margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 20px; }
+  .footer-box { border: 1.5px solid #000000; padding: 12px; border-radius: 2px; break-inside: avoid; page-break-inside: avoid; }
   @media print {
     body { padding: 0; margin: 0; }
-    .print-page, .print-page-last { height: 100vh; padding: 0; margin: 0; }
+    .print-page, .print-page-last { padding: 0; margin: 0; }
   }
 </style>
 </head>
