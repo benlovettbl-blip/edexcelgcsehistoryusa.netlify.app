@@ -914,26 +914,11 @@ export function renderPastQuestionMarkup(qId, questionText, clue, modelAnswer, m
         <span class="exam-question-marks" style="flex-shrink: 0; background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">${marks} Marks</span>
       </div>
       ${stimulusHTML}
-      <textarea class="exam-textarea" id="past-textarea-${qId}" placeholder="Draft your answer here..." style="min-height: 120px;"></textarea>
-      
-      <!-- Live feedback card -->
-      <div class="draft-feedback-card" id="draft-feedback-${qId}">
-        <div class="feedback-stats">
-          <div class="feedback-badge" id="feedback-badge-${qId}">Structure: Drafting</div>
-          <div class="feedback-progress-bar">
-            <div class="feedback-progress-fill" id="feedback-fill-${qId}" style="width: 0%;"></div>
-          </div>
-        </div>
-        <div class="feedback-checklist">
-          <div class="feedback-item">
-            <strong>Connectives checklist:</strong>
-            <div class="feedback-tags" id="connective-tags-${qId}"></div>
-          </div>
-          <div class="feedback-item" id="keyword-feedback-row-${qId}">
-            <strong>${isQ2 ? 'Historical Knowledge Words' : 'Key Terms'}:</strong>
-            <div class="feedback-tags" id="keyword-tags-${qId}"></div>
-          </div>
-        </div>
+      <div class="drafting-instructions" style="background: rgba(255, 255, 255, 0.03); border-left: 4px solid var(--accent); padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+        <strong style="color: var(--accent); display: block; margin-bottom: 6px;"><i class="fa-solid fa-pen"></i> Draft on Paper</strong>
+        <p style="margin: 0; font-size: 0.9rem; color: var(--text-main); line-height: 1.5;">
+          We recommend drafting your answer on actual lined paper to build exam stamina. Use the <strong>Educator Clues</strong> and <strong>Writing Scaffolds</strong> below if you get stuck. When finished, use the <strong>Self-Check Answer</strong> button to review the examiner's model response.
+        </p>
       </div>
 
       <div class="exam-sheet-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">

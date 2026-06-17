@@ -7195,15 +7195,151 @@ export function renderTradingCardsView() {
     
     grid.innerHTML = '';
     
-
+    // Add global explosion trigger if not exists
+    if (!window.triggerPackExplosion) {
+      window.triggerPackExplosion = function(card, wrapperEl) {
+        if (wrapperEl.dataset.isAnimating === 'true') return;
+        wrapperEl.dataset.isAnimating = 'true';
+        
+        // Add to opened packs and save
+        if (!state.userStats.openedPacks) state.userStats.openedPacks = [];
+        if (!state.userStats.openedPacks.includes(card.id)) {
+          state.userStats.openedPacks.push(card.id);
+          try {
+            localStorage.setItem('edexcel_prefs_user_stats', JSON.stringify(state.userStats));
+          } catch(e) {}
+        }
+        
+        // Create full screen overlay
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.inset = '0';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.85)';
+        overlay.style.zIndex = '9999';
+        overlay.style.display = 'flex';
+        overlay.style.flexDirection = 'column';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.backdropFilter = 'blur(8px)';
+        
+        const animatedWrapper = document.createElement('div');
+        animatedWrapper.style.width = '250px';
+        animatedWrapper.style.height = '350px';
+        animatedWrapper.style.backgroundImage = "url('assets/mr_lovett_wrapper.png?v=2')";
+        animatedWrapper.style.backgroundSize = 'cover';
+        animatedWrapper.style.backgroundPosition = 'center';
+        animatedWrapper.style.borderRadius = '10px';
+        animatedWrapper.style.boxShadow = '0 0 40px rgba(250, 204, 21, 0.8)';
+        animatedWrapper.style.transition = 'all 0.1s';
+        
+        overlay.appendChild(animatedWrapper);
+        document.body.appendChild(overlay);
+        
+        // Scale and shake animation
+        setTimeout(() => {
+          animatedWrapper.style.transform = 'scale(1.2)';
+        }, 50);
+        
+        let shakes = 0;
+        const shakeInterval = setInterval(() => {
+          shakes++;
+          const offsetX = (Math.random() - 0.5) * 15;
+          const offsetY = (Math.random() - 0.5) * 15;
+          animatedWrapper.style.transform = `scale(1.2) translate(${offsetX}px, ${offsetY}px) rotate(${offsetX}deg)`;
+          
+          if (shakes > 15) {
+            clearInterval(shakeInterval);
+            // Explosion
+            if (window.AudioEngine) window.AudioEngine.play('cheer');
+            animatedWrapper.style.opacity = '0';
+            animatedWrapper.style.transform = 'scale(2)';
+            
+            // Particles
+            for(let i = 0; i < 60; i++) {
+              const particle = document.createElement('div');
+              particle.style.position = 'absolute';
+              particle.style.width = Math.random() * 10 + 5 + 'px';
+              particle.style.height = Math.random() * 10 + 5 + 'px';
+              particle.style.backgroundColor = ['#facc15', '#ef4444', '#3b82f6', '#10b981', '#ffffff'][Math.floor(Math.random() * 5)];
+              particle.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+              particle.style.top = '50%';
+              particle.style.left = '50%';
+              particle.style.transform = 'translate(-50%, -50%)';
+              particle.style.boxShadow = '0 0 10px currentColor';
+              particle.style.pointerEvents = 'none';
+              overlay.appendChild(particle);
+              
+              const angle = Math.random() * Math.PI * 2;
+              const velocity = Math.random() * 300 + 100;
+              const tx = Math.cos(angle) * velocity;
+              const ty = Math.sin(angle) * velocity;
+              
+              particle.animate([
+                { transform: 'translate(-50%, -50%)', opacity: 1 },
+                { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0)`, opacity: 0 }
+              ], { duration: 800 + Math.random() * 600, easing: 'cubic-bezier(0.25, 1, 0.5, 1)', fill: 'forwards' });
+            }
+            
+            // Show Card
+            const cardEl = document.createElement('div');
+            cardEl.className = "scumbag-card-container scumbag-flippable";
+            cardEl.style.width = '250px';
+            cardEl.style.height = '350px';
+            cardEl.style.position = 'absolute';
+            cardEl.style.transform = 'scale(0.5)';
+            cardEl.style.opacity = '0';
+            cardEl.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            
+            cardEl.innerHTML = `
+              <div class="scumbag-flip-card-inner">
+                <div class="scumbag-flip-card-front scumbag-card-unlocked" style="background-image: url('${card.image}'); background-size: cover; background-position: center 15%;">
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, transparent 100%); padding: 20px 5px 10px; text-align: center;">
+                    <h3 style="color: #facc15; font-family: 'Kalam', cursive; font-size: 1.2rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); line-height: 1.1;">"${card.frontPhrase || card.name}"</h3>
+                  </div>
+                  <div class="hologram"></div>
+                </div>
+              </div>
+            `;
+            
+            overlay.appendChild(cardEl);
+            
+            setTimeout(() => {
+              cardEl.style.transform = 'scale(1.3)';
+              cardEl.style.opacity = '1';
+            }, 50);
+            
+            const hint = document.createElement('div');
+            hint.innerHTML = '<i class="fa-solid fa-hand-pointer"></i> Tap anywhere to continue';
+            hint.style.position = 'absolute';
+            hint.style.bottom = '10%';
+            hint.style.color = 'rgba(255,255,255,0.8)';
+            hint.style.fontSize = '1.2rem';
+            hint.style.fontWeight = 'bold';
+            hint.style.textTransform = 'uppercase';
+            hint.style.animation = 'pulse 1.5s infinite';
+            overlay.appendChild(hint);
+            
+            overlay.onclick = () => {
+              overlay.remove();
+              renderTradingCardsView(); // re-render grid
+            };
+          }
+        }, 60);
+      };
+    }
   
     const forceUnlock = window.localStorage.getItem('unlock_all_cards') === 'true';
-  
     const totalXP = (window.state && window.state.userStats && window.state.userStats.xp) || 0;
+    
+    // Ensure openedPacks exists
+    if (window.state && window.state.userStats && !window.state.userStats.openedPacks) {
+      window.state.userStats.openedPacks = [];
+    }
 
     TRADING_CARDS_DATA.forEach((card, index) => {
       const requiredXP = (index + 1) * 200;
-      const isUnlocked = forceUnlock || totalXP >= requiredXP;
+      const hasEnoughXP = forceUnlock || totalXP >= requiredXP;
+      const isOpened = forceUnlock || (window.state && window.state.userStats && window.state.userStats.openedPacks && window.state.userStats.openedPacks.includes(card.id));
   
       const wrapperEl = document.createElement("div");
       wrapperEl.className = "scumbag-card-container scumbag-flippable"; 
@@ -7214,7 +7350,12 @@ export function renderTradingCardsView() {
   
       const frontEl = document.createElement("div");
       frontEl.className = "scumbag-flip-card-front";
-      if (isUnlocked) {
+      
+      const backEl = document.createElement("div");
+      backEl.className = "scumbag-flip-card-back";
+
+      if (hasEnoughXP && isOpened) {
+        // STATE: OPENED CARD
         frontEl.className += " scumbag-card-unlocked";
         frontEl.style.backgroundImage = `url('${card.image}')`;
         frontEl.style.backgroundSize = "cover";
@@ -7230,7 +7371,75 @@ rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, transparent 100%); padding: 20px 5px 10px
           </div>
           <div class="hologram"></div>
         `;
+        
+        if (card.stats) {
+          backEl.innerHTML = `
+            <div class="scumbag-back-content">
+              <div class="scumbag-back-header">
+                <h4>${card.name}</h4>
+              </div>
+              <div class="scumbag-bio">${card.bio}</div>
+              <div class="scumbag-stats-box">
+                <div class="scumbag-stat-row">
+                  <span class="stat-label">Audacity</span>
+                  <span class="scumbag-stat-value">
+                    <div class="scumbag-stat-bar" style="width: ${card.stats.audacity}%"></div>
+                    ${card.stats.audacity}
+                  </span>
+                </div>
+                <div class="scumbag-stat-row">
+                  <span class="stat-label">Sneakiness</span>
+                  <span class="scumbag-stat-value">
+                    <div class="scumbag-stat-bar" style="width: ${card.stats.diplomaticSneakiness}%"></div>
+                    ${card.stats.diplomaticSneakiness}
+                  </span>
+                </div>
+                <div class="scumbag-stat-row">
+                  <span class="stat-label">Military</span>
+                  <span class="scumbag-stat-value">
+                    <div class="scumbag-stat-bar" style="width: ${card.stats.militaryMight}%"></div>
+                    ${card.stats.militaryMight}
+                  </span>
+                </div>
+                <div class="scumbag-stat-row">
+                  <span class="stat-label">Legacy</span>
+                  <span class="scumbag-stat-value">
+                    <div class="scumbag-stat-bar" style="width: ${card.stats.legacyScore}%"></div>
+                    ${card.stats.legacyScore}
+                  </span>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+        
+        wrapperEl.onclick = () => {
+          if(window.AudioEngine) window.AudioEngine.play('flip');
+          innerEl.classList.toggle('flipped');
+        };
+        
+      } else if (hasEnoughXP && !isOpened) {
+        // STATE: READY TO OPEN
+        frontEl.className += " scumbag-card-ready";
+        frontEl.innerHTML = `
+          <div class="foil-pack-body" style="position: absolute; inset: 0; background-image: url('assets/mr_lovett_wrapper.png?v=2'); background-size: cover; 
+background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; 
+padding: 20px; color: white; text-align: center; border: 2px solid #facc15; box-shadow: 0 0 15px rgba(250, 204, 21, 0.5); animation: pulse 2s infinite;">
+            <div style="background: rgba(0,0,0,0.8); padding: 15px; border-radius: 8px; width: 100%; border: 1px solid #facc15;">
+              <i class="fa-solid fa-gift" style="font-size: 2rem; margin-bottom: 10px; color: #facc15; animation: bounce 1s infinite;"></i>
+              <h3 style="margin-bottom: 5px; color: #facc15; text-transform: uppercase;">Tap to Open!</h3>
+            </div>
+          </div>
+        `;
+        backEl.innerHTML = `<div class="scumbag-back-content"></div>`;
+        
+        wrapperEl.style.cursor = 'pointer';
+        wrapperEl.onclick = () => {
+          if (window.triggerPackExplosion) window.triggerPackExplosion(card, wrapperEl);
+        };
+        
       } else {
+        // STATE: LOCKED
         frontEl.className += " scumbag-card-locked";
         frontEl.innerHTML = `
           <div class="foil-pack-body" style="position: absolute; inset: 0; background-image: linear-gradient(rgba(10, 10, 15, 0.85), rgba(10, 10, 15, 0.85)), url('assets/mr_lovett_wrapper.png?v=2'); background-size: cover; 
@@ -7244,65 +7453,12 @@ rgba(255,255,255,0.2);">
             </div>
           </div>
         `;
-      }
-  
-      const backEl = document.createElement("div");
-      backEl.className = "scumbag-flip-card-back";
-      
-      if (isUnlocked && card.stats) {
-        backEl.innerHTML = `
-          <div class="scumbag-back-content">
-            <div class="scumbag-back-header">
-              <h4>${card.name}</h4>
-            </div>
-            <div class="scumbag-bio">${card.bio}</div>
-            <div class="scumbag-stats-box">
-              <div class="scumbag-stat-row">
-                <span class="stat-label">Audacity</span>
-                <span class="scumbag-stat-value">
-                  <div class="scumbag-stat-bar" style="width: ${card.stats.audacity}%"></div>
-                  ${card.stats.audacity}
-                </span>
-              </div>
-              <div class="scumbag-stat-row">
-                <span class="stat-label">Sneakiness</span>
-                <span class="scumbag-stat-value">
-                  <div class="scumbag-stat-bar" style="width: ${card.stats.diplomaticSneakiness}%"></div>
-                  ${card.stats.diplomaticSneakiness}
-                </span>
-              </div>
-              <div class="scumbag-stat-row">
-                <span class="stat-label">Military</span>
-                <span class="scumbag-stat-value">
-                  <div class="scumbag-stat-bar" style="width: ${card.stats.militaryMight}%"></div>
-                  ${card.stats.militaryMight}
-                </span>
-              </div>
-              <div class="scumbag-stat-row">
-                <span class="stat-label">Legacy</span>
-                <span class="scumbag-stat-value">
-                  <div class="scumbag-stat-bar" style="width: ${card.stats.legacyScore}%"></div>
-                  ${card.stats.legacyScore}
-                </span>
-              </div>
-            </div>
-          </div>
-        `;
-      } else {
-        backEl.innerHTML = `<div class="scumbag-back-content"><i class="fa-solid fa-question" style="font-size: 3rem; 
-opacity: 0.1;"></i></div>`;
+        backEl.innerHTML = `<div class="scumbag-back-content"><i class="fa-solid fa-question" style="font-size: 3rem; opacity: 0.1;"></i></div>`;
       }
   
       innerEl.appendChild(frontEl);
       innerEl.appendChild(backEl);
       wrapperEl.appendChild(innerEl);
-  
-      if (isUnlocked) {
-        wrapperEl.onclick = () => {
-          if(window.AudioEngine) window.AudioEngine.play('cardFlip');
-          innerEl.classList.toggle('flipped');
-        };
-      }
   
       grid.appendChild(wrapperEl);
     });

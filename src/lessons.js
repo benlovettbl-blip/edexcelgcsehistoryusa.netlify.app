@@ -1179,18 +1179,25 @@ export async function renderMasteryView(subtopicId) {
       console.error("Failed to load core support workbook data:", e);
     }
     coreSupportHtml = `
-      <div class="core-support-container" style="max-width: 800px; margin: 0 auto 24px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        ${vocabListHtml}
-        ${timelineListHtml}
-      </div>
+      <details class="core-support-details" style="max-width: 800px; margin: 0 auto 24px auto; background: rgba(0,0,0,0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md);">
+        <summary style="cursor: pointer; padding: 16px; font-weight: 700; color: var(--text-main); list-style: none; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-book-open" style="color: var(--secondary);"></i> Core Vocabulary & Timeline (Click to Expand)
+        </summary>
+        <div class="core-support-container" style="padding: 0 16px 16px 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+          ${vocabListHtml}
+          ${timelineListHtml}
+        </div>
+      </details>
     `;
   }
 
   // Generate Steps HTML
   let stepsHtml = '';
-  const halfPoint = Math.ceil(data.steps.length / 2);
+  let consolidatedScholarlyHtml = '';
+  let livedExperienceHtml = '';
+  
   data.steps.forEach((step, index) => {
-    let scholarlyHtml = '';
+    let stepScholarlyHtml = '';
     if (step.scholarlyDepth && !isCoreMode) {
       let scholarlyImgHtml = '';
       if (step.scholarlyDepth.image) {
@@ -1230,7 +1237,7 @@ export async function renderMasteryView(subtopicId) {
         `;
       }
 
-      scholarlyHtml = `
+      stepScholarlyHtml = `
         <details class="scholarly-extension" style="margin-top: 16px;">
           <summary class="scholarly-summary">
             <i class="fa-solid fa-graduation-cap"></i> ${step.scholarlyDepth.title} (Click to expand)
@@ -1242,6 +1249,7 @@ export async function renderMasteryView(subtopicId) {
           </div>
         </details>
       `;
+      consolidatedScholarlyHtml += stepScholarlyHtml;
     }
 
     let bridgeHtml = '';
@@ -1302,7 +1310,6 @@ export async function renderMasteryView(subtopicId) {
             ${finalBodyHtml}
           </div>
           ${bridgeHtml}
-          ${scholarlyHtml}
         </div>
       `;
     } else {
@@ -1316,59 +1323,73 @@ export async function renderMasteryView(subtopicId) {
             ${applyGlossaryTooltips(injectScaffoldingIntoMindMap(step.bodyHtml, subtopicId))}
           </div>
           ${bridgeHtml}
-          ${scholarlyHtml}
           ${stepQuizHtml}
         </div>
       `;
     }
+  });
 
-    // Insert Lived Experience discussion card half-way through the lesson
-    if (index + 1 === halfPoint && data.livedExperience) {
-      const le = data.livedExperience;
-      const discussionPromptText = isCoreMode && le.coreDiscussionQuestion 
-        ? le.coreDiscussionQuestion 
-        : (isCoreMode 
-            ? `Read ${le.witness || 'the witness'}'s account. Find one detail that shows the impact of this historical situation, and explain why it was significant or how it made people feel.` 
-            : le.discussionQuestion);
+  if (data.livedExperience) {
+    const le = data.livedExperience;
+    const discussionPromptText = isCoreMode && le.coreDiscussionQuestion 
+      ? le.coreDiscussionQuestion 
+      : (isCoreMode 
+          ? `Read ${le.witness || 'the witness'}'s account. Find one detail that shows the impact of this historical situation, and explain why it was significant or how it made people feel.` 
+          : le.discussionQuestion);
 
-      let hasSourceA = false;
-      if (data.steps) {
-        data.steps.forEach(step => {
-          if (step.bodyHtml && /source\s+a\b/i.test(step.bodyHtml)) {
-            hasSourceA = true;
-          }
-        });
-      }
-      const sourceLabel = hasSourceA ? 'Source B' : 'Source A';
+    let hasSourceA = false;
+    if (data.steps) {
+      data.steps.forEach(step => {
+        if (step.bodyHtml && /source\s+a\b/i.test(step.bodyHtml)) {
+          hasSourceA = true;
+        }
+      });
+    }
+    const sourceLabel = hasSourceA ? 'Source B' : 'Source A';
 
-      stepsHtml += `
-        <div class="mastery-card lived-experience-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--accent);">
-          <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
-            <span style="color: var(--accent);"><i class="fa-solid fa-comments"></i> Mid-Lesson Class Discussion: Lived Experience</span>
-            <button class="btn-audio-read" title="Read Source Aloud" style="margin-left: 8px;">
-              <i class="fa-solid fa-volume-high"></i>
-            </button>
-          </h3>
-          <div class="mastery-card-body card-content">
-            <div class="source-provenance" style="font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">
-              <strong>${sourceLabel}:</strong> ${le.witness} - ${le.context}
-            </div>
-            <blockquote class="source-quote" style="font-size: 1.05rem; font-style: italic; border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 20px 0; color: var(--text-main); line-height: 1.55; font-family: Georgia, 'Times New Roman', serif;">
-              "${le.quote}"
-            </blockquote>
-            <div class="discussion-prompt" style="background: var(--accent-glow); border: 1px dashed var(--accent); border-radius: var(--border-radius-sm); padding: 16px; margin-top: 16px; box-sizing: border-box;">
-              <h4 style="margin: 0 0 8px 0; color: var(--accent); display: flex; align-items: center; gap: 8px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-heading); font-weight: 700;">
-                <i class="fa-solid fa-circle-question"></i> Class Discussion Prompt
-              </h4>
-              <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-weight: 500;">
-                ${discussionPromptText}
-              </p>
-            </div>
+    livedExperienceHtml = `
+      <div class="mastery-card lived-experience-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--accent);">
+        <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+          <span style="color: var(--accent);"><i class="fa-solid fa-comments"></i> Class Discussion: Lived Experience</span>
+          <button class="btn-audio-read" title="Read Source Aloud" style="margin-left: 8px;">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </h3>
+        <div class="mastery-card-body card-content">
+          <div class="source-provenance" style="font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">
+            <strong>${sourceLabel}:</strong> ${le.witness} - ${le.context}
+          </div>
+          <blockquote class="source-quote" style="font-size: 1.05rem; font-style: italic; border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 20px 0; color: var(--text-main); line-height: 1.55; font-family: Georgia, 'Times New Roman', serif;">
+            "${le.quote}"
+          </blockquote>
+          <div class="discussion-prompt" style="background: var(--accent-glow); border: 1px dashed var(--accent); border-radius: var(--border-radius-sm); padding: 16px; margin-top: 16px; box-sizing: border-box;">
+            <h4 style="margin: 0 0 8px 0; color: var(--accent); display: flex; align-items: center; gap: 8px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-heading); font-weight: 700;">
+              <i class="fa-solid fa-circle-question"></i> Class Discussion Prompt
+            </h4>
+            <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-weight: 500;">
+              ${discussionPromptText}
+            </p>
           </div>
         </div>
-      `;
-    }
-  });
+      </div>
+    `;
+  }
+
+  // Append Lived Experience to the end
+  stepsHtml += livedExperienceHtml;
+
+  // Append Consolidated Scholarly Extensions if they exist
+  if (consolidatedScholarlyHtml) {
+    stepsHtml += `
+      <div class="mastery-card scholarly-deep-dive-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 4px solid var(--secondary);">
+        <h3 class="mastery-card-title" style="color: var(--secondary);"><i class="fa-solid fa-magnifying-glass-chart"></i> Historical Sources & Perspectives</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0; margin-bottom: 12px; font-style: italic;">Expand the sections below for deeper scholarly analysis and source evaluation on this topic.</p>
+        <div class="mastery-card-body card-content">
+          ${consolidatedScholarlyHtml}
+        </div>
+      </div>
+    `;
+  }
 
   if (isCoreMode) {
     stepsHtml += renderCoreScaffoldQuestions(subtopicId);
@@ -1841,23 +1862,12 @@ export async function renderMasteryView(subtopicId) {
         <div id="do-now-drafting-container" style="display: none; flex-direction: column; gap: 10px; margin-bottom: 18px; padding: 14px; border: 1px dashed var(--border-glass); border-radius: var(--border-radius-md); background: rgba(255,255,255,0.01);">
           <strong style="font-size: 0.82rem; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-pen-to-square"></i> Drafting Assistant</strong>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <div style="display: none;" id="textarea-wrap-c">
-              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Content Analysis (C):</label>
-              <textarea id="draft-c" placeholder="Describe what you see in the Jim Crow sign that is useful..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
-            </div>
-            <div style="display: none;" id="textarea-wrap-nop">
-              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Provenance Analysis (NOP):</label>
-              <textarea id="draft-nop" placeholder="Explain how the nature (public sign) and timing (circa 1950s) impact its utility..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
-            </div>
-            <div style="display: none;" id="textarea-wrap-ok">
-              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Own Knowledge (OK):</label>
-              <textarea id="draft-ok" placeholder="Introduce one fact from your own knowledge about Jim Crow laws..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
-            </div>
+            <p style="font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.45;">
+              <strong>Draft your answer on paper.</strong> Check the boxes above to reveal clues, and construct your paragraph using the components (Content, Provenance, and Own Knowledge). 
+            </p>
           </div>
-          <button id="compile-draft-btn" class="mastery-btn" style="background: var(--accent); color: #000; font-size: 0.8rem; font-weight: 800; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; margin-top: 4px; align-self: flex-start; display: none;">Compile & Compare Draft</button>
+          <button id="compile-draft-btn" class="mastery-btn" style="background: var(--accent); color: #000; font-size: 0.8rem; font-weight: 800; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; margin-top: 8px; align-self: flex-start; display: none;"><i class="fa-solid fa-eye"></i> Reveal Examiner Model Answer</button>
           <div id="compiled-draft-display" style="display: none; flex-direction: column; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-glass);">
-            <div style="font-weight: 700; font-size: 0.82rem; color: var(--accent);">Your Compiled Answer:</div>
-            <p id="compiled-draft-text" style="margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); background: rgba(255,255,255,0.02); padding: 8px; border-radius: 4px; border: 1px solid var(--border-glass);"></p>
             <div style="font-weight: 700; font-size: 0.82rem; color: var(--success); margin-top: 6px;">Smithsonian Exhibit Model Answer:</div>
             <p style="margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); background: rgba(16, 185, 129, 0.03); padding: 8px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.15);">Source E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading "COLORED WAITING ROOM" hanging above a public entrance. This content's utility is supported by my knowledge that Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions. The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of segregation infrastructure, though it fails to document the personal experiences of Black passengers who suffered under it.</p>
           </div>
@@ -2571,26 +2581,11 @@ export async function renderMasteryView(subtopicId) {
 
             ${questionsListHTML}
 
-            <textarea class="exam-textarea" id="past-textarea-${qId}" placeholder="Draft your answers for Q3a, Q3b, Q3c, and Q3d here..." style="min-height: 250px;"></textarea>
-
-            <!-- Live feedback card -->
-            <div class="draft-feedback-card" id="draft-feedback-${qId}">
-              <div class="feedback-stats">
-                <div class="feedback-badge" id="feedback-badge-${qId}">Structure: Drafting</div>
-                <div class="feedback-progress-bar">
-                  <div class="feedback-progress-fill" id="feedback-fill-${qId}" style="width: 0%;"></div>
-                </div>
-              </div>
-              <div class="feedback-checklist">
-                <div class="feedback-item">
-                  <strong>Connectives checklist:</strong>
-                  <div class="feedback-tags" id="connective-tags-${qId}"></div>
-                </div>
-                <div class="feedback-item" id="keyword-feedback-row-${qId}">
-                  <strong>Key Terms:</strong>
-                  <div class="feedback-tags" id="keyword-tags-${qId}"></div>
-                </div>
-              </div>
+            <div class="drafting-instructions" style="background: rgba(255, 255, 255, 0.03); border-left: 4px solid var(--accent); padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+              <strong style="color: var(--accent); display: block; margin-bottom: 6px;"><i class="fa-solid fa-pen"></i> Draft on Paper</strong>
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-main); line-height: 1.5;">
+                We recommend drafting your answers to these questions on actual lined paper to build exam stamina. Use the <strong>Educator Clues</strong> and <strong>Writing Scaffolds</strong> below if you get stuck. When finished, use the <strong>Self-Check Answers</strong> button to review the examiner's model responses.
+              </p>
             </div>
 
             <div class="exam-sheet-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -2867,23 +2862,11 @@ export async function renderMasteryView(subtopicId) {
 
     ${stepsHtml}
     
-    ${dualHtml}
-    
     ${lessonWrapUpHtml}
     
     ${kcHtml}
     
-    ${summaryCorrectionHtml}
-    
     ${hwHtml}
-    
-    ${causalHtml}
-    
-    ${impHtml}
-    
-    ${vaultHtml}
-    
-    ${howUsefulHtml}
     
     ${deepThinkingHtml}
 
@@ -5738,7 +5721,147 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
   return html;
 }
 
+function generateQuizPackHtml(includeAnswers) {
+  let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quick-Fire Quiz Pack</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #000000; padding: 20px; line-height: 1.3; margin: 0; }
+  .print-page { page-break-after: always; padding: 10px 0; clear: both; height: 95vh; box-sizing: border-box; position: relative; }
+  .print-page-last { padding: 10px 0; clear: both; height: 95vh; box-sizing: border-box; position: relative; }
+  .main-title { font-size: 15pt; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 5px; color: #000000; display: flex; justify-content: space-between; align-items: baseline; }
+  .main-title-right { font-size: 9pt; font-weight: normal; text-transform: none; }
+  .spec-box { border: 1px solid #c0c0c0; border-radius: 4px; padding: 12px; margin-bottom: 12px; font-size: 9pt; }
+  .spec-box strong { color: #000000; display: block; margin-bottom: 6px; font-size: 9.5pt; }
+  .spec-point { display: flex; gap: 8px; margin-bottom: 4px; align-items: flex-start; }
+  .spec-point-box { width: 10px; height: 10px; border: 1px solid #000; margin-top: 3px; flex-shrink: 0; }
+  .instruction-box { border: 1.5px solid #000000; border-radius: 4px; padding: 12px; margin-bottom: 20px; font-size: 9.5pt; }
+  .instruction-box strong { color: #d97706; display: block; margin-bottom: 4px; font-size: 10pt; text-transform: uppercase; }
+  .columns { column-count: 2; column-gap: 40px; }
+  .question-container { margin-bottom: 16px; break-inside: avoid-column; page-break-inside: avoid; }
+  .q-text { font-weight: bold; font-size: 9.5pt; color: #000000; margin-bottom: 10px; line-height: 1.4; }
+  .dotted-line { border-bottom: 1px dashed #a0a0a0; height: 20px; }
+  .answer-text { font-size: 9pt; line-height: 1.35; margin-top: 5px; }
+  .answer-text strong { color: #16a34a; font-weight: 600; }
+  .answer-text em { color: #4b5563; display: block; margin-top: 2px; }
+  .footer-row { display: flex; gap: 15px; margin-top: 20px; border-top: 1px solid #e5e7eb; padding-top: 20px; position: absolute; bottom: 10px; left: 0; right: 0; }
+  .footer-box { border: 1.5px solid #000000; padding: 12px; border-radius: 2px; }
+  @media print {
+    body { padding: 0; margin: 0; }
+    .print-page, .print-page-last { height: 100vh; padding: 0; margin: 0; }
+  }
+</style>
+</head>
+<body>`;
+
+  QUIZ_DATA.forEach((topic, tIdx) => {
+    topic.subtopics.forEach((subtopic, sIdx) => {
+      const lessonData = LESSONS_DATA[subtopic.id] || { specPoints: [] };
+      const specHtml = lessonData.specPoints.map(sp => `<div class="spec-point"><div class="spec-point-box"></div><div>${sp}</div></div>`).join('');
+
+      // Questions Page
+      const isLastQPage = (tIdx === QUIZ_DATA.length - 1 && sIdx === topic.subtopics.length - 1) && !includeAnswers;
+      html += `
+        <div class="${isLastQPage ? 'print-page-last' : 'print-page'}" ${!isLastQPage ? 'style="page-break-after: always;"' : ''}>
+          <div class="main-title">
+            <span>${subtopic.title.split(':')[0]}: QUICK-FIRE QUIZ</span>
+            <span class="main-title-right">GCSE History Lesson Resource - Workbook</span>
+          </div>
+
+          <div class="spec-box">
+            <strong>📋 CURRICULUM SPECIFICATION CHECKLIST (PEARSON EDEXCEL)</strong>
+            ${specHtml}
+          </div>
+
+          <div class="instruction-box">
+            <strong>✏️ INSTRUCTIONS</strong>
+            Answer all 10 questions from memory. Write your answers clearly on the dotted lines. Keep your answers brief.
+          </div>
+
+          <div class="columns">
+      `;
+
+      subtopic.standard.forEach((q, qIdx) => {
+        html += `
+            <div class="question-container">
+              <div class="q-text">Q${qIdx + 1}: ${q.question}</div>
+              <div class="dotted-line"></div>
+              <div class="dotted-line"></div>
+              <div class="dotted-line"></div>
+            </div>
+        `;
+      });
+      html += `
+          </div>
+        </div>
+      `;
+
+      // Answers Page
+      if (includeAnswers) {
+        const isLastAPage = (tIdx === QUIZ_DATA.length - 1 && sIdx === topic.subtopics.length - 1);
+        html += `
+          <div class="${isLastAPage ? 'print-page-last' : 'print-page'}" ${!isLastAPage ? 'style="page-break-after: always;"' : ''}>
+            <div class="main-title">
+              <span>${subtopic.title.split(':')[0]}: QUIZ ANSWER KEY & EXPLANATIONS</span>
+              <span class="main-title-right">GCSE History Lesson Resource - Workbook</span>
+            </div>
+
+            <div class="columns">
+        `;
+        subtopic.standard.forEach((q, qIdx) => {
+          html += `
+              <div class="question-container" style="margin-bottom: 16px;">
+                <div class="q-text" style="margin-bottom: 2px;">Q${qIdx + 1}: ${q.question}</div>
+                <div class="answer-text">
+                  <strong>Correct Answer:</strong> ${q.answer}
+                  <em>${q.explanation}</em>
+                </div>
+              </div>
+          `;
+        });
+        html += `
+            </div>
+
+            <div class="footer-row">
+              <div class="footer-box" style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                <strong style="font-size: 10pt;">SCORE TRACKER</strong>
+                <div style="margin-top: 12px; font-size: 16pt; font-weight: bold; border: 1px dashed #a0a0a0; padding: 10px; width: 80px; margin: 0 auto;">/ 10</div>
+              </div>
+              <div class="footer-box" style="flex: 2;">
+                <strong style="font-size: 10pt; display: flex; align-items: center; gap: 6px;">📊 PERFORMANCE BOUNDARIES</strong>
+                <div style="font-size: 9pt; margin-top: 10px; line-height: 1.5;">
+                  <strong>9–10 Marks:</strong> Mastery (Level 9 Focus) - Excellent recall.<br/>
+                  <strong>7–8 Marks:</strong> Strong (Level 7 Focus) - Solid foundation.<br/>
+                  <strong>Under 7 Marks:</strong> Focus Needed - Re-read narrative & vocabulary.
+                </div>
+              </div>
+              <div class="footer-box" style="flex: 1.5; background: #f8fafc; border-color: #cbd5e1;">
+                <strong style="font-size: 10pt; color: #0369a1;">🔍 DIAGNOSTIC STUDY GUIDE</strong>
+                <div style="font-size: 9pt; margin-top: 10px; line-height: 1.5; color: #334155;">
+                  If you struggled with any question:<br/>
+                  1. Re-read the Lesson Study Narrative.<br/>
+                  2. Review the Vocab Spotlight terms.<br/>
+                  3. Re-test using active recall.
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    });
+  });
+
+  html += `</body></html>`;
+  return html;
+}
+
 export function generateBulkWorkbookHtml(style, density, includeAnswers) {
+  if (style === 'quiz') {
+    return generateQuizPackHtml(includeAnswers);
+  }
+
   const subtopicIds = [
     'subtopic_1_1', 'subtopic_1_2', 'subtopic_1_3', 'subtopic_1_4',
     'subtopic_2_1', 'subtopic_2_2', 'subtopic_2_3', 'subtopic_2_4',

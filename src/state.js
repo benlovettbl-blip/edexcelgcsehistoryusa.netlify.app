@@ -65,6 +65,7 @@ export const state = {
     xp: 0,
     level: 1,
     streak: 0,
-    lastLoginDate: null
+    lastLoginDate: null,
+    openedPacks: []
   }
 };
