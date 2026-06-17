@@ -4952,7 +4952,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       q3Html = `
         <div style="page-break-before: always;">
           <h2 class="main-title">End of Unit Exam Practice (3A-D)</h2>
-          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5; margin-bottom: 20px; page-break-inside: avoid;">
+          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5; margin-bottom: 20px;">
             <span style="font-weight: bold; font-size: 11pt; color: #000000; display: block; margin-bottom: 12px;">Question 3 [32 Marks]:</span>
             <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9.5pt; line-height: 1.35;">
               ${srcBHtml}<br><br>
