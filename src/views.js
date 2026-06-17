@@ -1625,6 +1625,10 @@ function startFlashcardSessionDirect(subtopicId) {
   if (subtopicId === 'bookmarks') {
     questions = state.allQuestions.filter(q => state.bookmarks.includes(q.id));
     state.flashcardSession.deck = [...questions].sort(() => Math.random() - 0.5);
+  } else if (subtopicId === 'quick') {
+    if (!state.flashcardSession.deck || state.flashcardSession.deck.length === 0) {
+      state.flashcardSession.deck = [...state.allQuestions].sort(() => Math.random() - 0.5).slice(0, 10);
+    }
   } else {
     questions = state.allQuestions.filter(q => q.subtopicId === subtopicId);
     let deck = [...questions].sort(() => Math.random() - 0.5);
@@ -6526,7 +6530,7 @@ function updateDashboardActionCards() {
       state.flashcardSession.reinforcing = false;
       
       if (window.switchView) {
-        window.switchView('flashcards');
+        window.switchView('flashcards', 'quick');
       }
     };
   }
