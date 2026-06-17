@@ -100,12 +100,19 @@ export function switchView(viewName, subtopicId = null) {
     if (!state.examSession.isActive) {
       showExamSetup();
     }
+  } else if (viewName === 'worksheets') {
+    const wsNav = document.getElementById('nav-worksheets');
+    if (wsNav) wsNav.classList.add('active');
+    if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
+    const viewTitle = document.getElementById('current-view-title');
+    if (viewTitle) viewTitle.textContent = "Educator Worksheets";
+    state.selectedSubtopicId = null;
   } else if (viewName === 'exam-hub') {
     const hubNav = document.getElementById('nav-exam-hub');
     if (hubNav) hubNav.classList.add('active');
     if (headerModeSwitcher) headerModeSwitcher.style.display = 'none';
     const viewTitle = document.getElementById('current-view-title');
-    if (viewTitle) viewTitle.textContent = "Resource & Exam Hub";
+    if (viewTitle) viewTitle.textContent = "Exam Technique";
     state.selectedSubtopicId = null;
     
     const targetPanel = subtopicId || 'educator-hub';
@@ -223,6 +230,7 @@ export function switchView(viewName, subtopicId = null) {
     'lessons': 'view-mastery',
     'games': 'view-games',
     'exam-hub': 'view-exam-hub',
+    'worksheets': 'view-worksheets',
     'key-topic': 'view-key-topic',
     'ai-videos': 'view-ai-videos',
     'leaderboard': 'view-leaderboard',

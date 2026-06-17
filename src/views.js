@@ -1680,7 +1680,7 @@ function startFlashcardSessionDirect(subtopicId) {
 
 function startFlashcardSession(subtopicId) {
   state.selectedSubtopicId = subtopicId;
-  if (subtopicId !== 'bookmarks' && NARRATIVE_FRAMINGS[subtopicId]) {
+  if (subtopicId !== 'bookmarks' && subtopicId !== 'quick' && NARRATIVE_FRAMINGS[subtopicId]) {
     showNarrativeFramingScreen(subtopicId);
   } else {
     startFlashcardSessionDirect(subtopicId);

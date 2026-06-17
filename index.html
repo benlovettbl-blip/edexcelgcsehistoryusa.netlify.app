@@ -144,10 +144,16 @@
               <span class="nav-text">Quiz Generator</span>
             </span>
           </a>
-          <a class="nav-item" id="nav-exam-hub" title="Resource Hub">
+          <a class="nav-item" id="nav-worksheets" title="Educator Worksheets">
+            <span class="nav-item-content">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span class="nav-text">Educator Worksheets</span>
+            </span>
+          </a>
+          <a class="nav-item" id="nav-exam-hub" title="Exam Technique">
             <span class="nav-item-content">
               <i class="fa-solid fa-chalkboard-user"></i>
-              <span class="nav-text">Resource Hub</span>
+              <span class="nav-text">Exam Technique</span>
             </span>
           </a>
           
@@ -386,6 +392,15 @@
             </div>
           </div>
 
+          <div class="shortcut-card" id="shortcut-worksheets" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--border-active)';" onmouseout="this.style.transform='none'; this.style.borderColor='var(--border-glass)';">
+            <div class="shortcut-icon" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">
+              <i class="fa-solid fa-file-pdf"></i>
+            </div>
+            <div class="shortcut-info">
+              <h3>Educator Worksheets</h3>
+              <p>Printable PDF workbooks and revision sheets</p>
+            </div>
+          </div>
           <div class="shortcut-card" id="shortcut-exam-hub" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--border-active)';" onmouseout="this.style.transform='none'; this.style.borderColor='var(--border-glass)';">
             <div class="shortcut-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
               <i class="fa-solid fa-chalkboard-user"></i>
@@ -945,10 +960,8 @@
         <div class="exam-skills-container" style="max-width: 800px; margin: 0 auto; padding: 12px 4px;">
           <!-- Tab Navigation Bar for Paper 3 -->
           <div class="exam-tabs-header" style="display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px; flex-wrap: wrap;">
-            <button class="exam-tab-btn active" data-panel="educator-hub" style="padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-main); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
-              <i class="fa-solid fa-chalkboard-user" style="color: #10b981; margin-right: 6px;"></i> 1. Educator Worksheets
-            </button>
-            <button class="exam-tab-btn" data-panel="technique" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
+            
+            <button class="exam-tab-btn active" data-panel="technique" style="padding: 10px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
               <i class="fa-solid fa-graduation-cap" style="color: var(--primary); margin-right: 6px;"></i> 2. Technique Guide
             </button>
             <button class="exam-tab-btn" data-panel="q1" style="padding: 10px 16px; background: transparent; border: 1px solid transparent; border-radius: var(--border-radius-sm); color: var(--text-muted); font-family: var(--font-heading); font-weight: 600; cursor: pointer; transition: all var(--transition-fast);">
