@@ -9818,7 +9818,7 @@ body.printing-active #print-area {
     background: var(--surface-light);
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 0;
     overflow-y: auto;
   }
   .scumbag-card-locked .foil-pack-body {

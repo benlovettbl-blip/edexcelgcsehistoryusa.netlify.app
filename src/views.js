@@ -7374,41 +7374,45 @@ rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, transparent 100%); padding: 20px 5px 10px
         
         if (card.stats) {
           backEl.innerHTML = `
-            <div class="scumbag-back-content">
-              <div class="scumbag-back-header">
-                <h4>${card.name}</h4>
+            <div class="scumbag-back-content" style="height: 100%; display: flex; flex-direction: column; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); padding: 15px; box-sizing: border-box; border: 2px solid #facc15; box-shadow: inset 0 0 20px rgba(0,0,0,0.8);">
+              
+              <div style="background: rgba(250, 204, 21, 0.1); border-bottom: 2px solid #facc15; padding-bottom: 8px; margin-bottom: 12px; text-align: center; border-radius: 4px;">
+                <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px;">Historic Figures</div>
+                <h4 style="margin: 0; font-family: 'Kalam', cursive; font-size: 1.5rem; color: #facc15; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">${card.name}</h4>
               </div>
-              <div class="scumbag-bio">${card.bio}</div>
-              <div class="scumbag-stats-box">
-                <div class="scumbag-stat-row">
-                  <span class="stat-label">Audacity</span>
-                  <span class="scumbag-stat-value">
-                    <div class="scumbag-stat-bar" style="width: ${card.stats.audacity}%"></div>
-                    ${card.stats.audacity}
-                  </span>
-                </div>
-                <div class="scumbag-stat-row">
-                  <span class="stat-label">Sneakiness</span>
-                  <span class="scumbag-stat-value">
-                    <div class="scumbag-stat-bar" style="width: ${card.stats.diplomaticSneakiness}%"></div>
-                    ${card.stats.diplomaticSneakiness}
-                  </span>
-                </div>
-                <div class="scumbag-stat-row">
-                  <span class="stat-label">Rhetoric</span>
-                  <span class="scumbag-stat-value">
-                    <div class="scumbag-stat-bar" style="width: ${card.stats.rhetoricalPower}%"></div>
-                    ${card.stats.rhetoricalPower}
-                  </span>
-                </div>
-                <div class="scumbag-stat-row">
-                  <span class="stat-label">Legacy</span>
-                  <span class="scumbag-stat-value">
-                    <div class="scumbag-stat-bar" style="width: ${card.stats.legacyScore}%"></div>
-                    ${card.stats.legacyScore}
-                  </span>
-                </div>
+              
+              <div style="font-size: 0.85rem; color: #e2e8f0; line-height: 1.35; text-align: center; margin-bottom: 15px; font-style: italic; flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 0 5px;">
+                "${card.bio}"
               </div>
+              
+              <div style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+                
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                  <div style="width: 25px; text-align: center; color: #f87171;"><i class="fa-solid fa-fire"></i></div>
+                  <div style="flex-grow: 1; font-size: 0.85rem; color: #f87171; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Audacity</div>
+                  <div style="font-size: 1.1rem; color: white; font-weight: bold; background: #991b1b; padding: 2px 10px; border-radius: 4px; box-shadow: 0 0 8px #991b1b; text-shadow: 1px 1px 1px black;">${card.stats.audacity}</div>
+                </div>
+
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                  <div style="width: 25px; text-align: center; color: #a78bfa;"><i class="fa-solid fa-mask"></i></div>
+                  <div style="flex-grow: 1; font-size: 0.85rem; color: #a78bfa; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Sneakiness</div>
+                  <div style="font-size: 1.1rem; color: white; font-weight: bold; background: #5b21b6; padding: 2px 10px; border-radius: 4px; box-shadow: 0 0 8px #5b21b6; text-shadow: 1px 1px 1px black;">${card.stats.diplomaticSneakiness}</div>
+                </div>
+
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                  <div style="width: 25px; text-align: center; color: #38bdf8;"><i class="fa-solid fa-bullhorn"></i></div>
+                  <div style="flex-grow: 1; font-size: 0.85rem; color: #38bdf8; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Rhetoric</div>
+                  <div style="font-size: 1.1rem; color: white; font-weight: bold; background: #075985; padding: 2px 10px; border-radius: 4px; box-shadow: 0 0 8px #075985; text-shadow: 1px 1px 1px black;">${card.stats.rhetoricalPower}</div>
+                </div>
+
+                <div style="display: flex; align-items: center;">
+                  <div style="width: 25px; text-align: center; color: #facc15;"><i class="fa-solid fa-crown"></i></div>
+                  <div style="flex-grow: 1; font-size: 0.85rem; color: #facc15; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Legacy</div>
+                  <div style="font-size: 1.1rem; color: white; font-weight: bold; background: #a16207; padding: 2px 10px; border-radius: 4px; box-shadow: 0 0 8px #a16207; text-shadow: 1px 1px 1px black;">${card.stats.legacyScore}</div>
+                </div>
+
+              </div>
+              
             </div>
           `;
         }
