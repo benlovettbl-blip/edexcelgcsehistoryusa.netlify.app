@@ -4861,9 +4861,24 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     };
 
     const narrativeHtml = (data.narrative || []).map((section, idx) => `
-      <div style="margin-bottom: 25px;">
+      <div style="margin-bottom: 25px; page-break-inside: avoid;">
         <h3 style="font-size: 14pt; margin-bottom: 12px; font-weight: bold; border-bottom: 2px solid #000000; padding-bottom: 4px;">${idx + 1}. ${section.title}</h3>
-        ${section.paragraphs.map(p => `<div style="font-size: 11.5pt; line-height: 1.6; margin-bottom: 12px;">${cleanHtml(p)}</div>`).join('')}
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="width: 65%; padding-right: 20px; vertical-align: top;">
+              ${section.paragraphs.map(p => `<div style="font-size: 11.5pt; line-height: 1.6; margin-bottom: 12px;">${cleanHtml(p)}</div>`).join('')}
+            </td>
+            <td style="width: 35%; vertical-align: top; border-left: 2px dashed #a0a0a0; padding-left: 15px;">
+              <div style="border: 1.5px solid #000000; padding: 10px; background: #f9fafb; border-radius: 4px; height: 100%; min-height: 100px;">
+                <strong style="font-size: 9pt; display: block; margin-bottom: 6px; color: #000000; text-transform: uppercase;">📝 Active Reading</strong>
+                <span style="font-size: 8.5pt; font-style: italic; color: #000000; display: block; margin-bottom: 10px;">Extract 3 key facts or summarise this section in 10 words:</span>
+                <div style="border-bottom: 1px dashed #a0a0a0; margin-bottom: 15px; height: 15px;"></div>
+                <div style="border-bottom: 1px dashed #a0a0a0; margin-bottom: 15px; height: 15px;"></div>
+                <div style="border-bottom: 1px dashed #a0a0a0; margin-bottom: 15px; height: 15px;"></div>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
     `).join('');
 
@@ -4877,7 +4892,8 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
         ${data.timeline.map((item, idx) => {
           const q = data.comprehensionCheck[idx];
-          return `
+          const isLast = idx === data.timeline.length - 1;
+          let rowHtml = `
             <tr>
               <td style="width: 20%; padding: 15px 15px 15px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
                 <strong style="font-size: 12pt;">${item.date}</strong>
@@ -4895,8 +4911,37 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
               </td>
             </tr>
           `;
+          
+          if (!isLast) {
+            rowHtml += `
+            <tr>
+              <td style="width: 20%; padding: 0; text-align: right; vertical-align: middle; border-right: 3px solid #000000;">
+                <div style="font-size: 20pt; color: #a0a0a0; margin-right: -13px; background: #ffffff; width: 24px; display: inline-block; text-align: center; line-height: 1;">↓</div>
+              </td>
+              <td colspan="2" style="padding: 10px 15px;">
+                <div style="border: 1px solid #000000; padding: 10px; background: #f9fafb; border-radius: 4px; border-left: 4px solid #f59e0b;">
+                  <strong style="font-size: 9pt; display: block; margin-bottom: 4px; color: #000000; text-transform: uppercase;">🔗 Causal Link</strong>
+                  <span style="font-size: 8.5pt; font-style: italic; color: #000000; display: block;">Explain how the event above led to the event below:</span>
+                  <div style="border-bottom: 1px dashed #a0a0a0; margin-top: 15px; height: 10px;"></div>
+                  <div style="border-bottom: 1px dashed #a0a0a0; margin-top: 15px; height: 10px;"></div>
+                </div>
+              </td>
+            </tr>
+            `;
+          }
+          return rowHtml;
         }).join('')}
       </table>
+      
+      <div style="margin-top: 30px; border: 2px solid #000000; padding: 15px; border-radius: 6px; background: #f8fafc; page-break-inside: avoid;">
+        <strong style="font-size: 12pt; display: block; margin-bottom: 8px; color: #000000; text-transform: uppercase;">🌟 Big Picture Synthesis</strong>
+        <span style="font-size: 10.5pt; font-style: italic; color: #000000; display: block; margin-bottom: 15px;">
+          Review the timeline above. Which event do you consider the <strong>most significant turning point</strong> in this topic? Justify your answer with two reasons.
+        </span>
+        <div style="border-bottom: 1px dashed #a0a0a0; margin-top: 25px; height: 10px;"></div>
+        <div style="border-bottom: 1px dashed #a0a0a0; margin-top: 25px; height: 10px;"></div>
+        <div style="border-bottom: 1px dashed #a0a0a0; margin-top: 25px; height: 10px;"></div>
+      </div>
     `;
 
     let q2Title = data.causalQuestion || "Explain why this topic developed during this period.";
