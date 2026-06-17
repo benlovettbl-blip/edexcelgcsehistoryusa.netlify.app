@@ -5282,7 +5282,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     }
     .footer-note {
       font-size: 7pt;
-      color: #6b7280;
+      color: #000000;
       text-align: center;
       border-top: 1px solid #e5e7eb;
       padding-top: 2px;
@@ -5369,7 +5369,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       font-weight: bold;
       width: 4%;
       vertical-align: middle;
-      color: #4b5563;
+      color: #000000;
     }
     /* Vocabulary Match-up styles */
     .vocab-table {
@@ -5491,7 +5491,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       <tr class="print-cornell-row">
         <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 8pt; font-weight: bold; background: #f9fafb;">
           ${cue.title}<br><br>
-          <span style="font-size: 7.5pt; font-weight: normal; color: #4b5563;">
+          <span style="font-size: 7.5pt; font-weight: normal; color: #000000;">
             ${cue.subCues.map(sc => `${sc}`).join('<br>')}
           </span>
         </td>
@@ -5699,7 +5699,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
               Model Answer for Question ${qNum + 1} [${marks} Marks]
             </div>
             
-            <p style="font-size: 10pt; font-weight: bold; margin-bottom: 10px; font-style: italic; color: #4b5563;">
+            <p style="font-size: 10pt; font-weight: bold; margin-bottom: 10px; font-style: italic; color: #000000;">
               Question: ${qText}
             </p>
 
@@ -5745,7 +5745,7 @@ function generateQuizPackHtml(includeAnswers) {
   .dotted-line { border-bottom: 1px dashed #a0a0a0; height: 20px; }
   .answer-text { font-size: 9pt; line-height: 1.35; margin-top: 5px; }
   .answer-text strong { color: #16a34a; font-weight: 600; }
-  .answer-text em { color: #4b5563; display: block; margin-top: 2px; }
+  .answer-text em { color: #000000; display: block; margin-top: 2px; font-style: normal; }
   .footer-row { display: flex; gap: 15px; margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 20px; }
   .footer-box { border: 1.5px solid #000000; padding: 12px; border-radius: 2px; break-inside: avoid; page-break-inside: avoid; }
   @media print {
@@ -5838,8 +5838,8 @@ function generateQuizPackHtml(includeAnswers) {
                 </div>
               </div>
               <div class="footer-box" style="flex: 1.5; background: #f8fafc; border-color: #cbd5e1;">
-                <strong style="font-size: 10pt; color: #0369a1;">🔍 DIAGNOSTIC STUDY GUIDE</strong>
-                <div style="font-size: 9pt; margin-top: 10px; line-height: 1.5; color: #334155;">
+                <strong style="font-size: 10pt; color: #000000;">🔍 DIAGNOSTIC STUDY GUIDE</strong>
+                <div style="font-size: 9pt; margin-top: 10px; line-height: 1.5; color: #000000;">
                   If you struggled with any question:<br/>
                   1. Re-read the Lesson Study Narrative.<br/>
                   2. Review the Vocab Spotlight terms.<br/>
