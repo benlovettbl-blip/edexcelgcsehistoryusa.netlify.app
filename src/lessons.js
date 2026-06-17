@@ -4874,22 +4874,22 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     `).join('');
 
     const timelineAndQuestionsHtml = `
-      <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
         ${data.timeline.map((item, idx) => {
           const q = data.comprehensionCheck[idx];
           return `
             <tr>
-              <td style="width: 20%; padding: 15px 15px 15px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
-                <strong style="font-size: 12pt;">${item.date}</strong>
+              <td style="width: 20%; padding: 8px 8px 8px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
+                <strong style="font-size: 11.5pt;">${item.date}</strong>
               </td>
-              <td style="width: 40%; padding: 15px; vertical-align: top;">
-                <span style="font-size: 11pt;">${item.desc}</span>
+              <td style="width: 40%; padding: 8px 12px; vertical-align: top;">
+                <span style="font-size: 10.5pt; line-height: 1.3;">${item.desc}</span>
               </td>
-              <td style="width: 40%; padding: 15px; vertical-align: top;">
+              <td style="width: 40%; padding: 8px 0 8px 12px; vertical-align: top;">
                 ${q ? `
-                  <div style="padding: 10px; border: 2px solid #000000; border-radius: 6px;">
-                    <span style="font-size: 11pt; font-weight: bold;">${q.title}</span><br>
-                    <span style="font-size: 10pt; font-style: italic; display: block; margin-top: 4px;">${q.scaffold}</span>
+                  <div style="padding: 8px 10px; border: 2px solid #000000; border-radius: 6px;">
+                    <span style="font-size: 10.5pt; font-weight: bold;">${q.title}</span><br>
+                    <span style="font-size: 9.5pt; font-style: italic; display: block; margin-top: 2px; line-height: 1.25;">${q.scaffold}</span>
                   </div>
                 ` : ''}
               </td>
@@ -4924,12 +4924,12 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     }
 
     const whyHtml = `
-      <div style="margin-bottom: 20px; border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box;">
-        <span style="font-weight: bold; font-size: 12pt; color: #000000; display: block;">Question 2 [12 Marks]:</span>
-        <span style="display: block; font-size: 12pt; font-weight: bold; margin-top: 6px;">
+      <div style="margin-bottom: 12px; border: 2px solid #000000; padding: 10px 15px; border-radius: 6px; box-sizing: border-box;">
+        <span style="font-weight: bold; font-size: 11.5pt; color: #000000; display: block;">Question 2 [12 Marks]:</span>
+        <span style="display: block; font-size: 11.5pt; font-weight: bold; margin-top: 4px;">
           ${q2Title}
         </span>
-        <div style="font-size: 11pt; border-left: 3px solid #000000; padding-left: 10px; margin-left: 2px; margin-top: 10px;">
+        <div style="font-size: 10.5pt; border-left: 3px solid #000000; padding-left: 10px; margin-left: 2px; margin-top: 8px;">
           You may use the following in your answer:<br>
           ${q2Stimulus.map(s => `• ${s}<br>`).join('')}
           • You must also use information of your own.
@@ -4953,9 +4953,9 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       const q3d = q3.questions?.q3d || q3.q3d;
 
       q3Html = `
-        <div class="print-page" style="page-break-before: always; margin-top: 30px;">
+        <div class="${includeAnswers ? 'print-page' : 'print-page-last'}" style="page-break-before: always;">
           <h2 class="main-title">End of Unit Exam Practice (3A-D)</h2>
-          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5;">
+          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5; margin-bottom: 20px;">
             <span style="font-weight: bold; font-size: 11pt; color: #000000; display: block; margin-bottom: 12px;">Question 3 [32 Marks]:</span>
             <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
               ${srcBHtml}<br><br>
@@ -4978,6 +4978,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
               <strong>3 (d)</strong> ${q3d}
             </span>
           </div>
+          <div class="footer-note">Page 3</div>
         </div>
       `;
     }
@@ -5188,7 +5189,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
   </div>
 
   <!-- PAGE 2: ANALYTICAL TASKS & TIMELINE -->
-  <div class="${isEndOfUnit && data.examPractice && data.examPractice.q3set ? 'print-page' : (includeAnswers ? 'print-page' : 'print-page-last')}">
+  <div class="${(isEndOfUnit && (data.paper3Suite || (data.examPractice && data.examPractice.q3set))) || includeAnswers ? 'print-page' : 'print-page-last'}">
     <div class="section-title" style="margin-top: 0;">Exam Practice</div>
     
     ${whyHtml}

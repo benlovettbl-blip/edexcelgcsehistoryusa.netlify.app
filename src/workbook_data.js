@@ -536,7 +536,8 @@ for (const subtopicId in LESSONS_DATA) {
     cornell: cornell,
     organizer: organizer,
     causalQuestion: data.causalLinks ? (data.causalLinks.question || "") : "",
-    sourcesQuestion: data.howUsefulAnalyser ? (data.howUsefulAnalyser.question || "") : ""
+    sourcesQuestion: data.howUsefulAnalyser ? (data.howUsefulAnalyser.question || "") : "",
+    paper3Suite: data.paper3Suite || null
   };
 }
 
