@@ -443,6 +443,14 @@ function bindEvents() {
     switchView('exam');
   });
 
+  const shortcutWorksheets = document.getElementById('shortcut-worksheets');
+  if (shortcutWorksheets) {
+    shortcutWorksheets.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('worksheets');
+    });
+  }
+
   document.getElementById('shortcut-exam-hub').addEventListener('click', () => {
     AudioEngine.play('click');
     switchView('exam-hub', 'technique');

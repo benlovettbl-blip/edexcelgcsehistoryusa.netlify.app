@@ -23,6 +23,8 @@
     // { subtopicId: string }
     specObjectives: {},
     // { objectiveId: boolean }
+    dailyXp: 0,
+    lastActiveDate: null,
     // Flashcard Session State
     flashcardSession: {
       deck: [],
@@ -69,7 +71,8 @@
       xp: 0,
       level: 1,
       streak: 0,
-      lastLoginDate: null
+      lastLoginDate: null,
+      openedPacks: []
     }
   };
 
@@ -14921,26 +14924,11 @@ ${cleanBrackets(paper.q3d.model)}
         <span class="exam-question-marks" style="flex-shrink: 0; background: var(--primary-glow); color: var(--primary); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">${marks} Marks</span>
       </div>
       ${stimulusHTML}
-      <textarea class="exam-textarea" id="past-textarea-${qId}" placeholder="Draft your answer here..." style="min-height: 120px;"></textarea>
-      
-      <!-- Live feedback card -->
-      <div class="draft-feedback-card" id="draft-feedback-${qId}">
-        <div class="feedback-stats">
-          <div class="feedback-badge" id="feedback-badge-${qId}">Structure: Drafting</div>
-          <div class="feedback-progress-bar">
-            <div class="feedback-progress-fill" id="feedback-fill-${qId}" style="width: 0%;"></div>
-          </div>
-        </div>
-        <div class="feedback-checklist">
-          <div class="feedback-item">
-            <strong>Connectives checklist:</strong>
-            <div class="feedback-tags" id="connective-tags-${qId}"></div>
-          </div>
-          <div class="feedback-item" id="keyword-feedback-row-${qId}">
-            <strong>${isQ2 ? "Historical Knowledge Words" : "Key Terms"}:</strong>
-            <div class="feedback-tags" id="keyword-tags-${qId}"></div>
-          </div>
-        </div>
+      <div class="drafting-instructions" style="background: rgba(255, 255, 255, 0.03); border-left: 4px solid var(--accent); padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+        <strong style="color: var(--accent); display: block; margin-bottom: 6px;"><i class="fa-solid fa-pen"></i> Draft on Paper</strong>
+        <p style="margin: 0; font-size: 0.9rem; color: var(--text-main); line-height: 1.5;">
+          We recommend drafting your answer on actual lined paper to build exam stamina. Use the <strong>Educator Clues</strong> and <strong>Writing Scaffolds</strong> below if you get stuck. When finished, use the <strong>Self-Check Answer</strong> button to review the examiner's model response.
+        </p>
       </div>
 
       <div class="exam-sheet-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -15723,6 +15711,18 @@ ${cleanBrackets(paper.q3d.model)}
         const density = document.getElementById("bulk-workbook-density").value;
         const answers = document.getElementById("bulk-workbook-answers").value;
         AudioEngine.play("click");
+        if (style === "revision") {
+          window.open("revision_workbook_usa.html", "_blank");
+          return;
+        }
+        if (style === "interpretations") {
+          window.open("interpretations_practice.html", "_blank");
+          return;
+        }
+        if (style === "foundation") {
+          window.open("foundation_quiz_pack.html", "_blank");
+          return;
+        }
         const html = window.generateBulkWorkbookHtml(style, density, answers === "yes");
         const newWin = window.open();
         if (newWin) {
@@ -15739,6 +15739,13 @@ ${cleanBrackets(paper.q3d.model)}
         const density = document.getElementById("bulk-workbook-density").value;
         const answers = document.getElementById("bulk-workbook-answers").value;
         AudioEngine.play("click");
+        if (style === "revision" || style === "interpretations" || style === "foundation") {
+          let packName = "Active Revision Pack";
+          if (style === "interpretations") packName = "Interpretations Practice Book";
+          if (style === "foundation") packName = "Foundation Quiz Pack";
+          alert(`The ${packName} is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print Pack (Web)' instead.`);
+          return;
+        }
         const html = window.generateBulkWorkbookHtml(style, density, answers === "yes");
         const styleLabel = style.charAt(0).toUpperCase() + style.slice(1);
         downloadHtmlAsWord(`Course_Worksheet_Pack_All_Lessons_${styleLabel}.doc`, html);
@@ -18800,6 +18807,13 @@ ${cleanBrackets(paper.q3d.model)}
   }
   function addXp(amount) {
     state.userStats.xp += amount;
+    const today = (/* @__PURE__ */ new Date()).toDateString();
+    if (state.lastActiveDate !== today) {
+      state.dailyXp = 0;
+      state.lastActiveDate = today;
+    }
+    state.dailyXp += amount;
+    updateDailyGoalUI();
     const headerXpEl = document.getElementById("header-xp-value");
     if (headerXpEl) {
       headerXpEl.textContent = state.userStats.xp;
@@ -18918,97 +18932,7 @@ ${cleanBrackets(paper.q3d.model)}
   }
   function renderDashboard2() {
     renderPlayerProfileWidget();
-    const quickActionsContainer = document.getElementById("dashboard-quick-actions-container");
-    if (quickActionsContainer) {
-      const lastSubtopicId = localStorage.getItem("edexcel_last_subtopic");
-      const bookmarkCount = state.bookmarks.length;
-      if (lastSubtopicId || bookmarkCount > 0) {
-        quickActionsContainer.style.display = "flex";
-        quickActionsContainer.innerHTML = "";
-        if (lastSubtopicId) {
-          const subtopicQuestion = state.allQuestions.find((q) => q.subtopicId === lastSubtopicId);
-          const subTitle = subtopicQuestion ? subtopicQuestion.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "") : "Last Studied Lesson";
-          const resumeCard = document.createElement("div");
-          resumeCard.className = "shortcut-card";
-          resumeCard.style.flex = "1";
-          resumeCard.style.minWidth = "240px";
-          resumeCard.style.display = "flex";
-          resumeCard.style.gap = "14px";
-          resumeCard.style.alignItems = "center";
-          resumeCard.style.padding = "14px 18px";
-          resumeCard.style.cursor = "pointer";
-          resumeCard.style.background = "rgba(56, 189, 248, 0.04)";
-          resumeCard.style.border = "1px solid rgba(56, 189, 248, 0.2)";
-          resumeCard.style.borderRadius = "var(--border-radius-sm)";
-          resumeCard.style.transition = "all var(--transition-fast)";
-          resumeCard.innerHTML = `
-          <div class="shortcut-icon" style="background: rgba(56, 189, 248, 0.1); color: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
-            <i class="fa-solid fa-play"></i>
-          </div>
-          <div style="text-align: left;">
-            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; letter-spacing: 0.5px;">Quick Resume</span>
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 2px;">${subTitle}</div>
-          </div>
-        `;
-          resumeCard.addEventListener("click", () => {
-            AudioEngine.play("click");
-            switchView("subtopic", lastSubtopicId);
-          });
-          resumeCard.addEventListener("mouseover", () => {
-            resumeCard.style.transform = "translateY(-2px)";
-            resumeCard.style.borderColor = "var(--primary)";
-            resumeCard.style.background = "rgba(56, 189, 248, 0.08)";
-          });
-          resumeCard.addEventListener("mouseout", () => {
-            resumeCard.style.transform = "none";
-            resumeCard.style.borderColor = "rgba(56, 189, 248, 0.2)";
-            resumeCard.style.background = "rgba(56, 189, 248, 0.04)";
-          });
-          quickActionsContainer.appendChild(resumeCard);
-        }
-        if (bookmarkCount > 0) {
-          const reviewCard = document.createElement("div");
-          reviewCard.className = "shortcut-card";
-          reviewCard.style.flex = "1";
-          reviewCard.style.minWidth = "240px";
-          reviewCard.style.display = "flex";
-          reviewCard.style.gap = "14px";
-          reviewCard.style.alignItems = "center";
-          reviewCard.style.padding = "14px 18px";
-          reviewCard.style.cursor = "pointer";
-          reviewCard.style.background = "rgba(250, 204, 21, 0.04)";
-          reviewCard.style.border = "1px solid rgba(250, 204, 21, 0.2)";
-          reviewCard.style.borderRadius = "var(--border-radius-sm)";
-          reviewCard.style.transition = "all var(--transition-fast)";
-          reviewCard.innerHTML = `
-          <div class="shortcut-icon" style="background: rgba(250, 204, 21, 0.1); color: #facc15; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <div style="text-align: left;">
-            <span style="font-size: 0.65rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; letter-spacing: 0.5px;">Smart Review</span>
-            <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-top: 2px;">Study Bookmarked Cards (${bookmarkCount})</div>
-          </div>
-        `;
-          reviewCard.addEventListener("click", () => {
-            AudioEngine.play("click");
-            switchView("flashcards", "bookmarks");
-          });
-          reviewCard.addEventListener("mouseover", () => {
-            reviewCard.style.transform = "translateY(-2px)";
-            reviewCard.style.borderColor = "#facc15";
-            reviewCard.style.background = "rgba(250, 204, 21, 0.08)";
-          });
-          reviewCard.addEventListener("mouseout", () => {
-            reviewCard.style.transform = "none";
-            reviewCard.style.borderColor = "rgba(250, 204, 21, 0.2)";
-            reviewCard.style.background = "rgba(250, 204, 21, 0.04)";
-          });
-          quickActionsContainer.appendChild(reviewCard);
-        }
-      } else {
-        quickActionsContainer.style.display = "none";
-      }
-    }
+    updateDashboardActionCards();
     const container = document.getElementById("dashboard-topics-list");
     container.innerHTML = "";
     const topicInquiries = {
@@ -20032,6 +19956,10 @@ ${cleanBrackets(paper.q3d.model)}
     if (subtopicId === "bookmarks") {
       questions = state.allQuestions.filter((q) => state.bookmarks.includes(q.id));
       state.flashcardSession.deck = [...questions].sort(() => Math.random() - 0.5);
+    } else if (subtopicId === "quick") {
+      if (!state.flashcardSession.deck || state.flashcardSession.deck.length === 0) {
+        state.flashcardSession.deck = [...state.allQuestions].sort(() => Math.random() - 0.5).slice(0, 10);
+      }
     } else {
       questions = state.allQuestions.filter((q) => q.subtopicId === subtopicId);
       let deck = [...questions].sort(() => Math.random() - 0.5);
@@ -20080,7 +20008,8 @@ ${cleanBrackets(paper.q3d.model)}
   }
   function startFlashcardSession(subtopicId) {
     state.selectedSubtopicId = subtopicId;
-    if (subtopicId !== "bookmarks" && NARRATIVE_FRAMINGS[subtopicId]) {
+    state.flashcardSession.speedStudyMode = true;
+    if (subtopicId !== "bookmarks" && subtopicId !== "quick" && NARRATIVE_FRAMINGS[subtopicId]) {
       showNarrativeFramingScreen(subtopicId);
     } else {
       startFlashcardSessionDirect(subtopicId);
@@ -20171,19 +20100,10 @@ ${cleanBrackets(paper.q3d.model)}
         <span style="font-size: 0.68rem; font-weight: 700; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 4px; margin-bottom: 6px;">
           <i class="fa-solid fa-brain"></i> Synthesis Rubric
         </span>
-        <div style="display: flex; flex-direction: column; gap: 6px;">
-          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
-            <input type="checkbox" class="rubric-checkbox" data-idx="0" style="accent-color: var(--accent); cursor: pointer;">
-            <span>Compared both historical factors?</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
-            <input type="checkbox" class="rubric-checkbox" data-idx="1" style="accent-color: var(--accent); cursor: pointer;">
-            <span>Identified a primary factor with evidence?</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0;">
-            <input type="checkbox" class="rubric-checkbox" data-idx="2" style="accent-color: var(--accent); cursor: pointer;">
-            <span>Formulated a clear synthesis conclusion?</span>
-          </label>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-left: 10px;">
+          <span style="font-size: 0.75rem; color: var(--text-main); margin: 0;">\u2022 Compared both historical factors?</span>
+          <span style="font-size: 0.75rem; color: var(--text-main); margin: 0;">\u2022 Identified a primary factor with evidence?</span>
+          <span style="font-size: 0.75rem; color: var(--text-main); margin: 0;">\u2022 Formulated a clear synthesis conclusion?</span>
         </div>
       </div>
     `;
@@ -20209,10 +20129,10 @@ ${cleanBrackets(paper.q3d.model)}
       const split = getFactSplit(q);
       const rubrics = getCardRubrics(q);
       const rubricItemsHtml = rubrics.map((rub, index) => `
-      <label style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.75rem; color: var(--text-normal); cursor: pointer; margin: 0; line-height: 1.3;">
-        <input type="checkbox" class="rubric-checkbox" data-idx="${index}" style="accent-color: var(--primary); cursor: pointer; margin-top: 2px; flex-shrink: 0;">
-        <span><strong>${rub.label}:</strong> ${rub.text}</span>
-      </label>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 8px; border-bottom: 1px solid var(--border-glass); margin-bottom: 8px;">
+        <span style="font-weight: 700; color: var(--accent); font-size: 0.85rem;">${rub.label}</span>
+        <span style="color: var(--text-main); font-size: 0.85rem; line-height: 1.4;">${rub.text}</span>
+      </div>
     `).join("");
       backBody.innerHTML = `
       <h2 class="card-answer-text" id="card-back-answer" style="margin-top: 0; margin-bottom: 10px;">${q.answer}</h2>
@@ -20348,7 +20268,7 @@ ${cleanBrackets(paper.q3d.model)}
           <span id="flashcard-counter-text">Card 1 of 15</span>
           <span id="flashcard-mastery-text" style="font-size: 0.7rem; color: var(--text-muted);">0% resolved this session</span>
         </div>
-        <div class="speed-study-toggle-container" style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border-glass);">
+        <div class="speed-study-toggle-container" style="display: none; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border-glass);">
           <span style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 4px;" id="speed-study-label">
             <i class="fa-solid fa-bolt" style="color: var(--accent);"></i> Whiz Mode
           </span>
@@ -24191,6 +24111,55 @@ ${cleanBrackets(paper.q3d.model)}
     </div>
   `;
   }
+  function updateDailyGoalUI() {
+    const goalEl = document.getElementById("daily-goal-text");
+    const barEl = document.getElementById("daily-goal-bar");
+    if (goalEl && barEl) {
+      const goal = 100;
+      const current = state.dailyXp || 0;
+      goalEl.textContent = `${current} / ${goal} XP`;
+      const percent = Math.min(100, Math.round(current / goal * 100));
+      barEl.style.width = `${percent}%`;
+      if (percent >= 100) {
+        barEl.style.background = "#10b981";
+      } else {
+        barEl.style.background = "var(--primary)";
+      }
+    }
+  }
+  function updateDashboardActionCards() {
+    updateDailyGoalUI();
+    const upNextBtn = document.getElementById("btn-up-next");
+    const upNextTitle = document.getElementById("up-next-title");
+    const quickQuizBtn = document.getElementById("btn-quick-quiz");
+    if (upNextBtn && upNextTitle) {
+      let nextTopic = state.allQuestions.find((q) => !state.mastery[q.id]);
+      if (!nextTopic) {
+        nextTopic = state.allQuestions[0];
+      }
+      if (nextTopic) {
+        const cleanTitle = nextTopic.subtopicTitle.replace(/^Topic \d\.\d:\s*/, "");
+        upNextTitle.textContent = cleanTitle;
+        upNextBtn.onclick = () => {
+          state.currentMode = "lessons";
+          switchView("subtopic", nextTopic.subtopicId);
+        };
+      }
+    }
+    if (quickQuizBtn) {
+      quickQuizBtn.onclick = () => {
+        state.flashcardSession.deck = [...state.allQuestions].sort(() => 0.5 - Math.random()).slice(0, 10);
+        state.flashcardSession.activeIndex = 0;
+        state.flashcardSession.originalLength = state.flashcardSession.deck.length;
+        state.flashcardSession.masteredCount = 0;
+        state.flashcardSession.failedCardIds = [];
+        state.flashcardSession.reinforcing = false;
+        if (window.switchView) {
+          window.switchView("flashcards", "quick");
+        }
+      };
+    }
+  }
   function activateExamHubPanel(targetPanel) {
     renderExamSkillsView(targetPanel);
     if (targetPanel === "papers") {
@@ -24762,11 +24731,125 @@ ${cleanBrackets(paper.q3d.model)}
     const grid = document.getElementById("trading-cards-grid");
     if (!container || !grid) return;
     grid.innerHTML = "";
+    if (!window.triggerPackExplosion) {
+      window.triggerPackExplosion = function(card, wrapperEl) {
+        if (wrapperEl.dataset.isAnimating === "true") return;
+        wrapperEl.dataset.isAnimating = "true";
+        if (!state.userStats.openedPacks) state.userStats.openedPacks = [];
+        if (!state.userStats.openedPacks.includes(card.id)) {
+          state.userStats.openedPacks.push(card.id);
+          try {
+            localStorage.setItem("edexcel_prefs_user_stats", JSON.stringify(state.userStats));
+          } catch (e) {
+          }
+        }
+        const overlay = document.createElement("div");
+        overlay.style.position = "fixed";
+        overlay.style.inset = "0";
+        overlay.style.backgroundColor = "rgba(0,0,0,0.85)";
+        overlay.style.zIndex = "9999";
+        overlay.style.display = "flex";
+        overlay.style.flexDirection = "column";
+        overlay.style.alignItems = "center";
+        overlay.style.justifyContent = "center";
+        overlay.style.backdropFilter = "blur(8px)";
+        const animatedWrapper = document.createElement("div");
+        animatedWrapper.style.width = "250px";
+        animatedWrapper.style.height = "350px";
+        animatedWrapper.style.backgroundImage = "url('assets/mr_lovett_wrapper.png?v=2')";
+        animatedWrapper.style.backgroundSize = "cover";
+        animatedWrapper.style.backgroundPosition = "center";
+        animatedWrapper.style.borderRadius = "10px";
+        animatedWrapper.style.boxShadow = "0 0 40px rgba(250, 204, 21, 0.8)";
+        animatedWrapper.style.transition = "all 0.1s";
+        overlay.appendChild(animatedWrapper);
+        document.body.appendChild(overlay);
+        setTimeout(() => {
+          animatedWrapper.style.transform = "scale(1.2)";
+        }, 50);
+        let shakes = 0;
+        const shakeInterval = setInterval(() => {
+          shakes++;
+          const offsetX = (Math.random() - 0.5) * 15;
+          const offsetY = (Math.random() - 0.5) * 15;
+          animatedWrapper.style.transform = `scale(1.2) translate(${offsetX}px, ${offsetY}px) rotate(${offsetX}deg)`;
+          if (shakes > 15) {
+            clearInterval(shakeInterval);
+            if (window.AudioEngine) window.AudioEngine.play("cheer");
+            animatedWrapper.style.opacity = "0";
+            animatedWrapper.style.transform = "scale(2)";
+            for (let i = 0; i < 60; i++) {
+              const particle = document.createElement("div");
+              particle.style.position = "absolute";
+              particle.style.width = Math.random() * 10 + 5 + "px";
+              particle.style.height = Math.random() * 10 + 5 + "px";
+              particle.style.backgroundColor = ["#facc15", "#ef4444", "#3b82f6", "#10b981", "#ffffff"][Math.floor(Math.random() * 5)];
+              particle.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+              particle.style.top = "50%";
+              particle.style.left = "50%";
+              particle.style.transform = "translate(-50%, -50%)";
+              particle.style.boxShadow = "0 0 10px currentColor";
+              particle.style.pointerEvents = "none";
+              overlay.appendChild(particle);
+              const angle = Math.random() * Math.PI * 2;
+              const velocity = Math.random() * 300 + 100;
+              const tx = Math.cos(angle) * velocity;
+              const ty = Math.sin(angle) * velocity;
+              particle.animate([
+                { transform: "translate(-50%, -50%)", opacity: 1 },
+                { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0)`, opacity: 0 }
+              ], { duration: 800 + Math.random() * 600, easing: "cubic-bezier(0.25, 1, 0.5, 1)", fill: "forwards" });
+            }
+            const cardEl = document.createElement("div");
+            cardEl.className = "scumbag-card-container scumbag-flippable";
+            cardEl.style.width = "250px";
+            cardEl.style.height = "350px";
+            cardEl.style.position = "absolute";
+            cardEl.style.transform = "scale(0.5)";
+            cardEl.style.opacity = "0";
+            cardEl.style.transition = "all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)";
+            cardEl.innerHTML = `
+              <div class="scumbag-flip-card-inner">
+                <div class="scumbag-flip-card-front scumbag-card-unlocked" style="background-image: url('${card.image}'); background-size: cover; background-position: center 15%;">
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, transparent 100%); padding: 20px 5px 10px; text-align: center;">
+                    <h3 style="color: #facc15; font-family: 'Kalam', cursive; font-size: 1.2rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); line-height: 1.1;">"${card.frontPhrase || card.name}"</h3>
+                  </div>
+                  <div class="hologram"></div>
+                </div>
+              </div>
+            `;
+            overlay.appendChild(cardEl);
+            setTimeout(() => {
+              cardEl.style.transform = "scale(1.3)";
+              cardEl.style.opacity = "1";
+            }, 50);
+            const hint = document.createElement("div");
+            hint.innerHTML = '<i class="fa-solid fa-hand-pointer"></i> Tap anywhere to continue';
+            hint.style.position = "absolute";
+            hint.style.bottom = "10%";
+            hint.style.color = "rgba(255,255,255,0.8)";
+            hint.style.fontSize = "1.2rem";
+            hint.style.fontWeight = "bold";
+            hint.style.textTransform = "uppercase";
+            hint.style.animation = "pulse 1.5s infinite";
+            overlay.appendChild(hint);
+            overlay.onclick = () => {
+              overlay.remove();
+              renderTradingCardsView();
+            };
+          }
+        }, 60);
+      };
+    }
     const forceUnlock = window.localStorage.getItem("unlock_all_cards") === "true";
     const totalXP = window.state && window.state.userStats && window.state.userStats.xp || 0;
+    if (window.state && window.state.userStats && !window.state.userStats.openedPacks) {
+      window.state.userStats.openedPacks = [];
+    }
     TRADING_CARDS_DATA.forEach((card, index) => {
       const requiredXP = (index + 1) * 200;
-      const isUnlocked = forceUnlock || totalXP >= requiredXP;
+      const hasEnoughXP = forceUnlock || totalXP >= requiredXP;
+      const isOpened = forceUnlock || window.state && window.state.userStats && window.state.userStats.openedPacks && window.state.userStats.openedPacks.includes(card.id);
       const wrapperEl = document.createElement("div");
       wrapperEl.className = "scumbag-card-container scumbag-flippable";
       wrapperEl.style.height = "350px";
@@ -24774,7 +24857,9 @@ ${cleanBrackets(paper.q3d.model)}
       innerEl.className = "scumbag-flip-card-inner";
       const frontEl = document.createElement("div");
       frontEl.className = "scumbag-flip-card-front";
-      if (isUnlocked) {
+      const backEl = document.createElement("div");
+      backEl.className = "scumbag-flip-card-back";
+      if (hasEnoughXP && isOpened) {
         frontEl.className += " scumbag-card-unlocked";
         frontEl.style.backgroundImage = `url('${card.image}')`;
         frontEl.style.backgroundSize = "cover";
@@ -24789,6 +24874,71 @@ rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 70%, transparent 100%); padding: 20px 5px 10px
           </div>
           <div class="hologram"></div>
         `;
+        if (card.stats) {
+          backEl.innerHTML = `
+            <div class="scumbag-back-content" style="height: 100%; display: flex; flex-direction: column; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); padding: 15px; box-sizing: border-box; border: 2px solid #facc15; box-shadow: inset 0 0 20px rgba(0,0,0,0.8);">
+              
+              <div style="background: rgba(250, 204, 21, 0.1); border-bottom: 2px solid #facc15; padding-bottom: 8px; margin-bottom: 12px; text-align: center; border-radius: 4px;">
+                <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px;">Historic Figures</div>
+                <h4 style="margin: 0; font-family: 'Kalam', cursive; font-size: 1.5rem; color: #facc15; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">${card.name}</h4>
+              </div>
+              
+              <div style="font-size: 0.85rem; color: #e2e8f0; line-height: 1.35; text-align: center; margin-bottom: 15px; font-style: italic; flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 0 5px;">
+                "${card.bio}"
+              </div>
+              
+              <div style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+                
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                  <div style="width: 25px; text-align: center; color: #f87171;"><i class="fa-solid fa-fire"></i></div>
+                  <div style="flex-grow: 1; font-size: 0.85rem; color: #f87171; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Audacity</div>
+                  <div style="font-size: 1.1rem; color: white; font-weight: bold; background: #991b1b; padding: 2px 10px; border-radius: 4px; box-shadow: 0 0 8px #991b1b; text-shadow: 1px 1px 1px black;">${card.stats.audacity}</div>
+                </div>
+
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                  <div style="width: 25px; text-align: center; color: #a78bfa;"><i class="fa-solid fa-mask"></i></div>
+                  <div style="flex-grow: 1; font-size: 0.85rem; color: #a78bfa; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Sneakiness</div>
+                  <div style="font-size: 1.1rem; color: white; font-weight: bold; background: #5b21b6; padding: 2px 10px; border-radius: 4px; box-shadow: 0 0 8px #5b21b6; text-shadow: 1px 1px 1px black;">${card.stats.diplomaticSneakiness}</div>
+                </div>
+
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                  <div style="width: 25px; text-align: center; color: #38bdf8;"><i class="fa-solid fa-bullhorn"></i></div>
+                  <div style="flex-grow: 1; font-size: 0.85rem; color: #38bdf8; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Rhetoric</div>
+                  <div style="font-size: 1.1rem; color: white; font-weight: bold; background: #075985; padding: 2px 10px; border-radius: 4px; box-shadow: 0 0 8px #075985; text-shadow: 1px 1px 1px black;">${card.stats.rhetoricalPower}</div>
+                </div>
+
+                <div style="display: flex; align-items: center;">
+                  <div style="width: 25px; text-align: center; color: #facc15;"><i class="fa-solid fa-crown"></i></div>
+                  <div style="flex-grow: 1; font-size: 0.85rem; color: #facc15; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Legacy</div>
+                  <div style="font-size: 1.1rem; color: white; font-weight: bold; background: #a16207; padding: 2px 10px; border-radius: 4px; box-shadow: 0 0 8px #a16207; text-shadow: 1px 1px 1px black;">${card.stats.legacyScore}</div>
+                </div>
+
+              </div>
+              
+            </div>
+          `;
+        }
+        wrapperEl.onclick = () => {
+          if (window.AudioEngine) window.AudioEngine.play("flip");
+          wrapperEl.classList.toggle("flipped");
+        };
+      } else if (hasEnoughXP && !isOpened) {
+        frontEl.className += " scumbag-card-ready";
+        frontEl.innerHTML = `
+          <div class="foil-pack-body" style="position: absolute; inset: 0; background-image: url('assets/mr_lovett_wrapper.png?v=2'); background-size: cover; 
+background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; 
+padding: 20px; color: white; text-align: center; border: 2px solid #facc15; box-shadow: 0 0 15px rgba(250, 204, 21, 0.5); animation: pulse 2s infinite;">
+            <div style="background: rgba(0,0,0,0.8); padding: 15px; border-radius: 8px; width: 100%; border: 1px solid #facc15;">
+              <i class="fa-solid fa-gift" style="font-size: 2rem; margin-bottom: 10px; color: #facc15; animation: bounce 1s infinite;"></i>
+              <h3 style="margin-bottom: 5px; color: #facc15; text-transform: uppercase;">Tap to Open!</h3>
+            </div>
+          </div>
+        `;
+        backEl.innerHTML = `<div class="scumbag-back-content"></div>`;
+        wrapperEl.style.cursor = "pointer";
+        wrapperEl.onclick = () => {
+          if (window.triggerPackExplosion) window.triggerPackExplosion(card, wrapperEl);
+        };
       } else {
         frontEl.className += " scumbag-card-locked";
         frontEl.innerHTML = `
@@ -24803,61 +24953,11 @@ rgba(255,255,255,0.2);">
             </div>
           </div>
         `;
-      }
-      const backEl = document.createElement("div");
-      backEl.className = "scumbag-flip-card-back";
-      if (isUnlocked && card.stats) {
-        backEl.innerHTML = `
-          <div class="scumbag-back-content">
-            <div class="scumbag-back-header">
-              <h4>${card.name}</h4>
-            </div>
-            <div class="scumbag-bio">${card.bio}</div>
-            <div class="scumbag-stats-box">
-              <div class="scumbag-stat-row">
-                <span class="stat-label">Audacity</span>
-                <span class="scumbag-stat-value">
-                  <div class="scumbag-stat-bar" style="width: ${card.stats.audacity}%"></div>
-                  ${card.stats.audacity}
-                </span>
-              </div>
-              <div class="scumbag-stat-row">
-                <span class="stat-label">Sneakiness</span>
-                <span class="scumbag-stat-value">
-                  <div class="scumbag-stat-bar" style="width: ${card.stats.diplomaticSneakiness}%"></div>
-                  ${card.stats.diplomaticSneakiness}
-                </span>
-              </div>
-              <div class="scumbag-stat-row">
-                <span class="stat-label">Military</span>
-                <span class="scumbag-stat-value">
-                  <div class="scumbag-stat-bar" style="width: ${card.stats.militaryMight}%"></div>
-                  ${card.stats.militaryMight}
-                </span>
-              </div>
-              <div class="scumbag-stat-row">
-                <span class="stat-label">Legacy</span>
-                <span class="scumbag-stat-value">
-                  <div class="scumbag-stat-bar" style="width: ${card.stats.legacyScore}%"></div>
-                  ${card.stats.legacyScore}
-                </span>
-              </div>
-            </div>
-          </div>
-        `;
-      } else {
-        backEl.innerHTML = `<div class="scumbag-back-content"><i class="fa-solid fa-question" style="font-size: 3rem; 
-opacity: 0.1;"></i></div>`;
+        backEl.innerHTML = `<div class="scumbag-back-content"><i class="fa-solid fa-question" style="font-size: 3rem; opacity: 0.1;"></i></div>`;
       }
       innerEl.appendChild(frontEl);
       innerEl.appendChild(backEl);
       wrapperEl.appendChild(innerEl);
-      if (isUnlocked) {
-        wrapperEl.onclick = () => {
-          if (window.AudioEngine) window.AudioEngine.play("cardFlip");
-          innerEl.classList.toggle("flipped");
-        };
-      }
       grid.appendChild(wrapperEl);
     });
   }
@@ -26365,9 +26465,28 @@ opacity: 0.1;"></i></div>`;
       cornell,
       organizer,
       causalQuestion: data.causalLinks ? data.causalLinks.question || "" : "",
-      sourcesQuestion: data.howUsefulAnalyser ? data.howUsefulAnalyser.question || "" : ""
+      sourcesQuestion: data.howUsefulAnalyser ? data.howUsefulAnalyser.question || "" : "",
+      paper3Suite: data.paper3Suite || null
     };
   }
+  var SYNTHESIS_TASKS = {
+    "subtopic_1_1": { type: "The Strategy Comparison", task: "By the 1940s, different groups were fighting Jim Crow laws using different methods. Compare the strategies used by the NAACP and CORE. Explain how their methods were different (e.g., litigation vs. direct action) and provide one example from your timeline of a success or action taken by each group." },
+    "subtopic_1_2": { type: "The Causal Chain", task: "The fight for school integration was a chain reaction of rulings and resistance. Write a short narrative account explaining the struggle to desegregate schools. You must link the following three events together chronologically: The Brown v. Board ruling (1954), the creation of White Citizens' Councils, and the events at Little Rock High School (1957)." },
+    "subtopic_1_3": { type: "The Big Picture Summary", task: "Imagine you are writing a textbook summary on the success of the Montgomery Bus Boycott. Write a comprehensive paragraph explaining why the boycott succeeded. You MUST accurately use at least FIVE of these terms in context: MIA, Rosa Parks, Browder v. Gayle, Economic Pressure, Martin Luther King Jr., Non-violent, SCLC." },
+    "subtopic_1_4": { type: "The Judgment", task: "Look back at the events of white resistance on your timeline. Which form of opposition\u2014political/legal resistance (like the Southern Manifesto) or violent intimidation (like the KKK)\u2014do you think was the biggest obstacle to civil rights in the 1950s? Justify your choice with evidence." },
+    "subtopic_2_1": { type: "The Turning Point", task: "Look at the grassroots protests on your timeline. Which of these events do you believe was the most significant turning point for the Civil Rights Movement? Identify your chosen event, explain its impact, and compare it to at least one other event to justify why your choice was more important." },
+    "subtopic_2_2": { type: "The Causal Chain", task: "The passage of the Civil Rights Act (1964) and Voting Rights Act (1965) were direct results of public pressure. Write a short narrative account explaining how protest led to legislation. You must link the following together: The events in Birmingham (1963), the national media reaction, and the passage of the Civil Rights Act (1964)." },
+    "subtopic_2_3": { type: "The Strategy Comparison", task: "The Black Power movement differed significantly from MLK's approach. Compare the goals and methods of the Black Panther Party with those of mainstream groups like the SCLC. Explain what the Black Panthers were demanding and why they rejected non-violent direct action." },
+    "subtopic_2_4": { type: "The Big Picture Summary", task: "Write a comprehensive paragraph explaining the causes of the race riots in the mid-1960s (such as Watts or Detroit). You MUST accurately use at least FIVE of these terms: De Facto Segregation, Kerner Commission, Police Brutality, Poverty, Two Societies, Freedom Summer, Radicalisation." },
+    "subtopic_3_1": { type: "The Causal Chain", task: "The fall of President Diem was a chain reaction of his own unpopular policies. Write a short narrative account explaining why the Diem regime lost control of South Vietnam. You must link the following together: Diem's Catholic favoritism, the Buddhist Crisis (1963), and Diem's assassination." },
+    "subtopic_3_2": { type: "The Judgment", task: "'The Gulf of Tonkin Incident was merely an excuse for President Johnson to escalate the war.' Based on your timeline, how far do you agree with this statement? Justify your answer by explaining the events of the incident and what the Gulf of Tonkin Resolution allowed LBJ to do." },
+    "subtopic_3_3": { type: "The Big Picture Summary", task: "Write a comprehensive paragraph explaining why the Vietcong were such a difficult enemy for the US military to defeat. You MUST accurately use at least FIVE of these terms: Ho Chi Minh Trail, Guerrilla Warfare, Booby Traps, Search and Destroy, Cu Chi Tunnels, Peasant Support, Napalm." },
+    "subtopic_3_4": { type: "The Turning Point", task: "Nixon expanded the war into Cambodia and Laos to cut off the Ho Chi Minh Trail. Did these invasions strengthen or weaken the overall US position? Explain your judgment by referencing both the military impact in Southeast Asia and the political reaction back home in the USA." },
+    "subtopic_4_1": { type: "The Causal Chain", task: "The anti-war movement grew rapidly due to media exposure. Write a short narrative account explaining the collapse of public support for the Vietnam War. You must link the following together: The exposure of the My Lai Massacre, the widening 'Credibility Gap', and the student protests (like Kent State)." },
+    "subtopic_4_2": { type: "The Strategy Comparison", task: "President Nixon faced immense pressure from anti-war protestors, but he also relied on the 'Silent Majority'. Compare how Nixon responded to the anti-war movement versus how he appealed to the Silent Majority. Provide examples of his policies or speeches that targeted each group." },
+    "subtopic_4_3": { type: "The Big Picture Summary", task: "Write a comprehensive paragraph explaining the final collapse of South Vietnam after the US withdrew. You MUST accurately use at least FIVE of these terms: Vietnamization, Paris Peace Accords, US Withdrawal, Congress Funding Cuts, Fall of Saigon, Communist Victory." },
+    "subtopic_4_4": { type: "The Judgment", task: "Historians debate the main reason the USA lost the Vietnam War. Was it primarily due to military failures (e.g., ineffective tactics against guerrillas) or political/social failures (e.g., loss of public support and the anti-war movement)? Justify your choice with evidence from your timeline." }
+  };
 
   // src/peel_data.js
   var PEEL_DATA = {
@@ -29807,16 +29926,22 @@ opacity: 0.1;"></i></div>`;
         console.error("Failed to load core support workbook data:", e);
       }
       coreSupportHtml = `
-      <div class="core-support-container" style="max-width: 800px; margin: 0 auto 24px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        ${vocabListHtml}
-        ${timelineListHtml}
-      </div>
+      <details class="core-support-details" style="max-width: 800px; margin: 0 auto 24px auto; background: rgba(0,0,0,0.1); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md);">
+        <summary style="cursor: pointer; padding: 16px; font-weight: 700; color: var(--text-main); list-style: none; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-book-open" style="color: var(--secondary);"></i> Core Vocabulary & Timeline (Click to Expand)
+        </summary>
+        <div class="core-support-container" style="padding: 0 16px 16px 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+          ${vocabListHtml}
+          ${timelineListHtml}
+        </div>
+      </details>
     `;
     }
     let stepsHtml = "";
-    const halfPoint = Math.ceil(data.steps.length / 2);
+    let consolidatedScholarlyHtml = "";
+    let livedExperienceHtml = "";
     data.steps.forEach((step, index) => {
-      let scholarlyHtml = "";
+      let stepScholarlyHtml = "";
       if (step.scholarlyDepth && !isCoreMode) {
         let scholarlyImgHtml = "";
         if (step.scholarlyDepth.image) {
@@ -29855,7 +29980,7 @@ opacity: 0.1;"></i></div>`;
           </div>
         `;
         }
-        scholarlyHtml = `
+        stepScholarlyHtml = `
         <details class="scholarly-extension" style="margin-top: 16px;">
           <summary class="scholarly-summary">
             <i class="fa-solid fa-graduation-cap"></i> ${step.scholarlyDepth.title} (Click to expand)
@@ -29867,6 +29992,7 @@ opacity: 0.1;"></i></div>`;
           </div>
         </details>
       `;
+        consolidatedScholarlyHtml += stepScholarlyHtml;
       }
       let bridgeHtml = "";
       const yearMatch = step.title.match(/\b(19\d{2})\b/);
@@ -29920,7 +30046,6 @@ opacity: 0.1;"></i></div>`;
             ${finalBodyHtml}
           </div>
           ${bridgeHtml}
-          ${scholarlyHtml}
         </div>
       `;
       } else {
@@ -29934,51 +30059,62 @@ opacity: 0.1;"></i></div>`;
             ${applyGlossaryTooltips(injectScaffoldingIntoMindMap(step.bodyHtml, subtopicId))}
           </div>
           ${bridgeHtml}
-          ${scholarlyHtml}
           ${stepQuizHtml}
         </div>
       `;
       }
-      if (index + 1 === halfPoint && data.livedExperience) {
-        const le = data.livedExperience;
-        const discussionPromptText = isCoreMode && le.coreDiscussionQuestion ? le.coreDiscussionQuestion : isCoreMode ? `Read ${le.witness || "the witness"}'s account. Find one detail that shows the impact of this historical situation, and explain why it was significant or how it made people feel.` : le.discussionQuestion;
-        let hasSourceA = false;
-        if (data.steps) {
-          data.steps.forEach((step2) => {
-            if (step2.bodyHtml && /source\s+a\b/i.test(step2.bodyHtml)) {
-              hasSourceA = true;
-            }
-          });
-        }
-        const sourceLabel = hasSourceA ? "Source B" : "Source A";
-        stepsHtml += `
-        <div class="mastery-card lived-experience-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--accent);">
-          <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
-            <span style="color: var(--accent);"><i class="fa-solid fa-comments"></i> Mid-Lesson Class Discussion: Lived Experience</span>
-            <button class="btn-audio-read" title="Read Source Aloud" style="margin-left: 8px;">
-              <i class="fa-solid fa-volume-high"></i>
-            </button>
-          </h3>
-          <div class="mastery-card-body card-content">
-            <div class="source-provenance" style="font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">
-              <strong>${sourceLabel}:</strong> ${le.witness} - ${le.context}
-            </div>
-            <blockquote class="source-quote" style="font-size: 1.05rem; font-style: italic; border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 20px 0; color: var(--text-main); line-height: 1.55; font-family: Georgia, 'Times New Roman', serif;">
-              "${le.quote}"
-            </blockquote>
-            <div class="discussion-prompt" style="background: var(--accent-glow); border: 1px dashed var(--accent); border-radius: var(--border-radius-sm); padding: 16px; margin-top: 16px; box-sizing: border-box;">
-              <h4 style="margin: 0 0 8px 0; color: var(--accent); display: flex; align-items: center; gap: 8px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-heading); font-weight: 700;">
-                <i class="fa-solid fa-circle-question"></i> Class Discussion Prompt
-              </h4>
-              <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-weight: 500;">
-                ${discussionPromptText}
-              </p>
-            </div>
+    });
+    if (data.livedExperience) {
+      const le = data.livedExperience;
+      const discussionPromptText = isCoreMode && le.coreDiscussionQuestion ? le.coreDiscussionQuestion : isCoreMode ? `Read ${le.witness || "the witness"}'s account. Find one detail that shows the impact of this historical situation, and explain why it was significant or how it made people feel.` : le.discussionQuestion;
+      let hasSourceA = false;
+      if (data.steps) {
+        data.steps.forEach((step) => {
+          if (step.bodyHtml && /source\s+a\b/i.test(step.bodyHtml)) {
+            hasSourceA = true;
+          }
+        });
+      }
+      const sourceLabel = hasSourceA ? "Source B" : "Source A";
+      livedExperienceHtml = `
+      <div class="mastery-card lived-experience-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--accent);">
+        <h3 class="mastery-card-title" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+          <span style="color: var(--accent);"><i class="fa-solid fa-comments"></i> Class Discussion: Lived Experience</span>
+          <button class="btn-audio-read" title="Read Source Aloud" style="margin-left: 8px;">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </h3>
+        <div class="mastery-card-body card-content">
+          <div class="source-provenance" style="font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin-bottom: 12px; line-height: 1.4;">
+            <strong>${sourceLabel}:</strong> ${le.witness} - ${le.context}
+          </div>
+          <blockquote class="source-quote" style="font-size: 1.05rem; font-style: italic; border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 20px 0; color: var(--text-main); line-height: 1.55; font-family: Georgia, 'Times New Roman', serif;">
+            "${le.quote}"
+          </blockquote>
+          <div class="discussion-prompt" style="background: var(--accent-glow); border: 1px dashed var(--accent); border-radius: var(--border-radius-sm); padding: 16px; margin-top: 16px; box-sizing: border-box;">
+            <h4 style="margin: 0 0 8px 0; color: var(--accent); display: flex; align-items: center; gap: 8px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-heading); font-weight: 700;">
+              <i class="fa-solid fa-circle-question"></i> Class Discussion Prompt
+            </h4>
+            <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-main); font-weight: 500;">
+              ${discussionPromptText}
+            </p>
           </div>
         </div>
-      `;
-      }
-    });
+      </div>
+    `;
+    }
+    stepsHtml += livedExperienceHtml;
+    if (consolidatedScholarlyHtml) {
+      stepsHtml += `
+      <div class="mastery-card scholarly-deep-dive-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 4px solid var(--secondary);">
+        <h3 class="mastery-card-title" style="color: var(--secondary);"><i class="fa-solid fa-magnifying-glass-chart"></i> Historical Sources & Perspectives</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0; margin-bottom: 12px; font-style: italic;">Expand the sections below for deeper scholarly analysis and source evaluation on this topic.</p>
+        <div class="mastery-card-body card-content">
+          ${consolidatedScholarlyHtml}
+        </div>
+      </div>
+    `;
+    }
     if (isCoreMode) {
       stepsHtml += renderCoreScaffoldQuestions(subtopicId);
     }
@@ -30432,23 +30568,12 @@ opacity: 0.1;"></i></div>`;
         <div id="do-now-drafting-container" style="display: none; flex-direction: column; gap: 10px; margin-bottom: 18px; padding: 14px; border: 1px dashed var(--border-glass); border-radius: var(--border-radius-md); background: rgba(255,255,255,0.01);">
           <strong style="font-size: 0.82rem; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-pen-to-square"></i> Drafting Assistant</strong>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <div style="display: none;" id="textarea-wrap-c">
-              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Content Analysis (C):</label>
-              <textarea id="draft-c" placeholder="Describe what you see in the Jim Crow sign that is useful..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
-            </div>
-            <div style="display: none;" id="textarea-wrap-nop">
-              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Provenance Analysis (NOP):</label>
-              <textarea id="draft-nop" placeholder="Explain how the nature (public sign) and timing (circa 1950s) impact its utility..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
-            </div>
-            <div style="display: none;" id="textarea-wrap-ok">
-              <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 3px; font-weight: 700;">Own Knowledge (OK):</label>
-              <textarea id="draft-ok" placeholder="Introduce one fact from your own knowledge about Jim Crow laws..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: 4px; padding: 6px 8px; color: var(--text-main); font-size: 0.82rem; font-family: inherit; resize: none; outline: none;"></textarea>
-            </div>
+            <p style="font-size: 0.85rem; color: var(--text-main); margin: 0; line-height: 1.45;">
+              <strong>Draft your answer on paper.</strong> Check the boxes above to reveal clues, and construct your paragraph using the components (Content, Provenance, and Own Knowledge). 
+            </p>
           </div>
-          <button id="compile-draft-btn" class="mastery-btn" style="background: var(--accent); color: #000; font-size: 0.8rem; font-weight: 800; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; margin-top: 4px; align-self: flex-start; display: none;">Compile & Compare Draft</button>
+          <button id="compile-draft-btn" class="mastery-btn" style="background: var(--accent); color: #000; font-size: 0.8rem; font-weight: 800; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; margin-top: 8px; align-self: flex-start; display: none;"><i class="fa-solid fa-eye"></i> Reveal Examiner Model Answer</button>
           <div id="compiled-draft-display" style="display: none; flex-direction: column; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-glass);">
-            <div style="font-weight: 700; font-size: 0.82rem; color: var(--accent);">Your Compiled Answer:</div>
-            <p id="compiled-draft-text" style="margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-base); background: rgba(255,255,255,0.02); padding: 8px; border-radius: 4px; border: 1px solid var(--border-glass);"></p>
             <div style="font-weight: 700; font-size: 0.82rem; color: var(--success); margin-top: 6px;">Smithsonian Exhibit Model Answer:</div>
             <p style="margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-muted); background: rgba(16, 185, 129, 0.03); padding: 8px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.15);">Source E is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading "COLORED WAITING ROOM" hanging above a public entrance. This content's utility is supported by my knowledge that Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions. The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of segregation infrastructure, though it fails to document the personal experiences of Black passengers who suffered under it.</p>
           </div>
@@ -31135,26 +31260,11 @@ opacity: 0.1;"></i></div>`;
 
             ${questionsListHTML}
 
-            <textarea class="exam-textarea" id="past-textarea-${qId}" placeholder="Draft your answers for Q3a, Q3b, Q3c, and Q3d here..." style="min-height: 250px;"></textarea>
-
-            <!-- Live feedback card -->
-            <div class="draft-feedback-card" id="draft-feedback-${qId}">
-              <div class="feedback-stats">
-                <div class="feedback-badge" id="feedback-badge-${qId}">Structure: Drafting</div>
-                <div class="feedback-progress-bar">
-                  <div class="feedback-progress-fill" id="feedback-fill-${qId}" style="width: 0%;"></div>
-                </div>
-              </div>
-              <div class="feedback-checklist">
-                <div class="feedback-item">
-                  <strong>Connectives checklist:</strong>
-                  <div class="feedback-tags" id="connective-tags-${qId}"></div>
-                </div>
-                <div class="feedback-item" id="keyword-feedback-row-${qId}">
-                  <strong>Key Terms:</strong>
-                  <div class="feedback-tags" id="keyword-tags-${qId}"></div>
-                </div>
-              </div>
+            <div class="drafting-instructions" style="background: rgba(255, 255, 255, 0.03); border-left: 4px solid var(--accent); padding: 12px 16px; margin: 16px 0; border-radius: 4px;">
+              <strong style="color: var(--accent); display: block; margin-bottom: 6px;"><i class="fa-solid fa-pen"></i> Draft on Paper</strong>
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-main); line-height: 1.5;">
+                We recommend drafting your answers to these questions on actual lined paper to build exam stamina. Use the <strong>Educator Clues</strong> and <strong>Writing Scaffolds</strong> below if you get stuck. When finished, use the <strong>Self-Check Answers</strong> button to review the examiner's model responses.
+              </p>
             </div>
 
             <div class="exam-sheet-actions" style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -31412,23 +31522,11 @@ opacity: 0.1;"></i></div>`;
 
     ${stepsHtml}
     
-    ${dualHtml}
-    
     ${lessonWrapUpHtml}
     
     ${kcHtml}
     
-    ${summaryCorrectionHtml}
-    
     ${hwHtml}
-    
-    ${causalHtml}
-    
-    ${impHtml}
-    
-    ${vaultHtml}
-    
-    ${howUsefulHtml}
     
     ${deepThinkingHtml}
 
@@ -33134,22 +33232,22 @@ opacity: 0.1;"></i></div>`;
       </div>
     `).join("");
       const timelineAndQuestionsHtml = `
-      <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <table style="width: 100%; border-collapse: collapse; margin-top: 10px; page-break-inside: avoid;">
         ${data.timeline.map((item, idx) => {
         const q = data.comprehensionCheck[idx];
         return `
-            <tr>
-              <td style="width: 20%; padding: 15px 15px 15px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
-                <strong style="font-size: 12pt;">${item.date}</strong>
+            <tr style="page-break-inside: avoid;">
+              <td style="width: 18%; padding: 6px 8px 6px 0; text-align: right; vertical-align: top; border-right: 3px solid #000000;">
+                <strong style="font-size: 10.5pt;">${item.date}</strong>
               </td>
-              <td style="width: 40%; padding: 15px; vertical-align: top;">
-                <span style="font-size: 11pt;">${item.desc}</span>
+              <td style="width: 42%; padding: 6px 10px; vertical-align: top;">
+                <span style="font-size: 9.5pt; line-height: 1.3;">${item.desc}</span>
               </td>
-              <td style="width: 40%; padding: 15px; vertical-align: top;">
+              <td style="width: 40%; padding: 6px 0 6px 10px; vertical-align: top;">
                 ${q ? `
-                  <div style="padding: 10px; border: 2px solid #000000; border-radius: 6px;">
-                    <span style="font-size: 11pt; font-weight: bold;">${q.title}</span><br>
-                    <span style="font-size: 10pt; font-style: italic; display: block; margin-top: 4px;">${q.scaffold}</span>
+                  <div style="padding: 6px 8px; border: 1px solid #111827; border-radius: 4px; background: #fdfdfd;">
+                    <span style="font-size: 9.5pt; font-weight: bold;">${q.title}</span><br>
+                    <span style="font-size: 8.5pt; font-style: italic; display: block; margin-top: 2px; line-height: 1.2;">${q.scaffold}</span>
                   </div>
                 ` : ""}
               </td>
@@ -33158,6 +33256,18 @@ opacity: 0.1;"></i></div>`;
       }).join("")}
       </table>
     `;
+      const synthTask = SYNTHESIS_TASKS[subtopicId];
+      const synthesisHtml = synthTask ? `
+      <div style="margin-top: 15px; border: 1px solid #111827; border-radius: 4px; padding: 10px; background: #fdfdfd; page-break-inside: avoid;">
+        <div style="font-size: 9.5pt; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; color: #111827; display: flex; justify-content: space-between;">
+          <span>\u{1F4DD} Unit Synthesis Task</span>
+          <span style="font-size: 8pt; font-style: italic; font-weight: normal; color: #000000;">${synthTask.type}</span>
+        </div>
+        <div style="font-size: 9.5pt; line-height: 1.3; color: #000000;">
+          ${synthTask.task}
+        </div>
+      </div>
+    ` : "";
       let q2Title = data.causalQuestion || "Explain why this topic developed during this period.";
       let q2Stimulus = (data.causationMatrix?.factors || []).slice(0, 2);
       if (data.examPractice && data.examPractice.q2) {
@@ -33165,12 +33275,12 @@ opacity: 0.1;"></i></div>`;
         q2Stimulus = data.examPractice.q2.stimulus || [];
       }
       const whyHtml = `
-      <div style="margin-bottom: 20px; border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box;">
-        <span style="font-weight: bold; font-size: 12pt; color: #000000; display: block;">Question 2 [12 Marks]:</span>
-        <span style="display: block; font-size: 12pt; font-weight: bold; margin-top: 6px;">
+      <div style="margin-bottom: 15px; padding: 0 0 10px 0; box-sizing: border-box; page-break-inside: avoid;">
+        <span style="font-weight: bold; font-size: 11pt; color: #000000; display: block;">Question 2 [12 Marks]:</span>
+        <span style="display: block; font-size: 10.5pt; font-weight: bold; margin-top: 2px; margin-bottom: 6px;">
           ${q2Title}
         </span>
-        <div style="font-size: 11pt; border-left: 3px solid #000000; padding-left: 10px; margin-left: 2px; margin-top: 10px;">
+        <div style="font-size: 9.5pt; border-left: 3px solid #000000; padding-left: 10px; margin-left: 2px; line-height: 1.3;">
           You may use the following in your answer:<br>
           ${q2Stimulus.map((s) => `\u2022 ${s}<br>`).join("")}
           \u2022 You must also use information of your own.
@@ -33189,18 +33299,18 @@ opacity: 0.1;"></i></div>`;
         const q3c = q3.questions?.q3c || q3.q3c;
         const q3d = q3.questions?.q3d || q3.q3d;
         q3Html = `
-        <div class="print-page" style="page-break-before: always; margin-top: 30px;">
+        <div style="page-break-before: always;">
           <h2 class="main-title">End of Unit Exam Practice (3A-D)</h2>
-          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5;">
+          <div style="border: 2px solid #000000; padding: 15px; border-radius: 6px; box-sizing: border-box; font-size: 11pt; line-height: 1.5; margin-bottom: 20px;">
             <span style="font-weight: bold; font-size: 11pt; color: #000000; display: block; margin-bottom: 12px;">Question 3 [32 Marks]:</span>
-            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
+            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9.5pt; line-height: 1.35;">
               ${srcBHtml}<br><br>
               ${srcCHtml}
             </div>
             <span style="display: block; font-size: 11pt; font-weight: bold; margin-bottom: 12px;">
               <strong>3 (a)</strong> ${q3a}
             </span>
-            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9pt; line-height: 1.35;">
+            <div style="margin-bottom: 12px; border: 1px solid #000000; padding: 10px; background: #ffffff; font-size: 9.5pt; line-height: 1.35;">
               ${interp1Html}<br><br>
               ${interp2Html}
             </div>
@@ -33228,15 +33338,13 @@ opacity: 0.1;"></i></div>`;
         </div>
       `).join("");
         teacherAnswersHtml = `
-        <div class="print-page-last" style="page-break-before: always; margin-top: 20px; position: relative;">
+        <div style="page-break-before: always; margin-top: 20px;">
           <h2 class="main-title">Teacher Answer Key &bull; Topic ${topicName}</h2>
           
           <div class="section-title" style="margin-top: 10px; margin-bottom: 6px;">Comprehension Check Answers</div>
           <div style="border: 2px solid #000000; padding: 10px; border-radius: 6px; margin-bottom: 10px; box-sizing: border-box;">
             ${comprehensionAnswersHtml}
           </div>
-          
-          <div class="footer-note">Teacher Answer Key</div>
         </div>
       `;
       }
@@ -33253,7 +33361,7 @@ opacity: 0.1;"></i></div>`;
     }
     body {
       font-family: 'Arial', 'Helvetica', sans-serif;
-      font-size: 11pt;
+      font-size: 10.5pt;
       color: #000000;
       line-height: 1.4;
       background: #ffffff;
@@ -33291,7 +33399,7 @@ opacity: 0.1;"></i></div>`;
       body {
         background: #ffffff !important;
         color: #000000 !important;
-        font-size: 11pt !important;
+        font-size: 10.5pt !important;
         line-height: 1.4 !important;
       }
       .print-page, .print-page-last {
@@ -33316,7 +33424,7 @@ opacity: 0.1;"></i></div>`;
       color: #000000;
     }
     .section-title {
-      font-size: 13pt;
+      font-size: 11.5pt;
       font-weight: bold;
       text-transform: uppercase;
       color: #000000;
@@ -33388,56 +33496,48 @@ opacity: 0.1;"></i></div>`;
         margin-top: 0;
       }
     }
+    }
     @media print {
       .footer-note {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin-top: 0;
+        display: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- PAGE 1: NARRATIVE & VOCAB -->
-  <div class="print-page">
-    <h2 class="main-title">Topic ${topicName}: ${data.title}</h2>
-    ${specBoxHtml}
+  <!-- TOPIC CONTAINER -->
+  <div class="topic-container" style="page-break-after: always;">
+    <!-- PAGE 1: NARRATIVE & VOCAB -->
+    <div>
+      <h2 class="main-title">Topic ${topicName}: ${data.title}</h2>
+      ${specBoxHtml}
 
+      
+      <div style="font-size: 11pt; text-align: left; line-height: 1.4;">
+        ${narrativeHtml}
+      </div>
 
-    
-    <div style="font-size: 11pt; text-align: left; line-height: 1.4;">
-      ${narrativeHtml}
+      <div class="vocab-box">
+        <h4>Vocabulary Focus</h4>
+        ${vocabHtml}
+      </div>
     </div>
 
-    <div class="vocab-box">
-      <h4>Vocabulary Focus</h4>
-      ${vocabHtml}
+    <!-- WORKSHEET SECTION -->
+    <div style="margin-top: 20px;">
+      <div class="section-title" style="margin-top: 0;">Exam Practice</div>
+      
+      ${whyHtml}
+
+      ${timelineAndQuestionsHtml}
+      
+      ${synthesisHtml}
     </div>
 
-    <div class="footer-note">Page 1</div>
+    ${q3Html}
+    ${teacherAnswersHtml}
   </div>
-
-  <!-- PAGE 2: ANALYTICAL TASKS & TIMELINE -->
-  <div class="${isEndOfUnit && data.examPractice && data.examPractice.q3set ? "print-page" : includeAnswers ? "print-page" : "print-page-last"}">
-    <div class="section-title" style="margin-top: 0;">Exam Practice</div>
-    
-    ${whyHtml}
-
-    <div class="section-title">Timeline & Comprehension Questions</div>
-    <p style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">
-      <strong>Task:</strong> Review the chronology below. Answer the targeted questions on the right in your exercise book.
-    </p>
-
-    ${timelineAndQuestionsHtml}
-
-    <div class="footer-note">Page 2</div>
-  </div>
-
-  ${q3Html}
-  ${teacherAnswersHtml}
 </body>
 </html>`;
     }
@@ -33449,7 +33549,7 @@ opacity: 0.1;"></i></div>`;
   <style>
     @page {
       size: 21cm 29.7cm; /* A4 */
-      margin: 1.0cm;
+      margin: 1.5cm;
       mso-page-orientation: portrait;
     }
     body {
@@ -33530,7 +33630,7 @@ opacity: 0.1;"></i></div>`;
     }
     .footer-note {
       font-size: 7pt;
-      color: #6b7280;
+      color: #000000;
       text-align: center;
       border-top: 1px solid #e5e7eb;
       padding-top: 2px;
@@ -33617,7 +33717,7 @@ opacity: 0.1;"></i></div>`;
       font-weight: bold;
       width: 4%;
       vertical-align: middle;
-      color: #4b5563;
+      color: #000000;
     }
     /* Vocabulary Match-up styles */
     .vocab-table {
@@ -33730,7 +33830,7 @@ opacity: 0.1;"></i></div>`;
       <tr class="print-cornell-row">
         <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 8pt; font-weight: bold; background: #f9fafb;">
           ${cue.title}<br><br>
-          <span style="font-size: 7.5pt; font-weight: normal; color: #4b5563;">
+          <span style="font-size: 7.5pt; font-weight: normal; color: #000000;">
             ${cue.subCues.map((sc) => `${sc}`).join("<br>")}
           </span>
         </td>
@@ -33923,7 +34023,7 @@ opacity: 0.1;"></i></div>`;
               Model Answer for Question ${qNum + 1} [${marks} Marks]
             </div>
             
-            <p style="font-size: 10pt; font-weight: bold; margin-bottom: 10px; font-style: italic; color: #4b5563;">
+            <p style="font-size: 10pt; font-weight: bold; margin-bottom: 10px; font-style: italic; color: #000000;">
               Question: ${qText}
             </p>
 
@@ -33936,6 +34036,75 @@ opacity: 0.1;"></i></div>`;
         `;
         }
       });
+    } else if (style.startsWith("foldable-")) {
+      const isBlank = style === "foldable-blank";
+      const isScaffolded = style === "foldable-scaffolded";
+      const isPopulated = style === "foldable-populated";
+      const lessonData = LESSONS_DATA[subtopicId] || {};
+      let rightSideContent = "";
+      if (isBlank) {
+        rightSideContent = `
+        <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 40px;">
+          ${Array(8).fill('<div style="border-bottom: 2px dotted #999; width: 100%;"></div>').join("")}
+        </div>
+      `;
+      } else if (isScaffolded) {
+        const qList = (lessonData.knowledgeCheck || []).map((kc) => `
+        <div style="margin-bottom: 30px;">
+          <p style="font-weight: bold; font-size: 11pt; margin-bottom: 15px;">Q: ${kc.question}</p>
+          <div style="border-bottom: 2px dotted #999; width: 100%;"></div>
+        </div>
+      `).join("");
+        rightSideContent = `
+        <div style="margin-top: 20px;">
+          <h4 style="font-size: 13pt; margin-bottom: 20px; text-transform: uppercase; color: #333;">Test Your Knowledge</h4>
+          ${qList}
+        </div>
+      `;
+      } else if (isPopulated) {
+        const qList = (lessonData.knowledgeCheck || []).map((kc) => `
+        <div style="margin-bottom: 20px;">
+          <p style="font-weight: bold; font-size: 11pt; margin-bottom: 5px;">Q: ${kc.question}</p>
+          <p style="font-size: 11pt; color: #111;">A: ${kc.answer}</p>
+        </div>
+      `).join("");
+        rightSideContent = `
+        <div style="margin-top: 20px;">
+          <h4 style="font-size: 13pt; margin-bottom: 20px; text-transform: uppercase; color: #333;">Key Facts Summary</h4>
+          ${qList}
+        </div>
+      `;
+      }
+      const titleParts = lessonData.headerTitle ? lessonData.headerTitle.split(":") : [""];
+      const displayTitle = titleParts.length > 1 ? titleParts.slice(1).join(":").trim() : lessonData.headerTitle || "";
+      html += `
+      <div class="print-page" style="display: flex; width: 100%; height: 190mm; margin: 0; padding: 0; box-sizing: border-box; overflow: hidden; position: relative;">
+        
+        <!-- Fold Line -->
+        <div style="position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dashed #9ca3af; transform: translateX(-50%); z-index: 10;">
+          <div style="position: absolute; top: 10px; left: -14px; background: #fff; padding: 4px; font-size: 14px;">\u2702\uFE0F</div>
+          <div style="position: absolute; bottom: 10px; left: -14px; background: #fff; padding: 4px; font-size: 14px;">\u2702\uFE0F</div>
+        </div>
+
+        <!-- Left Side (Front) -->
+        <div style="width: 50%; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+          <div style="border: 4px solid #111; padding: 30px; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 4px 4px 0px #111;">
+            <p style="font-size: 12pt; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #6b7280; margin-bottom: 10px;">Topic ${topicName}</p>
+            <h2 style="font-size: 24pt; margin: 0 0 20px 0; color: #111; line-height: 1.2;">${displayTitle}</h2>
+            <div style="font-size: 10pt; font-style: italic; color: #4b5563; line-height: 1.5; text-align: left;">
+              ${lessonData.headerIntro || ""}
+            </div>
+          </div>
+          <p style="margin-top: 30px; font-size: 10pt; color: #9ca3af; font-family: monospace;">Fold down the center line to create your flashcard</p>
+        </div>
+
+        <!-- Right Side (Back) -->
+        <div style="width: 50%; padding: 40px; box-sizing: border-box; text-align: left;">
+          ${rightSideContent}
+        </div>
+        
+      </div>
+    `;
     }
     html += `
 </body>
@@ -33943,7 +34112,138 @@ opacity: 0.1;"></i></div>`;
   `;
     return html;
   }
+  function generateQuizPackHtml(includeAnswers) {
+    let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quick-Fire Quiz Pack</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #000000; padding: 20px; line-height: 1.3; margin: 0; }
+  .print-page { page-break-after: always; padding: 10px 0; clear: both; box-sizing: border-box; position: relative; }
+  .print-page-last { padding: 10px 0; clear: both; box-sizing: border-box; position: relative; }
+  .main-title { font-size: 15pt; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 5px; color: #000000; display: flex; justify-content: space-between; align-items: baseline; }
+  .main-title-right { font-size: 9pt; font-weight: normal; text-transform: none; }
+  .spec-box { border: 1px solid #c0c0c0; border-radius: 4px; padding: 12px; margin-bottom: 12px; font-size: 9pt; }
+  .spec-box strong { color: #000000; display: block; margin-bottom: 6px; font-size: 9.5pt; }
+  .spec-point { display: flex; gap: 8px; margin-bottom: 4px; align-items: flex-start; }
+  .spec-point-box { width: 10px; height: 10px; border: 1px solid #000; margin-top: 3px; flex-shrink: 0; }
+  .instruction-box { border: 1.5px solid #000000; border-radius: 4px; padding: 12px; margin-bottom: 20px; font-size: 9.5pt; }
+  .instruction-box strong { color: #d97706; display: block; margin-bottom: 4px; font-size: 10pt; text-transform: uppercase; }
+  .columns { column-count: 2; column-gap: 40px; }
+  .question-container { margin-bottom: 16px; break-inside: avoid-column; page-break-inside: avoid; }
+  .q-text { font-weight: bold; font-size: 9.5pt; color: #000000; margin-bottom: 10px; line-height: 1.4; }
+  .dotted-line { border-bottom: 1px dashed #a0a0a0; height: 20px; }
+  .answer-text { font-size: 9pt; line-height: 1.35; margin-top: 5px; }
+  .answer-text strong { color: #16a34a; font-weight: 600; }
+  .answer-text em { color: #000000; display: block; margin-top: 2px; font-style: normal; }
+  .footer-row { display: flex; gap: 15px; margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 20px; }
+  .footer-box { border: 1.5px solid #000000; padding: 12px; border-radius: 2px; break-inside: avoid; page-break-inside: avoid; }
+  @media print {
+    body { padding: 0; margin: 0; }
+    .print-page, .print-page-last { padding: 0; margin: 0; }
+  }
+</style>
+</head>
+<body>`;
+    QUIZ_DATA.forEach((topic, tIdx) => {
+      topic.subtopics.forEach((subtopic, sIdx) => {
+        const lessonData = LESSONS_DATA[subtopic.id] || { specPoints: [] };
+        const specHtml = lessonData.specPoints.map((sp) => `<div class="spec-point"><div class="spec-point-box"></div><div>${sp}</div></div>`).join("");
+        const isLastQPage = tIdx === QUIZ_DATA.length - 1 && sIdx === topic.subtopics.length - 1 && !includeAnswers;
+        html += `
+        <div class="${isLastQPage ? "print-page-last" : "print-page"}" ${!isLastQPage ? 'style="page-break-after: always;"' : ""}>
+          <div class="main-title">
+            <span>${subtopic.title.split(":")[0]}: QUICK-FIRE QUIZ</span>
+            <span class="main-title-right">GCSE History Lesson Resource - Workbook</span>
+          </div>
+
+          <div class="spec-box">
+            <strong>\u{1F4CB} CURRICULUM SPECIFICATION CHECKLIST (PEARSON EDEXCEL)</strong>
+            ${specHtml}
+          </div>
+
+          <div class="instruction-box">
+            <strong>\u270F\uFE0F INSTRUCTIONS</strong>
+            Answer all 10 questions from memory. Write your answers clearly on the dotted lines. Keep your answers brief.
+          </div>
+
+          <div class="columns">
+      `;
+        subtopic.standard.forEach((q, qIdx) => {
+          html += `
+            <div class="question-container">
+              <div class="q-text">Q${qIdx + 1}: ${q.question}</div>
+              <div class="dotted-line"></div>
+              <div class="dotted-line"></div>
+              <div class="dotted-line"></div>
+            </div>
+        `;
+        });
+        html += `
+          </div>
+        </div>
+      `;
+        if (includeAnswers) {
+          const isLastAPage = tIdx === QUIZ_DATA.length - 1 && sIdx === topic.subtopics.length - 1;
+          html += `
+          <div class="${isLastAPage ? "print-page-last" : "print-page"}" ${!isLastAPage ? 'style="page-break-after: always;"' : ""}>
+            <div class="main-title">
+              <span>${subtopic.title.split(":")[0]}: QUIZ ANSWER KEY & EXPLANATIONS</span>
+              <span class="main-title-right">GCSE History Lesson Resource - Workbook</span>
+            </div>
+
+            <div class="columns">
+        `;
+          subtopic.standard.forEach((q, qIdx) => {
+            html += `
+              <div class="question-container" style="margin-bottom: 16px;">
+                <div class="q-text" style="margin-bottom: 2px;">Q${qIdx + 1}: ${q.question}</div>
+                <div class="answer-text">
+                  <strong>Correct Answer:</strong> ${q.answer}
+                  <em>${q.explanation}</em>
+                </div>
+              </div>
+          `;
+          });
+          html += `
+            </div>
+
+            <div class="footer-row">
+              <div class="footer-box" style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                <strong style="font-size: 10pt;">SCORE TRACKER</strong>
+                <div style="margin-top: 12px; font-size: 16pt; font-weight: bold; border: 1px dashed #a0a0a0; padding: 10px; width: 80px; margin: 0 auto;">/ 10</div>
+              </div>
+              <div class="footer-box" style="flex: 2;">
+                <strong style="font-size: 10pt; display: flex; align-items: center; gap: 6px;">\u{1F4CA} PERFORMANCE BOUNDARIES</strong>
+                <div style="font-size: 9pt; margin-top: 10px; line-height: 1.5;">
+                  <strong>9\u201310 Marks:</strong> Mastery (Level 9 Focus) - Excellent recall.<br/>
+                  <strong>7\u20138 Marks:</strong> Strong (Level 7 Focus) - Solid foundation.<br/>
+                  <strong>Under 7 Marks:</strong> Focus Needed - Re-read narrative & vocabulary.
+                </div>
+              </div>
+              <div class="footer-box" style="flex: 1.5; background: #f8fafc; border-color: #cbd5e1;">
+                <strong style="font-size: 10pt; color: #000000;">\u{1F50D} DIAGNOSTIC STUDY GUIDE</strong>
+                <div style="font-size: 9pt; margin-top: 10px; line-height: 1.5; color: #000000;">
+                  If you struggled with any question:<br/>
+                  1. Re-read the Lesson Study Narrative.<br/>
+                  2. Review the Vocab Spotlight terms.<br/>
+                  3. Re-test using active recall.
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        }
+      });
+    });
+    html += `</body></html>`;
+    return html;
+  }
   function generateBulkWorkbookHtml(style, density, includeAnswers) {
+    if (style === "quiz") {
+      return generateQuizPackHtml(includeAnswers);
+    }
     const subtopicIds = [
       "subtopic_1_1",
       "subtopic_1_2",
@@ -33976,9 +34276,6 @@ opacity: 0.1;"></i></div>`;
       const bodyEndIdx = html.lastIndexOf("</body>");
       if (bodyStartIdx !== -1 && bodyEndIdx !== -1) {
         let bodyContent = html.substring(bodyStartIdx + 6, bodyEndIdx).trim();
-        if (index < subtopicIds.length - 1) {
-          bodyContent = bodyContent.replace(/class="print-page-last"/g, 'class="print-page"');
-        }
         combinedBodyContent += `
 <!-- LESSON ${subId} -->
 ` + bodyContent;
@@ -34159,12 +34456,20 @@ opacity: 0.1;"></i></div>`;
       if (!state.examSession.isActive) {
         showExamSetup();
       }
+    } else if (viewName === "worksheets") {
+      const wsNav = document.getElementById("nav-worksheets");
+      if (wsNav) wsNav.classList.add("active");
+      if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
+      const viewTitle = document.getElementById("current-view-title");
+      if (viewTitle) viewTitle.textContent = "Educator Worksheets";
+      state.selectedSubtopicId = null;
+      activateExamHubPanel("educator-hub");
     } else if (viewName === "exam-hub") {
       const hubNav = document.getElementById("nav-exam-hub");
       if (hubNav) hubNav.classList.add("active");
       if (headerModeSwitcher) headerModeSwitcher.style.display = "none";
       const viewTitle = document.getElementById("current-view-title");
-      if (viewTitle) viewTitle.textContent = "Resource & Exam Hub";
+      if (viewTitle) viewTitle.textContent = "Exam Technique";
       state.selectedSubtopicId = null;
       const targetPanel = subtopicId || "educator-hub";
       activateExamHubPanel(targetPanel);
@@ -34267,6 +34572,7 @@ opacity: 0.1;"></i></div>`;
       "lessons": "view-mastery",
       "games": "view-games",
       "exam-hub": "view-exam-hub",
+      "worksheets": "view-exam-hub",
       "key-topic": "view-key-topic",
       "ai-videos": "view-ai-videos",
       "leaderboard": "view-leaderboard",
@@ -34809,9 +35115,9 @@ opacity: 0.1;"></i></div>`;
         switchView("leaderboard");
       });
     }
-    const navGuide = document.getElementById("nav-guide");
-    if (navGuide) {
-      navGuide.addEventListener("click", () => {
+    const navGuideHeader = document.getElementById("nav-guide-header");
+    if (navGuideHeader) {
+      navGuideHeader.addEventListener("click", () => {
         AudioEngine.play("click");
         switchView("guide");
       });
@@ -34831,6 +35137,13 @@ opacity: 0.1;"></i></div>`;
       AudioEngine.play("click");
       switchView("exam");
     });
+    const shortcutWorksheets = document.getElementById("shortcut-worksheets");
+    if (shortcutWorksheets) {
+      shortcutWorksheets.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("worksheets");
+      });
+    }
     document.getElementById("shortcut-exam-hub").addEventListener("click", () => {
       AudioEngine.play("click");
       switchView("exam-hub", "technique");
@@ -34843,13 +35156,6 @@ opacity: 0.1;"></i></div>`;
       AudioEngine.play("click");
       switchView("ai-videos");
     });
-    const shortcutGuide = document.getElementById("shortcut-guide");
-    if (shortcutGuide) {
-      shortcutGuide.addEventListener("click", () => {
-        AudioEngine.play("click");
-        switchView("guide");
-      });
-    }
     const heroGuideBtn = document.getElementById("hero-guide-btn");
     if (heroGuideBtn) {
       heroGuideBtn.addEventListener("click", () => {
@@ -35125,7 +35431,14 @@ Overall, the most important reason why ${topic} was [Reason 1/2/3] because...`;
     if (navExamHub) {
       navExamHub.addEventListener("click", () => {
         AudioEngine.play("click");
-        switchView("exam-hub", "educator-hub");
+        switchView("exam-hub", "technique");
+      });
+    }
+    const navWorksheets = document.getElementById("nav-worksheets");
+    if (navWorksheets) {
+      navWorksheets.addEventListener("click", () => {
+        AudioEngine.play("click");
+        switchView("worksheets");
       });
     }
     document.querySelectorAll(".exam-tab-btn").forEach((btn) => {

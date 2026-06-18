@@ -5715,6 +5715,79 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
         `;
       }
     });
+  } else if (style.startsWith('foldable-')) {
+    const isBlank = style === 'foldable-blank';
+    const isScaffolded = style === 'foldable-scaffolded';
+    const isPopulated = style === 'foldable-populated';
+    const lessonData = LESSONS_DATA[subtopicId] || {};
+    
+    let rightSideContent = '';
+    
+    if (isBlank) {
+      rightSideContent = `
+        <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 40px;">
+          ${Array(8).fill('<div style="border-bottom: 2px dotted #999; width: 100%;"></div>').join('')}
+        </div>
+      `;
+    } else if (isScaffolded) {
+      const qList = (lessonData.knowledgeCheck || []).map(kc => `
+        <div style="margin-bottom: 30px;">
+          <p style="font-weight: bold; font-size: 11pt; margin-bottom: 15px;">Q: ${kc.question}</p>
+          <div style="border-bottom: 2px dotted #999; width: 100%;"></div>
+        </div>
+      `).join('');
+      rightSideContent = `
+        <div style="margin-top: 20px;">
+          <h4 style="font-size: 13pt; margin-bottom: 20px; text-transform: uppercase; color: #333;">Test Your Knowledge</h4>
+          ${qList}
+        </div>
+      `;
+    } else if (isPopulated) {
+      const qList = (lessonData.knowledgeCheck || []).map(kc => `
+        <div style="margin-bottom: 20px;">
+          <p style="font-weight: bold; font-size: 11pt; margin-bottom: 5px;">Q: ${kc.question}</p>
+          <p style="font-size: 11pt; color: #111;">A: ${kc.answer}</p>
+        </div>
+      `).join('');
+      rightSideContent = `
+        <div style="margin-top: 20px;">
+          <h4 style="font-size: 13pt; margin-bottom: 20px; text-transform: uppercase; color: #333;">Key Facts Summary</h4>
+          ${qList}
+        </div>
+      `;
+    }
+
+    const titleParts = lessonData.headerTitle ? lessonData.headerTitle.split(':') : [''];
+    const displayTitle = titleParts.length > 1 ? titleParts.slice(1).join(':').trim() : (lessonData.headerTitle || '');
+
+    html += `
+      <div class="print-page" style="display: flex; width: 100%; height: 190mm; margin: 0; padding: 0; box-sizing: border-box; overflow: hidden; position: relative;">
+        
+        <!-- Fold Line -->
+        <div style="position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dashed #9ca3af; transform: translateX(-50%); z-index: 10;">
+          <div style="position: absolute; top: 10px; left: -14px; background: #fff; padding: 4px; font-size: 14px;">✂️</div>
+          <div style="position: absolute; bottom: 10px; left: -14px; background: #fff; padding: 4px; font-size: 14px;">✂️</div>
+        </div>
+
+        <!-- Left Side (Front) -->
+        <div style="width: 50%; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+          <div style="border: 4px solid #111; padding: 30px; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 4px 4px 0px #111;">
+            <p style="font-size: 12pt; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #6b7280; margin-bottom: 10px;">Topic ${topicName}</p>
+            <h2 style="font-size: 24pt; margin: 0 0 20px 0; color: #111; line-height: 1.2;">${displayTitle}</h2>
+            <div style="font-size: 10pt; font-style: italic; color: #4b5563; line-height: 1.5; text-align: left;">
+              ${lessonData.headerIntro || ''}
+            </div>
+          </div>
+          <p style="margin-top: 30px; font-size: 10pt; color: #9ca3af; font-family: monospace;">Fold down the center line to create your flashcard</p>
+        </div>
+
+        <!-- Right Side (Back) -->
+        <div style="width: 50%; padding: 40px; box-sizing: border-box; text-align: left;">
+          ${rightSideContent}
+        </div>
+        
+      </div>
+    `;
   }
 
   html += `

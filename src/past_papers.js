@@ -1741,6 +1741,10 @@ export function initBulkWorkbookCreator() {
         window.open('interpretations_practice.html', '_blank');
         return;
       }
+      if (style === 'foundation') {
+        window.open('foundation_quiz_pack.html', '_blank');
+        return;
+      }
       
       const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
       
@@ -1762,8 +1766,11 @@ export function initBulkWorkbookCreator() {
       
       AudioEngine.play('click');
       
-      if (style === 'revision' || style === 'interpretations') {
-        alert(`The ${style === 'revision' ? 'Active Revision Pack' : 'Interpretations Practice Book'} is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print Pack (Web)' instead.`);
+      if (style === 'revision' || style === 'interpretations' || style === 'foundation') {
+        let packName = "Active Revision Pack";
+        if (style === 'interpretations') packName = "Interpretations Practice Book";
+        if (style === 'foundation') packName = "Foundation Quiz Pack";
+        alert(`The ${packName} is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print Pack (Web)' instead.`);
         return;
       }
       
