@@ -6504,10 +6504,8 @@ function updateDashboardActionCards() {
       upNextTitle.textContent = cleanTitle;
       
       upNextBtn.onclick = () => {
-        if (window.switchView) {
-          state.currentMode = 'lessons';
-          window.switchView('subtopic', nextTopic.subtopicId);
-        }
+        state.currentMode = 'lessons';
+        switchView('subtopic', nextTopic.subtopicId);
       };
     }
   }

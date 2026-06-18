@@ -790,7 +790,16 @@ function bindEvents() {
   if (navExamHub) {
     navExamHub.addEventListener('click', () => {
       AudioEngine.play('click');
-      switchView('exam-hub', 'educator-hub');
+      switchView('exam-hub', 'technique');
+    });
+  }
+
+  // Educator Worksheets Nav Click
+  const navWorksheets = document.getElementById('nav-worksheets');
+  if (navWorksheets) {
+    navWorksheets.addEventListener('click', () => {
+      AudioEngine.play('click');
+      switchView('worksheets');
     });
   }
 

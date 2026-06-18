@@ -107,6 +107,8 @@ export function switchView(viewName, subtopicId = null) {
     const viewTitle = document.getElementById('current-view-title');
     if (viewTitle) viewTitle.textContent = "Educator Worksheets";
     state.selectedSubtopicId = null;
+    
+    activateExamHubPanel('educator-hub');
   } else if (viewName === 'exam-hub') {
     const hubNav = document.getElementById('nav-exam-hub');
     if (hubNav) hubNav.classList.add('active');
@@ -230,7 +232,7 @@ export function switchView(viewName, subtopicId = null) {
     'lessons': 'view-mastery',
     'games': 'view-games',
     'exam-hub': 'view-exam-hub',
-    'worksheets': 'view-worksheets',
+    'worksheets': 'view-exam-hub',
     'key-topic': 'view-key-topic',
     'ai-videos': 'view-ai-videos',
     'leaderboard': 'view-leaderboard',
