@@ -1,7 +1,7 @@
-const CACHE_NAME = 'edexcel-history-usa-v2';
+const CACHE_NAME = 'edexcel-history-usa-v3';
 
 self.addEventListener('install', event => {
-  // Let the user trigger activation via the reload notification prompt
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
