@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key Vocabulary Workbook</title>
+    <title>Concept Maps & Vocabulary Workbook</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
+            --primary: #1e3a8a;
+            --primary-dark: #172554;
+            --accent: #b45309;
             --border: #cbd5e1;
             --bg-light: #f8fafc;
             --text: #0f172a;
@@ -18,7 +19,7 @@
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text);
-            line-height: 1.4;
+            line-height: 1.3;
             margin: 0;
             padding: 0;
             background: #e2e8f0;
@@ -34,7 +35,7 @@
             width: 210mm;
             height: 297mm;
             margin: 20px auto;
-            padding: 15mm;
+            padding: 12mm 15mm;
             box-sizing: border-box;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: relative;
@@ -45,137 +46,414 @@
 
         .section-header {
             border-bottom: 2px solid var(--primary);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            text-align: center;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
         }
 
         .section-title {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--primary-dark);
             margin: 0;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-size: 9px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Vocab Section */
+        .vocab-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 14px;
         }
 
         .vocab-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            width: 65%;
-            margin: 0 auto;
-            box-sizing: border-box;
+            gap: 12px;
         }
 
         .vocab-list {
             border: 1px solid var(--border);
             background: var(--bg-light);
             border-radius: 4px;
-            padding: 10px;
-            box-sizing: border-box;
+            padding: 8px 10px;
         }
 
         .vocab-title {
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 10px;
+            font-weight: 800;
             color: var(--primary);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 4px;
-            margin-bottom: 8px;
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 2px;
+            margin-bottom: 6px;
             text-transform: uppercase;
         }
 
         .vocab-item {
-            font-size: 9.5px;
-            margin-bottom: 8px;
-            line-height: 1.35;
+            font-size: 9px;
+            margin-bottom: 5px;
+            line-height: 1.3;
         }
 
         .vocab-item strong {
-            color: #0f172a;
-            font-size: 10px;
+            color: #000;
         }
 
         .exercise-box {
-            border: 1.5px solid #111827;
-            padding: 12px;
+            border: 1px solid #94a3b8;
+            padding: 8px 10px;
             background: white;
             border-radius: 4px;
-            width: 65%;
-            margin: 0 auto;
-            box-sizing: border-box;
-            text-align: left;
         }
 
         .exercise-title {
             font-weight: 800;
-            font-size: 11px;
-            color: #0f172a;
-            margin-bottom: 8px;
+            font-size: 10px;
+            color: var(--text);
+            margin-bottom: 4px;
             text-transform: uppercase;
+        }
+
+        .exercise-desc {
+            font-size: 8px;
+            color: #475569;
+            margin-bottom: 6px;
+            font-style: italic;
         }
 
         .match-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
-            font-size: 9.5px;
+            margin-bottom: 6px;
+            font-size: 9px;
         }
 
-        .match-term {
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-weight: 600;
-            width: 30%;
-            text-align: center;
-            box-sizing: border-box;
+        .match-text {
+            width: 55%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .match-line {
             flex-grow: 1;
             border-bottom: 1px dashed #cbd5e1;
-            margin: 0 15px;
+            margin: 0 10px;
             height: 1px;
         }
 
         .match-slot {
-            border: 1px solid #475569;
+            border: 1px solid #64748b;
             background: #f8fafc;
-            width: 60%;
-            height: 24px;
+            width: 35%;
+            height: 20px;
             border-radius: 3px;
-            box-sizing: border-box;
             position: relative;
         }
 
         .match-slot span {
             position: absolute;
-            bottom: 4px;
+            bottom: 3px;
             left: 6px;
             color: #94a3b8;
+            font-size: 7.5px;
+            font-weight: 600;
+        }
+
+        /* Divider */
+        .page-divider {
+            border-top: 2px dashed #94a3b8;
+            margin: 8px 0 12px 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .page-divider span {
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 10px;
             font-size: 8px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Concept Maps */
+        .concept-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        .concept-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+
+        .concept-desc {
+            font-size: 8.5px;
+            color: #475569;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .dotted-line {
+            border-bottom: 1px dashed #94a3b8;
+            height: 18px;
+            margin-bottom: 4px;
+        }
+
+        /* Venn Diagram Styling */
+        .venn-container {
+            position: relative;
+            width: 100%;
+            height: 125px;
+            margin: 0 auto 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .venn-circle {
+            position: absolute;
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 9px;
+            font-weight: 700;
+            background: rgba(37, 99, 235, 0.03);
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .venn-circle.left {
+            left: calc(50% - 100px);
+            border-color: #2563eb;
+            color: #1d4ed8;
+            background: rgba(37, 99, 235, 0.04);
+        }
+
+        .venn-circle.right {
+            right: calc(50% - 100px);
+            border-color: #db2777;
+            color: #be185d;
+            background: rgba(219, 39, 119, 0.04);
+        }
+
+        .venn-intersection {
+            position: absolute;
+            width: 70px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+            color: #475569;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .venn-label {
+            font-size: 8px;
+            font-weight: 600;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .venn-input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            flex-grow: 1;
+        }
+
+        .venn-column {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--bg-light);
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .venn-column-title {
+            font-size: 8.5px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+        }
+
+        /* Key Topic 2: Grid Comparison */
+        .comparison-grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        .comparison-card {
+            border: 1.5px solid #475569;
+            background: white;
+            border-radius: 4px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header-title {
+            font-size: 9.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+        }
+
+        /* Key Topic 3: T-Chart */
+        .t-chart-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            flex-grow: 1;
+            border-top: 2px solid #0f172a;
+        }
+
+        .t-chart-col {
+            padding: 6px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .t-chart-col.left {
+            border-right: 1px solid #94a3b8;
+            padding-right: 10px;
+        }
+
+        .t-chart-col.right {
+            padding-left: 10px;
+        }
+
+        .t-chart-header {
+            font-size: 10px;
+            font-weight: 800;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            padding-bottom: 2px;
+        }
+
+        /* Key Topic 4: Fishbone */
+        .fishbone-container {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: relative;
+            box-sizing: border-box;
+            height: 150px;
+        }
+
+        .fishbone-spine {
+            position: absolute;
+            left: 0;
+            right: 35px;
+            top: 50%;
+            height: 2px;
+            background: #0f172a;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .fishbone-head {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            background: #0f172a;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            z-index: 2;
+        }
+
+        .fishbone-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px 30px;
+            height: 100%;
+            z-index: 2;
+            padding-right: 40px;
+        }
+
+        .fishbone-box {
+            border: 1px solid #475569;
+            background: white;
+            border-radius: 4px;
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .fishbone-title {
+            font-size: 8.5px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .footer-note {
             position: absolute;
-            bottom: 12mm;
+            bottom: 6mm;
             left: 15mm;
             right: 15mm;
             text-align: center;
-            font-size: 8px;
+            font-size: 7.5px;
             color: #64748b;
             border-top: 1px solid #e2e8f0;
-            padding-top: 5px;
+            padding-top: 4px;
         }
 
         @media print {
             body { background: none; }
             .page { 
                 margin: 0; 
-                padding: 15mm; 
+                padding: 10mm 15mm; 
                 border: none; 
                 box-shadow: none; 
                 width: 210mm;
@@ -190,224 +468,338 @@
 </head>
 <body>
 
-<!-- PAGE 1: Key Topic 1 Vocabulary -->
+<!-- PAGE 1: Key Topic 1 Vocabulary & Venn Comparison -->
 <div class="page">
     <div class="section-header">
-        <h1 class="section-title">Key Topic 1 Glossary & Match-up: Civil Rights, 1954–60</h1>
+        <h1 class="section-title">Key Topic 1: Civil Rights Development, 1954–60</h1>
+        <span class="section-subtitle">GCSE History Study Companion</span>
     </div>
 
-    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+    <!-- Vocab Part -->
+    <div class="vocab-section">
         <div class="vocab-grid">
-            <div class="vocab-list" style="grid-column: span 2;">
-                <div class="vocab-title">Core Term Definitions</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <div class="vocab-item"><strong>Segregation:</strong> The legal and social separation of Black and White people in public life.</div>
-                    <div class="vocab-item"><strong>Disenfranchisement:</strong> The system of blocking citizens from using their constitutional right to vote.</div>
-                    <div class="vocab-item"><strong>Litigation:</strong> Taking legal cases to federal courts (e.g. NAACP targeting segregation).</div>
-                    <div class="vocab-item"><strong>Boycott:</strong> Peaceful commercial protest involving refusal to buy/use segregated services.</div>
-                    <div class="vocab-item"><strong>Precedent:</strong> A legal decision serving as a binding guide for future rulings (e.g. Brown v. Topeka).</div>
+            <div class="vocab-list">
+                <div class="vocab-title">Core Glossary</div>
+                <div class="vocab-item"><strong>Segregation:</strong> Legal/social separation of races in public.</div>
+                <div class="vocab-item"><strong>Disenfranchisement:</strong> Blocking citizens from voting.</div>
+                <div class="vocab-item"><strong>Litigation:</strong> Challenging laws in federal courts.</div>
+                <div class="vocab-item"><strong>Boycott:</strong> Refusal to use segregated services.</div>
+                <div class="vocab-item"><strong>Precedent:</strong> Court ruling acting as a future legal guide.</div>
+            </div>
+
+            <div class="exercise-box">
+                <div class="exercise-title">Match-up Exercise</div>
+                <div class="exercise-desc">Write the matching glossary term in the box.</div>
+                
+                <div class="match-row">
+                    <span class="match-text">1. Literacy tests blocking Black voters.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
+                </div>
+                <div class="match-row">
+                    <span class="match-text">2. Brown ruling outlawing school segregation.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
+                </div>
+                <div class="match-row">
+                    <span class="match-text">3. Refusing to ride Montgomery buses.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="exercise-box">
-            <div class="exercise-title">Vocabulary Match-up Exercise</div>
-            <div style="font-size: 9px; color: #475569; margin-bottom: 12px; font-style: italic;">Match the definitions on the left to their correct core term by writing the term in the blank box.</div>
-            
-            <div class="match-row">
-                <div style="width: 35%;">1. NAACP filing lawsuits to challenge laws.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
+    <div class="page-divider"><span>Concept Diagram Integration</span></div>
+
+    <!-- Concept Map Part -->
+    <div class="concept-section">
+        <h3 class="concept-title">Civil Rights Philosophies: Integration vs. Separatism</h3>
+        <p class="concept-desc">Compare the strategies of Martin Luther King Jr. and Malcolm X. Fill in the Venn diagram with their goals (non-violent direct action, integration, self-defense, separatism, black pride, equality).</p>
+
+        <div class="venn-container">
+            <div class="venn-circle left">MLK (Integration)<br><span style="font-weight:normal; font-size:8px; display:block; margin-top:20px;">Non-Violence</span></div>
+            <div class="venn-intersection">Shared<br>Goals</div>
+            <div class="venn-circle right">Malcolm X (Separatism)<br><span style="font-weight:normal; font-size:8px; display:block; margin-top:20px;">Self-Defense</span></div>
+        </div>
+
+        <div class="venn-input-grid">
+            <div class="venn-column">
+                <div class="venn-column-title" style="color: #2563eb;">MLK Features</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
             </div>
-            <div class="match-row">
-                <div style="width: 35%;">2. Supreme court ruling outlawing school segregation.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
+            <div class="venn-column">
+                <div class="venn-column-title" style="color: #475569;">Shared Elements</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
             </div>
-            <div class="match-row">
-                <div style="width: 35%;">3. Legal rules enforcing separate drinking fountains.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">4. Citizens refusing to ride Montgomery buses.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">5. Literacy tests preventing voter registration.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
+            <div class="venn-column">
+                <div class="venn-column-title" style="color: #db2777;">Malcolm X Features</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
             </div>
         </div>
     </div>
 
-    <div class="footer-note">GCSE History Vocabulary &bull; Key Topic 1 &bull; Page 1 of 4</div>
+    <div class="footer-note">GCSE History Concept Maps & Vocab &bull; Key Topic 1 &bull; Page 1 of 4</div>
 </div>
 
-<!-- PAGE 2: Key Topic 2 Vocabulary -->
+<!-- PAGE 2: Key Topic 2 Vocabulary & Grid Comparison -->
 <div class="page">
     <div class="section-header">
-        <h1 class="section-title">Key Topic 2 Glossary & Match-up: Civil Rights, 1960–75</h1>
+        <h1 class="section-title">Key Topic 2: Three Areas of Progress, 1960–75</h1>
+        <span class="section-subtitle">GCSE History Study Companion</span>
     </div>
 
-    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+    <!-- Vocab Part -->
+    <div class="vocab-section">
         <div class="vocab-grid">
-            <div class="vocab-list" style="grid-column: span 2;">
-                <div class="vocab-title">Core Term Definitions</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <div class="vocab-item"><strong>Militancy:</strong> Using direct, confrontational, or armed methods to demand immediate reform.</div>
-                    <div class="vocab-item"><strong>Legislation:</strong> Statutory acts passed by Congress to outlaw segregation (e.g. Civil Rights Act).</div>
-                    <div class="vocab-item"><strong>Integration:</strong> The blending of segregated races in schools, transport, or public areas.</div>
-                    <div class="vocab-item"><strong>Separatism:</strong> The goal of separating Black communities to form independent social institutions.</div>
-                    <div class="vocab-item"><strong>De facto:</strong> Segregation existing by custom and economic reality, rather than by law.</div>
+            <div class="vocab-list">
+                <div class="vocab-title">Core Glossary</div>
+                <div class="vocab-item"><strong>Militancy:</strong> Using confrontational or armed methods.</div>
+                <div class="vocab-item"><strong>Legislation:</strong> Statutory laws passed by Congress.</div>
+                <div class="vocab-item"><strong>Integration:</strong> Desegregating public facilities/schools.</div>
+                <div class="vocab-item"><strong>Separatism:</strong> Establishing separate Black institutions.</div>
+                <div class="vocab-item"><strong>De facto:</strong> Segregation by custom/social reality.</div>
+            </div>
+
+            <div class="exercise-box">
+                <div class="exercise-title">Match-up Exercise</div>
+                <div class="exercise-desc">Write the matching glossary term in the box.</div>
+                
+                <div class="match-row">
+                    <span class="match-text">1. Black Panthers patrolling with weapons.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
+                </div>
+                <div class="match-row">
+                    <span class="match-text">2. Ghetto segregation caused by rent policies.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
+                </div>
+                <div class="match-row">
+                    <span class="match-text">3. The Voting Rights Act of 1965.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="exercise-box">
-            <div class="exercise-title">Vocabulary Match-up Exercise</div>
-            <div style="font-size: 9px; color: #475569; margin-bottom: 12px; font-style: italic;">Match the definitions on the left to their correct core term by writing the term in the blank box.</div>
-            
-            <div class="match-row">
-                <div style="width: 35%;">1. Northern ghetto segregation caused by rent policies.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
+    <div class="page-divider"><span>Concept Diagram Integration</span></div>
+
+    <!-- Concept Map Part -->
+    <div class="concept-section">
+        <h3 class="concept-title">Protest Methods: Non-Violent Direct Action vs. Black Power</h3>
+        <p class="concept-desc">Contrast the methods and impacts of the two protest systems of the 1960s. Note key methods, organizations, achievements, and criticisms for each.</p>
+
+        <div class="comparison-grid-2x2">
+            <!-- Box 1: Non-Violent Direct Action -->
+            <div class="comparison-card" style="border-color: #2563eb;">
+                <div class="card-header-title" style="color: #2563eb; display: flex; justify-content: space-between;">
+                    <span>Non-Violent Direct Action</span>
+                    <span style="font-size: 8px; font-weight: normal;">(SCLC, SNCC, CORE)</span>
+                </div>
+                <div style="font-size: 8.5px; font-weight: bold; margin-bottom: 4px; color: #475569;">Key Methods & Achievements:</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+                <div style="font-size: 8.5px; font-weight: bold; margin-top: 6px; margin-bottom: 4px; color: #475569;">Criticisms & Limitations:</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
             </div>
-            <div class="match-row">
-                <div style="width: 35%;">2. Black Panthers patrolling streets with weapons.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">3. Black and White children attending the same school.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">4. Nation of Islam advocating separate states.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">5. The Voting Rights Act of 1965.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
+
+            <!-- Box 2: Black Power Movement -->
+            <div class="comparison-card" style="border-color: #db2777;">
+                <div class="card-header-title" style="color: #db2777; display: flex; justify-content: space-between;">
+                    <span>Black Power Movement</span>
+                    <span style="font-size: 8px; font-weight: normal;">(Panthers, NOI, SNCC post-66)</span>
+                </div>
+                <div style="font-size: 8.5px; font-weight: bold; margin-bottom: 4px; color: #475569;">Key Methods & Achievements:</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+                <div style="font-size: 8.5px; font-weight: bold; margin-top: 6px; margin-bottom: 4px; color: #475569;">Criticisms & Limitations:</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
             </div>
         </div>
     </div>
 
-    <div class="footer-note">GCSE History Vocabulary &bull; Key Topic 2 &bull; Page 2 of 4</div>
+    <div class="footer-note">GCSE History Concept Maps & Vocab &bull; Key Topic 2 &bull; Page 2 of 4</div>
 </div>
 
-<!-- PAGE 3: Key Topic 3 Vocabulary -->
+<!-- PAGE 3: Key Topic 3 Vocabulary & T-Chart Comparison -->
 <div class="page">
     <div class="section-header">
-        <h1 class="section-title">Key Topic 3 Glossary & Match-up: US & Vietnam, 1954–68</h1>
+        <h1 class="section-title">Key Topic 3: US Involvement in Vietnam, 1954–75</h1>
+        <span class="section-subtitle">GCSE History Study Companion</span>
     </div>
 
-    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+    <!-- Vocab Part -->
+    <div class="vocab-section">
         <div class="vocab-grid">
-            <div class="vocab-list" style="grid-column: span 2;">
-                <div class="vocab-title">Core Term Definitions</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <div class="vocab-item"><strong>Containment:</strong> Foreign policy designed to block the geographical spread of communism.</div>
-                    <div class="vocab-item"><strong>Escalation:</strong> Broadening military commitments (e.g. deploying thousands of combat troops).</div>
-                    <div class="vocab-item"><strong>Defoliation:</strong> Destroying jungle canopy using chemicals (e.g. Agent Orange) to expose cover.</div>
-                    <div class="vocab-item"><strong>Guerrilla:</strong> Hit-and-run tactics, ambushes, and tunnel networks used by the Vietcong.</div>
-                    <div class="vocab-item"><strong>Stalemate:</strong> A deadlock where neither side can make significant military progress.</div>
+            <div class="vocab-list">
+                <div class="vocab-title">Core Glossary</div>
+                <div class="vocab-item"><strong>Containment:</strong> Foreign policy blocking communist spread.</div>
+                <div class="vocab-item"><strong>Escalation:</strong> Broadening military commitments (troops).</div>
+                <div class="vocab-item"><strong>Defoliation:</strong> Destroying forests with chemicals.</div>
+                <div class="vocab-item"><strong>Guerrilla:</strong> Ambushes/hit-and-run style warfare.</div>
+                <div class="vocab-item"><strong>Stalemate:</strong> Deadlock where neither side makes progress.</div>
+            </div>
+
+            <div class="exercise-box">
+                <div class="exercise-title">Match-up Exercise</div>
+                <div class="exercise-desc">Write the matching glossary term in the box.</div>
+                
+                <div class="match-row">
+                    <span class="match-text">1. Vietcong tunnel networks and booby traps.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
+                </div>
+                <div class="match-row">
+                    <span class="match-text">2. Spraying Agent Orange over forests.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
+                </div>
+                <div class="match-row">
+                    <span class="match-text">3. Truman Doctrine and Domino Theory logic.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="exercise-box">
-            <div class="exercise-title">Vocabulary Match-up Exercise</div>
-            <div style="font-size: 9px; color: #475569; margin-bottom: 12px; font-style: italic;">Match the definitions on the left to their correct core term by writing the term in the blank box.</div>
-            
-            <div class="match-row">
-                <div style="width: 35%;">1. Vietcong tunnel networks and booby traps.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
+    <div class="page-divider"><span>Concept Diagram Integration</span></div>
+
+    <!-- Concept Map Part -->
+    <div class="concept-section">
+        <h3 class="concept-title">Vietnam Conflict: US Forces vs. Vietcong Tactics</h3>
+        <p class="concept-desc">Contrast the asymmetrical military strategies used in the Vietnam War. Note search-and-destroy, defoliation, guerrilla actions, tunnel systems, air superiority, and local support factors.</p>
+
+        <div class="t-chart-container">
+            <!-- US Forces Column -->
+            <div class="t-chart-col left">
+                <div class="t-chart-header" style="color: #1e3a8a;">US Forces (High-Tech Attrition)</div>
+                <div style="font-size: 8px; color: #64748b; font-style: italic; margin-bottom: 6px;">Key Tactics (Search & Destroy, bombing, chemical defoliation):</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+                <div style="font-size: 8px; color: #64748b; font-style: italic; margin-top: 6px; margin-bottom: 6px;">Tactical Problems & Drawbacks:</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
             </div>
-            <div class="match-row">
-                <div style="width: 35%;">2. The war ending in a deadlock by late 1967.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">3. US spraying defoliants over forests.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">4. Truman Doctrine and Domino Theory logic.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">5. Sending 500,000 ground troops under LBJ.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
+
+            <!-- Vietcong Column -->
+            <div class="t-chart-col right">
+                <div class="t-chart-header" style="color: #b45309;">Vietcong (Guerrilla Insurgency)</div>
+                <div style="font-size: 8px; color: #64748b; font-style: italic; margin-bottom: 6px;">Key Tactics (Guerrilla warfare, tunnels, local support):</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+                <div style="font-size: 8px; color: #64748b; font-style: italic; margin-top: 6px; margin-bottom: 6px;">Tactical Advantages & Strengths:</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
             </div>
         </div>
     </div>
 
-    <div class="footer-note">GCSE History Vocabulary &bull; Key Topic 3 &bull; Page 3 of 4</div>
+    <div class="footer-note">GCSE History Concept Maps & Vocab &bull; Key Topic 3 &bull; Page 3 of 4</div>
 </div>
 
-<!-- PAGE 4: Key Topic 4 Vocabulary -->
+<!-- PAGE 4: Key Topic 4 Vocabulary & Fishbone Causes of Defeat -->
 <div class="page">
     <div class="section-header">
-        <h1 class="section-title">Key Topic 4 Glossary & Match-up: Vietnam End, 1969–75</h1>
+        <h1 class="section-title">Key Topic 4: Reactions to Vietnam Involvement, 1964–75</h1>
+        <span class="section-subtitle">GCSE History Study Companion</span>
     </div>
 
-    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+    <!-- Vocab Part -->
+    <div class="vocab-section">
         <div class="vocab-grid">
-            <div class="vocab-list" style="grid-column: span 2;">
-                <div class="vocab-title">Core Term Definitions</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <div class="vocab-item"><strong>Vietnamisation:</strong> Nixon's policy of withdrawing US troops and building up South Vietnamese forces.</div>
-                    <div class="vocab-item"><strong>Conscription (Draft):</strong> Compulsory state military draft to select soldiers for Vietnam combat.</div>
-                    <div class="vocab-item"><strong>Silent Majority:</strong> Nixon's term for the moderate public who did not participate in war protests.</div>
-                    <div class="vocab-item"><strong>Moratorium:</strong> Large coordinated public anti-war protests taking place in major cities.</div>
-                    <div class="vocab-item"><strong>Credibility Gap:</strong> Public skepticism resulting from contradictions in government military reports.</div>
+            <div class="vocab-list">
+                <div class="vocab-title">Core Glossary</div>
+                <div class="vocab-item"><strong>Vietnamisation:</strong> Nixon's troop withdrawal policy.</div>
+                <div class="vocab-item"><strong>Conscription:</strong> Compulsory state draft for military service.</div>
+                <div class="vocab-item"><strong>Silent Majority:</strong> Moderate citizens supporting the war.</div>
+                <div class="vocab-item"><strong>Moratorium:</strong> Massive coordinated anti-war protests.</div>
+                <div class="vocab-item"><strong>Credibility Gap:</strong> Public skepticism of government statements.</div>
+            </div>
+
+            <div class="exercise-box">
+                <div class="exercise-title">Match-up Exercise</div>
+                <div class="exercise-desc">Write the matching glossary term in the box.</div>
+                
+                <div class="match-row">
+                    <span class="match-text">1. My Lai exposure causing public mistrust.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
+                </div>
+                <div class="match-row">
+                    <span class="match-text">2. Training the ARVN to replace US ground troops.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
+                </div>
+                <div class="match-row">
+                    <span class="match-text">3. Compulsory selective service lottery draft.</span>
+                    <div class="match-line"></div>
+                    <div class="match-slot"><span>Write Term Here</span></div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="exercise-box">
-            <div class="exercise-title">Vocabulary Match-up Exercise</div>
-            <div style="font-size: 9px; color: #475569; margin-bottom: 12px; font-style: italic;">Match the definitions on the left to their correct core term by writing the term in the blank box.</div>
-            
-            <div class="match-row">
-                <div style="width: 35%;">1. Selective Service lottery wheel system.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">2. The My Lai massacre exposure causing public mistrust.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">3. Nixon's speech appealing to the patriotic masses.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">4. Training the ARVN to replace departing US soldiers.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
-            </div>
-            <div class="match-row">
-                <div style="width: 35%;">5. Half a million protestors marching in Washington.</div>
-                <div class="match-line"></div>
-                <div class="match-slot"><span>Write Term Here</span></div>
+    <div class="page-divider"><span>Concept Diagram Integration</span></div>
+
+    <!-- Concept Map Part -->
+    <div class="concept-section">
+        <h3 class="concept-title">Multi-Causal Analysis: Why Did the USA Fail in Vietnam?</h3>
+        <p class="concept-desc">Analyze the causes of US failure. Complete the fishbone diagram by identifying a key factor for each category (Military Tactics, Vietcong Resolve, Home Front/Media, Political Constraints).</p>
+
+        <div class="fishbone-container">
+            <!-- Spine in background -->
+            <div class="fishbone-spine"></div>
+            <div class="fishbone-head"></div>
+
+            <!-- Four Boxes for Categories -->
+            <div class="fishbone-boxes">
+                <!-- Military Tactics -->
+                <div class="fishbone-box">
+                    <div class="fishbone-title" style="color: #1e3a8a;">US Military Tactics</div>
+                    <div style="font-size: 7.5px; color: #64748b; font-style: italic; margin-bottom: 2px;">Why Search & Destroy failed:</div>
+                    <div class="dotted-line"></div>
+                    <div class="dotted-line"></div>
+                </div>
+
+                <!-- Vietcong Resolve -->
+                <div class="fishbone-box">
+                    <div class="fishbone-title" style="color: #b45309;">Vietcong Strengths</div>
+                    <div style="font-size: 7.5px; color: #64748b; font-style: italic; margin-bottom: 2px;">Why VC resolve was high:</div>
+                    <div class="dotted-line"></div>
+                    <div class="dotted-line"></div>
+                </div>
+
+                <!-- Home Front & Public Opinion -->
+                <div class="fishbone-box">
+                    <div class="fishbone-title" style="color: #db2777;">Home Front & Media</div>
+                    <div style="font-size: 7.5px; color: #64748b; font-style: italic; margin-bottom: 2px;">How public opinion shifted:</div>
+                    <div class="dotted-line"></div>
+                    <div class="dotted-line"></div>
+                </div>
+
+                <!-- Political Constraints -->
+                <div class="fishbone-box">
+                    <div class="fishbone-title" style="color: #0d9488;">Political Constraints</div>
+                    <div style="font-size: 7.5px; color: #64748b; font-style: italic; margin-bottom: 2px;">Cold War limits on military power:</div>
+                    <div class="dotted-line"></div>
+                    <div class="dotted-line"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="footer-note">GCSE History Vocabulary &bull; Key Topic 4 &bull; Page 4 of 4</div>
+    <div class="footer-note">GCSE History Concept Maps & Vocab &bull; Key Topic 4 &bull; Page 4 of 4</div>
 </div>
 
 </body>

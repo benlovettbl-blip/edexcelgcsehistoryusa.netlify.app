@@ -15969,7 +15969,7 @@ ${cleanBrackets(paper.q3d.model)}
       const answers = document.getElementById("preview-answers").value;
       const densitySelector = document.getElementById("preview-density").parentElement;
       const answersSelector = document.getElementById("preview-answers").parentElement;
-      if (activeStyle === "revision" || activeStyle === "interpretations" || activeStyle === "foundation" || activeStyle === "sources" || activeStyle === "vocabulary" || activeStyle === "chronology" || activeStyle === "comparison") {
+      if (activeStyle === "revision" || activeStyle === "interpretations" || activeStyle === "foundation" || activeStyle === "sources" || activeStyle === "vocabulary" || activeStyle === "chronology") {
         if (densitySelector) densitySelector.style.display = "none";
         if (answersSelector) answersSelector.style.display = "none";
         let url = "revision_workbook_usa.html";
@@ -15978,7 +15978,6 @@ ${cleanBrackets(paper.q3d.model)}
         if (activeStyle === "foundation") url = "foundation_quiz_pack.html";
         if (activeStyle === "vocabulary") url = "vocabulary_workbook.html";
         if (activeStyle === "chronology") url = "chronology_workbook.html";
-        if (activeStyle === "comparison") url = "concept_comparison_workbook.html";
         iframe.src = url;
       } else {
         if (densitySelector) densitySelector.style.display = "flex";
@@ -16041,14 +16040,13 @@ ${cleanBrackets(paper.q3d.model)}
     if (btnWord) {
       btnWord.addEventListener("click", () => {
         AudioEngine.play("click");
-        if (activeStyle === "revision" || activeStyle === "interpretations" || activeStyle === "foundation" || activeStyle === "sources" || activeStyle === "vocabulary" || activeStyle === "chronology" || activeStyle === "comparison") {
+        if (activeStyle === "revision" || activeStyle === "interpretations" || activeStyle === "foundation" || activeStyle === "sources" || activeStyle === "vocabulary" || activeStyle === "chronology") {
           let packName = "Active Revision Pack";
           if (activeStyle === "interpretations") packName = "Interpretations Practice Book";
           if (activeStyle === "sources") packName = "Sources Practice Book";
           if (activeStyle === "foundation") packName = "Foundation Quiz Pack";
-          if (activeStyle === "vocabulary") packName = "Key Vocabulary Workbook";
+          if (activeStyle === "vocabulary") packName = "Concept Maps & Vocabulary Workbook";
           if (activeStyle === "chronology") packName = "Chronology & Timeline Workbook";
-          if (activeStyle === "comparison") packName = "Concept Comparison Workbook";
           alert(`The ${packName} is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print (Web)' instead.`);
           return;
         }
@@ -37225,134 +37223,6 @@ rgba(255,255,255,0.2);">
   `;
     return html;
   }
-  function generateQuizPackHtml(includeAnswers) {
-    let html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Quick-Fire Quiz Pack</title>
-<style>
-  body { font-family: "Segoe UI", Arial, sans-serif; color: #000000; padding: 20px; line-height: 1.3; margin: 0; }
-  .print-page { page-break-after: always; padding: 10px 0; clear: both; box-sizing: border-box; position: relative; }
-  .print-page-last { padding: 10px 0; clear: both; box-sizing: border-box; position: relative; }
-  .main-title { font-size: 15pt; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 5px; color: #000000; display: flex; justify-content: space-between; align-items: baseline; }
-  .main-title-right { font-size: 9pt; font-weight: normal; text-transform: none; }
-  .spec-box { border: 1px solid #c0c0c0; border-radius: 4px; padding: 12px; margin-bottom: 12px; font-size: 9pt; }
-  .spec-box strong { color: #000000; display: block; margin-bottom: 6px; font-size: 9.5pt; }
-  .spec-point { display: flex; gap: 8px; margin-bottom: 4px; align-items: flex-start; }
-  .spec-point-box { width: 10px; height: 10px; border: 1px solid #000; margin-top: 3px; flex-shrink: 0; }
-  .instruction-box { border: 1.5px solid #000000; border-radius: 4px; padding: 12px; margin-bottom: 20px; font-size: 9.5pt; }
-  .instruction-box strong { color: #d97706; display: block; margin-bottom: 4px; font-size: 10pt; text-transform: uppercase; }
-  .columns { column-count: 2; column-gap: 40px; }
-  .question-container { margin-bottom: 16px; break-inside: avoid-column; page-break-inside: avoid; }
-  .q-text { font-weight: bold; font-size: 9.5pt; color: #000000; margin-bottom: 10px; line-height: 1.4; }
-  .dotted-line { border-bottom: 1px dashed #a0a0a0; height: 20px; }
-  .answer-text { font-size: 9pt; line-height: 1.35; margin-top: 5px; }
-  .answer-text strong { color: #16a34a; font-weight: 600; }
-  .answer-text em { color: #000000; display: block; margin-top: 2px; font-style: normal; }
-  .footer-row { display: flex; gap: 15px; margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 20px; }
-  .footer-box { border: 1.5px solid #000000; padding: 12px; border-radius: 2px; break-inside: avoid; page-break-inside: avoid; }
-  @media print {
-    body { padding: 0; margin: 0; }
-    .print-page, .print-page-last { padding: 0; margin: 0; }
-  }
-</style>
-</head>
-<body>`;
-    QUIZ_DATA.forEach((topic, tIdx) => {
-      topic.subtopics.forEach((subtopic, sIdx) => {
-        const lessonData = LESSONS_DATA[subtopic.id] || { specPoints: [] };
-        const specHtml = lessonData.specPoints.map((sp) => `<div class="spec-point"><div class="spec-point-box"></div><div>${sp}</div></div>`).join("");
-        const isLastQPage = tIdx === QUIZ_DATA.length - 1 && sIdx === topic.subtopics.length - 1 && !includeAnswers;
-        html += `
-        <div class="${isLastQPage ? "print-page-last" : "print-page"}" ${!isLastQPage ? 'style="page-break-after: always;"' : ""}>
-          <div class="main-title">
-            <span>${subtopic.title.split(":")[0]}: QUICK-FIRE QUIZ</span>
-            <span class="main-title-right">GCSE History Lesson Resource - Workbook</span>
-          </div>
-
-          <div class="spec-box">
-            <strong>\u{1F4CB} CURRICULUM SPECIFICATION CHECKLIST (GCSE SYLLABUS)</strong>
-            ${specHtml}
-          </div>
-
-          <div class="instruction-box">
-            <strong>\u270F\uFE0F INSTRUCTIONS</strong>
-            Answer all 10 questions from memory. Write your answers clearly on the dotted lines. Keep your answers brief.
-          </div>
-
-          <div class="columns">
-      `;
-        subtopic.standard.forEach((q, qIdx) => {
-          html += `
-            <div class="question-container">
-              <div class="q-text">Q${qIdx + 1}: ${q.question}</div>
-              <div class="dotted-line"></div>
-              <div class="dotted-line"></div>
-              <div class="dotted-line"></div>
-            </div>
-        `;
-        });
-        html += `
-          </div>
-        </div>
-      `;
-        if (includeAnswers) {
-          const isLastAPage = tIdx === QUIZ_DATA.length - 1 && sIdx === topic.subtopics.length - 1;
-          html += `
-          <div class="${isLastAPage ? "print-page-last" : "print-page"}" ${!isLastAPage ? 'style="page-break-after: always;"' : ""}>
-            <div class="main-title">
-              <span>${subtopic.title.split(":")[0]}: QUIZ ANSWER KEY & EXPLANATIONS</span>
-              <span class="main-title-right">GCSE History Lesson Resource - Workbook</span>
-            </div>
-
-            <div class="columns">
-        `;
-          subtopic.standard.forEach((q, qIdx) => {
-            html += `
-              <div class="question-container" style="margin-bottom: 16px;">
-                <div class="q-text" style="margin-bottom: 2px;">Q${qIdx + 1}: ${q.question}</div>
-                <div class="answer-text">
-                  <strong>Correct Answer:</strong> ${q.answer}
-                  <em>${q.explanation}</em>
-                </div>
-              </div>
-          `;
-          });
-          html += `
-            </div>
-
-            <div class="footer-row">
-              <div class="footer-box" style="flex: 1; text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                <strong style="font-size: 10pt;">SCORE TRACKER</strong>
-                <div style="margin-top: 12px; font-size: 16pt; font-weight: bold; border: 1px dashed #a0a0a0; padding: 10px; width: 80px; margin: 0 auto;">/ 10</div>
-              </div>
-              <div class="footer-box" style="flex: 2;">
-                <strong style="font-size: 10pt; display: flex; align-items: center; gap: 6px;">\u{1F4CA} PERFORMANCE BOUNDARIES</strong>
-                <div style="font-size: 9pt; margin-top: 10px; line-height: 1.5;">
-                  <strong>9\u201310 Marks:</strong> Mastery (Level 9 Focus) - Excellent recall.<br/>
-                  <strong>7\u20138 Marks:</strong> Strong (Level 7 Focus) - Solid foundation.<br/>
-                  <strong>Under 7 Marks:</strong> Focus Needed - Re-read narrative & vocabulary.
-                </div>
-              </div>
-              <div class="footer-box" style="flex: 1.5; background: #f8fafc; border-color: #cbd5e1;">
-                <strong style="font-size: 10pt; color: #000000;">\u{1F50D} DIAGNOSTIC STUDY GUIDE</strong>
-                <div style="font-size: 9pt; margin-top: 10px; line-height: 1.5; color: #000000;">
-                  If you struggled with any question:<br/>
-                  1. Re-read the Lesson Study Narrative.<br/>
-                  2. Review the Vocab Spotlight terms.<br/>
-                  3. Re-test using active recall.
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-        }
-      });
-    });
-    html += `</body></html>`;
-    return html;
-  }
   function generateExaminerQuizPackHtml(includeAnswers) {
     let html = `<!DOCTYPE html>
 <html lang="en">
@@ -37455,9 +37325,6 @@ rgba(255,255,255,0.2);">
     return html;
   }
   function generateBulkWorkbookHtml(style, density, includeAnswers) {
-    if (style === "quiz") {
-      return generateQuizPackHtml(includeAnswers);
-    }
     if (style === "examiner-quiz") {
       return generateExaminerQuizPackHtml(includeAnswers);
     }

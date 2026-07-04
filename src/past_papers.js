@@ -1737,7 +1737,7 @@ export function initBulkWorkbookCreator() {
     const densitySelector = document.getElementById('preview-density').parentElement;
     const answersSelector = document.getElementById('preview-answers').parentElement;
 
-    if (activeStyle === 'revision' || activeStyle === 'interpretations' || activeStyle === 'foundation' || activeStyle === 'sources' || activeStyle === 'vocabulary' || activeStyle === 'chronology' || activeStyle === 'comparison') {
+    if (activeStyle === 'revision' || activeStyle === 'interpretations' || activeStyle === 'foundation' || activeStyle === 'sources' || activeStyle === 'vocabulary' || activeStyle === 'chronology') {
       // Hide density/answers toolbar controls for standalone print files
       if (densitySelector) densitySelector.style.display = 'none';
       if (answersSelector) answersSelector.style.display = 'none';
@@ -1748,7 +1748,6 @@ export function initBulkWorkbookCreator() {
       if (activeStyle === 'foundation') url = 'foundation_quiz_pack.html';
       if (activeStyle === 'vocabulary') url = 'vocabulary_workbook.html';
       if (activeStyle === 'chronology') url = 'chronology_workbook.html';
-      if (activeStyle === 'comparison') url = 'concept_comparison_workbook.html';
 
       iframe.src = url;
     } else {
@@ -1825,14 +1824,13 @@ export function initBulkWorkbookCreator() {
   if (btnWord) {
     btnWord.addEventListener('click', () => {
       AudioEngine.play('click');
-      if (activeStyle === 'revision' || activeStyle === 'interpretations' || activeStyle === 'foundation' || activeStyle === 'sources' || activeStyle === 'vocabulary' || activeStyle === 'chronology' || activeStyle === 'comparison') {
+      if (activeStyle === 'revision' || activeStyle === 'interpretations' || activeStyle === 'foundation' || activeStyle === 'sources' || activeStyle === 'vocabulary' || activeStyle === 'chronology') {
         let packName = "Active Revision Pack";
         if (activeStyle === 'interpretations') packName = "Interpretations Practice Book";
         if (activeStyle === 'sources') packName = "Sources Practice Book";
         if (activeStyle === 'foundation') packName = "Foundation Quiz Pack";
-        if (activeStyle === 'vocabulary') packName = "Key Vocabulary Workbook";
+        if (activeStyle === 'vocabulary') packName = "Concept Maps & Vocabulary Workbook";
         if (activeStyle === 'chronology') packName = "Chronology & Timeline Workbook";
-        if (activeStyle === 'comparison') packName = "Concept Comparison Workbook";
         alert(`The ${packName} is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print (Web)' instead.`);
         return;
       }
