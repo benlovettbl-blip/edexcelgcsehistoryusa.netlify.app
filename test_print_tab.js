@@ -197,36 +197,66 @@ function fireClick(element) {
     if (printCalledCount === 0) {
       throw new Error("Clicking #btn-print-exam-sheet did not call window.print()!");
     }
-    if (!printArea.innerHTML.includes("Pearson Edexcel GCSE History")) {
+    if (!printArea.innerHTML.includes("GCSE History Paper 3 Simulation")) {
       throw new Error("Compiled past paper content was not written to #print-area!");
     }
     console.log("✓ TEST 3 PASSED: Past Exam Paper printed inline via print-area.");
 
-    // --- TEST 4: Bulk Worksheet Pack Print (opens tab, writes once) ---
-    console.log("\n--- TEST 4: Bulk Worksheet Pack Print ---");
-    // Switch to Educator Panel
-    const educatorTabBtn = Array.from(document.querySelectorAll('.exam-tab-btn')).find(btn => btn.getAttribute('data-panel') === 'educator-hub');
-    fireClick(educatorTabBtn);
+    // --- TEST 4: Bulk Worksheet Pack Print (renders in iframe and prints) ---
+    console.log("\n--- TEST 4: Bulk Worksheet Pack Print (iframe-based) ---");
+    // Switch to Educator Panel via navigation link
+    const educatorNavBtn = document.getElementById('nav-worksheets');
+    fireClick(educatorNavBtn);
     
-    const printBulkBtn = document.getElementById('btn-bulk-workbook-print');
-    if (!printBulkBtn) {
-      throw new Error("Bulk print button (#btn-bulk-workbook-print) not found!");
+    // Select the first worksheet gallery card (Course Workbook with style booklet)
+    const galleryCard = Array.from(document.querySelectorAll('.worksheet-gallery-card')).find(card => card.getAttribute('data-style') === 'booklet');
+    if (!galleryCard) {
+      throw new Error("Worksheet gallery card with data-style='booklet' not found!");
     }
     
-    // Reset window tracker
-    openedWindows = [];
-    fireClick(printBulkBtn);
+    // Click the card to open preview and render
+    fireClick(galleryCard);
     
-    if (openedWindows.length === 0) {
-      throw new Error("Clicking #btn-bulk-workbook-print did not call window.open!");
+    const previewArea = document.getElementById('educator-hub-preview-area');
+    if (previewArea.style.display === 'none') {
+      throw new Error("Clicking gallery card did not reveal the preview area!");
     }
     
-    const win4 = openedWindows[0];
-    console.log("  - window.open called synchronously.");
-    if (!win4.win.document.writtenContent.includes("GCSE History Lesson Resource -")) {
-      throw new Error("Compiled bulk worksheets pack content was not written to the tab!");
+    const iframe = document.getElementById('worksheet-preview-iframe');
+    if (!iframe) {
+      throw new Error("Worksheet preview iframe (#worksheet-preview-iframe) not found!");
     }
-    console.log("✓ TEST 4 PASSED: Bulk Worksheet Pack opened and compiled correctly.");
+    
+    // Mock the iframe's contentWindow print function
+    let iframePrintCalled = false;
+    if (iframe.contentWindow) {
+      iframe.contentWindow.print = () => {
+        iframePrintCalled = true;
+      };
+    }
+    
+    // Get the print button in the preview toolbar
+    const printPreviewBtn = document.getElementById('btn-preview-print');
+    if (!printPreviewBtn) {
+      throw new Error("Print button (#btn-preview-print) not found in preview toolbar!");
+    }
+    
+    // Click the print button
+    fireClick(printPreviewBtn);
+    
+    if (!iframePrintCalled) {
+      throw new Error("Clicking #btn-preview-print did not call print() on the iframe contentWindow!");
+    }
+    
+    // Check if the generated HTML content contains the expected text
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    const iframeHtml = iframeDoc.documentElement.innerHTML;
+    
+    if (!iframeHtml.includes("GCSE History Lesson Resource -")) {
+      throw new Error("Compiled bulk worksheets pack content was not written to the iframe!");
+    }
+    
+    console.log("✓ TEST 4 PASSED: Bulk Worksheet Pack rendered in iframe and printed correctly.");
 
     console.log("\n=================================================");
     console.log("ALL TARGETED PRINT TESTS COMPLETED SUCCESSFULLY!");

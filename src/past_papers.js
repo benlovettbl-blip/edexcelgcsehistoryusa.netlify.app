@@ -1082,7 +1082,7 @@ export function generatePastPaperHtml(paper, printMode) {
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head>
   <meta charset="utf-8">
-  <title>${paper.title} - Pearson Edexcel GCSE</title>
+  <title>${paper.title} - GCSE History Simulation</title>
   <style>
     @page {
       size: 21cm 29.7cm; /* A4 */
@@ -1322,7 +1322,7 @@ export function generatePastPaperHtml(paper, printMode) {
     </table>
 
     <div class="edexcel-title-block">
-      <span class="edexcel-title-pearson">Pearson Edexcel GCSE (9-1)</span>
+      <span class="edexcel-title-pearson">GCSE (9-1) History Simulation</span>
       <div style="height: 2px; background: #000; margin: 8px 0;"></div>
       <span class="edexcel-title-main">History</span>
       <span style="font-size: 11.5pt; font-weight: bold; display: block; margin-top: 4px;">Paper 3: Modern depth study</span>
@@ -1367,7 +1367,7 @@ export function generatePastPaperHtml(paper, printMode) {
     </div>
 
     <div class="edexcel-double-line"></div>
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 1</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 1</div>
   </div>
 
   <!-- PAGE 2: Q1 SOURCE INFERENCE -->
@@ -1391,7 +1391,7 @@ export function generatePastPaperHtml(paper, printMode) {
       ${q1Content}
     </div>
 
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 2</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 2</div>
   </div>
 
   <!-- PAGE 3: Q2 CAUSATION ESSAY -->
@@ -1409,7 +1409,7 @@ export function generatePastPaperHtml(paper, printMode) {
       20
     )}
 
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 3</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 3</div>
   </div>
 
   <!-- PAGE 4: SOURCES BOOKLET (SECTION C) -->
@@ -1433,7 +1433,7 @@ export function generatePastPaperHtml(paper, printMode) {
       </div>
     ` : ''}
 
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 4</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 4</div>
   </div>
 
   <!-- PAGE 5: INTERPRETATIONS BOOKLET (SECTION C) -->
@@ -1457,7 +1457,7 @@ export function generatePastPaperHtml(paper, printMode) {
       </div>
     ` : ''}
 
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 5</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 5</div>
   </div>
 
   <!-- PAGE 6: QUESTION 3A -->
@@ -1477,7 +1477,7 @@ export function generatePastPaperHtml(paper, printMode) {
       16
     )}
 
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 6</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 6</div>
   </div>
 
   <!-- PAGE 7: QUESTION 3B -->
@@ -1495,7 +1495,7 @@ export function generatePastPaperHtml(paper, printMode) {
       10
     )}
 
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 7</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 7</div>
   </div>
 
   <!-- PAGE 8: QUESTION 3C -->
@@ -1513,7 +1513,7 @@ export function generatePastPaperHtml(paper, printMode) {
       10
     )}
 
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 8</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 8</div>
   </div>
 
   <!-- PAGE 9: QUESTION 3D -->
@@ -1531,7 +1531,7 @@ export function generatePastPaperHtml(paper, printMode) {
       25
     )}
 
-    <div class="footer-note">Pearson Edexcel GCSE History &bull; Paper 3: USA, 1954-75 &bull; Page 9</div>
+    <div class="footer-note">GCSE History Paper 3 Simulation &bull; USA, 1954-75 &bull; Page 9</div>
   </div>
 </body>
 </html>`;
@@ -1722,63 +1722,131 @@ export function downloadHtmlAsWord(filename, htmlContent) {
 }
 
 export function initBulkWorkbookCreator() {
-  const btnPrint = document.getElementById('btn-bulk-workbook-print');
-  const btnWord = document.getElementById('btn-bulk-workbook-word');
+  const gallery = document.getElementById('educator-hub-gallery');
+  const previewArea = document.getElementById('educator-hub-preview-area');
+  const iframe = document.getElementById('worksheet-preview-iframe');
 
+  if (!gallery || !previewArea || !iframe) return;
+
+  let activeStyle = '';
+
+  function renderPreview() {
+    const density = document.getElementById('preview-density').value;
+    const answers = document.getElementById('preview-answers').value;
+    
+    const densitySelector = document.getElementById('preview-density').parentElement;
+    const answersSelector = document.getElementById('preview-answers').parentElement;
+
+    if (activeStyle === 'revision' || activeStyle === 'interpretations' || activeStyle === 'foundation' || activeStyle === 'sources' || activeStyle === 'scaffolds' || activeStyle === 'vocabulary' || activeStyle === 'chronology' || activeStyle === 'comparison') {
+      // Hide density/answers toolbar controls for standalone print files
+      if (densitySelector) densitySelector.style.display = 'none';
+      if (answersSelector) answersSelector.style.display = 'none';
+
+      let url = 'revision_workbook_usa.html';
+      if (activeStyle === 'interpretations') url = 'interpretations_practice.html';
+      if (activeStyle === 'sources') url = 'sources_practice.html';
+      if (activeStyle === 'foundation') url = 'foundation_quiz_pack.html';
+      if (activeStyle === 'scaffolds') url = 'exam_writing_scaffolds.html';
+      if (activeStyle === 'vocabulary') url = 'vocabulary_workbook.html';
+      if (activeStyle === 'chronology') url = 'chronology_workbook.html';
+      if (activeStyle === 'comparison') url = 'concept_comparison_workbook.html';
+
+      iframe.src = url;
+    } else {
+      // Show controls for dynamically compiled worksheets
+      if (densitySelector) densitySelector.style.display = 'flex';
+      if (answersSelector) answersSelector.style.display = 'flex';
+
+      iframe.removeAttribute('src');
+      const html = window.generateBulkWorkbookHtml(activeStyle, density, answers === 'yes');
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      doc.open();
+      doc.write(html);
+      doc.close();
+    }
+  }
+
+  // Bind gallery card clicks
+  document.querySelectorAll('.worksheet-gallery-card').forEach(card => {
+    card.addEventListener('click', () => {
+      AudioEngine.play('click');
+      activeStyle = card.getAttribute('data-style');
+      gallery.style.display = 'none';
+      previewArea.style.display = 'block';
+      renderPreview();
+    });
+  });
+
+  // Bind back button
+  const btnBack = document.getElementById('btn-preview-back');
+  if (btnBack) {
+    btnBack.addEventListener('click', () => {
+      AudioEngine.play('click');
+      gallery.style.display = 'block';
+      previewArea.style.display = 'none';
+      iframe.removeAttribute('src');
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      doc.open();
+      doc.write('');
+      doc.close();
+    });
+  }
+
+  // Bind toolbar changes
+  const selectDensity = document.getElementById('preview-density');
+  if (selectDensity) {
+    selectDensity.addEventListener('change', () => {
+      AudioEngine.play('click');
+      renderPreview();
+    });
+  }
+
+  const selectAnswers = document.getElementById('preview-answers');
+  if (selectAnswers) {
+    selectAnswers.addEventListener('change', () => {
+      AudioEngine.play('click');
+      renderPreview();
+    });
+  }
+
+  // Bind Print Action
+  const btnPrint = document.getElementById('btn-preview-print');
   if (btnPrint) {
     btnPrint.addEventListener('click', () => {
-      const style = document.getElementById('bulk-workbook-style').value;
-      const density = document.getElementById('bulk-workbook-density').value;
-      const answers = document.getElementById('bulk-workbook-answers').value;
-      
       AudioEngine.play('click');
-      
-      if (style === 'revision') {
-        window.open('revision_workbook_usa.html', '_blank');
-        return;
-      }
-      if (style === 'interpretations') {
-        window.open('interpretations_practice.html', '_blank');
-        return;
-      }
-      if (style === 'foundation') {
-        window.open('foundation_quiz_pack.html', '_blank');
-        return;
-      }
-      
-      const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
-      
-      const newWin = window.open();
-      if (newWin) {
-        newWin.document.write(html);
-        newWin.document.close();
-      } else {
-        alert("Pop-up blocker prevented opening the bulk worksheets. Please allow popups for this site.");
+      if (iframe.contentWindow) {
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
       }
     });
   }
 
+  // Bind Word Action
+  const btnWord = document.getElementById('btn-preview-word');
   if (btnWord) {
     btnWord.addEventListener('click', () => {
-      const style = document.getElementById('bulk-workbook-style').value;
-      const density = document.getElementById('bulk-workbook-density').value;
-      const answers = document.getElementById('bulk-workbook-answers').value;
-      
       AudioEngine.play('click');
-      
-      if (style === 'revision' || style === 'interpretations' || style === 'foundation') {
+      if (activeStyle === 'revision' || activeStyle === 'interpretations' || activeStyle === 'foundation' || activeStyle === 'sources' || activeStyle === 'scaffolds' || activeStyle === 'vocabulary' || activeStyle === 'chronology' || activeStyle === 'comparison') {
         let packName = "Active Revision Pack";
-        if (style === 'interpretations') packName = "Interpretations Practice Book";
-        if (style === 'foundation') packName = "Foundation Quiz Pack";
-        alert(`The ${packName} is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print Pack (Web)' instead.`);
+        if (activeStyle === 'interpretations') packName = "Interpretations Practice Book";
+        if (activeStyle === 'sources') packName = "Sources Practice Book";
+        if (activeStyle === 'foundation') packName = "Foundation Quiz Pack";
+        if (activeStyle === 'scaffolds') packName = "Exam Writing Scaffolds";
+        if (activeStyle === 'vocabulary') packName = "Key Vocabulary Workbook";
+        if (activeStyle === 'chronology') packName = "Chronology & Timeline Workbook";
+        if (activeStyle === 'comparison') packName = "Concept Comparison Workbook";
+        alert(`The ${packName} is strictly designed for web printing directly to A4 to preserve layout. Please click 'Print (Web)' instead.`);
         return;
       }
       
-      const html = window.generateBulkWorkbookHtml(style, density, answers === 'yes');
-      const styleLabel = style.charAt(0).toUpperCase() + style.slice(1);
+      const density = document.getElementById('preview-density').value;
+      const answers = document.getElementById('preview-answers').value;
+      const html = window.generateBulkWorkbookHtml(activeStyle, density, answers === 'yes');
+      const styleLabel = activeStyle.charAt(0).toUpperCase() + activeStyle.slice(1);
       
       downloadHtmlAsWord(`Course_Worksheet_Pack_All_Lessons_${styleLabel}.doc`, html);
       AudioEngine.play('success');
     });
   }
 }
+

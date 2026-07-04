@@ -6288,6 +6288,87 @@ details > summary::marker {
   }
 }
 
+/* Custom Map Marker styles for Map Explorer */
+.custom-map-marker {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.custom-map-marker-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.custom-map-marker-pin {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.custom-map-marker-pulse {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: map-marker-ping 2.2s infinite cubic-bezier(0.1, 0.8, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* USA Marker Theme styling */
+.custom-map-marker-pin.usa-pin {
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary), 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.custom-map-marker-container:hover .custom-map-marker-pin.usa-pin {
+  transform: scale(1.35);
+  background: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 0 15px var(--primary), 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+.custom-map-marker-pulse.usa-pulse {
+  border: 1.5px solid var(--primary);
+  background: var(--primary-glow);
+}
+
+/* Vietnam Marker Theme styling */
+.custom-map-marker-pin.vietnam-pin {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent), 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.custom-map-marker-container:hover .custom-map-marker-pin.vietnam-pin {
+  transform: scale(1.35);
+  background: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent), 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+.custom-map-marker-pulse.vietnam-pulse {
+  border: 1.5px solid var(--accent);
+  background: var(--accent-glow);
+}
+
+@keyframes map-marker-ping {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
 /* --- 10-Step Unit Mastery Journey Accordion Styles --- */
 .mastery-journey-container {
   display: flex;
@@ -7833,7 +7914,7 @@ input:checked + .switch-slider:before {
   }
 }
 
-/* Upgrades for Edexcel GCSE History USA Lesson Modules */
+/* Upgrades for GCSE History USA Lesson Modules */
 
 .mastery-checkbox-container.mastered-secured {
   background-color: #06b6d4 !important;
@@ -8990,7 +9071,7 @@ input:checked + .switch-slider:before {
     page-break-after: avoid;
   }
 
-  /* Edexcel GCSE Exam Paper Layout Styles */
+  /* GCSE Exam Paper Layout Styles */
   .edexcel-header-table {
     width: 100%;
     border-collapse: collapse;
@@ -9825,3 +9906,35 @@ body.printing-active #print-area {
   .scumbag-card-locked .foil-pack-body {
     border-radius: var(--border-radius-md);
   }
+
+/* AI Audio Overview & Wave Animations */
+@keyframes bounceWave {
+  0% {
+    height: 3px;
+  }
+  100% {
+    height: 14px;
+  }
+}
+
+.ai-audio-player-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ai-audio-player-card:hover {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.audio-wave-anim .bar {
+  transform-origin: bottom;
+}
+
+.btn-ai-podcast-play:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
+}
+
+.btn-ai-podcast-play:active {
+  transform: translateY(0);
+}

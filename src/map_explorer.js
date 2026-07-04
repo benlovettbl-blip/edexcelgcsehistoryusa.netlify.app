@@ -272,6 +272,34 @@ export const MAP_LOCATIONS_VIETNAM = [
 let mapUsa = null;
 let mapVietnam = null;
 
+function loadLeaflet(callback) {
+  if (window.L) {
+    callback();
+    return;
+  }
+
+  // Dynamically load Leaflet stylesheet
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+  link.crossOrigin = '';
+  document.head.appendChild(link);
+
+  // Dynamically load Leaflet script
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+  script.crossOrigin = '';
+  script.onload = () => {
+    callback();
+  };
+  script.onerror = () => {
+    console.error('Failed to dynamically load Leaflet Map library.');
+  };
+  document.head.appendChild(script);
+}
+
 export function initMapExplorer() {
   // Bind Map Tab Switching
   const btnUsa = document.getElementById('btn-map-tab-usa');
@@ -315,16 +343,18 @@ export function initMapExplorer() {
     wrapperUsa.style.display = 'block';
     wrapperVietnam.style.display = 'none';
 
-    // Lazy initialize Leaflet maps
-    if (!mapUsa) {
-      setupMaps();
-    } else {
-      // Refresh sizing
-      setTimeout(() => {
-        if (mapUsa) mapUsa.invalidateSize();
-        if (mapVietnam) mapVietnam.invalidateSize();
-      }, 100);
-    }
+    // Lazy initialize Leaflet maps after dynamically loading it
+    loadLeaflet(() => {
+      if (!mapUsa) {
+        setupMaps();
+      } else {
+        // Refresh sizing
+        setTimeout(() => {
+          if (mapUsa) mapUsa.invalidateSize();
+          if (mapVietnam) mapVietnam.invalidateSize();
+        }, 100);
+      }
+    });
   });
 }
 
@@ -348,9 +378,36 @@ function setupMaps() {
     maxZoom: 19
   }).addTo(mapVietnam);
 
+  // Create Custom Icons
+  const usaIcon = L.divIcon({
+    className: 'custom-map-marker',
+    html: `
+      <div class="custom-map-marker-container">
+        <div class="custom-map-marker-pulse usa-pulse"></div>
+        <div class="custom-map-marker-pin usa-pin"></div>
+      </div>
+    `,
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+  });
+
+  const vietnamIcon = L.divIcon({
+    className: 'custom-map-marker',
+    html: `
+      <div class="custom-map-marker-container">
+        <div class="custom-map-marker-pulse vietnam-pulse"></div>
+        <div class="custom-map-marker-pin vietnam-pin"></div>
+      </div>
+    `,
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
+  });
+
   // 3. Add USA Markers
   MAP_LOCATIONS_USA.forEach(loc => {
-    const marker = L.marker([loc.lat, loc.lng]).addTo(mapUsa);
+    const marker = L.marker([loc.lat, loc.lng], { icon: usaIcon }).addTo(mapUsa);
     marker.bindPopup(`<strong>${loc.title}</strong>`);
     marker.on('click', () => {
       AudioEngine.play('ping_usa');
@@ -360,7 +417,7 @@ function setupMaps() {
 
   // 4. Add Vietnam Markers
   MAP_LOCATIONS_VIETNAM.forEach(loc => {
-    const marker = L.marker([loc.lat, loc.lng]).addTo(mapVietnam);
+    const marker = L.marker([loc.lat, loc.lng], { icon: vietnamIcon }).addTo(mapVietnam);
     marker.bindPopup(`<strong>${loc.title}</strong>`);
     marker.on('click', () => {
       AudioEngine.play('ping_vietnam');

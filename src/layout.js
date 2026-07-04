@@ -13,7 +13,7 @@ import {
   setActiveClassicFilter,
   closeVideoModal
 } from './views.js';
-import { startExam, nextExamQuestion, displayExamQuestion, finishExam, showExamSetup } from './exam.js';
+import { startExam, nextExamQuestion, displayExamQuestion, finishExam, showExamSetup, speakRemedial, resumeExamFromRemedial } from './exam.js';
 import { saveProgress } from './storage.js';
 import { startPastPaper, generateMockExam, renderPastPapersView, initBulkWorkbookCreator } from './past_papers.js';
 import { initWorkbookCreator } from './lessons.js';
@@ -333,7 +333,7 @@ function initializePracticeDropdowns() {
     selectEl.innerHTML = `<option value="" disabled selected>-- Select a ${sectionName} Topic --</option>`;
     
     const presetsGroup = document.createElement('optgroup');
-    presetsGroup.label = 'Official Edexcel Past Papers / Presets';
+    presetsGroup.label = 'Practice Papers / Presets';
     presetsGroup.style.background = 'var(--bg-card)';
     presetsGroup.style.color = 'var(--text-main)';
 
@@ -694,6 +694,34 @@ function bindEvents() {
 
 
 
+  const adaptiveToggle = document.getElementById('exam-mode-adaptive');
+  const analyticalToggle = document.getElementById('exam-mode-analytical');
+  
+  if (adaptiveToggle && analyticalToggle) {
+    const syncToggles = () => {
+      if (adaptiveToggle.checked) {
+        analyticalToggle.checked = false;
+        analyticalToggle.disabled = true;
+        analyticalToggle.parentElement.parentElement.style.opacity = '0.5';
+        analyticalToggle.parentElement.parentElement.style.pointerEvents = 'none';
+      } else {
+        analyticalToggle.disabled = false;
+        analyticalToggle.parentElement.parentElement.style.opacity = '1';
+        analyticalToggle.parentElement.parentElement.style.pointerEvents = 'auto';
+      }
+    };
+
+    adaptiveToggle.addEventListener('change', syncToggles);
+    analyticalToggle.addEventListener('change', () => {
+      if (analyticalToggle.checked) {
+        adaptiveToggle.checked = false;
+      }
+    });
+
+    // Run once at load
+    syncToggles();
+  }
+
   document.getElementById('btn-exam-start').addEventListener('click', () => {
     AudioEngine.play('click');
     const scope = document.getElementById('exam-scope-select').value;
@@ -723,6 +751,16 @@ function bindEvents() {
   document.getElementById('btn-exam-next').addEventListener('click', () => {
     AudioEngine.play('click');
     nextExamQuestion();
+  });
+
+  // Remedial Review Panel bindings
+  document.getElementById('btn-remedial-speak').addEventListener('click', () => {
+    speakRemedial();
+  });
+
+  document.getElementById('btn-remedial-resume').addEventListener('click', () => {
+    AudioEngine.play('click');
+    resumeExamFromRemedial();
   });
   
   // Self-Grading buttons removed (dead code)

@@ -3,13 +3,278 @@ import { AudioEngine } from './audio.js';
 import { Confetti } from './confetti.js';
 import { switchView } from './navigation.js';
 import { initExamLeaderboard, addXp } from './views.js';
+import { LESSONS_DATA } from './lessons_data.js';
 
+// --- Adaptive Pathing Router Engine ---
+const AdaptiveRouter = {
+  recordAnswer(questionId, subtopicId, isCorrect) {
+    const history = state.examSession.rollingHistory;
+    history.push({ subtopicId, isCorrect });
+    if (history.length > 5) {
+      history.shift();
+    }
+  },
+
+  determineNextQuestion(currentSubtopicId) {
+    const history = state.examSession.rollingHistory;
+    
+    // Filter history for the active subtopic
+    const subtopicHistory = history.filter(h => h.subtopicId === currentSubtopicId);
+    
+    // Last 5 answers for rolling window metrics
+    const lastAnswers = subtopicHistory.slice(-5);
+    const incorrectCount = lastAnswers.filter(h => !h.isCorrect).length;
+    
+    // Calculate consecutive correct answers at the end of the history stream
+    const getConsecutiveCorrect = () => {
+      let count = 0;
+      for (let i = subtopicHistory.length - 1; i >= 0; i--) {
+        if (subtopicHistory[i].isCorrect) {
+          count++;
+        } else {
+          break;
+        }
+      }
+      return count;
+    };
+
+    const consecutiveCorrect = getConsecutiveCorrect();
+    const currentDiff = state.examSession.currentDifficulty;
+
+    // State machine logic:
+    if (currentDiff === 'easy') {
+      // Ramp-back trigger: 2 consecutive correct answers on easy downshifted questions
+      if (consecutiveCorrect >= 2) {
+        console.log(`[Adaptive Router] Ramp-up: 2 correct at 'easy'. Moving back to 'medium'.`);
+        state.examSession.currentDifficulty = 'medium';
+        return {
+          targetSubtopicId: currentSubtopicId,
+          difficulty: 'medium',
+          triggerRemedialInfo: false
+        };
+      }
+    } else if (currentDiff === 'medium') {
+      // Struggling downshift trigger: 3 or more wrong in the last 5
+      if (incorrectCount >= 3) {
+        console.log(`[Adaptive Router] Struggling: ${incorrectCount}/5 wrong at 'medium'. Downshifting to 'easy'.`);
+        state.examSession.currentDifficulty = 'easy';
+        return {
+          targetSubtopicId: currentSubtopicId,
+          difficulty: 'easy',
+          triggerRemedialInfo: true
+        };
+      }
+      // Excellence upshift trigger: 3 correct in a row
+      if (consecutiveCorrect >= 3) {
+        console.log(`[Adaptive Router] Excelling: 3 correct at 'medium'. Moving to 'hard'.`);
+        state.examSession.currentDifficulty = 'hard';
+        return {
+          targetSubtopicId: currentSubtopicId,
+          difficulty: 'hard',
+          triggerRemedialInfo: false
+        };
+      }
+    } else if (currentDiff === 'hard') {
+      // High-ability downshift safeguard: 2 or more wrong in the last 5 at analytical level
+      if (incorrectCount >= 2) {
+        console.log(`[Adaptive Router] Struggling: ${incorrectCount}/5 wrong at 'hard'. Downshifting to 'medium'.`);
+        state.examSession.currentDifficulty = 'medium';
+        return {
+          targetSubtopicId: currentSubtopicId,
+          difficulty: 'medium',
+          triggerRemedialInfo: false
+        };
+      }
+    }
+
+    // Default: keep current difficulty level
+    return {
+      targetSubtopicId: currentSubtopicId,
+      difficulty: state.examSession.currentDifficulty,
+      triggerRemedialInfo: false
+    };
+  },
+
+  getNextQuestion(scope) {
+    let targetSubtopicId = scope;
+    if (scope === 'all' || !scope.startsWith('subtopic_')) {
+      const pool = this.getAvailablePool(scope);
+      if (pool.length === 0) return null;
+      targetSubtopicId = pool[Math.floor(Math.random() * pool.length)].subtopicId;
+    }
+
+    const route = this.determineNextQuestion(targetSubtopicId);
+    
+    // Map difficulty: 'easy' -> 'standard', 'medium' -> 'depth', 'hard' -> 'analytical'
+    let typeFilter = 'depth';
+    let poolSource = state.allQuestions;
+    if (route.difficulty === 'easy') {
+      typeFilter = 'standard';
+    } else if (route.difficulty === 'hard') {
+      typeFilter = 'analytical';
+      poolSource = state.analyticalQuestions;
+    }
+
+    let candidates = poolSource.filter(q => 
+      q.subtopicId === route.targetSubtopicId && 
+      q.type === typeFilter &&
+      !state.examSession.answers.hasOwnProperty(q.id)
+    );
+
+    // Fallback if no matching difficulty type is found
+    if (candidates.length === 0) {
+      candidates = state.allQuestions.filter(q => 
+        q.subtopicId === route.targetSubtopicId && 
+        !state.examSession.answers.hasOwnProperty(q.id)
+      );
+      state.examSession.currentDifficulty = 'medium';
+    }
+
+    // Fallback to analytical pool if all others are exhausted
+    if (candidates.length === 0) {
+      candidates = state.analyticalQuestions.filter(q => 
+        q.subtopicId === route.targetSubtopicId && 
+        !state.examSession.answers.hasOwnProperty(q.id)
+      );
+    }
+
+    if (candidates.length === 0) return null;
+
+    const chosenQ = candidates[Math.floor(Math.random() * candidates.length)];
+    return {
+      question: chosenQ,
+      triggerRemedialInfo: route.triggerRemedialInfo
+    };
+  },
+
+  getAvailablePool(scope) {
+    let pool = [...state.allQuestions, ...state.analyticalQuestions];
+    if (scope !== 'all') {
+      if (scope.startsWith('subtopic_')) {
+        pool = pool.filter(q => q.subtopicId === scope);
+      } else {
+        pool = pool.filter(q => q.topicId === scope);
+      }
+    }
+    return pool.filter(q => !state.examSession.answers.hasOwnProperty(q.id));
+  }
+};
+
+export { AdaptiveRouter };
+
+export let activeRemedialSpeechText = '';
+
+export function showRemedialAlert(subtopicId) {
+  const lessonData = LESSONS_DATA[subtopicId];
+  if (!lessonData) return;
+  
+  if (state.examSession.timerInterval && state.examSession.timeLimit > 0) {
+    clearInterval(state.examSession.timerInterval);
+    state.examSession.timerInterval = null;
+  }
+  
+  const subtopicTitleEl = document.getElementById('remedial-subtopic-title');
+  const textContentEl = document.getElementById('remedial-text-content');
+  if (subtopicTitleEl) subtopicTitleEl.textContent = lessonData.headerTitle;
+  if (textContentEl) textContentEl.textContent = lessonData.headerIntro;
+  
+  activeRemedialSpeechText = `Tutor Review of ${lessonData.headerTitle.replace("KT", "Key Topic")}. ${lessonData.headerIntro}`;
+  
+  document.getElementById('exam-runner-panel').style.display = 'none';
+  document.getElementById('exam-remedial-panel').style.display = 'flex';
+  
+  const speakBtn = document.getElementById('btn-remedial-speak');
+  if (speakBtn) {
+    speakBtn.classList.remove('speaking');
+    speakBtn.innerHTML = `<i class="fa-solid fa-play"></i> Listen to Overview`;
+    speakBtn.style.background = 'var(--accent)';
+  }
+  
+  const wave = document.querySelector('#exam-remedial-panel .remedial-wave-anim');
+  if (wave) {
+    wave.style.display = 'none';
+    wave.querySelectorAll('.bar').forEach(b => b.style.animation = 'none');
+  }
+}
+
+function speakRemedial() {
+  const speakBtn = document.getElementById('btn-remedial-speak');
+  if (!speakBtn) return;
+  
+  const wave = document.querySelector('#exam-remedial-panel .remedial-wave-anim');
+  const waveBars = wave ? wave.querySelectorAll('.bar') : [];
+  
+  if (speakBtn.classList.contains('speaking')) {
+    AudioEngine.stopSpeaking();
+    speakBtn.classList.remove('speaking');
+    speakBtn.innerHTML = `<i class="fa-solid fa-play"></i> Listen to Overview`;
+    speakBtn.style.background = 'var(--accent)';
+    if (wave) wave.style.display = 'none';
+    waveBars.forEach(b => b.style.animation = 'none');
+    return;
+  }
+  
+  AudioEngine.stopSpeaking();
+  AudioEngine.speak(
+    activeRemedialSpeechText,
+    () => { // onstart
+      speakBtn.classList.add('speaking');
+      speakBtn.innerHTML = `<i class="fa-solid fa-circle-stop"></i> Stop`;
+      speakBtn.style.background = '#e11d48';
+      if (wave) wave.style.display = 'flex';
+      waveBars.forEach((bar, idx) => {
+        bar.style.animation = `bounceWave 0.8s ease-in-out infinite alternate`;
+        bar.style.animationDelay = `${idx * 0.15}s`;
+      });
+    },
+    () => { // onend
+      speakBtn.classList.remove('speaking');
+      speakBtn.innerHTML = `<i class="fa-solid fa-play"></i> Listen to Overview`;
+      speakBtn.style.background = 'var(--accent)';
+      if (wave) wave.style.display = 'none';
+      waveBars.forEach(b => b.style.animation = 'none');
+    },
+    () => { // onerror
+      speakBtn.classList.remove('speaking');
+      speakBtn.innerHTML = `<i class="fa-solid fa-play"></i> Listen to Overview`;
+      speakBtn.style.background = 'var(--accent)';
+      if (wave) wave.style.display = 'none';
+      waveBars.forEach(b => b.style.animation = 'none');
+    }
+  );
+}
+
+function resumeExamFromRemedial() {
+  AudioEngine.stopSpeaking();
+  
+  document.getElementById('exam-remedial-panel').style.display = 'none';
+  document.getElementById('exam-runner-panel').style.display = 'flex';
+  
+  if (state.examSession.timeLimit > 0) {
+    if (state.examSession.timerInterval) {
+      clearInterval(state.examSession.timerInterval);
+    }
+    state.examSession.timerInterval = setInterval(() => {
+      state.examSession.timeRemaining--;
+      updateExamTimerDisplay();
+      if (state.examSession.timeRemaining <= 0) {
+        clearInterval(state.examSession.timerInterval);
+        AudioEngine.play('fail');
+        alert("Time is up! Submitting your recall test.");
+        finishExam();
+      }
+    }, 1000);
+  }
+  
+  displayExamQuestion();
+}
 
 // --- Quiz Generator Engine ---
 function showExamSetup() {
   document.getElementById('exam-setup-panel').style.display = 'flex';
   document.getElementById('exam-runner-panel').style.display = 'none';
   document.getElementById('exam-results-panel').style.display = 'none';
+  document.getElementById('exam-remedial-panel').style.display = 'none';
   state.examSession.isActive = false;
   
   if (state.examSession.timerInterval) {
@@ -29,37 +294,54 @@ function startExam(scope, length, timeLimit) {
   state.examSession.grades = {};
   state.examSession.startTime = Date.now();
 
-  // Filter pool of questions based on chosen Scope and Mode
-  const analyticalToggle = document.getElementById('exam-mode-analytical');
-  const isAnalytical = analyticalToggle ? analyticalToggle.checked : false;
-  let pool = isAnalytical ? [...state.analyticalQuestions] : [...state.allQuestions];
-  
-  if (scope !== 'all') {
-    if (scope.startsWith('subtopic_')) {
-      pool = pool.filter(q => q.subtopicId === scope);
-    } else {
-      pool = pool.filter(q => q.topicId === scope);
+  const adaptiveToggle = document.getElementById('exam-mode-adaptive');
+  state.examSession.isAdaptive = adaptiveToggle ? adaptiveToggle.checked : false;
+  state.examSession.rollingHistory = [];
+  state.examSession.currentDifficulty = 'medium';
+  state.examSession.questions = [];
+
+  if (state.examSession.isAdaptive) {
+    // Dynamic selection starts
+    const firstQData = AdaptiveRouter.getNextQuestion(scope);
+    if (!firstQData || !firstQData.question) {
+      alert("No questions found in this scope to start the adaptive challenge.");
+      showExamSetup();
+      return;
     }
-  }
-
-  // Cap requested length to the size of the question pool
-  if (state.examSession.length > pool.length) {
-    state.examSession.length = pool.length;
-  }
-
-  // Shuffle pool before slicing
-  const shuffledPool = [...pool].sort(() => Math.random() - 0.5);
-  const selection = shuffledPool.slice(0, state.examSession.length);
-
-  // Optional: Chronological sort or randomized shuffle
-  const sortOrder = document.getElementById('exam-order-select').value;
-  if (sortOrder === 'chronological') {
-    selection.sort((a, b) => a.year - b.year);
+    state.examSession.questions = [firstQData.question];
   } else {
-    selection.sort(() => Math.random() - 0.5);
-  }
+    // Filter pool of questions based on chosen Scope and Mode
+    const analyticalToggle = document.getElementById('exam-mode-analytical');
+    const isAnalytical = analyticalToggle ? analyticalToggle.checked : false;
+    let pool = isAnalytical ? [...state.analyticalQuestions] : [...state.allQuestions];
+    
+    if (scope !== 'all') {
+      if (scope.startsWith('subtopic_')) {
+        pool = pool.filter(q => q.subtopicId === scope);
+      } else {
+        pool = pool.filter(q => q.topicId === scope);
+      }
+    }
 
-  state.examSession.questions = selection;
+    // Cap requested length to the size of the question pool
+    if (state.examSession.length > pool.length) {
+      state.examSession.length = pool.length;
+    }
+
+    // Shuffle pool before slicing
+    const shuffledPool = [...pool].sort(() => Math.random() - 0.5);
+    const selection = shuffledPool.slice(0, state.examSession.length);
+
+    // Optional: Chronological sort or randomized shuffle
+    const sortOrder = document.getElementById('exam-order-select').value;
+    if (sortOrder === 'chronological') {
+      selection.sort((a, b) => a.year - b.year);
+    } else {
+      selection.sort(() => Math.random() - 0.5);
+    }
+
+    state.examSession.questions = selection;
+  }
 
   // Set up panels
   document.getElementById('exam-setup-panel').style.display = 'none';
@@ -429,7 +711,7 @@ function displayExamQuestion() {
   const questions = state.examSession.questions;
   const q = questions[index];
   
-  document.getElementById('exam-progress-text').textContent = `Question ${index + 1} of ${questions.length}`;
+  document.getElementById('exam-progress-text').textContent = `Question ${index + 1} of ${state.examSession.length}`;
   
   // Update Accuracy during exam based on progress
   const gradesMap = Object.values(state.examSession.grades);
@@ -442,7 +724,30 @@ function displayExamQuestion() {
   // Question Card elements
   const badge = document.getElementById('exam-q-badge');
   if (badge) {
-    badge.style.display = 'none';
+    if (state.examSession.isAdaptive) {
+      badge.style.display = 'inline-block';
+      if (q.type === 'standard') {
+        badge.className = 'badge badge-standard';
+        badge.textContent = 'Core Level';
+        badge.style.background = 'var(--success-glow)';
+        badge.style.color = 'var(--success)';
+        badge.style.borderColor = 'rgba(16, 185, 129, 0.2)';
+      } else if (q.type === 'depth') {
+        badge.className = 'badge';
+        badge.textContent = 'Intermediate Level';
+        badge.style.background = 'rgba(230, 92, 0, 0.05)';
+        badge.style.color = 'var(--primary)';
+        badge.style.borderColor = 'rgba(230, 92, 0, 0.2)';
+      } else if (q.type === 'analytical') {
+        badge.className = 'badge badge-challenge';
+        badge.textContent = 'Advanced Level (High-Yield)';
+        badge.style.background = 'var(--accent-glow)';
+        badge.style.color = 'var(--accent)';
+        badge.style.borderColor = 'rgba(244, 63, 94, 0.2)';
+      }
+    } else {
+      badge.style.display = 'none';
+    }
   }
   
   document.getElementById('exam-q-text').textContent = q.question;
@@ -476,6 +781,10 @@ function selectMCQOption(optionText) {
   const isCorrect = (optionText === q.answer.trim());
   state.examSession.answers[q.id] = optionText;
   state.examSession.grades[q.id] = isCorrect;
+  
+  if (state.examSession.isAdaptive) {
+    AdaptiveRouter.recordAnswer(q.id, q.subtopicId, isCorrect);
+  }
   
   // Play sound and award XP
   AudioEngine.play(isCorrect ? 'success' : 'fail');
@@ -513,11 +822,27 @@ function selectMCQOption(optionText) {
 }
 
 function nextExamQuestion() {
-  const questions = state.examSession.questions;
   state.examSession.activeIndex++;
   
-  if (state.examSession.activeIndex >= questions.length) {
+  if (state.examSession.activeIndex >= state.examSession.length) {
     finishExam();
+    return;
+  }
+  
+  if (state.examSession.isAdaptive) {
+    const nextQData = AdaptiveRouter.getNextQuestion(state.examSession.scope);
+    if (nextQData && nextQData.question) {
+      state.examSession.questions.push(nextQData.question);
+      
+      if (nextQData.triggerRemedialInfo) {
+        showRemedialAlert(nextQData.question.subtopicId);
+      } else {
+        displayExamQuestion();
+      }
+    } else {
+      // Out of questions in scope, finish early
+      finishExam();
+    }
   } else {
     displayExamQuestion();
   }
@@ -658,6 +983,8 @@ export {
   finishExam,
   getLetterGrade,
   getGcseLevel,
-  getUniversalGrade
+  getUniversalGrade,
+  speakRemedial,
+  resumeExamFromRemedial
 };
 

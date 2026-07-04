@@ -6,8 +6,10 @@ import { renderSidebarNav, updateGlobalStats, openVideoModal, addXp } from './vi
 import { saveProgress } from './storage.js';
 import { downloadHtmlAsWord } from './past_papers.js';
 import { WORKBOOK_DATA, SYNTHESIS_TASKS } from './workbook_data.js';
+import { CURATED_WORKSHEET_DATA } from './curated_worksheets.js';
 import { PEEL_DATA } from './peel_data.js';
 import { CORE_QUESTIONS_DATA } from './core_questions_data.js';
+import { startExam } from './exam.js';
 
 const viewedSlides = new Set();
 let activeWorkbookSubtopicId = null;
@@ -2113,6 +2115,55 @@ export async function renderMasteryView(subtopicId) {
           </p>
         </div>
       `;
+    } else {
+      // Option B: Render In-App Audio Overview Player using headerIntro
+      const lessonData = LESSONS_DATA[subtopicId];
+      if (lessonData && lessonData.headerIntro) {
+        const speechText = `AI Overview of ${lessonData.headerTitle.replace("KT", "Key Topic")}. ${lessonData.headerIntro}`;
+        primaryHtml = `
+          <div class="ai-audio-player-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 14px 16px; margin-bottom: 4px; display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden; transition: all var(--transition-fast);">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); background: var(--accent-glow); border: 1px solid rgba(244, 63, 94, 0.2); padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); white-space: nowrap;">🎧 In-App Podcast</span>
+                <strong style="font-size: 0.82rem; color: var(--text-main); font-family: var(--font-heading);">2-Minute AI Audio Overview</strong>
+              </div>
+              <!-- Audio Wave Animation -->
+              <div class="audio-wave-anim" style="display: flex; gap: 2px; align-items: flex-end; height: 14px; margin-right: 4px;">
+                <span class="bar" style="width: 2px; height: 3px; background: var(--accent); border-radius: 1px; transition: height 0.15s ease;"></span>
+                <span class="bar" style="width: 2px; height: 3px; background: var(--accent); border-radius: 1px; transition: height 0.15s ease;"></span>
+                <span class="bar" style="width: 2px; height: 3px; background: var(--accent); border-radius: 1px; transition: height 0.15s ease;"></span>
+                <span class="bar" style="width: 2px; height: 3px; background: var(--accent); border-radius: 1px; transition: height 0.15s ease;"></span>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <button class="mastery-btn btn-ai-podcast-play" data-speech-text="${speechText.replace(/"/g, '&quot;')}" style="background: var(--accent); color: #fff; border: none; font-size: 0.76rem; font-weight: bold; padding: 6px 12px; border-radius: var(--border-radius-sm); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all var(--transition-fast);">
+                <i class="fa-solid fa-play"></i> Listen to Overview
+              </button>
+              <button class="mastery-btn btn-ai-podcast-script-toggle" style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-glass); color: var(--text-main); font-size: 0.76rem; font-weight: bold; padding: 6px 12px; border-radius: var(--border-radius-sm); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all var(--transition-fast);">
+                <i class="fa-solid fa-file-lines"></i> Show Script
+              </button>
+              
+              <!-- Speed Selector -->
+              <div style="display: flex; align-items: center; gap: 6px; margin-left: auto;">
+                <span style="font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-heading); font-weight: 500;">Speed:</span>
+                <select class="select-input select-ai-podcast-speed" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 6px; border-radius: var(--border-radius-sm); cursor: pointer; width: auto; height: auto;">
+                  <option value="0.8">0.8x</option>
+                  <option value="0.95" selected>1.0x</option>
+                  <option value="1.15">1.15x</option>
+                  <option value="1.3">1.3x</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Hidden Script Area -->
+            <div class="ai-podcast-script-panel" style="display: none; background: rgba(0,0,0,0.25); padding: 10px 12px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); font-size: 0.8rem; color: var(--text-muted); line-height: 1.45; max-height: 120px; overflow-y: auto; font-family: var(--font-body);">
+              <strong style="display: block; font-size: 0.72rem; color: var(--text-main); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Narrator Script:</strong>
+              <div class="ai-podcast-script-content" style="text-align: justify;">${lessonData.headerIntro}</div>
+            </div>
+          </div>
+        `;
+      }
     }
 
     let secondaryHtml = '';
@@ -2139,7 +2190,7 @@ export async function renderMasteryView(subtopicId) {
         
         <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--border-radius-sm); padding: 10px 14px;">
           <strong style="font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-            <i class="fa-solid fa-clipboard-question"></i> Video Study Questions:
+            <i class="fa-solid fa-clipboard-question"></i> Video/Audio Study Questions:
           </strong>
           <ul style="margin: 0; padding-left: 20px; font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px; line-height: 1.45;">
             ${questionsList}
@@ -2870,6 +2921,19 @@ export async function renderMasteryView(subtopicId) {
     
     ${deepThinkingHtml}
 
+    <!-- Self-Quiz Integration Card -->
+    <div class="mastery-card lesson-quiz-integration-card" style="max-width: 800px; margin: 0 auto 20px auto; border-left: 6px solid var(--success); background: rgba(16, 185, 129, 0.03);">
+      <h3 class="mastery-card-title" style="color: var(--success);"><i class="fa-solid fa-bolt"></i> Test Your Knowledge</h3>
+      <div class="mastery-card-body" style="padding: 16px 20px; text-align: left;">
+        <p style="margin: 0 0 16px 0; font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">
+          Check how much you remember from this topic! Launch a quick, targeted active recall quiz specifically for <strong>${data.headerTitle.replace(/^KT\s+\d+\.\d+(?:\s+-\s+GCSE\s+CORE\s+MASTERY)?:\s*/i, "")}</strong>.
+        </p>
+        <button class="mastery-btn" id="btn-lesson-targeted-quiz" style="background: var(--success); color: var(--text-inverse); border: none; font-weight: 700; font-size: 0.85rem; padding: 10px 18px; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: var(--shadow-sm); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+          <i class="fa-solid fa-graduation-cap"></i> Start Subtopic Quiz
+        </button>
+      </div>
+    </div>
+
     <!-- Mastery Progress Button -->
     <div class="mastered-button-wrapper" style="max-width: 800px; margin: 0 auto 40px auto; padding: 0 10px;">
       <button class="mastery-btn mastery-btn-success" id="btn-mark-mastery-mastered">
@@ -3022,6 +3086,20 @@ export async function renderMasteryView(subtopicId) {
         b.classList.remove('speaking');
         b.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
       });
+      container.querySelectorAll('.btn-ai-podcast-play').forEach(pb => {
+        if (pb.classList.contains('speaking')) {
+          pb.classList.remove('speaking');
+          pb.innerHTML = `<i class="fa-solid fa-play"></i> Listen to Overview`;
+          pb.style.background = 'var(--accent)';
+          const wave = pb.closest('.ai-audio-player-card').querySelector('.audio-wave-anim');
+          if (wave) {
+            wave.querySelectorAll('.bar').forEach(bar => {
+              bar.style.animation = 'none';
+              bar.style.height = '3px';
+            });
+          }
+        }
+      });
       
       AudioEngine.speak(
         textToRead,
@@ -3038,6 +3116,125 @@ export async function renderMasteryView(subtopicId) {
           btn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
         }
       );
+    });
+  });
+
+  // Bind AI Podcast buttons
+  const podcastPlayButtons = container.querySelectorAll('.btn-ai-podcast-play');
+  podcastPlayButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const textToRead = btn.getAttribute('data-speech-text');
+      const card = btn.closest('.ai-audio-player-card');
+      const wave = card ? card.querySelector('.audio-wave-anim') : null;
+      const waveBars = wave ? wave.querySelectorAll('.bar') : [];
+      const scriptPanel = card ? card.querySelector('.ai-podcast-script-content') : null;
+      const lessonData = LESSONS_DATA[subtopicId];
+      
+      if (btn.classList.contains('speaking')) {
+        AudioEngine.stopSpeaking();
+        btn.classList.remove('speaking');
+        btn.innerHTML = `<i class="fa-solid fa-play"></i> Listen to Overview`;
+        btn.style.background = 'var(--accent)';
+        waveBars.forEach(bar => {
+          bar.style.animation = 'none';
+          bar.style.height = '3px';
+        });
+        if (scriptPanel && lessonData) {
+          scriptPanel.innerHTML = lessonData.headerIntro;
+        }
+        return;
+      }
+      
+      // Stop all other audio buttons (standard TTS buttons + other podcast buttons)
+      container.querySelectorAll('.btn-audio-read, .btn-ai-podcast-play').forEach(b => {
+        if (b !== btn && b.classList.contains('speaking')) {
+          b.click(); // trigger click to stop it
+        }
+      });
+      AudioEngine.stopSpeaking();
+      
+      // Prepare word-by-word wrapping for highlighting
+      if (scriptPanel && lessonData) {
+        const words = lessonData.headerIntro.split(/\s+/);
+        scriptPanel.innerHTML = words.map((w, idx) => `<span class="tts-word" data-word-idx="${idx}" style="transition: background-color var(--transition-fast), color var(--transition-fast);">${w}</span>`).join(' ');
+      }
+      const wordSpans = scriptPanel ? scriptPanel.querySelectorAll('.tts-word') : [];
+      
+      // Read selected speed
+      const speedSelect = card ? card.querySelector('.select-ai-podcast-speed') : null;
+      const currentSpeed = speedSelect ? parseFloat(speedSelect.value) : 0.95;
+      
+      AudioEngine.speak(
+        textToRead,
+        () => { // onstart
+          btn.classList.add('speaking');
+          btn.innerHTML = `<i class="fa-solid fa-circle-stop"></i> Stop Listening`;
+          btn.style.background = '#e11d48'; // dark rose red
+          waveBars.forEach((bar, idx) => {
+            bar.style.animation = `bounceWave 0.8s ease-in-out infinite alternate`;
+            bar.style.animationDelay = `${idx * 0.15}s`;
+          });
+        },
+        () => { // onend
+          btn.classList.remove('speaking');
+          btn.innerHTML = `<i class="fa-solid fa-play"></i> Listen to Overview`;
+          btn.style.background = 'var(--accent)';
+          waveBars.forEach(bar => {
+            bar.style.animation = 'none';
+            bar.style.height = '3px';
+          });
+          if (scriptPanel && lessonData) {
+            scriptPanel.innerHTML = lessonData.headerIntro;
+          }
+        },
+        () => { // onerror
+          btn.classList.remove('speaking');
+          btn.innerHTML = `<i class="fa-solid fa-play"></i> Listen to Overview`;
+          btn.style.background = 'var(--accent)';
+          waveBars.forEach(bar => {
+            bar.style.animation = 'none';
+            bar.style.height = '3px';
+          });
+          if (scriptPanel && lessonData) {
+            scriptPanel.innerHTML = lessonData.headerIntro;
+          }
+        },
+        currentSpeed,
+        lessonData.headerIntro, // highlightText
+        (activeWordIdx) => { // onWordHighlight
+          wordSpans.forEach((span, idx) => {
+            if (idx === activeWordIdx) {
+              span.style.background = 'var(--accent-glow)';
+              span.style.color = 'var(--text-main)';
+              span.style.borderRadius = '3px';
+              span.style.padding = '0 2px';
+            } else {
+              span.style.background = 'none';
+              span.style.color = 'var(--text-muted)';
+              span.style.padding = '0';
+            }
+          });
+        }
+      );
+    });
+  });
+
+  const podcastScriptToggles = container.querySelectorAll('.btn-ai-podcast-script-toggle');
+  podcastScriptToggles.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.ai-audio-player-card');
+      const panel = card.querySelector('.ai-podcast-script-panel');
+      if (panel.style.display === 'none') {
+        panel.style.display = 'block';
+        btn.innerHTML = `<i class="fa-solid fa-file-lines"></i> Hide Script`;
+        btn.style.background = 'rgba(255,255,255,0.1)';
+      } else {
+        panel.style.display = 'none';
+        btn.innerHTML = `<i class="fa-solid fa-file-lines"></i> Show Script`;
+        btn.style.background = 'rgba(255,255,255,0.04)';
+      }
     });
   });
 
@@ -3735,6 +3932,48 @@ export async function renderMasteryView(subtopicId) {
       openVideoModal(url, title);
     });
   });
+
+  // Self-Quiz Integration button click handler
+  const btnLessonQuiz = document.getElementById('btn-lesson-targeted-quiz');
+  if (btnLessonQuiz) {
+    btnLessonQuiz.addEventListener('click', () => {
+      AudioEngine.play('click');
+      // Go to Quiz Generator view
+      switchView('exam');
+      
+      // Update the UI form select controls to match the configuration
+      const scopeSelect = document.getElementById('exam-scope-select');
+      if (scopeSelect) {
+        scopeSelect.value = subtopicId;
+      }
+      const lenSelect = document.getElementById('exam-len-select');
+      if (lenSelect) {
+        lenSelect.value = "5";
+      }
+      const timeSelect = document.getElementById('exam-time-select');
+      if (timeSelect) {
+        timeSelect.value = "0"; // Untimed
+      }
+      const adaptiveToggle = document.getElementById('exam-mode-adaptive');
+      if (adaptiveToggle) {
+        adaptiveToggle.checked = true; // Use adaptive mode (Personalized Tutor) by default
+      }
+      const analyticalToggle = document.getElementById('exam-mode-analytical');
+      if (analyticalToggle) {
+        analyticalToggle.checked = false;
+        // Trigger status updates if there are listeners
+        analyticalToggle.dispatchEvent(new Event('change'));
+      }
+      
+      // Dispatch change event on scopeSelect to ensure any secondary event handlers sync correctly
+      if (scopeSelect) {
+        scopeSelect.dispatchEvent(new Event('change'));
+      }
+      
+      // Start the actual exam session
+      startExam(subtopicId, 5, 0);
+    });
+  }
 
   // Mark Mastery button
   const btnMark = document.getElementById('btn-mark-mastery-mastered');
@@ -4810,18 +5049,252 @@ export function initWorkbookCreator() {
   }
 }
 
+function getClueHint(text) {
+  if (!text) return "";
+  const matchYear = text.match(/\b(19\d{2})\b/g);
+  const matchEntities = text.match(/\b([A-Z][a-zA-Z\.\-]+(?:\s+[A-Z][a-zA-Z\.\-]+)*)\b/g);
+  
+  const clues = [];
+  if (matchYear) {
+    matchYear.forEach(y => { if (!clues.includes(y)) clues.push(y); });
+  }
+  if (matchEntities) {
+    const stopWords = ['One', 'This', 'The', 'Following', 'Point', 'It', 'By', 'In', 'Explain', 'Both', 'To', 'USA', 'US', 'Vietnam', 'American', 'Black', 'White', 'Southern', 'North', 'South', 'Vietcong', 'President', 'Court', 'Source', 'Sources', 'Interpretation', 'Interpretations', 'History', 'Historian', 'Task', 'Factor', 'Key', 'Cornell', 'Methodology'];
+    matchEntities.forEach(ent => {
+      if (!clues.includes(ent) && !stopWords.includes(ent) && ent.length > 2) {
+        clues.push(ent);
+      }
+    });
+  }
+  
+  if (clues.length > 0) {
+    return `<div style="font-size: 7.2pt; color: #4b5563; margin-top: 4px; font-style: italic; font-weight: 500;">Clue Hints: ${clues.slice(0, 3).join(', ')}</div>`;
+  }
+  return "";
+}
+
+function getKeywordTargets(text, subtopicId) {
+  if (!text) return "";
+  const vocab = WORKBOOK_DATA[subtopicId]?.vocabulary || [];
+  const foundTerms = [];
+  vocab.forEach(v => {
+    const escapedTerm = v.term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const regex = new RegExp(`\\b${escapedTerm}\\b`, 'i');
+    if (regex.test(text)) {
+      foundTerms.push(v.term);
+    }
+  });
+  if (foundTerms.length > 0) {
+    return `<div style="font-size: 7.2pt; margin-top: 8px; color: #4b5563; font-weight: bold; font-style: italic;">
+      Target vocabulary: <span style="font-weight: normal; color: #111827;">${foundTerms.join(', ')}</span>
+    </div>`;
+  }
+  
+  // Fallback: extract capitalized proper nouns
+  const matchEntities = text.match(/\b([A-Z][a-zA-Z\.\-]+(?:\s+[A-Z][a-zA-Z\.\-]+)*)\b/g);
+  if (matchEntities) {
+    const stopWords = ['One', 'This', 'The', 'Following', 'Point', 'It', 'By', 'In', 'Explain', 'Both', 'To', 'USA', 'US', 'Vietnam', 'American', 'Black', 'White', 'Southern', 'North', 'South', 'Vietcong', 'President', 'Court', 'Source', 'Sources', 'Interpretation', 'Interpretations', 'History', 'Historian', 'Task', 'Factor', 'Key', 'Cornell', 'Methodology'];
+    const filtered = [];
+    matchEntities.forEach(ent => {
+      if (!filtered.includes(ent) && !stopWords.includes(ent) && ent.length > 2) {
+        filtered.push(ent);
+      }
+    });
+    if (filtered.length > 0) {
+      return `<div style="font-size: 7.2pt; margin-top: 8px; color: #4b5563; font-weight: bold; font-style: italic;">
+        Target vocabulary: <span style="font-weight: normal; color: #111827;">${filtered.slice(0, 3).join(', ')}</span>
+      </div>`;
+    }
+  }
+  return "";
+}
+
+function getLinkingQuestion(subtopicId) {
+  if (subtopicId.startsWith('subtopic_1') || subtopicId.startsWith('subtopic_2')) {
+    return `<strong>GCSE Connection:</strong> How does this event compare to other civil rights milestones in terms of federal support vs. grassroots action?`;
+  } else {
+    return `<strong>GCSE Connection:</strong> How did the events in this unit directly contribute to the growing anti-war movement or domestic credibility gap in the US?`;
+  }
+}
+
+function generateSpacedRecallQuizHtml(currentSubtopicId, includeAnswers) {
+  // Chronological list of all subtopics
+  const allSubtopicIds = [];
+  QUIZ_DATA.forEach(topic => {
+    topic.subtopics.forEach(sub => {
+      allSubtopicIds.push(sub.id);
+    });
+  });
+
+  const currentIdx = allSubtopicIds.indexOf(currentSubtopicId);
+  if (currentIdx === -1) return '';
+
+  const selectedQuestions = [];
+  
+  // Helper to retrieve standard questions
+  const getSubtopicStandardQs = (subId) => {
+    for (const topic of QUIZ_DATA) {
+      const sub = topic.subtopics.find(s => s.id === subId);
+      if (sub && sub.standard) return sub.standard;
+    }
+    return [];
+  };
+
+  const getSubtopicTitle = (subId) => {
+    for (const topic of QUIZ_DATA) {
+      const sub = topic.subtopics.find(s => s.id === subId);
+      if (sub) return sub.title.replace(/^Topic \d\.\d:\s*/, "").split(':')[0];
+    }
+    return "";
+  };
+
+  // 1. Get 2 questions from current subtopic
+  const currentQs = getSubtopicStandardQs(currentSubtopicId);
+  if (currentQs.length > 0) {
+    const shuffledCurrent = [...currentQs].sort(() => Math.random() - 0.5);
+    const countToTake = Math.min(2, shuffledCurrent.length);
+    for (let i = 0; i < countToTake; i++) {
+      selectedQuestions.push({
+        question: shuffledCurrent[i].question,
+        answer: shuffledCurrent[i].answer,
+        label: `Active`
+      });
+    }
+  }
+
+  // 2. Get questions from previous subtopics
+  const previousSubtopicIds = allSubtopicIds.slice(0, currentIdx);
+  if (previousSubtopicIds.length > 0) {
+    // We want 8 questions from previous topics. Let's shuffle previous subtopic IDs and pull questions.
+    let attempts = 0;
+    while (selectedQuestions.length < 10 && attempts < 60) {
+      attempts++;
+      const randomPrevId = previousSubtopicIds[Math.floor(Math.random() * previousSubtopicIds.length)];
+      const prevQs = getSubtopicStandardQs(randomPrevId);
+      if (prevQs.length > 0) {
+        const randomPrevQ = prevQs[Math.floor(Math.random() * prevQs.length)];
+        // Avoid duplicates
+        if (!selectedQuestions.some(sq => sq.question === randomPrevQ.question)) {
+          selectedQuestions.push({
+            question: randomPrevQ.question,
+            answer: randomPrevQ.answer,
+            label: `${getSubtopicTitle(randomPrevId)}`
+          });
+        }
+      }
+    }
+  }
+
+  // 3. Fallback: If we don't have 10 questions yet, fill from current subtopic
+  if (selectedQuestions.length < 10 && currentQs.length > 0) {
+    const unusedCurrent = currentQs.filter(q => !selectedQuestions.some(sq => sq.question === q.question));
+    const shuffledUnused = unusedCurrent.sort(() => Math.random() - 0.5);
+    while (selectedQuestions.length < 10 && shuffledUnused.length > 0) {
+      const q = shuffledUnused.pop();
+      selectedQuestions.push({
+        question: q.question,
+        answer: q.answer,
+        label: `Active`
+      });
+    }
+  }
+
+  // 4. Fallback 2: If we still don't have 10 questions (should only happen if the total pool is extremely small),
+  // pull from subsequent subtopics just to guarantee a full 10-question quiz sheet.
+  if (selectedQuestions.length < 10) {
+    const subsequentSubtopicIds = allSubtopicIds.slice(currentIdx + 1);
+    let attempts = 0;
+    while (selectedQuestions.length < 10 && subsequentSubtopicIds.length > 0 && attempts < 50) {
+      attempts++;
+      const randomSubId = subsequentSubtopicIds[Math.floor(Math.random() * subsequentSubtopicIds.length)];
+      const subQs = getSubtopicStandardQs(randomSubId);
+      if (subQs.length > 0) {
+        const randomSubQ = subQs[Math.floor(Math.random() * subQs.length)];
+        if (!selectedQuestions.some(sq => sq.question === randomSubQ.question)) {
+          selectedQuestions.push({
+            question: randomSubQ.question,
+            answer: randomSubQ.answer,
+            label: `Preview`
+          });
+        }
+      }
+    }
+  }
+
+  // Truncate to exactly 10 questions if we somehow exceeded it
+  const finalQuestions = selectedQuestions.slice(0, 10);
+
+  // Divide into 2 columns: Column 1 has 1-5, Column 2 has 6-10
+  const col1 = finalQuestions.slice(0, 5);
+  const col2 = finalQuestions.slice(5, 10);
+
+  const renderColumnHtml = (colQs, startIndex) => {
+    return colQs.map((q, idx) => `
+      <div style="margin-bottom: 7px; page-break-inside: avoid; break-inside: avoid;">
+        <div style="font-size: 8pt; font-weight: bold; line-height: 1.35; color: #111827; margin-bottom: 2px;">
+          Q${startIndex + idx + 1}. <span style="font-size: 7.2pt; color: #6b7280; font-weight: 700; margin-right: 4px;">[${q.label}]</span> ${q.question}
+        </div>
+        ${includeAnswers ? `
+          <div style="font-size: 8pt; color: #16a34a; font-style: italic; padding-left: 6px; border-left: 2px solid #16a34a; margin-top: 1px;">
+            ${q.answer}
+          </div>
+        ` : `
+          <div style="border-bottom: 1px dashed #9ca3af; height: 15px; margin-top: 1px; margin-bottom: 3px;"></div>
+        `}
+      </div>
+    `).join('');
+  };
+
+  return `
+    <!-- Do Now spaced recall challenge -->
+    <div class="spaced-recall-box" style="border: 1.5px solid #111827; padding: 10px 12px; margin-top: 20px; background: #f9fafb; border-radius: 4px; box-sizing: border-box; page-break-inside: avoid; break-inside: avoid;">
+      <h3 style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 8.5pt; font-weight: bold; border-bottom: 1.5px solid #111827; padding-bottom: 3px; color: #111827; font-family: 'Arial', sans-serif;">
+        ⚡ Do Now: Spaced Recall Challenge
+      </h3>
+      <p style="margin: 0 0 10px 0; font-size: 7.5pt; color: #4b5563; font-style: italic; font-family: 'Arial', sans-serif;">
+        Answer the following quick-fire questions to activate your memory of current and previous historical units.
+      </p>
+      
+      <div style="display: flex; gap: 20px; font-family: 'Arial', sans-serif;">
+        <!-- Column 1 -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          ${renderColumnHtml(col1, 0)}
+        </div>
+        <!-- Column 2 -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          ${renderColumnHtml(col2, 5)}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function generateWorkbookHtml(subtopicId, style, density, includeAnswers, selectedIndices = []) {
-  const data = WORKBOOK_DATA[subtopicId];
+  let data = WORKBOOK_DATA[subtopicId];
   if (!data) {
     return `<html><body><h3>Workbook pack not available for subtopic: ${subtopicId}</h3></body></html>`;
   }
+
+  // Overlay curated content if available
+  const curated = CURATED_WORKSHEET_DATA[subtopicId];
+  if (curated) {
+    data = {
+      ...data,
+      title: curated.title || data.title,
+      cornell: curated.cornell || data.cornell,
+      organizer: curated.organizer ? { ...data.organizer, ...curated.organizer } : data.organizer,
+      cloze: curated.cloze || data.cloze,
+      examinerQuiz: curated.examinerQuiz || null
+    };
+  }
+
   const topicName = subtopicId.replace('subtopic_', '').replace('_', '.');
 
   const specList = SPEC_CHECKLIST_DATA[subtopicId] || [];
 
   const specBoxHtml = specList.length > 0 ? `
     <div class="spec-box" style="border: 1px solid #d1d5db; padding: 6px 10px; margin-bottom: 10px; font-size: 7.5pt; background: #f9fafb; border-radius: 4px; line-height: 1.3; box-sizing: border-box; text-align: left;">
-      <strong style="text-transform: uppercase; font-size: 8pt; color: #111827; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (Pearson Edexcel)</strong>
+      <strong style="text-transform: uppercase; font-size: 8pt; color: #111827; display: block; margin-bottom: 3px;">📋 Curriculum Specification Checklist (GCSE Syllabus)</strong>
       <ul style="margin: 0; padding-left: 0; list-style: none;">
         ${specList.map(item => `
           <li style="margin: 0 0 3px 0; padding: 0; display: flex; align-items: flex-start; gap: 6px;">
@@ -4860,12 +5333,28 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       return html;
     };
 
-    const narrativeHtml = (data.narrative || []).map((section, idx) => `
-      <div style="margin-bottom: 25px;">
-        <h3 style="font-size: 14pt; margin-bottom: 12px; font-weight: bold; border-bottom: 2px solid #000000; padding-bottom: 4px;">${idx + 1}. ${section.title}</h3>
-        ${section.paragraphs.map(p => `<div style="font-size: 11.5pt; line-height: 1.6; margin-bottom: 12px;">${cleanHtml(p)}</div>`).join('')}
-      </div>
-    `).join('');
+    const narrativeHtml = (data.narrative || []).map((section, idx) => {
+      const bulletedParagraphs = section.paragraphs.map(p => {
+        const cleaned = cleanHtml(p);
+        const sentences = cleaned.split(/(?<=\. )|(?<=\! )/).map(s => s.trim()).filter(s => s.length > 0);
+        return sentences.map(s => `
+          <li style="font-size: 10pt; line-height: 1.45; margin-bottom: 6px; text-align: justify; list-style-type: square; color: #111827;">
+            ${s}
+          </li>
+        `).join('');
+      }).join('');
+
+      return `
+        <div style="margin-bottom: 20px; page-break-inside: avoid; break-inside: avoid;">
+          <h3 style="font-size: 12pt; margin-bottom: 8px; font-weight: bold; border-bottom: 1.5px solid #111827; padding-bottom: 3px; color: #111827; text-transform: uppercase;">
+            ${idx + 1}. ${section.title}
+          </h3>
+          <ul style="margin: 0 0 10px 0; padding-left: 18px;">
+            ${bulletedParagraphs}
+          </ul>
+        </div>
+      `;
+    }).join('');
 
     const vocabHtml = data.vocabulary.map(item => `
       <div class="vocab-item" style="margin-bottom: 8px;">
@@ -5426,7 +5915,44 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
 <body>
 `;
 
-  if (style === 'cloze') {
+  if (style === 'examiner-quiz') {
+    const questions = data.examinerQuiz || [];
+    const makeDottedLines = (count) => Array(count).fill('<div class="dotted-writing-line" style="border-bottom: 1px dashed #a0a0a0; height: 18px; margin-bottom: 8px;"></div>').join('');
+    
+    const questionsHtml = questions.map((q, idx) => `
+      <div class="question-container" style="margin-bottom: 20px; break-inside: avoid-column; page-break-inside: avoid;">
+        <div class="q-text" style="font-weight: bold; font-size: 10pt; color: #111827; margin-bottom: 6px; line-height: 1.4;">
+          ${idx + 1}. ${q.q}
+        </div>
+        ${includeAnswers ? `
+          <div class="answer-text" style="font-size: 9.5pt; line-height: 1.4; color: #16a34a; background: #f0fdf4; border-left: 3px solid #16a34a; padding: 8px; margin-top: 4px;">
+            <strong>Examiner Answer Key:</strong> ${q.a}
+          </div>
+        ` : `
+          <div style="margin-top: 6px;">
+            ${makeDottedLines(3)}
+          </div>
+        `}
+      </div>
+    `).join('');
+
+    html += `
+      <div class="print-page-last">
+        <h2 class="main-title">Examiner's Quiz Pack &bull; Topic ${topicName}: ${data.title}</h2>
+        ${specBoxHtml}
+        <div style="border: 1.5px solid #111827; padding: 10px; margin-bottom: 18px; font-size: 9pt; background: #f9fafb; border-radius: 4px;">
+          <strong>Examiner Guidance:</strong> Test your recall on the key historical terms, dates, and figures for this lesson. Focus on spelling names correctly and including exact dates in your answers.
+        </div>
+        
+        <div style="column-count: 2; column-gap: 30px; margin-top: 10px;">
+          ${questionsHtml}
+        </div>
+        
+        <div class="footer-note">GCSE History Workbook &bull; Examiner's Quiz Pack &bull; Page 1 of 1</div>
+      </div>
+    `;
+
+  } else if (style === 'cloze') {
     const scrambledWordBank = [...data.cloze.wordBank].sort(() => Math.random() - 0.5);
     const wordBank = scrambledWordBank.join(' | ');
     
@@ -5451,24 +5977,28 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       </p>
     `).join('');
 
+    const spacedQuizHtml = generateSpacedRecallQuizHtml(subtopicId, includeAnswers);
+
     html += `
       <div class="print-page-last">
         <h2 class="main-title">Guided Cloze Review &bull; Topic ${topicName}: ${data.title}</h2>
         ${specBoxHtml}
-        <div style="border: 1px solid #111827; padding: 10px; margin-bottom: 15px; font-size: 9pt; background: #f9fafb;">
+        <div style="border: 1px solid #111827; padding: 10px; margin-bottom: 12px; font-size: 9pt; background: #f9fafb;">
           <strong>Instructions:</strong> Read the passage below and fill in the blanks using the terms from the Word Bank at the bottom.
         </div>
         
-        <div style="font-size: 10pt; line-height: 1.8; text-align: justify;">
+        <div style="font-size: 10pt; line-height: 1.7; text-align: justify;">
           ${clozeSectionsHtml}
         </div>
 
-        <div style="border: 1.5px solid #111827; padding: 12px; margin-top: 30px; background: #f9fafb; border-radius: 4px;">
-          <strong style="display: block; margin-bottom: 6px; text-transform: uppercase; font-size: 8.5pt;">Word Bank</strong>
+        <div style="border: 1.5px solid #111827; padding: 10px; margin-top: 15px; background: #f9fafb; border-radius: 4px;">
+          <strong style="display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 8.5pt;">Word Bank</strong>
           <div style="font-size: 8.5pt; line-height: 1.5; text-align: center; font-style: italic;">
             ${wordBank}
           </div>
         </div>
+        
+        ${spacedQuizHtml}
         
         <div class="footer-note">GCSE History Workbook &bull; Guided Cloze Review &bull; Page 1 of 1</div>
       </div>
@@ -5490,19 +6020,27 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
     const page1Cues = cues.slice(0, 3);
     const page2Cues = cues.slice(3);
 
-    const renderCueRow = (cue) => `
-      <tr class="print-cornell-row">
-        <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 8pt; font-weight: bold; background: #f9fafb;">
-          ${cue.title}<br><br>
-          <span style="font-size: 7.5pt; font-weight: normal; color: #000000;">
-            ${cue.subCues.map(sc => `${sc}`).join('<br>')}
-          </span>
-        </td>
-        <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
-          ${fillNote(cue.modelNotes)}
-        </td>
-      </tr>
-    `;
+    const renderCueRow = (cue, idx) => {
+      const keywordsMarkup = getKeywordTargets(cue.modelNotes, subtopicId);
+      const isLast = (idx === cues.length - 1);
+      const linkingMarkup = isLast ? `<div style="font-size: 7.2pt; font-weight: bold; color: #b91c1c; margin-top: 10px; border-top: 1px dashed #b91c1c; padding-top: 6px;">${getLinkingQuestion(subtopicId)}</div>` : "";
+
+      return `
+        <tr class="print-cornell-row">
+          <td class="print-cornell-cues" style="width: 30%; border-right: 1.5px solid #111827; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; font-size: 8pt; font-weight: bold; background: #f9fafb; text-align: left;">
+            ${cue.title}<br><br>
+            <span style="font-size: 7.5pt; font-weight: normal; color: #000000; display: block; line-height: 1.45;">
+              ${cue.subCues.map(sc => `${sc}`).join('<br>')}
+            </span>
+            ${keywordsMarkup}
+            ${linkingMarkup}
+          </td>
+          <td class="print-cornell-notes" style="width: 70%; border-bottom: 1.5px solid #111827; padding: 10px; vertical-align: top; background: #ffffff;">
+            ${fillNote(cue.modelNotes)}
+          </td>
+        </tr>
+      `;
+    };
 
     html += `
       <div class="print-page">
@@ -5514,7 +6052,7 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
 
         <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
           <tbody>
-            ${page1Cues.map(renderCueRow).join('')}
+            ${page1Cues.map((cue, idx) => renderCueRow(cue, idx)).join('')}
           </tbody>
         </table>
         
@@ -5524,9 +6062,9 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       <div class="print-page-last">
         <table class="print-cornell-grid" style="width: 100%; border-collapse: collapse; border: 1.5px solid #111827; margin-top: 10px; box-sizing: border-box;">
           <tbody>
-            ${page2Cues.map(renderCueRow).join('')}
+            ${page2Cues.map((cue, idx) => renderCueRow(cue, idx + 3)).join('')}
             <tr class="print-cornell-summary-row">
-              <td class="print-cornell-summary-cell" colspan="2" style="padding: 10px; vertical-align: top; background: #f9fafb; font-size: 8.5pt; border-top: 1.5px solid #111827;">
+              <td class="print-cornell-summary-cell" colspan="2" style="padding: 10px; vertical-align: top; background: #f9fafb; font-size: 8.5pt; border-top: 1.5px solid #111827; text-align: left;">
                 <strong>Synthesis Summary:</strong> ${data.cornell.synthesis.prompt}
                 ${includeAnswers ? `
                   <div style="font-size: 9.5pt; color: #16a34a; font-style: italic; margin-top: 8px;">
@@ -5550,7 +6088,9 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       if (includeAnswers) {
         return `<div style="font-size: 8pt; color: #16a34a; font-style: italic; line-height: 1.4;"><strong>Key Points:</strong> ${ans}</div>`;
       } else {
-        return makeDottedLines(flowchartLines);
+        const hint = getClueHint(ans);
+        const linesToMake = hint ? Math.max(1, flowchartLines - 1) : flowchartLines;
+        return hint + makeDottedLines(linesToMake);
       }
     };
 
@@ -5581,6 +6121,8 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
       </tr>
     `).join('');
 
+    const spacedQuizHtml = generateSpacedRecallQuizHtml(subtopicId, includeAnswers);
+
     html += `
       <div class="print-page-last">
         <h2 class="main-title">Graphic Organizer &bull; Topic ${topicName}: ${data.title}</h2>
@@ -5608,6 +6150,8 @@ function generateWorkbookHtml(subtopicId, style, density, includeAnswers, select
             ${vocabRows}
           </tbody>
         </table>
+
+        ${spacedQuizHtml}
 
         <div class="footer-note">GCSE History Workbook &bull; Graphic Organizer &bull; Page 1 of 1</div>
       </div>
@@ -5847,7 +6391,7 @@ function generateQuizPackHtml(includeAnswers) {
           </div>
 
           <div class="spec-box">
-            <strong>📋 CURRICULUM SPECIFICATION CHECKLIST (PEARSON EDEXCEL)</strong>
+            <strong>📋 CURRICULUM SPECIFICATION CHECKLIST (GCSE SYLLABUS)</strong>
             ${specHtml}
           </div>
 
@@ -5933,9 +6477,110 @@ function generateQuizPackHtml(includeAnswers) {
   return html;
 }
 
+function generateExaminerQuizPackHtml(includeAnswers) {
+  let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Examiner's Quiz Pack</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #000000; padding: 20px; line-height: 1.3; margin: 0; }
+  .print-page { page-break-after: always; padding: 10px 0; clear: both; box-sizing: border-box; position: relative; }
+  .print-page-last { padding: 10px 0; clear: both; box-sizing: border-box; position: relative; }
+  .main-title { font-size: 15pt; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 5px; color: #000000; display: flex; justify-content: space-between; align-items: baseline; }
+  .main-title-right { font-size: 9pt; font-weight: normal; text-transform: none; }
+  .spec-box { border: 1px solid #c0c0c0; border-radius: 4px; padding: 12px; margin-bottom: 12px; font-size: 9pt; }
+  .spec-box strong { color: #000000; display: block; margin-bottom: 6px; font-size: 9.5pt; }
+  .spec-point { display: flex; gap: 8px; margin-bottom: 4px; align-items: flex-start; }
+  .spec-point-box { width: 10px; height: 10px; border: 1px solid #000; margin-top: 3px; flex-shrink: 0; }
+  .instruction-box { border: 1.5px solid #000000; border-radius: 4px; padding: 12px; margin-bottom: 20px; font-size: 9.5pt; }
+  .instruction-box strong { color: #d97706; display: block; margin-bottom: 4px; font-size: 10pt; text-transform: uppercase; }
+  .columns { column-count: 2; column-gap: 40px; }
+  .question-container { margin-bottom: 16px; break-inside: avoid-column; page-break-inside: avoid; }
+  .q-text { font-weight: bold; font-size: 9.5pt; color: #000000; margin-bottom: 10px; line-height: 1.4; }
+  .dotted-line { border-bottom: 1px dashed #a0a0a0; height: 20px; }
+  .answer-text { font-size: 9pt; line-height: 1.35; margin-top: 5px; }
+  .answer-text strong { color: #16a34a; font-weight: 600; }
+  .answer-text em { color: #000000; display: block; margin-top: 2px; font-style: normal; }
+  .footer-row { display: flex; gap: 15px; margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 20px; }
+  .footer-box { border: 1.5px solid #000000; padding: 12px; border-radius: 2px; break-inside: avoid; page-break-inside: avoid; }
+  @media print {
+    body { padding: 0; margin: 0; }
+    .print-page, .print-page-last { padding: 0; margin: 0; }
+  }
+</style>
+</head>
+<body>`;
+
+  const subtopicIds = [
+    'subtopic_1_1', 'subtopic_1_2', 'subtopic_1_3', 'subtopic_1_4',
+    'subtopic_2_1', 'subtopic_2_2', 'subtopic_2_3', 'subtopic_2_4',
+    'subtopic_3_1', 'subtopic_3_2', 'subtopic_3_3', 'subtopic_3_4',
+    'subtopic_4_1', 'subtopic_4_2', 'subtopic_4_3', 'subtopic_4_4'
+  ];
+
+  subtopicIds.forEach((subId, index) => {
+    const lessonData = LESSONS_DATA[subId] || { specPoints: [], headerTitle: "GCSE Lesson" };
+    const curated = CURATED_WORKSHEET_DATA[subId];
+    if (!curated) return;
+
+    const topicName = subId.replace('subtopic_', '').replace('_', '.');
+    const specHtml = lessonData.specPoints.map(sp => `<div class="spec-point"><div class="spec-point-box"></div><div>${sp}</div></div>`).join('');
+
+    const isLastPage = (index === subtopicIds.length - 1) && !includeAnswers;
+
+    html += `
+      <div class="${isLastPage ? 'print-page-last' : 'print-page'}" ${!isLastPage ? 'style="page-break-after: always;"' : ''}>
+        <div class="main-title">
+          <span>Topic ${topicName}: EXAMINER'S QUIZ PACK</span>
+          <span class="main-title-right">Curated GCSE History Resource - Workbook</span>
+        </div>
+
+        <div class="spec-box">
+          <strong>📋 CURRICULUM SPECIFICATION CHECKLIST (GCSE SYLLABUS)</strong>
+          ${specHtml}
+        </div>
+
+        <div class="instruction-box">
+          <strong>Examiner Guidance</strong>
+          Use these questions to lock in core facts, figures, and dates. Spelling and historical accuracy are critical.
+        </div>
+
+        <div class="columns">`;
+
+    curated.examinerQuiz.forEach((q, qIdx) => {
+      html += `
+        <div class="question-container">
+          <div class="q-text">Q${qIdx + 1}: ${q.q}</div>`;
+      if (includeAnswers) {
+        html += `
+          <div class="answer-text">
+            <strong>Model Fact:</strong> ${q.a}
+          </div>`;
+      } else {
+        html += `
+          <div class="dotted-line"></div>
+          <div class="dotted-line"></div>
+          <div class="dotted-line"></div>`;
+      }
+      html += `</div>`;
+    });
+
+    html += `
+        </div>
+      </div>`;
+  });
+
+  html += `</body></html>`;
+  return html;
+}
+
 export function generateBulkWorkbookHtml(style, density, includeAnswers) {
   if (style === 'quiz') {
     return generateQuizPackHtml(includeAnswers);
+  }
+  if (style === 'examiner-quiz') {
+    return generateExaminerQuizPackHtml(includeAnswers);
   }
 
   const subtopicIds = [

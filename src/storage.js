@@ -56,7 +56,25 @@ export function initData() {
       try {
         const parsed = JSON.parse(storedMasteryVal);
         if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
-          state.mastery = parsed;
+          const migrated = {};
+          const now = Date.now();
+          for (const [qid, val] of Object.entries(parsed)) {
+            if (val === true || val === 'secured') {
+              migrated[qid] = { status: 'secured', timestamp: now, leitnerBox: 3, nextReview: now };
+            } else if (val === 'mastered') {
+              migrated[qid] = { status: 'mastered', timestamp: now, leitnerBox: 5, nextReview: now };
+            } else if (val && typeof val === 'object') {
+              migrated[qid] = {
+                status: val.status || 'secured',
+                timestamp: val.timestamp || now,
+                leitnerBox: val.leitnerBox || (val.status === 'mastered' ? 5 : 3),
+                nextReview: val.nextReview || now
+              };
+            } else {
+              migrated[qid] = { status: 'secured', timestamp: now, leitnerBox: 1, nextReview: now };
+            }
+          }
+          state.mastery = migrated;
         }
       } catch (e) {
         console.error("Error parsing stored mastery:", e);
@@ -244,39 +262,57 @@ export function getMasteryStatus(questionId) {
 }
 
 export function setMastered(questionId, isMastered) {
-  if (!isMastered) {
-    if (state.mastery[questionId]) {
-      delete state.mastery[questionId];
-      saveProgress();
-    }
-    return;
+  if (!state.mastery) state.mastery = {};
+
+  let entry = state.mastery[questionId];
+  if (entry && typeof entry !== 'object') {
+    entry = {
+      status: entry === true || entry === 'secured' ? 'secured' : 'mastered',
+      timestamp: Date.now()
+    };
   }
 
-  const entry = state.mastery[questionId];
-  let newStatus = 'secured';
+  if (!entry) {
+    entry = {
+      status: 'secured',
+      timestamp: Date.now(),
+      leitnerBox: 1,
+      nextReview: 0
+    };
+  }
+
   const now = Date.now();
+  let newStatus = 'secured';
 
-  if (entry) {
-    if (entry === true) {
-      newStatus = 'secured';
-    } else if (typeof entry === 'object') {
-      if (entry.status === 'secured') {
-        const hoursElapsed = (now - (entry.timestamp || 0)) / (1000 * 60 * 60);
-        if (hoursElapsed >= 24) {
-          newStatus = 'mastered';
-        } else {
-          newStatus = 'secured';
-        }
-      } else if (entry.status === 'mastered') {
-        newStatus = 'mastered';
-      }
-    }
+  if (isMastered) {
+    // Promote box by 1 (max 5)
+    const currentBox = entry.leitnerBox || 1;
+    const newBox = Math.min(5, currentBox + 1);
+    
+    // Calculate review intervals: Box 1: 4h, Box 2: 1d, Box 3: 3d, Box 4: 7d, Box 5: 14d
+    const intervals = {
+      1: 4 * 60 * 60 * 1000,
+      2: 24 * 60 * 60 * 1000,
+      3: 3 * 24 * 60 * 60 * 1000,
+      4: 7 * 24 * 60 * 60 * 1000,
+      5: 14 * 24 * 60 * 60 * 1000
+    };
+    
+    entry.leitnerBox = newBox;
+    entry.nextReview = now + intervals[newBox];
+    newStatus = newBox === 5 ? 'mastered' : 'secured';
+    entry.status = newStatus;
+    entry.timestamp = now;
+  } else {
+    // Demote box to 1
+    entry.leitnerBox = 1;
+    entry.nextReview = now; // Review immediately
+    newStatus = 'secured';
+    entry.status = newStatus;
+    entry.timestamp = now;
   }
 
-  state.mastery[questionId] = {
-    status: newStatus,
-    timestamp: now
-  };
+  state.mastery[questionId] = entry;
   saveProgress();
 
   if (newStatus === 'mastered') {

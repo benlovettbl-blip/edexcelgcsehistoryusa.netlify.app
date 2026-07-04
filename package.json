@@ -1,7 +1,7 @@
 {
   "name": "usa-history-mastery",
   "version": "1.0.0",
-  "description": "Edexcel GCSE History Paper 3 The USA Mastery",
+  "description": "GCSE History Paper 3 The USA Mastery",
   "main": "index.html",
   "scripts": {
     "dev": "vite",

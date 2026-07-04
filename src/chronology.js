@@ -96,7 +96,7 @@ function renderChronologyGameUI() {
         <span style="font-weight: 700; font-size: 0.95rem; color: var(--success);" id="chrono-score-display">Score: ${chronoState.score}</span>
       </div>
       <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0 0 20px 0;">
-        Edexcel Paper 3 requires clear chronological analysis. Drag and drop the cards below into the correct sequence (earliest to latest), or tap a card and tap a slot to place it.
+        GCSE Paper 3 requires clear chronological analysis. Drag and drop the cards below into the correct sequence (earliest to latest), or tap a card and tap a slot to place it.
       </p>
 
       <!-- Chronology slots panel (Top viewport) -->

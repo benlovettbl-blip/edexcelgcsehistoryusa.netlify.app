@@ -18,6 +18,7 @@ import { VIDEOS_DATA } from './videos_data.js';
 import { initChronologyGame } from './chronology.js';
 import { initAdventureGame, initVietnamAdventureGame, initCivilianAdventureGame, initNorthVietnamAdventureGame } from './adventure.js';
 import { initEchoesAdventureGame } from './echoes_adventure.js';
+import { initSourceDetectiveGame } from './source_game.js';
 
 window.initAdventureGame = initAdventureGame;
 window.initVietnamAdventureGame = initVietnamAdventureGame;
@@ -190,6 +191,49 @@ function updateGlobalStats() {
   const heroStreakCount = document.getElementById('hero-streak-count');
   if (heroStreakCount && state.userStats) {
     heroStreakCount.textContent = `${state.userStats.streak} Day${state.userStats.streak === 1 ? '' : 's'}`;
+  }
+
+  // Count Leitner Box distribution
+  const boxesCount = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  state.allQuestions.forEach(q => {
+    const entry = state.mastery[q.id];
+    const box = entry ? (entry.leitnerBox || 1) : 1;
+    boxesCount[box]++;
+  });
+
+  const distBarsContainer = document.getElementById('leitner-distribution-bars');
+  if (distBarsContainer) {
+    const totalQ = state.allQuestions.length;
+    const boxColors = {
+      1: '#ef4444', // Red
+      2: '#f97316', // Orange
+      3: '#06b6d4', // Cyan
+      4: '#3b82f6', // Blue
+      5: '#eab308'  // Gold
+    };
+    const boxLabels = {
+      1: 'Box 1: New / Struggled',
+      2: 'Box 2: Familiar',
+      3: 'Box 3: Secured',
+      4: 'Box 4: Highly Retained',
+      5: 'Box 5: Fully Mastered'
+    };
+
+    let html = '';
+    for (let box = 1; box <= 5; box++) {
+      const count = boxesCount[box] || 0;
+      const pct = totalQ > 0 ? Math.round((count / totalQ) * 100) : 0;
+      html += `
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 0.76rem;">
+          <span style="width: 140px; font-weight: 600; color: var(--text-muted); text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${boxLabels[box]}</span>
+          <div style="flex: 1; height: 10px; background: rgba(0, 0, 0, 0.2); border-radius: 5px; overflow: hidden; position: relative;">
+            <div style="height: 100%; width: ${pct}%; background: ${boxColors[box]}; border-radius: 5px; transition: width 0.5s ease;"></div>
+          </div>
+          <span style="width: 70px; text-align: right; font-weight: bold; color: var(--text-main);">${count} card${count === 1 ? '' : 's'} (${pct}%)</span>
+        </div>
+      `;
+    }
+    distBarsContainer.innerHTML = html;
   }
   
   // Update sidebar subtopic nav percentages
@@ -676,6 +720,7 @@ function renderGamesView() {
   const tabCivilianAdventure = document.getElementById('btn-tab-game-civilian-adventure');
   const tabNorthVietnamAdventure = document.getElementById('btn-tab-game-north-vietnam-adventure');
   const tabEchoesAdventure = document.getElementById('btn-tab-game-echoes-adventure');
+  const tabSourceDetective = document.getElementById('btn-tab-game-source-detective');
   const paneCausal = document.getElementById('game-causal-container');
   const paneChronology = document.getElementById('game-chronology-container');
   const paneMastery = document.getElementById('game-mastery-container');
@@ -687,19 +732,20 @@ function renderGamesView() {
   const paneCivilianAdventure = document.getElementById('game-civilian-adventure-container');
   const paneNorthVietnamAdventure = document.getElementById('game-north-vietnam-adventure-container');
   const paneEchoesAdventure = document.getElementById('game-echoes-adventure-container');
+  const paneSourceDetective = document.getElementById('game-source-detective-container');
 
-  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure && tabCivilianAdventure && tabNorthVietnamAdventure && tabEchoesAdventure &&
-      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure && paneCivilianAdventure && paneNorthVietnamAdventure && paneEchoesAdventure) {
+  if (tabCausal && tabChronology && tabMastery && tabDecisions && tabMindMap && tabTaboo && tabAdventure && tabVietnamAdventure && tabCivilianAdventure && tabNorthVietnamAdventure && tabEchoesAdventure && tabSourceDetective &&
+      paneCausal && paneChronology && paneMastery && paneDecisions && paneMindMap && paneTaboo && paneAdventure && paneVietnamAdventure && paneCivilianAdventure && paneNorthVietnamAdventure && paneEchoesAdventure && paneSourceDetective) {
     const ALL_GAME_TABS = [
       tabCausal, tabChronology, tabMastery, tabDecisions, 
       tabMindMap, tabTaboo, tabAdventure, tabVietnamAdventure, 
-      tabCivilianAdventure, tabNorthVietnamAdventure, tabEchoesAdventure
+      tabCivilianAdventure, tabNorthVietnamAdventure, tabEchoesAdventure, tabSourceDetective
     ];
     
     const ALL_GAME_PANES = [
       paneCausal, paneChronology, paneMastery, paneDecisions, 
       paneMindMap, paneTaboo, paneAdventure, paneVietnamAdventure, 
-      paneCivilianAdventure, paneNorthVietnamAdventure, paneEchoesAdventure
+      paneCivilianAdventure, paneNorthVietnamAdventure, paneEchoesAdventure, paneSourceDetective
     ];
 
     const showTabPane = (activeTab, activePane) => {
@@ -776,6 +822,11 @@ function renderGamesView() {
       initEchoesAdventureGame();
     };
 
+    const showSourceDetective = () => {
+      showTabPane(tabSourceDetective, paneSourceDetective);
+      initSourceDetectiveGame();
+    };
+
     tabCausal.addEventListener('click', () => {
       AudioEngine.play('click');
       showCausal();
@@ -829,6 +880,11 @@ function renderGamesView() {
     tabEchoesAdventure.addEventListener('click', () => {
       AudioEngine.play('click');
       showEchoesAdventure();
+    });
+
+    tabSourceDetective.addEventListener('click', () => {
+      AudioEngine.play('click');
+      showSourceDetective();
     });
   }
 }
@@ -1631,8 +1687,32 @@ function startFlashcardSessionDirect(subtopicId) {
     }
   } else {
     questions = state.allQuestions.filter(q => q.subtopicId === subtopicId);
-    let deck = [...questions].sort(() => Math.random() - 0.5);
-    deck = deck.slice(0, 14);
+    
+    // Sort questions by review priority (SRS):
+    // 1. Overdue cards (nextReview <= now)
+    // 2. Lower boxes (unseen/struggled cards)
+    // 3. Not overdue cards, sorted by nextReview ascending
+    const now = Date.now();
+    let sortedQuestions = [...questions].sort((a, b) => {
+      const aEntry = state.mastery[a.id] || { leitnerBox: 1, nextReview: 0 };
+      const bEntry = state.mastery[b.id] || { leitnerBox: 1, nextReview: 0 };
+      
+      const aOverdue = (aEntry.nextReview || 0) <= now;
+      const bOverdue = (bEntry.nextReview || 0) <= now;
+      
+      if (aOverdue && !bOverdue) return -1;
+      if (!aOverdue && bOverdue) return 1;
+      
+      // If both are overdue (or both not), sort by lower leitnerBox first
+      const aBox = aEntry.leitnerBox || 1;
+      const bBox = bEntry.leitnerBox || 1;
+      if (aBox !== bBox) return aBox - bBox;
+      
+      // If same box, sort by nextReview ascending
+      return (aEntry.nextReview || 0) - (bEntry.nextReview || 0);
+    });
+    
+    let deck = sortedQuestions.slice(0, 14);
     
     // Add Synthesis Card as the 15th card
     const challenge = SYNTHESIS_CHALLENGES[subtopicId];
@@ -1692,18 +1772,76 @@ function startFlashcardSession(subtopicId) {
   }
 }
 
+function getCardCategory(card) {
+  const ans = card.answer || "";
+  const ques = card.question || "";
+  if (/year|when|date/i.test(ques) || /^\d{4}$/.test(ans.trim())) {
+    return 'date';
+  }
+  if (/\b(MLK|King|Eisenhower|Reagan|Kennedy|Nixon|Johnson|Thurmond|Parks|Warren|Malcolm|Diem|Westmoreland|Abrams|Russell)\b/i.test(ques) || /\b(MLK|King|Eisenhower|Reagan|Kennedy|Nixon|Johnson|Thurmond|Parks|Warren|Malcolm|Diem|Westmoreland|Abrams|Russell)\b/i.test(ans)) {
+    return 'person';
+  }
+  if (/\b(Act|Manifesto|decision|ruling|law|amendment|doctrine|Boycott|offensive|massacre)\b/i.test(ques) || /\b(Act|Manifesto|decision|ruling|law|amendment|doctrine|Boycott|offensive|massacre)\b/i.test(ans)) {
+    return 'event-law';
+  }
+  return 'general';
+}
+
 function generateReinforcementMCQ(q) {
   let pool = state.allQuestions.filter(other => other.subtopicId === q.subtopicId && other.id !== q.id);
   if (pool.length < 3) {
     pool = state.allQuestions.filter(other => other.topicId === q.topicId && other.id !== q.id);
   }
 
+  // Prioritize cards matching the same category to ensure taxonomic alignment
+  const targetCategory = getCardCategory(q);
+  const categoryPool = pool.filter(other => getCardCategory(other) === targetCategory);
+  if (categoryPool.length >= 3) {
+    pool = categoryPool;
+  } else {
+    // Try to match standard vs depth if category pool was too small
+    const preferredPool = pool.filter(other => other.type === q.type);
+    if (preferredPool.length >= 3) {
+      pool = preferredPool;
+    }
+  }
+
   const prompt = getElaborativePrompt(q);
   const correctText = q.explanation;
   const uniqueExps = [...new Set(pool.map(other => other.explanation).filter(e => e !== correctText))];
   const distractors = uniqueExps.slice(0, 3);
+
+  const topicFallbacks = {
+    'topic_1': [
+      "The Supreme Court's desegregation rulings faced massive resistance from Southern white politicians who pledged to defend state sovereignty.",
+      "Local Southern police and vigilante groups often colluded to suppress civil rights demonstrations and voter registration drives.",
+      "Early direct-action protests focused on desegregating transport and public facilities through non-violent economic pressure."
+    ],
+    'topic_2': [
+      "Militant Black Power groups advocated for self-defense and economic independence, contrasting with the non-violent integrationist movement.",
+      "Televised civil rights marches exposed state-sanctioned violence to a global audience, forcing federal legislative intervention.",
+      "Urban riots in Northern and Western cities highlighted the failure of legal reforms to address systemic police brutality and economic inequality."
+    ],
+    'topic_3': [
+      "US military strategy focused on search-and-destroy missions and body counts, which frequently alienated the local rural population.",
+      "The domino theory led US administrations to support an unpopular and corrupt regime in Saigon to contain communist expansion.",
+      "Vietcong guerrilla forces used underground tunnels, booby traps, and local knowledge to neutralize US technological superiority."
+    ],
+    'topic_4': [
+      "Nixon's policy of Vietnamization aimed to train South Vietnamese forces to defend themselves while withdrawing US combat troops.",
+      "Growing media coverage and revelations of military atrocities created a massive credibility gap and fueled domestic anti-war protests.",
+      "The Paris Peace Accords led to US military withdrawal but allowed North Vietnamese forces to maintain their positions, ensuring Saigon's collapse."
+    ]
+  };
+
+  const fallbacks = topicFallbacks[q.topicId] || topicFallbacks['topic_1'];
+  let fallbackIdx = 0;
   while (distractors.length < 3) {
-    distractors.push("Alternative historical context overview for Paper 3 studies.");
+    const fb = fallbacks[fallbackIdx % fallbacks.length];
+    if (!distractors.includes(fb) && fb !== correctText) {
+      distractors.push(fb);
+    }
+    fallbackIdx++;
   }
 
   const options = [correctText, ...distractors].sort(() => Math.random() - 0.5);
@@ -1845,6 +1983,25 @@ function updateGotItButtonState() {
   }
 }
 
+function getLeitnerDotsHtml(boxNum) {
+  let dots = '';
+  const colors = ['#ef4444', '#f97316', '#06b6d4', '#3b82f6', '#eab308'];
+  const boxColor = colors[boxNum - 1] || '#ef4444';
+  for (let i = 1; i <= 5; i++) {
+    if (i <= boxNum) {
+      dots += `<span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: ${boxColor}; margin: 0 2px;"></span>`;
+    } else {
+      dots += `<span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: rgba(255,255,255,0.1); margin: 0 2px; border: 1px solid var(--border-glass);"></span>`;
+    }
+  }
+  return `
+    <div style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: 12px; margin-left: 8px;" title="Memory Strength: Box ${boxNum}">
+      <span style="font-size: 0.65rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Box ${boxNum}</span>
+      <div style="display: inline-flex; align-items: center;">${dots}</div>
+    </div>
+  `;
+}
+
 function renderFlashcard() {
   AudioEngine.stopSpeaking();
   state.flashcardSession.wasDragged = false;
@@ -1880,8 +2037,13 @@ function renderFlashcard() {
   
   const status = getMasteryStatus(q.id);
   const statusBadgeHtml = getMasteryBadgeHtml(status);
-  document.getElementById('card-front-status-badge').innerHTML = statusBadgeHtml;
-  document.getElementById('card-back-status-badge').innerHTML = statusBadgeHtml;
+  
+  const entry = state.mastery[q.id];
+  const boxNum = entry ? (entry.leitnerBox || 1) : 1;
+  const dotsHtml = q.type === 'synthesis' ? '' : getLeitnerDotsHtml(boxNum);
+  
+  document.getElementById('card-front-status-badge').innerHTML = statusBadgeHtml + dotsHtml;
+  document.getElementById('card-back-status-badge').innerHTML = statusBadgeHtml + dotsHtml;
 
   // Clear previous hint if any
   const oldHint = document.getElementById('card-front-hint-box');
@@ -2036,6 +2198,17 @@ function handleFlashcardGrade(correct) {
         }
         return;
       }
+
+      // Trigger MCQ Reinforcement to double-check recall
+      state.flashcardSession.reinforcing = true;
+      state.flashcardSession.reinforceQuestion = generateReinforcementMCQ(q);
+      
+      document.getElementById('flashcard-back-standard-body').style.display = 'none';
+      document.getElementById('flashcard-back-reinforce-body').style.display = 'flex';
+      document.getElementById('flashcard-self-grade-actions').style.display = 'none';
+      
+      renderMCQReinforce(state.flashcardSession.reinforceQuestion);
+      return;
     }
 
     AudioEngine.play('success');
@@ -5915,10 +6088,38 @@ function renderKeyTopicOverview(topicId) {
 
       <!-- Historical Context Overview (Full Width) -->
       <div style="background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 24px;">
-        <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-book-open"></i> Historical Context Overview
-        </h3>
-        <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--border-glass); padding-bottom: 10px;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 0; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-book-open"></i> Historical Context Overview
+          </h3>
+          
+          <!-- Podcast & Speed Controls -->
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <!-- Speed Selector -->
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-heading); font-weight: 500;">Speed:</span>
+              <select class="select-input select-kt-podcast-speed" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); color: var(--text-main); font-size: 0.7rem; font-weight: bold; padding: 3px 6px; border-radius: var(--border-radius-sm); cursor: pointer; width: auto; height: auto;">
+                <option value="0.8">0.8x</option>
+                <option value="0.95" selected>1.0x</option>
+                <option value="1.15">1.15x</option>
+                <option value="1.3">1.3x</option>
+              </select>
+            </div>
+            
+            <button class="mastery-btn btn-kt-podcast-play" style="background: var(--accent); color: #fff; border: none; font-size: 0.76rem; font-weight: bold; padding: 6px 12px; border-radius: var(--border-radius-sm); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all var(--transition-fast);">
+              <i class="fa-solid fa-podcast"></i> Play Unit Podcast
+            </button>
+            
+            <!-- Audio Wave Animation -->
+            <div class="kt-audio-wave-anim" style="display: none; gap: 2px; align-items: flex-end; height: 14px; margin-left: 4px;">
+              <span class="bar" style="width: 2px; height: 3px; background: var(--accent); border-radius: 1px; transition: height 0.15s ease;"></span>
+              <span class="bar" style="width: 2px; height: 3px; background: var(--accent); border-radius: 1px; transition: height 0.15s ease;"></span>
+              <span class="bar" style="width: 2px; height: 3px; background: var(--accent); border-radius: 1px; transition: height 0.15s ease;"></span>
+              <span class="bar" style="width: 2px; height: 3px; background: var(--accent); border-radius: 1px; transition: height 0.15s ease;"></span>
+            </div>
+          </div>
+        </div>
+        <p class="kt-overview-text-panel" style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); margin: 0; text-align: justify;">
           ${data.overview}
         </p>
       </div>
@@ -5998,6 +6199,100 @@ function renderKeyTopicOverview(topicId) {
         </div>
       </div>
     `;
+
+    // Unit Podcast Logic
+    const ktPodcastBtn = container.querySelector('.btn-kt-podcast-play');
+    const ktWave = container.querySelector('.kt-audio-wave-anim');
+    const ktWaveBars = ktWave ? ktWave.querySelectorAll('.bar') : [];
+    const overviewPanel = container.querySelector('.kt-overview-text-panel');
+    
+    if (ktPodcastBtn) {
+      ktPodcastBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        AudioEngine.play('click');
+        
+        if (ktPodcastBtn.classList.contains('speaking')) {
+          AudioEngine.stopSpeaking();
+          ktPodcastBtn.classList.remove('speaking');
+          ktPodcastBtn.innerHTML = `<i class="fa-solid fa-podcast"></i> Play Unit Podcast`;
+          ktPodcastBtn.style.background = 'var(--accent)';
+          if (ktWave) ktWave.style.display = 'none';
+          ktWaveBars.forEach(bar => {
+            bar.style.animation = 'none';
+          });
+          if (overviewPanel) {
+            overviewPanel.innerHTML = data.overview;
+          }
+          return;
+        }
+        
+        // Stop any other active narration
+        AudioEngine.stopSpeaking();
+        
+        const cleanSpeechText = data.overview;
+        
+        // Prepare word-by-word highlights
+        if (overviewPanel) {
+          const words = cleanSpeechText.split(/\s+/);
+          overviewPanel.innerHTML = words.map((w, idx) => `<span class="kt-tts-word" data-word-idx="${idx}" style="transition: background-color var(--transition-fast), color var(--transition-fast);">${w}</span>`).join(' ');
+        }
+        const wordSpans = overviewPanel ? overviewPanel.querySelectorAll('.kt-tts-word') : [];
+        
+        // Read speed selector
+        const speedSelect = container.querySelector('.select-kt-podcast-speed');
+        const currentSpeed = speedSelect ? parseFloat(speedSelect.value) : 0.95;
+        
+        AudioEngine.speak(
+          cleanSpeechText,
+          () => { // onstart
+            ktPodcastBtn.classList.add('speaking');
+            ktPodcastBtn.innerHTML = `<i class="fa-solid fa-circle-stop"></i> Stop Podcast`;
+            ktPodcastBtn.style.background = '#e11d48';
+            if (ktWave) ktWave.style.display = 'flex';
+            ktWaveBars.forEach((bar, idx) => {
+              bar.style.animation = `bounceWave 0.8s ease-in-out infinite alternate`;
+              bar.style.animationDelay = `${idx * 0.15}s`;
+            });
+          },
+          () => { // onend
+            ktPodcastBtn.classList.remove('speaking');
+            ktPodcastBtn.innerHTML = `<i class="fa-solid fa-podcast"></i> Play Unit Podcast`;
+            ktPodcastBtn.style.background = 'var(--accent)';
+            if (ktWave) ktWave.style.display = 'none';
+            ktWaveBars.forEach(bar => {
+              bar.style.animation = 'none';
+            });
+            if (overviewPanel) overviewPanel.innerHTML = data.overview;
+          },
+          () => { // onerror
+            ktPodcastBtn.classList.remove('speaking');
+            ktPodcastBtn.innerHTML = `<i class="fa-solid fa-podcast"></i> Play Unit Podcast`;
+            ktPodcastBtn.style.background = 'var(--accent)';
+            if (ktWave) ktWave.style.display = 'none';
+            ktWaveBars.forEach(bar => {
+              bar.style.animation = 'none';
+            });
+            if (overviewPanel) overviewPanel.innerHTML = data.overview;
+          },
+          currentSpeed,
+          cleanSpeechText, // highlightText
+          (activeWordIdx) => { // onWordHighlight
+            wordSpans.forEach((span, idx) => {
+              if (idx === activeWordIdx) {
+                span.style.background = 'var(--accent-glow)';
+                span.style.color = 'var(--text-main)';
+                span.style.borderRadius = '3px';
+                span.style.padding = '0 2px';
+              } else {
+                span.style.background = 'none';
+                span.style.color = 'var(--text-muted)';
+                span.style.padding = '0';
+              }
+            });
+          }
+        );
+      });
+    }
 
     // Modal logic
     const overlay = document.getElementById('timeline-modal-overlay');
@@ -6448,6 +6743,13 @@ function renderGuideView() {
               </p>
             </div>
 
+            <div style="padding: 12px 14px; background: rgba(255, 255, 255, 0.01); border-left: 4px solid var(--text-muted); border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); border-left-width: 4px; margin-top: 10px;">
+              <strong style="color: var(--text-muted); font-size: 0.85rem; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-scale-balanced"></i> Legal & Trademark Disclaimer</strong>
+              <p style="margin: 6px 0 0 0; font-size: 0.78rem; color: var(--text-muted); line-height: 1.4;">
+                This revision application is an independent, community-driven educational platform designed for GCSE revision. It is not affiliated with, approved by, sponsored by, or associated with Pearson Education, Edexcel, or any other official examinations board. "GCSE" and "Edexcel" are registered trademarks of their respective owners.
+              </p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -6488,6 +6790,23 @@ function updateDashboardActionCards() {
   const upNextBtn = document.getElementById('btn-up-next');
   const upNextTitle = document.getElementById('up-next-title');
   const quickQuizBtn = document.getElementById('btn-quick-quiz');
+  const heroResumeBtn = document.getElementById('hero-resume-btn');
+  
+  if (heroResumeBtn) {
+    heroResumeBtn.onclick = () => {
+      const lastSubtopicId = localStorage.getItem('edexcel_last_subtopic');
+      if (lastSubtopicId) {
+        state.currentMode = 'lessons';
+        switchView('subtopic', lastSubtopicId);
+      } else {
+        // Fallback to the first unmastered or topic_1_1
+        let nextTopic = state.allQuestions.find(q => !state.mastery[q.id]);
+        const targetId = nextTopic ? nextTopic.subtopicId : 'subtopic_1_1';
+        state.currentMode = 'lessons';
+        switchView('subtopic', targetId);
+      }
+    };
+  }
   
   if (upNextBtn && upNextTitle) {
     // Find the first unmastered question
@@ -6653,7 +6972,7 @@ function renderAiVideosView() {
 
   subtopicIds.forEach(subtopicId => {
     const video = VIDEOS_DATA[subtopicId];
-    if (!video || !video.primary) return;
+    if (!video || (!video.primary && !video.secondary)) return;
 
     const subtopicData = QUIZ_DATA.flatMap(t => t.subtopics).find(s => s.id === subtopicId);
     const lessonTitle = subtopicData ? subtopicData.title : subtopicId;
@@ -6690,52 +7009,129 @@ function renderAiVideosView() {
       </div>
     `;
 
-    const ytid = getYouTubeId(video.primary.youtube_url);
+    // Extract thumbnail from primary or secondary video
+    const displayVideo = video.primary || video.secondary;
+    const ytid = getYouTubeId(displayVideo.youtube_url);
     const thumbnailUrl = ytid ? `https://img.youtube.com/vi/${ytid}/mqdefault.jpg` : '';
+    const durationText = displayVideo.duration;
 
     const thumbnail = `
       <div class="video-thumbnail-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--border-radius-sm); border: 1px solid var(--border-glass); margin-bottom: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
         ${thumbnailUrl ? `<img src="${thumbnailUrl}" alt="${lessonTitle}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.65; transition: opacity 0.2s;" />` : `
         <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; padding: 10px; font-family: var(--font-body); font-weight: 500;">
           <i class="fa-solid fa-film" style="font-size: 1.8rem; display: block; margin-bottom: 6px; color: var(--primary);"></i>
-          2-Minute AI Overview
+          Lesson Video Overview
         </div>`}
         <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); transition: transform 0.2s; z-index: 2;" class="play-btn">
           <i class="fa-solid fa-play" style="margin-left: 2px;"></i>
         </div>
-        <span style="position: absolute; bottom: 8px; right: 8px; font-size: 0.7rem; font-weight: 700; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); z-index: 2;">${video.primary.duration} mins</span>
+        <span style="position: absolute; bottom: 8px; right: 8px; font-size: 0.7rem; font-weight: 700; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 6px; border-radius: 4px; font-family: var(--font-heading); z-index: 2;">${durationText} mins</span>
       </div>
     `;
 
     const body = `
       <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.45; margin: 0 0 16px 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-        Watch the quick 2-minute overview covering: ${video.questions.map(q => q.replace(/\?$/, "")).join(', ')}.
+        Listen to the 2-minute AI audio overview or watch the deep-dive video covering: ${video.questions.map(q => q.replace(/\?$/, "")).join(', ')}.
       </p>
     `;
 
     const actions = document.createElement('div');
     actions.style.display = 'flex';
+    actions.style.flexDirection = 'column';
     actions.style.gap = '8px';
     actions.style.marginTop = 'auto';
 
-    const playBtn = document.createElement('button');
-    playBtn.className = 'mastery-btn';
-    playBtn.style.flex = '1';
-    playBtn.style.padding = '8px';
-    playBtn.style.fontSize = '0.78rem';
-    playBtn.style.fontWeight = 'bold';
-    playBtn.style.background = 'var(--primary)';
-    playBtn.style.color = '#fff';
-    playBtn.style.border = 'none';
-    playBtn.style.display = 'inline-flex';
-    playBtn.style.alignItems = 'center';
-    playBtn.style.justifyContent = 'center';
-    playBtn.style.gap = '6px';
-    playBtn.innerHTML = `<i class="fa-solid fa-play"></i> Watch`;
-    playBtn.addEventListener('click', (e) => {
+    const btnRow = document.createElement('div');
+    btnRow.style.display = 'flex';
+    btnRow.style.gap = '8px';
+
+    const listenBtn = document.createElement('button');
+    listenBtn.className = 'mastery-btn btn-hub-audio-listen';
+    listenBtn.style.flex = '1';
+    listenBtn.style.padding = '8px';
+    listenBtn.style.fontSize = '0.78rem';
+    listenBtn.style.fontWeight = 'bold';
+    listenBtn.style.background = 'var(--accent)';
+    listenBtn.style.color = '#fff';
+    listenBtn.style.border = 'none';
+    listenBtn.style.display = 'inline-flex';
+    listenBtn.style.alignItems = 'center';
+    listenBtn.style.justifyContent = 'center';
+    listenBtn.style.gap = '6px';
+    listenBtn.innerHTML = `<i class="fa-solid fa-headphones"></i> Listen (2m)`;
+    
+    // Prepare the text to read
+    const lessonData = LESSONS_DATA[subtopicId];
+    const introText = lessonData ? lessonData.headerIntro : '';
+    const speechText = `AI Overview of ${lessonTitle.replace("KT", "Key Topic")}. ${introText} Focus on the study questions while listening.`;
+    listenBtn.setAttribute('data-speech-text', speechText);
+
+    listenBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       AudioEngine.play('click');
-      openVideoModal(video.primary.youtube_url, video.primary.video_title);
+      
+      if (listenBtn.classList.contains('speaking')) {
+        AudioEngine.stopSpeaking();
+        listenBtn.classList.remove('speaking');
+        listenBtn.innerHTML = `<i class="fa-solid fa-headphones"></i> Listen (2m)`;
+        listenBtn.style.background = 'var(--accent)';
+        return;
+      }
+      
+      // Stop other speaking buttons in the view
+      container.querySelectorAll('.btn-hub-audio-listen').forEach(b => {
+        if (b !== listenBtn && b.classList.contains('speaking')) {
+          b.classList.remove('speaking');
+          b.innerHTML = `<i class="fa-solid fa-headphones"></i> Listen (2m)`;
+          b.style.background = 'var(--accent)';
+        }
+      });
+      AudioEngine.stopSpeaking();
+      
+      AudioEngine.speak(
+        speechText,
+        () => {
+          listenBtn.classList.add('speaking');
+          listenBtn.innerHTML = `<i class="fa-solid fa-circle-stop"></i> Stop`;
+          listenBtn.style.background = '#e11d48'; // dark rose red
+        },
+        () => {
+          listenBtn.classList.remove('speaking');
+          listenBtn.innerHTML = `<i class="fa-solid fa-headphones"></i> Listen (2m)`;
+          listenBtn.style.background = 'var(--accent)';
+        },
+        () => {
+          listenBtn.classList.remove('speaking');
+          listenBtn.innerHTML = `<i class="fa-solid fa-headphones"></i> Listen (2m)`;
+          listenBtn.style.background = 'var(--accent)';
+        }
+      );
+    });
+
+    const watchBtn = document.createElement('button');
+    watchBtn.className = 'mastery-btn';
+    watchBtn.style.flex = '1';
+    watchBtn.style.padding = '8px';
+    watchBtn.style.fontSize = '0.78rem';
+    watchBtn.style.fontWeight = 'bold';
+    watchBtn.style.background = 'var(--primary)';
+    watchBtn.style.color = '#fff';
+    watchBtn.style.border = 'none';
+    watchBtn.style.display = 'inline-flex';
+    watchBtn.style.alignItems = 'center';
+    watchBtn.style.justifyContent = 'center';
+    watchBtn.style.gap = '6px';
+    watchBtn.innerHTML = `<i class="fa-solid fa-play"></i> Watch`;
+    watchBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      AudioEngine.play('click');
+      AudioEngine.stopSpeaking(); // stop reading if playing video
+      container.querySelectorAll('.btn-hub-audio-listen').forEach(b => {
+        b.classList.remove('speaking');
+        b.innerHTML = `<i class="fa-solid fa-headphones"></i> Listen (2m)`;
+        b.style.background = 'var(--accent)';
+      });
+      openVideoModal(displayVideo.youtube_url, displayVideo.video_title);
     });
 
     const studyBtn = document.createElement('button');
@@ -6746,14 +7142,18 @@ function renderAiVideosView() {
     studyBtn.style.background = 'rgba(255,255,255,0.05)';
     studyBtn.style.border = '1px solid var(--border-glass)';
     studyBtn.style.color = 'var(--text-main)';
+    studyBtn.style.width = '100%';
     studyBtn.innerHTML = `Study Lesson`;
     studyBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       AudioEngine.play('click');
+      AudioEngine.stopSpeaking();
       switchView('subtopic', subtopicId);
     });
 
-    actions.appendChild(playBtn);
+    btnRow.appendChild(listenBtn);
+    btnRow.appendChild(watchBtn);
+    actions.appendChild(btnRow);
     actions.appendChild(studyBtn);
 
     card.innerHTML = header + thumbnail + body;
@@ -6761,7 +7161,13 @@ function renderAiVideosView() {
 
     card.addEventListener('click', () => {
       AudioEngine.play('click');
-      openVideoModal(video.primary.youtube_url, video.primary.video_title);
+      AudioEngine.stopSpeaking();
+      container.querySelectorAll('.btn-hub-audio-listen').forEach(b => {
+        b.classList.remove('speaking');
+        b.innerHTML = `<i class="fa-solid fa-headphones"></i> Listen (2m)`;
+        b.style.background = 'var(--accent)';
+      });
+      openVideoModal(displayVideo.youtube_url, displayVideo.video_title);
     });
 
     container.appendChild(card);

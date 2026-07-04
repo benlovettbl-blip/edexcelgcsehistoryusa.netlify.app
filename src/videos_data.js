@@ -1,11 +1,5 @@
 export const VIDEOS_DATA = {
   "subtopic_1_1": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Brown v Board of Education",
-      "youtube_url": "https://www.youtube.com/watch?v=dKyYlye0c6Q",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "School Segregation and Brown v Board: Crash Course Black American History #33",
       "youtube_url": "https://www.youtube.com/watch?v=NBlqcAEv4nk",
@@ -19,12 +13,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_1_2": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Little Rock Nine",
-      "youtube_url": "https://www.youtube.com/watch?v=mI09vVUs0FQ",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "Little Rock Nine integration at 60",
       "youtube_url": "https://www.youtube.com/watch?v=ym8rdtq-KBE",
@@ -38,12 +26,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_1_3": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Montgomery Bus Boycott",
-      "youtube_url": "https://www.youtube.com/watch?v=AiLWOcVNDEQ",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "The Montgomery Bus Boycott: Crash Course Black American History #35",
       "youtube_url": "https://www.youtube.com/watch?v=ylOpide9dus",
@@ -57,12 +39,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_1_4": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Early Civil Rights Steps",
-      "youtube_url": "https://www.youtube.com/watch?v=qML-X9i7_3w",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "Early Steps in the CIVIL RIGHTS Movement (1940s-50s)",
       "youtube_url": "https://www.youtube.com/watch?v=0sUpGqKayWY",
@@ -76,12 +52,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_2_1": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Freedom Rides & Sit-Ins",
-      "youtube_url": "https://www.youtube.com/watch?v=8ufqX4wmvgc",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "Sound Smart: The Freedom Rides",
       "youtube_url": "https://www.youtube.com/watch?v=dJqA6PQRh3U",
@@ -95,12 +65,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_2_2": {
-    "primary": {
-      "video_title": "2-minute AI Overview: March on Washington & Civil Rights Act",
-      "youtube_url": "https://www.youtube.com/watch?v=xW9k63w-TRM",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "Bet You Didn't Know: March on Washington",
       "youtube_url": "https://www.youtube.com/watch?v=qjL1E3R9dF4",
@@ -114,12 +78,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_2_3": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Malcolm X & Black Power",
-      "youtube_url": "https://www.youtube.com/watch?v=fX-zU1nl-zU",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "The Life of Malcolm X",
       "youtube_url": "https://www.youtube.com/watch?v=tFh4OloaJMo",
@@ -133,12 +91,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_2_4": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Watts Riots & Race Riots",
-      "youtube_url": "https://www.youtube.com/watch?v=Fq8hWqOlF-A",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "50 Years On: A Look Back at the Watts Riots",
       "youtube_url": "https://www.youtube.com/watch?v=lJrWmKsxEos",
@@ -152,12 +104,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_3_1": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Domino Theory & Early US Involvement",
-      "youtube_url": "https://www.youtube.com/watch?v=fVRaO3QW6fU",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "Drawn History: What is Domino Theory?",
       "youtube_url": "https://www.youtube.com/watch?v=44cnzhzcYjs",
@@ -171,12 +117,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_3_2": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Gulf of Tonkin & Escalation",
-      "youtube_url": "https://www.youtube.com/watch?v=lYzopF_Tg7s",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "The Gulf of Tonkin Incident (1964)",
       "youtube_url": "https://www.youtube.com/watch?v=crALHjTiXbk",
@@ -190,12 +130,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_3_3": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Ho Chi Minh Trail & Guerrilla Tactics",
-      "youtube_url": "https://www.youtube.com/watch?v=L21k5Bh_hHo",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "The Infamous and Ingenious Ho Chi Minh Trail",
       "youtube_url": "https://www.youtube.com/watch?v=poE_nNW9-yk",
@@ -209,12 +143,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_3_4": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Vietnamization & Nixon Doctrine",
-      "youtube_url": "https://www.youtube.com/watch?v=yTZzZlLoE84",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "Address to the Nation on Vietnam - April 26, 1972",
       "youtube_url": "https://www.youtube.com/watch?v=jnbhRdmK6ek",
@@ -228,12 +156,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_1": {
-    "primary": {
-      "video_title": "2-minute AI Overview: The Tet Offensive",
-      "youtube_url": "https://www.youtube.com/watch?v=KYE62XVdcrY",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "How The Tet Offensive Changed The Vietnam War",
       "youtube_url": "https://www.youtube.com/watch?v=BPgWqgpgVRc",
@@ -247,12 +169,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_2": {
-    "primary": {
-      "video_title": "2-minute AI Overview: My Lai, Silent Majority & Anti-War Movement",
-      "youtube_url": "https://www.youtube.com/watch?v=7qrPo5ASv-o",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "President Richard Nixon's 'Silent Majority' Speech",
       "youtube_url": "https://www.youtube.com/watch?v=TpCWHQ30Do8",
@@ -266,12 +182,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_3": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Peace Negotiations & Fall of Saigon",
-      "youtube_url": "https://www.youtube.com/watch?v=q69gxI2U9QE",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "Witnessing History: The Fall of Saigon: 50 Years On",
       "youtube_url": "https://www.youtube.com/watch?v=Y0PaYMWsENs&t=188s",
@@ -285,12 +195,6 @@ export const VIDEOS_DATA = {
     ]
   },
   "subtopic_4_4": {
-    "primary": {
-      "video_title": "2-minute AI Overview: Why the US Failed in Vietnam",
-      "youtube_url": "https://www.youtube.com/watch?v=KqsDh0eUc2M",
-      "duration": "02:00",
-      "production_source": "AI Revision Guide"
-    },
     "secondary": {
       "video_title": "How did the U.S. Fail in Vietnam?",
       "youtube_url": "https://www.youtube.com/watch?v=zAq6MrYgLr0",

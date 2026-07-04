@@ -1197,7 +1197,7 @@ const nStoryNodes = {
   extended_complete: {
     year: "Completed",
     topic: "🏆 Full Syllabus Perspective Unlocked!",
-    text: "You have completed the full chronological journey from the perspective of the North Vietnamese forces.\n\nYou have traced the entire conflict: from the early roots of anti-colonial resistance against France, through the land reforms that unified the peasantry, the survival strategies against Operation Rolling Thunder, the grueling hardships of the Ho Chi Minh Trail, the military devastation yet political triumph of Tet, and the final unification of 1975. You now possess a comprehensive, top-tier analytical framework for your Edexcel history exam.",
+    text: "You have completed the full chronological journey from the perspective of the North Vietnamese forces.\n\nYou have traced the entire conflict: from the early roots of anti-colonial resistance against France, through the land reforms that unified the peasantry, the survival strategies against Operation Rolling Thunder, the grueling hardships of the Ho Chi Minh Trail, the military devastation yet political triumph of Tet, and the final unification of 1975. You now possess a comprehensive, top-tier analytical framework for your GCSE history exam.",
     evidenceKey: "total_war_commitment",
     evidenceText: "🇻🇳 Total War Dedication: The sacrifice of 2-3 million lives underscores a determination for independence that conventional US military strategies could not break.",
     options: [

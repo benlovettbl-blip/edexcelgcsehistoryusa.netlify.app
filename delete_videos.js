@@ -8,10 +8,10 @@ const CLIENT_SECRET_FILE = 'client_secret.json';
 const TOKEN_FILE = 'youtube_token.json';
 
 const VIDEO_IDS = [
-  'qui3PrFBKeo', 'IrEAKGcOLLI', 'TeZYmbdSDSo', '0GHTzCXSIVY',
-  'v3Hv5oaqVI8', '-96L7OowcLk', 'MbTGxzAwYRY', 'TNcj1yGz5bQ',
-  'xq2ExDeu1N8', 'c--krABWVnk', 'yjuL5sPSuNA', 'CQZrwd2Lzeo',
-  'ZQGAiaS7W6s', 'G77FIuQyZlI', 'Hizq4lyFnVU', 'Lb21pTRkUsg'
+  'dKyYlye0c6Q', 'mI09vVUs0FQ', 'AiLWOcVNDEQ', 'qML-X9i7_3w',
+  '8ufqX4wmvgc', 'xW9k63w-TRM', 'fX-zU1nl-zU', 'Fq8hWqOlF-A',
+  'fVRaO3QW6fU', 'lYzopF_Tg7s', 'L21k5Bh_hHo', 'yTZzZlLoE84',
+  'KYE62XVdcrY', '7qrPo5ASv-o', 'q69gxI2U9QE', 'KqsDh0eUc2M'
 ];
 
 async function main() {
@@ -44,8 +44,14 @@ async function main() {
   try {
     await deleteVideos(oAuth2Client);
   } catch (err) {
-    if (err.message.includes('insufficient') || err.code === 403 || err.message.toLowerCase().includes('scope')) {
-      console.log('\nCurrent scope is insufficient to delete videos. Requesting full YouTube scope...');
+    const isAuthError = err.message.includes('insufficient') || 
+                        err.code === 403 || 
+                        err.code === 401 ||
+                        err.code === 400 ||
+                        err.message.includes('invalid_grant') ||
+                        err.message.toLowerCase().includes('scope');
+    if (isAuthError) {
+      console.log('\nCurrent credentials are insufficient or expired. Requesting full YouTube scope...');
       await getNewToken(oAuth2Client);
       await deleteVideos(oAuth2Client);
     } else {

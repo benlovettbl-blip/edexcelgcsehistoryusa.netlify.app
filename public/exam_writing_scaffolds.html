@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Writing Scaffolds</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --border: #cbd5e1;
+            --bg-light: #f8fafc;
+            --text: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            background: #e2e8f0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            padding: 15mm;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        .section-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 16px;
+            color: var(--primary-dark);
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .prompt-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+
+        .scaffold-block {
+            border: 1.5px solid #111827;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .block-title {
+            font-weight: 800;
+            font-size: 11px;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .writing-line {
+            border-bottom: 1px solid #94a3b8;
+            height: 24px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .writing-line span {
+            font-size: 9.5px;
+            font-weight: 600;
+            color: #475569;
+            position: absolute;
+            bottom: 2px;
+            left: 2px;
+        }
+
+        .footer-note {
+            position: absolute;
+            bottom: 12mm;
+            left: 15mm;
+            right: 15mm;
+            text-align: center;
+            font-size: 8px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 5px;
+        }
+
+        @media print {
+            body { background: none; }
+            .page { 
+                margin: 0; 
+                padding: 15mm; 
+                border: none; 
+                box-shadow: none; 
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: Question 1 Scaffold -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Paper 3 Question 1: Give Two Differences (4 Marks)</h1>
+    </div>
+    
+    <div class="prompt-box">
+        <strong>Exam Technique Tip:</strong> Keep this response concise. For each difference, state the difference clearly, then provide a direct comparison quote/detail from Source A and Source B. Do not analyze NOP or add own knowledge.
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+        <!-- Difference 1 -->
+        <div class="scaffold-block">
+            <div class="block-title">Difference 1 Builder</div>
+            <div class="writing-line"><span>One difference between the sources is that Source A shows...</span></div>
+            <div class="writing-line"></div>
+            <div class="writing-line"><span>Whereas Source B shows...</span></div>
+            <div class="writing-line"></div>
+            <div class="writing-line"><span>For example, Source A states: "___________________________________"</span></div>
+            <div class="writing-line"><span>which differs from Source B which states: "_________________________"</span></div>
+        </div>
+
+        <!-- Difference 2 -->
+        <div class="worksheet-row" style="flex-grow: 1; min-height: 20px;"></div>
+
+        <div class="scaffold-block">
+            <div class="block-title">Difference 2 Builder</div>
+            <div class="writing-line"><span>Another difference is that Source A portrays...</span></div>
+            <div class="writing-line"></div>
+            <div class="writing-line"><span>Whereas Source B portrays...</span></div>
+            <div class="writing-line"></div>
+            <div class="writing-line"><span>For example, Source A shows: "___________________________________"</span></div>
+            <div class="writing-line"><span>which differs from Source B which shows: "_________________________"</span></div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Exam Skills &bull; Writing Scaffolds &bull; Page 1 of 3</div>
+</div>
+
+<!-- PAGE 2: Question 2 Scaffold -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Paper 3 Question 2: Explain Why (12 Marks)</h1>
+    </div>
+    
+    <div class="prompt-box">
+        <strong>Exam Technique Tip:</strong> You must explain **three separate reasons** for the event. For each reason, write a PEEL paragraph (Point, Evidence, Explanation, Link). Focus directly on causation ("Explain why...").
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+        <!-- Paragraph 1 -->
+        <div class="scaffold-block" style="padding: 10px;">
+            <div class="block-title" style="margin-bottom: 4px;">Paragraph 1 (First Reason)</div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Point: One key reason why [event] occurred was...</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Evidence: For example, during this time... [add specific detail]</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Explanation: This led to [event] because... [explain the cause]</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Link: Therefore, this was a vital factor because...</span></div>
+        </div>
+
+        <div style="flex-grow: 1; min-height: 10px;"></div>
+
+        <!-- Paragraph 2 -->
+        <div class="scaffold-block" style="padding: 10px;">
+            <div class="block-title" style="margin-bottom: 4px;">Paragraph 2 (Second Reason)</div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Point: Another significant reason was...</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Evidence: This can be seen in...</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Explanation: This caused [event] to happen because...</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Link: As a result, this escalated the situation by...</span></div>
+        </div>
+
+        <div style="flex-grow: 1; min-height: 10px;"></div>
+
+        <!-- Paragraph 3 -->
+        <div class="scaffold-block" style="padding: 10px;">
+            <div class="block-title" style="margin-bottom: 4px;">Paragraph 3 (Third Reason - From Own Knowledge)</div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Point: Furthermore, [event] was also caused by...</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Evidence: Specific historical context shows that...</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Explanation: This played a role in the outcome because...</span></div>
+            <div class="writing-line" style="height: 20px; margin-bottom: 8px;"><span>Link: Thus, this completed the path to...</span></div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Exam Skills &bull; Writing Scaffolds &bull; Page 2 of 3</div>
+</div>
+
+<!-- PAGE 3: Question 3a Scaffold -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Paper 3 Question 3a: Source Utility (8 Marks)</h1>
+    </div>
+    
+    <div class="prompt-box">
+        <strong>Exam Technique Tip:</strong> Evaluate **both** sources. For each source, analyze its content (what it tells you), its Nature, Origin, and Purpose (NOP - why it was made and if it's reliable), and back it up with your Own Knowledge.
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+        <!-- Source B Evaluation -->
+        <div class="scaffold-block">
+            <div class="block-title">Source B Evaluation Paragraph</div>
+            <div class="writing-line"><span>Source B is useful because the content reveals... [extract quotes]</span></div>
+            <div class="writing-line"></div>
+            <div class="writing-line"><span>This is supported by my own knowledge that... [add historical context]</span></div>
+            <div class="writing-line"></div>
+            <div class="writing-line"><span>Furthermore, Source B's utility is enhanced/limited by its NOP because...</span></div>
+            <div class="writing-line"><span>It was produced by [Author] in [Year] to [Purpose]...</span></div>
+        </div>
+
+        <div style="flex-grow: 1; min-height: 15px;"></div>
+
+        <!-- Source C Evaluation -->
+        <div class="scaffold-block">
+            <div class="block-title">Source C Evaluation Paragraph</div>
+            <div class="writing-line"><span>Source C is also useful because it shows...</span></div>
+            <div class="writing-line"></div>
+            <div class="writing-line"><span>From my own knowledge, I know that...</span></div>
+            <div class="writing-line"></div>
+            <div class="writing-line"><span>Regarding NOP, Source C is useful because it is a [Nature] from...</span></div>
+            <div class="writing-line"><span>which means its reliability and perspective are...</span></div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Exam Skills &bull; Writing Scaffolds &bull; Page 3 of 3</div>
+</div>
+
+</body>
+</html>

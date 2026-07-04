@@ -125,7 +125,17 @@ export const AudioEngine = {
       console.warn("Audio Context synth error:", e);
     }
   },
-  speak(text, onStart, onEnd, onError) {
+  normalizeTextForSpeech(text) {
+    if (!text) return '';
+    return text.replace(/<[^>]*>/g, '').trim()
+      .replace(/\b1940s\b/g, "1940's")
+      .replace(/\b1950s\b/g, "1950's")
+      .replace(/\b1960s\b/g, "1960's")
+      .replace(/\b1970s\b/g, "1970's")
+      .replace(/\bNAACP\b/g, "N.A.A.C.P.")
+      .replace(/\bCORE\b/g, "C.O.R.E.");
+  },
+  speak(text, onStart, onEnd, onError, rate = 0.95, highlightText = null, onWordHighlight = null) {
     if (!('speechSynthesis' in window)) {
       console.warn("Speech Synthesis not supported in this browser.");
       if (onError) onError();
@@ -140,21 +150,41 @@ export const AudioEngine = {
       return;
     }
     
-    // Remove HTML tags if any
-    const cleanText = text.replace(/<[^>]*>/g, '').trim();
+    // Get normalized texts
+    const spokenText = this.normalizeTextForSpeech(text);
+    const spokenHighlightText = highlightText ? this.normalizeTextForSpeech(highlightText) : spokenText;
+    const introStartOffset = Math.max(0, spokenText.indexOf(spokenHighlightText));
     
     try {
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.rate = 0.95; // Slightly slower for readability
+      const utterance = new SpeechSynthesisUtterance(spokenText);
+      utterance.rate = rate; // Custom rate (default 0.95)
       utterance.pitch = 1.0;
       
       const vol = state.audioVolume !== undefined ? state.audioVolume : 0.8;
       utterance.volume = vol;
       
       const voices = window.speechSynthesis.getVoices();
-      const enVoice = voices.find(v => v.lang === 'en-GB' || v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
+      // Search for premium natural voice
+      const premiumVoice = voices.find(v => v.lang.startsWith('en') && 
+        (v.name.includes('Natural') || v.name.includes('Neural') || v.name.includes('Google') || v.name.includes('Premium')));
+      const enVoice = premiumVoice || 
+                      voices.find(v => v.lang === 'en-GB') || 
+                      voices.find(v => v.lang === 'en-US') || 
+                      voices.find(v => v.lang.startsWith('en'));
       if (enVoice) {
         utterance.voice = enVoice;
+      }
+      
+      // Calculate word offsets within the highlighted block only
+      let wordOffsets = [];
+      if (onWordHighlight) {
+        const words = spokenHighlightText.split(/\s+/);
+        let currentOffset = 0;
+        words.forEach(w => {
+          const pos = spokenHighlightText.indexOf(w, currentOffset);
+          wordOffsets.push(pos);
+          currentOffset = pos + w.length;
+        });
       }
       
       utterance.onstart = () => {
@@ -167,6 +197,30 @@ export const AudioEngine = {
         console.warn("SpeechSynthesis error:", e);
         if (onError) onError();
       };
+      
+      if (onWordHighlight) {
+        utterance.onboundary = (event) => {
+          if (event.name === 'word') {
+            const charIndex = event.charIndex;
+            // Subtract prefix offset to get boundary index relative to the highlighted text
+            const relativeCharIndex = charIndex - introStartOffset;
+            
+            if (relativeCharIndex >= 0) {
+              let activeWordIdx = -1;
+              for (let i = 0; i < wordOffsets.length; i++) {
+                if (wordOffsets[i] <= relativeCharIndex) {
+                  activeWordIdx = i;
+                } else {
+                  break;
+                }
+              }
+              if (activeWordIdx !== -1) {
+                onWordHighlight(activeWordIdx);
+              }
+            }
+          }
+        };
+      }
       
       window.speechSynthesis.speak(utterance);
     } catch (err) {

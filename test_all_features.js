@@ -1,6 +1,6 @@
 /**
  * test_all_features.js
- * Comprehensive integration tests for the Edexcel GCSE History USA app.
+ * Comprehensive integration tests for the GCSE History USA app.
  * Runs in Node.js using JSDOM to simulate user interaction, routing, state changes, and games.
  */
 
@@ -224,12 +224,10 @@ try {
     { navId: 'nav-timeline', viewId: 'view-timeline', name: 'Timeline' },
     { navId: 'nav-map', viewId: 'view-map', name: 'Map Explorer' },
     { navId: 'nav-exam-sim', viewId: 'view-exam', name: 'Quiz Generator' },
+    { navId: 'nav-worksheets', viewId: 'view-exam-hub', name: 'Educator Worksheets' },
     { navId: 'nav-exam-hub', viewId: 'view-exam-hub', name: 'Exam Hub' },
-    { navId: 'nav-bookmarks', viewId: 'view-bookmarks', name: 'Bookmarks' },
     { navId: 'nav-games', viewId: 'view-games', name: 'Games Hub' },
-    { navId: 'nav-ai-videos', viewId: 'view-ai-videos', name: '2-Min AI Videos' },
-    { navId: 'nav-leaderboard', viewId: 'view-leaderboard', name: 'Leaderboard' },
-    { navId: 'nav-guide', viewId: 'view-guide', name: 'User & Parent Guide' }
+    { navId: 'nav-leaderboard', viewId: 'view-leaderboard', name: 'Leaderboard' }
   ];
 
   views.forEach(v => {
@@ -800,26 +798,16 @@ try {
   // Navigate back to dashboard first to start from main screen
   window.switchView('dashboard');
 
-  // Verify dashboard shortcut button click triggers guide view
-  const shortcutGuideBtn = document.getElementById('shortcut-guide');
-  if (!shortcutGuideBtn) throw new Error("Dashboard shortcut-guide button not found!");
-  fireClick(shortcutGuideBtn);
+  // Verify header guide button click triggers guide view
+  const headerGuideBtn = document.getElementById('nav-guide-header');
+  if (!headerGuideBtn) throw new Error("Header nav-guide-header button not found!");
+  fireClick(headerGuideBtn);
   
   const guideView = document.getElementById('view-guide');
   if (!guideView || !guideView.classList.contains('active')) {
-    throw new Error("User & Parent Guide view was not activated after clicking dashboard shortcut!");
+    throw new Error("User & Parent Guide view was not activated after clicking header guide button!");
   }
-  console.log("    * Dashboard shortcut card click navigation verified.");
-
-  // Navigate back to dashboard and verify hero guide button click triggers guide view
-  window.switchView('dashboard');
-  const heroGuideBtn = document.getElementById('hero-guide-btn');
-  if (!heroGuideBtn) throw new Error("Dashboard hero-guide-btn not found!");
-  fireClick(heroGuideBtn);
-  if (!guideView.classList.contains('active')) {
-    throw new Error("User & Parent Guide view was not activated after clicking dashboard hero button!");
-  }
-  console.log("    * Dashboard hero button click navigation verified.");
+  console.log("    * Header guide button click navigation verified.");
   
   console.log("✓ User & Parent Guide view verification passed.");
 

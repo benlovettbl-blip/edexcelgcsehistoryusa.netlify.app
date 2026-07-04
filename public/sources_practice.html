@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sources Practice Book</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --border: #cbd5e1;
+            --bg-light: #f8fafc;
+            --text: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            background: #e2e8f0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            padding: 15mm;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        .cover-page {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20mm 20mm;
+        }
+
+        .source-box {
+            border: 1.5px solid #111827;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 65%;
+            text-align: left;
+        }
+
+        .source-title {
+            font-weight: 800;
+            font-size: 10px;
+            color: var(--primary);
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .source-provenance {
+            font-size: 8.5px;
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 6px;
+            line-height: 1.25;
+        }
+
+        .source-content {
+            font-size: 10.5px;
+            line-height: 1.4;
+            text-align: justify;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        .clues-band {
+            background: #eff6ff;
+            border: 1.5px solid #bfdbfe;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 8px;
+            line-height: 1.3;
+            display: flex;
+            gap: 12px;
+            box-sizing: border-box;
+            width: 65%;
+            text-align: left;
+        }
+
+        .clues-band div {
+            flex: 1;
+        }
+
+        .footer-note {
+            position: absolute;
+            bottom: 12mm;
+            left: 15mm;
+            right: 15mm;
+            text-align: center;
+            font-size: 8px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 5px;
+        }
+
+        @media print {
+            body { background: none; }
+            .page { 
+                margin: 0; 
+                padding: 15mm; 
+                border: none; 
+                box-shadow: none; 
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cover Page -->
+<div class="page cover-page">
+    <div class="cover-title" style="font-size: 40px; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; line-height: 1.2;">Sources Practice Book</div>
+    <div class="cover-subtitle" style="font-size: 18px; color: #475569; margin-bottom: 12px;">The USA, 1954–75: conflict at home and abroad</div>
+    
+    <div class="cover-name-box" style="border: 2px dashed var(--border); padding: 12px; width: 85%; text-align: left; font-size: 14px; margin-bottom: 12px;">
+        <strong>Name:</strong> _________________________________________<br><br>
+        <strong>Class:</strong> _________________________________________
+    </div>
+
+    <!-- The Q3a Useful Triangle -->
+    <div class="triangle-container" style="margin-bottom: 15px; padding: 12px 15px; background: var(--bg-light); border: 1.5px solid var(--primary); border-radius: 8px; width: 85%; text-align: left; box-sizing: border-box; position: relative;">
+        <h3 style="margin: 0 0 6px 0; font-size: 12px; color: var(--primary-dark); text-transform: uppercase; font-weight: bold; text-align: center;">📐 The Q3a Useful Triangle</h3>
+        <p style="font-size: 10.5px; color: #475569; margin: 0 0 10px 0; text-align: center;">
+            To score full marks on Q3a (8 Marks), structure your response into **two paragraphs** (one for Source B, one for Source C). You must weave together all three corners of the evaluation triangle:
+        </p>
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; position: relative; margin-top: 5px; height: 110px;">
+            <!-- Left Point: NOP -->
+            <div style="width: 30%; text-align: center; font-size: 10px; z-index: 2; background: white; border: 1.5px solid #2563eb; padding: 4px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); box-sizing: border-box;">
+                <strong style="color: #2563eb; display: block; font-size: 11px; margin-bottom: 2px;">NOP</strong>
+                <strong>Nature/Origin/Purpose</strong><br>
+                Who wrote it? Why? Is it reliable?
+            </div>
+            
+            <!-- Top Point (Absolute Center Top): C -->
+            <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 30%; text-align: center; font-size: 10px; z-index: 2; background: white; border: 1.5px solid #10b981; padding: 4px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); box-sizing: border-box;">
+                <strong style="color: #10b981; display: block; font-size: 11px; margin-bottom: 2px;">C</strong>
+                <strong>Content & Quotes</strong><br>
+                What details can you extract?
+            </div>
+            
+            <!-- Right Point: OK -->
+            <div style="width: 30%; text-align: center; font-size: 10px; z-index: 2; background: white; border: 1.5px solid #f59e0b; padding: 4px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); box-sizing: border-box;">
+                <strong style="color: #f59e0b; display: block; font-size: 11px; margin-bottom: 2px;">OK</strong>
+                <strong>Own Knowledge</strong><br>
+                What context supports this?
+            </div>
+            
+            <!-- SVG Triangle Connectors in background -->
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+                <polygon points="50,15 15,85 85,85" style="fill:none; stroke:#93c5fd; stroke-width:1.5; stroke-dasharray:3;" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="checklist" style="text-align: left; width: 85%; background: var(--bg-light); padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border); box-sizing: border-box;">
+        <h3 style="margin-top: 0; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 8px; font-size: 1rem;">Key Topics Checklist</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>1.1:</strong> Early 1950s Position</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>2.3:</strong> Malcolm X Leadership</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>1.2:</strong> Education Progress</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>2.4:</strong> Black Power Movement</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>1.3:</strong> Montgomery Boycott</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>3.1:</strong> Domino Theory</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>1.4:</strong> 1950s Opposition</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>3.2:</strong> Gulf of Tonkin</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>2.1:</strong> Peaceful Protests</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>3.3:</strong> US Military Tactics</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>2.2:</strong> Federal Legislation</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>3.4:</strong> Tet Offensive Turning Point</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>4.1:</strong> Vietnamisation</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>4.2:</strong> Anti-War Movement</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>4.3:</strong> Paris Peace Accords</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 10.5px; line-height: 1.2;">
+                <div style="width: 12px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; flex-shrink: 0;"></div>
+                <div><strong>4.4:</strong> Reasons for US Defeat</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 1: Topic 1.1 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 1.1: Position of Black Americans in the early 1950s</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the barriers faced by Black Americans in the Southern states in the early 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Jim Crow laws</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Voting literacy tests</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> NAACP litigation</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Economic intimidation</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Plessy v. Ferguson</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What voting obstacles are mentioned? How does the writer describe white applicants' exams?</div>
+                <div><strong>NOP:</strong> A Northern newspaper report from 1954. Why might a Chicago reporter write about Southern segregation?</div>
+                <div><strong>OK:</strong> Link to Jim Crow laws, poll taxes, and literacy tests designed to prevent Black registration.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From a journalist's dispatch in a Chicago newspaper, reporting on Southern voter registration in 1954.</div>
+                <p class="source-content">"Registering to vote in Southern states such as Mississippi and Alabama remains an unattainable goal for African Americans. Local registrars administer arbitrary 'literacy exams' that require Black applicants to interpret intricate constitutional clauses, whereas white applicants face no such hurdles. Furthermore, any Black citizen attempting to register risks immediate dismissal by their employer. Intimidation is omnipresent."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a confidential memo by a leading NAACP attorney to the executive board, 1953.</div>
+                <p class="source-content">"Our courtroom strategy is yielding significant results. By initiating litigation in the federal courts, we have successfully outlawed the exclusionary white primary system in Texas and are now targeting segregation in higher education. The federal courts are our primary arena, and by leveraging constitutional guarantees, we are compelling the government to recognize that segregation is inherently discriminatory."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What legal successes does the attorney report? Where is the NAACP taking their fight?</div>
+                <div><strong>NOP:</strong> A confidential internal NAACP memo. Does the private nature of the memo increase its honesty?</div>
+                <div><strong>OK:</strong> Link to the NAACP legal defense fund, led by Thurgood Marshall, and the Sweatt v. Painter precedent.</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 1 of 16</div>
+</div>
+
+<!-- PAGE 2: Topic 1.2 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 1.2: Education progress for Black Americans, 1954–60</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the Little Rock High School crisis of 1957? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Little Rock Nine</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Governor Orval Faubus</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> 101st Airborne Division</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Brown v. Topeka (1954)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> White Citizens Councils</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block (Visual Source) -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What details show the strength of public opposition? How are the protestors reacting?</div>
+                <div><strong>NOP:</strong> A photograph taken by a press photographer on 4 September 1957. Why would a photograph of this moment be useful?</div>
+                <div><strong>OK:</strong> Link to the Little Rock Nine, Governor Faubus's defiance of the federal court, and the public hostility at Central High School.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B (Visual Source)</div>
+                <div class="source-provenance">A photograph showing Elizabeth Eckford (one of the Little Rock Nine) attempting to enter Little Rock Central High School on 4 September 1957.</div>
+                
+                <div style="border: 1px dashed #64748b; padding: 4px; background: white; margin-top: 5px; border-radius: 4px; box-sizing: border-box; text-align: center;">
+                    <img src="assets/sources/little-rock-protest-1957.jpg" style="width: auto; max-width: 100%; height: auto; max-height: 120px; display: block; margin: 0 auto; border-radius: 4px;" alt="Source B: Little Rock Protest">
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a radio address by President Dwight D. Eisenhower to the American people, 24 September 1957.</div>
+                <p class="source-content">"Mob rule in Little Rock cannot be allowed to override the decisions of our courts. The integration of Central High School must proceed as ordered by the federal courts. I have today issued an Executive Order directing the use of federal troops to remove the obstruction and ensure that the law is obeyed. We must show the world that our laws are supreme."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What reason does Eisenhower give for sending in soldiers? What does he say about 'mob rule'?</div>
+                <div><strong>NOP:</strong> A televised presidential address. Why was this speech broadcast to the nation? How does his political motive affect reliability?</div>
+                <div><strong>OK:</strong> Link to the deployment of the 101st Airborne Division and federalising the National Guard to protect the students.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 2 of 16</div>
+</div>
+
+<!-- PAGE 3: Topic 1.3 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 1.3: The Montgomery Bus Boycott, 1955–56</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the methods and impact of the Montgomery Bus Boycott? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Rosa Parks arrest</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Montgomery Improvement Assoc. (MIA)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Martin Luther King Jr.</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Browder v. Gayle (1956)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Non-violent direct action</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What methods of alternative transport are suggested? What warning is given about violence?</div>
+                <div><strong>NOP:</strong> An organizing leaflet from the MIA. How does the intent to mobilize the community affect its usefulness?</div>
+                <div><strong>OK:</strong> Link to the coordination of carpools by MLK and the MIA, and the arrest of Rosa Parks.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From a leaflet distributed by the Montgomery Improvement Association (MIA) to the Black community, December 1955.</div>
+                <p class="source-content">"Don't ride the buses on Monday to protest the arrest and trial of Rosa Parks. If you work, take a carpool, ride in a Black-owned taxi, or walk. We must stand united for dignity and justice. Do not use violence under any circumstances. Walk with pride, and let our peaceful absence from the buses speak for us."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From an editorial in a Montgomery newspaper, December 1956, reflecting on the Supreme Court's desegregation order.</div>
+                <p class="source-content">"The Supreme Court decision is a hard blow to our local customs. However, the boycott was not a success of peaceful protest; it was a campaign of economic intimidation that forced local businesses to close. The boycott has destroyed decades of good race relations in Montgomery, leaving behind a bitter town divided by federal court coercion."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What is the writer's attitude towards the Supreme Court? How does the editorial describe the boycott's impact?</div>
+                <div><strong>NOP:</strong> A Southern newspaper editorial from 1956. How does the paper's segregationist bias shape its representation of the boycott?</div>
+                <div><strong>OK:</strong> Link this to the Supreme Court ruling in Browder v. Gayle, which declared segregated buses unconstitutional.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 3 of 16</div>
+</div>
+
+<!-- PAGE 4: Topic 1.4 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 1.4: Opposition to the civil rights movement, 1954–60</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the methods of opposition to the civil rights movement in the late 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Southern Manifesto (1956)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> White Citizens Councils</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Massive Resistance</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Economic retaliation</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> KKK intimidation</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What is the main accusation against the Supreme Court? What do they pledge to do?</div>
+                <div><strong>NOP:</strong> An official manifesto signed by 101 Southern congressmen. Why is this useful for understanding political resistance?</div>
+                <div><strong>OK:</strong> Link to the policy of 'Massive Resistance' and how Southern states closures circumvented Brown.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From the 'Southern Manifesto' (Declaration of Constitutional Principles) signed by 101 Southern members of Congress in March 1956.</div>
+                <p class="source-content">"We regard the decision of the Supreme Court in the school cases as a clear abuse of judicial power. It climaxes a trend in the Federal judiciary to legislate, in derogation of the authority of Congress, and to encroach upon the reserved rights of the States and the people. We pledge ourselves to use all lawful means to bring about a reversal of this decision which is contrary to the Constitution and to prevent the use of force in its implementation."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a speech by a leader of the Montgomery White Citizens Council in Alabama, speaking to a segregationist rally in 1956.</div>
+                <p class="source-content">"The Negroes think that a court ruling can force us to integrate. But we hold the economic power in this town. If they continue to demand integration, they will find themselves without jobs, without credit at our banks, and without homes. We will organize economic boycotts against any business that surrenders, and we will use every social pressure to protect our segregated Southern way of life."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What economic sanctions are threatened? How do they plan to pressure local businesses?</div>
+                <div><strong>NOP:</strong> A speech at a public segregationist rally. How does the speaker's tone and audience affect reliability?</div>
+                <div><strong>OK:</strong> Link to the rapid growth of White Citizens Councils in the 1950s, using economic coercion to ruin Black activists financially.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 4 of 16</div>
+</div>
+
+<!-- PAGE 5: Topic 2.1 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 2.1: Peaceful protests in the early 1960s</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the Birmingham Campaign of 1963? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Project C (Confrontation)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Police Chief Bull Connor</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Children's Crusade</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Letter from Birmingham Jail</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Media coverage impact</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block (Visual Source) -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What details show the police methods used? How does this photograph capture the scale of tension?</div>
+                <div><strong>NOP:</strong> A photograph published in national newspapers in May 1963. Why would publication in national newspapers affect its utility?</div>
+                <div><strong>OK:</strong> Link to SCLC's Birmingham Campaign, Project C, Police Chief Bull Connor, and the use of children/teenagers in protests.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B (Visual Source)</div>
+                <div class="source-provenance">A photograph showing the police department using attack dogs against young protestors in Birmingham, Alabama, May 1963.</div>
+                
+                <div style="border: 1px dashed #64748b; padding: 4px; background: white; margin-top: 5px; border-radius: 4px; box-sizing: border-box; text-align: center;">
+                    <img src="assets/sources/birmingham-protests-dogs-1963.jpg" style="width: auto; max-width: 100%; height: auto; max-height: 120px; display: block; margin: 0 auto; border-radius: 4px;" alt="Source B: Birmingham Protests">
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a statement by Albert Boutwell, the newly elected moderate mayor of Birmingham, May 1963.</div>
+                <p class="source-content">"These outside agitators have flooded our city at a time when we were moving towards resolving our local problems peacefully. Their protests are illegal, dangerous, and have caused unnecessary disorder in our streets. They have exploited children, placing them in the front lines of protests, solely to create sensationalist headlines for the national media."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What does he accuse the protesters of doing? How does he describe the impact on the streets?</div>
+                <div><strong>NOP:</strong> A statement by the Birmingham Mayor. How does his position as city leader shape his view of the activists?</div>
+                <div><strong>OK:</strong> Link to the 'Children's Crusade' where the SCLC used school children as protestors, resulting in Connor using water cannons and dogs.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 5 of 16</div>
+</div>
+
+<!-- PAGE 6: Topic 2.2 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 2.2: Federal civil rights legislation, 1963–65</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the passage of the Voting Rights Act of 1965? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Selma campaign (1965)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Bloody Sunday</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> President Lyndon B. Johnson</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Voting Rights Act of 1965</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Civil Rights Act of 1964</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> How does Johnson describe the events at Selma? What does he say about the right to vote?</div>
+                <div><strong>NOP:</strong> An address to Congress by the President. How does the public, legislative nature of the speech affect its usefulness?</div>
+                <div><strong>OK:</strong> Link to the Selma to Montgomery marches and 'Bloody Sunday' where state troopers attacked peaceful protestors.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From President Lyndon B. Johnson's address to a joint session of Congress, introducing the Voting Rights Bill, 15 March 1965.</div>
+                <p class="source-content">"At Selma, Alabama, long-suffering men and women have campaigned peacefully for the right to register as voters. They have been met by police violence and state-sanctioned resistance. Every American citizen must have an equal right to vote. There is no constitutional issue here; it is a moral issue. We shall overcome the legacy of bigotry and deny no one their constitutional rights."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a student civil rights worker's diary in Selma, Alabama, describing voting registration hurdles, January 1965.</div>
+                <p class="source-content">"We went to the courthouse again today. Only 15 Black people were allowed to stand in line, and the registrar worked at a snail's pace. Sheriff Clark stood by, clutching his cattle prod, looking for any reason to arrest us. After five hours in the cold, the registrar declared the office closed. Only two people managed to submit their forms, and they will likely be rejected."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What specific tactics were used to prevent Black citizens from registering? How is Clark described?</div>
+                <div><strong>NOP:</strong> A student volunteer's diary. Does the private, daily nature of a diary make it more useful for understanding personal experience?</div>
+                <div><strong>OK:</strong> Link to Sheriff Jim Clark's notorious violence in Selma, which was highlighted by SNCC and SCLC for national media.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 6 of 16</div>
+</div>
+
+<!-- PAGE 7: Topic 2.3 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 2.3: Malcolm X and civil rights leadership</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the methods and impact of Malcolm X? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Nation of Islam</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Self-defense doctrine</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Black Nationalism</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> "Ballot or the Bullet"</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Split in activist strategies</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> How does the speaker view the 'American dream'? What choice does he present?</div>
+                <div><strong>NOP:</strong> A speech delivered to a Black audience in 1964. What is the speaker's main purpose? Does the militant language limit usefulness?</div>
+                <div><strong>OK:</strong> Link to Malcolm X's split from the Nation of Islam and his growing focus on political action and armed self-defense.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From Malcolm X's "The Ballot or the Bullet" speech, delivered in Cleveland, Ohio, 3 April 1964.</div>
+                <p class="source-content">"We don't see any American dream; we've only experienced the American nightmare. If the government refuses to protect our constitutional rights, we must defend ourselves. We are within our rights to use any means necessary. It must be the ballot or the bullet. If we cannot vote peacefully, then we must be prepared for armed self-defense."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From an article by Martin Luther King Jr., published in a national magazine, January 1965.</div>
+                <p class="source-content">"Malcolm X's advocacy of violence and separation is deeply dangerous. It plays into the hands of segregationists who want to paint us as extremists. We cannot achieve integration or equality by arming ourselves or withdrawing from white society. Our strength lies in our moral power and our ability to win over the conscience of the nation through nonviolent suffering."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> Why does King think Malcolm X's ideas are dangerous? How does he define the movement's strength?</div>
+                <div><strong>NOP:</strong> A magazine article by MLK. How does King's audience and goal shape his critique?</div>
+                <div><strong>OK:</strong> Link to the ideological division between MLK's integrationist non-violence and Malcolm X's Black Nationalist separatism.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 7 of 16</div>
+</div>
+
+<!-- PAGE 8: Topic 2.4 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 2.4: The Black Power movement, 1965–75</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the goals and methods of the Black Panther Party? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Ten-Point Program</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Huey Newton & Bobby Seale</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Armed patrols (self-defense)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Community programs (breakfast)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> FBI surveillance (COINTELPRO)</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What are their primary demands? What is their attitude towards capitalists and police?</div>
+                <div><strong>NOP:</strong> The official founding platform of the Panthers. Why is this useful for understanding their official goals?</div>
+                <div><strong>OK:</strong> Link to the founding of the Black Panther Party in Oakland by Huey Newton and Bobby Seale in response to urban ghetto conditions.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From the Black Panther Party's Ten-Point Program (What We Want, What We Believe), October 1966.</div>
+                <p class="source-content">"1. We want freedom. We want power to determine the destiny of our Black Community.<br>3. We want an end to the robbery by the capitalists of our Black community.<br>7. We want an immediate end to police brutality and murder of Black people.<br>10. We want land, bread, housing, education, clothing, justice, and peace."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From an official report by the FBI Director to a US Senate Subcommittee, investigating extremist groups, 1969.</div>
+                <p class="source-content">"The Black Panther Party is the greatest threat to the internal security of the country. They recruit young criminals and arm them under the guise of 'self-defense'. They teach hatred of white people and local law enforcement, actively encouraging violence against police officers. Their community programs are merely front operations designed to gain public sympathy."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What does the report accuse the Panthers of doing? How does it view their breakfast programs?</div>
+                <div><strong>NOP:</strong> An official government intelligence report. How does the FBI's hostile stance shape its portrayal of the Panthers?</div>
+                <div><strong>OK:</strong> Link to J. Edgar Hoover, the FBI's COINTELPRO program, and their covert campaign to dismantle Black Power groups.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 8 of 16</div>
+</div>
+
+<!-- PAGE 9: Topic 3.1 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 3.1: US involvement in Vietnam & the Domino Theory</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the reasons for US involvement in Vietnam in the 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Domino Theory</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Battle of Dien Bien Phu</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Ho Chi Minh nationalism</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> President Dwight D. Eisenhower</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Containment policy</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What is the 'domino' analogy? Which countries does the president fear will fall next?</div>
+                <div><strong>NOP:</strong> An internal government memo from the President. How does the secret, strategic nature of this memo affect usefulness?</div>
+                <div><strong>OK:</strong> Link this to the 'containment' doctrine and the Truman Doctrine's promise to assist free peoples resisting communism.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From a memorandum by President Eisenhower to the State Department explaining the "Domino Theory", April 1954.</div>
+                <p class="source-content">"If Indochina falls to the communists, the rest of Southeast Asia will follow quickly like a row of dominos. The loss of Indochina would threaten Burma, Thailand, and Malaya, placing millions more under communist control. It would also compromise the security of Japan and the Philippines. We must prevent this first block from falling to protect our interests."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From an open letter by Ho Chi Minh to the United Nations, protesting foreign intervention in Vietnam, November 1954.</div>
+                <p class="source-content">"For eighty years, the French imperialists have oppressed our people. We have fought a long and bloody war solely to achieve our national independence and unify our homeland. The United States is now supplying weapons and advisers to establish a puppet regime in the South, denying our people their right to self-determination. We only desire peace and freedom."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What reason does Ho Chi Minh give for their struggle? What accusation does he make against the US?</div>
+                <div><strong>NOP:</strong> An open letter to the UN by Ho Chi Minh. Why did he appeal to the UN? How does the goal of global support affect usefulness?</div>
+                <div><strong>OK:</strong> Link to the defeat of the French at Dien Bien Phu and the division of Vietnam at the Geneva Conference in 1954.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 9 of 16</div>
+</div>
+
+<!-- PAGE 10: Topic 3.2 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 3.2: The Gulf of Tonkin incident and escalation</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the escalation of the Vietnam War following the Gulf of Tonkin incident (1964)? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> USS Maddox incident</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Gulf of Tonkin Resolution</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> President Lyndon B. Johnson</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Escalation (troop deployment)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> US Senate vote</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What event is cited as the reason for the resolution? What powers are granted to the President?</div>
+                <div><strong>NOP:</strong> A joint resolution passed by Congress. What makes this a highly useful legal source? How does the belief in attacks affect reliability?</div>
+                <div><strong>OK:</strong> Link to the reported attack on the USS Maddox in August 1964 and how Johnson escalated troops without a war declaration.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From the Gulf of Tonkin Resolution, passed by the United States Congress, 7 August 1964.</div>
+                <p class="source-content">"Whereas naval vessels of the communist regime in Vietnam have repeatedly and aggressively attacked United States vessels in international waters... Resolved, that the Congress approves and supports the determination of the President, as Commander in Chief, to take all necessary measures to repel any armed attack against the forces of the United States and to prevent further aggression."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a North Vietnamese government official statement broadcast on Hanoi Radio, 6 August 1964.</div>
+                <p class="source-content">"The US government has fabricated the story of a second attack on its warships on August 4. This is a blatant pretext designed to justify their air raids against our coastal defenses and escalate their imperialist war in Vietnam. US warships deliberately intruded into our territorial waters to provoke our forces, violating international law."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What does the speaker accuse the US of doing on August 4? What reason does Hanoi give for US movements?</div>
+                <div><strong>NOP:</strong> A radio broadcast from a communist state. How does the propaganda purpose of state radio affect reliability?</div>
+                <div><strong>OK:</strong> Link to subsequent historical findings that the second attack on August 4 did not actually take place, confirming Hanoi's claim.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 10 of 16</div>
+</div>
+
+<!-- PAGE 11: Topic 3.3 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 3.3: US military tactics in the Vietnam War</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the effectiveness of US military tactics in Vietnam? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Search and Destroy</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Chemical defoliants (Agent Orange)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Vietcong guerrilla tactics</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Body count metric</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Hearts and Minds failure</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block (Visual Source) -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What tactics are shown? How does the size of the spray compare to the jungle canopy?</div>
+                <div><strong>NOP:</strong> A photograph taken by a military photographer in 1968. How does the military origin of the photo affect reliability?</div>
+                <div><strong>OK:</strong> Link to Operation Ranch Hand, defoliation tactics (Agent Orange), and the environmental and human impact.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B (Visual Source)</div>
+                <div class="source-provenance">A photograph showing US Air Force UC-123 planes spraying chemical defoliants (Agent Orange) over the jungle canopy in South Vietnam, 1968.</div>
+                
+                <div style="border: 1px dashed #64748b; padding: 4px; background: white; margin-top: 5px; border-radius: 4px; box-sizing: border-box; text-align: center;">
+                    <img src="assets/sources/agent-orange-spraying-c123.jpg" style="width: auto; max-width: 100%; height: auto; max-height: 120px; display: block; margin: 0 auto; border-radius: 4px;" alt="Source B: Agent Orange Spraying">
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From an interview with a Vietcong veteran, recalling the impact of US Search and Destroy missions, recorded in 1971.</div>
+                <p class="source-content">"Whenever the American helicopters arrived, we simply withdrew into our underground tunnel systems. When they left, we re-emerged to lay booby traps and ambush their patrols. Their search-and-destroy missions never held any territory. They came, burned our huts, killed our livestock, and left. This only made our anger grow and strengthened our resolve to fight."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> How did the Vietcong survive attacks? Why does he claim search-and-destroy failed to hold territory?</div>
+                <div><strong>NOP:</strong> Interview with a Vietcong veteran. How does pride in fighting and victory shape the reliability?</div>
+                <div><strong>OK:</strong> Link to Vietcong guerrilla tactics (punji traps, bouncing bettys, tunnels of Cu Chi) and how search-and-destroy alienated civilians.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 11 of 16</div>
+</div>
+
+<!-- PAGE 12: Topic 3.4 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 3.4: The Tet Offensive as a turning point</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the impact of the Tet Offensive (1968) on the US war effort? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Tet Offensive (Jan 1968)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Walter Cronkite broadcast</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Credibility gap</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Military vs political victory</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> President Johnson's decision</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> Why does the author believe the war will end in a stalemate? What does he recommend?</div>
+                <div><strong>NOP:</strong> A television broadcast by CBS anchor Walter Cronkite. Why is this politically useful?</div>
+                <div><strong>OK:</strong> Link to the 'credibility gap' and President Johnson's reaction (*"If I've lost Cronkite, I've lost Middle America"*).</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From a televised news report by Walter Cronkite, CBS News anchor, broadcast on national television, 27 February 1968.</div>
+                <p class="source-content">"To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past. It seems now more certain than ever that the bloody experience of Vietnam is to end in a stalemate. The only rational way out will be to negotiate, not as victors, but as an honorable people who lived up to their pledge."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From an internal assessment report by General Westmoreland, US Military Commander in Vietnam, sent to the Joint Chiefs of Staff, March 1968.</div>
+                <p class="source-content">"The enemy's Tet Offensive has ended in a complete military defeat for their forces. The Vietcong suffered catastrophic casualties, losing over 45,000 experienced combatants, and failed to spark a popular uprising. Their infrastructure in the South is shattered. We must now launch a counter-offensive to destroy the remaining pockets of resistance."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What evidence is used to claim military victory? What next step does he propose?</div>
+                <div><strong>NOP:</strong> An internal military report by the commanding general. How does military defense shape reliability?</div>
+                <div><strong>OK:</strong> Link to the military reality that the VC were decimated during Tet, but it was a massive political defeat for the US.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 12 of 16</div>
+</div>
+
+<!-- PAGE 13: Topic 4.1 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 4.1: Vietnamisation and Nixon's policy, 1969–73</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the success of Nixon's policy of Vietnamisation? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Nixon Doctrine</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> ARVN (South Vietnamese Army)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> US troop withdrawals</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Invasion of Cambodia (1970)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Peace with Honour</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What is the core definition of Vietnamisation? How many troops does he claim to have withdrawn?</div>
+                <div><strong>NOP:</strong> A televised presidential address. How does the political need to satisfy a war-weary US electorate affect reliability?</div>
+                <div><strong>OK:</strong> Link to the 'Nixon Doctrine' and the domestic pressure of the anti-war movement forcing troop withdrawals.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From President Richard Nixon's televised address to the nation, announcing troop withdrawals, November 1969.</div>
+                <p class="source-content">"Under our plan of Vietnamisation, we are systematically training and equipping the South Vietnamese forces to take over full responsibility for defending their own country. This allows us to withdraw American combat troops while maintaining our commitments. We have already withdrawn 60,000 men. This policy offers the only path to a lasting peace with honor."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a report by a US military adviser in Saigon, sent to the Defense Department, 1971.</div>
+                <p class="source-content">"The ARVN forces remain heavily dependent on US air support. Morale is extremely low, and desertion rates have reached record highs. Many units are led by corrupt officers who pocket supplies instead of distributing them. When faced with North Vietnamese attacks in Laos, ARVN troops panicked and suffered massive casualties, proving they cannot fight alone."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What key problems are identified in the ARVN? How did they perform in combat in Laos?</div>
+                <div><strong>NOP:</strong> An internal military report. Does the confidential nature of military-to-government reports make it more reliable?</div>
+                <div><strong>OK:</strong> Link to the failure of the ARVN's invasion of Laos (Operation Lam Son 719) in 1971, which exposed their weakness.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 13 of 16</div>
+</div>
+
+<!-- PAGE 14: Topic 4.2 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 4.2: The anti-war movement in the USA</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the impact and opposition to the anti-war movement? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Kent State shootings (1970)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Draft card burning</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Students for a Democratic Society (SDS)</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Silent Majority</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Spiro Agnew criticism</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block (Visual Source) -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What elements represent the draft process? How is the lottery system depicted?</div>
+                <div><strong>NOP:</strong> A photograph showing the draft lottery operation in 1970. Why is this photograph useful for understanding domestic impact?</div>
+                <div><strong>OK:</strong> Link to the Vietnam draft lottery system, student deferments ending, campus protests, and opposition to the Cambodia invasion.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B (Visual Source)</div>
+                <div class="source-provenance">A photograph showing the selection of draft numbers during the first Vietnam War draft lottery in Washington D.C., December 1969.</div>
+                
+                <div style="border: 1px dashed #64748b; padding: 4px; background: white; margin-top: 5px; border-radius: 4px; box-sizing: border-box; text-align: center;">
+                    <img src="assets/sources/vietnam-draft-lottery.jpg" style="width: auto; max-width: 100%; height: auto; max-height: 120px; display: block; margin: 0 auto; border-radius: 4px;" alt="Source B: Vietnam Draft Lottery">
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a speech by US Vice President Spiro Agnew, delivered to a Republican rally in Ohio, May 1970.</div>
+                <p class="source-content">"We cannot allow our national foreign policy to be dictated by a vocal minority of radical students who burn draft cards and wave communist flags. They are not heroes; they are parasites who exploit the freedoms of our universities to sow division. The silent majority of patriotic Americans support our president in his search for an honorable peace."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> How does Agnew characterize student protesters? Who does he claim supports the president?</div>
+                <div><strong>NOP:</strong> A political rally speech by the Vice President. How does the goal of rallying political supporters affect usefulness?</div>
+                <div><strong>OK:</strong> Link to Nixon's concept of the 'Silent Majority'—the millions of middle-class Americans who did not protest.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 14 of 16</div>
+</div>
+
+<!-- PAGE 15: Topic 4.3 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 4.3: The Paris Peace Accords, 1973</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the negotiations and impact of the Paris Peace Accords? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Cease-fire agreement</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Henry Kissinger negotiations</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> President Nguyen Van Thieu</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> US military withdrawal</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> North Vietnamese troops in South</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What are the ceasefire terms and US troop withdrawal timelines?</div>
+                <div><strong>NOP:</strong> The official international peace treaty. What makes this treaty text highly useful for understanding formal terms?</div>
+                <div><strong>OK:</strong> Link to Henry Kissinger's negotiations with North Vietnam's Le Duc Tho in Paris.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From the official text of the Paris Peace Agreement, signed by the US, South Vietnam, and North Vietnam, 27 January 1973.</div>
+                <p class="source-content">"Article 2: A cease-fire shall be observed throughout South Vietnam... Article 5: Within sixty days of the signing of this Agreement, there shall be a total withdrawal from South Vietnam of all troops, military advisers, and military personnel... of the United States.<br>Article 15: The reunification of Vietnam shall be carried out step by step through peaceful means."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a personal letter written by President Nguyen Van Thieu of South Vietnam to President Nixon, expressing concerns about the treaty draft, December 1972.</div>
+                <p class="source-content">"This agreement is a death warrant for South Vietnam. It requires the total withdrawal of all American military support, yet it allows over 150,000 North Vietnamese troops to remain stationed inside our borders. How can we defend ourselves? Without your guarantee of military intervention if they violate the cease-fire, Saigon will be lost."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> Why does Thieu call the treaty a 'death warrant'? What does he say about North Vietnamese troops?</div>
+                <div><strong>NOP:</strong> A private letter from President Thieu. Does the private nature of the letter make it more useful for understanding Thieu's true fears?</div>
+                <div><strong>OK:</strong> Link to South Vietnam's reluctant signing of the Accords after Nixon promised to 'respond with full force' if North Vietnam violated the treaty.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 15 of 16</div>
+</div>
+
+<!-- PAGE 16: Topic 4.4 -->
+<div class="page">
+    <header style="margin-bottom: 12px; text-align: center;">
+        <h1 style="font-size: 18px; color: var(--primary); margin: 0; font-weight: bold; text-decoration: underline; text-underline-offset: 3px;">Key Topic 4.4: Reasons for US defeat in Vietnam</h1>
+    </header>
+    <div style="margin-bottom: 8px; text-align: center;">
+        <div style="font-size: 11px; font-weight: 600; font-style: italic;">How useful are Sources B and C for an enquiry into the failure of the USA in Vietnam? Explain your answer, using Sources B and C and your own knowledge of the failure of the USA in Vietnam. (8 marks)</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5px; color: #475569; margin-bottom: 15px; width: 100%;">
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Military failures</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Hearts and minds failure</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Domestic political pressure</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Ho Chi Minh trail resolve</div>
+        <div style="display: flex; align-items: center; gap: 4px;"><div style="width: 10px; height: 10px; border: 1.5px solid #64748b; border-radius: 2px;"></div> Guerrilla tactical flexibility</div>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Source B Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source B Clues -->
+            <div class="clues-band" style="margin-bottom: 6px;">
+                <div><strong>C:</strong> What political and tactical constraints are blamed? How does he describe enemy resolve?</div>
+                <div><strong>NOP:</strong> A US officer's memoir published in 1980. How does his desire to justify a military defeat shape usefulness?</div>
+                <div><strong>OK:</strong> Link to the Ho Chi Minh trail passing through Laos and Cambodia, which US ground forces were forbidden to invade.</div>
+            </div>
+
+            <!-- Source B -->
+            <div class="source-box">
+                <div class="source-title">Source B</div>
+                <div class="source-provenance">From a memoir by a former US infantry officer reflecting on the failure of search and destroy, published in 1980.</div>
+                <p class="source-content">"We were never defeated in a major battle, yet we lost the war. We were hamstrung by political restrictions that prevented us from invading North Vietnam. Our search-and-destroy tactics were useless against an enemy that could retreat into Laos and Cambodia. We were fighting a war of attrition where the enemy was willing to take ten casualties for every one of ours, and our own public at home wouldn't tolerate the body counts."</p>
+            </div>
+        </div>
+
+        <!-- Vertical Spacer pushing them apart -->
+        <div style="flex-grow: 1; min-height: 20px;"></div>
+
+        <!-- Source C Block -->
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <!-- Source C -->
+            <div class="source-box" style="margin-bottom: 6px;">
+                <div class="source-title">Source C</div>
+                <div class="source-provenance">From a memoir by a former Vietcong organizer reflecting on why they won the war, published in 1982.</div>
+                <p class="source-content">"The Americans relied on technology, bombs, and chemical defoliants, but they never understood that this war was a fight for our national survival. Every bomb they dropped only strengthened our determination to drive out the foreign invaders. We were willing to fight for twenty, fifty, or a hundred years. Our strength did not come from weapons; it came from the support of the peasants who hid us, fed us, and rebuilt our trails."</p>
+            </div>
+
+            <!-- Source C Clues -->
+            <div class="clues-band">
+                <div><strong>C:</strong> What was the true source of Vietcong strength? What did the US fail to understand?</div>
+                <div><strong>NOP:</strong> A memoir by a victorious Vietcong organizer. How does the pride in winning shape reliability?</div>
+                <div><strong>OK:</strong> Link to the Ho Chi Minh Trail maintenance by thousands of volunteers, and failure of US forces to secure the 'Hearts and Minds'.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">GCSE History Workbook &bull; Sources Practice &bull; Page 16 of 16</div>
+</div>
+
+</body>
+</html>

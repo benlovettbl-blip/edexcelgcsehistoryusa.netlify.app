@@ -1,7 +1,7 @@
 {
-  "name": "Edexcel GCSE History Paper 3: The USA",
+  "name": "GCSE History Paper 3: The USA",
   "short_name": "USA History GCSE",
-  "description": "Edexcel GCSE History Paper 3: The USA, 1954-75: Conflict at Home and Abroad revision guide and recall quizzes.",
+  "description": "GCSE History Paper 3: The USA, 1954-75: Conflict at Home and Abroad revision guide and recall quizzes.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0f172a",

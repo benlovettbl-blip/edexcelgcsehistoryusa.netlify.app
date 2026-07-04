@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Vocabulary Workbook</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --border: #cbd5e1;
+            --bg-light: #f8fafc;
+            --text: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            background: #e2e8f0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            padding: 15mm;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        .section-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 14px;
+            color: var(--primary-dark);
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 65%;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .vocab-list {
+            border: 1px solid var(--border);
+            background: var(--bg-light);
+            border-radius: 4px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .vocab-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .vocab-item {
+            font-size: 9.5px;
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+
+        .vocab-item strong {
+            color: #0f172a;
+            font-size: 10px;
+        }
+
+        .exercise-box {
+            border: 1.5px solid #111827;
+            padding: 12px;
+            background: white;
+            border-radius: 4px;
+            width: 65%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .exercise-title {
+            font-weight: 800;
+            font-size: 11px;
+            color: #0f172a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .match-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 9.5px;
+        }
+
+        .match-term {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+            width: 30%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .match-line {
+            flex-grow: 1;
+            border-bottom: 1px dashed #cbd5e1;
+            margin: 0 15px;
+            height: 1px;
+        }
+
+        .match-slot {
+            border: 1px solid #475569;
+            background: #f8fafc;
+            width: 60%;
+            height: 24px;
+            border-radius: 3px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .match-slot span {
+            position: absolute;
+            bottom: 4px;
+            left: 6px;
+            color: #94a3b8;
+            font-size: 8px;
+        }
+
+        .footer-note {
+            position: absolute;
+            bottom: 12mm;
+            left: 15mm;
+            right: 15mm;
+            text-align: center;
+            font-size: 8px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 5px;
+        }
+
+        @media print {
+            body { background: none; }
+            .page { 
+                margin: 0; 
+                padding: 15mm; 
+                border: none; 
+                box-shadow: none; 
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: Key Topic 1 Vocabulary -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Key Topic 1 Glossary & Match-up: Civil Rights, 1954–60</h1>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+        <div class="vocab-grid">
+            <div class="vocab-list" style="grid-column: span 2;">
+                <div class="vocab-title">Core Term Definitions</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div class="vocab-item"><strong>Segregation:</strong> The legal and social separation of Black and White people in public life.</div>
+                    <div class="vocab-item"><strong>Disenfranchisement:</strong> The system of blocking citizens from using their constitutional right to vote.</div>
+                    <div class="vocab-item"><strong>Litigation:</strong> Taking legal cases to federal courts (e.g. NAACP targeting segregation).</div>
+                    <div class="vocab-item"><strong>Boycott:</strong> Peaceful commercial protest involving refusal to buy/use segregated services.</div>
+                    <div class="vocab-item"><strong>Precedent:</strong> A legal decision serving as a binding guide for future rulings (e.g. Brown v. Topeka).</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise-box">
+            <div class="exercise-title">Vocabulary Match-up Exercise</div>
+            <div style="font-size: 9px; color: #475569; margin-bottom: 12px; font-style: italic;">Match the definitions on the left to their correct core term by writing the term in the blank box.</div>
+            
+            <div class="match-row">
+                <div style="width: 35%;">1. NAACP filing lawsuits to challenge laws.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">2. Supreme court ruling outlawing school segregation.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">3. Legal rules enforcing separate drinking fountains.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">4. Citizens refusing to ride Montgomery buses.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">5. Literacy tests preventing voter registration.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Vocabulary &bull; Key Topic 1 &bull; Page 1 of 4</div>
+</div>
+
+<!-- PAGE 2: Key Topic 2 Vocabulary -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Key Topic 2 Glossary & Match-up: Civil Rights, 1960–75</h1>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+        <div class="vocab-grid">
+            <div class="vocab-list" style="grid-column: span 2;">
+                <div class="vocab-title">Core Term Definitions</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div class="vocab-item"><strong>Militancy:</strong> Using direct, confrontational, or armed methods to demand immediate reform.</div>
+                    <div class="vocab-item"><strong>Legislation:</strong> Statutory acts passed by Congress to outlaw segregation (e.g. Civil Rights Act).</div>
+                    <div class="vocab-item"><strong>Integration:</strong> The blending of segregated races in schools, transport, or public areas.</div>
+                    <div class="vocab-item"><strong>Separatism:</strong> The goal of separating Black communities to form independent social institutions.</div>
+                    <div class="vocab-item"><strong>De facto:</strong> Segregation existing by custom and economic reality, rather than by law.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise-box">
+            <div class="exercise-title">Vocabulary Match-up Exercise</div>
+            <div style="font-size: 9px; color: #475569; margin-bottom: 12px; font-style: italic;">Match the definitions on the left to their correct core term by writing the term in the blank box.</div>
+            
+            <div class="match-row">
+                <div style="width: 35%;">1. Northern ghetto segregation caused by rent policies.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">2. Black Panthers patrolling streets with weapons.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">3. Black and White children attending the same school.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">4. Nation of Islam advocating separate states.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">5. The Voting Rights Act of 1965.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Vocabulary &bull; Key Topic 2 &bull; Page 2 of 4</div>
+</div>
+
+<!-- PAGE 3: Key Topic 3 Vocabulary -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Key Topic 3 Glossary & Match-up: US & Vietnam, 1954–68</h1>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+        <div class="vocab-grid">
+            <div class="vocab-list" style="grid-column: span 2;">
+                <div class="vocab-title">Core Term Definitions</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div class="vocab-item"><strong>Containment:</strong> Foreign policy designed to block the geographical spread of communism.</div>
+                    <div class="vocab-item"><strong>Escalation:</strong> Broadening military commitments (e.g. deploying thousands of combat troops).</div>
+                    <div class="vocab-item"><strong>Defoliation:</strong> Destroying jungle canopy using chemicals (e.g. Agent Orange) to expose cover.</div>
+                    <div class="vocab-item"><strong>Guerrilla:</strong> Hit-and-run tactics, ambushes, and tunnel networks used by the Vietcong.</div>
+                    <div class="vocab-item"><strong>Stalemate:</strong> A deadlock where neither side can make significant military progress.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise-box">
+            <div class="exercise-title">Vocabulary Match-up Exercise</div>
+            <div style="font-size: 9px; color: #475569; margin-bottom: 12px; font-style: italic;">Match the definitions on the left to their correct core term by writing the term in the blank box.</div>
+            
+            <div class="match-row">
+                <div style="width: 35%;">1. Vietcong tunnel networks and booby traps.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">2. The war ending in a deadlock by late 1967.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">3. US spraying defoliants over forests.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">4. Truman Doctrine and Domino Theory logic.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">5. Sending 500,000 ground troops under LBJ.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Vocabulary &bull; Key Topic 3 &bull; Page 3 of 4</div>
+</div>
+
+<!-- PAGE 4: Key Topic 4 Vocabulary -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Key Topic 4 Glossary & Match-up: Vietnam End, 1969–75</h1>
+    </div>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-around;">
+        <div class="vocab-grid">
+            <div class="vocab-list" style="grid-column: span 2;">
+                <div class="vocab-title">Core Term Definitions</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div class="vocab-item"><strong>Vietnamisation:</strong> Nixon's policy of withdrawing US troops and building up South Vietnamese forces.</div>
+                    <div class="vocab-item"><strong>Conscription (Draft):</strong> Compulsory state military draft to select soldiers for Vietnam combat.</div>
+                    <div class="vocab-item"><strong>Silent Majority:</strong> Nixon's term for the moderate public who did not participate in war protests.</div>
+                    <div class="vocab-item"><strong>Moratorium:</strong> Large coordinated public anti-war protests taking place in major cities.</div>
+                    <div class="vocab-item"><strong>Credibility Gap:</strong> Public skepticism resulting from contradictions in government military reports.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise-box">
+            <div class="exercise-title">Vocabulary Match-up Exercise</div>
+            <div style="font-size: 9px; color: #475569; margin-bottom: 12px; font-style: italic;">Match the definitions on the left to their correct core term by writing the term in the blank box.</div>
+            
+            <div class="match-row">
+                <div style="width: 35%;">1. Selective Service lottery wheel system.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">2. The My Lai massacre exposure causing public mistrust.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">3. Nixon's speech appealing to the patriotic masses.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">4. Training the ARVN to replace departing US soldiers.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+            <div class="match-row">
+                <div style="width: 35%;">5. Half a million protestors marching in Washington.</div>
+                <div class="match-line"></div>
+                <div class="match-slot"><span>Write Term Here</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Vocabulary &bull; Key Topic 4 &bull; Page 4 of 4</div>
+</div>
+
+</body>
+</html>

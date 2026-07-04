@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronology & Timeline Workbook</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --border: #cbd5e1;
+            --bg-light: #f8fafc;
+            --text: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.35;
+            margin: 0;
+            padding: 0;
+            background: #e2e8f0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            padding: 15mm;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        .section-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 14px;
+            color: var(--primary-dark);
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .prompt-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 9.5px;
+            line-height: 1.35;
+            margin-bottom: 12px;
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+
+        .timeline-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 65%;
+            margin: 0 auto;
+            flex-grow: 1;
+            box-sizing: border-box;
+        }
+
+        .timeline-axis {
+            position: relative;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            background: var(--primary);
+            z-index: 1;
+        }
+
+        .timeline-node {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            border: 2.5px solid var(--primary);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-slots {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            box-sizing: border-box;
+        }
+
+        .timeline-dates {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            font-weight: 800;
+            font-size: 11px;
+            color: var(--primary-dark);
+            text-align: right;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .slot-box {
+            border: 1.5px solid #475569;
+            background: #f8fafc;
+            border-radius: 4px;
+            height: 38px;
+            padding: 4px 8px;
+            box-sizing: border-box;
+            font-size: 9px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slot-box span {
+            color: #94a3b8;
+            font-size: 8px;
+        }
+
+        .event-bank {
+            border: 1px solid var(--border);
+            background: var(--bg-light);
+            border-radius: 4px;
+            padding: 8px 10px;
+            width: 65%;
+            margin: 10px auto 0 auto;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .event-bank-title {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .event-bank-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            font-size: 8.5px;
+        }
+
+        .footer-note {
+            position: absolute;
+            bottom: 12mm;
+            left: 15mm;
+            right: 15mm;
+            text-align: center;
+            font-size: 8px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 5px;
+        }
+
+        @media print {
+            body { background: none; }
+            .page { 
+                margin: 0; 
+                padding: 15mm; 
+                border: none; 
+                box-shadow: none; 
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: Civil Rights Timeline -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Chronology & Timeline Matching: Civil Rights, 1954–65</h1>
+    </div>
+
+    <div class="prompt-box">
+        <strong>Inquiry Task:</strong> Review the Event Bank at the bottom of the page. Match each description to its correct year on the timeline track by writing the correct event letter (A–H) in the blank boxes.
+    </div>
+
+    <div class="timeline-container">
+        <!-- Dates Column -->
+        <div class="timeline-dates">
+            <div>May 1954</div>
+            <div>Dec 1955</div>
+            <div>Sept 1957</div>
+            <div>Feb 1960</div>
+            <div>May 1961</div>
+            <div>Aug 1963</div>
+            <div>July 1964</div>
+            <div>Aug 1965</div>
+        </div>
+
+        <!-- Axis Axis -->
+        <div class="timeline-axis">
+            <div class="timeline-line"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+        </div>
+
+        <!-- Slot Boxes Column -->
+        <div class="timeline-slots">
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+        </div>
+    </div>
+
+    <div class="event-bank">
+        <div class="event-bank-title">Event Bank</div>
+        <div class="event-bank-grid">
+            <div><strong>A:</strong> Brown v. Board of Education rules segregation illegal.</div>
+            <div><strong>E:</strong> CORE Freedom Riders test desegregated bus travel.</div>
+            <div><strong>B:</strong> Rosa Parks arrest triggers Montgomery Bus Boycott.</div>
+            <div><strong>F:</strong> March on Washington, MLK "I Have a Dream" speech.</div>
+            <div><strong>C:</strong> Governor Faubus blocked, Federal troops desegregate Nine.</div>
+            <div><strong>G:</strong> President LBJ signs the Civil Rights Act.</div>
+            <div><strong>D:</strong> Greensboro Sit-ins spark lunch counter protests.</div>
+            <div><strong>H:</strong> Selma Campaign prompts Voting Rights Act of 1965.</div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Chronology &bull; Civil Rights &bull; Page 1 of 2</div>
+</div>
+
+<!-- PAGE 2: Vietnam War Timeline -->
+<div class="page">
+    <div class="section-header">
+        <h1 class="section-title">Chronology & Timeline Matching: Vietnam War, 1954–75</h1>
+    </div>
+
+    <div class="prompt-box">
+        <strong>Inquiry Task:</strong> Review the Event Bank at the bottom of the page. Match each description to its correct year on the timeline track by writing the correct event letter (A–H) in the blank boxes.
+    </div>
+
+    <div class="timeline-container">
+        <!-- Dates Column -->
+        <div class="timeline-dates">
+            <div>July 1954</div>
+            <div>Aug 1964</div>
+            <div>Mar 1965</div>
+            <div>Jan 1968</div>
+            <div>Apr 1970</div>
+            <div>Mar 1972</div>
+            <div>Jan 1973</div>
+            <div>Apr 1975</div>
+        </div>
+
+        <!-- Axis Axis -->
+        <div class="timeline-axis">
+            <div class="timeline-line"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+            <div class="timeline-node"></div>
+        </div>
+
+        <!-- Slot Boxes Column -->
+        <div class="timeline-slots">
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+            <div class="slot-box"><span>Write letter (A–H):</span></div>
+        </div>
+    </div>
+
+    <div class="event-bank">
+        <div class="event-bank-title">Event Bank</div>
+        <div class="event-bank-grid">
+            <div><strong>A:</strong> Dien Bien Phu defeat, Geneva Accords divide Vietnam.</div>
+            <div><strong>E:</strong> Invasion of Cambodia expands war, Kent State protests.</div>
+            <div><strong>B:</strong> USS Maddox incident prompts Gulf of Tonkin Resolution.</div>
+            <div><strong>F:</strong> NVA Easter Offensive repelled by ARVN & air support.</div>
+            <div><strong>C:</strong> Operation Rolling Thunder strategic bombing campaign starts.</div>
+            <div><strong>G:</strong> Paris Peace Accords signed, US troops withdraw.</div>
+            <div><strong>D:</strong> Tet Offensive turning point shocks American public.</div>
+            <div><strong>H:</strong> Fall of Saigon, NV troops capture capital, war ends.</div>
+        </div>
+    </div>
+
+    <div class="footer-note">GCSE History Chronology &bull; Vietnam War &bull; Page 2 of 2</div>
+</div>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 /*
-   Edexcel GCSE History Paper 3 The USA, 1954-75: Conflict at Home and Abroad - Application Controller
+   GCSE History Paper 3 The USA, 1954-75: Conflict at Home and Abroad - Application Controller
    Handles SPA routing, progress syncing, audio synthesis, exam timing, 
    flashcard sessions, global search, and timeline assembly.
 */
@@ -47,7 +47,10 @@ export const state = {
     timeLimit: 0,
     timeElapsed: 0,
     scope: 'all',
-    length: 15
+    length: 15,
+    isAdaptive: false,
+    rollingHistory: [],              // Rolling array of { subtopicId, isCorrect } representing the last 5 answers
+    currentDifficulty: 'medium'      // 'easy' | 'medium' | 'hard'
   },
   
   // Cache flattened questions list for quick access
