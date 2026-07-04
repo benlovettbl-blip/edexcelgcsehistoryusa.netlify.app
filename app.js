@@ -15623,7 +15623,7 @@ ${cleanBrackets(paper.q3d.model)}
     <div class="edexcel-question-container">
       <div class="edexcel-question-header">
         <span class="edexcel-question-marks">(4 marks)</span>
-        <span>1. Give two inferences you can make from Source A.</span>
+        <span>1. ${paper.q1.question || "Give two inferences from Source A."}</span>
       </div>
       
       ${paper.sourceA ? `
@@ -15969,14 +15969,13 @@ ${cleanBrackets(paper.q3d.model)}
       const answers = document.getElementById("preview-answers").value;
       const densitySelector = document.getElementById("preview-density").parentElement;
       const answersSelector = document.getElementById("preview-answers").parentElement;
-      if (activeStyle === "revision" || activeStyle === "interpretations" || activeStyle === "foundation" || activeStyle === "sources" || activeStyle === "scaffolds" || activeStyle === "vocabulary" || activeStyle === "chronology" || activeStyle === "comparison") {
+      if (activeStyle === "revision" || activeStyle === "interpretations" || activeStyle === "foundation" || activeStyle === "sources" || activeStyle === "vocabulary" || activeStyle === "chronology" || activeStyle === "comparison") {
         if (densitySelector) densitySelector.style.display = "none";
         if (answersSelector) answersSelector.style.display = "none";
         let url = "revision_workbook_usa.html";
         if (activeStyle === "interpretations") url = "interpretations_practice.html";
         if (activeStyle === "sources") url = "sources_practice.html";
         if (activeStyle === "foundation") url = "foundation_quiz_pack.html";
-        if (activeStyle === "scaffolds") url = "exam_writing_scaffolds.html";
         if (activeStyle === "vocabulary") url = "vocabulary_workbook.html";
         if (activeStyle === "chronology") url = "chronology_workbook.html";
         if (activeStyle === "comparison") url = "concept_comparison_workbook.html";
@@ -16042,12 +16041,11 @@ ${cleanBrackets(paper.q3d.model)}
     if (btnWord) {
       btnWord.addEventListener("click", () => {
         AudioEngine.play("click");
-        if (activeStyle === "revision" || activeStyle === "interpretations" || activeStyle === "foundation" || activeStyle === "sources" || activeStyle === "scaffolds" || activeStyle === "vocabulary" || activeStyle === "chronology" || activeStyle === "comparison") {
+        if (activeStyle === "revision" || activeStyle === "interpretations" || activeStyle === "foundation" || activeStyle === "sources" || activeStyle === "vocabulary" || activeStyle === "chronology" || activeStyle === "comparison") {
           let packName = "Active Revision Pack";
           if (activeStyle === "interpretations") packName = "Interpretations Practice Book";
           if (activeStyle === "sources") packName = "Sources Practice Book";
           if (activeStyle === "foundation") packName = "Foundation Quiz Pack";
-          if (activeStyle === "scaffolds") packName = "Exam Writing Scaffolds";
           if (activeStyle === "vocabulary") packName = "Key Vocabulary Workbook";
           if (activeStyle === "chronology") packName = "Chronology & Timeline Workbook";
           if (activeStyle === "comparison") packName = "Concept Comparison Workbook";
